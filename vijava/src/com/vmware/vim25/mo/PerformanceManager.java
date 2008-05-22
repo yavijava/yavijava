@@ -73,7 +73,7 @@ public class PerformanceManager extends ManagedObject
 	{
 		getVimService().createPerfInterval(getMOR(), intervalId);
 	}
-	// TODO * not sure if entity should ME or just MO. Need to check with SDK team
+
 	public PerfMetricId[] queryAvailablePerfMetric(ManagedEntity entity, Calendar beginTime, Calendar endTime, Integer intervalId) throws RuntimeFault, RemoteException 
 	{
 		if(entity==null)
