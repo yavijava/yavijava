@@ -43,12 +43,7 @@ import com.vmware.vim25.mo.util.*;
 
 public class ServiceInstance extends ManagedObject 
 {
-	// TODO * add singleton control of each manager attached with this ServiceInstance
-	// TODO* one way to verify the property names before it's passed to server!!!
-	final static String[] propNames = {"capability", "content", "serverClock" };
-
 	private ServiceContent serviceContent = null;
-
 	final static ManagedObjectReference SERVICE_INSTANCE_MOR;
 	
 	static 

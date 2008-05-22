@@ -89,7 +89,6 @@ public class QueryMemoryOverhead
 		vhardware.setNumCPU(Integer.parseInt(cpucount));
 		vmConfigInfo.setHardware(vhardware);
             
-		// TODO*** Not Required For Computing The Overhead
 		vmConfigInfo.setName("OnlyFoeInfo");
 		vmConfigInfo.setUuid("12345678-abcd-1234-cdef-123456789abc");
 		vmConfigInfo.setVersion("First");

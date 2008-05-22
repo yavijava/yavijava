@@ -63,7 +63,6 @@ public class HostAutoStartManager extends ManagedObject
 		getVimService().autoStartPowerOn(getMOR());
 	}
 	
-	// TODO ******* to change the name
 	public void reconfigureAutostart(HostAutoStartManagerConfig spec) throws RuntimeFault, RemoteException 
 	{
 		getVimService().reconfigureAutostart(getMOR(), spec);
