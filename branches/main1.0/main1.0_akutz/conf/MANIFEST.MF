@@ -10,10 +10,12 @@ Specification-Vendor: http://vijava.sf.net/
 Implementation-Title: com.vmware.vim25.mo
 Implementation-Version: 1.0.0
 Implementation-Vendor: http://vijava.sf.net/
-Class-Path: lib/activation.jar lib/axis-ant.jar lib/axis.jar lib/commo
- ns-cli-1.1.jar lib/commons-discovery-0.2.jar lib/commons-logging-1.0.
- 4.jar lib/httpunit.jar lib/jaxrpc.jar lib/junit.jar lib/log4j-1.2.8.j
- ar lib/mailapi_1_3_1.jar lib/saaj.jar lib/vim25.jar lib/wsdl4j-1.5.1.
- jar
+Class-Path: /usr/share/ant/lib/ant-launcher.jar:/Users/akutz/Projects/
+ vijava/foo:/usr/share/ant/lib/ant-jai.jar:/usr/share/ant/lib/ant-jmf.
+ jar:/usr/share/ant/lib/ant-junit.jar:/usr/share/ant/lib/ant-launcher.
+ jar:/usr/share/ant/lib/ant-nodeps.jar:/usr/share/ant/lib/ant-swing.ja
+ r:/usr/share/ant/lib/ant-testutil.jar:/usr/share/ant/lib/ant-trax.jar
+ :/usr/share/ant/lib/ant.jar:/usr/share/ant/lib/xercesImpl.jar:/usr/sh
+ are/ant/lib/xml-apis.jar
 Sealed: true
 

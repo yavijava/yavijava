@@ -16,6 +16,8 @@
 	</target>
 
 	<target name="init" description="initialize project">
+		<echo>${java.class.path}</echo>
+		
 		<mkdir dir="${dist}" />
 		<mkdir dir="${docs}" />
 		<mkdir dir="${build}/src/classes" />
