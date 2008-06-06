@@ -73,6 +73,7 @@
 		</manifest>
 		
 		<!-- compile the source files -->
+		<echo>${java.class.path}</echo>
 		<javac srcdir="${src}" sourcepath="" destdir="${build}/src/classes">
 			<classpath path="${java.class.path}">
 				<fileset dir="${lib}/"/>
