@@ -115,7 +115,8 @@
 	<target name="test" depends="compile" description="run unit tests">
 		
 		<junit printsummary="yes" haltonfailure="yes" fork="off">
-			<classpath refid="project.class.path">
+			<classpath refid="project.class.path" />
+			<classpath>
 				<pathelement location="${build}/src/${proj.name.unix}-${proj.version}.jar" />
 				<pathelement location="${build}/test/${proj.name.unix}-${proj.version}.test.jar" />
 			</classpath>
