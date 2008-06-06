@@ -1,0 +1,4 @@
+#!/bin/bash
+
+./setvars
+ant test
