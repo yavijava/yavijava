@@ -4,22 +4,29 @@
 	<property file="conf/default.properties" />
 	
 	<!-- do everything: build, test, dist -->
-	<target name="all">
-		<antcall target="compile" />
+	<target name="all" description="build, test, and dist">
+		<antcall target="build" />
 		<antcall target="test" />
 		<antcall target="dist" />
 	</target>
 
 	<!-- build the project -->
-	<target name="build">
+	<target name="build" description="build the project">
 		<antcall target="compile" />
 	</target>
 
-	<target name="init">
+	<target name="init" description="initialize project">
 		<mkdir dir="${dist}" />
 		<mkdir dir="${docs}" />
 		<mkdir dir="${build}/src/classes" />
 		<mkdir dir="${build}/test/classes" />
+		
+		<!-- 
+			create an empty lib if one does not exist. this is so the CI 
+			server doesn't complain that the lib dir doesn't exist when it
+			is creating the manifest file
+		-->
+		<mkdir dir="${lib}" />
 	</target>
 	
 	<!-- clean the project -->
@@ -36,7 +43,7 @@
 	
 
 	<!-- compile the project -->
-	<target name="compile" depends="init">
+	<target name="compile" depends="init" description="compile the project">
 		
 		<!-- set it up so we can create the manifest Classpath property -->
 		<property name="jar-all" location="lib" />
@@ -67,7 +74,7 @@
 		
 		<!-- compile the source files -->
 		<javac srcdir="${src}" sourcepath="" destdir="${build}/src/classes">
-			<classpath>
+			<classpath path="${classpath}">
 				<fileset dir="${lib}/"/>
 			</classpath>
 			<include name="**/*.java"/>
@@ -81,7 +88,7 @@
 		
 		<!-- compile the unit tests -->
 		<javac srcdir="${test}" destdir="${build}/test/classes">
-			<classpath>
+			<classpath path="${classpath}">
 				<fileset dir="${lib}/"/>
 				<fileset dir="${build}/src"/>
 			</classpath>
@@ -96,10 +103,10 @@
 	</target>
 
 	<!-- run unit tests on the project -->
-	<target name="test" depends="compile">
+	<target name="test" depends="compile" description="run unit tests">
 		
 		<junit printsummary="yes" haltonfailure="yes" fork="off">
-			<classpath>
+			<classpath path="${classpath}">
 				<fileset dir="${lib}">
 					<include name="**/*.jar" />
 				</fileset>
@@ -125,7 +132,8 @@
 	</target>
 	
 	<!-- prepare the project for distribution -->
-	<target name="dist" depends="compile">
+	<target name="dist" depends="compile" 
+		description="tar up the src and binary output">
 
 		<!-- ***************************** src ***************************** -->
 
@@ -133,7 +141,7 @@
 		<javadoc 
 			sourcepath="${src}" 
 			destdir="${docs}">
-			<classpath>
+			<classpath path="${classpath}">
 				<fileset dir="lib">
 					<include name="**/*.jar" />
 				</fileset>
