@@ -67,14 +67,14 @@
 				<attribute name="Implementation-Title" value="${proj.name}" />
 				<attribute name="Implementation-Version" value="${proj.version}" />
 				<attribute name="Implementation-Vendor" value="${proj.vendor}" />
-				<attribute name="Class-Path" value="${classpath}" />
+				<attribute name="Class-Path" value="${java.class.path}" />
 				<attribute name="Sealed" value="true" />
 			</section>
 		</manifest>
 		
 		<!-- compile the source files -->
 		<javac srcdir="${src}" sourcepath="" destdir="${build}/src/classes">
-			<classpath path="${classpath}">
+			<classpath path="${java.class.path}">
 				<fileset dir="${lib}/"/>
 			</classpath>
 			<include name="**/*.java"/>
@@ -88,7 +88,7 @@
 		
 		<!-- compile the unit tests -->
 		<javac srcdir="${test}" destdir="${build}/test/classes">
-			<classpath path="${classpath}">
+			<classpath path="${java.class.path}">
 				<fileset dir="${lib}/"/>
 				<fileset dir="${build}/src"/>
 			</classpath>
@@ -106,7 +106,7 @@
 	<target name="test" depends="compile" description="run unit tests">
 		
 		<junit printsummary="yes" haltonfailure="yes" fork="off">
-			<classpath path="${classpath}">
+			<classpath path="${java.class.path}">
 				<fileset dir="${lib}">
 					<include name="**/*.jar" />
 				</fileset>
@@ -141,7 +141,7 @@
 		<javadoc 
 			sourcepath="${src}" 
 			destdir="${docs}">
-			<classpath path="${classpath}">
+			<classpath path="${java.class.path}">
 				<fileset dir="lib">
 					<include name="**/*.jar" />
 				</fileset>
