@@ -42,9 +42,10 @@ import org.apache.commons.cli.*;
 import java.io.*;
 
 /**
- * This class is used to create a session to and interact with a VI server.
+ * This class makes it easy to use VI Java from the command line.
  * 
  * @author Schley Andrew Kutz &lt;sakutz@gmail.com&gt;
+ *
  */
 public class ServiceInstanceHelper
 {
@@ -117,13 +118,6 @@ public class ServiceInstanceHelper
 		VirtualMachine,
 	};
 
-	// </editor-fold>
-
-	// </region>
-
-	// <region> Semi-Constants
-
-	// <editor-fold defaultstate="collapsed" desc="Semi-Constants">
 
 	// If there are environment variables for options then
 	// set the default values of those options to the value
@@ -140,13 +134,6 @@ public class ServiceInstanceHelper
 	private String VI_URL = System.getenv( "VI_URL" );
 	private String VI_USERNAME = System.getenv( "VI_USERNAME" );
 
-	// </editor-fold>
-
-	// </region>
-
-	// <region> Fields
-
-	// <editor-fold defaultstate="collapsed" desc="Fields">
 
 	/**
 	 * The string to print out before the generated usage text.
@@ -265,14 +252,6 @@ public class ServiceInstanceHelper
 		// Initialize the default options
 		initDefaultOptions();
 	}
-
-	// </editor-fold>
-
-	// </region>
-
-	// <region> Methods
-
-	// <editor-fold defaultstate="collapsed" desc="Methods">
 
 	/**
 	 * Initialize the default options.
@@ -713,51 +692,58 @@ public class ServiceInstanceHelper
 		fout.close();
 	}
 	
-	 public String getOnelineInput(String prompt)
-	   {
-		   System.out.print(prompt);
-	       BufferedReader stdin = new BufferedReader(new InputStreamReader(System.in));
-	       String pass = null;
-	       try
-	       {
-	    	   pass = stdin.readLine();
-	       } catch(IOException ioe)
-	       {
-	    	   System.out.println("Error in reading console input.");
-	       }
-	       return pass;
-	   }
-	
-	private String readPassword (String prompt) 
-	   {
-	      try { 
-	         PasswordMask consoleEraser = new PasswordMask();
-	         System.out.print(prompt);
-	         BufferedReader stdin = new BufferedReader(new
-	                             InputStreamReader(System.in));
-	         consoleEraser.start();                       
-	         String pass = stdin.readLine();
-	         consoleEraser.halt();
-	         System.out.print("\b");
-	         return pass;
-	      }
-	      catch(Exception e) {
-	         return null;
-	      }
-	   }   
-	   class PasswordMask extends Thread {
-	      private boolean running = true;
-	      public void run() {
-	         while (running) {
-	            System.out.print("\b ");
-	         }
-	      }
-	      public synchronized void halt() {
-	         running = false;
-	      }
-	   }
+	public String getOnelineInput( String prompt )
+	{
+		System.out.print( prompt );
+		BufferedReader stdin =
+			new BufferedReader( new InputStreamReader( System.in ) );
+		String pass = null;
+		try
+		{
+			pass = stdin.readLine();
+		}
+		catch (IOException ioe)
+		{
+			System.out.println( "Error in reading console input." );
+		}
+		return pass;
+	}
 
-	// </editor-fold>
+	private String readPassword( String prompt )
+	{
+		try
+		{
+			PasswordMask consoleEraser = new PasswordMask();
+			System.out.print( prompt );
+			BufferedReader stdin =
+				new BufferedReader( new InputStreamReader( System.in ) );
+			consoleEraser.start();
+			String pass = stdin.readLine();
+			consoleEraser.halt();
+			System.out.print( "\b" );
+			return pass;
+		}
+		catch (Exception e)
+		{
+			return null;
+		}
+	}
 
-	// </region>
+	class PasswordMask extends Thread
+	{
+		private boolean running = true;
+
+		public void run()
+		{
+			while ( running )
+			{
+				System.out.print( "\b " );
+			}
+		}
+
+		public synchronized void halt()
+		{
+			running = false;
+		}
+	}
 }

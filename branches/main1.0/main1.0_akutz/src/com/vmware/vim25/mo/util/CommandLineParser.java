@@ -37,6 +37,7 @@ import java.util.Iterator;
 import java.util.Set;
 import java.util.Vector;
 
+@Deprecated
 public class CommandLineParser 
 {
    private HashMap<String, String> optsEntered = new HashMap<String, String>();     
