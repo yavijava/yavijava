@@ -2,6 +2,17 @@
 
 	<!-- get the default properties -->
 	<property file="conf/default.properties" />
+
+	<!-- the project's classpath -->
+	<property environment="env" />
+	<path id="project.class.path">
+		<fileset dir="${lib}">
+			<include name="**/*.jar" />
+		</fileset>
+		<fileset dir="${env.LIB_JAVA}">
+			<include name="**/*.jar" />
+		</fileset>
+	</path>
 	
 	<!-- do everything: build, test, dist -->
 	<target name="all" description="build, test, and dist">
@@ -16,8 +27,6 @@
 	</target>
 
 	<target name="init" description="initialize project">
-		<echo>${java.class.path}</echo>
-		
 		<mkdir dir="${dist}" />
 		<mkdir dir="${docs}" />
 		<mkdir dir="${build}/src/classes" />
@@ -69,17 +78,14 @@
 				<attribute name="Implementation-Title" value="${proj.name}" />
 				<attribute name="Implementation-Version" value="${proj.version}" />
 				<attribute name="Implementation-Vendor" value="${proj.vendor}" />
-				<attribute name="Class-Path" value="${java.class.path}" />
+				<attribute name="Class-Path" value="${classpath}" />
 				<attribute name="Sealed" value="true" />
 			</section>
 		</manifest>
 		
 		<!-- compile the source files -->
-		<echo>${java.class.path}</echo>
 		<javac srcdir="${src}" sourcepath="" destdir="${build}/src/classes">
-			<classpath path="${java.class.path}">
-				<fileset dir="${lib}/"/>
-			</classpath>
+ 			<classpath refid="project.class.path"/>
 			<include name="**/*.java"/>
 		</javac>
 		
@@ -91,8 +97,8 @@
 		
 		<!-- compile the unit tests -->
 		<javac srcdir="${test}" destdir="${build}/test/classes">
-			<classpath path="${java.class.path}">
-				<fileset dir="${lib}/"/>
+			<classpath refid="project.class.path" />
+			<classpath>
 				<fileset dir="${build}/src"/>
 			</classpath>
 		</javac>
@@ -109,10 +115,7 @@
 	<target name="test" depends="compile" description="run unit tests">
 		
 		<junit printsummary="yes" haltonfailure="yes" fork="off">
-			<classpath path="${java.class.path}">
-				<fileset dir="${lib}">
-					<include name="**/*.jar" />
-				</fileset>
+			<classpath refid="project.class.path">
 				<pathelement location="${build}/src/${proj.name.unix}-${proj.version}.jar" />
 				<pathelement location="${build}/test/${proj.name.unix}-${proj.version}.test.jar" />
 			</classpath>
@@ -144,11 +147,7 @@
 		<javadoc 
 			sourcepath="${src}" 
 			destdir="${docs}">
-			<classpath path="${java.class.path}">
-				<fileset dir="lib">
-					<include name="**/*.jar" />
-				</fileset>
-			</classpath>
+			<classpath refid="project.class.path" />
 		</javadoc>
 
 		<!-- Sync the project (minus some dirs) to the dist src tree -->
