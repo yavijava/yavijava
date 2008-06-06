@@ -1,0 +1,195 @@
+<project name="com.vmware.vim25.mo" default="all" basedir=".">
+
+	<!-- get the default properties -->
+	<property file="conf/default.properties" />
+	
+	<!-- do everything: build, test, dist -->
+	<target name="all">
+		<antcall target="compile" />
+		<antcall target="test" />
+		<antcall target="dist" />
+	</target>
+
+	<!-- build the project -->
+	<target name="build">
+		<antcall target="compile" />
+	</target>
+
+	<target name="init">
+		<mkdir dir="${dist}" />
+		<mkdir dir="${docs}" />
+		<mkdir dir="${build}/src/classes" />
+		<mkdir dir="${build}/test/classes" />
+	</target>
+	
+	<!-- clean the project -->
+	<target name="clean" description="clean up">
+		<delete dir="${build}" />
+		<delete dir="${dist}" />
+		<delete dir="${docs}" />
+		<delete>
+			<fileset dir=".">
+				<include name="TEST*" />
+			</fileset>
+		</delete>
+	</target>
+	
+
+	<!-- compile the project -->
+	<target name="compile" depends="init">
+		
+		<!-- set it up so we can create the manifest Classpath property -->
+		<property name="jar-all" location="lib" />
+		<fileset id="jars" dir="${jar-all}">
+			<include name="*.jar" />
+		</fileset>
+		<path id="cp">
+			<fileset refid="jars" />
+		</path>
+		<pathconvert property="classpath" refid="cp" pathsep=" " dirsep="/">
+			<map from="${jar-all}" to="lib" />
+		</pathconvert>
+
+		<!-- create the manifest file -->
+		<manifest file="${conf}/MANIFEST.MF">
+			<attribute name="Built-By" value="${proj.author}" />
+			<section name="${proj.name.slash}">
+				<attribute name="Specification-Title" value="${proj.title}" />
+				<attribute name="Specification-Version" value="${proj.version}" />
+				<attribute name="Specification-Vendor" value="${proj.vendor}" />
+				<attribute name="Implementation-Title" value="${proj.name}" />
+				<attribute name="Implementation-Version" value="${proj.version}" />
+				<attribute name="Implementation-Vendor" value="${proj.vendor}" />
+				<attribute name="Class-Path" value="${classpath}" />
+				<attribute name="Sealed" value="true" />
+			</section>
+		</manifest>
+		
+		<!-- compile the source files -->
+		<javac srcdir="${src}" sourcepath="" destdir="${build}/src/classes">
+			<classpath>
+				<fileset dir="${lib}/"/>
+			</classpath>
+			<include name="**/*.java"/>
+		</javac>
+		
+		<!-- jar up the source files -->
+		<jar 
+			jarfile="${build}/src/${proj.name.unix}-${proj.version}.jar" 
+			basedir="${build}/src/classes" 
+			manifest="${conf}/MANIFEST.MF" />
+		
+		<!-- compile the unit tests -->
+		<javac srcdir="${test}" destdir="${build}/test/classes">
+			<classpath>
+				<fileset dir="${lib}/"/>
+				<fileset dir="${build}/src"/>
+			</classpath>
+		</javac>
+		
+		<!-- jar up the unit tests -->
+		<jar 
+			jarfile="${build}/test/${proj.name.unix}-${proj.version}.test.jar" 
+			basedir="${build}/test/classes" 
+			manifest="${conf}/MANIFEST.MF" />
+		
+	</target>
+
+	<!-- run unit tests on the project -->
+	<target name="test" depends="compile">
+		
+		<junit printsummary="yes" haltonfailure="yes" fork="off">
+			<classpath>
+				<fileset dir="${lib}">
+					<include name="**/*.jar" />
+				</fileset>
+				<pathelement location="${build}/src/${proj.name.unix}-${proj.version}.jar" />
+				<pathelement location="${build}/test/${proj.name.unix}-${proj.version}.test.jar" />
+			</classpath>
+			
+			<formatter type="plain"/>
+			
+			<batchtest>
+				<fileset dir="${build}/test/classes">
+					<include name="**/*.class" />
+				</fileset>
+			</batchtest>
+			
+		</junit>
+		
+		<delete>
+			<fileset dir=".">
+				<include name="TEST*" />
+			</fileset>
+		</delete>
+	</target>
+	
+	<!-- prepare the project for distribution -->
+	<target name="dist" depends="compile">
+
+		<!-- ***************************** src ***************************** -->
+
+		<!-- Create the javadocs -->
+		<javadoc 
+			sourcepath="${src}" 
+			destdir="${docs}">
+			<classpath>
+				<fileset dir="lib">
+					<include name="**/*.jar" />
+				</fileset>
+			</classpath>
+		</javadoc>
+
+		<!-- Sync the project (minus some dirs) to the dist src tree -->
+		<sync todir="${dist}/${proj.name.unix}-src-${proj.version}">
+			<fileset 
+				dir="${basedir}" 
+				excludes="bin/ build/ dist/ conf/local.properties TEST*" />
+		</sync>
+
+		<!-- Tar the dist src tree -->
+		<tar 
+			destfile="${dist}/${proj.name.unix}-src-${proj.version}.tar.gz" 
+			basedir="${dist}" 
+			compression="gzip" 
+			includes="${proj.name.unix}-src-${proj.version}/**" />
+
+		<!-- ***************************** src ***************************** -->
+
+
+		<!-- ***************************** bin ***************************** -->
+		
+		<!-- Sync the lib directory to the dist bin tree -->
+		<sync todir="${dist}/${proj.name.unix}-bin-${proj.version}/lib">
+			<fileset dir="lib/" />
+		</sync>
+		
+		<!-- Sync the javadocs to the dist bin tree -->
+		<sync todir="${dist}/${proj.name.unix}-bin-${proj.version}/doc">
+			<fileset dir="${docs}" />
+		</sync>
+		
+		<!-- copy the readme and license file into the dist dir -->
+		<copy 
+			file="README.txt" 
+			todir="${dist}/${proj.name.unix}-bin-${proj.version}" />
+		<copy 
+			file="LICENSE.txt" 
+			todir="${dist}/${proj.name.unix}-bin-${proj.version}" />
+		
+		<copy
+			file="${build}/src/${proj.name.unix}-${proj.version}.jar"
+			todir="${dist}/${proj.name.unix}-bin-${proj.version}" />
+
+		<!-- Tar the dist bin tree -->
+		<tar 
+			destfile="${dist}/${proj.name.unix}-bin-${proj.version}.tar.gz" 
+			basedir="${dist}" 
+			compression="gzip" 
+			includes="${proj.name.unix}-bin-${proj.version}/**" />
+
+		<!-- ***************************** bin ***************************** -->
+
+	</target>
+</project>
+
