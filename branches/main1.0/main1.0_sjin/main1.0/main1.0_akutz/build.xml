@@ -1,0 +1,206 @@
+<project name="com.vmware.vim25.mo" default="all" basedir=".">
+
+	<!-- get the default properties -->
+	<property file="conf/default.properties" />
+
+	<!-- the project's classpath -->
+	<property environment="env" />
+	<path id="project.class.path">
+		<fileset dir="${lib}">
+			<include name="**/*.jar" />
+		</fileset>
+		<fileset dir="${env.LIB_JAVA}">
+			<include name="**/*.jar" />
+		</fileset>
+	</path>
+	
+	<!-- do everything: build, test, dist -->
+	<target name="all" description="build, test, and dist">
+		<antcall target="build" />
+		<antcall target="test" />
+		<antcall target="dist" />
+	</target>
+
+	<!-- build the project -->
+	<target name="build" description="build the project">
+		<antcall target="compile" />
+	</target>
+
+	<target name="init" description="initialize project">
+		<mkdir dir="${dist}" />
+		<mkdir dir="${docs}" />
+		<mkdir dir="${build}/src/classes" />
+		<mkdir dir="${build}/test/classes" />
+		
+		<!-- 
+			create an empty lib if one does not exist. this is so the CI 
+			server doesn't complain that the lib dir doesn't exist when it
+			is creating the manifest file
+		-->
+		<mkdir dir="${lib}" />
+	</target>
+	
+	<!-- clean the project -->
+	<target name="clean" description="clean up">
+		<delete dir="${build}" />
+		<delete dir="${dist}" />
+		<delete dir="${docs}" />
+		<delete>
+			<fileset dir=".">
+				<include name="TEST*" />
+			</fileset>
+		</delete>
+	</target>
+	
+
+	<!-- compile the project -->
+	<target name="compile" depends="init" description="compile the project">
+		
+		<!-- set it up so we can create the manifest Classpath property -->
+		<property name="jar-all" location="lib" />
+		<fileset id="jars" dir="${jar-all}">
+			<include name="*.jar" />
+		</fileset>
+		<path id="cp">
+			<fileset refid="jars" />
+		</path>
+		<pathconvert property="classpath" refid="cp" pathsep=" " dirsep="/">
+			<map from="${jar-all}" to="lib" />
+		</pathconvert>
+
+		<!-- create the manifest file -->
+		<manifest file="${conf}/MANIFEST.MF">
+			<attribute name="Built-By" value="${proj.author}" />
+			<section name="${proj.name.slash}">
+				<attribute name="Specification-Title" value="${proj.title}" />
+				<attribute name="Specification-Version" value="${proj.version}" />
+				<attribute name="Specification-Vendor" value="${proj.vendor}" />
+				<attribute name="Implementation-Title" value="${proj.name}" />
+				<attribute name="Implementation-Version" value="${proj.version}" />
+				<attribute name="Implementation-Vendor" value="${proj.vendor}" />
+				<attribute name="Class-Path" value="${classpath}" />
+				<attribute name="Sealed" value="true" />
+			</section>
+		</manifest>
+		
+		<!-- compile the source files -->
+		<javac srcdir="${src}" sourcepath="" destdir="${build}/src/classes">
+ 			<classpath refid="project.class.path"/>
+			<include name="**/*.java"/>
+		</javac>
+		
+		<!-- jar up the source files -->
+		<jar 
+			jarfile="${build}/src/${proj.name.unix}-${proj.version}.jar" 
+			basedir="${build}/src/classes" 
+			manifest="${conf}/MANIFEST.MF" />
+		
+		<!-- compile the unit tests -->
+		<javac srcdir="${test}" destdir="${build}/test/classes">
+			<classpath refid="project.class.path" />
+			<classpath>
+				<fileset dir="${build}/src"/>
+			</classpath>
+		</javac>
+		
+		<!-- jar up the unit tests -->
+		<jar 
+			jarfile="${build}/test/${proj.name.unix}-${proj.version}.test.jar" 
+			basedir="${build}/test/classes" 
+			manifest="${conf}/MANIFEST.MF" />
+		
+	</target>
+
+	<!-- run unit tests on the project -->
+	<target name="test" depends="compile" description="run unit tests">
+		
+		<junit printsummary="yes" haltonfailure="yes" fork="off">
+			<classpath refid="project.class.path" />
+			<classpath>
+				<pathelement location="${build}/src/${proj.name.unix}-${proj.version}.jar" />
+				<pathelement location="${build}/test/${proj.name.unix}-${proj.version}.test.jar" />
+			</classpath>
+			
+			<formatter type="plain"/>
+			
+			<batchtest>
+				<fileset dir="${build}/test/classes">
+					<include name="**/*.class" />
+				</fileset>
+			</batchtest>
+			
+		</junit>
+		
+		<delete>
+			<fileset dir=".">
+				<include name="TEST*" />
+			</fileset>
+		</delete>
+	</target>
+	
+	<!-- prepare the project for distribution -->
+	<target name="dist" depends="compile" 
+		description="tar up the src and binary output">
+
+		<!-- ***************************** src ***************************** -->
+
+		<!-- Create the javadocs -->
+		<javadoc 
+			sourcepath="${src}" 
+			destdir="${docs}">
+			<classpath refid="project.class.path" />
+		</javadoc>
+
+		<!-- Sync the project (minus some dirs) to the dist src tree -->
+		<sync todir="${dist}/${proj.name.unix}-src-${proj.version}">
+			<fileset 
+				dir="${basedir}" 
+				excludes="bin/ build/ dist/ conf/local.properties TEST*" />
+		</sync>
+
+		<!-- Tar the dist src tree -->
+		<tar 
+			destfile="${dist}/${proj.name.unix}-src-${proj.version}.tar.gz" 
+			basedir="${dist}" 
+			compression="gzip" 
+			includes="${proj.name.unix}-src-${proj.version}/**" />
+
+		<!-- ***************************** src ***************************** -->
+
+
+		<!-- ***************************** bin ***************************** -->
+		
+		<!-- Sync the lib directory to the dist bin tree -->
+		<sync todir="${dist}/${proj.name.unix}-bin-${proj.version}/lib">
+			<fileset dir="lib/" />
+		</sync>
+		
+		<!-- Sync the javadocs to the dist bin tree -->
+		<sync todir="${dist}/${proj.name.unix}-bin-${proj.version}/doc">
+			<fileset dir="${docs}" />
+		</sync>
+		
+		<!-- copy the readme and license file into the dist dir -->
+		<copy 
+			file="README.txt" 
+			todir="${dist}/${proj.name.unix}-bin-${proj.version}" />
+		<copy 
+			file="LICENSE.txt" 
+			todir="${dist}/${proj.name.unix}-bin-${proj.version}" />
+		
+		<copy
+			file="${build}/src/${proj.name.unix}-${proj.version}.jar"
+			todir="${dist}/${proj.name.unix}-bin-${proj.version}" />
+
+		<!-- Tar the dist bin tree -->
+		<tar 
+			destfile="${dist}/${proj.name.unix}-bin-${proj.version}.tar.gz" 
+			basedir="${dist}" 
+			compression="gzip" 
+			includes="${proj.name.unix}-bin-${proj.version}/**" />
+
+		<!-- ***************************** bin ***************************** -->
+
+	</target>
+</project>
+
