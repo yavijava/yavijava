@@ -53,6 +53,10 @@ import java.net.URL;
  *--username [username] --password [password] --vmname  [vmName]
  *
  *<pre>
+ *
+ * @author sjin
+ * Converted a similar sample from VMware web site
+ *
  */
 
 public class GetUpdates 
