@@ -61,6 +61,8 @@ import com.vmware.vim25.mo.util.*;
 *run.bat com.vmware.samples.host.RemoveVirtualSwitchPortGroup --url [webserviceurl] --username [username] --password  <password> 
 *--portgroupname[<myportgroup] --host<hostname>
 *</pre>
+* @author sjin 
+* THis is a sample converted from VI SDK samples
 */
 
 public class RemoveVirtualSwitchPortGroup 

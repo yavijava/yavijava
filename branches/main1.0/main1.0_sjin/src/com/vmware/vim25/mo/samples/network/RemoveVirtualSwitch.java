@@ -58,6 +58,8 @@ import com.vmware.vim25.mo.util.*;
 *run.bat com.vmware.samples.host.RemoveVirtualSwitch --url [webserviceurl] --username [username] --password  [password]  --vsiwtchid [mySwitch] --host [host]
 *
 *</pre>
+* @author sjin 
+* THis is a sample converted from VI SDK samples
 */
 
 public class RemoveVirtualSwitch  

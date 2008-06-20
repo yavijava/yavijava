@@ -34,6 +34,11 @@ import com.vmware.vim25.mo.*;
 import com.vmware.vim25.mo.util.CommandLineParser;
 import com.vmware.vim25.mo.util.OptionSpec;
 
+/**
+ * This sample shows how to change a VM's name.
+ * @author sjin
+ */
+
 public class VmRename 
 {
 	public static void main(String[] args) throws Exception

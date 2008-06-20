@@ -60,7 +60,8 @@ import com.vmware.vim25.mo.util.*;
 *--vsiwtchid [mySwitch] --portgroupname[myportgroup] --ipaddress[AAA.AAA.AAA.AAA]
 
 </pre>
-
+* @author sjin 
+* THis is a sample converted from VI SDK samples
 */
 
 public class AddVirtualNic 

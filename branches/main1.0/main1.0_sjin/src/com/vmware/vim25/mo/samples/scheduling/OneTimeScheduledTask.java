@@ -52,6 +52,8 @@ import com.vmware.vim25.mo.util.*;
 *[webserviceurl] --username [username] --password [password] 
 *--taskname [myTask]
 *<pre>
+* @author sjin 
+* THis is a sample converted from VI SDK samples
 */
 
 public class OneTimeScheduledTask 

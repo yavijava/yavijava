@@ -58,7 +58,9 @@ import com.vmware.vim25.mo.util.*;
 *run.bat com.vmware.samples.host.AddVirtualSwitchPortGroup --url [webserviceurl] --username [username] --password  [password] 
 *--vsiwtchid [mySwitch]  --portgroupname [myportgroup]
 *</pre>
-
+*
+* @author sjin 
+* THis is a sample converted from VI SDK samples
 */
 
 

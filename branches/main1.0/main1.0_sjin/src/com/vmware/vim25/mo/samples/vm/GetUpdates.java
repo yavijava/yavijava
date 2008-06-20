@@ -55,8 +55,8 @@ import java.net.URL;
  *<pre>
  *
  * @author sjin
- * Converted a similar sample from VMware web site
- *
+ * This is a sample converted from a similar sample from VMware web site.
+ * It definitely needs clean-up ...
  */
 
 public class GetUpdates 

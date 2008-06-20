@@ -63,7 +63,9 @@ import com.vmware.vim25.mo.util.*;
 *run.bat com.vmware.samples.vm.VMReconfig --url [webserviceurl] 
 *--username [username] --password [password] --vmname [vmname] --device [nic]
 *--operation [remove]  --value [name of the nic]
-</pre>
+*</pre>
+* This is a sample converted from the equivalent from VI SDK
+* @author sjin
 */
 
 

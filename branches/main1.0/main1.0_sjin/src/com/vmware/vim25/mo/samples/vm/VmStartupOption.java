@@ -35,6 +35,10 @@ import com.vmware.vim25.*;
 import com.vmware.vim25.mo.*;
 import com.vmware.vim25.mo.util.*;
 
+/** This sample shows how to change the startup option for a host
+ * @author sjin
+ */
+
 public class VmStartupOption 
 {
 	public static void main(String[] args) throws Exception

@@ -69,6 +69,9 @@ import com.vmware.vim25.mo.util.*;
 *run.bat com.vmware.samples.vm.VMSnapshot --url [webserviceurl]
 *--username [username] --password  [password] --vmname [vmname]
 *--operation [remove]  --removechild [0]
+*
+* @author sjin
+* This is a sample converted from the equivalent in VI SDK
 */
 
 

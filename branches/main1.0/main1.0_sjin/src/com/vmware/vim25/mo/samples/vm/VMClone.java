@@ -62,7 +62,8 @@ import com.vmware.vim25.*;
 *--url https://10.17.218.228/sdk --username administrator --password ca$hc0w --DatacenterName Datacenter 
 *--vmPath Datacenter/vm/W2K3St --CloneName w2k3Std_cloneTest
 *</pre>
-* @author Steve JIN (sjin@vmware.com)
+* @author sjin
+* This is a sample converted from VI SDK samples.
 */
 
 

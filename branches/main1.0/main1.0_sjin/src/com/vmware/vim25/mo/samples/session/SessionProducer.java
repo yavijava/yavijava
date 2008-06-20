@@ -35,6 +35,12 @@ import com.vmware.vim25.mo.ServiceInstance;
 import com.vmware.vim25.mo.util.CommandLineParser;
 import com.vmware.vim25.mo.util.OptionSpec;
 
+/**
+ * This sample shows how to get the session ID.
+ * The session ID can be used by SessionConsumer.
+ * @author sjin
+ */
+
 public class SessionProducer 
 {
 	public static void main(String[] args) throws Exception

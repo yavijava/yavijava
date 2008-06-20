@@ -54,6 +54,8 @@ import com.vmware.vim25.mo.util.*;
 *--vmpath ["/DatacenterName/vm/FolderName/myVM"]
 *--taskname [Task1]
 *</pre>
+* @author sjin 
+* THis is a sample converted from VI SDK samples
 */
 
 public class WeeklyRecurrenceScheduledTask 

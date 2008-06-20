@@ -34,6 +34,12 @@ import java.net.URL;
 import com.vmware.vim25.mo.*;
 import com.vmware.vim25.*;
 
+/**
+ * This sample shows how to use the session ID to login.
+ * The session ID can be get from SessionProducer.
+ * @author sjin
+ */
+
 public class SessionConsumer {
 
 	public static void main(String[] args) throws Exception

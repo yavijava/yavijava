@@ -57,6 +57,9 @@ import com.vmware.vim25.mo.util.*;
 *run.bat com.vmware.samples.host.RemoveVirtualNic --url [webserviceurl] --username [username] --password  [password] 
 *--portgroupname [myportgroup] --host [name of the host]
 *</pre>
+*
+* @author sjin 
+* THis is a sample converted from VI SDK samples
 */
 
 

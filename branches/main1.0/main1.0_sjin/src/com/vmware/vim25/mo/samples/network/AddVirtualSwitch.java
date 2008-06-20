@@ -51,7 +51,9 @@ import com.vmware.vim25.mo.util.*;
 *run.bat com.vmware.samples.host.AddVirtualSwitch --url [webserviceurl] --username [username] --password  [password] 
 *--vsiwtchid [mySwitch] --datacenter [mydatacenter]
 *</pre>
-*
+
+* @author sjin 
+* This is a sample converted from VI SDK samples
 */
 
 public class AddVirtualSwitch  
@@ -132,9 +134,9 @@ public class AddVirtualSwitch
    {
       return new OptionSpec[] 
       {
-    		  new OptionSpec("vswitchid","String",1,"Name of the switch", null),
-    		  new OptionSpec("host","String",0, "Name of the host", null),
-    		  new OptionSpec("datacenter","String",0, "Name of the datacenter", null)
+    		new OptionSpec("vswitchid","String",1,"Name of the switch", null),
+    		new OptionSpec("host","String",0, "Name of the host", null),
+    		new OptionSpec("datacenter","String",0, "Name of the datacenter", null)
       };
    } 
 }
