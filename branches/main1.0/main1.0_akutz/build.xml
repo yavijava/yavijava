@@ -16,7 +16,9 @@
 	
 	<!-- get the version from teamcity if it exists -->
 	<condition property="proj.version" value="${env.BUILD_NUMBER}">
-		<avalaible property="${env.BUILD_NUMBER}" />
+		<and>
+			<avalaible property="${env.BUILD_NUMBER}" />
+		</and>
 	</condition>
 	
 	<!-- do everything: build, test, dist -->
