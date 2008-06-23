@@ -51,7 +51,7 @@ public class SessionManagerTest
 			return;
 		}
 		
-		if ( System.getenv( "TEAMCITY_PROJECT_NAME" ) != null ) return;
+		//if ( System.getenv( "TEAMCITY_PROJECT_NAME" ) != null ) return;
 			
 		// Attempt to login by SSPI
 		ServiceInstance si = new ServiceInstance(
