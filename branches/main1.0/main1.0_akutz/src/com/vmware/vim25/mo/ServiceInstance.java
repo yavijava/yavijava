@@ -32,6 +32,7 @@ package com.vmware.vim25.mo;
 import java.net.URL;
 import java.rmi.RemoteException;
 import java.util.Calendar;
+import javax.naming.MalformedLinkException;
 
 import com.vmware.vim25.*;
 import com.vmware.vim25.mo.util.*;
@@ -53,6 +54,43 @@ public class ServiceInstance extends ManagedObject
 		SERVICE_INSTANCE_MOR.setType("ServiceInstance");
 	}
 
+	/**
+	 * Creates a connection to the VI server using Windows pass-though
+	 * authentication. This constructor is only valid when executed on a 
+	 * Microsoft Windows platform; otherwise the JVM will crash.
+	 * @param url The URL to the VI server's web service.
+	 * @param ignoreCert True to ignore certificate errors; otherwise false.
+	 */
+	public ServiceInstance(URL url, boolean ignoreCert)
+	{
+		if(ignoreCert==true)
+		{
+			this.ignoreCertificate();
+		}
+		
+		setMOR(SERVICE_INSTANCE_MOR);
+		
+		VimServiceLocator serviceLocator = new VimServiceLocator();
+		serviceLocator.setMaintainSession(true);
+		
+		try
+		{
+			VimPortType vimService = serviceLocator.getVimPort(url);
+			((org.apache.axis.client.Stub)vimService).setTimeout(1200000); //optional
+
+			((VimBindingStub) vimService).setMaintainSession(true);
+		
+			serviceContent = vimService.retrieveServiceContent(SERVICE_INSTANCE_MOR);
+			setServerConnection(new ServerConnection(url, vimService, this));
+			UserSession userSession = getSessionManager().login();
+			getServerConnection().setUserSession(userSession);
+		}
+		catch (Exception e)
+		{
+			System.err.println("Exception: " + e.getMessage() );
+		}
+	}
+	
 	public ServiceInstance(URL url, String username, String password) 
 	{
 		this(url, username, password, false);
@@ -318,6 +356,26 @@ public class ServiceInstance extends ManagedObject
 	private ManagedObject createMO(ManagedObjectReference mor)
 	{
 		return MorUtil.createExactManagedObject(getServerConnection(), mor);
+	}
+	
+	static public URL getVIUrl( String server, boolean https )
+		throws java.net.MalformedURLException
+	{
+		return getVIUrl( server, https, -1 );
+	}
+	
+	static public URL getVIUrl( String server, boolean https, int port )
+		throws java.net.MalformedURLException
+	{
+		String url =
+			String.format(
+				"%1$s://%2$s:%3$s%4$s", 
+				https ? "https" : "http",
+				server, 
+				port == -1 ? https ? "443" : "80" : port,
+				"/sdk/webService" );
+			
+		return new URL( url );
 	}
 	
 	// TODO vim.VirtualizationManager is defined in servicecontent but no documentation there. Filed a bug already
