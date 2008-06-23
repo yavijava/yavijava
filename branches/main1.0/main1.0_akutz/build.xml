@@ -2,8 +2,8 @@
 
 	<!-- get the default properties -->
 	<property file="conf/default.properties" />
-
-	<!-- the project's classpath -->
+	
+		<!-- the project's classpath -->
 	<property environment="env" />
 	<path id="project.class.path">
 		<fileset dir="${lib}">
@@ -13,6 +13,11 @@
 			<include name="**/*.jar" />
 		</fileset>
 	</path>
+	
+	<!-- get the version from teamcity if it exists -->
+	<condition property="proj.version" value="${env.BUILD_NUMBER}">
+		<avalaible property="${env.BUILD_NUMBER}" />
+	</condition>
 	
 	<!-- do everything: build, test, dist -->
 	<target name="all" description="build, test, and dist">
