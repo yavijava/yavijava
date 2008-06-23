@@ -17,7 +17,7 @@
 	<!-- get the version from teamcity if it exists -->
 	<condition property="proj.version" value="${env.BUILD_NUMBER}">
 		<and>
-			<avalaible property="${env.BUILD_NUMBER}" />
+			<isset property="${env.BUILD_NUMBER}" />
 		</and>
 	</condition>
 	
