@@ -49,7 +49,9 @@ public class SessionManagerTest
 			.toUpperCase().indexOf( "WINDOWS" ) == -1 )
 		{
 			return;
-		}	
+		}
+		
+		if ( System.getenv( "TEAMCITY_PROJECT_NAME" ) != null ) return;
 			
 		// Attempt to login by SSPI
 		ServiceInstance si = new ServiceInstance(
