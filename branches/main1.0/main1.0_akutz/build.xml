@@ -15,7 +15,10 @@
 	</path>
 	
 	<!-- get the version from teamcity if it exists -->
-	<condition property="proj.version" value="${env.BUILD_NUMBER}">
+	<condition
+		property="proj.build.number" 
+		value="${env.BUILD_NUMBER}"
+		else="${proj.version}">
 		<and>
 			<isset property="${env.BUILD_NUMBER}" />
 		</and>
@@ -80,10 +83,10 @@
 			<attribute name="Built-By" value="${proj.author}" />
 			<section name="${proj.name.slash}">
 				<attribute name="Specification-Title" value="${proj.title}" />
-				<attribute name="Specification-Version" value="${proj.version}" />
+				<attribute name="Specification-Version" value="${proj.build.number}" />
 				<attribute name="Specification-Vendor" value="${proj.vendor}" />
 				<attribute name="Implementation-Title" value="${proj.name}" />
-				<attribute name="Implementation-Version" value="${proj.version}" />
+				<attribute name="Implementation-Version" value="${proj.build.number}" />
 				<attribute name="Implementation-Vendor" value="${proj.vendor}" />
 				<attribute name="Class-Path" value="${classpath}" />
 				<attribute name="Sealed" value="true" />
@@ -98,7 +101,7 @@
 		
 		<!-- jar up the source files -->
 		<jar 
-			jarfile="${build}/src/${proj.name.unix}-${proj.version}.jar" 
+			jarfile="${build}/src/${proj.name.unix}-${proj.build.number}.jar" 
 			basedir="${build}/src/classes" 
 			manifest="${conf}/MANIFEST.MF" />
 		
@@ -112,7 +115,7 @@
 		
 		<!-- jar up the unit tests -->
 		<jar 
-			jarfile="${build}/test/${proj.name.unix}-${proj.version}.test.jar" 
+			jarfile="${build}/test/${proj.name.unix}-${proj.build.number}.test.jar" 
 			basedir="${build}/test/classes" 
 			manifest="${conf}/MANIFEST.MF" />
 		
@@ -124,8 +127,8 @@
 		<junit printsummary="yes" haltonfailure="yes" fork="off">
 			<classpath refid="project.class.path" />
 			<classpath>
-				<pathelement location="${build}/src/${proj.name.unix}-${proj.version}.jar" />
-				<pathelement location="${build}/test/${proj.name.unix}-${proj.version}.test.jar" />
+				<pathelement location="${build}/src/${proj.name.unix}-${proj.build.number}.jar" />
+				<pathelement location="${build}/test/${proj.name.unix}-${proj.build.number}.test.jar" />
 			</classpath>
 			
 			<formatter type="plain"/>
@@ -159,7 +162,7 @@
 		</javadoc>
 
 		<!-- Sync the project (minus some dirs) to the dist src tree -->
-		<sync todir="${dist}/${proj.name.unix}-src-${proj.version}">
+		<sync todir="${dist}/${proj.name.unix}-src-${proj.build.number}">
 			<fileset 
 				dir="${basedir}" 
 				excludes="bin/ build/ dist/ conf/local.properties TEST*" />
@@ -167,10 +170,10 @@
 
 		<!-- Tar the dist src tree -->
 		<tar 
-			destfile="${dist}/${proj.name.unix}-src-${proj.version}.tar.gz" 
+			destfile="${dist}/${proj.name.unix}-src-${proj.build.number}.tar.gz" 
 			basedir="${dist}" 
 			compression="gzip" 
-			includes="${proj.name.unix}-src-${proj.version}/**" />
+			includes="${proj.name.unix}-src-${proj.build.number}/**" />
 
 		<!-- ***************************** src ***************************** -->
 
@@ -178,33 +181,33 @@
 		<!-- ***************************** bin ***************************** -->
 		
 		<!-- Sync the lib directory to the dist bin tree -->
-		<sync todir="${dist}/${proj.name.unix}-bin-${proj.version}/lib">
+		<sync todir="${dist}/${proj.name.unix}-bin-${proj.build.number}/lib">
 			<fileset dir="lib/" />
 		</sync>
 		
 		<!-- Sync the javadocs to the dist bin tree -->
-		<sync todir="${dist}/${proj.name.unix}-bin-${proj.version}/doc">
+		<sync todir="${dist}/${proj.name.unix}-bin-${proj.build.number}/doc">
 			<fileset dir="${docs}" />
 		</sync>
 		
 		<!-- copy the readme and license file into the dist dir -->
 		<copy 
 			file="README.txt" 
-			todir="${dist}/${proj.name.unix}-bin-${proj.version}" />
+			todir="${dist}/${proj.name.unix}-bin-${proj.build.number}" />
 		<copy 
 			file="LICENSE.txt" 
-			todir="${dist}/${proj.name.unix}-bin-${proj.version}" />
+			todir="${dist}/${proj.name.unix}-bin-${proj.build.number}" />
 		
 		<copy
-			file="${build}/src/${proj.name.unix}-${proj.version}.jar"
-			todir="${dist}/${proj.name.unix}-bin-${proj.version}" />
+			file="${build}/src/${proj.name.unix}-${proj.build.number}.jar"
+			todir="${dist}/${proj.name.unix}-bin-${proj.build.number}" />
 
 		<!-- Tar the dist bin tree -->
 		<tar 
-			destfile="${dist}/${proj.name.unix}-bin-${proj.version}.tar.gz" 
+			destfile="${dist}/${proj.name.unix}-bin-${proj.build.number}.tar.gz" 
 			basedir="${dist}" 
 			compression="gzip" 
-			includes="${proj.name.unix}-bin-${proj.version}/**" />
+			includes="${proj.name.unix}-bin-${proj.build.number}/**" />
 
 		<!-- ***************************** bin ***************************** -->
 
