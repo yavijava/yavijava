@@ -20,9 +20,11 @@
 		value="${env.BUILD_NUMBER}"
 		else="${proj.version}">
 		<and>
-			<isset property="${env.BUILD_NUMBER}" />
+			<isset property="env.BUILD_NUMBER" />
 		</and>
 	</condition>
+	
+	<echo>Build number: ${env.BUILD_NUMBER}</echo>
 	
 	<!-- do everything: build, test, dist -->
 	<target name="all" description="build, test, and dist">
