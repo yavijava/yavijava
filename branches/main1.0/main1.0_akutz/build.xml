@@ -153,6 +153,10 @@
 	<!-- prepare the project for distribution -->
 	<target name="dist" depends="compile" 
 		description="tar up the src and binary output">
+		
+		<!-- delete the contents of the dist dir -->
+		<delete dir="${dist}" />
+		<mkdir dir="${dist}" />
 
 		<!-- ***************************** src ***************************** -->
 
