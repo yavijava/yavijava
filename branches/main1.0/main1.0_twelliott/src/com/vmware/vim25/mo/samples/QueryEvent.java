@@ -33,6 +33,7 @@ import java.net.URL;
 
 import com.vmware.vim25.Event;
 import com.vmware.vim25.EventFilterSpec;
+import com.vmware.vim25.mo.EventHistoryCollector;
 import com.vmware.vim25.mo.EventManager;
 import com.vmware.vim25.mo.ServiceInstance;
 import com.vmware.vim25.mo.util.CommandLineParser;
@@ -61,7 +62,9 @@ public class QueryEvent {
 	        EventManager _eventManager = si.getEventManager();
 	        EventFilterSpec eventFilter = new EventFilterSpec();
 	                
-	        Event[] events = _eventManager.queryEvents(eventFilter);
+	        EventHistoryCollector history = _eventManager.createCollectorForEvents(eventFilter);
+	        Event[] events = history.getLastPage();
+	        
 	        System.out.println("Events In the latestPage are : ");
 	        for (int i = 0; i < events.length; i++) {
 	          Event anEvent = events[i];
