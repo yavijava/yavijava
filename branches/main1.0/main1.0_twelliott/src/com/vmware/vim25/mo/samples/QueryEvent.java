@@ -4,14 +4,14 @@ Copyright (c) 2008 VMware, Inc. All Rights Reserved.
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
 
-* Redistributions of source code must retain the above copyright notice, 
+ * Redistributions of source code must retain the above copyright notice, 
 this list of conditions and the following disclaimer.
 
-* Redistributions in binary form must reproduce the above copyright notice, 
+ * Redistributions in binary form must reproduce the above copyright notice, 
 this list of conditions and the following disclaimer in the documentation 
 and/or other materials provided with the distribution.
 
-* Neither the name of VMware, Inc. nor the names of its contributors may be used
+ * Neither the name of VMware, Inc. nor the names of its contributors may be used
 to endorse or promote products derived from this software without specific prior 
 written permission.
 
@@ -41,56 +41,66 @@ import com.vmware.vim25.mo.util.OptionSpec;
 
 /**
  * This sample shows you how to get filtered events from VC
+ * 
  * @author Tom Elliott (twelliott - telliott@vmware.com)
- *
+ * 
  */
-public class QueryEvent {
+public class QueryEvent 
+{
 
-	private static void usage(){
+	private static void usage() 
+	{
 		System.err.println("Usage: QueryEvent server username password");
 	}
-	
-	public static void main(String[] args) throws Exception {
 
-		if(args.length < 3){
+	public static void main(String[] args) throws Exception 
+	{
+
+		if (args.length != 3) 
+		{
 			usage();
 			return;
 		}
-		
+
 		String urlStr = args[0];
-	   	String username = args[1];
-	   	String password = args[2];
-	 
-	   	System.out.println("Connecting to " + urlStr + " as " + username);
-	   	
-		ServiceInstance si = new ServiceInstance(new URL(urlStr), username, password, true);
-		
-	    System.out.println("info---" + si.getAboutInfo().getFullName());
-		
-	    // Displays all the Events with Full Formatted message
-	    try {
-	        EventManager _eventManager = si.getEventManager();
-	        EventFilterSpec eventFilter = new EventFilterSpec();
-	                
-	        EventHistoryCollector history = _eventManager.createCollectorForEvents(eventFilter);
-	        Event[] events = history.getLastPage();
-	        
-	        System.out.println("Events In the latestPage are : ");
-	        for (int i = 0; i < events.length; i++) {
-	          Event anEvent = events[i];
-	          System.out.println("Event: " + anEvent.getClass().getName() + "  FullFormattedMessage: " + anEvent.getFullFormattedMessage());
-	        }
-	     } 
-	     catch (Exception e) {
-	        System.out.println("Caught Exception : " +
-	                           " Name : " + e.getClass().getName() +
-	                           " Message : " + e.getMessage() +
-	                           " Trace : ");
-	        e.printStackTrace();
-	     }
-	     
+		String username = args[1];
+		String password = args[2];
+
+		System.out.println("Connecting to " + urlStr + " as " + username);
+
+		ServiceInstance si = new ServiceInstance(new URL(urlStr), username,
+				password, true);
+
+		System.out.println("info---" + si.getAboutInfo().getFullName());
+
+		// Displays all the Events with Full Formatted message
+		try 
+		{
+			EventManager _eventManager = si.getEventManager();
+			EventFilterSpec eventFilter = new EventFilterSpec();
+
+			EventHistoryCollector history = _eventManager
+					.createCollectorForEvents(eventFilter);
+			Event[] events = history.getLastPage();
+
+			System.out.println("Events In the latestPage are : ");
+			for (int i = 0; i < events.length; i++) 
+			{
+				Event anEvent = events[i];
+				System.out.println("Event: " + anEvent.getClass().getName()
+						+ "  FullFormattedMessage: "
+						+ anEvent.getFullFormattedMessage());
+			}
+		} catch (Exception e)
+		{
+			System.out.println("Caught Exception : " + " Name : "
+					+ e.getClass().getName() + " Message : " + e.getMessage()
+					+ " Trace : ");
+			e.printStackTrace();
+		}
+
 		si.getServerConnection().logout();
-	    
+
 	}
-	
+
 }
