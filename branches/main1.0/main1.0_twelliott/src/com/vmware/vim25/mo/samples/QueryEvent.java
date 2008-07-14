@@ -46,13 +46,23 @@ import com.vmware.vim25.mo.util.OptionSpec;
  */
 public class QueryEvent {
 
+	private static void usage(){
+		System.err.println("Usage: QueryEvent server username password");
+	}
+	
 	public static void main(String[] args) throws Exception {
-	    
-		CommandLineParser clp = new CommandLineParser(new OptionSpec[]{}, args);
-	   	String urlStr = clp.get_option("url");
-  	    String username = clp.get_option("username");
-	    String password = clp.get_option("password");
 
+		if(args.length < 3){
+			usage();
+			return;
+		}
+		
+		String urlStr = args[0];
+	   	String username = args[1];
+	   	String password = args[2];
+	 
+	   	System.out.println("Connecting to " + urlStr + " as " + username);
+	   	
 		ServiceInstance si = new ServiceInstance(new URL(urlStr), username, password, true);
 		
 	    System.out.println("info---" + si.getAboutInfo().getFullName());
