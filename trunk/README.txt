@@ -1,8 +1,34 @@
-To get started, please include the jar downloaded in your existing VI SDK project.
+Welcome to VI Java API Beta Release. 
+
+WHAT IS VI JAVA API?
+VI Java API is a set of Java libraries that aim to ease the usage of VI 
+SDK Web Services interfaces. It's now open sourced under BSD license.
+
+It provides the following benefits to the Java developers:
+
+* Enables OO programming with a well defined managed object model
+* Reduces the need to use ManagedObjectReference and makes possible 
+  compile time type checking
+* Hides the complexity of the PropertyCollector
+* Provides necessary utility classes to simplify VI SDK web interfaces
+* Leverages current VI SDK web services interface while keeping it intact
+
+As a result, the application code using this API is much shorter (70% less) 
+and much more readable than the equivalent using web service interfaces 
+directly. The API itself is straight-forward and easy to learn and use. 
+
+WHAT IS INCLUDED?
+Everything is packaged into one Jar file, including the Java source code, 
+binary, sample code, license. 
+
+HOW TO GET STARTED?
+To get started, please include the jar downloaded in your existing VI 
+SDK project. 
 Please refer to the Developer's Setup Guide to set up an VI SDK project:
 http://www.vmware.com/support/developer/vc-sdk/visdk25pubs/visdk25setupguide.pdf
 
-The open source project home:
+WHERE TO DOWNLOAD THE LATEST RELEASE? 
+http://vijava.sf.net
 http://sourceforge.net/projects/viperltoolkit
 
 Blog:

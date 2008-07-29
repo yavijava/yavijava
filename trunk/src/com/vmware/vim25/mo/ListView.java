@@ -29,7 +29,10 @@ POSSIBILITY OF SUCH DAMAGE.
 
 package com.vmware.vim25.mo;
 
-import com.vmware.vim25.ManagedObjectReference;
+import java.rmi.RemoteException;
+
+import com.vmware.vim25.*;
+import com.vmware.vim25.mo.util.*;
 
 /**
  * The managed object class corresponding to the one defined in VI SDK API reference.
@@ -43,5 +46,33 @@ public class ListView extends ManagedObjectView
 	{
 		super(serverConnection, mor);
 	}
-
+	
+	public ManagedEntity[] modifyListView(ManagedEntity[] add, ManagedEntity[] remove) 
+		throws RuntimeFault, RemoteException
+	{
+		ManagedObjectReference[] mors =
+			getVimService().modifyListView(getMOR(), 
+				add==null? null : MorUtil.createMORs(add),	
+				remove==null? null : MorUtil.createMORs(remove));
+		return MorUtil.createManagedEntities(getServerConnection(), mors);
+	}
+	
+	public ManagedEntity[] resetListView(ManagedEntity[] obj) 
+		throws RuntimeFault, RemoteException
+	{
+		ManagedObjectReference[] mors =  
+			getVimService().resetListView(getMOR(), 
+				obj==null? null : MorUtil.createMORs(obj));
+		return MorUtil.createManagedEntities(getServerConnection(), mors);
+	}
+	
+	public void resetListViewFromView(View view) 
+		throws RuntimeFault, RemoteException
+	{
+		if(view==null)
+		{	
+			throw new IllegalArgumentException("view must not be null.");
+		}
+		getVimService().resetListViewFromView(getMOR(), view.getMOR());
+	}
 }

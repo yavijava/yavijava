@@ -33,6 +33,8 @@ import java.net.URL;
 import java.rmi.RemoteException;
 import java.util.Calendar;
 
+import javax.xml.rpc.ServiceException;
+
 import com.vmware.vim25.*;
 import com.vmware.vim25.mo.util.*;
 
@@ -54,11 +56,13 @@ public class ServiceInstance extends ManagedObject
 	}
 
 	public ServiceInstance(URL url, String username, String password) 
+		throws ServiceException, RemoteException 
 	{
 		this(url, username, password, false);
 	}
 
 	public ServiceInstance(URL url, String username, String password, boolean ignoreCert)
+		throws ServiceException, RemoteException 
 	{
 		if(url == null || username==null)
 		{
@@ -75,26 +79,20 @@ public class ServiceInstance extends ManagedObject
 		VimServiceLocator serviceLocator = new VimServiceLocator();
 		serviceLocator.setMaintainSession(true);
 
-		try
-		{
-			VimPortType vimService = serviceLocator.getVimPort(url);
-			((org.apache.axis.client.Stub)vimService).setTimeout(1200000); //optional
+		VimPortType vimService = serviceLocator.getVimPort(url);
+		((org.apache.axis.client.Stub)vimService).setTimeout(1200000); //optional
 
-			((VimBindingStub) vimService).setMaintainSession(true);
-		
-			serviceContent = vimService.retrieveServiceContent(SERVICE_INSTANCE_MOR);
-			setServerConnection(new ServerConnection(url, vimService, this));
-			UserSession userSession = getSessionManager().login(username, password, null);
-			getServerConnection().setUserSession(userSession);
-		}
-		catch (Exception e)
-		{
-			System.err.println("Exception: " + e.getMessage() );
-		}
+		((VimBindingStub) vimService).setMaintainSession(true);
+	
+		serviceContent = vimService.retrieveServiceContent(SERVICE_INSTANCE_MOR);
+		setServerConnection(new ServerConnection(url, vimService, this));
+		UserSession userSession = getSessionManager().login(username, password, null);
+		getServerConnection().setUserSession(userSession);
 	}
 	
 	// sessionStr format: "vmware_soap_session=\"B3240D15-34DF-4BB8-B902-A844FDF42E85\""
 	public ServiceInstance(URL url, String sessionStr, boolean ignoreCert)
+		throws ServiceException, RemoteException
 	{
 		if(url == null || sessionStr ==null)
 		{
@@ -111,24 +109,17 @@ public class ServiceInstance extends ManagedObject
 		VimServiceLocator serviceLocator = new VimServiceLocator();
 		serviceLocator.setMaintainSession(true);
 		
-		try
-		{
-			VimPortType vimService = serviceLocator.getVimPort(url);
-			((org.apache.axis.client.Stub)vimService).setTimeout(1200000); //optional
-			((VimBindingStub) vimService).setMaintainSession(true);
+		VimPortType vimService = serviceLocator.getVimPort(url);
+		((org.apache.axis.client.Stub)vimService).setTimeout(1200000); //optional
+		((VimBindingStub) vimService).setMaintainSession(true);
 		
-			VimBindingStub vimStub = (VimBindingStub) vimService;
-			vimStub._setProperty(org.apache.axis.transport.http.HTTPConstants.HEADER_COOKIE, sessionStr	);
-			
-			serviceContent = vimService.retrieveServiceContent(SERVICE_INSTANCE_MOR);
-			setServerConnection(new ServerConnection(url, vimService, this));
-			UserSession userSession = (UserSession) getSessionManager().getCurrentProperty("currentSession");
-			getServerConnection().setUserSession(userSession);
-		}
-		catch (Exception e)
-		{
-			System.err.println("Exception: " + e.getMessage() );
-		}
+		VimBindingStub vimStub = (VimBindingStub) vimService;
+		vimStub._setProperty(org.apache.axis.transport.http.HTTPConstants.HEADER_COOKIE, sessionStr	);
+		
+		serviceContent = vimService.retrieveServiceContent(SERVICE_INSTANCE_MOR);
+		setServerConnection(new ServerConnection(url, vimService, this));
+		UserSession userSession = (UserSession) getSessionManager().getCurrentProperty("currentSession");
+		getServerConnection().setUserSession(userSession);
 	}
 	
 	private void ignoreCertificate() 
