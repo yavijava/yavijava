@@ -1,0 +1,8 @@
+The summary of bug fixes in Version 1.0 Beta
+
+1. Surfaced the exception up to the caller other than printing out error message.
+	Many thanks to Gregory Najd who filed the bug:
+	https://sourceforge.net/tracker/?func=detail&atid=1073396&aid=2031543&group_id=228007
+2. Added three missing methods to the ListView managed object.
+3. Added 18 more samples into the release. Tom Elliot contributed his first sample.
+4. Changed the VMClone.java to accommodate the change of #1. 
