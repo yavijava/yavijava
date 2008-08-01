@@ -470,4 +470,10 @@ abstract public class ManagedObject
 		}
 	}
 	
+	public String toString()
+	{
+		return mor.getType() + ":" + mor.get_value()
+			+ "@" + getServerConnection().getUrl();
+	}
+	
 }
