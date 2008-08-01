@@ -178,6 +178,16 @@ abstract public class ManagedObject
 		}
 		return propertyValue;
 	}
+	/**
+	 * Get a nested property using a property path, e.g. "config.alternateGuestName"
+	 * The property path cannot include ManagedObjectReference type.
+	 * @param propPath
+	 * @return Object, the caller needs to do casting to real type
+	*/
+	public Object getPropertyByPath(String propPath)
+	{
+		return getCurrentProperty(propPath);
+	}
 
 	private Object convertProperty(Object dynaPropVal) 
 	{
