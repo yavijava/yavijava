@@ -110,7 +110,7 @@ public class SearchIndex extends ManagedObject
 		}
 		
 		ManagedObjectReference mor = getVimService().findByDatastorePath(getMOR(), datacenter.getMOR(), dPath);
-		return new VirtualMachine(getServerConnection(), mor);
+		return (VirtualMachine) MorUtil.createExactManagedEntity(getServerConnection(), mor);
 	}
 	
 	/**
