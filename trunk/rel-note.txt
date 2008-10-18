@@ -1,3 +1,11 @@
+What is new in Version 1.0
+1. Some code refactoring with ManagedObject.java and PropertyCollectorUtil.java
+2. Added getPropertiesByPaths() which can retrieve multiple
+   properties of a single managed object at a time. The result is returned in a Hashtable.
+3. Added retrieveProperties() method into the PropertyCollectorUtil so that you can get multiple
+   properties on multiple managed objects in a single call.
+4. Added a new sample to show how to use the retrieveProperties() API.
+
 The summary of bug fixes in Version 1.0 Beta
 
 1. Surfaced the exception up to the caller other than printing out error message.
