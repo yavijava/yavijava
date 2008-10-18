@@ -50,7 +50,13 @@ public class HelloVM
 
 		ServiceInstance si = new ServiceInstance(new URL(urlStr), username, password, true);
 		Folder rootFolder = si.getRootFolder();
-		VirtualMachine vm = (VirtualMachine) new InventoryNavigator(rootFolder).searchManagedEntities("VirtualMachine")[0];
+		ManagedEntity[] mes = new InventoryNavigator(rootFolder).searchManagedEntities("VirtualMachine");
+		if(mes==null || mes.length ==0)
+		{
+			return;
+		}
+		
+		VirtualMachine vm = (VirtualMachine) mes[0]; 
 		
 		VirtualMachineConfigInfo vminfo = vm.getConfig();
 		VirtualMachineCapability vmc = vm.getCapability();
