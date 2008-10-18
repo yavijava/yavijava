@@ -33,6 +33,7 @@ import java.lang.reflect.Array;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
 import java.rmi.RemoteException;
+import java.util.Hashtable;
 
 import com.vmware.vim25.*;
 import com.vmware.vim25.mo.util.*;
@@ -121,14 +122,13 @@ abstract public class ManagedObject
 
 	protected ObjectContent retrieveObjectProperties(String[] properties) 
 	{
-		PropertySpec pSpec = new PropertySpec();
-		pSpec.setAll(new Boolean (properties == null || properties.length == 0)); //if true, all props of this obj are to be read regardless of propName
-		pSpec.setType(getMOR().getType());
-		pSpec.setPathSet(properties);
+		ObjectSpec oSpec = PropertyCollectorUtil.creatObjectSpec(
+				getMOR(), Boolean.FALSE, null);
 		
-		ObjectSpec oSpec = new ObjectSpec();
-		oSpec.setObj(getMOR());
-		oSpec.setSkip(Boolean.FALSE);
+		PropertySpec pSpec = PropertyCollectorUtil.createPropertySpec(
+				getMOR().getType(),
+				properties == null || properties.length == 0, //if true, all props of this obj are to be read regardless of propName
+				properties);
 		
 		PropertyFilterSpec pfSpec = new PropertyFilterSpec();
 		pfSpec.setObjectSet(new ObjectSpec[] { oSpec });
@@ -173,57 +173,34 @@ abstract public class ManagedObject
 		   		
 			if ((dynaProps != null) && (dynaProps[0]!= null)) 
 			{
-				propertyValue = convertProperty(dynaProps[0].getVal());
+				propertyValue = PropertyCollectorUtil.convertProperty(dynaProps[0].getVal());
 			}
 		}
 		return propertyValue;
 	}
-	/**
-	 * Get a nested property using a property path, e.g. "config.alternateGuestName"
-	 * The property path cannot include ManagedObjectReference type.
-	 * @param propPath
-	 * @return Object, the caller needs to do casting to real type
-	*/
+	
 	public Object getPropertyByPath(String propPath)
 	{
 		return getCurrentProperty(propPath);
 	}
-
-	private Object convertProperty(Object dynaPropVal) 
-	{
-		Object propertyValue = null;
-		
-		Class propClass = dynaPropVal.getClass();
-		String propName = propClass.getName();
-		if (propName.indexOf("ArrayOf") != -1) //Check the dynamic propery for ArrayOfXXX object 
-		{ 	
-			String methodName = propName.substring(propName.indexOf("ArrayOf") +"ArrayOf".length());
-//			 If object is ArrayOfXXX object, then get the XXX[] by invoking getXXX() on the object. For Ex:
-//			 ArrayOfManagedObjectReference.getManagedObjectReference() returns ManagedObjectReference[] array.
-			try
-			{
-				Method getMethod = propClass.getMethod("get" + methodName, (Class[])null);
-				if (getMethod==null) 
-				{
-	            	getMethod = propClass.getMethod("get_" + methodName.toLowerCase(), (Class[])null);
-	            }
 	
-				propertyValue = getMethod.invoke(dynaPropVal, (Object[])null);
-			}catch(Exception e)
-			{
-				e.printStackTrace();
-			}
-		} 
-        else if (dynaPropVal.getClass().isArray()) //Handle the case of an unwrapped array being deserialized.
-        { 
-        	propertyValue = dynaPropVal;
-        } 
-        else 
-        {
-        	propertyValue = dynaPropVal;
-        } 
-		
-		return propertyValue;
+	/**
+	 * Get multiple properties by their paths
+	 * @param propPaths an array of strings for property path
+	 * @return a Hashtable holding with the property path as key, and the value.
+	 * @throws InvalidProperty
+	 * @throws RuntimeFault
+	 * @throws RemoteException
+	 */
+	public Hashtable getPropertiesByPaths(String[] propPaths) 
+		throws InvalidProperty,	RuntimeFault, RemoteException
+	{
+		Hashtable[] pht = PropertyCollectorUtil.retrieveProperties(
+				new ManagedObject[] { this }, getMOR().getType(), propPaths);
+		if(pht.length!=0)
+			return pht[0];
+		else 
+			return null;
 	}
 	
 	protected ManagedObject[] getManagedObjects(String propName, boolean mixedType) 
@@ -394,15 +371,13 @@ abstract public class ManagedObject
 		Object[] endVals = new Object[endWaitProps.length];
 		Object[] filterVals = new Object[filterProps.length];
 		
-		ObjectSpec oSpec = new ObjectSpec();
-		oSpec.setObj(getMOR());
-		oSpec.setSkip(Boolean.FALSE);
-		oSpec.setSelectSet(null);
+		ObjectSpec oSpec = PropertyCollectorUtil.creatObjectSpec(
+				getMOR(), Boolean.FALSE, null);
 		
-		PropertySpec pSpec = new PropertySpec();
-		pSpec.setAll(new Boolean (filterProps == null || filterProps.length == 0)); //if true, all props of this obj are to be read regardless of propName
-		pSpec.setType(getMOR().getType());
-		pSpec.setPathSet(filterProps);
+		PropertySpec pSpec = PropertyCollectorUtil.createPropertySpec(
+				getMOR().getType(),
+				filterProps == null || filterProps.length == 0, //if true, all props of this obj are to be read regardless of propName
+				filterProps);
 
 		PropertyFilterSpec spec = new PropertyFilterSpec();
 		spec.setObjectSet(new ObjectSpec[] { oSpec });
@@ -483,7 +458,7 @@ abstract public class ManagedObject
 	public String toString()
 	{
 		return mor.getType() + ":" + mor.get_value()
-			+ "@" + getServerConnection().getUrl();
+			+ " @ " + getServerConnection().getUrl();
 	}
 	
 }
