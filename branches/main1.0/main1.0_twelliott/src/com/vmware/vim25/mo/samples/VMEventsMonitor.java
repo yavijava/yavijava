@@ -289,10 +289,11 @@ public class VMEventsMonitor implements Runnable
                     if (update != null && update.getFilterSet() != null)
                     {
 
-                        this.handleUpdate(update);
-
                         version = update.getVersion();
                         System.out.println(" Current Version: " + version);
+                        
+                        this.handleUpdate(update);
+
                     } else
                     {
                         System.out.println("No update is present!");
