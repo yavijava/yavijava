@@ -52,7 +52,7 @@ public class AuthorizationManager extends ManagedObject
 
 	}
 
-	public AuthorizationPrivilege[] getrivilegeList()
+	public AuthorizationPrivilege[] getPrivilegeList()
 	{
 		return (AuthorizationPrivilege[]) getCurrentProperty("privilegeList");
 
