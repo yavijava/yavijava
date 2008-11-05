@@ -50,7 +50,7 @@ public class TaskHistoryCollector extends HistoryCollector
 		return (TaskFilterSpec) getCurrentProperty("filter");
 	}
 	
-	public TaskInfo[] getLastPage()
+	public TaskInfo[] getLatestPage()
 	{
 		return (TaskInfo[]) getCurrentProperty("latestPage");
 	}
