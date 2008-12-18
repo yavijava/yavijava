@@ -217,9 +217,7 @@ abstract public class ManagedObject
 			return new ManagedObject[] {}; 
 		}
 		
-		String moType = mors[0].getType();
-
-		Object arr = new Object[mors.length];
+		Object mos = new ManagedObject[mors.length];;
 		
 		try
 		{
@@ -227,18 +225,20 @@ abstract public class ManagedObject
 			
 			if(mixedType==false)
 			{
-				moClass = Class.forName(MO_PACKAGE_NAME + "." + moType);
-			}else
-			{
-				moClass = Class.forName(MO_PACKAGE_NAME + "." + "ManagedObject");
+				moClass = Class.forName(MO_PACKAGE_NAME + "." + mors[0].getType());
+			    mos = Array.newInstance(moClass, mors.length);
 			}
 			
-			Constructor constructor = moClass.getConstructor(new Class[] {ServerConnection.class, ManagedObjectReference.class});
-		    arr = Array.newInstance(moClass, mors.length);
-		    
 			for(int i=0; i<mors.length; i++)
 			{
-				Array.set(arr, i, 
+				if(mixedType == true )
+				{
+					moClass = Class.forName(MO_PACKAGE_NAME + "." + mors[i].getType());
+				}
+				Constructor constructor = moClass.getConstructor(
+						new Class[] {ServerConnection.class, ManagedObjectReference.class});
+
+				Array.set(mos, i, 
 					constructor.newInstance(new Object[] { getServerConnection(), mors[i]}) );
 			}
 		} catch(Exception e)
@@ -246,7 +246,7 @@ abstract public class ManagedObject
 			e.printStackTrace();
 		}
 	
-		return (ManagedObject[]) arr;
+		return (ManagedObject[]) mos;
 	}
 
 	
