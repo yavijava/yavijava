@@ -51,7 +51,7 @@ public class EventHistoryCollector extends HistoryCollector
 		return (EventFilterSpec) getCurrentProperty("filter");
 	}
 	
-	public Event[] getLastPage()
+	public Event[] getLatestPage()
 	{
 		return (Event[]) this.getCurrentProperty("latestPage");
 	}
