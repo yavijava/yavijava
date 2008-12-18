@@ -81,7 +81,7 @@ public class QueryEvent
 
 			EventHistoryCollector history = _eventManager
 					.createCollectorForEvents(eventFilter);
-			Event[] events = history.getLastPage();
+			Event[] events = history.getLatestPage();
 
 			System.out.println("Events In the latestPage are : ");
 			for (int i = 0; i < events.length; i++) 
