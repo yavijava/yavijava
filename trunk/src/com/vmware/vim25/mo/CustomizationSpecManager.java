@@ -86,9 +86,9 @@ public class CustomizationSpecManager extends ManagedObject
 		getVimService().duplicateCustomizationSpec(getMOR(), name, newName);
 	}
 	
-	public void getCustomizationSpec(String name) throws NotFound, RuntimeFault, RemoteException  
+	public CustomizationSpecItem getCustomizationSpec(String name) throws NotFound, RuntimeFault, RemoteException  
 	{
-		getVimService().getCustomizationSpec(getMOR(), name);
+		return getVimService().getCustomizationSpec(getMOR(), name);
 	}
 	
 	public void overwriteCustomizationSpec(String name) throws NotFound, RuntimeFault, RemoteException  
