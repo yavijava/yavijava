@@ -42,6 +42,8 @@ import com.vmware.vim25.mo.*;
  */
 public class PropertyCollectorUtil 
 {
+	final public static Object NULL = new Object(); 
+	
 	/**
 	 * Retrieves properties from multiple managed objects.
 	 * @param mos the array of managed objects which could be of single type or mixed types. When they are mix-typed,
@@ -104,7 +106,12 @@ public class PropertyCollectorUtil
 			pTables[index] = new Hashtable();
 			for(int j=0; props!=null && j < props.length; j++)
 			{
-				pTables[index].put(props[j].getName(), convertProperty(props[j].getVal()));
+				Object obj = convertProperty(props[j].getVal());
+				if(obj==null)
+				{
+					obj = NULL;
+				}
+				pTables[index].put(props[j].getName(), obj);
 			}
 		}
 		return pTables;
@@ -134,12 +141,14 @@ public class PropertyCollectorUtil
 //			 ArrayOfManagedObjectReference.getManagedObjectReference() returns ManagedObjectReference[] array.
 			try
 			{
-				Method getMethod = propClass.getMethod("get" + methodName, (Class[])null);
-				if (getMethod==null) 
+				Method getMethod = null; 
+				try
 				{
-	            	getMethod = propClass.getMethod("get_" + methodName.toLowerCase(), (Class[])null);
+					getMethod = propClass.getMethod("get" + methodName, (Class[])null);
+				} catch(NoSuchMethodException nsme)
+				{
+					getMethod = propClass.getMethod("get_" + methodName.toLowerCase(), (Class[])null);
 	            }
-	
 				propertyValue = getMethod.invoke(dynaPropVal, (Object[])null);
 			}catch(Exception e)
 			{
