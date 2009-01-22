@@ -76,16 +76,26 @@ public class MultiProperties
 		Hashtable props = vm.getPropertiesByPaths(new String[] {"name", 
 				"config.cpuFeatureMask",
 				"guest.toolsStatus",
-				"guest.guestId"});
+				"guest.guestId",
+				"recentTask"
+				});
 		System.out.println(vm);
 		System.out.println(props);
+		
+		Object task = props.get("recentTask");
+		// Hashtable cannot have null as value, so check it against PropertyCollectorUtil.NULL
+		if(task==PropertyCollectorUtil.NULL) 
+		{
+			System.out.println("recent task is null!");
+		}
 		
 		System.out.println("\nretrieve multiple properties from multiple managed objects.");
 		Hashtable[] pTables = PropertyCollectorUtil.retrieveProperties(vms, "VirtualMachine",
 				new String[] {"name", 
 				"config.cpuFeatureMask",
 				"guest.toolsStatus",
-				"guest.guestId"
+				"guest.guestId",
+				"recentTask"
 				});
 		for(int i=0; i<pTables.length; i++)
 		{
