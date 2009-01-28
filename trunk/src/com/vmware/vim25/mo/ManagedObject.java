@@ -411,7 +411,7 @@ abstract public class ManagedObject
 		    	{
 		    		ObjectUpdate objup = objupary[j];
 		    		PropertyChange[] propchgary = objup.getChangeSet();
-		            for (int k = 0; k < propchgary.length; k++) 
+		            for (int k = 0; propchgary!=null && k < propchgary.length; k++) 
 		           	{
 		        		PropertyChange propchg = propchgary[k];
 	                    updateValues(endWaitProps, endVals, propchg);
