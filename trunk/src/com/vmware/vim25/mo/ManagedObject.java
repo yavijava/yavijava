@@ -406,10 +406,18 @@ abstract public class ManagedObject
 		    for (int i = 0; i < filtupary.length; i++) 
 		    {
 				PropertyFilterUpdate filtup = filtupary[i];
+				if(filtup==null)
+				{
+					continue;
+				}
 				ObjectUpdate[] objupary = filtup.getObjectSet();
-		    	for (int j = 0; j < objupary.length; j++) 
+		    	for (int j = 0; objupary!=null && j < objupary.length; j++) 
 		    	{
 		    		ObjectUpdate objup = objupary[j];
+		    		if(objup==null)
+		    		{
+		    			continue;
+		    		}
 		    		PropertyChange[] propchgary = objup.getChangeSet();
 		            for (int k = 0; propchgary!=null && k < propchgary.length; k++) 
 		           	{
