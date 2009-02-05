@@ -51,10 +51,9 @@ public class RestAppDemo
     runMOLevel(rc);
   }
 
-  public static void runMOLevel(RestClient rc1) throws Exception
+  public static void runMOLevel(RestClient rc) throws Exception
   {
     
-    RestClient rc = new RestClient("https://10.20.143.205", "root", "ca$hc0w");
     RestManagedObject si = new RestManagedObject(rc, "ServiceInstance");
 
     System.out.println("name:" + si.getPropertyAsString("content.about.fullName"));
