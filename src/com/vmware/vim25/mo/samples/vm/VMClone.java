@@ -29,14 +29,19 @@ POSSIBILITY OF SUCH DAMAGE.
 
 package com.vmware.vim25.mo.samples.vm;
 
-import java.net.*;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.rmi.RemoteException;
 
-import org.apache.axis.AxisFault;
-
-import com.vmware.vim25.mo.*;
-import com.vmware.vim25.mo.util.*;
-import com.vmware.vim25.*;
+import com.vmware.vim25.VirtualMachineCloneSpec;
+import com.vmware.vim25.VirtualMachineRelocateSpec;
+import com.vmware.vim25.mo.Datacenter;
+import com.vmware.vim25.mo.Folder;
+import com.vmware.vim25.mo.ServiceInstance;
+import com.vmware.vim25.mo.Task;
+import com.vmware.vim25.mo.VirtualMachine;
+import com.vmware.vim25.mo.util.CommandLineParser;
+import com.vmware.vim25.mo.util.OptionSpec;
 
 
 /**
@@ -109,33 +114,6 @@ public class VMClone
 		   else
 		   {
 			   System.out.println("Failure -: Virtual Machine cannot be cloned");
-		   }
-	   }
-	   catch(AxisFault fault)
-	   {
-		   org.w3c.dom.Element [] errors = fault.getFaultDetails();
-		   for(int i=0; i<errors.length; i++) 
-		   {
-			   if(errors[i].toString().indexOf("DuplicateName") != -1) 
-			   {
-				   System.out.println("Virtual Machine with the same name already exists");
-			   }
-		       else if(errors[i].toString().indexOf("InvalidArgument") != -1) 
-		       {
-		    	   System.out.println("Specification is invalid");
-		       }
-		       else if(errors[i].toString().indexOf("InvalidName") != -1) 
-		       {
-		    	   System.out.println("Virtual Machine name is empty or too long");
-		       }
-		       else if(errors[i].toString().indexOf("RuntimeFault") != -1) 
-		       {
-		    	   System.out.println(errors[i].toString());
-		       }
-		       else 
-		       {
-		    	   System.out.println(errors[i].toString());
-		       }
 		   }
 	   }
 	   catch(RemoteException re)

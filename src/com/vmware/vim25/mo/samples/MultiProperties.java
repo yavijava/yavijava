@@ -34,11 +34,15 @@ import java.net.URL;
 import java.rmi.RemoteException;
 import java.util.Hashtable;
 
-import javax.xml.rpc.ServiceException;
-
-import com.vmware.vim25.*;
-import com.vmware.vim25.mo.*;
-import com.vmware.vim25.mo.util.*;
+import com.vmware.vim25.VirtualMachineToolsStatus;
+import com.vmware.vim25.mo.Folder;
+import com.vmware.vim25.mo.InventoryNavigator;
+import com.vmware.vim25.mo.ManagedEntity;
+import com.vmware.vim25.mo.ServiceInstance;
+import com.vmware.vim25.mo.VirtualMachine;
+import com.vmware.vim25.mo.util.CommandLineParser;
+import com.vmware.vim25.mo.util.OptionSpec;
+import com.vmware.vim25.mo.util.PropertyCollectorUtil;
 
 /**
  * This sample code shows how to get different API to:
@@ -50,7 +54,7 @@ import com.vmware.vim25.mo.util.*;
 
 public class MultiProperties 
 {
-	public static void main(String[] args) throws RemoteException, MalformedURLException, ServiceException 
+	public static void main(String[] args) throws RemoteException, MalformedURLException 
 	{
 	    CommandLineParser clp = new CommandLineParser(new OptionSpec[]{}, args);
 	   	String urlStr = clp.get_option("url");

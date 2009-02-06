@@ -88,7 +88,9 @@ public class GetUpdates
 		
 		PropertySpec[] pSpecs = PropertyCollectorUtil.buildPropertySpecArray(typeInfo);
 		ObjectSpec[] oSpecs = createObjectSpecs(vm);
-		PropertyFilterSpec pSpec = new PropertyFilterSpec(null,null, pSpecs, oSpecs);
+		PropertyFilterSpec pSpec = new PropertyFilterSpec();
+		pSpec.propSet = pSpecs;
+		pSpec.objectSet = oSpecs;
 
 		PropertyCollector pc = si.getPropertyCollector();
 		PropertyFilter pf = pc.createFilter(pSpec, false);
@@ -168,7 +170,7 @@ public class GetUpdates
    static void handleObjectUpdate(ObjectUpdate oUpdate) 
    {
       PropertyChange[] pc = oUpdate.getChangeSet();
-      System.out.println(oUpdate.getKind().getValue() + "Data:");
+      System.out.println(oUpdate.getKind() + "Data:");
 	  handleChanges(pc);
    }   
    

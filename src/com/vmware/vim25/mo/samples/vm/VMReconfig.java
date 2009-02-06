@@ -222,7 +222,7 @@ public class VMReconfig
     	  {
             for (int i = 0; i < configTarget.getDatastore().length; i++) 
             {
-               VirtualMachineDatastoreInfo vdsInfo = configTarget.getDatastore(i);
+               VirtualMachineDatastoreInfo vdsInfo = configTarget.getDatastore()[i];
                DatastoreSummary dsSummary = vdsInfo.getDatastore();
                if (dsSummary.isAccessible()) 
                {
@@ -346,7 +346,7 @@ public class VMReconfig
          {
             for (int i = 0; i < configTarget.getNetwork().length; i++) 
             {
-               VirtualMachineNetworkInfo netInfo = configTarget.getNetwork(i);
+               VirtualMachineNetworkInfo netInfo = configTarget.getNetwork()[i];
                NetworkSummary netSummary = netInfo.getNetwork();
                if (netSummary.isAccessible()) 
                {
@@ -461,17 +461,11 @@ public class VMReconfig
       ResourceAllocationInfo raInfo = new ResourceAllocationInfo();
       SharesInfo sharesInfo = new SharesInfo();
      
-      if(val.equalsIgnoreCase(SharesLevel._high)) 
+      SharesLevel sl = SharesLevel.valueOf(val);
+      
+      if(sl == SharesLevel.high || sl == SharesLevel.normal || sl == SharesLevel.low)
       {       
-         sharesInfo.setLevel(SharesLevel.high);          
-      }
-      else if(val.equalsIgnoreCase(SharesLevel._normal)) 
-      {
-         sharesInfo.setLevel(SharesLevel.normal);
-      }
-      else if(val.equalsIgnoreCase(SharesLevel._low)) 
-      {
-         sharesInfo.setLevel(SharesLevel.low);
+         sharesInfo.setLevel(sl);          
       }
       else 
       {

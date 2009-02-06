@@ -32,6 +32,7 @@ package com.vmware.vim25.mo;
 import java.net.URL;
 
 import com.vmware.vim25.*;
+import com.vmware.vim25.ws.WSClient;
 
 /**
  * The class representing the connection to a server either VC server or ESX.
@@ -57,11 +58,8 @@ final public class ServerConnection
 	 */
 	public String getSessionStr()
 	{
-		VimBindingStub vimStub = (VimBindingStub) vimService;
-		org.apache.axis.client.Call call = vimStub._getCall();
-		org.apache.axis.MessageContext msgContext = call.getMessageContext();       
-		String sessionStr = (String) msgContext.getProperty(org.apache.axis.transport.http.HTTPConstants.HEADER_COOKIE);
-		return sessionStr;
+		WSClient wsc = vimService.getWsc();
+		return wsc.getCookie();
 	}
 	
 	/**

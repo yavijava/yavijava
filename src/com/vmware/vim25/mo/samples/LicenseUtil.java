@@ -31,8 +31,6 @@ package com.vmware.vim25.mo.samples;
 
 import java.net.URL;
 
-import org.apache.axis.AxisFault;
-
 import com.vmware.vim25.*;
 import com.vmware.vim25.mo.*;
 import com.vmware.vim25.mo.util.*;
@@ -122,28 +120,9 @@ public class LicenseUtil
       {
     	  licMgr.configureLicenseSource(null, source);
       }
-      catch(AxisFault fault) 
+      catch(java.rmi.RemoteException re) 
       {
-    	  org.w3c.dom.Element [] errors = fault.getFaultDetails();
-          for(int i=0; i<errors.length; i++) 
-          {
-               if(errors[i].toString().indexOf("InvalidLicense") != -1) 
-               {
-                  System.out.println("License file is not valid");	   
-               }
-               else if(errors[i].toString().indexOf("NotEnoughLicenses") != -1) 
-               {
-                  System.out.println("New license source does not have enough licenses.");
-               }
-               else if(errors[i].toString().indexOf("LicenseServerUnavailable") != -1) 
-               {
-                  System.out.println("License server is unreachable.");
-               }               
-               else 
-               {
-                  System.out.println(errors[i].toString());
-               }
-          } 
+    	  re.printStackTrace();
       }
    }  
  
@@ -156,24 +135,9 @@ public class LicenseUtil
          {      
             licMgr.setLicenseEdition(null, edition);
          }
-         catch(AxisFault fault) 
+         catch(java.rmi.RemoteException re) 
          {
-        	 org.w3c.dom.Element [] errors = fault.getFaultDetails();
-        	 for(int i=0; i<errors.length; i++) 
-        	 {
-                  if(errors[i].toString().indexOf("InvalidState") != -1) 
-                  {
-                     System.out.println("Feature cannot be supported on the platform");
-                  }
-                  else if(errors[i].toString().indexOf("InvalidArgument") != -1) 
-                  {
-                     System.out.println("Feature key is not an edition feature key.");
-                  }               
-                  else 
-                  {
-                     System.out.println(errors[i].toString());
-                  }
-               } 
+        	 re.printStackTrace();
          }
       }
    }
@@ -262,13 +226,13 @@ public class LicenseUtil
       {
          for(int i=0; i<usage.getFeatureInfo().length; ++i) 
          {
-            print(usage.getFeatureInfo(i));
+            print(usage.getFeatureInfo()[i]);
          }
          if(usage.getReservationInfo() != null) 
          {
             for(int i=0; i<usage.getReservationInfo().length; ++i) 
             {
-               print(usage.getReservationInfo(i));
+               print(usage.getReservationInfo()[i]);
             }
          }
       } 

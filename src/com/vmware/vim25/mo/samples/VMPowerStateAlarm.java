@@ -100,13 +100,13 @@ public class VMPowerStateAlarm
 	
 	static StateAlarmExpression createStateAlarmExpression()
 	{   
-	   return new StateAlarmExpression(null, null,
-			   StateAlarmOperator.isEqual, //operator
-			   "VirtualMachine", //type
-			   "runtime.powerState", //state path
-			   null, //yellow
-			   "poweredOff" //red
-	   	);
+		StateAlarmExpression sae = new StateAlarmExpression();
+		sae.operator = StateAlarmOperator.isEqual;
+		sae.type = "VirtualMachine"; //type
+		sae.statePath = "runtime.powerState"; //state path
+		sae.red = "poweredOff"; //red
+
+		return sae;
 	}
    
 	static MethodAction createPowerOnAction() 
@@ -122,7 +122,7 @@ public class VMPowerStateAlarm
    static AlarmTriggeringAction createAlarmTriggerAction(MethodAction methodAction) throws Exception 
    {
       AlarmTriggeringAction alarmAction = new AlarmTriggeringAction();
-      alarmAction.setYellow2Red(true);
+      alarmAction.setYellow2red(true);
       alarmAction.setAction(methodAction);
       return alarmAction;
    }

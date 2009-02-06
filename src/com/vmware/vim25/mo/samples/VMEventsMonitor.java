@@ -172,7 +172,7 @@ public class VMEventsMonitor implements Runnable
             String name = changes[pci].getName();
             Object value = changes[pci].getVal();
             PropertyChangeOp op = changes[pci].getOp();
-            if (value != null && !op.getValue().equalsIgnoreCase("remove"))
+            if (value != null && op!= PropertyChangeOp.remove)
             {
                 System.out.println("===============");
                 System.out.println("\nEvent Details follows:");
@@ -300,19 +300,7 @@ public class VMEventsMonitor implements Runnable
                     }
                 } catch (Exception e)
                 {
-                    if (e instanceof org.apache.axis.AxisFault)
-                    {
-                        org.apache.axis.AxisFault fault = (org.apache.axis.AxisFault) e;
-                        org.w3c.dom.Element[] errors = fault.getFaultDetails();
-                        String faultString = fault.getFaultString();
-                        if (faultString
-                                .indexOf("java.net.SocketTimeoutException") != -1)
-                        {
-                        } else
-                        {
-                            throw e;
-                        }
-                    }
+                	e.printStackTrace();
                 }
             } while (shouldRun);
         } catch (Exception e)

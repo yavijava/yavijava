@@ -29,14 +29,14 @@ POSSIBILITY OF SUCH DAMAGE.
 
 package com.vmware.vim25.mo;
 
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.rmi.RemoteException;
 import java.util.Calendar;
 
-import javax.xml.rpc.ServiceException;
-
 import com.vmware.vim25.*;
 import com.vmware.vim25.mo.util.*;
+import com.vmware.vim25.ws.WSClient;
 
 /**
  * The managed object class corresponding to the one defined in VI SDK API reference.
@@ -56,34 +56,23 @@ public class ServiceInstance extends ManagedObject
 	}
 
 	public ServiceInstance(URL url, String username, String password) 
-		throws ServiceException, RemoteException 
+		throws RemoteException, MalformedURLException
 	{
 		this(url, username, password, false);
 	}
 
 	public ServiceInstance(URL url, String username, String password, boolean ignoreCert)
-		throws ServiceException, RemoteException 
+		throws RemoteException, MalformedURLException 
 	{
 		if(url == null || username==null)
 		{
 			throw new NullPointerException("None of url, username can be null.");
 		}
 		
-		if(ignoreCert==true)
-		{
-			this.ignoreCertificate();
-		}
-		
 		setMOR(SERVICE_INSTANCE_MOR);
+
+		VimPortType vimService = new VimPortType(url.toString(), ignoreCert);
 		
-		VimServiceLocator serviceLocator = new VimServiceLocator();
-		serviceLocator.setMaintainSession(true);
-
-		VimPortType vimService = serviceLocator.getVimPort(url);
-		((org.apache.axis.client.Stub)vimService).setTimeout(1200000); //optional
-
-		((VimBindingStub) vimService).setMaintainSession(true);
-	
 		serviceContent = vimService.retrieveServiceContent(SERVICE_INSTANCE_MOR);
 		setServerConnection(new ServerConnection(url, vimService, this));
 		UserSession userSession = getSessionManager().login(username, password, null);
@@ -92,42 +81,24 @@ public class ServiceInstance extends ManagedObject
 	
 	// sessionStr format: "vmware_soap_session=\"B3240D15-34DF-4BB8-B902-A844FDF42E85\""
 	public ServiceInstance(URL url, String sessionStr, boolean ignoreCert)
-		throws ServiceException, RemoteException
+		throws RemoteException, MalformedURLException
 	{
 		if(url == null || sessionStr ==null)
 		{
 			throw new NullPointerException("None of url, session string can be null.");
 		}
-		
-		if(ignoreCert==true)
-		{
-			this.ignoreCertificate();
-		}
 
 		setMOR(SERVICE_INSTANCE_MOR);
 		
-		VimServiceLocator serviceLocator = new VimServiceLocator();
-		serviceLocator.setMaintainSession(true);
-		
-		VimPortType vimService = serviceLocator.getVimPort(url);
-		((org.apache.axis.client.Stub)vimService).setTimeout(1200000); //optional
-		((VimBindingStub) vimService).setMaintainSession(true);
-		
-		VimBindingStub vimStub = (VimBindingStub) vimService;
-		vimStub._setProperty(org.apache.axis.transport.http.HTTPConstants.HEADER_COOKIE, sessionStr	);
+		VimPortType vimService = new VimPortType(url.toString(), ignoreCert);
+		WSClient wsc = vimService.getWsc();
+		wsc.setCookie(sessionStr);
 		
 		serviceContent = vimService.retrieveServiceContent(SERVICE_INSTANCE_MOR);
 		setServerConnection(new ServerConnection(url, vimService, this));
 		UserSession userSession = (UserSession) getSessionManager().getCurrentProperty("currentSession");
 		getServerConnection().setUserSession(userSession);
 	}
-	
-	private void ignoreCertificate() 
-	{
-		System.setProperty("org.apache.axis.components.net.SecureSocketFactory",
-			"org.apache.axis.components.net.SunFakeTrustSocketFactory");
-	}
-	
 	
 	public ServiceInstance(ServerConnection sc) 
 	{

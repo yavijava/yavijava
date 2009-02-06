@@ -72,12 +72,15 @@ public class InventoryNavigator
 	
 		PropertySpec[] propspecary = PropertyCollectorUtil.buildPropertySpecArray(typeinfo);
 	
-		PropertyFilterSpec spec = new PropertyFilterSpec(null,null,
-	        propspecary, new ObjectSpec[] { 
-	           new ObjectSpec(null,null, rootEntity.getMOR(), Boolean.FALSE, selectionSpecs) 
-	        }
-	     );
-	
+		ObjectSpec os = new ObjectSpec();
+		os.setObj(rootEntity.getMOR());
+		os.setSkip(Boolean.FALSE);
+		os.setSelectSet(selectionSpecs);
+		
+		PropertyFilterSpec spec = new PropertyFilterSpec();
+		spec.setObjectSet(new ObjectSpec[] { os });
+		spec.setPropSet(propspecary);
+		
 		return pc.retrieveProperties(new PropertyFilterSpec[] { spec } );
 	}
 			

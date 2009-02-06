@@ -79,8 +79,10 @@ public class PropertyCollectorUtil
 
 		PropertySpec pSpec = createPropertySpec(moType, false, propPaths);
 
-		PropertyFilterSpec pfs = new PropertyFilterSpec( null, null,
-				new PropertySpec[] {pSpec}, oss	);
+		PropertyFilterSpec pfs = new PropertyFilterSpec();
+		pfs.setObjectSet(oss);
+		pfs.setPropSet(new PropertySpec[] {pSpec});
+		
 		ObjectContent[] objs = pc.retrieveProperties(
 				new PropertyFilterSpec[] { pfs } );
 		
@@ -190,7 +192,8 @@ public class PropertyCollectorUtil
 		SelectionSpec[] sss = new SelectionSpec[names.length];
 		for(int i=0; i<names.length; i++)
 		{
-			sss[i] = new SelectionSpec(null, null, names[i]);
+			sss[i] = new SelectionSpec();
+			sss[i].setName(names[i]);
 		}
 		return sss;
 	}
@@ -202,12 +205,13 @@ public class PropertyCollectorUtil
 	
 	public static TraversalSpec createTraversalSpec(String name, String type, String path, SelectionSpec[] selectSet)
 	{
-		return	new TraversalSpec(null, null, 
-			name, // Name of the selection specification. 
-			type, // Name of the object type containing the property. 
-			path, // Name of the property to use in order to select additional objects. 
-			Boolean.FALSE, // Flag to indicate whether or not to filter the object in the "path" field. 
-			selectSet );
+		TraversalSpec ts = new TraversalSpec();
+		ts.setName(name);
+		ts.setType(type);
+		ts.setPath(path);
+		ts.setSkip(Boolean.FALSE);
+		ts.setSelectSet(selectSet);
+		return ts;
 	}
 
 	/**

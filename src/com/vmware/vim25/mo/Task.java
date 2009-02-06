@@ -35,6 +35,7 @@ import com.vmware.vim25.InvalidProperty;
 import com.vmware.vim25.InvalidState;
 import com.vmware.vim25.LocalizedMethodFault;
 import com.vmware.vim25.ManagedObjectReference;
+import com.vmware.vim25.MethodFault;
 import com.vmware.vim25.OutOfBounds;
 import com.vmware.vim25.RuntimeFault;
 import com.vmware.vim25.TaskInfo;
@@ -103,9 +104,9 @@ public class Task extends ExtensibleManagedObject
 			String error = "Error Occured";
 			if(fault!=null) 
 			{
-				error = fault.getFault().getFaultReason();
-				System.out.println("Fault " + fault.getFault().getFaultCode());
-				System.out.println("Message " + fault.getLocalizedMessage());
+				MethodFault mf = fault.getFault();
+				mf.printStackTrace();
+				error = mf.getMessage();
 			}
 			return error;
 		}
