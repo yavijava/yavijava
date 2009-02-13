@@ -34,7 +34,7 @@ package com.vmware.vim25.ws;
  * @author Steve Jin (sjin@vmware.com)
 */
 
-public class Argument
+final public class Argument
 {
   private String name;
   private Object value;
