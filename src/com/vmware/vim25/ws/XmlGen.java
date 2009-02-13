@@ -58,6 +58,11 @@ public class XmlGen
   private static Namespace XSI = new Namespace("xsi", "http://www.w3.org/2001/XMLSchema-instance");
   private static QName XSI_TYPE = new QName("type", XSI);
   private static String[] BASIC_TYPES = new String[] {"String", "int", "short", "long", "byte", "boolean", "Calendar"};
+
+  static
+  {
+      DatatypeConverter.setDatatypeConverter(DatatypeConverterImpl.theInstance);
+  }
   
   public static SoapFaultException parseSoapFault(String xmlStr) throws Exception
   {
@@ -380,7 +385,6 @@ public class XmlGen
     }
     else if("Calendar".equals(type))
     {
-      DatatypeConverter.setDatatypeConverter(DatatypeConverterImpl.theInstance);
       Calendar cal = DatatypeConverter.parseTime(values[0]);
       return cal;
     }
@@ -490,7 +494,6 @@ public class XmlGen
     }
     else if("Calendar".equals(fType))
     {
-      DatatypeConverter.setDatatypeConverter(DatatypeConverterImpl.theInstance);
       Calendar cal = DatatypeConverter.parseTime(values[0]);
       f.set(obj, cal);
     }
@@ -530,6 +533,11 @@ public class XmlGen
     else if(c.getCanonicalName().startsWith("java.lang"))
     { //basic data type
       return "<" + tag +">" + obj + "</" + tag + ">";
+    }
+    else if(c.getSimpleName().equals("Calendar"))
+    {
+        String dateStr = DatatypeConverter.printTime((Calendar)obj);
+        return "<" + tag +">" + dateStr + "</" + tag + ">";
     }
     else
     {
