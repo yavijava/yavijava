@@ -534,6 +534,10 @@ public class XmlGen
     { //basic data type
       return "<" + tag +">" + obj + "</" + tag + ">";
     }
+    else if(c.isEnum())
+    { // enumeration data type
+      return "<" + tag +">" + obj + "</" + tag + ">";
+    }
     else
     {
       StringBuffer sb = new StringBuffer();
