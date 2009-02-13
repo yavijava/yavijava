@@ -534,11 +534,6 @@ public class XmlGen
     { //basic data type
       return "<" + tag +">" + obj + "</" + tag + ">";
     }
-    else if(c.getSimpleName().equals("Calendar"))
-    {
-        String dateStr = DatatypeConverter.printTime((Calendar)obj);
-        return "<" + tag +">" + dateStr + "</" + tag + ">";
-    }
     else
     {
       StringBuffer sb = new StringBuffer();
@@ -606,7 +601,14 @@ public class XmlGen
     if (! isComplexType)
     {
       sb.append("<" + fName + ">");
-      sb.append(obj);
+      if(typeName.endsWith("Calendar"))
+      {
+    	  sb.append(DatatypeConverter.printDateTime((Calendar)obj));
+      }
+      else
+      {
+    	  sb.append(obj);
+      }
       sb.append("</" + fName + ">");
     }
     else 
