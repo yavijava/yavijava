@@ -81,7 +81,7 @@ public class Task extends ExtensibleManagedObject
 		getVimService().setTaskState(getMOR(), tis, result, fault);
 	}
 	
-	public void udpateProgress(int percentDone) throws InvalidState, OutOfBounds, RuntimeFault, RemoteException 
+	public void updateProgress(int percentDone) throws InvalidState, OutOfBounds, RuntimeFault, RemoteException 
 	{
 		getVimService().updateProgress(getMOR(), percentDone);
 	}
