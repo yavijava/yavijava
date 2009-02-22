@@ -187,7 +187,8 @@ public class WSClient
     try {
       soapReturn = post(sb.toString());
     } catch (IOException e) {
-      throw new RemoteException("VI SDK invoke exception", e);
+      System.out.println("Request Caused Exception:" + sb.toString());
+      throw new RemoteException("VI SDK invoke exception:" + e);
     }
 //    long end = System.currentTimeMillis();
 //    System.out.println("Time for one post:" + (end-start));
