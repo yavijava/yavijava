@@ -38,7 +38,6 @@ import java.util.List;
 import javax.xml.bind.DatatypeConverter;
 
 import org.dom4j.Document;
-import org.dom4j.DocumentException;
 import org.dom4j.DocumentHelper;
 import org.dom4j.Element;
 import org.dom4j.Namespace;
@@ -176,7 +175,7 @@ public class XmlGen
         if(isFieldArray)
         {
           List<?> al = getAllArrayElements(subNodes, tagName, i, subNodes.size());
-          i = i + al.size();
+          i = i + al.size()-1;
           ManagedObjectReference[] mos = new ManagedObjectReference[al.size()];
           for(int j=0; j<mos.length; j++)
           {
@@ -202,7 +201,7 @@ public class XmlGen
           if(isFieldArray)
           {
             ArrayList<?> al = getAllArrayElements(subNodes, tagName, i, subNodes.size());
-            i = i + al.size();
+            i = i + al.size()-1;
             
             arrayTypeName = arrayTypeName.substring(0, arrayTypeName.length()-2);
             
@@ -240,7 +239,7 @@ public class XmlGen
           if(isFieldArray)
           {
             ArrayList<?> al = getAllArrayElements(subNodes, tagName, i, subNodes.size());
-            i = i + al.size();
+            i = i + al.size()-1;
             String[] values = new String[al.size()];
             for(int j=0; j < values.length; j++)
             {
