@@ -97,7 +97,12 @@ public class XmlGen
     Element root = doc.getRootElement();
     List<?> subNodes = root.elements();
     
-    if(isBasicType(type))
+    if(type.equals("ManagedObjectReference"))
+    {
+    	Element e = (Element) subNodes.get(0);
+    	return createMOR(e.attributeValue("type"), e.getText());	
+    }
+    else if(isBasicType(type))
     {
       String[] vals = new String[subNodes.size()];
       for(int i=0; i<vals.length; i++)
@@ -601,9 +606,18 @@ public class XmlGen
     }
     
     boolean isComplexType  = typeName.startsWith(PACKAGE_NAME);
-    if (! isComplexType)
+    String realFieldType = obj.getClass().getCanonicalName();
+
+    if (! isComplexType) 
     {
-      sb.append("<" + fName + ">");
+      if(realFieldType.equals(typeName))
+      {
+    	  sb.append("<" + fName + ">");
+      }
+      else
+      {
+    	  sb.append("<" + fName + " xsi:type=\"" + getXSIType(realFieldType) + "\">");
+      }
       if(typeName.endsWith("Calendar"))
       {
     	  sb.append(DatatypeConverter.printDateTime((Calendar)obj));
@@ -616,7 +630,6 @@ public class XmlGen
     }
     else 
     {
-      String realFieldType = obj.getClass().getCanonicalName();
       if(realFieldType.equals(typeName))
       {
     	sb.append(toXML(fName, obj, null));
@@ -628,6 +641,38 @@ public class XmlGen
     	sb.append(toXML(fName, obj, nameSpaceType));
       }
     }
+  }
+  
+  private static String getXSIType(String type)
+  {
+	  if("java.lang.Integer".equals(type))
+	  {
+		  return "xsd:int";
+	  }
+	  else if("java.lang.Long".equals(type))
+	  {
+		  return "xsd:long";
+	  }
+	  else if("java.lang.Boolean".equals(type))
+	  {
+		  return "xsd:boolean";
+	  }
+	  else if("java.lang.Short".equals(type))
+	  {
+		  return "xsd:short";
+	  }
+	  else if("java.lang.Float".equals(type))
+	  {
+		  return "xsd:float";
+	  }
+	  else if("java.lang.String".equals(type))
+	  {
+		  return "xsd:string";
+	  }
+	  else
+	  {
+		  throw new RuntimeException("Unknow data type during serialization:" + type);
+	  }
   }
 
   private static Field[] getAllFields(Class<?> c)
