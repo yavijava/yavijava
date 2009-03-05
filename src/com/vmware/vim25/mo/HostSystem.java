@@ -160,7 +160,7 @@ public class HostSystem extends ManagedEntity
 		return new Task(getServerConnection(), mor);
 	}
 	
-	public Task reconnectHost(HostConnectSpec hcs) throws InvalidName, InvalidLogin, InvalidState, HostConnectFault, RuntimeFault, RemoteException 
+	public Task reconnectHost_Task(HostConnectSpec hcs) throws InvalidName, InvalidLogin, InvalidState, HostConnectFault, RuntimeFault, RemoteException 
 	{
 		ManagedObjectReference mor = getVimService().reconnectHost_Task(getMOR(), hcs);
 		return new Task(getServerConnection(), mor);
