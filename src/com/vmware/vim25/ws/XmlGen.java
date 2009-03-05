@@ -114,6 +114,16 @@ public class XmlGen
     else if(type.endsWith("[]"))
     { // array type
       String singleTypeName = type.substring(0, type.length()-2);
+      if(subNodes.size()>0)
+      {
+    	  Element e = (Element)subNodes.get(0);
+    	  String xsiType = e.attributeValue(XSI_TYPE);
+    	  if(xsiType!= null)
+    	  {
+    		  singleTypeName = xsiType;
+    	  }
+      }
+      
       Object ao = Array.newInstance(Class.forName(PACKAGE_NAME + "." + singleTypeName), subNodes.size());
       for(int i=0; i<subNodes.size(); i++)
       {
@@ -165,6 +175,11 @@ public class XmlGen
       
       Class<?> fType = field.getType();
       boolean isFieldArray = fType.isArray();
+      Class arrayElemType = null;
+      if(isFieldArray)
+      {
+    	  arrayElemType = fType.getComponentType();
+      }
       String arrayTypeName = fType.getSimpleName();
       String xsiType = e.attributeValue(XSI_TYPE);
       if(xsiType!=null && (!xsiType.startsWith("xsd:")))
@@ -200,6 +215,18 @@ public class XmlGen
         Class enumClass = Class.forName(fTypeFullName);
         Object fo = Enum.valueOf(enumClass, enumStr); 
         field.set(obj, fo);
+      }
+      else if(isFieldArray==true && arrayElemType.isEnum())
+      {
+          ArrayList<?> al = getAllArrayElements(subNodes, tagName, i, subNodes.size());
+          i = i + al.size()-1;
+          Object ao = Array.newInstance(arrayElemType, al.size());
+          for(int j=0; j<al.size(); j++)
+          {
+        	  String enumStr = ((Element) al.get(j)).getText();
+        	  Array.set(ao, j, Enum.valueOf(arrayElemType, enumStr));
+          }
+          field.set(obj, ao);
       }
       else if(((xsiType!=null) && (!xsiType.startsWith("xsd"))) || fTypeFullName.startsWith(PACKAGE_NAME))
       { 
@@ -573,7 +600,6 @@ public class XmlGen
         {
           continue;
         }
-        String typeName = f.getType().getCanonicalName();
 
         Class<?> clazz = f.getType();
         if(clazz.isArray())
@@ -581,12 +607,12 @@ public class XmlGen
           Object[] values = (Object[]) value;
           for(int j=0; values!=null && j<values.length; j++)
           {
-            fieldToXML(sb, fName, typeName, values[j]);
+            fieldToXML(sb, fName, clazz.getComponentType().getCanonicalName(), values[j]);
           }
         }
         else
         {
-          fieldToXML(sb, fName, typeName, value);
+          fieldToXML(sb, fName, clazz.getCanonicalName(), value);
         }
       }
       sb.append("</" + tag + ">");
@@ -668,6 +694,10 @@ public class XmlGen
 	  else if("java.lang.String".equals(type))
 	  {
 		  return "xsd:string";
+	  }
+	  else if("java.util.GregorianCalendar".equals(type))
+	  {
+		  return "xsd:dateTime";
 	  }
 	  else
 	  {
