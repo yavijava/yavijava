@@ -86,7 +86,7 @@ public class Task extends ExtensibleManagedObject
 		getVimService().updateProgress(getMOR(), percentDone);
 	}
 	
-	public String waitForMe() throws InvalidProperty, RuntimeFault, RemoteException  
+	public String waitForMe() throws InvalidProperty, RuntimeFault, MethodFault, RemoteException  
 	{   	  
 		Object[] result = waitForValues(
 		                        new String[] { "info.state", "info.error" }, 
@@ -105,8 +105,7 @@ public class Task extends ExtensibleManagedObject
 			if(fault!=null) 
 			{
 				MethodFault mf = fault.getFault();
-				// mf.printStackTrace();
-				error = mf.getMessage();
+				throw mf;
 			}
 			return error;
 		}
