@@ -67,16 +67,10 @@ public class WSClient
   private final static String SOAP_BODY = "<soapenv:Body>";
   private final static String SOAP_BODY_END = "</soapenv:Body>";
   private final static String SOAP_FAULT = "<soapenv:Fault>";
-  public final static String VIM25 = " xmlns=\"urn:vim25\">";
-  public final static String VIM = " xmlns=\"urn:vim\">";
   
   private URL baseUrl = null;
   private String cookie = null;
-  private String vimNameSpace = VIM25;
-  
-  static 
-  {
-  }
+  private String vimNameSpace = null;
   
   public WSClient(String serverUrl) throws MalformedURLException 
   {
