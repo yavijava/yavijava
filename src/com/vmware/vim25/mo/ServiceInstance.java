@@ -47,6 +47,8 @@ public class ServiceInstance extends ManagedObject
 {
 	private ServiceContent serviceContent = null;
 	final static ManagedObjectReference SERVICE_INSTANCE_MOR;
+	public final static String VIM25_NAMESPACE = " xmlns=\"urn:vim25\">";
+	public final static String VIM_NAMESPACE = " xmlns=\"urn:vim\">";
 	
 	static 
 	{
@@ -62,6 +64,12 @@ public class ServiceInstance extends ManagedObject
 	}
 
 	public ServiceInstance(URL url, String username, String password, boolean ignoreCert)
+	throws RemoteException, MalformedURLException 
+	{
+		this(url, username, password, ignoreCert, VIM25_NAMESPACE);
+	}
+	
+	public ServiceInstance(URL url, String username, String password, boolean ignoreCert, String namespace)
 		throws RemoteException, MalformedURLException 
 	{
 		if(url == null || username==null)
@@ -72,6 +80,7 @@ public class ServiceInstance extends ManagedObject
 		setMOR(SERVICE_INSTANCE_MOR);
 
 		VimPortType vimService = new VimPortType(url.toString(), ignoreCert);
+		vimService.getWsc().setVimNameSpace(namespace);
 		
 		serviceContent = vimService.retrieveServiceContent(SERVICE_INSTANCE_MOR);
 		setServerConnection(new ServerConnection(url, vimService, this));
@@ -79,8 +88,14 @@ public class ServiceInstance extends ManagedObject
 		getServerConnection().setUserSession(userSession);
 	}
 	
-	// sessionStr format: "vmware_soap_session=\"B3240D15-34DF-4BB8-B902-A844FDF42E85\""
 	public ServiceInstance(URL url, String sessionStr, boolean ignoreCert)
+	throws RemoteException, MalformedURLException
+	{
+		this(url, sessionStr, ignoreCert, VIM25_NAMESPACE);
+	}
+		
+	// sessionStr format: "vmware_soap_session=\"B3240D15-34DF-4BB8-B902-A844FDF42E85\""
+	public ServiceInstance(URL url, String sessionStr, boolean ignoreCert, String namespace)
 		throws RemoteException, MalformedURLException
 	{
 		if(url == null || sessionStr ==null)
@@ -93,6 +108,7 @@ public class ServiceInstance extends ManagedObject
 		VimPortType vimService = new VimPortType(url.toString(), ignoreCert);
 		WSClient wsc = vimService.getWsc();
 		wsc.setCookie(sessionStr);
+		wsc.setVimNameSpace(namespace);
 		
 		serviceContent = vimService.retrieveServiceContent(SERVICE_INSTANCE_MOR);
 		setServerConnection(new ServerConnection(url, vimService, this));
