@@ -61,7 +61,7 @@ public class ResultConverter
   {
     int pos = html.indexOf(TABLE_START, from);
     pos = html.indexOf(TR_START, pos) + TR_START.length();
-    System.out.println("ConvertTable Pos:" + pos);
+//    System.out.println("ConvertTable Pos:" + pos);
     
     while( (pos = html.indexOf(TR_START, pos))!= -1)
     {
@@ -85,7 +85,7 @@ public class ResultConverter
 
       xml.append("</" + name +">\n");
     }
-    System.out.println("ConvertTable Pos(end):" + pos);
+//    System.out.println("ConvertTable Pos(end):" + pos);
     return pos;
   }
   
@@ -100,10 +100,10 @@ public class ResultConverter
     if(!isSimpleTdValue(html, pos, to))
     {
       int tableEnd = getTableEnd(html, pos + TD_START.length() + TABLE_START.length(), to-1);
-      System.out.println("tableEnd:" + tableEnd);
+      //System.out.println("tableEnd:" + tableEnd);
 //ServiceContent</p>         <table summary="Table of properties for this Data Object">                <tr>                  <th>Name</th>                  <th>Type</th>                  <th>Value</th>                </tr><tr><td class="c2">about</td><td class="c1">AboutInfo</td><td>         <table summary="Table of properties for this Data Object">                <tr>                  <th>Name</th>                  <th>Type</th>                  <th>Value</th>                </tr><tr><td class="c2">apiType</td><td class="c1">string</td><td>"HostAgent"</td></tr><tr><td class="c2">apiVersion</td><td class="c1">string</td><td>"2.0.0"</td></tr><tr><td class="c2">build</td><td class="c1">string</td><td>"62355"</td></tr><tr><td class="c2">dynamicProperty</td><td class="c1">DynamicProperty[]</td><td>Unset</td></tr><tr><td class="c2">dynamicType</td><td class="c1">string</td><td>Unset</td></tr><tr><td class="c2">fullName</td><td class="c1">string</td><td>"VMware ESX Server 3.5.0 build-62355"</td></tr><tr><td class="c2">localeBuild</td><td class="c1">string</td><td>"000"</td></tr><tr><td class="c2">localeVersion</td><td class="c1">string</td><td>"INTL"</td></tr><tr><td class="c2">name</td><td class="c1">string</td><td>"VMware ESX Server"</td></tr><tr><td class="c2">osType</td><td class="c1">string</td><td>"vmnix-x86"</td></tr><tr><td class="c2">productLineId</td><td class="c1">string</td><td>"esx"</td></tr><tr><td class="c2">vendor</td><td class="c1">string</td><td>"VMware, Inc."</td></tr><tr><td class="c2">version</td><td class="c1">string</td><td>"3.5.0"</td></tr></table></td></tr><tr><td class="c2">accountManager</td><td class="c1">ManagedObjectReference:HostLocalAccountManager</td><td><a href="/mob/?moid=ha%2dlocalacctmgr">ha-localacctmgr</a></td></tr><tr><td class="c2">alarmManager</td><td class="c1">ManagedObjectReference:AlarmManager</td><td>Unset</td></tr><tr><td class="c2">authorizationManager</td><td class="c1">ManagedObjectReference:AuthorizationManager</td><td><a href="/mob/?moid=ha%2dauthmgr">ha-authmgr</a></td></tr><tr><td class="c2">customFieldsManager</td><td class="c1">ManagedObjectReference:CustomFieldsManager</td><td>Unset</td></tr><tr><td class="c2">customizationSpecManager</td><td class="c1">ManagedObjectReference:CustomizationSpecManager</td><td>Unset</td></tr><tr><td class="c2">diagnosticManager</td><td class="c1">ManagedObjectReference:DiagnosticManager</td><td><a href="/mob/?moid=ha%2ddiagnosticmgr">ha-diagnosticmgr</a></td></tr><tr><td class="c2">dynamicProperty</td><td class="c1">DynamicProperty[]</td><td>Unset</td></tr><tr><td class="c2">dynamicType</td><td class="c1">string</td><td>Unset</td></tr><tr><td class="c2">eventManager</td><td class="c1">ManagedObjectReference:EventManager</td><td><a href="/mob/?moid=ha%2deventmgr">ha-eventmgr</a></td></tr><tr><td class="c2">extensionManager</td><td class="c1">ManagedObjectReference:ExtensionManager</td><td>Unset</td></tr><tr><td class="c2">fileManager</td><td class="c1">ManagedObjectReference:FileManager</td><td><a href="/mob/?moid=ha%2dnfc%2dfile%2dmanager">ha-nfc-file-manager</a></td></tr><tr><td class="c2">licenseManager</td><td class="c1">ManagedObjectReference:LicenseManager</td><td><a href="/mob/?moid=ha%2dlicense%2dmanager">ha-license-manager</a></td></tr><tr><td class="c2">perfManager</td><td class="c1">ManagedObjectReference:PerformanceManager</td><td><a href="/mob/?moid=ha%2dperfmgr">ha-perfmgr</a></td></tr><tr><td class="c2">propertyCollector</td><td class="c1">ManagedObjectReference:PropertyCollector</td><td><a href="/mob/?moid=ha%2dproperty%2dcollector">ha-property-collector</a></td></tr><tr><td class="c2">rootFolder</td><td class="c1">ManagedObjectReference:Folder</td><td><a href="/mob/?moid=ha%2dfolder%2droot">ha-folder-root</a></td></tr><tr><td class="c2">scheduledTaskManager</td><td class="c1">ManagedObjectReference:ScheduledTaskManager</td><td>Unset</td></tr><tr><td class="c2">searchIndex</td><td class="c1">ManagedObjectReference:SearchIndex</td><td><a href="/mob/?moid=ha%2dsearchindex">ha-searchindex</a></td></tr><tr><td class="c2">sessionManager</td><td class="c1">ManagedObjectReference:SessionManager</td><td><a href="/mob/?moid=ha%2dsessionmgr">ha-sessionmgr</a></td></tr><tr><td class="c2">setting</td><td class="c1">ManagedObjectReference:OptionManager</td><td><a href="/mob/?moid=HostAgentSettings">HostAgentSettings</a></td></tr><tr><td class="c2">taskManager</td><td class="c1">ManagedObjectReference:TaskManager</td><td><a href="/mob/?moid=ha%2dtaskmgr">ha-taskmgr</a></td></tr><tr><td class="c2">userDirectory</td><td class="c1">ManagedObjectReference:UserDirectory</td><td><a href="/mob/?moid=ha%2duser%2ddirectory">ha-user-directory</a></td></tr><tr><td class="c2">viewManager</td><td class="c1">ManagedObjectReference:ViewManager</td><td><a href="/mob/?moid=ViewManager">ViewManager</a></td></tr><tr><td class="c2">virtualDiskManager</td><td class="c1">ManagedObjectReference:VirtualDiskManager</td><td><a href="/mob/?moid=ha%2dvdiskmanager">ha-vdiskmanager</a></td></tr><tr><td class="c2">virtualizationManager</td><td class="c1">ManagedObjectReference:VirtualizationManager</td><td>Unset</td></tr></table>  </body></html>        
       pos = convertTable(html, pos, tableEnd + TABLE_END.length()+1, xml);
-      System.out.println("pos:" + pos);
+      //System.out.println("pos:" + pos);
     }
     else
     {
@@ -124,6 +124,7 @@ public class ResultConverter
         int end = value.indexOf("</a>", start);
         value = value.substring(start+1, end);
       }
+      xml.append(value);
     }
     return pos;
   }
