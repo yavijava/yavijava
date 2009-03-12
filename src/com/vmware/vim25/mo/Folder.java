@@ -69,7 +69,7 @@ public class Folder extends ManagedEntity
 		return (String[]) getCurrentProperty("childType");
 	}
 	
-	public Task addStandaloneHost(HostConnectSpec spec, ComputeResourceConfigSpec compResSpec, boolean addConnected) throws InvalidLogin, HostConnectFault, RuntimeFault, RemoteException 
+	public Task addStandaloneHost_Task(HostConnectSpec spec, ComputeResourceConfigSpec compResSpec, boolean addConnected) throws InvalidLogin, HostConnectFault, RuntimeFault, RemoteException 
 	{
 		return new Task(getServerConnection(),
 			getVimService().addStandaloneHost_Task(getMOR(), spec, compResSpec, addConnected) );
