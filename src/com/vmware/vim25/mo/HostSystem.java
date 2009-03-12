@@ -166,7 +166,7 @@ public class HostSystem extends ManagedEntity
 		return new Task(getServerConnection(), mor);
 	}
 	
-	public Task shutdownHost(boolean force) throws InvalidState, NotSupported, RuntimeFault, RemoteException
+	public Task shutdownHost_Task(boolean force) throws InvalidState, NotSupported, RuntimeFault, RemoteException
 	{
 		ManagedObjectReference mor = getVimService().shutdownHost_Task(getMOR(), force);
 		return new Task(getServerConnection(), mor);
