@@ -48,7 +48,7 @@ public class ServiceInstance extends ManagedObject
 	private ServiceContent serviceContent = null;
 	final static ManagedObjectReference SERVICE_INSTANCE_MOR;
 	public final static String VIM25_NAMESPACE = " xmlns=\"urn:vim25\">";
-	public final static String VIM_NAMESPACE = " xmlns=\"urn:vim\">";
+	public final static String VIM20_NAMESPACE = " xmlns=\"urn:vim2\">";
 	
 	static 
 	{
