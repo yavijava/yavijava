@@ -569,6 +569,10 @@ public class XmlGen
     { // enumeration data type
       return "<" + tag +">" + obj + "</" + tag + ">";
     }
+    else if (obj instanceof Calendar) 
+    { 
+    	return "<" + tag + " xsi:type=\"xsd:dateTime\">" + DatatypeConverter.printDateTime((Calendar)obj) + "</" + tag + ">";
+    } 
     else
     {
       StringBuffer sb = new StringBuffer();
