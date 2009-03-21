@@ -37,8 +37,6 @@ import java.util.List;
 
 import javax.xml.bind.DatatypeConverter;
 
-import org.dom4j.Document;
-import org.dom4j.DocumentHelper;
 import org.dom4j.Element;
 import org.dom4j.Namespace;
 import org.dom4j.QName;
@@ -51,7 +49,7 @@ import com.vmware.vim25.ManagedObjectReference;
  * @author Steve Jin (sjin@vmware.com)
 */
 
-public class XmlGen
+public final class XmlGen
 {
   private static String PACKAGE_NAME = "com.vmware.vim25";
   private static Namespace XSI = new Namespace("xsi", "http://www.w3.org/2001/XMLSchema-instance");
@@ -63,11 +61,9 @@ public class XmlGen
       DatatypeConverter.setDatatypeConverter(DatatypeConverterImpl.theInstance);
   }
   
-  public static SoapFaultException parseSoapFault(String xmlStr) throws Exception
+  public static SoapFaultException parseSoapFault(Element root) throws Exception
   {
     SoapFaultException sfe = new SoapFaultException();
-    Document doc = DocumentHelper.parseText(xmlStr);
-    Element root = doc.getRootElement();
 
     sfe.setFaultCode(root.elementText("faultcode"));
     sfe.setFaultString(root.elementText("faultstring"));
@@ -83,7 +79,7 @@ public class XmlGen
         String faultTypeName = faultE.attributeValue(XSI_TYPE);
         if(faultTypeName!=null)
         {
-          sfe.detail = (Throwable) fromXML(faultTypeName, faultE);
+          sfe.detail = (Throwable) fromXmlElem(faultTypeName, faultE);
         }
       }
     }
@@ -91,15 +87,13 @@ public class XmlGen
     return sfe;
   }
   
-  public static Object fromXML(String type, String xmlStr) throws Exception
+  public static Object fromXML(String type, Element root) throws Exception
   {
-    Document doc = DocumentHelper.parseText(xmlStr);
-    Element root = doc.getRootElement();
-    List<?> subNodes = root.elements();
+    List<Element> subNodes = root.elements();
     
     if(type.equals("ManagedObjectReference"))
     {
-    	Element e = (Element) subNodes.get(0);
+    	Element e = subNodes.get(0);
     	return createMOR(e.attributeValue("type"), e.getText());	
     }
     else if(isBasicType(type))
@@ -107,7 +101,7 @@ public class XmlGen
       String[] vals = new String[subNodes.size()];
       for(int i=0; i<vals.length; i++)
       {
-        vals[i] = ((Element)subNodes.get(i)).getText();
+        vals[i] = subNodes.get(i).getText();
       }
       return parseValue(type, vals);
     }
@@ -116,7 +110,7 @@ public class XmlGen
       String singleTypeName = type.substring(0, type.length()-2);
       if(subNodes.size()>0)
       {
-    	  Element e = (Element)subNodes.get(0);
+    	  Element e = subNodes.get(0);
     	  String xsiType = e.attributeValue(XSI_TYPE);
     	  if(xsiType!= null)
     	  {
@@ -127,14 +121,14 @@ public class XmlGen
       Object ao = Array.newInstance(Class.forName(PACKAGE_NAME + "." + singleTypeName), subNodes.size());
       for(int i=0; i<subNodes.size(); i++)
       {
-        Object o = fromXML(singleTypeName, (Element)subNodes.get(i));
+        Object o = fromXmlElem(singleTypeName, subNodes.get(i));
         Array.set(ao, i, o);
       }
       return ao;
     }
     else
     {
-      return fromXML(type, (Element)subNodes.get(0));
+      return fromXmlElem(type, subNodes.get(0));
     }
   }
   
@@ -149,16 +143,16 @@ public class XmlGen
   }
   
   /** Handle single VIM Data Object */
-  private static Object fromXML(String type, Element node) throws Exception
+  private static Object fromXmlElem(String type, Element node) throws Exception
   {
     Class<?> clazz = Class.forName(PACKAGE_NAME + "." + type);
     Object obj = clazz.newInstance();
     
-    List<?> subNodes = node.elements();
+    List<Element> subNodes = node.elements();
     
     for (int i=0; i<subNodes.size(); i++) 
     {
-      Element e = (Element) subNodes.get(i);
+      Element e = subNodes.get(i);
       String tagName = e.getName();
       
       Field field = null;
@@ -247,7 +241,7 @@ public class XmlGen
               {
                 elemType = elem.attributeValue(XSI_TYPE);
               }
-              Object o = fromXML(elemType, elem);
+              Object o = fromXmlElem(elemType, elem);
               Array.set(ao, j, o);
             }
             field.set(obj, ao);
@@ -257,11 +251,11 @@ public class XmlGen
             Object o = null;
             if(xsiType!=null)
             {
-              o = fromXML(xsiType, e);
+              o = fromXmlElem(xsiType, e);
             }
             else
             {
-              o = fromXML(fType.getSimpleName(), e);
+              o = fromXmlElem(fType.getSimpleName(), e);
             }
             field.set(obj, o);
           }
@@ -309,15 +303,15 @@ public class XmlGen
     return obj;
   }
 
-  private static ArrayList<Element> getAllArrayElements(List<?> subNodes, String tagName, int from, int length)
+  private static ArrayList<Element> getAllArrayElements(List<Element> subNodes, String tagName, int from, int length)
   {
     ArrayList<Element> al = new ArrayList<Element>();
-    al.add((Element)subNodes.get(from));
+    al.add(subNodes.get(from));
     from++;
     
     while(from <= length-1)
     {
-      Element ne = (Element)subNodes.get(from);
+      Element ne = subNodes.get(from);
       if(ne.getName().equals(tagName))
       {
         al.add(ne);
@@ -421,7 +415,7 @@ public class XmlGen
     }
     else
     {
-      System.out.println("Unexpected Type: " + type);
+      System.err.println("Unexpected Type: " + type);
     }
     return null;
   }
@@ -530,7 +524,7 @@ public class XmlGen
     }
     else
     {
-      System.out.println("Unexpected Type@setField: " + f.getType().getCanonicalName() + type + fType);
+      System.err.println("Unexpected Type@setField: " + f.getType().getCanonicalName() + type + fType);
       throw new RuntimeException("Unexpected Type@setField: " + f.getType().getCanonicalName() + f.getName());
     }
   }
