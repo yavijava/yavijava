@@ -48,7 +48,7 @@ public class OptionManager extends ManagedObject
 	
 	public 	OptionValue[] getSetting()
 	{
-		return (OptionValue[]) getCurrentProperty("settting");
+		return (OptionValue[]) getCurrentProperty("setting");
 	}
 
 	public 	OptionDef[] getSupportedOption()
