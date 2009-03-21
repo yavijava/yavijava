@@ -51,6 +51,10 @@ import javax.net.ssl.SSLSession;
 import javax.net.ssl.TrustManager;
 import javax.net.ssl.X509TrustManager;
 
+import org.dom4j.Document;
+import org.dom4j.Element;
+import org.dom4j.io.SAXReader;
+
 import com.vmware.vim25.ManagedObjectReference;
 
 import java.rmi.RemoteException;
@@ -60,17 +64,15 @@ import java.rmi.RemoteException;
  * @author Steve Jin (sjin@vmware.com)
 */
 
-public class WSClient
+public final class WSClient
 {
   private final static String SOAP_HEADER = "<?xml version=\"1.0\" encoding=\"UTF-8\"?><soapenv:Envelope xmlns:soapenc=\"http://schemas.xmlsoap.org/soap/encoding/\" xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"><soapenv:Body>"; 
   private final static String SOAP_END = "</soapenv:Body></soapenv:Envelope>";
-  private final static String SOAP_BODY = "<soapenv:Body>";
-  private final static String SOAP_BODY_END = "</soapenv:Body>";
-  private final static String SOAP_FAULT = "<soapenv:Fault>";
   
   private URL baseUrl = null;
   private String cookie = null;
   private String vimNameSpace = null;
+  private SAXReader reader = new SAXReader();
   
   public WSClient(String serverUrl) throws MalformedURLException 
   {
@@ -113,18 +115,15 @@ public class WSClient
 
   public Object invoke(String methodName, Argument[] paras, String returnType) throws RemoteException
   {
-    String body = invoke(methodName, paras);
-    // System.out.println("ret:" + body);
+    Element root = invoke(methodName, paras);
+    Element body = (Element) root.elements().get(0);
+    Element resp = (Element) body.elements().get(0);
     
-    if(body.indexOf(SOAP_FAULT)!=-1)
+    if(resp.getName().indexOf("Fault")!=-1)
     {   
-      StringBuffer sb = new StringBuffer(body);
-      int pos = sb.indexOf("soapenv:Fault");
-      sb.insert(pos + "soapenv:Fault".length(), " xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"");
-      
       try 
       {
-        SoapFaultException sfe = XmlGen.parseSoapFault(sb.toString());
+        SoapFaultException sfe = XmlGen.parseSoapFault(resp);
         if(sfe.detail!=null)
         {
           throw (RemoteException) sfe.detail;
@@ -139,13 +138,9 @@ public class WSClient
     {
       if(returnType!=null)
       {
-        StringBuffer sb = new StringBuffer(body);
-        int pos = sb.indexOf("Response");
-        sb.insert(pos + "Response".length(), " xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"");
-        
         try 
         {
-          return XmlGen.fromXML(returnType, sb.toString());
+          return XmlGen.fromXML(returnType, resp);
         } 
         catch (Exception e) 
         {
@@ -159,44 +154,59 @@ public class WSClient
     }
   }
   
-  public String invoke(String methodName, Argument[] paras) throws RemoteException
+  public Element invoke(String methodName, Argument[] paras) throws RemoteException
   {
-    StringBuffer sb = new StringBuffer();
-    sb.append(SOAP_HEADER);
-    
-    sb.append("<" + methodName + vimNameSpace);
+    String soapMsg = createSoapMessage(methodName, paras);
 
-    for(int i=0; i<paras.length; i++)
+    Element root = null;
+    try 
     {
-      String key = paras[i].getName();
-      Object obj = paras[i].getValue();
-      sb.append(XmlGen.toXML(key, obj, null));
-    }
-    
-    sb.append("</" + methodName + ">");
-    sb.append(SOAP_END);
-
-//    long start = System.currentTimeMillis();
-    String soapReturn;
-    try {
-      soapReturn = post(sb.toString());
-    } catch (IOException e) {
-      System.out.println("Request Caused Exception:" + sb.toString());
+      InputStream is = post(soapMsg);
+      Document doc = reader.read(is);
+	  root = doc.getRootElement();
+    } catch (Exception e) 
+    {
       throw new RemoteException("VI SDK invoke exception:" + e);
     }
-//    long end = System.currentTimeMillis();
-//    System.out.println("Time for one post:" + (end-start));
     
-    int retStart = soapReturn.indexOf(SOAP_BODY);
-    int retEnd = soapReturn.indexOf(SOAP_BODY_END, retStart);
-    
-    return soapReturn.substring(retStart+SOAP_BODY.length(), retEnd);
+    return root;
   }
   
-  public String post(String soapMsg) throws IOException
+  public StringBuffer invokeAsString(String methodName, Argument[] paras) throws RemoteException
   {
-//    System.out.println("soapToSend:" + soapMsg);
-    
+    String soapMsg = createSoapMessage(methodName, paras);
+
+    try 
+    {
+      InputStream is = post(soapMsg);
+      return readStream(is);
+    } catch (Exception e) 
+    {
+      throw new RemoteException("VI SDK invoke exception:" + e);
+    }
+  }
+
+  private String createSoapMessage(String methodName, Argument[] paras)
+  {
+	StringBuffer sb = new StringBuffer();
+	sb.append(SOAP_HEADER);
+	    
+	sb.append("<" + methodName + vimNameSpace);
+	
+	for(int i=0; i<paras.length; i++)
+	{
+	  String key = paras[i].getName();
+	  Object obj = paras[i].getValue();
+	  sb.append(XmlGen.toXML(key, obj, null));
+	}
+	    
+	sb.append("</" + methodName + ">");
+	sb.append(SOAP_END);
+	return sb.toString();
+  }
+  
+  public InputStream post(String soapMsg) throws IOException
+  {
     HttpURLConnection postCon = (HttpURLConnection) baseUrl.openConnection();
     try {
         postCon.setRequestMethod("POST");
@@ -218,14 +228,12 @@ public class WSClient
     out.close();
 
     InputStream is = postCon.getInputStream();
-    StringBuffer sb = readStream(is);
     
     if(cookie==null)
     {
       cookie = postCon.getHeaderField("Set-Cookie");
     }
-   // System.out.println("cookie:" + cookie);
-    return sb.toString();
+    return is;
   }
   
   public URL getBaseUrl()
