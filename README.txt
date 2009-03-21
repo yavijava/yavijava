@@ -2,7 +2,7 @@ Welcome to VI Java API Beta Release.
 
 WHAT IS VI JAVA API?
 VI Java API is a set of Java libraries that aim to ease the usage of VI 
-SDK Web Services interfaces. It's now open sourced under BSD license.
+SDK Web Services interfaces. It's now open-sourced under BSD license.
 
 It provides the following benefits to the Java developers:
 
@@ -11,7 +11,7 @@ It provides the following benefits to the Java developers:
   compile time type checking
 * Hides the complexity of the PropertyCollector
 * Provides necessary utility classes to simplify VI SDK web interfaces
-* Leverages current VI SDK web services interface while keeping it intact
+* High performance with 4+ times faster than AXIS engine
 
 As a result, the application code using this API is much shorter (70% less) 
 and much more readable than the equivalent using web service interfaces 
@@ -19,20 +19,22 @@ directly. The API itself is straight-forward and easy to learn and use.
 
 WHAT IS INCLUDED?
 Everything is packaged into one Jar file, including the Java source code, 
-binary, sample code, license. 
+binary, sample code, license.
+Version 2.0 includes a high performance web service engine which is 15+ times
+faster in loading and 4+ faster in de-serialization than AXIS with only 1/4
+of the size.
 
 HOW TO GET STARTED?
-To get started, please include the jar downloaded in your existing VI 
-SDK project. 
-Please refer to the Developer's Setup Guide to set up an VI SDK project:
-http://www.vmware.com/support/developer/vc-sdk/visdk25pubs/visdk25setupguide.pdf
+To get started, check out the project tutorial at: http://vijava.wiki.sourceforge.net/vijavaapisetup
 
 WHERE TO DOWNLOAD THE LATEST RELEASE? 
-http://vijava.sf.net
+http://vijava.sf.net, or
 http://sourceforge.net/projects/viperltoolkit
 
-Blog:
-http://communities.vmware.com/blogs/DeveloperCenter/
+WHERE CAN I GET HELP?
+Project Wiki Home: http://vijava.wiki.sourceforge.net/
+VMware SDK forum: http://communities.vmware.com/community/developer/managementapi
+File a bug: https://sourceforge.net/tracker/?group_id=228007
 
 COPYRIGHT & LICENSE:
 Copyright (c) 2008 VMware, Inc. All Rights Reserved.
