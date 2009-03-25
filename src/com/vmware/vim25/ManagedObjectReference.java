@@ -68,4 +68,20 @@ public class ManagedObjectReference
     this.val = val;
   }
   
+  public boolean equals(Object obj)
+  {
+    if(this == obj)
+      return true;
+    if((obj == null) || (obj.getClass() != this.getClass()))
+      return false;
+
+    ManagedObjectReference mor = (ManagedObjectReference)obj;
+    
+    return  mor.getType().equals(getType()) && mor.getVal().equals(getVal());
+  }
+
+  public int hashCode()
+  {
+    return val.hashCode() + type.hashCode();
+  }
 }
