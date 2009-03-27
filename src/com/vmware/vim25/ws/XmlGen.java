@@ -563,11 +563,24 @@ public final class XmlGen
   	
 	  if(clazz.isArray())
 	  {
-	    Object[] objs = (Object[]) obj;
-	    for(int i=0; i<objs.length; i++)
-	    {
-	      toXML(sb, tagName, type.getComponentType(), objs[i]);
-	    }
+	  	if(obj.getClass() == (new int[]{}.getClass()))
+	  	{
+	  		int[] objs = (int[]) obj;
+	  		for(int i=0; i<objs.length; i++)
+	  		{
+	  			sb.append("<" + tagName +">");
+	  	  	sb.append(objs[i]);
+	  	  	sb.append("</" + tagName + ">");
+	  		}
+	  	}
+	  	else
+	  	{
+		    Object[] objs = (Object[]) obj;
+		    for(int i=0; i<objs.length; i++)
+		    {
+		      toXML(sb, tagName, type.getComponentType(), objs[i]);
+		    }
+	  	}
 	  }
 	  
 	  // from now on, no array type
