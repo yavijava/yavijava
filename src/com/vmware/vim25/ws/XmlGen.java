@@ -63,7 +63,7 @@ public final class XmlGen
 
   static
   {
-      DatatypeConverter.setDatatypeConverter(DatatypeConverterImpl.theInstance);
+    DatatypeConverter.setDatatypeConverter(DatatypeConverterImpl.theInstance);
   }
   
   public static SoapFaultException parseSoapFault(Element root) throws Exception
@@ -84,11 +84,10 @@ public final class XmlGen
         String faultTypeName = faultE.attributeValue(XSI_TYPE);
         if(faultTypeName!=null)
         {
-          sfe.detail = (Throwable) fromXmlElem(faultTypeName, faultE);
+          sfe.detail = (Throwable) fromXml(getVimClass(faultTypeName), faultE);
         }
       }
     }
-
     return sfe;
   }
   
@@ -126,14 +125,14 @@ public final class XmlGen
       Object ao = Array.newInstance(Class.forName(PACKAGE_NAME + "." + singleTypeName), subNodes.size());
       for(int i=0; i<subNodes.size(); i++)
       {
-        Object o = fromXmlElem(singleTypeName, subNodes.get(i));
+        Object o = fromXml(getVimClass(singleTypeName), subNodes.get(i));
         Array.set(ao, i, o);
       }
       return ao;
     }
     else
     {
-      return fromXmlElem(type, subNodes.get(0));
+      return fromXml(getVimClass(type), subNodes.get(0));
     }
   }
   
@@ -157,24 +156,30 @@ public final class XmlGen
 	  PRIMITIVE_DATA_TYPES.add("long");
   }
   
-  private final static Map<String, Class> VimClasses = new HashMap<String, Class>(); 
-  /** Handle single VIM Data Object */
-  private static Object fromXmlElem(String type, Element node) throws Exception
+  private final static Map<String, Class> VimClasses = new HashMap<String, Class>();
+  
+  private final static Class getVimClass(String type) throws ClassNotFoundException
   {
-    Class<?> clazz = null;
   	if(VimClasses.containsKey(type))
   	{
-  		clazz = VimClasses.get(type);
+  		return VimClasses.get(type);
   	}
   	else
   	{
-  		clazz = Class.forName(PACKAGE_NAME + "." + type);
+  		Class clazz = Class.forName(PACKAGE_NAME + "." + type);
   		VimClasses.put(type, clazz);
+  		return clazz;
   	}
-  	Object obj = clazz.newInstance();
+  }
+  
+  private final static Package VIM_PKG = ManagedObjectReference.class.getPackage();
+  
+  /** Handle single VIM Data Object except MOR */
+  private static Object fromXml(Class clazz, Element node) throws Exception
+  {
+    Object obj = clazz.newInstance();
     
     List<Element> subNodes = node.elements();
-    
     int sizeOfSubNodes = subNodes.size();
     
     for (int i=0; i<sizeOfSubNodes; i++) 
@@ -192,26 +197,23 @@ public final class XmlGen
         field = clazz.getField(tagName);
       }
       
-      Class<?> fType = field.getType();
+      Class fType = field.getType();
       boolean isFieldArray = fType.isArray();
-      Class arrayElemType = null;
+      //if field is an array, adjust it to the component type
       if(isFieldArray)
       {
-    	  arrayElemType = fType.getComponentType();
+    	  fType = fType.getComponentType();
       }
-      String arrayTypeName = fType.getSimpleName();
+
+      Class fRealType = fType;
       String xsiType = e.attributeValue(XSI_TYPE);
       if(xsiType!=null && (!xsiType.startsWith("xsd:")))
       {
-          fType = Class.forName(PACKAGE_NAME + "." + xsiType);
+        fRealType = getVimClass(xsiType);
       }
       
-      String fTypeFullName = fType.getCanonicalName();
-      String fTypeSimpleName = fType.getSimpleName();
-      
-//      if(fTypeSimpleName.startsWith("ManagedObjectReference"))
-      if(fType == ManagedObjectReference.class)
-      {
+      if(fRealType == ManagedObjectReference.class)
+      { // MOR
         if(isFieldArray)
         {
           int sizeOfFieldArray = getNumberOfSameTags(subNodes, sizeOfSubNodes, i, tagName);
@@ -229,42 +231,40 @@ public final class XmlGen
           field.set(obj, createMOR(e.attributeValue("type"), e.getText()));
         }
       }
-      else if(fType.isEnum())
-      {
-        String enumStr = e.getText();
-        Class enumClass = Class.forName(fTypeFullName);
-        Object fo = Enum.valueOf(enumClass, enumStr); 
-        field.set(obj, fo);
+      else if(fRealType.isEnum())
+      { // Enum type
+      	if(!isFieldArray)
+      	{
+	        Object fo = Enum.valueOf(fRealType, e.getText()); 
+	        field.set(obj, fo);
+      	}
+      	else
+      	{
+	        int sizeOfFieldArray = getNumberOfSameTags(subNodes, sizeOfSubNodes, i, tagName);
+	        Object ao = Array.newInstance(fRealType, sizeOfFieldArray);
+	        for(int j=0; j<sizeOfFieldArray; j++)
+	        {
+	          String enumStr = ((Element) subNodes.get(j+i)).getText();
+	          Array.set(ao, j, Enum.valueOf(fRealType, enumStr));
+	        }
+	        field.set(obj, ao);
+	        i = i + sizeOfFieldArray -1;
+      	}
       }
-      else if(isFieldArray==true && arrayElemType.isEnum())
-      {
-        int sizeOfFieldArray = getNumberOfSameTags(subNodes, sizeOfSubNodes, i, tagName);
-        Object ao = Array.newInstance(arrayElemType, sizeOfFieldArray);
-        for(int j=0; j<sizeOfFieldArray; j++)
-        {
-          String enumStr = ((Element) subNodes.get(j+i)).getText();
-          Array.set(ao, j, Enum.valueOf(arrayElemType, enumStr));
-        }
-        field.set(obj, ao);
-        i = i + sizeOfFieldArray -1;
-      }
-      else if(((xsiType!=null) && (!xsiType.startsWith("xsd"))) || fTypeFullName.startsWith(PACKAGE_NAME))
-      { 
+      else if( fRealType.getPackage() == VIM_PKG)
+      { //VIM type
         if(isFieldArray)
         {
           int sizeOfFieldArray = getNumberOfSameTags(subNodes, sizeOfSubNodes, i, tagName);
-          arrayTypeName = arrayTypeName.substring(0, arrayTypeName.length()-2);
-          Object ao = Array.newInstance(Class.forName(PACKAGE_NAME + "." + arrayTypeName), sizeOfFieldArray);
-          
+         // arrayTypeName = arrayTypeName.substring(0, arrayTypeName.length()-2);
+          Object ao = Array.newInstance(fType, sizeOfFieldArray);
+          String fGenericType = fType.getSimpleName();
           for(int j=0; j<sizeOfFieldArray; j++)
           {
             Element elem = (Element) subNodes.get(j+i);
-            String elemType = arrayTypeName; 
-            if(elem.attributeValue(XSI_TYPE)!=null)
-            {
-              elemType = elem.attributeValue(XSI_TYPE);
-            }
-            Object o = fromXmlElem(elemType, elem);
+            String elemXsiType = elem.attributeValue(XSI_TYPE);
+            String elemType = elemXsiType!=null? elemXsiType : fGenericType;
+            Object o = fromXml(getVimClass(elemType), elem);
             Array.set(ao, j, o);
           }
           field.set(obj, ao);
@@ -272,15 +272,7 @@ public final class XmlGen
         }
         else
         { // single VIM
-          Object o = null;
-          if(xsiType!=null)
-          {
-            o = fromXmlElem(xsiType, e);
-          }
-          else
-          {
-            o = fromXmlElem(fType.getSimpleName(), e);
-          }
+          Object o = fromXml(fRealType, e);
           field.set(obj, o);
         }
       }
@@ -303,25 +295,25 @@ public final class XmlGen
           }
           else
           {
-            fTrueType = fTypeSimpleName;
+            fTrueType = fRealType.getSimpleName();
             if(!fTrueType.endsWith("[]"))
             {
               fTrueType = fTrueType + "[]";
             }
           }
-          setFieldValue(field, obj, fTrueType, values);
+          setArrayFieldValue(field, obj, fTrueType, values);
           i = i + sizeOfFieldArray -1;
         }
         else
         {
-          if(xsiType!=null && xsiType.startsWith("xsd:"))
+          if(xsiType!=null)
           {
             xsiType = xsiType.substring("xsd:".length());
-            setFieldValue(field, obj, xsiType, new String[] { e.getText()});
+            setFieldValue(field, obj, xsiType, e.getText());
           }
           else
           {
-            setFieldValue(field, obj, xsiType, new String[] { e.getText()});
+            setFieldValue(field, obj, fRealType.getSimpleName(), e.getText());
           }
         }
       }
@@ -429,39 +421,81 @@ public final class XmlGen
       }
       return bs;
     }
-    else if("Calendar".equals(type))
+    else if("Calendar".equals(type)  || "dateTime".equals(type))
     {
       Calendar cal = DatatypeConverter.parseTime(values[0]);
       return cal;
     }
     else
     {
-      System.err.println("Unexpected Type: " + type);
+      throw new RuntimeException("Unexpected Type@setField: " + type + values[0]);
     }
-    return null;
   }
   
-  private static void setFieldValue(Field f, Object obj, String type, String[] values) throws IllegalArgumentException, IllegalAccessException 
+  private final static void setFieldValue(Field f, Object obj, String type, String value) throws IllegalArgumentException, IllegalAccessException 
   {
-    String fType = type==null? f.getType().getSimpleName() : type;
-    
-    if("String".equals(fType) || "string".equals(fType))
+    if("String".equals(type) || "string".equals(type))
     {
-      f.set(obj, values[0]);
+      f.set(obj, value);
     }
-    else if("String[]".equals(fType) || "string[]".equals(fType))
+    else if("int".equals(type))
+    {
+      f.set(obj, Integer.parseInt(value));
+    }
+    else if("Integer".equals(type))
+    {
+      f.set(obj, new Integer(value));
+    }
+    else if("short".equals(type))
+    {
+      f.set(obj, Short.parseShort(value));
+    }
+    else if("Short".equals(type))
+    {
+      f.set(obj, new Short(value));
+    }
+    else if("byte".equals(type))
+    {
+      f.set(obj, Byte.parseByte(value));
+    }
+    else if("Byte".equals(type))
+    {
+      f.set(obj, new Byte(value));
+    }
+    else if("long".equals(type))
+    {
+      f.set(obj, Long.parseLong(value));
+    }
+    else if("Long".equals(type))
+    {
+      f.set(obj, new Long(value));
+    }
+    else if("boolean".equals(type))
+    {
+      f.set(obj, Boolean.parseBoolean(value));
+    }
+    else if("Boolean".equals(type))
+    {
+      f.set(obj, new Boolean(value));
+    }
+    else if("Calendar".equals(type) || "dateTime".equals(type))
+    {
+      Calendar cal = DatatypeConverter.parseTime(value);
+      f.set(obj, cal);
+    }
+    else
+    {
+      throw new RuntimeException("Unexpected Type@setField: " + f.getType().getCanonicalName() + f.getName());
+    }
+  }
+
+  private static void setArrayFieldValue(Field f, Object obj, String type, String[] values) throws IllegalArgumentException, IllegalAccessException 
+  {
+    if("String[]".equals(type) || "string[]".equals(type))
     {
       f.set(obj, values);
     }
-    else if("int".equals(fType))
-    {
-      f.set(obj, Integer.parseInt(values[0]));
-    }
-    else if("Integer".equals(fType))
-    {
-      f.set(obj, new Integer(values[0]));
-    }
-    else if("int[]".equals(fType))
+    else if("int[]".equals(type))
     {
       int[] is = new int[values.length];
       for(int i=0; i<is.length; i++)
@@ -470,15 +504,7 @@ public final class XmlGen
       }
       f.set(obj, is);
     }
-    else if("short".equals(fType))
-    {
-      f.set(obj, Short.parseShort(values[0]));
-    }
-    else if("Short".equals(fType))
-    {
-      f.set(obj, new Short(values[0]));
-    }
-    else if("short[]".equals(fType))
+    else if("short[]".equals(type))
     {
       short[] ss = new short[values.length];
       for(int i=0; i< ss.length; i++)
@@ -487,15 +513,7 @@ public final class XmlGen
       }
       f.set(obj, ss);
     }
-    else if("byte".equals(fType))
-    {
-      f.set(obj, Byte.parseByte(values[0]));
-    }
-    else if("Byte".equals(fType))
-    {
-      f.set(obj, new Byte(values[0]));
-    }
-    else if("byte[]".equals(fType))
+    else if("byte[]".equals(type))
     {
       byte[] bs = new byte[values.length];
       for(int i=0; i< bs.length; i++)
@@ -504,15 +522,7 @@ public final class XmlGen
       }
       f.set(obj, bs);
     }
-    else if("long".equals(fType))
-    {
-      f.set(obj, Long.parseLong(values[0]));
-    }
-    else if("Long".equals(fType))
-    {
-      f.set(obj, new Long(values[0]));
-    }
-    else if("long[]".equals(fType))
+    else if("long[]".equals(type))
     {
       long[] ls = new long[values.length];
       for(int i=0; i< ls.length; i++)
@@ -521,15 +531,7 @@ public final class XmlGen
       }
       f.set(obj, ls);
     }
-    else if("boolean".equals(fType))
-    {
-      f.set(obj, Boolean.parseBoolean(values[0]));
-    }
-    else if("Boolean".equals(fType))
-    {
-      f.set(obj, new Boolean(values[0]));
-    }
-    else if("boolean[]".equals(fType))
+    else if("boolean[]".equals(type))
     {
       boolean[] bs = new boolean[values.length];
       for(int i=0; i< bs.length; i++)
@@ -538,154 +540,102 @@ public final class XmlGen
       }
       f.set(obj, bs);
     }
-    else if("Calendar".equals(fType))
-    {
-      Calendar cal = DatatypeConverter.parseTime(values[0]);
-      f.set(obj, cal);
-    }
     else
     {
-      System.err.println("Unexpected Type@setField: " + f.getType().getCanonicalName() + type + fType);
       throw new RuntimeException("Unexpected Type@setField: " + f.getType().getCanonicalName() + f.getName());
     }
   }
   
-  public static String toXML(String tag, Object obj, String nameSpaceType)
+  public static String toXML(String tag, Object obj) //, String nameSpaceType)
   {
-	if(obj==null)
-	{
-		return "";
-	}
-    Class<?> c = obj.getClass();
-    
-    if(c.isArray())
+    if(obj==null)
     {
-      StringBuffer sb = new StringBuffer();
-      Object[] objs = (Object[]) obj;
-      for(int i=0; i<objs.length; i++)
-      {
-        sb.append(toXML(tag, objs[i], nameSpaceType));
-      }
-      return sb.toString();
+    	return "";
     }
-    if(c == ManagedObjectReference.class)
-    {
-      ManagedObjectReference mor = (ManagedObjectReference) obj;
-      StringBuffer sb = new StringBuffer("<" + tag + " type=\"" + mor.type + "\">");
-      sb.append(mor.val);
-      sb.append("</" + tag + ">");
-      return sb.toString();
-    }
-    else if(c.getCanonicalName().startsWith("java.lang"))
-    { //basic data type
-      return "<" + tag +">" + obj + "</" + tag + ">";
-    }
-    else if(c.isEnum())
-    { // enumeration data type
-      return "<" + tag +">" + obj + "</" + tag + ">";
-    }
-    else if (obj instanceof Calendar) 
-    { 
-    	return "<" + tag + " xsi:type=\"xsd:dateTime\">" + DatatypeConverter.printDateTime((Calendar)obj) + "</" + tag + ">";
-    } 
-    else
-    {
-      StringBuffer sb = new StringBuffer();
-      if(nameSpaceType==null)
-      {
-    	sb.append("<" + tag + ">");
-      }
-      else
-      {
-    	sb.append("<" + tag + " xsi:type=\"" + nameSpaceType + "\">");
-      }
-      
-      Field[] fields = getAllFields(c);
-      
-      for(int i=0; i<fields.length; i++)
-      {
-        Field f = fields[i];
-        String fName = f.getName();
-        
-        Object value  = null;
-        try
-        {
-          value = f.get(obj);
-        } catch (IllegalAccessException iae)
-        {
-          iae.printStackTrace();
-        }
-        if(value==null)
-        {
-          continue;
-        }
-
-        Class<?> clazz = f.getType();
-        if(clazz.isArray())
-        {
-          Object[] values = (Object[]) value;
-          for(int j=0; values!=null && j<values.length; j++)
-          {
-            fieldToXML(sb, fName, clazz.getComponentType().getCanonicalName(), values[j]);
-          }
-        }
-        else
-        {
-          fieldToXML(sb, fName, clazz.getCanonicalName(), value);
-        }
-      }
-      sb.append("</" + tag + ">");
-      return sb.toString();
-    }
+    StringBuffer sb = new StringBuffer();
+    toXML(sb, tag, obj.getClass(), obj);
+    return sb.toString();
   }
-  
-  private static void fieldToXML(StringBuffer sb, String fName, String typeName, Object obj)
-  {
-    if(obj.getClass() == ManagedObjectReference.class)
-    {
-      ManagedObjectReference mor = (ManagedObjectReference) obj;
-      sb.append("<" + fName + " type=\"" + mor.type + "\">");
-      sb.append(mor.val);
-      sb.append("</" + fName + ">");
-      return;
-    }
-    
-    boolean isVimType  = typeName.startsWith(PACKAGE_NAME);
-    String realFieldType = obj.getClass().getCanonicalName();
 
-    if (! isVimType) 
+  private static void toXML(StringBuffer sb, String tagName, Class type, Object obj)
+  {
+  	Class<?> clazz = obj.getClass();
+  	
+	  if(clazz.isArray())
+	  {
+	    Object[] objs = (Object[]) obj;
+	    for(int i=0; i<objs.length; i++)
+	    {
+	      toXML(sb, tagName, type.getComponentType(), objs[i]);
+	    }
+	  }
+	  
+	  // from now on, no array type
+	  else if(clazz == ManagedObjectReference.class)
+	  { //MOR]
+	  	ManagedObjectReference mor = (ManagedObjectReference) obj;
+	    sb.append("<" + tagName + " type=\"" + mor.type + "\">");
+	    sb.append(mor.val);
+	    sb.append("</" + tagName + ">");
+	  }
+	  else if(clazz.getCanonicalName().startsWith("java.lang")) //basic data type
+	  {
+	  	if(clazz!=type)
+	  	{
+	  		sb.append("<" + tagName + " xsi:type=\"" + getXSIType(obj) + "\">");
+	  	}
+	  	else
+	  	{
+	  		sb.append("<" + tagName +">");
+	  	}
+	  	sb.append(obj);
+	  	sb.append("</" + tagName + ">");
+	  }
+	  else if(clazz.isEnum()) //enum data type
     {
-      if(realFieldType.equals(typeName))
-      {
-    	  sb.append("<" + fName + ">");
-      }
-      else
-      {
-    	  sb.append("<" + fName + " xsi:type=\"" + getXSIType(obj) + "\">");
-      }
-      if(typeName.endsWith("Calendar"))
-      {
-    	  sb.append(DatatypeConverter.printDateTime((Calendar)obj));
-      }
-      else
-      {
-    	  sb.append(obj);
-      }
-      sb.append("</" + fName + ">");
-    }
-    else 
-    {
-      if(realFieldType.equals(typeName))
-      {
-    	sb.append(toXML(fName, obj, null));
-      }
-      else
-      {
-    	int lastDot = realFieldType.lastIndexOf(".");
-    	String nameSpaceType = realFieldType.substring(lastDot+1);
-    	sb.append(toXML(fName, obj, nameSpaceType));
-      }
-    }
+	    sb.append("<" + tagName +">" + obj + "</" + tagName + ">");
+	  }
+	  else if (obj instanceof Calendar) 
+	  {
+	    sb.append("<" + tagName + " xsi:type=\"xsd:dateTime\">" + DatatypeConverter.printDateTime((Calendar)obj) + "</" + tagName + ">");
+	  }
+	  else
+	  { // VIM type
+	    if(clazz==type)
+	    {
+	    	sb.append("<" + tagName + ">");
+	    }
+	    else
+	    {
+	    	String nameSpaceType = clazz.getSimpleName();
+	    	sb.append("<" + tagName + " xsi:type=\"" + nameSpaceType + "\">");
+	    }
+	    
+	    Field[] fields = getAllFields(clazz);
+	    
+	    for(int i=0; i<fields.length; i++)
+	    {
+	      Field f = fields[i];
+	      String fName = f.getName();
+	      
+	      Object value  = null;
+	      try
+	      {
+	        value = f.get(obj);
+	      } catch (IllegalAccessException iae)
+	      {
+	        iae.printStackTrace();
+	      }
+	      if(value==null)
+	      {
+	        continue;
+	      }
+	
+	      Class<?> fType = f.getType();
+	      toXML(sb, fName, fType, value);
+	    }
+	    sb.append("</" + tagName + ">");
+	  }
   }
   
   private static String getXSIType(Object obj)
@@ -735,10 +685,7 @@ public final class XmlGen
     ArrayList<Field> al = new ArrayList<Field>();
     getAllFields(c, al);
     fields = new Field[al.size()];
-    for(int i=0; i<al.size(); i++)
-    {
-      fields[i] = (Field) al.get(i);
-    }
+    al.toArray(fields);
     return fields;
   }
   
