@@ -197,7 +197,7 @@ public final class WSClient
 	{
 	  String key = paras[i].getName();
 	  Object obj = paras[i].getValue();
-	  sb.append(XmlGen.toXML(key, obj, null));
+	  sb.append(XmlGen.toXML(key, obj)); //, null));
 	}
 	    
 	sb.append("</" + methodName + ">");
