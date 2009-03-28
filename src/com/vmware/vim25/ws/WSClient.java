@@ -163,7 +163,7 @@ public final class WSClient
     {
       InputStream is = post(soapMsg);
       Document doc = reader.read(is);
-	  root = doc.getRootElement();
+	    root = doc.getRootElement();
     } catch (Exception e) 
     {
       throw new RemoteException("VI SDK invoke exception:" + e);
@@ -188,21 +188,21 @@ public final class WSClient
 
   private String createSoapMessage(String methodName, Argument[] paras)
   {
-	StringBuffer sb = new StringBuffer();
-	sb.append(SOAP_HEADER);
-	    
-	sb.append("<" + methodName + vimNameSpace);
-	
-	for(int i=0; i<paras.length; i++)
-	{
-	  String key = paras[i].getName();
-	  Object obj = paras[i].getValue();
-	  sb.append(XmlGen.toXML(key, obj)); //, null));
-	}
-	    
-	sb.append("</" + methodName + ">");
-	sb.append(SOAP_END);
-	return sb.toString();
+    StringBuffer sb = new StringBuffer();
+    sb.append(SOAP_HEADER);
+
+    sb.append("<" + methodName + vimNameSpace);
+		
+    for(int i=0; i<paras.length; i++)
+    {
+      String key = paras[i].getName();
+      Object obj = paras[i].getValue();
+      sb.append(XmlGen.toXML(key, obj)); //, null));
+    }
+
+    sb.append("</" + methodName + ">");
+    sb.append(SOAP_END);
+    return sb.toString();
   }
   
   public InputStream post(String soapMsg) throws IOException
