@@ -346,6 +346,56 @@ public final class XmlGen
     return mor;
   }
   
+  private static byte[] parseByteArray(String[] values)
+  {
+    byte[] bs = new byte[values.length];
+    for(int i=0; i< bs.length; i++)
+    {
+      bs[i] = Byte.parseByte(values[i]);
+    }
+    return bs;
+  }
+
+  private static long[] parseLongArray(String[] values)
+  {
+	  long[] ls = new long[values.length];
+	  for(int i=0; i< ls.length; i++)
+	  {
+	    ls[i] = Long.parseLong(values[i]);
+	  }
+	  return ls;
+  }
+
+  private static short[] parseShortArray(String[] values)
+  { 
+	  short[] ss = new short[values.length];
+	  for(int i=0; i< ss.length; i++)
+	  {
+	    ss[i] = Short.parseShort(values[i]);
+	  }
+	  return ss;
+  }
+
+  private static int[] parseIntArray(String[] values)
+  { 
+	  int[] is = new int[values.length];
+	  for(int i=0; i<is.length; i++)
+	  {
+	    is[i] = Integer.parseInt(values[i]);
+	  }
+	  return is;
+  }
+
+  private static boolean[] parseBooleanArray(String[] values)
+  { 
+  	boolean[] bs = new boolean[values.length];
+	  for(int i=0; i< bs.length; i++)
+	  {
+	    bs[i] = Boolean.parseBoolean(values[i]);
+	  }
+	  return bs;
+  }
+  
   private static Object parseValue(String type, String[] values) 
   {
     if("String".equals(type) || "string".equals(type))
@@ -362,12 +412,7 @@ public final class XmlGen
     }
     else if("int[]".equals(type))
     {
-      int[] is = new int[values.length];
-      for(int i=0; i<is.length; i++)
-      {
-        is[i] = Integer.parseInt(values[i]);
-      }
-      return is;
+      return parseIntArray(values);
     }
     else if("short".equals(type))
     {
@@ -375,12 +420,7 @@ public final class XmlGen
     }
     else if("short[]".equals(type))
     {
-      short[] ss = new short[values.length];
-      for(int i=0; i< ss.length; i++)
-      {
-        ss[i] = Short.parseShort(values[i]);
-      }
-      return ss;
+      return parseShortArray(values);
     }
     else if("byte".equals(type))
     {
@@ -388,12 +428,7 @@ public final class XmlGen
     }
     else if("byte[]".equals(type))
     {
-      byte[] bs = new byte[values.length];
-      for(int i=0; i< bs.length; i++)
-      {
-        bs[i] = Byte.parseByte(values[i]);
-      }
-      return bs;
+      return parseByteArray(values);
     }
     else if("long".equals(type))
     {
@@ -401,12 +436,7 @@ public final class XmlGen
     }
     else if("long[]".equals(type))
     {
-      long[] ls = new long[values.length];
-      for(int i=0; i< ls.length; i++)
-      {
-        ls[i] = Long.parseLong(values[i]);
-      }
-      return ls;
+      return parseLongArray(values);
     }
     else if("boolean".equals(type))
     {
@@ -414,12 +444,7 @@ public final class XmlGen
     }
     else if("boolean[]".equals(type))
     {
-      boolean[] bs = new boolean[values.length];
-      for(int i=0; i< bs.length; i++)
-      {
-        bs[i] = Boolean.getBoolean(values[i]);
-      }
-      return bs;
+      return parseBooleanArray(values);
     }
     else if("Calendar".equals(type)  || "dateTime".equals(type))
     {
@@ -497,48 +522,23 @@ public final class XmlGen
     }
     else if("int[]".equals(type))
     {
-      int[] is = new int[values.length];
-      for(int i=0; i<is.length; i++)
-      {
-        is[i] = Integer.parseInt(values[i]);
-      }
-      f.set(obj, is);
+      f.set(obj, parseIntArray(values));
     }
     else if("short[]".equals(type))
     {
-      short[] ss = new short[values.length];
-      for(int i=0; i< ss.length; i++)
-      {
-        ss[i] = Short.parseShort(values[i]);
-      }
-      f.set(obj, ss);
+      f.set(obj, parseShortArray(values));
     }
     else if("byte[]".equals(type))
     {
-      byte[] bs = new byte[values.length];
-      for(int i=0; i< bs.length; i++)
-      {
-        bs[i] = Byte.parseByte(values[i]);
-      }
-      f.set(obj, bs);
+      f.set(obj, parseByteArray(values));
     }
     else if("long[]".equals(type))
     {
-      long[] ls = new long[values.length];
-      for(int i=0; i< ls.length; i++)
-      {
-        ls[i] = Long.parseLong(values[i]);
-      }
-      f.set(obj, ls);
+      f.set(obj, parseLongArray(values));
     }
     else if("boolean[]".equals(type))
     {
-      boolean[] bs = new boolean[values.length];
-      for(int i=0; i< bs.length; i++)
-      {
-        bs[i] = Boolean.parseBoolean(values[i]);
-      }
-      f.set(obj, bs);
+      f.set(obj, parseBooleanArray(values));
     }
     else
     {
