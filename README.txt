@@ -33,7 +33,7 @@ http://sourceforge.net/projects/viperltoolkit
 
 WHERE CAN I GET HELP?
 Project Wiki Home: http://vijava.wiki.sourceforge.net/
-VMware SDK forum: http://communities.vmware.com/community/developer/managementapi
+Project Forum: https://sourceforge.net/forum/forum.php?forum_id=826592
 File a bug: https://sourceforge.net/tracker/?group_id=228007
 
 COPYRIGHT & LICENSE:
