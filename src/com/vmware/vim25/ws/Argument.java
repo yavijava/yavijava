@@ -37,11 +37,13 @@ package com.vmware.vim25.ws;
 final public class Argument
 {
   private String name;
+  private String type;
   private Object value;
   
-  public Argument(String name, Object value)
+  public Argument(String name, String type, Object value)
   {
     this.name = name;
+    this.type = type;
     this.value = value;
   }
   public String getName()
@@ -60,4 +62,12 @@ final public class Argument
   {
     this.value = value;
   }
+	public String getType()
+	{
+		return type;
+	}
+	public void setType(String type)
+	{
+		this.type = type;
+	}
 }
