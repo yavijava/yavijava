@@ -107,7 +107,7 @@ public final class WSClient
   public Object invoke(ManagedObjectReference mor, String methodName, Argument[] paras, String returnType) throws IOException
   {
     Argument[] fullParas = new Argument[paras.length + 1];
-    fullParas[0] = new Argument("_this", mor);
+    fullParas[0] = new Argument("_this", "ManagedObjectReference", mor);
     System.arraycopy(paras, 0, fullParas, 1, paras.length);
     return invoke(methodName, fullParas, returnType);
   }
@@ -196,8 +196,9 @@ public final class WSClient
     for(int i=0; i<paras.length; i++)
     {
       String key = paras[i].getName();
+      String type = paras[i].getType();
       Object obj = paras[i].getValue();
-      sb.append(XmlGen.toXML(key, obj)); //, null));
+      sb.append(XmlGen.toXML(key, type, obj)); //, null));
     }
 
     sb.append("</" + methodName + ">");

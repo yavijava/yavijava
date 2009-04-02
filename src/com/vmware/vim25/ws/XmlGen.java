@@ -59,7 +59,7 @@ public final class XmlGen
   private static String PACKAGE_NAME = "com.vmware.vim25";
   private static Namespace XSI = new Namespace("xsi", "http://www.w3.org/2001/XMLSchema-instance");
   private static QName XSI_TYPE = new QName("type", XSI);
-  private static String[] BASIC_TYPES = new String[] {"String", "int", "short", "long", "byte", "boolean", "java.util.Calendar"};
+  private static String[] BASIC_TYPES = new String[] {"String", "int", "short", "long", "byte", "boolean", "Calendar"};
 
   static
   {
@@ -173,7 +173,7 @@ public final class XmlGen
   
   private final static Map<String, Class> VimClasses = new HashMap<String, Class>();
   
-  private final static Class getVimClass(String type) throws ClassNotFoundException
+  private final static Class getVimClass(String type) 
   {
   	if(VimClasses.containsKey(type))
   	{
@@ -181,9 +181,25 @@ public final class XmlGen
   	}
   	else
   	{
-  		Class clazz = Class.forName(PACKAGE_NAME + "." + type);
-  		VimClasses.put(type, clazz);
-  		return clazz;
+  		try
+  		{
+  			Class clazz = null;
+      	if(! type.endsWith("[]"))
+      	{
+      	  clazz = Class.forName(PACKAGE_NAME + "." + type);
+      	}
+      	else
+      	{
+      		type = type.substring(0, type.length()-2);
+      		clazz = Array.newInstance(getVimClass(type), 0).getClass();
+      	}
+  			VimClasses.put(type, clazz);
+  			return clazz;
+  		} catch (ClassNotFoundException cnfe)
+  		{
+  			cnfe.printStackTrace();
+  			return null;
+  		}
   	}
   }
   
@@ -461,7 +477,7 @@ public final class XmlGen
     {
       return parseBooleanArray(values);
     }
-    else if("java.util.Calendar".equals(type)  || "dateTime".equals(type))
+    else if("Calendar".equals(type)  || "dateTime".equals(type))
     {
       Calendar cal = DatatypeConverter.parseTime(values[0]);
       return cal;
@@ -561,14 +577,22 @@ public final class XmlGen
     }
   }
   
-  public static String toXML(String tag, Object obj) //, String nameSpaceType)
+  public static String toXML(String tag, String type, Object obj)
   {
     if(obj==null)
     {
     	return "";
     }
     StringBuffer sb = new StringBuffer();
-    toXML(sb, tag, obj.getClass(), obj);
+    if(isBasicType(type))
+    {
+    	toXML(sb, tag, obj.getClass(), obj);
+    }
+    else
+    {
+    	Class clazz = getVimClass(type);
+    	toXML(sb, tag, clazz, obj);
+    }
     return sb.toString();
   }
 
