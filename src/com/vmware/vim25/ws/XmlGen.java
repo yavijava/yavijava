@@ -59,7 +59,7 @@ public final class XmlGen
   private static String PACKAGE_NAME = "com.vmware.vim25";
   private static Namespace XSI = new Namespace("xsi", "http://www.w3.org/2001/XMLSchema-instance");
   private static QName XSI_TYPE = new QName("type", XSI);
-  private static String[] BASIC_TYPES = new String[] {"String", "int", "short", "long", "byte", "boolean", "Calendar"};
+  private static String[] BASIC_TYPES = new String[] {"String", "int", "short", "long", "byte", "boolean", "java.util.Calendar"};
 
   static
   {
@@ -95,10 +95,28 @@ public final class XmlGen
   {
     List<Element> subNodes = root.elements();
     
-    if(type.equals("ManagedObjectReference"))
+    if(subNodes.size()==0)
     {
-    	Element e = subNodes.get(0);
-    	return createMOR(e.attributeValue("type"), e.getText());	
+      return null;
+    }
+    
+    if(type.startsWith("ManagedObjectReference"))
+    {
+    	if(! type.endsWith("[]"))
+    	{
+    		Element e = subNodes.get(0);
+    		return createMOR(e.attributeValue("type"), e.getText());
+    	}
+    	else
+    	{
+        ManagedObjectReference[] mos = new ManagedObjectReference[subNodes.size()];
+        for(int i=0; i<subNodes.size(); i++)
+        {
+          Element elem = (Element) subNodes.get(i);
+          mos[i] = XmlGen.createMOR(elem.attributeValue("type"), elem.getText());
+        }
+        return mos;
+    	}
     }
     else if(isBasicType(type))
     {
@@ -112,17 +130,14 @@ public final class XmlGen
     else if(type.endsWith("[]"))
     { // array type
       String singleTypeName = type.substring(0, type.length()-2);
-      if(subNodes.size()>0)
-      {
-    	  Element e = subNodes.get(0);
-    	  String xsiType = e.attributeValue(XSI_TYPE);
-    	  if(xsiType!= null)
-    	  {
-    		  singleTypeName = xsiType;
-    	  }
-      }
-      
-      Object ao = Array.newInstance(Class.forName(PACKAGE_NAME + "." + singleTypeName), subNodes.size());
+   	  Element e = subNodes.get(0);
+   	  String xsiType = e.attributeValue(XSI_TYPE);
+   	  if(xsiType!= null)
+   	  {
+   		  singleTypeName = xsiType;
+   	  }
+      Class clazz = getVimClass(singleTypeName);
+      Object ao = Array.newInstance(clazz, subNodes.size());
       for(int i=0; i<subNodes.size(); i++)
       {
         Object o = fromXml(getVimClass(singleTypeName), subNodes.get(i));
@@ -446,7 +461,7 @@ public final class XmlGen
     {
       return parseBooleanArray(values);
     }
-    else if("Calendar".equals(type)  || "dateTime".equals(type))
+    else if("java.util.Calendar".equals(type)  || "dateTime".equals(type))
     {
       Calendar cal = DatatypeConverter.parseTime(values[0]);
       return cal;
