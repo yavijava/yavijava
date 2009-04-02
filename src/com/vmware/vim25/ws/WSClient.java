@@ -72,7 +72,6 @@ public final class WSClient
   private URL baseUrl = null;
   private String cookie = null;
   private String vimNameSpace = null;
-  private SAXReader reader = new SAXReader();
   
   public WSClient(String serverUrl) throws MalformedURLException 
   {
@@ -162,6 +161,7 @@ public final class WSClient
     try 
     {
       InputStream is = post(soapMsg);
+      SAXReader reader = new SAXReader();
       Document doc = reader.read(is);
 	    root = doc.getRootElement();
     } catch (Exception e) 
