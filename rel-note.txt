@@ -2,7 +2,7 @@ What is new in Version 2.0
 
 1. High performance Web Service Engine to replace AXIS.
 2. POJO Data Objects and Java Enum Types 
-3. REST Client API
+3. REST Client API (experimental)
 4. Samples using the APIs
 
 
