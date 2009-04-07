@@ -228,7 +228,16 @@ public final class WSClient
     out.write(soapMsg);
     out.close();
 
-    InputStream is = postCon.getInputStream();
+    InputStream is;
+    
+    try
+    {
+    	is = postCon.getInputStream();
+    } 
+    catch(IOException ioe)
+    {
+    	is = postCon.getErrorStream();
+    }
     
     if(cookie==null)
     {
