@@ -119,19 +119,24 @@ public final class WSClient
     Element resp = (Element) body.elements().get(0);
     
     if(resp.getName().indexOf("Fault")!=-1)
-    {   
+    {
+    	SoapFaultException sfe = null;
       try 
       {
-        SoapFaultException sfe = XmlGen.parseSoapFault(resp);
-        if(sfe.detail!=null)
-        {
-          throw (RemoteException) sfe.detail;
-        }
-      } catch (Exception e) 
+        sfe = XmlGen.parseSoapFault(resp);
+      } 
+      catch (Exception e) 
       {
         throw new RemoteException("Exception in WSClient.invoke:", e);
       }
-      return null;
+      if(sfe!=null && sfe.detail!=null)
+      {
+        throw (RemoteException) sfe.detail;
+      }
+      else
+      {
+      	throw sfe;
+      }
     }
     else
     {
