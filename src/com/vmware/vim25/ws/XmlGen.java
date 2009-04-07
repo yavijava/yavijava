@@ -189,8 +189,8 @@ public final class XmlGen
       	}
       	else
       	{
-      		type = type.substring(0, type.length()-2);
-      		clazz = Array.newInstance(getVimClass(type), 0).getClass();
+      		String compType = type.substring(0, type.length()-2);
+      		clazz = Array.newInstance(getVimClass(compType), 0).getClass();
       	}
   			VimClasses.put(type, clazz);
   			return clazz;
