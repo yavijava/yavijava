@@ -60,7 +60,6 @@ public class ExtensionManager extends ManagedObject
 		return (Extension[])getCurrentProperty("extensionList");
 	}
 
-
 	/**
 	 * Un-register an existing plugin
 	 * If <code>keyStr</code> is null then a <code>NullPointerException</code>
@@ -75,7 +74,7 @@ public class ExtensionManager extends ManagedObject
 	public void unregisterExtension(String keyStr) throws NotFound, RuntimeFault, RemoteException
 	{
 		if (keyStr == null) {
-		    throw new NullPointerException();
+		  throw new NullPointerException();
 		}
 		getVimService().unregisterExtension(getMOR(), keyStr);
 	}
@@ -93,8 +92,11 @@ public class ExtensionManager extends ManagedObject
 	public void updateExtension(Extension extension) throws NotFound, RuntimeFault, RemoteException
 	{
 		if (extension == null) {
-		    throw new NullPointerException();
+		  throw new NullPointerException();
 		}
+		
+		encodeUrl(extension);
+
 		getVimService().updateExtension(getMOR(), extension);
 	}
 
@@ -110,8 +112,9 @@ public class ExtensionManager extends ManagedObject
 	public void registerExtension(Extension extension) throws RuntimeFault, RemoteException
 	{
 		if (extension == null) {
-		    throw new NullPointerException();
+		  throw new NullPointerException();
 		}
+		encodeUrl(extension);
 		getVimService().registerExtension(getMOR(), extension);
 	}
 	
@@ -133,27 +136,26 @@ public class ExtensionManager extends ManagedObject
 		}
 		return getVimService().findExtension(getMOR(), keyStr);
 	}
-
-	/**
-	 * Print out information of all the plugins to stdout
-	 * @throws RemoteException if something is wrong with web service call, 
-	 * either because of the web service itself, or because of the service
-	 * provider unable to handle the request. 
-	 */
-	public void printAllExtensions() 
+	
+	private void encodeUrl(Extension extension)
 	{
-		Extension[] exts = getExtensionList();
-
-		System.out.println("There are totally " + exts.length + " plugin(s) registered.");
-		
-		for(int i=0; exts!=null && i<exts.length; i++)
+		// replace all the & in the url with &amp;
+		for(int i=0; extension.client!=null && i<extension.client.length; i++)
 		{
-			System.out.println("\n ---- Plugin # " + (i+1) + " ---- ");
-			System.out.println("Key: " + exts[i].getKey());
-			System.out.println("Version: " + exts[i].getVersion());
-			System.out.println("Registration Time: " + exts[i].getLastHeartbeatTime().getTime());
-			System.out.println("Configuration URL: " + exts[i].getServer()[0].getUrl());
+			ExtensionClientInfo eci = extension.client[i];
+			if(eci.url.indexOf("&")!=-1)
+			{
+				eci.url = eci.url.replaceAll("&", "&amp;");
+			}
+		}
+		for(int i=0; extension.server!=null && i<extension.server.length; i++)
+		{
+			ExtensionServerInfo esi = extension.server[i];
+			if(esi.url.indexOf("&")!=-1)
+			{
+				esi.url = esi.url.replaceAll("&", "&amp;");
+			}
 		}
 	}
-	
+
 }
