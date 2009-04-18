@@ -73,7 +73,7 @@ public class FileManager extends ManagedObject
 	public Task moveDatastoreFile_Task(String sourceName, Datacenter sourceDatacenter, 
 			String destinationName, Datacenter destinationDatacenter, boolean force) throws FileFault, InvalidDatastore, RuntimeFault, RemoteException 
 	{
-		ManagedObjectReference taskMor = getVimService().copyDatastoreFile_Task(getMOR(), 
+		ManagedObjectReference taskMor = getVimService().moveDatastoreFile_Task(getMOR(), 
 				sourceName, sourceDatacenter==null? null : sourceDatacenter.getMOR(), 
 				destinationName, destinationDatacenter==null? null : destinationDatacenter.getMOR(), force);
 		return new Task(getServerConnection(), taskMor);
