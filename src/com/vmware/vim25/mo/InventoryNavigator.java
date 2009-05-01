@@ -127,7 +127,7 @@ public class InventoryNavigator
 
 		ObjectContent[] ocs = retrieveObjectContents(typeinfo, true);
 
-		if (ocs.length == 0) 
+		if (ocs==null || ocs.length == 0) 
 		{
 			return null;
 		}
