@@ -4,12 +4,12 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
+import com.vmware.vim.cf.CacheInstance;
 import com.vmware.vim25.Description;
 import com.vmware.vim25.Extension;
 import com.vmware.vim25.ExtensionClientInfo;
 import com.vmware.vim25.ExtensionServerInfo;
 import com.vmware.vim25.VirtualMachineSummary;
-import com.vmware.vim25.cf.CacheInstance;
 import com.vmware.vim25.mo.Folder;
 import com.vmware.vim25.mo.InventoryNavigator;
 import com.vmware.vim25.mo.ManagedEntity;
