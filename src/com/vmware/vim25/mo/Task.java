@@ -86,6 +86,17 @@ public class Task extends ExtensibleManagedObject
 		getVimService().updateProgress(getMOR(), percentDone);
 	}
 	
+	/**
+	 * If there is another thread or client calling waitForUpdate(), the behavior of this
+	 * method is not predictable. This usually happens with VI Client plug-in which shares
+	 * the session with the VI Client which use waitForUpdate() extensively.
+	 * The safer way is to poll the related info.state and check its value.
+	 * @return
+	 * @throws InvalidProperty
+	 * @throws RuntimeFault
+	 * @throws RemoteException
+	 * @deprecated
+	 */
 	public String waitForMe() throws InvalidProperty, RuntimeFault, RemoteException  
 	{   
 		
