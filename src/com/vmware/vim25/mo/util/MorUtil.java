@@ -84,15 +84,6 @@ public class MorUtil
 		return (ManagedEntity) createExactManagedObject(sc, mor);
 	}
 	
-//	public String methodFaultToString(MethodFault mf) 
-//	{
-//		return "Type : " + mf.getClass().getName() + 
-//			"\n Actor : " + mf.getFaultActor() + 
-//		    "\n Code : " + mf.getFaultNode() +
-//		    "\n Reason : " + mf.getFaultReason() +
-//		    "\n Fault String : " + mf.getFaultString();
-//	}
-//
 	public static ManagedEntity[] createManagedEntities(ServerConnection sc, ManagedObjectReference[] mors) 
 	{
 		ManagedEntity[] mes = new ManagedEntity[mors.length];
