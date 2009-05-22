@@ -38,6 +38,8 @@ public enum ScsiLunState
   unknownState ("unknownState"),
   ok ("ok"),
   error ("error"),
+  off ("off"),
+  quiesced ("quiesced"),
   degraded ("degraded"),
   lostCommunication ("lostCommunication");
 

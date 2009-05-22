@@ -37,7 +37,8 @@ public enum VirtualMachineConfigSpecNpivWwnOp
 {
   generate ("generate"),
   set ("set"),
-  remove ("remove");
+  remove ("remove"),
+  extend ("extend");
 
   private final String val;
   private VirtualMachineConfigSpecNpivWwnOp(String val)

@@ -58,6 +58,16 @@ public class ServiceContent extends DynamicData
   public ManagedObjectReference fileManager;
   public ManagedObjectReference virtualDiskManager;
   public ManagedObjectReference virtualizationManager;
+  public ManagedObjectReference snmpSystem;
+  public ManagedObjectReference vmProvisioningChecker;
+  public ManagedObjectReference vmCompatibilityChecker;
+  public ManagedObjectReference ovfManager;
+  public ManagedObjectReference ipPoolManager;
+  public ManagedObjectReference dvSwitchManager;
+  public ManagedObjectReference hostProfileManager;
+  public ManagedObjectReference clusterProfileManager;
+  public ManagedObjectReference complianceManager;
+  public ManagedObjectReference localizationManager;
 
   public ManagedObjectReference getRootFolder()
   {
@@ -174,6 +184,56 @@ public class ServiceContent extends DynamicData
     return this.virtualizationManager;
   }
 
+  public ManagedObjectReference getSnmpSystem()
+  {
+    return this.snmpSystem;
+  }
+
+  public ManagedObjectReference getVmProvisioningChecker()
+  {
+    return this.vmProvisioningChecker;
+  }
+
+  public ManagedObjectReference getVmCompatibilityChecker()
+  {
+    return this.vmCompatibilityChecker;
+  }
+
+  public ManagedObjectReference getOvfManager()
+  {
+    return this.ovfManager;
+  }
+
+  public ManagedObjectReference getIpPoolManager()
+  {
+    return this.ipPoolManager;
+  }
+
+  public ManagedObjectReference getDvSwitchManager()
+  {
+    return this.dvSwitchManager;
+  }
+
+  public ManagedObjectReference getHostProfileManager()
+  {
+    return this.hostProfileManager;
+  }
+
+  public ManagedObjectReference getClusterProfileManager()
+  {
+    return this.clusterProfileManager;
+  }
+
+  public ManagedObjectReference getComplianceManager()
+  {
+    return this.complianceManager;
+  }
+
+  public ManagedObjectReference getLocalizationManager()
+  {
+    return this.localizationManager;
+  }
+
   public void setRootFolder(ManagedObjectReference rootFolder)
   {
     this.rootFolder=rootFolder;
@@ -287,5 +347,55 @@ public class ServiceContent extends DynamicData
   public void setVirtualizationManager(ManagedObjectReference virtualizationManager)
   {
     this.virtualizationManager=virtualizationManager;
+  }
+
+  public void setSnmpSystem(ManagedObjectReference snmpSystem)
+  {
+    this.snmpSystem=snmpSystem;
+  }
+
+  public void setVmProvisioningChecker(ManagedObjectReference vmProvisioningChecker)
+  {
+    this.vmProvisioningChecker=vmProvisioningChecker;
+  }
+
+  public void setVmCompatibilityChecker(ManagedObjectReference vmCompatibilityChecker)
+  {
+    this.vmCompatibilityChecker=vmCompatibilityChecker;
+  }
+
+  public void setOvfManager(ManagedObjectReference ovfManager)
+  {
+    this.ovfManager=ovfManager;
+  }
+
+  public void setIpPoolManager(ManagedObjectReference ipPoolManager)
+  {
+    this.ipPoolManager=ipPoolManager;
+  }
+
+  public void setDvSwitchManager(ManagedObjectReference dvSwitchManager)
+  {
+    this.dvSwitchManager=dvSwitchManager;
+  }
+
+  public void setHostProfileManager(ManagedObjectReference hostProfileManager)
+  {
+    this.hostProfileManager=hostProfileManager;
+  }
+
+  public void setClusterProfileManager(ManagedObjectReference clusterProfileManager)
+  {
+    this.clusterProfileManager=clusterProfileManager;
+  }
+
+  public void setComplianceManager(ManagedObjectReference complianceManager)
+  {
+    this.complianceManager=complianceManager;
+  }
+
+  public void setLocalizationManager(ManagedObjectReference localizationManager)
+  {
+    this.localizationManager=localizationManager;
   }
 }

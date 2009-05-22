@@ -28,6 +28,7 @@ POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
 
 package com.vmware.vim25;
+import java.util.Calendar;
 
 /**
 @author Steve Jin (sjin@vmware.com)
@@ -38,15 +39,19 @@ public class VirtualMachineRuntimeInfo extends DynamicData
   public ManagedObjectReference host;
   public VirtualMachineConnectionState connectionState;
   public VirtualMachinePowerState powerState;
+  public VirtualMachineFaultToleranceState faultToleranceState;
   public boolean toolsInstallerMounted;
-  public java.util.Calendar suspendTime;
-  public java.util.Calendar bootTime;
+  public Calendar suspendTime;
+  public Calendar bootTime;
   public Long suspendInterval;
   public VirtualMachineQuestionInfo question;
   public Long memoryOverhead;
   public Integer maxCpuUsage;
   public Integer maxMemoryUsage;
   public int numMksConnections;
+  public VirtualMachineRecordReplayState recordReplayState;
+  public Boolean cleanPowerOff;
+  public String needSecondaryReason;
 
   public ManagedObjectReference getHost()
   {
@@ -63,17 +68,22 @@ public class VirtualMachineRuntimeInfo extends DynamicData
     return this.powerState;
   }
 
+  public VirtualMachineFaultToleranceState getFaultToleranceState()
+  {
+    return this.faultToleranceState;
+  }
+
   public boolean isToolsInstallerMounted()
   {
     return this.toolsInstallerMounted;
   }
 
-  public java.util.Calendar getSuspendTime()
+  public Calendar getSuspendTime()
   {
     return this.suspendTime;
   }
 
-  public java.util.Calendar getBootTime()
+  public Calendar getBootTime()
   {
     return this.bootTime;
   }
@@ -108,6 +118,21 @@ public class VirtualMachineRuntimeInfo extends DynamicData
     return this.numMksConnections;
   }
 
+  public VirtualMachineRecordReplayState getRecordReplayState()
+  {
+    return this.recordReplayState;
+  }
+
+  public Boolean getCleanPowerOff()
+  {
+    return this.cleanPowerOff;
+  }
+
+  public String getNeedSecondaryReason()
+  {
+    return this.needSecondaryReason;
+  }
+
   public void setHost(ManagedObjectReference host)
   {
     this.host=host;
@@ -123,17 +148,22 @@ public class VirtualMachineRuntimeInfo extends DynamicData
     this.powerState=powerState;
   }
 
+  public void setFaultToleranceState(VirtualMachineFaultToleranceState faultToleranceState)
+  {
+    this.faultToleranceState=faultToleranceState;
+  }
+
   public void setToolsInstallerMounted(boolean toolsInstallerMounted)
   {
     this.toolsInstallerMounted=toolsInstallerMounted;
   }
 
-  public void setSuspendTime(java.util.Calendar suspendTime)
+  public void setSuspendTime(Calendar suspendTime)
   {
     this.suspendTime=suspendTime;
   }
 
-  public void setBootTime(java.util.Calendar bootTime)
+  public void setBootTime(Calendar bootTime)
   {
     this.bootTime=bootTime;
   }
@@ -166,5 +196,20 @@ public class VirtualMachineRuntimeInfo extends DynamicData
   public void setNumMksConnections(int numMksConnections)
   {
     this.numMksConnections=numMksConnections;
+  }
+
+  public void setRecordReplayState(VirtualMachineRecordReplayState recordReplayState)
+  {
+    this.recordReplayState=recordReplayState;
+  }
+
+  public void setCleanPowerOff(Boolean cleanPowerOff)
+  {
+    this.cleanPowerOff=cleanPowerOff;
+  }
+
+  public void setNeedSecondaryReason(String needSecondaryReason)
+  {
+    this.needSecondaryReason=needSecondaryReason;
   }
 }

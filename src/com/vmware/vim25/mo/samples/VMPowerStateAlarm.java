@@ -100,13 +100,13 @@ public class VMPowerStateAlarm
 	
 	static StateAlarmExpression createStateAlarmExpression()
 	{   
-		StateAlarmExpression sae = new StateAlarmExpression();
-		sae.operator = StateAlarmOperator.isEqual;
-		sae.type = "VirtualMachine"; //type
-		sae.statePath = "runtime.powerState"; //state path
-		sae.red = "poweredOff"; //red
-
-		return sae;
+	  StateAlarmExpression sae = new StateAlarmExpression();
+	  sae.setOperator(StateAlarmOperator.isEqual);
+	  sae.setRed("poweredOff");
+	  sae.setYellow(null);
+	  sae.setStatePath("runtime.powerState");
+	  sae.setType("VirtualMachine");
+	  return sae;
 	}
    
 	static MethodAction createPowerOnAction() 

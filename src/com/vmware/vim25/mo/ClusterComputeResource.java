@@ -60,6 +60,14 @@ public class ClusterComputeResource extends ComputeResource
 		return (ClusterConfigInfo) getCurrentProperty("configuration");
 	}
 	
+	/**
+	 * @since 4.0
+	 */
+	public ClusterDrsFaults[] getDrsFault()
+	{
+		return (ClusterDrsFaults[]) getCurrentProperty("drsFault");
+	}
+	
 	public ClusterDrsRecommendation[] getDrsRecommendation()
 	{
 		return (ClusterDrsRecommendation[]) getCurrentProperty("drsRecommendation");
@@ -75,9 +83,16 @@ public class ClusterComputeResource extends ComputeResource
 		return (ClusterRecommendation[]) getCurrentProperty("recommendation");
 	}
 
+	// SDK 2.5 signature for back compatibility
 	public Task addHost_Task(HostConnectSpec spec, boolean asConnected, ResourcePool resourcePool) throws InvalidLogin, HostConnectFault, RuntimeFault, RemoteException  
 	{
-		ManagedObjectReference taskMOR = getVimService().addHost_Task(getMOR(), spec, asConnected, resourcePool==null? null : resourcePool.getMOR());
+		return addHost_Task(spec, asConnected, resourcePool, null);
+	}
+
+	// new SDK 4.0 signature
+	public Task addHost_Task(HostConnectSpec spec, boolean asConnected, ResourcePool resourcePool, String license) throws InvalidLogin, HostConnectFault, RuntimeFault, RemoteException  
+	{
+		ManagedObjectReference taskMOR = getVimService().addHost_Task(getMOR(), spec, asConnected, resourcePool==null? null : resourcePool.getMOR(), license);
 		return new Task(getServerConnection(), taskMOR);
 	}
 	
@@ -125,5 +140,12 @@ public class ClusterComputeResource extends ComputeResource
 	{
 		getVimService().refreshRecommendation(getMOR());
 	}
-
+	
+	/**
+	 * @since 4.0
+	 */
+	public ClusterDasAdvancedRuntimeInfo retrieveDasAdvancedRuntimeInfo() throws RuntimeFault, RemoteException
+	{
+		return getVimService().retrieveDasAdvancedRuntimeInfo(getMOR());
+	}
 }

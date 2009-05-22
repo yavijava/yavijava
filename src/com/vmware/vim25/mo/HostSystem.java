@@ -182,6 +182,14 @@ public class HostSystem extends ManagedEntity
 		getVimService().updateSystemResources(getMOR(), resourceInfo);
 	}
 	
+	/**
+	 * @since 4.0
+	 */
+	public void updateIpmi(HostIpmiInfo ipmiInfo) throws InvalidIpmiLoginInfo, InvalidIpmiMacAddress, RuntimeFault, RemoteException
+	{
+		getVimService().updateIpmi(getMOR(), ipmiInfo);
+	}
+	
 	private HostConfigManager getConfigManager() throws InvalidProperty, RuntimeFault, RemoteException 
 	{
 		if(configManager==null)
@@ -239,6 +247,34 @@ public class HostSystem extends ManagedEntity
 				getConfigManager().getFirmwareSystem());
 	}
 
+	/** @since SDK4.0 */
+	public HostKernelModuleSystem getHostKernelModuleSystem() throws InvalidProperty, RuntimeFault, RemoteException 
+	{
+		return (HostKernelModuleSystem) MorUtil.createExactManagedObject(getServerConnection(),
+				getConfigManager().getKernelModuleSystem());
+	}
+
+	/** @since SDK4.0 */
+	public LicenseManager getLicenseManager() throws InvalidProperty, RuntimeFault, RemoteException 
+	{
+		return (LicenseManager) MorUtil.createExactManagedObject(getServerConnection(),
+				getConfigManager().getLicenseManager());
+	}
+	
+	/** @since SDK4.0 */
+	public HostPciPassthruSystem getHostPciPassthruSystem() throws InvalidProperty, RuntimeFault, RemoteException 
+	{
+		return (HostPciPassthruSystem) MorUtil.createExactManagedObject(getServerConnection(),
+				getConfigManager().getPciPassthruSystem());
+	}
+
+	/** @since SDK4.0 */
+	public HostVirtualNicManager getHostVirtualNicManager() throws InvalidProperty, RuntimeFault, RemoteException 
+	{
+		return (HostVirtualNicManager) MorUtil.createExactManagedObject(getServerConnection(),
+				getConfigManager().getVirtualNicManager());
+	}
+
 	public HostHealthStatusSystem getHealthStatusSystem() throws InvalidProperty, RuntimeFault, RemoteException 
 	{
 		return (HostHealthStatusSystem) MorUtil.createExactManagedObject(getServerConnection(),
@@ -287,10 +323,10 @@ public class HostSystem extends ManagedEntity
 				getConfigManager().getStorageSystem());
 	}
 	
+	/** @deprecated as of SDK 4.0, use getHostVirtualNicManager instead */
 	public HostVMotionSystem getHostVMotionSystem() throws InvalidProperty, RuntimeFault, RemoteException 
 	{
 		return (HostVMotionSystem) MorUtil.createExactManagedObject(getServerConnection(),
 				getConfigManager().getVmotionSystem());
 	}
-	
 }

@@ -38,6 +38,8 @@ public class MethodFault extends java.rmi.RemoteException
 {
   public String dynamicType;
   public DynamicProperty[] dynamicProperty;
+  public LocalizedMethodFault faultCause;
+  public LocalizableMessage[] faultMessage;
 
   public String getDynamicType()
   {
@@ -49,6 +51,16 @@ public class MethodFault extends java.rmi.RemoteException
     return this.dynamicProperty;
   }
 
+  public LocalizedMethodFault getFaultCause()
+  {
+    return this.faultCause;
+  }
+
+  public LocalizableMessage[] getFaultMessage()
+  {
+    return this.faultMessage;
+  }
+
   public void setDynamicType(String dynamicType)
   {
     this.dynamicType=dynamicType;
@@ -57,5 +69,15 @@ public class MethodFault extends java.rmi.RemoteException
   public void setDynamicProperty(DynamicProperty[] dynamicProperty)
   {
     this.dynamicProperty=dynamicProperty;
+  }
+
+  public void setFaultCause(LocalizedMethodFault faultCause)
+  {
+    this.faultCause=faultCause;
+  }
+
+  public void setFaultMessage(LocalizableMessage[] faultMessage)
+  {
+    this.faultMessage=faultMessage;
   }
 }

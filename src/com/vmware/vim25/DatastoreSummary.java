@@ -40,6 +40,7 @@ public class DatastoreSummary extends DynamicData
   public String url;
   public long capacity;
   public long freeSpace;
+  public Long uncommitted;
   public boolean accessible;
   public Boolean multipleHostAccess;
   public String type;
@@ -67,6 +68,11 @@ public class DatastoreSummary extends DynamicData
   public long getFreeSpace()
   {
     return this.freeSpace;
+  }
+
+  public Long getUncommitted()
+  {
+    return this.uncommitted;
   }
 
   public boolean isAccessible()
@@ -107,6 +113,11 @@ public class DatastoreSummary extends DynamicData
   public void setFreeSpace(long freeSpace)
   {
     this.freeSpace=freeSpace;
+  }
+
+  public void setUncommitted(Long uncommitted)
+  {
+    this.uncommitted=uncommitted;
   }
 
   public void setAccessible(boolean accessible)

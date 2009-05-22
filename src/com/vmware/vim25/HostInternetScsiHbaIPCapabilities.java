@@ -41,6 +41,10 @@ public class HostInternetScsiHbaIPCapabilities extends DynamicData
   public boolean defaultGatewaySettable;
   public boolean primaryDnsServerAddressSettable;
   public boolean alternateDnsServerAddressSettable;
+  public Boolean ipv6Supported;
+  public Boolean arpRedirectSettable;
+  public Boolean mtuSettable;
+  public Boolean hostNameAsTargetAddress;
 
   public boolean isAddressSettable()
   {
@@ -72,6 +76,26 @@ public class HostInternetScsiHbaIPCapabilities extends DynamicData
     return this.alternateDnsServerAddressSettable;
   }
 
+  public Boolean getIpv6Supported()
+  {
+    return this.ipv6Supported;
+  }
+
+  public Boolean getArpRedirectSettable()
+  {
+    return this.arpRedirectSettable;
+  }
+
+  public Boolean getMtuSettable()
+  {
+    return this.mtuSettable;
+  }
+
+  public Boolean getHostNameAsTargetAddress()
+  {
+    return this.hostNameAsTargetAddress;
+  }
+
   public void setAddressSettable(boolean addressSettable)
   {
     this.addressSettable=addressSettable;
@@ -100,5 +124,25 @@ public class HostInternetScsiHbaIPCapabilities extends DynamicData
   public void setAlternateDnsServerAddressSettable(boolean alternateDnsServerAddressSettable)
   {
     this.alternateDnsServerAddressSettable=alternateDnsServerAddressSettable;
+  }
+
+  public void setIpv6Supported(Boolean ipv6Supported)
+  {
+    this.ipv6Supported=ipv6Supported;
+  }
+
+  public void setArpRedirectSettable(Boolean arpRedirectSettable)
+  {
+    this.arpRedirectSettable=arpRedirectSettable;
+  }
+
+  public void setMtuSettable(Boolean mtuSettable)
+  {
+    this.mtuSettable=mtuSettable;
+  }
+
+  public void setHostNameAsTargetAddress(Boolean hostNameAsTargetAddress)
+  {
+    this.hostNameAsTargetAddress=hostNameAsTargetAddress;
   }
 }

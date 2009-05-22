@@ -54,6 +54,30 @@ public class AlarmManager extends ManagedObject
 	{
 		return (AlarmDescription) this.getCurrentProperty("description");
 	}
+
+	/**
+	 * @since 4.0
+	 */
+	public void acknowledgeAlarm(Alarm alarm, ManagedEntity entity) throws RuntimeFault, RemoteException
+	{
+		getVimService().acknowledgeAlarm(getMOR(), alarm.getMOR(), entity.getMOR());
+	}
+	
+	/**
+	 * @since 4.0
+	 */
+	public boolean areAlarmActionsEnabled(ManagedEntity entity) throws RuntimeFault, RemoteException
+	{
+		return getVimService().areAlarmActionsEnabled(getMOR(), entity.getMOR());
+	}
+
+	/**
+	 * @since 4.0
+	 */
+	public void enableAlarmActions(ManagedEntity entity, boolean enabled) throws RuntimeFault, RemoteException
+	{
+		getVimService().enableAlarmActions(getMOR(), entity.getMOR(), enabled);
+	}
 	
 	public Alarm createAlarm(ManagedEntity me, AlarmSpec as) throws InvalidName, DuplicateName, RuntimeFault, RemoteException  
 	{

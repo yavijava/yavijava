@@ -36,6 +36,7 @@ package com.vmware.vim25;
 public class EventDescriptionEventDetail extends DynamicData
 {
   public String key;
+  public String description;
   public String category;
   public String formatOnDatacenter;
   public String formatOnComputeResource;
@@ -46,6 +47,11 @@ public class EventDescriptionEventDetail extends DynamicData
   public String getKey()
   {
     return this.key;
+  }
+
+  public String getDescription()
+  {
+    return this.description;
   }
 
   public String getCategory()
@@ -81,6 +87,11 @@ public class EventDescriptionEventDetail extends DynamicData
   public void setKey(String key)
   {
     this.key=key;
+  }
+
+  public void setDescription(String description)
+  {
+    this.description=description;
   }
 
   public void setCategory(String category)

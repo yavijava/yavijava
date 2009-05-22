@@ -41,6 +41,10 @@ public class TaskFilterSpec extends DynamicData
   public TaskInfoState[] state;
   public ManagedObjectReference alarm;
   public ManagedObjectReference scheduledTask;
+  public int[] eventChainId;
+  public String[] tag;
+  public String[] parentTaskKey;
+  public String[] rootTaskKey;
 
   public TaskFilterSpecByEntity getEntity()
   {
@@ -72,6 +76,26 @@ public class TaskFilterSpec extends DynamicData
     return this.scheduledTask;
   }
 
+  public int[] getEventChainId()
+  {
+    return this.eventChainId;
+  }
+
+  public String[] getTag()
+  {
+    return this.tag;
+  }
+
+  public String[] getParentTaskKey()
+  {
+    return this.parentTaskKey;
+  }
+
+  public String[] getRootTaskKey()
+  {
+    return this.rootTaskKey;
+  }
+
   public void setEntity(TaskFilterSpecByEntity entity)
   {
     this.entity=entity;
@@ -100,5 +124,25 @@ public class TaskFilterSpec extends DynamicData
   public void setScheduledTask(ManagedObjectReference scheduledTask)
   {
     this.scheduledTask=scheduledTask;
+  }
+
+  public void setEventChainId(int[] eventChainId)
+  {
+    this.eventChainId=eventChainId;
+  }
+
+  public void setTag(String[] tag)
+  {
+    this.tag=tag;
+  }
+
+  public void setParentTaskKey(String[] parentTaskKey)
+  {
+    this.parentTaskKey=parentTaskKey;
+  }
+
+  public void setRootTaskKey(String[] rootTaskKey)
+  {
+    this.rootTaskKey=rootTaskKey;
   }
 }

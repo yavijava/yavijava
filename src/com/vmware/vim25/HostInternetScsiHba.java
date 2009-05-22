@@ -40,8 +40,12 @@ public class HostInternetScsiHba extends HostHostBusAdapter
   public HostInternetScsiHbaDiscoveryProperties discoveryProperties;
   public HostInternetScsiHbaAuthenticationCapabilities authenticationCapabilities;
   public HostInternetScsiHbaAuthenticationProperties authenticationProperties;
+  public HostInternetScsiHbaDigestCapabilities digestCapabilities;
+  public HostInternetScsiHbaDigestProperties digestProperties;
   public HostInternetScsiHbaIPCapabilities ipCapabilities;
   public HostInternetScsiHbaIPProperties ipProperties;
+  public OptionDef[] supportedAdvancedOptions;
+  public HostInternetScsiHbaParamValue[] advancedOptions;
   public String iScsiName;
   public String iScsiAlias;
   public HostInternetScsiHbaSendTarget[] configuredSendTarget;
@@ -74,6 +78,16 @@ public class HostInternetScsiHba extends HostHostBusAdapter
     return this.authenticationProperties;
   }
 
+  public HostInternetScsiHbaDigestCapabilities getDigestCapabilities()
+  {
+    return this.digestCapabilities;
+  }
+
+  public HostInternetScsiHbaDigestProperties getDigestProperties()
+  {
+    return this.digestProperties;
+  }
+
   public HostInternetScsiHbaIPCapabilities getIpCapabilities()
   {
     return this.ipCapabilities;
@@ -82,6 +96,16 @@ public class HostInternetScsiHba extends HostHostBusAdapter
   public HostInternetScsiHbaIPProperties getIpProperties()
   {
     return this.ipProperties;
+  }
+
+  public OptionDef[] getSupportedAdvancedOptions()
+  {
+    return this.supportedAdvancedOptions;
+  }
+
+  public HostInternetScsiHbaParamValue[] getAdvancedOptions()
+  {
+    return this.advancedOptions;
   }
 
   public String getIScsiName()
@@ -139,6 +163,16 @@ public class HostInternetScsiHba extends HostHostBusAdapter
     this.authenticationProperties=authenticationProperties;
   }
 
+  public void setDigestCapabilities(HostInternetScsiHbaDigestCapabilities digestCapabilities)
+  {
+    this.digestCapabilities=digestCapabilities;
+  }
+
+  public void setDigestProperties(HostInternetScsiHbaDigestProperties digestProperties)
+  {
+    this.digestProperties=digestProperties;
+  }
+
   public void setIpCapabilities(HostInternetScsiHbaIPCapabilities ipCapabilities)
   {
     this.ipCapabilities=ipCapabilities;
@@ -147,6 +181,16 @@ public class HostInternetScsiHba extends HostHostBusAdapter
   public void setIpProperties(HostInternetScsiHbaIPProperties ipProperties)
   {
     this.ipProperties=ipProperties;
+  }
+
+  public void setSupportedAdvancedOptions(OptionDef[] supportedAdvancedOptions)
+  {
+    this.supportedAdvancedOptions=supportedAdvancedOptions;
+  }
+
+  public void setAdvancedOptions(HostInternetScsiHbaParamValue[] advancedOptions)
+  {
+    this.advancedOptions=advancedOptions;
   }
 
   public void setIScsiName(String iScsiName)

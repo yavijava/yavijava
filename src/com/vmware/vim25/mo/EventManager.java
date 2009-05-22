@@ -86,4 +86,8 @@ public class EventManager extends ManagedObject
 		return getVimService().queryEvents(getMOR(), filter);
 	}
 	
+	public EventArgDesc[] retrieveArgumentDescription(String eventTypeId) throws RuntimeFault, RemoteException
+	{
+		return getVimService().retrieveArgumentDescription(getMOR(), eventTypeId);
+	}
 }

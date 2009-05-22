@@ -92,6 +92,30 @@ public class SearchIndex extends ManagedObject
 		ManagedObjectReference mor = getVimService().findByDnsName(getMOR(), datacenter==null? null : datacenter.getMOR(), dnsName, vmOnly);
 		return MorUtil.createExactManagedEntity(getServerConnection(), mor);
 	}
+
+	/** @since SDK4.0 */
+	public ManagedEntity[] findAllByDnsName(Datacenter datacenter, String dnsName, boolean vmSearch) throws RuntimeFault, RemoteException
+	{
+		ManagedObjectReference[] mors = getVimService().findAllByDnsName(getMOR(), 
+			datacenter==null? null : datacenter.getMOR(), dnsName, vmSearch);
+		return MorUtil.createManagedEntities(getServerConnection(), mors);
+	}
+
+	/** @since SDK4.0 */
+	public ManagedEntity[] findAllByIp(Datacenter datacenter, String ip, boolean vmSearch) throws RuntimeFault, RemoteException
+	{
+		ManagedObjectReference[] mors = getVimService().findAllByIp(getMOR(), 
+			datacenter==null? null : datacenter.getMOR(), ip, vmSearch);
+		return MorUtil.createManagedEntities(getServerConnection(), mors);
+	}
+
+	/** @since SDK4.0 */
+	public ManagedEntity[] findAllByUuid(Datacenter datacenter, String uuid, boolean vmSearch, boolean instanceUuid) throws RuntimeFault, RemoteException
+	{
+		ManagedObjectReference[] mors = getVimService().findAllByUuid(getMOR(), 
+			datacenter==null? null : datacenter.getMOR(), uuid, vmSearch, instanceUuid);
+		return MorUtil.createManagedEntities(getServerConnection(), mors);
+	}
 	
 	/**
 	 * Find a VM by its location on a datastore
@@ -122,9 +146,17 @@ public class SearchIndex extends ManagedObject
 	 * @throws RemoteException 
 	 * @throws RuntimeFault 
 	 */
+	
+	//SDK2.5 signature for back compatibility
 	public ManagedEntity findByUuid(Datacenter datacenter, String uuid, boolean vmOnly) throws RuntimeFault, RemoteException
 	{
-		ManagedObjectReference mor = getVimService().findByUuid(getMOR(), datacenter==null? null : datacenter.getMOR(), uuid, vmOnly);
+		return findByUuid(datacenter, uuid, vmOnly, false);
+	}
+
+	//SDK4.0 signature
+	public ManagedEntity findByUuid(Datacenter datacenter, String uuid, boolean vmOnly, boolean instanceUuid) throws RuntimeFault, RemoteException
+	{
+		ManagedObjectReference mor = getVimService().findByUuid(getMOR(), datacenter==null? null : datacenter.getMOR(), uuid, vmOnly, instanceUuid);
 		return MorUtil.createExactManagedEntity(getServerConnection(), mor);
 	}
 

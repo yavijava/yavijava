@@ -28,6 +28,7 @@ POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
 
 package com.vmware.vim25;
+import java.util.Calendar;
 
 /**
 @author Steve Jin (sjin@vmware.com)
@@ -35,17 +36,17 @@ package com.vmware.vim25;
 
 public class LicenseDiagnostics extends DynamicData
 {
-  public java.util.Calendar sourceLastChanged;
+  public Calendar sourceLastChanged;
   public String sourceLost;
   public float sourceLatency;
   public String licenseRequests;
   public String licenseRequestFailures;
   public String licenseFeatureUnknowns;
   public LicenseManagerState opState;
-  public java.util.Calendar lastStatusUpdate;
+  public Calendar lastStatusUpdate;
   public String opFailureMessage;
 
-  public java.util.Calendar getSourceLastChanged()
+  public Calendar getSourceLastChanged()
   {
     return this.sourceLastChanged;
   }
@@ -80,7 +81,7 @@ public class LicenseDiagnostics extends DynamicData
     return this.opState;
   }
 
-  public java.util.Calendar getLastStatusUpdate()
+  public Calendar getLastStatusUpdate()
   {
     return this.lastStatusUpdate;
   }
@@ -90,7 +91,7 @@ public class LicenseDiagnostics extends DynamicData
     return this.opFailureMessage;
   }
 
-  public void setSourceLastChanged(java.util.Calendar sourceLastChanged)
+  public void setSourceLastChanged(Calendar sourceLastChanged)
   {
     this.sourceLastChanged=sourceLastChanged;
   }
@@ -125,7 +126,7 @@ public class LicenseDiagnostics extends DynamicData
     this.opState=opState;
   }
 
-  public void setLastStatusUpdate(java.util.Calendar lastStatusUpdate)
+  public void setLastStatusUpdate(Calendar lastStatusUpdate)
   {
     this.lastStatusUpdate=lastStatusUpdate;
   }

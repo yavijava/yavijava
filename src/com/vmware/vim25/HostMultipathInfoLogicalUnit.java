@@ -40,6 +40,7 @@ public class HostMultipathInfoLogicalUnit extends DynamicData
   public String lun;
   public HostMultipathInfoPath[] path;
   public HostMultipathInfoLogicalUnitPolicy policy;
+  public HostMultipathInfoLogicalUnitStorageArrayTypePolicy storageArrayTypePolicy;
 
   public String getKey()
   {
@@ -66,6 +67,11 @@ public class HostMultipathInfoLogicalUnit extends DynamicData
     return this.policy;
   }
 
+  public HostMultipathInfoLogicalUnitStorageArrayTypePolicy getStorageArrayTypePolicy()
+  {
+    return this.storageArrayTypePolicy;
+  }
+
   public void setKey(String key)
   {
     this.key=key;
@@ -89,5 +95,10 @@ public class HostMultipathInfoLogicalUnit extends DynamicData
   public void setPolicy(HostMultipathInfoLogicalUnitPolicy policy)
   {
     this.policy=policy;
+  }
+
+  public void setStorageArrayTypePolicy(HostMultipathInfoLogicalUnitStorageArrayTypePolicy storageArrayTypePolicy)
+  {
+    this.storageArrayTypePolicy=storageArrayTypePolicy;
   }
 }

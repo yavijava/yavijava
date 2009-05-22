@@ -35,14 +35,14 @@ package com.vmware.vim25;
 
 public class GenericDrsFault extends VimFault
 {
-  public MethodFault[] hostFaults;
+  public LocalizedMethodFault[] hostFaults;
 
-  public MethodFault[] getHostFaults()
+  public LocalizedMethodFault[] getHostFaults()
   {
     return this.hostFaults;
   }
 
-  public void setHostFaults(MethodFault[] hostFaults)
+  public void setHostFaults(LocalizedMethodFault[] hostFaults)
   {
     this.hostFaults=hostFaults;
   }

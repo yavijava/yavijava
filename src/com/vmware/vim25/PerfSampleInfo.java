@@ -28,6 +28,7 @@ POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
 
 package com.vmware.vim25;
+import java.util.Calendar;
 
 /**
 @author Steve Jin (sjin@vmware.com)
@@ -35,10 +36,10 @@ package com.vmware.vim25;
 
 public class PerfSampleInfo extends DynamicData
 {
-  public java.util.Calendar timestamp;
+  public Calendar timestamp;
   public int interval;
 
-  public java.util.Calendar getTimestamp()
+  public Calendar getTimestamp()
   {
     return this.timestamp;
   }
@@ -48,7 +49,7 @@ public class PerfSampleInfo extends DynamicData
     return this.interval;
   }
 
-  public void setTimestamp(java.util.Calendar timestamp)
+  public void setTimestamp(Calendar timestamp)
   {
     this.timestamp=timestamp;
   }

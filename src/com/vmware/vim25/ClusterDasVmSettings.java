@@ -37,6 +37,7 @@ public class ClusterDasVmSettings extends DynamicData
 {
   public String restartPriority;
   public String isolationResponse;
+  public ClusterVmToolsMonitoringSettings vmToolsMonitoringSettings;
 
   public String getRestartPriority()
   {
@@ -48,6 +49,11 @@ public class ClusterDasVmSettings extends DynamicData
     return this.isolationResponse;
   }
 
+  public ClusterVmToolsMonitoringSettings getVmToolsMonitoringSettings()
+  {
+    return this.vmToolsMonitoringSettings;
+  }
+
   public void setRestartPriority(String restartPriority)
   {
     this.restartPriority=restartPriority;
@@ -56,5 +62,10 @@ public class ClusterDasVmSettings extends DynamicData
   public void setIsolationResponse(String isolationResponse)
   {
     this.isolationResponse=isolationResponse;
+  }
+
+  public void setVmToolsMonitoringSettings(ClusterVmToolsMonitoringSettings vmToolsMonitoringSettings)
+  {
+    this.vmToolsMonitoringSettings=vmToolsMonitoringSettings;
   }
 }

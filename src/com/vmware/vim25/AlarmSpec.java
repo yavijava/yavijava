@@ -40,6 +40,7 @@ public class AlarmSpec extends DynamicData
   public boolean enabled;
   public AlarmExpression expression;
   public AlarmAction action;
+  public Integer actionFrequency;
   public AlarmSetting setting;
 
   public String getName()
@@ -65,6 +66,11 @@ public class AlarmSpec extends DynamicData
   public AlarmAction getAction()
   {
     return this.action;
+  }
+
+  public Integer getActionFrequency()
+  {
+    return this.actionFrequency;
   }
 
   public AlarmSetting getSetting()
@@ -95,6 +101,11 @@ public class AlarmSpec extends DynamicData
   public void setAction(AlarmAction action)
   {
     this.action=action;
+  }
+
+  public void setActionFrequency(Integer actionFrequency)
+  {
+    this.actionFrequency=actionFrequency;
   }
 
   public void setSetting(AlarmSetting setting)

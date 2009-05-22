@@ -38,7 +38,7 @@ import com.vmware.vim25.*;
  * @author Steve JIN (sjin@vmware.com)
  */
 
-public class Datastore extends ExtensibleManagedObject 
+public class Datastore extends ManagedEntity 
 {
 	public Datastore(ServerConnection serverConnection, ManagedObjectReference mor) 
 	{
@@ -83,6 +83,14 @@ public class Datastore extends ExtensibleManagedObject
 	public void refreshDatastore() throws RuntimeFault, RemoteException 
 	{
 		getVimService().refreshDatastore(getMOR());
+	}
+	
+	/**
+	 * @since 4.0
+	 */
+	public void refreshDatastoreStorageInfo() throws RuntimeFault, RemoteException
+	{
+		getVimService().refreshDatastoreStorageInfo(getMOR());
 	}
 	
 	public void renameDatastore(String newName) throws InvalidName, DuplicateName, RuntimeFault, RemoteException 

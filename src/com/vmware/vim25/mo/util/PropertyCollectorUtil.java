@@ -42,8 +42,6 @@ import com.vmware.vim25.mo.*;
  */
 public class PropertyCollectorUtil 
 {
-	final public static Object NULL = new Object(); 
-	
 	/**
 	 * Retrieves properties from multiple managed objects.
 	 * @param mos the array of managed objects which could be of single type or mixed types. When they are mix-typed,
@@ -108,12 +106,7 @@ public class PropertyCollectorUtil
 			pTables[index] = new Hashtable();
 			for(int j=0; props!=null && j < props.length; j++)
 			{
-				Object obj = convertProperty(props[j].getVal());
-				if(obj==null)
-				{
-					obj = NULL;
-				}
-				pTables[index].put(props[j].getName(), obj);
+				pTables[index].put(props[j].getName(), convertProperty(props[j].getVal()));
 			}
 		}
 		return pTables;

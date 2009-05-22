@@ -40,6 +40,11 @@ public class VirtualPCIControllerOption extends VirtualControllerOption
   public IntOption numVideoCards;
   public IntOption numSoundCards;
   public IntOption numVmiRoms;
+  public IntOption numVmciDevices;
+  public IntOption numPCIPassthroughDevices;
+  public IntOption numSasSCSIControllers;
+  public IntOption numVmxnet3EthernetCards;
+  public IntOption numParaVirtualSCSIControllers;
 
   public IntOption getNumSCSIControllers()
   {
@@ -66,6 +71,31 @@ public class VirtualPCIControllerOption extends VirtualControllerOption
     return this.numVmiRoms;
   }
 
+  public IntOption getNumVmciDevices()
+  {
+    return this.numVmciDevices;
+  }
+
+  public IntOption getNumPCIPassthroughDevices()
+  {
+    return this.numPCIPassthroughDevices;
+  }
+
+  public IntOption getNumSasSCSIControllers()
+  {
+    return this.numSasSCSIControllers;
+  }
+
+  public IntOption getNumVmxnet3EthernetCards()
+  {
+    return this.numVmxnet3EthernetCards;
+  }
+
+  public IntOption getNumParaVirtualSCSIControllers()
+  {
+    return this.numParaVirtualSCSIControllers;
+  }
+
   public void setNumSCSIControllers(IntOption numSCSIControllers)
   {
     this.numSCSIControllers=numSCSIControllers;
@@ -89,5 +119,30 @@ public class VirtualPCIControllerOption extends VirtualControllerOption
   public void setNumVmiRoms(IntOption numVmiRoms)
   {
     this.numVmiRoms=numVmiRoms;
+  }
+
+  public void setNumVmciDevices(IntOption numVmciDevices)
+  {
+    this.numVmciDevices=numVmciDevices;
+  }
+
+  public void setNumPCIPassthroughDevices(IntOption numPCIPassthroughDevices)
+  {
+    this.numPCIPassthroughDevices=numPCIPassthroughDevices;
+  }
+
+  public void setNumSasSCSIControllers(IntOption numSasSCSIControllers)
+  {
+    this.numSasSCSIControllers=numSasSCSIControllers;
+  }
+
+  public void setNumVmxnet3EthernetCards(IntOption numVmxnet3EthernetCards)
+  {
+    this.numVmxnet3EthernetCards=numVmxnet3EthernetCards;
+  }
+
+  public void setNumParaVirtualSCSIControllers(IntOption numParaVirtualSCSIControllers)
+  {
+    this.numParaVirtualSCSIControllers=numParaVirtualSCSIControllers;
   }
 }

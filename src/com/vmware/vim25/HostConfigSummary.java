@@ -37,8 +37,10 @@ public class HostConfigSummary extends DynamicData
 {
   public String name;
   public int port;
+  public String sslThumbprint;
   public AboutInfo product;
   public boolean vmotionEnabled;
+  public Boolean faultToleranceEnabled;
 
   public String getName()
   {
@@ -48,6 +50,11 @@ public class HostConfigSummary extends DynamicData
   public int getPort()
   {
     return this.port;
+  }
+
+  public String getSslThumbprint()
+  {
+    return this.sslThumbprint;
   }
 
   public AboutInfo getProduct()
@@ -60,6 +67,11 @@ public class HostConfigSummary extends DynamicData
     return this.vmotionEnabled;
   }
 
+  public Boolean getFaultToleranceEnabled()
+  {
+    return this.faultToleranceEnabled;
+  }
+
   public void setName(String name)
   {
     this.name=name;
@@ -70,6 +82,11 @@ public class HostConfigSummary extends DynamicData
     this.port=port;
   }
 
+  public void setSslThumbprint(String sslThumbprint)
+  {
+    this.sslThumbprint=sslThumbprint;
+  }
+
   public void setProduct(AboutInfo product)
   {
     this.product=product;
@@ -78,5 +95,10 @@ public class HostConfigSummary extends DynamicData
   public void setVmotionEnabled(boolean vmotionEnabled)
   {
     this.vmotionEnabled=vmotionEnabled;
+  }
+
+  public void setFaultToleranceEnabled(Boolean faultToleranceEnabled)
+  {
+    this.faultToleranceEnabled=faultToleranceEnabled;
   }
 }

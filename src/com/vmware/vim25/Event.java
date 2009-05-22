@@ -28,6 +28,7 @@ POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
 
 package com.vmware.vim25;
+import java.util.Calendar;
 
 /**
 @author Steve Jin (sjin@vmware.com)
@@ -37,13 +38,17 @@ public class Event extends DynamicData
 {
   public int key;
   public int chainId;
-  public java.util.Calendar createdTime;
+  public Calendar createdTime;
   public String userName;
   public DatacenterEventArgument datacenter;
   public ComputeResourceEventArgument computeResource;
   public HostEventArgument host;
   public VmEventArgument vm;
+  public DatastoreEventArgument ds;
+  public NetworkEventArgument net;
+  public DvsEventArgument dvs;
   public String fullFormattedMessage;
+  public String changeTag;
 
   public int getKey()
   {
@@ -55,7 +60,7 @@ public class Event extends DynamicData
     return this.chainId;
   }
 
-  public java.util.Calendar getCreatedTime()
+  public Calendar getCreatedTime()
   {
     return this.createdTime;
   }
@@ -85,9 +90,29 @@ public class Event extends DynamicData
     return this.vm;
   }
 
+  public DatastoreEventArgument getDs()
+  {
+    return this.ds;
+  }
+
+  public NetworkEventArgument getNet()
+  {
+    return this.net;
+  }
+
+  public DvsEventArgument getDvs()
+  {
+    return this.dvs;
+  }
+
   public String getFullFormattedMessage()
   {
     return this.fullFormattedMessage;
+  }
+
+  public String getChangeTag()
+  {
+    return this.changeTag;
   }
 
   public void setKey(int key)
@@ -100,7 +125,7 @@ public class Event extends DynamicData
     this.chainId=chainId;
   }
 
-  public void setCreatedTime(java.util.Calendar createdTime)
+  public void setCreatedTime(Calendar createdTime)
   {
     this.createdTime=createdTime;
   }
@@ -130,8 +155,28 @@ public class Event extends DynamicData
     this.vm=vm;
   }
 
+  public void setDs(DatastoreEventArgument ds)
+  {
+    this.ds=ds;
+  }
+
+  public void setNet(NetworkEventArgument net)
+  {
+    this.net=net;
+  }
+
+  public void setDvs(DvsEventArgument dvs)
+  {
+    this.dvs=dvs;
+  }
+
   public void setFullFormattedMessage(String fullFormattedMessage)
   {
     this.fullFormattedMessage=fullFormattedMessage;
+  }
+
+  public void setChangeTag(String changeTag)
+  {
+    this.changeTag=changeTag;
   }
 }

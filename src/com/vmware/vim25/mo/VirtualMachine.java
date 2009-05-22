@@ -80,6 +80,18 @@ public class VirtualMachine extends ManagedEntity
 		return (VirtualMachineFileLayout) getCurrentProperty("layout");
 	}
 	
+	/** @since SDK4.0 */
+	public VirtualMachineFileLayoutEx getLayoutEx()
+	{
+		return (VirtualMachineFileLayoutEx) getCurrentProperty("layoutEx");
+	}
+	
+	/** @since SDK4.0 */
+	public VirtualMachineStorageInfo getStorage()
+	{
+		return (VirtualMachineStorageInfo) getCurrentProperty("storage");
+	}
+
 	public Network[] getNetworks() throws InvalidProperty, RuntimeFault, RemoteException 
 	{
 		return getNetworks("network");
@@ -110,7 +122,7 @@ public class VirtualMachine extends ManagedEntity
 		return (VirtualMachineSnapshot) getManagedObject("snapshot.currentSnapshot");
 	}
 
-	public 	VirtualMachineSummary getSummary()
+	public VirtualMachineSummary getSummary()
 	{
 		return (VirtualMachineSummary) getCurrentProperty("summary");
 	}
@@ -139,10 +151,59 @@ public class VirtualMachine extends ManagedEntity
 		ManagedObjectReference mor = getVimService().cloneVM_Task(getMOR(), folder.getMOR(), name, spec);
 		return new Task(getServerConnection(), mor);
 	}
+
+	/** @since SDK4.0 */
+	public Task CreateScreenshot_Task() throws TaskInProgress, FileFault, InvalidState, RuntimeFault, RemoteException
+	{
+		ManagedObjectReference mor = getVimService().createScreenshot_Task(getMOR());
+		return new Task(getServerConnection(), mor);
+	}
 	
 	public Task createSnapshot_Task(String name, String description, boolean memory, boolean quiesce) throws InvalidName, VmConfigFault, SnapshotFault, TaskInProgress, FileFault, InvalidState, RuntimeFault, RemoteException 
 	{
 		ManagedObjectReference mor = getVimService().createSnapshot_Task(getMOR(), name, description, memory, quiesce);
+		return new Task(getServerConnection(), mor);
+	}
+	
+	/** @since SDK4.0 */
+	public Task createSecondaryVM_Task(HostSystem host) throws TaskInProgress, InvalidState, InsufficientResourcesFault, VmFaultToleranceIssue, FileFault, VmConfigFault, RuntimeFault, RemoteException
+	{
+		ManagedObjectReference mor = getVimService().createSecondaryVM_Task(getMOR(), host==null? null : host.getMOR());
+		return new Task(getServerConnection(), mor);
+	}
+
+	/** @since SDK4.0 */
+	public Task disableSecondaryVM_Task(VirtualMachine vm) throws TaskInProgress, VmFaultToleranceIssue, InvalidState, RuntimeFault, RemoteException
+	{
+		ManagedObjectReference mor = getVimService().disableSecondaryVM_Task(getMOR(), vm.getMOR());
+		return new Task(getServerConnection(), mor);
+	}
+	
+	/** @since SDK4.0 */
+	public Task enableSecondaryVM_Task(VirtualMachine vm, HostSystem host) throws TaskInProgress, VmFaultToleranceIssue, InvalidState, VmConfigFault, RuntimeFault, RemoteException
+	{
+		ManagedObjectReference mor = getVimService().enableSecondaryVM_Task(getMOR(), vm.getMOR(),
+				host==null? null : host.getMOR());
+		return new Task(getServerConnection(), mor);
+	}
+	
+	/** @since SDK4.0 */
+	public HttpNfcLease exportVm() throws InvalidPowerState, TaskInProgress, InvalidState, FileFault, RuntimeFault, RemoteException
+	{
+		ManagedObjectReference mor = getVimService().exportVm(getMOR());
+		return new HttpNfcLease(getServerConnection(), mor);
+	}
+	
+	/** @since SDK4.0 */
+	public String extractOvfEnvironment() throws InvalidState, RuntimeFault, RemoteException
+	{
+		return getVimService().extractOvfEnvironment(getMOR());
+	}
+	
+	/** @since SDK4.0 */
+	public Task makePrimaryVM_Task(VirtualMachine vm) throws TaskInProgress, VmFaultToleranceIssue, InvalidState, RuntimeFault, RemoteException
+	{
+		ManagedObjectReference mor = getVimService().makePrimaryVM_Task(getMOR(), vm.getMOR());
 		return new Task(getServerConnection(), mor);
 	}
 	
@@ -195,6 +256,27 @@ public class VirtualMachine extends ManagedEntity
 		return new Task(getServerConnection(), mor);
 	}
 	
+	/** @since SDK4.0 */
+	public Task promoteDisks_Task(boolean unlink, VirtualDisk[] disks) throws InvalidPowerState, InvalidState, TaskInProgress, RuntimeFault, RemoteException
+	{
+		ManagedObjectReference mor = getVimService().promoteDisks_Task(getMOR(), unlink, disks);
+		return new Task(getServerConnection(), mor);
+	}
+	
+	/** @since SDK4.0 */
+	public DiskChangeInfo queryChangedDiskAreas(VirtualMachineSnapshot snapshot, int deviceKey, long startOffset, String changeId) throws FileFault, NotFound, RuntimeFault, RemoteException
+	{
+		return getVimService().queryChangedDiskAreas(getMOR(), 
+				snapshot==null?null:snapshot.getMOR(), 
+				deviceKey, startOffset, changeId);
+	}
+	
+	/** @since SDK4.0 */
+	public String[] queryUnownedFiles() throws RuntimeFault, RemoteException
+	{
+		return getVimService().queryUnownedFiles(getMOR());
+	}
+	
 	public void rebootGuest() throws TaskInProgress, InvalidState, ToolsUnavailable, RuntimeFault, RemoteException 
 	{
 		getVimService().rebootGuest(getMOR());
@@ -205,13 +287,26 @@ public class VirtualMachine extends ManagedEntity
 		ManagedObjectReference mor = getVimService().reconfigVM_Task(getMOR(), spec);
 		return new Task(getServerConnection(), mor);
 	}
+
+	/** @since SDK4.0 */
+	public void refreshStorageInfo() throws RuntimeFault, RemoteException
+	{
+		getVimService().refreshStorageInfo(getMOR());
+	}
 	
+	//SDK2.5 signature for back compatibility
 	public Task relocateVM_Task(VirtualMachineRelocateSpec spec) throws VmConfigFault, Timedout, FileFault, InvalidState, InsufficientResourcesFault, MigrationFault, InvalidDatastore, RuntimeFault, RemoteException 
 	{
-		ManagedObjectReference mor = getVimService().relocateVM_Task(getMOR(), spec);
+		return relocateVM_Task(spec, null);
+	}
+	
+	//SDK4.0 signature
+	public Task relocateVM_Task(VirtualMachineRelocateSpec spec, VirtualMachineMovePriority priority) throws VmConfigFault, Timedout, FileFault, InvalidState, InsufficientResourcesFault, MigrationFault, InvalidDatastore, RuntimeFault, RemoteException 
+	{
+		ManagedObjectReference mor = getVimService().relocateVM_Task(getMOR(), spec, priority);
 		return new Task(getServerConnection(), mor);
 	}
-		
+	
 	public Task removeAllSnapshots_Task() throws SnapshotFault, TaskInProgress, InvalidState, RuntimeFault, RemoteException 
 	{
 		ManagedObjectReference mor = getVimService().removeAllSnapshots_Task(getMOR());
@@ -229,10 +324,23 @@ public class VirtualMachine extends ManagedEntity
 		return new Task(getServerConnection(), mor);
 	}
 	
+	//SDK2.5 signature for back compatibility
 	public Task revertToCurrentSnapshot_Task(HostSystem host) throws VmConfigFault, SnapshotFault, TaskInProgress, InvalidState, InsufficientResourcesFault, NotFound, RuntimeFault, RemoteException 
 	{
-		ManagedObjectReference mor = getVimService().revertToCurrentSnapshot_Task(getMOR(), host==null? null : host.getMOR());
+		return revertToCurrentSnapshot_Task(host, false);
+	}
+	
+	//SDK4.0 signature
+	public Task revertToCurrentSnapshot_Task(HostSystem host, boolean suppressPowerOn) throws VmConfigFault, SnapshotFault, TaskInProgress, InvalidState, InsufficientResourcesFault, NotFound, RuntimeFault, RemoteException 
+	{
+		ManagedObjectReference mor = getVimService().revertToCurrentSnapshot_Task(getMOR(), host==null? null : host.getMOR(), suppressPowerOn);
 		return new Task(getServerConnection(), mor);
+	}
+	
+	/** @since SDK4.0 */
+	public void setDisplayTopology(VirtualMachineDisplayTopology[] displays) throws InvalidState, ToolsUnavailable, RuntimeFault, RemoteException
+	{
+		getVimService().setDisplayTopology(getMOR(), displays);
 	}
 	
 	public void setScreenResolution(int width, int height) throws InvalidPowerState, ToolsUnavailable, RuntimeFault, RemoteException 
@@ -245,6 +353,34 @@ public class VirtualMachine extends ManagedEntity
 		getVimService().shutdownGuest(getMOR());
 	}
 	
+	/** @since SDK4.0 */
+	public Task startRecording_Task(String name, String description) throws InvalidPowerState, InvalidState, TaskInProgress, FileFault, SnapshotFault, VmConfigFault, RecordReplayDisabled, HostIncompatibleForRecordReplay, InvalidName, RuntimeFault, RemoteException
+	{
+		ManagedObjectReference mor = getVimService().startRecording_Task(getMOR(), name, description);
+		return new Task(getServerConnection(), mor);
+	}
+	
+	/** @since SDK4.0 */
+	public Task stopRecording_Task() throws InvalidPowerState, InvalidState, TaskInProgress, FileFault, SnapshotFault, RuntimeFault, RemoteException 
+	{
+		ManagedObjectReference mor = getVimService().stopRecording_Task(getMOR());
+		return new Task(getServerConnection(), mor);
+	}
+	
+	/** @since SDK4.0 */
+	public Task stopReplaying_Task() throws InvalidPowerState, InvalidState, TaskInProgress, FileFault, SnapshotFault, RuntimeFault, RemoteException 
+	{
+		ManagedObjectReference mor = getVimService().stopReplaying_Task(getMOR());
+		return new Task(getServerConnection(), mor);
+	}
+
+	/** @since SDK4.0 */
+	public Task startReplaying_Task(VirtualMachineSnapshot replaySnapshot) throws InvalidPowerState, InvalidState, TaskInProgress, FileFault, SnapshotFault, VmConfigFault, RecordReplayDisabled, HostIncompatibleForRecordReplay, InvalidName, RuntimeFault, RemoteException
+	{
+		ManagedObjectReference mor = getVimService().startReplaying_Task(getMOR(),replaySnapshot.getMOR());
+		return new Task(getServerConnection(), mor);
+	}
+
 	public void standbyGuest() throws TaskInProgress, InvalidState, ToolsUnavailable, RuntimeFault, RemoteException 
 	{
 		getVimService().standbyGuest(getMOR());
@@ -253,6 +389,21 @@ public class VirtualMachine extends ManagedEntity
 	public Task suspendVM_Task() throws TaskInProgress, InvalidState, RuntimeFault, RemoteException 
 	{
 		ManagedObjectReference mor = getVimService().suspendVM_Task(getMOR());
+		return new Task(getServerConnection(), mor);
+	}
+	
+	/** @since SDK4.0 */
+	public Task terminateFaultTolerantVM_Task(VirtualMachine vm) throws TaskInProgress, VmFaultToleranceIssue, InvalidState, RuntimeFault, RemoteException
+	{
+		ManagedObjectReference mor = getVimService().terminateFaultTolerantVM_Task(getMOR(),
+				vm==null? null : vm.getMOR());
+		return new Task(getServerConnection(), mor);
+	}
+	
+	/** @since SDK4.0 */
+	public Task turnOffFaultToleranceForVM_Task() throws TaskInProgress, VmFaultToleranceIssue, InvalidState, RuntimeFault, RemoteException
+	{
+		ManagedObjectReference mor = getVimService().turnOffFaultToleranceForVM_Task(getMOR());
 		return new Task(getServerConnection(), mor);
 	}
 	
@@ -277,5 +428,4 @@ public class VirtualMachine extends ManagedEntity
 		ManagedObjectReference mor = getVimService().upgradeVM_Task(getMOR(), version);
 		return new Task(getServerConnection(), mor);
 	}
-	
 }

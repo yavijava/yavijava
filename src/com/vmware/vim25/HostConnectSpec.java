@@ -44,6 +44,7 @@ public class HostConnectSpec extends DynamicData
   public boolean force;
   public String vimAccountName;
   public String vimAccountPassword;
+  public String managementIp;
 
   public String getHostName()
   {
@@ -90,6 +91,11 @@ public class HostConnectSpec extends DynamicData
     return this.vimAccountPassword;
   }
 
+  public String getManagementIp()
+  {
+    return this.managementIp;
+  }
+
   public void setHostName(String hostName)
   {
     this.hostName=hostName;
@@ -133,5 +139,10 @@ public class HostConnectSpec extends DynamicData
   public void setVimAccountPassword(String vimAccountPassword)
   {
     this.vimAccountPassword=vimAccountPassword;
+  }
+
+  public void setManagementIp(String managementIp)
+  {
+    this.managementIp=managementIp;
   }
 }

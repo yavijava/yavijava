@@ -28,6 +28,7 @@ POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
 
 package com.vmware.vim25;
+import java.util.Calendar;
 
 /**
 @author Steve Jin (sjin@vmware.com)
@@ -37,7 +38,7 @@ public class ExpiredFeatureLicense extends NotEnoughLicenses
 {
   public String feature;
   public int count;
-  public java.util.Calendar expirationDate;
+  public Calendar expirationDate;
 
   public String getFeature()
   {
@@ -49,7 +50,7 @@ public class ExpiredFeatureLicense extends NotEnoughLicenses
     return this.count;
   }
 
-  public java.util.Calendar getExpirationDate()
+  public Calendar getExpirationDate()
   {
     return this.expirationDate;
   }
@@ -64,7 +65,7 @@ public class ExpiredFeatureLicense extends NotEnoughLicenses
     this.count=count;
   }
 
-  public void setExpirationDate(java.util.Calendar expirationDate)
+  public void setExpirationDate(Calendar expirationDate)
   {
     this.expirationDate=expirationDate;
   }

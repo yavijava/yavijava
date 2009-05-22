@@ -66,14 +66,21 @@ public class TaskManager extends ManagedObject
 		return new TaskHistoryCollector(getServerConnection(),
 				getVimService().createCollectorForTasks(getMOR(), filter));
 	}
-
+	
+	//SDK2.5 signature for back compatibility
 	public TaskInfo createTask(ManagedObject obj, String taskTypeId, String initiatedBy, boolean cancelable) throws RuntimeFault, RemoteException 
+	{
+		return createTask(obj, taskTypeId, initiatedBy, cancelable, null);
+	}
+
+	//SDK4.0 signature
+	public TaskInfo createTask(ManagedObject obj, String taskTypeId, String initiatedBy, boolean cancelable, String parentTaskKey) throws RuntimeFault, RemoteException 
 	{
 		if(obj==null)
 		{
 			throw new IllegalArgumentException("obj must not be null.");
 		}
-		return getVimService().createTask(getMOR(), obj.getMOR(), taskTypeId, initiatedBy, cancelable);
+		return getVimService().createTask(getMOR(), obj.getMOR(), taskTypeId, initiatedBy, cancelable, parentTaskKey);
 	}
 	
 }

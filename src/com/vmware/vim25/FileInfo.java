@@ -28,6 +28,7 @@ POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
 
 package com.vmware.vim25;
+import java.util.Calendar;
 
 /**
 @author Steve Jin (sjin@vmware.com)
@@ -37,7 +38,8 @@ public class FileInfo extends DynamicData
 {
   public String path;
   public Long fileSize;
-  public java.util.Calendar modification;
+  public Calendar modification;
+  public String owner;
 
   public String getPath()
   {
@@ -49,9 +51,14 @@ public class FileInfo extends DynamicData
     return this.fileSize;
   }
 
-  public java.util.Calendar getModification()
+  public Calendar getModification()
   {
     return this.modification;
+  }
+
+  public String getOwner()
+  {
+    return this.owner;
   }
 
   public void setPath(String path)
@@ -64,8 +71,13 @@ public class FileInfo extends DynamicData
     this.fileSize=fileSize;
   }
 
-  public void setModification(java.util.Calendar modification)
+  public void setModification(Calendar modification)
   {
     this.modification=modification;
+  }
+
+  public void setOwner(String owner)
+  {
+    this.owner=owner;
   }
 }

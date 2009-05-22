@@ -84,7 +84,7 @@ public class TaskList_New
             else if(TaskInfoState.queued.equals(tis))  { state = "-Queued";  } 
             else if(TaskInfoState.running.equals(tis)) { state = "-Running"; } 
             else if(TaskInfoState.success.equals(tis)) { state = "-Success"; }
-            else if (ti.isCancelled()) 
+            else if (ti.cancelled) 
             {
                      state += "-Cancelled";
             } 

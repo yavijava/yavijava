@@ -42,6 +42,7 @@ public class HostConnectInfo extends DynamicData
   public Boolean clusterSupported;
   public HostConnectInfoNetworkInfo[] network;
   public HostDatastoreConnectInfo[] datastore;
+  public HostLicenseConnectInfo license;
 
   public String getServerIp()
   {
@@ -78,6 +79,11 @@ public class HostConnectInfo extends DynamicData
     return this.datastore;
   }
 
+  public HostLicenseConnectInfo getLicense()
+  {
+    return this.license;
+  }
+
   public void setServerIp(String serverIp)
   {
     this.serverIp=serverIp;
@@ -111,5 +117,10 @@ public class HostConnectInfo extends DynamicData
   public void setDatastore(HostDatastoreConnectInfo[] datastore)
   {
     this.datastore=datastore;
+  }
+
+  public void setLicense(HostLicenseConnectInfo license)
+  {
+    this.license=license;
   }
 }

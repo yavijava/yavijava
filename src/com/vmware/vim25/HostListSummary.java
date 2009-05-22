@@ -44,6 +44,8 @@ public class HostListSummary extends DynamicData
   public boolean rebootRequired;
   public CustomFieldValue[] customValue;
   public String managementServerIp;
+  public String maxEVCModeKey;
+  public String currentEVCModeKey;
 
   public ManagedObjectReference getHost()
   {
@@ -90,6 +92,16 @@ public class HostListSummary extends DynamicData
     return this.managementServerIp;
   }
 
+  public String getMaxEVCModeKey()
+  {
+    return this.maxEVCModeKey;
+  }
+
+  public String getCurrentEVCModeKey()
+  {
+    return this.currentEVCModeKey;
+  }
+
   public void setHost(ManagedObjectReference host)
   {
     this.host=host;
@@ -133,5 +145,15 @@ public class HostListSummary extends DynamicData
   public void setManagementServerIp(String managementServerIp)
   {
     this.managementServerIp=managementServerIp;
+  }
+
+  public void setMaxEVCModeKey(String maxEVCModeKey)
+  {
+    this.maxEVCModeKey=maxEVCModeKey;
+  }
+
+  public void setCurrentEVCModeKey(String currentEVCModeKey)
+  {
+    this.currentEVCModeKey=currentEVCModeKey;
   }
 }

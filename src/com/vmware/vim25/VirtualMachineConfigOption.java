@@ -44,6 +44,8 @@ public class VirtualMachineConfigOption extends DynamicData
   public DatastoreOption datastore;
   public VirtualDevice[] defaultDevice;
   public String[] supportedMonitorType;
+  public String[] supportedOvfEnvironmentTransport;
+  public String[] supportedOvfInstallTransport;
 
   public String getVersion()
   {
@@ -90,6 +92,16 @@ public class VirtualMachineConfigOption extends DynamicData
     return this.supportedMonitorType;
   }
 
+  public String[] getSupportedOvfEnvironmentTransport()
+  {
+    return this.supportedOvfEnvironmentTransport;
+  }
+
+  public String[] getSupportedOvfInstallTransport()
+  {
+    return this.supportedOvfInstallTransport;
+  }
+
   public void setVersion(String version)
   {
     this.version=version;
@@ -133,5 +145,15 @@ public class VirtualMachineConfigOption extends DynamicData
   public void setSupportedMonitorType(String[] supportedMonitorType)
   {
     this.supportedMonitorType=supportedMonitorType;
+  }
+
+  public void setSupportedOvfEnvironmentTransport(String[] supportedOvfEnvironmentTransport)
+  {
+    this.supportedOvfEnvironmentTransport=supportedOvfEnvironmentTransport;
+  }
+
+  public void setSupportedOvfInstallTransport(String[] supportedOvfInstallTransport)
+  {
+    this.supportedOvfInstallTransport=supportedOvfInstallTransport;
   }
 }

@@ -39,6 +39,7 @@ public class HostSnmpSystemAgentLimits extends DynamicData
   public int maxTrapDestinations;
   public int maxCommunityLength;
   public int maxBufferSize;
+  public HostSnmpAgentCapability capability;
 
   public int getMaxReadOnlyCommunities()
   {
@@ -60,6 +61,11 @@ public class HostSnmpSystemAgentLimits extends DynamicData
     return this.maxBufferSize;
   }
 
+  public HostSnmpAgentCapability getCapability()
+  {
+    return this.capability;
+  }
+
   public void setMaxReadOnlyCommunities(int maxReadOnlyCommunities)
   {
     this.maxReadOnlyCommunities=maxReadOnlyCommunities;
@@ -78,5 +84,10 @@ public class HostSnmpSystemAgentLimits extends DynamicData
   public void setMaxBufferSize(int maxBufferSize)
   {
     this.maxBufferSize=maxBufferSize;
+  }
+
+  public void setCapability(HostSnmpAgentCapability capability)
+  {
+    this.capability=capability;
   }
 }

@@ -46,6 +46,13 @@ public class ManagedEntity extends ExtensibleManagedObject
 	}
 	
 	/* =========================Accessors=================================*/
+	
+	/** @since SDK4.0 */
+	public boolean getAlarmActionEabled()
+	{
+		return ((Boolean)getCurrentProperty("alarmActionsEnabled")).booleanValue();
+	}
+	
 	public Event[] getConfigIssue()
 	{
 		return (Event[]) getCurrentProperty("configIssue");
@@ -101,6 +108,12 @@ public class ManagedEntity extends ExtensibleManagedObject
 		return getTasks("recentTask");
 	}
 
+	/** @since SDK4.0 */
+	public Tag[] getTag()
+	{
+		return (Tag[]) getCurrentProperty("tag");
+	}
+	
 	public AlarmState[] getTriggeredAlarmState()
 	{
 		return (AlarmState[]) getCurrentProperty("triggeredAlarmState");

@@ -45,6 +45,7 @@ public class HostPciDevice extends DynamicData
   public String vendorName;
   public short deviceId;
   public short subDeviceId;
+  public String parentBridge;
   public String deviceName;
 
   public String getId()
@@ -95,6 +96,11 @@ public class HostPciDevice extends DynamicData
   public short getSubDeviceId()
   {
     return this.subDeviceId;
+  }
+
+  public String getParentBridge()
+  {
+    return this.parentBridge;
   }
 
   public String getDeviceName()
@@ -150,6 +156,11 @@ public class HostPciDevice extends DynamicData
   public void setSubDeviceId(short subDeviceId)
   {
     this.subDeviceId=subDeviceId;
+  }
+
+  public void setParentBridge(String parentBridge)
+  {
+    this.parentBridge=parentBridge;
   }
 
   public void setDeviceName(String deviceName)

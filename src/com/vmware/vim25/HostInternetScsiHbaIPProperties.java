@@ -42,6 +42,12 @@ public class HostInternetScsiHbaIPProperties extends DynamicData
   public String defaultGateway;
   public String primaryDnsServerAddress;
   public String alternateDnsServerAddress;
+  public String ipv6Address;
+  public String ipv6SubnetMask;
+  public String ipv6DefaultGateway;
+  public Boolean arpRedirectEnabled;
+  public Integer mtu;
+  public Boolean jumboFramesEnabled;
 
   public String getMac()
   {
@@ -78,6 +84,36 @@ public class HostInternetScsiHbaIPProperties extends DynamicData
     return this.alternateDnsServerAddress;
   }
 
+  public String getIpv6Address()
+  {
+    return this.ipv6Address;
+  }
+
+  public String getIpv6SubnetMask()
+  {
+    return this.ipv6SubnetMask;
+  }
+
+  public String getIpv6DefaultGateway()
+  {
+    return this.ipv6DefaultGateway;
+  }
+
+  public Boolean getArpRedirectEnabled()
+  {
+    return this.arpRedirectEnabled;
+  }
+
+  public Integer getMtu()
+  {
+    return this.mtu;
+  }
+
+  public Boolean getJumboFramesEnabled()
+  {
+    return this.jumboFramesEnabled;
+  }
+
   public void setMac(String mac)
   {
     this.mac=mac;
@@ -111,5 +147,35 @@ public class HostInternetScsiHbaIPProperties extends DynamicData
   public void setAlternateDnsServerAddress(String alternateDnsServerAddress)
   {
     this.alternateDnsServerAddress=alternateDnsServerAddress;
+  }
+
+  public void setIpv6Address(String ipv6Address)
+  {
+    this.ipv6Address=ipv6Address;
+  }
+
+  public void setIpv6SubnetMask(String ipv6SubnetMask)
+  {
+    this.ipv6SubnetMask=ipv6SubnetMask;
+  }
+
+  public void setIpv6DefaultGateway(String ipv6DefaultGateway)
+  {
+    this.ipv6DefaultGateway=ipv6DefaultGateway;
+  }
+
+  public void setArpRedirectEnabled(Boolean arpRedirectEnabled)
+  {
+    this.arpRedirectEnabled=arpRedirectEnabled;
+  }
+
+  public void setMtu(Integer mtu)
+  {
+    this.mtu=mtu;
+  }
+
+  public void setJumboFramesEnabled(Boolean jumboFramesEnabled)
+  {
+    this.jumboFramesEnabled=jumboFramesEnabled;
   }
 }

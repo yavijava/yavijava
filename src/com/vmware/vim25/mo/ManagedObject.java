@@ -267,12 +267,17 @@ abstract public class ManagedObject
 
 	protected Network[] getNetworks(String propName)
 	{
-		Object[] objs = getManagedObjects(propName);
+		Object[] objs = getManagedObjects(propName, true);
 		if(objs.length == 0)
 		{
 			return new Network[] {};
 		}
-		return (Network[]) objs;
+		Network[] nets = new Network[objs.length];
+		for(int i=0; i< objs.length; i++)
+		{
+			nets[i] = (Network) objs[i];
+		}
+		return nets;
 	}
 
 	protected VirtualMachine[] getVms(String propName)
@@ -406,20 +411,12 @@ abstract public class ManagedObject
 		    for (int i = 0; i < filtupary.length; i++) 
 		    {
 				PropertyFilterUpdate filtup = filtupary[i];
-				if(filtup==null)
-				{
-					continue;
-				}
 				ObjectUpdate[] objupary = filtup.getObjectSet();
-		    	for (int j = 0; objupary!=null && j < objupary.length; j++) 
+		    	for (int j = 0; j < objupary.length; j++) 
 		    	{
 		    		ObjectUpdate objup = objupary[j];
-		    		if(objup==null)
-		    		{
-		    			continue;
-		    		}
 		    		PropertyChange[] propchgary = objup.getChangeSet();
-		            for (int k = 0; propchgary!=null && k < propchgary.length; k++) 
+		            for (int k = 0; k < propchgary.length; k++) 
 		           	{
 		        		PropertyChange propchg = propchgary[k];
 	                    updateValues(endWaitProps, endVals, propchg);
@@ -467,6 +464,15 @@ abstract public class ManagedObject
 	{
 		return mor.getType() + ":" + mor.get_value()
 			+ " @ " + getServerConnection().getUrl();
+	}
+
+	protected ManagedObjectReference[] convertMors(ManagedObject[] mos) {
+		ManagedObjectReference[] mors = null;
+		if(mos!=null)
+		{
+			mors = MorUtil.createMORs(mos);
+		}
+		return mors;
 	}
 	
 }

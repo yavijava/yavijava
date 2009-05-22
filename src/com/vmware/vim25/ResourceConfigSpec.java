@@ -28,6 +28,7 @@ POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
 
 package com.vmware.vim25;
+import java.util.Calendar;
 
 /**
 @author Steve Jin (sjin@vmware.com)
@@ -37,7 +38,7 @@ public class ResourceConfigSpec extends DynamicData
 {
   public ManagedObjectReference entity;
   public String changeVersion;
-  public java.util.Calendar lastModified;
+  public Calendar lastModified;
   public ResourceAllocationInfo cpuAllocation;
   public ResourceAllocationInfo memoryAllocation;
 
@@ -51,7 +52,7 @@ public class ResourceConfigSpec extends DynamicData
     return this.changeVersion;
   }
 
-  public java.util.Calendar getLastModified()
+  public Calendar getLastModified()
   {
     return this.lastModified;
   }
@@ -76,7 +77,7 @@ public class ResourceConfigSpec extends DynamicData
     this.changeVersion=changeVersion;
   }
 
-  public void setLastModified(java.util.Calendar lastModified)
+  public void setLastModified(Calendar lastModified)
   {
     this.lastModified=lastModified;
   }

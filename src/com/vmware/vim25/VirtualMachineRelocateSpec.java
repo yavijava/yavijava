@@ -36,6 +36,7 @@ package com.vmware.vim25;
 public class VirtualMachineRelocateSpec extends DynamicData
 {
   public ManagedObjectReference datastore;
+  public String diskMoveType;
   public ManagedObjectReference pool;
   public ManagedObjectReference host;
   public VirtualMachineRelocateSpecDiskLocator[] disk;
@@ -44,6 +45,11 @@ public class VirtualMachineRelocateSpec extends DynamicData
   public ManagedObjectReference getDatastore()
   {
     return this.datastore;
+  }
+
+  public String getDiskMoveType()
+  {
+    return this.diskMoveType;
   }
 
   public ManagedObjectReference getPool()
@@ -69,6 +75,11 @@ public class VirtualMachineRelocateSpec extends DynamicData
   public void setDatastore(ManagedObjectReference datastore)
   {
     this.datastore=datastore;
+  }
+
+  public void setDiskMoveType(String diskMoveType)
+  {
+    this.diskMoveType=diskMoveType;
   }
 
   public void setPool(ManagedObjectReference pool)

@@ -37,6 +37,11 @@ public class HostInternetScsiHbaSendTarget extends DynamicData
 {
   public String address;
   public Integer port;
+  public HostInternetScsiHbaAuthenticationProperties authenticationProperties;
+  public HostInternetScsiHbaDigestProperties digestProperties;
+  public OptionDef[] supportedAdvancedOptions;
+  public HostInternetScsiHbaParamValue[] advancedOptions;
+  public String parent;
 
   public String getAddress()
   {
@@ -48,6 +53,31 @@ public class HostInternetScsiHbaSendTarget extends DynamicData
     return this.port;
   }
 
+  public HostInternetScsiHbaAuthenticationProperties getAuthenticationProperties()
+  {
+    return this.authenticationProperties;
+  }
+
+  public HostInternetScsiHbaDigestProperties getDigestProperties()
+  {
+    return this.digestProperties;
+  }
+
+  public OptionDef[] getSupportedAdvancedOptions()
+  {
+    return this.supportedAdvancedOptions;
+  }
+
+  public HostInternetScsiHbaParamValue[] getAdvancedOptions()
+  {
+    return this.advancedOptions;
+  }
+
+  public String getParent()
+  {
+    return this.parent;
+  }
+
   public void setAddress(String address)
   {
     this.address=address;
@@ -56,5 +86,30 @@ public class HostInternetScsiHbaSendTarget extends DynamicData
   public void setPort(Integer port)
   {
     this.port=port;
+  }
+
+  public void setAuthenticationProperties(HostInternetScsiHbaAuthenticationProperties authenticationProperties)
+  {
+    this.authenticationProperties=authenticationProperties;
+  }
+
+  public void setDigestProperties(HostInternetScsiHbaDigestProperties digestProperties)
+  {
+    this.digestProperties=digestProperties;
+  }
+
+  public void setSupportedAdvancedOptions(OptionDef[] supportedAdvancedOptions)
+  {
+    this.supportedAdvancedOptions=supportedAdvancedOptions;
+  }
+
+  public void setAdvancedOptions(HostInternetScsiHbaParamValue[] advancedOptions)
+  {
+    this.advancedOptions=advancedOptions;
+  }
+
+  public void setParent(String parent)
+  {
+    this.parent=parent;
   }
 }

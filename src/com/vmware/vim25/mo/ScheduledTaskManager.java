@@ -54,7 +54,7 @@ public class ScheduledTaskManager extends ManagedObject
 	{
 		return getScheduledTasks("scheduledTask"); 
 	}
-	
+
 	public ScheduledTask createScheduledTask(ManagedEntity entity, ScheduledTaskSpec spec) throws InvalidName, DuplicateName, RuntimeFault, RemoteException 
 	{
 		if(entity==null)
@@ -62,7 +62,18 @@ public class ScheduledTaskManager extends ManagedObject
 			throw new IllegalArgumentException("entity must not be null.");
 		}
 		return new ScheduledTask(getServerConnection(), 
-		getVimService().createScheduledTask(getMOR(), entity.getMOR(), spec));
+				getVimService().createScheduledTask(getMOR(), entity.getMOR(), spec));
+	}
+	
+	/** @since SDK4.0 */
+	public ScheduledTask createObjectScheduledTask(ManagedObject obj, ScheduledTaskSpec spec) throws InvalidName, DuplicateName, RuntimeFault, RemoteException 
+	{
+		if(obj==null)
+		{
+			throw new IllegalArgumentException("managed object must not be null.");
+		}
+		return new ScheduledTask(getServerConnection(), 
+				getVimService().createObjectScheduledTask(getMOR(), obj.getMOR(), spec));
 	}
 	
 	public ScheduledTask[] retrieveEntityScheduledTask(ManagedEntity entity) throws RuntimeFault, RemoteException 
@@ -74,8 +85,19 @@ public class ScheduledTaskManager extends ManagedObject
 		{
 			tasks[i] = new ScheduledTask(getServerConnection(), mors[i]);
 		}
-		
 		return tasks;
 	}
 
+	/** @since SDK4.0 */
+	public ScheduledTask[] retrieveObjectScheduledTask(ManagedObject obj) throws RuntimeFault, RemoteException 
+	{
+		ManagedObjectReference[] mors = getVimService().retrieveObjectScheduledTask(getMOR(), obj==null? null : obj.getMOR());
+		
+		ScheduledTask[] tasks  = new ScheduledTask[mors.length];
+		for(int i=0; i< mors.length; i++)
+		{
+			tasks[i] = new ScheduledTask(getServerConnection(), mors[i]);
+		}
+		return tasks;
+	}
 }

@@ -45,9 +45,13 @@ public class VirtualMachineConfigSummary extends DynamicData
   public Integer numEthernetCards;
   public Integer numVirtualDisks;
   public String uuid;
+  public String instanceUuid;
   public String guestId;
   public String guestFullName;
   public String annotation;
+  public VAppProductInfo product;
+  public Boolean installBootRequired;
+  public FaultToleranceConfigInfo ftInfo;
 
   public String getName()
   {
@@ -99,6 +103,11 @@ public class VirtualMachineConfigSummary extends DynamicData
     return this.uuid;
   }
 
+  public String getInstanceUuid()
+  {
+    return this.instanceUuid;
+  }
+
   public String getGuestId()
   {
     return this.guestId;
@@ -112,6 +121,21 @@ public class VirtualMachineConfigSummary extends DynamicData
   public String getAnnotation()
   {
     return this.annotation;
+  }
+
+  public VAppProductInfo getProduct()
+  {
+    return this.product;
+  }
+
+  public Boolean getInstallBootRequired()
+  {
+    return this.installBootRequired;
+  }
+
+  public FaultToleranceConfigInfo getFtInfo()
+  {
+    return this.ftInfo;
   }
 
   public void setName(String name)
@@ -164,6 +188,11 @@ public class VirtualMachineConfigSummary extends DynamicData
     this.uuid=uuid;
   }
 
+  public void setInstanceUuid(String instanceUuid)
+  {
+    this.instanceUuid=instanceUuid;
+  }
+
   public void setGuestId(String guestId)
   {
     this.guestId=guestId;
@@ -177,5 +206,20 @@ public class VirtualMachineConfigSummary extends DynamicData
   public void setAnnotation(String annotation)
   {
     this.annotation=annotation;
+  }
+
+  public void setProduct(VAppProductInfo product)
+  {
+    this.product=product;
+  }
+
+  public void setInstallBootRequired(Boolean installBootRequired)
+  {
+    this.installBootRequired=installBootRequired;
+  }
+
+  public void setFtInfo(FaultToleranceConfigInfo ftInfo)
+  {
+    this.ftInfo=ftInfo;
   }
 }

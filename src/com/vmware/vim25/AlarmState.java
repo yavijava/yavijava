@@ -28,6 +28,7 @@ POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
 
 package com.vmware.vim25;
+import java.util.Calendar;
 
 /**
 @author Steve Jin (sjin@vmware.com)
@@ -39,7 +40,10 @@ public class AlarmState extends DynamicData
   public ManagedObjectReference entity;
   public ManagedObjectReference alarm;
   public ManagedEntityStatus overallStatus;
-  public java.util.Calendar time;
+  public Calendar time;
+  public Boolean acknowledged;
+  public String acknowledgedByUser;
+  public Calendar acknowledgedTime;
 
   public String getKey()
   {
@@ -61,9 +65,24 @@ public class AlarmState extends DynamicData
     return this.overallStatus;
   }
 
-  public java.util.Calendar getTime()
+  public Calendar getTime()
   {
     return this.time;
+  }
+
+  public Boolean getAcknowledged()
+  {
+    return this.acknowledged;
+  }
+
+  public String getAcknowledgedByUser()
+  {
+    return this.acknowledgedByUser;
+  }
+
+  public Calendar getAcknowledgedTime()
+  {
+    return this.acknowledgedTime;
   }
 
   public void setKey(String key)
@@ -86,8 +105,23 @@ public class AlarmState extends DynamicData
     this.overallStatus=overallStatus;
   }
 
-  public void setTime(java.util.Calendar time)
+  public void setTime(Calendar time)
   {
     this.time=time;
+  }
+
+  public void setAcknowledged(Boolean acknowledged)
+  {
+    this.acknowledged=acknowledged;
+  }
+
+  public void setAcknowledgedByUser(String acknowledgedByUser)
+  {
+    this.acknowledgedByUser=acknowledgedByUser;
+  }
+
+  public void setAcknowledgedTime(Calendar acknowledgedTime)
+  {
+    this.acknowledgedTime=acknowledgedTime;
   }
 }

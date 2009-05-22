@@ -36,6 +36,7 @@ package com.vmware.vim25;
 public class HostNetworkInfo extends DynamicData
 {
   public HostVirtualSwitch[] vswitch;
+  public HostProxySwitch[] proxySwitch;
   public HostPortGroup[] portgroup;
   public PhysicalNic[] pnic;
   public HostVirtualNic[] vnic;
@@ -43,12 +44,19 @@ public class HostNetworkInfo extends DynamicData
   public HostDnsConfig dnsConfig;
   public HostIpRouteConfig ipRouteConfig;
   public HostIpRouteConfig consoleIpRouteConfig;
+  public HostIpRouteTableInfo routeTableInfo;
   public HostDhcpService[] dhcp;
   public HostNatService[] nat;
+  public Boolean ipV6Enabled;
 
   public HostVirtualSwitch[] getVswitch()
   {
     return this.vswitch;
+  }
+
+  public HostProxySwitch[] getProxySwitch()
+  {
+    return this.proxySwitch;
   }
 
   public HostPortGroup[] getPortgroup()
@@ -86,6 +94,11 @@ public class HostNetworkInfo extends DynamicData
     return this.consoleIpRouteConfig;
   }
 
+  public HostIpRouteTableInfo getRouteTableInfo()
+  {
+    return this.routeTableInfo;
+  }
+
   public HostDhcpService[] getDhcp()
   {
     return this.dhcp;
@@ -96,9 +109,19 @@ public class HostNetworkInfo extends DynamicData
     return this.nat;
   }
 
+  public Boolean getIpV6Enabled()
+  {
+    return this.ipV6Enabled;
+  }
+
   public void setVswitch(HostVirtualSwitch[] vswitch)
   {
     this.vswitch=vswitch;
+  }
+
+  public void setProxySwitch(HostProxySwitch[] proxySwitch)
+  {
+    this.proxySwitch=proxySwitch;
   }
 
   public void setPortgroup(HostPortGroup[] portgroup)
@@ -136,6 +159,11 @@ public class HostNetworkInfo extends DynamicData
     this.consoleIpRouteConfig=consoleIpRouteConfig;
   }
 
+  public void setRouteTableInfo(HostIpRouteTableInfo routeTableInfo)
+  {
+    this.routeTableInfo=routeTableInfo;
+  }
+
   public void setDhcp(HostDhcpService[] dhcp)
   {
     this.dhcp=dhcp;
@@ -144,5 +172,10 @@ public class HostNetworkInfo extends DynamicData
   public void setNat(HostNatService[] nat)
   {
     this.nat=nat;
+  }
+
+  public void setIpV6Enabled(Boolean ipV6Enabled)
+  {
+    this.ipV6Enabled=ipV6Enabled;
   }
 }

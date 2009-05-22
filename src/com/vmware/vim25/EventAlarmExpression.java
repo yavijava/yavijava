@@ -35,8 +35,16 @@ package com.vmware.vim25;
 
 public class EventAlarmExpression extends AlarmExpression
 {
+  public EventAlarmExpressionComparison[] comparisons;
   public String eventType;
   public String eventTypeId;
+  public String objectType;
+  public ManagedEntityStatus status;
+
+  public EventAlarmExpressionComparison[] getComparisons()
+  {
+    return this.comparisons;
+  }
 
   public String getEventType()
   {
@@ -48,6 +56,21 @@ public class EventAlarmExpression extends AlarmExpression
     return this.eventTypeId;
   }
 
+  public String getObjectType()
+  {
+    return this.objectType;
+  }
+
+  public ManagedEntityStatus getStatus()
+  {
+    return this.status;
+  }
+
+  public void setComparisons(EventAlarmExpressionComparison[] comparisons)
+  {
+    this.comparisons=comparisons;
+  }
+
   public void setEventType(String eventType)
   {
     this.eventType=eventType;
@@ -56,5 +79,15 @@ public class EventAlarmExpression extends AlarmExpression
   public void setEventTypeId(String eventTypeId)
   {
     this.eventTypeId=eventTypeId;
+  }
+
+  public void setObjectType(String objectType)
+  {
+    this.objectType=objectType;
+  }
+
+  public void setStatus(ManagedEntityStatus status)
+  {
+    this.status=status;
   }
 }

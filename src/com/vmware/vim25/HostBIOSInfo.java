@@ -28,6 +28,7 @@ POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
 
 package com.vmware.vim25;
+import java.util.Calendar;
 
 /**
 @author Steve Jin (sjin@vmware.com)
@@ -36,14 +37,14 @@ package com.vmware.vim25;
 public class HostBIOSInfo extends DynamicData
 {
   public String biosVersion;
-  public java.util.Calendar releaseDate;
+  public Calendar releaseDate;
 
   public String getBiosVersion()
   {
     return this.biosVersion;
   }
 
-  public java.util.Calendar getReleaseDate()
+  public Calendar getReleaseDate()
   {
     return this.releaseDate;
   }
@@ -53,7 +54,7 @@ public class HostBIOSInfo extends DynamicData
     this.biosVersion=biosVersion;
   }
 
-  public void setReleaseDate(java.util.Calendar releaseDate)
+  public void setReleaseDate(Calendar releaseDate)
   {
     this.releaseDate=releaseDate;
   }

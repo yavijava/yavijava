@@ -81,6 +81,24 @@ public class SessionManager extends ManagedObject
 		return getVimService().acquireLocalTicket(getMOR(), userName);
 	}
 	
+	/** @since SDK4.0 */
+	public UserSession cloneSession(String cloneTicket) throws InvalidLogin, RuntimeFault, RemoteException
+	{
+		return getVimService().cloneSession(getMOR(), cloneTicket);
+	}
+
+	/** @since SDK4.0 */
+	public String acquireCloneTicket() throws RuntimeFault, RemoteException
+	{
+		return getVimService().acquireCloneTicket(getMOR());
+	}
+	
+	/** @since SDK4.0 */
+	public UserSession loginExtensionBySubjectName(String extensionKey, String locale) throws InvalidLogin, InvalidLocale, NotFound, NoClientCertificate, NoSubjectName, RuntimeFault, RemoteException
+	{
+		return getVimService().loginExtensionBySubjectName(getMOR(), extensionKey, locale);
+	}
+	
 	public UserSession impersonateUser(String userName, String locale) throws InvalidLogin, InvalidLocale, RuntimeFault, RemoteException 
 	{
 		return getVimService().impersonateUser(getMOR(), userName, locale);

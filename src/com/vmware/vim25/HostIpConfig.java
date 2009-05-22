@@ -38,6 +38,7 @@ public class HostIpConfig extends DynamicData
   public boolean dhcp;
   public String ipAddress;
   public String subnetMask;
+  public HostIpConfigIpV6AddressConfiguration ipV6Config;
 
   public boolean isDhcp()
   {
@@ -54,6 +55,11 @@ public class HostIpConfig extends DynamicData
     return this.subnetMask;
   }
 
+  public HostIpConfigIpV6AddressConfiguration getIpV6Config()
+  {
+    return this.ipV6Config;
+  }
+
   public void setDhcp(boolean dhcp)
   {
     this.dhcp=dhcp;
@@ -67,5 +73,10 @@ public class HostIpConfig extends DynamicData
   public void setSubnetMask(String subnetMask)
   {
     this.subnetMask=subnetMask;
+  }
+
+  public void setIpV6Config(HostIpConfigIpV6AddressConfiguration ipV6Config)
+  {
+    this.ipV6Config=ipV6Config;
   }
 }

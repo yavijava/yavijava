@@ -28,6 +28,7 @@ POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
 
 package com.vmware.vim25;
+import java.util.Calendar;
 
 /**
 @author Steve Jin (sjin@vmware.com)
@@ -39,7 +40,7 @@ public class CustomizationSpecInfo extends DynamicData
   public String description;
   public String type;
   public String changeVersion;
-  public java.util.Calendar lastUpdateTime;
+  public Calendar lastUpdateTime;
 
   public String getName()
   {
@@ -61,7 +62,7 @@ public class CustomizationSpecInfo extends DynamicData
     return this.changeVersion;
   }
 
-  public java.util.Calendar getLastUpdateTime()
+  public Calendar getLastUpdateTime()
   {
     return this.lastUpdateTime;
   }
@@ -86,7 +87,7 @@ public class CustomizationSpecInfo extends DynamicData
     this.changeVersion=changeVersion;
   }
 
-  public void setLastUpdateTime(java.util.Calendar lastUpdateTime)
+  public void setLastUpdateTime(Calendar lastUpdateTime)
   {
     this.lastUpdateTime=lastUpdateTime;
   }

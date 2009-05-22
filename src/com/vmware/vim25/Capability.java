@@ -38,6 +38,7 @@ public class Capability extends DynamicData
   public boolean provisioningSupported;
   public boolean multiHostSupported;
   public boolean userShellAccessSupported;
+  public EVCMode[] supportedEVCMode;
 
   public boolean isProvisioningSupported()
   {
@@ -54,6 +55,11 @@ public class Capability extends DynamicData
     return this.userShellAccessSupported;
   }
 
+  public EVCMode[] getSupportedEVCMode()
+  {
+    return this.supportedEVCMode;
+  }
+
   public void setProvisioningSupported(boolean provisioningSupported)
   {
     this.provisioningSupported=provisioningSupported;
@@ -67,5 +73,10 @@ public class Capability extends DynamicData
   public void setUserShellAccessSupported(boolean userShellAccessSupported)
   {
     this.userShellAccessSupported=userShellAccessSupported;
+  }
+
+  public void setSupportedEVCMode(EVCMode[] supportedEVCMode)
+  {
+    this.supportedEVCMode=supportedEVCMode;
   }
 }

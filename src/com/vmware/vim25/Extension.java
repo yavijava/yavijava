@@ -28,6 +28,7 @@ POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
 
 package com.vmware.vim25;
+import java.util.Calendar;
 
 /**
 @author Steve Jin (sjin@vmware.com)
@@ -37,6 +38,8 @@ public class Extension extends DynamicData
 {
   public Description description;
   public String key;
+  public String company;
+  public String type;
   public String version;
   public String subjectName;
   public ExtensionServerInfo[] server;
@@ -46,7 +49,8 @@ public class Extension extends DynamicData
   public ExtensionFaultTypeInfo[] faultList;
   public ExtensionPrivilegeInfo[] privilegeList;
   public ExtensionResourceInfo[] resourceList;
-  public java.util.Calendar lastHeartbeatTime;
+  public Calendar lastHeartbeatTime;
+  public ExtensionHealthInfo healthInfo;
 
   public Description getDescription()
   {
@@ -56,6 +60,16 @@ public class Extension extends DynamicData
   public String getKey()
   {
     return this.key;
+  }
+
+  public String getCompany()
+  {
+    return this.company;
+  }
+
+  public String getType()
+  {
+    return this.type;
   }
 
   public String getVersion()
@@ -103,9 +117,14 @@ public class Extension extends DynamicData
     return this.resourceList;
   }
 
-  public java.util.Calendar getLastHeartbeatTime()
+  public Calendar getLastHeartbeatTime()
   {
     return this.lastHeartbeatTime;
+  }
+
+  public ExtensionHealthInfo getHealthInfo()
+  {
+    return this.healthInfo;
   }
 
   public void setDescription(Description description)
@@ -116,6 +135,16 @@ public class Extension extends DynamicData
   public void setKey(String key)
   {
     this.key=key;
+  }
+
+  public void setCompany(String company)
+  {
+    this.company=company;
+  }
+
+  public void setType(String type)
+  {
+    this.type=type;
   }
 
   public void setVersion(String version)
@@ -163,8 +192,13 @@ public class Extension extends DynamicData
     this.resourceList=resourceList;
   }
 
-  public void setLastHeartbeatTime(java.util.Calendar lastHeartbeatTime)
+  public void setLastHeartbeatTime(Calendar lastHeartbeatTime)
   {
     this.lastHeartbeatTime=lastHeartbeatTime;
+  }
+
+  public void setHealthInfo(ExtensionHealthInfo healthInfo)
+  {
+    this.healthInfo=healthInfo;
   }
 }

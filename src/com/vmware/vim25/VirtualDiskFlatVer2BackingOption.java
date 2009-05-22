@@ -41,6 +41,8 @@ public class VirtualDiskFlatVer2BackingOption extends VirtualDeviceFileBackingOp
   public boolean growable;
   public boolean hotGrowable;
   public boolean uuid;
+  public BoolOption thinProvisioned;
+  public BoolOption eagerlyScrub;
 
   public ChoiceOption getDiskMode()
   {
@@ -72,6 +74,16 @@ public class VirtualDiskFlatVer2BackingOption extends VirtualDeviceFileBackingOp
     return this.uuid;
   }
 
+  public BoolOption getThinProvisioned()
+  {
+    return this.thinProvisioned;
+  }
+
+  public BoolOption getEagerlyScrub()
+  {
+    return this.eagerlyScrub;
+  }
+
   public void setDiskMode(ChoiceOption diskMode)
   {
     this.diskMode=diskMode;
@@ -100,5 +112,15 @@ public class VirtualDiskFlatVer2BackingOption extends VirtualDeviceFileBackingOp
   public void setUuid(boolean uuid)
   {
     this.uuid=uuid;
+  }
+
+  public void setThinProvisioned(BoolOption thinProvisioned)
+  {
+    this.thinProvisioned=thinProvisioned;
+  }
+
+  public void setEagerlyScrub(BoolOption eagerlyScrub)
+  {
+    this.eagerlyScrub=eagerlyScrub;
   }
 }

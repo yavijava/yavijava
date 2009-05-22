@@ -37,6 +37,7 @@ public class HostVirtualSwitchBondBridge extends HostVirtualSwitchBridge
 {
   public String[] nicDevice;
   public HostVirtualSwitchBeaconConfig beacon;
+  public LinkDiscoveryProtocolConfig linkDiscoveryProtocolConfig;
 
   public String[] getNicDevice()
   {
@@ -48,6 +49,11 @@ public class HostVirtualSwitchBondBridge extends HostVirtualSwitchBridge
     return this.beacon;
   }
 
+  public LinkDiscoveryProtocolConfig getLinkDiscoveryProtocolConfig()
+  {
+    return this.linkDiscoveryProtocolConfig;
+  }
+
   public void setNicDevice(String[] nicDevice)
   {
     this.nicDevice=nicDevice;
@@ -56,5 +62,10 @@ public class HostVirtualSwitchBondBridge extends HostVirtualSwitchBridge
   public void setBeacon(HostVirtualSwitchBeaconConfig beacon)
   {
     this.beacon=beacon;
+  }
+
+  public void setLinkDiscoveryProtocolConfig(LinkDiscoveryProtocolConfig linkDiscoveryProtocolConfig)
+  {
+    this.linkDiscoveryProtocolConfig=linkDiscoveryProtocolConfig;
   }
 }

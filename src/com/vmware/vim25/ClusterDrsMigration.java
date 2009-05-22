@@ -28,6 +28,7 @@ POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
 
 package com.vmware.vim25;
+import java.util.Calendar;
 
 /**
 @author Steve Jin (sjin@vmware.com)
@@ -36,7 +37,7 @@ package com.vmware.vim25;
 public class ClusterDrsMigration extends DynamicData
 {
   public String key;
-  public java.util.Calendar time;
+  public Calendar time;
   public ManagedObjectReference vm;
   public Integer cpuLoad;
   public Long memoryLoad;
@@ -52,7 +53,7 @@ public class ClusterDrsMigration extends DynamicData
     return this.key;
   }
 
-  public java.util.Calendar getTime()
+  public Calendar getTime()
   {
     return this.time;
   }
@@ -107,7 +108,7 @@ public class ClusterDrsMigration extends DynamicData
     this.key=key;
   }
 
-  public void setTime(java.util.Calendar time)
+  public void setTime(Calendar time)
   {
     this.time=time;
   }

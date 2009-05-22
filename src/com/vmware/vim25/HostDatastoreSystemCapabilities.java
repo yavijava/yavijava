@@ -38,6 +38,7 @@ public class HostDatastoreSystemCapabilities extends DynamicData
   public boolean nfsMountCreationRequired;
   public boolean nfsMountCreationSupported;
   public boolean localDatastoreSupported;
+  public Boolean vmfsExtentExpansionSupported;
 
   public boolean isNfsMountCreationRequired()
   {
@@ -54,6 +55,11 @@ public class HostDatastoreSystemCapabilities extends DynamicData
     return this.localDatastoreSupported;
   }
 
+  public Boolean getVmfsExtentExpansionSupported()
+  {
+    return this.vmfsExtentExpansionSupported;
+  }
+
   public void setNfsMountCreationRequired(boolean nfsMountCreationRequired)
   {
     this.nfsMountCreationRequired=nfsMountCreationRequired;
@@ -67,5 +73,10 @@ public class HostDatastoreSystemCapabilities extends DynamicData
   public void setLocalDatastoreSupported(boolean localDatastoreSupported)
   {
     this.localDatastoreSupported=localDatastoreSupported;
+  }
+
+  public void setVmfsExtentExpansionSupported(Boolean vmfsExtentExpansionSupported)
+  {
+    this.vmfsExtentExpansionSupported=vmfsExtentExpansionSupported;
   }
 }

@@ -36,11 +36,20 @@ package com.vmware.vim25;
 public class ClusterComputeResourceSummary extends ComputeResourceSummary
 {
   public int currentFailoverLevel;
+  public ClusterDasAdmissionControlInfo admissionControlInfo;
   public int numVmotions;
+  public Integer targetBalance;
+  public Integer currentBalance;
+  public String currentEVCModeKey;
 
   public int getCurrentFailoverLevel()
   {
     return this.currentFailoverLevel;
+  }
+
+  public ClusterDasAdmissionControlInfo getAdmissionControlInfo()
+  {
+    return this.admissionControlInfo;
   }
 
   public int getNumVmotions()
@@ -48,13 +57,48 @@ public class ClusterComputeResourceSummary extends ComputeResourceSummary
     return this.numVmotions;
   }
 
+  public Integer getTargetBalance()
+  {
+    return this.targetBalance;
+  }
+
+  public Integer getCurrentBalance()
+  {
+    return this.currentBalance;
+  }
+
+  public String getCurrentEVCModeKey()
+  {
+    return this.currentEVCModeKey;
+  }
+
   public void setCurrentFailoverLevel(int currentFailoverLevel)
   {
     this.currentFailoverLevel=currentFailoverLevel;
   }
 
+  public void setAdmissionControlInfo(ClusterDasAdmissionControlInfo admissionControlInfo)
+  {
+    this.admissionControlInfo=admissionControlInfo;
+  }
+
   public void setNumVmotions(int numVmotions)
   {
     this.numVmotions=numVmotions;
+  }
+
+  public void setTargetBalance(Integer targetBalance)
+  {
+    this.targetBalance=targetBalance;
+  }
+
+  public void setCurrentBalance(Integer currentBalance)
+  {
+    this.currentBalance=currentBalance;
+  }
+
+  public void setCurrentEVCModeKey(String currentEVCModeKey)
+  {
+    this.currentEVCModeKey=currentEVCModeKey;
   }
 }

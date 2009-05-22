@@ -78,6 +78,15 @@ public class HostDatastoreSystem extends ManagedObject
 		ManagedObjectReference mor = getVimService().createVmfsDatastore(getMOR(), spec);
 		return new Datastore(getServerConnection(), mor);
 	}
+
+	/**
+	 * @since 4.0
+	 */
+	public Datastore expandVmfsDatastore(Datastore datastore, VmfsDatastoreExpandSpec spec) throws NotFound, HostConfigFault, RuntimeFault, RemoteException
+	{
+		ManagedObjectReference mor = getVimService().expandVmfsDatastore(getMOR(), datastore.getMOR(), spec);
+		return new Datastore(getServerConnection(), mor);
+	}
 	
 	public Datastore extendVmfsDatastore(Datastore datastore, VmfsDatastoreExtendSpec spec) throws HostConfigFault, NotFound, RuntimeFault, RemoteException 
 	{
@@ -99,13 +108,40 @@ public class HostDatastoreSystem extends ManagedObject
 		return getVimService().queryVmfsDatastoreCreateOptions(getMOR(), devicePath);
 	}
 	
+	//SDK2.5 signature for back compatibility
 	public VmfsDatastoreOption[] queryVmfsDatastoreExtendOptions(Datastore datastore, String devicePath) throws HostConfigFault, NotFound, RuntimeFault, RemoteException 
 	{
 		if(datastore==null)
 		{
 			throw new IllegalArgumentException("datastore must not be null.");
 		}
-		return getVimService().queryVmfsDatastoreExtendOptions(getMOR(), datastore.getMOR(), devicePath);
+		return getVimService().queryVmfsDatastoreExtendOptions(getMOR(), datastore.getMOR(), devicePath, false);
+	}
+	
+	//SDK4.0 signature
+	public VmfsDatastoreOption[] queryVmfsDatastoreExtendOptions(Datastore datastore, String devicePath, boolean suppressExpandCandidates) throws HostConfigFault, NotFound, RuntimeFault, RemoteException 
+	{
+		if(datastore==null)
+		{
+			throw new IllegalArgumentException("datastore must not be null.");
+		}
+		return getVimService().queryVmfsDatastoreExtendOptions(getMOR(), datastore.getMOR(), devicePath, suppressExpandCandidates);
+	}
+
+	/** 
+	 * @since 4.0
+	 */
+	public VmfsDatastoreOption[] queryVmfsDatastoreExpandOptions(Datastore datastore) throws NotFound, HostConfigFault, RuntimeFault, RemoteException
+	{
+		return getVimService().queryVmfsDatastoreExpandOptions(getMOR(), datastore.getMOR());
+	}
+	
+	/**
+	 * @since 4.0
+	 */
+	public HostUnresolvedVmfsVolume[] queryUnresolvedVmfsVolumes() throws RuntimeFault, RemoteException
+	{
+		return getVimService().queryUnresolvedVmfsVolumes(getMOR());
 	}
 	
 	public void removeDatastore(Datastore datastore) throws HostConfigFault, ResourceInUse, NotFound, RuntimeFault, RemoteException 
@@ -115,6 +151,15 @@ public class HostDatastoreSystem extends ManagedObject
 			throw new IllegalArgumentException("datastore must not be null.");
 		}
 		getVimService().removeDatastore(getMOR(), datastore.getMOR());
+	}
+	
+	/**
+	 * @since 4.0
+	 */
+	public Task resignatureUnresolvedVmfsVolume_Task(HostUnresolvedVmfsResignatureSpec resolutionSpec) throws VmfsAmbiguousMount, HostConfigFault, RuntimeFault, RemoteException
+	{
+		ManagedObjectReference taskMor = getVimService().resignatureUnresolvedVmfsVolume_Task(getMOR(), resolutionSpec);
+		return new Task(getServerConnection(), taskMor);
 	}
 	
 	public void updateLocalSwapDatastore(Datastore datastore) throws InaccessibleDatastore, DatastoreNotWritableOnHost, RuntimeFault, RemoteException 

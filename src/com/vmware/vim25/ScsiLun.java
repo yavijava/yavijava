@@ -37,7 +37,9 @@ public class ScsiLun extends HostDevice
 {
   public String key;
   public String uuid;
+  public ScsiLunDescriptor[] descriptor;
   public String canonicalName;
+  public String displayName;
   public String lunType;
   public String vendor;
   public String model;
@@ -49,6 +51,7 @@ public class ScsiLun extends HostDevice
   public byte[] standardInquiry;
   public Integer queueDepth;
   public String[] operationalState;
+  public ScsiLunCapabilities capabilities;
 
   public String getKey()
   {
@@ -60,9 +63,19 @@ public class ScsiLun extends HostDevice
     return this.uuid;
   }
 
+  public ScsiLunDescriptor[] getDescriptor()
+  {
+    return this.descriptor;
+  }
+
   public String getCanonicalName()
   {
     return this.canonicalName;
+  }
+
+  public String getDisplayName()
+  {
+    return this.displayName;
   }
 
   public String getLunType()
@@ -120,6 +133,11 @@ public class ScsiLun extends HostDevice
     return this.operationalState;
   }
 
+  public ScsiLunCapabilities getCapabilities()
+  {
+    return this.capabilities;
+  }
+
   public void setKey(String key)
   {
     this.key=key;
@@ -130,9 +148,19 @@ public class ScsiLun extends HostDevice
     this.uuid=uuid;
   }
 
+  public void setDescriptor(ScsiLunDescriptor[] descriptor)
+  {
+    this.descriptor=descriptor;
+  }
+
   public void setCanonicalName(String canonicalName)
   {
     this.canonicalName=canonicalName;
+  }
+
+  public void setDisplayName(String displayName)
+  {
+    this.displayName=displayName;
   }
 
   public void setLunType(String lunType)
@@ -188,5 +216,10 @@ public class ScsiLun extends HostDevice
   public void setOperationalState(String[] operationalState)
   {
     this.operationalState=operationalState;
+  }
+
+  public void setCapabilities(ScsiLunCapabilities capabilities)
+  {
+    this.capabilities=capabilities;
   }
 }

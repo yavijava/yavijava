@@ -28,6 +28,7 @@ POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
 
 package com.vmware.vim25;
+import java.util.Calendar;
 
 /**
 @author Steve Jin (sjin@vmware.com)
@@ -43,7 +44,7 @@ public class LicenseFeatureInfo extends DynamicData
   public String sourceRestriction;
   public String[] dependentKey;
   public Boolean edition;
-  public java.util.Calendar expiresOn;
+  public Calendar expiresOn;
 
   public String getKey()
   {
@@ -85,7 +86,7 @@ public class LicenseFeatureInfo extends DynamicData
     return this.edition;
   }
 
-  public java.util.Calendar getExpiresOn()
+  public Calendar getExpiresOn()
   {
     return this.expiresOn;
   }
@@ -130,7 +131,7 @@ public class LicenseFeatureInfo extends DynamicData
     this.edition=edition;
   }
 
-  public void setExpiresOn(java.util.Calendar expiresOn)
+  public void setExpiresOn(Calendar expiresOn)
   {
     this.expiresOn=expiresOn;
   }

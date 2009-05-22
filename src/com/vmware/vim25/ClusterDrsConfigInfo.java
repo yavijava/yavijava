@@ -36,6 +36,7 @@ package com.vmware.vim25;
 public class ClusterDrsConfigInfo extends DynamicData
 {
   public Boolean enabled;
+  public Boolean enableVmBehaviorOverrides;
   public DrsBehavior defaultVmBehavior;
   public Integer vmotionRate;
   public OptionValue[] option;
@@ -43,6 +44,11 @@ public class ClusterDrsConfigInfo extends DynamicData
   public Boolean getEnabled()
   {
     return this.enabled;
+  }
+
+  public Boolean getEnableVmBehaviorOverrides()
+  {
+    return this.enableVmBehaviorOverrides;
   }
 
   public DrsBehavior getDefaultVmBehavior()
@@ -63,6 +69,11 @@ public class ClusterDrsConfigInfo extends DynamicData
   public void setEnabled(Boolean enabled)
   {
     this.enabled=enabled;
+  }
+
+  public void setEnableVmBehaviorOverrides(Boolean enableVmBehaviorOverrides)
+  {
+    this.enableVmBehaviorOverrides=enableVmBehaviorOverrides;
   }
 
   public void setDefaultVmBehavior(DrsBehavior defaultVmBehavior)

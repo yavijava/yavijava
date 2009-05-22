@@ -36,6 +36,7 @@ package com.vmware.vim25;
 public class HostNetworkConfig extends DynamicData
 {
   public HostVirtualSwitchConfig[] vswitch;
+  public HostProxySwitchConfig[] proxySwitch;
   public HostPortGroupConfig[] portgroup;
   public PhysicalNicConfig[] pnic;
   public HostVirtualNicConfig[] vnic;
@@ -43,12 +44,19 @@ public class HostNetworkConfig extends DynamicData
   public HostDnsConfig dnsConfig;
   public HostIpRouteConfig ipRouteConfig;
   public HostIpRouteConfig consoleIpRouteConfig;
+  public HostIpRouteTableConfig routeTableConfig;
   public HostDhcpServiceConfig[] dhcp;
   public HostNatServiceConfig[] nat;
+  public Boolean ipV6Enabled;
 
   public HostVirtualSwitchConfig[] getVswitch()
   {
     return this.vswitch;
+  }
+
+  public HostProxySwitchConfig[] getProxySwitch()
+  {
+    return this.proxySwitch;
   }
 
   public HostPortGroupConfig[] getPortgroup()
@@ -86,6 +94,11 @@ public class HostNetworkConfig extends DynamicData
     return this.consoleIpRouteConfig;
   }
 
+  public HostIpRouteTableConfig getRouteTableConfig()
+  {
+    return this.routeTableConfig;
+  }
+
   public HostDhcpServiceConfig[] getDhcp()
   {
     return this.dhcp;
@@ -96,9 +109,19 @@ public class HostNetworkConfig extends DynamicData
     return this.nat;
   }
 
+  public Boolean getIpV6Enabled()
+  {
+    return this.ipV6Enabled;
+  }
+
   public void setVswitch(HostVirtualSwitchConfig[] vswitch)
   {
     this.vswitch=vswitch;
+  }
+
+  public void setProxySwitch(HostProxySwitchConfig[] proxySwitch)
+  {
+    this.proxySwitch=proxySwitch;
   }
 
   public void setPortgroup(HostPortGroupConfig[] portgroup)
@@ -136,6 +159,11 @@ public class HostNetworkConfig extends DynamicData
     this.consoleIpRouteConfig=consoleIpRouteConfig;
   }
 
+  public void setRouteTableConfig(HostIpRouteTableConfig routeTableConfig)
+  {
+    this.routeTableConfig=routeTableConfig;
+  }
+
   public void setDhcp(HostDhcpServiceConfig[] dhcp)
   {
     this.dhcp=dhcp;
@@ -144,5 +172,10 @@ public class HostNetworkConfig extends DynamicData
   public void setNat(HostNatServiceConfig[] nat)
   {
     this.nat=nat;
+  }
+
+  public void setIpV6Enabled(Boolean ipV6Enabled)
+  {
+    this.ipV6Enabled=ipV6Enabled;
   }
 }

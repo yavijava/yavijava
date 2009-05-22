@@ -30,6 +30,7 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25.mo.samples;
 
 import java.net.URL;
+import java.rmi.RemoteException;
 
 import com.vmware.vim25.*;
 import com.vmware.vim25.mo.*;
@@ -120,7 +121,7 @@ public class LicenseUtil
       {
     	  licMgr.configureLicenseSource(null, source);
       }
-      catch(java.rmi.RemoteException re) 
+      catch(RemoteException re) 
       {
     	  re.printStackTrace();
       }
@@ -135,7 +136,7 @@ public class LicenseUtil
          {      
             licMgr.setLicenseEdition(null, edition);
          }
-         catch(java.rmi.RemoteException re) 
+         catch(RemoteException re) 
          {
         	 re.printStackTrace();
          }
@@ -226,13 +227,13 @@ public class LicenseUtil
       {
          for(int i=0; i<usage.getFeatureInfo().length; ++i) 
          {
-            print(usage.getFeatureInfo()[i]);
+            print(usage.featureInfo[i]);
          }
          if(usage.getReservationInfo() != null) 
          {
             for(int i=0; i<usage.getReservationInfo().length; ++i) 
             {
-               print(usage.getReservationInfo()[i]);
+               print(usage.featureInfo[i]);
             }
          }
       } 

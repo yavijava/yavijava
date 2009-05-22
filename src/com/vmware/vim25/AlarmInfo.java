@@ -28,6 +28,7 @@ POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
 
 package com.vmware.vim25;
+import java.util.Calendar;
 
 /**
 @author Steve Jin (sjin@vmware.com)
@@ -38,7 +39,7 @@ public class AlarmInfo extends AlarmSpec
   public String key;
   public ManagedObjectReference alarm;
   public ManagedObjectReference entity;
-  public java.util.Calendar lastModifiedTime;
+  public Calendar lastModifiedTime;
   public String lastModifiedUser;
   public int creationEventId;
 
@@ -57,7 +58,7 @@ public class AlarmInfo extends AlarmSpec
     return this.entity;
   }
 
-  public java.util.Calendar getLastModifiedTime()
+  public Calendar getLastModifiedTime()
   {
     return this.lastModifiedTime;
   }
@@ -87,7 +88,7 @@ public class AlarmInfo extends AlarmSpec
     this.entity=entity;
   }
 
-  public void setLastModifiedTime(java.util.Calendar lastModifiedTime)
+  public void setLastModifiedTime(Calendar lastModifiedTime)
   {
     this.lastModifiedTime=lastModifiedTime;
   }

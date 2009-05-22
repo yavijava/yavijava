@@ -40,6 +40,8 @@ public class ConfigTarget extends DynamicData
   public int numNumaNodes;
   public VirtualMachineDatastoreInfo[] datastore;
   public VirtualMachineNetworkInfo[] network;
+  public DistributedVirtualPortgroupInfo[] distributedVirtualPortgroup;
+  public DistributedVirtualSwitchInfo[] distributedVirtualSwitch;
   public VirtualMachineCdromInfo[] cdRom;
   public VirtualMachineSerialInfo[] serial;
   public VirtualMachineParallelInfo[] parallel;
@@ -53,6 +55,7 @@ public class ConfigTarget extends DynamicData
   public int maxMemMBOptimalPerf;
   public ResourcePoolRuntimeInfo resourcePool;
   public Boolean autoVmotion;
+  public VirtualMachinePciPassthroughInfo[] pciPassthrough;
 
   public int getNumCpus()
   {
@@ -77,6 +80,16 @@ public class ConfigTarget extends DynamicData
   public VirtualMachineNetworkInfo[] getNetwork()
   {
     return this.network;
+  }
+
+  public DistributedVirtualPortgroupInfo[] getDistributedVirtualPortgroup()
+  {
+    return this.distributedVirtualPortgroup;
+  }
+
+  public DistributedVirtualSwitchInfo[] getDistributedVirtualSwitch()
+  {
+    return this.distributedVirtualSwitch;
   }
 
   public VirtualMachineCdromInfo[] getCdRom()
@@ -144,6 +157,11 @@ public class ConfigTarget extends DynamicData
     return this.autoVmotion;
   }
 
+  public VirtualMachinePciPassthroughInfo[] getPciPassthrough()
+  {
+    return this.pciPassthrough;
+  }
+
   public void setNumCpus(int numCpus)
   {
     this.numCpus=numCpus;
@@ -167,6 +185,16 @@ public class ConfigTarget extends DynamicData
   public void setNetwork(VirtualMachineNetworkInfo[] network)
   {
     this.network=network;
+  }
+
+  public void setDistributedVirtualPortgroup(DistributedVirtualPortgroupInfo[] distributedVirtualPortgroup)
+  {
+    this.distributedVirtualPortgroup=distributedVirtualPortgroup;
+  }
+
+  public void setDistributedVirtualSwitch(DistributedVirtualSwitchInfo[] distributedVirtualSwitch)
+  {
+    this.distributedVirtualSwitch=distributedVirtualSwitch;
   }
 
   public void setCdRom(VirtualMachineCdromInfo[] cdRom)
@@ -232,5 +260,10 @@ public class ConfigTarget extends DynamicData
   public void setAutoVmotion(Boolean autoVmotion)
   {
     this.autoVmotion=autoVmotion;
+  }
+
+  public void setPciPassthrough(VirtualMachinePciPassthroughInfo[] pciPassthrough)
+  {
+    this.pciPassthrough=pciPassthrough;
   }
 }

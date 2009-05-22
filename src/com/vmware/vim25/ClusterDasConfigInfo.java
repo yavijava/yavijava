@@ -36,7 +36,10 @@ package com.vmware.vim25;
 public class ClusterDasConfigInfo extends DynamicData
 {
   public Boolean enabled;
+  public String vmMonitoring;
+  public String hostMonitoring;
   public Integer failoverLevel;
+  public ClusterDasAdmissionControlPolicy admissionControlPolicy;
   public Boolean admissionControlEnabled;
   public ClusterDasVmSettings defaultVmSettings;
   public OptionValue[] option;
@@ -46,9 +49,24 @@ public class ClusterDasConfigInfo extends DynamicData
     return this.enabled;
   }
 
+  public String getVmMonitoring()
+  {
+    return this.vmMonitoring;
+  }
+
+  public String getHostMonitoring()
+  {
+    return this.hostMonitoring;
+  }
+
   public Integer getFailoverLevel()
   {
     return this.failoverLevel;
+  }
+
+  public ClusterDasAdmissionControlPolicy getAdmissionControlPolicy()
+  {
+    return this.admissionControlPolicy;
   }
 
   public Boolean getAdmissionControlEnabled()
@@ -71,9 +89,24 @@ public class ClusterDasConfigInfo extends DynamicData
     this.enabled=enabled;
   }
 
+  public void setVmMonitoring(String vmMonitoring)
+  {
+    this.vmMonitoring=vmMonitoring;
+  }
+
+  public void setHostMonitoring(String hostMonitoring)
+  {
+    this.hostMonitoring=hostMonitoring;
+  }
+
   public void setFailoverLevel(Integer failoverLevel)
   {
     this.failoverLevel=failoverLevel;
+  }
+
+  public void setAdmissionControlPolicy(ClusterDasAdmissionControlPolicy admissionControlPolicy)
+  {
+    this.admissionControlPolicy=admissionControlPolicy;
   }
 
   public void setAdmissionControlEnabled(Boolean admissionControlEnabled)

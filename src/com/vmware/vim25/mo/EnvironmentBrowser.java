@@ -32,6 +32,7 @@ package com.vmware.vim25.mo;
 import java.rmi.RemoteException;
 
 import com.vmware.vim25.ConfigTarget;
+import com.vmware.vim25.HostCapability;
 import com.vmware.vim25.ManagedObjectReference;
 import com.vmware.vim25.RuntimeFault;
 import com.vmware.vim25.VirtualMachineConfigOption;
@@ -69,5 +70,9 @@ public class EnvironmentBrowser extends ManagedObject
 	{
 		return getVimService().queryConfigTarget(getMOR(), host==null? null : host.getMOR());
 	}
-
+	
+	public HostCapability queryTargetCapabilities(HostSystem host) throws RuntimeFault, RemoteException
+	{
+		return getVimService().queryTargetCapabilities(getMOR(), host==null?null:host.getMOR());
+	}
 }

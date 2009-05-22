@@ -37,6 +37,7 @@ public class ClusterDpmConfigInfo extends DynamicData
 {
   public Boolean enabled;
   public DpmBehavior defaultDpmBehavior;
+  public Integer hostPowerActionRate;
   public OptionValue[] option;
 
   public Boolean getEnabled()
@@ -47,6 +48,11 @@ public class ClusterDpmConfigInfo extends DynamicData
   public DpmBehavior getDefaultDpmBehavior()
   {
     return this.defaultDpmBehavior;
+  }
+
+  public Integer getHostPowerActionRate()
+  {
+    return this.hostPowerActionRate;
   }
 
   public OptionValue[] getOption()
@@ -62,6 +68,11 @@ public class ClusterDpmConfigInfo extends DynamicData
   public void setDefaultDpmBehavior(DpmBehavior defaultDpmBehavior)
   {
     this.defaultDpmBehavior=defaultDpmBehavior;
+  }
+
+  public void setHostPowerActionRate(Integer hostPowerActionRate)
+  {
+    this.hostPowerActionRate=hostPowerActionRate;
   }
 
   public void setOption(OptionValue[] option)

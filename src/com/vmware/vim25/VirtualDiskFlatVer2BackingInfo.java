@@ -39,7 +39,11 @@ public class VirtualDiskFlatVer2BackingInfo extends VirtualDeviceFileBackingInfo
   public Boolean split;
   public Boolean writeThrough;
   public Boolean thinProvisioned;
+  public Boolean eagerlyScrub;
   public String uuid;
+  public String contentId;
+  public String changeId;
+  public VirtualDiskFlatVer2BackingInfo parent;
 
   public String getDiskMode()
   {
@@ -61,9 +65,29 @@ public class VirtualDiskFlatVer2BackingInfo extends VirtualDeviceFileBackingInfo
     return this.thinProvisioned;
   }
 
+  public Boolean getEagerlyScrub()
+  {
+    return this.eagerlyScrub;
+  }
+
   public String getUuid()
   {
     return this.uuid;
+  }
+
+  public String getContentId()
+  {
+    return this.contentId;
+  }
+
+  public String getChangeId()
+  {
+    return this.changeId;
+  }
+
+  public VirtualDiskFlatVer2BackingInfo getParent()
+  {
+    return this.parent;
   }
 
   public void setDiskMode(String diskMode)
@@ -86,8 +110,28 @@ public class VirtualDiskFlatVer2BackingInfo extends VirtualDeviceFileBackingInfo
     this.thinProvisioned=thinProvisioned;
   }
 
+  public void setEagerlyScrub(Boolean eagerlyScrub)
+  {
+    this.eagerlyScrub=eagerlyScrub;
+  }
+
   public void setUuid(String uuid)
   {
     this.uuid=uuid;
+  }
+
+  public void setContentId(String contentId)
+  {
+    this.contentId=contentId;
+  }
+
+  public void setChangeId(String changeId)
+  {
+    this.changeId=changeId;
+  }
+
+  public void setParent(VirtualDiskFlatVer2BackingInfo parent)
+  {
+    this.parent=parent;
   }
 }

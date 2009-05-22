@@ -28,6 +28,7 @@ POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
 
 package com.vmware.vim25;
+import java.util.Calendar;
 
 /**
 @author Steve Jin (sjin@vmware.com)
@@ -39,10 +40,13 @@ public class VirtualMachineSnapshotTree extends DynamicData
   public ManagedObjectReference vm;
   public String name;
   public String description;
-  public java.util.Calendar createTime;
+  public Integer id;
+  public Calendar createTime;
   public VirtualMachinePowerState state;
   public boolean quiesced;
+  public String backupManifest;
   public VirtualMachineSnapshotTree[] childSnapshotList;
+  public Boolean replaySupported;
 
   public ManagedObjectReference getSnapshot()
   {
@@ -64,7 +68,12 @@ public class VirtualMachineSnapshotTree extends DynamicData
     return this.description;
   }
 
-  public java.util.Calendar getCreateTime()
+  public Integer getId()
+  {
+    return this.id;
+  }
+
+  public Calendar getCreateTime()
   {
     return this.createTime;
   }
@@ -79,9 +88,19 @@ public class VirtualMachineSnapshotTree extends DynamicData
     return this.quiesced;
   }
 
+  public String getBackupManifest()
+  {
+    return this.backupManifest;
+  }
+
   public VirtualMachineSnapshotTree[] getChildSnapshotList()
   {
     return this.childSnapshotList;
+  }
+
+  public Boolean getReplaySupported()
+  {
+    return this.replaySupported;
   }
 
   public void setSnapshot(ManagedObjectReference snapshot)
@@ -104,7 +123,12 @@ public class VirtualMachineSnapshotTree extends DynamicData
     this.description=description;
   }
 
-  public void setCreateTime(java.util.Calendar createTime)
+  public void setId(Integer id)
+  {
+    this.id=id;
+  }
+
+  public void setCreateTime(Calendar createTime)
   {
     this.createTime=createTime;
   }
@@ -119,8 +143,18 @@ public class VirtualMachineSnapshotTree extends DynamicData
     this.quiesced=quiesced;
   }
 
+  public void setBackupManifest(String backupManifest)
+  {
+    this.backupManifest=backupManifest;
+  }
+
   public void setChildSnapshotList(VirtualMachineSnapshotTree[] childSnapshotList)
   {
     this.childSnapshotList=childSnapshotList;
+  }
+
+  public void setReplaySupported(Boolean replaySupported)
+  {
+    this.replaySupported=replaySupported;
   }
 }

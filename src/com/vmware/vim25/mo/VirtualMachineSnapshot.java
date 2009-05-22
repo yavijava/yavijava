@@ -61,10 +61,17 @@ public class VirtualMachineSnapshot extends ManagedObject
 		getVimService().renameSnapshot(getMOR(), name, description);
 	}
 	
+	//SDK2.5 signature for back compatibility
 	public Task revertToSnapshot_Task(HostSystem host) throws VmConfigFault, TaskInProgress, FileFault, InvalidState, InsufficientResourcesFault, RuntimeFault, RemoteException 
 	{
-		return new Task(getServerConnection(),
-				getVimService().revertToSnapshot_Task(getMOR(), host==null? null: host.getMOR()));
+		return revertToSnapshot_Task(host, false);
 	}
 	
+	//SDK4.0 signature
+	public Task revertToSnapshot_Task(HostSystem host, boolean suppressPowerOn) throws VmConfigFault, TaskInProgress, FileFault, InvalidState, InsufficientResourcesFault, RuntimeFault, RemoteException 
+	{
+		return new Task(getServerConnection(),
+				getVimService().revertToSnapshot_Task(getMOR(), host==null? null: host.getMOR(), suppressPowerOn));
+	}
+
 }

@@ -36,6 +36,8 @@ package com.vmware.vim25;
 public class GuestInfo extends DynamicData
 {
   public VirtualMachineToolsStatus toolsStatus;
+  public String toolsVersionStatus;
+  public String toolsRunningStatus;
   public String toolsVersion;
   public String guestId;
   public String guestFamily;
@@ -50,6 +52,16 @@ public class GuestInfo extends DynamicData
   public VirtualMachineToolsStatus getToolsStatus()
   {
     return this.toolsStatus;
+  }
+
+  public String getToolsVersionStatus()
+  {
+    return this.toolsVersionStatus;
+  }
+
+  public String getToolsRunningStatus()
+  {
+    return this.toolsRunningStatus;
   }
 
   public String getToolsVersion()
@@ -105,6 +117,16 @@ public class GuestInfo extends DynamicData
   public void setToolsStatus(VirtualMachineToolsStatus toolsStatus)
   {
     this.toolsStatus=toolsStatus;
+  }
+
+  public void setToolsVersionStatus(String toolsVersionStatus)
+  {
+    this.toolsVersionStatus=toolsVersionStatus;
+  }
+
+  public void setToolsRunningStatus(String toolsRunningStatus)
+  {
+    this.toolsRunningStatus=toolsRunningStatus;
   }
 
   public void setToolsVersion(String toolsVersion)

@@ -36,14 +36,25 @@ package com.vmware.vim25;
 public class VirtualEthernetCardNetworkBackingInfo extends VirtualDeviceDeviceBackingInfo
 {
   public ManagedObjectReference network;
+  public Boolean inPassthroughMode;
 
   public ManagedObjectReference getNetwork()
   {
     return this.network;
   }
 
+  public Boolean getInPassthroughMode()
+  {
+    return this.inPassthroughMode;
+  }
+
   public void setNetwork(ManagedObjectReference network)
   {
     this.network=network;
+  }
+
+  public void setInPassthroughMode(Boolean inPassthroughMode)
+  {
+    this.inPassthroughMode=inPassthroughMode;
   }
 }

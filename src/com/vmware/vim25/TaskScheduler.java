@@ -28,6 +28,7 @@ POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
 
 package com.vmware.vim25;
+import java.util.Calendar;
 
 /**
 @author Steve Jin (sjin@vmware.com)
@@ -35,25 +36,25 @@ package com.vmware.vim25;
 
 public class TaskScheduler extends DynamicData
 {
-  public java.util.Calendar activeTime;
-  public java.util.Calendar expireTime;
+  public Calendar activeTime;
+  public Calendar expireTime;
 
-  public java.util.Calendar getActiveTime()
+  public Calendar getActiveTime()
   {
     return this.activeTime;
   }
 
-  public java.util.Calendar getExpireTime()
+  public Calendar getExpireTime()
   {
     return this.expireTime;
   }
 
-  public void setActiveTime(java.util.Calendar activeTime)
+  public void setActiveTime(Calendar activeTime)
   {
     this.activeTime=activeTime;
   }
 
-  public void setExpireTime(java.util.Calendar expireTime)
+  public void setExpireTime(Calendar expireTime)
   {
     this.expireTime=expireTime;
   }

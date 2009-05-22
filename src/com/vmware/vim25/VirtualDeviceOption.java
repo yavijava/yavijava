@@ -44,6 +44,7 @@ public class VirtualDeviceOption extends DynamicData
   public String[] licensingLimit;
   public boolean deprecated;
   public boolean plugAndPlay;
+  public Boolean hotRemoveSupported;
 
   public String getType()
   {
@@ -90,6 +91,11 @@ public class VirtualDeviceOption extends DynamicData
     return this.plugAndPlay;
   }
 
+  public Boolean getHotRemoveSupported()
+  {
+    return this.hotRemoveSupported;
+  }
+
   public void setType(String type)
   {
     this.type=type;
@@ -133,5 +139,10 @@ public class VirtualDeviceOption extends DynamicData
   public void setPlugAndPlay(boolean plugAndPlay)
   {
     this.plugAndPlay=plugAndPlay;
+  }
+
+  public void setHotRemoveSupported(Boolean hotRemoveSupported)
+  {
+    this.hotRemoveSupported=hotRemoveSupported;
   }
 }

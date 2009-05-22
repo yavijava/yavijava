@@ -37,6 +37,7 @@ public enum ClusterDasVmSettingsIsolationResponse
 {
   none ("none"),
   powerOff ("powerOff"),
+  shutdown ("shutdown"),
   clusterIsolationResponse ("clusterIsolationResponse");
 
   private final String val;

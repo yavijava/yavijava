@@ -36,14 +36,25 @@ package com.vmware.vim25;
 public class HostDasErrorEvent extends HostEvent
 {
   public String message;
+  public String reason;
 
   public String getMessage()
   {
     return this.message;
   }
 
+  public String getReason()
+  {
+    return this.reason;
+  }
+
   public void setMessage(String message)
   {
     this.message=message;
+  }
+
+  public void setReason(String reason)
+  {
+    this.reason=reason;
   }
 }

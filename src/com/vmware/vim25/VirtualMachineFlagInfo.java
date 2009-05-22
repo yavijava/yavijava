@@ -45,7 +45,9 @@ public class VirtualMachineFlagInfo extends DynamicData
   public Boolean snapshotLocked;
   public Boolean diskUuidEnabled;
   public String virtualMmuUsage;
+  public String virtualExecUsage;
   public String snapshotPowerOffBehavior;
+  public Boolean recordReplayEnabled;
 
   public Boolean getDisableAcceleration()
   {
@@ -97,9 +99,19 @@ public class VirtualMachineFlagInfo extends DynamicData
     return this.virtualMmuUsage;
   }
 
+  public String getVirtualExecUsage()
+  {
+    return this.virtualExecUsage;
+  }
+
   public String getSnapshotPowerOffBehavior()
   {
     return this.snapshotPowerOffBehavior;
+  }
+
+  public Boolean getRecordReplayEnabled()
+  {
+    return this.recordReplayEnabled;
   }
 
   public void setDisableAcceleration(Boolean disableAcceleration)
@@ -152,8 +164,18 @@ public class VirtualMachineFlagInfo extends DynamicData
     this.virtualMmuUsage=virtualMmuUsage;
   }
 
+  public void setVirtualExecUsage(String virtualExecUsage)
+  {
+    this.virtualExecUsage=virtualExecUsage;
+  }
+
   public void setSnapshotPowerOffBehavior(String snapshotPowerOffBehavior)
   {
     this.snapshotPowerOffBehavior=snapshotPowerOffBehavior;
+  }
+
+  public void setRecordReplayEnabled(Boolean recordReplayEnabled)
+  {
+    this.recordReplayEnabled=recordReplayEnabled;
   }
 }

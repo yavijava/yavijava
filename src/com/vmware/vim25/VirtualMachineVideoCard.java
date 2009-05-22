@@ -36,14 +36,47 @@ package com.vmware.vim25;
 public class VirtualMachineVideoCard extends VirtualDevice
 {
   public Long videoRamSizeInKB;
+  public Integer numDisplays;
+  public Boolean useAutoDetect;
+  public Boolean enable3DSupport;
 
   public Long getVideoRamSizeInKB()
   {
     return this.videoRamSizeInKB;
   }
 
+  public Integer getNumDisplays()
+  {
+    return this.numDisplays;
+  }
+
+  public Boolean getUseAutoDetect()
+  {
+    return this.useAutoDetect;
+  }
+
+  public Boolean getEnable3DSupport()
+  {
+    return this.enable3DSupport;
+  }
+
   public void setVideoRamSizeInKB(Long videoRamSizeInKB)
   {
     this.videoRamSizeInKB=videoRamSizeInKB;
+  }
+
+  public void setNumDisplays(Integer numDisplays)
+  {
+    this.numDisplays=numDisplays;
+  }
+
+  public void setUseAutoDetect(Boolean useAutoDetect)
+  {
+    this.useAutoDetect=useAutoDetect;
+  }
+
+  public void setEnable3DSupport(Boolean enable3DSupport)
+  {
+    this.enable3DSupport=enable3DSupport;
   }
 }

@@ -40,6 +40,7 @@ public enum PerformanceManagerUnit
   megaBytes ("megaBytes"),
   megaHertz ("megaHertz"),
   number ("number"),
+  microsecond ("microsecond"),
   millisecond ("millisecond"),
   second ("second"),
   kiloBytesPerSecond ("kiloBytesPerSecond"),

@@ -40,6 +40,7 @@ public class VmDiskFileQueryFlags extends DynamicData
   public boolean hardwareVersion;
   public Boolean controllerType;
   public Boolean diskExtents;
+  public Boolean thin;
 
   public boolean isDiskType()
   {
@@ -66,6 +67,11 @@ public class VmDiskFileQueryFlags extends DynamicData
     return this.diskExtents;
   }
 
+  public Boolean getThin()
+  {
+    return this.thin;
+  }
+
   public void setDiskType(boolean diskType)
   {
     this.diskType=diskType;
@@ -89,5 +95,10 @@ public class VmDiskFileQueryFlags extends DynamicData
   public void setDiskExtents(Boolean diskExtents)
   {
     this.diskExtents=diskExtents;
+  }
+
+  public void setThin(Boolean thin)
+  {
+    this.thin=thin;
   }
 }

@@ -37,6 +37,8 @@ public class CustomizationLinuxPrep extends CustomizationIdentitySettings
 {
   public CustomizationName hostName;
   public String domain;
+  public String timeZone;
+  public Boolean hwClockUTC;
 
   public CustomizationName getHostName()
   {
@@ -48,6 +50,16 @@ public class CustomizationLinuxPrep extends CustomizationIdentitySettings
     return this.domain;
   }
 
+  public String getTimeZone()
+  {
+    return this.timeZone;
+  }
+
+  public Boolean getHwClockUTC()
+  {
+    return this.hwClockUTC;
+  }
+
   public void setHostName(CustomizationName hostName)
   {
     this.hostName=hostName;
@@ -56,5 +68,15 @@ public class CustomizationLinuxPrep extends CustomizationIdentitySettings
   public void setDomain(String domain)
   {
     this.domain=domain;
+  }
+
+  public void setTimeZone(String timeZone)
+  {
+    this.timeZone=timeZone;
+  }
+
+  public void setHwClockUTC(Boolean hwClockUTC)
+  {
+    this.hwClockUTC=hwClockUTC;
   }
 }

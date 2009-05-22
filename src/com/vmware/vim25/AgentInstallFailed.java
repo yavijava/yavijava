@@ -35,4 +35,37 @@ package com.vmware.vim25;
 
 public class AgentInstallFailed extends HostConnectFault
 {
+  public String reason;
+  public Integer statusCode;
+  public String installerOutput;
+
+  public String getReason()
+  {
+    return this.reason;
+  }
+
+  public Integer getStatusCode()
+  {
+    return this.statusCode;
+  }
+
+  public String getInstallerOutput()
+  {
+    return this.installerOutput;
+  }
+
+  public void setReason(String reason)
+  {
+    this.reason=reason;
+  }
+
+  public void setStatusCode(Integer statusCode)
+  {
+    this.statusCode=statusCode;
+  }
+
+  public void setInstallerOutput(String installerOutput)
+  {
+    this.installerOutput=installerOutput;
+  }
 }

@@ -39,7 +39,9 @@ public class MetricAlarmExpression extends AlarmExpression
   public String type;
   public PerfMetricId metric;
   public Integer yellow;
+  public Integer yellowInterval;
   public Integer red;
+  public Integer redInterval;
 
   public MetricAlarmOperator getOperator()
   {
@@ -61,9 +63,19 @@ public class MetricAlarmExpression extends AlarmExpression
     return this.yellow;
   }
 
+  public Integer getYellowInterval()
+  {
+    return this.yellowInterval;
+  }
+
   public Integer getRed()
   {
     return this.red;
+  }
+
+  public Integer getRedInterval()
+  {
+    return this.redInterval;
   }
 
   public void setOperator(MetricAlarmOperator operator)
@@ -86,8 +98,18 @@ public class MetricAlarmExpression extends AlarmExpression
     this.yellow=yellow;
   }
 
+  public void setYellowInterval(Integer yellowInterval)
+  {
+    this.yellowInterval=yellowInterval;
+  }
+
   public void setRed(Integer red)
   {
     this.red=red;
+  }
+
+  public void setRedInterval(Integer redInterval)
+  {
+    this.redInterval=redInterval;
   }
 }

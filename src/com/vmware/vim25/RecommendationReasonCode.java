@@ -45,7 +45,9 @@ public enum RecommendationReasonCode
   reservationMem ("reservationMem"),
   powerOnVm ("powerOnVm"),
   powerSaving ("powerSaving"),
-  increaseCapacity ("increaseCapacity");
+  increaseCapacity ("increaseCapacity"),
+  checkResource ("checkResource"),
+  unreservedCapacity ("unreservedCapacity");
 
   private final String val;
   private RecommendationReasonCode(String val)

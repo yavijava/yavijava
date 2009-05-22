@@ -39,6 +39,7 @@ public class HostStorageDeviceInfo extends DynamicData
   public ScsiLun[] scsiLun;
   public HostScsiTopology scsiTopology;
   public HostMultipathInfo multipathInfo;
+  public HostPlugStoreTopology plugStoreTopology;
   public boolean softwareInternetScsiEnabled;
 
   public HostHostBusAdapter[] getHostBusAdapter()
@@ -59,6 +60,11 @@ public class HostStorageDeviceInfo extends DynamicData
   public HostMultipathInfo getMultipathInfo()
   {
     return this.multipathInfo;
+  }
+
+  public HostPlugStoreTopology getPlugStoreTopology()
+  {
+    return this.plugStoreTopology;
   }
 
   public boolean isSoftwareInternetScsiEnabled()
@@ -84,6 +90,11 @@ public class HostStorageDeviceInfo extends DynamicData
   public void setMultipathInfo(HostMultipathInfo multipathInfo)
   {
     this.multipathInfo=multipathInfo;
+  }
+
+  public void setPlugStoreTopology(HostPlugStoreTopology plugStoreTopology)
+  {
+    this.plugStoreTopology=plugStoreTopology;
   }
 
   public void setSoftwareInternetScsiEnabled(boolean softwareInternetScsiEnabled)

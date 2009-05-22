@@ -47,6 +47,8 @@ public class VirtualHardwareOption extends DynamicData
   public IntOption numSIOControllers;
   public IntOption numPS2Controllers;
   public String[] licensingLimit;
+  public IntOption numSupportedWwnPorts;
+  public IntOption numSupportedWwnNodes;
 
   public int getHwVersion()
   {
@@ -108,6 +110,16 @@ public class VirtualHardwareOption extends DynamicData
     return this.licensingLimit;
   }
 
+  public IntOption getNumSupportedWwnPorts()
+  {
+    return this.numSupportedWwnPorts;
+  }
+
+  public IntOption getNumSupportedWwnNodes()
+  {
+    return this.numSupportedWwnNodes;
+  }
+
   public void setHwVersion(int hwVersion)
   {
     this.hwVersion=hwVersion;
@@ -166,5 +178,15 @@ public class VirtualHardwareOption extends DynamicData
   public void setLicensingLimit(String[] licensingLimit)
   {
     this.licensingLimit=licensingLimit;
+  }
+
+  public void setNumSupportedWwnPorts(IntOption numSupportedWwnPorts)
+  {
+    this.numSupportedWwnPorts=numSupportedWwnPorts;
+  }
+
+  public void setNumSupportedWwnNodes(IntOption numSupportedWwnNodes)
+  {
+    this.numSupportedWwnNodes=numSupportedWwnNodes;
   }
 }

@@ -36,15 +36,31 @@ package com.vmware.vim25;
 public class VirtualMachineQuickStats extends DynamicData
 {
   public Integer overallCpuUsage;
+  public Integer overallCpuDemand;
   public Integer guestMemoryUsage;
   public Integer hostMemoryUsage;
   public ManagedEntityStatus guestHeartbeatStatus;
   public Integer distributedCpuEntitlement;
   public Integer distributedMemoryEntitlement;
+  public Integer staticCpuEntitlement;
+  public Integer staticMemoryEntitlement;
+  public Integer privateMemory;
+  public Integer sharedMemory;
+  public Integer swappedMemory;
+  public Integer balloonedMemory;
+  public Integer consumedOverheadMemory;
+  public Integer ftLogBandwidth;
+  public Integer ftSecondaryLatency;
+  public ManagedEntityStatus ftLatencyStatus;
 
   public Integer getOverallCpuUsage()
   {
     return this.overallCpuUsage;
+  }
+
+  public Integer getOverallCpuDemand()
+  {
+    return this.overallCpuDemand;
   }
 
   public Integer getGuestMemoryUsage()
@@ -72,9 +88,64 @@ public class VirtualMachineQuickStats extends DynamicData
     return this.distributedMemoryEntitlement;
   }
 
+  public Integer getStaticCpuEntitlement()
+  {
+    return this.staticCpuEntitlement;
+  }
+
+  public Integer getStaticMemoryEntitlement()
+  {
+    return this.staticMemoryEntitlement;
+  }
+
+  public Integer getPrivateMemory()
+  {
+    return this.privateMemory;
+  }
+
+  public Integer getSharedMemory()
+  {
+    return this.sharedMemory;
+  }
+
+  public Integer getSwappedMemory()
+  {
+    return this.swappedMemory;
+  }
+
+  public Integer getBalloonedMemory()
+  {
+    return this.balloonedMemory;
+  }
+
+  public Integer getConsumedOverheadMemory()
+  {
+    return this.consumedOverheadMemory;
+  }
+
+  public Integer getFtLogBandwidth()
+  {
+    return this.ftLogBandwidth;
+  }
+
+  public Integer getFtSecondaryLatency()
+  {
+    return this.ftSecondaryLatency;
+  }
+
+  public ManagedEntityStatus getFtLatencyStatus()
+  {
+    return this.ftLatencyStatus;
+  }
+
   public void setOverallCpuUsage(Integer overallCpuUsage)
   {
     this.overallCpuUsage=overallCpuUsage;
+  }
+
+  public void setOverallCpuDemand(Integer overallCpuDemand)
+  {
+    this.overallCpuDemand=overallCpuDemand;
   }
 
   public void setGuestMemoryUsage(Integer guestMemoryUsage)
@@ -100,5 +171,55 @@ public class VirtualMachineQuickStats extends DynamicData
   public void setDistributedMemoryEntitlement(Integer distributedMemoryEntitlement)
   {
     this.distributedMemoryEntitlement=distributedMemoryEntitlement;
+  }
+
+  public void setStaticCpuEntitlement(Integer staticCpuEntitlement)
+  {
+    this.staticCpuEntitlement=staticCpuEntitlement;
+  }
+
+  public void setStaticMemoryEntitlement(Integer staticMemoryEntitlement)
+  {
+    this.staticMemoryEntitlement=staticMemoryEntitlement;
+  }
+
+  public void setPrivateMemory(Integer privateMemory)
+  {
+    this.privateMemory=privateMemory;
+  }
+
+  public void setSharedMemory(Integer sharedMemory)
+  {
+    this.sharedMemory=sharedMemory;
+  }
+
+  public void setSwappedMemory(Integer swappedMemory)
+  {
+    this.swappedMemory=swappedMemory;
+  }
+
+  public void setBalloonedMemory(Integer balloonedMemory)
+  {
+    this.balloonedMemory=balloonedMemory;
+  }
+
+  public void setConsumedOverheadMemory(Integer consumedOverheadMemory)
+  {
+    this.consumedOverheadMemory=consumedOverheadMemory;
+  }
+
+  public void setFtLogBandwidth(Integer ftLogBandwidth)
+  {
+    this.ftLogBandwidth=ftLogBandwidth;
+  }
+
+  public void setFtSecondaryLatency(Integer ftSecondaryLatency)
+  {
+    this.ftSecondaryLatency=ftSecondaryLatency;
+  }
+
+  public void setFtLatencyStatus(ManagedEntityStatus ftLatencyStatus)
+  {
+    this.ftLatencyStatus=ftLatencyStatus;
   }
 }

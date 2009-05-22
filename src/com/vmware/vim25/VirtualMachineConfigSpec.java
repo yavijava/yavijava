@@ -39,9 +39,14 @@ public class VirtualMachineConfigSpec extends DynamicData
   public String name;
   public String version;
   public String uuid;
+  public String instanceUuid;
   public long[] npivNodeWorldWideName;
   public long[] npivPortWorldWideName;
   public String npivWorldWideNameType;
+  public Short npivDesiredNodeWwns;
+  public Short npivDesiredPortWwns;
+  public Boolean npivTemporaryDisabled;
+  public Boolean npivOnNonRdmDisks;
   public String npivWorldWideNameOp;
   public String locationId;
   public String guestId;
@@ -54,6 +59,9 @@ public class VirtualMachineConfigSpec extends DynamicData
   public VirtualMachineDefaultPowerOpInfo powerOpInfo;
   public Integer numCPUs;
   public Long memoryMB;
+  public Boolean memoryHotAddEnabled;
+  public Boolean cpuHotAddEnabled;
+  public Boolean cpuHotRemoveEnabled;
   public VirtualDeviceConfigSpec[] deviceChange;
   public ResourceAllocationInfo cpuAllocation;
   public ResourceAllocationInfo memoryAllocation;
@@ -64,6 +72,11 @@ public class VirtualMachineConfigSpec extends DynamicData
   public OptionValue[] extraConfig;
   public String swapPlacement;
   public VirtualMachineBootOptions bootOptions;
+  public VmConfigSpec vAppConfig;
+  public FaultToleranceConfigInfo ftInfo;
+  public Boolean vAppConfigRemoved;
+  public Boolean vAssertsEnabled;
+  public Boolean changeTrackingEnabled;
 
   public String getChangeVersion()
   {
@@ -85,6 +98,11 @@ public class VirtualMachineConfigSpec extends DynamicData
     return this.uuid;
   }
 
+  public String getInstanceUuid()
+  {
+    return this.instanceUuid;
+  }
+
   public long[] getNpivNodeWorldWideName()
   {
     return this.npivNodeWorldWideName;
@@ -98,6 +116,26 @@ public class VirtualMachineConfigSpec extends DynamicData
   public String getNpivWorldWideNameType()
   {
     return this.npivWorldWideNameType;
+  }
+
+  public Short getNpivDesiredNodeWwns()
+  {
+    return this.npivDesiredNodeWwns;
+  }
+
+  public Short getNpivDesiredPortWwns()
+  {
+    return this.npivDesiredPortWwns;
+  }
+
+  public Boolean getNpivTemporaryDisabled()
+  {
+    return this.npivTemporaryDisabled;
+  }
+
+  public Boolean getNpivOnNonRdmDisks()
+  {
+    return this.npivOnNonRdmDisks;
   }
 
   public String getNpivWorldWideNameOp()
@@ -160,6 +198,21 @@ public class VirtualMachineConfigSpec extends DynamicData
     return this.memoryMB;
   }
 
+  public Boolean getMemoryHotAddEnabled()
+  {
+    return this.memoryHotAddEnabled;
+  }
+
+  public Boolean getCpuHotAddEnabled()
+  {
+    return this.cpuHotAddEnabled;
+  }
+
+  public Boolean getCpuHotRemoveEnabled()
+  {
+    return this.cpuHotRemoveEnabled;
+  }
+
   public VirtualDeviceConfigSpec[] getDeviceChange()
   {
     return this.deviceChange;
@@ -210,6 +263,31 @@ public class VirtualMachineConfigSpec extends DynamicData
     return this.bootOptions;
   }
 
+  public VmConfigSpec getVAppConfig()
+  {
+    return this.vAppConfig;
+  }
+
+  public FaultToleranceConfigInfo getFtInfo()
+  {
+    return this.ftInfo;
+  }
+
+  public Boolean getVAppConfigRemoved()
+  {
+    return this.vAppConfigRemoved;
+  }
+
+  public Boolean getVAssertsEnabled()
+  {
+    return this.vAssertsEnabled;
+  }
+
+  public Boolean getChangeTrackingEnabled()
+  {
+    return this.changeTrackingEnabled;
+  }
+
   public void setChangeVersion(String changeVersion)
   {
     this.changeVersion=changeVersion;
@@ -230,6 +308,11 @@ public class VirtualMachineConfigSpec extends DynamicData
     this.uuid=uuid;
   }
 
+  public void setInstanceUuid(String instanceUuid)
+  {
+    this.instanceUuid=instanceUuid;
+  }
+
   public void setNpivNodeWorldWideName(long[] npivNodeWorldWideName)
   {
     this.npivNodeWorldWideName=npivNodeWorldWideName;
@@ -243,6 +326,26 @@ public class VirtualMachineConfigSpec extends DynamicData
   public void setNpivWorldWideNameType(String npivWorldWideNameType)
   {
     this.npivWorldWideNameType=npivWorldWideNameType;
+  }
+
+  public void setNpivDesiredNodeWwns(Short npivDesiredNodeWwns)
+  {
+    this.npivDesiredNodeWwns=npivDesiredNodeWwns;
+  }
+
+  public void setNpivDesiredPortWwns(Short npivDesiredPortWwns)
+  {
+    this.npivDesiredPortWwns=npivDesiredPortWwns;
+  }
+
+  public void setNpivTemporaryDisabled(Boolean npivTemporaryDisabled)
+  {
+    this.npivTemporaryDisabled=npivTemporaryDisabled;
+  }
+
+  public void setNpivOnNonRdmDisks(Boolean npivOnNonRdmDisks)
+  {
+    this.npivOnNonRdmDisks=npivOnNonRdmDisks;
   }
 
   public void setNpivWorldWideNameOp(String npivWorldWideNameOp)
@@ -305,6 +408,21 @@ public class VirtualMachineConfigSpec extends DynamicData
     this.memoryMB=memoryMB;
   }
 
+  public void setMemoryHotAddEnabled(Boolean memoryHotAddEnabled)
+  {
+    this.memoryHotAddEnabled=memoryHotAddEnabled;
+  }
+
+  public void setCpuHotAddEnabled(Boolean cpuHotAddEnabled)
+  {
+    this.cpuHotAddEnabled=cpuHotAddEnabled;
+  }
+
+  public void setCpuHotRemoveEnabled(Boolean cpuHotRemoveEnabled)
+  {
+    this.cpuHotRemoveEnabled=cpuHotRemoveEnabled;
+  }
+
   public void setDeviceChange(VirtualDeviceConfigSpec[] deviceChange)
   {
     this.deviceChange=deviceChange;
@@ -353,5 +471,30 @@ public class VirtualMachineConfigSpec extends DynamicData
   public void setBootOptions(VirtualMachineBootOptions bootOptions)
   {
     this.bootOptions=bootOptions;
+  }
+
+  public void setVAppConfig(VmConfigSpec vAppConfig)
+  {
+    this.vAppConfig=vAppConfig;
+  }
+
+  public void setFtInfo(FaultToleranceConfigInfo ftInfo)
+  {
+    this.ftInfo=ftInfo;
+  }
+
+  public void setVAppConfigRemoved(Boolean vAppConfigRemoved)
+  {
+    this.vAppConfigRemoved=vAppConfigRemoved;
+  }
+
+  public void setVAssertsEnabled(Boolean vAssertsEnabled)
+  {
+    this.vAssertsEnabled=vAssertsEnabled;
+  }
+
+  public void setChangeTrackingEnabled(Boolean changeTrackingEnabled)
+  {
+    this.changeTrackingEnabled=changeTrackingEnabled;
   }
 }

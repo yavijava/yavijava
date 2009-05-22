@@ -28,6 +28,7 @@ POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
 
 package com.vmware.vim25;
+import java.util.Calendar;
 
 /**
 @author Steve Jin (sjin@vmware.com)
@@ -37,7 +38,7 @@ public class ClusterRecommendation extends DynamicData
 {
   public String key;
   public String type;
-  public java.util.Calendar time;
+  public Calendar time;
   public int rating;
   public String reason;
   public String reasonText;
@@ -55,7 +56,7 @@ public class ClusterRecommendation extends DynamicData
     return this.type;
   }
 
-  public java.util.Calendar getTime()
+  public Calendar getTime()
   {
     return this.time;
   }
@@ -100,7 +101,7 @@ public class ClusterRecommendation extends DynamicData
     this.type=type;
   }
 
-  public void setTime(java.util.Calendar time)
+  public void setTime(Calendar time)
   {
     this.time=time;
   }

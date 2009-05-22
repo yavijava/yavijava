@@ -38,6 +38,7 @@ public class CustomizationIPSettings extends DynamicData
   public CustomizationIpGenerator ip;
   public String subnetMask;
   public String[] gateway;
+  public CustomizationIPSettingsIpV6AddressSpec ipV6Spec;
   public String[] dnsServerList;
   public String dnsDomain;
   public String primaryWINS;
@@ -57,6 +58,11 @@ public class CustomizationIPSettings extends DynamicData
   public String[] getGateway()
   {
     return this.gateway;
+  }
+
+  public CustomizationIPSettingsIpV6AddressSpec getIpV6Spec()
+  {
+    return this.ipV6Spec;
   }
 
   public String[] getDnsServerList()
@@ -97,6 +103,11 @@ public class CustomizationIPSettings extends DynamicData
   public void setGateway(String[] gateway)
   {
     this.gateway=gateway;
+  }
+
+  public void setIpV6Spec(CustomizationIPSettingsIpV6AddressSpec ipV6Spec)
+  {
+    this.ipV6Spec=ipV6Spec;
   }
 
   public void setDnsServerList(String[] dnsServerList)

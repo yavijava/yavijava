@@ -37,6 +37,7 @@ public class VirtualDiskRawDiskVer2BackingInfo extends VirtualDeviceDeviceBackin
 {
   public String descriptorFileName;
   public String uuid;
+  public String changeId;
 
   public String getDescriptorFileName()
   {
@@ -48,6 +49,11 @@ public class VirtualDiskRawDiskVer2BackingInfo extends VirtualDeviceDeviceBackin
     return this.uuid;
   }
 
+  public String getChangeId()
+  {
+    return this.changeId;
+  }
+
   public void setDescriptorFileName(String descriptorFileName)
   {
     this.descriptorFileName=descriptorFileName;
@@ -56,5 +62,10 @@ public class VirtualDiskRawDiskVer2BackingInfo extends VirtualDeviceDeviceBackin
   public void setUuid(String uuid)
   {
     this.uuid=uuid;
+  }
+
+  public void setChangeId(String changeId)
+  {
+    this.changeId=changeId;
   }
 }

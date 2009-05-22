@@ -39,6 +39,9 @@ public class HostInternetScsiHbaAuthenticationCapabilities extends DynamicData
   public boolean krb5AuthSettable;
   public boolean srpAuthSettable;
   public boolean spkmAuthSettable;
+  public Boolean mutualChapSettable;
+  public Boolean targetChapSettable;
+  public Boolean targetMutualChapSettable;
 
   public boolean isChapAuthSettable()
   {
@@ -60,6 +63,21 @@ public class HostInternetScsiHbaAuthenticationCapabilities extends DynamicData
     return this.spkmAuthSettable;
   }
 
+  public Boolean getMutualChapSettable()
+  {
+    return this.mutualChapSettable;
+  }
+
+  public Boolean getTargetChapSettable()
+  {
+    return this.targetChapSettable;
+  }
+
+  public Boolean getTargetMutualChapSettable()
+  {
+    return this.targetMutualChapSettable;
+  }
+
   public void setChapAuthSettable(boolean chapAuthSettable)
   {
     this.chapAuthSettable=chapAuthSettable;
@@ -78,5 +96,20 @@ public class HostInternetScsiHbaAuthenticationCapabilities extends DynamicData
   public void setSpkmAuthSettable(boolean spkmAuthSettable)
   {
     this.spkmAuthSettable=spkmAuthSettable;
+  }
+
+  public void setMutualChapSettable(Boolean mutualChapSettable)
+  {
+    this.mutualChapSettable=mutualChapSettable;
+  }
+
+  public void setTargetChapSettable(Boolean targetChapSettable)
+  {
+    this.targetChapSettable=targetChapSettable;
+  }
+
+  public void setTargetMutualChapSettable(Boolean targetMutualChapSettable)
+  {
+    this.targetMutualChapSettable=targetMutualChapSettable;
   }
 }

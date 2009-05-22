@@ -34,15 +34,9 @@ import java.net.URL;
 import java.rmi.RemoteException;
 import java.util.Hashtable;
 
-import com.vmware.vim25.VirtualMachineToolsStatus;
-import com.vmware.vim25.mo.Folder;
-import com.vmware.vim25.mo.InventoryNavigator;
-import com.vmware.vim25.mo.ManagedEntity;
-import com.vmware.vim25.mo.ServiceInstance;
-import com.vmware.vim25.mo.VirtualMachine;
-import com.vmware.vim25.mo.util.CommandLineParser;
-import com.vmware.vim25.mo.util.OptionSpec;
-import com.vmware.vim25.mo.util.PropertyCollectorUtil;
+import com.vmware.vim25.*;
+import com.vmware.vim25.mo.*;
+import com.vmware.vim25.mo.util.*;
 
 /**
  * This sample code shows how to get different API to:
@@ -80,26 +74,16 @@ public class MultiProperties
 		Hashtable props = vm.getPropertiesByPaths(new String[] {"name", 
 				"config.cpuFeatureMask",
 				"guest.toolsStatus",
-				"guest.guestId",
-				"recentTask"
-				});
+				"guest.guestId"});
 		System.out.println(vm);
 		System.out.println(props);
-		
-		Object task = props.get("recentTask");
-		// Hashtable cannot have null as value, so check it against PropertyCollectorUtil.NULL
-		if(task==PropertyCollectorUtil.NULL) 
-		{
-			System.out.println("recent task is null!");
-		}
 		
 		System.out.println("\nretrieve multiple properties from multiple managed objects.");
 		Hashtable[] pTables = PropertyCollectorUtil.retrieveProperties(vms, "VirtualMachine",
 				new String[] {"name", 
 				"config.cpuFeatureMask",
 				"guest.toolsStatus",
-				"guest.guestId",
-				"recentTask"
+				"guest.guestId"
 				});
 		for(int i=0; i<pTables.length; i++)
 		{

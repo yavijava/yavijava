@@ -28,6 +28,7 @@ POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
 
 package com.vmware.vim25;
+import java.util.Calendar;
 
 /**
 @author Steve Jin (sjin@vmware.com)
@@ -39,6 +40,7 @@ public class DatastoreInfo extends DynamicData
   public String url;
   public long freeSpace;
   public long maxFileSize;
+  public Calendar timestamp;
 
   public String getName()
   {
@@ -60,6 +62,11 @@ public class DatastoreInfo extends DynamicData
     return this.maxFileSize;
   }
 
+  public Calendar getTimestamp()
+  {
+    return this.timestamp;
+  }
+
   public void setName(String name)
   {
     this.name=name;
@@ -78,5 +85,10 @@ public class DatastoreInfo extends DynamicData
   public void setMaxFileSize(long maxFileSize)
   {
     this.maxFileSize=maxFileSize;
+  }
+
+  public void setTimestamp(Calendar timestamp)
+  {
+    this.timestamp=timestamp;
   }
 }

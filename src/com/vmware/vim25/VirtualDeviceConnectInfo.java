@@ -38,6 +38,7 @@ public class VirtualDeviceConnectInfo extends DynamicData
   public boolean startConnected;
   public boolean allowGuestControl;
   public boolean connected;
+  public String status;
 
   public boolean isStartConnected()
   {
@@ -54,6 +55,11 @@ public class VirtualDeviceConnectInfo extends DynamicData
     return this.connected;
   }
 
+  public String getStatus()
+  {
+    return this.status;
+  }
+
   public void setStartConnected(boolean startConnected)
   {
     this.startConnected=startConnected;
@@ -67,5 +73,10 @@ public class VirtualDeviceConnectInfo extends DynamicData
   public void setConnected(boolean connected)
   {
     this.connected=connected;
+  }
+
+  public void setStatus(String status)
+  {
+    this.status=status;
   }
 }

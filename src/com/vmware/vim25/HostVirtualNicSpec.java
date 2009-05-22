@@ -37,6 +37,10 @@ public class HostVirtualNicSpec extends DynamicData
 {
   public HostIpConfig ip;
   public String mac;
+  public DistributedVirtualSwitchPortConnection distributedVirtualPort;
+  public String portgroup;
+  public Integer mtu;
+  public Boolean tsoEnabled;
 
   public HostIpConfig getIp()
   {
@@ -48,6 +52,26 @@ public class HostVirtualNicSpec extends DynamicData
     return this.mac;
   }
 
+  public DistributedVirtualSwitchPortConnection getDistributedVirtualPort()
+  {
+    return this.distributedVirtualPort;
+  }
+
+  public String getPortgroup()
+  {
+    return this.portgroup;
+  }
+
+  public Integer getMtu()
+  {
+    return this.mtu;
+  }
+
+  public Boolean getTsoEnabled()
+  {
+    return this.tsoEnabled;
+  }
+
   public void setIp(HostIpConfig ip)
   {
     this.ip=ip;
@@ -56,5 +80,25 @@ public class HostVirtualNicSpec extends DynamicData
   public void setMac(String mac)
   {
     this.mac=mac;
+  }
+
+  public void setDistributedVirtualPort(DistributedVirtualSwitchPortConnection distributedVirtualPort)
+  {
+    this.distributedVirtualPort=distributedVirtualPort;
+  }
+
+  public void setPortgroup(String portgroup)
+  {
+    this.portgroup=portgroup;
+  }
+
+  public void setMtu(Integer mtu)
+  {
+    this.mtu=mtu;
+  }
+
+  public void setTsoEnabled(Boolean tsoEnabled)
+  {
+    this.tsoEnabled=tsoEnabled;
   }
 }

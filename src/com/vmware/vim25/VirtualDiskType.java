@@ -43,6 +43,8 @@ public enum VirtualDiskType
   sparse2Gb ("sparse2Gb"),
   thick2Gb ("thick2Gb"),
   eagerZeroedThick ("eagerZeroedThick"),
+  sparseMonolithic ("sparseMonolithic"),
+  flatMonolithic ("flatMonolithic"),
   thick ("thick");
 
   private final String val;

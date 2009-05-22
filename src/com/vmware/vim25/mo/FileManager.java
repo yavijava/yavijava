@@ -35,6 +35,7 @@ import com.vmware.vim25.FileFault;
 import com.vmware.vim25.InvalidDatastore;
 import com.vmware.vim25.ManagedObjectReference;
 import com.vmware.vim25.RuntimeFault;
+import com.vmware.vim25.UserNotFound;
 
 /**
  * The managed object class corresponding to the one defined in VI SDK API reference.
@@ -49,6 +50,15 @@ public class FileManager extends ManagedObject
 		super(serverConnection, mor);
 	}
 
+	/**
+	 * @since 4.0
+	 */
+	public void changeOwner(String name, Datacenter datacenter, String owner) throws InvalidDatastore, FileFault, UserNotFound, RuntimeFault, RemoteException
+	{
+		getVimService().changeOwner(getMOR(), name, 
+				datacenter==null?null:datacenter.getMOR(), owner);
+	}
+	
 	public Task copyDatastoreFile_Task(String sourceName, Datacenter sourceDatacenter, 
 			String destinationName, Datacenter destinationDatacenter, boolean force) throws FileFault, InvalidDatastore, RuntimeFault, RemoteException 
 	{

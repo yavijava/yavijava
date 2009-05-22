@@ -40,6 +40,7 @@ public class VmDiskFileInfo extends FileInfo
   public Integer hardwareVersion;
   public String controllerType;
   public String[] diskExtents;
+  public Boolean thin;
 
   public String getDiskType()
   {
@@ -66,6 +67,11 @@ public class VmDiskFileInfo extends FileInfo
     return this.diskExtents;
   }
 
+  public Boolean getThin()
+  {
+    return this.thin;
+  }
+
   public void setDiskType(String diskType)
   {
     this.diskType=diskType;
@@ -89,5 +95,10 @@ public class VmDiskFileInfo extends FileInfo
   public void setDiskExtents(String[] diskExtents)
   {
     this.diskExtents=diskExtents;
+  }
+
+  public void setThin(Boolean thin)
+  {
+    this.thin=thin;
   }
 }

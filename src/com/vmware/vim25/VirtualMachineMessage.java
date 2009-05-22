@@ -37,6 +37,7 @@ public class VirtualMachineMessage extends DynamicData
 {
   public String id;
   public Object[] argument;
+  public String text;
 
   public String getId()
   {
@@ -48,6 +49,11 @@ public class VirtualMachineMessage extends DynamicData
     return this.argument;
   }
 
+  public String getText()
+  {
+    return this.text;
+  }
+
   public void setId(String id)
   {
     this.id=id;
@@ -56,5 +62,10 @@ public class VirtualMachineMessage extends DynamicData
   public void setArgument(Object[] argument)
   {
     this.argument=argument;
+  }
+
+  public void setText(String text)
+  {
+    this.text=text;
   }
 }

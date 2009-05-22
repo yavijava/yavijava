@@ -68,11 +68,18 @@ public class Folder extends ManagedEntity
 	{
 		return (String[]) getCurrentProperty("childType");
 	}
-	
+
+	// SDK2.5 signature for back compatibility
 	public Task addStandaloneHost_Task(HostConnectSpec spec, ComputeResourceConfigSpec compResSpec, boolean addConnected) throws InvalidLogin, HostConnectFault, RuntimeFault, RemoteException 
 	{
+		return addStandaloneHost_Task(spec, compResSpec, addConnected, null);
+	}
+
+	// new 4.0 signature
+	public Task addStandaloneHost_Task(HostConnectSpec spec, ComputeResourceConfigSpec compResSpec, boolean addConnected, String license) throws InvalidLogin, HostConnectFault, RuntimeFault, RemoteException 
+	{
 		return new Task(getServerConnection(),
-			getVimService().addStandaloneHost_Task(getMOR(), spec, compResSpec, addConnected) );
+			getVimService().addStandaloneHost_Task(getMOR(), spec, compResSpec, addConnected, license));
 	}
 
 	public ClusterComputeResource createCluster(String name, ClusterConfigSpec spec) throws InvalidName, DuplicateName, RuntimeFault, RemoteException 
@@ -91,6 +98,15 @@ public class Folder extends ManagedEntity
 	{
 		return new Datacenter(getServerConnection(),
 			getVimService().createDatacenter(getMOR(), name) );
+	}
+	
+	/**
+	 * @since 4.0
+	 */
+	public Task createDVS_Task(DVSCreateSpec spec) throws DvsNotAuthorized, DvsFault, DuplicateName, InvalidName, NotFound, RuntimeFault, RemoteException
+	{
+		ManagedObjectReference taskMor = getVimService().createDVS_Task(getMOR(), spec);
+		return new Task(getServerConnection(), taskMor);
 	}
 	
 	public Folder createFolder(String name) throws InvalidName, DuplicateName, RuntimeFault, RemoteException 

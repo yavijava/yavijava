@@ -38,6 +38,7 @@ public class VmDiskFileQueryFilter extends DynamicData
   public String[] diskType;
   public int[] matchHardwareVersion;
   public String[] controllerType;
+  public Boolean thin;
 
   public String[] getDiskType()
   {
@@ -54,6 +55,11 @@ public class VmDiskFileQueryFilter extends DynamicData
     return this.controllerType;
   }
 
+  public Boolean getThin()
+  {
+    return this.thin;
+  }
+
   public void setDiskType(String[] diskType)
   {
     this.diskType=diskType;
@@ -67,5 +73,10 @@ public class VmDiskFileQueryFilter extends DynamicData
   public void setControllerType(String[] controllerType)
   {
     this.controllerType=controllerType;
+  }
+
+  public void setThin(Boolean thin)
+  {
+    this.thin=thin;
   }
 }

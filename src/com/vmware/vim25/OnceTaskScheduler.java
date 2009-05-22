@@ -28,6 +28,7 @@ POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
 
 package com.vmware.vim25;
+import java.util.Calendar;
 
 /**
 @author Steve Jin (sjin@vmware.com)
@@ -35,14 +36,14 @@ package com.vmware.vim25;
 
 public class OnceTaskScheduler extends TaskScheduler
 {
-  public java.util.Calendar runAt;
+  public Calendar runAt;
 
-  public java.util.Calendar getRunAt()
+  public Calendar getRunAt()
   {
     return this.runAt;
   }
 
-  public void setRunAt(java.util.Calendar runAt)
+  public void setRunAt(Calendar runAt)
   {
     this.runAt=runAt;
   }

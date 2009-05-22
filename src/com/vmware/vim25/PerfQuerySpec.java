@@ -28,6 +28,7 @@ POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
 
 package com.vmware.vim25;
+import java.util.Calendar;
 
 /**
 @author Steve Jin (sjin@vmware.com)
@@ -36,8 +37,8 @@ package com.vmware.vim25;
 public class PerfQuerySpec extends DynamicData
 {
   public ManagedObjectReference entity;
-  public java.util.Calendar startTime;
-  public java.util.Calendar endTime;
+  public Calendar startTime;
+  public Calendar endTime;
   public Integer maxSample;
   public PerfMetricId[] metricId;
   public Integer intervalId;
@@ -48,12 +49,12 @@ public class PerfQuerySpec extends DynamicData
     return this.entity;
   }
 
-  public java.util.Calendar getStartTime()
+  public Calendar getStartTime()
   {
     return this.startTime;
   }
 
-  public java.util.Calendar getEndTime()
+  public Calendar getEndTime()
   {
     return this.endTime;
   }
@@ -83,12 +84,12 @@ public class PerfQuerySpec extends DynamicData
     this.entity=entity;
   }
 
-  public void setStartTime(java.util.Calendar startTime)
+  public void setStartTime(Calendar startTime)
   {
     this.startTime=startTime;
   }
 
-  public void setEndTime(java.util.Calendar endTime)
+  public void setEndTime(Calendar endTime)
   {
     this.endTime=endTime;
   }

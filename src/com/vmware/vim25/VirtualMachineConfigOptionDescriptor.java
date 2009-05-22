@@ -38,6 +38,8 @@ public class VirtualMachineConfigOptionDescriptor extends DynamicData
   public String key;
   public String description;
   public ManagedObjectReference[] host;
+  public Boolean createSupported;
+  public Boolean defaultConfigOption;
 
   public String getKey()
   {
@@ -54,6 +56,16 @@ public class VirtualMachineConfigOptionDescriptor extends DynamicData
     return this.host;
   }
 
+  public Boolean getCreateSupported()
+  {
+    return this.createSupported;
+  }
+
+  public Boolean getDefaultConfigOption()
+  {
+    return this.defaultConfigOption;
+  }
+
   public void setKey(String key)
   {
     this.key=key;
@@ -67,5 +79,15 @@ public class VirtualMachineConfigOptionDescriptor extends DynamicData
   public void setHost(ManagedObjectReference[] host)
   {
     this.host=host;
+  }
+
+  public void setCreateSupported(Boolean createSupported)
+  {
+    this.createSupported=createSupported;
+  }
+
+  public void setDefaultConfigOption(Boolean defaultConfigOption)
+  {
+    this.defaultConfigOption=defaultConfigOption;
   }
 }

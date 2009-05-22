@@ -38,6 +38,8 @@ public class HostMultipathInfoPath extends DynamicData
   public String key;
   public String name;
   public String pathState;
+  public String state;
+  public Boolean isWorkingPath;
   public String adapter;
   public String lun;
   public HostTargetTransport transport;
@@ -55,6 +57,16 @@ public class HostMultipathInfoPath extends DynamicData
   public String getPathState()
   {
     return this.pathState;
+  }
+
+  public String getState()
+  {
+    return this.state;
+  }
+
+  public Boolean getIsWorkingPath()
+  {
+    return this.isWorkingPath;
   }
 
   public String getAdapter()
@@ -85,6 +97,16 @@ public class HostMultipathInfoPath extends DynamicData
   public void setPathState(String pathState)
   {
     this.pathState=pathState;
+  }
+
+  public void setState(String state)
+  {
+    this.state=state;
+  }
+
+  public void setIsWorkingPath(Boolean isWorkingPath)
+  {
+    this.isWorkingPath=isWorkingPath;
   }
 
   public void setAdapter(String adapter)

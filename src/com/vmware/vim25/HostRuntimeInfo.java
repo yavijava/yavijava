@@ -28,6 +28,7 @@ POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
 
 package com.vmware.vim25;
+import java.util.Calendar;
 
 /**
 @author Steve Jin (sjin@vmware.com)
@@ -38,8 +39,9 @@ public class HostRuntimeInfo extends DynamicData
   public HostSystemConnectionState connectionState;
   public HostSystemPowerState powerState;
   public boolean inMaintenanceMode;
-  public java.util.Calendar bootTime;
+  public Calendar bootTime;
   public HealthSystemRuntime healthSystemRuntime;
+  public HostTpmDigestInfo[] tpmPcrValues;
 
   public HostSystemConnectionState getConnectionState()
   {
@@ -56,7 +58,7 @@ public class HostRuntimeInfo extends DynamicData
     return this.inMaintenanceMode;
   }
 
-  public java.util.Calendar getBootTime()
+  public Calendar getBootTime()
   {
     return this.bootTime;
   }
@@ -64,6 +66,11 @@ public class HostRuntimeInfo extends DynamicData
   public HealthSystemRuntime getHealthSystemRuntime()
   {
     return this.healthSystemRuntime;
+  }
+
+  public HostTpmDigestInfo[] getTpmPcrValues()
+  {
+    return this.tpmPcrValues;
   }
 
   public void setConnectionState(HostSystemConnectionState connectionState)
@@ -81,7 +88,7 @@ public class HostRuntimeInfo extends DynamicData
     this.inMaintenanceMode=inMaintenanceMode;
   }
 
-  public void setBootTime(java.util.Calendar bootTime)
+  public void setBootTime(Calendar bootTime)
   {
     this.bootTime=bootTime;
   }
@@ -89,5 +96,10 @@ public class HostRuntimeInfo extends DynamicData
   public void setHealthSystemRuntime(HealthSystemRuntime healthSystemRuntime)
   {
     this.healthSystemRuntime=healthSystemRuntime;
+  }
+
+  public void setTpmPcrValues(HostTpmDigestInfo[] tpmPcrValues)
+  {
+    this.tpmPcrValues=tpmPcrValues;
   }
 }

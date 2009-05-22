@@ -39,6 +39,8 @@ public class VirtualDiskSparseVer1BackingInfo extends VirtualDeviceFileBackingIn
   public Boolean split;
   public Boolean writeThrough;
   public Long spaceUsedInKB;
+  public String contentId;
+  public VirtualDiskSparseVer1BackingInfo parent;
 
   public String getDiskMode()
   {
@@ -60,6 +62,16 @@ public class VirtualDiskSparseVer1BackingInfo extends VirtualDeviceFileBackingIn
     return this.spaceUsedInKB;
   }
 
+  public String getContentId()
+  {
+    return this.contentId;
+  }
+
+  public VirtualDiskSparseVer1BackingInfo getParent()
+  {
+    return this.parent;
+  }
+
   public void setDiskMode(String diskMode)
   {
     this.diskMode=diskMode;
@@ -78,5 +90,15 @@ public class VirtualDiskSparseVer1BackingInfo extends VirtualDeviceFileBackingIn
   public void setSpaceUsedInKB(Long spaceUsedInKB)
   {
     this.spaceUsedInKB=spaceUsedInKB;
+  }
+
+  public void setContentId(String contentId)
+  {
+    this.contentId=contentId;
+  }
+
+  public void setParent(VirtualDiskSparseVer1BackingInfo parent)
+  {
+    this.parent=parent;
   }
 }

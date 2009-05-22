@@ -41,9 +41,11 @@ public class HostConfigInfo extends DynamicData
   public ServiceConsoleReservationInfo consoleReservation;
   public VirtualMachineMemoryReservationInfo virtualMachineReservation;
   public HostStorageDeviceInfo storageDevice;
+  public HostMultipathStateInfo multipathState;
   public HostFileSystemVolumeInfo fileSystemVolume;
   public HostNetworkInfo network;
   public HostVMotionInfo vmotion;
+  public HostVirtualNicManagerInfo virtualNicManagerInfo;
   public HostNetCapabilities capabilities;
   public HostDatastoreSystemCapabilities datastoreCapabilities;
   public HostNetOffloadCapabilities offloadCapabilities;
@@ -59,6 +61,9 @@ public class HostConfigInfo extends DynamicData
   public HostDateTimeInfo dateTimeInfo;
   public HostFlagInfo flags;
   public Boolean adminDisabled;
+  public HostIpmiInfo ipmi;
+  public HostSslThumbprintInfo sslThumbprintInfo;
+  public HostPciPassthruInfo[] pciPassthruInfo;
 
   public ManagedObjectReference getHost()
   {
@@ -90,6 +95,11 @@ public class HostConfigInfo extends DynamicData
     return this.storageDevice;
   }
 
+  public HostMultipathStateInfo getMultipathState()
+  {
+    return this.multipathState;
+  }
+
   public HostFileSystemVolumeInfo getFileSystemVolume()
   {
     return this.fileSystemVolume;
@@ -103,6 +113,11 @@ public class HostConfigInfo extends DynamicData
   public HostVMotionInfo getVmotion()
   {
     return this.vmotion;
+  }
+
+  public HostVirtualNicManagerInfo getVirtualNicManagerInfo()
+  {
+    return this.virtualNicManagerInfo;
   }
 
   public HostNetCapabilities getCapabilities()
@@ -180,6 +195,21 @@ public class HostConfigInfo extends DynamicData
     return this.adminDisabled;
   }
 
+  public HostIpmiInfo getIpmi()
+  {
+    return this.ipmi;
+  }
+
+  public HostSslThumbprintInfo getSslThumbprintInfo()
+  {
+    return this.sslThumbprintInfo;
+  }
+
+  public HostPciPassthruInfo[] getPciPassthruInfo()
+  {
+    return this.pciPassthruInfo;
+  }
+
   public void setHost(ManagedObjectReference host)
   {
     this.host=host;
@@ -210,6 +240,11 @@ public class HostConfigInfo extends DynamicData
     this.storageDevice=storageDevice;
   }
 
+  public void setMultipathState(HostMultipathStateInfo multipathState)
+  {
+    this.multipathState=multipathState;
+  }
+
   public void setFileSystemVolume(HostFileSystemVolumeInfo fileSystemVolume)
   {
     this.fileSystemVolume=fileSystemVolume;
@@ -223,6 +258,11 @@ public class HostConfigInfo extends DynamicData
   public void setVmotion(HostVMotionInfo vmotion)
   {
     this.vmotion=vmotion;
+  }
+
+  public void setVirtualNicManagerInfo(HostVirtualNicManagerInfo virtualNicManagerInfo)
+  {
+    this.virtualNicManagerInfo=virtualNicManagerInfo;
   }
 
   public void setCapabilities(HostNetCapabilities capabilities)
@@ -298,5 +338,20 @@ public class HostConfigInfo extends DynamicData
   public void setAdminDisabled(Boolean adminDisabled)
   {
     this.adminDisabled=adminDisabled;
+  }
+
+  public void setIpmi(HostIpmiInfo ipmi)
+  {
+    this.ipmi=ipmi;
+  }
+
+  public void setSslThumbprintInfo(HostSslThumbprintInfo sslThumbprintInfo)
+  {
+    this.sslThumbprintInfo=sslThumbprintInfo;
+  }
+
+  public void setPciPassthruInfo(HostPciPassthruInfo[] pciPassthruInfo)
+  {
+    this.pciPassthruInfo=pciPassthruInfo;
   }
 }

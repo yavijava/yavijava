@@ -38,7 +38,7 @@ import com.vmware.vim25.*;
  * @author Steve JIN (sjin@vmware.com)
  */
 
-public class Network extends ExtensibleManagedObject 
+public class Network extends ManagedEntity 
 {
 
 	public Network(ServerConnection serverConnection, ManagedObjectReference mor) 

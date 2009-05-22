@@ -62,6 +62,22 @@ public class Datacenter extends ManagedEntity
 		return getDatastores("datastore");
 	}
 	
+	/**
+	 * @since 4.0
+	 */
+	public Folder getDatastoreFolder()
+	{
+		return (Folder) getManagedObject("datastoreFolder");
+	}
+	
+	/**
+	 * @since 4.0
+	 */
+	public Folder getNetworkFolder()
+	{
+		return (Folder) getManagedObject("networkFolder");
+	}
+	
 	public Network[] getNetworks() throws InvalidProperty, RuntimeFault, RemoteException  
 	{
 		return getNetworks("network");

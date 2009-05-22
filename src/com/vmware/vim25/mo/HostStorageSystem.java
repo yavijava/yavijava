@@ -50,6 +50,14 @@ public class HostStorageSystem extends ExtensibleManagedObject
 	{
 		return (HostFileSystemVolumeInfo) getCurrentProperty("fileSystemVolumeInfo");
 	}
+	
+	/**
+	 * @since 4.0
+	 */
+	public HostMultipathStateInfo getMultipathStateInfo()
+	{
+		return (HostMultipathStateInfo) getCurrentProperty("multipathStateInfo");
+	}
 
 	public HostStorageDeviceInfo getStorageDeviceInfo()
 	{
@@ -75,6 +83,14 @@ public class HostStorageSystem extends ExtensibleManagedObject
 	{
 		return getVimService().computeDiskPartitionInfo(getMOR(), devicePath, layout);
 	}
+
+	/**
+	 * @since 4.0
+	 */
+	public HostDiskPartitionInfo computeDiskPartitionInfoForResize(HostScsiDiskPartition partition, HostDiskPartitionBlockRange blockRange) throws NotFound, HostConfigFault, RuntimeFault, RemoteException
+	{
+		return getVimService().computeDiskPartitionInfoForResize(getMOR(), partition, blockRange);
+	}
 	
 	public void disableMultipathPath(String pathName) throws HostConfigFault, NotFound, RuntimeFault, RemoteException
 	{
@@ -86,9 +102,41 @@ public class HostStorageSystem extends ExtensibleManagedObject
 		getVimService().enableMultipathPath(getMOR(), pathName);
 	}
 	
+	/**
+	 * @since 4.0
+	 */
+	public void expandVmfsExtent(String vmfsPath, HostScsiDiskPartition extent) throws NotFound, HostConfigFault, RuntimeFault, RemoteException
+	{
+		getVimService().expandVmfsExtent(getMOR(), vmfsPath, extent);
+	}
+	
 	public HostVmfsVolume formatVmfs(HostVmfsSpec createSpec) throws HostConfigFault, AlreadyExists, RuntimeFault, RemoteException
 	{
 		return getVimService().formatVmfs(getMOR(), createSpec);
+	}
+	
+	/**
+	 * @since 4.0
+	 */
+	public HostPathSelectionPolicyOption[] queryPathSelectionPolicyOptions() throws HostConfigFault, RuntimeFault, RemoteException
+	{
+		return getVimService().queryPathSelectionPolicyOptions(getMOR());
+	}
+	
+	/**
+	 * @since 4.0
+	 */
+	public HostStorageArrayTypePolicyOption[] queryStorageArrayTypePolicyOptions() throws HostConfigFault, RuntimeFault, RemoteException
+	{
+		return getVimService().queryStorageArrayTypePolicyOptions(getMOR());
+	}
+
+	/**
+	 * @since 4.0
+	 */
+	public HostUnresolvedVmfsVolume[] queryUnresolvedVmfsVolume() throws RuntimeFault, RemoteException
+	{
+		return getVimService().queryUnresolvedVmfsVolume(getMOR());
 	}
 	
 	public void refreshStorageSystem() throws RuntimeFault, RemoteException
@@ -121,6 +169,14 @@ public class HostStorageSystem extends ExtensibleManagedObject
 		getVimService().rescanVmfs(getMOR());
 	}
 	
+	/**
+	 * @since 4.0
+	 */
+	public HostUnresolvedVmfsResolutionResult[] resolveMultipleUnresolvedVmfsVolumes(HostUnresolvedVmfsResolutionSpec[] resolutionSpec) throws HostConfigFault, RuntimeFault, RemoteException
+	{
+		return getVimService().resolveMultipleUnresolvedVmfsVolumes(getMOR(), resolutionSpec);
+	}
+	
 	public HostDiskPartitionInfo[] retrieveDiskPartitionInfo(String[] devicePath) throws RuntimeFault, RemoteException
 	{
 		return getVimService().retrieveDiskPartitionInfo(getMOR(), devicePath);
@@ -141,10 +197,42 @@ public class HostStorageSystem extends ExtensibleManagedObject
 		getVimService().updateInternetScsiAlias(getMOR(), iScsiHbaDevice, iScsiAlias);
 	}
 	
+	//SDK2.5 signature for back compatibility
 	public void updateInternetScsiAuthenticationProperties(String iScsiHbaDevice, HostInternetScsiHbaAuthenticationProperties authenticationProperties) 
 		throws HostConfigFault, NotFound, RuntimeFault, RemoteException
 	{
-		getVimService().updateInternetScsiAuthenticationProperties(getMOR(), iScsiHbaDevice, authenticationProperties);
+		updateInternetScsiAuthenticationProperties(iScsiHbaDevice, authenticationProperties, null);
+	}
+	
+	//SDK4.0 signature
+	public void updateInternetScsiAuthenticationProperties(String iScsiHbaDevice, HostInternetScsiHbaAuthenticationProperties authenticationProperties, HostInternetScsiHbaTargetSet targetSet) 
+		throws HostConfigFault, NotFound, RuntimeFault, RemoteException
+	{
+		getVimService().updateInternetScsiAuthenticationProperties(getMOR(), iScsiHbaDevice, authenticationProperties, targetSet);
+	}
+
+	/**
+	 * @since 4.0
+	 */
+	public void updateInternetScsiAdvancedOptions(String iScsiHbaDevice, HostInternetScsiHbaTargetSet targetSet, HostInternetScsiHbaParamValue[] options) throws NotFound, HostConfigFault, RuntimeFault, RemoteException
+	{
+		getVimService().updateInternetScsiAdvancedOptions(getMOR(), iScsiHbaDevice, targetSet, options);
+	}
+
+	/**
+	 * @since 4.0
+	 */
+	public void updateInternetScsiDigestProperties(String iScsiHbaDevice, HostInternetScsiHbaTargetSet targetSet, HostInternetScsiHbaDigestProperties digestProperties) throws NotFound, HostConfigFault, RuntimeFault, RemoteException
+	{
+		getVimService().updateInternetScsiDigestProperties(getMOR(), iScsiHbaDevice, targetSet, digestProperties);
+	}
+	
+	/**
+	 * @since 4.0
+	 */
+	public void updateScsiLunDisplayName(String lunUuid, String displayName) throws NotFound, HostConfigFault, InvalidName, DuplicateName, RuntimeFault, RemoteException
+	{
+		getVimService().updateScsiLunDisplayName(getMOR(), lunUuid, displayName);
 	}
 	
 	public void updateInternetScsiDiscoveryProperties(String iScsiHbaDevice, HostInternetScsiHbaDiscoveryProperties discoveryProperties) 

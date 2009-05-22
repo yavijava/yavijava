@@ -45,17 +45,60 @@ public class HostPatchManager extends ManagedObject
 		super(serverConnection, mor);
 	}
 
+	/** 
+	 * @since 4.0
+	 */
+	public Task checkHostPatch_Task(String[] metaUrls, String[] bundleUrls, HostPatchManagerPatchManagerOperationSpec spec) throws PlatformConfigFault, RequestCanceled, InvalidState, TaskInProgress, RuntimeFault, RemoteException
+	{
+		ManagedObjectReference taskMor = getVimService().checkHostPatch_Task(getMOR(), metaUrls, bundleUrls, spec);
+		return new Task(getServerConnection(), taskMor);
+	}
+
+	/** 
+	 * @since 4.0
+	 */
+	public Task installHostPatchV2_Task(String[] metaUrls, String[] bundleUrls, String[] vibUrls, HostPatchManagerPatchManagerOperationSpec spec) throws PlatformConfigFault, RequestCanceled, InvalidState, TaskInProgress, RuntimeFault, RemoteException
+	{
+		ManagedObjectReference taskMor = getVimService().installHostPatchV2_Task(getMOR(), metaUrls, bundleUrls, vibUrls, spec);
+		return new Task(getServerConnection(), taskMor);
+	}
+	
 	public Task installHostPatch_Task(HostPatchManagerLocator repository, String updateID, Boolean force) throws PatchInstallFailed, NoDiskSpace, TaskInProgress, RebootRequired, PatchBinariesNotFound, InvalidState, PatchNotApplicable, PatchMetadataInvalid, RuntimeFault, RemoteException
 	{
 		return new Task(getServerConnection(),
 		getVimService().installHostPatch_Task(getMOR(), repository, updateID, force));
 	}
 	
+	/** 
+	 * @since 4.0
+	 */
+	public Task queryHostPatch_Task(HostPatchManagerPatchManagerOperationSpec spec) throws PlatformConfigFault, RequestCanceled, InvalidState, TaskInProgress, RuntimeFault, RemoteException
+	{
+		ManagedObjectReference taskMor = getVimService().queryHostPatch_Task(getMOR(), spec);
+		return new Task(getServerConnection(), taskMor);
+	}
+	
 	public Task scanHostPatch_Task(HostPatchManagerLocator repository, String[] updateID) throws PlatformConfigFault, RequestCanceled, PatchMetadataInvalid, RuntimeFault, RemoteException 
 	{
 		return new Task(getServerConnection(),
 			getVimService().scanHostPatch_Task(getMOR(), repository, updateID));
-		
 	}
 	
+	/**
+	 * @since 4.0
+	 */
+	public Task scanHostPatchV2_Task(String[] metaUrls, String[] bundleUrls, HostPatchManagerPatchManagerOperationSpec spec) throws PlatformConfigFault, RequestCanceled, InvalidState, TaskInProgress, RuntimeFault, RemoteException
+	{
+		ManagedObjectReference taskMor = getVimService().scanHostPatchV2_Task(getMOR(), metaUrls, bundleUrls, spec);
+		return new Task(getServerConnection(), taskMor);
+	}
+	
+	/**
+	 * @since 4.0
+	 */
+	public Task stageHostPatch_Task(String[] metaUrls, String[] bundleUrls, String[] vibUrls, HostPatchManagerPatchManagerOperationSpec spec) throws PlatformConfigFault, RequestCanceled, InvalidState, TaskInProgress, RuntimeFault, RemoteException
+	{
+		ManagedObjectReference taskMor = getVimService().stageHostPatch_Task(getMOR(), metaUrls, bundleUrls, vibUrls, spec);
+		return new Task(getServerConnection(), taskMor);
+	}
 }

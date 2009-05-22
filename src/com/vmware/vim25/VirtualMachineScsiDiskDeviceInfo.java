@@ -36,14 +36,36 @@ package com.vmware.vim25;
 public class VirtualMachineScsiDiskDeviceInfo extends VirtualMachineDiskDeviceInfo
 {
   public HostScsiDisk disk;
+  public String transportHint;
+  public Integer lunNumber;
 
   public HostScsiDisk getDisk()
   {
     return this.disk;
   }
 
+  public String getTransportHint()
+  {
+    return this.transportHint;
+  }
+
+  public Integer getLunNumber()
+  {
+    return this.lunNumber;
+  }
+
   public void setDisk(HostScsiDisk disk)
   {
     this.disk=disk;
+  }
+
+  public void setTransportHint(String transportHint)
+  {
+    this.transportHint=transportHint;
+  }
+
+  public void setLunNumber(Integer lunNumber)
+  {
+    this.lunNumber=lunNumber;
   }
 }

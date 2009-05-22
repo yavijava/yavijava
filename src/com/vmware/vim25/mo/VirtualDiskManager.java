@@ -73,10 +73,25 @@ public class VirtualDiskManager extends ManagedObject
 				getVimService().deleteVirtualDisk_Task(getMOR(), name, datacenter==null? null : datacenter.getMOR()));
 	}
 	
+	//SDK2.5 signature for back compatibility
 	public Task extendVirtualDisk_Task(String name, Datacenter datacenter, long newCapacityKb) throws FileFault, RuntimeFault, RemoteException 
 	{
+		return extendVirtualDisk_Task(name, datacenter, newCapacityKb, false);
+	}
+
+	//SDK4.0 signature
+	public Task extendVirtualDisk_Task(String name, Datacenter datacenter, long newCapacityKb, boolean eagerZero) throws FileFault, RuntimeFault, RemoteException 
+	{
 		return new Task(getServerConnection(),
-				getVimService().extendVirtualDisk_Task(getMOR(), name, datacenter==null? null : datacenter.getMOR(), newCapacityKb));
+				getVimService().extendVirtualDisk_Task(getMOR(), name, datacenter==null? null : datacenter.getMOR(), newCapacityKb, eagerZero));
+	}
+	
+	/** @since SDK4.0 */
+	public Task eagerZeroVirtualDisk_Task(String name, Datacenter datacenter) throws FileFault, RuntimeFault, RemoteException
+	{
+		return new Task(getServerConnection(),
+			getVimService().eagerZeroVirtualDisk_Task(getMOR(), name, 
+				datacenter==null? null : datacenter.getMOR()));
 	}
 	
 	public Task inflateVirtualDisk_Task(String name, Datacenter datacenter) throws FileFault, RuntimeFault, RemoteException 

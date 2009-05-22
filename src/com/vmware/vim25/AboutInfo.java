@@ -46,6 +46,9 @@ public class AboutInfo extends DynamicData
   public String productLineId;
   public String apiType;
   public String apiVersion;
+  public String instanceUuid;
+  public String licenseProductName;
+  public String licenseProductVersion;
 
   public String getName()
   {
@@ -102,6 +105,21 @@ public class AboutInfo extends DynamicData
     return this.apiVersion;
   }
 
+  public String getInstanceUuid()
+  {
+    return this.instanceUuid;
+  }
+
+  public String getLicenseProductName()
+  {
+    return this.licenseProductName;
+  }
+
+  public String getLicenseProductVersion()
+  {
+    return this.licenseProductVersion;
+  }
+
   public void setName(String name)
   {
     this.name=name;
@@ -155,5 +173,20 @@ public class AboutInfo extends DynamicData
   public void setApiVersion(String apiVersion)
   {
     this.apiVersion=apiVersion;
+  }
+
+  public void setInstanceUuid(String instanceUuid)
+  {
+    this.instanceUuid=instanceUuid;
+  }
+
+  public void setLicenseProductName(String licenseProductName)
+  {
+    this.licenseProductName=licenseProductName;
+  }
+
+  public void setLicenseProductVersion(String licenseProductVersion)
+  {
+    this.licenseProductVersion=licenseProductVersion;
   }
 }

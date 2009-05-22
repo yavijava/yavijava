@@ -38,6 +38,7 @@ public class NetworkSummary extends DynamicData
   public ManagedObjectReference network;
   public String name;
   public boolean accessible;
+  public String ipPoolName;
 
   public ManagedObjectReference getNetwork()
   {
@@ -54,6 +55,11 @@ public class NetworkSummary extends DynamicData
     return this.accessible;
   }
 
+  public String getIpPoolName()
+  {
+    return this.ipPoolName;
+  }
+
   public void setNetwork(ManagedObjectReference network)
   {
     this.network=network;
@@ -67,5 +73,10 @@ public class NetworkSummary extends DynamicData
   public void setAccessible(boolean accessible)
   {
     this.accessible=accessible;
+  }
+
+  public void setIpPoolName(String ipPoolName)
+  {
+    this.ipPoolName=ipPoolName;
   }
 }

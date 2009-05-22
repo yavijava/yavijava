@@ -41,6 +41,7 @@ public class HostCapability extends DynamicData
   public boolean shutdownSupported;
   public boolean vmotionSupported;
   public boolean standbySupported;
+  public Boolean ipmiSupported;
   public Integer maxSupportedVMs;
   public Integer maxRunningVMs;
   public Integer maxSupportedVcpus;
@@ -61,6 +62,18 @@ public class HostCapability extends DynamicData
   public boolean preAssignedPCIUnitNumbersSupported;
   public boolean screenshotSupported;
   public boolean scaledScreenshotSupported;
+  public Boolean storageVMotionSupported;
+  public Boolean vmotionWithStorageVMotionSupported;
+  public Boolean recordReplaySupported;
+  public Boolean ftSupported;
+  public String replayUnsupportedReason;
+  public Boolean loginBySSLThumbprintSupported;
+  public Boolean cloneFromSnapshotSupported;
+  public Boolean deltaDiskBackingsSupported;
+  public Boolean perVMNetworkTrafficShapingSupported;
+  public Boolean tpmSupported;
+  public HostCpuIdInfo[] supportedCpuFeature;
+  public Boolean virtualExecUsageSupported;
 
   public boolean isRecursiveResourcePoolsSupported()
   {
@@ -90,6 +103,11 @@ public class HostCapability extends DynamicData
   public boolean isStandbySupported()
   {
     return this.standbySupported;
+  }
+
+  public Boolean getIpmiSupported()
+  {
+    return this.ipmiSupported;
   }
 
   public Integer getMaxSupportedVMs()
@@ -192,6 +210,66 @@ public class HostCapability extends DynamicData
     return this.scaledScreenshotSupported;
   }
 
+  public Boolean getStorageVMotionSupported()
+  {
+    return this.storageVMotionSupported;
+  }
+
+  public Boolean getVmotionWithStorageVMotionSupported()
+  {
+    return this.vmotionWithStorageVMotionSupported;
+  }
+
+  public Boolean getRecordReplaySupported()
+  {
+    return this.recordReplaySupported;
+  }
+
+  public Boolean getFtSupported()
+  {
+    return this.ftSupported;
+  }
+
+  public String getReplayUnsupportedReason()
+  {
+    return this.replayUnsupportedReason;
+  }
+
+  public Boolean getLoginBySSLThumbprintSupported()
+  {
+    return this.loginBySSLThumbprintSupported;
+  }
+
+  public Boolean getCloneFromSnapshotSupported()
+  {
+    return this.cloneFromSnapshotSupported;
+  }
+
+  public Boolean getDeltaDiskBackingsSupported()
+  {
+    return this.deltaDiskBackingsSupported;
+  }
+
+  public Boolean getPerVMNetworkTrafficShapingSupported()
+  {
+    return this.perVMNetworkTrafficShapingSupported;
+  }
+
+  public Boolean getTpmSupported()
+  {
+    return this.tpmSupported;
+  }
+
+  public HostCpuIdInfo[] getSupportedCpuFeature()
+  {
+    return this.supportedCpuFeature;
+  }
+
+  public Boolean getVirtualExecUsageSupported()
+  {
+    return this.virtualExecUsageSupported;
+  }
+
   public void setRecursiveResourcePoolsSupported(boolean recursiveResourcePoolsSupported)
   {
     this.recursiveResourcePoolsSupported=recursiveResourcePoolsSupported;
@@ -220,6 +298,11 @@ public class HostCapability extends DynamicData
   public void setStandbySupported(boolean standbySupported)
   {
     this.standbySupported=standbySupported;
+  }
+
+  public void setIpmiSupported(Boolean ipmiSupported)
+  {
+    this.ipmiSupported=ipmiSupported;
   }
 
   public void setMaxSupportedVMs(Integer maxSupportedVMs)
@@ -320,5 +403,65 @@ public class HostCapability extends DynamicData
   public void setScaledScreenshotSupported(boolean scaledScreenshotSupported)
   {
     this.scaledScreenshotSupported=scaledScreenshotSupported;
+  }
+
+  public void setStorageVMotionSupported(Boolean storageVMotionSupported)
+  {
+    this.storageVMotionSupported=storageVMotionSupported;
+  }
+
+  public void setVmotionWithStorageVMotionSupported(Boolean vmotionWithStorageVMotionSupported)
+  {
+    this.vmotionWithStorageVMotionSupported=vmotionWithStorageVMotionSupported;
+  }
+
+  public void setRecordReplaySupported(Boolean recordReplaySupported)
+  {
+    this.recordReplaySupported=recordReplaySupported;
+  }
+
+  public void setFtSupported(Boolean ftSupported)
+  {
+    this.ftSupported=ftSupported;
+  }
+
+  public void setReplayUnsupportedReason(String replayUnsupportedReason)
+  {
+    this.replayUnsupportedReason=replayUnsupportedReason;
+  }
+
+  public void setLoginBySSLThumbprintSupported(Boolean loginBySSLThumbprintSupported)
+  {
+    this.loginBySSLThumbprintSupported=loginBySSLThumbprintSupported;
+  }
+
+  public void setCloneFromSnapshotSupported(Boolean cloneFromSnapshotSupported)
+  {
+    this.cloneFromSnapshotSupported=cloneFromSnapshotSupported;
+  }
+
+  public void setDeltaDiskBackingsSupported(Boolean deltaDiskBackingsSupported)
+  {
+    this.deltaDiskBackingsSupported=deltaDiskBackingsSupported;
+  }
+
+  public void setPerVMNetworkTrafficShapingSupported(Boolean perVMNetworkTrafficShapingSupported)
+  {
+    this.perVMNetworkTrafficShapingSupported=perVMNetworkTrafficShapingSupported;
+  }
+
+  public void setTpmSupported(Boolean tpmSupported)
+  {
+    this.tpmSupported=tpmSupported;
+  }
+
+  public void setSupportedCpuFeature(HostCpuIdInfo[] supportedCpuFeature)
+  {
+    this.supportedCpuFeature=supportedCpuFeature;
+  }
+
+  public void setVirtualExecUsageSupported(Boolean virtualExecUsageSupported)
+  {
+    this.virtualExecUsageSupported=virtualExecUsageSupported;
   }
 }

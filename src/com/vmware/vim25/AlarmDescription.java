@@ -40,6 +40,9 @@ public class AlarmDescription extends DynamicData
   public ElementDescription[] metricOperator;
   public ElementDescription[] hostSystemConnectionState;
   public ElementDescription[] virtualMachinePowerState;
+  public ElementDescription[] datastoreConnectionState;
+  public ElementDescription[] hostSystemPowerState;
+  public ElementDescription[] virtualMachineGuestHeartbeatStatus;
   public ElementDescription[] entityStatus;
   public TypeDescription[] action;
 
@@ -66,6 +69,21 @@ public class AlarmDescription extends DynamicData
   public ElementDescription[] getVirtualMachinePowerState()
   {
     return this.virtualMachinePowerState;
+  }
+
+  public ElementDescription[] getDatastoreConnectionState()
+  {
+    return this.datastoreConnectionState;
+  }
+
+  public ElementDescription[] getHostSystemPowerState()
+  {
+    return this.hostSystemPowerState;
+  }
+
+  public ElementDescription[] getVirtualMachineGuestHeartbeatStatus()
+  {
+    return this.virtualMachineGuestHeartbeatStatus;
   }
 
   public ElementDescription[] getEntityStatus()
@@ -101,6 +119,21 @@ public class AlarmDescription extends DynamicData
   public void setVirtualMachinePowerState(ElementDescription[] virtualMachinePowerState)
   {
     this.virtualMachinePowerState=virtualMachinePowerState;
+  }
+
+  public void setDatastoreConnectionState(ElementDescription[] datastoreConnectionState)
+  {
+    this.datastoreConnectionState=datastoreConnectionState;
+  }
+
+  public void setHostSystemPowerState(ElementDescription[] hostSystemPowerState)
+  {
+    this.hostSystemPowerState=hostSystemPowerState;
+  }
+
+  public void setVirtualMachineGuestHeartbeatStatus(ElementDescription[] virtualMachineGuestHeartbeatStatus)
+  {
+    this.virtualMachineGuestHeartbeatStatus=virtualMachineGuestHeartbeatStatus;
   }
 
   public void setEntityStatus(ElementDescription[] entityStatus)

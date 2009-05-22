@@ -37,6 +37,7 @@ public class EventDescription extends DynamicData
 {
   public ElementDescription[] category;
   public EventDescriptionEventDetail[] eventInfo;
+  public EnumDescription[] enumeratedTypes;
 
   public ElementDescription[] getCategory()
   {
@@ -48,6 +49,11 @@ public class EventDescription extends DynamicData
     return this.eventInfo;
   }
 
+  public EnumDescription[] getEnumeratedTypes()
+  {
+    return this.enumeratedTypes;
+  }
+
   public void setCategory(ElementDescription[] category)
   {
     this.category=category;
@@ -56,5 +62,10 @@ public class EventDescription extends DynamicData
   public void setEventInfo(EventDescriptionEventDetail[] eventInfo)
   {
     this.eventInfo=eventInfo;
+  }
+
+  public void setEnumeratedTypes(EnumDescription[] enumeratedTypes)
+  {
+    this.enumeratedTypes=enumeratedTypes;
   }
 }

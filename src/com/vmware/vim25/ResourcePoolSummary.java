@@ -38,6 +38,8 @@ public class ResourcePoolSummary extends DynamicData
   public String name;
   public ResourceConfigSpec config;
   public ResourcePoolRuntimeInfo runtime;
+  public ResourcePoolQuickStats quickStats;
+  public Integer configuredMemoryMB;
 
   public String getName()
   {
@@ -54,6 +56,16 @@ public class ResourcePoolSummary extends DynamicData
     return this.runtime;
   }
 
+  public ResourcePoolQuickStats getQuickStats()
+  {
+    return this.quickStats;
+  }
+
+  public Integer getConfiguredMemoryMB()
+  {
+    return this.configuredMemoryMB;
+  }
+
   public void setName(String name)
   {
     this.name=name;
@@ -67,5 +79,15 @@ public class ResourcePoolSummary extends DynamicData
   public void setRuntime(ResourcePoolRuntimeInfo runtime)
   {
     this.runtime=runtime;
+  }
+
+  public void setQuickStats(ResourcePoolQuickStats quickStats)
+  {
+    this.quickStats=quickStats;
+  }
+
+  public void setConfiguredMemoryMB(Integer configuredMemoryMB)
+  {
+    this.configuredMemoryMB=configuredMemoryMB;
   }
 }

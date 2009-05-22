@@ -41,6 +41,7 @@ public class HostConfigManager extends DynamicData
   public ManagedObjectReference storageSystem;
   public ManagedObjectReference networkSystem;
   public ManagedObjectReference vmotionSystem;
+  public ManagedObjectReference virtualNicManager;
   public ManagedObjectReference serviceSystem;
   public ManagedObjectReference firewallSystem;
   public ManagedObjectReference advancedOption;
@@ -52,6 +53,9 @@ public class HostConfigManager extends DynamicData
   public ManagedObjectReference bootDeviceSystem;
   public ManagedObjectReference firmwareSystem;
   public ManagedObjectReference healthStatusSystem;
+  public ManagedObjectReference pciPassthruSystem;
+  public ManagedObjectReference licenseManager;
+  public ManagedObjectReference kernelModuleSystem;
 
   public ManagedObjectReference getCpuScheduler()
   {
@@ -81,6 +85,11 @@ public class HostConfigManager extends DynamicData
   public ManagedObjectReference getVmotionSystem()
   {
     return this.vmotionSystem;
+  }
+
+  public ManagedObjectReference getVirtualNicManager()
+  {
+    return this.virtualNicManager;
   }
 
   public ManagedObjectReference getServiceSystem()
@@ -138,6 +147,21 @@ public class HostConfigManager extends DynamicData
     return this.healthStatusSystem;
   }
 
+  public ManagedObjectReference getPciPassthruSystem()
+  {
+    return this.pciPassthruSystem;
+  }
+
+  public ManagedObjectReference getLicenseManager()
+  {
+    return this.licenseManager;
+  }
+
+  public ManagedObjectReference getKernelModuleSystem()
+  {
+    return this.kernelModuleSystem;
+  }
+
   public void setCpuScheduler(ManagedObjectReference cpuScheduler)
   {
     this.cpuScheduler=cpuScheduler;
@@ -166,6 +190,11 @@ public class HostConfigManager extends DynamicData
   public void setVmotionSystem(ManagedObjectReference vmotionSystem)
   {
     this.vmotionSystem=vmotionSystem;
+  }
+
+  public void setVirtualNicManager(ManagedObjectReference virtualNicManager)
+  {
+    this.virtualNicManager=virtualNicManager;
   }
 
   public void setServiceSystem(ManagedObjectReference serviceSystem)
@@ -221,5 +250,20 @@ public class HostConfigManager extends DynamicData
   public void setHealthStatusSystem(ManagedObjectReference healthStatusSystem)
   {
     this.healthStatusSystem=healthStatusSystem;
+  }
+
+  public void setPciPassthruSystem(ManagedObjectReference pciPassthruSystem)
+  {
+    this.pciPassthruSystem=pciPassthruSystem;
+  }
+
+  public void setLicenseManager(ManagedObjectReference licenseManager)
+  {
+    this.licenseManager=licenseManager;
+  }
+
+  public void setKernelModuleSystem(ManagedObjectReference kernelModuleSystem)
+  {
+    this.kernelModuleSystem=kernelModuleSystem;
   }
 }

@@ -91,7 +91,7 @@ public class GetVirtualDiskFiles
 			int len = searchResult.getHostDatastoreBrowserSearchResults().length;                        
 			for(int j=0 ; j<len; j++) 
 			{
-				HostDatastoreBrowserSearchResults sres =  searchResult.getHostDatastoreBrowserSearchResults(j);
+				HostDatastoreBrowserSearchResults sres =  searchResult.HostDatastoreBrowserSearchResults[j];
 				FileInfo [] fileArray = sres.getFile();
 				if(fileArray == null) continue;
 				for(int k=0 ; k<fileArray.length; k++) 

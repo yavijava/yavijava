@@ -32,24 +32,18 @@ package com.vmware.vim25.mo.samples;
 import java.net.URL;
 import com.vmware.vim25.*;
 import com.vmware.vim25.mo.*;
-import com.vmware.vim25.mo.util.*;
-
-/**
- * This sample shows how to get hold of the first VirtualMachine in an inventory and retrieve its properties.
- * @author sjin
- */
 
 public class HelloVM 
 {
 	public static void main(String[] args) throws Exception
 	{
-	    CommandLineParser clp = new CommandLineParser(new OptionSpec[]{}, args);
-	   	String urlStr = clp.get_option("url");
-  	    String username = clp.get_option("username");
-	    String password = clp.get_option("password");
-
-		ServiceInstance si = new ServiceInstance(new URL(urlStr), username, password, true);
+		long start = System.currentTimeMillis();
+		ServiceInstance si = new ServiceInstance(new URL("https://10.115.66.232/sdk"), "root", "ca$hc0w", true);
+		long end = System.currentTimeMillis();
+		System.out.println("time taken:" + (end-start));
 		Folder rootFolder = si.getRootFolder();
+		String name = rootFolder.getName();
+		System.out.println("root:" + name);
 		ManagedEntity[] mes = new InventoryNavigator(rootFolder).searchManagedEntities("VirtualMachine");
 		if(mes==null || mes.length ==0)
 		{

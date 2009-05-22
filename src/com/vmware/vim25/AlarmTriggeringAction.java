@@ -36,6 +36,7 @@ package com.vmware.vim25;
 public class AlarmTriggeringAction extends AlarmAction
 {
   public Action action;
+  public AlarmTriggeringActionTransitionSpec[] transitionSpecs;
   public boolean green2yellow;
   public boolean yellow2red;
   public boolean red2yellow;
@@ -44,6 +45,11 @@ public class AlarmTriggeringAction extends AlarmAction
   public Action getAction()
   {
     return this.action;
+  }
+
+  public AlarmTriggeringActionTransitionSpec[] getTransitionSpecs()
+  {
+    return this.transitionSpecs;
   }
 
   public boolean isGreen2yellow()
@@ -69,6 +75,11 @@ public class AlarmTriggeringAction extends AlarmAction
   public void setAction(Action action)
   {
     this.action=action;
+  }
+
+  public void setTransitionSpecs(AlarmTriggeringActionTransitionSpec[] transitionSpecs)
+  {
+    this.transitionSpecs=transitionSpecs;
   }
 
   public void setGreen2yellow(boolean green2yellow)

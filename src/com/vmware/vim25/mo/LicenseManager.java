@@ -46,29 +46,69 @@ public class LicenseManager extends ManagedObject
 		super(serverConnection, mor);
 	}
 	
+	/**
+	 * @deprecated in SDK4.0
+	 */
 	public LicenseDiagnostics getDiagnostics()
 	{
 		return (LicenseDiagnostics) getCurrentProperty("diagnostics");
 	}
 	
+	public LicenseManagerEvaluationInfo getEvaluation()
+	{
+		return (LicenseManagerEvaluationInfo) getCurrentProperty("evaluation");
+	}
+	
+	public LicenseAssignmentManager getLicenseAssignmentManager()
+	{
+		return (LicenseAssignmentManager) getManagedObject("licenseAssignmentManager");
+	}
+	
+	public LicenseManagerLicenseInfo[] getLicenses()
+	{
+		return (LicenseManagerLicenseInfo[]) getCurrentProperty("licenses");
+	}
+
+	/**
+	 * @deprecated in SDK4.0
+	 */
 	public LicenseFeatureInfo[] getFeatureInfo()
 	{
 		return (LicenseFeatureInfo[]) getCurrentProperty("featureInfo");
 	} 
 
+	/**
+	 * @deprecated in SDK4.0
+	 */
 	public String getLicensedEdition()
 	{
 		return (String) getCurrentProperty("licensedEdition");
 	}
 	
+	/**
+	 * @deprecated in SDK4.0
+	 */
 	public LicenseSource getSource()
 	{
 		return (LicenseSource) getCurrentProperty("source");
 	}
 
+	/** @deprecated in SDK4.0 */
 	public boolean getSourceAvailable()
 	{
 		return ((Boolean) getCurrentProperty("sourceAvailable")).booleanValue();
+	}
+	
+	/** @since SDK4.0 */
+	public LicenseManagerLicenseInfo addLicense(String licenseKey, KeyValue[] labels) throws RuntimeFault, RemoteException
+	{
+		return (LicenseManagerLicenseInfo) getVimService().addLicense(getMOR(), licenseKey, labels);
+	}
+
+	/** @since SDK4.0 */
+	public LicenseManagerLicenseInfo decodeLicense(String licenseKey) throws RuntimeFault, RemoteException
+	{
+		return (LicenseManagerLicenseInfo) getVimService().decodeLicense(getMOR(), licenseKey);
 	}
 	
 	public boolean checkLicenseFeature(HostSystem host, String featureKey) throws InvalidState, RuntimeFault, RemoteException 
@@ -81,6 +121,9 @@ public class LicenseManager extends ManagedObject
 		getVimService().configureLicenseSource(getMOR(), host==null? null: host.getMOR(), licenseSource);
 	}
 	
+	/**
+	 * @deprecated in SDK4.0
+	 */
 	public void disableFeature(HostSystem host, String featureKey) throws LicenseServerUnavailable, InvalidState, RuntimeFault, RemoteException 
 	{
 		getVimService().disableFeature(getMOR(), host==null? null: host.getMOR(), featureKey);
@@ -106,6 +149,30 @@ public class LicenseManager extends ManagedObject
 		return getVimService().querySupportedFeatures(getMOR(), host==null? null: host.getMOR());
 	}
 	
+	/** @since SDK4.0 */
+	public void removeLicense(String licenseKey) throws RuntimeFault, RemoteException
+	{
+		getVimService().removeLicense(getMOR(), licenseKey);
+	}
+
+	/** @since SDK4.0 */
+	public void removeLicenseLabel(String licenseKey, String labelKey) throws RuntimeFault, RemoteException
+	{
+		getVimService().removeLicenseLabel(getMOR(), licenseKey, labelKey);
+	}
+
+	/** @since SDK4.0 */
+	public void updateLicense(String licenseKey, KeyValue[] labels) throws RuntimeFault, RemoteException
+	{
+		getVimService().updateLicense(getMOR(), licenseKey, labels);
+	}
+	
+	/** @since SDK4.0 */
+	public void updateLicenseLabel( String licenseKey, String labelKey, String labelValue) throws RuntimeFault, RemoteException
+	{
+		getVimService().updateLicenseLabel(getMOR(), licenseKey, labelKey, labelValue);
+	}
+
 	public void setLicenseEdition(HostSystem host, String featureKey) throws LicenseServerUnavailable, InvalidState, RuntimeFault, RemoteException 
 	{
 		getVimService().setLicenseEdition(getMOR(), host==null? null: host.getMOR(), featureKey);

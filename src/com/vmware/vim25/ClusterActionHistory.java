@@ -28,6 +28,7 @@ POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
 
 package com.vmware.vim25;
+import java.util.Calendar;
 
 /**
 @author Steve Jin (sjin@vmware.com)
@@ -36,14 +37,14 @@ package com.vmware.vim25;
 public class ClusterActionHistory extends DynamicData
 {
   public ClusterAction action;
-  public java.util.Calendar time;
+  public Calendar time;
 
   public ClusterAction getAction()
   {
     return this.action;
   }
 
-  public java.util.Calendar getTime()
+  public Calendar getTime()
   {
     return this.time;
   }
@@ -53,7 +54,7 @@ public class ClusterActionHistory extends DynamicData
     this.action=action;
   }
 
-  public void setTime(java.util.Calendar time)
+  public void setTime(Calendar time)
   {
     this.time=time;
   }

@@ -28,6 +28,7 @@ POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
 
 package com.vmware.vim25;
+import java.util.Calendar;
 
 /**
 @author Steve Jin (sjin@vmware.com)
@@ -38,8 +39,8 @@ public class UserSession extends DynamicData
   public String key;
   public String userName;
   public String fullName;
-  public java.util.Calendar loginTime;
-  public java.util.Calendar lastActiveTime;
+  public Calendar loginTime;
+  public Calendar lastActiveTime;
   public String locale;
   public String messageLocale;
 
@@ -58,12 +59,12 @@ public class UserSession extends DynamicData
     return this.fullName;
   }
 
-  public java.util.Calendar getLoginTime()
+  public Calendar getLoginTime()
   {
     return this.loginTime;
   }
 
-  public java.util.Calendar getLastActiveTime()
+  public Calendar getLastActiveTime()
   {
     return this.lastActiveTime;
   }
@@ -93,12 +94,12 @@ public class UserSession extends DynamicData
     this.fullName=fullName;
   }
 
-  public void setLoginTime(java.util.Calendar loginTime)
+  public void setLoginTime(Calendar loginTime)
   {
     this.loginTime=loginTime;
   }
 
-  public void setLastActiveTime(java.util.Calendar lastActiveTime)
+  public void setLastActiveTime(Calendar lastActiveTime)
   {
     this.lastActiveTime=lastActiveTime;
   }

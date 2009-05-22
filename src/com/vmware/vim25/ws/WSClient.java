@@ -68,6 +68,8 @@ public final class WSClient
 {
   private final static String SOAP_HEADER = "<?xml version=\"1.0\" encoding=\"UTF-8\"?><soapenv:Envelope xmlns:soapenc=\"http://schemas.xmlsoap.org/soap/encoding/\" xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"><soapenv:Body>"; 
   private final static String SOAP_END = "</soapenv:Body></soapenv:Envelope>";
+  private final static String SOAP_ACTION = "SOAPAction";
+  private final static String SOAP_ACTION_V4 = "urn:vim25/4.0";
   
   private URL baseUrl = null;
   private String cookie = null;
@@ -222,6 +224,7 @@ public final class WSClient
     }
     postCon.setDoOutput(true);
     postCon.setDoInput(true);
+    postCon.setRequestProperty(SOAP_ACTION, SOAP_ACTION_V4);
     if(cookie!=null)
     {
       postCon.setRequestProperty("Cookie", cookie);

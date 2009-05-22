@@ -44,6 +44,8 @@ public class EventFilterSpec extends DynamicData
   public Boolean disableFullMessage;
   public String[] category;
   public String[] type;
+  public String[] tag;
+  public String[] eventTypeId;
 
   public EventFilterSpecByEntity getEntity()
   {
@@ -90,6 +92,16 @@ public class EventFilterSpec extends DynamicData
     return this.type;
   }
 
+  public String[] getTag()
+  {
+    return this.tag;
+  }
+
+  public String[] getEventTypeId()
+  {
+    return this.eventTypeId;
+  }
+
   public void setEntity(EventFilterSpecByEntity entity)
   {
     this.entity=entity;
@@ -133,5 +145,15 @@ public class EventFilterSpec extends DynamicData
   public void setType(String[] type)
   {
     this.type=type;
+  }
+
+  public void setTag(String[] tag)
+  {
+    this.tag=tag;
+  }
+
+  public void setEventTypeId(String[] eventTypeId)
+  {
+    this.eventTypeId=eventTypeId;
   }
 }

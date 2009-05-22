@@ -28,6 +28,7 @@ POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
 
 package com.vmware.vim25;
+import java.util.Calendar;
 
 /**
 @author Steve Jin (sjin@vmware.com)
@@ -37,6 +38,7 @@ public class TaskInfo extends DynamicData
 {
   public String key;
   public ManagedObjectReference task;
+  public LocalizableMessage description;
   public String name;
   public String descriptionId;
   public ManagedObjectReference entity;
@@ -49,10 +51,13 @@ public class TaskInfo extends DynamicData
   public Object result;
   public Integer progress;
   public TaskReason reason;
-  public java.util.Calendar queueTime;
-  public java.util.Calendar startTime;
-  public java.util.Calendar completeTime;
+  public Calendar queueTime;
+  public Calendar startTime;
+  public Calendar completeTime;
   public int eventChainId;
+  public String changeTag;
+  public String parentTaskKey;
+  public String rootTaskKey;
 
   public String getKey()
   {
@@ -62,6 +67,11 @@ public class TaskInfo extends DynamicData
   public ManagedObjectReference getTask()
   {
     return this.task;
+  }
+
+  public LocalizableMessage getDescription()
+  {
+    return this.description;
   }
 
   public String getName()
@@ -124,17 +134,17 @@ public class TaskInfo extends DynamicData
     return this.reason;
   }
 
-  public java.util.Calendar getQueueTime()
+  public Calendar getQueueTime()
   {
     return this.queueTime;
   }
 
-  public java.util.Calendar getStartTime()
+  public Calendar getStartTime()
   {
     return this.startTime;
   }
 
-  public java.util.Calendar getCompleteTime()
+  public Calendar getCompleteTime()
   {
     return this.completeTime;
   }
@@ -142,6 +152,21 @@ public class TaskInfo extends DynamicData
   public int getEventChainId()
   {
     return this.eventChainId;
+  }
+
+  public String getChangeTag()
+  {
+    return this.changeTag;
+  }
+
+  public String getParentTaskKey()
+  {
+    return this.parentTaskKey;
+  }
+
+  public String getRootTaskKey()
+  {
+    return this.rootTaskKey;
   }
 
   public void setKey(String key)
@@ -152,6 +177,11 @@ public class TaskInfo extends DynamicData
   public void setTask(ManagedObjectReference task)
   {
     this.task=task;
+  }
+
+  public void setDescription(LocalizableMessage description)
+  {
+    this.description=description;
   }
 
   public void setName(String name)
@@ -214,17 +244,17 @@ public class TaskInfo extends DynamicData
     this.reason=reason;
   }
 
-  public void setQueueTime(java.util.Calendar queueTime)
+  public void setQueueTime(Calendar queueTime)
   {
     this.queueTime=queueTime;
   }
 
-  public void setStartTime(java.util.Calendar startTime)
+  public void setStartTime(Calendar startTime)
   {
     this.startTime=startTime;
   }
 
-  public void setCompleteTime(java.util.Calendar completeTime)
+  public void setCompleteTime(Calendar completeTime)
   {
     this.completeTime=completeTime;
   }
@@ -232,5 +262,20 @@ public class TaskInfo extends DynamicData
   public void setEventChainId(int eventChainId)
   {
     this.eventChainId=eventChainId;
+  }
+
+  public void setChangeTag(String changeTag)
+  {
+    this.changeTag=changeTag;
+  }
+
+  public void setParentTaskKey(String parentTaskKey)
+  {
+    this.parentTaskKey=parentTaskKey;
+  }
+
+  public void setRootTaskKey(String rootTaskKey)
+  {
+    this.rootTaskKey=rootTaskKey;
   }
 }

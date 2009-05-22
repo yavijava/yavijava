@@ -81,6 +81,36 @@ public class ResourcePool extends ManagedEntity
 		return getVms("vm");
 	}	                         
 	
+	/** @since SDK4.0 */
+	public Task createChildVM_Task(VirtualMachineConfigSpec config, HostSystem host) throws VmConfigFault, FileFault, OutOfBounds, InvalidName, InvalidDatastore, InsufficientResourcesFault, RuntimeFault, RemoteException
+	{
+		ManagedObjectReference taskMor = getVimService().createChildVM_Task(getMOR(), config, 
+				host==null? null : host.getMOR());
+		return new Task(getServerConnection(), taskMor);
+	}
+	
+	/** @since SDK4.0 */
+	public VirtualApp createVApp(String name, ResourceConfigSpec resSpec, VAppConfigSpec configSpec, Folder vmFolder) throws InvalidName, DuplicateName, InsufficientResourcesFault, InvalidState, VmConfigFault, RuntimeFault, RemoteException
+	{
+		ManagedObjectReference vaMor = getVimService().createVApp(getMOR(), name, resSpec, configSpec, vmFolder==null? null : vmFolder.getMOR());
+		return new VirtualApp(getServerConnection(), vaMor);
+	}
+	
+	/** @since SDK4.0 */
+	public HttpNfcLease importVApp(ImportSpec spec, Folder folder, HostSystem host) throws VmConfigFault, FileFault, OutOfBounds, DuplicateName, InvalidName, InvalidDatastore, InsufficientResourcesFault, RuntimeFault, RemoteException
+	{
+		ManagedObjectReference mor = getVimService().importVApp(getMOR(), spec, 
+				folder==null? null : folder.getMOR(), host==null? null : host.getMOR()); 
+		return new HttpNfcLease(getServerConnection(), mor);
+	}
+	
+	/** @since SDK4.0 */
+	public Task registerChildVM_Task(String path, String name, HostSystem host) throws OutOfBounds, AlreadyExists, InvalidDatastore, NotFound, InvalidName, VmConfigFault, InsufficientResourcesFault, FileFault, RuntimeFault, RemoteException
+	{
+		ManagedObjectReference mor = getVimService().registerChildVM_Task(getMOR(), path, name, host==null?null:host.getMOR());
+		return new Task(getServerConnection(), mor);
+	}
+	
 	public ResourcePool createResourcePool(String name, ResourceConfigSpec spec) throws InvalidName, DuplicateName, InsufficientResourcesFault, RuntimeFault, RemoteException 
 	{
 		ManagedObjectReference rpMor = getVimService().createResourcePool(getMOR(), name, spec);
@@ -110,5 +140,4 @@ public class ResourcePool extends ManagedEntity
 	{
 		getVimService().updateConfig(getMOR(), name, spec);
 	}
-	
 }

@@ -47,6 +47,7 @@ public class HostNetCapabilities extends DynamicData
   public boolean ipRouteConfigSupported;
   public boolean dnsConfigSupported;
   public boolean dhcpOnVnicSupported;
+  public Boolean ipV6Supported;
 
   public boolean isCanSetPhysicalNicLinkSpeed()
   {
@@ -108,6 +109,11 @@ public class HostNetCapabilities extends DynamicData
     return this.dhcpOnVnicSupported;
   }
 
+  public Boolean getIpV6Supported()
+  {
+    return this.ipV6Supported;
+  }
+
   public void setCanSetPhysicalNicLinkSpeed(boolean canSetPhysicalNicLinkSpeed)
   {
     this.canSetPhysicalNicLinkSpeed=canSetPhysicalNicLinkSpeed;
@@ -166,5 +172,10 @@ public class HostNetCapabilities extends DynamicData
   public void setDhcpOnVnicSupported(boolean dhcpOnVnicSupported)
   {
     this.dhcpOnVnicSupported=dhcpOnVnicSupported;
+  }
+
+  public void setIpV6Supported(Boolean ipV6Supported)
+  {
+    this.ipV6Supported=ipV6Supported;
   }
 }

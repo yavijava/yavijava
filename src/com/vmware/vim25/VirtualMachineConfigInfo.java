@@ -28,6 +28,7 @@ POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
 
 package com.vmware.vim25;
+import java.util.Calendar;
 
 /**
 @author Steve Jin (sjin@vmware.com)
@@ -36,14 +37,19 @@ package com.vmware.vim25;
 public class VirtualMachineConfigInfo extends DynamicData
 {
   public String changeVersion;
-  public java.util.Calendar modified;
+  public Calendar modified;
   public String name;
   public String guestFullName;
   public String version;
   public String uuid;
+  public String instanceUuid;
   public long[] npivNodeWorldWideName;
   public long[] npivPortWorldWideName;
   public String npivWorldWideNameType;
+  public Short npivDesiredNodeWwns;
+  public Short npivDesiredPortWwns;
+  public Boolean npivTemporaryDisabled;
+  public Boolean npivOnNonRdmDisks;
   public String locationId;
   public boolean template;
   public String guestId;
@@ -57,6 +63,11 @@ public class VirtualMachineConfigInfo extends DynamicData
   public VirtualHardware hardware;
   public ResourceAllocationInfo cpuAllocation;
   public ResourceAllocationInfo memoryAllocation;
+  public Boolean memoryHotAddEnabled;
+  public Boolean cpuHotAddEnabled;
+  public Boolean cpuHotRemoveEnabled;
+  public Long hotPlugMemoryLimit;
+  public Long hotPlugMemoryIncrementSize;
   public VirtualMachineAffinityInfo cpuAffinity;
   public VirtualMachineAffinityInfo memoryAffinity;
   public VirtualMachineNetworkShaperInfo networkShaper;
@@ -65,13 +76,17 @@ public class VirtualMachineConfigInfo extends DynamicData
   public VirtualMachineConfigInfoDatastoreUrlPair[] datastoreUrl;
   public String swapPlacement;
   public VirtualMachineBootOptions bootOptions;
+  public FaultToleranceConfigInfo ftInfo;
+  public VmConfigInfo vAppConfig;
+  public Boolean vAssertsEnabled;
+  public Boolean changeTrackingEnabled;
 
   public String getChangeVersion()
   {
     return this.changeVersion;
   }
 
-  public java.util.Calendar getModified()
+  public Calendar getModified()
   {
     return this.modified;
   }
@@ -96,6 +111,11 @@ public class VirtualMachineConfigInfo extends DynamicData
     return this.uuid;
   }
 
+  public String getInstanceUuid()
+  {
+    return this.instanceUuid;
+  }
+
   public long[] getNpivNodeWorldWideName()
   {
     return this.npivNodeWorldWideName;
@@ -109,6 +129,26 @@ public class VirtualMachineConfigInfo extends DynamicData
   public String getNpivWorldWideNameType()
   {
     return this.npivWorldWideNameType;
+  }
+
+  public Short getNpivDesiredNodeWwns()
+  {
+    return this.npivDesiredNodeWwns;
+  }
+
+  public Short getNpivDesiredPortWwns()
+  {
+    return this.npivDesiredPortWwns;
+  }
+
+  public Boolean getNpivTemporaryDisabled()
+  {
+    return this.npivTemporaryDisabled;
+  }
+
+  public Boolean getNpivOnNonRdmDisks()
+  {
+    return this.npivOnNonRdmDisks;
   }
 
   public String getLocationId()
@@ -176,6 +216,31 @@ public class VirtualMachineConfigInfo extends DynamicData
     return this.memoryAllocation;
   }
 
+  public Boolean getMemoryHotAddEnabled()
+  {
+    return this.memoryHotAddEnabled;
+  }
+
+  public Boolean getCpuHotAddEnabled()
+  {
+    return this.cpuHotAddEnabled;
+  }
+
+  public Boolean getCpuHotRemoveEnabled()
+  {
+    return this.cpuHotRemoveEnabled;
+  }
+
+  public Long getHotPlugMemoryLimit()
+  {
+    return this.hotPlugMemoryLimit;
+  }
+
+  public Long getHotPlugMemoryIncrementSize()
+  {
+    return this.hotPlugMemoryIncrementSize;
+  }
+
   public VirtualMachineAffinityInfo getCpuAffinity()
   {
     return this.cpuAffinity;
@@ -216,12 +281,32 @@ public class VirtualMachineConfigInfo extends DynamicData
     return this.bootOptions;
   }
 
+  public FaultToleranceConfigInfo getFtInfo()
+  {
+    return this.ftInfo;
+  }
+
+  public VmConfigInfo getVAppConfig()
+  {
+    return this.vAppConfig;
+  }
+
+  public Boolean getVAssertsEnabled()
+  {
+    return this.vAssertsEnabled;
+  }
+
+  public Boolean getChangeTrackingEnabled()
+  {
+    return this.changeTrackingEnabled;
+  }
+
   public void setChangeVersion(String changeVersion)
   {
     this.changeVersion=changeVersion;
   }
 
-  public void setModified(java.util.Calendar modified)
+  public void setModified(Calendar modified)
   {
     this.modified=modified;
   }
@@ -246,6 +331,11 @@ public class VirtualMachineConfigInfo extends DynamicData
     this.uuid=uuid;
   }
 
+  public void setInstanceUuid(String instanceUuid)
+  {
+    this.instanceUuid=instanceUuid;
+  }
+
   public void setNpivNodeWorldWideName(long[] npivNodeWorldWideName)
   {
     this.npivNodeWorldWideName=npivNodeWorldWideName;
@@ -259,6 +349,26 @@ public class VirtualMachineConfigInfo extends DynamicData
   public void setNpivWorldWideNameType(String npivWorldWideNameType)
   {
     this.npivWorldWideNameType=npivWorldWideNameType;
+  }
+
+  public void setNpivDesiredNodeWwns(Short npivDesiredNodeWwns)
+  {
+    this.npivDesiredNodeWwns=npivDesiredNodeWwns;
+  }
+
+  public void setNpivDesiredPortWwns(Short npivDesiredPortWwns)
+  {
+    this.npivDesiredPortWwns=npivDesiredPortWwns;
+  }
+
+  public void setNpivTemporaryDisabled(Boolean npivTemporaryDisabled)
+  {
+    this.npivTemporaryDisabled=npivTemporaryDisabled;
+  }
+
+  public void setNpivOnNonRdmDisks(Boolean npivOnNonRdmDisks)
+  {
+    this.npivOnNonRdmDisks=npivOnNonRdmDisks;
   }
 
   public void setLocationId(String locationId)
@@ -326,6 +436,31 @@ public class VirtualMachineConfigInfo extends DynamicData
     this.memoryAllocation=memoryAllocation;
   }
 
+  public void setMemoryHotAddEnabled(Boolean memoryHotAddEnabled)
+  {
+    this.memoryHotAddEnabled=memoryHotAddEnabled;
+  }
+
+  public void setCpuHotAddEnabled(Boolean cpuHotAddEnabled)
+  {
+    this.cpuHotAddEnabled=cpuHotAddEnabled;
+  }
+
+  public void setCpuHotRemoveEnabled(Boolean cpuHotRemoveEnabled)
+  {
+    this.cpuHotRemoveEnabled=cpuHotRemoveEnabled;
+  }
+
+  public void setHotPlugMemoryLimit(Long hotPlugMemoryLimit)
+  {
+    this.hotPlugMemoryLimit=hotPlugMemoryLimit;
+  }
+
+  public void setHotPlugMemoryIncrementSize(Long hotPlugMemoryIncrementSize)
+  {
+    this.hotPlugMemoryIncrementSize=hotPlugMemoryIncrementSize;
+  }
+
   public void setCpuAffinity(VirtualMachineAffinityInfo cpuAffinity)
   {
     this.cpuAffinity=cpuAffinity;
@@ -364,5 +499,25 @@ public class VirtualMachineConfigInfo extends DynamicData
   public void setBootOptions(VirtualMachineBootOptions bootOptions)
   {
     this.bootOptions=bootOptions;
+  }
+
+  public void setFtInfo(FaultToleranceConfigInfo ftInfo)
+  {
+    this.ftInfo=ftInfo;
+  }
+
+  public void setVAppConfig(VmConfigInfo vAppConfig)
+  {
+    this.vAppConfig=vAppConfig;
+  }
+
+  public void setVAssertsEnabled(Boolean vAssertsEnabled)
+  {
+    this.vAssertsEnabled=vAssertsEnabled;
+  }
+
+  public void setChangeTrackingEnabled(Boolean changeTrackingEnabled)
+  {
+    this.changeTrackingEnabled=changeTrackingEnabled;
   }
 }

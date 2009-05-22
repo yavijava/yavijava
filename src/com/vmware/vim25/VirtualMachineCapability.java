@@ -51,12 +51,17 @@ public class VirtualMachineCapability extends DynamicData
   public boolean toolsAutoUpdateSupported;
   public boolean vmNpivWwnSupported;
   public boolean npivWwnOnNonRdmVmSupported;
+  public Boolean vmNpivWwnDisableSupported;
+  public Boolean vmNpivWwnUpdateSupported;
   public boolean swapPlacementSupported;
   public boolean toolsSyncTimeSupported;
   public boolean virtualMmuUsageSupported;
   public boolean diskSharesSupported;
   public boolean bootOptionsSupported;
   public boolean settingVideoRamSizeSupported;
+  public Boolean settingDisplayTopologySupported;
+  public Boolean recordReplaySupported;
+  public Boolean changeTrackingSupported;
 
   public boolean isSnapshotOperationsSupported()
   {
@@ -138,6 +143,16 @@ public class VirtualMachineCapability extends DynamicData
     return this.npivWwnOnNonRdmVmSupported;
   }
 
+  public Boolean getVmNpivWwnDisableSupported()
+  {
+    return this.vmNpivWwnDisableSupported;
+  }
+
+  public Boolean getVmNpivWwnUpdateSupported()
+  {
+    return this.vmNpivWwnUpdateSupported;
+  }
+
   public boolean isSwapPlacementSupported()
   {
     return this.swapPlacementSupported;
@@ -166,6 +181,21 @@ public class VirtualMachineCapability extends DynamicData
   public boolean isSettingVideoRamSizeSupported()
   {
     return this.settingVideoRamSizeSupported;
+  }
+
+  public Boolean getSettingDisplayTopologySupported()
+  {
+    return this.settingDisplayTopologySupported;
+  }
+
+  public Boolean getRecordReplaySupported()
+  {
+    return this.recordReplaySupported;
+  }
+
+  public Boolean getChangeTrackingSupported()
+  {
+    return this.changeTrackingSupported;
   }
 
   public void setSnapshotOperationsSupported(boolean snapshotOperationsSupported)
@@ -248,6 +278,16 @@ public class VirtualMachineCapability extends DynamicData
     this.npivWwnOnNonRdmVmSupported=npivWwnOnNonRdmVmSupported;
   }
 
+  public void setVmNpivWwnDisableSupported(Boolean vmNpivWwnDisableSupported)
+  {
+    this.vmNpivWwnDisableSupported=vmNpivWwnDisableSupported;
+  }
+
+  public void setVmNpivWwnUpdateSupported(Boolean vmNpivWwnUpdateSupported)
+  {
+    this.vmNpivWwnUpdateSupported=vmNpivWwnUpdateSupported;
+  }
+
   public void setSwapPlacementSupported(boolean swapPlacementSupported)
   {
     this.swapPlacementSupported=swapPlacementSupported;
@@ -276,5 +316,20 @@ public class VirtualMachineCapability extends DynamicData
   public void setSettingVideoRamSizeSupported(boolean settingVideoRamSizeSupported)
   {
     this.settingVideoRamSizeSupported=settingVideoRamSizeSupported;
+  }
+
+  public void setSettingDisplayTopologySupported(Boolean settingDisplayTopologySupported)
+  {
+    this.settingDisplayTopologySupported=settingDisplayTopologySupported;
+  }
+
+  public void setRecordReplaySupported(Boolean recordReplaySupported)
+  {
+    this.recordReplaySupported=recordReplaySupported;
+  }
+
+  public void setChangeTrackingSupported(Boolean changeTrackingSupported)
+  {
+    this.changeTrackingSupported=changeTrackingSupported;
   }
 }

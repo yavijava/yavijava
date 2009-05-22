@@ -28,6 +28,7 @@ POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
 
 package com.vmware.vim25;
+import java.util.Calendar;
 
 /**
 @author Steve Jin (sjin@vmware.com)
@@ -35,25 +36,25 @@ package com.vmware.vim25;
 
 public class EventFilterSpecByTime extends DynamicData
 {
-  public java.util.Calendar beginTime;
-  public java.util.Calendar endTime;
+  public Calendar beginTime;
+  public Calendar endTime;
 
-  public java.util.Calendar getBeginTime()
+  public Calendar getBeginTime()
   {
     return this.beginTime;
   }
 
-  public java.util.Calendar getEndTime()
+  public Calendar getEndTime()
   {
     return this.endTime;
   }
 
-  public void setBeginTime(java.util.Calendar beginTime)
+  public void setBeginTime(Calendar beginTime)
   {
     this.beginTime=beginTime;
   }
 
-  public void setEndTime(java.util.Calendar endTime)
+  public void setEndTime(Calendar endTime)
   {
     this.endTime=endTime;
   }

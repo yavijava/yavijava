@@ -38,6 +38,8 @@ public class VirtualDiskFlatVer1BackingInfo extends VirtualDeviceFileBackingInfo
   public String diskMode;
   public Boolean split;
   public Boolean writeThrough;
+  public String contentId;
+  public VirtualDiskFlatVer1BackingInfo parent;
 
   public String getDiskMode()
   {
@@ -54,6 +56,16 @@ public class VirtualDiskFlatVer1BackingInfo extends VirtualDeviceFileBackingInfo
     return this.writeThrough;
   }
 
+  public String getContentId()
+  {
+    return this.contentId;
+  }
+
+  public VirtualDiskFlatVer1BackingInfo getParent()
+  {
+    return this.parent;
+  }
+
   public void setDiskMode(String diskMode)
   {
     this.diskMode=diskMode;
@@ -67,5 +79,15 @@ public class VirtualDiskFlatVer1BackingInfo extends VirtualDeviceFileBackingInfo
   public void setWriteThrough(Boolean writeThrough)
   {
     this.writeThrough=writeThrough;
+  }
+
+  public void setContentId(String contentId)
+  {
+    this.contentId=contentId;
+  }
+
+  public void setParent(VirtualDiskFlatVer1BackingInfo parent)
+  {
+    this.parent=parent;
   }
 }

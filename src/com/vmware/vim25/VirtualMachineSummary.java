@@ -39,6 +39,7 @@ public class VirtualMachineSummary extends DynamicData
   public VirtualMachineRuntimeInfo runtime;
   public VirtualMachineGuestSummary guest;
   public VirtualMachineConfigSummary config;
+  public VirtualMachineStorageSummary storage;
   public VirtualMachineQuickStats quickStats;
   public ManagedEntityStatus overallStatus;
   public CustomFieldValue[] customValue;
@@ -61,6 +62,11 @@ public class VirtualMachineSummary extends DynamicData
   public VirtualMachineConfigSummary getConfig()
   {
     return this.config;
+  }
+
+  public VirtualMachineStorageSummary getStorage()
+  {
+    return this.storage;
   }
 
   public VirtualMachineQuickStats getQuickStats()
@@ -96,6 +102,11 @@ public class VirtualMachineSummary extends DynamicData
   public void setConfig(VirtualMachineConfigSummary config)
   {
     this.config=config;
+  }
+
+  public void setStorage(VirtualMachineStorageSummary storage)
+  {
+    this.storage=storage;
   }
 
   public void setQuickStats(VirtualMachineQuickStats quickStats)

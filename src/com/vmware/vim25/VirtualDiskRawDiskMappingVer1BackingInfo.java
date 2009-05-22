@@ -40,6 +40,9 @@ public class VirtualDiskRawDiskMappingVer1BackingInfo extends VirtualDeviceFileB
   public String compatibilityMode;
   public String diskMode;
   public String uuid;
+  public String contentId;
+  public String changeId;
+  public VirtualDiskRawDiskMappingVer1BackingInfo parent;
 
   public String getLunUuid()
   {
@@ -66,6 +69,21 @@ public class VirtualDiskRawDiskMappingVer1BackingInfo extends VirtualDeviceFileB
     return this.uuid;
   }
 
+  public String getContentId()
+  {
+    return this.contentId;
+  }
+
+  public String getChangeId()
+  {
+    return this.changeId;
+  }
+
+  public VirtualDiskRawDiskMappingVer1BackingInfo getParent()
+  {
+    return this.parent;
+  }
+
   public void setLunUuid(String lunUuid)
   {
     this.lunUuid=lunUuid;
@@ -89,5 +107,20 @@ public class VirtualDiskRawDiskMappingVer1BackingInfo extends VirtualDeviceFileB
   public void setUuid(String uuid)
   {
     this.uuid=uuid;
+  }
+
+  public void setContentId(String contentId)
+  {
+    this.contentId=contentId;
+  }
+
+  public void setChangeId(String changeId)
+  {
+    this.changeId=changeId;
+  }
+
+  public void setParent(VirtualDiskRawDiskMappingVer1BackingInfo parent)
+  {
+    this.parent=parent;
   }
 }

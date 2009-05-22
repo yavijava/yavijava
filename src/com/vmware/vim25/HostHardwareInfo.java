@@ -36,6 +36,7 @@ package com.vmware.vim25;
 public class HostHardwareInfo extends DynamicData
 {
   public HostSystemInfo systemInfo;
+  public HostCpuPowerManagementInfo cpuPowerManagementInfo;
   public HostCpuInfo cpuInfo;
   public HostCpuPackage[] cpuPkg;
   public long memorySize;
@@ -47,6 +48,11 @@ public class HostHardwareInfo extends DynamicData
   public HostSystemInfo getSystemInfo()
   {
     return this.systemInfo;
+  }
+
+  public HostCpuPowerManagementInfo getCpuPowerManagementInfo()
+  {
+    return this.cpuPowerManagementInfo;
   }
 
   public HostCpuInfo getCpuInfo()
@@ -87,6 +93,11 @@ public class HostHardwareInfo extends DynamicData
   public void setSystemInfo(HostSystemInfo systemInfo)
   {
     this.systemInfo=systemInfo;
+  }
+
+  public void setCpuPowerManagementInfo(HostCpuPowerManagementInfo cpuPowerManagementInfo)
+  {
+    this.cpuPowerManagementInfo=cpuPowerManagementInfo;
   }
 
   public void setCpuInfo(HostCpuInfo cpuInfo)

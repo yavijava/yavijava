@@ -53,6 +53,10 @@ public class GuestOsDescriptor extends DynamicData
   public Boolean supportsSlaveDisk;
   public HostCpuIdInfo[] cpuFeatureMask;
   public boolean supportsWakeOnLan;
+  public Boolean supportsVMI;
+  public Boolean supportsMemoryHotAdd;
+  public Boolean supportsCpuHotAdd;
+  public Boolean supportsCpuHotRemove;
 
   public String getId()
   {
@@ -144,6 +148,26 @@ public class GuestOsDescriptor extends DynamicData
     return this.supportsWakeOnLan;
   }
 
+  public Boolean getSupportsVMI()
+  {
+    return this.supportsVMI;
+  }
+
+  public Boolean getSupportsMemoryHotAdd()
+  {
+    return this.supportsMemoryHotAdd;
+  }
+
+  public Boolean getSupportsCpuHotAdd()
+  {
+    return this.supportsCpuHotAdd;
+  }
+
+  public Boolean getSupportsCpuHotRemove()
+  {
+    return this.supportsCpuHotRemove;
+  }
+
   public void setId(String id)
   {
     this.id=id;
@@ -232,5 +256,25 @@ public class GuestOsDescriptor extends DynamicData
   public void setSupportsWakeOnLan(boolean supportsWakeOnLan)
   {
     this.supportsWakeOnLan=supportsWakeOnLan;
+  }
+
+  public void setSupportsVMI(Boolean supportsVMI)
+  {
+    this.supportsVMI=supportsVMI;
+  }
+
+  public void setSupportsMemoryHotAdd(Boolean supportsMemoryHotAdd)
+  {
+    this.supportsMemoryHotAdd=supportsMemoryHotAdd;
+  }
+
+  public void setSupportsCpuHotAdd(Boolean supportsCpuHotAdd)
+  {
+    this.supportsCpuHotAdd=supportsCpuHotAdd;
+  }
+
+  public void setSupportsCpuHotRemove(Boolean supportsCpuHotRemove)
+  {
+    this.supportsCpuHotRemove=supportsCpuHotRemove;
   }
 }

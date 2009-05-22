@@ -40,6 +40,7 @@ public class VirtualMachineCloneSpec extends DynamicData
   public VirtualMachineConfigSpec config;
   public CustomizationSpec customization;
   public boolean powerOn;
+  public ManagedObjectReference snapshot;
 
   public VirtualMachineRelocateSpec getLocation()
   {
@@ -66,6 +67,11 @@ public class VirtualMachineCloneSpec extends DynamicData
     return this.powerOn;
   }
 
+  public ManagedObjectReference getSnapshot()
+  {
+    return this.snapshot;
+  }
+
   public void setLocation(VirtualMachineRelocateSpec location)
   {
     this.location=location;
@@ -89,5 +95,10 @@ public class VirtualMachineCloneSpec extends DynamicData
   public void setPowerOn(boolean powerOn)
   {
     this.powerOn=powerOn;
+  }
+
+  public void setSnapshot(ManagedObjectReference snapshot)
+  {
+    this.snapshot=snapshot;
   }
 }

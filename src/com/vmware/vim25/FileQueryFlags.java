@@ -38,6 +38,7 @@ public class FileQueryFlags extends DynamicData
   public boolean fileType;
   public boolean fileSize;
   public boolean modification;
+  public Boolean fileOwner;
 
   public boolean isFileType()
   {
@@ -54,6 +55,11 @@ public class FileQueryFlags extends DynamicData
     return this.modification;
   }
 
+  public Boolean getFileOwner()
+  {
+    return this.fileOwner;
+  }
+
   public void setFileType(boolean fileType)
   {
     this.fileType=fileType;
@@ -67,5 +73,10 @@ public class FileQueryFlags extends DynamicData
   public void setModification(boolean modification)
   {
     this.modification=modification;
+  }
+
+  public void setFileOwner(Boolean fileOwner)
+  {
+    this.fileOwner=fileOwner;
   }
 }

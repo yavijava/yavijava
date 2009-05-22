@@ -28,6 +28,7 @@ POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
 
 package com.vmware.vim25;
+import java.util.Calendar;
 
 /**
 @author Steve Jin (sjin@vmware.com)
@@ -37,15 +38,16 @@ public class ScheduledTaskInfo extends ScheduledTaskSpec
 {
   public ManagedObjectReference scheduledTask;
   public ManagedObjectReference entity;
-  public java.util.Calendar lastModifiedTime;
+  public Calendar lastModifiedTime;
   public String lastModifiedUser;
-  public java.util.Calendar nextRunTime;
-  public java.util.Calendar prevRunTime;
+  public Calendar nextRunTime;
+  public Calendar prevRunTime;
   public TaskInfoState state;
   public LocalizedMethodFault error;
   public Object result;
   public Integer progress;
   public ManagedObjectReference activeTask;
+  public ManagedObjectReference taskObject;
 
   public ManagedObjectReference getScheduledTask()
   {
@@ -57,7 +59,7 @@ public class ScheduledTaskInfo extends ScheduledTaskSpec
     return this.entity;
   }
 
-  public java.util.Calendar getLastModifiedTime()
+  public Calendar getLastModifiedTime()
   {
     return this.lastModifiedTime;
   }
@@ -67,12 +69,12 @@ public class ScheduledTaskInfo extends ScheduledTaskSpec
     return this.lastModifiedUser;
   }
 
-  public java.util.Calendar getNextRunTime()
+  public Calendar getNextRunTime()
   {
     return this.nextRunTime;
   }
 
-  public java.util.Calendar getPrevRunTime()
+  public Calendar getPrevRunTime()
   {
     return this.prevRunTime;
   }
@@ -102,6 +104,11 @@ public class ScheduledTaskInfo extends ScheduledTaskSpec
     return this.activeTask;
   }
 
+  public ManagedObjectReference getTaskObject()
+  {
+    return this.taskObject;
+  }
+
   public void setScheduledTask(ManagedObjectReference scheduledTask)
   {
     this.scheduledTask=scheduledTask;
@@ -112,7 +119,7 @@ public class ScheduledTaskInfo extends ScheduledTaskSpec
     this.entity=entity;
   }
 
-  public void setLastModifiedTime(java.util.Calendar lastModifiedTime)
+  public void setLastModifiedTime(Calendar lastModifiedTime)
   {
     this.lastModifiedTime=lastModifiedTime;
   }
@@ -122,12 +129,12 @@ public class ScheduledTaskInfo extends ScheduledTaskSpec
     this.lastModifiedUser=lastModifiedUser;
   }
 
-  public void setNextRunTime(java.util.Calendar nextRunTime)
+  public void setNextRunTime(Calendar nextRunTime)
   {
     this.nextRunTime=nextRunTime;
   }
 
-  public void setPrevRunTime(java.util.Calendar prevRunTime)
+  public void setPrevRunTime(Calendar prevRunTime)
   {
     this.prevRunTime=prevRunTime;
   }
@@ -155,5 +162,10 @@ public class ScheduledTaskInfo extends ScheduledTaskSpec
   public void setActiveTask(ManagedObjectReference activeTask)
   {
     this.activeTask=activeTask;
+  }
+
+  public void setTaskObject(ManagedObjectReference taskObject)
+  {
+    this.taskObject=taskObject;
   }
 }
