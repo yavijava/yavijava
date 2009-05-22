@@ -31,12 +31,25 @@ package com.vmware.vim25.mo;
 
 import java.lang.reflect.Array;
 import java.lang.reflect.Constructor;
-import java.lang.reflect.Method;
 import java.rmi.RemoteException;
 import java.util.Hashtable;
 
-import com.vmware.vim25.*;
-import com.vmware.vim25.mo.util.*;
+import com.vmware.vim25.DynamicProperty;
+import com.vmware.vim25.InvalidProperty;
+import com.vmware.vim25.ManagedObjectReference;
+import com.vmware.vim25.ObjectContent;
+import com.vmware.vim25.ObjectSpec;
+import com.vmware.vim25.ObjectUpdate;
+import com.vmware.vim25.PropertyChange;
+import com.vmware.vim25.PropertyChangeOp;
+import com.vmware.vim25.PropertyFilterSpec;
+import com.vmware.vim25.PropertyFilterUpdate;
+import com.vmware.vim25.PropertySpec;
+import com.vmware.vim25.RuntimeFault;
+import com.vmware.vim25.UpdateSet;
+import com.vmware.vim25.VimPortType;
+import com.vmware.vim25.mo.util.MorUtil;
+import com.vmware.vim25.mo.util.PropertyCollectorUtil;
 
 /**
  * This class is intended to provide a wrapper around a managed object class.
@@ -411,12 +424,20 @@ abstract public class ManagedObject
 		    for (int i = 0; i < filtupary.length; i++) 
 		    {
 				PropertyFilterUpdate filtup = filtupary[i];
+				if(filtup==null)
+				{
+					continue;
+				}
 				ObjectUpdate[] objupary = filtup.getObjectSet();
-		    	for (int j = 0; j < objupary.length; j++) 
+		    	for (int j = 0; objupary!=null && j < objupary.length; j++) 
 		    	{
 		    		ObjectUpdate objup = objupary[j];
+		    		if(objup==null)
+		    		{
+		    			continue;
+		    		}
 		    		PropertyChange[] propchgary = objup.getChangeSet();
-		            for (int k = 0; k < propchgary.length; k++) 
+		            for (int k = 0; propchgary!=null && k < propchgary.length; k++) 
 		           	{
 		        		PropertyChange propchg = propchgary[k];
 	                    updateValues(endWaitProps, endVals, propchg);
