@@ -95,6 +95,9 @@ public class ExtensionManager extends ManagedObject
 		if (extension == null) {
 		    throw new NullPointerException();
 		}
+		
+		encodeUrl(extension);
+
 		getVimService().updateExtension(getMOR(), extension);
 	}
 
@@ -112,6 +115,7 @@ public class ExtensionManager extends ManagedObject
 		if (extension == null) {
 		    throw new NullPointerException();
 		}
+		encodeUrl(extension);
 		getVimService().registerExtension(getMOR(), extension);
 	}
 	
@@ -133,12 +137,34 @@ public class ExtensionManager extends ManagedObject
 		}
 		return getVimService().findExtension(getMOR(), keyStr);
 	}
+	
+	private void encodeUrl(Extension extension)
+	{
+		// replace all the & in the url with &amp;
+		for(int i=0; extension.client!=null && i<extension.client.length; i++)
+		{
+			ExtensionClientInfo eci = extension.client[i];
+			if(eci.url.indexOf("&")!=-1)
+			{
+				eci.url = eci.url.replaceAll("&", "&amp;");
+			}
+		}
+		for(int i=0; extension.server!=null && i<extension.server.length; i++)
+		{
+			ExtensionServerInfo esi = extension.server[i];
+			if(esi.url.indexOf("&")!=-1)
+			{
+				esi.url = esi.url.replaceAll("&", "&amp;");
+			}
+		}
+	}
 
 	/**
 	 * Print out information of all the plugins to stdout
 	 * @throws RemoteException if something is wrong with web service call, 
 	 * either because of the web service itself, or because of the service
 	 * provider unable to handle the request. 
+	 * @deprecated
 	 */
 	public void printAllExtensions() 
 	{
@@ -155,5 +181,4 @@ public class ExtensionManager extends ManagedObject
 			System.out.println("Configuration URL: " + exts[i].getServer()[0].getUrl());
 		}
 	}
-	
 }
