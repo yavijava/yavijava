@@ -338,9 +338,9 @@ public class ServiceInstance extends ManagedObject
 		return (OptionManager) createMO(getServiceContent().getSetting());
 	}
 	
-	public OptionManager getOvfManager()
+	public OvfManager getOvfManager()
 	{
-		return (OptionManager) createMO(getServiceContent().getOvfManager());
+		return (OvfManager) createMO(getServiceContent().getOvfManager());
 	}
 	
 	private ManagedObject createMO(ManagedObjectReference mor)
