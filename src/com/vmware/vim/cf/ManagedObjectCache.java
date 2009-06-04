@@ -38,6 +38,8 @@ import com.vmware.vim25.ObjectUpdate;
 import com.vmware.vim25.PropertyChange;
 import com.vmware.vim25.PropertyFilterUpdate;
 
+import static com.vmware.vim.cf.NullObject.NULL;
+
 /**
  * @author Steve JIN (sjin@vmware.com)
  */
@@ -80,7 +82,9 @@ class ManagedObjectCache implements Observer
                     PropertyChange[] pcs = ous[j].getChangeSet();
                     for(int k=0; k < pcs.length; k++)
                     {
-                        moMap.put(pcs[k].getName() , pcs[k].getVal());
+                    	  Object value = pcs[k].getVal();
+                    	  value = value == null ? NULL : value; //null is not allowed as value in CHM
+                        moMap.put(pcs[k].getName(), value);
                     }
                 }
             }

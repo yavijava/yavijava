@@ -54,17 +54,35 @@ public class CacheInstance
 		mom.addObserver(cache);
 	}
 	
+	/**
+	 * Add the managed objects and their properties to be watched.
+	 * @param mos array of managed objects. 
+	 * @param props array of properties to watch
+	 */
 	public void watch(ManagedObject[] mos, String[] props)
 	{
 		mom.watch(mos, props);
 	}
-	
+
+  /**
+   * Add PropertyFilterSpec for advanced settings
+   * @param pfs the property filter spec which specifies
+   * the managed objects and properties to watch.
+   */
 	public void watch(PropertyFilterSpec pfs)
 	{
 		mom.watch(pfs);
 	}
 
-  public Object getCopy(ManagedObject mo, String propName)
+	/**
+	 * Get a copy of the cached property. You can change the returned
+	 * object as you like
+	 * @param mo Managed object
+	 * @param propName property name
+	 * @return the data object identified by the propName.
+	 * NullObject.NULL if the data object is really null
+	 */
+	public Object getCopy(ManagedObject mo, String propName)
   {
      Object obj = get(mo.getMOR(), propName);
      try
@@ -77,16 +95,40 @@ public class CacheInstance
      return obj;
    }
 
+	/**
+	 * Get a copy of the cached property. You can change the returned
+	 * object as you like
+	 * @param mor Managed object reference
+	 * @param propName property name
+	 * @return the data object identified by the propName.
+	 * NullObject.NULL if the data object is really null
+	 */
   public Object getCopy(ManagedObjectReference mor, String propName)
   {
     return getCopy(mor, propName);
   }
    
+  /**
+   * Get the value of cached property whose name is propName.
+   * You should NEVER change the returned data object.
+   * @param mo Managed object on which the cached property is requested
+   * @param propName Property name, can include "."
+   * @return the data object identified by the propName.
+   * NullObject.NULL if the data object is really null
+   */
 	public Object get(ManagedObject mo, String propName)
 	{
 		return get(mo.getMOR(), propName);
 	}
 	
+	/**
+	 * Get the value of cached property whose name is propName.
+	 * You should NEVER change the returned data object.
+	 * @param mor Managed object reference pointing to the managed object
+	 * @param propName Property name
+	 * @return the data object identified by the propName.
+   * NullObject.NULL if the data object is really null
+	 */
 	public Object get(ManagedObjectReference mor, String propName)
 	{
 	  Map<ManagedObjectReference, Map<String, Object>> items = cache.getCachedItems();
@@ -94,11 +136,15 @@ public class CacheInstance
     Map<String, Object> moMap =  items.get(mor);
 	  if(moMap!=null)
 	  {
-		return moMap.get(propName);
+		  return moMap.get(propName);
 	  }
 	  return null;
 	}
-
+	
+	/**
+	 * Start the caching service. Called after specifying the managed
+	 * objects and their properties to watch.
+	 */
 	public void start()
 	{
 	  mThread = new Thread(mom);
@@ -106,6 +152,9 @@ public class CacheInstance
 	  mThread.start();
 	}
 	
+	/**
+	 * Destrory the caching service when no longer needed.
+	 */
 	public void destroy()
 	{
 		mom.cleanUp();
@@ -116,11 +165,18 @@ public class CacheInstance
 		mThread = null;
 	}
 	
+	/**
+	 * Get the corresponding ServiceInstance
+	 * @return ServiceInstance object
+	 */
 	public ServiceInstance getServiceInstance()
 	{
 	  return si;
 	}
-	
+	/**
+	 * Check if the CacheInstance is ready for retrieval
+	 * @return true if ready; false otherwise
+	 */
 	public boolean isReady()
 	{
 		return cache.isReady();

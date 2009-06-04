@@ -1,14 +1,11 @@
 package com.vmware.vim25.mo.samples;
+import static com.vmware.vim.cf.NullObject.NULL;
+
 import java.net.URL;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.Date;
 
 import com.vmware.vim.cf.CacheInstance;
-import com.vmware.vim25.Description;
-import com.vmware.vim25.Extension;
-import com.vmware.vim25.ExtensionClientInfo;
-import com.vmware.vim25.ExtensionServerInfo;
 import com.vmware.vim25.VirtualMachineSummary;
 import com.vmware.vim25.mo.Folder;
 import com.vmware.vim25.mo.InventoryNavigator;
@@ -29,7 +26,12 @@ public class CacheFrameworkSample
     vicf.watch(hosts, new String[] {"name", "summary"});
     vicf.start();
 
-    Thread.sleep(1000);
+    //check if the caching is ready to use; otherwise wait
+    while(!vicf.isReady()) 
+    {
+    	Thread.sleep(1000);
+    }
+    
     Thread[] vrs = new VimReader[2];
 
     for(int i=0; i<vrs.length; i++)
@@ -69,6 +71,11 @@ class VimReader extends Thread
         String name = (String) vicf.get(vms[i], "name");
         SimpleDateFormat sdf = new SimpleDateFormat();
         Object power = vicf.get(vms[i], "runtime.powerState");
+        //show how to test the null value
+        if(power==NULL) // or == NullObject.NULL
+        {
+        	System.out.println("power is null");
+        }
         VirtualMachineSummary summary = (VirtualMachineSummary )vicf.get(vms[i], "summary");
         System.out.println(this.getName() + " reading vm: " + name + " = " + power + " @ " + sdf.format(new Date(System.currentTimeMillis())));//+ summary.getRuntime().getMaxMemoryUsage());
       }
