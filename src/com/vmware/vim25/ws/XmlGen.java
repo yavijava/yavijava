@@ -128,18 +128,15 @@ public final class XmlGen
     }
     else if(type.endsWith("[]"))
     { // array type
-      String singleTypeName = type.substring(0, type.length()-2);
-   	  Element e = subNodes.get(0);
-   	  String xsiType = e.attributeValue(XSI_TYPE);
-   	  if(xsiType!= null)
-   	  {
-   		  singleTypeName = xsiType;
-   	  }
-      Class clazz = getVimClass(singleTypeName);
+      String arrayItemTypeName = type.substring(0, type.length()-2);
+      Class clazz = getVimClass(arrayItemTypeName);
       Object ao = Array.newInstance(clazz, subNodes.size());
+
       for(int i=0; i<subNodes.size(); i++)
       {
-        Object o = fromXml(getVimClass(singleTypeName), subNodes.get(i));
+     	  Element e = subNodes.get(i);
+     	  String xsiType = e.attributeValue(XSI_TYPE);
+        Object o = fromXml(getVimClass(xsiType==null? arrayItemTypeName : xsiType), subNodes.get(i));
         Array.set(ao, i, o);
       }
       return ao;
