@@ -1,10 +1,11 @@
 What is new in Version 2.0
 
+0. vSphere 4.0 support
 1. High performance Web Service Engine to replace AXIS.
 2. POJO Data Objects and Java Enum Types 
 3. REST Client API (experimental)
-4. Samples using the APIs
-
+4. Caching framework (experimental)
+5. Samples using the APIs
 
 What is new in Version 1.0
 1. Some code refactoring with ManagedObject.java and PropertyCollectorUtil.java
