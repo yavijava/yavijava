@@ -150,11 +150,11 @@ public class SearchIndex extends ManagedObject
 	//SDK2.5 signature for back compatibility
 	public ManagedEntity findByUuid(Datacenter datacenter, String uuid, boolean vmOnly) throws RuntimeFault, RemoteException
 	{
-		return findByUuid(datacenter, uuid, vmOnly, false);
+		return findByUuid(datacenter, uuid, vmOnly, null);
 	}
 
 	//SDK4.0 signature
-	public ManagedEntity findByUuid(Datacenter datacenter, String uuid, boolean vmOnly, boolean instanceUuid) throws RuntimeFault, RemoteException
+	public ManagedEntity findByUuid(Datacenter datacenter, String uuid, boolean vmOnly, Boolean instanceUuid) throws RuntimeFault, RemoteException
 	{
 		ManagedObjectReference mor = getVimService().findByUuid(getMOR(), datacenter==null? null : datacenter.getMOR(), uuid, vmOnly, instanceUuid);
 		return MorUtil.createExactManagedEntity(getServerConnection(), mor);

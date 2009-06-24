@@ -76,11 +76,11 @@ public class VirtualDiskManager extends ManagedObject
 	//SDK2.5 signature for back compatibility
 	public Task extendVirtualDisk_Task(String name, Datacenter datacenter, long newCapacityKb) throws FileFault, RuntimeFault, RemoteException 
 	{
-		return extendVirtualDisk_Task(name, datacenter, newCapacityKb, false);
+		return extendVirtualDisk_Task(name, datacenter, newCapacityKb, null);
 	}
 
 	//SDK4.0 signature
-	public Task extendVirtualDisk_Task(String name, Datacenter datacenter, long newCapacityKb, boolean eagerZero) throws FileFault, RuntimeFault, RemoteException 
+	public Task extendVirtualDisk_Task(String name, Datacenter datacenter, long newCapacityKb, Boolean eagerZero) throws FileFault, RuntimeFault, RemoteException 
 	{
 		return new Task(getServerConnection(),
 				getVimService().extendVirtualDisk_Task(getMOR(), name, datacenter==null? null : datacenter.getMOR(), newCapacityKb, eagerZero));

@@ -327,11 +327,11 @@ public class VirtualMachine extends ManagedEntity
 	//SDK2.5 signature for back compatibility
 	public Task revertToCurrentSnapshot_Task(HostSystem host) throws VmConfigFault, SnapshotFault, TaskInProgress, InvalidState, InsufficientResourcesFault, NotFound, RuntimeFault, RemoteException 
 	{
-		return revertToCurrentSnapshot_Task(host, false);
+		return revertToCurrentSnapshot_Task(host, null);
 	}
 	
 	//SDK4.0 signature
-	public Task revertToCurrentSnapshot_Task(HostSystem host, boolean suppressPowerOn) throws VmConfigFault, SnapshotFault, TaskInProgress, InvalidState, InsufficientResourcesFault, NotFound, RuntimeFault, RemoteException 
+	public Task revertToCurrentSnapshot_Task(HostSystem host, Boolean suppressPowerOn) throws VmConfigFault, SnapshotFault, TaskInProgress, InvalidState, InsufficientResourcesFault, NotFound, RuntimeFault, RemoteException 
 	{
 		ManagedObjectReference mor = getVimService().revertToCurrentSnapshot_Task(getMOR(), host==null? null : host.getMOR(), suppressPowerOn);
 		return new Task(getServerConnection(), mor);

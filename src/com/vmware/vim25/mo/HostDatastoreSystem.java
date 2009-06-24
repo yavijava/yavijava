@@ -111,15 +111,11 @@ public class HostDatastoreSystem extends ManagedObject
 	//SDK2.5 signature for back compatibility
 	public VmfsDatastoreOption[] queryVmfsDatastoreExtendOptions(Datastore datastore, String devicePath) throws HostConfigFault, NotFound, RuntimeFault, RemoteException 
 	{
-		if(datastore==null)
-		{
-			throw new IllegalArgumentException("datastore must not be null.");
-		}
-		return getVimService().queryVmfsDatastoreExtendOptions(getMOR(), datastore.getMOR(), devicePath, false);
+		return queryVmfsDatastoreExtendOptions(datastore, devicePath, null);
 	}
 	
 	//SDK4.0 signature
-	public VmfsDatastoreOption[] queryVmfsDatastoreExtendOptions(Datastore datastore, String devicePath, boolean suppressExpandCandidates) throws HostConfigFault, NotFound, RuntimeFault, RemoteException 
+	public VmfsDatastoreOption[] queryVmfsDatastoreExtendOptions(Datastore datastore, String devicePath, Boolean suppressExpandCandidates) throws HostConfigFault, NotFound, RuntimeFault, RemoteException 
 	{
 		if(datastore==null)
 		{

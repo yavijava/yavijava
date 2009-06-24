@@ -590,7 +590,7 @@ public class VimStub
     paras[2] = new Argument("certificatePem", "String", certificatePem);
     wsc.invoke("SetExtensionCertificate", paras, null);
   }
-  public ManagedObjectReference moveDatastoreFile_Task(ManagedObjectReference _this, String sourceName, ManagedObjectReference sourceDatacenter, String destinationName, ManagedObjectReference destinationDatacenter, boolean force) throws java.rmi.RemoteException, InvalidDatastore, FileFault, RuntimeFault
+  public ManagedObjectReference moveDatastoreFile_Task(ManagedObjectReference _this, String sourceName, ManagedObjectReference sourceDatacenter, String destinationName, ManagedObjectReference destinationDatacenter, Boolean force) throws java.rmi.RemoteException, InvalidDatastore, FileFault, RuntimeFault
   {
     Argument[] paras = new Argument[6];
     paras[0] = new Argument("_this", "ManagedObjectReference", _this);
@@ -598,10 +598,10 @@ public class VimStub
     paras[2] = new Argument("sourceDatacenter", "ManagedObjectReference", sourceDatacenter);
     paras[3] = new Argument("destinationName", "String", destinationName);
     paras[4] = new Argument("destinationDatacenter", "ManagedObjectReference", destinationDatacenter);
-    paras[5] = new Argument("force", "boolean", force);
+    paras[5] = new Argument("force", "Boolean", force);
     return (ManagedObjectReference) wsc.invoke("MoveDatastoreFile_Task", paras, "ManagedObjectReference");
   }
-  public ManagedObjectReference copyDatastoreFile_Task(ManagedObjectReference _this, String sourceName, ManagedObjectReference sourceDatacenter, String destinationName, ManagedObjectReference destinationDatacenter, boolean force) throws java.rmi.RemoteException, InvalidDatastore, FileFault, RuntimeFault
+  public ManagedObjectReference copyDatastoreFile_Task(ManagedObjectReference _this, String sourceName, ManagedObjectReference sourceDatacenter, String destinationName, ManagedObjectReference destinationDatacenter, Boolean force) throws java.rmi.RemoteException, InvalidDatastore, FileFault, RuntimeFault
   {
     Argument[] paras = new Argument[6];
     paras[0] = new Argument("_this", "ManagedObjectReference", _this);
@@ -609,7 +609,7 @@ public class VimStub
     paras[2] = new Argument("sourceDatacenter", "ManagedObjectReference", sourceDatacenter);
     paras[3] = new Argument("destinationName", "String", destinationName);
     paras[4] = new Argument("destinationDatacenter", "ManagedObjectReference", destinationDatacenter);
-    paras[5] = new Argument("force", "boolean", force);
+    paras[5] = new Argument("force", "Boolean", force);
     return (ManagedObjectReference) wsc.invoke("CopyDatastoreFile_Task", paras, "ManagedObjectReference");
   }
   public ManagedObjectReference deleteDatastoreFile_Task(ManagedObjectReference _this, String name, ManagedObjectReference datacenter) throws java.rmi.RemoteException, InvalidDatastore, FileFault, RuntimeFault
@@ -620,13 +620,13 @@ public class VimStub
     paras[2] = new Argument("datacenter", "ManagedObjectReference", datacenter);
     return (ManagedObjectReference) wsc.invoke("DeleteDatastoreFile_Task", paras, "ManagedObjectReference");
   }
-  public void makeDirectory(ManagedObjectReference _this, String name, ManagedObjectReference datacenter, boolean createParentDirectories) throws java.rmi.RemoteException, InvalidDatastore, FileFault, RuntimeFault
+  public void makeDirectory(ManagedObjectReference _this, String name, ManagedObjectReference datacenter, Boolean createParentDirectories) throws java.rmi.RemoteException, InvalidDatastore, FileFault, RuntimeFault
   {
     Argument[] paras = new Argument[4];
     paras[0] = new Argument("_this", "ManagedObjectReference", _this);
     paras[1] = new Argument("name", "String", name);
     paras[2] = new Argument("datacenter", "ManagedObjectReference", datacenter);
-    paras[3] = new Argument("createParentDirectories", "boolean", createParentDirectories);
+    paras[3] = new Argument("createParentDirectories", "Boolean", createParentDirectories);
     wsc.invoke("MakeDirectory", paras, null);
   }
   public void changeOwner(ManagedObjectReference _this, String name, ManagedObjectReference datacenter, String owner) throws java.rmi.RemoteException, InvalidDatastore, FileFault, UserNotFound, RuntimeFault
@@ -769,12 +769,12 @@ public class VimStub
     paras[0] = new Argument("_this", "ManagedObjectReference", _this);
     return (ManagedObjectReference) wsc.invoke("DisconnectHost_Task", paras, "ManagedObjectReference");
   }
-  public ManagedObjectReference enterMaintenanceMode_Task(ManagedObjectReference _this, int timeout, boolean evacuatePoweredOffVms) throws java.rmi.RemoteException, InvalidState, Timedout, RuntimeFault
+  public ManagedObjectReference enterMaintenanceMode_Task(ManagedObjectReference _this, int timeout, Boolean evacuatePoweredOffVms) throws java.rmi.RemoteException, InvalidState, Timedout, RuntimeFault
   {
     Argument[] paras = new Argument[3];
     paras[0] = new Argument("_this", "ManagedObjectReference", _this);
     paras[1] = new Argument("timeout", "int", timeout);
-    paras[2] = new Argument("evacuatePoweredOffVms", "boolean", evacuatePoweredOffVms);
+    paras[2] = new Argument("evacuatePoweredOffVms", "Boolean", evacuatePoweredOffVms);
     return (ManagedObjectReference) wsc.invoke("EnterMaintenanceMode_Task", paras, "ManagedObjectReference");
   }
   public ManagedObjectReference exitMaintenanceMode_Task(ManagedObjectReference _this, int timeout) throws java.rmi.RemoteException, InvalidState, Timedout, RuntimeFault
@@ -798,12 +798,12 @@ public class VimStub
     paras[1] = new Argument("force", "boolean", force);
     return (ManagedObjectReference) wsc.invoke("ShutdownHost_Task", paras, "ManagedObjectReference");
   }
-  public ManagedObjectReference powerDownHostToStandBy_Task(ManagedObjectReference _this, int timeoutSec, boolean evacuatePoweredOffVms) throws java.rmi.RemoteException, HostPowerOpFailed, InvalidState, NotSupported, Timedout, RequestCanceled, RuntimeFault
+  public ManagedObjectReference powerDownHostToStandBy_Task(ManagedObjectReference _this, int timeoutSec, Boolean evacuatePoweredOffVms) throws java.rmi.RemoteException, HostPowerOpFailed, InvalidState, NotSupported, Timedout, RequestCanceled, RuntimeFault
   {
     Argument[] paras = new Argument[3];
     paras[0] = new Argument("_this", "ManagedObjectReference", _this);
     paras[1] = new Argument("timeoutSec", "int", timeoutSec);
-    paras[2] = new Argument("evacuatePoweredOffVms", "boolean", evacuatePoweredOffVms);
+    paras[2] = new Argument("evacuatePoweredOffVms", "Boolean", evacuatePoweredOffVms);
     return (ManagedObjectReference) wsc.invoke("PowerDownHostToStandBy_Task", paras, "ManagedObjectReference");
   }
   public ManagedObjectReference powerUpHostFromStandBy_Task(ManagedObjectReference _this, int timeoutSec) throws java.rmi.RemoteException, HostPowerOpFailed, InvalidState, NotSupported, Timedout, RuntimeFault
@@ -1249,14 +1249,14 @@ public class VimStub
     paras[3] = new Argument("host", "ManagedObjectReference", host);
     return (ManagedObjectReference) wsc.invoke("ImportVApp", paras, "ManagedObjectReference");
   }
-  public ManagedObjectReference findByUuid(ManagedObjectReference _this, ManagedObjectReference datacenter, String uuid, boolean vmSearch, boolean instanceUuid) throws java.rmi.RemoteException, RuntimeFault
+  public ManagedObjectReference findByUuid(ManagedObjectReference _this, ManagedObjectReference datacenter, String uuid, boolean vmSearch, Boolean instanceUuid) throws java.rmi.RemoteException, RuntimeFault
   {
     Argument[] paras = new Argument[5];
     paras[0] = new Argument("_this", "ManagedObjectReference", _this);
     paras[1] = new Argument("datacenter", "ManagedObjectReference", datacenter);
     paras[2] = new Argument("uuid", "String", uuid);
     paras[3] = new Argument("vmSearch", "boolean", vmSearch);
-    paras[4] = new Argument("instanceUuid", "boolean", instanceUuid);
+    paras[4] = new Argument("instanceUuid", "Boolean", instanceUuid);
     return (ManagedObjectReference) wsc.invoke("FindByUuid", paras, "ManagedObjectReference");
   }
   public ManagedObjectReference findByDatastorePath(ManagedObjectReference _this, ManagedObjectReference datacenter, String path) throws java.rmi.RemoteException, InvalidDatastore, RuntimeFault
@@ -1300,14 +1300,14 @@ public class VimStub
     paras[2] = new Argument("name", "String", name);
     return (ManagedObjectReference) wsc.invoke("FindChild", paras, "ManagedObjectReference");
   }
-  public ManagedObjectReference[] findAllByUuid(ManagedObjectReference _this, ManagedObjectReference datacenter, String uuid, boolean vmSearch, boolean instanceUuid) throws java.rmi.RemoteException, RuntimeFault
+  public ManagedObjectReference[] findAllByUuid(ManagedObjectReference _this, ManagedObjectReference datacenter, String uuid, boolean vmSearch, Boolean instanceUuid) throws java.rmi.RemoteException, RuntimeFault
   {
     Argument[] paras = new Argument[5];
     paras[0] = new Argument("_this", "ManagedObjectReference", _this);
     paras[1] = new Argument("datacenter", "ManagedObjectReference", datacenter);
     paras[2] = new Argument("uuid", "String", uuid);
     paras[3] = new Argument("vmSearch", "boolean", vmSearch);
-    paras[4] = new Argument("instanceUuid", "boolean", instanceUuid);
+    paras[4] = new Argument("instanceUuid", "Boolean", instanceUuid);
     return (ManagedObjectReference[]) wsc.invoke("FindAllByUuid", paras, "ManagedObjectReference[]");
   }
   public ManagedObjectReference[] findAllByDnsName(ManagedObjectReference _this, ManagedObjectReference datacenter, String dnsName, boolean vmSearch) throws java.rmi.RemoteException, RuntimeFault
@@ -1595,7 +1595,7 @@ public class VimStub
     paras[2] = new Argument("datacenter", "ManagedObjectReference", datacenter);
     return (ManagedObjectReference) wsc.invoke("DeleteVirtualDisk_Task", paras, "ManagedObjectReference");
   }
-  public ManagedObjectReference moveVirtualDisk_Task(ManagedObjectReference _this, String sourceName, ManagedObjectReference sourceDatacenter, String destName, ManagedObjectReference destDatacenter, boolean force) throws java.rmi.RemoteException, FileFault, RuntimeFault
+  public ManagedObjectReference moveVirtualDisk_Task(ManagedObjectReference _this, String sourceName, ManagedObjectReference sourceDatacenter, String destName, ManagedObjectReference destDatacenter, Boolean force) throws java.rmi.RemoteException, FileFault, RuntimeFault
   {
     Argument[] paras = new Argument[6];
     paras[0] = new Argument("_this", "ManagedObjectReference", _this);
@@ -1603,10 +1603,10 @@ public class VimStub
     paras[2] = new Argument("sourceDatacenter", "ManagedObjectReference", sourceDatacenter);
     paras[3] = new Argument("destName", "String", destName);
     paras[4] = new Argument("destDatacenter", "ManagedObjectReference", destDatacenter);
-    paras[5] = new Argument("force", "boolean", force);
+    paras[5] = new Argument("force", "Boolean", force);
     return (ManagedObjectReference) wsc.invoke("MoveVirtualDisk_Task", paras, "ManagedObjectReference");
   }
-  public ManagedObjectReference copyVirtualDisk_Task(ManagedObjectReference _this, String sourceName, ManagedObjectReference sourceDatacenter, String destName, ManagedObjectReference destDatacenter, VirtualDiskSpec destSpec, boolean force) throws java.rmi.RemoteException, FileFault, RuntimeFault
+  public ManagedObjectReference copyVirtualDisk_Task(ManagedObjectReference _this, String sourceName, ManagedObjectReference sourceDatacenter, String destName, ManagedObjectReference destDatacenter, VirtualDiskSpec destSpec, Boolean force) throws java.rmi.RemoteException, FileFault, RuntimeFault
   {
     Argument[] paras = new Argument[7];
     paras[0] = new Argument("_this", "ManagedObjectReference", _this);
@@ -1615,17 +1615,17 @@ public class VimStub
     paras[3] = new Argument("destName", "String", destName);
     paras[4] = new Argument("destDatacenter", "ManagedObjectReference", destDatacenter);
     paras[5] = new Argument("destSpec", "VirtualDiskSpec", destSpec);
-    paras[6] = new Argument("force", "boolean", force);
+    paras[6] = new Argument("force", "Boolean", force);
     return (ManagedObjectReference) wsc.invoke("CopyVirtualDisk_Task", paras, "ManagedObjectReference");
   }
-  public ManagedObjectReference extendVirtualDisk_Task(ManagedObjectReference _this, String name, ManagedObjectReference datacenter, long newCapacityKb, boolean eagerZero) throws java.rmi.RemoteException, FileFault, RuntimeFault
+  public ManagedObjectReference extendVirtualDisk_Task(ManagedObjectReference _this, String name, ManagedObjectReference datacenter, long newCapacityKb, Boolean eagerZero) throws java.rmi.RemoteException, FileFault, RuntimeFault
   {
     Argument[] paras = new Argument[5];
     paras[0] = new Argument("_this", "ManagedObjectReference", _this);
     paras[1] = new Argument("name", "String", name);
     paras[2] = new Argument("datacenter", "ManagedObjectReference", datacenter);
     paras[3] = new Argument("newCapacityKb", "long", newCapacityKb);
-    paras[4] = new Argument("eagerZero", "boolean", eagerZero);
+    paras[4] = new Argument("eagerZero", "Boolean", eagerZero);
     return (ManagedObjectReference) wsc.invoke("ExtendVirtualDisk_Task", paras, "ManagedObjectReference");
   }
   public int queryVirtualDiskFragmentation(ManagedObjectReference _this, String name, ManagedObjectReference datacenter) throws java.rmi.RemoteException, FileFault, RuntimeFault
@@ -1645,13 +1645,13 @@ public class VimStub
     paras[2] = new Argument("datacenter", "ManagedObjectReference", datacenter);
     return (ManagedObjectReference) wsc.invoke("DefragmentVirtualDisk_Task", paras, "ManagedObjectReference");
   }
-  public ManagedObjectReference shrinkVirtualDisk_Task(ManagedObjectReference _this, String name, ManagedObjectReference datacenter, boolean copy) throws java.rmi.RemoteException, FileFault, RuntimeFault
+  public ManagedObjectReference shrinkVirtualDisk_Task(ManagedObjectReference _this, String name, ManagedObjectReference datacenter, Boolean copy) throws java.rmi.RemoteException, FileFault, RuntimeFault
   {
     Argument[] paras = new Argument[4];
     paras[0] = new Argument("_this", "ManagedObjectReference", _this);
     paras[1] = new Argument("name", "String", name);
     paras[2] = new Argument("datacenter", "ManagedObjectReference", datacenter);
-    paras[3] = new Argument("copy", "boolean", copy);
+    paras[3] = new Argument("copy", "Boolean", copy);
     return (ManagedObjectReference) wsc.invoke("ShrinkVirtualDisk_Task", paras, "ManagedObjectReference");
   }
   public ManagedObjectReference inflateVirtualDisk_Task(ManagedObjectReference _this, String name, ManagedObjectReference datacenter) throws java.rmi.RemoteException, FileFault, RuntimeFault
@@ -1719,12 +1719,12 @@ public class VimStub
     paras[4] = new Argument("quiesce", "boolean", quiesce);
     return (ManagedObjectReference) wsc.invoke("CreateSnapshot_Task", paras, "ManagedObjectReference");
   }
-  public ManagedObjectReference revertToCurrentSnapshot_Task(ManagedObjectReference _this, ManagedObjectReference host, boolean suppressPowerOn) throws java.rmi.RemoteException, TaskInProgress, SnapshotFault, InsufficientResourcesFault, InvalidState, VmConfigFault, NotFound, RuntimeFault
+  public ManagedObjectReference revertToCurrentSnapshot_Task(ManagedObjectReference _this, ManagedObjectReference host, Boolean suppressPowerOn) throws java.rmi.RemoteException, TaskInProgress, SnapshotFault, InsufficientResourcesFault, InvalidState, VmConfigFault, NotFound, RuntimeFault
   {
     Argument[] paras = new Argument[3];
     paras[0] = new Argument("_this", "ManagedObjectReference", _this);
     paras[1] = new Argument("host", "ManagedObjectReference", host);
-    paras[2] = new Argument("suppressPowerOn", "boolean", suppressPowerOn);
+    paras[2] = new Argument("suppressPowerOn", "Boolean", suppressPowerOn);
     return (ManagedObjectReference) wsc.invoke("RevertToCurrentSnapshot_Task", paras, "ManagedObjectReference");
   }
   public ManagedObjectReference removeAllSnapshots_Task(ManagedObjectReference _this) throws java.rmi.RemoteException, TaskInProgress, InvalidState, SnapshotFault, RuntimeFault
@@ -2280,13 +2280,13 @@ public class VimStub
     paras[1] = new Argument("spec", "VmfsDatastoreCreateSpec", spec);
     return (ManagedObjectReference) wsc.invoke("CreateVmfsDatastore", paras, "ManagedObjectReference");
   }
-  public VmfsDatastoreOption[] queryVmfsDatastoreExtendOptions(ManagedObjectReference _this, ManagedObjectReference datastore, String devicePath, boolean suppressExpandCandidates) throws java.rmi.RemoteException, NotFound, HostConfigFault, RuntimeFault
+  public VmfsDatastoreOption[] queryVmfsDatastoreExtendOptions(ManagedObjectReference _this, ManagedObjectReference datastore, String devicePath, Boolean suppressExpandCandidates) throws java.rmi.RemoteException, NotFound, HostConfigFault, RuntimeFault
   {
     Argument[] paras = new Argument[4];
     paras[0] = new Argument("_this", "ManagedObjectReference", _this);
     paras[1] = new Argument("datastore", "ManagedObjectReference", datastore);
     paras[2] = new Argument("devicePath", "String", devicePath);
-    paras[3] = new Argument("suppressExpandCandidates", "boolean", suppressExpandCandidates);
+    paras[3] = new Argument("suppressExpandCandidates", "Boolean", suppressExpandCandidates);
     return (VmfsDatastoreOption[]) wsc.invoke("QueryVmfsDatastoreExtendOptions", paras, "VmfsDatastoreOption[]");
   }
   public VmfsDatastoreOption[] queryVmfsDatastoreExpandOptions(ManagedObjectReference _this, ManagedObjectReference datastore) throws java.rmi.RemoteException, NotFound, HostConfigFault, RuntimeFault
@@ -2764,13 +2764,13 @@ public class VimStub
     paras[4] = new Argument("spec", "HostPatchManagerPatchManagerOperationSpec", spec);
     return (ManagedObjectReference) wsc.invoke("StageHostPatch_Task", paras, "ManagedObjectReference");
   }
-  public ManagedObjectReference installHostPatch_Task(ManagedObjectReference _this, HostPatchManagerLocator repository, String updateID, boolean force) throws java.rmi.RemoteException, PatchMetadataInvalid, PatchBinariesNotFound, PatchNotApplicable, NoDiskSpace, PatchInstallFailed, RebootRequired, InvalidState, TaskInProgress, RuntimeFault
+  public ManagedObjectReference installHostPatch_Task(ManagedObjectReference _this, HostPatchManagerLocator repository, String updateID, Boolean force) throws java.rmi.RemoteException, PatchMetadataInvalid, PatchBinariesNotFound, PatchNotApplicable, NoDiskSpace, PatchInstallFailed, RebootRequired, InvalidState, TaskInProgress, RuntimeFault
   {
     Argument[] paras = new Argument[4];
     paras[0] = new Argument("_this", "ManagedObjectReference", _this);
     paras[1] = new Argument("repository", "HostPatchManagerLocator", repository);
     paras[2] = new Argument("updateID", "String", updateID);
-    paras[3] = new Argument("force", "boolean", force);
+    paras[3] = new Argument("force", "Boolean", force);
     return (ManagedObjectReference) wsc.invoke("InstallHostPatch_Task", paras, "ManagedObjectReference");
   }
   public ManagedObjectReference installHostPatchV2_Task(ManagedObjectReference _this, String[] metaUrls, String[] bundleUrls, String[] vibUrls, HostPatchManagerPatchManagerOperationSpec spec) throws java.rmi.RemoteException, RequestCanceled, InvalidState, TaskInProgress, PlatformConfigFault, RuntimeFault
@@ -3439,12 +3439,12 @@ public class VimStub
     paras[1] = new Argument("view", "ManagedObjectReference", view);
     return (ManagedObjectReference) wsc.invoke("CreateListViewFromView", paras, "ManagedObjectReference");
   }
-  public ManagedObjectReference revertToSnapshot_Task(ManagedObjectReference _this, ManagedObjectReference host, boolean suppressPowerOn) throws java.rmi.RemoteException, TaskInProgress, InsufficientResourcesFault, InvalidState, FileFault, VmConfigFault, RuntimeFault
+  public ManagedObjectReference revertToSnapshot_Task(ManagedObjectReference _this, ManagedObjectReference host, Boolean suppressPowerOn) throws java.rmi.RemoteException, TaskInProgress, InsufficientResourcesFault, InvalidState, FileFault, VmConfigFault, RuntimeFault
   {
     Argument[] paras = new Argument[3];
     paras[0] = new Argument("_this", "ManagedObjectReference", _this);
     paras[1] = new Argument("host", "ManagedObjectReference", host);
-    paras[2] = new Argument("suppressPowerOn", "boolean", suppressPowerOn);
+    paras[2] = new Argument("suppressPowerOn", "Boolean", suppressPowerOn);
     return (ManagedObjectReference) wsc.invoke("RevertToSnapshot_Task", paras, "ManagedObjectReference");
   }
   public ManagedObjectReference removeSnapshot_Task(ManagedObjectReference _this, boolean removeChildren) throws java.rmi.RemoteException, TaskInProgress, RuntimeFault

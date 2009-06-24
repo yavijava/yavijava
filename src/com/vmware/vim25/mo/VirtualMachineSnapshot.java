@@ -64,11 +64,11 @@ public class VirtualMachineSnapshot extends ManagedObject
 	//SDK2.5 signature for back compatibility
 	public Task revertToSnapshot_Task(HostSystem host) throws VmConfigFault, TaskInProgress, FileFault, InvalidState, InsufficientResourcesFault, RuntimeFault, RemoteException 
 	{
-		return revertToSnapshot_Task(host, false);
+		return revertToSnapshot_Task(host, null);
 	}
 	
 	//SDK4.0 signature
-	public Task revertToSnapshot_Task(HostSystem host, boolean suppressPowerOn) throws VmConfigFault, TaskInProgress, FileFault, InvalidState, InsufficientResourcesFault, RuntimeFault, RemoteException 
+	public Task revertToSnapshot_Task(HostSystem host, Boolean suppressPowerOn) throws VmConfigFault, TaskInProgress, FileFault, InvalidState, InsufficientResourcesFault, RuntimeFault, RemoteException 
 	{
 		return new Task(getServerConnection(),
 				getVimService().revertToSnapshot_Task(getMOR(), host==null? null: host.getMOR(), suppressPowerOn));
