@@ -45,7 +45,6 @@ import org.dom4j.Element;
 import org.dom4j.Namespace;
 import org.dom4j.QName;
 
-import com.sun.xml.internal.bind.DatatypeConverterImpl;
 import com.vmware.vim25.ManagedObjectReference;
 
 /** 
@@ -58,13 +57,8 @@ public final class XmlGen
   private static String PACKAGE_NAME = "com.vmware.vim25";
   private static Namespace XSI = new Namespace("xsi", "http://www.w3.org/2001/XMLSchema-instance");
   private static QName XSI_TYPE = new QName("type", XSI);
-  private static String[] BASIC_TYPES = new String[] {"String", "int", "short", "long", "byte", "boolean", "Calendar"};
+  private static String[] BASIC_TYPES = new String[] {"String", "int", "short", "long", "byte", "boolean", "Boolean", "Calendar"};
 
-  static
-  {
-    DatatypeConverter.setDatatypeConverter(DatatypeConverterImpl.theInstance);
-  }
-  
   public static SoapFaultException parseSoapFault(Element root) throws Exception
   {
     SoapFaultException sfe = new SoapFaultException();
