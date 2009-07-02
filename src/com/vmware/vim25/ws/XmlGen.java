@@ -586,13 +586,15 @@ public final class XmlGen
     return sb.toString();
   }
 
+  final static Class INT_ARRAY_CLASS = new int[]{}.getClass();
+  final static Class BYTE_ARRAY_CLASS = new byte[]{}.getClass();
   private static void toXML(StringBuffer sb, String tagName, Class type, Object obj)
   {
   	Class<?> clazz = obj.getClass();
   	
 	  if(clazz.isArray())
 	  {
-	  	if(obj.getClass() == (new int[]{}.getClass()))
+	  	if(obj.getClass() == INT_ARRAY_CLASS)
 	  	{
 	  		int[] objs = (int[]) obj;
 	  		for(int i=0; i<objs.length; i++)
@@ -601,6 +603,16 @@ public final class XmlGen
 	  	  	sb.append(objs[i]);
 	  	  	sb.append("</" + tagName + ">");
 	  		}
+	  	}
+	  	else if(obj.getClass()== BYTE_ARRAY_CLASS)
+	  	{
+	  	  byte[] objs = (byte[]) obj;
+        for(int i=0; i<objs.length; i++)
+        {
+          sb.append("<" + tagName +">");
+          sb.append(objs[i]);
+          sb.append("</" + tagName + ">");
+        }
 	  	}
 	  	else
 	  	{
