@@ -70,7 +70,7 @@ class ManagedObjectCache implements Observer
             for(int i=0; pfus!=null && i< pfus.length; i++)
             {
                 ObjectUpdate[] ous = pfus[i].getObjectSet();
-                for(int j=0; j < ous.length; j++)
+                for(int j=0; ous!=null && j < ous.length; j++)
                 {
                     ManagedObjectReference mor = ous[j].getObj();
                     if(! items.containsKey(mor))
@@ -80,6 +80,10 @@ class ManagedObjectCache implements Observer
                     Map<String, Object> moMap = items.get(mor);
                     
                     PropertyChange[] pcs = ous[j].getChangeSet();
+                    if(pcs==null)
+                    {
+                      continue;
+                    }
                     for(int k=0; k < pcs.length; k++)
                     {
                     	  Object value = pcs[k].getVal();
