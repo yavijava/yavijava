@@ -99,7 +99,7 @@ public class DistributedVirtualSwitch extends ManagedEntity
 	
 	public DVSSummary getSummary()
 	{
-		return (DVSSummary) getCurrentProperty("portgroup");
+		return (DVSSummary) getCurrentProperty("summary");
 	}
 	
 	public String getUuid()
