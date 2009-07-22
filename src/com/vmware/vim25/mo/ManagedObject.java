@@ -315,12 +315,13 @@ abstract public class ManagedObject
 	
 	protected ResourcePool[] getResourcePools(String propName)
 	{
-		Object[] objs = getManagedObjects(propName);
-		if(objs.length == 0)
+		Object[] objs = getManagedObjects(propName, true);
+		ResourcePool[] rps = new ResourcePool[objs.length];
+		for(int i=0; i < rps.length; i++)
 		{
-			return new ResourcePool[] {};
+		  rps[i] = (ResourcePool) objs[i];
 		}
-		return (ResourcePool[]) objs;
+		return rps;
 	}
 	
 	protected Task[] getTasks(String propName)
