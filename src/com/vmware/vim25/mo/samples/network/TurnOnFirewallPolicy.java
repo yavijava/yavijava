@@ -31,73 +31,86 @@ package com.vmware.vim25.mo.samples.network;
 
 import java.net.URL;
 
-import com.vmware.vim25.HostIpConfig;
-import com.vmware.vim25.HostNetworkPolicy;
-import com.vmware.vim25.HostPortGroupSpec;
-import com.vmware.vim25.HostVirtualNicSpec;
-import com.vmware.vim25.HostVirtualSwitchSpec;
+import com.vmware.vim25.HostFirewallDefaultPolicy;
+import com.vmware.vim25.HostFirewallInfo;
+import com.vmware.vim25.HostFirewallRule;
+import com.vmware.vim25.HostFirewallRuleset;
 import com.vmware.vim25.mo.Folder;
-import com.vmware.vim25.mo.HostNetworkSystem;
+import com.vmware.vim25.mo.HostFirewallSystem;
 import com.vmware.vim25.mo.HostSystem;
 import com.vmware.vim25.mo.InventoryNavigator;
 import com.vmware.vim25.mo.ServiceInstance;
-
 
 /**
  * http://vijava.sf.net
  * @author Steve Jin
  */
 
-public class AddVirtualSwitch  
+public class TurnOnFirewallPolicy
 {
   public static void main(String[] args) throws Exception 
   {
-    if(args.length != 3)
+    if(args.length != 4)
     {
-      System.out.println("Usage: java AddVirtualNic <url> " 
-          + "<username> <password>");
+      System.out.println("Usage: java TurnOnFirewallPolicy " +
+      		"<url> <username> <password> <hostname>");
       return;
     }
 
     ServiceInstance si = new ServiceInstance(
         new URL(args[0]), args[1], args[2], true);
 
-    String hostname = "sjin-dev1.eng.vmware.com";
-    String portGroupName = "ViMaster PortGroup"; 
-    String switchName = "ViMaster Switch";
-
+    String hostname = args[3];
     Folder rootFolder = si.getRootFolder();
     HostSystem host = null;
     host = (HostSystem) new InventoryNavigator(
         rootFolder).searchManagedEntity("HostSystem", hostname);
 
-    HostNetworkSystem hns = host.getHostNetworkSystem();
+    if(host==null)
+    {
+      System.out.println("Cannot find the host:" + hostname);
+      si.getServerConnection().logout();
+      return;
+    }
+    
+    HostFirewallSystem hss = host.getHostFirewallSystem();
+    
+    HostFirewallInfo hsi = hss.getFirewallInfo();
+    
+    System.out.println("Default Firewall Policy:");
+    HostFirewallDefaultPolicy defPolicy = hsi.getDefaultPolicy();
+    System.out.println("IncomingBlocked:" 
+        + defPolicy.getIncomingBlocked());
+    System.out.println("OutgoingBlocked:" 
+        + defPolicy.getOutgoingBlocked());
+    
+    HostFirewallRuleset[] rs = hsi.getRuleset();
+    for(int i=0; rs!=null && i<rs.length; i++)
+    {
+      printRuleSet(rs[i]);
+      if(!rs[i].isEnabled())
+      {
+        hss.enableRuleset(rs[i].getKey());
+      }
+    }
+  }
+  
+  static void printRuleSet(HostFirewallRuleset rule)
+  {
+    System.out.println("\nKey:" + rule.getKey());
+    System.out.println("Label:" + rule.getLabel());
+    System.out.println("Required:" + rule.isRequired());
+    System.out.println("Service:" + rule.getService());
 
-    // add a virtual switch
-    HostVirtualSwitchSpec spec = new HostVirtualSwitchSpec();
-    spec.setNumPorts(8);
-    hns.addVirtualSwitch(switchName, spec);
-    
-    // add a port group
-    HostPortGroupSpec hpgs = new HostPortGroupSpec();
-    hpgs.setName(portGroupName);
-    hpgs.setVlanId(0); // not associated with a VLAN
-    hpgs.setVswitchName(switchName);
-    hpgs.setPolicy(new HostNetworkPolicy());
-    hns.addPortGroup(hpgs);
-    
-    // add a virtual NIC to VMKernel
-    HostVirtualNicSpec hvns = new HostVirtualNicSpec();
-    hvns.setMac("00:50:56:7d:5e:0b");
-    HostIpConfig hic = new HostIpConfig();
-    hic.setDhcp(false);
-    hic.setIpAddress("10.20.143.204");
-    hic.setSubnetMask("255.255.252.0");
-    hvns.setIp(hic);
-    String result = hns.addVirtualNic("VMKernel", hvns);
-    System.out.println(result);
-    
-    System.out.println("Successful created : " + switchName);
+    System.out.print("Rules:");
+    HostFirewallRule[] rules = rule.getRule();
+    for(int j=0; rules!=null && j<rules.length; j++)
+    {
+      System.out.println("Protocol:" + rules[j].getProtocol());
+      System.out.println("Port:" + rules[j].getPort());
+      System.out.println("Direction:" + rules[j].getDirection());
+      System.out.println("EndPort:" + rules[j].getEndPort());
+    }
+    System.out.println("Enabled:" + rule.isEnabled());
   }
 }
-

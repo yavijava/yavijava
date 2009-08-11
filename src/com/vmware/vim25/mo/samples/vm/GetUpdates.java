@@ -29,9 +29,22 @@ POSSIBILITY OF SUCH DAMAGE.
 
 package com.vmware.vim25.mo.samples.vm;
 
-import com.vmware.vim25.*;
+import com.vmware.vim25.HostListSummaryQuickStats;
+import com.vmware.vim25.HostRuntimeInfo;
+import com.vmware.vim25.ObjectSpec;
+import com.vmware.vim25.ObjectUpdate;
+import com.vmware.vim25.PropertyChange;
+import com.vmware.vim25.PropertyChangeOp;
+import com.vmware.vim25.PropertyFilterSpec;
+import com.vmware.vim25.PropertyFilterUpdate;
+import com.vmware.vim25.PropertySpec;
+import com.vmware.vim25.UpdateSet;
+import com.vmware.vim25.VirtualMachineQuickStats;
+import com.vmware.vim25.VirtualMachineRuntimeInfo;
 import com.vmware.vim25.mo.*;
 import com.vmware.vim25.mo.util.*;
+import com.vmware.vim25.ws.*;
+
 import java.util.*;
 import java.io.*;
 import java.net.URL;
@@ -54,7 +67,7 @@ import java.net.URL;
  *
  *<pre>
  *
- * @author sjin
+ * @author Steve Jin
  * This is a sample converted from a similar sample from VMware web site.
  * It definitely needs clean-up ...
  */
@@ -89,8 +102,8 @@ public class GetUpdates
 		PropertySpec[] pSpecs = PropertyCollectorUtil.buildPropertySpecArray(typeInfo);
 		ObjectSpec[] oSpecs = createObjectSpecs(vm);
 		PropertyFilterSpec pSpec = new PropertyFilterSpec();
-		pSpec.propSet = pSpecs;
-		pSpec.objectSet = oSpecs;
+		pSpec.setPropSet(pSpecs);
+		pSpec.setObjectSet(oSpecs);
 
 		PropertyCollector pc = si.getPropertyCollector();
 		PropertyFilter pf = pc.createFilter(pSpec, false);

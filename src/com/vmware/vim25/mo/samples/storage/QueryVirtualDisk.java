@@ -27,68 +27,57 @@ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
 
-package com.vmware.vim25.mo.samples.vm;
+package com.vmware.vim25.mo.samples.storage;
 
 import java.net.URL;
 
-import com.vmware.vim25.AutoStartDefaults;
-import com.vmware.vim25.HostAutoStartManagerConfig;
-import com.vmware.vim25.mo.HostAutoStartManager;
-import com.vmware.vim25.mo.HostSystem;
-import com.vmware.vim25.mo.InventoryNavigator;
+import com.vmware.vim25.HostDiskDimensionsChs;
 import com.vmware.vim25.mo.ServiceInstance;
-import com.vmware.vim25.mo.util.CommandLineParser;
-import com.vmware.vim25.mo.util.OptionSpec;
+import com.vmware.vim25.mo.VirtualDiskManager;
 
 /**
  * http://vijava.sf.net
  * @author Steve Jin
  */
 
-public class VmStartupOption
+public class QueryVirtualDisk
 {
   public static void main(String[] args) throws Exception
   {
-    CommandLineParser clp = new CommandLineParser(
-        constructOptions(), args);
-    String urlStr = clp.get_option("url");
-    String username = clp.get_option("username");
-    String password = clp.get_option("password");
-    String hostname = clp.get_option("hostname");
-
-    ServiceInstance si = new ServiceInstance(new URL(urlStr),
-        username, password, true);
-    HostSystem host = (HostSystem) new InventoryNavigator(si
-        .getRootFolder()).searchManagedEntity("HostSystem",
-        hostname);
-
-    if (host == null) {
-      System.out.println("Host cannot be found");
+    if(args.length != 3)
+    {
+      System.out.println("Usage: java QueryVirtualDisk " 
+        + "<url> <username> <password>");
       return;
     }
 
-    HostAutoStartManager hasm = host.getHostAutoStartManager();
-    if (hasm == null) {
-      System.out
-          .println("HostAutoStartManager is not available.");
+    ServiceInstance si = new ServiceInstance(
+      new URL(args[0]), args[1], args[2], true);
+    
+    VirtualDiskManager vdMgr = si.getVirtualDiskManager();
+    if(vdMgr==null)
+    {
+      System.out.println("VirtualDiskManager not available.");
+      si.getServerConnection().logout();
       return;
     }
+    
+    String vmdkPath = 
+      "[storage1 (2)] sdk188_sec/sdk188_sec.vmdk";
 
-    AutoStartDefaults asd = new AutoStartDefaults();
-    asd.setStartDelay(new Integer(100));
-    asd.setEnabled(Boolean.TRUE);
-    asd.setStopDelay(new Integer(60));
-    HostAutoStartManagerConfig spec = new HostAutoStartManagerConfig();
-    spec.setDefaults(asd);
-    hasm.reconfigureAutostart(spec);
-
-    System.out
-        .println("Done with reconfiguring the autostart options.");
-  }
-
-  private static OptionSpec[] constructOptions()
-  {
-    return new OptionSpec[] { new OptionSpec("hostname",
-        "String", 1, "Name of the host", null) };
+    int fragPerfent = vdMgr.queryVirtualDiskFragmentation(
+        vmdkPath, null);
+    System.out.println("Defragmentation:" + fragPerfent + "%");
+    
+    String uuid = vdMgr.queryVirtualDiskUuid(vmdkPath, null);
+    System.out.println("Disk UUID:" + uuid);
+    
+    HostDiskDimensionsChs hddc = vdMgr.queryVirtualDiskGeometry(
+        vmdkPath, null);
+    System.out.println("Cylinder:" + hddc.getCylinder());
+    System.out.println("Head:" + hddc.getHead());
+    System.out.println("Sector:" + hddc.getSector());
+    
+    si.getServerConnection().logout();
   }
 }

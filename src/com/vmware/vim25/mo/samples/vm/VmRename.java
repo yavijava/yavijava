@@ -36,7 +36,8 @@ import com.vmware.vim25.mo.util.OptionSpec;
 
 /**
  * This sample shows how to change a VM's name.
- * @author sjin
+ * @author Steve Jin
+ * http://vijava.sf.net
  */
 
 public class VmRename 

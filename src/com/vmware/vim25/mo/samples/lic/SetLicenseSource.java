@@ -27,68 +27,50 @@ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
 
-package com.vmware.vim25.mo.samples.vm;
+package com.vmware.vim25.mo.samples.lic;
 
 import java.net.URL;
 
-import com.vmware.vim25.AutoStartDefaults;
-import com.vmware.vim25.HostAutoStartManagerConfig;
-import com.vmware.vim25.mo.HostAutoStartManager;
-import com.vmware.vim25.mo.HostSystem;
-import com.vmware.vim25.mo.InventoryNavigator;
+import com.vmware.vim25.LicenseServerSource;
+import com.vmware.vim25.mo.LicenseManager;
 import com.vmware.vim25.mo.ServiceInstance;
-import com.vmware.vim25.mo.util.CommandLineParser;
-import com.vmware.vim25.mo.util.OptionSpec;
 
 /**
  * http://vijava.sf.net
  * @author Steve Jin
  */
-
-public class VmStartupOption
-{
+public class SetLicenseSource
+{  
   public static void main(String[] args) throws Exception
   {
-    CommandLineParser clp = new CommandLineParser(
-        constructOptions(), args);
-    String urlStr = clp.get_option("url");
-    String username = clp.get_option("username");
-    String password = clp.get_option("password");
-    String hostname = clp.get_option("hostname");
-
-    ServiceInstance si = new ServiceInstance(new URL(urlStr),
-        username, password, true);
-    HostSystem host = (HostSystem) new InventoryNavigator(si
-        .getRootFolder()).searchManagedEntity("HostSystem",
-        hostname);
-
-    if (host == null) {
-      System.out.println("Host cannot be found");
+    if(args.length != 3)
+    {
+      System.out.println("Usage: java SetLicenseSource <url> " 
+        + "<username> <password>");
       return;
     }
+    ServiceInstance si = new ServiceInstance(
+      new URL(args[0]), args[1], args[2], true);
+    LicenseManager lm = si.getLicenseManager();
+    
+    LicenseServerSource lss = new LicenseServerSource();
+    // please change it to a license server you can access
+    lss.setLicenseServer("27000@lic-serv.acme.com");
+    
+    lm.configureLicenseSource(null, lss);
+    lm.setLicenseEdition(null, "esxFull");
 
-    HostAutoStartManager hasm = host.getHostAutoStartManager();
-    if (hasm == null) {
-      System.out
-          .println("HostAutoStartManager is not available.");
-      return;
-    }
+    boolean enabled = lm.checkLicenseFeature(null, "iscsi");
+    System.out.println("ISCSI enabled:" + enabled);
 
-    AutoStartDefaults asd = new AutoStartDefaults();
-    asd.setStartDelay(new Integer(100));
-    asd.setEnabled(Boolean.TRUE);
-    asd.setStopDelay(new Integer(60));
-    HostAutoStartManagerConfig spec = new HostAutoStartManagerConfig();
-    spec.setDefaults(asd);
-    hasm.reconfigureAutostart(spec);
+    lm.disableFeature(null, "iscsi");
+    enabled = lm.checkLicenseFeature(null, "iscsi");
+    System.out.println("ISCSI enabled:" + enabled);
 
-    System.out
-        .println("Done with reconfiguring the autostart options.");
-  }
-
-  private static OptionSpec[] constructOptions()
-  {
-    return new OptionSpec[] { new OptionSpec("hostname",
-        "String", 1, "Name of the host", null) };
+    lm.enableFeature(null, "iscsi");
+    enabled = lm.checkLicenseFeature(null, "iscsi");
+    System.out.println("ISCSI enabled:" + enabled);
+    
+    si.getServerConnection().logout();
   }
 }

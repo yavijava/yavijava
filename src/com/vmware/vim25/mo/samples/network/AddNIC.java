@@ -30,7 +30,6 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25.mo.samples.network;
 
 import java.net.URL;
-
 import com.vmware.vim25.HostIpConfig;
 import com.vmware.vim25.HostNetworkPolicy;
 import com.vmware.vim25.HostPortGroupSpec;
@@ -42,19 +41,18 @@ import com.vmware.vim25.mo.HostSystem;
 import com.vmware.vim25.mo.InventoryNavigator;
 import com.vmware.vim25.mo.ServiceInstance;
 
-
 /**
  * http://vijava.sf.net
  * @author Steve Jin
  */
 
-public class AddVirtualSwitch  
+public class AddNIC  
 {
   public static void main(String[] args) throws Exception 
   {
     if(args.length != 3)
     {
-      System.out.println("Usage: java AddVirtualNic <url> " 
+      System.out.println("Usage: java AddNIC <url> " 
           + "<username> <password>");
       return;
     }
@@ -62,7 +60,7 @@ public class AddVirtualSwitch
     ServiceInstance si = new ServiceInstance(
         new URL(args[0]), args[1], args[2], true);
 
-    String hostname = "sjin-dev1.eng.vmware.com";
+    String hostname = "dev.acme.com";
     String portGroupName = "ViMaster PortGroup"; 
     String switchName = "ViMaster Switch";
 
@@ -97,7 +95,6 @@ public class AddVirtualSwitch
     String result = hns.addVirtualNic("VMKernel", hvns);
     System.out.println(result);
     
-    System.out.println("Successful created : " + switchName);
+    si.getServerConnection().logout();
   }
 }
-

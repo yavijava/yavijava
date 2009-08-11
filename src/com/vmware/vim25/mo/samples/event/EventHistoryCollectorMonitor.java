@@ -27,68 +27,63 @@ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
 
-package com.vmware.vim25.mo.samples.vm;
+package com.vmware.vim25.mo.samples.event;
+
+import com.vmware.vim25.Event;
+import com.vmware.vim25.EventFilterSpec;
+import com.vmware.vim25.mo.*;
+import com.vmware.vim25.mo.util.*;
+import com.vmware.vim25.ws.*;
 
 import java.net.URL;
 
-import com.vmware.vim25.AutoStartDefaults;
-import com.vmware.vim25.HostAutoStartManagerConfig;
-import com.vmware.vim25.mo.HostAutoStartManager;
-import com.vmware.vim25.mo.HostSystem;
-import com.vmware.vim25.mo.InventoryNavigator;
-import com.vmware.vim25.mo.ServiceInstance;
-import com.vmware.vim25.mo.util.CommandLineParser;
-import com.vmware.vim25.mo.util.OptionSpec;
 
 /**
+ *<pre>
+ *This is a simple standalone client whose purpose is to demonstrate the
+ *process for Logging into the Webservice, Creating EventHistoryCollector
+ *and monitoring Events using the latestPage attribute of the 
+ *EventHistoryCollector
+ *
+ *<b>Command Line: </b>
+ *run.bat com.vmware.samples.vm.EventHistoryCollectorMonitor --url 
+ *[webserviceurl] --username [username] --password [password]
+ *</pre>
  * http://vijava.sf.net
  * @author Steve Jin
  */
+ 
 
-public class VmStartupOption
-{
+public class EventHistoryCollectorMonitor 
+{  
   public static void main(String[] args) throws Exception
   {
     CommandLineParser clp = new CommandLineParser(
-        constructOptions(), args);
+        new OptionSpec[]{}, args);
     String urlStr = clp.get_option("url");
     String username = clp.get_option("username");
     String password = clp.get_option("password");
-    String hostname = clp.get_option("hostname");
 
-    ServiceInstance si = new ServiceInstance(new URL(urlStr),
+    ServiceInstance si = new ServiceInstance(new URL(urlStr), 
         username, password, true);
-    HostSystem host = (HostSystem) new InventoryNavigator(si
-        .getRootFolder()).searchManagedEntity("HostSystem",
-        hostname);
 
-    if (host == null) {
-      System.out.println("Host cannot be found");
-      return;
+    EventManager evtMgr = si.getEventManager();
+
+    if(evtMgr!=null)
+    {
+      EventFilterSpec eventFilter = new EventFilterSpec();
+      EventHistoryCollector ehc = 
+        evtMgr.createCollectorForEvents(eventFilter);
+      Event[] events = ehc.getLatestPage();
+
+      for (int i = 0; i < events.length; i++)
+      {
+        Event anEvent = events[i];
+        System.out.println("Event: " + 
+            anEvent.getClass().getName());
+      }
     }
-
-    HostAutoStartManager hasm = host.getHostAutoStartManager();
-    if (hasm == null) {
-      System.out
-          .println("HostAutoStartManager is not available.");
-      return;
-    }
-
-    AutoStartDefaults asd = new AutoStartDefaults();
-    asd.setStartDelay(new Integer(100));
-    asd.setEnabled(Boolean.TRUE);
-    asd.setStopDelay(new Integer(60));
-    HostAutoStartManagerConfig spec = new HostAutoStartManagerConfig();
-    spec.setDefaults(asd);
-    hasm.reconfigureAutostart(spec);
-
-    System.out
-        .println("Done with reconfiguring the autostart options.");
-  }
-
-  private static OptionSpec[] constructOptions()
-  {
-    return new OptionSpec[] { new OptionSpec("hostname",
-        "String", 1, "Name of the host", null) };
+    si.getServerConnection().logout();
   }
 }
+

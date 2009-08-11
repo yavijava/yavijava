@@ -4,14 +4,14 @@ Copyright (c) 2008 VMware, Inc. All Rights Reserved.
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
 
-* Redistributions of source code must retain the above copyright notice, 
+ * Redistributions of source code must retain the above copyright notice, 
 this list of conditions and the following disclaimer.
 
-* Redistributions in binary form must reproduce the above copyright notice, 
+ * Redistributions in binary form must reproduce the above copyright notice, 
 this list of conditions and the following disclaimer in the documentation 
 and/or other materials provided with the distribution.
 
-* Neither the name of VMware, Inc. nor the names of its contributors may be used
+ * Neither the name of VMware, Inc. nor the names of its contributors may be used
 to endorse or promote products derived from this software without specific prior 
 written permission.
 
@@ -31,209 +31,187 @@ package com.vmware.vim25.mo.samples.vm;
 
 import java.net.URL;
 
-import com.vmware.vim25.*;
-import com.vmware.vim25.mo.*;
-import com.vmware.vim25.mo.util.*;
+import com.vmware.vim25.ManagedObjectReference;
+import com.vmware.vim25.VirtualMachineSnapshotInfo;
+import com.vmware.vim25.VirtualMachineSnapshotTree;
+import com.vmware.vim25.mo.Folder;
+import com.vmware.vim25.mo.InventoryNavigator;
+import com.vmware.vim25.mo.ServiceInstance;
+import com.vmware.vim25.mo.Task;
+import com.vmware.vim25.mo.VirtualMachine;
+import com.vmware.vim25.mo.VirtualMachineSnapshot;
 
 /**
-*<pre>This sample Performs virtual machine snapshot operations
-*
-*To run this samples following parameters are used:
-*
-*<b>Parameters</b>
-*vmname         [required]:Name of the virtual machine
-*operation      [required]:Type of the operation
-*snapshotname   [optional]:Name of the snapshot
-*description    [optional]:description of the sanpshot
-*removechild    [optional]:if children needs to be removed and 0 if children
-*               needn't be removed
-*
-*<b>Command Line:To list the name of the snapshot</b>
-*run.bat com.vmware.samples.vm.VMSnapshot --url [webserviceurl]
-*--username [username] --password  [password] --vmname [vmname]
-*--operation [list]
-*
-*<b>Command Line: To create a snapshot of the virtual machine</b>
-*run.bat com.vmware.samples.vm.VMSnapshot --url [webserviceurl]
-*--username [username] --password  [password] --vmname [vmname]
-*--operation [create]
-*--description [Description of the snapshot]
-*
-*<b>Command Line: To revert a snapshot of the virtual machine</b>
-*run.bat com.vmware.samples.vm.VMSnapshot --url [webserviceurl]
-*--username [username] --password  [password] --vmname [vmname]
-*--operation [revert]
-*--description [Description of the snapshot]
-*
-*<b>Command Line: To remove a snapshot of the virtual machine</b>
-*run.bat com.vmware.samples.vm.VMSnapshot --url [webserviceurl]
-*--username [username] --password  [password] --vmname [vmname]
-*--operation [remove]  --removechild [0]
-*
-* @author sjin
-* This is a sample converted from the equivalent in VI SDK
-*/
-
+ * http://vijava.sf.net
+ * @author Steve Jin
+ */
 
 public class VMSnapshot 
 {
+  public static void main(String[] args) throws Exception 
+  {
+    if(args.length!=5)
+    {
+      System.out.println("Usage: java VMSnapshot <url> " +
+      		"<username> <password> <vmname> <op>");
+      System.out.println("op - list, create, remove, " +
+      		"removeall, revert");
+      System.exit(0);
+    }
 
-	private static void listSnapshots(VirtualMachine vm)
-	{
-		VirtualMachineSnapshotInfo snapInfo = vm.getSnapshot();
-		VirtualMachineSnapshotTree[] snapTree = snapInfo.getRootSnapshotList();
-		printSnapshots(snapTree);
-	}
+    String vmname = args[3];
+    String op = args[4];
+    //please change the following three depending your op
+    String snapshotname = "test";
+    String desc = "A description for sample snapshot";
+    boolean removechild = true;
+    
+    ServiceInstance si = new ServiceInstance(
+        new URL(args[0]), args[1], args[2], true);
 
-	private static void printSnapshots(VirtualMachineSnapshotTree[] snapTree)
-	{
-		for (int i = 0; snapTree!=null && i < snapTree.length; i++) 
-		{
-	          VirtualMachineSnapshotTree node = snapTree[i];
-	          System.out.println("Snapshot Name : " + node.getName());            
-	          VirtualMachineSnapshotTree[] childTree = node.getChildSnapshotList();
-	          if(childTree!=null)
-	          {
-	        	  printSnapshots(childTree);
-	          }
-		}
-	}
-	
-	private static VirtualMachineSnapshot findSnapshotInTree( VirtualMachine vm, String snapName)
-	{
-		if (vm == null || snapName == null) 
-		{
-			return null;
-		}
-		
-		VirtualMachineSnapshotTree[] snapTree = vm.getSnapshot().getRootSnapshotList();
-		
-		ManagedObjectReference mor = findSnapshotInTree(snapTree, snapName);
-		if(mor!=null)
-		{
-			return new VirtualMachineSnapshot(vm.getServerConnection(), mor);
-		}
-		return null;
-	}
-	
-	private static ManagedObjectReference findSnapshotInTree( VirtualMachineSnapshotTree[] snapTree, String snapName)
-	{
-		if(snapTree==null || snapName==null)
-		{
-			return null;
-		}
-		
-		for (int i = 0; i < snapTree.length; i++) 
-		{
-			VirtualMachineSnapshotTree node = snapTree[i];
-			if (snapName.equals(node.getName()))
-			{
-				return node.getSnapshot();
-			} 
-			else 
-			{
-				VirtualMachineSnapshotTree[] childTree = node.getChildSnapshotList();
-				if(childTree!=null)
-				{
-					ManagedObjectReference mor = findSnapshotInTree(childTree, snapName);
-					if(mor!=null)
-					{
-						return mor;
-					}
-				}
-			}
-		}
-		return null;
-	}
+    Folder rootFolder = si.getRootFolder();
+    VirtualMachine vm = (VirtualMachine) new InventoryNavigator(
+      rootFolder).searchManagedEntity("VirtualMachine", vmname);
 
-   private static OptionSpec[] constructOptions() 
-   {
-      return new OptionSpec[] {
-    	  new OptionSpec("vmname","String",1,"Name of the virtual machine", null),
-    	  new OptionSpec("operation","String",1, "Type of the operation [list|create|remove|removeall|revert]", null),
-    	  new OptionSpec("snapshotname","String",0, "Name of Snapshot", null),
-    	  new OptionSpec("description","String",0, "Description of snapshot", null),
-    	  new OptionSpec("removechild","Integer",0,"1 if children needs to be removed and 0 if children needn't be removed", null)
-      };
-   }
-   
-   public static void main(String[] args) throws Exception 
-   {
-	   	CommandLineParser clp = new CommandLineParser(constructOptions(), args);
-	   	String urlStr = clp.get_option("url");
-  	    String username = clp.get_option("username");
-	    String password = clp.get_option("password");
-	    String vmname = clp.get_option("vmname");
-	    String snapshotname = clp.get_option("snapshotname");
-	    String desc = clp.get_option("description");
-	    String op = clp.get_option("operation");
-	    boolean removechild = "1".equalsIgnoreCase(clp.get_option("removechild"));
-	    
-		ServiceInstance si = new ServiceInstance(new URL(urlStr), username, password, true);
-		Folder rootFolder = si.getRootFolder();
-		VirtualMachine vm = (VirtualMachine) new InventoryNavigator(rootFolder).searchManagedEntity("VirtualMachine", vmname);
-	   
-		if(vm==null)
-		{
-			System.out.println("No VM " + vmname + " found");
-			return;
-		}
-		
-		boolean res = false;
-		if("create".equalsIgnoreCase(op))
-		{
-			Task task = vm.createSnapshot_Task(snapshotname, desc, false, false);
-			if(task.waitForMe()==Task.SUCCESS)
-			{
-				res = true;
-			}
-		}
-		else if("list".equalsIgnoreCase(op))
-		{
-			listSnapshots(vm);
-		}
-        else if(op.equalsIgnoreCase("revert")) 
+    if(vm==null)
+    {
+      System.out.println("No VM " + vmname + " found");
+      si.getServerConnection().logout();
+      return;
+    }
+
+    if("create".equalsIgnoreCase(op))
+    {
+      Task task = vm.createSnapshot_Task(
+          snapshotname, desc, false, false);
+      if(task.waitForMe()==Task.SUCCESS)
+      {
+        System.out.println("Snapshot was created.");
+      }
+    }
+    else if("list".equalsIgnoreCase(op))
+    {
+      listSnapshots(vm);
+    }
+    else if(op.equalsIgnoreCase("revert")) 
+    {
+      VirtualMachineSnapshot vmsnap = getSnapshotInTree(
+          vm, snapshotname);
+      if(vmsnap!=null)
+      {
+        Task task = vmsnap.revertToSnapshot_Task(null);
+        if(task.waitForMe()==Task.SUCCESS)
         {
-        	VirtualMachineSnapshot vmsnap = findSnapshotInTree(vm, snapshotname);
-        	if(vmsnap!=null)
-        	{
-        		Task task = vmsnap.revertToSnapshot_Task(null);
-        		if(task.waitForMe()==Task.SUCCESS)
-        		{
-        			res = true;
-        		}
-        	}
+          System.out.println("Reverted to snapshot:" 
+              + snapshotname);
         }
-        else if(op.equalsIgnoreCase("removeall")) 
+      }
+    }
+    else if(op.equalsIgnoreCase("removeall")) 
+    {
+      Task task = vm.removeAllSnapshots_Task();      
+      if(task.waitForMe()== Task.SUCCESS) 
+      {
+        System.out.println("Removed all snapshots");
+      }
+    }
+    else if(op.equalsIgnoreCase("remove")) 
+    {
+      VirtualMachineSnapshot vmsnap = getSnapshotInTree(
+          vm, snapshotname);
+      if(vmsnap!=null)
+      {
+        Task task = vmsnap.removeSnapshot_Task(removechild);
+        if(task.waitForMe()==Task.SUCCESS)
         {
-        	Task task = vm.removeAllSnapshots_Task();      
-            if(task.waitForMe()== Task.SUCCESS) 
-            {
-            	res = true;
-            }
+          System.out.println("Removed snapshot:" + snapshotname);
         }
-        else if(op.equalsIgnoreCase("remove")) 
+      }
+    }
+    else 
+    {
+      System.out.println("Invalid operation");
+      return;
+    }
+    si.getServerConnection().logout();
+  }
+  
+  static VirtualMachineSnapshot getSnapshotInTree(
+      VirtualMachine vm, String snapName)
+  {
+    if (vm == null || snapName == null) 
+    {
+      return null;
+    }
+
+    VirtualMachineSnapshotTree[] snapTree = 
+        vm.getSnapshot().getRootSnapshotList();
+    if(snapTree!=null)
+    {
+      ManagedObjectReference mor = findSnapshotInTree(
+          snapTree, snapName);
+      if(mor!=null)
+      {
+        return new VirtualMachineSnapshot(
+            vm.getServerConnection(), mor);
+      }
+    }
+    return null;
+  }
+
+  static ManagedObjectReference findSnapshotInTree(
+      VirtualMachineSnapshotTree[] snapTree, String snapName)
+  {
+    for(int i=0; i <snapTree.length; i++) 
+    {
+      VirtualMachineSnapshotTree node = snapTree[i];
+      if(snapName.equals(node.getName()))
+      {
+        return node.getSnapshot();
+      } 
+      else 
+      {
+        VirtualMachineSnapshotTree[] childTree = 
+            node.getChildSnapshotList();
+        if(childTree!=null)
         {
-        	VirtualMachineSnapshot vmsnap = findSnapshotInTree(vm, snapshotname);
-        	if(vmsnap!=null)
-        	{
-        		Task task = vmsnap.removeSnapshot_Task(removechild);
-        		if(task.waitForMe()==Task.SUCCESS)
-        		{
-        			res = true;
-        		}
-        	}
+          ManagedObjectReference mor = findSnapshotInTree(
+              childTree, snapName);
+          if(mor!=null)
+          {
+            return mor;
+          }
         }
-        else 
-        {
-        	System.out.println("Invalid operation [create|list|revert|remoeveall|remove]");
-        	return;
-        }
-		
-		if(res)
-		{
-               System.out.println("Operation " + op + " completed sucessfully");
-        }
-		si.getServerConnection().logout();
-   }
+      }
+    }
+    return null;
+  }
+
+  static void listSnapshots(VirtualMachine vm)
+  {
+    if(vm==null)
+    {
+      return;
+    }
+    VirtualMachineSnapshotInfo snapInfo = vm.getSnapshot();
+    VirtualMachineSnapshotTree[] snapTree = 
+      snapInfo.getRootSnapshotList();
+    printSnapshots(snapTree);
+  }
+
+  static void printSnapshots(
+      VirtualMachineSnapshotTree[] snapTree)
+  {
+    for (int i = 0; snapTree!=null && i < snapTree.length; i++) 
+    {
+      VirtualMachineSnapshotTree node = snapTree[i];
+      System.out.println("Snapshot Name : " + node.getName());           
+      VirtualMachineSnapshotTree[] childTree = 
+        node.getChildSnapshotList();
+      if(childTree!=null)
+      {
+        printSnapshots(childTree);
+      }
+    }
+  }
 }

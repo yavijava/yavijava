@@ -27,77 +27,67 @@ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
 
-package com.vmware.vim25.mo.samples.network;
+package com.vmware.vim25.mo.samples.storage;
 
 import java.net.URL;
 
-import com.vmware.vim25.HostIpConfig;
-import com.vmware.vim25.HostNetworkPolicy;
-import com.vmware.vim25.HostPortGroupSpec;
-import com.vmware.vim25.HostVirtualNicSpec;
-import com.vmware.vim25.HostVirtualSwitchSpec;
+import com.vmware.vim25.DatastoreInfo;
+import com.vmware.vim25.HostNasVolumeSpec;
+import com.vmware.vim25.mo.Datastore;
 import com.vmware.vim25.mo.Folder;
-import com.vmware.vim25.mo.HostNetworkSystem;
+import com.vmware.vim25.mo.HostDatastoreSystem;
 import com.vmware.vim25.mo.HostSystem;
 import com.vmware.vim25.mo.InventoryNavigator;
 import com.vmware.vim25.mo.ServiceInstance;
-
 
 /**
  * http://vijava.sf.net
  * @author Steve Jin
  */
 
-public class AddVirtualSwitch  
+public class AddDatastore
 {
-  public static void main(String[] args) throws Exception 
+  public static void main(String[] args) throws Exception
   {
     if(args.length != 3)
     {
-      System.out.println("Usage: java AddVirtualNic <url> " 
-          + "<username> <password>");
+      System.out.println("Usage: java AddDatastore " 
+        + "<url> <username> <password>");
       return;
     }
 
     ServiceInstance si = new ServiceInstance(
-        new URL(args[0]), args[1], args[2], true);
-
+      new URL(args[0]), args[1], args[2], true);
+    
     String hostname = "sjin-dev1.eng.vmware.com";
-    String portGroupName = "ViMaster PortGroup"; 
-    String switchName = "ViMaster Switch";
 
     Folder rootFolder = si.getRootFolder();
     HostSystem host = null;
+
     host = (HostSystem) new InventoryNavigator(
         rootFolder).searchManagedEntity("HostSystem", hostname);
-
-    HostNetworkSystem hns = host.getHostNetworkSystem();
-
-    // add a virtual switch
-    HostVirtualSwitchSpec spec = new HostVirtualSwitchSpec();
-    spec.setNumPorts(8);
-    hns.addVirtualSwitch(switchName, spec);
+  
+    if(host==null)
+    {
+      System.out.println("Host not found");
+      si.getServerConnection().logout();
+      return;
+    }
     
-    // add a port group
-    HostPortGroupSpec hpgs = new HostPortGroupSpec();
-    hpgs.setName(portGroupName);
-    hpgs.setVlanId(0); // not associated with a VLAN
-    hpgs.setVswitchName(switchName);
-    hpgs.setPolicy(new HostNetworkPolicy());
-    hns.addPortGroup(hpgs);
+    HostDatastoreSystem hds = host.getHostDatastoreSystem();
     
-    // add a virtual NIC to VMKernel
-    HostVirtualNicSpec hvns = new HostVirtualNicSpec();
-    hvns.setMac("00:50:56:7d:5e:0b");
-    HostIpConfig hic = new HostIpConfig();
-    hic.setDhcp(false);
-    hic.setIpAddress("10.20.143.204");
-    hic.setSubnetMask("255.255.252.0");
-    hvns.setIp(hic);
-    String result = hns.addVirtualNic("VMKernel", hvns);
-    System.out.println(result);
+    HostNasVolumeSpec hnvs = new HostNasVolumeSpec();
+    hnvs.setRemoteHost("10.20.140.25");
+    hnvs.setRemotePath("/home/vm_share");
+    hnvs.setLocalPath("VM_Share");
+    hnvs.setAccessMode("readWrite"); // or, "readOnly"
     
-    System.out.println("Successful created : " + switchName);
+    Datastore ds = hds.createNasDatastore(hnvs);
+    DatastoreInfo di = ds.getInfo();
+    
+    System.out.println("Name:" + di.getName());
+    System.out.println("FreeSpace:" + di.getFreeSpace());
+    
+    si.getServerConnection().logout();
   }
 }
-

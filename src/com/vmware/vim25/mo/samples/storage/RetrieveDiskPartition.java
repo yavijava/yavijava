@@ -27,68 +27,53 @@ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
 
-package com.vmware.vim25.mo.samples.vm;
+package com.vmware.vim25.mo.samples.storage;
 
 import java.net.URL;
 
-import com.vmware.vim25.AutoStartDefaults;
-import com.vmware.vim25.HostAutoStartManagerConfig;
-import com.vmware.vim25.mo.HostAutoStartManager;
-import com.vmware.vim25.mo.HostSystem;
-import com.vmware.vim25.mo.InventoryNavigator;
-import com.vmware.vim25.mo.ServiceInstance;
-import com.vmware.vim25.mo.util.CommandLineParser;
-import com.vmware.vim25.mo.util.OptionSpec;
+import com.vmware.vim25.HostDiskPartitionInfo;
+import com.vmware.vim25.mo.*;
+import com.vmware.vim25.ws.*;
 
 /**
  * http://vijava.sf.net
  * @author Steve Jin
  */
 
-public class VmStartupOption
+public class RetrieveDiskPartition
 {
   public static void main(String[] args) throws Exception
   {
-    CommandLineParser clp = new CommandLineParser(
-        constructOptions(), args);
-    String urlStr = clp.get_option("url");
-    String username = clp.get_option("username");
-    String password = clp.get_option("password");
-    String hostname = clp.get_option("hostname");
-
-    ServiceInstance si = new ServiceInstance(new URL(urlStr),
-        username, password, true);
-    HostSystem host = (HostSystem) new InventoryNavigator(si
-        .getRootFolder()).searchManagedEntity("HostSystem",
-        hostname);
-
-    if (host == null) {
-      System.out.println("Host cannot be found");
+    if(args.length != 3)
+    {
+      System.out.println("Usage: java RetrieveDiskPartition " +
+      		"<url> <username> <password>");
       return;
     }
 
-    HostAutoStartManager hasm = host.getHostAutoStartManager();
-    if (hasm == null) {
-      System.out
-          .println("HostAutoStartManager is not available.");
-      return;
+    ServiceInstance si = new ServiceInstance(
+            new URL(args[0]), args[1], args[2], true);
+    
+    Folder rootFolder = si.getRootFolder();
+    HostSystem host = (HostSystem) new InventoryNavigator(
+        rootFolder).searchManagedEntities("HostSystem")[0];
+
+    HostStorageSystem hss = host.getHostStorageSystem();
+    
+    try{
+      hss.upgradeVmfs("vmhba0:0:0:1");
+    } catch(Exception e)
+    {
+      e.printStackTrace();
     }
-
-    AutoStartDefaults asd = new AutoStartDefaults();
-    asd.setStartDelay(new Integer(100));
-    asd.setEnabled(Boolean.TRUE);
-    asd.setStopDelay(new Integer(60));
-    HostAutoStartManagerConfig spec = new HostAutoStartManagerConfig();
-    spec.setDefaults(asd);
-    hasm.reconfigureAutostart(spec);
-
-    System.out
-        .println("Done with reconfiguring the autostart options.");
-  }
-
-  private static OptionSpec[] constructOptions()
-  {
-    return new OptionSpec[] { new OptionSpec("hostname",
-        "String", 1, "Name of the host", null) };
+    
+    HostDiskPartitionInfo[] hdpi =hss.retrieveDiskPartitionInfo(
+        new String[] {"/vmfs/devices/disks/vml.0100000000334b5335474c3136303030303937303952375834535433313436"});
+    for(int i=0; hdpi!=null && i<hdpi.length; i++)
+    {
+      System.out.println("deviceName:" + hdpi[i].getDeviceName());
+      System.out.println("spec.totalS:" + hdpi[i].getSpec().getTotalSectors());
+    }
+    si.getServerConnection().logout();
   }
 }

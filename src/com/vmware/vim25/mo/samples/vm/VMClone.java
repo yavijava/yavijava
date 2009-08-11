@@ -64,7 +64,7 @@ import com.vmware.vim25.mo.util.OptionSpec;
 *--vmPath <vmPath>  --CloneName <CloneName>
 *
 *Example:
-*--url https://10.17.218.228/sdk --username administrator --password ca$hc0w --DatacenterName Datacenter 
+*--url https://10.17.218.228/sdk --username administrator --password mypass --DatacenterName Datacenter 
 *--vmPath Datacenter/vm/W2K3St --CloneName w2k3Std_cloneTest
 *</pre>
 * @author sjin

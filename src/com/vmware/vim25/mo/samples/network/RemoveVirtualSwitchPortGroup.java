@@ -31,9 +31,12 @@ package com.vmware.vim25.mo.samples.network;
 
 import java.net.URL;
 
-import com.vmware.vim25.*;
+import com.vmware.vim25.InvalidArgument;
+import com.vmware.vim25.NotFound;
+import com.vmware.vim25.ResourceInUse;
 import com.vmware.vim25.mo.*;
 import com.vmware.vim25.mo.util.*;
+import com.vmware.vim25.ws.*;
 
 
 /**
@@ -61,7 +64,7 @@ import com.vmware.vim25.mo.util.*;
 *run.bat com.vmware.samples.host.RemoveVirtualSwitchPortGroup --url [webserviceurl] --username [username] --password  <password> 
 *--portgroupname[<myportgroup] --host<hostname>
 *</pre>
-* @author sjin 
+* @author Steve Jin
 * THis is a sample converted from VI SDK samples
 */
 

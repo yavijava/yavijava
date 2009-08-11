@@ -31,73 +31,58 @@ package com.vmware.vim25.mo.samples.network;
 
 import java.net.URL;
 
-import com.vmware.vim25.HostIpConfig;
-import com.vmware.vim25.HostNetworkPolicy;
-import com.vmware.vim25.HostPortGroupSpec;
-import com.vmware.vim25.HostVirtualNicSpec;
-import com.vmware.vim25.HostVirtualSwitchSpec;
+import com.vmware.vim25.HostSnmpConfigSpec;
+import com.vmware.vim25.HostSnmpDestination;
 import com.vmware.vim25.mo.Folder;
-import com.vmware.vim25.mo.HostNetworkSystem;
+import com.vmware.vim25.mo.HostSnmpSystem;
 import com.vmware.vim25.mo.HostSystem;
 import com.vmware.vim25.mo.InventoryNavigator;
 import com.vmware.vim25.mo.ServiceInstance;
-
 
 /**
  * http://vijava.sf.net
  * @author Steve Jin
  */
 
-public class AddVirtualSwitch  
+public class ConfigureSnmpSystem
 {
   public static void main(String[] args) throws Exception 
   {
-    if(args.length != 3)
+    if(args.length != 4)
     {
-      System.out.println("Usage: java AddVirtualNic <url> " 
-          + "<username> <password>");
+      System.out.println("Usage: java ConfigureSnmpSystem " +
+      		"<url> <username> <password> <hostname>");
       return;
     }
 
     ServiceInstance si = new ServiceInstance(
         new URL(args[0]), args[1], args[2], true);
 
-    String hostname = "sjin-dev1.eng.vmware.com";
-    String portGroupName = "ViMaster PortGroup"; 
-    String switchName = "ViMaster Switch";
-
+    String hostname = args[3];
     Folder rootFolder = si.getRootFolder();
     HostSystem host = null;
     host = (HostSystem) new InventoryNavigator(
         rootFolder).searchManagedEntity("HostSystem", hostname);
 
-    HostNetworkSystem hns = host.getHostNetworkSystem();
-
-    // add a virtual switch
-    HostVirtualSwitchSpec spec = new HostVirtualSwitchSpec();
-    spec.setNumPorts(8);
-    hns.addVirtualSwitch(switchName, spec);
+    if(host==null)
+    {
+      System.out.println("Cannot find the host:" + hostname);
+      si.getServerConnection().logout();
+      return;
+    }
+    HostSnmpSystem hss = host.getHostSnmpSystem();
     
-    // add a port group
-    HostPortGroupSpec hpgs = new HostPortGroupSpec();
-    hpgs.setName(portGroupName);
-    hpgs.setVlanId(0); // not associated with a VLAN
-    hpgs.setVswitchName(switchName);
-    hpgs.setPolicy(new HostNetworkPolicy());
-    hns.addPortGroup(hpgs);
+    HostSnmpConfigSpec spec = new HostSnmpConfigSpec();
+    spec.setEnabled(true);
+    spec.setReadOnlyCommunities(new String[] {"visdk"});
+    HostSnmpDestination dest = new HostSnmpDestination();
+    dest.setCommunity("visdk");
+    dest.setHostName("192.168.8.8");
+    dest.setPort(162);
+    spec.setTrapTargets(new HostSnmpDestination[] {dest});
     
-    // add a virtual NIC to VMKernel
-    HostVirtualNicSpec hvns = new HostVirtualNicSpec();
-    hvns.setMac("00:50:56:7d:5e:0b");
-    HostIpConfig hic = new HostIpConfig();
-    hic.setDhcp(false);
-    hic.setIpAddress("10.20.143.204");
-    hic.setSubnetMask("255.255.252.0");
-    hvns.setIp(hic);
-    String result = hns.addVirtualNic("VMKernel", hvns);
-    System.out.println(result);
+    hss.reconfigureSnmpAgent(spec);
     
-    System.out.println("Successful created : " + switchName);
+    si.getServerConnection().logout();
   }
 }
-

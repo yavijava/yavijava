@@ -27,77 +27,80 @@ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
 
-package com.vmware.vim25.mo.samples.network;
+package com.vmware.vim25.mo.samples.vm;
 
 import java.net.URL;
 
-import com.vmware.vim25.HostIpConfig;
-import com.vmware.vim25.HostNetworkPolicy;
-import com.vmware.vim25.HostPortGroupSpec;
-import com.vmware.vim25.HostVirtualNicSpec;
-import com.vmware.vim25.HostVirtualSwitchSpec;
+import com.vmware.vim25.HostVMotionCompatibility;
+import com.vmware.vim25.TaskInfo;
+import com.vmware.vim25.VirtualMachineMovePriority;
+import com.vmware.vim25.VirtualMachinePowerState;
+import com.vmware.vim25.mo.ComputeResource;
 import com.vmware.vim25.mo.Folder;
-import com.vmware.vim25.mo.HostNetworkSystem;
 import com.vmware.vim25.mo.HostSystem;
 import com.vmware.vim25.mo.InventoryNavigator;
 import com.vmware.vim25.mo.ServiceInstance;
-
+import com.vmware.vim25.mo.Task;
+import com.vmware.vim25.mo.VirtualMachine;
 
 /**
  * http://vijava.sf.net
  * @author Steve Jin
  */
 
-public class AddVirtualSwitch  
+public class MigrateVM
 {
-  public static void main(String[] args) throws Exception 
+  public static void main(String[] args) throws Exception
   {
-    if(args.length != 3)
+    if(args.length!=5)
     {
-      System.out.println("Usage: java AddVirtualNic <url> " 
-          + "<username> <password>");
-      return;
+      System.out.println("Usage: java MigrateVM <url> " +
+      "<username> <password> <vmname> <newhost>");
+      System.exit(0);
     }
+
+    String vmname = args[3];
+    String newHostName = args[4];
 
     ServiceInstance si = new ServiceInstance(
         new URL(args[0]), args[1], args[2], true);
 
-    String hostname = "sjin-dev1.eng.vmware.com";
-    String portGroupName = "ViMaster PortGroup"; 
-    String switchName = "ViMaster Switch";
-
     Folder rootFolder = si.getRootFolder();
-    HostSystem host = null;
-    host = (HostSystem) new InventoryNavigator(
-        rootFolder).searchManagedEntity("HostSystem", hostname);
-
-    HostNetworkSystem hns = host.getHostNetworkSystem();
-
-    // add a virtual switch
-    HostVirtualSwitchSpec spec = new HostVirtualSwitchSpec();
-    spec.setNumPorts(8);
-    hns.addVirtualSwitch(switchName, spec);
+    VirtualMachine vm = (VirtualMachine) new InventoryNavigator(
+        rootFolder).searchManagedEntity(
+            "VirtualMachine", vmname);
+    HostSystem newHost = (HostSystem) new InventoryNavigator(
+        rootFolder).searchManagedEntity(
+            "HostSystem", newHostName);
+    ComputeResource cr = (ComputeResource) newHost.getParent();
     
-    // add a port group
-    HostPortGroupSpec hpgs = new HostPortGroupSpec();
-    hpgs.setName(portGroupName);
-    hpgs.setVlanId(0); // not associated with a VLAN
-    hpgs.setVswitchName(switchName);
-    hpgs.setPolicy(new HostNetworkPolicy());
-    hns.addPortGroup(hpgs);
+    String[] checks = new String[] {"cpu", "software"};
+    HostVMotionCompatibility[] vmcs =
+      si.queryVMotionCompatibility(vm, new HostSystem[] 
+         {newHost},checks );
     
-    // add a virtual NIC to VMKernel
-    HostVirtualNicSpec hvns = new HostVirtualNicSpec();
-    hvns.setMac("00:50:56:7d:5e:0b");
-    HostIpConfig hic = new HostIpConfig();
-    hic.setDhcp(false);
-    hic.setIpAddress("10.20.143.204");
-    hic.setSubnetMask("255.255.252.0");
-    hvns.setIp(hic);
-    String result = hns.addVirtualNic("VMKernel", hvns);
-    System.out.println(result);
+    String[] comps = vmcs[0].getCompatibility();
+    if(checks.length != comps.length)
+    {
+      System.out.println("CPU/software NOT compatible. Exit.");
+      si.getServerConnection().logout();
+      return;
+    }
     
-    System.out.println("Successful created : " + switchName);
+    Task task = vm.migrateVM_Task(cr.getResourcePool(), newHost,
+        VirtualMachineMovePriority.highPriority, 
+        VirtualMachinePowerState.poweredOn);
+  
+    if(task.waitForMe()==Task.SUCCESS)
+    {
+      System.out.println("VMotioned!");
+    }
+    else
+    {
+      System.out.println("VMotion failed!");
+      TaskInfo info = task.getTaskInfo();
+      System.out.println(info.getError().getFault());
+    }
+    si.getServerConnection().logout();
   }
 }
-

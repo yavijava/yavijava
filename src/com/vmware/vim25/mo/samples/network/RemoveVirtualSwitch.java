@@ -27,14 +27,14 @@ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
 
-
-
 package com.vmware.vim25.mo.samples.network;
 
 import java.net.URL;
 import java.rmi.RemoteException;
 
-import com.vmware.vim25.*;
+import com.vmware.vim25.HostConfigFault;
+import com.vmware.vim25.NotFound;
+import com.vmware.vim25.ResourceInUse;
 import com.vmware.vim25.mo.*;
 import com.vmware.vim25.mo.util.*;
 
@@ -58,9 +58,10 @@ import com.vmware.vim25.mo.util.*;
 *run.bat com.vmware.samples.host.RemoveVirtualSwitch --url [webserviceurl] --username [username] --password  [password]  --vsiwtchid [mySwitch] --host [host]
 *
 *</pre>
-* @author sjin 
-* THis is a sample converted from VI SDK samples
-*/
+/**
+ * http://vijava.sf.net
+ * @author Steve Jin
+ */
 
 public class RemoveVirtualSwitch  
 {

@@ -27,68 +27,71 @@ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
 
-package com.vmware.vim25.mo.samples.vm;
+package com.vmware.vim25.mo.samples.event;
 
 import java.net.URL;
 
-import com.vmware.vim25.AutoStartDefaults;
-import com.vmware.vim25.HostAutoStartManagerConfig;
-import com.vmware.vim25.mo.HostAutoStartManager;
-import com.vmware.vim25.mo.HostSystem;
-import com.vmware.vim25.mo.InventoryNavigator;
+import com.vmware.vim25.Event;
+import com.vmware.vim25.EventFilterSpec;
+import com.vmware.vim25.mo.EventHistoryCollector;
+import com.vmware.vim25.mo.EventManager;
 import com.vmware.vim25.mo.ServiceInstance;
-import com.vmware.vim25.mo.util.CommandLineParser;
-import com.vmware.vim25.mo.util.OptionSpec;
 
 /**
  * http://vijava.sf.net
  * @author Steve Jin
  */
 
-public class VmStartupOption
-{
+public class QueryHistoricalEvents 
+{  
   public static void main(String[] args) throws Exception
   {
-    CommandLineParser clp = new CommandLineParser(
-        constructOptions(), args);
-    String urlStr = clp.get_option("url");
-    String username = clp.get_option("username");
-    String password = clp.get_option("password");
-    String hostname = clp.get_option("hostname");
-
-    ServiceInstance si = new ServiceInstance(new URL(urlStr),
-        username, password, true);
-    HostSystem host = (HostSystem) new InventoryNavigator(si
-        .getRootFolder()).searchManagedEntity("HostSystem",
-        hostname);
-
-    if (host == null) {
-      System.out.println("Host cannot be found");
+    if(args.length != 3)
+    {
+      System.out.println("Usage: java QueryHistoricalEvents " 
+        + "<url> <username> <password>");
       return;
     }
 
-    HostAutoStartManager hasm = host.getHostAutoStartManager();
-    if (hasm == null) {
-      System.out
-          .println("HostAutoStartManager is not available.");
-      return;
+    ServiceInstance si = new ServiceInstance(
+      new URL(args[0]), args[1], args[2], true);
+
+    EventManager evtMgr = si.getEventManager();
+
+    if(evtMgr!=null)
+    {
+      EventFilterSpec eventFilter = new EventFilterSpec();
+      EventHistoryCollector ehc = 
+        evtMgr.createCollectorForEvents(eventFilter);
+      
+      int total = 0;
+      
+      Event[] latestEvts = ehc.getLatestPage();
+      printEvents(latestEvts, 0);
+      total += latestEvts==null? 0 : latestEvts.length;
+      
+      System.out.println("\nBefore Latest Page:");
+      ehc.resetCollector();
+      while(true)
+      {
+        Event[] events = ehc.readPreviousEvents(50);
+        if(events==null)
+        {
+          break;
+        }
+        printEvents(events, total);
+        total += events.length;
+      }
     }
-
-    AutoStartDefaults asd = new AutoStartDefaults();
-    asd.setStartDelay(new Integer(100));
-    asd.setEnabled(Boolean.TRUE);
-    asd.setStopDelay(new Integer(60));
-    HostAutoStartManagerConfig spec = new HostAutoStartManagerConfig();
-    spec.setDefaults(asd);
-    hasm.reconfigureAutostart(spec);
-
-    System.out
-        .println("Done with reconfiguring the autostart options.");
+    si.getServerConnection().logout();
   }
-
-  private static OptionSpec[] constructOptions()
+  
+  static void printEvents(Event[] events, int total)
   {
-    return new OptionSpec[] { new OptionSpec("hostname",
-        "String", 1, "Name of the host", null) };
+    for(int i=0; i<events.length; i++)
+    {
+      System.out.println("Event[" + (total+i) + "]=" + events[i].getClass().getName());
+      System.out.println("Event: " + events[i].getCreatedTime().getTime());
+    }
   }
 }
