@@ -107,9 +107,10 @@ public class DistributedVirtualSwitch extends ManagedEntity
 		return (String) getCurrentProperty("uuid");
 	}
 	
-	public void addDVPortgroup_Task(DVPortgroupConfigSpec[] spec) throws DvsFault, DuplicateName, InvalidName, RuntimeFault, RemoteException
+	public Task addDVPortgroup_Task(DVPortgroupConfigSpec[] spec) throws DvsFault, DuplicateName, InvalidName, RuntimeFault, RemoteException
 	{
-		getVimService().addDVPortgroup_Task(getMOR(), spec);
+	  ManagedObjectReference taskMor = getVimService().addDVPortgroup_Task(getMOR(), spec);
+	  return new Task(getServerConnection(), taskMor);
 	}
 	
 	public String[] fetchDVPortKeys(DistributedVirtualSwitchPortCriteria criteria) throws RuntimeFault, RemoteException
@@ -128,9 +129,10 @@ public class DistributedVirtualSwitch extends ManagedEntity
 		return new Task(getServerConnection(), taskMor);
 	}
 	
-	public void moveDVPort_Task(String[] portKey, String destinationPortgroupKey) throws DvsFault, NotFound, ConcurrentAccess, RuntimeFault, RemoteException
+	public Task moveDVPort_Task(String[] portKey, String destinationPortgroupKey) throws DvsFault, NotFound, ConcurrentAccess, RuntimeFault, RemoteException
 	{
-		getVimService().moveDVPort_Task(getMOR(), portKey, destinationPortgroupKey);
+	  ManagedObjectReference taskMor = getVimService().moveDVPort_Task(getMOR(), portKey, destinationPortgroupKey);
+	  return new Task(getServerConnection(), taskMor);
 	}
 	
 	public Task performDvsProductSpecOperation_Task(String operation, DistributedVirtualSwitchProductSpec productSpec) throws TaskInProgress, InvalidState, DvsFault, RuntimeFault, RemoteException
