@@ -101,4 +101,13 @@ public class HostPatchManager extends ManagedObject
 		ManagedObjectReference taskMor = getVimService().stageHostPatch_Task(getMOR(), metaUrls, bundleUrls, vibUrls, spec);
 		return new Task(getServerConnection(), taskMor);
 	}
+	
+	/**
+	 * @since 4.0
+	 */
+	public Task uninstallHostPatch_Task(String[] bulletinIds, HostPatchManagerPatchManagerOperationSpec spec) throws PlatformConfigFault, InvalidState, TaskInProgress, RuntimeFault, RemoteException
+	{
+    ManagedObjectReference taskMor = getVimService().uninstallHostPatch_Task(getMOR(), bulletinIds, spec);
+    return new Task(getServerConnection(), taskMor);
+	}
 }
