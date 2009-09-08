@@ -32,6 +32,7 @@ import java.rmi.RemoteException;
 import java.util.Observable;
 import java.util.Vector;
 
+import com.vmware.vim25.NotAuthenticated;
 import com.vmware.vim25.ObjectSpec;
 import com.vmware.vim25.PropertyFilterSpec;
 import com.vmware.vim25.PropertyFilterUpdate;
@@ -99,7 +100,13 @@ class ManagedObjectWatcher extends Observable implements Runnable
                 this.setChanged();
                 this.notifyObservers(pfu);
                 version = update.getVersion();
-            } catch(Exception e)
+            }
+            catch(NotAuthenticated na)
+            {
+              na.printStackTrace();
+              break;
+            }
+            catch(Exception e)
             {
               e.printStackTrace();
             }
