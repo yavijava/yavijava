@@ -28,10 +28,6 @@ POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
 package com.vmware.vim25.mo.samples.ovf;
 
-/**
- * Deploy VM or vApp from local disk to an ESX(i) server
- * @author Steve Jin (sjin@vmware.com)
- */
 import java.io.*;
 import java.net.*;
 import javax.net.ssl.*;
@@ -44,6 +40,7 @@ import com.vmware.vim25.mo.ResourcePool;
 import com.vmware.vim25.mo.ServiceInstance;
 
 /**
+ * Deploy VM or vApp from local disk to an ESX(i) server
  * http://vijava.sf.net
  * @author Steve Jin (sjin@vmware.com)
  */
