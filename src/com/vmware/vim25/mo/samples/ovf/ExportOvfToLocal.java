@@ -28,23 +28,6 @@ POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
 package com.vmware.vim25.mo.samples.ovf;
 
-/**
- * 
- * #############################################################################
- * DISCLAIMER. THIS SCRIPT IS PROVIDED TO YOU "AS IS" WITHOUT WARRANTIES OR
- * CONDITIONS # OF ANY KIND, WHETHER ORAL OR WRITTEN, EXPRESS OR IMPLIED. THE
- * AUTHOR SPECIFICALLY # DISCLAIMS ANY IMPLIED WARRANTIES OR CONDITIONS OF
- * MERCHANTABILITY, SATISFACTORY # QUALITY, NON-INFRINGEMENT AND FITNESS FOR A
- * PARTICULAR PURPOSE.
- * #############################################################################
- */
-
-
-/**
- * Exports VMDK(s) and OVF Descriptor for a VM or a vApp.
- *
- * @author steve jin (sjin@vmware.com)
- */
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.FileWriter;
@@ -72,6 +55,7 @@ import com.vmware.vim25.mo.VirtualApp;
 import com.vmware.vim25.mo.VirtualMachine;
 
 /**
+ * Exports VMDK(s) and OVF Descriptor for a VM or a vApp.
  * http://vijava.sf.net
  * @author Steve Jin (sjin@vmware.com)
  */
