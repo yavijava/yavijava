@@ -28,25 +28,8 @@ POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
 package com.vmware.vim25.mo.samples.ovf;
 
-/* **********************************************************
- * 
- * VMware Confidential
- * **********************************************************/
-
 /**
- * Copyright 2009 VMware, Inc. All rights reserved.
- * 
- * #############################################################################
- * DISCLAIMER. THIS SCRIPT IS PROVIDED TO YOU "AS IS" WITHOUT WARRANTIES OR
- * CONDITIONS # OF ANY KIND, WHETHER ORAL OR WRITTEN, EXPRESS OR IMPLIED. THE
- * AUTHOR SPECIFICALLY # DISCLAIMS ANY IMPLIED WARRANTIES OR CONDITIONS OF
- * MERCHANTABILITY, SATISFACTORY # QUALITY, NON-INFRINGEMENT AND FITNESS FOR A
- * PARTICULAR PURPOSE.
- * #############################################################################
- */
-
-/**
- * Deploy VMs from local disk to an ESX(i) server
+ * Deploy VM or vApp from local disk to an ESX(i) server
  * @author Steve Jin (sjin@vmware.com)
  */
 import java.io.*;
