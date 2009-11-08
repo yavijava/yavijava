@@ -160,7 +160,7 @@ public class ExportOvfToLocal
 	        String diskFileName = deviceUrlStr.substring(deviceUrlStr.lastIndexOf("/") + 1);
 	        String diskUrlStr = deviceUrlStr.replace("*", hostip);
 	        String diskLocalPath = targetDir + diskFileName;
-	        System.out.println("Absolute File Name: " + diskFileName);
+	        System.out.println("File Name: " + diskFileName);
 	        System.out.println("VMDK URL: " + diskUrlStr);
 	        String cookie = si.getServerConnection().getVimService().getWsc().getCookie();
 	        long lengthOfDiskFile = writeVMDKFile(diskLocalPath, diskUrlStr, cookie, alredyWrittenBytes, diskCapacityInByte);
