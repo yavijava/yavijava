@@ -34,6 +34,7 @@ import com.vmware.vim25.DuplicateName;
 import com.vmware.vim25.HostProfileConfigSpec;
 import com.vmware.vim25.ManagedObjectReference;
 import com.vmware.vim25.ProfileDeferredPolicyOptionParameter;
+import com.vmware.vim25.ProfileExecuteResult;
 import com.vmware.vim25.ProfileUpdateFailed;
 import com.vmware.vim25.RuntimeFault;
 
@@ -54,9 +55,9 @@ public class HostProfile extends Profile
 		return (HostSystem) getManagedObject("referenceHost");
 	}
 	
-	public void executeHostProfile(HostSystem host, ProfileDeferredPolicyOptionParameter[] deferredParam) throws RuntimeFault, RemoteException
+	public ProfileExecuteResult executeHostProfile(HostSystem host, ProfileDeferredPolicyOptionParameter[] deferredParam) throws RuntimeFault, RemoteException
 	{
-		getVimService().executeHostProfile(getMOR(), host.getMOR(), deferredParam);
+		return getVimService().executeHostProfile(getMOR(), host.getMOR(), deferredParam);
 	}
 	
 	public void updateHostProfile(HostProfileConfigSpec config) throws DuplicateName, ProfileUpdateFailed, RuntimeFault, RemoteException
