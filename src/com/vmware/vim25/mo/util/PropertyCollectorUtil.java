@@ -275,6 +275,15 @@ public class PropertyCollectorUtil
 		TraversalSpec dcToVmf = createTraversalSpec( "dcToVmf",  
 				"Datacenter", "vmFolder", 
 				new String[] {"visitFolders"});
+
+    /**
+     * Copyright 2009 Altor Networks, contribution by Elsa Bignoli
+     * @author Elsa Bignoli (elsa@altornetworks.com)
+	   */
+    // Traversal through netFolder branch
+    TraversalSpec dcToNetf = createTraversalSpec( "dcToNetf",  
+         "Datacenter", "networkFolder", 
+         new String[] {"visitFolders"});
 	
 		// Recurse through all Hosts
 		TraversalSpec HToVm = createTraversalSpec( "HToVm",
@@ -284,9 +293,9 @@ public class PropertyCollectorUtil
 		// Recurse through the folders
 		TraversalSpec visitFolders = createTraversalSpec( "visitFolders", 
 		  "Folder",  "childEntity", 
-		  new String[] {"visitFolders", "dcToHf", "dcToVmf", "crToH", "crToRp", "HToVm", "rpToVm"});
+		  new String[] {"visitFolders", "dcToHf", "dcToVmf", "dcToNetf", "crToH", "crToRp", "HToVm", "rpToVm"});
 	
-		return new SelectionSpec [] {visitFolders,dcToVmf,dcToHf,crToH,crToRp,rpToRp,HToVm,rpToVm};
+		return new SelectionSpec [] {visitFolders,dcToVmf,dcToNetf,dcToHf,crToH,crToRp,rpToRp,HToVm,rpToVm};
 	}
 
 }
