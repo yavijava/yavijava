@@ -86,6 +86,10 @@ public class MorUtil
 	
 	public static ManagedEntity[] createManagedEntities(ServerConnection sc, ManagedObjectReference[] mors) 
 	{
+	  if(mors==null)
+	  {
+	    return new ManagedEntity[0];
+	  }
 		ManagedEntity[] mes = new ManagedEntity[mors.length];
 		
 		for(int i=0; i< mors.length; i++)
