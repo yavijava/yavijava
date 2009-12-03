@@ -9,7 +9,8 @@ import com.vmware.vim25.mo.util.PropertyCollectorUtil;
 public class InventoryNavigator
 {
 	private ManagedEntity rootEntity = null;
-	
+	private SelectionSpec[] selectionSpecs = null;
+
 	public InventoryNavigator(ManagedEntity rootEntity)
 	{
 		this.rootEntity = rootEntity;
@@ -64,10 +65,19 @@ public class InventoryNavigator
 	
 		PropertyCollector pc = rootEntity.getServerConnection().getServiceInstance().getPropertyCollector();
 	
-		SelectionSpec[] selectionSpecs = null;
-		if (recurse) 
+		if (recurse && selectionSpecs==null) 
 		{
-			selectionSpecs = PropertyCollectorUtil.buildFullTraversal();
+		  AboutInfo ai = rootEntity.getServerConnection().getServiceInstance().getAboutInfo();
+		  
+		  /* The apiVersion values in all the shipped products
+		  "2.0.0"    VI 3.0
+		  "2.5.0"    VI 3.5 (and u1)
+		  "2.5u2"   VI 3.5u2 (and u3, u4)
+		  "4.0"       vSphere 4.0 (and u1)
+      ******************************************************/
+			selectionSpecs = ai.apiVersion.startsWith("4")? 
+			    PropertyCollectorUtil.buildFullTraversalV4() : 
+			    PropertyCollectorUtil.buildFullTraversal();
 		}
 	
 		PropertySpec[] propspecary = PropertyCollectorUtil.buildPropertySpecArray(typeinfo);
