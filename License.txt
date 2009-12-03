@@ -1,4 +1,6 @@
 Copyright (c) 2008 VMware, Inc. All Rights Reserved.
+Copyright (c) 2009 Altor Networks. All Rights Reserved.
+Copyright (c) 2009 NetApp. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
