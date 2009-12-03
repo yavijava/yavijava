@@ -30,8 +30,18 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25.mo;
 
 import java.rmi.RemoteException;
-import com.vmware.vim25.*;
-import com.vmware.vim25.mo.util.*;
+
+import com.vmware.vim25.AlarmState;
+import com.vmware.vim25.CustomFieldValue;
+import com.vmware.vim25.DuplicateName;
+import com.vmware.vim25.Event;
+import com.vmware.vim25.InvalidName;
+import com.vmware.vim25.ManagedEntityStatus;
+import com.vmware.vim25.ManagedObjectReference;
+import com.vmware.vim25.Permission;
+import com.vmware.vim25.RuntimeFault;
+import com.vmware.vim25.Tag;
+import com.vmware.vim25.VimFault;
 
 /**
  * ManagedEntity represents the managed objects that can be listed in the inventory tree.

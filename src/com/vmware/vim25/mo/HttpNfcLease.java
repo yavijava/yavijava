@@ -35,7 +35,6 @@ import com.vmware.vim25.HttpNfcLeaseState;
 import com.vmware.vim25.InvalidState;
 import com.vmware.vim25.LocalizedMethodFault;
 import com.vmware.vim25.ManagedObjectReference;
-import com.vmware.vim25.MethodFault;
 import com.vmware.vim25.RuntimeFault;
 import com.vmware.vim25.Timedout;
 

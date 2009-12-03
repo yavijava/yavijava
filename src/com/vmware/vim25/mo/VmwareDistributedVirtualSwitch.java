@@ -28,14 +28,7 @@ POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
 package com.vmware.vim25.mo;
 
-import java.rmi.RemoteException;
-
-import com.vmware.vim25.ClusterProfileConfigSpec;
-import com.vmware.vim25.DuplicateName;
-import com.vmware.vim25.InvalidState;
 import com.vmware.vim25.ManagedObjectReference;
-import com.vmware.vim25.NoActiveHostInCluster;
-import com.vmware.vim25.RuntimeFault;
 
 /**
  * The managed object class corresponding to the one defined in VI SDK API reference.
