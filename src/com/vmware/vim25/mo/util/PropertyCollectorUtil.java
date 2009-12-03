@@ -31,7 +31,10 @@ package com.vmware.vim25.mo.util;
 
 import java.lang.reflect.Method;
 import java.rmi.RemoteException;
+import java.util.Arrays;
 import java.util.Hashtable;
+import java.util.List;
+
 import com.vmware.vim25.*;
 import com.vmware.vim25.mo.*;
 
@@ -242,60 +245,101 @@ public class PropertyCollectorUtil
 	/**
 	* This method creates a SelectionSpec[] to traverses the entire
 	* inventory tree starting at a Folder
+	* NOTE: This full traversal is based on VC2/ESX3 inventory structure.
+	* It does not search new ManagedEntities like Network, DVS, etc.
+	* If you want a full traversal with VC4/ESX4, use buildFullTraversalV4().
 	* @return The SelectionSpec[]
 	*/
 	public static SelectionSpec [] buildFullTraversal() 
 	{
-		// Recurse through all ResourcePools
-		TraversalSpec rpToRp = createTraversalSpec( "rpToRp",
-	            "ResourcePool", "resourcePool",
-	            new String[]{ "rpToRp", "rpToVm"});
-		
-		// Recurse through all ResourcePools	  
-		TraversalSpec rpToVm = createTraversalSpec( "rpToVm", 
-	            "ResourcePool", "vm", 
-	            new SelectionSpec[] {});
-	      
-		// Traversal through ResourcePool branch
-		TraversalSpec crToRp = createTraversalSpec( "crToRp",
-	            "ComputeResource", "resourcePool",
-	            new String[]{ "rpToRp", "rpToVm" });
-	
-		// Traversal through host branch
-		TraversalSpec crToH = createTraversalSpec( "crToH", 
-				"ComputeResource",  "host",
-				new SelectionSpec[] {});
-	
-		// Traversal through hostFolder branch
-		TraversalSpec dcToHf = createTraversalSpec( "dcToHf", 
-				"Datacenter", "hostFolder", 
-				new String[] {"visitFolders"});
-	
-		// Traversal through vmFolder branch
-		TraversalSpec dcToVmf = createTraversalSpec( "dcToVmf",  
-				"Datacenter", "vmFolder", 
-				new String[] {"visitFolders"});
-
-    /**
-     * Copyright 2009 Altor Networks, contribution by Elsa Bignoli
-     * @author Elsa Bignoli (elsa@altornetworks.com)
-	   */
-    // Traversal through netFolder branch
-    TraversalSpec dcToNetf = createTraversalSpec( "dcToNetf",  
-         "Datacenter", "networkFolder", 
-         new String[] {"visitFolders"});
-	
-		// Recurse through all Hosts
-		TraversalSpec HToVm = createTraversalSpec( "HToVm",
-				"HostSystem", "vm", 
-				new String[] {"visitFolders"});
-	
+	  List<TraversalSpec> tSpecs = buildFullTraversalV2NoFolder();
+	  
 		// Recurse through the folders
 		TraversalSpec visitFolders = createTraversalSpec( "visitFolders", 
 		  "Folder",  "childEntity", 
-		  new String[] {"visitFolders", "dcToHf", "dcToVmf", "dcToNetf", "crToH", "crToRp", "HToVm", "rpToVm"});
+		  new String[] {"visitFolders", "dcToHf", "dcToVmf", "crToH", "crToRp", "HToVm", "rpToVm"});
 	
-		return new SelectionSpec [] {visitFolders,dcToVmf,dcToNetf,dcToHf,crToH,crToRp,rpToRp,HToVm,rpToVm};
+		SelectionSpec[] sSpecs = new SelectionSpec[tSpecs.size() + 1];
+		sSpecs[0] = visitFolders;
+		for(int i=1; i<sSpecs.length; i++)
+		  sSpecs[i] = tSpecs.get(i-1);
+		
+		return sSpecs;
 	}
 
+	 /**
+	  * This method creates basic set of TraveralSpec without visitFolders spec
+	  * @return The TraversalSpec[]
+	  */
+	  private static List<TraversalSpec> buildFullTraversalV2NoFolder() 
+	  {
+	    // Recurse through all ResourcePools
+	    TraversalSpec rpToRp = createTraversalSpec( "rpToRp",
+	              "ResourcePool", "resourcePool",
+	              new String[]{ "rpToRp", "rpToVm"});
+	    
+	    // Recurse through all ResourcePools    
+	    TraversalSpec rpToVm = createTraversalSpec( "rpToVm", 
+	              "ResourcePool", "vm", 
+	              new SelectionSpec[] {});
+	        
+	    // Traversal through ResourcePool branch
+	    TraversalSpec crToRp = createTraversalSpec( "crToRp",
+	              "ComputeResource", "resourcePool",
+	              new String[]{ "rpToRp", "rpToVm" });
+	  
+	    // Traversal through host branch
+	    TraversalSpec crToH = createTraversalSpec( "crToH", 
+	        "ComputeResource",  "host",
+	        new SelectionSpec[] {});
+	  
+	    // Traversal through hostFolder branch
+	    TraversalSpec dcToHf = createTraversalSpec( "dcToHf", 
+	        "Datacenter", "hostFolder", 
+	        new String[] {"visitFolders"});
+	  
+	    // Traversal through vmFolder branch
+	    TraversalSpec dcToVmf = createTraversalSpec( "dcToVmf",  
+	        "Datacenter", "vmFolder", 
+	        new String[] {"visitFolders"});
+
+	    TraversalSpec HToVm = createTraversalSpec( "HToVm",
+	        "HostSystem", "vm", 
+	        new String[] {"visitFolders"});
+	  
+	    return Arrays.asList(dcToVmf,dcToHf,crToH,crToRp,rpToRp,HToVm, rpToVm);
+	  }
+	
+	 /**
+	  * This method creates a SelectionSpec[] to traverses the entire
+	  * inventory tree starting at a Folder
+	  * @return The SelectionSpec[]
+	  */
+	  public static SelectionSpec [] buildFullTraversalV4() 
+	  {
+	    List<TraversalSpec> tSpecs = buildFullTraversalV2NoFolder();
+
+	    /**
+	     * Copyright 2009 Altor Networks, contribution by Elsa Bignoli
+	     * @author Elsa Bignoli (elsa@altornetworks.com)
+	     */
+	    // Traversal through netFolder branch
+	    TraversalSpec dcToNetf = createTraversalSpec( "dcToNetf",  
+	         "Datacenter", "networkFolder", 
+	         new String[] {"visitFolders"});
+	  
+	    // Recurse through the folders
+	    TraversalSpec visitFolders = createTraversalSpec( "visitFolders", 
+	      "Folder",  "childEntity", 
+	      new String[] {"visitFolders", "dcToHf", "dcToVmf", "dcToNetf", "crToH", "crToRp", "HToVm", "rpToVm"});
+	  
+	    SelectionSpec[] sSpecs = new SelectionSpec[tSpecs.size() + 2];
+	    sSpecs[0] = visitFolders;
+	    sSpecs[1] = dcToNetf;
+	    for(int i=2; i < sSpecs.length; i++)
+	      sSpecs[i] = tSpecs.get(i-2);
+	    
+	    return sSpecs;
+	  }
+	  
 }
