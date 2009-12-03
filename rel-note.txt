@@ -1,3 +1,18 @@
+What is new in Version 2.0u1
+Bug fixes:
+2814793  	 ClassCastException in XmlGen.java
+2819624  	 Caching: NPE occurs repeatedly in watcher thread
+2823427  	 customize vm causes cast error in XmlGen.toXML()
+2825430  	 DistributedVirtualSwitch#getSummary() has incorrect impl
+2825433  	 ResourcePools occasionally returned as VirtualApps
+2837427  	 AddDVPortgroup_Task should return a Task object
+2837428  	 moveDVPort_Task should return a Task object
+2839209  	 Caching: Flood of exceptions when authentication fails
+2840733  	 HostPatchManager.uninstallHostPatch_Task() is missing
+2898611  	 HostProfile.updateHostProfile() should return ProfileExecute
+2903501  	 NullPointerException when call findAllByUuid
+2907215  	 Missing network traveral in PropertyCollectorUtil.java
+
 What is new in Version 2.0
 
 0. vSphere 4.0 support
