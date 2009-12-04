@@ -318,7 +318,11 @@ public class PropertyCollectorUtil
 	  public static SelectionSpec [] buildFullTraversalV4() 
 	  {
 	    List<TraversalSpec> tSpecs = buildFullTraversalV2NoFolder();
-
+	    
+      TraversalSpec dcToDs = createTraversalSpec( "dcToDs",  
+          "Datacenter", "datastoreFolder", 
+          new String[] {"visitFolders"});
+	    
 	    /**
 	     * Copyright 2009 Altor Networks, contribution by Elsa Bignoli
 	     * @author Elsa Bignoli (elsa@altornetworks.com)
@@ -331,13 +335,14 @@ public class PropertyCollectorUtil
 	    // Recurse through the folders
 	    TraversalSpec visitFolders = createTraversalSpec( "visitFolders", 
 	      "Folder",  "childEntity", 
-	      new String[] {"visitFolders", "dcToHf", "dcToVmf", "dcToNetf", "crToH", "crToRp", "HToVm", "rpToVm"});
+	      new String[] {"visitFolders", "dcToHf", "dcToVmf", "dcToDs", "dcToNetf", "crToH", "crToRp", "HToVm", "rpToVm"});
 	  
-	    SelectionSpec[] sSpecs = new SelectionSpec[tSpecs.size() + 2];
+	    SelectionSpec[] sSpecs = new SelectionSpec[tSpecs.size() + 3];
 	    sSpecs[0] = visitFolders;
-	    sSpecs[1] = dcToNetf;
-	    for(int i=2; i < sSpecs.length; i++)
-	      sSpecs[i] = tSpecs.get(i-2);
+	    sSpecs[1] = dcToDs;
+	    sSpecs[2] = dcToNetf;
+	    for(int i=3; i<sSpecs.length; i++)
+	      sSpecs[i] = tSpecs.get(i-3);
 	    
 	    return sSpecs;
 	  }
