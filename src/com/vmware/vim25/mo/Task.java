@@ -126,18 +126,19 @@ public class Task extends ExtensibleManagedObject
   /**
    * Copyright 2009 NetApp, contribution by Eric Forgette
    * 
-   * @author Eric Forgette (forgette@netapp.com)
-   * 
    * This is a "drop-in" replacement for waitForMe() that uses a timed polling
    * in place of waitForValues.
    * 
    * This method will eat 3 exceptions while trying to get TaskInfo and TaskState.
    * On the fourth try, the captured exception is thrown.
    * 
-   * @return String based on TaskInfoState, or "Error Occured"
+   * @return String based on TaskInfoState
    * @throws RuntimeFault
    * @throws RemoteException
    * @throws InterruptedException 
+   * @throws RuntimeException if the third exception is not RuntimeFault or RemoteException
+   * 
+   * @author Eric Forgette (forgette@netapp.com)
    */
   public String waitForTask() throws RuntimeFault, RemoteException, InterruptedException  
   {  
@@ -146,8 +147,6 @@ public class Task extends ExtensibleManagedObject
 	
   /**
    * Copyright 2009 NetApp, contribution by Eric Forgette
-   * 
-   * @author Eric Forgette (forgette@netapp.com)
    * 
    * This is a replacement for waitForMe() that uses a timed polling
    * in place of waitForValues.  The delay between each poll is 
@@ -162,10 +161,13 @@ public class Task extends ExtensibleManagedObject
    * 
    * @param runningDelayInMillSecond - number of milliseconds to sleep between polls for a running task
    * @param queuedDelayInMillSecond - number of milliseconds to sleep between polls for a queued task
-   * @return String based on TaskInfoState, or "Error Occured"
+   * @return String based on TaskInfoState
    * @throws RuntimeFault
    * @throws RemoteException
    * @throws InterruptedException 
+   * @throws RuntimeException if the third exception is not RuntimeFault or RemoteException
+   * 
+   * @author Eric Forgette (forgette@netapp.com)
    */
   public String waitForTask(int runningDelayInMillSecond, int queuedDelayInMillSecond) throws RuntimeFault, RemoteException, InterruptedException  
   {         
@@ -196,6 +198,10 @@ public class Task extends ExtensibleManagedObject
           else if (getInfoException  instanceof RemoteException )
           {
             throw (RemoteException) getInfoException;
+          }
+          else
+          {
+              throw new RuntimeException(getInfoException);
           }
         }
 
