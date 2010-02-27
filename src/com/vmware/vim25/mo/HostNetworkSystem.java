@@ -151,6 +151,11 @@ public class HostNetworkSystem extends ExtensibleManagedObject
 		getVimService().updateIpRouteConfig(getMOR(), config);
 	}
 	
+  public void updateIpRouteTableConfig(HostIpRouteTableConfig config) throws HostConfigFault, RuntimeFault, RemoteException 
+  {
+    getVimService().updateIpRouteTableConfig(getMOR(), config);
+  }
+	
 	public void updateNetworkConfig(HostNetworkConfig config, String changeMode) throws HostConfigFault, AlreadyExists, NotFound, RuntimeFault, RemoteException 
 	{
 		getVimService().updateNetworkConfig(getMOR(), config, changeMode);
