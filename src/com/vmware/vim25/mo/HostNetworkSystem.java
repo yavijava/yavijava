@@ -35,7 +35,7 @@ import com.vmware.vim25.*;
 
 /**
  * The managed object class corresponding to the one defined in VI SDK API reference.
- * @author Steve JIN (sjin@vmware.com)
+ * @author Steve JIN (sjin@vmware.com), Lu Yu (lyu@vmware.com)
  */
 
 public class HostNetworkSystem extends ExtensibleManagedObject 
