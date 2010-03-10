@@ -628,7 +628,12 @@ public final class XmlGen
 	  else if(clazz == ManagedObjectReference.class)
 	  { //MOR]
 	  	ManagedObjectReference mor = (ManagedObjectReference) obj;
-	    sb.append("<" + tagName + " type=\"" + mor.type + "\">");
+	    sb.append("<" + tagName);
+      if(clazz!=type)
+      {
+        sb.append(" xsi:type=\"" + mor.type + "\"");
+      }
+	    sb.append(" type=\"" + mor.type + "\">");
 	    sb.append(mor.val);
 	    sb.append("</" + tagName + ">");
 	  }
