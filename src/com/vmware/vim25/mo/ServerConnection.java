@@ -110,6 +110,11 @@ final public class ServerConnection
 	{
 		this.userSession = userSession;
 	}
+	
+	void setServiceInstance(ServiceInstance si)
+	{
+	  this.serviceInstance = si;
+	}
 //	@Override
 //	protected void finalize() throws Throwable 
 //	{
