@@ -29,6 +29,7 @@ POSSIBILITY OF SUCH DAMAGE.
 
 package com.vmware.vim25.mo;
 
+import java.net.MalformedURLException;
 import java.rmi.RemoteException;
 
 import com.vmware.vim25.*;
@@ -81,13 +82,51 @@ public class SessionManager extends ManagedObject
 		return getVimService().acquireLocalTicket(getMOR(), userName);
 	}
 	
-	/** @since SDK4.0 */
+	/** @since SDK4.0 
+	 * You don't need to use this method. Instead, look at the other cloneSession method.
+	 * */
 	public UserSession cloneSession(String cloneTicket) throws InvalidLogin, RuntimeFault, RemoteException
 	{
 		return getVimService().cloneSession(getMOR(), cloneTicket);
 	}
+	
+  /**
+   * Copyright 2009 NetApp, contribution by Eric Forgette
+   * Modified by Steve Jin (sjin@vmware.com)
+   * 
+   * This constructor builds a new ServiceInstance based on a ServiceInstance.
+   * The new ServiceInstance is effectively a clone of the first.  This clone will
+   * NOT become invalid when the first is logged out.
+   * 
+   * @author Eric Forgette (forgette@netapp.com)
+   * @throws RemoteException 
+   * @throws RuntimeFault 
+   * @throws InvalidLogin 
+   * @throws MalformedURLException 
+   * 
+   */
+	public ServiceInstance cloneSession(boolean ignoreCert) throws InvalidLogin, RuntimeFault, RemoteException, MalformedURLException
+	{
+	  ServiceInstance oldsi = getServerConnection().getServiceInstance();
+	  ServerConnection oldsc = oldsi.getServerConnection();
+    String ticket = oldsi.getSessionManager().acquireCloneTicket();
+	  
+    VimPortType vimService = new VimPortType(oldsc.getUrl().toString(), ignoreCert);
+    vimService.getWsc().setVimNameSpace(oldsc.getVimService().getWsc().getVimNameSpace());
 
-	/** @since SDK4.0 */
+    ServerConnection newsc = new ServerConnection(oldsc.getUrl(), vimService, null);
+    ServiceInstance newsi = new ServiceInstance(newsc);
+    newsc.setServiceInstance(newsi);
+    
+    UserSession userSession = newsi.getSessionManager().cloneSession(ticket);
+    newsc.setUserSession(userSession);
+    return newsi;
+	}
+
+	/** @since SDK4.0 
+	 * This method is called in the cloneSession method. If you happen to use this method,
+	 * please double check if it's really needed.
+	 * */
 	public String acquireCloneTicket() throws RuntimeFault, RemoteException
 	{
 		return getVimService().acquireCloneTicket(getMOR());
