@@ -33,6 +33,7 @@ import java.rmi.RemoteException;
 
 import com.vmware.vim25.InvalidProperty;
 import com.vmware.vim25.InvalidState;
+import com.vmware.vim25.LocalizableMessage;
 import com.vmware.vim25.LocalizedMethodFault;
 import com.vmware.vim25.ManagedObjectReference;
 import com.vmware.vim25.MethodFault;
@@ -84,6 +85,12 @@ public class Task extends ExtensibleManagedObject
 	public void updateProgress(int percentDone) throws InvalidState, OutOfBounds, RuntimeFault, RemoteException 
 	{
 		getVimService().updateProgress(getMOR(), percentDone);
+	}
+	
+  /** @since SDK4.0 */
+	public void setTaskDescription(LocalizableMessage description) throws RuntimeFault, RemoteException
+	{
+	  getVimService().setTaskDescription(getMOR(), description);
 	}
 	
 	/**
