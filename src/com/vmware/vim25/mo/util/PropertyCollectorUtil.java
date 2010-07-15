@@ -322,7 +322,11 @@ public class PropertyCollectorUtil
       TraversalSpec dcToDs = createTraversalSpec( "dcToDs",  
           "Datacenter", "datastoreFolder", 
           new String[] {"visitFolders"});
-	    
+
+      TraversalSpec vAppToRp = createTraversalSpec( "vAppToRp",  
+          "VirtualApp", "resourcePool", 
+          new String[] {"rpToRp", "vAppToRp"});
+      
 	    /**
 	     * Copyright 2009 Altor Networks, contribution by Elsa Bignoli
 	     * @author Elsa Bignoli (elsa@altornetworks.com)
@@ -337,12 +341,13 @@ public class PropertyCollectorUtil
 	      "Folder",  "childEntity", 
 	      new String[] {"visitFolders", "dcToHf", "dcToVmf", "dcToDs", "dcToNetf", "crToH", "crToRp", "HToVm", "rpToVm"});
 	  
-	    SelectionSpec[] sSpecs = new SelectionSpec[tSpecs.size() + 3];
+	    SelectionSpec[] sSpecs = new SelectionSpec[tSpecs.size() + 4];
 	    sSpecs[0] = visitFolders;
 	    sSpecs[1] = dcToDs;
 	    sSpecs[2] = dcToNetf;
-	    for(int i=3; i<sSpecs.length; i++)
-	      sSpecs[i] = tSpecs.get(i-3);
+	    sSpecs[3] = vAppToRp;
+	    for(int i=4; i<sSpecs.length; i++)
+	      sSpecs[i] = tSpecs.get(i-4);
 	    
 	    return sSpecs;
 	  }
