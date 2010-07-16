@@ -83,14 +83,21 @@ public class Datacenter extends ManagedEntity
 		return getNetworks("network");
 	}
 	
-	public Task powerOnMultiVM_Task(VirtualMachine[] vms) throws RuntimeFault, RemoteException  
+	/** old signature for back compatibility with 2.5 and 4.0 */
+  public Task powerOnMultiVM_Task(VirtualMachine[] vms) throws RuntimeFault, RemoteException  
+  {
+    return powerOnMultiVM_Task(vms, null);
+  }
+	
+  /** @since SDK4.1 */
+	public Task powerOnMultiVM_Task(VirtualMachine[] vms, OptionValue[] option) throws RuntimeFault, RemoteException  
 	{
 		if(vms==null)
 		{
 			throw new IllegalArgumentException("vms must not be null.");
 		}
 		ManagedObjectReference[] mors = MorUtil.createMORs(vms);
-		ManagedObjectReference tmor = getVimService().powerOnMultiVM_Task(getMOR(), mors );
+		ManagedObjectReference tmor = getVimService().powerOnMultiVM_Task(getMOR(), mors, option);
 		return new Task(getServerConnection(), tmor);
 	}
 	

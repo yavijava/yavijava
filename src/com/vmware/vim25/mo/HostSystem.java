@@ -109,10 +109,22 @@ public class HostSystem extends ManagedEntity
 		return new Task(getServerConnection(), mor);
 	}
 	
+	/** @since SDK4.1 */
+	public void enterLockdownMode() throws HostConfigFault, RuntimeFault, RemoteException
+	{
+	  getVimService().enterLockdownMode(getMOR());
+	}
+	
 	public Task enterMaintenanceMode(int timeout, boolean evacuatePoweredOffVms) throws Timedout, InvalidState, RuntimeFault, RemoteException 
 	{
 		ManagedObjectReference mor = getVimService().enterMaintenanceMode_Task(getMOR(), timeout, new Boolean(evacuatePoweredOffVms));
 		return new Task(getServerConnection(), mor);
+	}
+	
+	/** @since SDK4.1 */
+	public void exitLockdownMode() throws HostConfigFault, RuntimeFault, RemoteException
+	{
+	  getVimService().exitLockdownMode(getMOR());  
 	}
 	
 	public Task exitMaintenanceMode(int timeout) throws Timedout, InvalidState, RuntimeFault, RemoteException 
@@ -164,6 +176,12 @@ public class HostSystem extends ManagedEntity
 	{
 		ManagedObjectReference mor = getVimService().reconnectHost_Task(getMOR(), hcs);
 		return new Task(getServerConnection(), mor);
+	}
+	
+	/** @since SDK4.1 */
+	public long retrieveHardwareUptime() throws RuntimeFault, RemoteException
+	{
+	  return getVimService().retrieveHardwareUptime(getMOR());
 	}
 	
 	public Task shutdownHost_Task(boolean force) throws InvalidState, NotSupported, RuntimeFault, RemoteException

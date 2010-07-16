@@ -40,12 +40,14 @@ import com.vmware.vim25.InvalidPowerState;
 import com.vmware.vim25.InvalidState;
 import com.vmware.vim25.ManagedObjectReference;
 import com.vmware.vim25.MigrationFault;
+import com.vmware.vim25.ResourceConfigSpec;
 import com.vmware.vim25.RuntimeFault;
 import com.vmware.vim25.TaskInProgress;
 import com.vmware.vim25.VAppCloneSpec;
 import com.vmware.vim25.VAppConfigFault;
 import com.vmware.vim25.VAppConfigInfo;
 import com.vmware.vim25.VAppConfigSpec;
+import com.vmware.vim25.VirtualAppLinkInfo;
 import com.vmware.vim25.VmConfigFault;
 
 /**
@@ -59,6 +61,12 @@ public class VirtualApp extends ResourcePool
 		super(sc, mor);
 	}
 
+	/** @since SDK4.1 */
+	public VirtualAppLinkInfo[] getChildLink()
+	{
+	  return (VirtualAppLinkInfo[]) getCurrentProperty("childLink");
+	}
+	
 	public Datastore[] getDatastore()
 	{
 		return getDatastores("datastore");
@@ -73,6 +81,13 @@ public class VirtualApp extends ResourcePool
 	{
 		ManagedObjectReference mor = (ManagedObjectReference) getCurrentProperty("parentFolder");
 		return new Folder(getServerConnection(), mor);
+	}
+	
+	/** @since SDK4.1 */
+	public ManagedEntity getParentVApp()
+	{
+	  ManagedObjectReference mor = (ManagedObjectReference) getCurrentProperty("parentVApp");
+    return new ManagedEntity(getServerConnection(), mor);
 	}
 	
 	public VAppConfigInfo getVAppConfig()
@@ -98,6 +113,13 @@ public class VirtualApp extends ResourcePool
 		return new Task(getServerConnection(), taskMor);
 	}
 	
+	/** @since SDK4.1 */
+	public Task suspendVApp_Task() throws TaskInProgress, InvalidState, VAppConfigFault, RuntimeFault, RemoteException
+	{
+	  ManagedObjectReference taskMor = getVimService().suspendVApp_Task(getMOR());
+	  return new Task(getServerConnection(), taskMor);
+	}
+	
 	public Task powerOnVApp_Task() throws TaskInProgress, InvalidState, InsufficientResourcesFault, VmConfigFault, VAppConfigFault, FileFault, RuntimeFault, RemoteException
 	{
 		ManagedObjectReference taskMor = getVimService().powerOnVApp_Task(getMOR());
@@ -108,6 +130,12 @@ public class VirtualApp extends ResourcePool
 	{
 		ManagedObjectReference taskMor = getVimService().unregisterVApp_Task(getMOR());
 		return new Task(getServerConnection(), taskMor);
+	}
+	
+	/** @since SDK4.1 */
+	public void updateLinkedChildren(VirtualAppLinkInfo[] addChangeSet, ManagedObjectReference[] removeSet) throws ConcurrentAccess, RuntimeFault, RemoteException
+	{
+	  getVimService().updateLinkedChildren(getMOR(), addChangeSet, removeSet);
 	}
 	
 	public void updateVAppConfig(VAppConfigSpec spec) throws TaskInProgress, VmConfigFault, ConcurrentAccess, FileFault, InvalidName, DuplicateName, InvalidState, InsufficientResourcesFault, InvalidDatastore, RuntimeFault, RemoteException

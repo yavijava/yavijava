@@ -68,12 +68,16 @@ public final class WSClient
 {
   private final static String SOAP_HEADER = "<?xml version=\"1.0\" encoding=\"UTF-8\"?><soapenv:Envelope xmlns:soapenc=\"http://schemas.xmlsoap.org/soap/encoding/\" xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"><soapenv:Body>"; 
   private final static String SOAP_END = "</soapenv:Body></soapenv:Envelope>";
-  private final static String SOAP_ACTION = "SOAPAction";
-  private final static String SOAP_ACTION_V4 = "urn:vim25/4.0";
+  private final static String SOAP_ACTION_HEADER = "SOAPAction";
+  private final static String SOAP_ACTION_V40 = "urn:vim25/4.0";
+  private final static String SOAP_ACTION_V41 = "urn:vim25/4.1";
   
   private URL baseUrl = null;
   private String cookie = null;
   private String vimNameSpace = null;
+  private String soapAction = SOAP_ACTION_V40;
+  private int connectTimeout = 0;
+  private int readTimeout = 0;
   
   public WSClient(String serverUrl) throws MalformedURLException 
   {
@@ -222,6 +226,12 @@ public final class WSClient
   public InputStream post(String soapMsg) throws IOException
   {
     HttpURLConnection postCon = (HttpURLConnection) baseUrl.openConnection();
+    
+    if(connectTimeout > 0)
+      postCon.setConnectTimeout(connectTimeout);
+    if(readTimeout > 0)
+      postCon.setReadTimeout(readTimeout);
+    
     try {
         postCon.setRequestMethod("POST");
     } catch (ProtocolException e) 
@@ -230,7 +240,7 @@ public final class WSClient
     }
     postCon.setDoOutput(true);
     postCon.setDoInput(true);
-    postCon.setRequestProperty(SOAP_ACTION, SOAP_ACTION_V4);
+    postCon.setRequestProperty(SOAP_ACTION_HEADER, soapAction);
     if(cookie!=null)
     {
       postCon.setRequestProperty("Cookie", cookie);
@@ -288,6 +298,43 @@ public final class WSClient
   public void setVimNameSpace(String vimNameSpace)
   {
     this.vimNameSpace = vimNameSpace;
+  }
+  
+  public void setConnectTimeout(int timeoutMilliSec)
+  {
+    this.connectTimeout = timeoutMilliSec;
+  }
+
+  public int getConnectTimeout()
+  {
+    return this.connectTimeout;
+  }
+
+  public void setReadTimeout(int timeoutMilliSec)
+  {
+    this.readTimeout = timeoutMilliSec;
+  }
+  
+  public int getReadTimeout()
+  {
+    return this.readTimeout;
+  }
+  
+/*===============================================
+   * API versions *   
+  "2.0.0"    VI 3.0
+  "2.5.0"    VI 3.5 (and u1)
+  "2.5u2"   VI 3.5u2 (and u3, u4)
+  "4.0"       vSphere 4.0 (and u1)
+  "4.1"       vSphere 4.1
+  ===============================================*/
+  public void setSoapActionOnApiVersion(String apiVersion)
+  {
+    //4.0 is set by default already, so skip it here
+    if("4.1".equals(apiVersion))
+    {
+      soapAction = SOAP_ACTION_V41;
+    }
   }
   
   private StringBuffer readStream(InputStream is) throws IOException

@@ -38,6 +38,8 @@ import com.vmware.vim25.DVPortgroupConfigSpec;
 import com.vmware.vim25.DVSCapability;
 import com.vmware.vim25.DVSConfigInfo;
 import com.vmware.vim25.DVSConfigSpec;
+import com.vmware.vim25.DVSNetworkResourcePool;
+import com.vmware.vim25.DVSNetworkResourcePoolConfigSpec;
 import com.vmware.vim25.DVSSummary;
 import com.vmware.vim25.DistributedVirtualPort;
 import com.vmware.vim25.DistributedVirtualSwitchPortCriteria;
@@ -81,6 +83,12 @@ public class DistributedVirtualSwitch extends ManagedEntity
 		return (DVSConfigInfo) getCurrentProperty("config");
 	}
 	
+	/** @since SDK4.1 */
+	public DVSNetworkResourcePool[] getNetworkResourcePool()
+	{
+	  return (DVSNetworkResourcePool[]) getCurrentProperty("networkResourcePool");
+	}
+	
 	public DistributedVirtualPortgroup[] getPortgroup()
 	{
 		ManagedObjectReference[] pgMors = (ManagedObjectReference[]) getCurrentProperty("portgroup");
@@ -111,6 +119,12 @@ public class DistributedVirtualSwitch extends ManagedEntity
 	{
 	  ManagedObjectReference taskMor = getVimService().addDVPortgroup_Task(getMOR(), spec);
 	  return new Task(getServerConnection(), taskMor);
+	}
+	
+	/** @since SDK4.1 */
+	public void enableNetworkResourceManagement(boolean enable) throws DvsFault, RuntimeFault, RemoteException
+	{
+    getVimService().enableNetworkResourceManagement(getMOR(), enable);
 	}
 	
 	public String[] fetchDVPortKeys(DistributedVirtualSwitchPortCriteria criteria) throws RuntimeFault, RemoteException
@@ -167,6 +181,12 @@ public class DistributedVirtualSwitch extends ManagedEntity
 	public void updateDvsCapability(DVSCapability capability) throws RuntimeFault, RemoteException
 	{
 		getVimService().updateDvsCapability(getMOR(), capability);
+	}
+	
+	/** @since SDK4.1 */
+	public void updateNetworkResourcePool(DVSNetworkResourcePoolConfigSpec[] configSpec) throws DvsFault, NotFound, InvalidName, RuntimeFault, RemoteException
+	{
+	  getVimService().updateNetworkResourcePool(getMOR(), configSpec);
 	}
 	
 	public Task reconfigureDVPort_Task(DVPortConfigSpec[] port) throws DvsFault, NotFound, ResourceInUse, ConcurrentAccess, RuntimeFault, RemoteException

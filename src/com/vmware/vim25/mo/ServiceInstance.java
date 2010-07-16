@@ -83,6 +83,7 @@ public class ServiceInstance extends ManagedObject
 		vimService.getWsc().setVimNameSpace(namespace);
 		
 		serviceContent = vimService.retrieveServiceContent(SERVICE_INSTANCE_MOR);
+		vimService.getWsc().setSoapActionOnApiVersion(serviceContent.getAbout().getApiVersion());
 		setServerConnection(new ServerConnection(url, vimService, this));
 		UserSession userSession = getSessionManager().login(username, password, null);
 		getServerConnection().setUserSession(userSession);

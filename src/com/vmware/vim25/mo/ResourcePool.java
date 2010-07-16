@@ -104,6 +104,12 @@ public class ResourcePool extends ManagedEntity
 		return new HttpNfcLease(getServerConnection(), mor);
 	}
 	
+	/** @since SDK4.1 */
+	public void refreshRuntime() throws RuntimeFault, RemoteException
+	{
+	  getVimService().refreshRuntime(getMOR());
+	}
+	
 	/** @since SDK4.0 */
 	public Task registerChildVM_Task(String path, String name, HostSystem host) throws OutOfBounds, AlreadyExists, InvalidDatastore, NotFound, InvalidName, VmConfigFault, InsufficientResourcesFault, FileFault, RuntimeFault, RemoteException
 	{
@@ -129,6 +135,12 @@ public class ResourcePool extends ManagedEntity
 			throw new IllegalArgumentException("entities must not be null.");
 		}
 		getVimService().moveIntoResourcePool(getMOR(), MorUtil.createMORs(entities) );
+	}
+	
+	/** @since SDK4.1 */
+	public ResourceConfigOption queryResourceConfigOption() throws RuntimeFault, RemoteException
+	{
+    return getVimService().queryResourceConfigOption(getMOR());
 	}
 	
 	public void updateChildResourceConfiguration(ResourceConfigSpec[] spec) throws InvalidState, InsufficientResourcesFault, RuntimeFault, RemoteException 

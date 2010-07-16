@@ -31,6 +31,7 @@ package com.vmware.vim25.mo;
 import java.rmi.RemoteException;
 
 import com.vmware.vim25.HttpNfcLeaseInfo;
+import com.vmware.vim25.HttpNfcLeaseManifestEntry;
 import com.vmware.vim25.HttpNfcLeaseState;
 import com.vmware.vim25.InvalidState;
 import com.vmware.vim25.LocalizedMethodFault;
@@ -78,6 +79,12 @@ public class HttpNfcLease extends ManagedObject
 	public void httpNfcLeaseComplete() throws Timedout, InvalidState, RuntimeFault, RemoteException
 	{
 		getVimService().httpNfcLeaseComplete(getMOR());
+	}
+	
+	/** @since SDK4.1 */
+	public HttpNfcLeaseManifestEntry[] httpNfcLeaseGetManifest() throws Timedout, InvalidState, RuntimeFault, RemoteException
+	{
+    return getVimService().httpNfcLeaseGetManifest(getMOR());
 	}
 	
 	public void httpNfcLeaseProgress(int percent) throws Timedout, RuntimeFault, RemoteException

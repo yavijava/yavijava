@@ -60,7 +60,8 @@ public class ManagedEntity extends ExtensibleManagedObject
 	/** @since SDK4.0 */
 	public boolean getAlarmActionEabled()
 	{
-		return ((Boolean)getCurrentProperty("alarmActionsEnabled")).booleanValue();
+	  Boolean aae = (Boolean)getCurrentProperty("alarmActionsEnabled");
+    return aae == null? false : aae.booleanValue();
 	}
 	
 	public Event[] getConfigIssue()

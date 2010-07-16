@@ -31,8 +31,13 @@ package com.vmware.vim25.mo;
 
 import java.rmi.RemoteException;
 
+import com.vmware.vim25.DVSFeatureCapability;
 import com.vmware.vim25.DVSManagerDvsConfigTarget;
 import com.vmware.vim25.DistributedVirtualSwitchHostProductSpec;
+import com.vmware.vim25.DistributedVirtualSwitchManagerCompatibilityResult;
+import com.vmware.vim25.DistributedVirtualSwitchManagerDvsProductSpec;
+import com.vmware.vim25.DistributedVirtualSwitchManagerHostContainer;
+import com.vmware.vim25.DistributedVirtualSwitchManagerHostDvsFilterSpec;
 import com.vmware.vim25.DistributedVirtualSwitchProductSpec;
 import com.vmware.vim25.ManagedObjectReference;
 import com.vmware.vim25.NotFound;
@@ -85,6 +90,15 @@ public class DistributedVirtualSwitchManager extends ManagedObject
 		return getVimService().queryDvsCompatibleHostSpec(getMOR(), switchProductSpec);
 	}
 	
+	/** @since SDK4.1 */
+	public DistributedVirtualSwitchManagerCompatibilityResult[] queryDvsCheckCompatibility(
+	    DistributedVirtualSwitchManagerHostContainer hostContainer,	DistributedVirtualSwitchManagerDvsProductSpec dvsProductSpec,
+	    DistributedVirtualSwitchManagerHostDvsFilterSpec[] hostFilterSpec) throws RuntimeFault, RemoteException
+	{
+	  return getVimService().queryDvsCheckCompatibility(getMOR(), hostContainer, dvsProductSpec, hostFilterSpec);
+	}
+	    
+	
 	public DVSManagerDvsConfigTarget queryDvsConfigTarget(HostSystem host, DistributedVirtualSwitch dvs) throws RuntimeFault, RemoteException
 	{
 		return getVimService().queryDvsConfigTarget(getMOR(), 
@@ -98,4 +112,9 @@ public class DistributedVirtualSwitchManager extends ManagedObject
 		return new DistributedVirtualSwitch(getServerConnection(), mor);
 	}
 	
+	 /** @since SDK4.1 */
+	public DVSFeatureCapability queryDvsFeatureCapability(DistributedVirtualSwitchProductSpec switchProductSpec) throws RuntimeFault, RemoteException
+	{
+	  return getVimService().queryDvsFeatureCapability(getMOR(), switchProductSpec);
+	}
 }

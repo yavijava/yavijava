@@ -45,6 +45,18 @@ public class VirtualMachineSnapshot extends ManagedObject
 	{
 		super(sc, mor);
 	}
+
+	/** @since SDK4.1 */
+	public VirtualMachineSnapshot[] getChildSnapshot()
+  {
+    ManagedObjectReference[] mors = (ManagedObjectReference[]) getCurrentProperty("childSnapshot");
+    VirtualMachineSnapshot[] vmns = new VirtualMachineSnapshot[mors.length];
+    for(int i=0; i< mors.length; i++)
+    {
+      vmns[i] = new VirtualMachineSnapshot(getServerConnection(), mors[i]);
+    }
+    return vmns;
+  }
 	
 	public VirtualMachineConfigInfo getConfig()
 	{

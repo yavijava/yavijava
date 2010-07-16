@@ -100,6 +100,12 @@ public class ClusterComputeResource extends ComputeResource
 	{
 		getVimService().applyRecommendation(getMOR(), key);
 	}
+
+	 /** @since SDK4.1 */
+  public void cancelRecommendation(String key) throws RuntimeFault, RemoteException  
+	{
+    getVimService().cancelRecommendation(getMOR(), key);
+	}
 	
 	public Task moveHostInto_Task(HostSystem host, ResourcePool resourcePool) throws TooManyHosts, InvalidState, RuntimeFault, RemoteException  
 	{

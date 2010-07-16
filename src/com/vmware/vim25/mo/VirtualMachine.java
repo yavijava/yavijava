@@ -96,6 +96,13 @@ public class VirtualMachine extends ManagedEntity
 	{
 		return getNetworks("network");
 	}
+	
+	 /** @since SDK4.1 */
+  public ManagedEntity getParentVApp()
+  {
+    ManagedObjectReference mor = (ManagedObjectReference) getCurrentProperty("parentVApp");
+    return new ManagedEntity(getServerConnection(), mor);
+  }
 
 	public ResourceConfigSpec getResourceConfig()
 	{
@@ -105,6 +112,22 @@ public class VirtualMachine extends ManagedEntity
 	public ResourcePool getResourcePool() throws InvalidProperty, RuntimeFault, RemoteException 
 	{
 		return (ResourcePool) getManagedObject("resourcePool");
+	}
+	
+	/** @since SDK4.1 */
+	public VirtualMachineSnapshot[] getRootSnapshot()
+	{
+    ManagedObjectReference[] mors = (ManagedObjectReference[]) getCurrentProperty("rootSnapshot");
+    if(mors == null)
+    {
+      return new VirtualMachineSnapshot[0];
+    }
+    VirtualMachineSnapshot[] vmns = new VirtualMachineSnapshot[mors.length];
+    for(int i=0; i< mors.length; i++)
+    {
+      vmns[i] = new VirtualMachineSnapshot(getServerConnection(), mors[i]);
+    }
+    return vmns;
 	}
 	
 	public VirtualMachineRuntimeInfo getRuntime()
@@ -127,9 +150,16 @@ public class VirtualMachine extends ManagedEntity
 		return (VirtualMachineSummary) getCurrentProperty("summary");
 	}
 	
+	/** @deprecated as of SDK4.1. Use acquireTicket instead. */
 	public VirtualMachineMksTicket acquireMksTicket() throws RuntimeFault, RemoteException 
 	{
 		return getVimService().acquireMksTicket(getMOR());
+	}
+	
+	/** @since SDK4.1 */
+	public VirtualMachineTicket acquireTicket(String ticketType) throws InvalidState, RuntimeFault, RemoteException
+	{
+	  return getVimService().acquireTicket(getMOR(), ticketType);
 	}
 		
 	public void answerVM(String questionId, String answerChoice) throws ConcurrentAccess, RuntimeFault, RemoteException 
@@ -271,6 +301,12 @@ public class VirtualMachine extends ManagedEntity
 				deviceKey, startOffset, changeId);
 	}
 	
+	/** @since SDK4.1 */
+	public  LocalizedMethodFault[] queryFaultToleranceCompatibility() throws InvalidState, VmConfigFault, RuntimeFault, RemoteException
+	{
+	  return getVimService().queryFaultToleranceCompatibility(getMOR());
+	}
+	
 	/** @since SDK4.0 */
 	public String[] queryUnownedFiles() throws RuntimeFault, RemoteException
 	{
@@ -286,6 +322,13 @@ public class VirtualMachine extends ManagedEntity
 	{
 		ManagedObjectReference mor = getVimService().reconfigVM_Task(getMOR(), spec);
 		return new Task(getServerConnection(), mor);
+	}
+	
+	/** @since SDK4.1 */
+	public Task reloadVirtualMachineFromPath_Task(String configurationPath) throws InvalidPowerState, TaskInProgress, FileFault, InvalidState, VmConfigFault, AlreadyExists, RuntimeFault, RemoteException
+	{
+    ManagedObjectReference mor = getVimService().reloadVirtualMachineFromPath_Task(getMOR(), configurationPath);
+    return new Task(getServerConnection(), mor);
 	}
 
 	/** @since SDK4.0 */

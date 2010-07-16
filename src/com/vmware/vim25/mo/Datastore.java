@@ -64,6 +64,12 @@ public class Datastore extends ManagedEntity
 	{
 		return (DatastoreInfo) getCurrentProperty("info");
 	}
+
+	/** @since SDK4.1 */
+	public StorageIORMInfo getIormConfiguration()
+	{
+    return (StorageIORMInfo) getCurrentProperty("iormConfiguration");
+	}
 	
 	public DatastoreSummary getSummary()
 	{
@@ -96,5 +102,12 @@ public class Datastore extends ManagedEntity
 	public void renameDatastore(String newName) throws InvalidName, DuplicateName, RuntimeFault, RemoteException 
 	{
 		getVimService().renameDatastore(getMOR(), newName);
+	}
+	
+	/** @since SDK4.1 */
+	public Task updateVirtualMachineFiles_Task(DatastoreMountPathDatastorePair[] mountPathDatastoreMapping) throws PlatformConfigFault, ResourceInUse, TaskInProgress, InvalidDatastore, RuntimeFault, RemoteException
+	{
+	  ManagedObjectReference mor = getVimService().updateVirtualMachineFiles_Task(getMOR(), mountPathDatastoreMapping);
+	  return new Task(getServerConnection(), mor);
 	}
 }

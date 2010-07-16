@@ -63,6 +63,12 @@ public class HostStorageSystem extends ExtensibleManagedObject
 	{
 		return (HostStorageDeviceInfo) getCurrentProperty("storageDeviceInfo");
 	}
+
+	/** @since SDK4.1 */
+	public String[] getSystemFile()
+	{
+	  return (String[]) getCurrentProperty("systemFile");
+	}
 	
 	public void addInternetScsiSendTargets(String iScsiHbaDevice, HostInternetScsiHbaSendTarget[] targets) throws HostConfigFault, NotFound, RuntimeFault, RemoteException 
 	{
