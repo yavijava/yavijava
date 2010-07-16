@@ -38,6 +38,7 @@ public class HostRuntimeInfo extends DynamicData
 {
   public HostSystemConnectionState connectionState;
   public HostSystemPowerState powerState;
+  public String standbyMode;
   public boolean inMaintenanceMode;
   public Calendar bootTime;
   public HealthSystemRuntime healthSystemRuntime;
@@ -51,6 +52,11 @@ public class HostRuntimeInfo extends DynamicData
   public HostSystemPowerState getPowerState()
   {
     return this.powerState;
+  }
+
+  public String getStandbyMode()
+  {
+    return this.standbyMode;
   }
 
   public boolean isInMaintenanceMode()
@@ -81,6 +87,11 @@ public class HostRuntimeInfo extends DynamicData
   public void setPowerState(HostSystemPowerState powerState)
   {
     this.powerState=powerState;
+  }
+
+  public void setStandbyMode(String standbyMode)
+  {
+    this.standbyMode=standbyMode;
   }
 
   public void setInMaintenanceMode(boolean inMaintenanceMode)

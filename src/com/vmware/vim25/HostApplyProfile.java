@@ -45,6 +45,7 @@ public class HostApplyProfile extends ApplyProfile
   public OptionProfile[] option;
   public UserProfile[] userAccount;
   public UserGroupProfile[] usergroupAccount;
+  public AuthenticationProfile authentication;
 
   public HostMemoryProfile getMemory()
   {
@@ -96,6 +97,11 @@ public class HostApplyProfile extends ApplyProfile
     return this.usergroupAccount;
   }
 
+  public AuthenticationProfile getAuthentication()
+  {
+    return this.authentication;
+  }
+
   public void setMemory(HostMemoryProfile memory)
   {
     this.memory=memory;
@@ -144,5 +150,10 @@ public class HostApplyProfile extends ApplyProfile
   public void setUsergroupAccount(UserGroupProfile[] usergroupAccount)
   {
     this.usergroupAccount=usergroupAccount;
+  }
+
+  public void setAuthentication(AuthenticationProfile authentication)
+  {
+    this.authentication=authentication;
   }
 }

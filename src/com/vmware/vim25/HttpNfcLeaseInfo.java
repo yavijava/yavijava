@@ -40,6 +40,7 @@ public class HttpNfcLeaseInfo extends DynamicData
   public HttpNfcLeaseDeviceUrl[] deviceUrl;
   public long totalDiskCapacityInKB;
   public int leaseTimeout;
+  public HttpNfcLeaseDatastoreLeaseInfo[] hostMap;
 
   public ManagedObjectReference getLease()
   {
@@ -66,6 +67,11 @@ public class HttpNfcLeaseInfo extends DynamicData
     return this.leaseTimeout;
   }
 
+  public HttpNfcLeaseDatastoreLeaseInfo[] getHostMap()
+  {
+    return this.hostMap;
+  }
+
   public void setLease(ManagedObjectReference lease)
   {
     this.lease=lease;
@@ -89,5 +95,10 @@ public class HttpNfcLeaseInfo extends DynamicData
   public void setLeaseTimeout(int leaseTimeout)
   {
     this.leaseTimeout=leaseTimeout;
+  }
+
+  public void setHostMap(HttpNfcLeaseDatastoreLeaseInfo[] hostMap)
+  {
+    this.hostMap=hostMap;
   }
 }

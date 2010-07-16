@@ -37,6 +37,7 @@ public class HostFileSystemMountInfo extends DynamicData
 {
   public HostMountInfo mountInfo;
   public HostFileSystemVolume volume;
+  public String vStorageSupport;
 
   public HostMountInfo getMountInfo()
   {
@@ -48,6 +49,11 @@ public class HostFileSystemMountInfo extends DynamicData
     return this.volume;
   }
 
+  public String getVStorageSupport()
+  {
+    return this.vStorageSupport;
+  }
+
   public void setMountInfo(HostMountInfo mountInfo)
   {
     this.mountInfo=mountInfo;
@@ -56,5 +62,10 @@ public class HostFileSystemMountInfo extends DynamicData
   public void setVolume(HostFileSystemVolume volume)
   {
     this.volume=volume;
+  }
+
+  public void setVStorageSupport(String vStorageSupport)
+  {
+    this.vStorageSupport=vStorageSupport;
   }
 }

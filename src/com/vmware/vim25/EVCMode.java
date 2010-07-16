@@ -35,12 +35,24 @@ package com.vmware.vim25;
 
 public class EVCMode extends ElementDescription
 {
+  public HostCpuIdInfo[] guaranteedCPUFeatures;
   public String vendor;
+  public String[] track;
   public int vendorTier;
+
+  public HostCpuIdInfo[] getGuaranteedCPUFeatures()
+  {
+    return this.guaranteedCPUFeatures;
+  }
 
   public String getVendor()
   {
     return this.vendor;
+  }
+
+  public String[] getTrack()
+  {
+    return this.track;
   }
 
   public int getVendorTier()
@@ -48,9 +60,19 @@ public class EVCMode extends ElementDescription
     return this.vendorTier;
   }
 
+  public void setGuaranteedCPUFeatures(HostCpuIdInfo[] guaranteedCPUFeatures)
+  {
+    this.guaranteedCPUFeatures=guaranteedCPUFeatures;
+  }
+
   public void setVendor(String vendor)
   {
     this.vendor=vendor;
+  }
+
+  public void setTrack(String[] track)
+  {
+    this.track=track;
   }
 
   public void setVendorTier(int vendorTier)

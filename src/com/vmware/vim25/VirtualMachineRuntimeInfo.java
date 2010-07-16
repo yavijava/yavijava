@@ -36,6 +36,7 @@ import java.util.Calendar;
 
 public class VirtualMachineRuntimeInfo extends DynamicData
 {
+  public VirtualMachineDeviceRuntimeInfo[] device;
   public ManagedObjectReference host;
   public VirtualMachineConnectionState connectionState;
   public VirtualMachinePowerState powerState;
@@ -52,6 +53,12 @@ public class VirtualMachineRuntimeInfo extends DynamicData
   public VirtualMachineRecordReplayState recordReplayState;
   public Boolean cleanPowerOff;
   public String needSecondaryReason;
+  public String minRequiredEVCModeKey;
+
+  public VirtualMachineDeviceRuntimeInfo[] getDevice()
+  {
+    return this.device;
+  }
 
   public ManagedObjectReference getHost()
   {
@@ -133,6 +140,16 @@ public class VirtualMachineRuntimeInfo extends DynamicData
     return this.needSecondaryReason;
   }
 
+  public String getMinRequiredEVCModeKey()
+  {
+    return this.minRequiredEVCModeKey;
+  }
+
+  public void setDevice(VirtualMachineDeviceRuntimeInfo[] device)
+  {
+    this.device=device;
+  }
+
   public void setHost(ManagedObjectReference host)
   {
     this.host=host;
@@ -211,5 +228,10 @@ public class VirtualMachineRuntimeInfo extends DynamicData
   public void setNeedSecondaryReason(String needSecondaryReason)
   {
     this.needSecondaryReason=needSecondaryReason;
+  }
+
+  public void setMinRequiredEVCModeKey(String minRequiredEVCModeKey)
+  {
+    this.minRequiredEVCModeKey=minRequiredEVCModeKey;
   }
 }

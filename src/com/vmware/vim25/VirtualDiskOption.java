@@ -36,14 +36,25 @@ package com.vmware.vim25;
 public class VirtualDiskOption extends VirtualDeviceOption
 {
   public LongOption capacityInKB;
+  public StorageIOAllocationOption ioAllocationOption;
 
   public LongOption getCapacityInKB()
   {
     return this.capacityInKB;
   }
 
+  public StorageIOAllocationOption getIoAllocationOption()
+  {
+    return this.ioAllocationOption;
+  }
+
   public void setCapacityInKB(LongOption capacityInKB)
   {
     this.capacityInKB=capacityInKB;
+  }
+
+  public void setIoAllocationOption(StorageIOAllocationOption ioAllocationOption)
+  {
+    this.ioAllocationOption=ioAllocationOption;
   }
 }

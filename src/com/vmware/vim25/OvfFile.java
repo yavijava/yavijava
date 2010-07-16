@@ -40,6 +40,8 @@ public class OvfFile extends DynamicData
   public String compressionMethod;
   public Long chunkSize;
   public long size;
+  public Long capacity;
+  public Long populatedSize;
 
   public String getDeviceId()
   {
@@ -66,6 +68,16 @@ public class OvfFile extends DynamicData
     return this.size;
   }
 
+  public Long getCapacity()
+  {
+    return this.capacity;
+  }
+
+  public Long getPopulatedSize()
+  {
+    return this.populatedSize;
+  }
+
   public void setDeviceId(String deviceId)
   {
     this.deviceId=deviceId;
@@ -89,5 +101,15 @@ public class OvfFile extends DynamicData
   public void setSize(long size)
   {
     this.size=size;
+  }
+
+  public void setCapacity(Long capacity)
+  {
+    this.capacity=capacity;
+  }
+
+  public void setPopulatedSize(Long populatedSize)
+  {
+    this.populatedSize=populatedSize;
   }
 }

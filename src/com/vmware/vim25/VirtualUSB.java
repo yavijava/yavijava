@@ -36,14 +36,58 @@ package com.vmware.vim25;
 public class VirtualUSB extends VirtualDevice
 {
   public boolean connected;
+  public Integer vendor;
+  public Integer product;
+  public String[] family;
+  public String[] speed;
 
   public boolean isConnected()
   {
     return this.connected;
   }
 
+  public Integer getVendor()
+  {
+    return this.vendor;
+  }
+
+  public Integer getProduct()
+  {
+    return this.product;
+  }
+
+  public String[] getFamily()
+  {
+    return this.family;
+  }
+
+  public String[] getSpeed()
+  {
+    return this.speed;
+  }
+
   public void setConnected(boolean connected)
   {
     this.connected=connected;
+  }
+
+  public void setVendor(Integer vendor)
+  {
+    this.vendor=vendor;
+  }
+
+  public void setProduct(Integer product)
+  {
+    this.product=product;
+  }
+
+  public void setFamily(String[] family)
+  {
+    this.family=family;
+  }
+
+  public void setSpeed(String[] speed)
+  {
+    this.speed=speed;
   }
 }

@@ -35,4 +35,15 @@ package com.vmware.vim25;
 
 public class VmFailoverFailed extends VmEvent
 {
+  public LocalizedMethodFault reason;
+
+  public LocalizedMethodFault getReason()
+  {
+    return this.reason;
+  }
+
+  public void setReason(LocalizedMethodFault reason)
+  {
+    this.reason=reason;
+  }
 }

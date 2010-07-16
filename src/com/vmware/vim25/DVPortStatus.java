@@ -42,6 +42,11 @@ public class DVPortStatus extends DynamicData
   public Integer mtu;
   public String linkPeer;
   public String macAddress;
+  public String statusDetail;
+  public Boolean vmDirectPathGen2Active;
+  public String[] vmDirectPathGen2InactiveReasonNetwork;
+  public String[] vmDirectPathGen2InactiveReasonOther;
+  public String vmDirectPathGen2InactiveReasonExtended;
 
   public boolean isLinkUp()
   {
@@ -78,6 +83,31 @@ public class DVPortStatus extends DynamicData
     return this.macAddress;
   }
 
+  public String getStatusDetail()
+  {
+    return this.statusDetail;
+  }
+
+  public Boolean getVmDirectPathGen2Active()
+  {
+    return this.vmDirectPathGen2Active;
+  }
+
+  public String[] getVmDirectPathGen2InactiveReasonNetwork()
+  {
+    return this.vmDirectPathGen2InactiveReasonNetwork;
+  }
+
+  public String[] getVmDirectPathGen2InactiveReasonOther()
+  {
+    return this.vmDirectPathGen2InactiveReasonOther;
+  }
+
+  public String getVmDirectPathGen2InactiveReasonExtended()
+  {
+    return this.vmDirectPathGen2InactiveReasonExtended;
+  }
+
   public void setLinkUp(boolean linkUp)
   {
     this.linkUp=linkUp;
@@ -111,5 +141,30 @@ public class DVPortStatus extends DynamicData
   public void setMacAddress(String macAddress)
   {
     this.macAddress=macAddress;
+  }
+
+  public void setStatusDetail(String statusDetail)
+  {
+    this.statusDetail=statusDetail;
+  }
+
+  public void setVmDirectPathGen2Active(Boolean vmDirectPathGen2Active)
+  {
+    this.vmDirectPathGen2Active=vmDirectPathGen2Active;
+  }
+
+  public void setVmDirectPathGen2InactiveReasonNetwork(String[] vmDirectPathGen2InactiveReasonNetwork)
+  {
+    this.vmDirectPathGen2InactiveReasonNetwork=vmDirectPathGen2InactiveReasonNetwork;
+  }
+
+  public void setVmDirectPathGen2InactiveReasonOther(String[] vmDirectPathGen2InactiveReasonOther)
+  {
+    this.vmDirectPathGen2InactiveReasonOther=vmDirectPathGen2InactiveReasonOther;
+  }
+
+  public void setVmDirectPathGen2InactiveReasonExtended(String vmDirectPathGen2InactiveReasonExtended)
+  {
+    this.vmDirectPathGen2InactiveReasonExtended=vmDirectPathGen2InactiveReasonExtended;
   }
 }

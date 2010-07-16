@@ -41,6 +41,7 @@ public enum HostDasErrorEventHostDasErrorReason
   healthCheckScriptFailed ("healthCheckScriptFailed"),
   agentFailed ("agentFailed"),
   agentShutdown ("agentShutdown"),
+  isolationAddressUnpingable ("isolationAddressUnpingable"),
   other ("other");
 
   private final String val;

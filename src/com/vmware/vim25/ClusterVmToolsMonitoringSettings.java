@@ -36,6 +36,7 @@ package com.vmware.vim25;
 public class ClusterVmToolsMonitoringSettings extends DynamicData
 {
   public Boolean enabled;
+  public String vmMonitoring;
   public Boolean clusterSettings;
   public Integer failureInterval;
   public Integer minUpTime;
@@ -45,6 +46,11 @@ public class ClusterVmToolsMonitoringSettings extends DynamicData
   public Boolean getEnabled()
   {
     return this.enabled;
+  }
+
+  public String getVmMonitoring()
+  {
+    return this.vmMonitoring;
   }
 
   public Boolean getClusterSettings()
@@ -75,6 +81,11 @@ public class ClusterVmToolsMonitoringSettings extends DynamicData
   public void setEnabled(Boolean enabled)
   {
     this.enabled=enabled;
+  }
+
+  public void setVmMonitoring(String vmMonitoring)
+  {
+    this.vmMonitoring=vmMonitoring;
   }
 
   public void setClusterSettings(Boolean clusterSettings)

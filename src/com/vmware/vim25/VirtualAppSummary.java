@@ -37,7 +37,9 @@ public class VirtualAppSummary extends ResourcePoolSummary
 {
   public VAppProductInfo product;
   public VirtualAppVAppState vAppState;
+  public Boolean suspended;
   public Boolean installBootRequired;
+  public String instanceUuid;
 
   public VAppProductInfo getProduct()
   {
@@ -49,9 +51,19 @@ public class VirtualAppSummary extends ResourcePoolSummary
     return this.vAppState;
   }
 
+  public Boolean getSuspended()
+  {
+    return this.suspended;
+  }
+
   public Boolean getInstallBootRequired()
   {
     return this.installBootRequired;
+  }
+
+  public String getInstanceUuid()
+  {
+    return this.instanceUuid;
   }
 
   public void setProduct(VAppProductInfo product)
@@ -64,8 +76,18 @@ public class VirtualAppSummary extends ResourcePoolSummary
     this.vAppState=vAppState;
   }
 
+  public void setSuspended(Boolean suspended)
+  {
+    this.suspended=suspended;
+  }
+
   public void setInstallBootRequired(Boolean installBootRequired)
   {
     this.installBootRequired=installBootRequired;
+  }
+
+  public void setInstanceUuid(String instanceUuid)
+  {
+    this.instanceUuid=instanceUuid;
   }
 }

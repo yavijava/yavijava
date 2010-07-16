@@ -37,6 +37,7 @@ public class PropertyFilterSpec extends DynamicData
 {
   public PropertySpec[] propSet;
   public ObjectSpec[] objectSet;
+  public Boolean reportMissingObjectsInResults;
 
   public PropertySpec[] getPropSet()
   {
@@ -48,6 +49,11 @@ public class PropertyFilterSpec extends DynamicData
     return this.objectSet;
   }
 
+  public Boolean getReportMissingObjectsInResults()
+  {
+    return this.reportMissingObjectsInResults;
+  }
+
   public void setPropSet(PropertySpec[] propSet)
   {
     this.propSet=propSet;
@@ -56,5 +62,10 @@ public class PropertyFilterSpec extends DynamicData
   public void setObjectSet(ObjectSpec[] objectSet)
   {
     this.objectSet=objectSet;
+  }
+
+  public void setReportMissingObjectsInResults(Boolean reportMissingObjectsInResults)
+  {
+    this.reportMissingObjectsInResults=reportMissingObjectsInResults;
   }
 }

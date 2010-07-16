@@ -49,6 +49,7 @@ public class OvfParseDescriptorResult extends DynamicData
   public boolean virtualApp;
   public OvfDeploymentOption[] deploymentOption;
   public String defaultDeploymentOption;
+  public KeyValue[] entityName;
   public LocalizedMethodFault[] error;
   public LocalizedMethodFault[] warning;
 
@@ -120,6 +121,11 @@ public class OvfParseDescriptorResult extends DynamicData
   public String getDefaultDeploymentOption()
   {
     return this.defaultDeploymentOption;
+  }
+
+  public KeyValue[] getEntityName()
+  {
+    return this.entityName;
   }
 
   public LocalizedMethodFault[] getError()
@@ -200,6 +206,11 @@ public class OvfParseDescriptorResult extends DynamicData
   public void setDefaultDeploymentOption(String defaultDeploymentOption)
   {
     this.defaultDeploymentOption=defaultDeploymentOption;
+  }
+
+  public void setEntityName(KeyValue[] entityName)
+  {
+    this.entityName=entityName;
   }
 
   public void setError(LocalizedMethodFault[] error)

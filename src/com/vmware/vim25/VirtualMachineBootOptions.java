@@ -37,6 +37,8 @@ public class VirtualMachineBootOptions extends DynamicData
 {
   public Long bootDelay;
   public Boolean enterBIOSSetup;
+  public Boolean bootRetryEnabled;
+  public Long bootRetryDelay;
 
   public Long getBootDelay()
   {
@@ -48,6 +50,16 @@ public class VirtualMachineBootOptions extends DynamicData
     return this.enterBIOSSetup;
   }
 
+  public Boolean getBootRetryEnabled()
+  {
+    return this.bootRetryEnabled;
+  }
+
+  public Long getBootRetryDelay()
+  {
+    return this.bootRetryDelay;
+  }
+
   public void setBootDelay(Long bootDelay)
   {
     this.bootDelay=bootDelay;
@@ -56,5 +68,15 @@ public class VirtualMachineBootOptions extends DynamicData
   public void setEnterBIOSSetup(Boolean enterBIOSSetup)
   {
     this.enterBIOSSetup=enterBIOSSetup;
+  }
+
+  public void setBootRetryEnabled(Boolean bootRetryEnabled)
+  {
+    this.bootRetryEnabled=bootRetryEnabled;
+  }
+
+  public void setBootRetryDelay(Long bootRetryDelay)
+  {
+    this.bootRetryDelay=bootRetryDelay;
   }
 }

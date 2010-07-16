@@ -38,6 +38,7 @@ public class OvfCreateDescriptorResult extends DynamicData
   public String ovfDescriptor;
   public LocalizedMethodFault[] error;
   public LocalizedMethodFault[] warning;
+  public Boolean includeImageFiles;
 
   public String getOvfDescriptor()
   {
@@ -54,6 +55,11 @@ public class OvfCreateDescriptorResult extends DynamicData
     return this.warning;
   }
 
+  public Boolean getIncludeImageFiles()
+  {
+    return this.includeImageFiles;
+  }
+
   public void setOvfDescriptor(String ovfDescriptor)
   {
     this.ovfDescriptor=ovfDescriptor;
@@ -67,5 +73,10 @@ public class OvfCreateDescriptorResult extends DynamicData
   public void setWarning(LocalizedMethodFault[] warning)
   {
     this.warning=warning;
+  }
+
+  public void setIncludeImageFiles(Boolean includeImageFiles)
+  {
+    this.includeImageFiles=includeImageFiles;
   }
 }

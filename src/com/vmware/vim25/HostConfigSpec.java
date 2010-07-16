@@ -50,6 +50,7 @@ public class HostConfigSpec extends DynamicData
   public HostAccountSpec[] userAccount;
   public HostAccountSpec[] usergroupAccount;
   public HostMemorySpec memory;
+  public HostActiveDirectory[] activeDirectory;
 
   public HostNasVolumeConfig[] getNasDatastore()
   {
@@ -126,6 +127,11 @@ public class HostConfigSpec extends DynamicData
     return this.memory;
   }
 
+  public HostActiveDirectory[] getActiveDirectory()
+  {
+    return this.activeDirectory;
+  }
+
   public void setNasDatastore(HostNasVolumeConfig[] nasDatastore)
   {
     this.nasDatastore=nasDatastore;
@@ -199,5 +205,10 @@ public class HostConfigSpec extends DynamicData
   public void setMemory(HostMemorySpec memory)
   {
     this.memory=memory;
+  }
+
+  public void setActiveDirectory(HostActiveDirectory[] activeDirectory)
+  {
+    this.activeDirectory=activeDirectory;
   }
 }

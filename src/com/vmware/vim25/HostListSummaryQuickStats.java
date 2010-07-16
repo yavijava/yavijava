@@ -39,6 +39,7 @@ public class HostListSummaryQuickStats extends DynamicData
   public Integer overallMemoryUsage;
   public Integer distributedCpuFairness;
   public Integer distributedMemoryFairness;
+  public Integer uptime;
 
   public Integer getOverallCpuUsage()
   {
@@ -60,6 +61,11 @@ public class HostListSummaryQuickStats extends DynamicData
     return this.distributedMemoryFairness;
   }
 
+  public Integer getUptime()
+  {
+    return this.uptime;
+  }
+
   public void setOverallCpuUsage(Integer overallCpuUsage)
   {
     this.overallCpuUsage=overallCpuUsage;
@@ -78,5 +84,10 @@ public class HostListSummaryQuickStats extends DynamicData
   public void setDistributedMemoryFairness(Integer distributedMemoryFairness)
   {
     this.distributedMemoryFairness=distributedMemoryFairness;
+  }
+
+  public void setUptime(Integer uptime)
+  {
+    this.uptime=uptime;
   }
 }

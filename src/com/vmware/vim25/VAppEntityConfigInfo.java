@@ -43,6 +43,7 @@ public class VAppEntityConfigInfo extends DynamicData
   public String startAction;
   public Integer stopDelay;
   public String stopAction;
+  public Boolean destroyWithParent;
 
   public ManagedObjectReference getKey()
   {
@@ -84,6 +85,11 @@ public class VAppEntityConfigInfo extends DynamicData
     return this.stopAction;
   }
 
+  public Boolean getDestroyWithParent()
+  {
+    return this.destroyWithParent;
+  }
+
   public void setKey(ManagedObjectReference key)
   {
     this.key=key;
@@ -122,5 +128,10 @@ public class VAppEntityConfigInfo extends DynamicData
   public void setStopAction(String stopAction)
   {
     this.stopAction=stopAction;
+  }
+
+  public void setDestroyWithParent(Boolean destroyWithParent)
+  {
+    this.destroyWithParent=destroyWithParent;
   }
 }

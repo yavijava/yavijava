@@ -36,6 +36,7 @@ package com.vmware.vim25;
 public class DVPortSetting extends DynamicData
 {
   public BoolPolicy blocked;
+  public BoolPolicy vmDirectPathGen2Allowed;
   public DVSTrafficShapingPolicy inShapingPolicy;
   public DVSTrafficShapingPolicy outShapingPolicy;
   public DVSVendorSpecificConfig vendorSpecificConfig;
@@ -43,6 +44,11 @@ public class DVPortSetting extends DynamicData
   public BoolPolicy getBlocked()
   {
     return this.blocked;
+  }
+
+  public BoolPolicy getVmDirectPathGen2Allowed()
+  {
+    return this.vmDirectPathGen2Allowed;
   }
 
   public DVSTrafficShapingPolicy getInShapingPolicy()
@@ -63,6 +69,11 @@ public class DVPortSetting extends DynamicData
   public void setBlocked(BoolPolicy blocked)
   {
     this.blocked=blocked;
+  }
+
+  public void setVmDirectPathGen2Allowed(BoolPolicy vmDirectPathGen2Allowed)
+  {
+    this.vmDirectPathGen2Allowed=vmDirectPathGen2Allowed;
   }
 
   public void setInShapingPolicy(DVSTrafficShapingPolicy inShapingPolicy)

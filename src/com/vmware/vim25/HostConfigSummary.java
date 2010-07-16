@@ -41,6 +41,7 @@ public class HostConfigSummary extends DynamicData
   public AboutInfo product;
   public boolean vmotionEnabled;
   public Boolean faultToleranceEnabled;
+  public HostFeatureVersionInfo[] featureVersion;
 
   public String getName()
   {
@@ -72,6 +73,11 @@ public class HostConfigSummary extends DynamicData
     return this.faultToleranceEnabled;
   }
 
+  public HostFeatureVersionInfo[] getFeatureVersion()
+  {
+    return this.featureVersion;
+  }
+
   public void setName(String name)
   {
     this.name=name;
@@ -100,5 +106,10 @@ public class HostConfigSummary extends DynamicData
   public void setFaultToleranceEnabled(Boolean faultToleranceEnabled)
   {
     this.faultToleranceEnabled=faultToleranceEnabled;
+  }
+
+  public void setFeatureVersion(HostFeatureVersionInfo[] featureVersion)
+  {
+    this.featureVersion=featureVersion;
   }
 }

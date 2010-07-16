@@ -37,6 +37,7 @@ public class VirtualDisk extends VirtualDevice
 {
   public long capacityInKB;
   public SharesInfo shares;
+  public StorageIOAllocationInfo storageIOAllocation;
 
   public long getCapacityInKB()
   {
@@ -48,6 +49,11 @@ public class VirtualDisk extends VirtualDevice
     return this.shares;
   }
 
+  public StorageIOAllocationInfo getStorageIOAllocation()
+  {
+    return this.storageIOAllocation;
+  }
+
   public void setCapacityInKB(long capacityInKB)
   {
     this.capacityInKB=capacityInKB;
@@ -56,5 +62,10 @@ public class VirtualDisk extends VirtualDevice
   public void setShares(SharesInfo shares)
   {
     this.shares=shares;
+  }
+
+  public void setStorageIOAllocation(StorageIOAllocationInfo storageIOAllocation)
+  {
+    this.storageIOAllocation=storageIOAllocation;
   }
 }

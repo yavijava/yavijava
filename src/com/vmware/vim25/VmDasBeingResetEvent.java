@@ -35,4 +35,15 @@ package com.vmware.vim25;
 
 public class VmDasBeingResetEvent extends VmEvent
 {
+  public String reason;
+
+  public String getReason()
+  {
+    return this.reason;
+  }
+
+  public void setReason(String reason)
+  {
+    this.reason=reason;
+  }
 }

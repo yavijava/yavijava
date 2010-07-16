@@ -41,6 +41,8 @@ public class VAppCloneSpec extends DynamicData
   public ManagedObjectReference vmFolder;
   public VAppCloneSpecNetworkMappingPair[] networkMapping;
   public KeyValue[] property;
+  public VAppCloneSpecResourceMap[] resourceMapping;
+  public String provisioning;
 
   public ManagedObjectReference getLocation()
   {
@@ -72,6 +74,16 @@ public class VAppCloneSpec extends DynamicData
     return this.property;
   }
 
+  public VAppCloneSpecResourceMap[] getResourceMapping()
+  {
+    return this.resourceMapping;
+  }
+
+  public String getProvisioning()
+  {
+    return this.provisioning;
+  }
+
   public void setLocation(ManagedObjectReference location)
   {
     this.location=location;
@@ -100,5 +112,15 @@ public class VAppCloneSpec extends DynamicData
   public void setProperty(KeyValue[] property)
   {
     this.property=property;
+  }
+
+  public void setResourceMapping(VAppCloneSpecResourceMap[] resourceMapping)
+  {
+    this.resourceMapping=resourceMapping;
+  }
+
+  public void setProvisioning(String provisioning)
+  {
+    this.provisioning=provisioning;
   }
 }

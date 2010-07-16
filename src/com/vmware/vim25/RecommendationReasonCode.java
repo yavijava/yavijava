@@ -47,7 +47,9 @@ public enum RecommendationReasonCode
   powerSaving ("powerSaving"),
   increaseCapacity ("increaseCapacity"),
   checkResource ("checkResource"),
-  unreservedCapacity ("unreservedCapacity");
+  unreservedCapacity ("unreservedCapacity"),
+  vmHostHardAffinity ("vmHostHardAffinity"),
+  vmHostSoftAffinity ("vmHostSoftAffinity");
 
   private final String val;
   private RecommendationReasonCode(String val)

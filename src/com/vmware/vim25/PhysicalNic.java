@@ -44,6 +44,11 @@ public class PhysicalNic extends DynamicData
   public PhysicalNicSpec spec;
   public boolean wakeOnLanSupported;
   public String mac;
+  public Boolean vmDirectPathGen2Supported;
+  public String vmDirectPathGen2SupportedMode;
+  public Boolean resourcePoolSchedulerAllowed;
+  public String[] resourcePoolSchedulerDisallowedReason;
+  public Boolean autoNegotiateSupported;
 
   public String getKey()
   {
@@ -90,6 +95,31 @@ public class PhysicalNic extends DynamicData
     return this.mac;
   }
 
+  public Boolean getVmDirectPathGen2Supported()
+  {
+    return this.vmDirectPathGen2Supported;
+  }
+
+  public String getVmDirectPathGen2SupportedMode()
+  {
+    return this.vmDirectPathGen2SupportedMode;
+  }
+
+  public Boolean getResourcePoolSchedulerAllowed()
+  {
+    return this.resourcePoolSchedulerAllowed;
+  }
+
+  public String[] getResourcePoolSchedulerDisallowedReason()
+  {
+    return this.resourcePoolSchedulerDisallowedReason;
+  }
+
+  public Boolean getAutoNegotiateSupported()
+  {
+    return this.autoNegotiateSupported;
+  }
+
   public void setKey(String key)
   {
     this.key=key;
@@ -133,5 +163,30 @@ public class PhysicalNic extends DynamicData
   public void setMac(String mac)
   {
     this.mac=mac;
+  }
+
+  public void setVmDirectPathGen2Supported(Boolean vmDirectPathGen2Supported)
+  {
+    this.vmDirectPathGen2Supported=vmDirectPathGen2Supported;
+  }
+
+  public void setVmDirectPathGen2SupportedMode(String vmDirectPathGen2SupportedMode)
+  {
+    this.vmDirectPathGen2SupportedMode=vmDirectPathGen2SupportedMode;
+  }
+
+  public void setResourcePoolSchedulerAllowed(Boolean resourcePoolSchedulerAllowed)
+  {
+    this.resourcePoolSchedulerAllowed=resourcePoolSchedulerAllowed;
+  }
+
+  public void setResourcePoolSchedulerDisallowedReason(String[] resourcePoolSchedulerDisallowedReason)
+  {
+    this.resourcePoolSchedulerDisallowedReason=resourcePoolSchedulerDisallowedReason;
+  }
+
+  public void setAutoNegotiateSupported(Boolean autoNegotiateSupported)
+  {
+    this.autoNegotiateSupported=autoNegotiateSupported;
   }
 }

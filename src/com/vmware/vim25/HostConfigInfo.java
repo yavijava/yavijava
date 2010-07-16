@@ -43,6 +43,7 @@ public class HostConfigInfo extends DynamicData
   public HostStorageDeviceInfo storageDevice;
   public HostMultipathStateInfo multipathState;
   public HostFileSystemVolumeInfo fileSystemVolume;
+  public String[] systemFile;
   public HostNetworkInfo network;
   public HostVMotionInfo vmotion;
   public HostVirtualNicManagerInfo virtualNicManagerInfo;
@@ -64,6 +65,10 @@ public class HostConfigInfo extends DynamicData
   public HostIpmiInfo ipmi;
   public HostSslThumbprintInfo sslThumbprintInfo;
   public HostPciPassthruInfo[] pciPassthruInfo;
+  public HostAuthenticationManagerInfo authenticationManagerInfo;
+  public HostFeatureVersionInfo[] featureVersion;
+  public PowerSystemCapability powerSystemCapability;
+  public PowerSystemInfo powerSystemInfo;
 
   public ManagedObjectReference getHost()
   {
@@ -103,6 +108,11 @@ public class HostConfigInfo extends DynamicData
   public HostFileSystemVolumeInfo getFileSystemVolume()
   {
     return this.fileSystemVolume;
+  }
+
+  public String[] getSystemFile()
+  {
+    return this.systemFile;
   }
 
   public HostNetworkInfo getNetwork()
@@ -210,6 +220,26 @@ public class HostConfigInfo extends DynamicData
     return this.pciPassthruInfo;
   }
 
+  public HostAuthenticationManagerInfo getAuthenticationManagerInfo()
+  {
+    return this.authenticationManagerInfo;
+  }
+
+  public HostFeatureVersionInfo[] getFeatureVersion()
+  {
+    return this.featureVersion;
+  }
+
+  public PowerSystemCapability getPowerSystemCapability()
+  {
+    return this.powerSystemCapability;
+  }
+
+  public PowerSystemInfo getPowerSystemInfo()
+  {
+    return this.powerSystemInfo;
+  }
+
   public void setHost(ManagedObjectReference host)
   {
     this.host=host;
@@ -248,6 +278,11 @@ public class HostConfigInfo extends DynamicData
   public void setFileSystemVolume(HostFileSystemVolumeInfo fileSystemVolume)
   {
     this.fileSystemVolume=fileSystemVolume;
+  }
+
+  public void setSystemFile(String[] systemFile)
+  {
+    this.systemFile=systemFile;
   }
 
   public void setNetwork(HostNetworkInfo network)
@@ -353,5 +388,25 @@ public class HostConfigInfo extends DynamicData
   public void setPciPassthruInfo(HostPciPassthruInfo[] pciPassthruInfo)
   {
     this.pciPassthruInfo=pciPassthruInfo;
+  }
+
+  public void setAuthenticationManagerInfo(HostAuthenticationManagerInfo authenticationManagerInfo)
+  {
+    this.authenticationManagerInfo=authenticationManagerInfo;
+  }
+
+  public void setFeatureVersion(HostFeatureVersionInfo[] featureVersion)
+  {
+    this.featureVersion=featureVersion;
+  }
+
+  public void setPowerSystemCapability(PowerSystemCapability powerSystemCapability)
+  {
+    this.powerSystemCapability=powerSystemCapability;
+  }
+
+  public void setPowerSystemInfo(PowerSystemInfo powerSystemInfo)
+  {
+    this.powerSystemInfo=powerSystemInfo;
   }
 }

@@ -41,6 +41,8 @@ public class EventEx extends Event
   public KeyAnyValue[] arguments;
   public String objectId;
   public String objectType;
+  public String objectName;
+  public LocalizedMethodFault fault;
 
   public String getEventTypeId()
   {
@@ -72,6 +74,16 @@ public class EventEx extends Event
     return this.objectType;
   }
 
+  public String getObjectName()
+  {
+    return this.objectName;
+  }
+
+  public LocalizedMethodFault getFault()
+  {
+    return this.fault;
+  }
+
   public void setEventTypeId(String eventTypeId)
   {
     this.eventTypeId=eventTypeId;
@@ -100,5 +112,15 @@ public class EventEx extends Event
   public void setObjectType(String objectType)
   {
     this.objectType=objectType;
+  }
+
+  public void setObjectName(String objectName)
+  {
+    this.objectName=objectName;
+  }
+
+  public void setFault(LocalizedMethodFault fault)
+  {
+    this.fault=fault;
   }
 }

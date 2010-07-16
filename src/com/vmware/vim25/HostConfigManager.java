@@ -56,6 +56,8 @@ public class HostConfigManager extends DynamicData
   public ManagedObjectReference pciPassthruSystem;
   public ManagedObjectReference licenseManager;
   public ManagedObjectReference kernelModuleSystem;
+  public ManagedObjectReference authenticationManager;
+  public ManagedObjectReference powerSystem;
 
   public ManagedObjectReference getCpuScheduler()
   {
@@ -162,6 +164,16 @@ public class HostConfigManager extends DynamicData
     return this.kernelModuleSystem;
   }
 
+  public ManagedObjectReference getAuthenticationManager()
+  {
+    return this.authenticationManager;
+  }
+
+  public ManagedObjectReference getPowerSystem()
+  {
+    return this.powerSystem;
+  }
+
   public void setCpuScheduler(ManagedObjectReference cpuScheduler)
   {
     this.cpuScheduler=cpuScheduler;
@@ -265,5 +277,15 @@ public class HostConfigManager extends DynamicData
   public void setKernelModuleSystem(ManagedObjectReference kernelModuleSystem)
   {
     this.kernelModuleSystem=kernelModuleSystem;
+  }
+
+  public void setAuthenticationManager(ManagedObjectReference authenticationManager)
+  {
+    this.authenticationManager=authenticationManager;
+  }
+
+  public void setPowerSystem(ManagedObjectReference powerSystem)
+  {
+    this.powerSystem=powerSystem;
   }
 }

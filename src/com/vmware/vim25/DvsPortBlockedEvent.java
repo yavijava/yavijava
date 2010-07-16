@@ -36,14 +36,25 @@ package com.vmware.vim25;
 public class DvsPortBlockedEvent extends DvsEvent
 {
   public String portKey;
+  public String statusDetail;
 
   public String getPortKey()
   {
     return this.portKey;
   }
 
+  public String getStatusDetail()
+  {
+    return this.statusDetail;
+  }
+
   public void setPortKey(String portKey)
   {
     this.portKey=portKey;
+  }
+
+  public void setStatusDetail(String statusDetail)
+  {
+    this.statusDetail=statusDetail;
   }
 }

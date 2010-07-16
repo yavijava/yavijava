@@ -38,6 +38,7 @@ public class VirtualEthernetCardOption extends VirtualDeviceOption
   public ChoiceOption supportedOUI;
   public ChoiceOption macType;
   public BoolOption wakeOnLanEnabled;
+  public Boolean vmDirectPathGen2Supported;
 
   public ChoiceOption getSupportedOUI()
   {
@@ -54,6 +55,11 @@ public class VirtualEthernetCardOption extends VirtualDeviceOption
     return this.wakeOnLanEnabled;
   }
 
+  public Boolean getVmDirectPathGen2Supported()
+  {
+    return this.vmDirectPathGen2Supported;
+  }
+
   public void setSupportedOUI(ChoiceOption supportedOUI)
   {
     this.supportedOUI=supportedOUI;
@@ -67,5 +73,10 @@ public class VirtualEthernetCardOption extends VirtualDeviceOption
   public void setWakeOnLanEnabled(BoolOption wakeOnLanEnabled)
   {
     this.wakeOnLanEnabled=wakeOnLanEnabled;
+  }
+
+  public void setVmDirectPathGen2Supported(Boolean vmDirectPathGen2Supported)
+  {
+    this.vmDirectPathGen2Supported=vmDirectPathGen2Supported;
   }
 }

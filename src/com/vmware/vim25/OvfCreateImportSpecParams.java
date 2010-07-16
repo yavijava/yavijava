@@ -41,6 +41,8 @@ public class OvfCreateImportSpecParams extends OvfManagerCommonParams
   public String ipAllocationPolicy;
   public String ipProtocol;
   public KeyValue[] propertyMapping;
+  public OvfResourceMap[] resourceMapping;
+  public String diskProvisioning;
 
   public String getEntityName()
   {
@@ -72,6 +74,16 @@ public class OvfCreateImportSpecParams extends OvfManagerCommonParams
     return this.propertyMapping;
   }
 
+  public OvfResourceMap[] getResourceMapping()
+  {
+    return this.resourceMapping;
+  }
+
+  public String getDiskProvisioning()
+  {
+    return this.diskProvisioning;
+  }
+
   public void setEntityName(String entityName)
   {
     this.entityName=entityName;
@@ -100,5 +112,15 @@ public class OvfCreateImportSpecParams extends OvfManagerCommonParams
   public void setPropertyMapping(KeyValue[] propertyMapping)
   {
     this.propertyMapping=propertyMapping;
+  }
+
+  public void setResourceMapping(OvfResourceMap[] resourceMapping)
+  {
+    this.resourceMapping=resourceMapping;
+  }
+
+  public void setDiskProvisioning(String diskProvisioning)
+  {
+    this.diskProvisioning=diskProvisioning;
   }
 }

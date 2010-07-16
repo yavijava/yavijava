@@ -45,9 +45,11 @@ public class GuestInfo extends DynamicData
   public String hostName;
   public String ipAddress;
   public GuestNicInfo[] net;
+  public GuestStackInfo[] ipStack;
   public GuestDiskInfo[] disk;
   public GuestScreenInfo screen;
   public String guestState;
+  public String appHeartbeatStatus;
 
   public VirtualMachineToolsStatus getToolsStatus()
   {
@@ -99,6 +101,11 @@ public class GuestInfo extends DynamicData
     return this.net;
   }
 
+  public GuestStackInfo[] getIpStack()
+  {
+    return this.ipStack;
+  }
+
   public GuestDiskInfo[] getDisk()
   {
     return this.disk;
@@ -112,6 +119,11 @@ public class GuestInfo extends DynamicData
   public String getGuestState()
   {
     return this.guestState;
+  }
+
+  public String getAppHeartbeatStatus()
+  {
+    return this.appHeartbeatStatus;
   }
 
   public void setToolsStatus(VirtualMachineToolsStatus toolsStatus)
@@ -164,6 +176,11 @@ public class GuestInfo extends DynamicData
     this.net=net;
   }
 
+  public void setIpStack(GuestStackInfo[] ipStack)
+  {
+    this.ipStack=ipStack;
+  }
+
   public void setDisk(GuestDiskInfo[] disk)
   {
     this.disk=disk;
@@ -177,5 +194,10 @@ public class GuestInfo extends DynamicData
   public void setGuestState(String guestState)
   {
     this.guestState=guestState;
+  }
+
+  public void setAppHeartbeatStatus(String appHeartbeatStatus)
+  {
+    this.appHeartbeatStatus=appHeartbeatStatus;
   }
 }

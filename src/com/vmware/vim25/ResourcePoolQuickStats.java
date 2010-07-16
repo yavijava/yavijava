@@ -49,6 +49,7 @@ public class ResourcePoolQuickStats extends DynamicData
   public Long balloonedMemory;
   public Long overheadMemory;
   public Long consumedOverheadMemory;
+  public Long compressedMemory;
 
   public Long getOverallCpuUsage()
   {
@@ -120,6 +121,11 @@ public class ResourcePoolQuickStats extends DynamicData
     return this.consumedOverheadMemory;
   }
 
+  public Long getCompressedMemory()
+  {
+    return this.compressedMemory;
+  }
+
   public void setOverallCpuUsage(Long overallCpuUsage)
   {
     this.overallCpuUsage=overallCpuUsage;
@@ -188,5 +194,10 @@ public class ResourcePoolQuickStats extends DynamicData
   public void setConsumedOverheadMemory(Long consumedOverheadMemory)
   {
     this.consumedOverheadMemory=consumedOverheadMemory;
+  }
+
+  public void setCompressedMemory(Long compressedMemory)
+  {
+    this.compressedMemory=compressedMemory;
   }
 }

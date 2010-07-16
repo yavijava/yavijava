@@ -38,6 +38,7 @@ public class HostIpRouteEntry extends DynamicData
   public String network;
   public int prefixLength;
   public String gateway;
+  public String deviceName;
 
   public String getNetwork()
   {
@@ -54,6 +55,11 @@ public class HostIpRouteEntry extends DynamicData
     return this.gateway;
   }
 
+  public String getDeviceName()
+  {
+    return this.deviceName;
+  }
+
   public void setNetwork(String network)
   {
     this.network=network;
@@ -67,5 +73,10 @@ public class HostIpRouteEntry extends DynamicData
   public void setGateway(String gateway)
   {
     this.gateway=gateway;
+  }
+
+  public void setDeviceName(String deviceName)
+  {
+    this.deviceName=deviceName;
   }
 }

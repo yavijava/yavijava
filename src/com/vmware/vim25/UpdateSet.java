@@ -37,6 +37,7 @@ public class UpdateSet extends DynamicData
 {
   public String version;
   public PropertyFilterUpdate[] filterSet;
+  public Boolean truncated;
 
   public String getVersion()
   {
@@ -48,6 +49,11 @@ public class UpdateSet extends DynamicData
     return this.filterSet;
   }
 
+  public Boolean getTruncated()
+  {
+    return this.truncated;
+  }
+
   public void setVersion(String version)
   {
     this.version=version;
@@ -56,5 +62,10 @@ public class UpdateSet extends DynamicData
   public void setFilterSet(PropertyFilterUpdate[] filterSet)
   {
     this.filterSet=filterSet;
+  }
+
+  public void setTruncated(Boolean truncated)
+  {
+    this.truncated=truncated;
   }
 }

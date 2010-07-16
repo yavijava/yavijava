@@ -45,6 +45,7 @@ public class HostInternetScsiHbaIPCapabilities extends DynamicData
   public Boolean arpRedirectSettable;
   public Boolean mtuSettable;
   public Boolean hostNameAsTargetAddress;
+  public Boolean nameAliasSettable;
 
   public boolean isAddressSettable()
   {
@@ -96,6 +97,11 @@ public class HostInternetScsiHbaIPCapabilities extends DynamicData
     return this.hostNameAsTargetAddress;
   }
 
+  public Boolean getNameAliasSettable()
+  {
+    return this.nameAliasSettable;
+  }
+
   public void setAddressSettable(boolean addressSettable)
   {
     this.addressSettable=addressSettable;
@@ -144,5 +150,10 @@ public class HostInternetScsiHbaIPCapabilities extends DynamicData
   public void setHostNameAsTargetAddress(Boolean hostNameAsTargetAddress)
   {
     this.hostNameAsTargetAddress=hostNameAsTargetAddress;
+  }
+
+  public void setNameAliasSettable(Boolean nameAliasSettable)
+  {
+    this.nameAliasSettable=nameAliasSettable;
   }
 }

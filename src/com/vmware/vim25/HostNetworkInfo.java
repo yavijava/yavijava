@@ -48,6 +48,7 @@ public class HostNetworkInfo extends DynamicData
   public HostDhcpService[] dhcp;
   public HostNatService[] nat;
   public Boolean ipV6Enabled;
+  public Boolean atBootIpV6Enabled;
 
   public HostVirtualSwitch[] getVswitch()
   {
@@ -114,6 +115,11 @@ public class HostNetworkInfo extends DynamicData
     return this.ipV6Enabled;
   }
 
+  public Boolean getAtBootIpV6Enabled()
+  {
+    return this.atBootIpV6Enabled;
+  }
+
   public void setVswitch(HostVirtualSwitch[] vswitch)
   {
     this.vswitch=vswitch;
@@ -177,5 +183,10 @@ public class HostNetworkInfo extends DynamicData
   public void setIpV6Enabled(Boolean ipV6Enabled)
   {
     this.ipV6Enabled=ipV6Enabled;
+  }
+
+  public void setAtBootIpV6Enabled(Boolean atBootIpV6Enabled)
+  {
+    this.atBootIpV6Enabled=atBootIpV6Enabled;
   }
 }

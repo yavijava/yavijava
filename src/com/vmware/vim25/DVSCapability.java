@@ -39,6 +39,7 @@ public class DVSCapability extends DynamicData
   public Boolean dvPortGroupOperationSupported;
   public Boolean dvPortOperationSupported;
   public DistributedVirtualSwitchHostProductSpec[] compatibleHostComponentProductInfo;
+  public DVSFeatureCapability featuresSupported;
 
   public Boolean getDvsOperationSupported()
   {
@@ -60,6 +61,11 @@ public class DVSCapability extends DynamicData
     return this.compatibleHostComponentProductInfo;
   }
 
+  public DVSFeatureCapability getFeaturesSupported()
+  {
+    return this.featuresSupported;
+  }
+
   public void setDvsOperationSupported(Boolean dvsOperationSupported)
   {
     this.dvsOperationSupported=dvsOperationSupported;
@@ -78,5 +84,10 @@ public class DVSCapability extends DynamicData
   public void setCompatibleHostComponentProductInfo(DistributedVirtualSwitchHostProductSpec[] compatibleHostComponentProductInfo)
   {
     this.compatibleHostComponentProductInfo=compatibleHostComponentProductInfo;
+  }
+
+  public void setFeaturesSupported(DVSFeatureCapability featuresSupported)
+  {
+    this.featuresSupported=featuresSupported;
   }
 }

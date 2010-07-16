@@ -39,6 +39,7 @@ public class DistributedVirtualSwitchHostMember extends DynamicData
   public DistributedVirtualSwitchProductSpec productInfo;
   public String[] uplinkPortKey;
   public String status;
+  public String statusDetail;
 
   public DistributedVirtualSwitchHostMemberConfigInfo getConfig()
   {
@@ -60,6 +61,11 @@ public class DistributedVirtualSwitchHostMember extends DynamicData
     return this.status;
   }
 
+  public String getStatusDetail()
+  {
+    return this.statusDetail;
+  }
+
   public void setConfig(DistributedVirtualSwitchHostMemberConfigInfo config)
   {
     this.config=config;
@@ -78,5 +84,10 @@ public class DistributedVirtualSwitchHostMember extends DynamicData
   public void setStatus(String status)
   {
     this.status=status;
+  }
+
+  public void setStatusDetail(String statusDetail)
+  {
+    this.statusDetail=statusDetail;
   }
 }

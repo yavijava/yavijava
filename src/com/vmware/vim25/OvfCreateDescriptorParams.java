@@ -38,6 +38,7 @@ public class OvfCreateDescriptorParams extends DynamicData
   public OvfFile[] ovfFiles;
   public String name;
   public String description;
+  public Boolean includeImageFiles;
 
   public OvfFile[] getOvfFiles()
   {
@@ -54,6 +55,11 @@ public class OvfCreateDescriptorParams extends DynamicData
     return this.description;
   }
 
+  public Boolean getIncludeImageFiles()
+  {
+    return this.includeImageFiles;
+  }
+
   public void setOvfFiles(OvfFile[] ovfFiles)
   {
     this.ovfFiles=ovfFiles;
@@ -67,5 +73,10 @@ public class OvfCreateDescriptorParams extends DynamicData
   public void setDescription(String description)
   {
     this.description=description;
+  }
+
+  public void setIncludeImageFiles(Boolean includeImageFiles)
+  {
+    this.includeImageFiles=includeImageFiles;
   }
 }

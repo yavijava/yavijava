@@ -40,6 +40,7 @@ public class OvfValidateHostResult extends DynamicData
   public Long sparseDeploymentSize;
   public LocalizedMethodFault[] error;
   public LocalizedMethodFault[] warning;
+  public String[] supportedDiskProvisioning;
 
   public Long getDownloadSize()
   {
@@ -66,6 +67,11 @@ public class OvfValidateHostResult extends DynamicData
     return this.warning;
   }
 
+  public String[] getSupportedDiskProvisioning()
+  {
+    return this.supportedDiskProvisioning;
+  }
+
   public void setDownloadSize(Long downloadSize)
   {
     this.downloadSize=downloadSize;
@@ -89,5 +95,10 @@ public class OvfValidateHostResult extends DynamicData
   public void setWarning(LocalizedMethodFault[] warning)
   {
     this.warning=warning;
+  }
+
+  public void setSupportedDiskProvisioning(String[] supportedDiskProvisioning)
+  {
+    this.supportedDiskProvisioning=supportedDiskProvisioning;
   }
 }

@@ -44,7 +44,9 @@ public enum PerformanceManagerUnit
   millisecond ("millisecond"),
   second ("second"),
   kiloBytesPerSecond ("kiloBytesPerSecond"),
-  megaBytesPerSecond ("megaBytesPerSecond");
+  megaBytesPerSecond ("megaBytesPerSecond"),
+  watt ("watt"),
+  joule ("joule");
 
   private final String val;
   private PerformanceManagerUnit(String val)

@@ -49,6 +49,7 @@ public class VirtualHardwareOption extends DynamicData
   public String[] licensingLimit;
   public IntOption numSupportedWwnPorts;
   public IntOption numSupportedWwnNodes;
+  public ResourceConfigOption resourceConfigOption;
 
   public int getHwVersion()
   {
@@ -120,6 +121,11 @@ public class VirtualHardwareOption extends DynamicData
     return this.numSupportedWwnNodes;
   }
 
+  public ResourceConfigOption getResourceConfigOption()
+  {
+    return this.resourceConfigOption;
+  }
+
   public void setHwVersion(int hwVersion)
   {
     this.hwVersion=hwVersion;
@@ -188,5 +194,10 @@ public class VirtualHardwareOption extends DynamicData
   public void setNumSupportedWwnNodes(IntOption numSupportedWwnNodes)
   {
     this.numSupportedWwnNodes=numSupportedWwnNodes;
+  }
+
+  public void setResourceConfigOption(ResourceConfigOption resourceConfigOption)
+  {
+    this.resourceConfigOption=resourceConfigOption;
   }
 }

@@ -35,4 +35,15 @@ package com.vmware.vim25;
 
 public class MethodDisabled extends RuntimeFault
 {
+  public String source;
+
+  public String getSource()
+  {
+    return this.source;
+  }
+
+  public void setSource(String source)
+  {
+    this.source=source;
+  }
 }

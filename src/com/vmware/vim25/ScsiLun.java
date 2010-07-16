@@ -52,6 +52,7 @@ public class ScsiLun extends HostDevice
   public Integer queueDepth;
   public String[] operationalState;
   public ScsiLunCapabilities capabilities;
+  public String vStorageSupport;
 
   public String getKey()
   {
@@ -138,6 +139,11 @@ public class ScsiLun extends HostDevice
     return this.capabilities;
   }
 
+  public String getVStorageSupport()
+  {
+    return this.vStorageSupport;
+  }
+
   public void setKey(String key)
   {
     this.key=key;
@@ -221,5 +227,10 @@ public class ScsiLun extends HostDevice
   public void setCapabilities(ScsiLunCapabilities capabilities)
   {
     this.capabilities=capabilities;
+  }
+
+  public void setVStorageSupport(String vStorageSupport)
+  {
+    this.vStorageSupport=vStorageSupport;
   }
 }

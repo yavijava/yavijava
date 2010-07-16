@@ -42,6 +42,7 @@ public class PerfCounterInfo extends DynamicData
   public PerfSummaryType rollupType;
   public PerfStatsType statsType;
   public Integer level;
+  public Integer perDeviceLevel;
   public int[] associatedCounterId;
 
   public int getKey()
@@ -77,6 +78,11 @@ public class PerfCounterInfo extends DynamicData
   public Integer getLevel()
   {
     return this.level;
+  }
+
+  public Integer getPerDeviceLevel()
+  {
+    return this.perDeviceLevel;
   }
 
   public int[] getAssociatedCounterId()
@@ -117,6 +123,11 @@ public class PerfCounterInfo extends DynamicData
   public void setLevel(Integer level)
   {
     this.level=level;
+  }
+
+  public void setPerDeviceLevel(Integer perDeviceLevel)
+  {
+    this.perDeviceLevel=perDeviceLevel;
   }
 
   public void setAssociatedCounterId(int[] associatedCounterId)

@@ -54,6 +54,7 @@ public class DVSConfigInfo extends DynamicData
   public String configVersion;
   public DVSContactInfo contact;
   public Calendar createTime;
+  public Boolean networkResourceManagementEnabled;
 
   public String getUuid()
   {
@@ -145,6 +146,11 @@ public class DVSConfigInfo extends DynamicData
     return this.createTime;
   }
 
+  public Boolean getNetworkResourceManagementEnabled()
+  {
+    return this.networkResourceManagementEnabled;
+  }
+
   public void setUuid(String uuid)
   {
     this.uuid=uuid;
@@ -233,5 +239,10 @@ public class DVSConfigInfo extends DynamicData
   public void setCreateTime(Calendar createTime)
   {
     this.createTime=createTime;
+  }
+
+  public void setNetworkResourceManagementEnabled(Boolean networkResourceManagementEnabled)
+  {
+    this.networkResourceManagementEnabled=networkResourceManagementEnabled;
   }
 }

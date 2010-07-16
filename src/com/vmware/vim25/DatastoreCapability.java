@@ -38,6 +38,7 @@ public class DatastoreCapability extends DynamicData
   public boolean directoryHierarchySupported;
   public boolean rawDiskMappingsSupported;
   public boolean perFileThinProvisioningSupported;
+  public Boolean storageIORMSupported;
 
   public boolean isDirectoryHierarchySupported()
   {
@@ -54,6 +55,11 @@ public class DatastoreCapability extends DynamicData
     return this.perFileThinProvisioningSupported;
   }
 
+  public Boolean getStorageIORMSupported()
+  {
+    return this.storageIORMSupported;
+  }
+
   public void setDirectoryHierarchySupported(boolean directoryHierarchySupported)
   {
     this.directoryHierarchySupported=directoryHierarchySupported;
@@ -67,5 +73,10 @@ public class DatastoreCapability extends DynamicData
   public void setPerFileThinProvisioningSupported(boolean perFileThinProvisioningSupported)
   {
     this.perFileThinProvisioningSupported=perFileThinProvisioningSupported;
+  }
+
+  public void setStorageIORMSupported(Boolean storageIORMSupported)
+  {
+    this.storageIORMSupported=storageIORMSupported;
   }
 }

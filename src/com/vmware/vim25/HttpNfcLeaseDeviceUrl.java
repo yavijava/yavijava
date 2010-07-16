@@ -39,6 +39,10 @@ public class HttpNfcLeaseDeviceUrl extends DynamicData
   public String importKey;
   public String url;
   public String sslThumbprint;
+  public Boolean disk;
+  public String targetId;
+  public String datastoreKey;
+  public Long fileSize;
 
   public String getKey()
   {
@@ -60,6 +64,26 @@ public class HttpNfcLeaseDeviceUrl extends DynamicData
     return this.sslThumbprint;
   }
 
+  public Boolean getDisk()
+  {
+    return this.disk;
+  }
+
+  public String getTargetId()
+  {
+    return this.targetId;
+  }
+
+  public String getDatastoreKey()
+  {
+    return this.datastoreKey;
+  }
+
+  public Long getFileSize()
+  {
+    return this.fileSize;
+  }
+
   public void setKey(String key)
   {
     this.key=key;
@@ -78,5 +102,25 @@ public class HttpNfcLeaseDeviceUrl extends DynamicData
   public void setSslThumbprint(String sslThumbprint)
   {
     this.sslThumbprint=sslThumbprint;
+  }
+
+  public void setDisk(Boolean disk)
+  {
+    this.disk=disk;
+  }
+
+  public void setTargetId(String targetId)
+  {
+    this.targetId=targetId;
+  }
+
+  public void setDatastoreKey(String datastoreKey)
+  {
+    this.datastoreKey=datastoreKey;
+  }
+
+  public void setFileSize(Long fileSize)
+  {
+    this.fileSize=fileSize;
   }
 }

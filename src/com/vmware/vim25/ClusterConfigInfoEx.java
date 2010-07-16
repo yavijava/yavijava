@@ -42,6 +42,7 @@ public class ClusterConfigInfoEx extends ComputeResourceConfigInfo
   public ClusterRuleInfo[] rule;
   public ClusterDpmConfigInfo dpmConfigInfo;
   public ClusterDpmHostConfigInfo[] dpmHostConfig;
+  public ClusterGroupInfo[] group;
 
   public ClusterDasConfigInfo getDasConfig()
   {
@@ -78,6 +79,11 @@ public class ClusterConfigInfoEx extends ComputeResourceConfigInfo
     return this.dpmHostConfig;
   }
 
+  public ClusterGroupInfo[] getGroup()
+  {
+    return this.group;
+  }
+
   public void setDasConfig(ClusterDasConfigInfo dasConfig)
   {
     this.dasConfig=dasConfig;
@@ -111,5 +117,10 @@ public class ClusterConfigInfoEx extends ComputeResourceConfigInfo
   public void setDpmHostConfig(ClusterDpmHostConfigInfo[] dpmHostConfig)
   {
     this.dpmHostConfig=dpmHostConfig;
+  }
+
+  public void setGroup(ClusterGroupInfo[] group)
+  {
+    this.group=group;
   }
 }

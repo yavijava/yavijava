@@ -58,6 +58,7 @@ public class VirtualMachineCapability extends DynamicData
   public boolean virtualMmuUsageSupported;
   public boolean diskSharesSupported;
   public boolean bootOptionsSupported;
+  public Boolean bootRetryOptionsSupported;
   public boolean settingVideoRamSizeSupported;
   public Boolean settingDisplayTopologySupported;
   public Boolean recordReplaySupported;
@@ -176,6 +177,11 @@ public class VirtualMachineCapability extends DynamicData
   public boolean isBootOptionsSupported()
   {
     return this.bootOptionsSupported;
+  }
+
+  public Boolean getBootRetryOptionsSupported()
+  {
+    return this.bootRetryOptionsSupported;
   }
 
   public boolean isSettingVideoRamSizeSupported()
@@ -311,6 +317,11 @@ public class VirtualMachineCapability extends DynamicData
   public void setBootOptionsSupported(boolean bootOptionsSupported)
   {
     this.bootOptionsSupported=bootOptionsSupported;
+  }
+
+  public void setBootRetryOptionsSupported(Boolean bootRetryOptionsSupported)
+  {
+    this.bootRetryOptionsSupported=bootRetryOptionsSupported;
   }
 
   public void setSettingVideoRamSizeSupported(boolean settingVideoRamSizeSupported)

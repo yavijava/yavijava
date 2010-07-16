@@ -67,6 +67,8 @@ public class HostCapability extends DynamicData
   public Boolean recordReplaySupported;
   public Boolean ftSupported;
   public String replayUnsupportedReason;
+  public String[] replayCompatibilityIssues;
+  public String[] ftCompatibilityIssues;
   public Boolean loginBySSLThumbprintSupported;
   public Boolean cloneFromSnapshotSupported;
   public Boolean deltaDiskBackingsSupported;
@@ -74,6 +76,11 @@ public class HostCapability extends DynamicData
   public Boolean tpmSupported;
   public HostCpuIdInfo[] supportedCpuFeature;
   public Boolean virtualExecUsageSupported;
+  public Boolean storageIORMSupported;
+  public Boolean vmDirectPathGen2Supported;
+  public String[] vmDirectPathGen2UnsupportedReason;
+  public String vmDirectPathGen2UnsupportedReasonExtended;
+  public Boolean vStorageCapable;
 
   public boolean isRecursiveResourcePoolsSupported()
   {
@@ -235,6 +242,16 @@ public class HostCapability extends DynamicData
     return this.replayUnsupportedReason;
   }
 
+  public String[] getReplayCompatibilityIssues()
+  {
+    return this.replayCompatibilityIssues;
+  }
+
+  public String[] getFtCompatibilityIssues()
+  {
+    return this.ftCompatibilityIssues;
+  }
+
   public Boolean getLoginBySSLThumbprintSupported()
   {
     return this.loginBySSLThumbprintSupported;
@@ -268,6 +285,31 @@ public class HostCapability extends DynamicData
   public Boolean getVirtualExecUsageSupported()
   {
     return this.virtualExecUsageSupported;
+  }
+
+  public Boolean getStorageIORMSupported()
+  {
+    return this.storageIORMSupported;
+  }
+
+  public Boolean getVmDirectPathGen2Supported()
+  {
+    return this.vmDirectPathGen2Supported;
+  }
+
+  public String[] getVmDirectPathGen2UnsupportedReason()
+  {
+    return this.vmDirectPathGen2UnsupportedReason;
+  }
+
+  public String getVmDirectPathGen2UnsupportedReasonExtended()
+  {
+    return this.vmDirectPathGen2UnsupportedReasonExtended;
+  }
+
+  public Boolean getVStorageCapable()
+  {
+    return this.vStorageCapable;
   }
 
   public void setRecursiveResourcePoolsSupported(boolean recursiveResourcePoolsSupported)
@@ -430,6 +472,16 @@ public class HostCapability extends DynamicData
     this.replayUnsupportedReason=replayUnsupportedReason;
   }
 
+  public void setReplayCompatibilityIssues(String[] replayCompatibilityIssues)
+  {
+    this.replayCompatibilityIssues=replayCompatibilityIssues;
+  }
+
+  public void setFtCompatibilityIssues(String[] ftCompatibilityIssues)
+  {
+    this.ftCompatibilityIssues=ftCompatibilityIssues;
+  }
+
   public void setLoginBySSLThumbprintSupported(Boolean loginBySSLThumbprintSupported)
   {
     this.loginBySSLThumbprintSupported=loginBySSLThumbprintSupported;
@@ -463,5 +515,30 @@ public class HostCapability extends DynamicData
   public void setVirtualExecUsageSupported(Boolean virtualExecUsageSupported)
   {
     this.virtualExecUsageSupported=virtualExecUsageSupported;
+  }
+
+  public void setStorageIORMSupported(Boolean storageIORMSupported)
+  {
+    this.storageIORMSupported=storageIORMSupported;
+  }
+
+  public void setVmDirectPathGen2Supported(Boolean vmDirectPathGen2Supported)
+  {
+    this.vmDirectPathGen2Supported=vmDirectPathGen2Supported;
+  }
+
+  public void setVmDirectPathGen2UnsupportedReason(String[] vmDirectPathGen2UnsupportedReason)
+  {
+    this.vmDirectPathGen2UnsupportedReason=vmDirectPathGen2UnsupportedReason;
+  }
+
+  public void setVmDirectPathGen2UnsupportedReasonExtended(String vmDirectPathGen2UnsupportedReasonExtended)
+  {
+    this.vmDirectPathGen2UnsupportedReasonExtended=vmDirectPathGen2UnsupportedReasonExtended;
+  }
+
+  public void setVStorageCapable(Boolean vStorageCapable)
+  {
+    this.vStorageCapable=vStorageCapable;
   }
 }

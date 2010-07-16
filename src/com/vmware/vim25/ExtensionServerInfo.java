@@ -40,6 +40,7 @@ public class ExtensionServerInfo extends DynamicData
   public String company;
   public String type;
   public String[] adminEmail;
+  public String serverThumbprint;
 
   public String getUrl()
   {
@@ -66,6 +67,11 @@ public class ExtensionServerInfo extends DynamicData
     return this.adminEmail;
   }
 
+  public String getServerThumbprint()
+  {
+    return this.serverThumbprint;
+  }
+
   public void setUrl(String url)
   {
     this.url=url;
@@ -89,5 +95,10 @@ public class ExtensionServerInfo extends DynamicData
   public void setAdminEmail(String[] adminEmail)
   {
     this.adminEmail=adminEmail;
+  }
+
+  public void setServerThumbprint(String serverThumbprint)
+  {
+    this.serverThumbprint=serverThumbprint;
   }
 }

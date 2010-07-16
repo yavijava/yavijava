@@ -35,4 +35,15 @@ package com.vmware.vim25;
 
 public class SecurityProfile extends ApplyProfile
 {
+  public PermissionProfile[] permission;
+
+  public PermissionProfile[] getPermission()
+  {
+    return this.permission;
+  }
+
+  public void setPermission(PermissionProfile[] permission)
+  {
+    this.permission=permission;
+  }
 }

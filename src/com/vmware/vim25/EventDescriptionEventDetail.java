@@ -43,6 +43,7 @@ public class EventDescriptionEventDetail extends DynamicData
   public String formatOnHost;
   public String formatOnVm;
   public String fullFormat;
+  public String longDescription;
 
   public String getKey()
   {
@@ -84,6 +85,11 @@ public class EventDescriptionEventDetail extends DynamicData
     return this.fullFormat;
   }
 
+  public String getLongDescription()
+  {
+    return this.longDescription;
+  }
+
   public void setKey(String key)
   {
     this.key=key;
@@ -122,5 +128,10 @@ public class EventDescriptionEventDetail extends DynamicData
   public void setFullFormat(String fullFormat)
   {
     this.fullFormat=fullFormat;
+  }
+
+  public void setLongDescription(String longDescription)
+  {
+    this.longDescription=longDescription;
   }
 }

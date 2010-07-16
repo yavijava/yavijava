@@ -39,7 +39,10 @@ public enum HostDisconnectedEventReasonCode
   licenseExpired ("licenseExpired"),
   agentUpgrade ("agentUpgrade"),
   userRequest ("userRequest"),
-  insufficientLicenses ("insufficientLicenses");
+  insufficientLicenses ("insufficientLicenses"),
+  agentOutOfDate ("agentOutOfDate"),
+  passwordDecryptFailure ("passwordDecryptFailure"),
+  unknown ("unknown");
 
   private final String val;
   private HostDisconnectedEventReasonCode(String val)

@@ -52,6 +52,8 @@ public class VirtualMachineQuickStats extends DynamicData
   public Integer ftLogBandwidth;
   public Integer ftSecondaryLatency;
   public ManagedEntityStatus ftLatencyStatus;
+  public Long compressedMemory;
+  public Integer uptimeSeconds;
 
   public Integer getOverallCpuUsage()
   {
@@ -138,6 +140,16 @@ public class VirtualMachineQuickStats extends DynamicData
     return this.ftLatencyStatus;
   }
 
+  public Long getCompressedMemory()
+  {
+    return this.compressedMemory;
+  }
+
+  public Integer getUptimeSeconds()
+  {
+    return this.uptimeSeconds;
+  }
+
   public void setOverallCpuUsage(Integer overallCpuUsage)
   {
     this.overallCpuUsage=overallCpuUsage;
@@ -221,5 +233,15 @@ public class VirtualMachineQuickStats extends DynamicData
   public void setFtLatencyStatus(ManagedEntityStatus ftLatencyStatus)
   {
     this.ftLatencyStatus=ftLatencyStatus;
+  }
+
+  public void setCompressedMemory(Long compressedMemory)
+  {
+    this.compressedMemory=compressedMemory;
+  }
+
+  public void setUptimeSeconds(Integer uptimeSeconds)
+  {
+    this.uptimeSeconds=uptimeSeconds;
   }
 }

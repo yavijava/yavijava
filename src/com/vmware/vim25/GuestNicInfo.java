@@ -40,6 +40,9 @@ public class GuestNicInfo extends DynamicData
   public String macAddress;
   public boolean connected;
   public int deviceConfigId;
+  public NetDnsConfigInfo dnsConfig;
+  public NetIpConfigInfo ipConfig;
+  public NetBIOSConfigInfo netBIOSConfig;
 
   public String getNetwork()
   {
@@ -66,6 +69,21 @@ public class GuestNicInfo extends DynamicData
     return this.deviceConfigId;
   }
 
+  public NetDnsConfigInfo getDnsConfig()
+  {
+    return this.dnsConfig;
+  }
+
+  public NetIpConfigInfo getIpConfig()
+  {
+    return this.ipConfig;
+  }
+
+  public NetBIOSConfigInfo getNetBIOSConfig()
+  {
+    return this.netBIOSConfig;
+  }
+
   public void setNetwork(String network)
   {
     this.network=network;
@@ -89,5 +107,20 @@ public class GuestNicInfo extends DynamicData
   public void setDeviceConfigId(int deviceConfigId)
   {
     this.deviceConfigId=deviceConfigId;
+  }
+
+  public void setDnsConfig(NetDnsConfigInfo dnsConfig)
+  {
+    this.dnsConfig=dnsConfig;
+  }
+
+  public void setIpConfig(NetIpConfigInfo ipConfig)
+  {
+    this.ipConfig=ipConfig;
+  }
+
+  public void setNetBIOSConfig(NetBIOSConfigInfo netBIOSConfig)
+  {
+    this.netBIOSConfig=netBIOSConfig;
   }
 }

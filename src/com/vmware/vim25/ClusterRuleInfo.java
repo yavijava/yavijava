@@ -39,6 +39,9 @@ public class ClusterRuleInfo extends DynamicData
   public ManagedEntityStatus status;
   public Boolean enabled;
   public String name;
+  public Boolean mandatory;
+  public Boolean userCreated;
+  public Boolean inCompliance;
 
   public Integer getKey()
   {
@@ -60,6 +63,21 @@ public class ClusterRuleInfo extends DynamicData
     return this.name;
   }
 
+  public Boolean getMandatory()
+  {
+    return this.mandatory;
+  }
+
+  public Boolean getUserCreated()
+  {
+    return this.userCreated;
+  }
+
+  public Boolean getInCompliance()
+  {
+    return this.inCompliance;
+  }
+
   public void setKey(Integer key)
   {
     this.key=key;
@@ -78,5 +96,20 @@ public class ClusterRuleInfo extends DynamicData
   public void setName(String name)
   {
     this.name=name;
+  }
+
+  public void setMandatory(Boolean mandatory)
+  {
+    this.mandatory=mandatory;
+  }
+
+  public void setUserCreated(Boolean userCreated)
+  {
+    this.userCreated=userCreated;
+  }
+
+  public void setInCompliance(Boolean inCompliance)
+  {
+    this.inCompliance=inCompliance;
   }
 }

@@ -37,6 +37,7 @@ public class VAppConfigSpec extends VmConfigSpec
 {
   public VAppEntityConfigInfo[] entityConfig;
   public String annotation;
+  public String instanceUuid;
 
   public VAppEntityConfigInfo[] getEntityConfig()
   {
@@ -48,6 +49,11 @@ public class VAppConfigSpec extends VmConfigSpec
     return this.annotation;
   }
 
+  public String getInstanceUuid()
+  {
+    return this.instanceUuid;
+  }
+
   public void setEntityConfig(VAppEntityConfigInfo[] entityConfig)
   {
     this.entityConfig=entityConfig;
@@ -56,5 +62,10 @@ public class VAppConfigSpec extends VmConfigSpec
   public void setAnnotation(String annotation)
   {
     this.annotation=annotation;
+  }
+
+  public void setInstanceUuid(String instanceUuid)
+  {
+    this.instanceUuid=instanceUuid;
   }
 }
