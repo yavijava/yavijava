@@ -49,7 +49,8 @@ public class ProfileManager extends ManagedObject
 	
 	public Profile[] getProfile()
 	{
-		return (Profile[]) getCurrentProperty("profile");
+	  ManagedObjectReference[] mors = (ManagedObjectReference[])getCurrentProperty("profile");
+	  return convert2Profiles(mors);
 	}
 	
 	public Profile createProfile(ProfileCreateSpec createSpec) throws DuplicateName, RuntimeFault, RemoteException
@@ -61,18 +62,23 @@ public class ProfileManager extends ManagedObject
 	public Profile[] findAssociatedProfile(ManagedEntity entity) throws RuntimeFault, RemoteException
 	{
 		ManagedObjectReference[] mors = getVimService().findAssociatedProfile(getMOR(), entity.getMOR());
-		Profile[] pfs = new Profile[mors.length];
-		
-		for(int i=0; i<mors.length; i++)
-		{
-			pfs[i] = new Profile(getServerConnection(), mors[i]);
-		}
-		return pfs;
+		return convert2Profiles(mors);
 	}
 	
 	public ProfilePolicyMetadata[] queryPolicyMetadata(String[] policyName) throws RuntimeFault, RemoteException
 	{
 		return getVimService().queryPolicyMetadata(getMOR(), policyName);
+	}
+	
+	private Profile[] convert2Profiles(ManagedObjectReference[] mors)
+	{
+    Profile[] pfs = new Profile[mors.length];
+  
+    for(int i=0; i<mors.length; i++)
+	  {
+	    pfs[i] = new Profile(getServerConnection(), mors[i]);
+	  }
+	  return pfs;
 	}
 	
 }
