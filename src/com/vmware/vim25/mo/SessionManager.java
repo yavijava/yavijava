@@ -113,6 +113,7 @@ public class SessionManager extends ManagedObject
 	  
     VimPortType vimService = new VimPortType(oldsc.getUrl().toString(), ignoreCert);
     vimService.getWsc().setVimNameSpace(oldsc.getVimService().getWsc().getVimNameSpace());
+    vimService.getWsc().setSoapActionOnApiVersion(oldsi.getAboutInfo().getApiVersion());
 
     ServerConnection newsc = new ServerConnection(oldsc.getUrl(), vimService, null);
     ServiceInstance newsi = new ServiceInstance(newsc);
