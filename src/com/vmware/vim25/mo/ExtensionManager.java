@@ -60,7 +60,11 @@ public class ExtensionManager extends ManagedObject
 		return (Extension[])getCurrentProperty("extensionList");
 	}
 
-
+	public void setPublicKey(String extensionKey, String publicKey) throws RuntimeFault, RemoteException
+	{
+	  getVimService().setPublicKey(getMOR(), extensionKey, publicKey);
+	}
+	
 	/**
 	 * Un-register an existing plugin
 	 * If <code>keyStr</code> is null then a <code>NullPointerException</code>
