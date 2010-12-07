@@ -46,7 +46,7 @@ public class TaskManager extends ManagedObject
 		super(serverConnection, mor);
 	}
 	
-	public TaskDescription getDescriptioin()
+	public TaskDescription getDescription()
 	{
 		return (TaskDescription) getCurrentProperty("description");
 	}
