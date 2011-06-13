@@ -46,6 +46,14 @@ public class TaskManager extends ManagedObject
 		super(serverConnection, mor);
 	}
 	
+	/**
+	 * @deprecated the misspelled word. Use getDescription() instead 
+	 */
+  public TaskDescription getDescriptioin()
+	{
+	  return getDescription();
+	}
+	
 	public TaskDescription getDescription()
 	{
 		return (TaskDescription) getCurrentProperty("description");
