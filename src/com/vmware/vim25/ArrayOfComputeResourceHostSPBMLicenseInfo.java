@@ -33,18 +33,22 @@ package com.vmware.vim25;
 @author Steve Jin (sjin@vmware.com)
 */
 
-public enum ActionType
+public class ArrayOfComputeResourceHostSPBMLicenseInfo
 {
-  MigrationV1 ("MigrationV1"),
-  VmPowerV1 ("VmPowerV1"),
-  HostPowerV1 ("HostPowerV1"),
-  HostMaintenanceV1 ("HostMaintenanceV1"),
-  StorageMigrationV1 ("StorageMigrationV1"),
-  StoragePlacementV1 ("StoragePlacementV1");
+  public ComputeResourceHostSPBMLicenseInfo[] ComputeResourceHostSPBMLicenseInfo;
 
-  private final String val;
-  private ActionType(String val)
+  public ComputeResourceHostSPBMLicenseInfo[] getComputeResourceHostSPBMLicenseInfo()
   {
-    this.val = val;
+    return this.ComputeResourceHostSPBMLicenseInfo;
+  }
+
+  public ComputeResourceHostSPBMLicenseInfo getComputeResourceHostSPBMLicenseInfo(int i)
+  {
+    return this.ComputeResourceHostSPBMLicenseInfo[i];
+  }
+
+  public void setComputeResourceHostSPBMLicenseInfo(ComputeResourceHostSPBMLicenseInfo[] ComputeResourceHostSPBMLicenseInfo)
+  {
+    this.ComputeResourceHostSPBMLicenseInfo=ComputeResourceHostSPBMLicenseInfo;
   }
 }

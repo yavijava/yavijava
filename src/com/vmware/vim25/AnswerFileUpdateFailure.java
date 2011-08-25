@@ -33,18 +33,28 @@ package com.vmware.vim25;
 @author Steve Jin (sjin@vmware.com)
 */
 
-public enum ActionType
+public class AnswerFileUpdateFailure extends DynamicData
 {
-  MigrationV1 ("MigrationV1"),
-  VmPowerV1 ("VmPowerV1"),
-  HostPowerV1 ("HostPowerV1"),
-  HostMaintenanceV1 ("HostMaintenanceV1"),
-  StorageMigrationV1 ("StorageMigrationV1"),
-  StoragePlacementV1 ("StoragePlacementV1");
+  public ProfilePropertyPath userInputPath;
+  public LocalizableMessage errMsg;
 
-  private final String val;
-  private ActionType(String val)
+  public ProfilePropertyPath getUserInputPath()
   {
-    this.val = val;
+    return this.userInputPath;
+  }
+
+  public LocalizableMessage getErrMsg()
+  {
+    return this.errMsg;
+  }
+
+  public void setUserInputPath(ProfilePropertyPath userInputPath)
+  {
+    this.userInputPath=userInputPath;
+  }
+
+  public void setErrMsg(LocalizableMessage errMsg)
+  {
+    this.errMsg=errMsg;
   }
 }

@@ -33,18 +33,22 @@ package com.vmware.vim25;
 @author Steve Jin (sjin@vmware.com)
 */
 
-public enum ActionType
+public class ArrayOfGuestFileInfo
 {
-  MigrationV1 ("MigrationV1"),
-  VmPowerV1 ("VmPowerV1"),
-  HostPowerV1 ("HostPowerV1"),
-  HostMaintenanceV1 ("HostMaintenanceV1"),
-  StorageMigrationV1 ("StorageMigrationV1"),
-  StoragePlacementV1 ("StoragePlacementV1");
+  public GuestFileInfo[] GuestFileInfo;
 
-  private final String val;
-  private ActionType(String val)
+  public GuestFileInfo[] getGuestFileInfo()
   {
-    this.val = val;
+    return this.GuestFileInfo;
+  }
+
+  public GuestFileInfo getGuestFileInfo(int i)
+  {
+    return this.GuestFileInfo[i];
+  }
+
+  public void setGuestFileInfo(GuestFileInfo[] GuestFileInfo)
+  {
+    this.GuestFileInfo=GuestFileInfo;
   }
 }

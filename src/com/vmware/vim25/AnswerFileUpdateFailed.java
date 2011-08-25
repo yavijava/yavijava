@@ -33,18 +33,17 @@ package com.vmware.vim25;
 @author Steve Jin (sjin@vmware.com)
 */
 
-public enum ActionType
+public class AnswerFileUpdateFailed extends VimFault
 {
-  MigrationV1 ("MigrationV1"),
-  VmPowerV1 ("VmPowerV1"),
-  HostPowerV1 ("HostPowerV1"),
-  HostMaintenanceV1 ("HostMaintenanceV1"),
-  StorageMigrationV1 ("StorageMigrationV1"),
-  StoragePlacementV1 ("StoragePlacementV1");
+  public AnswerFileUpdateFailure[] failure;
 
-  private final String val;
-  private ActionType(String val)
+  public AnswerFileUpdateFailure[] getFailure()
   {
-    this.val = val;
+    return this.failure;
+  }
+
+  public void setFailure(AnswerFileUpdateFailure[] failure)
+  {
+    this.failure=failure;
   }
 }

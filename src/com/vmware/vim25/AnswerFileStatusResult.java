@@ -28,23 +28,56 @@ POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
 
 package com.vmware.vim25;
+import java.util.Calendar;
 
 /**
 @author Steve Jin (sjin@vmware.com)
 */
 
-public enum ActionType
+public class AnswerFileStatusResult extends DynamicData
 {
-  MigrationV1 ("MigrationV1"),
-  VmPowerV1 ("VmPowerV1"),
-  HostPowerV1 ("HostPowerV1"),
-  HostMaintenanceV1 ("HostMaintenanceV1"),
-  StorageMigrationV1 ("StorageMigrationV1"),
-  StoragePlacementV1 ("StoragePlacementV1");
+  public Calendar checkedTime;
+  public ManagedObjectReference host;
+  public String status;
+  public AnswerFileStatusError[] error;
 
-  private final String val;
-  private ActionType(String val)
+  public Calendar getCheckedTime()
   {
-    this.val = val;
+    return this.checkedTime;
+  }
+
+  public ManagedObjectReference getHost()
+  {
+    return this.host;
+  }
+
+  public String getStatus()
+  {
+    return this.status;
+  }
+
+  public AnswerFileStatusError[] getError()
+  {
+    return this.error;
+  }
+
+  public void setCheckedTime(Calendar checkedTime)
+  {
+    this.checkedTime=checkedTime;
+  }
+
+  public void setHost(ManagedObjectReference host)
+  {
+    this.host=host;
+  }
+
+  public void setStatus(String status)
+  {
+    this.status=status;
+  }
+
+  public void setError(AnswerFileStatusError[] error)
+  {
+    this.error=error;
   }
 }

@@ -33,18 +33,6 @@ package com.vmware.vim25;
 @author Steve Jin (sjin@vmware.com)
 */
 
-public enum ActionType
+public class AnswerFileCreateSpec extends DynamicData
 {
-  MigrationV1 ("MigrationV1"),
-  VmPowerV1 ("VmPowerV1"),
-  HostPowerV1 ("HostPowerV1"),
-  HostMaintenanceV1 ("HostMaintenanceV1"),
-  StorageMigrationV1 ("StorageMigrationV1"),
-  StoragePlacementV1 ("StoragePlacementV1");
-
-  private final String val;
-  private ActionType(String val)
-  {
-    this.val = val;
-  }
 }

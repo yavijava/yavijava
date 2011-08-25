@@ -28,23 +28,45 @@ POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
 
 package com.vmware.vim25;
+import java.util.Calendar;
 
 /**
 @author Steve Jin (sjin@vmware.com)
 */
 
-public enum ActionType
+public class AnswerFile extends DynamicData
 {
-  MigrationV1 ("MigrationV1"),
-  VmPowerV1 ("VmPowerV1"),
-  HostPowerV1 ("HostPowerV1"),
-  HostMaintenanceV1 ("HostMaintenanceV1"),
-  StorageMigrationV1 ("StorageMigrationV1"),
-  StoragePlacementV1 ("StoragePlacementV1");
+  public ProfileDeferredPolicyOptionParameter[] userInput;
+  public Calendar createdTime;
+  public Calendar modifiedTime;
 
-  private final String val;
-  private ActionType(String val)
+  public ProfileDeferredPolicyOptionParameter[] getUserInput()
   {
-    this.val = val;
+    return this.userInput;
+  }
+
+  public Calendar getCreatedTime()
+  {
+    return this.createdTime;
+  }
+
+  public Calendar getModifiedTime()
+  {
+    return this.modifiedTime;
+  }
+
+  public void setUserInput(ProfileDeferredPolicyOptionParameter[] userInput)
+  {
+    this.userInput=userInput;
+  }
+
+  public void setCreatedTime(Calendar createdTime)
+  {
+    this.createdTime=createdTime;
+  }
+
+  public void setModifiedTime(Calendar modifiedTime)
+  {
+    this.modifiedTime=modifiedTime;
   }
 }

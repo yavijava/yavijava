@@ -33,18 +33,22 @@ package com.vmware.vim25;
 @author Steve Jin (sjin@vmware.com)
 */
 
-public enum ActionType
+public class ArrayOfApplyProfile
 {
-  MigrationV1 ("MigrationV1"),
-  VmPowerV1 ("VmPowerV1"),
-  HostPowerV1 ("HostPowerV1"),
-  HostMaintenanceV1 ("HostMaintenanceV1"),
-  StorageMigrationV1 ("StorageMigrationV1"),
-  StoragePlacementV1 ("StoragePlacementV1");
+  public ApplyProfile[] ApplyProfile;
 
-  private final String val;
-  private ActionType(String val)
+  public ApplyProfile[] getApplyProfile()
   {
-    this.val = val;
+    return this.ApplyProfile;
+  }
+
+  public ApplyProfile getApplyProfile(int i)
+  {
+    return this.ApplyProfile[i];
+  }
+
+  public void setApplyProfile(ApplyProfile[] ApplyProfile)
+  {
+    this.ApplyProfile=ApplyProfile;
   }
 }

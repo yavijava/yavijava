@@ -33,18 +33,22 @@ package com.vmware.vim25;
 @author Steve Jin (sjin@vmware.com)
 */
 
-public enum ActionType
+public class ArrayOfAnswerFileStatusResult
 {
-  MigrationV1 ("MigrationV1"),
-  VmPowerV1 ("VmPowerV1"),
-  HostPowerV1 ("HostPowerV1"),
-  HostMaintenanceV1 ("HostMaintenanceV1"),
-  StorageMigrationV1 ("StorageMigrationV1"),
-  StoragePlacementV1 ("StoragePlacementV1");
+  public AnswerFileStatusResult[] AnswerFileStatusResult;
 
-  private final String val;
-  private ActionType(String val)
+  public AnswerFileStatusResult[] getAnswerFileStatusResult()
   {
-    this.val = val;
+    return this.AnswerFileStatusResult;
+  }
+
+  public AnswerFileStatusResult getAnswerFileStatusResult(int i)
+  {
+    return this.AnswerFileStatusResult[i];
+  }
+
+  public void setAnswerFileStatusResult(AnswerFileStatusResult[] AnswerFileStatusResult)
+  {
+    this.AnswerFileStatusResult=AnswerFileStatusResult;
   }
 }

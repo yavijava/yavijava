@@ -33,18 +33,22 @@ package com.vmware.vim25;
 @author Steve Jin (sjin@vmware.com)
 */
 
-public enum ActionType
+public class ArrayOfHostFirewallRulesetIpNetwork
 {
-  MigrationV1 ("MigrationV1"),
-  VmPowerV1 ("VmPowerV1"),
-  HostPowerV1 ("HostPowerV1"),
-  HostMaintenanceV1 ("HostMaintenanceV1"),
-  StorageMigrationV1 ("StorageMigrationV1"),
-  StoragePlacementV1 ("StoragePlacementV1");
+  public HostFirewallRulesetIpNetwork[] HostFirewallRulesetIpNetwork;
 
-  private final String val;
-  private ActionType(String val)
+  public HostFirewallRulesetIpNetwork[] getHostFirewallRulesetIpNetwork()
   {
-    this.val = val;
+    return this.HostFirewallRulesetIpNetwork;
+  }
+
+  public HostFirewallRulesetIpNetwork getHostFirewallRulesetIpNetwork(int i)
+  {
+    return this.HostFirewallRulesetIpNetwork[i];
+  }
+
+  public void setHostFirewallRulesetIpNetwork(HostFirewallRulesetIpNetwork[] HostFirewallRulesetIpNetwork)
+  {
+    this.HostFirewallRulesetIpNetwork=HostFirewallRulesetIpNetwork;
   }
 }

@@ -33,18 +33,17 @@ package com.vmware.vim25;
 @author Steve Jin (sjin@vmware.com)
 */
 
-public enum ActionType
+public class AnswerFileSerializedCreateSpec extends AnswerFileCreateSpec
 {
-  MigrationV1 ("MigrationV1"),
-  VmPowerV1 ("VmPowerV1"),
-  HostPowerV1 ("HostPowerV1"),
-  HostMaintenanceV1 ("HostMaintenanceV1"),
-  StorageMigrationV1 ("StorageMigrationV1"),
-  StoragePlacementV1 ("StoragePlacementV1");
+  public String answerFileConfigString;
 
-  private final String val;
-  private ActionType(String val)
+  public String getAnswerFileConfigString()
   {
-    this.val = val;
+    return this.answerFileConfigString;
+  }
+
+  public void setAnswerFileConfigString(String answerFileConfigString)
+  {
+    this.answerFileConfigString=answerFileConfigString;
   }
 }

@@ -33,18 +33,17 @@ package com.vmware.vim25;
 @author Steve Jin (sjin@vmware.com)
 */
 
-public enum ActionType
+public class ApplyStorageRecommendationResult extends DynamicData
 {
-  MigrationV1 ("MigrationV1"),
-  VmPowerV1 ("VmPowerV1"),
-  HostPowerV1 ("HostPowerV1"),
-  HostMaintenanceV1 ("HostMaintenanceV1"),
-  StorageMigrationV1 ("StorageMigrationV1"),
-  StoragePlacementV1 ("StoragePlacementV1");
+  public ManagedObjectReference vm;
 
-  private final String val;
-  private ActionType(String val)
+  public ManagedObjectReference getVm()
   {
-    this.val = val;
+    return this.vm;
+  }
+
+  public void setVm(ManagedObjectReference vm)
+  {
+    this.vm=vm;
   }
 }

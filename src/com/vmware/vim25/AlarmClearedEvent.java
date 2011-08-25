@@ -33,18 +33,39 @@ package com.vmware.vim25;
 @author Steve Jin (sjin@vmware.com)
 */
 
-public enum ActionType
+public class AlarmClearedEvent extends AlarmEvent
 {
-  MigrationV1 ("MigrationV1"),
-  VmPowerV1 ("VmPowerV1"),
-  HostPowerV1 ("HostPowerV1"),
-  HostMaintenanceV1 ("HostMaintenanceV1"),
-  StorageMigrationV1 ("StorageMigrationV1"),
-  StoragePlacementV1 ("StoragePlacementV1");
+  public ManagedEntityEventArgument source;
+  public ManagedEntityEventArgument entity;
+  public String from;
 
-  private final String val;
-  private ActionType(String val)
+  public ManagedEntityEventArgument getSource()
   {
-    this.val = val;
+    return this.source;
+  }
+
+  public ManagedEntityEventArgument getEntity()
+  {
+    return this.entity;
+  }
+
+  public String getFrom()
+  {
+    return this.from;
+  }
+
+  public void setSource(ManagedEntityEventArgument source)
+  {
+    this.source=source;
+  }
+
+  public void setEntity(ManagedEntityEventArgument entity)
+  {
+    this.entity=entity;
+  }
+
+  public void setFrom(String from)
+  {
+    this.from=from;
   }
 }

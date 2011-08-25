@@ -33,18 +33,22 @@ package com.vmware.vim25;
 @author Steve Jin (sjin@vmware.com)
 */
 
-public enum ActionType
+public class ArrayOfHostCacheConfigurationInfo
 {
-  MigrationV1 ("MigrationV1"),
-  VmPowerV1 ("VmPowerV1"),
-  HostPowerV1 ("HostPowerV1"),
-  HostMaintenanceV1 ("HostMaintenanceV1"),
-  StorageMigrationV1 ("StorageMigrationV1"),
-  StoragePlacementV1 ("StoragePlacementV1");
+  public HostCacheConfigurationInfo[] HostCacheConfigurationInfo;
 
-  private final String val;
-  private ActionType(String val)
+  public HostCacheConfigurationInfo[] getHostCacheConfigurationInfo()
   {
-    this.val = val;
+    return this.HostCacheConfigurationInfo;
+  }
+
+  public HostCacheConfigurationInfo getHostCacheConfigurationInfo(int i)
+  {
+    return this.HostCacheConfigurationInfo[i];
+  }
+
+  public void setHostCacheConfigurationInfo(HostCacheConfigurationInfo[] HostCacheConfigurationInfo)
+  {
+    this.HostCacheConfigurationInfo=HostCacheConfigurationInfo;
   }
 }

@@ -33,18 +33,22 @@ package com.vmware.vim25;
 @author Steve Jin (sjin@vmware.com)
 */
 
-public enum ActionType
+public class ArrayOfHostLowLevelProvisioningManagerSnapshotLayoutSpec
 {
-  MigrationV1 ("MigrationV1"),
-  VmPowerV1 ("VmPowerV1"),
-  HostPowerV1 ("HostPowerV1"),
-  HostMaintenanceV1 ("HostMaintenanceV1"),
-  StorageMigrationV1 ("StorageMigrationV1"),
-  StoragePlacementV1 ("StoragePlacementV1");
+  public HostLowLevelProvisioningManagerSnapshotLayoutSpec[] HostLowLevelProvisioningManagerSnapshotLayoutSpec;
 
-  private final String val;
-  private ActionType(String val)
+  public HostLowLevelProvisioningManagerSnapshotLayoutSpec[] getHostLowLevelProvisioningManagerSnapshotLayoutSpec()
   {
-    this.val = val;
+    return this.HostLowLevelProvisioningManagerSnapshotLayoutSpec;
+  }
+
+  public HostLowLevelProvisioningManagerSnapshotLayoutSpec getHostLowLevelProvisioningManagerSnapshotLayoutSpec(int i)
+  {
+    return this.HostLowLevelProvisioningManagerSnapshotLayoutSpec[i];
+  }
+
+  public void setHostLowLevelProvisioningManagerSnapshotLayoutSpec(HostLowLevelProvisioningManagerSnapshotLayoutSpec[] HostLowLevelProvisioningManagerSnapshotLayoutSpec)
+  {
+    this.HostLowLevelProvisioningManagerSnapshotLayoutSpec=HostLowLevelProvisioningManagerSnapshotLayoutSpec;
   }
 }

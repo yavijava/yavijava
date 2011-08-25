@@ -33,18 +33,28 @@ package com.vmware.vim25;
 @author Steve Jin (sjin@vmware.com)
 */
 
-public enum ActionType
+public class AlarmAcknowledgedEvent extends AlarmEvent
 {
-  MigrationV1 ("MigrationV1"),
-  VmPowerV1 ("VmPowerV1"),
-  HostPowerV1 ("HostPowerV1"),
-  HostMaintenanceV1 ("HostMaintenanceV1"),
-  StorageMigrationV1 ("StorageMigrationV1"),
-  StoragePlacementV1 ("StoragePlacementV1");
+  public ManagedEntityEventArgument source;
+  public ManagedEntityEventArgument entity;
 
-  private final String val;
-  private ActionType(String val)
+  public ManagedEntityEventArgument getSource()
   {
-    this.val = val;
+    return this.source;
+  }
+
+  public ManagedEntityEventArgument getEntity()
+  {
+    return this.entity;
+  }
+
+  public void setSource(ManagedEntityEventArgument source)
+  {
+    this.source=source;
+  }
+
+  public void setEntity(ManagedEntityEventArgument entity)
+  {
+    this.entity=entity;
   }
 }
