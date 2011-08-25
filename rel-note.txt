@@ -1,3 +1,11 @@
+What is new in Version 5.0?
+vSphere 5.0 support: http://www.doublecloud.org/2011/08/what%e2%80%99s-new-in-vsphere-api-5-0/
+A few bug fixes since 2.1 release
+
+What is new in Version 2.1
+vSphere 4.1 support: http://www.doublecloud.org/2010/07/whats-new-in-vsphere-4-1-api/
+Bug fixes
+
 What is new in Version 2.0u1
 Bug fixes:
 2814793  	 ClassCastException in XmlGen.java

@@ -1,4 +1,4 @@
-Welcome to VI Java API 2.0 release 
+Welcome to VI Java API 5.0 release 
 
 WHAT IS VI JAVA API?
 VI Java API is a set of Java libraries that aim to ease the usage of VI 
@@ -24,12 +24,12 @@ contributions from the communities as well. See the web site for more details.
 WHAT IS INCLUDED?
 Everything is packaged into one Jar file, including the Java source code, 
 binary, sample code, license.
-Version 2.0 includes a high performance web service engine which is 15+ times
+Version 2.0+ includes a high performance web service engine which is 15+ times
 faster in loading and 4+ faster in de-serialization than AXIS with only 1/4
 of the size, and many other features. Find out more at project home.
 
 HOW TO GET STARTED?
-To get started, check out the project tutorial at: http://vijava.sf.net.
+To get started, check out the 5 minutes tutorial at: http://vijava.sf.net.
 
 WHERE TO DOWNLOAD THE LATEST RELEASE? 
 http://vijava.sf.net
@@ -37,6 +37,7 @@ http://vijava.sf.net
 WHERE CAN I GET HELP?
 Project Forum: https://sourceforge.net/forum/forum.php?forum_id=826592
 File a bug: https://sourceforge.net/tracker/?group_id=228007
+Blog: http://www.doublecloud.org
 
 COPYRIGHT & LICENSE:
-See the License.txt file for details
+BSD. See the License.txt file for details
