@@ -115,6 +115,15 @@ public class Folder extends ManagedEntity
 			getVimService().createFolder(getMOR(), name) );
 	}
 
+	/**
+	 * @since SDK5.0
+	 */
+	public StoragePod createStoragePod(String name) throws DuplicateName, InvalidName, RuntimeFault, RemoteException
+	{
+	  ManagedObjectReference mor = getVimService().createStoragePod(getMOR(), name);
+	  return new StoragePod(getServerConnection(), mor);
+	}
+	
 	public Task createVM_Task(VirtualMachineConfigSpec config, ResourcePool pool, HostSystem host) throws InvalidName, VmConfigFault, DuplicateName, FileFault, OutOfBounds, InsufficientResourcesFault, InvalidDatastore, RuntimeFault, RemoteException 
 	{
 		return new Task(getServerConnection(),

@@ -74,10 +74,17 @@ public class InventoryNavigator
 		  "2.5.0"    VI 3.5 (and u1)
 		  "2.5u2"   VI 3.5u2 (and u3, u4)
 		  "4.0"       vSphere 4.0 (and u1)
+		  "4.1"       vSphere 4.1
+		  "5.0"       vSphere 5.0
       ******************************************************/
-			selectionSpecs = ai.apiVersion.startsWith("4")? 
-			    PropertyCollectorUtil.buildFullTraversalV4() : 
-			    PropertyCollectorUtil.buildFullTraversal();
+			if(ai.apiVersion.startsWith("4") || ai.apiVersion.startsWith("5"))
+			{
+			  selectionSpecs = PropertyCollectorUtil.buildFullTraversalV4();
+			}
+			else
+			{
+			  selectionSpecs = PropertyCollectorUtil.buildFullTraversal();
+			}
 		}
 	
 		PropertySpec[] propspecary = PropertyCollectorUtil.buildPropertySpecArray(typeinfo);

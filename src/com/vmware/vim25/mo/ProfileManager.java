@@ -64,11 +64,19 @@ public class ProfileManager extends ManagedObject
 		ManagedObjectReference[] mors = getVimService().findAssociatedProfile(getMOR(), entity.getMOR());
 		return convert2Profiles(mors);
 	}
-	
+
+	//SDK4.1 signature for back compatibility
 	public ProfilePolicyMetadata[] queryPolicyMetadata(String[] policyName) throws RuntimeFault, RemoteException
 	{
-		return getVimService().queryPolicyMetadata(getMOR(), policyName);
+		return queryPolicyMetadata(policyName, null);
 	}
+
+	//SDK5.0 signature
+  public ProfilePolicyMetadata[] queryPolicyMetadata(String[] policyName, Profile profile) throws RuntimeFault, RemoteException
+  {
+    return getVimService().queryPolicyMetadata(getMOR(), policyName, profile==null? null : profile.getMOR());
+  }
+
 	
 	private Profile[] convert2Profiles(ManagedObjectReference[] mors)
 	{

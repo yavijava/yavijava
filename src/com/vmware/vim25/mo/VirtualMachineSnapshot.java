@@ -63,9 +63,17 @@ public class VirtualMachineSnapshot extends ManagedObject
 		return (VirtualMachineConfigInfo) getCurrentProperty("config");
 	}
 	
+  //SDK4.1 signature for back compatibility
 	public Task removeSnapshot_Task(boolean removeChildren) throws TaskInProgress, RuntimeFault, RemoteException 
-	{	return new Task( getServerConnection(),
-			getVimService().removeSnapshot_Task(getMOR(), removeChildren));
+	{	
+	  return removeSnapshot_Task(removeChildren, null);
+	}
+
+  //SDK5.0 signature
+	public Task removeSnapshot_Task(boolean removeChildren, Boolean consolidate) throws TaskInProgress, RuntimeFault, RemoteException 
+	{ 
+	  return new Task( getServerConnection(),
+	      getVimService().removeSnapshot_Task(getMOR(), removeChildren, consolidate));
 	}
 	
 	public void renameSnapshot(String name, String description) throws InvalidName, RuntimeFault, RemoteException 

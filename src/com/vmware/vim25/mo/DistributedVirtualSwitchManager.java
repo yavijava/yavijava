@@ -39,9 +39,11 @@ import com.vmware.vim25.DistributedVirtualSwitchManagerDvsProductSpec;
 import com.vmware.vim25.DistributedVirtualSwitchManagerHostContainer;
 import com.vmware.vim25.DistributedVirtualSwitchManagerHostDvsFilterSpec;
 import com.vmware.vim25.DistributedVirtualSwitchProductSpec;
+import com.vmware.vim25.DvsFault;
 import com.vmware.vim25.ManagedObjectReference;
 import com.vmware.vim25.NotFound;
 import com.vmware.vim25.RuntimeFault;
+import com.vmware.vim25.mo.util.MorUtil;
 
 /**
  * The managed object class corresponding to the one defined in VI SDK API reference.
@@ -116,5 +118,15 @@ public class DistributedVirtualSwitchManager extends ManagedObject
 	public DVSFeatureCapability queryDvsFeatureCapability(DistributedVirtualSwitchProductSpec switchProductSpec) throws RuntimeFault, RemoteException
 	{
 	  return getVimService().queryDvsFeatureCapability(getMOR(), switchProductSpec);
+	}
+	
+	/**
+	 * @since SDK5.0
+	 */
+	public Task rectifyDvsOnHost_Task(HostSystem[] hosts) throws DvsFault, RuntimeFault, RemoteException
+	{
+	  ManagedObjectReference[] hostMors = MorUtil.createMORs(hosts);
+	  ManagedObjectReference taskMor = getVimService().rectifyDvsOnHost_Task(getMOR(), hostMors);
+	  return new Task(getServerConnection(), taskMor);
 	}
 }

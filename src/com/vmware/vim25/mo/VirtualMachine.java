@@ -182,6 +182,13 @@ public class VirtualMachine extends ManagedEntity
 		return new Task(getServerConnection(), mor);
 	}
 
+	/** @since SDK5.0 */
+	public Task consolidateVMDisks_Task() throws TaskInProgress, InvalidState, FileFault, VmConfigFault, RuntimeFault, RemoteException
+	{
+	  ManagedObjectReference taskMor = getVimService().consolidateVMDisks_Task(getMOR());
+	  return new Task(getServerConnection(), taskMor);
+	}
+	
 	/** @since SDK4.0 */
 	public Task CreateScreenshot_Task() throws TaskInProgress, FileFault, InvalidState, RuntimeFault, RemoteException
 	{
@@ -215,6 +222,13 @@ public class VirtualMachine extends ManagedEntity
 		ManagedObjectReference mor = getVimService().enableSecondaryVM_Task(getMOR(), vm.getMOR(),
 				host==null? null : host.getMOR());
 		return new Task(getServerConnection(), mor);
+	}
+	
+	/** @since SDK5.0 */
+	public Task estimateStorageForConsolidateSnapshots_Task() throws TaskInProgress, InvalidState, FileFault, VmConfigFault, RuntimeFault, RemoteException
+	{
+    ManagedObjectReference taskMor = getVimService().estimateStorageForConsolidateSnapshots_Task(getMOR());
+    return new Task(getServerConnection(), taskMor);
 	}
 	
 	/** @since SDK4.0 */
@@ -350,11 +364,18 @@ public class VirtualMachine extends ManagedEntity
 		return new Task(getServerConnection(), mor);
 	}
 	
+  //SDK4.1 signature for back compatibility
 	public Task removeAllSnapshots_Task() throws SnapshotFault, TaskInProgress, InvalidState, RuntimeFault, RemoteException 
 	{
-		ManagedObjectReference mor = getVimService().removeAllSnapshots_Task(getMOR());
-		return new Task(getServerConnection(), mor);
+	  return removeAllSnapshots_Task(null);
 	}
+
+  //SDK5.0 signature
+  public Task removeAllSnapshots_Task(Boolean consolidate) throws SnapshotFault, TaskInProgress, InvalidState, RuntimeFault, RemoteException 
+  {
+    ManagedObjectReference mor = getVimService().removeAllSnapshots_Task(getMOR(), consolidate);
+    return new Task(getServerConnection(), mor);
+  }
 	
 	public void resetGuestInformation() throws InvalidState, RuntimeFault, RemoteException 
 	{

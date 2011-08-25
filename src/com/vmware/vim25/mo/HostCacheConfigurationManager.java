@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2008 VMware, Inc. All Rights Reserved.
+Copyright (c) 2011 VMware, Inc. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,51 +30,31 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25.mo;
 
 import java.rmi.RemoteException;
+
 import com.vmware.vim25.*;
 
 /**
- * The managed object class corresponding to the one defined in VI SDK API reference.
- * @author Steve JIN (sjin@vmware.com)
+ * provides access to ESX performance tuning features using solid state drive based cache
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @since SDK5.0
  */
 
-public class HostFirewallSystem extends ExtensibleManagedObject 
+public class HostCacheConfigurationManager extends ManagedObject 
 {
 
-	public HostFirewallSystem(ServerConnection serverConnection, ManagedObjectReference mor) 
+	public HostCacheConfigurationManager(ServerConnection serverConnection, ManagedObjectReference mor) 
 	{
 		super(serverConnection, mor);
 	}
-	
-	public HostFirewallInfo getFirewallInfo()
+
+	public HostCacheConfigurationInfo[] getCacheConfigurationInfo()
 	{
-		return (HostFirewallInfo) getCurrentProperty("firewallInfo");
+		return (HostCacheConfigurationInfo[]) getCurrentProperty("cacheConfigurationInfo");
 	}
 	
-	public void disableRuleset(String id) throws HostConfigFault, NotFound, RuntimeFault, RemoteException 
+	public Task configureHostCache_Task(HostCacheConfigurationSpec spec) throws RuntimeFault, RemoteException 
 	{
-		getVimService().disableRuleset(getMOR(), id);
-	}
-	
-	public void enableRuleset(String id) throws HostConfigFault, NotFound, RuntimeFault, RemoteException 
-	{
-		getVimService().enableRuleset(getMOR(), id);
-	}
-	
-	public void refreshFirewall() throws RuntimeFault, RemoteException 
-	{
-		getVimService().refreshFirewall(getMOR());
-	}
-	
-	public void updateDefaultPolicy(HostFirewallDefaultPolicy defaultPolicy) throws RuntimeFault, RemoteException 
-	{
-		getVimService().updateDefaultPolicy(getMOR(), defaultPolicy);
-	}
-	
-	/**
-	 * @since SDK5.0
-	 */
-	public void updateRuleset(String id, HostFirewallRulesetRulesetSpec spec) throws NotFound, HostConfigFault, RuntimeFault, RemoteException
-	{
-	  getVimService().updateRuleset(getMOR(), id, spec);
+		ManagedObjectReference taskMor = getVimService().configureHostCache_Task(getMOR(), spec);
+		return new Task(getServerConnection(), taskMor);
 	}
 }

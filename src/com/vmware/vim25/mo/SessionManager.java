@@ -82,6 +82,14 @@ public class SessionManager extends ManagedObject
 		return getVimService().acquireLocalTicket(getMOR(), userName);
 	}
 	
+	/**
+	 * @since SDK5.0
+	 */
+	public SessionManagerGenericServiceTicket acquireGenericServiceTicket(SessionManagerServiceRequestSpec spec) throws RuntimeFault, RemoteException
+	{
+	  return getVimService().acquireGenericServiceTicket(getMOR(), spec);
+	}
+	
 	/** @since SDK4.0 
 	 * You don't need to use this method. Instead, look at the other cloneSession method.
 	 * */

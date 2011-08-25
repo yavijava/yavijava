@@ -106,6 +106,15 @@ public class ClusterComputeResource extends ComputeResource
 	{
     getVimService().cancelRecommendation(getMOR(), key);
 	}
+  
+  /**
+   * @since SDK5.0 
+   */
+  public ClusterEnterMaintenanceResult clusterEnterMaintenanceMode(HostSystem[] hosts, OptionValue[] option) throws RuntimeFault, RemoteException
+  {
+    ManagedObjectReference[] hostMors = MorUtil.createMORs(hosts);
+    return getVimService().clusterEnterMaintenanceMode(getMOR(), hostMors, option);
+  }
 	
 	public Task moveHostInto_Task(HostSystem host, ResourcePool resourcePool) throws TooManyHosts, InvalidState, RuntimeFault, RemoteException  
 	{

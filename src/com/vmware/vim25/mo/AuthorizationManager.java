@@ -68,7 +68,15 @@ public class AuthorizationManager extends ManagedObject
 	{
 		return getVimService().addAuthorizationRole(getMOR(), name, privIds);
 	}
-	
+
+	/**
+	 * @since SDK5.0 
+	 */
+	public boolean[] HasPrivilegeOnEntity(ManagedEntity entity, String sessionId, String[] privId) throws RuntimeFault, RemoteException
+	{
+	  return getVimService().hasPrivilegeOnEntity(getMOR(), entity.getMOR(), sessionId, privId);
+	}
+
 	public void mergePermissions(int srcRoleId, int dstRoleId) throws AuthMinimumAdminPermission, NotFound, RuntimeFault, RemoteException  
 	{
 		getVimService().mergePermissions(getMOR(), srcRoleId, dstRoleId);

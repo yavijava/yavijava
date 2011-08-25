@@ -35,7 +35,13 @@ package com.vmware.vim25.mo;
 
 import java.rmi.RemoteException;
 
-import com.vmware.vim25.*;
+import com.vmware.vim25.Extension;
+import com.vmware.vim25.ExtensionClientInfo;
+import com.vmware.vim25.ExtensionServerInfo;
+import com.vmware.vim25.ManagedObjectReference;
+import com.vmware.vim25.NotFound;
+import com.vmware.vim25.RuntimeFault;
+import com.vmware.vim25.mo.util.MorUtil;
 
 /**
  * The managed object class corresponding to the one defined in VI SDK API reference.
@@ -60,6 +66,15 @@ public class ExtensionManager extends ManagedObject
 		return (Extension[])getCurrentProperty("extensionList");
 	}
 
+	/**
+	 * @since SDK5.0
+	 */
+	public ManagedEntity[] queryManagedBy(String extensionKey) throws RuntimeFault, RemoteException
+	{
+	  ManagedObjectReference[] mors = getVimService().queryManagedBy(getMOR(), extensionKey);
+	  return MorUtil.createManagedEntities(getServerConnection(), mors);
+	}
+	
 	public void setPublicKey(String extensionKey, String publicKey) throws RuntimeFault, RemoteException
 	{
 	  getVimService().setPublicKey(getMOR(), extensionKey, publicKey);

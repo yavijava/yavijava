@@ -81,6 +81,23 @@ public class Datastore extends ManagedEntity
 		return getVms("vm");
 	}
 	
+	/**
+	 * @since SDK5.0
+	 */
+	public StoragePlacementResult datastoreEnterMaintenanceMode() throws InvalidState, RuntimeFault, RemoteException
+	{
+	  return getVimService().datastoreEnterMaintenanceMode(getMOR());
+	}
+
+	/**
+	 * @since SDK5.0 
+	 */
+	public Task datastoreExitMaintenanceMode_Task() throws InvalidState, RuntimeFault, RemoteException
+	{
+	  ManagedObjectReference taskMor = getVimService().datastoreExitMaintenanceMode_Task(getMOR());
+	  return new Task(getServerConnection(), taskMor);
+	}
+	
 	public void destroyDatastore() throws ResourceInUse, RuntimeFault, RemoteException  
 	{
 		getVimService().destroyDatastore(getMOR());
@@ -92,7 +109,7 @@ public class Datastore extends ManagedEntity
 	}
 	
 	/**
-	 * @since 4.0
+	 * @since SDK4.0
 	 */
 	public void refreshDatastoreStorageInfo() throws RuntimeFault, RemoteException
 	{

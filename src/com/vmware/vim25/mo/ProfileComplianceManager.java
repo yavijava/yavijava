@@ -67,8 +67,15 @@ public class ProfileComplianceManager extends ManagedObject
 		return getVimService().queryComplianceStatus(getMOR(), convertMors(profile), convertMors(entity));
 	}
 	
+  //SDK4.1 signature for back compatibility
 	public ProfileExpressionMetadata[] queryExpressionMetadata(String[] expressionName) throws RuntimeFault, RemoteException
 	{
-		return getVimService().queryExpressionMetadata(getMOR(), expressionName);
+		return queryExpressionMetadata(expressionName, null);
 	}
+	
+  //SDK5.0 signature
+  public ProfileExpressionMetadata[] queryExpressionMetadata(String[] expressionName, Profile profile) throws RuntimeFault, RemoteException
+  {
+    return getVimService().queryExpressionMetadata(getMOR(), expressionName, profile==null? null : profile.getMOR());
+  }	
 }

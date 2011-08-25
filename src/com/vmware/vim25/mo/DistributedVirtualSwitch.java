@@ -121,6 +121,14 @@ public class DistributedVirtualSwitch extends ManagedEntity
 	  return new Task(getServerConnection(), taskMor);
 	}
 	
+	/**
+	 * @since SDK5.0
+	 */
+	public void addNetworkResourcePool(DVSNetworkResourcePoolConfigSpec[] configSpec) throws DvsFault, InvalidName, RuntimeFault, RemoteException
+	{
+	  getVimService().addNetworkResourcePool(getMOR(), configSpec);
+	}
+	
 	/** @since SDK4.1 */
 	public void enableNetworkResourceManagement(boolean enable) throws DvsFault, RuntimeFault, RemoteException
 	{
@@ -176,6 +184,14 @@ public class DistributedVirtualSwitch extends ManagedEntity
 	public void refreshDVPortState(String[] portKeys) throws DvsFault, NotFound, RuntimeFault, RemoteException
 	{
 		getVimService().refreshDVPortState(getMOR(), portKeys);
+	}
+	
+	/**
+	 * @since SDK5.0 
+	 */
+	public void removeNetworkResourcePool(String[] key) throws DvsFault, NotFound, InvalidName, ResourceInUse, RuntimeFault, RemoteException
+	{
+	  getVimService().removeNetworkResourcePool(getMOR(), key);
 	}
 	
 	public void updateDvsCapability(DVSCapability capability) throws RuntimeFault, RemoteException

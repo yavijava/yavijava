@@ -84,6 +84,7 @@ public class ServiceInstance extends ManagedObject
 		
 		serviceContent = vimService.retrieveServiceContent(SERVICE_INSTANCE_MOR);
 		vimService.getWsc().setSoapActionOnApiVersion(serviceContent.getAbout().getApiVersion());
+		serviceContent = vimService.retrieveServiceContent(SERVICE_INSTANCE_MOR); //with new SOAP_ACTION
 		setServerConnection(new ServerConnection(url, vimService, this));
 
 		// escape 5 special chars 
@@ -123,6 +124,7 @@ public class ServiceInstance extends ManagedObject
 		serviceContent = vimService.retrieveServiceContent(SERVICE_INSTANCE_MOR);
     wsc.setSoapActionOnApiVersion(serviceContent.getAbout().getApiVersion());
 		setServerConnection(new ServerConnection(url, vimService, this));
+		serviceContent = vimService.retrieveServiceContent(SERVICE_INSTANCE_MOR); //with new SOAP_ACTION
 		UserSession userSession = (UserSession) getSessionManager().getCurrentProperty("currentSession");
 		getServerConnection().setUserSession(userSession);
 	}
@@ -252,6 +254,11 @@ public class ServiceInstance extends ManagedObject
 	public FileManager getFileManager()
 	{
 		return (FileManager) createMO(getServiceContent().getFileManager());
+	}
+	
+	public GuestOperationsManager getGuestOperationsManager()
+	{
+	  return (GuestOperationsManager) createMO(getServiceContent().getGuestOperationsManager());
 	}
 	
 	public HostLocalAccountManager getAccountManager()

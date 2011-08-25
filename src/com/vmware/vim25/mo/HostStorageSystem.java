@@ -79,28 +79,65 @@ public class HostStorageSystem extends ExtensibleManagedObject
 	{
 		getVimService().addInternetScsiStaticTargets(getMOR(), iScsiHbaDevice, targets);
 	}
+	/**
+	 * @since SDK5.0
+	 */
+	public void attachScsiLun(String lunUuid) throws NotFound, HostConfigFault, InvalidState, RuntimeFault, RemoteException
+	{
+	  getVimService().attachScsiLun(getMOR(), lunUuid);
+	}
 	
 	public void attachVmfsExtent(String vmfsPath, HostScsiDiskPartition extent) throws HostConfigFault, NotFound, RuntimeFault, RemoteException
 	{
 		getVimService().attachVmfsExtent(getMOR(), vmfsPath, extent);
 	}
 	
+  //SDK4.1 signature for back compatibility
 	public HostDiskPartitionInfo computeDiskPartitionInfo(String devicePath, HostDiskPartitionLayout layout) throws HostConfigFault, NotFound, RuntimeFault, RemoteException
 	{
-		return getVimService().computeDiskPartitionInfo(getMOR(), devicePath, layout);
+		return computeDiskPartitionInfo(devicePath, layout, null);
 	}
-
+	
+	//SDK5.0 signature
+  public HostDiskPartitionInfo computeDiskPartitionInfo(String devicePath, HostDiskPartitionLayout layout, String partitionFormat) throws HostConfigFault, NotFound, RuntimeFault, RemoteException
+  {
+    return getVimService().computeDiskPartitionInfo(getMOR(), devicePath, layout, partitionFormat);
+  }
+	
 	/**
 	 * @since 4.0
 	 */
+  //SDK4.1 signature for back compatibility
 	public HostDiskPartitionInfo computeDiskPartitionInfoForResize(HostScsiDiskPartition partition, HostDiskPartitionBlockRange blockRange) throws NotFound, HostConfigFault, RuntimeFault, RemoteException
 	{
-		return getVimService().computeDiskPartitionInfoForResize(getMOR(), partition, blockRange);
+		return computeDiskPartitionInfoForResize(partition, blockRange, null);
+	}
+	
+  //SDK5.0 signature
+  public HostDiskPartitionInfo computeDiskPartitionInfoForResize(HostScsiDiskPartition partition, HostDiskPartitionBlockRange blockRange, String partitionFormat) throws NotFound, HostConfigFault, RuntimeFault, RemoteException
+  {
+    return getVimService().computeDiskPartitionInfoForResize(getMOR(), partition, blockRange, partitionFormat);
+  }
+	
+	/**
+	 * @since SDK5.0
+	 */
+	public void detachScsiLun(String lunUuid) throws NotFound, HostConfigFault, InvalidState, ResourceInUse, RuntimeFault, RemoteException
+	{
+	  getVimService().detachScsiLun(getMOR(), lunUuid);
 	}
 	
 	public void disableMultipathPath(String pathName) throws HostConfigFault, NotFound, RuntimeFault, RemoteException
 	{
 		getVimService().disableMultipathPath(getMOR(), pathName);
+	}
+	
+	/**
+	 * @since SDK5.0
+	 */
+	public void discoverFcoeHbas(FcoeConfigFcoeSpecification fcoeSpec) throws FcoeFaultPnicHasNoPortSet, HostConfigFault, NotFound, RuntimeFault, RemoteException
+	{
+	  getVimService().discoverFcoeHbas(getMOR(), fcoeSpec);
 	}
 	
 	public void enableMultipathPath(String pathName) throws HostConfigFault, NotFound, RuntimeFault, RemoteException
@@ -119,6 +156,22 @@ public class HostStorageSystem extends ExtensibleManagedObject
 	public HostVmfsVolume formatVmfs(HostVmfsSpec createSpec) throws HostConfigFault, AlreadyExists, RuntimeFault, RemoteException
 	{
 		return getVimService().formatVmfs(getMOR(), createSpec);
+	}
+	
+	/**
+	 * @since SDK5.0
+	 */
+	public void markForRemoval(String hbaName, boolean remove) throws NotFound, HostConfigFault, RuntimeFault, RemoteException
+	{
+	  getVimService().markForRemoval(getMOR(), hbaName, remove);
+	}
+	
+	/**
+	 * @since SDK5.0
+	 */
+	public void mountVmfsVolume(String vmfsUuid) throws NotFound, InvalidState, HostConfigFault, ResourceInUse, RuntimeFault, RemoteException
+	{
+	  getVimService().mountVmfsVolume(getMOR(), vmfsUuid);
 	}
 	
 	/**
@@ -191,6 +244,22 @@ public class HostStorageSystem extends ExtensibleManagedObject
 	public void setMultipathLunPolicy(String lunId, HostMultipathInfoLogicalUnitPolicy policy) throws HostConfigFault, NotFound, RuntimeFault, RemoteException
 	{
 		getVimService().setMultipathLunPolicy(getMOR(), lunId, policy);
+	}
+
+	/**
+	 * @since SDK4.0
+	 */
+	public void unmountForceMountedVmfsVolume(String vmfsUuid) throws NotFound, HostConfigFault, RuntimeFault, RemoteException
+	{
+	  getVimService().unmountForceMountedVmfsVolume(getMOR(), vmfsUuid);
+	}
+	
+	/**
+	 * @since SDK5.0
+	 */
+	public void unmountVmfsVolume(String vmfsUuid) throws NotFound, InvalidState, HostConfigFault, ResourceInUse, RuntimeFault, RemoteException
+	{
+	  getVimService().unmountVmfsVolume(getMOR(), vmfsUuid);
 	}
 	
 	public void updateDiskPartitions(String devicePath, HostDiskPartitionSpec spec) throws HostConfigFault, NotFound, RuntimeFault, RemoteException

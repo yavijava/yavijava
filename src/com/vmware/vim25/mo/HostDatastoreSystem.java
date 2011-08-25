@@ -103,11 +103,18 @@ public class HostDatastoreSystem extends ManagedObject
 		return getVimService().queryAvailableDisksForVmfs(getMOR(), datastore==null? null : datastore.getMOR());
 	}
 	
+  //SDK4.1 signature for back compatibility
 	public VmfsDatastoreOption[] queryVmfsDatastoreCreateOptions(String devicePath) throws HostConfigFault, NotFound, RuntimeFault, RemoteException 
 	{
 		return getVimService().queryVmfsDatastoreCreateOptions(getMOR(), devicePath);
 	}
 	
+	//SDK5.0 signature
+  public VmfsDatastoreOption[] queryVmfsDatastoreCreateOptions(String devicePath, int vmfsMajorVersion) throws HostConfigFault, NotFound, RuntimeFault, RemoteException 
+	{
+	  return getVimService().queryVmfsDatastoreCreateOptions(getMOR(), devicePath, vmfsMajorVersion);
+	}
+
 	//SDK2.5 signature for back compatibility
 	public VmfsDatastoreOption[] queryVmfsDatastoreExtendOptions(Datastore datastore, String devicePath) throws HostConfigFault, NotFound, RuntimeFault, RemoteException 
 	{

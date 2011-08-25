@@ -124,4 +124,11 @@ public class Profile extends ManagedObject
 		getVimService().dissociateProfile(getMOR(), mors);
 	}
 	
+	/**
+	 * @since SDK5.0
+	 */
+	public ProfileDescription retrieveDescription() throws RuntimeFault, RemoteException
+	{
+	  return getVimService().retrieveDescription(getMOR());
+	}
 }

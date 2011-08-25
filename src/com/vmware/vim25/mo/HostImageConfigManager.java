@@ -30,51 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25.mo;
 
 import java.rmi.RemoteException;
+
 import com.vmware.vim25.*;
 
 /**
- * The managed object class corresponding to the one defined in VI SDK API reference.
- * @author Steve JIN (sjin@vmware.com)
+ * manage configuration of the ESX software image, including properties 
+ * such as acceptance level. It is currently designed to be host agent specific. 
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @since SDK5.0
  */
 
-public class HostFirewallSystem extends ExtensibleManagedObject 
+public class HostImageConfigManager extends ManagedObject 
 {
 
-	public HostFirewallSystem(ServerConnection serverConnection, ManagedObjectReference mor) 
+	public HostImageConfigManager(ServerConnection serverConnection, ManagedObjectReference mor) 
 	{
 		super(serverConnection, mor);
 	}
 	
-	public HostFirewallInfo getFirewallInfo()
+	public String hostImageConfigGetAcceptance() throws HostConfigFault, RuntimeFault, RemoteException
 	{
-		return (HostFirewallInfo) getCurrentProperty("firewallInfo");
+	  return getVimService().hostImageConfigGetAcceptance(getMOR());
 	}
 	
-	public void disableRuleset(String id) throws HostConfigFault, NotFound, RuntimeFault, RemoteException 
+	
+	public HostImageProfileSummary hostImageConfigGetProfile() throws RuntimeFault, RemoteException
 	{
-		getVimService().disableRuleset(getMOR(), id);
+	  return getVimService().hostImageConfigGetProfile(getMOR());
 	}
 	
-	public void enableRuleset(String id) throws HostConfigFault, NotFound, RuntimeFault, RemoteException 
+	public void updateHostImageAcceptanceLevel(String newAcceptanceLevel) throws HostConfigFault, RuntimeFault, RemoteException
 	{
-		getVimService().enableRuleset(getMOR(), id);
-	}
-	
-	public void refreshFirewall() throws RuntimeFault, RemoteException 
-	{
-		getVimService().refreshFirewall(getMOR());
-	}
-	
-	public void updateDefaultPolicy(HostFirewallDefaultPolicy defaultPolicy) throws RuntimeFault, RemoteException 
-	{
-		getVimService().updateDefaultPolicy(getMOR(), defaultPolicy);
-	}
-	
-	/**
-	 * @since SDK5.0
-	 */
-	public void updateRuleset(String id, HostFirewallRulesetRulesetSpec spec) throws NotFound, HostConfigFault, RuntimeFault, RemoteException
-	{
-	  getVimService().updateRuleset(getMOR(), id, spec);
+	  getVimService().updateHostImageAcceptanceLevel(getMOR(), newAcceptanceLevel);
 	}
 }
