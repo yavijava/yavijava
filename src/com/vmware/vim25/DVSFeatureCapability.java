@@ -39,6 +39,7 @@ public class DVSFeatureCapability extends DynamicData
   public boolean vmDirectPathGen2Supported;
   public String[] nicTeamingPolicy;
   public Integer networkResourcePoolHighShareValue;
+  public DVSNetworkResourceManagementCapability networkResourceManagementCapability;
 
   public boolean isNetworkResourceManagementSupported()
   {
@@ -60,6 +61,11 @@ public class DVSFeatureCapability extends DynamicData
     return this.networkResourcePoolHighShareValue;
   }
 
+  public DVSNetworkResourceManagementCapability getNetworkResourceManagementCapability()
+  {
+    return this.networkResourceManagementCapability;
+  }
+
   public void setNetworkResourceManagementSupported(boolean networkResourceManagementSupported)
   {
     this.networkResourceManagementSupported=networkResourceManagementSupported;
@@ -78,5 +84,10 @@ public class DVSFeatureCapability extends DynamicData
   public void setNetworkResourcePoolHighShareValue(Integer networkResourcePoolHighShareValue)
   {
     this.networkResourcePoolHighShareValue=networkResourcePoolHighShareValue;
+  }
+
+  public void setNetworkResourceManagementCapability(DVSNetworkResourceManagementCapability networkResourceManagementCapability)
+  {
+    this.networkResourceManagementCapability=networkResourceManagementCapability;
   }
 }

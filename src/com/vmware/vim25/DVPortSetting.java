@@ -40,6 +40,7 @@ public class DVPortSetting extends DynamicData
   public DVSTrafficShapingPolicy inShapingPolicy;
   public DVSTrafficShapingPolicy outShapingPolicy;
   public DVSVendorSpecificConfig vendorSpecificConfig;
+  public StringPolicy networkResourcePoolKey;
 
   public BoolPolicy getBlocked()
   {
@@ -66,6 +67,11 @@ public class DVPortSetting extends DynamicData
     return this.vendorSpecificConfig;
   }
 
+  public StringPolicy getNetworkResourcePoolKey()
+  {
+    return this.networkResourcePoolKey;
+  }
+
   public void setBlocked(BoolPolicy blocked)
   {
     this.blocked=blocked;
@@ -89,5 +95,10 @@ public class DVPortSetting extends DynamicData
   public void setVendorSpecificConfig(DVSVendorSpecificConfig vendorSpecificConfig)
   {
     this.vendorSpecificConfig=vendorSpecificConfig;
+  }
+
+  public void setNetworkResourcePoolKey(StringPolicy networkResourcePoolKey)
+  {
+    this.networkResourcePoolKey=networkResourcePoolKey;
   }
 }

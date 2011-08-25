@@ -51,6 +51,11 @@ public class Extension extends DynamicData
   public ExtensionResourceInfo[] resourceList;
   public Calendar lastHeartbeatTime;
   public ExtensionHealthInfo healthInfo;
+  public ExtensionOvfConsumerInfo ovfConsumerInfo;
+  public ExtExtendedProductInfo extendedProductInfo;
+  public ExtManagedEntityInfo[] managedEntityInfo;
+  public Boolean shownInSolutionManager;
+  public ExtSolutionManagerInfo solutionManagerInfo;
 
   public Description getDescription()
   {
@@ -127,6 +132,31 @@ public class Extension extends DynamicData
     return this.healthInfo;
   }
 
+  public ExtensionOvfConsumerInfo getOvfConsumerInfo()
+  {
+    return this.ovfConsumerInfo;
+  }
+
+  public ExtExtendedProductInfo getExtendedProductInfo()
+  {
+    return this.extendedProductInfo;
+  }
+
+  public ExtManagedEntityInfo[] getManagedEntityInfo()
+  {
+    return this.managedEntityInfo;
+  }
+
+  public Boolean getShownInSolutionManager()
+  {
+    return this.shownInSolutionManager;
+  }
+
+  public ExtSolutionManagerInfo getSolutionManagerInfo()
+  {
+    return this.solutionManagerInfo;
+  }
+
   public void setDescription(Description description)
   {
     this.description=description;
@@ -200,5 +230,30 @@ public class Extension extends DynamicData
   public void setHealthInfo(ExtensionHealthInfo healthInfo)
   {
     this.healthInfo=healthInfo;
+  }
+
+  public void setOvfConsumerInfo(ExtensionOvfConsumerInfo ovfConsumerInfo)
+  {
+    this.ovfConsumerInfo=ovfConsumerInfo;
+  }
+
+  public void setExtendedProductInfo(ExtExtendedProductInfo extendedProductInfo)
+  {
+    this.extendedProductInfo=extendedProductInfo;
+  }
+
+  public void setManagedEntityInfo(ExtManagedEntityInfo[] managedEntityInfo)
+  {
+    this.managedEntityInfo=managedEntityInfo;
+  }
+
+  public void setShownInSolutionManager(Boolean shownInSolutionManager)
+  {
+    this.shownInSolutionManager=shownInSolutionManager;
+  }
+
+  public void setSolutionManagerInfo(ExtSolutionManagerInfo solutionManagerInfo)
+  {
+    this.solutionManagerInfo=solutionManagerInfo;
   }
 }

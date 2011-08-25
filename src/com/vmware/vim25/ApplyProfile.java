@@ -37,6 +37,9 @@ public class ApplyProfile extends DynamicData
 {
   public boolean enabled;
   public ProfilePolicy[] policy;
+  public String profileTypeName;
+  public String profileVersion;
+  public ProfileApplyProfileProperty[] property;
 
   public boolean isEnabled()
   {
@@ -48,6 +51,21 @@ public class ApplyProfile extends DynamicData
     return this.policy;
   }
 
+  public String getProfileTypeName()
+  {
+    return this.profileTypeName;
+  }
+
+  public String getProfileVersion()
+  {
+    return this.profileVersion;
+  }
+
+  public ProfileApplyProfileProperty[] getProperty()
+  {
+    return this.property;
+  }
+
   public void setEnabled(boolean enabled)
   {
     this.enabled=enabled;
@@ -56,5 +74,20 @@ public class ApplyProfile extends DynamicData
   public void setPolicy(ProfilePolicy[] policy)
   {
     this.policy=policy;
+  }
+
+  public void setProfileTypeName(String profileTypeName)
+  {
+    this.profileTypeName=profileTypeName;
+  }
+
+  public void setProfileVersion(String profileVersion)
+  {
+    this.profileVersion=profileVersion;
+  }
+
+  public void setProperty(ProfileApplyProfileProperty[] property)
+  {
+    this.property=property;
   }
 }

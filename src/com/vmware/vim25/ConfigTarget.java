@@ -38,6 +38,7 @@ public class ConfigTarget extends DynamicData
   public int numCpus;
   public int numCpuCores;
   public int numNumaNodes;
+  public Boolean smcPresent;
   public VirtualMachineDatastoreInfo[] datastore;
   public VirtualMachineNetworkInfo[] network;
   public DistributedVirtualPortgroupInfo[] distributedVirtualPortgroup;
@@ -70,6 +71,11 @@ public class ConfigTarget extends DynamicData
   public int getNumNumaNodes()
   {
     return this.numNumaNodes;
+  }
+
+  public Boolean getSmcPresent()
+  {
+    return this.smcPresent;
   }
 
   public VirtualMachineDatastoreInfo[] getDatastore()
@@ -175,6 +181,11 @@ public class ConfigTarget extends DynamicData
   public void setNumNumaNodes(int numNumaNodes)
   {
     this.numNumaNodes=numNumaNodes;
+  }
+
+  public void setSmcPresent(Boolean smcPresent)
+  {
+    this.smcPresent=smcPresent;
   }
 
   public void setDatastore(VirtualMachineDatastoreInfo[] datastore)

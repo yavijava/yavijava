@@ -37,6 +37,7 @@ public class DVSNetworkResourcePoolAllocationInfo extends DynamicData
 {
   public Long limit;
   public SharesInfo shares;
+  public Integer priorityTag;
 
   public Long getLimit()
   {
@@ -48,6 +49,11 @@ public class DVSNetworkResourcePoolAllocationInfo extends DynamicData
     return this.shares;
   }
 
+  public Integer getPriorityTag()
+  {
+    return this.priorityTag;
+  }
+
   public void setLimit(Long limit)
   {
     this.limit=limit;
@@ -56,5 +62,10 @@ public class DVSNetworkResourcePoolAllocationInfo extends DynamicData
   public void setShares(SharesInfo shares)
   {
     this.shares=shares;
+  }
+
+  public void setPriorityTag(Integer priorityTag)
+  {
+    this.priorityTag=priorityTag;
   }
 }

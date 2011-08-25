@@ -36,15 +36,22 @@ package com.vmware.vim25;
 public class CpuIncompatible1ECX extends CpuIncompatible
 {
   public boolean sse3;
+  public Boolean pclmulqdq;
   public boolean ssse3;
   public boolean sse41;
   public boolean sse42;
+  public Boolean aes;
   public boolean other;
   public boolean otherOnly;
 
   public boolean isSse3()
   {
     return this.sse3;
+  }
+
+  public Boolean getPclmulqdq()
+  {
+    return this.pclmulqdq;
   }
 
   public boolean isSsse3()
@@ -62,6 +69,11 @@ public class CpuIncompatible1ECX extends CpuIncompatible
     return this.sse42;
   }
 
+  public Boolean getAes()
+  {
+    return this.aes;
+  }
+
   public boolean isOther()
   {
     return this.other;
@@ -77,6 +89,11 @@ public class CpuIncompatible1ECX extends CpuIncompatible
     this.sse3=sse3;
   }
 
+  public void setPclmulqdq(Boolean pclmulqdq)
+  {
+    this.pclmulqdq=pclmulqdq;
+  }
+
   public void setSsse3(boolean ssse3)
   {
     this.ssse3=ssse3;
@@ -90,6 +107,11 @@ public class CpuIncompatible1ECX extends CpuIncompatible
   public void setSse42(boolean sse42)
   {
     this.sse42=sse42;
+  }
+
+  public void setAes(Boolean aes)
+  {
+    this.aes=aes;
   }
 
   public void setOther(boolean other)

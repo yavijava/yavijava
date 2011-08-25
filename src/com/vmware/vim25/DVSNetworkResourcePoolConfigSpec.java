@@ -38,6 +38,8 @@ public class DVSNetworkResourcePoolConfigSpec extends DynamicData
   public String key;
   public String configVersion;
   public DVSNetworkResourcePoolAllocationInfo allocationInfo;
+  public String name;
+  public String description;
 
   public String getKey()
   {
@@ -54,6 +56,16 @@ public class DVSNetworkResourcePoolConfigSpec extends DynamicData
     return this.allocationInfo;
   }
 
+  public String getName()
+  {
+    return this.name;
+  }
+
+  public String getDescription()
+  {
+    return this.description;
+  }
+
   public void setKey(String key)
   {
     this.key=key;
@@ -67,5 +79,15 @@ public class DVSNetworkResourcePoolConfigSpec extends DynamicData
   public void setAllocationInfo(DVSNetworkResourcePoolAllocationInfo allocationInfo)
   {
     this.allocationInfo=allocationInfo;
+  }
+
+  public void setName(String name)
+  {
+    this.name=name;
+  }
+
+  public void setDescription(String description)
+  {
+    this.description=description;
   }
 }

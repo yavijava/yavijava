@@ -53,6 +53,7 @@ public class DVSConfigInfo extends DynamicData
   public String description;
   public String configVersion;
   public DVSContactInfo contact;
+  public String switchIpAddress;
   public Calendar createTime;
   public Boolean networkResourceManagementEnabled;
 
@@ -139,6 +140,11 @@ public class DVSConfigInfo extends DynamicData
   public DVSContactInfo getContact()
   {
     return this.contact;
+  }
+
+  public String getSwitchIpAddress()
+  {
+    return this.switchIpAddress;
   }
 
   public Calendar getCreateTime()
@@ -234,6 +240,11 @@ public class DVSConfigInfo extends DynamicData
   public void setContact(DVSContactInfo contact)
   {
     this.contact=contact;
+  }
+
+  public void setSwitchIpAddress(String switchIpAddress)
+  {
+    this.switchIpAddress=switchIpAddress;
   }
 
   public void setCreateTime(Calendar createTime)

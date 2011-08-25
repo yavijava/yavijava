@@ -36,14 +36,25 @@ package com.vmware.vim25;
 public class ClusterDasAdvancedRuntimeInfo extends DynamicData
 {
   public ClusterDasHostInfo dasHostInfo;
+  public DasHeartbeatDatastoreInfo[] heartbeatDatastoreInfo;
 
   public ClusterDasHostInfo getDasHostInfo()
   {
     return this.dasHostInfo;
   }
 
+  public DasHeartbeatDatastoreInfo[] getHeartbeatDatastoreInfo()
+  {
+    return this.heartbeatDatastoreInfo;
+  }
+
   public void setDasHostInfo(ClusterDasHostInfo dasHostInfo)
   {
     this.dasHostInfo=dasHostInfo;
+  }
+
+  public void setHeartbeatDatastoreInfo(DasHeartbeatDatastoreInfo[] heartbeatDatastoreInfo)
+  {
+    this.heartbeatDatastoreInfo=heartbeatDatastoreInfo;
   }
 }

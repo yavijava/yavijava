@@ -37,6 +37,7 @@ public class GuestInfo extends DynamicData
 {
   public VirtualMachineToolsStatus toolsStatus;
   public String toolsVersionStatus;
+  public String toolsVersionStatus2;
   public String toolsRunningStatus;
   public String toolsVersion;
   public String guestId;
@@ -50,6 +51,8 @@ public class GuestInfo extends DynamicData
   public GuestScreenInfo screen;
   public String guestState;
   public String appHeartbeatStatus;
+  public Boolean guestOperationsReady;
+  public Boolean interactiveGuestOperationsReady;
 
   public VirtualMachineToolsStatus getToolsStatus()
   {
@@ -59,6 +62,11 @@ public class GuestInfo extends DynamicData
   public String getToolsVersionStatus()
   {
     return this.toolsVersionStatus;
+  }
+
+  public String getToolsVersionStatus2()
+  {
+    return this.toolsVersionStatus2;
   }
 
   public String getToolsRunningStatus()
@@ -126,6 +134,16 @@ public class GuestInfo extends DynamicData
     return this.appHeartbeatStatus;
   }
 
+  public Boolean getGuestOperationsReady()
+  {
+    return this.guestOperationsReady;
+  }
+
+  public Boolean getInteractiveGuestOperationsReady()
+  {
+    return this.interactiveGuestOperationsReady;
+  }
+
   public void setToolsStatus(VirtualMachineToolsStatus toolsStatus)
   {
     this.toolsStatus=toolsStatus;
@@ -134,6 +152,11 @@ public class GuestInfo extends DynamicData
   public void setToolsVersionStatus(String toolsVersionStatus)
   {
     this.toolsVersionStatus=toolsVersionStatus;
+  }
+
+  public void setToolsVersionStatus2(String toolsVersionStatus2)
+  {
+    this.toolsVersionStatus2=toolsVersionStatus2;
   }
 
   public void setToolsRunningStatus(String toolsRunningStatus)
@@ -199,5 +222,15 @@ public class GuestInfo extends DynamicData
   public void setAppHeartbeatStatus(String appHeartbeatStatus)
   {
     this.appHeartbeatStatus=appHeartbeatStatus;
+  }
+
+  public void setGuestOperationsReady(Boolean guestOperationsReady)
+  {
+    this.guestOperationsReady=guestOperationsReady;
+  }
+
+  public void setInteractiveGuestOperationsReady(Boolean interactiveGuestOperationsReady)
+  {
+    this.interactiveGuestOperationsReady=interactiveGuestOperationsReady;
   }
 }

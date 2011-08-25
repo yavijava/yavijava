@@ -48,6 +48,7 @@ public class DVSConfigSpec extends DynamicData
   public DVSPolicy policy;
   public DistributedVirtualSwitchKeyedOpaqueBlob[] vendorSpecificConfig;
   public DVSContactInfo contact;
+  public String switchIpAddress;
 
   public String getConfigVersion()
   {
@@ -114,6 +115,11 @@ public class DVSConfigSpec extends DynamicData
     return this.contact;
   }
 
+  public String getSwitchIpAddress()
+  {
+    return this.switchIpAddress;
+  }
+
   public void setConfigVersion(String configVersion)
   {
     this.configVersion=configVersion;
@@ -177,5 +183,10 @@ public class DVSConfigSpec extends DynamicData
   public void setContact(DVSContactInfo contact)
   {
     this.contact=contact;
+  }
+
+  public void setSwitchIpAddress(String switchIpAddress)
+  {
+    this.switchIpAddress=switchIpAddress;
   }
 }

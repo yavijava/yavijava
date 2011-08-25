@@ -43,6 +43,8 @@ public class ClusterDasConfigInfo extends DynamicData
   public Boolean admissionControlEnabled;
   public ClusterDasVmSettings defaultVmSettings;
   public OptionValue[] option;
+  public ManagedObjectReference[] heartbeatDatastore;
+  public String hBDatastoreCandidatePolicy;
 
   public Boolean getEnabled()
   {
@@ -84,6 +86,16 @@ public class ClusterDasConfigInfo extends DynamicData
     return this.option;
   }
 
+  public ManagedObjectReference[] getHeartbeatDatastore()
+  {
+    return this.heartbeatDatastore;
+  }
+
+  public String getHBDatastoreCandidatePolicy()
+  {
+    return this.hBDatastoreCandidatePolicy;
+  }
+
   public void setEnabled(Boolean enabled)
   {
     this.enabled=enabled;
@@ -122,5 +134,15 @@ public class ClusterDasConfigInfo extends DynamicData
   public void setOption(OptionValue[] option)
   {
     this.option=option;
+  }
+
+  public void setHeartbeatDatastore(ManagedObjectReference[] heartbeatDatastore)
+  {
+    this.heartbeatDatastore=heartbeatDatastore;
+  }
+
+  public void setHBDatastoreCandidatePolicy(String hBDatastoreCandidatePolicy)
+  {
+    this.hBDatastoreCandidatePolicy=hBDatastoreCandidatePolicy;
   }
 }

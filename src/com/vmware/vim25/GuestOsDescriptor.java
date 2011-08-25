@@ -39,6 +39,8 @@ public class GuestOsDescriptor extends DynamicData
   public String family;
   public String fullName;
   public int supportedMaxCPUs;
+  public Integer numSupportedPhysicalSockets;
+  public Integer numSupportedCoresPerSocket;
   public int supportedMinMemMB;
   public int supportedMaxMemMB;
   public int recommendedMemMB;
@@ -52,11 +54,23 @@ public class GuestOsDescriptor extends DynamicData
   public String recommendedEthernetCard;
   public Boolean supportsSlaveDisk;
   public HostCpuIdInfo[] cpuFeatureMask;
+  public Boolean smcRequired;
   public boolean supportsWakeOnLan;
   public Boolean supportsVMI;
   public Boolean supportsMemoryHotAdd;
   public Boolean supportsCpuHotAdd;
   public Boolean supportsCpuHotRemove;
+  public String[] supportedFirmware;
+  public String recommendedFirmware;
+  public String[] supportedUSBControllerList;
+  public String recommendedUSBController;
+  public Boolean supports3D;
+  public Boolean smcRecommended;
+  public Boolean ich7mRecommended;
+  public Boolean usbRecommended;
+  public String supportLevel;
+  public Boolean supportedForCreate;
+  public IntOption vRAMSizeInKB;
 
   public String getId()
   {
@@ -76,6 +90,16 @@ public class GuestOsDescriptor extends DynamicData
   public int getSupportedMaxCPUs()
   {
     return this.supportedMaxCPUs;
+  }
+
+  public Integer getNumSupportedPhysicalSockets()
+  {
+    return this.numSupportedPhysicalSockets;
+  }
+
+  public Integer getNumSupportedCoresPerSocket()
+  {
+    return this.numSupportedCoresPerSocket;
   }
 
   public int getSupportedMinMemMB()
@@ -143,6 +167,11 @@ public class GuestOsDescriptor extends DynamicData
     return this.cpuFeatureMask;
   }
 
+  public Boolean getSmcRequired()
+  {
+    return this.smcRequired;
+  }
+
   public boolean isSupportsWakeOnLan()
   {
     return this.supportsWakeOnLan;
@@ -168,6 +197,61 @@ public class GuestOsDescriptor extends DynamicData
     return this.supportsCpuHotRemove;
   }
 
+  public String[] getSupportedFirmware()
+  {
+    return this.supportedFirmware;
+  }
+
+  public String getRecommendedFirmware()
+  {
+    return this.recommendedFirmware;
+  }
+
+  public String[] getSupportedUSBControllerList()
+  {
+    return this.supportedUSBControllerList;
+  }
+
+  public String getRecommendedUSBController()
+  {
+    return this.recommendedUSBController;
+  }
+
+  public Boolean getSupports3D()
+  {
+    return this.supports3D;
+  }
+
+  public Boolean getSmcRecommended()
+  {
+    return this.smcRecommended;
+  }
+
+  public Boolean getIch7mRecommended()
+  {
+    return this.ich7mRecommended;
+  }
+
+  public Boolean getUsbRecommended()
+  {
+    return this.usbRecommended;
+  }
+
+  public String getSupportLevel()
+  {
+    return this.supportLevel;
+  }
+
+  public Boolean getSupportedForCreate()
+  {
+    return this.supportedForCreate;
+  }
+
+  public IntOption getVRAMSizeInKB()
+  {
+    return this.vRAMSizeInKB;
+  }
+
   public void setId(String id)
   {
     this.id=id;
@@ -186,6 +270,16 @@ public class GuestOsDescriptor extends DynamicData
   public void setSupportedMaxCPUs(int supportedMaxCPUs)
   {
     this.supportedMaxCPUs=supportedMaxCPUs;
+  }
+
+  public void setNumSupportedPhysicalSockets(Integer numSupportedPhysicalSockets)
+  {
+    this.numSupportedPhysicalSockets=numSupportedPhysicalSockets;
+  }
+
+  public void setNumSupportedCoresPerSocket(Integer numSupportedCoresPerSocket)
+  {
+    this.numSupportedCoresPerSocket=numSupportedCoresPerSocket;
   }
 
   public void setSupportedMinMemMB(int supportedMinMemMB)
@@ -253,6 +347,11 @@ public class GuestOsDescriptor extends DynamicData
     this.cpuFeatureMask=cpuFeatureMask;
   }
 
+  public void setSmcRequired(Boolean smcRequired)
+  {
+    this.smcRequired=smcRequired;
+  }
+
   public void setSupportsWakeOnLan(boolean supportsWakeOnLan)
   {
     this.supportsWakeOnLan=supportsWakeOnLan;
@@ -276,5 +375,60 @@ public class GuestOsDescriptor extends DynamicData
   public void setSupportsCpuHotRemove(Boolean supportsCpuHotRemove)
   {
     this.supportsCpuHotRemove=supportsCpuHotRemove;
+  }
+
+  public void setSupportedFirmware(String[] supportedFirmware)
+  {
+    this.supportedFirmware=supportedFirmware;
+  }
+
+  public void setRecommendedFirmware(String recommendedFirmware)
+  {
+    this.recommendedFirmware=recommendedFirmware;
+  }
+
+  public void setSupportedUSBControllerList(String[] supportedUSBControllerList)
+  {
+    this.supportedUSBControllerList=supportedUSBControllerList;
+  }
+
+  public void setRecommendedUSBController(String recommendedUSBController)
+  {
+    this.recommendedUSBController=recommendedUSBController;
+  }
+
+  public void setSupports3D(Boolean supports3D)
+  {
+    this.supports3D=supports3D;
+  }
+
+  public void setSmcRecommended(Boolean smcRecommended)
+  {
+    this.smcRecommended=smcRecommended;
+  }
+
+  public void setIch7mRecommended(Boolean ich7mRecommended)
+  {
+    this.ich7mRecommended=ich7mRecommended;
+  }
+
+  public void setUsbRecommended(Boolean usbRecommended)
+  {
+    this.usbRecommended=usbRecommended;
+  }
+
+  public void setSupportLevel(String supportLevel)
+  {
+    this.supportLevel=supportLevel;
+  }
+
+  public void setSupportedForCreate(Boolean supportedForCreate)
+  {
+    this.supportedForCreate=supportedForCreate;
+  }
+
+  public void setVRAMSizeInKB(IntOption vRAMSizeInKB)
+  {
+    this.vRAMSizeInKB=vRAMSizeInKB;
   }
 }

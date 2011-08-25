@@ -45,6 +45,7 @@ public class DVPortgroupConfigSpec extends DynamicData
   public ManagedObjectReference[] scope;
   public DVPortgroupPolicy policy;
   public DistributedVirtualSwitchKeyedOpaqueBlob[] vendorSpecificConfig;
+  public Boolean autoExpand;
 
   public String getConfigVersion()
   {
@@ -96,6 +97,11 @@ public class DVPortgroupConfigSpec extends DynamicData
     return this.vendorSpecificConfig;
   }
 
+  public Boolean getAutoExpand()
+  {
+    return this.autoExpand;
+  }
+
   public void setConfigVersion(String configVersion)
   {
     this.configVersion=configVersion;
@@ -144,5 +150,10 @@ public class DVPortgroupConfigSpec extends DynamicData
   public void setVendorSpecificConfig(DistributedVirtualSwitchKeyedOpaqueBlob[] vendorSpecificConfig)
   {
     this.vendorSpecificConfig=vendorSpecificConfig;
+  }
+
+  public void setAutoExpand(Boolean autoExpand)
+  {
+    this.autoExpand=autoExpand;
   }
 }

@@ -41,6 +41,7 @@ public class ClusterComputeResourceSummary extends ComputeResourceSummary
   public Integer targetBalance;
   public Integer currentBalance;
   public String currentEVCModeKey;
+  public ClusterDasData dasData;
 
   public int getCurrentFailoverLevel()
   {
@@ -72,6 +73,11 @@ public class ClusterComputeResourceSummary extends ComputeResourceSummary
     return this.currentEVCModeKey;
   }
 
+  public ClusterDasData getDasData()
+  {
+    return this.dasData;
+  }
+
   public void setCurrentFailoverLevel(int currentFailoverLevel)
   {
     this.currentFailoverLevel=currentFailoverLevel;
@@ -100,5 +106,10 @@ public class ClusterComputeResourceSummary extends ComputeResourceSummary
   public void setCurrentEVCModeKey(String currentEVCModeKey)
   {
     this.currentEVCModeKey=currentEVCModeKey;
+  }
+
+  public void setDasData(ClusterDasData dasData)
+  {
+    this.dasData=dasData;
   }
 }

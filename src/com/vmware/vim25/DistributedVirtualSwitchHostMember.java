@@ -35,11 +35,17 @@ package com.vmware.vim25;
 
 public class DistributedVirtualSwitchHostMember extends DynamicData
 {
+  public DistributedVirtualSwitchHostMemberRuntimeState runtimeState;
   public DistributedVirtualSwitchHostMemberConfigInfo config;
   public DistributedVirtualSwitchProductSpec productInfo;
   public String[] uplinkPortKey;
   public String status;
   public String statusDetail;
+
+  public DistributedVirtualSwitchHostMemberRuntimeState getRuntimeState()
+  {
+    return this.runtimeState;
+  }
 
   public DistributedVirtualSwitchHostMemberConfigInfo getConfig()
   {
@@ -64,6 +70,11 @@ public class DistributedVirtualSwitchHostMember extends DynamicData
   public String getStatusDetail()
   {
     return this.statusDetail;
+  }
+
+  public void setRuntimeState(DistributedVirtualSwitchHostMemberRuntimeState runtimeState)
+  {
+    this.runtimeState=runtimeState;
   }
 
   public void setConfig(DistributedVirtualSwitchHostMemberConfigInfo config)

@@ -36,6 +36,7 @@ package com.vmware.vim25;
 public class AlarmSpec extends DynamicData
 {
   public String name;
+  public String systemName;
   public String description;
   public boolean enabled;
   public AlarmExpression expression;
@@ -46,6 +47,11 @@ public class AlarmSpec extends DynamicData
   public String getName()
   {
     return this.name;
+  }
+
+  public String getSystemName()
+  {
+    return this.systemName;
   }
 
   public String getDescription()
@@ -81,6 +87,11 @@ public class AlarmSpec extends DynamicData
   public void setName(String name)
   {
     this.name=name;
+  }
+
+  public void setSystemName(String systemName)
+  {
+    this.systemName=systemName;
   }
 
   public void setDescription(String description)

@@ -36,14 +36,25 @@ package com.vmware.vim25;
 public class ClusterGroupInfo extends DynamicData
 {
   public String name;
+  public Boolean userCreated;
 
   public String getName()
   {
     return this.name;
   }
 
+  public Boolean getUserCreated()
+  {
+    return this.userCreated;
+  }
+
   public void setName(String name)
   {
     this.name=name;
+  }
+
+  public void setUserCreated(Boolean userCreated)
+  {
+    this.userCreated=userCreated;
   }
 }

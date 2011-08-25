@@ -40,6 +40,7 @@ public class DVPortgroupPolicy extends DynamicData
   public boolean vendorConfigOverrideAllowed;
   public boolean livePortMovingAllowed;
   public boolean portConfigResetAtDisconnect;
+  public Boolean networkResourcePoolOverrideAllowed;
 
   public boolean isBlockOverrideAllowed()
   {
@@ -66,6 +67,11 @@ public class DVPortgroupPolicy extends DynamicData
     return this.portConfigResetAtDisconnect;
   }
 
+  public Boolean getNetworkResourcePoolOverrideAllowed()
+  {
+    return this.networkResourcePoolOverrideAllowed;
+  }
+
   public void setBlockOverrideAllowed(boolean blockOverrideAllowed)
   {
     this.blockOverrideAllowed=blockOverrideAllowed;
@@ -89,5 +95,10 @@ public class DVPortgroupPolicy extends DynamicData
   public void setPortConfigResetAtDisconnect(boolean portConfigResetAtDisconnect)
   {
     this.portConfigResetAtDisconnect=portConfigResetAtDisconnect;
+  }
+
+  public void setNetworkResourcePoolOverrideAllowed(Boolean networkResourcePoolOverrideAllowed)
+  {
+    this.networkResourcePoolOverrideAllowed=networkResourcePoolOverrideAllowed;
   }
 }

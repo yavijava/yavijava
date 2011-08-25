@@ -44,6 +44,7 @@ public class DatastoreSummary extends DynamicData
   public boolean accessible;
   public Boolean multipleHostAccess;
   public String type;
+  public String maintenanceMode;
 
   public ManagedObjectReference getDatastore()
   {
@@ -90,6 +91,11 @@ public class DatastoreSummary extends DynamicData
     return this.type;
   }
 
+  public String getMaintenanceMode()
+  {
+    return this.maintenanceMode;
+  }
+
   public void setDatastore(ManagedObjectReference datastore)
   {
     this.datastore=datastore;
@@ -133,5 +139,10 @@ public class DatastoreSummary extends DynamicData
   public void setType(String type)
   {
     this.type=type;
+  }
+
+  public void setMaintenanceMode(String maintenanceMode)
+  {
+    this.maintenanceMode=maintenanceMode;
   }
 }
