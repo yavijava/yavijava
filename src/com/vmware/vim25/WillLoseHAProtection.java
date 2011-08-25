@@ -33,31 +33,17 @@ package com.vmware.vim25;
 @author Steve Jin (sjin@vmware.com)
 */
 
-public enum VmFaultToleranceConfigIssueReasonForIssue
+public class WillLoseHAProtection extends MigrationFault
 {
-  haNotEnabled ("haNotEnabled"),
-  moreThanOneSecondary ("moreThanOneSecondary"),
-  recordReplayNotSupported ("recordReplayNotSupported"),
-  replayNotSupported ("replayNotSupported"),
-  templateVm ("templateVm"),
-  multipleVCPU ("multipleVCPU"),
-  hostInactive ("hostInactive"),
-  ftUnsupportedHardware ("ftUnsupportedHardware"),
-  ftUnsupportedProduct ("ftUnsupportedProduct"),
-  missingVMotionNic ("missingVMotionNic"),
-  missingFTLoggingNic ("missingFTLoggingNic"),
-  thinDisk ("thinDisk"),
-  verifySSLCertificateFlagNotSet ("verifySSLCertificateFlagNotSet"),
-  hasSnapshots ("hasSnapshots"),
-  noConfig ("noConfig"),
-  ftSecondaryVm ("ftSecondaryVm"),
-  hasLocalDisk ("hasLocalDisk"),
-  esxAgentVm ("esxAgentVm"),
-  video3dEnabled ("video3dEnabled");
+  public String resolution;
 
-  private final String val;
-  private VmFaultToleranceConfigIssueReasonForIssue(String val)
+  public String getResolution()
   {
-    this.val = val;
+    return this.resolution;
+  }
+
+  public void setResolution(String resolution)
+  {
+    this.resolution=resolution;
   }
 }

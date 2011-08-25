@@ -54,6 +54,7 @@ public class VirtualMachineQuickStats extends DynamicData
   public ManagedEntityStatus ftLatencyStatus;
   public Long compressedMemory;
   public Integer uptimeSeconds;
+  public Long ssdSwappedMemory;
 
   public Integer getOverallCpuUsage()
   {
@@ -150,6 +151,11 @@ public class VirtualMachineQuickStats extends DynamicData
     return this.uptimeSeconds;
   }
 
+  public Long getSsdSwappedMemory()
+  {
+    return this.ssdSwappedMemory;
+  }
+
   public void setOverallCpuUsage(Integer overallCpuUsage)
   {
     this.overallCpuUsage=overallCpuUsage;
@@ -243,5 +249,10 @@ public class VirtualMachineQuickStats extends DynamicData
   public void setUptimeSeconds(Integer uptimeSeconds)
   {
     this.uptimeSeconds=uptimeSeconds;
+  }
+
+  public void setSsdSwappedMemory(Long ssdSwappedMemory)
+  {
+    this.ssdSwappedMemory=ssdSwappedMemory;
   }
 }

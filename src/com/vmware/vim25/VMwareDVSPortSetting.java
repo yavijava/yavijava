@@ -39,6 +39,7 @@ public class VMwareDVSPortSetting extends DVPortSetting
   public IntPolicy qosTag;
   public VmwareUplinkPortTeamingPolicy uplinkTeamingPolicy;
   public DVSSecurityPolicy securityPolicy;
+  public BoolPolicy ipfixEnabled;
   public BoolPolicy txUplink;
 
   public VmwareDistributedVirtualSwitchVlanSpec getVlan()
@@ -59,6 +60,11 @@ public class VMwareDVSPortSetting extends DVPortSetting
   public DVSSecurityPolicy getSecurityPolicy()
   {
     return this.securityPolicy;
+  }
+
+  public BoolPolicy getIpfixEnabled()
+  {
+    return this.ipfixEnabled;
   }
 
   public BoolPolicy getTxUplink()
@@ -84,6 +90,11 @@ public class VMwareDVSPortSetting extends DVPortSetting
   public void setSecurityPolicy(DVSSecurityPolicy securityPolicy)
   {
     this.securityPolicy=securityPolicy;
+  }
+
+  public void setIpfixEnabled(BoolPolicy ipfixEnabled)
+  {
+    this.ipfixEnabled=ipfixEnabled;
   }
 
   public void setTxUplink(BoolPolicy txUplink)

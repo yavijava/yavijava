@@ -35,4 +35,37 @@ package com.vmware.vim25;
 
 public class VMwareDVSFeatureCapability extends DVSFeatureCapability
 {
+  public Boolean vspanSupported;
+  public Boolean lldpSupported;
+  public Boolean ipfixSupported;
+
+  public Boolean getVspanSupported()
+  {
+    return this.vspanSupported;
+  }
+
+  public Boolean getLldpSupported()
+  {
+    return this.lldpSupported;
+  }
+
+  public Boolean getIpfixSupported()
+  {
+    return this.ipfixSupported;
+  }
+
+  public void setVspanSupported(Boolean vspanSupported)
+  {
+    this.vspanSupported=vspanSupported;
+  }
+
+  public void setLldpSupported(Boolean lldpSupported)
+  {
+    this.lldpSupported=lldpSupported;
+  }
+
+  public void setIpfixSupported(Boolean ipfixSupported)
+  {
+    this.ipfixSupported=ipfixSupported;
+  }
 }

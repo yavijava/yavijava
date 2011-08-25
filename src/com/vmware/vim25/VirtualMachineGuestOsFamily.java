@@ -39,6 +39,7 @@ public enum VirtualMachineGuestOsFamily
   linuxGuest ("linuxGuest"),
   netwareGuest ("netwareGuest"),
   solarisGuest ("solarisGuest"),
+  darwinGuestFamily ("darwinGuestFamily"),
   otherGuestFamily ("otherGuestFamily");
 
   private final String val;

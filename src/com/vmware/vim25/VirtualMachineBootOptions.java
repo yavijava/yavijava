@@ -39,6 +39,7 @@ public class VirtualMachineBootOptions extends DynamicData
   public Boolean enterBIOSSetup;
   public Boolean bootRetryEnabled;
   public Long bootRetryDelay;
+  public VirtualMachineBootOptionsBootableDevice[] bootOrder;
 
   public Long getBootDelay()
   {
@@ -60,6 +61,11 @@ public class VirtualMachineBootOptions extends DynamicData
     return this.bootRetryDelay;
   }
 
+  public VirtualMachineBootOptionsBootableDevice[] getBootOrder()
+  {
+    return this.bootOrder;
+  }
+
   public void setBootDelay(Long bootDelay)
   {
     this.bootDelay=bootDelay;
@@ -78,5 +84,10 @@ public class VirtualMachineBootOptions extends DynamicData
   public void setBootRetryDelay(Long bootRetryDelay)
   {
     this.bootRetryDelay=bootRetryDelay;
+  }
+
+  public void setBootOrder(VirtualMachineBootOptionsBootableDevice[] bootOrder)
+  {
+    this.bootOrder=bootOrder;
   }
 }

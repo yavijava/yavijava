@@ -38,7 +38,12 @@ public enum VirtualMachineToolsVersionStatus
   guestToolsNotInstalled ("guestToolsNotInstalled"),
   guestToolsNeedUpgrade ("guestToolsNeedUpgrade"),
   guestToolsCurrent ("guestToolsCurrent"),
-  guestToolsUnmanaged ("guestToolsUnmanaged");
+  guestToolsUnmanaged ("guestToolsUnmanaged"),
+  guestToolsTooOld ("guestToolsTooOld"),
+  guestToolsSupportedOld ("guestToolsSupportedOld"),
+  guestToolsSupportedNew ("guestToolsSupportedNew"),
+  guestToolsTooNew ("guestToolsTooNew"),
+  guestToolsBlacklisted ("guestToolsBlacklisted");
 
   private final String val;
   private VirtualMachineToolsVersionStatus(String val)

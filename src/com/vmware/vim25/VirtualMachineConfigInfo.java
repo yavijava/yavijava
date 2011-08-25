@@ -80,6 +80,12 @@ public class VirtualMachineConfigInfo extends DynamicData
   public VmConfigInfo vAppConfig;
   public Boolean vAssertsEnabled;
   public Boolean changeTrackingEnabled;
+  public String firmware;
+  public Integer maxMksConnections;
+  public Boolean guestAutoLockEnabled;
+  public ManagedByInfo managedBy;
+  public Boolean memoryReservationLockedToMax;
+  public VirtualMachineConfigInfoOverheadInfo initialOverhead;
 
   public String getChangeVersion()
   {
@@ -301,6 +307,36 @@ public class VirtualMachineConfigInfo extends DynamicData
     return this.changeTrackingEnabled;
   }
 
+  public String getFirmware()
+  {
+    return this.firmware;
+  }
+
+  public Integer getMaxMksConnections()
+  {
+    return this.maxMksConnections;
+  }
+
+  public Boolean getGuestAutoLockEnabled()
+  {
+    return this.guestAutoLockEnabled;
+  }
+
+  public ManagedByInfo getManagedBy()
+  {
+    return this.managedBy;
+  }
+
+  public Boolean getMemoryReservationLockedToMax()
+  {
+    return this.memoryReservationLockedToMax;
+  }
+
+  public VirtualMachineConfigInfoOverheadInfo getInitialOverhead()
+  {
+    return this.initialOverhead;
+  }
+
   public void setChangeVersion(String changeVersion)
   {
     this.changeVersion=changeVersion;
@@ -519,5 +555,35 @@ public class VirtualMachineConfigInfo extends DynamicData
   public void setChangeTrackingEnabled(Boolean changeTrackingEnabled)
   {
     this.changeTrackingEnabled=changeTrackingEnabled;
+  }
+
+  public void setFirmware(String firmware)
+  {
+    this.firmware=firmware;
+  }
+
+  public void setMaxMksConnections(Integer maxMksConnections)
+  {
+    this.maxMksConnections=maxMksConnections;
+  }
+
+  public void setGuestAutoLockEnabled(Boolean guestAutoLockEnabled)
+  {
+    this.guestAutoLockEnabled=guestAutoLockEnabled;
+  }
+
+  public void setManagedBy(ManagedByInfo managedBy)
+  {
+    this.managedBy=managedBy;
+  }
+
+  public void setMemoryReservationLockedToMax(Boolean memoryReservationLockedToMax)
+  {
+    this.memoryReservationLockedToMax=memoryReservationLockedToMax;
+  }
+
+  public void setInitialOverhead(VirtualMachineConfigInfoOverheadInfo initialOverhead)
+  {
+    this.initialOverhead=initialOverhead;
   }
 }

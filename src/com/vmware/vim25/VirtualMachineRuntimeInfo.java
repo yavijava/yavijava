@@ -41,6 +41,7 @@ public class VirtualMachineRuntimeInfo extends DynamicData
   public VirtualMachineConnectionState connectionState;
   public VirtualMachinePowerState powerState;
   public VirtualMachineFaultToleranceState faultToleranceState;
+  public VirtualMachineRuntimeInfoDasProtectionState dasVmProtection;
   public boolean toolsInstallerMounted;
   public Calendar suspendTime;
   public Calendar bootTime;
@@ -54,6 +55,7 @@ public class VirtualMachineRuntimeInfo extends DynamicData
   public Boolean cleanPowerOff;
   public String needSecondaryReason;
   public String minRequiredEVCModeKey;
+  public Boolean consolidationNeeded;
 
   public VirtualMachineDeviceRuntimeInfo[] getDevice()
   {
@@ -78,6 +80,11 @@ public class VirtualMachineRuntimeInfo extends DynamicData
   public VirtualMachineFaultToleranceState getFaultToleranceState()
   {
     return this.faultToleranceState;
+  }
+
+  public VirtualMachineRuntimeInfoDasProtectionState getDasVmProtection()
+  {
+    return this.dasVmProtection;
   }
 
   public boolean isToolsInstallerMounted()
@@ -145,6 +152,11 @@ public class VirtualMachineRuntimeInfo extends DynamicData
     return this.minRequiredEVCModeKey;
   }
 
+  public Boolean getConsolidationNeeded()
+  {
+    return this.consolidationNeeded;
+  }
+
   public void setDevice(VirtualMachineDeviceRuntimeInfo[] device)
   {
     this.device=device;
@@ -168,6 +180,11 @@ public class VirtualMachineRuntimeInfo extends DynamicData
   public void setFaultToleranceState(VirtualMachineFaultToleranceState faultToleranceState)
   {
     this.faultToleranceState=faultToleranceState;
+  }
+
+  public void setDasVmProtection(VirtualMachineRuntimeInfoDasProtectionState dasVmProtection)
+  {
+    this.dasVmProtection=dasVmProtection;
   }
 
   public void setToolsInstallerMounted(boolean toolsInstallerMounted)
@@ -233,5 +250,10 @@ public class VirtualMachineRuntimeInfo extends DynamicData
   public void setMinRequiredEVCModeKey(String minRequiredEVCModeKey)
   {
     this.minRequiredEVCModeKey=minRequiredEVCModeKey;
+  }
+
+  public void setConsolidationNeeded(Boolean consolidationNeeded)
+  {
+    this.consolidationNeeded=consolidationNeeded;
   }
 }

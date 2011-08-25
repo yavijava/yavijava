@@ -39,13 +39,18 @@ public enum VirtualMachineFileLayoutExFileType
   extendedConfig ("extendedConfig"),
   diskDescriptor ("diskDescriptor"),
   diskExtent ("diskExtent"),
+  digestDescriptor ("digestDescriptor"),
+  digestExtent ("digestExtent"),
+  diskReplicationState ("diskReplicationState"),
   log ("log"),
   stat ("stat"),
   nvram ("nvram"),
   snapshotData ("snapshotData"),
   snapshotList ("snapshotList"),
+  snapshotManifestList ("snapshotManifestList"),
   suspend ("suspend"),
   swap ("swap"),
+  uwswap ("uwswap"),
   core ("core"),
   screenshot ("screenshot");
 

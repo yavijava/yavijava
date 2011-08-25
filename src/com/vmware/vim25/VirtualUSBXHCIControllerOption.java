@@ -33,31 +33,28 @@ package com.vmware.vim25;
 @author Steve Jin (sjin@vmware.com)
 */
 
-public enum VmFaultToleranceConfigIssueReasonForIssue
+public class VirtualUSBXHCIControllerOption extends VirtualControllerOption
 {
-  haNotEnabled ("haNotEnabled"),
-  moreThanOneSecondary ("moreThanOneSecondary"),
-  recordReplayNotSupported ("recordReplayNotSupported"),
-  replayNotSupported ("replayNotSupported"),
-  templateVm ("templateVm"),
-  multipleVCPU ("multipleVCPU"),
-  hostInactive ("hostInactive"),
-  ftUnsupportedHardware ("ftUnsupportedHardware"),
-  ftUnsupportedProduct ("ftUnsupportedProduct"),
-  missingVMotionNic ("missingVMotionNic"),
-  missingFTLoggingNic ("missingFTLoggingNic"),
-  thinDisk ("thinDisk"),
-  verifySSLCertificateFlagNotSet ("verifySSLCertificateFlagNotSet"),
-  hasSnapshots ("hasSnapshots"),
-  noConfig ("noConfig"),
-  ftSecondaryVm ("ftSecondaryVm"),
-  hasLocalDisk ("hasLocalDisk"),
-  esxAgentVm ("esxAgentVm"),
-  video3dEnabled ("video3dEnabled");
+  public BoolOption autoConnectDevices;
+  public String[] supportedSpeeds;
 
-  private final String val;
-  private VmFaultToleranceConfigIssueReasonForIssue(String val)
+  public BoolOption getAutoConnectDevices()
   {
-    this.val = val;
+    return this.autoConnectDevices;
+  }
+
+  public String[] getSupportedSpeeds()
+  {
+    return this.supportedSpeeds;
+  }
+
+  public void setAutoConnectDevices(BoolOption autoConnectDevices)
+  {
+    this.autoConnectDevices=autoConnectDevices;
+  }
+
+  public void setSupportedSpeeds(String[] supportedSpeeds)
+  {
+    this.supportedSpeeds=supportedSpeeds;
   }
 }

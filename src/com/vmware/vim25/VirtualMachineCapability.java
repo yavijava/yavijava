@@ -63,6 +63,10 @@ public class VirtualMachineCapability extends DynamicData
   public Boolean settingDisplayTopologySupported;
   public Boolean recordReplaySupported;
   public Boolean changeTrackingSupported;
+  public Boolean multipleCoresPerSocketSupported;
+  public Boolean hostBasedReplicationSupported;
+  public Boolean guestAutoLockSupported;
+  public Boolean memoryReservationLockSupported;
 
   public boolean isSnapshotOperationsSupported()
   {
@@ -204,6 +208,26 @@ public class VirtualMachineCapability extends DynamicData
     return this.changeTrackingSupported;
   }
 
+  public Boolean getMultipleCoresPerSocketSupported()
+  {
+    return this.multipleCoresPerSocketSupported;
+  }
+
+  public Boolean getHostBasedReplicationSupported()
+  {
+    return this.hostBasedReplicationSupported;
+  }
+
+  public Boolean getGuestAutoLockSupported()
+  {
+    return this.guestAutoLockSupported;
+  }
+
+  public Boolean getMemoryReservationLockSupported()
+  {
+    return this.memoryReservationLockSupported;
+  }
+
   public void setSnapshotOperationsSupported(boolean snapshotOperationsSupported)
   {
     this.snapshotOperationsSupported=snapshotOperationsSupported;
@@ -342,5 +366,25 @@ public class VirtualMachineCapability extends DynamicData
   public void setChangeTrackingSupported(Boolean changeTrackingSupported)
   {
     this.changeTrackingSupported=changeTrackingSupported;
+  }
+
+  public void setMultipleCoresPerSocketSupported(Boolean multipleCoresPerSocketSupported)
+  {
+    this.multipleCoresPerSocketSupported=multipleCoresPerSocketSupported;
+  }
+
+  public void setHostBasedReplicationSupported(Boolean hostBasedReplicationSupported)
+  {
+    this.hostBasedReplicationSupported=hostBasedReplicationSupported;
+  }
+
+  public void setGuestAutoLockSupported(Boolean guestAutoLockSupported)
+  {
+    this.guestAutoLockSupported=guestAutoLockSupported;
+  }
+
+  public void setMemoryReservationLockSupported(Boolean memoryReservationLockSupported)
+  {
+    this.memoryReservationLockSupported=memoryReservationLockSupported;
   }
 }

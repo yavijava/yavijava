@@ -36,14 +36,36 @@ package com.vmware.vim25;
 public class VmMigratedEvent extends VmEvent
 {
   public HostEventArgument sourceHost;
+  public DatacenterEventArgument sourceDatacenter;
+  public DatastoreEventArgument sourceDatastore;
 
   public HostEventArgument getSourceHost()
   {
     return this.sourceHost;
   }
 
+  public DatacenterEventArgument getSourceDatacenter()
+  {
+    return this.sourceDatacenter;
+  }
+
+  public DatastoreEventArgument getSourceDatastore()
+  {
+    return this.sourceDatastore;
+  }
+
   public void setSourceHost(HostEventArgument sourceHost)
   {
     this.sourceHost=sourceHost;
+  }
+
+  public void setSourceDatacenter(DatacenterEventArgument sourceDatacenter)
+  {
+    this.sourceDatacenter=sourceDatacenter;
+  }
+
+  public void setSourceDatastore(DatastoreEventArgument sourceDatastore)
+  {
+    this.sourceDatastore=sourceDatastore;
   }
 }

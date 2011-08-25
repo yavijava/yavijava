@@ -37,6 +37,8 @@ public class VmFailedMigrateEvent extends VmEvent
 {
   public HostEventArgument destHost;
   public LocalizedMethodFault reason;
+  public DatacenterEventArgument destDatacenter;
+  public DatastoreEventArgument destDatastore;
 
   public HostEventArgument getDestHost()
   {
@@ -48,6 +50,16 @@ public class VmFailedMigrateEvent extends VmEvent
     return this.reason;
   }
 
+  public DatacenterEventArgument getDestDatacenter()
+  {
+    return this.destDatacenter;
+  }
+
+  public DatastoreEventArgument getDestDatastore()
+  {
+    return this.destDatastore;
+  }
+
   public void setDestHost(HostEventArgument destHost)
   {
     this.destHost=destHost;
@@ -56,5 +68,15 @@ public class VmFailedMigrateEvent extends VmEvent
   public void setReason(LocalizedMethodFault reason)
   {
     this.reason=reason;
+  }
+
+  public void setDestDatacenter(DatacenterEventArgument destDatacenter)
+  {
+    this.destDatacenter=destDatacenter;
+  }
+
+  public void setDestDatastore(DatastoreEventArgument destDatastore)
+  {
+    this.destDatastore=destDatastore;
   }
 }

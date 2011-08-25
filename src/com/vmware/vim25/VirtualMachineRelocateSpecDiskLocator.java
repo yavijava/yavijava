@@ -38,6 +38,7 @@ public class VirtualMachineRelocateSpecDiskLocator extends DynamicData
   public int diskId;
   public ManagedObjectReference datastore;
   public String diskMoveType;
+  public VirtualDeviceBackingInfo diskBackingInfo;
 
   public int getDiskId()
   {
@@ -54,6 +55,11 @@ public class VirtualMachineRelocateSpecDiskLocator extends DynamicData
     return this.diskMoveType;
   }
 
+  public VirtualDeviceBackingInfo getDiskBackingInfo()
+  {
+    return this.diskBackingInfo;
+  }
+
   public void setDiskId(int diskId)
   {
     this.diskId=diskId;
@@ -67,5 +73,10 @@ public class VirtualMachineRelocateSpecDiskLocator extends DynamicData
   public void setDiskMoveType(String diskMoveType)
   {
     this.diskMoveType=diskMoveType;
+  }
+
+  public void setDiskBackingInfo(VirtualDeviceBackingInfo diskBackingInfo)
+  {
+    this.diskBackingInfo=diskBackingInfo;
   }
 }

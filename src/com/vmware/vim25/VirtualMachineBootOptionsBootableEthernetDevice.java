@@ -33,31 +33,17 @@ package com.vmware.vim25;
 @author Steve Jin (sjin@vmware.com)
 */
 
-public enum VmFaultToleranceConfigIssueReasonForIssue
+public class VirtualMachineBootOptionsBootableEthernetDevice extends VirtualMachineBootOptionsBootableDevice
 {
-  haNotEnabled ("haNotEnabled"),
-  moreThanOneSecondary ("moreThanOneSecondary"),
-  recordReplayNotSupported ("recordReplayNotSupported"),
-  replayNotSupported ("replayNotSupported"),
-  templateVm ("templateVm"),
-  multipleVCPU ("multipleVCPU"),
-  hostInactive ("hostInactive"),
-  ftUnsupportedHardware ("ftUnsupportedHardware"),
-  ftUnsupportedProduct ("ftUnsupportedProduct"),
-  missingVMotionNic ("missingVMotionNic"),
-  missingFTLoggingNic ("missingFTLoggingNic"),
-  thinDisk ("thinDisk"),
-  verifySSLCertificateFlagNotSet ("verifySSLCertificateFlagNotSet"),
-  hasSnapshots ("hasSnapshots"),
-  noConfig ("noConfig"),
-  ftSecondaryVm ("ftSecondaryVm"),
-  hasLocalDisk ("hasLocalDisk"),
-  esxAgentVm ("esxAgentVm"),
-  video3dEnabled ("video3dEnabled");
+  public int deviceKey;
 
-  private final String val;
-  private VmFaultToleranceConfigIssueReasonForIssue(String val)
+  public int getDeviceKey()
   {
-    this.val = val;
+    return this.deviceKey;
+  }
+
+  public void setDeviceKey(int deviceKey)
+  {
+    this.deviceKey=deviceKey;
   }
 }

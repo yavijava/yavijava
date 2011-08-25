@@ -36,12 +36,19 @@ package com.vmware.vim25;
 public class VMwareDVSConfigSpec extends DVSConfigSpec
 {
   public VMwareDVSPvlanConfigSpec[] pvlanConfigSpec;
+  public VMwareDVSVspanConfigSpec[] vspanConfigSpec;
   public Integer maxMtu;
   public LinkDiscoveryProtocolConfig linkDiscoveryProtocolConfig;
+  public VMwareIpfixConfig ipfixConfig;
 
   public VMwareDVSPvlanConfigSpec[] getPvlanConfigSpec()
   {
     return this.pvlanConfigSpec;
+  }
+
+  public VMwareDVSVspanConfigSpec[] getVspanConfigSpec()
+  {
+    return this.vspanConfigSpec;
   }
 
   public Integer getMaxMtu()
@@ -54,9 +61,19 @@ public class VMwareDVSConfigSpec extends DVSConfigSpec
     return this.linkDiscoveryProtocolConfig;
   }
 
+  public VMwareIpfixConfig getIpfixConfig()
+  {
+    return this.ipfixConfig;
+  }
+
   public void setPvlanConfigSpec(VMwareDVSPvlanConfigSpec[] pvlanConfigSpec)
   {
     this.pvlanConfigSpec=pvlanConfigSpec;
+  }
+
+  public void setVspanConfigSpec(VMwareDVSVspanConfigSpec[] vspanConfigSpec)
+  {
+    this.vspanConfigSpec=vspanConfigSpec;
   }
 
   public void setMaxMtu(Integer maxMtu)
@@ -67,5 +84,10 @@ public class VMwareDVSConfigSpec extends DVSConfigSpec
   public void setLinkDiscoveryProtocolConfig(LinkDiscoveryProtocolConfig linkDiscoveryProtocolConfig)
   {
     this.linkDiscoveryProtocolConfig=linkDiscoveryProtocolConfig;
+  }
+
+  public void setIpfixConfig(VMwareIpfixConfig ipfixConfig)
+  {
+    this.ipfixConfig=ipfixConfig;
   }
 }

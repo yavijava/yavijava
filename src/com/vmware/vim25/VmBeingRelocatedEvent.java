@@ -36,14 +36,36 @@ package com.vmware.vim25;
 public class VmBeingRelocatedEvent extends VmRelocateSpecEvent
 {
   public HostEventArgument destHost;
+  public DatacenterEventArgument destDatacenter;
+  public DatastoreEventArgument destDatastore;
 
   public HostEventArgument getDestHost()
   {
     return this.destHost;
   }
 
+  public DatacenterEventArgument getDestDatacenter()
+  {
+    return this.destDatacenter;
+  }
+
+  public DatastoreEventArgument getDestDatastore()
+  {
+    return this.destDatastore;
+  }
+
   public void setDestHost(HostEventArgument destHost)
   {
     this.destHost=destHost;
+  }
+
+  public void setDestDatacenter(DatacenterEventArgument destDatacenter)
+  {
+    this.destDatacenter=destDatacenter;
+  }
+
+  public void setDestDatastore(DatastoreEventArgument destDatastore)
+  {
+    this.destDatastore=destDatastore;
   }
 }

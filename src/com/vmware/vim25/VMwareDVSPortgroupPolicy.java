@@ -38,6 +38,7 @@ public class VMwareDVSPortgroupPolicy extends DVPortgroupPolicy
   public boolean vlanOverrideAllowed;
   public boolean uplinkTeamingOverrideAllowed;
   public boolean securityPolicyOverrideAllowed;
+  public Boolean ipfixOverrideAllowed;
 
   public boolean isVlanOverrideAllowed()
   {
@@ -54,6 +55,11 @@ public class VMwareDVSPortgroupPolicy extends DVPortgroupPolicy
     return this.securityPolicyOverrideAllowed;
   }
 
+  public Boolean getIpfixOverrideAllowed()
+  {
+    return this.ipfixOverrideAllowed;
+  }
+
   public void setVlanOverrideAllowed(boolean vlanOverrideAllowed)
   {
     this.vlanOverrideAllowed=vlanOverrideAllowed;
@@ -67,5 +73,10 @@ public class VMwareDVSPortgroupPolicy extends DVPortgroupPolicy
   public void setSecurityPolicyOverrideAllowed(boolean securityPolicyOverrideAllowed)
   {
     this.securityPolicyOverrideAllowed=securityPolicyOverrideAllowed;
+  }
+
+  public void setIpfixOverrideAllowed(Boolean ipfixOverrideAllowed)
+  {
+    this.ipfixOverrideAllowed=ipfixOverrideAllowed;
   }
 }

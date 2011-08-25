@@ -33,31 +33,28 @@ package com.vmware.vim25;
 @author Steve Jin (sjin@vmware.com)
 */
 
-public enum VmFaultToleranceConfigIssueReasonForIssue
+public class VMwareDVSVspanConfigSpec extends DynamicData
 {
-  haNotEnabled ("haNotEnabled"),
-  moreThanOneSecondary ("moreThanOneSecondary"),
-  recordReplayNotSupported ("recordReplayNotSupported"),
-  replayNotSupported ("replayNotSupported"),
-  templateVm ("templateVm"),
-  multipleVCPU ("multipleVCPU"),
-  hostInactive ("hostInactive"),
-  ftUnsupportedHardware ("ftUnsupportedHardware"),
-  ftUnsupportedProduct ("ftUnsupportedProduct"),
-  missingVMotionNic ("missingVMotionNic"),
-  missingFTLoggingNic ("missingFTLoggingNic"),
-  thinDisk ("thinDisk"),
-  verifySSLCertificateFlagNotSet ("verifySSLCertificateFlagNotSet"),
-  hasSnapshots ("hasSnapshots"),
-  noConfig ("noConfig"),
-  ftSecondaryVm ("ftSecondaryVm"),
-  hasLocalDisk ("hasLocalDisk"),
-  esxAgentVm ("esxAgentVm"),
-  video3dEnabled ("video3dEnabled");
+  public VMwareVspanSession vspanSession;
+  public String operation;
 
-  private final String val;
-  private VmFaultToleranceConfigIssueReasonForIssue(String val)
+  public VMwareVspanSession getVspanSession()
   {
-    this.val = val;
+    return this.vspanSession;
+  }
+
+  public String getOperation()
+  {
+    return this.operation;
+  }
+
+  public void setVspanSession(VMwareVspanSession vspanSession)
+  {
+    this.vspanSession=vspanSession;
+  }
+
+  public void setOperation(String operation)
+  {
+    this.operation=operation;
   }
 }

@@ -58,10 +58,13 @@ public class VirtualMachineConfigSpec extends DynamicData
   public VirtualMachineConsolePreferences consolePreferences;
   public VirtualMachineDefaultPowerOpInfo powerOpInfo;
   public Integer numCPUs;
+  public Integer numCoresPerSocket;
   public Long memoryMB;
   public Boolean memoryHotAddEnabled;
   public Boolean cpuHotAddEnabled;
   public Boolean cpuHotRemoveEnabled;
+  public Boolean virtualICH7MPresent;
+  public Boolean virtualSMCPresent;
   public VirtualDeviceConfigSpec[] deviceChange;
   public ResourceAllocationInfo cpuAllocation;
   public ResourceAllocationInfo memoryAllocation;
@@ -77,6 +80,11 @@ public class VirtualMachineConfigSpec extends DynamicData
   public Boolean vAppConfigRemoved;
   public Boolean vAssertsEnabled;
   public Boolean changeTrackingEnabled;
+  public String firmware;
+  public Integer maxMksConnections;
+  public Boolean guestAutoLockEnabled;
+  public ManagedByInfo managedBy;
+  public Boolean memoryReservationLockedToMax;
 
   public String getChangeVersion()
   {
@@ -193,6 +201,11 @@ public class VirtualMachineConfigSpec extends DynamicData
     return this.numCPUs;
   }
 
+  public Integer getNumCoresPerSocket()
+  {
+    return this.numCoresPerSocket;
+  }
+
   public Long getMemoryMB()
   {
     return this.memoryMB;
@@ -211,6 +224,16 @@ public class VirtualMachineConfigSpec extends DynamicData
   public Boolean getCpuHotRemoveEnabled()
   {
     return this.cpuHotRemoveEnabled;
+  }
+
+  public Boolean getVirtualICH7MPresent()
+  {
+    return this.virtualICH7MPresent;
+  }
+
+  public Boolean getVirtualSMCPresent()
+  {
+    return this.virtualSMCPresent;
   }
 
   public VirtualDeviceConfigSpec[] getDeviceChange()
@@ -286,6 +309,31 @@ public class VirtualMachineConfigSpec extends DynamicData
   public Boolean getChangeTrackingEnabled()
   {
     return this.changeTrackingEnabled;
+  }
+
+  public String getFirmware()
+  {
+    return this.firmware;
+  }
+
+  public Integer getMaxMksConnections()
+  {
+    return this.maxMksConnections;
+  }
+
+  public Boolean getGuestAutoLockEnabled()
+  {
+    return this.guestAutoLockEnabled;
+  }
+
+  public ManagedByInfo getManagedBy()
+  {
+    return this.managedBy;
+  }
+
+  public Boolean getMemoryReservationLockedToMax()
+  {
+    return this.memoryReservationLockedToMax;
   }
 
   public void setChangeVersion(String changeVersion)
@@ -403,6 +451,11 @@ public class VirtualMachineConfigSpec extends DynamicData
     this.numCPUs=numCPUs;
   }
 
+  public void setNumCoresPerSocket(Integer numCoresPerSocket)
+  {
+    this.numCoresPerSocket=numCoresPerSocket;
+  }
+
   public void setMemoryMB(Long memoryMB)
   {
     this.memoryMB=memoryMB;
@@ -421,6 +474,16 @@ public class VirtualMachineConfigSpec extends DynamicData
   public void setCpuHotRemoveEnabled(Boolean cpuHotRemoveEnabled)
   {
     this.cpuHotRemoveEnabled=cpuHotRemoveEnabled;
+  }
+
+  public void setVirtualICH7MPresent(Boolean virtualICH7MPresent)
+  {
+    this.virtualICH7MPresent=virtualICH7MPresent;
+  }
+
+  public void setVirtualSMCPresent(Boolean virtualSMCPresent)
+  {
+    this.virtualSMCPresent=virtualSMCPresent;
   }
 
   public void setDeviceChange(VirtualDeviceConfigSpec[] deviceChange)
@@ -496,5 +559,30 @@ public class VirtualMachineConfigSpec extends DynamicData
   public void setChangeTrackingEnabled(Boolean changeTrackingEnabled)
   {
     this.changeTrackingEnabled=changeTrackingEnabled;
+  }
+
+  public void setFirmware(String firmware)
+  {
+    this.firmware=firmware;
+  }
+
+  public void setMaxMksConnections(Integer maxMksConnections)
+  {
+    this.maxMksConnections=maxMksConnections;
+  }
+
+  public void setGuestAutoLockEnabled(Boolean guestAutoLockEnabled)
+  {
+    this.guestAutoLockEnabled=guestAutoLockEnabled;
+  }
+
+  public void setManagedBy(ManagedByInfo managedBy)
+  {
+    this.managedBy=managedBy;
+  }
+
+  public void setMemoryReservationLockedToMax(Boolean memoryReservationLockedToMax)
+  {
+    this.memoryReservationLockedToMax=memoryReservationLockedToMax;
   }
 }

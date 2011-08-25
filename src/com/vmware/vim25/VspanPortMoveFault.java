@@ -33,31 +33,39 @@ package com.vmware.vim25;
 @author Steve Jin (sjin@vmware.com)
 */
 
-public enum VmFaultToleranceConfigIssueReasonForIssue
+public class VspanPortMoveFault extends DvsFault
 {
-  haNotEnabled ("haNotEnabled"),
-  moreThanOneSecondary ("moreThanOneSecondary"),
-  recordReplayNotSupported ("recordReplayNotSupported"),
-  replayNotSupported ("replayNotSupported"),
-  templateVm ("templateVm"),
-  multipleVCPU ("multipleVCPU"),
-  hostInactive ("hostInactive"),
-  ftUnsupportedHardware ("ftUnsupportedHardware"),
-  ftUnsupportedProduct ("ftUnsupportedProduct"),
-  missingVMotionNic ("missingVMotionNic"),
-  missingFTLoggingNic ("missingFTLoggingNic"),
-  thinDisk ("thinDisk"),
-  verifySSLCertificateFlagNotSet ("verifySSLCertificateFlagNotSet"),
-  hasSnapshots ("hasSnapshots"),
-  noConfig ("noConfig"),
-  ftSecondaryVm ("ftSecondaryVm"),
-  hasLocalDisk ("hasLocalDisk"),
-  esxAgentVm ("esxAgentVm"),
-  video3dEnabled ("video3dEnabled");
+  public String srcPortgroupName;
+  public String destPortgroupName;
+  public String portKey;
 
-  private final String val;
-  private VmFaultToleranceConfigIssueReasonForIssue(String val)
+  public String getSrcPortgroupName()
   {
-    this.val = val;
+    return this.srcPortgroupName;
+  }
+
+  public String getDestPortgroupName()
+  {
+    return this.destPortgroupName;
+  }
+
+  public String getPortKey()
+  {
+    return this.portKey;
+  }
+
+  public void setSrcPortgroupName(String srcPortgroupName)
+  {
+    this.srcPortgroupName=srcPortgroupName;
+  }
+
+  public void setDestPortgroupName(String destPortgroupName)
+  {
+    this.destPortgroupName=destPortgroupName;
+  }
+
+  public void setPortKey(String portKey)
+  {
+    this.portKey=portKey;
   }
 }

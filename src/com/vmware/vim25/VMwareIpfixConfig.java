@@ -33,31 +33,72 @@ package com.vmware.vim25;
 @author Steve Jin (sjin@vmware.com)
 */
 
-public enum VmFaultToleranceConfigIssueReasonForIssue
+public class VMwareIpfixConfig extends DynamicData
 {
-  haNotEnabled ("haNotEnabled"),
-  moreThanOneSecondary ("moreThanOneSecondary"),
-  recordReplayNotSupported ("recordReplayNotSupported"),
-  replayNotSupported ("replayNotSupported"),
-  templateVm ("templateVm"),
-  multipleVCPU ("multipleVCPU"),
-  hostInactive ("hostInactive"),
-  ftUnsupportedHardware ("ftUnsupportedHardware"),
-  ftUnsupportedProduct ("ftUnsupportedProduct"),
-  missingVMotionNic ("missingVMotionNic"),
-  missingFTLoggingNic ("missingFTLoggingNic"),
-  thinDisk ("thinDisk"),
-  verifySSLCertificateFlagNotSet ("verifySSLCertificateFlagNotSet"),
-  hasSnapshots ("hasSnapshots"),
-  noConfig ("noConfig"),
-  ftSecondaryVm ("ftSecondaryVm"),
-  hasLocalDisk ("hasLocalDisk"),
-  esxAgentVm ("esxAgentVm"),
-  video3dEnabled ("video3dEnabled");
+  public String collectorIpAddress;
+  public Integer collectorPort;
+  public int activeFlowTimeout;
+  public int idleFlowTimeout;
+  public int samplingRate;
+  public boolean internalFlowsOnly;
 
-  private final String val;
-  private VmFaultToleranceConfigIssueReasonForIssue(String val)
+  public String getCollectorIpAddress()
   {
-    this.val = val;
+    return this.collectorIpAddress;
+  }
+
+  public Integer getCollectorPort()
+  {
+    return this.collectorPort;
+  }
+
+  public int getActiveFlowTimeout()
+  {
+    return this.activeFlowTimeout;
+  }
+
+  public int getIdleFlowTimeout()
+  {
+    return this.idleFlowTimeout;
+  }
+
+  public int getSamplingRate()
+  {
+    return this.samplingRate;
+  }
+
+  public boolean isInternalFlowsOnly()
+  {
+    return this.internalFlowsOnly;
+  }
+
+  public void setCollectorIpAddress(String collectorIpAddress)
+  {
+    this.collectorIpAddress=collectorIpAddress;
+  }
+
+  public void setCollectorPort(Integer collectorPort)
+  {
+    this.collectorPort=collectorPort;
+  }
+
+  public void setActiveFlowTimeout(int activeFlowTimeout)
+  {
+    this.activeFlowTimeout=activeFlowTimeout;
+  }
+
+  public void setIdleFlowTimeout(int idleFlowTimeout)
+  {
+    this.idleFlowTimeout=idleFlowTimeout;
+  }
+
+  public void setSamplingRate(int samplingRate)
+  {
+    this.samplingRate=samplingRate;
+  }
+
+  public void setInternalFlowsOnly(boolean internalFlowsOnly)
+  {
+    this.internalFlowsOnly=internalFlowsOnly;
   }
 }

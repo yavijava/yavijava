@@ -46,7 +46,8 @@ public enum VirtualMachineDeviceRuntimeInfoVirtualEthernetCardRuntimeStateVmDire
   vmNptConflictingIOChainConfigured ("vmNptConflictingIOChainConfigured"),
   vmNptMonitorBlocks ("vmNptMonitorBlocks"),
   vmNptConflictingOperationInProgress ("vmNptConflictingOperationInProgress"),
-  vmNptRuntimeError ("vmNptRuntimeError");
+  vmNptRuntimeError ("vmNptRuntimeError"),
+  vmNptOutOfIntrVector ("vmNptOutOfIntrVector");
 
   private final String val;
   private VirtualMachineDeviceRuntimeInfoVirtualEthernetCardRuntimeStateVmDirectPathGen2InactiveReasonVm(String val)

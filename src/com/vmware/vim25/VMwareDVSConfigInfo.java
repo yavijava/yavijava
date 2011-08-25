@@ -35,9 +35,16 @@ package com.vmware.vim25;
 
 public class VMwareDVSConfigInfo extends DVSConfigInfo
 {
+  public VMwareVspanSession[] vspanSession;
   public VMwareDVSPvlanMapEntry[] pvlanConfig;
   public int maxMtu;
   public LinkDiscoveryProtocolConfig linkDiscoveryProtocolConfig;
+  public VMwareIpfixConfig ipfixConfig;
+
+  public VMwareVspanSession[] getVspanSession()
+  {
+    return this.vspanSession;
+  }
 
   public VMwareDVSPvlanMapEntry[] getPvlanConfig()
   {
@@ -54,6 +61,16 @@ public class VMwareDVSConfigInfo extends DVSConfigInfo
     return this.linkDiscoveryProtocolConfig;
   }
 
+  public VMwareIpfixConfig getIpfixConfig()
+  {
+    return this.ipfixConfig;
+  }
+
+  public void setVspanSession(VMwareVspanSession[] vspanSession)
+  {
+    this.vspanSession=vspanSession;
+  }
+
   public void setPvlanConfig(VMwareDVSPvlanMapEntry[] pvlanConfig)
   {
     this.pvlanConfig=pvlanConfig;
@@ -67,5 +84,10 @@ public class VMwareDVSConfigInfo extends DVSConfigInfo
   public void setLinkDiscoveryProtocolConfig(LinkDiscoveryProtocolConfig linkDiscoveryProtocolConfig)
   {
     this.linkDiscoveryProtocolConfig=linkDiscoveryProtocolConfig;
+  }
+
+  public void setIpfixConfig(VMwareIpfixConfig ipfixConfig)
+  {
+    this.ipfixConfig=ipfixConfig;
   }
 }

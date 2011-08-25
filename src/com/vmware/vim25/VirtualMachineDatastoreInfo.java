@@ -39,6 +39,7 @@ public class VirtualMachineDatastoreInfo extends VirtualMachineTargetInfo
   public DatastoreCapability capability;
   public long maxFileSize;
   public String mode;
+  public String vStorageSupport;
 
   public DatastoreSummary getDatastore()
   {
@@ -60,6 +61,11 @@ public class VirtualMachineDatastoreInfo extends VirtualMachineTargetInfo
     return this.mode;
   }
 
+  public String getVStorageSupport()
+  {
+    return this.vStorageSupport;
+  }
+
   public void setDatastore(DatastoreSummary datastore)
   {
     this.datastore=datastore;
@@ -78,5 +84,10 @@ public class VirtualMachineDatastoreInfo extends VirtualMachineTargetInfo
   public void setMode(String mode)
   {
     this.mode=mode;
+  }
+
+  public void setVStorageSupport(String vStorageSupport)
+  {
+    this.vStorageSupport=vStorageSupport;
   }
 }

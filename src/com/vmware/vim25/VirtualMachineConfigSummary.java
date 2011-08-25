@@ -52,6 +52,7 @@ public class VirtualMachineConfigSummary extends DynamicData
   public VAppProductInfo product;
   public Boolean installBootRequired;
   public FaultToleranceConfigInfo ftInfo;
+  public ManagedByInfo managedBy;
 
   public String getName()
   {
@@ -138,6 +139,11 @@ public class VirtualMachineConfigSummary extends DynamicData
     return this.ftInfo;
   }
 
+  public ManagedByInfo getManagedBy()
+  {
+    return this.managedBy;
+  }
+
   public void setName(String name)
   {
     this.name=name;
@@ -221,5 +227,10 @@ public class VirtualMachineConfigSummary extends DynamicData
   public void setFtInfo(FaultToleranceConfigInfo ftInfo)
   {
     this.ftInfo=ftInfo;
+  }
+
+  public void setManagedBy(ManagedByInfo managedBy)
+  {
+    this.managedBy=managedBy;
   }
 }

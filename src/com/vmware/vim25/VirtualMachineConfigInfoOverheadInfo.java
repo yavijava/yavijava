@@ -33,31 +33,28 @@ package com.vmware.vim25;
 @author Steve Jin (sjin@vmware.com)
 */
 
-public enum VmFaultToleranceConfigIssueReasonForIssue
+public class VirtualMachineConfigInfoOverheadInfo extends DynamicData
 {
-  haNotEnabled ("haNotEnabled"),
-  moreThanOneSecondary ("moreThanOneSecondary"),
-  recordReplayNotSupported ("recordReplayNotSupported"),
-  replayNotSupported ("replayNotSupported"),
-  templateVm ("templateVm"),
-  multipleVCPU ("multipleVCPU"),
-  hostInactive ("hostInactive"),
-  ftUnsupportedHardware ("ftUnsupportedHardware"),
-  ftUnsupportedProduct ("ftUnsupportedProduct"),
-  missingVMotionNic ("missingVMotionNic"),
-  missingFTLoggingNic ("missingFTLoggingNic"),
-  thinDisk ("thinDisk"),
-  verifySSLCertificateFlagNotSet ("verifySSLCertificateFlagNotSet"),
-  hasSnapshots ("hasSnapshots"),
-  noConfig ("noConfig"),
-  ftSecondaryVm ("ftSecondaryVm"),
-  hasLocalDisk ("hasLocalDisk"),
-  esxAgentVm ("esxAgentVm"),
-  video3dEnabled ("video3dEnabled");
+  public Long initialMemoryReservation;
+  public Long initialSwapReservation;
 
-  private final String val;
-  private VmFaultToleranceConfigIssueReasonForIssue(String val)
+  public Long getInitialMemoryReservation()
   {
-    this.val = val;
+    return this.initialMemoryReservation;
+  }
+
+  public Long getInitialSwapReservation()
+  {
+    return this.initialSwapReservation;
+  }
+
+  public void setInitialMemoryReservation(Long initialMemoryReservation)
+  {
+    this.initialMemoryReservation=initialMemoryReservation;
+  }
+
+  public void setInitialSwapReservation(Long initialSwapReservation)
+  {
+    this.initialSwapReservation=initialSwapReservation;
   }
 }

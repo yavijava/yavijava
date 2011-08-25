@@ -37,6 +37,7 @@ public class VirtualUSBControllerOption extends VirtualControllerOption
 {
   public BoolOption autoConnectDevices;
   public BoolOption ehciSupported;
+  public String[] supportedSpeeds;
 
   public BoolOption getAutoConnectDevices()
   {
@@ -48,6 +49,11 @@ public class VirtualUSBControllerOption extends VirtualControllerOption
     return this.ehciSupported;
   }
 
+  public String[] getSupportedSpeeds()
+  {
+    return this.supportedSpeeds;
+  }
+
   public void setAutoConnectDevices(BoolOption autoConnectDevices)
   {
     this.autoConnectDevices=autoConnectDevices;
@@ -56,5 +62,10 @@ public class VirtualUSBControllerOption extends VirtualControllerOption
   public void setEhciSupported(BoolOption ehciSupported)
   {
     this.ehciSupported=ehciSupported;
+  }
+
+  public void setSupportedSpeeds(String[] supportedSpeeds)
+  {
+    this.supportedSpeeds=supportedSpeeds;
   }
 }

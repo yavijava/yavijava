@@ -38,6 +38,7 @@ public enum VirtualMachineUsbInfoSpeed
   low ("low"),
   full ("full"),
   high ("high"),
+  superSpeed ("superSpeed"),
   unknownSpeed ("unknownSpeed");
 
   private final String val;

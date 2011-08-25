@@ -39,6 +39,7 @@ public class VirtualMachineGuestSummary extends DynamicData
   public String guestFullName;
   public VirtualMachineToolsStatus toolsStatus;
   public String toolsVersionStatus;
+  public String toolsVersionStatus2;
   public String toolsRunningStatus;
   public String hostName;
   public String ipAddress;
@@ -61,6 +62,11 @@ public class VirtualMachineGuestSummary extends DynamicData
   public String getToolsVersionStatus()
   {
     return this.toolsVersionStatus;
+  }
+
+  public String getToolsVersionStatus2()
+  {
+    return this.toolsVersionStatus2;
   }
 
   public String getToolsRunningStatus()
@@ -96,6 +102,11 @@ public class VirtualMachineGuestSummary extends DynamicData
   public void setToolsVersionStatus(String toolsVersionStatus)
   {
     this.toolsVersionStatus=toolsVersionStatus;
+  }
+
+  public void setToolsVersionStatus2(String toolsVersionStatus2)
+  {
+    this.toolsVersionStatus2=toolsVersionStatus2;
   }
 
   public void setToolsRunningStatus(String toolsRunningStatus)
