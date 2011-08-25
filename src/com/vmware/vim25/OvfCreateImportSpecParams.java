@@ -43,6 +43,7 @@ public class OvfCreateImportSpecParams extends OvfManagerCommonParams
   public KeyValue[] propertyMapping;
   public OvfResourceMap[] resourceMapping;
   public String diskProvisioning;
+  public OvfConsumerOstNode instantiationOst;
 
   public String getEntityName()
   {
@@ -84,6 +85,11 @@ public class OvfCreateImportSpecParams extends OvfManagerCommonParams
     return this.diskProvisioning;
   }
 
+  public OvfConsumerOstNode getInstantiationOst()
+  {
+    return this.instantiationOst;
+  }
+
   public void setEntityName(String entityName)
   {
     this.entityName=entityName;
@@ -122,5 +128,10 @@ public class OvfCreateImportSpecParams extends OvfManagerCommonParams
   public void setDiskProvisioning(String diskProvisioning)
   {
     this.diskProvisioning=diskProvisioning;
+  }
+
+  public void setInstantiationOst(OvfConsumerOstNode instantiationOst)
+  {
+    this.instantiationOst=instantiationOst;
   }
 }

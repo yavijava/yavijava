@@ -43,6 +43,7 @@ public class UserSession extends DynamicData
   public Calendar lastActiveTime;
   public String locale;
   public String messageLocale;
+  public Boolean extensionSession;
 
   public String getKey()
   {
@@ -79,6 +80,11 @@ public class UserSession extends DynamicData
     return this.messageLocale;
   }
 
+  public Boolean getExtensionSession()
+  {
+    return this.extensionSession;
+  }
+
   public void setKey(String key)
   {
     this.key=key;
@@ -112,5 +118,10 @@ public class UserSession extends DynamicData
   public void setMessageLocale(String messageLocale)
   {
     this.messageLocale=messageLocale;
+  }
+
+  public void setExtensionSession(Boolean extensionSession)
+  {
+    this.extensionSession=extensionSession;
   }
 }

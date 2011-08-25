@@ -43,6 +43,7 @@ public class VirtualDiskFlatVer2BackingOption extends VirtualDeviceFileBackingOp
   public boolean uuid;
   public BoolOption thinProvisioned;
   public BoolOption eagerlyScrub;
+  public ChoiceOption deltaDiskFormat;
 
   public ChoiceOption getDiskMode()
   {
@@ -84,6 +85,11 @@ public class VirtualDiskFlatVer2BackingOption extends VirtualDeviceFileBackingOp
     return this.eagerlyScrub;
   }
 
+  public ChoiceOption getDeltaDiskFormat()
+  {
+    return this.deltaDiskFormat;
+  }
+
   public void setDiskMode(ChoiceOption diskMode)
   {
     this.diskMode=diskMode;
@@ -122,5 +128,10 @@ public class VirtualDiskFlatVer2BackingOption extends VirtualDeviceFileBackingOp
   public void setEagerlyScrub(BoolOption eagerlyScrub)
   {
     this.eagerlyScrub=eagerlyScrub;
+  }
+
+  public void setDeltaDiskFormat(ChoiceOption deltaDiskFormat)
+  {
+    this.deltaDiskFormat=deltaDiskFormat;
   }
 }

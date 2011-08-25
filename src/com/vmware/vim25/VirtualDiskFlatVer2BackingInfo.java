@@ -44,6 +44,8 @@ public class VirtualDiskFlatVer2BackingInfo extends VirtualDeviceFileBackingInfo
   public String contentId;
   public String changeId;
   public VirtualDiskFlatVer2BackingInfo parent;
+  public String deltaDiskFormat;
+  public Boolean digestEnabled;
 
   public String getDiskMode()
   {
@@ -90,6 +92,16 @@ public class VirtualDiskFlatVer2BackingInfo extends VirtualDeviceFileBackingInfo
     return this.parent;
   }
 
+  public String getDeltaDiskFormat()
+  {
+    return this.deltaDiskFormat;
+  }
+
+  public Boolean getDigestEnabled()
+  {
+    return this.digestEnabled;
+  }
+
   public void setDiskMode(String diskMode)
   {
     this.diskMode=diskMode;
@@ -133,5 +145,15 @@ public class VirtualDiskFlatVer2BackingInfo extends VirtualDeviceFileBackingInfo
   public void setParent(VirtualDiskFlatVer2BackingInfo parent)
   {
     this.parent=parent;
+  }
+
+  public void setDeltaDiskFormat(String deltaDiskFormat)
+  {
+    this.deltaDiskFormat=deltaDiskFormat;
+  }
+
+  public void setDigestEnabled(Boolean digestEnabled)
+  {
+    this.digestEnabled=digestEnabled;
   }
 }

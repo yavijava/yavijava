@@ -38,6 +38,7 @@ public class VAppConfigSpec extends VmConfigSpec
   public VAppEntityConfigInfo[] entityConfig;
   public String annotation;
   public String instanceUuid;
+  public ManagedByInfo managedBy;
 
   public VAppEntityConfigInfo[] getEntityConfig()
   {
@@ -54,6 +55,11 @@ public class VAppConfigSpec extends VmConfigSpec
     return this.instanceUuid;
   }
 
+  public ManagedByInfo getManagedBy()
+  {
+    return this.managedBy;
+  }
+
   public void setEntityConfig(VAppEntityConfigInfo[] entityConfig)
   {
     this.entityConfig=entityConfig;
@@ -67,5 +73,10 @@ public class VAppConfigSpec extends VmConfigSpec
   public void setInstanceUuid(String instanceUuid)
   {
     this.instanceUuid=instanceUuid;
+  }
+
+  public void setManagedBy(ManagedByInfo managedBy)
+  {
+    this.managedBy=managedBy;
   }
 }

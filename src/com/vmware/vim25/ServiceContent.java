@@ -69,6 +69,7 @@ public class ServiceContent extends DynamicData
   public ManagedObjectReference complianceManager;
   public ManagedObjectReference localizationManager;
   public ManagedObjectReference storageResourceManager;
+  public ManagedObjectReference guestOperationsManager;
 
   public ManagedObjectReference getRootFolder()
   {
@@ -240,6 +241,11 @@ public class ServiceContent extends DynamicData
     return this.storageResourceManager;
   }
 
+  public ManagedObjectReference getGuestOperationsManager()
+  {
+    return this.guestOperationsManager;
+  }
+
   public void setRootFolder(ManagedObjectReference rootFolder)
   {
     this.rootFolder=rootFolder;
@@ -408,5 +414,10 @@ public class ServiceContent extends DynamicData
   public void setStorageResourceManager(ManagedObjectReference storageResourceManager)
   {
     this.storageResourceManager=storageResourceManager;
+  }
+
+  public void setGuestOperationsManager(ManagedObjectReference guestOperationsManager)
+  {
+    this.guestOperationsManager=guestOperationsManager;
   }
 }

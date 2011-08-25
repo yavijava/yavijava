@@ -39,6 +39,7 @@ public class PhysicalNicHintInfo extends DynamicData
   public PhysicalNicIpHint[] subnet;
   public PhysicalNicNameHint[] network;
   public PhysicalNicCdpInfo connectedSwitchPort;
+  public LinkLayerDiscoveryProtocolInfo lldpInfo;
 
   public String getDevice()
   {
@@ -60,6 +61,11 @@ public class PhysicalNicHintInfo extends DynamicData
     return this.connectedSwitchPort;
   }
 
+  public LinkLayerDiscoveryProtocolInfo getLldpInfo()
+  {
+    return this.lldpInfo;
+  }
+
   public void setDevice(String device)
   {
     this.device=device;
@@ -78,5 +84,10 @@ public class PhysicalNicHintInfo extends DynamicData
   public void setConnectedSwitchPort(PhysicalNicCdpInfo connectedSwitchPort)
   {
     this.connectedSwitchPort=connectedSwitchPort;
+  }
+
+  public void setLldpInfo(LinkLayerDiscoveryProtocolInfo lldpInfo)
+  {
+    this.lldpInfo=lldpInfo;
   }
 }

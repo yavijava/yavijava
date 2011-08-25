@@ -49,7 +49,15 @@ public enum RecommendationReasonCode
   checkResource ("checkResource"),
   unreservedCapacity ("unreservedCapacity"),
   vmHostHardAffinity ("vmHostHardAffinity"),
-  vmHostSoftAffinity ("vmHostSoftAffinity");
+  vmHostSoftAffinity ("vmHostSoftAffinity"),
+  balanceDatastoreSpaceUsage ("balanceDatastoreSpaceUsage"),
+  balanceDatastoreIOLoad ("balanceDatastoreIOLoad"),
+  datastoreMaint ("datastoreMaint"),
+  virtualDiskJointAffin ("virtualDiskJointAffin"),
+  virtualDiskAntiAffin ("virtualDiskAntiAffin"),
+  datastoreSpaceOutage ("datastoreSpaceOutage"),
+  storagePlacement ("storagePlacement"),
+  iolbDisabledInternal ("iolbDisabledInternal");
 
   private final String val;
   private RecommendationReasonCode(String val)

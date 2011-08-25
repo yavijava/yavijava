@@ -50,6 +50,7 @@ public class OvfParseDescriptorResult extends DynamicData
   public OvfDeploymentOption[] deploymentOption;
   public String defaultDeploymentOption;
   public KeyValue[] entityName;
+  public OvfConsumerOstNode annotatedOst;
   public LocalizedMethodFault[] error;
   public LocalizedMethodFault[] warning;
 
@@ -126,6 +127,11 @@ public class OvfParseDescriptorResult extends DynamicData
   public KeyValue[] getEntityName()
   {
     return this.entityName;
+  }
+
+  public OvfConsumerOstNode getAnnotatedOst()
+  {
+    return this.annotatedOst;
   }
 
   public LocalizedMethodFault[] getError()
@@ -211,6 +217,11 @@ public class OvfParseDescriptorResult extends DynamicData
   public void setEntityName(KeyValue[] entityName)
   {
     this.entityName=entityName;
+  }
+
+  public void setAnnotatedOst(OvfConsumerOstNode annotatedOst)
+  {
+    this.annotatedOst=annotatedOst;
   }
 
   public void setError(LocalizedMethodFault[] error)

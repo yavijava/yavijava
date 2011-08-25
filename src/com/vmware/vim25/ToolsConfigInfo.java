@@ -44,6 +44,7 @@ public class ToolsConfigInfo extends DynamicData
   public String toolsUpgradePolicy;
   public String pendingCustomization;
   public Boolean syncTimeWithHost;
+  public ToolsConfigInfoToolsLastInstallInfo lastInstallInfo;
 
   public Integer getToolsVersion()
   {
@@ -90,6 +91,11 @@ public class ToolsConfigInfo extends DynamicData
     return this.syncTimeWithHost;
   }
 
+  public ToolsConfigInfoToolsLastInstallInfo getLastInstallInfo()
+  {
+    return this.lastInstallInfo;
+  }
+
   public void setToolsVersion(Integer toolsVersion)
   {
     this.toolsVersion=toolsVersion;
@@ -133,5 +139,10 @@ public class ToolsConfigInfo extends DynamicData
   public void setSyncTimeWithHost(Boolean syncTimeWithHost)
   {
     this.syncTimeWithHost=syncTimeWithHost;
+  }
+
+  public void setLastInstallInfo(ToolsConfigInfoToolsLastInstallInfo lastInstallInfo)
+  {
+    this.lastInstallInfo=lastInstallInfo;
   }
 }

@@ -36,11 +36,18 @@ package com.vmware.vim25;
 public class ProfileMetadata extends DynamicData
 {
   public String key;
+  public String profileTypeName;
   public ExtendedDescription description;
+  public ProfileMetadataProfileSortSpec[] sortSpec;
 
   public String getKey()
   {
     return this.key;
+  }
+
+  public String getProfileTypeName()
+  {
+    return this.profileTypeName;
   }
 
   public ExtendedDescription getDescription()
@@ -48,13 +55,28 @@ public class ProfileMetadata extends DynamicData
     return this.description;
   }
 
+  public ProfileMetadataProfileSortSpec[] getSortSpec()
+  {
+    return this.sortSpec;
+  }
+
   public void setKey(String key)
   {
     this.key=key;
   }
 
+  public void setProfileTypeName(String profileTypeName)
+  {
+    this.profileTypeName=profileTypeName;
+  }
+
   public void setDescription(ExtendedDescription description)
   {
     this.description=description;
+  }
+
+  public void setSortSpec(ProfileMetadataProfileSortSpec[] sortSpec)
+  {
+    this.sortSpec=sortSpec;
   }
 }

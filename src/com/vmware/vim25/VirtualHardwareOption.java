@@ -39,11 +39,13 @@ public class VirtualHardwareOption extends DynamicData
   public VirtualDeviceOption[] virtualDeviceOption;
   public boolean deviceListReadonly;
   public int[] numCPU;
+  public IntOption numCoresPerSocket;
   public boolean numCpuReadonly;
   public LongOption memoryMB;
   public IntOption numPCIControllers;
   public IntOption numIDEControllers;
   public IntOption numUSBControllers;
+  public IntOption numUSBXHCIControllers;
   public IntOption numSIOControllers;
   public IntOption numPS2Controllers;
   public String[] licensingLimit;
@@ -71,6 +73,11 @@ public class VirtualHardwareOption extends DynamicData
     return this.numCPU;
   }
 
+  public IntOption getNumCoresPerSocket()
+  {
+    return this.numCoresPerSocket;
+  }
+
   public boolean isNumCpuReadonly()
   {
     return this.numCpuReadonly;
@@ -94,6 +101,11 @@ public class VirtualHardwareOption extends DynamicData
   public IntOption getNumUSBControllers()
   {
     return this.numUSBControllers;
+  }
+
+  public IntOption getNumUSBXHCIControllers()
+  {
+    return this.numUSBXHCIControllers;
   }
 
   public IntOption getNumSIOControllers()
@@ -146,6 +158,11 @@ public class VirtualHardwareOption extends DynamicData
     this.numCPU=numCPU;
   }
 
+  public void setNumCoresPerSocket(IntOption numCoresPerSocket)
+  {
+    this.numCoresPerSocket=numCoresPerSocket;
+  }
+
   public void setNumCpuReadonly(boolean numCpuReadonly)
   {
     this.numCpuReadonly=numCpuReadonly;
@@ -169,6 +186,11 @@ public class VirtualHardwareOption extends DynamicData
   public void setNumUSBControllers(IntOption numUSBControllers)
   {
     this.numUSBControllers=numUSBControllers;
+  }
+
+  public void setNumUSBXHCIControllers(IntOption numUSBXHCIControllers)
+  {
+    this.numUSBXHCIControllers=numUSBXHCIControllers;
   }
 
   public void setNumSIOControllers(IntOption numSIOControllers)

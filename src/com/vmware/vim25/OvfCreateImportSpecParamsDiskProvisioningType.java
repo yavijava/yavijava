@@ -41,6 +41,7 @@ public enum OvfCreateImportSpecParamsDiskProvisioningType
   twoGbMaxExtentFlat ("twoGbMaxExtentFlat"),
   thin ("thin"),
   thick ("thick"),
+  eagerZeroedThick ("eagerZeroedThick"),
   sparse ("sparse"),
   flat ("flat");
 

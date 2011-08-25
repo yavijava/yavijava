@@ -37,6 +37,8 @@ public class StorageIORMConfigSpec extends DynamicData
 {
   public Boolean enabled;
   public Integer congestionThreshold;
+  public Boolean statsCollectionEnabled;
+  public Boolean statsAggregationDisabled;
 
   public Boolean getEnabled()
   {
@@ -48,6 +50,16 @@ public class StorageIORMConfigSpec extends DynamicData
     return this.congestionThreshold;
   }
 
+  public Boolean getStatsCollectionEnabled()
+  {
+    return this.statsCollectionEnabled;
+  }
+
+  public Boolean getStatsAggregationDisabled()
+  {
+    return this.statsAggregationDisabled;
+  }
+
   public void setEnabled(Boolean enabled)
   {
     this.enabled=enabled;
@@ -56,5 +68,15 @@ public class StorageIORMConfigSpec extends DynamicData
   public void setCongestionThreshold(Integer congestionThreshold)
   {
     this.congestionThreshold=congestionThreshold;
+  }
+
+  public void setStatsCollectionEnabled(Boolean statsCollectionEnabled)
+  {
+    this.statsCollectionEnabled=statsCollectionEnabled;
+  }
+
+  public void setStatsAggregationDisabled(Boolean statsAggregationDisabled)
+  {
+    this.statsAggregationDisabled=statsAggregationDisabled;
   }
 }

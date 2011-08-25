@@ -37,6 +37,7 @@ public class StorageIORMConfigOption extends DynamicData
 {
   public BoolOption enabledOption;
   public IntOption congestionThresholdOption;
+  public BoolOption statsCollectionEnabledOption;
 
   public BoolOption getEnabledOption()
   {
@@ -48,6 +49,11 @@ public class StorageIORMConfigOption extends DynamicData
     return this.congestionThresholdOption;
   }
 
+  public BoolOption getStatsCollectionEnabledOption()
+  {
+    return this.statsCollectionEnabledOption;
+  }
+
   public void setEnabledOption(BoolOption enabledOption)
   {
     this.enabledOption=enabledOption;
@@ -56,5 +62,10 @@ public class StorageIORMConfigOption extends DynamicData
   public void setCongestionThresholdOption(IntOption congestionThresholdOption)
   {
     this.congestionThresholdOption=congestionThresholdOption;
+  }
+
+  public void setStatsCollectionEnabledOption(BoolOption statsCollectionEnabledOption)
+  {
+    this.statsCollectionEnabledOption=statsCollectionEnabledOption;
   }
 }

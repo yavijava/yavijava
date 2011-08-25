@@ -44,6 +44,7 @@ public class PhysicalNic extends DynamicData
   public PhysicalNicSpec spec;
   public boolean wakeOnLanSupported;
   public String mac;
+  public FcoeConfig fcoeConfiguration;
   public Boolean vmDirectPathGen2Supported;
   public String vmDirectPathGen2SupportedMode;
   public Boolean resourcePoolSchedulerAllowed;
@@ -93,6 +94,11 @@ public class PhysicalNic extends DynamicData
   public String getMac()
   {
     return this.mac;
+  }
+
+  public FcoeConfig getFcoeConfiguration()
+  {
+    return this.fcoeConfiguration;
   }
 
   public Boolean getVmDirectPathGen2Supported()
@@ -163,6 +169,11 @@ public class PhysicalNic extends DynamicData
   public void setMac(String mac)
   {
     this.mac=mac;
+  }
+
+  public void setFcoeConfiguration(FcoeConfig fcoeConfiguration)
+  {
+    this.fcoeConfiguration=fcoeConfiguration;
   }
 
   public void setVmDirectPathGen2Supported(Boolean vmDirectPathGen2Supported)

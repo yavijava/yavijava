@@ -36,7 +36,10 @@ package com.vmware.vim25;
 public class VirtualHardware extends DynamicData
 {
   public int numCPU;
+  public Integer numCoresPerSocket;
   public int memoryMB;
+  public Boolean virtualICH7MPresent;
+  public Boolean virtualSMCPresent;
   public VirtualDevice[] device;
 
   public int getNumCPU()
@@ -44,9 +47,24 @@ public class VirtualHardware extends DynamicData
     return this.numCPU;
   }
 
+  public Integer getNumCoresPerSocket()
+  {
+    return this.numCoresPerSocket;
+  }
+
   public int getMemoryMB()
   {
     return this.memoryMB;
+  }
+
+  public Boolean getVirtualICH7MPresent()
+  {
+    return this.virtualICH7MPresent;
+  }
+
+  public Boolean getVirtualSMCPresent()
+  {
+    return this.virtualSMCPresent;
   }
 
   public VirtualDevice[] getDevice()
@@ -59,9 +77,24 @@ public class VirtualHardware extends DynamicData
     this.numCPU=numCPU;
   }
 
+  public void setNumCoresPerSocket(Integer numCoresPerSocket)
+  {
+    this.numCoresPerSocket=numCoresPerSocket;
+  }
+
   public void setMemoryMB(int memoryMB)
   {
     this.memoryMB=memoryMB;
+  }
+
+  public void setVirtualICH7MPresent(Boolean virtualICH7MPresent)
+  {
+    this.virtualICH7MPresent=virtualICH7MPresent;
+  }
+
+  public void setVirtualSMCPresent(Boolean virtualSMCPresent)
+  {
+    this.virtualSMCPresent=virtualSMCPresent;
   }
 
   public void setDevice(VirtualDevice[] device)
