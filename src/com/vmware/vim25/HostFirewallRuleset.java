@@ -41,6 +41,7 @@ public class HostFirewallRuleset extends DynamicData
   public HostFirewallRule[] rule;
   public String service;
   public boolean enabled;
+  public HostFirewallRulesetIpList allowedHosts;
 
   public String getKey()
   {
@@ -72,6 +73,11 @@ public class HostFirewallRuleset extends DynamicData
     return this.enabled;
   }
 
+  public HostFirewallRulesetIpList getAllowedHosts()
+  {
+    return this.allowedHosts;
+  }
+
   public void setKey(String key)
   {
     this.key=key;
@@ -100,5 +106,10 @@ public class HostFirewallRuleset extends DynamicData
   public void setEnabled(boolean enabled)
   {
     this.enabled=enabled;
+  }
+
+  public void setAllowedHosts(HostFirewallRulesetIpList allowedHosts)
+  {
+    this.allowedHosts=allowedHosts;
   }
 }

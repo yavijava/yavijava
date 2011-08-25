@@ -39,6 +39,7 @@ public class HostProxySwitch extends DynamicData
   public String dvsName;
   public String key;
   public int numPorts;
+  public Integer configNumPorts;
   public int numPortsAvailable;
   public KeyValue[] uplinkPort;
   public Integer mtu;
@@ -63,6 +64,11 @@ public class HostProxySwitch extends DynamicData
   public int getNumPorts()
   {
     return this.numPorts;
+  }
+
+  public Integer getConfigNumPorts()
+  {
+    return this.configNumPorts;
   }
 
   public int getNumPortsAvailable()
@@ -108,6 +114,11 @@ public class HostProxySwitch extends DynamicData
   public void setNumPorts(int numPorts)
   {
     this.numPorts=numPorts;
+  }
+
+  public void setConfigNumPorts(Integer configNumPorts)
+  {
+    this.configNumPorts=configNumPorts;
   }
 
   public void setNumPortsAvailable(int numPortsAvailable)

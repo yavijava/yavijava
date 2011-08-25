@@ -43,6 +43,7 @@ public class HostVmfsVolume extends HostFileSystemVolume
   public HostScsiDiskPartition[] extent;
   public boolean vmfsUpgradable;
   public HostForceMountedInfo forceMountedInfo;
+  public Boolean ssd;
 
   public int getBlockSizeMb()
   {
@@ -84,6 +85,11 @@ public class HostVmfsVolume extends HostFileSystemVolume
     return this.forceMountedInfo;
   }
 
+  public Boolean getSsd()
+  {
+    return this.ssd;
+  }
+
   public void setBlockSizeMb(int blockSizeMb)
   {
     this.blockSizeMb=blockSizeMb;
@@ -122,5 +128,10 @@ public class HostVmfsVolume extends HostFileSystemVolume
   public void setForceMountedInfo(HostForceMountedInfo forceMountedInfo)
   {
     this.forceMountedInfo=forceMountedInfo;
+  }
+
+  public void setSsd(Boolean ssd)
+  {
+    this.ssd=ssd;
   }
 }

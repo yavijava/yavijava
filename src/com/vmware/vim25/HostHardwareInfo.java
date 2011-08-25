@@ -41,6 +41,7 @@ public class HostHardwareInfo extends DynamicData
   public HostCpuPackage[] cpuPkg;
   public long memorySize;
   public HostNumaInfo numaInfo;
+  public Boolean smcPresent;
   public HostPciDevice[] pciDevice;
   public HostCpuIdInfo[] cpuFeature;
   public HostBIOSInfo biosInfo;
@@ -73,6 +74,11 @@ public class HostHardwareInfo extends DynamicData
   public HostNumaInfo getNumaInfo()
   {
     return this.numaInfo;
+  }
+
+  public Boolean getSmcPresent()
+  {
+    return this.smcPresent;
   }
 
   public HostPciDevice[] getPciDevice()
@@ -118,6 +124,11 @@ public class HostHardwareInfo extends DynamicData
   public void setNumaInfo(HostNumaInfo numaInfo)
   {
     this.numaInfo=numaInfo;
+  }
+
+  public void setSmcPresent(Boolean smcPresent)
+  {
+    this.smcPresent=smcPresent;
   }
 
   public void setPciDevice(HostPciDevice[] pciDevice)

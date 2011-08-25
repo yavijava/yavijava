@@ -64,11 +64,15 @@ public class HostConfigInfo extends DynamicData
   public Boolean adminDisabled;
   public HostIpmiInfo ipmi;
   public HostSslThumbprintInfo sslThumbprintInfo;
+  public HostSslThumbprintInfo[] sslThumbprintData;
+  public byte[] certificate;
   public HostPciPassthruInfo[] pciPassthruInfo;
   public HostAuthenticationManagerInfo authenticationManagerInfo;
   public HostFeatureVersionInfo[] featureVersion;
   public PowerSystemCapability powerSystemCapability;
   public PowerSystemInfo powerSystemInfo;
+  public HostCacheConfigurationInfo[] cacheConfigurationInfo;
+  public Boolean wakeOnLanCapable;
 
   public ManagedObjectReference getHost()
   {
@@ -215,6 +219,16 @@ public class HostConfigInfo extends DynamicData
     return this.sslThumbprintInfo;
   }
 
+  public HostSslThumbprintInfo[] getSslThumbprintData()
+  {
+    return this.sslThumbprintData;
+  }
+
+  public byte[] getCertificate()
+  {
+    return this.certificate;
+  }
+
   public HostPciPassthruInfo[] getPciPassthruInfo()
   {
     return this.pciPassthruInfo;
@@ -238,6 +252,16 @@ public class HostConfigInfo extends DynamicData
   public PowerSystemInfo getPowerSystemInfo()
   {
     return this.powerSystemInfo;
+  }
+
+  public HostCacheConfigurationInfo[] getCacheConfigurationInfo()
+  {
+    return this.cacheConfigurationInfo;
+  }
+
+  public Boolean getWakeOnLanCapable()
+  {
+    return this.wakeOnLanCapable;
   }
 
   public void setHost(ManagedObjectReference host)
@@ -385,6 +409,16 @@ public class HostConfigInfo extends DynamicData
     this.sslThumbprintInfo=sslThumbprintInfo;
   }
 
+  public void setSslThumbprintData(HostSslThumbprintInfo[] sslThumbprintData)
+  {
+    this.sslThumbprintData=sslThumbprintData;
+  }
+
+  public void setCertificate(byte[] certificate)
+  {
+    this.certificate=certificate;
+  }
+
   public void setPciPassthruInfo(HostPciPassthruInfo[] pciPassthruInfo)
   {
     this.pciPassthruInfo=pciPassthruInfo;
@@ -408,5 +442,15 @@ public class HostConfigInfo extends DynamicData
   public void setPowerSystemInfo(PowerSystemInfo powerSystemInfo)
   {
     this.powerSystemInfo=powerSystemInfo;
+  }
+
+  public void setCacheConfigurationInfo(HostCacheConfigurationInfo[] cacheConfigurationInfo)
+  {
+    this.cacheConfigurationInfo=cacheConfigurationInfo;
+  }
+
+  public void setWakeOnLanCapable(Boolean wakeOnLanCapable)
+  {
+    this.wakeOnLanCapable=wakeOnLanCapable;
   }
 }

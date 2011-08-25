@@ -42,6 +42,7 @@ public class HostRuntimeInfo extends DynamicData
   public boolean inMaintenanceMode;
   public Calendar bootTime;
   public HealthSystemRuntime healthSystemRuntime;
+  public ClusterDasFdmHostState dasHostState;
   public HostTpmDigestInfo[] tpmPcrValues;
 
   public HostSystemConnectionState getConnectionState()
@@ -72,6 +73,11 @@ public class HostRuntimeInfo extends DynamicData
   public HealthSystemRuntime getHealthSystemRuntime()
   {
     return this.healthSystemRuntime;
+  }
+
+  public ClusterDasFdmHostState getDasHostState()
+  {
+    return this.dasHostState;
   }
 
   public HostTpmDigestInfo[] getTpmPcrValues()
@@ -107,6 +113,11 @@ public class HostRuntimeInfo extends DynamicData
   public void setHealthSystemRuntime(HealthSystemRuntime healthSystemRuntime)
   {
     this.healthSystemRuntime=healthSystemRuntime;
+  }
+
+  public void setDasHostState(ClusterDasFdmHostState dasHostState)
+  {
+    this.dasHostState=dasHostState;
   }
 
   public void setTpmPcrValues(HostTpmDigestInfo[] tpmPcrValues)

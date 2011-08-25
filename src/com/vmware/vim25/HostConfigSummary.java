@@ -42,6 +42,8 @@ public class HostConfigSummary extends DynamicData
   public boolean vmotionEnabled;
   public Boolean faultToleranceEnabled;
   public HostFeatureVersionInfo[] featureVersion;
+  public ManagedObjectReference agentVmDatastore;
+  public ManagedObjectReference agentVmNetwork;
 
   public String getName()
   {
@@ -78,6 +80,16 @@ public class HostConfigSummary extends DynamicData
     return this.featureVersion;
   }
 
+  public ManagedObjectReference getAgentVmDatastore()
+  {
+    return this.agentVmDatastore;
+  }
+
+  public ManagedObjectReference getAgentVmNetwork()
+  {
+    return this.agentVmNetwork;
+  }
+
   public void setName(String name)
   {
     this.name=name;
@@ -111,5 +123,15 @@ public class HostConfigSummary extends DynamicData
   public void setFeatureVersion(HostFeatureVersionInfo[] featureVersion)
   {
     this.featureVersion=featureVersion;
+  }
+
+  public void setAgentVmDatastore(ManagedObjectReference agentVmDatastore)
+  {
+    this.agentVmDatastore=agentVmDatastore;
+  }
+
+  public void setAgentVmNetwork(ManagedObjectReference agentVmNetwork)
+  {
+    this.agentVmNetwork=agentVmNetwork;
   }
 }

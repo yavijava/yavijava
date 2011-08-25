@@ -39,8 +39,10 @@ public class HostDiskPartitionAttributes extends DynamicData
   public long startSector;
   public long endSector;
   public String type;
+  public String guid;
   public boolean logical;
   public byte attributes;
+  public Long partitionAlignment;
 
   public int getPartition()
   {
@@ -62,6 +64,11 @@ public class HostDiskPartitionAttributes extends DynamicData
     return this.type;
   }
 
+  public String getGuid()
+  {
+    return this.guid;
+  }
+
   public boolean isLogical()
   {
     return this.logical;
@@ -70,6 +77,11 @@ public class HostDiskPartitionAttributes extends DynamicData
   public byte getAttributes()
   {
     return this.attributes;
+  }
+
+  public Long getPartitionAlignment()
+  {
+    return this.partitionAlignment;
   }
 
   public void setPartition(int partition)
@@ -92,6 +104,11 @@ public class HostDiskPartitionAttributes extends DynamicData
     this.type=type;
   }
 
+  public void setGuid(String guid)
+  {
+    this.guid=guid;
+  }
+
   public void setLogical(boolean logical)
   {
     this.logical=logical;
@@ -100,5 +117,10 @@ public class HostDiskPartitionAttributes extends DynamicData
   public void setAttributes(byte attributes)
   {
     this.attributes=attributes;
+  }
+
+  public void setPartitionAlignment(Long partitionAlignment)
+  {
+    this.partitionAlignment=partitionAlignment;
   }
 }

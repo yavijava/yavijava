@@ -37,6 +37,7 @@ public class HostScsiDisk extends ScsiLun
 {
   public HostDiskDimensionsLba capacity;
   public String devicePath;
+  public Boolean ssd;
 
   public HostDiskDimensionsLba getCapacity()
   {
@@ -48,6 +49,11 @@ public class HostScsiDisk extends ScsiLun
     return this.devicePath;
   }
 
+  public Boolean getSsd()
+  {
+    return this.ssd;
+  }
+
   public void setCapacity(HostDiskDimensionsLba capacity)
   {
     this.capacity=capacity;
@@ -56,5 +62,10 @@ public class HostScsiDisk extends ScsiLun
   public void setDevicePath(String devicePath)
   {
     this.devicePath=devicePath;
+  }
+
+  public void setSsd(Boolean ssd)
+  {
+    this.ssd=ssd;
   }
 }

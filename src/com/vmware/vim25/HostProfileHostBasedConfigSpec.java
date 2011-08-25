@@ -36,14 +36,25 @@ package com.vmware.vim25;
 public class HostProfileHostBasedConfigSpec extends HostProfileConfigSpec
 {
   public ManagedObjectReference host;
+  public Boolean useHostProfileEngine;
 
   public ManagedObjectReference getHost()
   {
     return this.host;
   }
 
+  public Boolean getUseHostProfileEngine()
+  {
+    return this.useHostProfileEngine;
+  }
+
   public void setHost(ManagedObjectReference host)
   {
     this.host=host;
+  }
+
+  public void setUseHostProfileEngine(Boolean useHostProfileEngine)
+  {
+    this.useHostProfileEngine=useHostProfileEngine;
   }
 }

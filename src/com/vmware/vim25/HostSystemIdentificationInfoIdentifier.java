@@ -36,7 +36,8 @@ package com.vmware.vim25;
 public enum HostSystemIdentificationInfoIdentifier
 {
   AssetTag ("AssetTag"),
-  ServiceTag ("ServiceTag");
+  ServiceTag ("ServiceTag"),
+  OemSpecificString ("OemSpecificString");
 
   private final String val;
   private HostSystemIdentificationInfoIdentifier(String val)

@@ -35,9 +35,15 @@ package com.vmware.vim25;
 
 public class HostDiskPartitionSpec extends DynamicData
 {
+  public String partitionFormat;
   public HostDiskDimensionsChs chs;
   public Long totalSectors;
   public HostDiskPartitionAttributes[] partition;
+
+  public String getPartitionFormat()
+  {
+    return this.partitionFormat;
+  }
 
   public HostDiskDimensionsChs getChs()
   {
@@ -52,6 +58,11 @@ public class HostDiskPartitionSpec extends DynamicData
   public HostDiskPartitionAttributes[] getPartition()
   {
     return this.partition;
+  }
+
+  public void setPartitionFormat(String partitionFormat)
+  {
+    this.partitionFormat=partitionFormat;
   }
 
   public void setChs(HostDiskDimensionsChs chs)

@@ -80,7 +80,14 @@ public class HostCapability extends DynamicData
   public Boolean vmDirectPathGen2Supported;
   public String[] vmDirectPathGen2UnsupportedReason;
   public String vmDirectPathGen2UnsupportedReasonExtended;
+  public int[] supportedVmfsMajorVersion;
   public Boolean vStorageCapable;
+  public Boolean snapshotRelayoutSupported;
+  public Boolean firewallIpRulesSupported;
+  public Boolean servicePackageInfoSupported;
+  public Integer maxHostRunningVms;
+  public Integer maxHostSupportedVcpus;
+  public Boolean vmfsDatastoreMountCapable;
 
   public boolean isRecursiveResourcePoolsSupported()
   {
@@ -307,9 +314,44 @@ public class HostCapability extends DynamicData
     return this.vmDirectPathGen2UnsupportedReasonExtended;
   }
 
+  public int[] getSupportedVmfsMajorVersion()
+  {
+    return this.supportedVmfsMajorVersion;
+  }
+
   public Boolean getVStorageCapable()
   {
     return this.vStorageCapable;
+  }
+
+  public Boolean getSnapshotRelayoutSupported()
+  {
+    return this.snapshotRelayoutSupported;
+  }
+
+  public Boolean getFirewallIpRulesSupported()
+  {
+    return this.firewallIpRulesSupported;
+  }
+
+  public Boolean getServicePackageInfoSupported()
+  {
+    return this.servicePackageInfoSupported;
+  }
+
+  public Integer getMaxHostRunningVms()
+  {
+    return this.maxHostRunningVms;
+  }
+
+  public Integer getMaxHostSupportedVcpus()
+  {
+    return this.maxHostSupportedVcpus;
+  }
+
+  public Boolean getVmfsDatastoreMountCapable()
+  {
+    return this.vmfsDatastoreMountCapable;
   }
 
   public void setRecursiveResourcePoolsSupported(boolean recursiveResourcePoolsSupported)
@@ -537,8 +579,43 @@ public class HostCapability extends DynamicData
     this.vmDirectPathGen2UnsupportedReasonExtended=vmDirectPathGen2UnsupportedReasonExtended;
   }
 
+  public void setSupportedVmfsMajorVersion(int[] supportedVmfsMajorVersion)
+  {
+    this.supportedVmfsMajorVersion=supportedVmfsMajorVersion;
+  }
+
   public void setVStorageCapable(Boolean vStorageCapable)
   {
     this.vStorageCapable=vStorageCapable;
+  }
+
+  public void setSnapshotRelayoutSupported(Boolean snapshotRelayoutSupported)
+  {
+    this.snapshotRelayoutSupported=snapshotRelayoutSupported;
+  }
+
+  public void setFirewallIpRulesSupported(Boolean firewallIpRulesSupported)
+  {
+    this.firewallIpRulesSupported=firewallIpRulesSupported;
+  }
+
+  public void setServicePackageInfoSupported(Boolean servicePackageInfoSupported)
+  {
+    this.servicePackageInfoSupported=servicePackageInfoSupported;
+  }
+
+  public void setMaxHostRunningVms(Integer maxHostRunningVms)
+  {
+    this.maxHostRunningVms=maxHostRunningVms;
+  }
+
+  public void setMaxHostSupportedVcpus(Integer maxHostSupportedVcpus)
+  {
+    this.maxHostSupportedVcpus=maxHostSupportedVcpus;
+  }
+
+  public void setVmfsDatastoreMountCapable(Boolean vmfsDatastoreMountCapable)
+  {
+    this.vmfsDatastoreMountCapable=vmfsDatastoreMountCapable;
   }
 }

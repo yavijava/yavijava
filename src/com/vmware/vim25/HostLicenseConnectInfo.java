@@ -37,6 +37,7 @@ public class HostLicenseConnectInfo extends DynamicData
 {
   public LicenseManagerLicenseInfo license;
   public LicenseManagerEvaluationInfo evaluation;
+  public HostLicensableResourceInfo resource;
 
   public LicenseManagerLicenseInfo getLicense()
   {
@@ -48,6 +49,11 @@ public class HostLicenseConnectInfo extends DynamicData
     return this.evaluation;
   }
 
+  public HostLicensableResourceInfo getResource()
+  {
+    return this.resource;
+  }
+
   public void setLicense(LicenseManagerLicenseInfo license)
   {
     this.license=license;
@@ -56,5 +62,10 @@ public class HostLicenseConnectInfo extends DynamicData
   public void setEvaluation(LicenseManagerEvaluationInfo evaluation)
   {
     this.evaluation=evaluation;
+  }
+
+  public void setResource(HostLicensableResourceInfo resource)
+  {
+    this.resource=resource;
   }
 }

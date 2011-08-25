@@ -37,6 +37,7 @@ public class HostFirewallConfigRuleSetConfig extends DynamicData
 {
   public String rulesetId;
   public boolean enabled;
+  public HostFirewallRulesetIpList allowedHosts;
 
   public String getRulesetId()
   {
@@ -48,6 +49,11 @@ public class HostFirewallConfigRuleSetConfig extends DynamicData
     return this.enabled;
   }
 
+  public HostFirewallRulesetIpList getAllowedHosts()
+  {
+    return this.allowedHosts;
+  }
+
   public void setRulesetId(String rulesetId)
   {
     this.rulesetId=rulesetId;
@@ -56,5 +62,10 @@ public class HostFirewallConfigRuleSetConfig extends DynamicData
   public void setEnabled(boolean enabled)
   {
     this.enabled=enabled;
+  }
+
+  public void setAllowedHosts(HostFirewallRulesetIpList allowedHosts)
+  {
+    this.allowedHosts=allowedHosts;
   }
 }

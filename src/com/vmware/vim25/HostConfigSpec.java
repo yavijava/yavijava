@@ -51,6 +51,7 @@ public class HostConfigSpec extends DynamicData
   public HostAccountSpec[] usergroupAccount;
   public HostMemorySpec memory;
   public HostActiveDirectory[] activeDirectory;
+  public KeyAnyValue[] genericConfig;
 
   public HostNasVolumeConfig[] getNasDatastore()
   {
@@ -132,6 +133,11 @@ public class HostConfigSpec extends DynamicData
     return this.activeDirectory;
   }
 
+  public KeyAnyValue[] getGenericConfig()
+  {
+    return this.genericConfig;
+  }
+
   public void setNasDatastore(HostNasVolumeConfig[] nasDatastore)
   {
     this.nasDatastore=nasDatastore;
@@ -210,5 +216,10 @@ public class HostConfigSpec extends DynamicData
   public void setActiveDirectory(HostActiveDirectory[] activeDirectory)
   {
     this.activeDirectory=activeDirectory;
+  }
+
+  public void setGenericConfig(KeyAnyValue[] genericConfig)
+  {
+    this.genericConfig=genericConfig;
   }
 }

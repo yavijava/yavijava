@@ -37,6 +37,7 @@ public class HostMountInfo extends DynamicData
 {
   public String path;
   public String accessMode;
+  public Boolean mounted;
   public Boolean accessible;
 
   public String getPath()
@@ -47,6 +48,11 @@ public class HostMountInfo extends DynamicData
   public String getAccessMode()
   {
     return this.accessMode;
+  }
+
+  public Boolean getMounted()
+  {
+    return this.mounted;
   }
 
   public Boolean getAccessible()
@@ -62,6 +68,11 @@ public class HostMountInfo extends DynamicData
   public void setAccessMode(String accessMode)
   {
     this.accessMode=accessMode;
+  }
+
+  public void setMounted(Boolean mounted)
+  {
+    this.mounted=mounted;
   }
 
   public void setAccessible(Boolean accessible)

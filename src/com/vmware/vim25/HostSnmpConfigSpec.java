@@ -39,6 +39,7 @@ public class HostSnmpConfigSpec extends DynamicData
   public Integer port;
   public String[] readOnlyCommunities;
   public HostSnmpDestination[] trapTargets;
+  public KeyValue[] option;
 
   public Boolean getEnabled()
   {
@@ -60,6 +61,11 @@ public class HostSnmpConfigSpec extends DynamicData
     return this.trapTargets;
   }
 
+  public KeyValue[] getOption()
+  {
+    return this.option;
+  }
+
   public void setEnabled(Boolean enabled)
   {
     this.enabled=enabled;
@@ -78,5 +84,10 @@ public class HostSnmpConfigSpec extends DynamicData
   public void setTrapTargets(HostSnmpDestination[] trapTargets)
   {
     this.trapTargets=trapTargets;
+  }
+
+  public void setOption(KeyValue[] option)
+  {
+    this.option=option;
   }
 }

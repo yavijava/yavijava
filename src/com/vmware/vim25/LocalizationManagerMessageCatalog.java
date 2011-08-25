@@ -42,6 +42,7 @@ public class LocalizationManagerMessageCatalog extends DynamicData
   public String catalogUri;
   public Calendar lastModified;
   public String md5sum;
+  public String version;
 
   public String getModuleName()
   {
@@ -73,6 +74,11 @@ public class LocalizationManagerMessageCatalog extends DynamicData
     return this.md5sum;
   }
 
+  public String getVersion()
+  {
+    return this.version;
+  }
+
   public void setModuleName(String moduleName)
   {
     this.moduleName=moduleName;
@@ -101,5 +107,10 @@ public class LocalizationManagerMessageCatalog extends DynamicData
   public void setMd5sum(String md5sum)
   {
     this.md5sum=md5sum;
+  }
+
+  public void setVersion(String version)
+  {
+    this.version=version;
   }
 }

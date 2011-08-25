@@ -36,6 +36,8 @@ package com.vmware.vim25;
 public class HostInternetScsiHba extends HostHostBusAdapter
 {
   public boolean isSoftwareBased;
+  public Boolean canBeDisabled;
+  public HostInternetScsiHbaNetworkBindingSupportType networkBindingSupport;
   public HostInternetScsiHbaDiscoveryCapabilities discoveryCapabilities;
   public HostInternetScsiHbaDiscoveryProperties discoveryProperties;
   public HostInternetScsiHbaAuthenticationCapabilities authenticationCapabilities;
@@ -56,6 +58,16 @@ public class HostInternetScsiHba extends HostHostBusAdapter
   public boolean isIsSoftwareBased()
   {
     return this.isSoftwareBased;
+  }
+
+  public Boolean getCanBeDisabled()
+  {
+    return this.canBeDisabled;
+  }
+
+  public HostInternetScsiHbaNetworkBindingSupportType getNetworkBindingSupport()
+  {
+    return this.networkBindingSupport;
   }
 
   public HostInternetScsiHbaDiscoveryCapabilities getDiscoveryCapabilities()
@@ -141,6 +153,16 @@ public class HostInternetScsiHba extends HostHostBusAdapter
   public void setIsSoftwareBased(boolean isSoftwareBased)
   {
     this.isSoftwareBased=isSoftwareBased;
+  }
+
+  public void setCanBeDisabled(Boolean canBeDisabled)
+  {
+    this.canBeDisabled=canBeDisabled;
+  }
+
+  public void setNetworkBindingSupport(HostInternetScsiHbaNetworkBindingSupportType networkBindingSupport)
+  {
+    this.networkBindingSupport=networkBindingSupport;
   }
 
   public void setDiscoveryCapabilities(HostInternetScsiHbaDiscoveryCapabilities discoveryCapabilities)

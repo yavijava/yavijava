@@ -50,6 +50,7 @@ public class HostConfigManager extends DynamicData
   public ManagedObjectReference snmpSystem;
   public ManagedObjectReference dateTimeSystem;
   public ManagedObjectReference patchManager;
+  public ManagedObjectReference imageConfigManager;
   public ManagedObjectReference bootDeviceSystem;
   public ManagedObjectReference firmwareSystem;
   public ManagedObjectReference healthStatusSystem;
@@ -58,6 +59,9 @@ public class HostConfigManager extends DynamicData
   public ManagedObjectReference kernelModuleSystem;
   public ManagedObjectReference authenticationManager;
   public ManagedObjectReference powerSystem;
+  public ManagedObjectReference cacheConfigurationManager;
+  public ManagedObjectReference esxAgentHostManager;
+  public ManagedObjectReference iscsiManager;
 
   public ManagedObjectReference getCpuScheduler()
   {
@@ -134,6 +138,11 @@ public class HostConfigManager extends DynamicData
     return this.patchManager;
   }
 
+  public ManagedObjectReference getImageConfigManager()
+  {
+    return this.imageConfigManager;
+  }
+
   public ManagedObjectReference getBootDeviceSystem()
   {
     return this.bootDeviceSystem;
@@ -172,6 +181,21 @@ public class HostConfigManager extends DynamicData
   public ManagedObjectReference getPowerSystem()
   {
     return this.powerSystem;
+  }
+
+  public ManagedObjectReference getCacheConfigurationManager()
+  {
+    return this.cacheConfigurationManager;
+  }
+
+  public ManagedObjectReference getEsxAgentHostManager()
+  {
+    return this.esxAgentHostManager;
+  }
+
+  public ManagedObjectReference getIscsiManager()
+  {
+    return this.iscsiManager;
   }
 
   public void setCpuScheduler(ManagedObjectReference cpuScheduler)
@@ -249,6 +273,11 @@ public class HostConfigManager extends DynamicData
     this.patchManager=patchManager;
   }
 
+  public void setImageConfigManager(ManagedObjectReference imageConfigManager)
+  {
+    this.imageConfigManager=imageConfigManager;
+  }
+
   public void setBootDeviceSystem(ManagedObjectReference bootDeviceSystem)
   {
     this.bootDeviceSystem=bootDeviceSystem;
@@ -287,5 +316,20 @@ public class HostConfigManager extends DynamicData
   public void setPowerSystem(ManagedObjectReference powerSystem)
   {
     this.powerSystem=powerSystem;
+  }
+
+  public void setCacheConfigurationManager(ManagedObjectReference cacheConfigurationManager)
+  {
+    this.cacheConfigurationManager=cacheConfigurationManager;
+  }
+
+  public void setEsxAgentHostManager(ManagedObjectReference esxAgentHostManager)
+  {
+    this.esxAgentHostManager=esxAgentHostManager;
+  }
+
+  public void setIscsiManager(ManagedObjectReference iscsiManager)
+  {
+    this.iscsiManager=iscsiManager;
   }
 }

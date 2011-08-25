@@ -42,6 +42,7 @@ public class HostService extends DynamicData
   public boolean running;
   public String[] ruleset;
   public String policy;
+  public HostServiceSourcePackage sourcePackage;
 
   public String getKey()
   {
@@ -78,6 +79,11 @@ public class HostService extends DynamicData
     return this.policy;
   }
 
+  public HostServiceSourcePackage getSourcePackage()
+  {
+    return this.sourcePackage;
+  }
+
   public void setKey(String key)
   {
     this.key=key;
@@ -111,5 +117,10 @@ public class HostService extends DynamicData
   public void setPolicy(String policy)
   {
     this.policy=policy;
+  }
+
+  public void setSourcePackage(HostServiceSourcePackage sourcePackage)
+  {
+    this.sourcePackage=sourcePackage;
   }
 }

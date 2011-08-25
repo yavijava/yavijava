@@ -38,6 +38,7 @@ public class HostFirewallRule extends DynamicData
   public int port;
   public Integer endPort;
   public HostFirewallRuleDirection direction;
+  public HostFirewallRulePortType portType;
   public String protocol;
 
   public int getPort()
@@ -53,6 +54,11 @@ public class HostFirewallRule extends DynamicData
   public HostFirewallRuleDirection getDirection()
   {
     return this.direction;
+  }
+
+  public HostFirewallRulePortType getPortType()
+  {
+    return this.portType;
   }
 
   public String getProtocol()
@@ -73,6 +79,11 @@ public class HostFirewallRule extends DynamicData
   public void setDirection(HostFirewallRuleDirection direction)
   {
     this.direction=direction;
+  }
+
+  public void setPortType(HostFirewallRulePortType portType)
+  {
+    this.portType=portType;
   }
 
   public void setProtocol(String protocol)

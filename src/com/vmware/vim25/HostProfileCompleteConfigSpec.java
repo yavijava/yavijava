@@ -39,6 +39,7 @@ public class HostProfileCompleteConfigSpec extends HostProfileConfigSpec
   public ComplianceProfile customComplyProfile;
   public boolean disabledExpressionListChanged;
   public String[] disabledExpressionList;
+  public ManagedObjectReference validatorHost;
 
   public HostApplyProfile getApplyProfile()
   {
@@ -60,6 +61,11 @@ public class HostProfileCompleteConfigSpec extends HostProfileConfigSpec
     return this.disabledExpressionList;
   }
 
+  public ManagedObjectReference getValidatorHost()
+  {
+    return this.validatorHost;
+  }
+
   public void setApplyProfile(HostApplyProfile applyProfile)
   {
     this.applyProfile=applyProfile;
@@ -78,5 +84,10 @@ public class HostProfileCompleteConfigSpec extends HostProfileConfigSpec
   public void setDisabledExpressionList(String[] disabledExpressionList)
   {
     this.disabledExpressionList=disabledExpressionList;
+  }
+
+  public void setValidatorHost(ManagedObjectReference validatorHost)
+  {
+    this.validatorHost=validatorHost;
   }
 }

@@ -36,11 +36,17 @@ package com.vmware.vim25;
 public class HostSslThumbprintInfo extends DynamicData
 {
   public String principal;
+  public String ownerTag;
   public String[] sslThumbprints;
 
   public String getPrincipal()
   {
     return this.principal;
+  }
+
+  public String getOwnerTag()
+  {
+    return this.ownerTag;
   }
 
   public String[] getSslThumbprints()
@@ -51,6 +57,11 @@ public class HostSslThumbprintInfo extends DynamicData
   public void setPrincipal(String principal)
   {
     this.principal=principal;
+  }
+
+  public void setOwnerTag(String ownerTag)
+  {
+    this.ownerTag=ownerTag;
   }
 
   public void setSslThumbprints(String[] sslThumbprints)

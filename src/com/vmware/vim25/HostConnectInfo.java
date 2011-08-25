@@ -36,6 +36,7 @@ package com.vmware.vim25;
 public class HostConnectInfo extends DynamicData
 {
   public String serverIp;
+  public Boolean inDasCluster;
   public HostListSummary host;
   public VirtualMachineSummary[] vm;
   public Boolean vimAccountNameRequired;
@@ -47,6 +48,11 @@ public class HostConnectInfo extends DynamicData
   public String getServerIp()
   {
     return this.serverIp;
+  }
+
+  public Boolean getInDasCluster()
+  {
+    return this.inDasCluster;
   }
 
   public HostListSummary getHost()
@@ -87,6 +93,11 @@ public class HostConnectInfo extends DynamicData
   public void setServerIp(String serverIp)
   {
     this.serverIp=serverIp;
+  }
+
+  public void setInDasCluster(Boolean inDasCluster)
+  {
+    this.inDasCluster=inDasCluster;
   }
 
   public void setHost(HostListSummary host)
