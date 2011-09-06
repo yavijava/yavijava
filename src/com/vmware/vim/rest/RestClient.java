@@ -57,6 +57,9 @@ import javax.net.ssl.X509TrustManager;
 
 public class RestClient
 {
+  final private static String NONCE = "vmware-session-nonce";
+  final private static String NONCE_VAL_START = "value=\"";
+  
   private String baseUrl = null;
   
   static 
@@ -157,6 +160,10 @@ public class RestClient
     String cookie = getCon.getHeaderField("Set-Cookie");
     cookie = cookie.substring(0, cookie.indexOf(";"));
     
+    //As of 4.1u1, a hidden input is added into form, shown as follows
+    //<input name="vmware-session-nonce" type="hidden" value="52f3d5cc-5664-6d09-cd3a-73869a2de488">
+    String nonceStr = findVMwareSessionNonce(getCon.getInputStream());
+    
     HttpURLConnection postCon = (HttpURLConnection) new URL(urlStr).openConnection();
     postCon.setRequestMethod("POST");
     postCon.setDoOutput(true);
@@ -165,6 +172,11 @@ public class RestClient
 
     OutputStream os = postCon.getOutputStream();
     OutputStreamWriter out = new OutputStreamWriter(os);
+    
+    if(nonceStr!=null)
+    {
+      out.write(NONCE + "=" + nonceStr);
+    }
 
     Iterator<String> keys = para.keySet().iterator();
     while(keys.hasNext())
@@ -189,6 +201,20 @@ public class RestClient
   public String getUrlStr()
   {
     return this.baseUrl;
+  }
+  
+  private String findVMwareSessionNonce(InputStream is) throws IOException
+  {
+    StringBuffer sb = readStream(is);
+    int pos = sb.indexOf(NONCE);
+    if(pos == -1)
+    {
+      return null;
+    }
+    
+    int start = sb.indexOf(NONCE_VAL_START, pos + NONCE.length()) + NONCE_VAL_START.length();
+    int end = sb.indexOf("\"", start);
+    return sb.substring(start, end);
   }
   
   private StringBuffer readStream(InputStream is) throws IOException
