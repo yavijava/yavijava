@@ -101,6 +101,13 @@ final public class ServerConnection
 		return userSession.getUserName();
 	}
 	
+	/** 
+	 * @deprecated
+	 * This method returns a cached UserSession which holds dynamic properties,
+	 * for example, lastActiveTime, but are not updated. To avoid this confusion,
+	 * deprecate it. Also see bug: 3403474
+	 * To get updated UserSession, always use SessionManager. 
+	 */
 	public UserSession getUserSession() 
 	{
 		return userSession;
