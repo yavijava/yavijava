@@ -242,13 +242,15 @@ public final class WSClient
     postCon.setDoOutput(true);
     postCon.setDoInput(true);
     postCon.setRequestProperty(SOAP_ACTION_HEADER, soapAction);
+    postCon.setRequestProperty("Content-Type", "application/xml; charset=utf-8");
+    
     if(cookie!=null)
     {
       postCon.setRequestProperty("Cookie", cookie);
     }
 
     OutputStream os = postCon.getOutputStream();
-    OutputStreamWriter out = new OutputStreamWriter(os);
+    OutputStreamWriter out = new OutputStreamWriter(os, "UTF8");
 
     out.write(soapMsg);
     out.close();
