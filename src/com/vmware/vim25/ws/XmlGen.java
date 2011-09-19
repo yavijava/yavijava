@@ -653,6 +653,13 @@ public final class XmlGen
 	  	{
 	  		sb.append("<" + tagName +">");
 	  	}
+	  	
+	  	if(clazz == String.class)
+	  	{
+	  	  String temp = (String) obj;
+	  	  obj = escapeForXML(temp);
+	  	}
+	  	
 	  	sb.append(obj);
 	  	sb.append("</" + tagName + ">");
 	  }
@@ -701,6 +708,46 @@ public final class XmlGen
 	    }
 	    sb.append("</" + tagName + ">");
 	  }
+  }
+  
+  /*
+   * escape 5 special chars 
+   * http://en.wikipedia.org/wiki/List_of_XML_and_HTML_character_entity_references
+   */
+  private static String escapeForXML(String str)
+  {
+    StringBuilder sb = new StringBuilder(str.length());
+    
+    for(int i=0; i<str.length(); i++)
+    {
+      char c = str.charAt(i);
+      
+      if(c=='&')
+      {
+        sb.append("&amp;");
+      }
+      else if(c=='<')
+      {
+        sb.append("&lt;");
+      }
+      else if(c=='>')
+      {
+        sb.append("&gt;");
+      }
+      else if(c=='"')
+      {
+        sb.append("&quot;");
+      }
+      else if(c=='\'')
+      {
+        sb.append("&apos;");
+      }
+      else
+      {
+        sb.append(c);
+      }
+    }
+    return sb.toString();
   }
   
   private static String getXSIType(Object obj)
