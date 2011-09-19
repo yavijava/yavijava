@@ -87,14 +87,6 @@ public class ServiceInstance extends ManagedObject
 		serviceContent = vimService.retrieveServiceContent(SERVICE_INSTANCE_MOR); //with new SOAP_ACTION
 		setServerConnection(new ServerConnection(url, vimService, this));
 
-		// escape 5 special chars 
-		// http://en.wikipedia.org/wiki/List_of_XML_and_HTML_character_entity_references
-		password = password.replace("&", "&amp;")
-		                   .replace("<", "&lt;")
-		                   .replace(">", "&gt;")
-		                   .replace("\"", "&quot;")
-		                   .replace("'", "&apos;");
-		
 		UserSession userSession = getSessionManager().login(username, password, null);
 		getServerConnection().setUserSession(userSession);
 	}
