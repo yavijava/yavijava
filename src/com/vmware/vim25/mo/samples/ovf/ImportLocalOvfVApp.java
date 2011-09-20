@@ -94,7 +94,6 @@ public class ImportLocalOvfVApp
 			return;
 		}
 		
-		ovfDescriptor = escapeSpecialChars(ovfDescriptor);
 		System.out.println("ovfDesc:" + ovfDescriptor);
 			
 		ResourcePool rp = ((ComputeResource)host.getParent()).getResourcePool();
@@ -268,11 +267,5 @@ public class ImportLocalOvfVApp
 		System.out.println("path: " + fi.getPath());
 		System.out.println("size: " + fi.getSize());
 		System.out.println("==============================================");
-	}
-
-	public static String escapeSpecialChars(String str)
-	{
-		str = str.replaceAll("<", "&lt;");
-		return str.replaceAll(">", "&gt;"); // do not escape "&" -> "&amp;", "\"" -> "&quot;"
 	}
 }
