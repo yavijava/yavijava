@@ -1,5 +1,6 @@
 /*================================================================================
 Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -639,7 +640,14 @@ public final class XmlGen
 	  else if(clazz == ManagedObjectReference.class)
 	  { //MOR]
 	  	ManagedObjectReference mor = (ManagedObjectReference) obj;
-	    sb.append("<" + tagName + " type=\"" + mor.type + "\">");
+	  	if(clazz==type)
+	  	{
+	  	  sb.append("<" + tagName + " type=\"" + mor.type + "\">");
+	  	}
+	  	else
+	  	{
+	  	  sb.append("<" + tagName + " xsi:type=\"ManagedObjectReference\" type=\"" + mor.type + "\">");
+	  	}
 	    sb.append(mor.val);
 	    sb.append("</" + tagName + ">");
 	  }
