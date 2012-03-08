@@ -39,6 +39,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
 
 import javax.xml.bind.DatatypeConverter;
 
@@ -162,7 +163,7 @@ public final class XmlGen
 	  PRIMITIVE_DATA_TYPES.add("long");
   }
   
-  private final static Map<String, Class> VimClasses = new HashMap<String, Class>();
+  private final static Map<String, Class> VimClasses = new ConcurrentHashMap<String, Class>();
   
   private final static Class getVimClass(String type) 
   {
