@@ -59,7 +59,7 @@ public final class XmlGen
   private static String PACKAGE_NAME = "com.vmware.vim25";
   private static Namespace XSI = new Namespace("xsi", "http://www.w3.org/2001/XMLSchema-instance");
   private static QName XSI_TYPE = new QName("type", XSI);
-  private static String[] BASIC_TYPES = new String[] {"String", "int", "short", "long", "byte", "boolean", "Boolean", "Calendar"};
+  private static String[] BASIC_TYPES = new String[] {"String", "int", "short", "long", "float", "Float", "byte", "boolean", "Boolean", "Calendar"};
 
   public static SoapFaultException parseSoapFault(Element root) throws Exception
   {
@@ -159,6 +159,7 @@ public final class XmlGen
 	  PRIMITIVE_DATA_TYPES.add("int");
 	  PRIMITIVE_DATA_TYPES.add("boolean");
 	  PRIMITIVE_DATA_TYPES.add("short");
+	  PRIMITIVE_DATA_TYPES.add("float");
 	  PRIMITIVE_DATA_TYPES.add("byte");
 	  PRIMITIVE_DATA_TYPES.add("long");
   }
@@ -399,6 +400,16 @@ public final class XmlGen
 	  return ss;
   }
 
+  private static float[] parseFloatArray(String[] values)
+  { 
+    float[] fs = new float[values.length];
+    for(int i=0; i< fs.length; i++)
+    {
+      fs[i] = Float.parseFloat(values[i]);
+    }
+    return fs;
+  }
+
   private static int[] parseIntArray(String[] values)
   { 
 	  int[] is = new int[values.length];
@@ -461,6 +472,14 @@ public final class XmlGen
     {
       return parseLongArray(values);
     }
+    else if("float".equals(type))
+    {
+      return new Float(values[0]);
+    }
+    else if("float[]".equals(type))
+    {
+      return parseFloatArray(values);
+    }
     else if("boolean".equals(type))
     {
       return new Boolean(values[0]);
@@ -518,6 +537,14 @@ public final class XmlGen
     {
       f.set(obj, new Long(value));
     }
+    else if("float".equals(type))
+    {
+      f.set(obj, Float.parseFloat(value));
+    }
+    else if("Float".equals(type))
+    {
+      f.set(obj, new Float(value));
+    }
     else if("boolean".equals(type))
     {
       f.set(obj, Boolean.parseBoolean(value));
@@ -558,6 +585,10 @@ public final class XmlGen
     else if("long[]".equals(type))
     {
       f.set(obj, parseLongArray(values));
+    }
+    else if("float[]".equals(type))
+    {
+      f.set(obj, parseFloatArray(values));
     }
     else if("boolean[]".equals(type))
     {
