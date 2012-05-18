@@ -1,3 +1,6 @@
+What is new in Version 5.0.1?
+Mainly bug fixes. Check out http://www.doublecloud.org for details. 
+
 What is new in Version 5.0?
 vSphere 5.0 support: http://www.doublecloud.org/2011/08/what%e2%80%99s-new-in-vsphere-api-5-0/
 A few bug fixes since 2.1 release

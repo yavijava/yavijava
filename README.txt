@@ -1,4 +1,4 @@
-Welcome to VI Java API 5.0 release 
+Welcome to VI Java API
 
 WHAT IS VI JAVA API?
 VI Java API is a set of Java libraries that aim to ease the usage of VI 
