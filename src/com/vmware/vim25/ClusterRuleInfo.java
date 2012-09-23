@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,11 +30,12 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class ClusterRuleInfo extends DynamicData
-{
+@SuppressWarnings("all")
+public class ClusterRuleInfo extends DynamicData {
   public Integer key;
   public ManagedEntityStatus status;
   public Boolean enabled;
@@ -43,73 +44,59 @@ public class ClusterRuleInfo extends DynamicData
   public Boolean userCreated;
   public Boolean inCompliance;
 
-  public Integer getKey()
-  {
+  public Integer getKey() {
     return this.key;
   }
 
-  public ManagedEntityStatus getStatus()
-  {
+  public ManagedEntityStatus getStatus() {
     return this.status;
   }
 
-  public Boolean getEnabled()
-  {
+  public Boolean getEnabled() {
     return this.enabled;
   }
 
-  public String getName()
-  {
+  public String getName() {
     return this.name;
   }
 
-  public Boolean getMandatory()
-  {
+  public Boolean getMandatory() {
     return this.mandatory;
   }
 
-  public Boolean getUserCreated()
-  {
+  public Boolean getUserCreated() {
     return this.userCreated;
   }
 
-  public Boolean getInCompliance()
-  {
+  public Boolean getInCompliance() {
     return this.inCompliance;
   }
 
-  public void setKey(Integer key)
-  {
+  public void setKey(Integer key) {
     this.key=key;
   }
 
-  public void setStatus(ManagedEntityStatus status)
-  {
+  public void setStatus(ManagedEntityStatus status) {
     this.status=status;
   }
 
-  public void setEnabled(Boolean enabled)
-  {
+  public void setEnabled(Boolean enabled) {
     this.enabled=enabled;
   }
 
-  public void setName(String name)
-  {
+  public void setName(String name) {
     this.name=name;
   }
 
-  public void setMandatory(Boolean mandatory)
-  {
+  public void setMandatory(Boolean mandatory) {
     this.mandatory=mandatory;
   }
 
-  public void setUserCreated(Boolean userCreated)
-  {
+  public void setUserCreated(Boolean userCreated) {
     this.userCreated=userCreated;
   }
 
-  public void setInCompliance(Boolean inCompliance)
-  {
+  public void setInCompliance(Boolean inCompliance) {
     this.inCompliance=inCompliance;
   }
 }

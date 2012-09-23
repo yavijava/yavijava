@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,64 +30,55 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class VirtualDiskFlatVer1BackingInfo extends VirtualDeviceFileBackingInfo
-{
+@SuppressWarnings("all")
+public class VirtualDiskFlatVer1BackingInfo extends VirtualDeviceFileBackingInfo {
   public String diskMode;
   public Boolean split;
   public Boolean writeThrough;
   public String contentId;
   public VirtualDiskFlatVer1BackingInfo parent;
 
-  public String getDiskMode()
-  {
+  public String getDiskMode() {
     return this.diskMode;
   }
 
-  public Boolean getSplit()
-  {
+  public Boolean getSplit() {
     return this.split;
   }
 
-  public Boolean getWriteThrough()
-  {
+  public Boolean getWriteThrough() {
     return this.writeThrough;
   }
 
-  public String getContentId()
-  {
+  public String getContentId() {
     return this.contentId;
   }
 
-  public VirtualDiskFlatVer1BackingInfo getParent()
-  {
+  public VirtualDiskFlatVer1BackingInfo getParent() {
     return this.parent;
   }
 
-  public void setDiskMode(String diskMode)
-  {
+  public void setDiskMode(String diskMode) {
     this.diskMode=diskMode;
   }
 
-  public void setSplit(Boolean split)
-  {
+  public void setSplit(Boolean split) {
     this.split=split;
   }
 
-  public void setWriteThrough(Boolean writeThrough)
-  {
+  public void setWriteThrough(Boolean writeThrough) {
     this.writeThrough=writeThrough;
   }
 
-  public void setContentId(String contentId)
-  {
+  public void setContentId(String contentId) {
     this.contentId=contentId;
   }
 
-  public void setParent(VirtualDiskFlatVer1BackingInfo parent)
-  {
+  public void setParent(VirtualDiskFlatVer1BackingInfo parent) {
     this.parent=parent;
   }
 }

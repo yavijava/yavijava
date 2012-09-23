@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,42 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class ClusterDasVmSettings extends DynamicData
-{
+@SuppressWarnings("all")
+public class ClusterDasVmSettings extends DynamicData {
   public String restartPriority;
   public String isolationResponse;
   public ClusterVmToolsMonitoringSettings vmToolsMonitoringSettings;
 
-  public String getRestartPriority()
-  {
+  public String getRestartPriority() {
     return this.restartPriority;
   }
 
-  public String getIsolationResponse()
-  {
+  public String getIsolationResponse() {
     return this.isolationResponse;
   }
 
-  public ClusterVmToolsMonitoringSettings getVmToolsMonitoringSettings()
-  {
+  public ClusterVmToolsMonitoringSettings getVmToolsMonitoringSettings() {
     return this.vmToolsMonitoringSettings;
   }
 
-  public void setRestartPriority(String restartPriority)
-  {
+  public void setRestartPriority(String restartPriority) {
     this.restartPriority=restartPriority;
   }
 
-  public void setIsolationResponse(String isolationResponse)
-  {
+  public void setIsolationResponse(String isolationResponse) {
     this.isolationResponse=isolationResponse;
   }
 
-  public void setVmToolsMonitoringSettings(ClusterVmToolsMonitoringSettings vmToolsMonitoringSettings)
-  {
+  public void setVmToolsMonitoringSettings(ClusterVmToolsMonitoringSettings vmToolsMonitoringSettings) {
     this.vmToolsMonitoringSettings=vmToolsMonitoringSettings;
   }
 }

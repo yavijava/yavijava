@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,53 +30,46 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class VirtualMachineDisplayTopology extends DynamicData
-{
+@SuppressWarnings("all")
+public class VirtualMachineDisplayTopology extends DynamicData {
   public int x;
   public int y;
   public int width;
   public int height;
 
-  public int getX()
-  {
+  public int getX() {
     return this.x;
   }
 
-  public int getY()
-  {
+  public int getY() {
     return this.y;
   }
 
-  public int getWidth()
-  {
+  public int getWidth() {
     return this.width;
   }
 
-  public int getHeight()
-  {
+  public int getHeight() {
     return this.height;
   }
 
-  public void setX(int x)
-  {
+  public void setX(int x) {
     this.x=x;
   }
 
-  public void setY(int y)
-  {
+  public void setY(int y) {
     this.y=y;
   }
 
-  public void setWidth(int width)
-  {
+  public void setWidth(int width) {
     this.width=width;
   }
 
-  public void setHeight(int height)
-  {
+  public void setHeight(int height) {
     this.height=height;
   }
 }

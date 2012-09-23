@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,64 +30,55 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class HostSnmpSystemAgentLimits extends DynamicData
-{
+@SuppressWarnings("all")
+public class HostSnmpSystemAgentLimits extends DynamicData {
   public int maxReadOnlyCommunities;
   public int maxTrapDestinations;
   public int maxCommunityLength;
   public int maxBufferSize;
   public HostSnmpAgentCapability capability;
 
-  public int getMaxReadOnlyCommunities()
-  {
+  public int getMaxReadOnlyCommunities() {
     return this.maxReadOnlyCommunities;
   }
 
-  public int getMaxTrapDestinations()
-  {
+  public int getMaxTrapDestinations() {
     return this.maxTrapDestinations;
   }
 
-  public int getMaxCommunityLength()
-  {
+  public int getMaxCommunityLength() {
     return this.maxCommunityLength;
   }
 
-  public int getMaxBufferSize()
-  {
+  public int getMaxBufferSize() {
     return this.maxBufferSize;
   }
 
-  public HostSnmpAgentCapability getCapability()
-  {
+  public HostSnmpAgentCapability getCapability() {
     return this.capability;
   }
 
-  public void setMaxReadOnlyCommunities(int maxReadOnlyCommunities)
-  {
+  public void setMaxReadOnlyCommunities(int maxReadOnlyCommunities) {
     this.maxReadOnlyCommunities=maxReadOnlyCommunities;
   }
 
-  public void setMaxTrapDestinations(int maxTrapDestinations)
-  {
+  public void setMaxTrapDestinations(int maxTrapDestinations) {
     this.maxTrapDestinations=maxTrapDestinations;
   }
 
-  public void setMaxCommunityLength(int maxCommunityLength)
-  {
+  public void setMaxCommunityLength(int maxCommunityLength) {
     this.maxCommunityLength=maxCommunityLength;
   }
 
-  public void setMaxBufferSize(int maxBufferSize)
-  {
+  public void setMaxBufferSize(int maxBufferSize) {
     this.maxBufferSize=maxBufferSize;
   }
 
-  public void setCapability(HostSnmpAgentCapability capability)
-  {
+  public void setCapability(HostSnmpAgentCapability capability) {
     this.capability=capability;
   }
 }

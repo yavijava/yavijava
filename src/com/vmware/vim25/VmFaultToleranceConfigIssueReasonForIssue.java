@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,11 +30,11 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public enum VmFaultToleranceConfigIssueReasonForIssue
-{
+public enum VmFaultToleranceConfigIssueReasonForIssue {
   haNotEnabled ("haNotEnabled"),
   moreThanOneSecondary ("moreThanOneSecondary"),
   recordReplayNotSupported ("recordReplayNotSupported"),
@@ -53,8 +53,11 @@ public enum VmFaultToleranceConfigIssueReasonForIssue
   ftSecondaryVm ("ftSecondaryVm"),
   hasLocalDisk ("hasLocalDisk"),
   esxAgentVm ("esxAgentVm"),
-  video3dEnabled ("video3dEnabled");
+  video3dEnabled ("video3dEnabled"),
+  hasUnsupportedDisk ("hasUnsupportedDisk"),
+  hasNestedHVConfiguration ("hasNestedHVConfiguration");
 
+  @SuppressWarnings("unused")
   private final String val;
   private VmFaultToleranceConfigIssueReasonForIssue(String val)
   {

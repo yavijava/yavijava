@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -31,42 +31,37 @@ package com.vmware.vim25;
 import java.util.Calendar;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class AnswerFile extends DynamicData
-{
+@SuppressWarnings("all")
+public class AnswerFile extends DynamicData {
   public ProfileDeferredPolicyOptionParameter[] userInput;
   public Calendar createdTime;
   public Calendar modifiedTime;
 
-  public ProfileDeferredPolicyOptionParameter[] getUserInput()
-  {
+  public ProfileDeferredPolicyOptionParameter[] getUserInput() {
     return this.userInput;
   }
 
-  public Calendar getCreatedTime()
-  {
+  public Calendar getCreatedTime() {
     return this.createdTime;
   }
 
-  public Calendar getModifiedTime()
-  {
+  public Calendar getModifiedTime() {
     return this.modifiedTime;
   }
 
-  public void setUserInput(ProfileDeferredPolicyOptionParameter[] userInput)
-  {
+  public void setUserInput(ProfileDeferredPolicyOptionParameter[] userInput) {
     this.userInput=userInput;
   }
 
-  public void setCreatedTime(Calendar createdTime)
-  {
+  public void setCreatedTime(Calendar createdTime) {
     this.createdTime=createdTime;
   }
 
-  public void setModifiedTime(Calendar modifiedTime)
-  {
+  public void setModifiedTime(Calendar modifiedTime) {
     this.modifiedTime=modifiedTime;
   }
 }

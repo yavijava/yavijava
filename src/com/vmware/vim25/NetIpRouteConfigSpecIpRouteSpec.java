@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,53 +30,46 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class NetIpRouteConfigSpecIpRouteSpec extends DynamicData
-{
+@SuppressWarnings("all")
+public class NetIpRouteConfigSpecIpRouteSpec extends DynamicData {
   public String network;
   public int prefixLength;
   public NetIpRouteConfigSpecGatewaySpec gateway;
   public String operation;
 
-  public String getNetwork()
-  {
+  public String getNetwork() {
     return this.network;
   }
 
-  public int getPrefixLength()
-  {
+  public int getPrefixLength() {
     return this.prefixLength;
   }
 
-  public NetIpRouteConfigSpecGatewaySpec getGateway()
-  {
+  public NetIpRouteConfigSpecGatewaySpec getGateway() {
     return this.gateway;
   }
 
-  public String getOperation()
-  {
+  public String getOperation() {
     return this.operation;
   }
 
-  public void setNetwork(String network)
-  {
+  public void setNetwork(String network) {
     this.network=network;
   }
 
-  public void setPrefixLength(int prefixLength)
-  {
+  public void setPrefixLength(int prefixLength) {
     this.prefixLength=prefixLength;
   }
 
-  public void setGateway(NetIpRouteConfigSpecGatewaySpec gateway)
-  {
+  public void setGateway(NetIpRouteConfigSpecGatewaySpec gateway) {
     this.gateway=gateway;
   }
 
-  public void setOperation(String operation)
-  {
+  public void setOperation(String operation) {
     this.operation=operation;
   }
 }

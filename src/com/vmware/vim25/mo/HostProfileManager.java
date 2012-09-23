@@ -1,4 +1,5 @@
 /*================================================================================
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 Copyright (c) 2008 VMware, Inc. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
@@ -35,6 +36,7 @@ import com.vmware.vim25.AnswerFileCreateSpec;
 import com.vmware.vim25.AnswerFileStatusResult;
 import com.vmware.vim25.AnswerFileUpdateFailed;
 import com.vmware.vim25.ApplyProfile;
+import com.vmware.vim25.HostApplyProfile;
 import com.vmware.vim25.HostConfigFailed;
 import com.vmware.vim25.HostConfigSpec;
 import com.vmware.vim25.HostProfileManagerConfigTaskList;
@@ -48,7 +50,7 @@ import com.vmware.vim25.mo.util.MorUtil;
 
 /**
  * The managed object class corresponding to the one defined in VI SDK API reference.
- * @author Steve JIN (sjin@vmware.com)
+ * @author Steve JIN (http://www.doublecloud.org)
  * @since 4.0
  */
 public class HostProfileManager extends ProfileManager
@@ -116,7 +118,7 @@ public class HostProfileManager extends ProfileManager
 	  ManagedObjectReference[] hostMors = MorUtil.createMORs(hosts);
 	  return getVimService().queryAnswerFileStatus(getMOR(), hostMors);
 	}
-
+	
   //SDK4.1 signature for back compatibility
 	public ProfileMetadata[] queryHostProfileMetadata(String[] profileName) throws RuntimeFault, RemoteException
 	{
@@ -144,6 +146,13 @@ public class HostProfileManager extends ProfileManager
 	public AnswerFile retrieveAnswerFile(HostSystem host) throws RuntimeFault, RemoteException
 	{
 	  return getVimService().retrieveAnswerFile(getMOR(), host.getMOR()); 
+	}
+
+
+	/** @since SDK5.1 */
+	public AnswerFile retrieveAnswerFileForProfile(HostSystem host, HostApplyProfile applyProfile) throws RuntimeFault, RemoteException
+	{
+	  return getVimService().retrieveAnswerFileForProfile(getMOR(), host==null?null:host.getMOR(), applyProfile);
 	}
 	
 	/**

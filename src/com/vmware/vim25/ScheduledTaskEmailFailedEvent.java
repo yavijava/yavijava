@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,31 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class ScheduledTaskEmailFailedEvent extends ScheduledTaskEvent
-{
+@SuppressWarnings("all")
+public class ScheduledTaskEmailFailedEvent extends ScheduledTaskEvent {
   public String to;
   public LocalizedMethodFault reason;
 
-  public String getTo()
-  {
+  public String getTo() {
     return this.to;
   }
 
-  public LocalizedMethodFault getReason()
-  {
+  public LocalizedMethodFault getReason() {
     return this.reason;
   }
 
-  public void setTo(String to)
-  {
+  public void setTo(String to) {
     this.to=to;
   }
 
-  public void setReason(LocalizedMethodFault reason)
-  {
+  public void setReason(LocalizedMethodFault reason) {
     this.reason=reason;
   }
 }

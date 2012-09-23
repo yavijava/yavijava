@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,11 +30,12 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class PerfCounterInfo extends DynamicData
-{
+@SuppressWarnings("all")
+public class PerfCounterInfo extends DynamicData {
   public int key;
   public ElementDescription nameInfo;
   public ElementDescription groupInfo;
@@ -45,93 +46,75 @@ public class PerfCounterInfo extends DynamicData
   public Integer perDeviceLevel;
   public int[] associatedCounterId;
 
-  public int getKey()
-  {
+  public int getKey() {
     return this.key;
   }
 
-  public ElementDescription getNameInfo()
-  {
+  public ElementDescription getNameInfo() {
     return this.nameInfo;
   }
 
-  public ElementDescription getGroupInfo()
-  {
+  public ElementDescription getGroupInfo() {
     return this.groupInfo;
   }
 
-  public ElementDescription getUnitInfo()
-  {
+  public ElementDescription getUnitInfo() {
     return this.unitInfo;
   }
 
-  public PerfSummaryType getRollupType()
-  {
+  public PerfSummaryType getRollupType() {
     return this.rollupType;
   }
 
-  public PerfStatsType getStatsType()
-  {
+  public PerfStatsType getStatsType() {
     return this.statsType;
   }
 
-  public Integer getLevel()
-  {
+  public Integer getLevel() {
     return this.level;
   }
 
-  public Integer getPerDeviceLevel()
-  {
+  public Integer getPerDeviceLevel() {
     return this.perDeviceLevel;
   }
 
-  public int[] getAssociatedCounterId()
-  {
+  public int[] getAssociatedCounterId() {
     return this.associatedCounterId;
   }
 
-  public void setKey(int key)
-  {
+  public void setKey(int key) {
     this.key=key;
   }
 
-  public void setNameInfo(ElementDescription nameInfo)
-  {
+  public void setNameInfo(ElementDescription nameInfo) {
     this.nameInfo=nameInfo;
   }
 
-  public void setGroupInfo(ElementDescription groupInfo)
-  {
+  public void setGroupInfo(ElementDescription groupInfo) {
     this.groupInfo=groupInfo;
   }
 
-  public void setUnitInfo(ElementDescription unitInfo)
-  {
+  public void setUnitInfo(ElementDescription unitInfo) {
     this.unitInfo=unitInfo;
   }
 
-  public void setRollupType(PerfSummaryType rollupType)
-  {
+  public void setRollupType(PerfSummaryType rollupType) {
     this.rollupType=rollupType;
   }
 
-  public void setStatsType(PerfStatsType statsType)
-  {
+  public void setStatsType(PerfStatsType statsType) {
     this.statsType=statsType;
   }
 
-  public void setLevel(Integer level)
-  {
+  public void setLevel(Integer level) {
     this.level=level;
   }
 
-  public void setPerDeviceLevel(Integer perDeviceLevel)
-  {
+  public void setPerDeviceLevel(Integer perDeviceLevel) {
     this.perDeviceLevel=perDeviceLevel;
   }
 
-  public void setAssociatedCounterId(int[] associatedCounterId)
-  {
+  public void setAssociatedCounterId(int[] associatedCounterId) {
     this.associatedCounterId=associatedCounterId;
   }
 }

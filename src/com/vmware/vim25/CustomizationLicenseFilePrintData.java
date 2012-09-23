@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,31 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class CustomizationLicenseFilePrintData extends DynamicData
-{
+@SuppressWarnings("all")
+public class CustomizationLicenseFilePrintData extends DynamicData {
   public CustomizationLicenseDataMode autoMode;
   public Integer autoUsers;
 
-  public CustomizationLicenseDataMode getAutoMode()
-  {
+  public CustomizationLicenseDataMode getAutoMode() {
     return this.autoMode;
   }
 
-  public Integer getAutoUsers()
-  {
+  public Integer getAutoUsers() {
     return this.autoUsers;
   }
 
-  public void setAutoMode(CustomizationLicenseDataMode autoMode)
-  {
+  public void setAutoMode(CustomizationLicenseDataMode autoMode) {
     this.autoMode=autoMode;
   }
 
-  public void setAutoUsers(Integer autoUsers)
-  {
+  public void setAutoUsers(Integer autoUsers) {
     this.autoUsers=autoUsers;
   }
 }

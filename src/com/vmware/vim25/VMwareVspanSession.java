@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,11 +30,12 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class VMwareVspanSession extends DynamicData
-{
+@SuppressWarnings("all")
+public class VMwareVspanSession extends DynamicData {
   public String key;
   public String name;
   public String description;
@@ -46,114 +47,110 @@ public class VMwareVspanSession extends DynamicData
   public boolean stripOriginalVlan;
   public Integer mirroredPacketLength;
   public boolean normalTrafficAllowed;
+  public String sessionType;
+  public Integer samplingRate;
 
-  public String getKey()
-  {
+  public String getKey() {
     return this.key;
   }
 
-  public String getName()
-  {
+  public String getName() {
     return this.name;
   }
 
-  public String getDescription()
-  {
+  public String getDescription() {
     return this.description;
   }
 
-  public boolean isEnabled()
-  {
+  public boolean isEnabled() {
     return this.enabled;
   }
 
-  public VMwareVspanPort getSourcePortTransmitted()
-  {
+  public VMwareVspanPort getSourcePortTransmitted() {
     return this.sourcePortTransmitted;
   }
 
-  public VMwareVspanPort getSourcePortReceived()
-  {
+  public VMwareVspanPort getSourcePortReceived() {
     return this.sourcePortReceived;
   }
 
-  public VMwareVspanPort getDestinationPort()
-  {
+  public VMwareVspanPort getDestinationPort() {
     return this.destinationPort;
   }
 
-  public Integer getEncapsulationVlanId()
-  {
+  public Integer getEncapsulationVlanId() {
     return this.encapsulationVlanId;
   }
 
-  public boolean isStripOriginalVlan()
-  {
+  public boolean isStripOriginalVlan() {
     return this.stripOriginalVlan;
   }
 
-  public Integer getMirroredPacketLength()
-  {
+  public Integer getMirroredPacketLength() {
     return this.mirroredPacketLength;
   }
 
-  public boolean isNormalTrafficAllowed()
-  {
+  public boolean isNormalTrafficAllowed() {
     return this.normalTrafficAllowed;
   }
 
-  public void setKey(String key)
-  {
+  public String getSessionType() {
+    return this.sessionType;
+  }
+
+  public Integer getSamplingRate() {
+    return this.samplingRate;
+  }
+
+  public void setKey(String key) {
     this.key=key;
   }
 
-  public void setName(String name)
-  {
+  public void setName(String name) {
     this.name=name;
   }
 
-  public void setDescription(String description)
-  {
+  public void setDescription(String description) {
     this.description=description;
   }
 
-  public void setEnabled(boolean enabled)
-  {
+  public void setEnabled(boolean enabled) {
     this.enabled=enabled;
   }
 
-  public void setSourcePortTransmitted(VMwareVspanPort sourcePortTransmitted)
-  {
+  public void setSourcePortTransmitted(VMwareVspanPort sourcePortTransmitted) {
     this.sourcePortTransmitted=sourcePortTransmitted;
   }
 
-  public void setSourcePortReceived(VMwareVspanPort sourcePortReceived)
-  {
+  public void setSourcePortReceived(VMwareVspanPort sourcePortReceived) {
     this.sourcePortReceived=sourcePortReceived;
   }
 
-  public void setDestinationPort(VMwareVspanPort destinationPort)
-  {
+  public void setDestinationPort(VMwareVspanPort destinationPort) {
     this.destinationPort=destinationPort;
   }
 
-  public void setEncapsulationVlanId(Integer encapsulationVlanId)
-  {
+  public void setEncapsulationVlanId(Integer encapsulationVlanId) {
     this.encapsulationVlanId=encapsulationVlanId;
   }
 
-  public void setStripOriginalVlan(boolean stripOriginalVlan)
-  {
+  public void setStripOriginalVlan(boolean stripOriginalVlan) {
     this.stripOriginalVlan=stripOriginalVlan;
   }
 
-  public void setMirroredPacketLength(Integer mirroredPacketLength)
-  {
+  public void setMirroredPacketLength(Integer mirroredPacketLength) {
     this.mirroredPacketLength=mirroredPacketLength;
   }
 
-  public void setNormalTrafficAllowed(boolean normalTrafficAllowed)
-  {
+  public void setNormalTrafficAllowed(boolean normalTrafficAllowed) {
     this.normalTrafficAllowed=normalTrafficAllowed;
+  }
+
+  public void setSessionType(String sessionType) {
+    this.sessionType=sessionType;
+  }
+
+  public void setSamplingRate(Integer samplingRate) {
+    this.samplingRate=samplingRate;
   }
 }

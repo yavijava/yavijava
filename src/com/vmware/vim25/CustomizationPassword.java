@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,31 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class CustomizationPassword extends DynamicData
-{
+@SuppressWarnings("all")
+public class CustomizationPassword extends DynamicData {
   public String value;
   public boolean plainText;
 
-  public String getValue()
-  {
+  public String getValue() {
     return this.value;
   }
 
-  public boolean isPlainText()
-  {
+  public boolean isPlainText() {
     return this.plainText;
   }
 
-  public void setValue(String value)
-  {
+  public void setValue(String value) {
     this.value=value;
   }
 
-  public void setPlainText(boolean plainText)
-  {
+  public void setPlainText(boolean plainText) {
     this.plainText=plainText;
   }
 }

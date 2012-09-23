@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,64 +30,55 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class ExtensionClientInfo extends DynamicData
-{
+@SuppressWarnings("all")
+public class ExtensionClientInfo extends DynamicData {
   public String version;
   public Description description;
   public String company;
   public String type;
   public String url;
 
-  public String getVersion()
-  {
+  public String getVersion() {
     return this.version;
   }
 
-  public Description getDescription()
-  {
+  public Description getDescription() {
     return this.description;
   }
 
-  public String getCompany()
-  {
+  public String getCompany() {
     return this.company;
   }
 
-  public String getType()
-  {
+  public String getType() {
     return this.type;
   }
 
-  public String getUrl()
-  {
+  public String getUrl() {
     return this.url;
   }
 
-  public void setVersion(String version)
-  {
+  public void setVersion(String version) {
     this.version=version;
   }
 
-  public void setDescription(Description description)
-  {
+  public void setDescription(Description description) {
     this.description=description;
   }
 
-  public void setCompany(String company)
-  {
+  public void setCompany(String company) {
     this.company=company;
   }
 
-  public void setType(String type)
-  {
+  public void setType(String type) {
     this.type=type;
   }
 
-  public void setUrl(String url)
-  {
+  public void setUrl(String url) {
     this.url=url;
   }
 }

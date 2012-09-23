@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,25 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class ArrayOfProfilePolicyMetadata
-{
+public class ArrayOfProfilePolicyMetadata {
   public ProfilePolicyMetadata[] ProfilePolicyMetadata;
 
-  public ProfilePolicyMetadata[] getProfilePolicyMetadata()
-  {
+  public ProfilePolicyMetadata[] getProfilePolicyMetadata() {
     return this.ProfilePolicyMetadata;
   }
 
-  public ProfilePolicyMetadata getProfilePolicyMetadata(int i)
-  {
+  public ProfilePolicyMetadata getProfilePolicyMetadata(int i) {
     return this.ProfilePolicyMetadata[i];
   }
 
-  public void setProfilePolicyMetadata(ProfilePolicyMetadata[] ProfilePolicyMetadata)
-  {
+  public void setProfilePolicyMetadata(ProfilePolicyMetadata[] ProfilePolicyMetadata) {
     this.ProfilePolicyMetadata=ProfilePolicyMetadata;
   }
 }

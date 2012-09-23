@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,53 +30,46 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class VirtualMachineNetworkShaperInfo extends DynamicData
-{
+@SuppressWarnings("all")
+public class VirtualMachineNetworkShaperInfo extends DynamicData {
   public Boolean enabled;
   public Long peakBps;
   public Long averageBps;
   public Long burstSize;
 
-  public Boolean getEnabled()
-  {
+  public Boolean getEnabled() {
     return this.enabled;
   }
 
-  public Long getPeakBps()
-  {
+  public Long getPeakBps() {
     return this.peakBps;
   }
 
-  public Long getAverageBps()
-  {
+  public Long getAverageBps() {
     return this.averageBps;
   }
 
-  public Long getBurstSize()
-  {
+  public Long getBurstSize() {
     return this.burstSize;
   }
 
-  public void setEnabled(Boolean enabled)
-  {
+  public void setEnabled(Boolean enabled) {
     this.enabled=enabled;
   }
 
-  public void setPeakBps(Long peakBps)
-  {
+  public void setPeakBps(Long peakBps) {
     this.peakBps=peakBps;
   }
 
-  public void setAverageBps(Long averageBps)
-  {
+  public void setAverageBps(Long averageBps) {
     this.averageBps=averageBps;
   }
 
-  public void setBurstSize(Long burstSize)
-  {
+  public void setBurstSize(Long burstSize) {
     this.burstSize=burstSize;
   }
 }

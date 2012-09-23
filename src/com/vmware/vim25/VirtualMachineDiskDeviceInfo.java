@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,31 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class VirtualMachineDiskDeviceInfo extends VirtualMachineTargetInfo
-{
+@SuppressWarnings("all")
+public class VirtualMachineDiskDeviceInfo extends VirtualMachineTargetInfo {
   public Long capacity;
   public ManagedObjectReference[] vm;
 
-  public Long getCapacity()
-  {
+  public Long getCapacity() {
     return this.capacity;
   }
 
-  public ManagedObjectReference[] getVm()
-  {
+  public ManagedObjectReference[] getVm() {
     return this.vm;
   }
 
-  public void setCapacity(Long capacity)
-  {
+  public void setCapacity(Long capacity) {
     this.capacity=capacity;
   }
 
-  public void setVm(ManagedObjectReference[] vm)
-  {
+  public void setVm(ManagedObjectReference[] vm) {
     this.vm=vm;
   }
 }

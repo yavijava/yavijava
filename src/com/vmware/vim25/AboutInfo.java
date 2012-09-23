@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,11 +30,12 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class AboutInfo extends DynamicData
-{
+@SuppressWarnings("all")
+public class AboutInfo extends DynamicData {
   public String name;
   public String fullName;
   public String vendor;
@@ -50,143 +51,115 @@ public class AboutInfo extends DynamicData
   public String licenseProductName;
   public String licenseProductVersion;
 
-  public String getName()
-  {
+  public String getName() {
     return this.name;
   }
 
-  public String getFullName()
-  {
+  public String getFullName() {
     return this.fullName;
   }
 
-  public String getVendor()
-  {
+  public String getVendor() {
     return this.vendor;
   }
 
-  public String getVersion()
-  {
+  public String getVersion() {
     return this.version;
   }
 
-  public String getBuild()
-  {
+  public String getBuild() {
     return this.build;
   }
 
-  public String getLocaleVersion()
-  {
+  public String getLocaleVersion() {
     return this.localeVersion;
   }
 
-  public String getLocaleBuild()
-  {
+  public String getLocaleBuild() {
     return this.localeBuild;
   }
 
-  public String getOsType()
-  {
+  public String getOsType() {
     return this.osType;
   }
 
-  public String getProductLineId()
-  {
+  public String getProductLineId() {
     return this.productLineId;
   }
 
-  public String getApiType()
-  {
+  public String getApiType() {
     return this.apiType;
   }
 
-  public String getApiVersion()
-  {
+  public String getApiVersion() {
     return this.apiVersion;
   }
 
-  public String getInstanceUuid()
-  {
+  public String getInstanceUuid() {
     return this.instanceUuid;
   }
 
-  public String getLicenseProductName()
-  {
+  public String getLicenseProductName() {
     return this.licenseProductName;
   }
 
-  public String getLicenseProductVersion()
-  {
+  public String getLicenseProductVersion() {
     return this.licenseProductVersion;
   }
 
-  public void setName(String name)
-  {
+  public void setName(String name) {
     this.name=name;
   }
 
-  public void setFullName(String fullName)
-  {
+  public void setFullName(String fullName) {
     this.fullName=fullName;
   }
 
-  public void setVendor(String vendor)
-  {
+  public void setVendor(String vendor) {
     this.vendor=vendor;
   }
 
-  public void setVersion(String version)
-  {
+  public void setVersion(String version) {
     this.version=version;
   }
 
-  public void setBuild(String build)
-  {
+  public void setBuild(String build) {
     this.build=build;
   }
 
-  public void setLocaleVersion(String localeVersion)
-  {
+  public void setLocaleVersion(String localeVersion) {
     this.localeVersion=localeVersion;
   }
 
-  public void setLocaleBuild(String localeBuild)
-  {
+  public void setLocaleBuild(String localeBuild) {
     this.localeBuild=localeBuild;
   }
 
-  public void setOsType(String osType)
-  {
+  public void setOsType(String osType) {
     this.osType=osType;
   }
 
-  public void setProductLineId(String productLineId)
-  {
+  public void setProductLineId(String productLineId) {
     this.productLineId=productLineId;
   }
 
-  public void setApiType(String apiType)
-  {
+  public void setApiType(String apiType) {
     this.apiType=apiType;
   }
 
-  public void setApiVersion(String apiVersion)
-  {
+  public void setApiVersion(String apiVersion) {
     this.apiVersion=apiVersion;
   }
 
-  public void setInstanceUuid(String instanceUuid)
-  {
+  public void setInstanceUuid(String instanceUuid) {
     this.instanceUuid=instanceUuid;
   }
 
-  public void setLicenseProductName(String licenseProductName)
-  {
+  public void setLicenseProductName(String licenseProductName) {
     this.licenseProductName=licenseProductName;
   }
 
-  public void setLicenseProductVersion(String licenseProductVersion)
-  {
+  public void setLicenseProductVersion(String licenseProductVersion) {
     this.licenseProductVersion=licenseProductVersion;
   }
 }

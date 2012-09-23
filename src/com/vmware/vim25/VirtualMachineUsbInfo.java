@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,11 +30,12 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class VirtualMachineUsbInfo extends VirtualMachineTargetInfo
-{
+@SuppressWarnings("all")
+public class VirtualMachineUsbInfo extends VirtualMachineTargetInfo {
   public String description;
   public int vendor;
   public int product;
@@ -43,73 +44,59 @@ public class VirtualMachineUsbInfo extends VirtualMachineTargetInfo
   public String[] speed;
   public VirtualMachineSummary summary;
 
-  public String getDescription()
-  {
+  public String getDescription() {
     return this.description;
   }
 
-  public int getVendor()
-  {
+  public int getVendor() {
     return this.vendor;
   }
 
-  public int getProduct()
-  {
+  public int getProduct() {
     return this.product;
   }
 
-  public String getPhysicalPath()
-  {
+  public String getPhysicalPath() {
     return this.physicalPath;
   }
 
-  public String[] getFamily()
-  {
+  public String[] getFamily() {
     return this.family;
   }
 
-  public String[] getSpeed()
-  {
+  public String[] getSpeed() {
     return this.speed;
   }
 
-  public VirtualMachineSummary getSummary()
-  {
+  public VirtualMachineSummary getSummary() {
     return this.summary;
   }
 
-  public void setDescription(String description)
-  {
+  public void setDescription(String description) {
     this.description=description;
   }
 
-  public void setVendor(int vendor)
-  {
+  public void setVendor(int vendor) {
     this.vendor=vendor;
   }
 
-  public void setProduct(int product)
-  {
+  public void setProduct(int product) {
     this.product=product;
   }
 
-  public void setPhysicalPath(String physicalPath)
-  {
+  public void setPhysicalPath(String physicalPath) {
     this.physicalPath=physicalPath;
   }
 
-  public void setFamily(String[] family)
-  {
+  public void setFamily(String[] family) {
     this.family=family;
   }
 
-  public void setSpeed(String[] speed)
-  {
+  public void setSpeed(String[] speed) {
     this.speed=speed;
   }
 
-  public void setSummary(VirtualMachineSummary summary)
-  {
+  public void setSummary(VirtualMachineSummary summary) {
     this.summary=summary;
   }
 }

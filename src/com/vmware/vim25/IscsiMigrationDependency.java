@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,42 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class IscsiMigrationDependency extends DynamicData
-{
+@SuppressWarnings("all")
+public class IscsiMigrationDependency extends DynamicData {
   public boolean migrationAllowed;
   public IscsiStatus disallowReason;
   public IscsiDependencyEntity[] dependency;
 
-  public boolean isMigrationAllowed()
-  {
+  public boolean isMigrationAllowed() {
     return this.migrationAllowed;
   }
 
-  public IscsiStatus getDisallowReason()
-  {
+  public IscsiStatus getDisallowReason() {
     return this.disallowReason;
   }
 
-  public IscsiDependencyEntity[] getDependency()
-  {
+  public IscsiDependencyEntity[] getDependency() {
     return this.dependency;
   }
 
-  public void setMigrationAllowed(boolean migrationAllowed)
-  {
+  public void setMigrationAllowed(boolean migrationAllowed) {
     this.migrationAllowed=migrationAllowed;
   }
 
-  public void setDisallowReason(IscsiStatus disallowReason)
-  {
+  public void setDisallowReason(IscsiStatus disallowReason) {
     this.disallowReason=disallowReason;
   }
 
-  public void setDependency(IscsiDependencyEntity[] dependency)
-  {
+  public void setDependency(IscsiDependencyEntity[] dependency) {
     this.dependency=dependency;
   }
 }

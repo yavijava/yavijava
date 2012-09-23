@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,42 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class VmRelocatedEvent extends VmRelocateSpecEvent
-{
+@SuppressWarnings("all")
+public class VmRelocatedEvent extends VmRelocateSpecEvent {
   public HostEventArgument sourceHost;
   public DatacenterEventArgument sourceDatacenter;
   public DatastoreEventArgument sourceDatastore;
 
-  public HostEventArgument getSourceHost()
-  {
+  public HostEventArgument getSourceHost() {
     return this.sourceHost;
   }
 
-  public DatacenterEventArgument getSourceDatacenter()
-  {
+  public DatacenterEventArgument getSourceDatacenter() {
     return this.sourceDatacenter;
   }
 
-  public DatastoreEventArgument getSourceDatastore()
-  {
+  public DatastoreEventArgument getSourceDatastore() {
     return this.sourceDatastore;
   }
 
-  public void setSourceHost(HostEventArgument sourceHost)
-  {
+  public void setSourceHost(HostEventArgument sourceHost) {
     this.sourceHost=sourceHost;
   }
 
-  public void setSourceDatacenter(DatacenterEventArgument sourceDatacenter)
-  {
+  public void setSourceDatacenter(DatacenterEventArgument sourceDatacenter) {
     this.sourceDatacenter=sourceDatacenter;
   }
 
-  public void setSourceDatastore(DatastoreEventArgument sourceDatastore)
-  {
+  public void setSourceDatastore(DatastoreEventArgument sourceDatastore) {
     this.sourceDatastore=sourceDatastore;
   }
 }

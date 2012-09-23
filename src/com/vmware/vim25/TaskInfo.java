@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -31,11 +31,12 @@ package com.vmware.vim25;
 import java.util.Calendar;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class TaskInfo extends DynamicData
-{
+@SuppressWarnings("all")
+public class TaskInfo extends DynamicData {
   public String key;
   public ManagedObjectReference task;
   public LocalizableMessage description;
@@ -59,223 +60,179 @@ public class TaskInfo extends DynamicData
   public String parentTaskKey;
   public String rootTaskKey;
 
-  public String getKey()
-  {
+  public String getKey() {
     return this.key;
   }
 
-  public ManagedObjectReference getTask()
-  {
+  public ManagedObjectReference getTask() {
     return this.task;
   }
 
-  public LocalizableMessage getDescription()
-  {
+  public LocalizableMessage getDescription() {
     return this.description;
   }
 
-  public String getName()
-  {
+  public String getName() {
     return this.name;
   }
 
-  public String getDescriptionId()
-  {
+  public String getDescriptionId() {
     return this.descriptionId;
   }
 
-  public ManagedObjectReference getEntity()
-  {
+  public ManagedObjectReference getEntity() {
     return this.entity;
   }
 
-  public String getEntityName()
-  {
+  public String getEntityName() {
     return this.entityName;
   }
 
-  public ManagedObjectReference[] getLocked()
-  {
+  public ManagedObjectReference[] getLocked() {
     return this.locked;
   }
 
-  public TaskInfoState getState()
-  {
+  public TaskInfoState getState() {
     return this.state;
   }
 
-  public boolean isCancelled()
-  {
+  public boolean isCancelled() {
     return this.cancelled;
   }
 
-  public boolean isCancelable()
-  {
+  public boolean isCancelable() {
     return this.cancelable;
   }
 
-  public LocalizedMethodFault getError()
-  {
+  public LocalizedMethodFault getError() {
     return this.error;
   }
 
-  public Object getResult()
-  {
+  public Object getResult() {
     return this.result;
   }
 
-  public Integer getProgress()
-  {
+  public Integer getProgress() {
     return this.progress;
   }
 
-  public TaskReason getReason()
-  {
+  public TaskReason getReason() {
     return this.reason;
   }
 
-  public Calendar getQueueTime()
-  {
+  public Calendar getQueueTime() {
     return this.queueTime;
   }
 
-  public Calendar getStartTime()
-  {
+  public Calendar getStartTime() {
     return this.startTime;
   }
 
-  public Calendar getCompleteTime()
-  {
+  public Calendar getCompleteTime() {
     return this.completeTime;
   }
 
-  public int getEventChainId()
-  {
+  public int getEventChainId() {
     return this.eventChainId;
   }
 
-  public String getChangeTag()
-  {
+  public String getChangeTag() {
     return this.changeTag;
   }
 
-  public String getParentTaskKey()
-  {
+  public String getParentTaskKey() {
     return this.parentTaskKey;
   }
 
-  public String getRootTaskKey()
-  {
+  public String getRootTaskKey() {
     return this.rootTaskKey;
   }
 
-  public void setKey(String key)
-  {
+  public void setKey(String key) {
     this.key=key;
   }
 
-  public void setTask(ManagedObjectReference task)
-  {
+  public void setTask(ManagedObjectReference task) {
     this.task=task;
   }
 
-  public void setDescription(LocalizableMessage description)
-  {
+  public void setDescription(LocalizableMessage description) {
     this.description=description;
   }
 
-  public void setName(String name)
-  {
+  public void setName(String name) {
     this.name=name;
   }
 
-  public void setDescriptionId(String descriptionId)
-  {
+  public void setDescriptionId(String descriptionId) {
     this.descriptionId=descriptionId;
   }
 
-  public void setEntity(ManagedObjectReference entity)
-  {
+  public void setEntity(ManagedObjectReference entity) {
     this.entity=entity;
   }
 
-  public void setEntityName(String entityName)
-  {
+  public void setEntityName(String entityName) {
     this.entityName=entityName;
   }
 
-  public void setLocked(ManagedObjectReference[] locked)
-  {
+  public void setLocked(ManagedObjectReference[] locked) {
     this.locked=locked;
   }
 
-  public void setState(TaskInfoState state)
-  {
+  public void setState(TaskInfoState state) {
     this.state=state;
   }
 
-  public void setCancelled(boolean cancelled)
-  {
+  public void setCancelled(boolean cancelled) {
     this.cancelled=cancelled;
   }
 
-  public void setCancelable(boolean cancelable)
-  {
+  public void setCancelable(boolean cancelable) {
     this.cancelable=cancelable;
   }
 
-  public void setError(LocalizedMethodFault error)
-  {
+  public void setError(LocalizedMethodFault error) {
     this.error=error;
   }
 
-  public void setResult(Object result)
-  {
+  public void setResult(Object result) {
     this.result=result;
   }
 
-  public void setProgress(Integer progress)
-  {
+  public void setProgress(Integer progress) {
     this.progress=progress;
   }
 
-  public void setReason(TaskReason reason)
-  {
+  public void setReason(TaskReason reason) {
     this.reason=reason;
   }
 
-  public void setQueueTime(Calendar queueTime)
-  {
+  public void setQueueTime(Calendar queueTime) {
     this.queueTime=queueTime;
   }
 
-  public void setStartTime(Calendar startTime)
-  {
+  public void setStartTime(Calendar startTime) {
     this.startTime=startTime;
   }
 
-  public void setCompleteTime(Calendar completeTime)
-  {
+  public void setCompleteTime(Calendar completeTime) {
     this.completeTime=completeTime;
   }
 
-  public void setEventChainId(int eventChainId)
-  {
+  public void setEventChainId(int eventChainId) {
     this.eventChainId=eventChainId;
   }
 
-  public void setChangeTag(String changeTag)
-  {
+  public void setChangeTag(String changeTag) {
     this.changeTag=changeTag;
   }
 
-  public void setParentTaskKey(String parentTaskKey)
-  {
+  public void setParentTaskKey(String parentTaskKey) {
     this.parentTaskKey=parentTaskKey;
   }
 
-  public void setRootTaskKey(String rootTaskKey)
-  {
+  public void setRootTaskKey(String rootTaskKey) {
     this.rootTaskKey=rootTaskKey;
   }
 }

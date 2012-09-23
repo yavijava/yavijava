@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,64 +30,55 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class CustomizationSysprep extends CustomizationIdentitySettings
-{
+@SuppressWarnings("all")
+public class CustomizationSysprep extends CustomizationIdentitySettings {
   public CustomizationGuiUnattended guiUnattended;
   public CustomizationUserData userData;
   public CustomizationGuiRunOnce guiRunOnce;
   public CustomizationIdentification identification;
   public CustomizationLicenseFilePrintData licenseFilePrintData;
 
-  public CustomizationGuiUnattended getGuiUnattended()
-  {
+  public CustomizationGuiUnattended getGuiUnattended() {
     return this.guiUnattended;
   }
 
-  public CustomizationUserData getUserData()
-  {
+  public CustomizationUserData getUserData() {
     return this.userData;
   }
 
-  public CustomizationGuiRunOnce getGuiRunOnce()
-  {
+  public CustomizationGuiRunOnce getGuiRunOnce() {
     return this.guiRunOnce;
   }
 
-  public CustomizationIdentification getIdentification()
-  {
+  public CustomizationIdentification getIdentification() {
     return this.identification;
   }
 
-  public CustomizationLicenseFilePrintData getLicenseFilePrintData()
-  {
+  public CustomizationLicenseFilePrintData getLicenseFilePrintData() {
     return this.licenseFilePrintData;
   }
 
-  public void setGuiUnattended(CustomizationGuiUnattended guiUnattended)
-  {
+  public void setGuiUnattended(CustomizationGuiUnattended guiUnattended) {
     this.guiUnattended=guiUnattended;
   }
 
-  public void setUserData(CustomizationUserData userData)
-  {
+  public void setUserData(CustomizationUserData userData) {
     this.userData=userData;
   }
 
-  public void setGuiRunOnce(CustomizationGuiRunOnce guiRunOnce)
-  {
+  public void setGuiRunOnce(CustomizationGuiRunOnce guiRunOnce) {
     this.guiRunOnce=guiRunOnce;
   }
 
-  public void setIdentification(CustomizationIdentification identification)
-  {
+  public void setIdentification(CustomizationIdentification identification) {
     this.identification=identification;
   }
 
-  public void setLicenseFilePrintData(CustomizationLicenseFilePrintData licenseFilePrintData)
-  {
+  public void setLicenseFilePrintData(CustomizationLicenseFilePrintData licenseFilePrintData) {
     this.licenseFilePrintData=licenseFilePrintData;
   }
 }

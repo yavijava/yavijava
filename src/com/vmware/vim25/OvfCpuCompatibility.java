@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,53 +30,46 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class OvfCpuCompatibility extends OvfImport
-{
+@SuppressWarnings("all")
+public class OvfCpuCompatibility extends OvfImport {
   public String registerName;
   public int level;
   public String registerValue;
   public String desiredRegisterValue;
 
-  public String getRegisterName()
-  {
+  public String getRegisterName() {
     return this.registerName;
   }
 
-  public int getLevel()
-  {
+  public int getLevel() {
     return this.level;
   }
 
-  public String getRegisterValue()
-  {
+  public String getRegisterValue() {
     return this.registerValue;
   }
 
-  public String getDesiredRegisterValue()
-  {
+  public String getDesiredRegisterValue() {
     return this.desiredRegisterValue;
   }
 
-  public void setRegisterName(String registerName)
-  {
+  public void setRegisterName(String registerName) {
     this.registerName=registerName;
   }
 
-  public void setLevel(int level)
-  {
+  public void setLevel(int level) {
     this.level=level;
   }
 
-  public void setRegisterValue(String registerValue)
-  {
+  public void setRegisterValue(String registerValue) {
     this.registerValue=registerValue;
   }
 
-  public void setDesiredRegisterValue(String desiredRegisterValue)
-  {
+  public void setDesiredRegisterValue(String desiredRegisterValue) {
     this.desiredRegisterValue=desiredRegisterValue;
   }
 }

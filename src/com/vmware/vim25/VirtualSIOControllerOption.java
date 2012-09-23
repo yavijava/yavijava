@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,42 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class VirtualSIOControllerOption extends VirtualControllerOption
-{
+@SuppressWarnings("all")
+public class VirtualSIOControllerOption extends VirtualControllerOption {
   public IntOption numFloppyDrives;
   public IntOption numSerialPorts;
   public IntOption numParallelPorts;
 
-  public IntOption getNumFloppyDrives()
-  {
+  public IntOption getNumFloppyDrives() {
     return this.numFloppyDrives;
   }
 
-  public IntOption getNumSerialPorts()
-  {
+  public IntOption getNumSerialPorts() {
     return this.numSerialPorts;
   }
 
-  public IntOption getNumParallelPorts()
-  {
+  public IntOption getNumParallelPorts() {
     return this.numParallelPorts;
   }
 
-  public void setNumFloppyDrives(IntOption numFloppyDrives)
-  {
+  public void setNumFloppyDrives(IntOption numFloppyDrives) {
     this.numFloppyDrives=numFloppyDrives;
   }
 
-  public void setNumSerialPorts(IntOption numSerialPorts)
-  {
+  public void setNumSerialPorts(IntOption numSerialPorts) {
     this.numSerialPorts=numSerialPorts;
   }
 
-  public void setNumParallelPorts(IntOption numParallelPorts)
-  {
+  public void setNumParallelPorts(IntOption numParallelPorts) {
     this.numParallelPorts=numParallelPorts;
   }
 }

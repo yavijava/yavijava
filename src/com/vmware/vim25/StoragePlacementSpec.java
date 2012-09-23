@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,11 +30,12 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class StoragePlacementSpec extends DynamicData
-{
+@SuppressWarnings("all")
+public class StoragePlacementSpec extends DynamicData {
   public String type;
   public VirtualMachineMovePriority priority;
   public ManagedObjectReference vm;
@@ -46,114 +47,110 @@ public class StoragePlacementSpec extends DynamicData
   public ManagedObjectReference resourcePool;
   public ManagedObjectReference host;
   public ManagedObjectReference folder;
+  public Boolean disallowPrerequisiteMoves;
+  public Integer resourceLeaseDurationSec;
 
-  public String getType()
-  {
+  public String getType() {
     return this.type;
   }
 
-  public VirtualMachineMovePriority getPriority()
-  {
+  public VirtualMachineMovePriority getPriority() {
     return this.priority;
   }
 
-  public ManagedObjectReference getVm()
-  {
+  public ManagedObjectReference getVm() {
     return this.vm;
   }
 
-  public StorageDrsPodSelectionSpec getPodSelectionSpec()
-  {
+  public StorageDrsPodSelectionSpec getPodSelectionSpec() {
     return this.podSelectionSpec;
   }
 
-  public VirtualMachineCloneSpec getCloneSpec()
-  {
+  public VirtualMachineCloneSpec getCloneSpec() {
     return this.cloneSpec;
   }
 
-  public String getCloneName()
-  {
+  public String getCloneName() {
     return this.cloneName;
   }
 
-  public VirtualMachineConfigSpec getConfigSpec()
-  {
+  public VirtualMachineConfigSpec getConfigSpec() {
     return this.configSpec;
   }
 
-  public VirtualMachineRelocateSpec getRelocateSpec()
-  {
+  public VirtualMachineRelocateSpec getRelocateSpec() {
     return this.relocateSpec;
   }
 
-  public ManagedObjectReference getResourcePool()
-  {
+  public ManagedObjectReference getResourcePool() {
     return this.resourcePool;
   }
 
-  public ManagedObjectReference getHost()
-  {
+  public ManagedObjectReference getHost() {
     return this.host;
   }
 
-  public ManagedObjectReference getFolder()
-  {
+  public ManagedObjectReference getFolder() {
     return this.folder;
   }
 
-  public void setType(String type)
-  {
+  public Boolean getDisallowPrerequisiteMoves() {
+    return this.disallowPrerequisiteMoves;
+  }
+
+  public Integer getResourceLeaseDurationSec() {
+    return this.resourceLeaseDurationSec;
+  }
+
+  public void setType(String type) {
     this.type=type;
   }
 
-  public void setPriority(VirtualMachineMovePriority priority)
-  {
+  public void setPriority(VirtualMachineMovePriority priority) {
     this.priority=priority;
   }
 
-  public void setVm(ManagedObjectReference vm)
-  {
+  public void setVm(ManagedObjectReference vm) {
     this.vm=vm;
   }
 
-  public void setPodSelectionSpec(StorageDrsPodSelectionSpec podSelectionSpec)
-  {
+  public void setPodSelectionSpec(StorageDrsPodSelectionSpec podSelectionSpec) {
     this.podSelectionSpec=podSelectionSpec;
   }
 
-  public void setCloneSpec(VirtualMachineCloneSpec cloneSpec)
-  {
+  public void setCloneSpec(VirtualMachineCloneSpec cloneSpec) {
     this.cloneSpec=cloneSpec;
   }
 
-  public void setCloneName(String cloneName)
-  {
+  public void setCloneName(String cloneName) {
     this.cloneName=cloneName;
   }
 
-  public void setConfigSpec(VirtualMachineConfigSpec configSpec)
-  {
+  public void setConfigSpec(VirtualMachineConfigSpec configSpec) {
     this.configSpec=configSpec;
   }
 
-  public void setRelocateSpec(VirtualMachineRelocateSpec relocateSpec)
-  {
+  public void setRelocateSpec(VirtualMachineRelocateSpec relocateSpec) {
     this.relocateSpec=relocateSpec;
   }
 
-  public void setResourcePool(ManagedObjectReference resourcePool)
-  {
+  public void setResourcePool(ManagedObjectReference resourcePool) {
     this.resourcePool=resourcePool;
   }
 
-  public void setHost(ManagedObjectReference host)
-  {
+  public void setHost(ManagedObjectReference host) {
     this.host=host;
   }
 
-  public void setFolder(ManagedObjectReference folder)
-  {
+  public void setFolder(ManagedObjectReference folder) {
     this.folder=folder;
+  }
+
+  public void setDisallowPrerequisiteMoves(Boolean disallowPrerequisiteMoves) {
+    this.disallowPrerequisiteMoves=disallowPrerequisiteMoves;
+  }
+
+  public void setResourceLeaseDurationSec(Integer resourceLeaseDurationSec) {
+    this.resourceLeaseDurationSec=resourceLeaseDurationSec;
   }
 }

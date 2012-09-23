@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,42 +30,46 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class UserLoginSessionEvent extends SessionEvent
-{
+@SuppressWarnings("all")
+public class UserLoginSessionEvent extends SessionEvent {
   public String ipAddress;
+  public String userAgent;
   public String locale;
   public String sessionId;
 
-  public String getIpAddress()
-  {
+  public String getIpAddress() {
     return this.ipAddress;
   }
 
-  public String getLocale()
-  {
+  public String getUserAgent() {
+    return this.userAgent;
+  }
+
+  public String getLocale() {
     return this.locale;
   }
 
-  public String getSessionId()
-  {
+  public String getSessionId() {
     return this.sessionId;
   }
 
-  public void setIpAddress(String ipAddress)
-  {
+  public void setIpAddress(String ipAddress) {
     this.ipAddress=ipAddress;
   }
 
-  public void setLocale(String locale)
-  {
+  public void setUserAgent(String userAgent) {
+    this.userAgent=userAgent;
+  }
+
+  public void setLocale(String locale) {
     this.locale=locale;
   }
 
-  public void setSessionId(String sessionId)
-  {
+  public void setSessionId(String sessionId) {
     this.sessionId=sessionId;
   }
 }

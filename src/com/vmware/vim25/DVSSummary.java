@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,11 +30,12 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class DVSSummary extends DynamicData
-{
+@SuppressWarnings("all")
+public class DVSSummary extends DynamicData {
   public String name;
   public String uuid;
   public int numPorts;
@@ -46,103 +47,83 @@ public class DVSSummary extends DynamicData
   public String description;
   public DVSContactInfo contact;
 
-  public String getName()
-  {
+  public String getName() {
     return this.name;
   }
 
-  public String getUuid()
-  {
+  public String getUuid() {
     return this.uuid;
   }
 
-  public int getNumPorts()
-  {
+  public int getNumPorts() {
     return this.numPorts;
   }
 
-  public DistributedVirtualSwitchProductSpec getProductInfo()
-  {
+  public DistributedVirtualSwitchProductSpec getProductInfo() {
     return this.productInfo;
   }
 
-  public ManagedObjectReference[] getHostMember()
-  {
+  public ManagedObjectReference[] getHostMember() {
     return this.hostMember;
   }
 
-  public ManagedObjectReference[] getVm()
-  {
+  public ManagedObjectReference[] getVm() {
     return this.vm;
   }
 
-  public ManagedObjectReference[] getHost()
-  {
+  public ManagedObjectReference[] getHost() {
     return this.host;
   }
 
-  public String[] getPortgroupName()
-  {
+  public String[] getPortgroupName() {
     return this.portgroupName;
   }
 
-  public String getDescription()
-  {
+  public String getDescription() {
     return this.description;
   }
 
-  public DVSContactInfo getContact()
-  {
+  public DVSContactInfo getContact() {
     return this.contact;
   }
 
-  public void setName(String name)
-  {
+  public void setName(String name) {
     this.name=name;
   }
 
-  public void setUuid(String uuid)
-  {
+  public void setUuid(String uuid) {
     this.uuid=uuid;
   }
 
-  public void setNumPorts(int numPorts)
-  {
+  public void setNumPorts(int numPorts) {
     this.numPorts=numPorts;
   }
 
-  public void setProductInfo(DistributedVirtualSwitchProductSpec productInfo)
-  {
+  public void setProductInfo(DistributedVirtualSwitchProductSpec productInfo) {
     this.productInfo=productInfo;
   }
 
-  public void setHostMember(ManagedObjectReference[] hostMember)
-  {
+  public void setHostMember(ManagedObjectReference[] hostMember) {
     this.hostMember=hostMember;
   }
 
-  public void setVm(ManagedObjectReference[] vm)
-  {
+  public void setVm(ManagedObjectReference[] vm) {
     this.vm=vm;
   }
 
-  public void setHost(ManagedObjectReference[] host)
-  {
+  public void setHost(ManagedObjectReference[] host) {
     this.host=host;
   }
 
-  public void setPortgroupName(String[] portgroupName)
-  {
+  public void setPortgroupName(String[] portgroupName) {
     this.portgroupName=portgroupName;
   }
 
-  public void setDescription(String description)
-  {
+  public void setDescription(String description) {
     this.description=description;
   }
 
-  public void setContact(DVSContactInfo contact)
-  {
+  public void setContact(DVSContactInfo contact) {
     this.contact=contact;
   }
 }

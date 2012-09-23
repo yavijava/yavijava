@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -31,11 +31,12 @@ package com.vmware.vim25;
 import java.util.Calendar;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class DistributedVirtualPort extends DynamicData
-{
+@SuppressWarnings("all")
+public class DistributedVirtualPort extends DynamicData {
   public String key;
   public DVPortConfigInfo config;
   public String dvsUuid;
@@ -47,114 +48,101 @@ public class DistributedVirtualPort extends DynamicData
   public DVPortState state;
   public Integer connectionCookie;
   public Calendar lastStatusChange;
+  public Boolean hostLocalPort;
 
-  public String getKey()
-  {
+  public String getKey() {
     return this.key;
   }
 
-  public DVPortConfigInfo getConfig()
-  {
+  public DVPortConfigInfo getConfig() {
     return this.config;
   }
 
-  public String getDvsUuid()
-  {
+  public String getDvsUuid() {
     return this.dvsUuid;
   }
 
-  public String getPortgroupKey()
-  {
+  public String getPortgroupKey() {
     return this.portgroupKey;
   }
 
-  public ManagedObjectReference getProxyHost()
-  {
+  public ManagedObjectReference getProxyHost() {
     return this.proxyHost;
   }
 
-  public DistributedVirtualSwitchPortConnectee getConnectee()
-  {
+  public DistributedVirtualSwitchPortConnectee getConnectee() {
     return this.connectee;
   }
 
-  public boolean isConflict()
-  {
+  public boolean isConflict() {
     return this.conflict;
   }
 
-  public String getConflictPortKey()
-  {
+  public String getConflictPortKey() {
     return this.conflictPortKey;
   }
 
-  public DVPortState getState()
-  {
+  public DVPortState getState() {
     return this.state;
   }
 
-  public Integer getConnectionCookie()
-  {
+  public Integer getConnectionCookie() {
     return this.connectionCookie;
   }
 
-  public Calendar getLastStatusChange()
-  {
+  public Calendar getLastStatusChange() {
     return this.lastStatusChange;
   }
 
-  public void setKey(String key)
-  {
+  public Boolean getHostLocalPort() {
+    return this.hostLocalPort;
+  }
+
+  public void setKey(String key) {
     this.key=key;
   }
 
-  public void setConfig(DVPortConfigInfo config)
-  {
+  public void setConfig(DVPortConfigInfo config) {
     this.config=config;
   }
 
-  public void setDvsUuid(String dvsUuid)
-  {
+  public void setDvsUuid(String dvsUuid) {
     this.dvsUuid=dvsUuid;
   }
 
-  public void setPortgroupKey(String portgroupKey)
-  {
+  public void setPortgroupKey(String portgroupKey) {
     this.portgroupKey=portgroupKey;
   }
 
-  public void setProxyHost(ManagedObjectReference proxyHost)
-  {
+  public void setProxyHost(ManagedObjectReference proxyHost) {
     this.proxyHost=proxyHost;
   }
 
-  public void setConnectee(DistributedVirtualSwitchPortConnectee connectee)
-  {
+  public void setConnectee(DistributedVirtualSwitchPortConnectee connectee) {
     this.connectee=connectee;
   }
 
-  public void setConflict(boolean conflict)
-  {
+  public void setConflict(boolean conflict) {
     this.conflict=conflict;
   }
 
-  public void setConflictPortKey(String conflictPortKey)
-  {
+  public void setConflictPortKey(String conflictPortKey) {
     this.conflictPortKey=conflictPortKey;
   }
 
-  public void setState(DVPortState state)
-  {
+  public void setState(DVPortState state) {
     this.state=state;
   }
 
-  public void setConnectionCookie(Integer connectionCookie)
-  {
+  public void setConnectionCookie(Integer connectionCookie) {
     this.connectionCookie=connectionCookie;
   }
 
-  public void setLastStatusChange(Calendar lastStatusChange)
-  {
+  public void setLastStatusChange(Calendar lastStatusChange) {
     this.lastStatusChange=lastStatusChange;
+  }
+
+  public void setHostLocalPort(Boolean hostLocalPort) {
+    this.hostLocalPort=hostLocalPort;
   }
 }

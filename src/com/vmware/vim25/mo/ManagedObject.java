@@ -57,7 +57,7 @@ import com.vmware.vim25.mo.util.PropertyCollectorUtil;
  * objects OO style in the client side programming.
  * Every managed object class can inherit from this and take advantage of this
  * abstraction.
- * @author Steve JIN (sjin@vmware.com)
+ * @author Steve JIN (http://www.doublecloud.org)
  */
 
 abstract public class ManagedObject 

@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,31 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class VmUuidConflictEvent extends VmEvent
-{
+@SuppressWarnings("all")
+public class VmUuidConflictEvent extends VmEvent {
   public VmEventArgument conflictedVm;
   public String uuid;
 
-  public VmEventArgument getConflictedVm()
-  {
+  public VmEventArgument getConflictedVm() {
     return this.conflictedVm;
   }
 
-  public String getUuid()
-  {
+  public String getUuid() {
     return this.uuid;
   }
 
-  public void setConflictedVm(VmEventArgument conflictedVm)
-  {
+  public void setConflictedVm(VmEventArgument conflictedVm) {
     this.conflictedVm=conflictedVm;
   }
 
-  public void setUuid(String uuid)
-  {
+  public void setUuid(String uuid) {
     this.uuid=uuid;
   }
 }

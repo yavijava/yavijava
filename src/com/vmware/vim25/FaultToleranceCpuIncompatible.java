@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,42 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class FaultToleranceCpuIncompatible extends CpuIncompatible
-{
+@SuppressWarnings("all")
+public class FaultToleranceCpuIncompatible extends CpuIncompatible {
   public boolean model;
   public boolean family;
   public boolean stepping;
 
-  public boolean isModel()
-  {
+  public boolean isModel() {
     return this.model;
   }
 
-  public boolean isFamily()
-  {
+  public boolean isFamily() {
     return this.family;
   }
 
-  public boolean isStepping()
-  {
+  public boolean isStepping() {
     return this.stepping;
   }
 
-  public void setModel(boolean model)
-  {
+  public void setModel(boolean model) {
     this.model=model;
   }
 
-  public void setFamily(boolean family)
-  {
+  public void setFamily(boolean family) {
     this.family=family;
   }
 
-  public void setStepping(boolean stepping)
-  {
+  public void setStepping(boolean stepping) {
     this.stepping=stepping;
   }
 }

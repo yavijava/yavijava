@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,31 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class ProfilePropertyPath extends DynamicData
-{
+@SuppressWarnings("all")
+public class ProfilePropertyPath extends DynamicData {
   public String profilePath;
   public String policyId;
+  public String parameterId;
 
-  public String getProfilePath()
-  {
+  public String getProfilePath() {
     return this.profilePath;
   }
 
-  public String getPolicyId()
-  {
+  public String getPolicyId() {
     return this.policyId;
   }
 
-  public void setProfilePath(String profilePath)
-  {
+  public String getParameterId() {
+    return this.parameterId;
+  }
+
+  public void setProfilePath(String profilePath) {
     this.profilePath=profilePath;
   }
 
-  public void setPolicyId(String policyId)
-  {
+  public void setPolicyId(String policyId) {
     this.policyId=policyId;
+  }
+
+  public void setParameterId(String parameterId) {
+    this.parameterId=parameterId;
   }
 }

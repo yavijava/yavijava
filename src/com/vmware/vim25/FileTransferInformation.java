@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,42 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class FileTransferInformation extends DynamicData
-{
+@SuppressWarnings("all")
+public class FileTransferInformation extends DynamicData {
   public GuestFileAttributes attributes;
   public long size;
   public String url;
 
-  public GuestFileAttributes getAttributes()
-  {
+  public GuestFileAttributes getAttributes() {
     return this.attributes;
   }
 
-  public long getSize()
-  {
+  public long getSize() {
     return this.size;
   }
 
-  public String getUrl()
-  {
+  public String getUrl() {
     return this.url;
   }
 
-  public void setAttributes(GuestFileAttributes attributes)
-  {
+  public void setAttributes(GuestFileAttributes attributes) {
     this.attributes=attributes;
   }
 
-  public void setSize(long size)
-  {
+  public void setSize(long size) {
     this.size=size;
   }
 
-  public void setUrl(String url)
-  {
+  public void setUrl(String url) {
     this.url=url;
   }
 }

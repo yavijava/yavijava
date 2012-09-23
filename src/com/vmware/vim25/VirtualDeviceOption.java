@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,13 +30,15 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class VirtualDeviceOption extends DynamicData
-{
+@SuppressWarnings("all")
+public class VirtualDeviceOption extends DynamicData {
   public String type;
   public VirtualDeviceConnectOption connectOption;
+  public VirtualDeviceBusSlotOption busSlotOption;
   public String controllerType;
   public BoolOption autoAssignController;
   public VirtualDeviceBackingOption[] backingOption;
@@ -46,103 +48,91 @@ public class VirtualDeviceOption extends DynamicData
   public boolean plugAndPlay;
   public Boolean hotRemoveSupported;
 
-  public String getType()
-  {
+  public String getType() {
     return this.type;
   }
 
-  public VirtualDeviceConnectOption getConnectOption()
-  {
+  public VirtualDeviceConnectOption getConnectOption() {
     return this.connectOption;
   }
 
-  public String getControllerType()
-  {
+  public VirtualDeviceBusSlotOption getBusSlotOption() {
+    return this.busSlotOption;
+  }
+
+  public String getControllerType() {
     return this.controllerType;
   }
 
-  public BoolOption getAutoAssignController()
-  {
+  public BoolOption getAutoAssignController() {
     return this.autoAssignController;
   }
 
-  public VirtualDeviceBackingOption[] getBackingOption()
-  {
+  public VirtualDeviceBackingOption[] getBackingOption() {
     return this.backingOption;
   }
 
-  public Integer getDefaultBackingOptionIndex()
-  {
+  public Integer getDefaultBackingOptionIndex() {
     return this.defaultBackingOptionIndex;
   }
 
-  public String[] getLicensingLimit()
-  {
+  public String[] getLicensingLimit() {
     return this.licensingLimit;
   }
 
-  public boolean isDeprecated()
-  {
+  public boolean isDeprecated() {
     return this.deprecated;
   }
 
-  public boolean isPlugAndPlay()
-  {
+  public boolean isPlugAndPlay() {
     return this.plugAndPlay;
   }
 
-  public Boolean getHotRemoveSupported()
-  {
+  public Boolean getHotRemoveSupported() {
     return this.hotRemoveSupported;
   }
 
-  public void setType(String type)
-  {
+  public void setType(String type) {
     this.type=type;
   }
 
-  public void setConnectOption(VirtualDeviceConnectOption connectOption)
-  {
+  public void setConnectOption(VirtualDeviceConnectOption connectOption) {
     this.connectOption=connectOption;
   }
 
-  public void setControllerType(String controllerType)
-  {
+  public void setBusSlotOption(VirtualDeviceBusSlotOption busSlotOption) {
+    this.busSlotOption=busSlotOption;
+  }
+
+  public void setControllerType(String controllerType) {
     this.controllerType=controllerType;
   }
 
-  public void setAutoAssignController(BoolOption autoAssignController)
-  {
+  public void setAutoAssignController(BoolOption autoAssignController) {
     this.autoAssignController=autoAssignController;
   }
 
-  public void setBackingOption(VirtualDeviceBackingOption[] backingOption)
-  {
+  public void setBackingOption(VirtualDeviceBackingOption[] backingOption) {
     this.backingOption=backingOption;
   }
 
-  public void setDefaultBackingOptionIndex(Integer defaultBackingOptionIndex)
-  {
+  public void setDefaultBackingOptionIndex(Integer defaultBackingOptionIndex) {
     this.defaultBackingOptionIndex=defaultBackingOptionIndex;
   }
 
-  public void setLicensingLimit(String[] licensingLimit)
-  {
+  public void setLicensingLimit(String[] licensingLimit) {
     this.licensingLimit=licensingLimit;
   }
 
-  public void setDeprecated(boolean deprecated)
-  {
+  public void setDeprecated(boolean deprecated) {
     this.deprecated=deprecated;
   }
 
-  public void setPlugAndPlay(boolean plugAndPlay)
-  {
+  public void setPlugAndPlay(boolean plugAndPlay) {
     this.plugAndPlay=plugAndPlay;
   }
 
-  public void setHotRemoveSupported(Boolean hotRemoveSupported)
-  {
+  public void setHotRemoveSupported(Boolean hotRemoveSupported) {
     this.hotRemoveSupported=hotRemoveSupported;
   }
 }

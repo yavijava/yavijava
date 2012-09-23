@@ -1,4 +1,5 @@
 /*================================================================================
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 Copyright (c) 2008 VMware, Inc. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
@@ -36,7 +37,7 @@ import com.vmware.vim25.mo.util.*;
 
 /**
  * The managed object class corresponding to the one defined in VI SDK API reference.
- * @author Steve JIN (sjin@vmware.com)
+ * @author Steve JIN (http://www.doublecloud.org)
  */
 
 public class Datacenter extends ManagedEntity 
@@ -60,6 +61,12 @@ public class Datacenter extends ManagedEntity
 	public Datastore[] getDatastores()
 	{
 		return getDatastores("datastore");
+	}
+	
+	/** @since SDK5.1 */
+	public DatacenterConfigInfo getConfiguration()
+	{
+	    return (DatacenterConfigInfo) getCurrentProperty("configuration");
 	}
 	
 	/**
@@ -101,10 +108,22 @@ public class Datacenter extends ManagedEntity
 		return new Task(getServerConnection(), tmor);
 	}
 	
+	/** @since SDK5.1 */
+	public Task reconfigureDatacenter_Task(DatacenterConfigSpec spec, boolean modify) throws RuntimeFault, RemoteException
+	{
+	    ManagedObjectReference tmor = getVimService().reconfigureDatacenter_Task(getMOR(), spec, modify);
+	    return new Task(getServerConnection(), tmor);
+	}
+	
 	public HostConnectInfo queryConnectionInfo(String hostname, int port, String username, String password,
 			String sslThumbprint) throws InvalidLogin, HostConnectFault, RuntimeFault, RemoteException  
 	{
 		return getVimService().queryConnectionInfo(getMOR(), hostname, port, username, password, sslThumbprint);
 	}
-	
+
+	/** @since SDK5.1 */
+	public VirtualMachineConfigOptionDescriptor[] queryDatacenterConfigOptionDescriptor() throws RuntimeFault, RemoteException
+	{
+	    return getVimService().queryDatacenterConfigOptionDescriptor(getMOR());
+	}
 }

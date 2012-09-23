@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,31 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class ReadOnlyDisksWithLegacyDestination extends MigrationFault
-{
+@SuppressWarnings("all")
+public class ReadOnlyDisksWithLegacyDestination extends MigrationFault {
   public int roDiskCount;
   public boolean timeoutDanger;
 
-  public int getRoDiskCount()
-  {
+  public int getRoDiskCount() {
     return this.roDiskCount;
   }
 
-  public boolean isTimeoutDanger()
-  {
+  public boolean isTimeoutDanger() {
     return this.timeoutDanger;
   }
 
-  public void setRoDiskCount(int roDiskCount)
-  {
+  public void setRoDiskCount(int roDiskCount) {
     this.roDiskCount=roDiskCount;
   }
 
-  public void setTimeoutDanger(boolean timeoutDanger)
-  {
+  public void setTimeoutDanger(boolean timeoutDanger) {
     this.timeoutDanger=timeoutDanger;
   }
 }

@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,25 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class ArrayOfCustomizationIpV6Generator
-{
+public class ArrayOfCustomizationIpV6Generator {
   public CustomizationIpV6Generator[] CustomizationIpV6Generator;
 
-  public CustomizationIpV6Generator[] getCustomizationIpV6Generator()
-  {
+  public CustomizationIpV6Generator[] getCustomizationIpV6Generator() {
     return this.CustomizationIpV6Generator;
   }
 
-  public CustomizationIpV6Generator getCustomizationIpV6Generator(int i)
-  {
+  public CustomizationIpV6Generator getCustomizationIpV6Generator(int i) {
     return this.CustomizationIpV6Generator[i];
   }
 
-  public void setCustomizationIpV6Generator(CustomizationIpV6Generator[] CustomizationIpV6Generator)
-  {
+  public void setCustomizationIpV6Generator(CustomizationIpV6Generator[] CustomizationIpV6Generator) {
     this.CustomizationIpV6Generator=CustomizationIpV6Generator;
   }
 }

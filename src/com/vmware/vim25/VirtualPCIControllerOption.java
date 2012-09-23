@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,11 +30,12 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class VirtualPCIControllerOption extends VirtualControllerOption
-{
+@SuppressWarnings("all")
+public class VirtualPCIControllerOption extends VirtualControllerOption {
   public IntOption numSCSIControllers;
   public IntOption numEthernetCards;
   public IntOption numVideoCards;
@@ -46,103 +47,83 @@ public class VirtualPCIControllerOption extends VirtualControllerOption
   public IntOption numVmxnet3EthernetCards;
   public IntOption numParaVirtualSCSIControllers;
 
-  public IntOption getNumSCSIControllers()
-  {
+  public IntOption getNumSCSIControllers() {
     return this.numSCSIControllers;
   }
 
-  public IntOption getNumEthernetCards()
-  {
+  public IntOption getNumEthernetCards() {
     return this.numEthernetCards;
   }
 
-  public IntOption getNumVideoCards()
-  {
+  public IntOption getNumVideoCards() {
     return this.numVideoCards;
   }
 
-  public IntOption getNumSoundCards()
-  {
+  public IntOption getNumSoundCards() {
     return this.numSoundCards;
   }
 
-  public IntOption getNumVmiRoms()
-  {
+  public IntOption getNumVmiRoms() {
     return this.numVmiRoms;
   }
 
-  public IntOption getNumVmciDevices()
-  {
+  public IntOption getNumVmciDevices() {
     return this.numVmciDevices;
   }
 
-  public IntOption getNumPCIPassthroughDevices()
-  {
+  public IntOption getNumPCIPassthroughDevices() {
     return this.numPCIPassthroughDevices;
   }
 
-  public IntOption getNumSasSCSIControllers()
-  {
+  public IntOption getNumSasSCSIControllers() {
     return this.numSasSCSIControllers;
   }
 
-  public IntOption getNumVmxnet3EthernetCards()
-  {
+  public IntOption getNumVmxnet3EthernetCards() {
     return this.numVmxnet3EthernetCards;
   }
 
-  public IntOption getNumParaVirtualSCSIControllers()
-  {
+  public IntOption getNumParaVirtualSCSIControllers() {
     return this.numParaVirtualSCSIControllers;
   }
 
-  public void setNumSCSIControllers(IntOption numSCSIControllers)
-  {
+  public void setNumSCSIControllers(IntOption numSCSIControllers) {
     this.numSCSIControllers=numSCSIControllers;
   }
 
-  public void setNumEthernetCards(IntOption numEthernetCards)
-  {
+  public void setNumEthernetCards(IntOption numEthernetCards) {
     this.numEthernetCards=numEthernetCards;
   }
 
-  public void setNumVideoCards(IntOption numVideoCards)
-  {
+  public void setNumVideoCards(IntOption numVideoCards) {
     this.numVideoCards=numVideoCards;
   }
 
-  public void setNumSoundCards(IntOption numSoundCards)
-  {
+  public void setNumSoundCards(IntOption numSoundCards) {
     this.numSoundCards=numSoundCards;
   }
 
-  public void setNumVmiRoms(IntOption numVmiRoms)
-  {
+  public void setNumVmiRoms(IntOption numVmiRoms) {
     this.numVmiRoms=numVmiRoms;
   }
 
-  public void setNumVmciDevices(IntOption numVmciDevices)
-  {
+  public void setNumVmciDevices(IntOption numVmciDevices) {
     this.numVmciDevices=numVmciDevices;
   }
 
-  public void setNumPCIPassthroughDevices(IntOption numPCIPassthroughDevices)
-  {
+  public void setNumPCIPassthroughDevices(IntOption numPCIPassthroughDevices) {
     this.numPCIPassthroughDevices=numPCIPassthroughDevices;
   }
 
-  public void setNumSasSCSIControllers(IntOption numSasSCSIControllers)
-  {
+  public void setNumSasSCSIControllers(IntOption numSasSCSIControllers) {
     this.numSasSCSIControllers=numSasSCSIControllers;
   }
 
-  public void setNumVmxnet3EthernetCards(IntOption numVmxnet3EthernetCards)
-  {
+  public void setNumVmxnet3EthernetCards(IntOption numVmxnet3EthernetCards) {
     this.numVmxnet3EthernetCards=numVmxnet3EthernetCards;
   }
 
-  public void setNumParaVirtualSCSIControllers(IntOption numParaVirtualSCSIControllers)
-  {
+  public void setNumParaVirtualSCSIControllers(IntOption numParaVirtualSCSIControllers) {
     this.numParaVirtualSCSIControllers=numParaVirtualSCSIControllers;
   }
 }

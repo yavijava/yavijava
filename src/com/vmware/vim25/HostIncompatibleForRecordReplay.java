@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,31 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class HostIncompatibleForRecordReplay extends VimFault
-{
+@SuppressWarnings("all")
+public class HostIncompatibleForRecordReplay extends VimFault {
   public String hostName;
   public String reason;
 
-  public String getHostName()
-  {
+  public String getHostName() {
     return this.hostName;
   }
 
-  public String getReason()
-  {
+  public String getReason() {
     return this.reason;
   }
 
-  public void setHostName(String hostName)
-  {
+  public void setHostName(String hostName) {
     this.hostName=hostName;
   }
 
-  public void setReason(String reason)
-  {
+  public void setReason(String reason) {
     this.reason=reason;
   }
 }

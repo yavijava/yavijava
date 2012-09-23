@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,53 +30,46 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class HostWwnChangedEvent extends HostEvent
-{
+@SuppressWarnings("all")
+public class HostWwnChangedEvent extends HostEvent {
   public long[] oldNodeWwns;
   public long[] oldPortWwns;
   public long[] newNodeWwns;
   public long[] newPortWwns;
 
-  public long[] getOldNodeWwns()
-  {
+  public long[] getOldNodeWwns() {
     return this.oldNodeWwns;
   }
 
-  public long[] getOldPortWwns()
-  {
+  public long[] getOldPortWwns() {
     return this.oldPortWwns;
   }
 
-  public long[] getNewNodeWwns()
-  {
+  public long[] getNewNodeWwns() {
     return this.newNodeWwns;
   }
 
-  public long[] getNewPortWwns()
-  {
+  public long[] getNewPortWwns() {
     return this.newPortWwns;
   }
 
-  public void setOldNodeWwns(long[] oldNodeWwns)
-  {
+  public void setOldNodeWwns(long[] oldNodeWwns) {
     this.oldNodeWwns=oldNodeWwns;
   }
 
-  public void setOldPortWwns(long[] oldPortWwns)
-  {
+  public void setOldPortWwns(long[] oldPortWwns) {
     this.oldPortWwns=oldPortWwns;
   }
 
-  public void setNewNodeWwns(long[] newNodeWwns)
-  {
+  public void setNewNodeWwns(long[] newNodeWwns) {
     this.newNodeWwns=newNodeWwns;
   }
 
-  public void setNewPortWwns(long[] newPortWwns)
-  {
+  public void setNewPortWwns(long[] newPortWwns) {
     this.newPortWwns=newPortWwns;
   }
 }

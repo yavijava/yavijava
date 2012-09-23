@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,64 +30,55 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class StorageDrsVmConfigInfo extends DynamicData
-{
+@SuppressWarnings("all")
+public class StorageDrsVmConfigInfo extends DynamicData {
   public ManagedObjectReference vm;
   public Boolean enabled;
   public String behavior;
   public Boolean intraVmAffinity;
   public VirtualDiskAntiAffinityRuleSpec intraVmAntiAffinity;
 
-  public ManagedObjectReference getVm()
-  {
+  public ManagedObjectReference getVm() {
     return this.vm;
   }
 
-  public Boolean getEnabled()
-  {
+  public Boolean getEnabled() {
     return this.enabled;
   }
 
-  public String getBehavior()
-  {
+  public String getBehavior() {
     return this.behavior;
   }
 
-  public Boolean getIntraVmAffinity()
-  {
+  public Boolean getIntraVmAffinity() {
     return this.intraVmAffinity;
   }
 
-  public VirtualDiskAntiAffinityRuleSpec getIntraVmAntiAffinity()
-  {
+  public VirtualDiskAntiAffinityRuleSpec getIntraVmAntiAffinity() {
     return this.intraVmAntiAffinity;
   }
 
-  public void setVm(ManagedObjectReference vm)
-  {
+  public void setVm(ManagedObjectReference vm) {
     this.vm=vm;
   }
 
-  public void setEnabled(Boolean enabled)
-  {
+  public void setEnabled(Boolean enabled) {
     this.enabled=enabled;
   }
 
-  public void setBehavior(String behavior)
-  {
+  public void setBehavior(String behavior) {
     this.behavior=behavior;
   }
 
-  public void setIntraVmAffinity(Boolean intraVmAffinity)
-  {
+  public void setIntraVmAffinity(Boolean intraVmAffinity) {
     this.intraVmAffinity=intraVmAffinity;
   }
 
-  public void setIntraVmAntiAffinity(VirtualDiskAntiAffinityRuleSpec intraVmAntiAffinity)
-  {
+  public void setIntraVmAntiAffinity(VirtualDiskAntiAffinityRuleSpec intraVmAntiAffinity) {
     this.intraVmAntiAffinity=intraVmAntiAffinity;
   }
 }

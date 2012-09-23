@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,31 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class VirtualPS2ControllerOption extends VirtualControllerOption
-{
+@SuppressWarnings("all")
+public class VirtualPS2ControllerOption extends VirtualControllerOption {
   public IntOption numKeyboards;
   public IntOption numPointingDevices;
 
-  public IntOption getNumKeyboards()
-  {
+  public IntOption getNumKeyboards() {
     return this.numKeyboards;
   }
 
-  public IntOption getNumPointingDevices()
-  {
+  public IntOption getNumPointingDevices() {
     return this.numPointingDevices;
   }
 
-  public void setNumKeyboards(IntOption numKeyboards)
-  {
+  public void setNumKeyboards(IntOption numKeyboards) {
     this.numKeyboards=numKeyboards;
   }
 
-  public void setNumPointingDevices(IntOption numPointingDevices)
-  {
+  public void setNumPointingDevices(IntOption numPointingDevices) {
     this.numPointingDevices=numPointingDevices;
   }
 }

@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,31 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class EventFilterSpecByUsername extends DynamicData
-{
+@SuppressWarnings("all")
+public class EventFilterSpecByUsername extends DynamicData {
   public boolean systemUser;
   public String[] userList;
 
-  public boolean isSystemUser()
-  {
+  public boolean isSystemUser() {
     return this.systemUser;
   }
 
-  public String[] getUserList()
-  {
+  public String[] getUserList() {
     return this.userList;
   }
 
-  public void setSystemUser(boolean systemUser)
-  {
+  public void setSystemUser(boolean systemUser) {
     this.systemUser=systemUser;
   }
 
-  public void setUserList(String[] userList)
-  {
+  public void setUserList(String[] userList) {
     this.userList=userList;
   }
 }

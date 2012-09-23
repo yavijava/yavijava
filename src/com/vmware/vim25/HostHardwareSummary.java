@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,11 +30,12 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class HostHardwareSummary extends DynamicData
-{
+@SuppressWarnings("all")
+public class HostHardwareSummary extends DynamicData {
   public String vendor;
   public String model;
   public String uuid;
@@ -48,123 +49,99 @@ public class HostHardwareSummary extends DynamicData
   public int numNics;
   public int numHBAs;
 
-  public String getVendor()
-  {
+  public String getVendor() {
     return this.vendor;
   }
 
-  public String getModel()
-  {
+  public String getModel() {
     return this.model;
   }
 
-  public String getUuid()
-  {
+  public String getUuid() {
     return this.uuid;
   }
 
-  public HostSystemIdentificationInfo[] getOtherIdentifyingInfo()
-  {
+  public HostSystemIdentificationInfo[] getOtherIdentifyingInfo() {
     return this.otherIdentifyingInfo;
   }
 
-  public long getMemorySize()
-  {
+  public long getMemorySize() {
     return this.memorySize;
   }
 
-  public String getCpuModel()
-  {
+  public String getCpuModel() {
     return this.cpuModel;
   }
 
-  public int getCpuMhz()
-  {
+  public int getCpuMhz() {
     return this.cpuMhz;
   }
 
-  public short getNumCpuPkgs()
-  {
+  public short getNumCpuPkgs() {
     return this.numCpuPkgs;
   }
 
-  public short getNumCpuCores()
-  {
+  public short getNumCpuCores() {
     return this.numCpuCores;
   }
 
-  public short getNumCpuThreads()
-  {
+  public short getNumCpuThreads() {
     return this.numCpuThreads;
   }
 
-  public int getNumNics()
-  {
+  public int getNumNics() {
     return this.numNics;
   }
 
-  public int getNumHBAs()
-  {
+  public int getNumHBAs() {
     return this.numHBAs;
   }
 
-  public void setVendor(String vendor)
-  {
+  public void setVendor(String vendor) {
     this.vendor=vendor;
   }
 
-  public void setModel(String model)
-  {
+  public void setModel(String model) {
     this.model=model;
   }
 
-  public void setUuid(String uuid)
-  {
+  public void setUuid(String uuid) {
     this.uuid=uuid;
   }
 
-  public void setOtherIdentifyingInfo(HostSystemIdentificationInfo[] otherIdentifyingInfo)
-  {
+  public void setOtherIdentifyingInfo(HostSystemIdentificationInfo[] otherIdentifyingInfo) {
     this.otherIdentifyingInfo=otherIdentifyingInfo;
   }
 
-  public void setMemorySize(long memorySize)
-  {
+  public void setMemorySize(long memorySize) {
     this.memorySize=memorySize;
   }
 
-  public void setCpuModel(String cpuModel)
-  {
+  public void setCpuModel(String cpuModel) {
     this.cpuModel=cpuModel;
   }
 
-  public void setCpuMhz(int cpuMhz)
-  {
+  public void setCpuMhz(int cpuMhz) {
     this.cpuMhz=cpuMhz;
   }
 
-  public void setNumCpuPkgs(short numCpuPkgs)
-  {
+  public void setNumCpuPkgs(short numCpuPkgs) {
     this.numCpuPkgs=numCpuPkgs;
   }
 
-  public void setNumCpuCores(short numCpuCores)
-  {
+  public void setNumCpuCores(short numCpuCores) {
     this.numCpuCores=numCpuCores;
   }
 
-  public void setNumCpuThreads(short numCpuThreads)
-  {
+  public void setNumCpuThreads(short numCpuThreads) {
     this.numCpuThreads=numCpuThreads;
   }
 
-  public void setNumNics(int numNics)
-  {
+  public void setNumNics(int numNics) {
     this.numNics=numNics;
   }
 
-  public void setNumHBAs(int numHBAs)
-  {
+  public void setNumHBAs(int numHBAs) {
     this.numHBAs=numHBAs;
   }
 }

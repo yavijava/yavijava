@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,11 +30,12 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class HostNatServiceNameServiceSpec extends DynamicData
-{
+@SuppressWarnings("all")
+public class HostNatServiceNameServiceSpec extends DynamicData {
   public boolean dnsAutoDetect;
   public String dnsPolicy;
   public int dnsRetries;
@@ -44,83 +45,67 @@ public class HostNatServiceNameServiceSpec extends DynamicData
   public int nbnsRetries;
   public int nbnsTimeout;
 
-  public boolean isDnsAutoDetect()
-  {
+  public boolean isDnsAutoDetect() {
     return this.dnsAutoDetect;
   }
 
-  public String getDnsPolicy()
-  {
+  public String getDnsPolicy() {
     return this.dnsPolicy;
   }
 
-  public int getDnsRetries()
-  {
+  public int getDnsRetries() {
     return this.dnsRetries;
   }
 
-  public int getDnsTimeout()
-  {
+  public int getDnsTimeout() {
     return this.dnsTimeout;
   }
 
-  public String[] getDnsNameServer()
-  {
+  public String[] getDnsNameServer() {
     return this.dnsNameServer;
   }
 
-  public int getNbdsTimeout()
-  {
+  public int getNbdsTimeout() {
     return this.nbdsTimeout;
   }
 
-  public int getNbnsRetries()
-  {
+  public int getNbnsRetries() {
     return this.nbnsRetries;
   }
 
-  public int getNbnsTimeout()
-  {
+  public int getNbnsTimeout() {
     return this.nbnsTimeout;
   }
 
-  public void setDnsAutoDetect(boolean dnsAutoDetect)
-  {
+  public void setDnsAutoDetect(boolean dnsAutoDetect) {
     this.dnsAutoDetect=dnsAutoDetect;
   }
 
-  public void setDnsPolicy(String dnsPolicy)
-  {
+  public void setDnsPolicy(String dnsPolicy) {
     this.dnsPolicy=dnsPolicy;
   }
 
-  public void setDnsRetries(int dnsRetries)
-  {
+  public void setDnsRetries(int dnsRetries) {
     this.dnsRetries=dnsRetries;
   }
 
-  public void setDnsTimeout(int dnsTimeout)
-  {
+  public void setDnsTimeout(int dnsTimeout) {
     this.dnsTimeout=dnsTimeout;
   }
 
-  public void setDnsNameServer(String[] dnsNameServer)
-  {
+  public void setDnsNameServer(String[] dnsNameServer) {
     this.dnsNameServer=dnsNameServer;
   }
 
-  public void setNbdsTimeout(int nbdsTimeout)
-  {
+  public void setNbdsTimeout(int nbdsTimeout) {
     this.nbdsTimeout=nbdsTimeout;
   }
 
-  public void setNbnsRetries(int nbnsRetries)
-  {
+  public void setNbnsRetries(int nbnsRetries) {
     this.nbnsRetries=nbnsRetries;
   }
 
-  public void setNbnsTimeout(int nbnsTimeout)
-  {
+  public void setNbnsTimeout(int nbnsTimeout) {
     this.nbnsTimeout=nbnsTimeout;
   }
 }

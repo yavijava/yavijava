@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,25 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class ArrayOfDistributedVirtualPortgroupInfo
-{
+public class ArrayOfDistributedVirtualPortgroupInfo {
   public DistributedVirtualPortgroupInfo[] DistributedVirtualPortgroupInfo;
 
-  public DistributedVirtualPortgroupInfo[] getDistributedVirtualPortgroupInfo()
-  {
+  public DistributedVirtualPortgroupInfo[] getDistributedVirtualPortgroupInfo() {
     return this.DistributedVirtualPortgroupInfo;
   }
 
-  public DistributedVirtualPortgroupInfo getDistributedVirtualPortgroupInfo(int i)
-  {
+  public DistributedVirtualPortgroupInfo getDistributedVirtualPortgroupInfo(int i) {
     return this.DistributedVirtualPortgroupInfo[i];
   }
 
-  public void setDistributedVirtualPortgroupInfo(DistributedVirtualPortgroupInfo[] DistributedVirtualPortgroupInfo)
-  {
+  public void setDistributedVirtualPortgroupInfo(DistributedVirtualPortgroupInfo[] DistributedVirtualPortgroupInfo) {
     this.DistributedVirtualPortgroupInfo=DistributedVirtualPortgroupInfo;
   }
 }

@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,42 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class HostScsiTopologyInterface extends DynamicData
-{
+@SuppressWarnings("all")
+public class HostScsiTopologyInterface extends DynamicData {
   public String key;
   public String adapter;
   public HostScsiTopologyTarget[] target;
 
-  public String getKey()
-  {
+  public String getKey() {
     return this.key;
   }
 
-  public String getAdapter()
-  {
+  public String getAdapter() {
     return this.adapter;
   }
 
-  public HostScsiTopologyTarget[] getTarget()
-  {
+  public HostScsiTopologyTarget[] getTarget() {
     return this.target;
   }
 
-  public void setKey(String key)
-  {
+  public void setKey(String key) {
     this.key=key;
   }
 
-  public void setAdapter(String adapter)
-  {
+  public void setAdapter(String adapter) {
     this.adapter=adapter;
   }
 
-  public void setTarget(HostScsiTopologyTarget[] target)
-  {
+  public void setTarget(HostScsiTopologyTarget[] target) {
     this.target=target;
   }
 }

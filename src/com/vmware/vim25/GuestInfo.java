@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,11 +30,12 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class GuestInfo extends DynamicData
-{
+@SuppressWarnings("all")
+public class GuestInfo extends DynamicData {
   public VirtualMachineToolsStatus toolsStatus;
   public String toolsVersionStatus;
   public String toolsVersionStatus2;
@@ -53,184 +54,157 @@ public class GuestInfo extends DynamicData
   public String appHeartbeatStatus;
   public Boolean guestOperationsReady;
   public Boolean interactiveGuestOperationsReady;
+  public GuestInfoNamespaceGenerationInfo[] generationInfo;
 
-  public VirtualMachineToolsStatus getToolsStatus()
-  {
+  public VirtualMachineToolsStatus getToolsStatus() {
     return this.toolsStatus;
   }
 
-  public String getToolsVersionStatus()
-  {
+  public String getToolsVersionStatus() {
     return this.toolsVersionStatus;
   }
 
-  public String getToolsVersionStatus2()
-  {
+  public String getToolsVersionStatus2() {
     return this.toolsVersionStatus2;
   }
 
-  public String getToolsRunningStatus()
-  {
+  public String getToolsRunningStatus() {
     return this.toolsRunningStatus;
   }
 
-  public String getToolsVersion()
-  {
+  public String getToolsVersion() {
     return this.toolsVersion;
   }
 
-  public String getGuestId()
-  {
+  public String getGuestId() {
     return this.guestId;
   }
 
-  public String getGuestFamily()
-  {
+  public String getGuestFamily() {
     return this.guestFamily;
   }
 
-  public String getGuestFullName()
-  {
+  public String getGuestFullName() {
     return this.guestFullName;
   }
 
-  public String getHostName()
-  {
+  public String getHostName() {
     return this.hostName;
   }
 
-  public String getIpAddress()
-  {
+  public String getIpAddress() {
     return this.ipAddress;
   }
 
-  public GuestNicInfo[] getNet()
-  {
+  public GuestNicInfo[] getNet() {
     return this.net;
   }
 
-  public GuestStackInfo[] getIpStack()
-  {
+  public GuestStackInfo[] getIpStack() {
     return this.ipStack;
   }
 
-  public GuestDiskInfo[] getDisk()
-  {
+  public GuestDiskInfo[] getDisk() {
     return this.disk;
   }
 
-  public GuestScreenInfo getScreen()
-  {
+  public GuestScreenInfo getScreen() {
     return this.screen;
   }
 
-  public String getGuestState()
-  {
+  public String getGuestState() {
     return this.guestState;
   }
 
-  public String getAppHeartbeatStatus()
-  {
+  public String getAppHeartbeatStatus() {
     return this.appHeartbeatStatus;
   }
 
-  public Boolean getGuestOperationsReady()
-  {
+  public Boolean getGuestOperationsReady() {
     return this.guestOperationsReady;
   }
 
-  public Boolean getInteractiveGuestOperationsReady()
-  {
+  public Boolean getInteractiveGuestOperationsReady() {
     return this.interactiveGuestOperationsReady;
   }
 
-  public void setToolsStatus(VirtualMachineToolsStatus toolsStatus)
-  {
+  public GuestInfoNamespaceGenerationInfo[] getGenerationInfo() {
+    return this.generationInfo;
+  }
+
+  public void setToolsStatus(VirtualMachineToolsStatus toolsStatus) {
     this.toolsStatus=toolsStatus;
   }
 
-  public void setToolsVersionStatus(String toolsVersionStatus)
-  {
+  public void setToolsVersionStatus(String toolsVersionStatus) {
     this.toolsVersionStatus=toolsVersionStatus;
   }
 
-  public void setToolsVersionStatus2(String toolsVersionStatus2)
-  {
+  public void setToolsVersionStatus2(String toolsVersionStatus2) {
     this.toolsVersionStatus2=toolsVersionStatus2;
   }
 
-  public void setToolsRunningStatus(String toolsRunningStatus)
-  {
+  public void setToolsRunningStatus(String toolsRunningStatus) {
     this.toolsRunningStatus=toolsRunningStatus;
   }
 
-  public void setToolsVersion(String toolsVersion)
-  {
+  public void setToolsVersion(String toolsVersion) {
     this.toolsVersion=toolsVersion;
   }
 
-  public void setGuestId(String guestId)
-  {
+  public void setGuestId(String guestId) {
     this.guestId=guestId;
   }
 
-  public void setGuestFamily(String guestFamily)
-  {
+  public void setGuestFamily(String guestFamily) {
     this.guestFamily=guestFamily;
   }
 
-  public void setGuestFullName(String guestFullName)
-  {
+  public void setGuestFullName(String guestFullName) {
     this.guestFullName=guestFullName;
   }
 
-  public void setHostName(String hostName)
-  {
+  public void setHostName(String hostName) {
     this.hostName=hostName;
   }
 
-  public void setIpAddress(String ipAddress)
-  {
+  public void setIpAddress(String ipAddress) {
     this.ipAddress=ipAddress;
   }
 
-  public void setNet(GuestNicInfo[] net)
-  {
+  public void setNet(GuestNicInfo[] net) {
     this.net=net;
   }
 
-  public void setIpStack(GuestStackInfo[] ipStack)
-  {
+  public void setIpStack(GuestStackInfo[] ipStack) {
     this.ipStack=ipStack;
   }
 
-  public void setDisk(GuestDiskInfo[] disk)
-  {
+  public void setDisk(GuestDiskInfo[] disk) {
     this.disk=disk;
   }
 
-  public void setScreen(GuestScreenInfo screen)
-  {
+  public void setScreen(GuestScreenInfo screen) {
     this.screen=screen;
   }
 
-  public void setGuestState(String guestState)
-  {
+  public void setGuestState(String guestState) {
     this.guestState=guestState;
   }
 
-  public void setAppHeartbeatStatus(String appHeartbeatStatus)
-  {
+  public void setAppHeartbeatStatus(String appHeartbeatStatus) {
     this.appHeartbeatStatus=appHeartbeatStatus;
   }
 
-  public void setGuestOperationsReady(Boolean guestOperationsReady)
-  {
+  public void setGuestOperationsReady(Boolean guestOperationsReady) {
     this.guestOperationsReady=guestOperationsReady;
   }
 
-  public void setInteractiveGuestOperationsReady(Boolean interactiveGuestOperationsReady)
-  {
+  public void setInteractiveGuestOperationsReady(Boolean interactiveGuestOperationsReady) {
     this.interactiveGuestOperationsReady=interactiveGuestOperationsReady;
+  }
+
+  public void setGenerationInfo(GuestInfoNamespaceGenerationInfo[] generationInfo) {
+    this.generationInfo=generationInfo;
   }
 }

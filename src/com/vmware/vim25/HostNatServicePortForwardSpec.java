@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,64 +30,55 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class HostNatServicePortForwardSpec extends DynamicData
-{
+@SuppressWarnings("all")
+public class HostNatServicePortForwardSpec extends DynamicData {
   public String type;
   public String name;
   public int hostPort;
   public int guestPort;
   public String guestIpAddress;
 
-  public String getType()
-  {
+  public String getType() {
     return this.type;
   }
 
-  public String getName()
-  {
+  public String getName() {
     return this.name;
   }
 
-  public int getHostPort()
-  {
+  public int getHostPort() {
     return this.hostPort;
   }
 
-  public int getGuestPort()
-  {
+  public int getGuestPort() {
     return this.guestPort;
   }
 
-  public String getGuestIpAddress()
-  {
+  public String getGuestIpAddress() {
     return this.guestIpAddress;
   }
 
-  public void setType(String type)
-  {
+  public void setType(String type) {
     this.type=type;
   }
 
-  public void setName(String name)
-  {
+  public void setName(String name) {
     this.name=name;
   }
 
-  public void setHostPort(int hostPort)
-  {
+  public void setHostPort(int hostPort) {
     this.hostPort=hostPort;
   }
 
-  public void setGuestPort(int guestPort)
-  {
+  public void setGuestPort(int guestPort) {
     this.guestPort=guestPort;
   }
 
-  public void setGuestIpAddress(String guestIpAddress)
-  {
+  public void setGuestIpAddress(String guestIpAddress) {
     this.guestIpAddress=guestIpAddress;
   }
 }

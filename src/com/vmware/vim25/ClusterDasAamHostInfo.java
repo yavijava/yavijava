@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,31 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class ClusterDasAamHostInfo extends ClusterDasHostInfo
-{
+@SuppressWarnings("all")
+public class ClusterDasAamHostInfo extends ClusterDasHostInfo {
   public ClusterDasAamNodeState[] hostDasState;
   public String[] primaryHosts;
 
-  public ClusterDasAamNodeState[] getHostDasState()
-  {
+  public ClusterDasAamNodeState[] getHostDasState() {
     return this.hostDasState;
   }
 
-  public String[] getPrimaryHosts()
-  {
+  public String[] getPrimaryHosts() {
     return this.primaryHosts;
   }
 
-  public void setHostDasState(ClusterDasAamNodeState[] hostDasState)
-  {
+  public void setHostDasState(ClusterDasAamNodeState[] hostDasState) {
     this.hostDasState=hostDasState;
   }
 
-  public void setPrimaryHosts(String[] primaryHosts)
-  {
+  public void setPrimaryHosts(String[] primaryHosts) {
     this.primaryHosts=primaryHosts;
   }
 }

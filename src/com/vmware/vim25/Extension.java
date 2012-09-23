@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -31,11 +31,12 @@ package com.vmware.vim25;
 import java.util.Calendar;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class Extension extends DynamicData
-{
+@SuppressWarnings("all")
+public class Extension extends DynamicData {
   public Description description;
   public String key;
   public String company;
@@ -57,203 +58,163 @@ public class Extension extends DynamicData
   public Boolean shownInSolutionManager;
   public ExtSolutionManagerInfo solutionManagerInfo;
 
-  public Description getDescription()
-  {
+  public Description getDescription() {
     return this.description;
   }
 
-  public String getKey()
-  {
+  public String getKey() {
     return this.key;
   }
 
-  public String getCompany()
-  {
+  public String getCompany() {
     return this.company;
   }
 
-  public String getType()
-  {
+  public String getType() {
     return this.type;
   }
 
-  public String getVersion()
-  {
+  public String getVersion() {
     return this.version;
   }
 
-  public String getSubjectName()
-  {
+  public String getSubjectName() {
     return this.subjectName;
   }
 
-  public ExtensionServerInfo[] getServer()
-  {
+  public ExtensionServerInfo[] getServer() {
     return this.server;
   }
 
-  public ExtensionClientInfo[] getClient()
-  {
+  public ExtensionClientInfo[] getClient() {
     return this.client;
   }
 
-  public ExtensionTaskTypeInfo[] getTaskList()
-  {
+  public ExtensionTaskTypeInfo[] getTaskList() {
     return this.taskList;
   }
 
-  public ExtensionEventTypeInfo[] getEventList()
-  {
+  public ExtensionEventTypeInfo[] getEventList() {
     return this.eventList;
   }
 
-  public ExtensionFaultTypeInfo[] getFaultList()
-  {
+  public ExtensionFaultTypeInfo[] getFaultList() {
     return this.faultList;
   }
 
-  public ExtensionPrivilegeInfo[] getPrivilegeList()
-  {
+  public ExtensionPrivilegeInfo[] getPrivilegeList() {
     return this.privilegeList;
   }
 
-  public ExtensionResourceInfo[] getResourceList()
-  {
+  public ExtensionResourceInfo[] getResourceList() {
     return this.resourceList;
   }
 
-  public Calendar getLastHeartbeatTime()
-  {
+  public Calendar getLastHeartbeatTime() {
     return this.lastHeartbeatTime;
   }
 
-  public ExtensionHealthInfo getHealthInfo()
-  {
+  public ExtensionHealthInfo getHealthInfo() {
     return this.healthInfo;
   }
 
-  public ExtensionOvfConsumerInfo getOvfConsumerInfo()
-  {
+  public ExtensionOvfConsumerInfo getOvfConsumerInfo() {
     return this.ovfConsumerInfo;
   }
 
-  public ExtExtendedProductInfo getExtendedProductInfo()
-  {
+  public ExtExtendedProductInfo getExtendedProductInfo() {
     return this.extendedProductInfo;
   }
 
-  public ExtManagedEntityInfo[] getManagedEntityInfo()
-  {
+  public ExtManagedEntityInfo[] getManagedEntityInfo() {
     return this.managedEntityInfo;
   }
 
-  public Boolean getShownInSolutionManager()
-  {
+  public Boolean getShownInSolutionManager() {
     return this.shownInSolutionManager;
   }
 
-  public ExtSolutionManagerInfo getSolutionManagerInfo()
-  {
+  public ExtSolutionManagerInfo getSolutionManagerInfo() {
     return this.solutionManagerInfo;
   }
 
-  public void setDescription(Description description)
-  {
+  public void setDescription(Description description) {
     this.description=description;
   }
 
-  public void setKey(String key)
-  {
+  public void setKey(String key) {
     this.key=key;
   }
 
-  public void setCompany(String company)
-  {
+  public void setCompany(String company) {
     this.company=company;
   }
 
-  public void setType(String type)
-  {
+  public void setType(String type) {
     this.type=type;
   }
 
-  public void setVersion(String version)
-  {
+  public void setVersion(String version) {
     this.version=version;
   }
 
-  public void setSubjectName(String subjectName)
-  {
+  public void setSubjectName(String subjectName) {
     this.subjectName=subjectName;
   }
 
-  public void setServer(ExtensionServerInfo[] server)
-  {
+  public void setServer(ExtensionServerInfo[] server) {
     this.server=server;
   }
 
-  public void setClient(ExtensionClientInfo[] client)
-  {
+  public void setClient(ExtensionClientInfo[] client) {
     this.client=client;
   }
 
-  public void setTaskList(ExtensionTaskTypeInfo[] taskList)
-  {
+  public void setTaskList(ExtensionTaskTypeInfo[] taskList) {
     this.taskList=taskList;
   }
 
-  public void setEventList(ExtensionEventTypeInfo[] eventList)
-  {
+  public void setEventList(ExtensionEventTypeInfo[] eventList) {
     this.eventList=eventList;
   }
 
-  public void setFaultList(ExtensionFaultTypeInfo[] faultList)
-  {
+  public void setFaultList(ExtensionFaultTypeInfo[] faultList) {
     this.faultList=faultList;
   }
 
-  public void setPrivilegeList(ExtensionPrivilegeInfo[] privilegeList)
-  {
+  public void setPrivilegeList(ExtensionPrivilegeInfo[] privilegeList) {
     this.privilegeList=privilegeList;
   }
 
-  public void setResourceList(ExtensionResourceInfo[] resourceList)
-  {
+  public void setResourceList(ExtensionResourceInfo[] resourceList) {
     this.resourceList=resourceList;
   }
 
-  public void setLastHeartbeatTime(Calendar lastHeartbeatTime)
-  {
+  public void setLastHeartbeatTime(Calendar lastHeartbeatTime) {
     this.lastHeartbeatTime=lastHeartbeatTime;
   }
 
-  public void setHealthInfo(ExtensionHealthInfo healthInfo)
-  {
+  public void setHealthInfo(ExtensionHealthInfo healthInfo) {
     this.healthInfo=healthInfo;
   }
 
-  public void setOvfConsumerInfo(ExtensionOvfConsumerInfo ovfConsumerInfo)
-  {
+  public void setOvfConsumerInfo(ExtensionOvfConsumerInfo ovfConsumerInfo) {
     this.ovfConsumerInfo=ovfConsumerInfo;
   }
 
-  public void setExtendedProductInfo(ExtExtendedProductInfo extendedProductInfo)
-  {
+  public void setExtendedProductInfo(ExtExtendedProductInfo extendedProductInfo) {
     this.extendedProductInfo=extendedProductInfo;
   }
 
-  public void setManagedEntityInfo(ExtManagedEntityInfo[] managedEntityInfo)
-  {
+  public void setManagedEntityInfo(ExtManagedEntityInfo[] managedEntityInfo) {
     this.managedEntityInfo=managedEntityInfo;
   }
 
-  public void setShownInSolutionManager(Boolean shownInSolutionManager)
-  {
+  public void setShownInSolutionManager(Boolean shownInSolutionManager) {
     this.shownInSolutionManager=shownInSolutionManager;
   }
 
-  public void setSolutionManagerInfo(ExtSolutionManagerInfo solutionManagerInfo)
-  {
+  public void setSolutionManagerInfo(ExtSolutionManagerInfo solutionManagerInfo) {
     this.solutionManagerInfo=solutionManagerInfo;
   }
 }

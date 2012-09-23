@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,11 +30,12 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class OvfValidateHostResult extends DynamicData
-{
+@SuppressWarnings("all")
+public class OvfValidateHostResult extends DynamicData {
   public Long downloadSize;
   public Long flatDeploymentSize;
   public Long sparseDeploymentSize;
@@ -42,63 +43,51 @@ public class OvfValidateHostResult extends DynamicData
   public LocalizedMethodFault[] warning;
   public String[] supportedDiskProvisioning;
 
-  public Long getDownloadSize()
-  {
+  public Long getDownloadSize() {
     return this.downloadSize;
   }
 
-  public Long getFlatDeploymentSize()
-  {
+  public Long getFlatDeploymentSize() {
     return this.flatDeploymentSize;
   }
 
-  public Long getSparseDeploymentSize()
-  {
+  public Long getSparseDeploymentSize() {
     return this.sparseDeploymentSize;
   }
 
-  public LocalizedMethodFault[] getError()
-  {
+  public LocalizedMethodFault[] getError() {
     return this.error;
   }
 
-  public LocalizedMethodFault[] getWarning()
-  {
+  public LocalizedMethodFault[] getWarning() {
     return this.warning;
   }
 
-  public String[] getSupportedDiskProvisioning()
-  {
+  public String[] getSupportedDiskProvisioning() {
     return this.supportedDiskProvisioning;
   }
 
-  public void setDownloadSize(Long downloadSize)
-  {
+  public void setDownloadSize(Long downloadSize) {
     this.downloadSize=downloadSize;
   }
 
-  public void setFlatDeploymentSize(Long flatDeploymentSize)
-  {
+  public void setFlatDeploymentSize(Long flatDeploymentSize) {
     this.flatDeploymentSize=flatDeploymentSize;
   }
 
-  public void setSparseDeploymentSize(Long sparseDeploymentSize)
-  {
+  public void setSparseDeploymentSize(Long sparseDeploymentSize) {
     this.sparseDeploymentSize=sparseDeploymentSize;
   }
 
-  public void setError(LocalizedMethodFault[] error)
-  {
+  public void setError(LocalizedMethodFault[] error) {
     this.error=error;
   }
 
-  public void setWarning(LocalizedMethodFault[] warning)
-  {
+  public void setWarning(LocalizedMethodFault[] warning) {
     this.warning=warning;
   }
 
-  public void setSupportedDiskProvisioning(String[] supportedDiskProvisioning)
-  {
+  public void setSupportedDiskProvisioning(String[] supportedDiskProvisioning) {
     this.supportedDiskProvisioning=supportedDiskProvisioning;
   }
 }

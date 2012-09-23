@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,42 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class HostDiskPartitionInfo extends DynamicData
-{
+@SuppressWarnings("all")
+public class HostDiskPartitionInfo extends DynamicData {
   public String deviceName;
   public HostDiskPartitionSpec spec;
   public HostDiskPartitionLayout layout;
 
-  public String getDeviceName()
-  {
+  public String getDeviceName() {
     return this.deviceName;
   }
 
-  public HostDiskPartitionSpec getSpec()
-  {
+  public HostDiskPartitionSpec getSpec() {
     return this.spec;
   }
 
-  public HostDiskPartitionLayout getLayout()
-  {
+  public HostDiskPartitionLayout getLayout() {
     return this.layout;
   }
 
-  public void setDeviceName(String deviceName)
-  {
+  public void setDeviceName(String deviceName) {
     this.deviceName=deviceName;
   }
 
-  public void setSpec(HostDiskPartitionSpec spec)
-  {
+  public void setSpec(HostDiskPartitionSpec spec) {
     this.spec=spec;
   }
 
-  public void setLayout(HostDiskPartitionLayout layout)
-  {
+  public void setLayout(HostDiskPartitionLayout layout) {
     this.layout=layout;
   }
 }

@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,11 +30,12 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class HostVmfsVolume extends HostFileSystemVolume
-{
+@SuppressWarnings("all")
+public class HostVmfsVolume extends HostFileSystemVolume {
   public int blockSizeMb;
   public int maxBlocks;
   public int majorVersion;
@@ -45,93 +46,75 @@ public class HostVmfsVolume extends HostFileSystemVolume
   public HostForceMountedInfo forceMountedInfo;
   public Boolean ssd;
 
-  public int getBlockSizeMb()
-  {
+  public int getBlockSizeMb() {
     return this.blockSizeMb;
   }
 
-  public int getMaxBlocks()
-  {
+  public int getMaxBlocks() {
     return this.maxBlocks;
   }
 
-  public int getMajorVersion()
-  {
+  public int getMajorVersion() {
     return this.majorVersion;
   }
 
-  public String getVersion()
-  {
+  public String getVersion() {
     return this.version;
   }
 
-  public String getUuid()
-  {
+  public String getUuid() {
     return this.uuid;
   }
 
-  public HostScsiDiskPartition[] getExtent()
-  {
+  public HostScsiDiskPartition[] getExtent() {
     return this.extent;
   }
 
-  public boolean isVmfsUpgradable()
-  {
+  public boolean isVmfsUpgradable() {
     return this.vmfsUpgradable;
   }
 
-  public HostForceMountedInfo getForceMountedInfo()
-  {
+  public HostForceMountedInfo getForceMountedInfo() {
     return this.forceMountedInfo;
   }
 
-  public Boolean getSsd()
-  {
+  public Boolean getSsd() {
     return this.ssd;
   }
 
-  public void setBlockSizeMb(int blockSizeMb)
-  {
+  public void setBlockSizeMb(int blockSizeMb) {
     this.blockSizeMb=blockSizeMb;
   }
 
-  public void setMaxBlocks(int maxBlocks)
-  {
+  public void setMaxBlocks(int maxBlocks) {
     this.maxBlocks=maxBlocks;
   }
 
-  public void setMajorVersion(int majorVersion)
-  {
+  public void setMajorVersion(int majorVersion) {
     this.majorVersion=majorVersion;
   }
 
-  public void setVersion(String version)
-  {
+  public void setVersion(String version) {
     this.version=version;
   }
 
-  public void setUuid(String uuid)
-  {
+  public void setUuid(String uuid) {
     this.uuid=uuid;
   }
 
-  public void setExtent(HostScsiDiskPartition[] extent)
-  {
+  public void setExtent(HostScsiDiskPartition[] extent) {
     this.extent=extent;
   }
 
-  public void setVmfsUpgradable(boolean vmfsUpgradable)
-  {
+  public void setVmfsUpgradable(boolean vmfsUpgradable) {
     this.vmfsUpgradable=vmfsUpgradable;
   }
 
-  public void setForceMountedInfo(HostForceMountedInfo forceMountedInfo)
-  {
+  public void setForceMountedInfo(HostForceMountedInfo forceMountedInfo) {
     this.forceMountedInfo=forceMountedInfo;
   }
 
-  public void setSsd(Boolean ssd)
-  {
+  public void setSsd(Boolean ssd) {
     this.ssd=ssd;
   }
 }

@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,31 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class LimitExceeded extends VimFault
-{
+@SuppressWarnings("all")
+public class LimitExceeded extends VimFault {
   public String property;
   public Integer limit;
 
-  public String getProperty()
-  {
+  public String getProperty() {
     return this.property;
   }
 
-  public Integer getLimit()
-  {
+  public Integer getLimit() {
     return this.limit;
   }
 
-  public void setProperty(String property)
-  {
+  public void setProperty(String property) {
     this.property=property;
   }
 
-  public void setLimit(Integer limit)
-  {
+  public void setLimit(Integer limit) {
     this.limit=limit;
   }
 }

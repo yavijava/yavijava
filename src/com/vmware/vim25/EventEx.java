@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,11 +30,12 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class EventEx extends Event
-{
+@SuppressWarnings("all")
+public class EventEx extends Event {
   public String eventTypeId;
   public String severity;
   public String message;
@@ -44,83 +45,67 @@ public class EventEx extends Event
   public String objectName;
   public LocalizedMethodFault fault;
 
-  public String getEventTypeId()
-  {
+  public String getEventTypeId() {
     return this.eventTypeId;
   }
 
-  public String getSeverity()
-  {
+  public String getSeverity() {
     return this.severity;
   }
 
-  public String getMessage()
-  {
+  public String getMessage() {
     return this.message;
   }
 
-  public KeyAnyValue[] getArguments()
-  {
+  public KeyAnyValue[] getArguments() {
     return this.arguments;
   }
 
-  public String getObjectId()
-  {
+  public String getObjectId() {
     return this.objectId;
   }
 
-  public String getObjectType()
-  {
+  public String getObjectType() {
     return this.objectType;
   }
 
-  public String getObjectName()
-  {
+  public String getObjectName() {
     return this.objectName;
   }
 
-  public LocalizedMethodFault getFault()
-  {
+  public LocalizedMethodFault getFault() {
     return this.fault;
   }
 
-  public void setEventTypeId(String eventTypeId)
-  {
+  public void setEventTypeId(String eventTypeId) {
     this.eventTypeId=eventTypeId;
   }
 
-  public void setSeverity(String severity)
-  {
+  public void setSeverity(String severity) {
     this.severity=severity;
   }
 
-  public void setMessage(String message)
-  {
+  public void setMessage(String message) {
     this.message=message;
   }
 
-  public void setArguments(KeyAnyValue[] arguments)
-  {
+  public void setArguments(KeyAnyValue[] arguments) {
     this.arguments=arguments;
   }
 
-  public void setObjectId(String objectId)
-  {
+  public void setObjectId(String objectId) {
     this.objectId=objectId;
   }
 
-  public void setObjectType(String objectType)
-  {
+  public void setObjectType(String objectType) {
     this.objectType=objectType;
   }
 
-  public void setObjectName(String objectName)
-  {
+  public void setObjectName(String objectName) {
     this.objectName=objectName;
   }
 
-  public void setFault(LocalizedMethodFault fault)
-  {
+  public void setFault(LocalizedMethodFault fault) {
     this.fault=fault;
   }
 }

@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,53 +30,46 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class CustomizationLinuxPrep extends CustomizationIdentitySettings
-{
+@SuppressWarnings("all")
+public class CustomizationLinuxPrep extends CustomizationIdentitySettings {
   public CustomizationName hostName;
   public String domain;
   public String timeZone;
   public Boolean hwClockUTC;
 
-  public CustomizationName getHostName()
-  {
+  public CustomizationName getHostName() {
     return this.hostName;
   }
 
-  public String getDomain()
-  {
+  public String getDomain() {
     return this.domain;
   }
 
-  public String getTimeZone()
-  {
+  public String getTimeZone() {
     return this.timeZone;
   }
 
-  public Boolean getHwClockUTC()
-  {
+  public Boolean getHwClockUTC() {
     return this.hwClockUTC;
   }
 
-  public void setHostName(CustomizationName hostName)
-  {
+  public void setHostName(CustomizationName hostName) {
     this.hostName=hostName;
   }
 
-  public void setDomain(String domain)
-  {
+  public void setDomain(String domain) {
     this.domain=domain;
   }
 
-  public void setTimeZone(String timeZone)
-  {
+  public void setTimeZone(String timeZone) {
     this.timeZone=timeZone;
   }
 
-  public void setHwClockUTC(Boolean hwClockUTC)
-  {
+  public void setHwClockUTC(Boolean hwClockUTC) {
     this.hwClockUTC=hwClockUTC;
   }
 }

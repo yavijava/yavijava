@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,42 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class ProfileProfileStructureProperty extends DynamicData
-{
+@SuppressWarnings("all")
+public class ProfileProfileStructureProperty extends DynamicData {
   public String propertyName;
   public boolean array;
   public ProfileProfileStructure element;
 
-  public String getPropertyName()
-  {
+  public String getPropertyName() {
     return this.propertyName;
   }
 
-  public boolean isArray()
-  {
+  public boolean isArray() {
     return this.array;
   }
 
-  public ProfileProfileStructure getElement()
-  {
+  public ProfileProfileStructure getElement() {
     return this.element;
   }
 
-  public void setPropertyName(String propertyName)
-  {
+  public void setPropertyName(String propertyName) {
     this.propertyName=propertyName;
   }
 
-  public void setArray(boolean array)
-  {
+  public void setArray(boolean array) {
     this.array=array;
   }
 
-  public void setElement(ProfileProfileStructure element)
-  {
+  public void setElement(ProfileProfileStructure element) {
     this.element=element;
   }
 }

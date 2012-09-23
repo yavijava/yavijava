@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,31 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class HostIpRouteTableConfig extends DynamicData
-{
+@SuppressWarnings("all")
+public class HostIpRouteTableConfig extends DynamicData {
   public HostIpRouteOp[] ipRoute;
   public HostIpRouteOp[] ipv6Route;
 
-  public HostIpRouteOp[] getIpRoute()
-  {
+  public HostIpRouteOp[] getIpRoute() {
     return this.ipRoute;
   }
 
-  public HostIpRouteOp[] getIpv6Route()
-  {
+  public HostIpRouteOp[] getIpv6Route() {
     return this.ipv6Route;
   }
 
-  public void setIpRoute(HostIpRouteOp[] ipRoute)
-  {
+  public void setIpRoute(HostIpRouteOp[] ipRoute) {
     this.ipRoute=ipRoute;
   }
 
-  public void setIpv6Route(HostIpRouteOp[] ipv6Route)
-  {
+  public void setIpv6Route(HostIpRouteOp[] ipv6Route) {
     this.ipv6Route=ipv6Route;
   }
 }

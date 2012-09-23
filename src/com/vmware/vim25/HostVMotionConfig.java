@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,31 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class HostVMotionConfig extends DynamicData
-{
+@SuppressWarnings("all")
+public class HostVMotionConfig extends DynamicData {
   public String vmotionNicKey;
   public boolean enabled;
 
-  public String getVmotionNicKey()
-  {
+  public String getVmotionNicKey() {
     return this.vmotionNicKey;
   }
 
-  public boolean isEnabled()
-  {
+  public boolean isEnabled() {
     return this.enabled;
   }
 
-  public void setVmotionNicKey(String vmotionNicKey)
-  {
+  public void setVmotionNicKey(String vmotionNicKey) {
     this.vmotionNicKey=vmotionNicKey;
   }
 
-  public void setEnabled(boolean enabled)
-  {
+  public void setEnabled(boolean enabled) {
     this.enabled=enabled;
   }
 }

@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,42 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class DVSSecurityPolicy extends InheritablePolicy
-{
+@SuppressWarnings("all")
+public class DVSSecurityPolicy extends InheritablePolicy {
   public BoolPolicy allowPromiscuous;
   public BoolPolicy macChanges;
   public BoolPolicy forgedTransmits;
 
-  public BoolPolicy getAllowPromiscuous()
-  {
+  public BoolPolicy getAllowPromiscuous() {
     return this.allowPromiscuous;
   }
 
-  public BoolPolicy getMacChanges()
-  {
+  public BoolPolicy getMacChanges() {
     return this.macChanges;
   }
 
-  public BoolPolicy getForgedTransmits()
-  {
+  public BoolPolicy getForgedTransmits() {
     return this.forgedTransmits;
   }
 
-  public void setAllowPromiscuous(BoolPolicy allowPromiscuous)
-  {
+  public void setAllowPromiscuous(BoolPolicy allowPromiscuous) {
     this.allowPromiscuous=allowPromiscuous;
   }
 
-  public void setMacChanges(BoolPolicy macChanges)
-  {
+  public void setMacChanges(BoolPolicy macChanges) {
     this.macChanges=macChanges;
   }
 
-  public void setForgedTransmits(BoolPolicy forgedTransmits)
-  {
+  public void setForgedTransmits(BoolPolicy forgedTransmits) {
     this.forgedTransmits=forgedTransmits;
   }
 }

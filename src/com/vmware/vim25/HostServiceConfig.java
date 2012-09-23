@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,31 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class HostServiceConfig extends DynamicData
-{
+@SuppressWarnings("all")
+public class HostServiceConfig extends DynamicData {
   public String serviceId;
   public String startupPolicy;
 
-  public String getServiceId()
-  {
+  public String getServiceId() {
     return this.serviceId;
   }
 
-  public String getStartupPolicy()
-  {
+  public String getStartupPolicy() {
     return this.startupPolicy;
   }
 
-  public void setServiceId(String serviceId)
-  {
+  public void setServiceId(String serviceId) {
     this.serviceId=serviceId;
   }
 
-  public void setStartupPolicy(String startupPolicy)
-  {
+  public void setStartupPolicy(String startupPolicy) {
     this.startupPolicy=startupPolicy;
   }
 }

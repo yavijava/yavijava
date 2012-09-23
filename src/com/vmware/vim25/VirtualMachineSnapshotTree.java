@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -31,11 +31,12 @@ package com.vmware.vim25;
 import java.util.Calendar;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class VirtualMachineSnapshotTree extends DynamicData
-{
+@SuppressWarnings("all")
+public class VirtualMachineSnapshotTree extends DynamicData {
   public ManagedObjectReference snapshot;
   public ManagedObjectReference vm;
   public String name;
@@ -48,113 +49,91 @@ public class VirtualMachineSnapshotTree extends DynamicData
   public VirtualMachineSnapshotTree[] childSnapshotList;
   public Boolean replaySupported;
 
-  public ManagedObjectReference getSnapshot()
-  {
+  public ManagedObjectReference getSnapshot() {
     return this.snapshot;
   }
 
-  public ManagedObjectReference getVm()
-  {
+  public ManagedObjectReference getVm() {
     return this.vm;
   }
 
-  public String getName()
-  {
+  public String getName() {
     return this.name;
   }
 
-  public String getDescription()
-  {
+  public String getDescription() {
     return this.description;
   }
 
-  public Integer getId()
-  {
+  public Integer getId() {
     return this.id;
   }
 
-  public Calendar getCreateTime()
-  {
+  public Calendar getCreateTime() {
     return this.createTime;
   }
 
-  public VirtualMachinePowerState getState()
-  {
+  public VirtualMachinePowerState getState() {
     return this.state;
   }
 
-  public boolean isQuiesced()
-  {
+  public boolean isQuiesced() {
     return this.quiesced;
   }
 
-  public String getBackupManifest()
-  {
+  public String getBackupManifest() {
     return this.backupManifest;
   }
 
-  public VirtualMachineSnapshotTree[] getChildSnapshotList()
-  {
+  public VirtualMachineSnapshotTree[] getChildSnapshotList() {
     return this.childSnapshotList;
   }
 
-  public Boolean getReplaySupported()
-  {
+  public Boolean getReplaySupported() {
     return this.replaySupported;
   }
 
-  public void setSnapshot(ManagedObjectReference snapshot)
-  {
+  public void setSnapshot(ManagedObjectReference snapshot) {
     this.snapshot=snapshot;
   }
 
-  public void setVm(ManagedObjectReference vm)
-  {
+  public void setVm(ManagedObjectReference vm) {
     this.vm=vm;
   }
 
-  public void setName(String name)
-  {
+  public void setName(String name) {
     this.name=name;
   }
 
-  public void setDescription(String description)
-  {
+  public void setDescription(String description) {
     this.description=description;
   }
 
-  public void setId(Integer id)
-  {
+  public void setId(Integer id) {
     this.id=id;
   }
 
-  public void setCreateTime(Calendar createTime)
-  {
+  public void setCreateTime(Calendar createTime) {
     this.createTime=createTime;
   }
 
-  public void setState(VirtualMachinePowerState state)
-  {
+  public void setState(VirtualMachinePowerState state) {
     this.state=state;
   }
 
-  public void setQuiesced(boolean quiesced)
-  {
+  public void setQuiesced(boolean quiesced) {
     this.quiesced=quiesced;
   }
 
-  public void setBackupManifest(String backupManifest)
-  {
+  public void setBackupManifest(String backupManifest) {
     this.backupManifest=backupManifest;
   }
 
-  public void setChildSnapshotList(VirtualMachineSnapshotTree[] childSnapshotList)
-  {
+  public void setChildSnapshotList(VirtualMachineSnapshotTree[] childSnapshotList) {
     this.childSnapshotList=childSnapshotList;
   }
 
-  public void setReplaySupported(Boolean replaySupported)
-  {
+  public void setReplaySupported(Boolean replaySupported) {
     this.replaySupported=replaySupported;
   }
 }

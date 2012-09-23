@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -31,31 +31,28 @@ package com.vmware.vim25;
 import java.util.Calendar;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class HostBIOSInfo extends DynamicData
-{
+@SuppressWarnings("all")
+public class HostBIOSInfo extends DynamicData {
   public String biosVersion;
   public Calendar releaseDate;
 
-  public String getBiosVersion()
-  {
+  public String getBiosVersion() {
     return this.biosVersion;
   }
 
-  public Calendar getReleaseDate()
-  {
+  public Calendar getReleaseDate() {
     return this.releaseDate;
   }
 
-  public void setBiosVersion(String biosVersion)
-  {
+  public void setBiosVersion(String biosVersion) {
     this.biosVersion=biosVersion;
   }
 
-  public void setReleaseDate(Calendar releaseDate)
-  {
+  public void setReleaseDate(Calendar releaseDate) {
     this.releaseDate=releaseDate;
   }
 }

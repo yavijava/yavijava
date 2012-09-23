@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,53 +30,46 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class AuthorizationPrivilege extends DynamicData
-{
+@SuppressWarnings("all")
+public class AuthorizationPrivilege extends DynamicData {
   public String privId;
   public boolean onParent;
   public String name;
   public String privGroupName;
 
-  public String getPrivId()
-  {
+  public String getPrivId() {
     return this.privId;
   }
 
-  public boolean isOnParent()
-  {
+  public boolean isOnParent() {
     return this.onParent;
   }
 
-  public String getName()
-  {
+  public String getName() {
     return this.name;
   }
 
-  public String getPrivGroupName()
-  {
+  public String getPrivGroupName() {
     return this.privGroupName;
   }
 
-  public void setPrivId(String privId)
-  {
+  public void setPrivId(String privId) {
     this.privId=privId;
   }
 
-  public void setOnParent(boolean onParent)
-  {
+  public void setOnParent(boolean onParent) {
     this.onParent=onParent;
   }
 
-  public void setName(String name)
-  {
+  public void setName(String name) {
     this.name=name;
   }
 
-  public void setPrivGroupName(String privGroupName)
-  {
+  public void setPrivGroupName(String privGroupName) {
     this.privGroupName=privGroupName;
   }
 }

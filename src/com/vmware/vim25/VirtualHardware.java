@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,11 +30,12 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class VirtualHardware extends DynamicData
-{
+@SuppressWarnings("all")
+public class VirtualHardware extends DynamicData {
   public int numCPU;
   public Integer numCoresPerSocket;
   public int memoryMB;
@@ -42,63 +43,51 @@ public class VirtualHardware extends DynamicData
   public Boolean virtualSMCPresent;
   public VirtualDevice[] device;
 
-  public int getNumCPU()
-  {
+  public int getNumCPU() {
     return this.numCPU;
   }
 
-  public Integer getNumCoresPerSocket()
-  {
+  public Integer getNumCoresPerSocket() {
     return this.numCoresPerSocket;
   }
 
-  public int getMemoryMB()
-  {
+  public int getMemoryMB() {
     return this.memoryMB;
   }
 
-  public Boolean getVirtualICH7MPresent()
-  {
+  public Boolean getVirtualICH7MPresent() {
     return this.virtualICH7MPresent;
   }
 
-  public Boolean getVirtualSMCPresent()
-  {
+  public Boolean getVirtualSMCPresent() {
     return this.virtualSMCPresent;
   }
 
-  public VirtualDevice[] getDevice()
-  {
+  public VirtualDevice[] getDevice() {
     return this.device;
   }
 
-  public void setNumCPU(int numCPU)
-  {
+  public void setNumCPU(int numCPU) {
     this.numCPU=numCPU;
   }
 
-  public void setNumCoresPerSocket(Integer numCoresPerSocket)
-  {
+  public void setNumCoresPerSocket(Integer numCoresPerSocket) {
     this.numCoresPerSocket=numCoresPerSocket;
   }
 
-  public void setMemoryMB(int memoryMB)
-  {
+  public void setMemoryMB(int memoryMB) {
     this.memoryMB=memoryMB;
   }
 
-  public void setVirtualICH7MPresent(Boolean virtualICH7MPresent)
-  {
+  public void setVirtualICH7MPresent(Boolean virtualICH7MPresent) {
     this.virtualICH7MPresent=virtualICH7MPresent;
   }
 
-  public void setVirtualSMCPresent(Boolean virtualSMCPresent)
-  {
+  public void setVirtualSMCPresent(Boolean virtualSMCPresent) {
     this.virtualSMCPresent=virtualSMCPresent;
   }
 
-  public void setDevice(VirtualDevice[] device)
-  {
+  public void setDevice(VirtualDevice[] device) {
     this.device=device;
   }
 }

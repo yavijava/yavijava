@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,42 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class VirtualDisk extends VirtualDevice
-{
+@SuppressWarnings("all")
+public class VirtualDisk extends VirtualDevice {
   public long capacityInKB;
   public SharesInfo shares;
   public StorageIOAllocationInfo storageIOAllocation;
 
-  public long getCapacityInKB()
-  {
+  public long getCapacityInKB() {
     return this.capacityInKB;
   }
 
-  public SharesInfo getShares()
-  {
+  public SharesInfo getShares() {
     return this.shares;
   }
 
-  public StorageIOAllocationInfo getStorageIOAllocation()
-  {
+  public StorageIOAllocationInfo getStorageIOAllocation() {
     return this.storageIOAllocation;
   }
 
-  public void setCapacityInKB(long capacityInKB)
-  {
+  public void setCapacityInKB(long capacityInKB) {
     this.capacityInKB=capacityInKB;
   }
 
-  public void setShares(SharesInfo shares)
-  {
+  public void setShares(SharesInfo shares) {
     this.shares=shares;
   }
 
-  public void setStorageIOAllocation(StorageIOAllocationInfo storageIOAllocation)
-  {
+  public void setStorageIOAllocation(StorageIOAllocationInfo storageIOAllocation) {
     this.storageIOAllocation=storageIOAllocation;
   }
 }

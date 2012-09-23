@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,53 +30,46 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class HbrManagerReplicationVmInfo extends DynamicData
-{
+@SuppressWarnings("all")
+public class HbrManagerReplicationVmInfo extends DynamicData {
   public String state;
   public ReplicationVmProgressInfo progressInfo;
   public String imageId;
   public LocalizedMethodFault lastError;
 
-  public String getState()
-  {
+  public String getState() {
     return this.state;
   }
 
-  public ReplicationVmProgressInfo getProgressInfo()
-  {
+  public ReplicationVmProgressInfo getProgressInfo() {
     return this.progressInfo;
   }
 
-  public String getImageId()
-  {
+  public String getImageId() {
     return this.imageId;
   }
 
-  public LocalizedMethodFault getLastError()
-  {
+  public LocalizedMethodFault getLastError() {
     return this.lastError;
   }
 
-  public void setState(String state)
-  {
+  public void setState(String state) {
     this.state=state;
   }
 
-  public void setProgressInfo(ReplicationVmProgressInfo progressInfo)
-  {
+  public void setProgressInfo(ReplicationVmProgressInfo progressInfo) {
     this.progressInfo=progressInfo;
   }
 
-  public void setImageId(String imageId)
-  {
+  public void setImageId(String imageId) {
     this.imageId=imageId;
   }
 
-  public void setLastError(LocalizedMethodFault lastError)
-  {
+  public void setLastError(LocalizedMethodFault lastError) {
     this.lastError=lastError;
   }
 }

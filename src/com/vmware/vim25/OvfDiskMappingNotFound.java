@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,31 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class OvfDiskMappingNotFound extends OvfSystemFault
-{
+@SuppressWarnings("all")
+public class OvfDiskMappingNotFound extends OvfSystemFault {
   public String diskName;
   public String vmName;
 
-  public String getDiskName()
-  {
+  public String getDiskName() {
     return this.diskName;
   }
 
-  public String getVmName()
-  {
+  public String getVmName() {
     return this.vmName;
   }
 
-  public void setDiskName(String diskName)
-  {
+  public void setDiskName(String diskName) {
     this.diskName=diskName;
   }
 
-  public void setVmName(String vmName)
-  {
+  public void setVmName(String vmName) {
     this.vmName=vmName;
   }
 }

@@ -1,4 +1,5 @@
 /*================================================================================
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 Copyright (c) 2008 VMware, Inc. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
@@ -36,7 +37,7 @@ import com.vmware.vim25.*;
 
 /**
  * The managed object class corresponding to the one defined in VI SDK API reference.
- * @author Steve JIN (sjin@vmware.com)
+ * @author Steve JIN (http://www.doublecloud.org)
  */
 
 public class SessionManager extends ManagedObject 
@@ -113,10 +114,10 @@ public class SessionManager extends ManagedObject
    * @throws MalformedURLException 
    * 
    */
-	public ServiceInstance cloneSession(boolean ignoreCert) throws InvalidLogin, RuntimeFault, RemoteException, MalformedURLException
-	{
-	  ServiceInstance oldsi = getServerConnection().getServiceInstance();
-	  ServerConnection oldsc = oldsi.getServerConnection();
+  public ServiceInstance cloneSession(boolean ignoreCert) throws InvalidLogin, RuntimeFault, RemoteException, MalformedURLException
+  {
+    ServiceInstance oldsi = getServerConnection().getServiceInstance();
+    ServerConnection oldsc = oldsi.getServerConnection();
     String ticket = oldsi.getSessionManager().acquireCloneTicket();
 	  
     VimPortType vimService = new VimPortType(oldsc.getUrl().toString(), ignoreCert);
@@ -130,7 +131,7 @@ public class SessionManager extends ManagedObject
     UserSession userSession = newsi.getSessionManager().cloneSession(ticket);
     newsc.setUserSession(userSession);
     return newsi;
-	}
+  }
 
 	/** @since SDK4.0 
 	 * This method is called in the cloneSession method. If you happen to use this method,
@@ -147,6 +148,12 @@ public class SessionManager extends ManagedObject
 		return getVimService().loginExtensionBySubjectName(getMOR(), extensionKey, locale);
 	}
 	
+	/** @since SDK4.0 */
+	public UserSession loginExtensionByCertificate(String extensionKey, String locale) throws InvalidLogin, InvalidLocale, NoClientCertificate, RuntimeFault, RemoteException
+	{
+	    return getVimService().loginExtensionByCertificate(getMOR(), extensionKey, locale);
+	}
+
 	public UserSession impersonateUser(String userName, String locale) throws InvalidLogin, InvalidLocale, RuntimeFault, RemoteException 
 	{
 		return getVimService().impersonateUser(getMOR(), userName, locale);
@@ -160,6 +167,12 @@ public class SessionManager extends ManagedObject
 	public UserSession loginBySSPI(String base64Token, String locale) throws InvalidLogin, InvalidLocale, SSPIChallenge, RuntimeFault, RemoteException 
 	{
 		return getVimService().loginBySSPI(getMOR(), base64Token, locale);
+	}
+	
+	/** @since SDK5.1 */
+	public UserSession loginByToken(String locale) throws InvalidLogin, InvalidLocale, RuntimeFault, RemoteException
+	{
+	    return getVimService().loginByToken(getMOR(), locale);
 	}
 	
 	public void logout() throws RuntimeFault, RemoteException 

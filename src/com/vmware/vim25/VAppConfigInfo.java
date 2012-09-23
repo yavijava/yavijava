@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,53 +30,46 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class VAppConfigInfo extends VmConfigInfo
-{
+@SuppressWarnings("all")
+public class VAppConfigInfo extends VmConfigInfo {
   public VAppEntityConfigInfo[] entityConfig;
   public String annotation;
   public String instanceUuid;
   public ManagedByInfo managedBy;
 
-  public VAppEntityConfigInfo[] getEntityConfig()
-  {
+  public VAppEntityConfigInfo[] getEntityConfig() {
     return this.entityConfig;
   }
 
-  public String getAnnotation()
-  {
+  public String getAnnotation() {
     return this.annotation;
   }
 
-  public String getInstanceUuid()
-  {
+  public String getInstanceUuid() {
     return this.instanceUuid;
   }
 
-  public ManagedByInfo getManagedBy()
-  {
+  public ManagedByInfo getManagedBy() {
     return this.managedBy;
   }
 
-  public void setEntityConfig(VAppEntityConfigInfo[] entityConfig)
-  {
+  public void setEntityConfig(VAppEntityConfigInfo[] entityConfig) {
     this.entityConfig=entityConfig;
   }
 
-  public void setAnnotation(String annotation)
-  {
+  public void setAnnotation(String annotation) {
     this.annotation=annotation;
   }
 
-  public void setInstanceUuid(String instanceUuid)
-  {
+  public void setInstanceUuid(String instanceUuid) {
     this.instanceUuid=instanceUuid;
   }
 
-  public void setManagedBy(ManagedByInfo managedBy)
-  {
+  public void setManagedBy(ManagedByInfo managedBy) {
     this.managedBy=managedBy;
   }
 }

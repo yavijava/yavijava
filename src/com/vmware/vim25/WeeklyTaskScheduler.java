@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,11 +30,12 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class WeeklyTaskScheduler extends DailyTaskScheduler
-{
+@SuppressWarnings("all")
+public class WeeklyTaskScheduler extends DailyTaskScheduler {
   public boolean sunday;
   public boolean monday;
   public boolean tuesday;
@@ -43,73 +44,59 @@ public class WeeklyTaskScheduler extends DailyTaskScheduler
   public boolean friday;
   public boolean saturday;
 
-  public boolean isSunday()
-  {
+  public boolean isSunday() {
     return this.sunday;
   }
 
-  public boolean isMonday()
-  {
+  public boolean isMonday() {
     return this.monday;
   }
 
-  public boolean isTuesday()
-  {
+  public boolean isTuesday() {
     return this.tuesday;
   }
 
-  public boolean isWednesday()
-  {
+  public boolean isWednesday() {
     return this.wednesday;
   }
 
-  public boolean isThursday()
-  {
+  public boolean isThursday() {
     return this.thursday;
   }
 
-  public boolean isFriday()
-  {
+  public boolean isFriday() {
     return this.friday;
   }
 
-  public boolean isSaturday()
-  {
+  public boolean isSaturday() {
     return this.saturday;
   }
 
-  public void setSunday(boolean sunday)
-  {
+  public void setSunday(boolean sunday) {
     this.sunday=sunday;
   }
 
-  public void setMonday(boolean monday)
-  {
+  public void setMonday(boolean monday) {
     this.monday=monday;
   }
 
-  public void setTuesday(boolean tuesday)
-  {
+  public void setTuesday(boolean tuesday) {
     this.tuesday=tuesday;
   }
 
-  public void setWednesday(boolean wednesday)
-  {
+  public void setWednesday(boolean wednesday) {
     this.wednesday=wednesday;
   }
 
-  public void setThursday(boolean thursday)
-  {
+  public void setThursday(boolean thursday) {
     this.thursday=thursday;
   }
 
-  public void setFriday(boolean friday)
-  {
+  public void setFriday(boolean friday) {
     this.friday=friday;
   }
 
-  public void setSaturday(boolean saturday)
-  {
+  public void setSaturday(boolean saturday) {
     this.saturday=saturday;
   }
 }

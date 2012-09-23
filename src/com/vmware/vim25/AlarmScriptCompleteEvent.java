@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,31 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class AlarmScriptCompleteEvent extends AlarmEvent
-{
+@SuppressWarnings("all")
+public class AlarmScriptCompleteEvent extends AlarmEvent {
   public ManagedEntityEventArgument entity;
   public String script;
 
-  public ManagedEntityEventArgument getEntity()
-  {
+  public ManagedEntityEventArgument getEntity() {
     return this.entity;
   }
 
-  public String getScript()
-  {
+  public String getScript() {
     return this.script;
   }
 
-  public void setEntity(ManagedEntityEventArgument entity)
-  {
+  public void setEntity(ManagedEntityEventArgument entity) {
     this.entity=entity;
   }
 
-  public void setScript(String script)
-  {
+  public void setScript(String script) {
     this.script=script;
   }
 }

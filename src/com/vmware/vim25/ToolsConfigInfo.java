@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,11 +30,12 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class ToolsConfigInfo extends DynamicData
-{
+@SuppressWarnings("all")
+public class ToolsConfigInfo extends DynamicData {
   public Integer toolsVersion;
   public Boolean afterPowerOn;
   public Boolean afterResume;
@@ -46,103 +47,83 @@ public class ToolsConfigInfo extends DynamicData
   public Boolean syncTimeWithHost;
   public ToolsConfigInfoToolsLastInstallInfo lastInstallInfo;
 
-  public Integer getToolsVersion()
-  {
+  public Integer getToolsVersion() {
     return this.toolsVersion;
   }
 
-  public Boolean getAfterPowerOn()
-  {
+  public Boolean getAfterPowerOn() {
     return this.afterPowerOn;
   }
 
-  public Boolean getAfterResume()
-  {
+  public Boolean getAfterResume() {
     return this.afterResume;
   }
 
-  public Boolean getBeforeGuestStandby()
-  {
+  public Boolean getBeforeGuestStandby() {
     return this.beforeGuestStandby;
   }
 
-  public Boolean getBeforeGuestShutdown()
-  {
+  public Boolean getBeforeGuestShutdown() {
     return this.beforeGuestShutdown;
   }
 
-  public Boolean getBeforeGuestReboot()
-  {
+  public Boolean getBeforeGuestReboot() {
     return this.beforeGuestReboot;
   }
 
-  public String getToolsUpgradePolicy()
-  {
+  public String getToolsUpgradePolicy() {
     return this.toolsUpgradePolicy;
   }
 
-  public String getPendingCustomization()
-  {
+  public String getPendingCustomization() {
     return this.pendingCustomization;
   }
 
-  public Boolean getSyncTimeWithHost()
-  {
+  public Boolean getSyncTimeWithHost() {
     return this.syncTimeWithHost;
   }
 
-  public ToolsConfigInfoToolsLastInstallInfo getLastInstallInfo()
-  {
+  public ToolsConfigInfoToolsLastInstallInfo getLastInstallInfo() {
     return this.lastInstallInfo;
   }
 
-  public void setToolsVersion(Integer toolsVersion)
-  {
+  public void setToolsVersion(Integer toolsVersion) {
     this.toolsVersion=toolsVersion;
   }
 
-  public void setAfterPowerOn(Boolean afterPowerOn)
-  {
+  public void setAfterPowerOn(Boolean afterPowerOn) {
     this.afterPowerOn=afterPowerOn;
   }
 
-  public void setAfterResume(Boolean afterResume)
-  {
+  public void setAfterResume(Boolean afterResume) {
     this.afterResume=afterResume;
   }
 
-  public void setBeforeGuestStandby(Boolean beforeGuestStandby)
-  {
+  public void setBeforeGuestStandby(Boolean beforeGuestStandby) {
     this.beforeGuestStandby=beforeGuestStandby;
   }
 
-  public void setBeforeGuestShutdown(Boolean beforeGuestShutdown)
-  {
+  public void setBeforeGuestShutdown(Boolean beforeGuestShutdown) {
     this.beforeGuestShutdown=beforeGuestShutdown;
   }
 
-  public void setBeforeGuestReboot(Boolean beforeGuestReboot)
-  {
+  public void setBeforeGuestReboot(Boolean beforeGuestReboot) {
     this.beforeGuestReboot=beforeGuestReboot;
   }
 
-  public void setToolsUpgradePolicy(String toolsUpgradePolicy)
-  {
+  public void setToolsUpgradePolicy(String toolsUpgradePolicy) {
     this.toolsUpgradePolicy=toolsUpgradePolicy;
   }
 
-  public void setPendingCustomization(String pendingCustomization)
-  {
+  public void setPendingCustomization(String pendingCustomization) {
     this.pendingCustomization=pendingCustomization;
   }
 
-  public void setSyncTimeWithHost(Boolean syncTimeWithHost)
-  {
+  public void setSyncTimeWithHost(Boolean syncTimeWithHost) {
     this.syncTimeWithHost=syncTimeWithHost;
   }
 
-  public void setLastInstallInfo(ToolsConfigInfoToolsLastInstallInfo lastInstallInfo)
-  {
+  public void setLastInstallInfo(ToolsConfigInfoToolsLastInstallInfo lastInstallInfo) {
     this.lastInstallInfo=lastInstallInfo;
   }
 }

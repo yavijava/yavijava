@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,64 +30,55 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class DVSNetworkResourcePoolConfigSpec extends DynamicData
-{
+@SuppressWarnings("all")
+public class DVSNetworkResourcePoolConfigSpec extends DynamicData {
   public String key;
   public String configVersion;
   public DVSNetworkResourcePoolAllocationInfo allocationInfo;
   public String name;
   public String description;
 
-  public String getKey()
-  {
+  public String getKey() {
     return this.key;
   }
 
-  public String getConfigVersion()
-  {
+  public String getConfigVersion() {
     return this.configVersion;
   }
 
-  public DVSNetworkResourcePoolAllocationInfo getAllocationInfo()
-  {
+  public DVSNetworkResourcePoolAllocationInfo getAllocationInfo() {
     return this.allocationInfo;
   }
 
-  public String getName()
-  {
+  public String getName() {
     return this.name;
   }
 
-  public String getDescription()
-  {
+  public String getDescription() {
     return this.description;
   }
 
-  public void setKey(String key)
-  {
+  public void setKey(String key) {
     this.key=key;
   }
 
-  public void setConfigVersion(String configVersion)
-  {
+  public void setConfigVersion(String configVersion) {
     this.configVersion=configVersion;
   }
 
-  public void setAllocationInfo(DVSNetworkResourcePoolAllocationInfo allocationInfo)
-  {
+  public void setAllocationInfo(DVSNetworkResourcePoolAllocationInfo allocationInfo) {
     this.allocationInfo=allocationInfo;
   }
 
-  public void setName(String name)
-  {
+  public void setName(String name) {
     this.name=name;
   }
 
-  public void setDescription(String description)
-  {
+  public void setDescription(String description) {
     this.description=description;
   }
 }

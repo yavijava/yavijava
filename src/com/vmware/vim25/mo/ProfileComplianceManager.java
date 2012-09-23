@@ -38,7 +38,7 @@ import com.vmware.vim25.RuntimeFault;
 /**
  * The managed object class corresponding to the one defined in VI SDK API reference.
  * @since 4.0
- * @author Steve JIN (sjin@vmware.com)
+ * @author Steve JIN (http://www.doublecloud.org)
  */
 public class ProfileComplianceManager extends ManagedObject 
 {

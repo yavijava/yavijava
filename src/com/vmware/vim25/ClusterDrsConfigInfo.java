@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,64 +30,55 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class ClusterDrsConfigInfo extends DynamicData
-{
+@SuppressWarnings("all")
+public class ClusterDrsConfigInfo extends DynamicData {
   public Boolean enabled;
   public Boolean enableVmBehaviorOverrides;
   public DrsBehavior defaultVmBehavior;
   public Integer vmotionRate;
   public OptionValue[] option;
 
-  public Boolean getEnabled()
-  {
+  public Boolean getEnabled() {
     return this.enabled;
   }
 
-  public Boolean getEnableVmBehaviorOverrides()
-  {
+  public Boolean getEnableVmBehaviorOverrides() {
     return this.enableVmBehaviorOverrides;
   }
 
-  public DrsBehavior getDefaultVmBehavior()
-  {
+  public DrsBehavior getDefaultVmBehavior() {
     return this.defaultVmBehavior;
   }
 
-  public Integer getVmotionRate()
-  {
+  public Integer getVmotionRate() {
     return this.vmotionRate;
   }
 
-  public OptionValue[] getOption()
-  {
+  public OptionValue[] getOption() {
     return this.option;
   }
 
-  public void setEnabled(Boolean enabled)
-  {
+  public void setEnabled(Boolean enabled) {
     this.enabled=enabled;
   }
 
-  public void setEnableVmBehaviorOverrides(Boolean enableVmBehaviorOverrides)
-  {
+  public void setEnableVmBehaviorOverrides(Boolean enableVmBehaviorOverrides) {
     this.enableVmBehaviorOverrides=enableVmBehaviorOverrides;
   }
 
-  public void setDefaultVmBehavior(DrsBehavior defaultVmBehavior)
-  {
+  public void setDefaultVmBehavior(DrsBehavior defaultVmBehavior) {
     this.defaultVmBehavior=defaultVmBehavior;
   }
 
-  public void setVmotionRate(Integer vmotionRate)
-  {
+  public void setVmotionRate(Integer vmotionRate) {
     this.vmotionRate=vmotionRate;
   }
 
-  public void setOption(OptionValue[] option)
-  {
+  public void setOption(OptionValue[] option) {
     this.option=option;
   }
 }

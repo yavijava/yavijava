@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,11 +30,12 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class HostInternetScsiHba extends HostHostBusAdapter
-{
+@SuppressWarnings("all")
+public class HostInternetScsiHba extends HostHostBusAdapter {
   public boolean isSoftwareBased;
   public Boolean canBeDisabled;
   public HostInternetScsiHbaNetworkBindingSupportType networkBindingSupport;
@@ -55,193 +56,155 @@ public class HostInternetScsiHba extends HostHostBusAdapter
   public Integer maxSpeedMb;
   public Integer currentSpeedMb;
 
-  public boolean isIsSoftwareBased()
-  {
+  public boolean isIsSoftwareBased() {
     return this.isSoftwareBased;
   }
 
-  public Boolean getCanBeDisabled()
-  {
+  public Boolean getCanBeDisabled() {
     return this.canBeDisabled;
   }
 
-  public HostInternetScsiHbaNetworkBindingSupportType getNetworkBindingSupport()
-  {
+  public HostInternetScsiHbaNetworkBindingSupportType getNetworkBindingSupport() {
     return this.networkBindingSupport;
   }
 
-  public HostInternetScsiHbaDiscoveryCapabilities getDiscoveryCapabilities()
-  {
+  public HostInternetScsiHbaDiscoveryCapabilities getDiscoveryCapabilities() {
     return this.discoveryCapabilities;
   }
 
-  public HostInternetScsiHbaDiscoveryProperties getDiscoveryProperties()
-  {
+  public HostInternetScsiHbaDiscoveryProperties getDiscoveryProperties() {
     return this.discoveryProperties;
   }
 
-  public HostInternetScsiHbaAuthenticationCapabilities getAuthenticationCapabilities()
-  {
+  public HostInternetScsiHbaAuthenticationCapabilities getAuthenticationCapabilities() {
     return this.authenticationCapabilities;
   }
 
-  public HostInternetScsiHbaAuthenticationProperties getAuthenticationProperties()
-  {
+  public HostInternetScsiHbaAuthenticationProperties getAuthenticationProperties() {
     return this.authenticationProperties;
   }
 
-  public HostInternetScsiHbaDigestCapabilities getDigestCapabilities()
-  {
+  public HostInternetScsiHbaDigestCapabilities getDigestCapabilities() {
     return this.digestCapabilities;
   }
 
-  public HostInternetScsiHbaDigestProperties getDigestProperties()
-  {
+  public HostInternetScsiHbaDigestProperties getDigestProperties() {
     return this.digestProperties;
   }
 
-  public HostInternetScsiHbaIPCapabilities getIpCapabilities()
-  {
+  public HostInternetScsiHbaIPCapabilities getIpCapabilities() {
     return this.ipCapabilities;
   }
 
-  public HostInternetScsiHbaIPProperties getIpProperties()
-  {
+  public HostInternetScsiHbaIPProperties getIpProperties() {
     return this.ipProperties;
   }
 
-  public OptionDef[] getSupportedAdvancedOptions()
-  {
+  public OptionDef[] getSupportedAdvancedOptions() {
     return this.supportedAdvancedOptions;
   }
 
-  public HostInternetScsiHbaParamValue[] getAdvancedOptions()
-  {
+  public HostInternetScsiHbaParamValue[] getAdvancedOptions() {
     return this.advancedOptions;
   }
 
-  public String getIScsiName()
-  {
+  public String getIScsiName() {
     return this.iScsiName;
   }
 
-  public String getIScsiAlias()
-  {
+  public String getIScsiAlias() {
     return this.iScsiAlias;
   }
 
-  public HostInternetScsiHbaSendTarget[] getConfiguredSendTarget()
-  {
+  public HostInternetScsiHbaSendTarget[] getConfiguredSendTarget() {
     return this.configuredSendTarget;
   }
 
-  public HostInternetScsiHbaStaticTarget[] getConfiguredStaticTarget()
-  {
+  public HostInternetScsiHbaStaticTarget[] getConfiguredStaticTarget() {
     return this.configuredStaticTarget;
   }
 
-  public Integer getMaxSpeedMb()
-  {
+  public Integer getMaxSpeedMb() {
     return this.maxSpeedMb;
   }
 
-  public Integer getCurrentSpeedMb()
-  {
+  public Integer getCurrentSpeedMb() {
     return this.currentSpeedMb;
   }
 
-  public void setIsSoftwareBased(boolean isSoftwareBased)
-  {
+  public void setIsSoftwareBased(boolean isSoftwareBased) {
     this.isSoftwareBased=isSoftwareBased;
   }
 
-  public void setCanBeDisabled(Boolean canBeDisabled)
-  {
+  public void setCanBeDisabled(Boolean canBeDisabled) {
     this.canBeDisabled=canBeDisabled;
   }
 
-  public void setNetworkBindingSupport(HostInternetScsiHbaNetworkBindingSupportType networkBindingSupport)
-  {
+  public void setNetworkBindingSupport(HostInternetScsiHbaNetworkBindingSupportType networkBindingSupport) {
     this.networkBindingSupport=networkBindingSupport;
   }
 
-  public void setDiscoveryCapabilities(HostInternetScsiHbaDiscoveryCapabilities discoveryCapabilities)
-  {
+  public void setDiscoveryCapabilities(HostInternetScsiHbaDiscoveryCapabilities discoveryCapabilities) {
     this.discoveryCapabilities=discoveryCapabilities;
   }
 
-  public void setDiscoveryProperties(HostInternetScsiHbaDiscoveryProperties discoveryProperties)
-  {
+  public void setDiscoveryProperties(HostInternetScsiHbaDiscoveryProperties discoveryProperties) {
     this.discoveryProperties=discoveryProperties;
   }
 
-  public void setAuthenticationCapabilities(HostInternetScsiHbaAuthenticationCapabilities authenticationCapabilities)
-  {
+  public void setAuthenticationCapabilities(HostInternetScsiHbaAuthenticationCapabilities authenticationCapabilities) {
     this.authenticationCapabilities=authenticationCapabilities;
   }
 
-  public void setAuthenticationProperties(HostInternetScsiHbaAuthenticationProperties authenticationProperties)
-  {
+  public void setAuthenticationProperties(HostInternetScsiHbaAuthenticationProperties authenticationProperties) {
     this.authenticationProperties=authenticationProperties;
   }
 
-  public void setDigestCapabilities(HostInternetScsiHbaDigestCapabilities digestCapabilities)
-  {
+  public void setDigestCapabilities(HostInternetScsiHbaDigestCapabilities digestCapabilities) {
     this.digestCapabilities=digestCapabilities;
   }
 
-  public void setDigestProperties(HostInternetScsiHbaDigestProperties digestProperties)
-  {
+  public void setDigestProperties(HostInternetScsiHbaDigestProperties digestProperties) {
     this.digestProperties=digestProperties;
   }
 
-  public void setIpCapabilities(HostInternetScsiHbaIPCapabilities ipCapabilities)
-  {
+  public void setIpCapabilities(HostInternetScsiHbaIPCapabilities ipCapabilities) {
     this.ipCapabilities=ipCapabilities;
   }
 
-  public void setIpProperties(HostInternetScsiHbaIPProperties ipProperties)
-  {
+  public void setIpProperties(HostInternetScsiHbaIPProperties ipProperties) {
     this.ipProperties=ipProperties;
   }
 
-  public void setSupportedAdvancedOptions(OptionDef[] supportedAdvancedOptions)
-  {
+  public void setSupportedAdvancedOptions(OptionDef[] supportedAdvancedOptions) {
     this.supportedAdvancedOptions=supportedAdvancedOptions;
   }
 
-  public void setAdvancedOptions(HostInternetScsiHbaParamValue[] advancedOptions)
-  {
+  public void setAdvancedOptions(HostInternetScsiHbaParamValue[] advancedOptions) {
     this.advancedOptions=advancedOptions;
   }
 
-  public void setIScsiName(String iScsiName)
-  {
+  public void setIScsiName(String iScsiName) {
     this.iScsiName=iScsiName;
   }
 
-  public void setIScsiAlias(String iScsiAlias)
-  {
+  public void setIScsiAlias(String iScsiAlias) {
     this.iScsiAlias=iScsiAlias;
   }
 
-  public void setConfiguredSendTarget(HostInternetScsiHbaSendTarget[] configuredSendTarget)
-  {
+  public void setConfiguredSendTarget(HostInternetScsiHbaSendTarget[] configuredSendTarget) {
     this.configuredSendTarget=configuredSendTarget;
   }
 
-  public void setConfiguredStaticTarget(HostInternetScsiHbaStaticTarget[] configuredStaticTarget)
-  {
+  public void setConfiguredStaticTarget(HostInternetScsiHbaStaticTarget[] configuredStaticTarget) {
     this.configuredStaticTarget=configuredStaticTarget;
   }
 
-  public void setMaxSpeedMb(Integer maxSpeedMb)
-  {
+  public void setMaxSpeedMb(Integer maxSpeedMb) {
     this.maxSpeedMb=maxSpeedMb;
   }
 
-  public void setCurrentSpeedMb(Integer currentSpeedMb)
-  {
+  public void setCurrentSpeedMb(Integer currentSpeedMb) {
     this.currentSpeedMb=currentSpeedMb;
   }
 }

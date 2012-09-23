@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,42 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class OvfConsumerPowerOnFault extends InvalidState
-{
+@SuppressWarnings("all")
+public class OvfConsumerPowerOnFault extends InvalidState {
   public String extensionKey;
   public String extensionName;
   public String description;
 
-  public String getExtensionKey()
-  {
+  public String getExtensionKey() {
     return this.extensionKey;
   }
 
-  public String getExtensionName()
-  {
+  public String getExtensionName() {
     return this.extensionName;
   }
 
-  public String getDescription()
-  {
+  public String getDescription() {
     return this.description;
   }
 
-  public void setExtensionKey(String extensionKey)
-  {
+  public void setExtensionKey(String extensionKey) {
     this.extensionKey=extensionKey;
   }
 
-  public void setExtensionName(String extensionName)
-  {
+  public void setExtensionName(String extensionName) {
     this.extensionName=extensionName;
   }
 
-  public void setDescription(String description)
-  {
+  public void setDescription(String description) {
     this.description=description;
   }
 }

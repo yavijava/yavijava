@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,42 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class EventDescription extends DynamicData
-{
+@SuppressWarnings("all")
+public class EventDescription extends DynamicData {
   public ElementDescription[] category;
   public EventDescriptionEventDetail[] eventInfo;
   public EnumDescription[] enumeratedTypes;
 
-  public ElementDescription[] getCategory()
-  {
+  public ElementDescription[] getCategory() {
     return this.category;
   }
 
-  public EventDescriptionEventDetail[] getEventInfo()
-  {
+  public EventDescriptionEventDetail[] getEventInfo() {
     return this.eventInfo;
   }
 
-  public EnumDescription[] getEnumeratedTypes()
-  {
+  public EnumDescription[] getEnumeratedTypes() {
     return this.enumeratedTypes;
   }
 
-  public void setCategory(ElementDescription[] category)
-  {
+  public void setCategory(ElementDescription[] category) {
     this.category=category;
   }
 
-  public void setEventInfo(EventDescriptionEventDetail[] eventInfo)
-  {
+  public void setEventInfo(EventDescriptionEventDetail[] eventInfo) {
     this.eventInfo=eventInfo;
   }
 
-  public void setEnumeratedTypes(EnumDescription[] enumeratedTypes)
-  {
+  public void setEnumeratedTypes(EnumDescription[] enumeratedTypes) {
     this.enumeratedTypes=enumeratedTypes;
   }
 }

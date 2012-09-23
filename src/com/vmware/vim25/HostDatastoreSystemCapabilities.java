@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,53 +30,46 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class HostDatastoreSystemCapabilities extends DynamicData
-{
+@SuppressWarnings("all")
+public class HostDatastoreSystemCapabilities extends DynamicData {
   public boolean nfsMountCreationRequired;
   public boolean nfsMountCreationSupported;
   public boolean localDatastoreSupported;
   public Boolean vmfsExtentExpansionSupported;
 
-  public boolean isNfsMountCreationRequired()
-  {
+  public boolean isNfsMountCreationRequired() {
     return this.nfsMountCreationRequired;
   }
 
-  public boolean isNfsMountCreationSupported()
-  {
+  public boolean isNfsMountCreationSupported() {
     return this.nfsMountCreationSupported;
   }
 
-  public boolean isLocalDatastoreSupported()
-  {
+  public boolean isLocalDatastoreSupported() {
     return this.localDatastoreSupported;
   }
 
-  public Boolean getVmfsExtentExpansionSupported()
-  {
+  public Boolean getVmfsExtentExpansionSupported() {
     return this.vmfsExtentExpansionSupported;
   }
 
-  public void setNfsMountCreationRequired(boolean nfsMountCreationRequired)
-  {
+  public void setNfsMountCreationRequired(boolean nfsMountCreationRequired) {
     this.nfsMountCreationRequired=nfsMountCreationRequired;
   }
 
-  public void setNfsMountCreationSupported(boolean nfsMountCreationSupported)
-  {
+  public void setNfsMountCreationSupported(boolean nfsMountCreationSupported) {
     this.nfsMountCreationSupported=nfsMountCreationSupported;
   }
 
-  public void setLocalDatastoreSupported(boolean localDatastoreSupported)
-  {
+  public void setLocalDatastoreSupported(boolean localDatastoreSupported) {
     this.localDatastoreSupported=localDatastoreSupported;
   }
 
-  public void setVmfsExtentExpansionSupported(Boolean vmfsExtentExpansionSupported)
-  {
+  public void setVmfsExtentExpansionSupported(Boolean vmfsExtentExpansionSupported) {
     this.vmfsExtentExpansionSupported=vmfsExtentExpansionSupported;
   }
 }

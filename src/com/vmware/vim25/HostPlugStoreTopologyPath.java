@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,11 +30,12 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class HostPlugStoreTopologyPath extends DynamicData
-{
+@SuppressWarnings("all")
+public class HostPlugStoreTopologyPath extends DynamicData {
   public String key;
   public String name;
   public Integer channelNumber;
@@ -44,83 +45,67 @@ public class HostPlugStoreTopologyPath extends DynamicData
   public String target;
   public String device;
 
-  public String getKey()
-  {
+  public String getKey() {
     return this.key;
   }
 
-  public String getName()
-  {
+  public String getName() {
     return this.name;
   }
 
-  public Integer getChannelNumber()
-  {
+  public Integer getChannelNumber() {
     return this.channelNumber;
   }
 
-  public Integer getTargetNumber()
-  {
+  public Integer getTargetNumber() {
     return this.targetNumber;
   }
 
-  public Integer getLunNumber()
-  {
+  public Integer getLunNumber() {
     return this.lunNumber;
   }
 
-  public String getAdapter()
-  {
+  public String getAdapter() {
     return this.adapter;
   }
 
-  public String getTarget()
-  {
+  public String getTarget() {
     return this.target;
   }
 
-  public String getDevice()
-  {
+  public String getDevice() {
     return this.device;
   }
 
-  public void setKey(String key)
-  {
+  public void setKey(String key) {
     this.key=key;
   }
 
-  public void setName(String name)
-  {
+  public void setName(String name) {
     this.name=name;
   }
 
-  public void setChannelNumber(Integer channelNumber)
-  {
+  public void setChannelNumber(Integer channelNumber) {
     this.channelNumber=channelNumber;
   }
 
-  public void setTargetNumber(Integer targetNumber)
-  {
+  public void setTargetNumber(Integer targetNumber) {
     this.targetNumber=targetNumber;
   }
 
-  public void setLunNumber(Integer lunNumber)
-  {
+  public void setLunNumber(Integer lunNumber) {
     this.lunNumber=lunNumber;
   }
 
-  public void setAdapter(String adapter)
-  {
+  public void setAdapter(String adapter) {
     this.adapter=adapter;
   }
 
-  public void setTarget(String target)
-  {
+  public void setTarget(String target) {
     this.target=target;
   }
 
-  public void setDevice(String device)
-  {
+  public void setDevice(String device) {
     this.device=device;
   }
 }

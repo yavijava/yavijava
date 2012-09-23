@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,31 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class ReplicationInvalidOptions extends ReplicationFault
-{
+@SuppressWarnings("all")
+public class ReplicationInvalidOptions extends ReplicationFault {
   public String options;
   public ManagedObjectReference entity;
 
-  public String getOptions()
-  {
+  public String getOptions() {
     return this.options;
   }
 
-  public ManagedObjectReference getEntity()
-  {
+  public ManagedObjectReference getEntity() {
     return this.entity;
   }
 
-  public void setOptions(String options)
-  {
+  public void setOptions(String options) {
     this.options=options;
   }
 
-  public void setEntity(ManagedObjectReference entity)
-  {
+  public void setEntity(ManagedObjectReference entity) {
     this.entity=entity;
   }
 }

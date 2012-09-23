@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,64 +30,55 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class EventAlarmExpression extends AlarmExpression
-{
+@SuppressWarnings("all")
+public class EventAlarmExpression extends AlarmExpression {
   public EventAlarmExpressionComparison[] comparisons;
   public String eventType;
   public String eventTypeId;
   public String objectType;
   public ManagedEntityStatus status;
 
-  public EventAlarmExpressionComparison[] getComparisons()
-  {
+  public EventAlarmExpressionComparison[] getComparisons() {
     return this.comparisons;
   }
 
-  public String getEventType()
-  {
+  public String getEventType() {
     return this.eventType;
   }
 
-  public String getEventTypeId()
-  {
+  public String getEventTypeId() {
     return this.eventTypeId;
   }
 
-  public String getObjectType()
-  {
+  public String getObjectType() {
     return this.objectType;
   }
 
-  public ManagedEntityStatus getStatus()
-  {
+  public ManagedEntityStatus getStatus() {
     return this.status;
   }
 
-  public void setComparisons(EventAlarmExpressionComparison[] comparisons)
-  {
+  public void setComparisons(EventAlarmExpressionComparison[] comparisons) {
     this.comparisons=comparisons;
   }
 
-  public void setEventType(String eventType)
-  {
+  public void setEventType(String eventType) {
     this.eventType=eventType;
   }
 
-  public void setEventTypeId(String eventTypeId)
-  {
+  public void setEventTypeId(String eventTypeId) {
     this.eventTypeId=eventTypeId;
   }
 
-  public void setObjectType(String objectType)
-  {
+  public void setObjectType(String objectType) {
     this.objectType=objectType;
   }
 
-  public void setStatus(ManagedEntityStatus status)
-  {
+  public void setStatus(ManagedEntityStatus status) {
     this.status=status;
   }
 }

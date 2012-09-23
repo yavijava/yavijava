@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,42 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class FloatOption extends OptionType
-{
+@SuppressWarnings("all")
+public class FloatOption extends OptionType {
   public float min;
   public float max;
   public float defaultValue;
 
-  public float getMin()
-  {
+  public float getMin() {
     return this.min;
   }
 
-  public float getMax()
-  {
+  public float getMax() {
     return this.max;
   }
 
-  public float getDefaultValue()
-  {
+  public float getDefaultValue() {
     return this.defaultValue;
   }
 
-  public void setMin(float min)
-  {
+  public void setMin(float min) {
     this.min=min;
   }
 
-  public void setMax(float max)
-  {
+  public void setMax(float max) {
     this.max=max;
   }
 
-  public void setDefaultValue(float defaultValue)
-  {
+  public void setDefaultValue(float defaultValue) {
     this.defaultValue=defaultValue;
   }
 }

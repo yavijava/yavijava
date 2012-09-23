@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,11 +30,12 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class HostNicTeamingPolicy extends DynamicData
-{
+@SuppressWarnings("all")
+public class HostNicTeamingPolicy extends DynamicData {
   public String policy;
   public Boolean reversePolicy;
   public Boolean notifySwitches;
@@ -42,63 +43,51 @@ public class HostNicTeamingPolicy extends DynamicData
   public HostNicFailureCriteria failureCriteria;
   public HostNicOrderPolicy nicOrder;
 
-  public String getPolicy()
-  {
+  public String getPolicy() {
     return this.policy;
   }
 
-  public Boolean getReversePolicy()
-  {
+  public Boolean getReversePolicy() {
     return this.reversePolicy;
   }
 
-  public Boolean getNotifySwitches()
-  {
+  public Boolean getNotifySwitches() {
     return this.notifySwitches;
   }
 
-  public Boolean getRollingOrder()
-  {
+  public Boolean getRollingOrder() {
     return this.rollingOrder;
   }
 
-  public HostNicFailureCriteria getFailureCriteria()
-  {
+  public HostNicFailureCriteria getFailureCriteria() {
     return this.failureCriteria;
   }
 
-  public HostNicOrderPolicy getNicOrder()
-  {
+  public HostNicOrderPolicy getNicOrder() {
     return this.nicOrder;
   }
 
-  public void setPolicy(String policy)
-  {
+  public void setPolicy(String policy) {
     this.policy=policy;
   }
 
-  public void setReversePolicy(Boolean reversePolicy)
-  {
+  public void setReversePolicy(Boolean reversePolicy) {
     this.reversePolicy=reversePolicy;
   }
 
-  public void setNotifySwitches(Boolean notifySwitches)
-  {
+  public void setNotifySwitches(Boolean notifySwitches) {
     this.notifySwitches=notifySwitches;
   }
 
-  public void setRollingOrder(Boolean rollingOrder)
-  {
+  public void setRollingOrder(Boolean rollingOrder) {
     this.rollingOrder=rollingOrder;
   }
 
-  public void setFailureCriteria(HostNicFailureCriteria failureCriteria)
-  {
+  public void setFailureCriteria(HostNicFailureCriteria failureCriteria) {
     this.failureCriteria=failureCriteria;
   }
 
-  public void setNicOrder(HostNicOrderPolicy nicOrder)
-  {
+  public void setNicOrder(HostNicOrderPolicy nicOrder) {
     this.nicOrder=nicOrder;
   }
 }

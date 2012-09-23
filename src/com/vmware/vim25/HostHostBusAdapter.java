@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,11 +30,12 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class HostHostBusAdapter extends DynamicData
-{
+@SuppressWarnings("all")
+public class HostHostBusAdapter extends DynamicData {
   public String key;
   public String device;
   public int bus;
@@ -43,73 +44,59 @@ public class HostHostBusAdapter extends DynamicData
   public String driver;
   public String pci;
 
-  public String getKey()
-  {
+  public String getKey() {
     return this.key;
   }
 
-  public String getDevice()
-  {
+  public String getDevice() {
     return this.device;
   }
 
-  public int getBus()
-  {
+  public int getBus() {
     return this.bus;
   }
 
-  public String getStatus()
-  {
+  public String getStatus() {
     return this.status;
   }
 
-  public String getModel()
-  {
+  public String getModel() {
     return this.model;
   }
 
-  public String getDriver()
-  {
+  public String getDriver() {
     return this.driver;
   }
 
-  public String getPci()
-  {
+  public String getPci() {
     return this.pci;
   }
 
-  public void setKey(String key)
-  {
+  public void setKey(String key) {
     this.key=key;
   }
 
-  public void setDevice(String device)
-  {
+  public void setDevice(String device) {
     this.device=device;
   }
 
-  public void setBus(int bus)
-  {
+  public void setBus(int bus) {
     this.bus=bus;
   }
 
-  public void setStatus(String status)
-  {
+  public void setStatus(String status) {
     this.status=status;
   }
 
-  public void setModel(String model)
-  {
+  public void setModel(String model) {
     this.model=model;
   }
 
-  public void setDriver(String driver)
-  {
+  public void setDriver(String driver) {
     this.driver=driver;
   }
 
-  public void setPci(String pci)
-  {
+  public void setPci(String pci) {
     this.pci=pci;
   }
 }

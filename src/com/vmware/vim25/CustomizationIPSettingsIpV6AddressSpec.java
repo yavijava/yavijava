@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,31 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class CustomizationIPSettingsIpV6AddressSpec extends DynamicData
-{
+@SuppressWarnings("all")
+public class CustomizationIPSettingsIpV6AddressSpec extends DynamicData {
   public CustomizationIpV6Generator[] ip;
   public String[] gateway;
 
-  public CustomizationIpV6Generator[] getIp()
-  {
+  public CustomizationIpV6Generator[] getIp() {
     return this.ip;
   }
 
-  public String[] getGateway()
-  {
+  public String[] getGateway() {
     return this.gateway;
   }
 
-  public void setIp(CustomizationIpV6Generator[] ip)
-  {
+  public void setIp(CustomizationIpV6Generator[] ip) {
     this.ip=ip;
   }
 
-  public void setGateway(String[] gateway)
-  {
+  public void setGateway(String[] gateway) {
     this.gateway=gateway;
   }
 }

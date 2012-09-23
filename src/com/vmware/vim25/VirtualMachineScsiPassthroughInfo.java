@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,42 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class VirtualMachineScsiPassthroughInfo extends VirtualMachineTargetInfo
-{
+@SuppressWarnings("all")
+public class VirtualMachineScsiPassthroughInfo extends VirtualMachineTargetInfo {
   public String scsiClass;
   public String vendor;
   public int physicalUnitNumber;
 
-  public String getScsiClass()
-  {
+  public String getScsiClass() {
     return this.scsiClass;
   }
 
-  public String getVendor()
-  {
+  public String getVendor() {
     return this.vendor;
   }
 
-  public int getPhysicalUnitNumber()
-  {
+  public int getPhysicalUnitNumber() {
     return this.physicalUnitNumber;
   }
 
-  public void setScsiClass(String scsiClass)
-  {
+  public void setScsiClass(String scsiClass) {
     this.scsiClass=scsiClass;
   }
 
-  public void setVendor(String vendor)
-  {
+  public void setVendor(String vendor) {
     this.vendor=vendor;
   }
 
-  public void setPhysicalUnitNumber(int physicalUnitNumber)
-  {
+  public void setPhysicalUnitNumber(int physicalUnitNumber) {
     this.physicalUnitNumber=physicalUnitNumber;
   }
 }

@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,11 +30,12 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class ClusterVmToolsMonitoringSettings extends DynamicData
-{
+@SuppressWarnings("all")
+public class ClusterVmToolsMonitoringSettings extends DynamicData {
   public Boolean enabled;
   public String vmMonitoring;
   public Boolean clusterSettings;
@@ -43,73 +44,59 @@ public class ClusterVmToolsMonitoringSettings extends DynamicData
   public Integer maxFailures;
   public Integer maxFailureWindow;
 
-  public Boolean getEnabled()
-  {
+  public Boolean getEnabled() {
     return this.enabled;
   }
 
-  public String getVmMonitoring()
-  {
+  public String getVmMonitoring() {
     return this.vmMonitoring;
   }
 
-  public Boolean getClusterSettings()
-  {
+  public Boolean getClusterSettings() {
     return this.clusterSettings;
   }
 
-  public Integer getFailureInterval()
-  {
+  public Integer getFailureInterval() {
     return this.failureInterval;
   }
 
-  public Integer getMinUpTime()
-  {
+  public Integer getMinUpTime() {
     return this.minUpTime;
   }
 
-  public Integer getMaxFailures()
-  {
+  public Integer getMaxFailures() {
     return this.maxFailures;
   }
 
-  public Integer getMaxFailureWindow()
-  {
+  public Integer getMaxFailureWindow() {
     return this.maxFailureWindow;
   }
 
-  public void setEnabled(Boolean enabled)
-  {
+  public void setEnabled(Boolean enabled) {
     this.enabled=enabled;
   }
 
-  public void setVmMonitoring(String vmMonitoring)
-  {
+  public void setVmMonitoring(String vmMonitoring) {
     this.vmMonitoring=vmMonitoring;
   }
 
-  public void setClusterSettings(Boolean clusterSettings)
-  {
+  public void setClusterSettings(Boolean clusterSettings) {
     this.clusterSettings=clusterSettings;
   }
 
-  public void setFailureInterval(Integer failureInterval)
-  {
+  public void setFailureInterval(Integer failureInterval) {
     this.failureInterval=failureInterval;
   }
 
-  public void setMinUpTime(Integer minUpTime)
-  {
+  public void setMinUpTime(Integer minUpTime) {
     this.minUpTime=minUpTime;
   }
 
-  public void setMaxFailures(Integer maxFailures)
-  {
+  public void setMaxFailures(Integer maxFailures) {
     this.maxFailures=maxFailures;
   }
 
-  public void setMaxFailureWindow(Integer maxFailureWindow)
-  {
+  public void setMaxFailureWindow(Integer maxFailureWindow) {
     this.maxFailureWindow=maxFailureWindow;
   }
 }

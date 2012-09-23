@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,42 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class ResourceNotAvailable extends VimFault
-{
+@SuppressWarnings("all")
+public class ResourceNotAvailable extends VimFault {
   public String containerType;
   public String containerName;
   public String type;
 
-  public String getContainerType()
-  {
+  public String getContainerType() {
     return this.containerType;
   }
 
-  public String getContainerName()
-  {
+  public String getContainerName() {
     return this.containerName;
   }
 
-  public String getType()
-  {
+  public String getType() {
     return this.type;
   }
 
-  public void setContainerType(String containerType)
-  {
+  public void setContainerType(String containerType) {
     this.containerType=containerType;
   }
 
-  public void setContainerName(String containerName)
-  {
+  public void setContainerName(String containerName) {
     this.containerName=containerName;
   }
 
-  public void setType(String type)
-  {
+  public void setType(String type) {
     this.type=type;
   }
 }

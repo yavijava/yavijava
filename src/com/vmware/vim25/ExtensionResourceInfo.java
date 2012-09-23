@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,42 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class ExtensionResourceInfo extends DynamicData
-{
+@SuppressWarnings("all")
+public class ExtensionResourceInfo extends DynamicData {
   public String locale;
   public String module;
   public KeyValue[] data;
 
-  public String getLocale()
-  {
+  public String getLocale() {
     return this.locale;
   }
 
-  public String getModule()
-  {
+  public String getModule() {
     return this.module;
   }
 
-  public KeyValue[] getData()
-  {
+  public KeyValue[] getData() {
     return this.data;
   }
 
-  public void setLocale(String locale)
-  {
+  public void setLocale(String locale) {
     this.locale=locale;
   }
 
-  public void setModule(String module)
-  {
+  public void setModule(String module) {
     this.module=module;
   }
 
-  public void setData(KeyValue[] data)
-  {
+  public void setData(KeyValue[] data) {
     this.data=data;
   }
 }

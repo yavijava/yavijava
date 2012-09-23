@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -31,11 +31,12 @@ package com.vmware.vim25;
 import java.util.Calendar;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class UserSession extends DynamicData
-{
+@SuppressWarnings("all")
+public class UserSession extends DynamicData {
   public String key;
   public String userName;
   public String fullName;
@@ -44,84 +45,95 @@ public class UserSession extends DynamicData
   public String locale;
   public String messageLocale;
   public Boolean extensionSession;
+  public String ipAddress;
+  public String userAgent;
+  public Long callCount;
 
-  public String getKey()
-  {
+  public String getKey() {
     return this.key;
   }
 
-  public String getUserName()
-  {
+  public String getUserName() {
     return this.userName;
   }
 
-  public String getFullName()
-  {
+  public String getFullName() {
     return this.fullName;
   }
 
-  public Calendar getLoginTime()
-  {
+  public Calendar getLoginTime() {
     return this.loginTime;
   }
 
-  public Calendar getLastActiveTime()
-  {
+  public Calendar getLastActiveTime() {
     return this.lastActiveTime;
   }
 
-  public String getLocale()
-  {
+  public String getLocale() {
     return this.locale;
   }
 
-  public String getMessageLocale()
-  {
+  public String getMessageLocale() {
     return this.messageLocale;
   }
 
-  public Boolean getExtensionSession()
-  {
+  public Boolean getExtensionSession() {
     return this.extensionSession;
   }
 
-  public void setKey(String key)
-  {
+  public String getIpAddress() {
+    return this.ipAddress;
+  }
+
+  public String getUserAgent() {
+    return this.userAgent;
+  }
+
+  public Long getCallCount() {
+    return this.callCount;
+  }
+
+  public void setKey(String key) {
     this.key=key;
   }
 
-  public void setUserName(String userName)
-  {
+  public void setUserName(String userName) {
     this.userName=userName;
   }
 
-  public void setFullName(String fullName)
-  {
+  public void setFullName(String fullName) {
     this.fullName=fullName;
   }
 
-  public void setLoginTime(Calendar loginTime)
-  {
+  public void setLoginTime(Calendar loginTime) {
     this.loginTime=loginTime;
   }
 
-  public void setLastActiveTime(Calendar lastActiveTime)
-  {
+  public void setLastActiveTime(Calendar lastActiveTime) {
     this.lastActiveTime=lastActiveTime;
   }
 
-  public void setLocale(String locale)
-  {
+  public void setLocale(String locale) {
     this.locale=locale;
   }
 
-  public void setMessageLocale(String messageLocale)
-  {
+  public void setMessageLocale(String messageLocale) {
     this.messageLocale=messageLocale;
   }
 
-  public void setExtensionSession(Boolean extensionSession)
-  {
+  public void setExtensionSession(Boolean extensionSession) {
     this.extensionSession=extensionSession;
+  }
+
+  public void setIpAddress(String ipAddress) {
+    this.ipAddress=ipAddress;
+  }
+
+  public void setUserAgent(String userAgent) {
+    this.userAgent=userAgent;
+  }
+
+  public void setCallCount(Long callCount) {
+    this.callCount=callCount;
   }
 }

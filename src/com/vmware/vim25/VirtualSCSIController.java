@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,42 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class VirtualSCSIController extends VirtualController
-{
+@SuppressWarnings("all")
+public class VirtualSCSIController extends VirtualController {
   public Boolean hotAddRemove;
   public VirtualSCSISharing sharedBus;
   public Integer scsiCtlrUnitNumber;
 
-  public Boolean getHotAddRemove()
-  {
+  public Boolean getHotAddRemove() {
     return this.hotAddRemove;
   }
 
-  public VirtualSCSISharing getSharedBus()
-  {
+  public VirtualSCSISharing getSharedBus() {
     return this.sharedBus;
   }
 
-  public Integer getScsiCtlrUnitNumber()
-  {
+  public Integer getScsiCtlrUnitNumber() {
     return this.scsiCtlrUnitNumber;
   }
 
-  public void setHotAddRemove(Boolean hotAddRemove)
-  {
+  public void setHotAddRemove(Boolean hotAddRemove) {
     this.hotAddRemove=hotAddRemove;
   }
 
-  public void setSharedBus(VirtualSCSISharing sharedBus)
-  {
+  public void setSharedBus(VirtualSCSISharing sharedBus) {
     this.sharedBus=sharedBus;
   }
 
-  public void setScsiCtlrUnitNumber(Integer scsiCtlrUnitNumber)
-  {
+  public void setScsiCtlrUnitNumber(Integer scsiCtlrUnitNumber) {
     this.scsiCtlrUnitNumber=scsiCtlrUnitNumber;
   }
 }

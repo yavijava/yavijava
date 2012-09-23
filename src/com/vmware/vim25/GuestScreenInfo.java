@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,31 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class GuestScreenInfo extends DynamicData
-{
+@SuppressWarnings("all")
+public class GuestScreenInfo extends DynamicData {
   public int width;
   public int height;
 
-  public int getWidth()
-  {
+  public int getWidth() {
     return this.width;
   }
 
-  public int getHeight()
-  {
+  public int getHeight() {
     return this.height;
   }
 
-  public void setWidth(int width)
-  {
+  public void setWidth(int width) {
     this.width=width;
   }
 
-  public void setHeight(int height)
-  {
+  public void setHeight(int height) {
     this.height=height;
   }
 }

@@ -1,4 +1,5 @@
 /*================================================================================
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 Copyright (c) 2008 VMware, Inc. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
@@ -27,25 +28,26 @@ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
 
-/* **********************************************************
- * Copyright 2007 VMware, Inc.  All rights reserved. 
- * -- VMware Confidential
- * **********************************************************/
 package com.vmware.vim25.mo;
 
 import java.rmi.RemoteException;
 
 import com.vmware.vim25.Extension;
 import com.vmware.vim25.ExtensionClientInfo;
+import com.vmware.vim25.ExtensionManagerIpAllocationUsage;
 import com.vmware.vim25.ExtensionServerInfo;
+import com.vmware.vim25.InvalidLocale;
+import com.vmware.vim25.InvalidLogin;
 import com.vmware.vim25.ManagedObjectReference;
+import com.vmware.vim25.NoClientCertificate;
 import com.vmware.vim25.NotFound;
 import com.vmware.vim25.RuntimeFault;
+import com.vmware.vim25.UserSession;
 import com.vmware.vim25.mo.util.MorUtil;
 
 /**
  * The managed object class corresponding to the one defined in VI SDK API reference.
- * @author Steve JIN (sjin@vmware.com)
+ * @author Steve JIN (http://www.doublecloud.org)
  */
 
 public class ExtensionManager extends ManagedObject
@@ -66,6 +68,12 @@ public class ExtensionManager extends ManagedObject
 		return (Extension[])getCurrentProperty("extensionList");
 	}
 
+	/** @since SDK5.1 */
+	public ExtensionManagerIpAllocationUsage[] queryExtensionIpAllocationUsage(String[] extensionKeys) throws RuntimeFault, RemoteException
+	{
+	    return getVimService().queryExtensionIpAllocationUsage(getMOR(), extensionKeys);
+	}
+	
 	/**
 	 * @since SDK5.0
 	 */

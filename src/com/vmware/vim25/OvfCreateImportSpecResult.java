@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,53 +30,46 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class OvfCreateImportSpecResult extends DynamicData
-{
+@SuppressWarnings("all")
+public class OvfCreateImportSpecResult extends DynamicData {
   public ImportSpec importSpec;
   public OvfFileItem[] fileItem;
   public LocalizedMethodFault[] warning;
   public LocalizedMethodFault[] error;
 
-  public ImportSpec getImportSpec()
-  {
+  public ImportSpec getImportSpec() {
     return this.importSpec;
   }
 
-  public OvfFileItem[] getFileItem()
-  {
+  public OvfFileItem[] getFileItem() {
     return this.fileItem;
   }
 
-  public LocalizedMethodFault[] getWarning()
-  {
+  public LocalizedMethodFault[] getWarning() {
     return this.warning;
   }
 
-  public LocalizedMethodFault[] getError()
-  {
+  public LocalizedMethodFault[] getError() {
     return this.error;
   }
 
-  public void setImportSpec(ImportSpec importSpec)
-  {
+  public void setImportSpec(ImportSpec importSpec) {
     this.importSpec=importSpec;
   }
 
-  public void setFileItem(OvfFileItem[] fileItem)
-  {
+  public void setFileItem(OvfFileItem[] fileItem) {
     this.fileItem=fileItem;
   }
 
-  public void setWarning(LocalizedMethodFault[] warning)
-  {
+  public void setWarning(LocalizedMethodFault[] warning) {
     this.warning=warning;
   }
 
-  public void setError(LocalizedMethodFault[] error)
-  {
+  public void setError(LocalizedMethodFault[] error) {
     this.error=error;
   }
 }

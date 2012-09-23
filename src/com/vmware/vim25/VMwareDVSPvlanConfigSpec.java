@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,31 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class VMwareDVSPvlanConfigSpec extends DynamicData
-{
+@SuppressWarnings("all")
+public class VMwareDVSPvlanConfigSpec extends DynamicData {
   public VMwareDVSPvlanMapEntry pvlanEntry;
   public String operation;
 
-  public VMwareDVSPvlanMapEntry getPvlanEntry()
-  {
+  public VMwareDVSPvlanMapEntry getPvlanEntry() {
     return this.pvlanEntry;
   }
 
-  public String getOperation()
-  {
+  public String getOperation() {
     return this.operation;
   }
 
-  public void setPvlanEntry(VMwareDVSPvlanMapEntry pvlanEntry)
-  {
+  public void setPvlanEntry(VMwareDVSPvlanMapEntry pvlanEntry) {
     this.pvlanEntry=pvlanEntry;
   }
 
-  public void setOperation(String operation)
-  {
+  public void setOperation(String operation) {
     this.operation=operation;
   }
 }

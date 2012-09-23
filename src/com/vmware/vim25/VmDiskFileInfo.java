@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,11 +30,12 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class VmDiskFileInfo extends FileInfo
-{
+@SuppressWarnings("all")
+public class VmDiskFileInfo extends FileInfo {
   public String diskType;
   public Long capacityKb;
   public Integer hardwareVersion;
@@ -42,63 +43,51 @@ public class VmDiskFileInfo extends FileInfo
   public String[] diskExtents;
   public Boolean thin;
 
-  public String getDiskType()
-  {
+  public String getDiskType() {
     return this.diskType;
   }
 
-  public Long getCapacityKb()
-  {
+  public Long getCapacityKb() {
     return this.capacityKb;
   }
 
-  public Integer getHardwareVersion()
-  {
+  public Integer getHardwareVersion() {
     return this.hardwareVersion;
   }
 
-  public String getControllerType()
-  {
+  public String getControllerType() {
     return this.controllerType;
   }
 
-  public String[] getDiskExtents()
-  {
+  public String[] getDiskExtents() {
     return this.diskExtents;
   }
 
-  public Boolean getThin()
-  {
+  public Boolean getThin() {
     return this.thin;
   }
 
-  public void setDiskType(String diskType)
-  {
+  public void setDiskType(String diskType) {
     this.diskType=diskType;
   }
 
-  public void setCapacityKb(Long capacityKb)
-  {
+  public void setCapacityKb(Long capacityKb) {
     this.capacityKb=capacityKb;
   }
 
-  public void setHardwareVersion(Integer hardwareVersion)
-  {
+  public void setHardwareVersion(Integer hardwareVersion) {
     this.hardwareVersion=hardwareVersion;
   }
 
-  public void setControllerType(String controllerType)
-  {
+  public void setControllerType(String controllerType) {
     this.controllerType=controllerType;
   }
 
-  public void setDiskExtents(String[] diskExtents)
-  {
+  public void setDiskExtents(String[] diskExtents) {
     this.diskExtents=diskExtents;
   }
 
-  public void setThin(Boolean thin)
-  {
+  public void setThin(Boolean thin) {
     this.thin=thin;
   }
 }

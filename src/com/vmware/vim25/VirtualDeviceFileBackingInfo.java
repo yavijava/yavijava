@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,31 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class VirtualDeviceFileBackingInfo extends VirtualDeviceBackingInfo
-{
+@SuppressWarnings("all")
+public class VirtualDeviceFileBackingInfo extends VirtualDeviceBackingInfo {
   public String fileName;
   public ManagedObjectReference datastore;
 
-  public String getFileName()
-  {
+  public String getFileName() {
     return this.fileName;
   }
 
-  public ManagedObjectReference getDatastore()
-  {
+  public ManagedObjectReference getDatastore() {
     return this.datastore;
   }
 
-  public void setFileName(String fileName)
-  {
+  public void setFileName(String fileName) {
     this.fileName=fileName;
   }
 
-  public void setDatastore(ManagedObjectReference datastore)
-  {
+  public void setDatastore(ManagedObjectReference datastore) {
     this.datastore=datastore;
   }
 }

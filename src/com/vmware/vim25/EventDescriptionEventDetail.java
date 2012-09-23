@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,11 +30,12 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class EventDescriptionEventDetail extends DynamicData
-{
+@SuppressWarnings("all")
+public class EventDescriptionEventDetail extends DynamicData {
   public String key;
   public String description;
   public String category;
@@ -45,93 +46,75 @@ public class EventDescriptionEventDetail extends DynamicData
   public String fullFormat;
   public String longDescription;
 
-  public String getKey()
-  {
+  public String getKey() {
     return this.key;
   }
 
-  public String getDescription()
-  {
+  public String getDescription() {
     return this.description;
   }
 
-  public String getCategory()
-  {
+  public String getCategory() {
     return this.category;
   }
 
-  public String getFormatOnDatacenter()
-  {
+  public String getFormatOnDatacenter() {
     return this.formatOnDatacenter;
   }
 
-  public String getFormatOnComputeResource()
-  {
+  public String getFormatOnComputeResource() {
     return this.formatOnComputeResource;
   }
 
-  public String getFormatOnHost()
-  {
+  public String getFormatOnHost() {
     return this.formatOnHost;
   }
 
-  public String getFormatOnVm()
-  {
+  public String getFormatOnVm() {
     return this.formatOnVm;
   }
 
-  public String getFullFormat()
-  {
+  public String getFullFormat() {
     return this.fullFormat;
   }
 
-  public String getLongDescription()
-  {
+  public String getLongDescription() {
     return this.longDescription;
   }
 
-  public void setKey(String key)
-  {
+  public void setKey(String key) {
     this.key=key;
   }
 
-  public void setDescription(String description)
-  {
+  public void setDescription(String description) {
     this.description=description;
   }
 
-  public void setCategory(String category)
-  {
+  public void setCategory(String category) {
     this.category=category;
   }
 
-  public void setFormatOnDatacenter(String formatOnDatacenter)
-  {
+  public void setFormatOnDatacenter(String formatOnDatacenter) {
     this.formatOnDatacenter=formatOnDatacenter;
   }
 
-  public void setFormatOnComputeResource(String formatOnComputeResource)
-  {
+  public void setFormatOnComputeResource(String formatOnComputeResource) {
     this.formatOnComputeResource=formatOnComputeResource;
   }
 
-  public void setFormatOnHost(String formatOnHost)
-  {
+  public void setFormatOnHost(String formatOnHost) {
     this.formatOnHost=formatOnHost;
   }
 
-  public void setFormatOnVm(String formatOnVm)
-  {
+  public void setFormatOnVm(String formatOnVm) {
     this.formatOnVm=formatOnVm;
   }
 
-  public void setFullFormat(String fullFormat)
-  {
+  public void setFullFormat(String fullFormat) {
     this.fullFormat=fullFormat;
   }
 
-  public void setLongDescription(String longDescription)
-  {
+  public void setLongDescription(String longDescription) {
     this.longDescription=longDescription;
   }
 }

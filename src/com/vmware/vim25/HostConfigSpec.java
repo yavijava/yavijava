@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,11 +30,12 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class HostConfigSpec extends DynamicData
-{
+@SuppressWarnings("all")
+public class HostConfigSpec extends DynamicData {
   public HostNasVolumeConfig[] nasDatastore;
   public HostNetworkConfig network;
   public HostVirtualNicManagerNicTypeSelection[] nicTypeSelection;
@@ -53,173 +54,139 @@ public class HostConfigSpec extends DynamicData
   public HostActiveDirectory[] activeDirectory;
   public KeyAnyValue[] genericConfig;
 
-  public HostNasVolumeConfig[] getNasDatastore()
-  {
+  public HostNasVolumeConfig[] getNasDatastore() {
     return this.nasDatastore;
   }
 
-  public HostNetworkConfig getNetwork()
-  {
+  public HostNetworkConfig getNetwork() {
     return this.network;
   }
 
-  public HostVirtualNicManagerNicTypeSelection[] getNicTypeSelection()
-  {
+  public HostVirtualNicManagerNicTypeSelection[] getNicTypeSelection() {
     return this.nicTypeSelection;
   }
 
-  public HostServiceConfig[] getService()
-  {
+  public HostServiceConfig[] getService() {
     return this.service;
   }
 
-  public HostFirewallConfig getFirewall()
-  {
+  public HostFirewallConfig getFirewall() {
     return this.firewall;
   }
 
-  public OptionValue[] getOption()
-  {
+  public OptionValue[] getOption() {
     return this.option;
   }
 
-  public String getDatastorePrincipal()
-  {
+  public String getDatastorePrincipal() {
     return this.datastorePrincipal;
   }
 
-  public String getDatastorePrincipalPasswd()
-  {
+  public String getDatastorePrincipalPasswd() {
     return this.datastorePrincipalPasswd;
   }
 
-  public HostDateTimeConfig getDatetime()
-  {
+  public HostDateTimeConfig getDatetime() {
     return this.datetime;
   }
 
-  public HostStorageDeviceInfo getStorageDevice()
-  {
+  public HostStorageDeviceInfo getStorageDevice() {
     return this.storageDevice;
   }
 
-  public HostLicenseSpec getLicense()
-  {
+  public HostLicenseSpec getLicense() {
     return this.license;
   }
 
-  public HostSecuritySpec getSecurity()
-  {
+  public HostSecuritySpec getSecurity() {
     return this.security;
   }
 
-  public HostAccountSpec[] getUserAccount()
-  {
+  public HostAccountSpec[] getUserAccount() {
     return this.userAccount;
   }
 
-  public HostAccountSpec[] getUsergroupAccount()
-  {
+  public HostAccountSpec[] getUsergroupAccount() {
     return this.usergroupAccount;
   }
 
-  public HostMemorySpec getMemory()
-  {
+  public HostMemorySpec getMemory() {
     return this.memory;
   }
 
-  public HostActiveDirectory[] getActiveDirectory()
-  {
+  public HostActiveDirectory[] getActiveDirectory() {
     return this.activeDirectory;
   }
 
-  public KeyAnyValue[] getGenericConfig()
-  {
+  public KeyAnyValue[] getGenericConfig() {
     return this.genericConfig;
   }
 
-  public void setNasDatastore(HostNasVolumeConfig[] nasDatastore)
-  {
+  public void setNasDatastore(HostNasVolumeConfig[] nasDatastore) {
     this.nasDatastore=nasDatastore;
   }
 
-  public void setNetwork(HostNetworkConfig network)
-  {
+  public void setNetwork(HostNetworkConfig network) {
     this.network=network;
   }
 
-  public void setNicTypeSelection(HostVirtualNicManagerNicTypeSelection[] nicTypeSelection)
-  {
+  public void setNicTypeSelection(HostVirtualNicManagerNicTypeSelection[] nicTypeSelection) {
     this.nicTypeSelection=nicTypeSelection;
   }
 
-  public void setService(HostServiceConfig[] service)
-  {
+  public void setService(HostServiceConfig[] service) {
     this.service=service;
   }
 
-  public void setFirewall(HostFirewallConfig firewall)
-  {
+  public void setFirewall(HostFirewallConfig firewall) {
     this.firewall=firewall;
   }
 
-  public void setOption(OptionValue[] option)
-  {
+  public void setOption(OptionValue[] option) {
     this.option=option;
   }
 
-  public void setDatastorePrincipal(String datastorePrincipal)
-  {
+  public void setDatastorePrincipal(String datastorePrincipal) {
     this.datastorePrincipal=datastorePrincipal;
   }
 
-  public void setDatastorePrincipalPasswd(String datastorePrincipalPasswd)
-  {
+  public void setDatastorePrincipalPasswd(String datastorePrincipalPasswd) {
     this.datastorePrincipalPasswd=datastorePrincipalPasswd;
   }
 
-  public void setDatetime(HostDateTimeConfig datetime)
-  {
+  public void setDatetime(HostDateTimeConfig datetime) {
     this.datetime=datetime;
   }
 
-  public void setStorageDevice(HostStorageDeviceInfo storageDevice)
-  {
+  public void setStorageDevice(HostStorageDeviceInfo storageDevice) {
     this.storageDevice=storageDevice;
   }
 
-  public void setLicense(HostLicenseSpec license)
-  {
+  public void setLicense(HostLicenseSpec license) {
     this.license=license;
   }
 
-  public void setSecurity(HostSecuritySpec security)
-  {
+  public void setSecurity(HostSecuritySpec security) {
     this.security=security;
   }
 
-  public void setUserAccount(HostAccountSpec[] userAccount)
-  {
+  public void setUserAccount(HostAccountSpec[] userAccount) {
     this.userAccount=userAccount;
   }
 
-  public void setUsergroupAccount(HostAccountSpec[] usergroupAccount)
-  {
+  public void setUsergroupAccount(HostAccountSpec[] usergroupAccount) {
     this.usergroupAccount=usergroupAccount;
   }
 
-  public void setMemory(HostMemorySpec memory)
-  {
+  public void setMemory(HostMemorySpec memory) {
     this.memory=memory;
   }
 
-  public void setActiveDirectory(HostActiveDirectory[] activeDirectory)
-  {
+  public void setActiveDirectory(HostActiveDirectory[] activeDirectory) {
     this.activeDirectory=activeDirectory;
   }
 
-  public void setGenericConfig(KeyAnyValue[] genericConfig)
-  {
+  public void setGenericConfig(KeyAnyValue[] genericConfig) {
     this.genericConfig=genericConfig;
   }
 }

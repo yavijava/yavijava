@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,31 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class ComputeResourceConfigSpec extends DynamicData
-{
+@SuppressWarnings("all")
+public class ComputeResourceConfigSpec extends DynamicData {
   public String vmSwapPlacement;
   public Boolean spbmEnabled;
+  public String defaultHardwareVersionKey;
 
-  public String getVmSwapPlacement()
-  {
+  public String getVmSwapPlacement() {
     return this.vmSwapPlacement;
   }
 
-  public Boolean getSpbmEnabled()
-  {
+  public Boolean getSpbmEnabled() {
     return this.spbmEnabled;
   }
 
-  public void setVmSwapPlacement(String vmSwapPlacement)
-  {
+  public String getDefaultHardwareVersionKey() {
+    return this.defaultHardwareVersionKey;
+  }
+
+  public void setVmSwapPlacement(String vmSwapPlacement) {
     this.vmSwapPlacement=vmSwapPlacement;
   }
 
-  public void setSpbmEnabled(Boolean spbmEnabled)
-  {
+  public void setSpbmEnabled(Boolean spbmEnabled) {
     this.spbmEnabled=spbmEnabled;
+  }
+
+  public void setDefaultHardwareVersionKey(String defaultHardwareVersionKey) {
+    this.defaultHardwareVersionKey=defaultHardwareVersionKey;
   }
 }

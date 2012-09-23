@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -31,11 +31,12 @@ package com.vmware.vim25;
 import java.util.Calendar;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class AlarmInfo extends AlarmSpec
-{
+@SuppressWarnings("all")
+public class AlarmInfo extends AlarmSpec {
   public String key;
   public ManagedObjectReference alarm;
   public ManagedObjectReference entity;
@@ -43,63 +44,51 @@ public class AlarmInfo extends AlarmSpec
   public String lastModifiedUser;
   public int creationEventId;
 
-  public String getKey()
-  {
+  public String getKey() {
     return this.key;
   }
 
-  public ManagedObjectReference getAlarm()
-  {
+  public ManagedObjectReference getAlarm() {
     return this.alarm;
   }
 
-  public ManagedObjectReference getEntity()
-  {
+  public ManagedObjectReference getEntity() {
     return this.entity;
   }
 
-  public Calendar getLastModifiedTime()
-  {
+  public Calendar getLastModifiedTime() {
     return this.lastModifiedTime;
   }
 
-  public String getLastModifiedUser()
-  {
+  public String getLastModifiedUser() {
     return this.lastModifiedUser;
   }
 
-  public int getCreationEventId()
-  {
+  public int getCreationEventId() {
     return this.creationEventId;
   }
 
-  public void setKey(String key)
-  {
+  public void setKey(String key) {
     this.key=key;
   }
 
-  public void setAlarm(ManagedObjectReference alarm)
-  {
+  public void setAlarm(ManagedObjectReference alarm) {
     this.alarm=alarm;
   }
 
-  public void setEntity(ManagedObjectReference entity)
-  {
+  public void setEntity(ManagedObjectReference entity) {
     this.entity=entity;
   }
 
-  public void setLastModifiedTime(Calendar lastModifiedTime)
-  {
+  public void setLastModifiedTime(Calendar lastModifiedTime) {
     this.lastModifiedTime=lastModifiedTime;
   }
 
-  public void setLastModifiedUser(String lastModifiedUser)
-  {
+  public void setLastModifiedUser(String lastModifiedUser) {
     this.lastModifiedUser=lastModifiedUser;
   }
 
-  public void setCreationEventId(int creationEventId)
-  {
+  public void setCreationEventId(int creationEventId) {
     this.creationEventId=creationEventId;
   }
 }

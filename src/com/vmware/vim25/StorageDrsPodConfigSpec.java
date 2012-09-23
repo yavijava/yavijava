@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,11 +30,12 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class StorageDrsPodConfigSpec extends DynamicData
-{
+@SuppressWarnings("all")
+public class StorageDrsPodConfigSpec extends DynamicData {
   public Boolean enabled;
   public Boolean ioLoadBalanceEnabled;
   public String defaultVmBehavior;
@@ -45,93 +46,75 @@ public class StorageDrsPodConfigSpec extends DynamicData
   public ClusterRuleSpec[] rule;
   public StorageDrsOptionSpec[] option;
 
-  public Boolean getEnabled()
-  {
+  public Boolean getEnabled() {
     return this.enabled;
   }
 
-  public Boolean getIoLoadBalanceEnabled()
-  {
+  public Boolean getIoLoadBalanceEnabled() {
     return this.ioLoadBalanceEnabled;
   }
 
-  public String getDefaultVmBehavior()
-  {
+  public String getDefaultVmBehavior() {
     return this.defaultVmBehavior;
   }
 
-  public Integer getLoadBalanceInterval()
-  {
+  public Integer getLoadBalanceInterval() {
     return this.loadBalanceInterval;
   }
 
-  public Boolean getDefaultIntraVmAffinity()
-  {
+  public Boolean getDefaultIntraVmAffinity() {
     return this.defaultIntraVmAffinity;
   }
 
-  public StorageDrsSpaceLoadBalanceConfig getSpaceLoadBalanceConfig()
-  {
+  public StorageDrsSpaceLoadBalanceConfig getSpaceLoadBalanceConfig() {
     return this.spaceLoadBalanceConfig;
   }
 
-  public StorageDrsIoLoadBalanceConfig getIoLoadBalanceConfig()
-  {
+  public StorageDrsIoLoadBalanceConfig getIoLoadBalanceConfig() {
     return this.ioLoadBalanceConfig;
   }
 
-  public ClusterRuleSpec[] getRule()
-  {
+  public ClusterRuleSpec[] getRule() {
     return this.rule;
   }
 
-  public StorageDrsOptionSpec[] getOption()
-  {
+  public StorageDrsOptionSpec[] getOption() {
     return this.option;
   }
 
-  public void setEnabled(Boolean enabled)
-  {
+  public void setEnabled(Boolean enabled) {
     this.enabled=enabled;
   }
 
-  public void setIoLoadBalanceEnabled(Boolean ioLoadBalanceEnabled)
-  {
+  public void setIoLoadBalanceEnabled(Boolean ioLoadBalanceEnabled) {
     this.ioLoadBalanceEnabled=ioLoadBalanceEnabled;
   }
 
-  public void setDefaultVmBehavior(String defaultVmBehavior)
-  {
+  public void setDefaultVmBehavior(String defaultVmBehavior) {
     this.defaultVmBehavior=defaultVmBehavior;
   }
 
-  public void setLoadBalanceInterval(Integer loadBalanceInterval)
-  {
+  public void setLoadBalanceInterval(Integer loadBalanceInterval) {
     this.loadBalanceInterval=loadBalanceInterval;
   }
 
-  public void setDefaultIntraVmAffinity(Boolean defaultIntraVmAffinity)
-  {
+  public void setDefaultIntraVmAffinity(Boolean defaultIntraVmAffinity) {
     this.defaultIntraVmAffinity=defaultIntraVmAffinity;
   }
 
-  public void setSpaceLoadBalanceConfig(StorageDrsSpaceLoadBalanceConfig spaceLoadBalanceConfig)
-  {
+  public void setSpaceLoadBalanceConfig(StorageDrsSpaceLoadBalanceConfig spaceLoadBalanceConfig) {
     this.spaceLoadBalanceConfig=spaceLoadBalanceConfig;
   }
 
-  public void setIoLoadBalanceConfig(StorageDrsIoLoadBalanceConfig ioLoadBalanceConfig)
-  {
+  public void setIoLoadBalanceConfig(StorageDrsIoLoadBalanceConfig ioLoadBalanceConfig) {
     this.ioLoadBalanceConfig=ioLoadBalanceConfig;
   }
 
-  public void setRule(ClusterRuleSpec[] rule)
-  {
+  public void setRule(ClusterRuleSpec[] rule) {
     this.rule=rule;
   }
 
-  public void setOption(StorageDrsOptionSpec[] option)
-  {
+  public void setOption(StorageDrsOptionSpec[] option) {
     this.option=option;
   }
 }

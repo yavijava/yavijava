@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,25 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class ArrayOfVirtualMachineSoundInfo
-{
+public class ArrayOfVirtualMachineSoundInfo {
   public VirtualMachineSoundInfo[] VirtualMachineSoundInfo;
 
-  public VirtualMachineSoundInfo[] getVirtualMachineSoundInfo()
-  {
+  public VirtualMachineSoundInfo[] getVirtualMachineSoundInfo() {
     return this.VirtualMachineSoundInfo;
   }
 
-  public VirtualMachineSoundInfo getVirtualMachineSoundInfo(int i)
-  {
+  public VirtualMachineSoundInfo getVirtualMachineSoundInfo(int i) {
     return this.VirtualMachineSoundInfo[i];
   }
 
-  public void setVirtualMachineSoundInfo(VirtualMachineSoundInfo[] VirtualMachineSoundInfo)
-  {
+  public void setVirtualMachineSoundInfo(VirtualMachineSoundInfo[] VirtualMachineSoundInfo) {
     this.VirtualMachineSoundInfo=VirtualMachineSoundInfo;
   }
 }

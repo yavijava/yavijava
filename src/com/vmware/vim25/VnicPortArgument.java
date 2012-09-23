@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,31 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class VnicPortArgument extends DynamicData
-{
+@SuppressWarnings("all")
+public class VnicPortArgument extends DynamicData {
   public String vnic;
   public DistributedVirtualSwitchPortConnection port;
 
-  public String getVnic()
-  {
+  public String getVnic() {
     return this.vnic;
   }
 
-  public DistributedVirtualSwitchPortConnection getPort()
-  {
+  public DistributedVirtualSwitchPortConnection getPort() {
     return this.port;
   }
 
-  public void setVnic(String vnic)
-  {
+  public void setVnic(String vnic) {
     this.vnic=vnic;
   }
 
-  public void setPort(DistributedVirtualSwitchPortConnection port)
-  {
+  public void setPort(DistributedVirtualSwitchPortConnection port) {
     this.port=port;
   }
 }

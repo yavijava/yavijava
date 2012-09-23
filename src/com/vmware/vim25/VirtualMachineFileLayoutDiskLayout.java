@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,31 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class VirtualMachineFileLayoutDiskLayout extends DynamicData
-{
+@SuppressWarnings("all")
+public class VirtualMachineFileLayoutDiskLayout extends DynamicData {
   public int key;
   public String[] diskFile;
 
-  public int getKey()
-  {
+  public int getKey() {
     return this.key;
   }
 
-  public String[] getDiskFile()
-  {
+  public String[] getDiskFile() {
     return this.diskFile;
   }
 
-  public void setKey(int key)
-  {
+  public void setKey(int key) {
     this.key=key;
   }
 
-  public void setDiskFile(String[] diskFile)
-  {
+  public void setDiskFile(String[] diskFile) {
     this.diskFile=diskFile;
   }
 }

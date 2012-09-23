@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,31 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class HostPosixAccountSpec extends HostAccountSpec
-{
+@SuppressWarnings("all")
+public class HostPosixAccountSpec extends HostAccountSpec {
   public Integer posixId;
   public Boolean shellAccess;
 
-  public Integer getPosixId()
-  {
+  public Integer getPosixId() {
     return this.posixId;
   }
 
-  public Boolean getShellAccess()
-  {
+  public Boolean getShellAccess() {
     return this.shellAccess;
   }
 
-  public void setPosixId(Integer posixId)
-  {
+  public void setPosixId(Integer posixId) {
     this.posixId=posixId;
   }
 
-  public void setShellAccess(Boolean shellAccess)
-  {
+  public void setShellAccess(Boolean shellAccess) {
     this.shellAccess=shellAccess;
   }
 }

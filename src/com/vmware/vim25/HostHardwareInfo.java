@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,11 +30,12 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class HostHardwareInfo extends DynamicData
-{
+@SuppressWarnings("all")
+public class HostHardwareInfo extends DynamicData {
   public HostSystemInfo systemInfo;
   public HostCpuPowerManagementInfo cpuPowerManagementInfo;
   public HostCpuInfo cpuInfo;
@@ -46,103 +47,83 @@ public class HostHardwareInfo extends DynamicData
   public HostCpuIdInfo[] cpuFeature;
   public HostBIOSInfo biosInfo;
 
-  public HostSystemInfo getSystemInfo()
-  {
+  public HostSystemInfo getSystemInfo() {
     return this.systemInfo;
   }
 
-  public HostCpuPowerManagementInfo getCpuPowerManagementInfo()
-  {
+  public HostCpuPowerManagementInfo getCpuPowerManagementInfo() {
     return this.cpuPowerManagementInfo;
   }
 
-  public HostCpuInfo getCpuInfo()
-  {
+  public HostCpuInfo getCpuInfo() {
     return this.cpuInfo;
   }
 
-  public HostCpuPackage[] getCpuPkg()
-  {
+  public HostCpuPackage[] getCpuPkg() {
     return this.cpuPkg;
   }
 
-  public long getMemorySize()
-  {
+  public long getMemorySize() {
     return this.memorySize;
   }
 
-  public HostNumaInfo getNumaInfo()
-  {
+  public HostNumaInfo getNumaInfo() {
     return this.numaInfo;
   }
 
-  public Boolean getSmcPresent()
-  {
+  public Boolean getSmcPresent() {
     return this.smcPresent;
   }
 
-  public HostPciDevice[] getPciDevice()
-  {
+  public HostPciDevice[] getPciDevice() {
     return this.pciDevice;
   }
 
-  public HostCpuIdInfo[] getCpuFeature()
-  {
+  public HostCpuIdInfo[] getCpuFeature() {
     return this.cpuFeature;
   }
 
-  public HostBIOSInfo getBiosInfo()
-  {
+  public HostBIOSInfo getBiosInfo() {
     return this.biosInfo;
   }
 
-  public void setSystemInfo(HostSystemInfo systemInfo)
-  {
+  public void setSystemInfo(HostSystemInfo systemInfo) {
     this.systemInfo=systemInfo;
   }
 
-  public void setCpuPowerManagementInfo(HostCpuPowerManagementInfo cpuPowerManagementInfo)
-  {
+  public void setCpuPowerManagementInfo(HostCpuPowerManagementInfo cpuPowerManagementInfo) {
     this.cpuPowerManagementInfo=cpuPowerManagementInfo;
   }
 
-  public void setCpuInfo(HostCpuInfo cpuInfo)
-  {
+  public void setCpuInfo(HostCpuInfo cpuInfo) {
     this.cpuInfo=cpuInfo;
   }
 
-  public void setCpuPkg(HostCpuPackage[] cpuPkg)
-  {
+  public void setCpuPkg(HostCpuPackage[] cpuPkg) {
     this.cpuPkg=cpuPkg;
   }
 
-  public void setMemorySize(long memorySize)
-  {
+  public void setMemorySize(long memorySize) {
     this.memorySize=memorySize;
   }
 
-  public void setNumaInfo(HostNumaInfo numaInfo)
-  {
+  public void setNumaInfo(HostNumaInfo numaInfo) {
     this.numaInfo=numaInfo;
   }
 
-  public void setSmcPresent(Boolean smcPresent)
-  {
+  public void setSmcPresent(Boolean smcPresent) {
     this.smcPresent=smcPresent;
   }
 
-  public void setPciDevice(HostPciDevice[] pciDevice)
-  {
+  public void setPciDevice(HostPciDevice[] pciDevice) {
     this.pciDevice=pciDevice;
   }
 
-  public void setCpuFeature(HostCpuIdInfo[] cpuFeature)
-  {
+  public void setCpuFeature(HostCpuIdInfo[] cpuFeature) {
     this.cpuFeature=cpuFeature;
   }
 
-  public void setBiosInfo(HostBIOSInfo biosInfo)
-  {
+  public void setBiosInfo(HostBIOSInfo biosInfo) {
     this.biosInfo=biosInfo;
   }
 }

@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,11 +30,12 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class LicenseManagerLicenseInfo extends DynamicData
-{
+@SuppressWarnings("all")
+public class LicenseManagerLicenseInfo extends DynamicData {
   public String licenseKey;
   public String editionKey;
   public String name;
@@ -44,83 +45,67 @@ public class LicenseManagerLicenseInfo extends DynamicData
   public KeyAnyValue[] properties;
   public KeyValue[] labels;
 
-  public String getLicenseKey()
-  {
+  public String getLicenseKey() {
     return this.licenseKey;
   }
 
-  public String getEditionKey()
-  {
+  public String getEditionKey() {
     return this.editionKey;
   }
 
-  public String getName()
-  {
+  public String getName() {
     return this.name;
   }
 
-  public int getTotal()
-  {
+  public int getTotal() {
     return this.total;
   }
 
-  public Integer getUsed()
-  {
+  public Integer getUsed() {
     return this.used;
   }
 
-  public String getCostUnit()
-  {
+  public String getCostUnit() {
     return this.costUnit;
   }
 
-  public KeyAnyValue[] getProperties()
-  {
+  public KeyAnyValue[] getProperties() {
     return this.properties;
   }
 
-  public KeyValue[] getLabels()
-  {
+  public KeyValue[] getLabels() {
     return this.labels;
   }
 
-  public void setLicenseKey(String licenseKey)
-  {
+  public void setLicenseKey(String licenseKey) {
     this.licenseKey=licenseKey;
   }
 
-  public void setEditionKey(String editionKey)
-  {
+  public void setEditionKey(String editionKey) {
     this.editionKey=editionKey;
   }
 
-  public void setName(String name)
-  {
+  public void setName(String name) {
     this.name=name;
   }
 
-  public void setTotal(int total)
-  {
+  public void setTotal(int total) {
     this.total=total;
   }
 
-  public void setUsed(Integer used)
-  {
+  public void setUsed(Integer used) {
     this.used=used;
   }
 
-  public void setCostUnit(String costUnit)
-  {
+  public void setCostUnit(String costUnit) {
     this.costUnit=costUnit;
   }
 
-  public void setProperties(KeyAnyValue[] properties)
-  {
+  public void setProperties(KeyAnyValue[] properties) {
     this.properties=properties;
   }
 
-  public void setLabels(KeyValue[] labels)
-  {
+  public void setLabels(KeyValue[] labels) {
     this.labels=labels;
   }
 }

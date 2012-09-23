@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,31 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class HostVMotionNetConfig extends DynamicData
-{
+@SuppressWarnings("all")
+public class HostVMotionNetConfig extends DynamicData {
   public HostVirtualNic[] candidateVnic;
   public String selectedVnic;
 
-  public HostVirtualNic[] getCandidateVnic()
-  {
+  public HostVirtualNic[] getCandidateVnic() {
     return this.candidateVnic;
   }
 
-  public String getSelectedVnic()
-  {
+  public String getSelectedVnic() {
     return this.selectedVnic;
   }
 
-  public void setCandidateVnic(HostVirtualNic[] candidateVnic)
-  {
+  public void setCandidateVnic(HostVirtualNic[] candidateVnic) {
     this.candidateVnic=candidateVnic;
   }
 
-  public void setSelectedVnic(String selectedVnic)
-  {
+  public void setSelectedVnic(String selectedVnic) {
     this.selectedVnic=selectedVnic;
   }
 }

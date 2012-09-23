@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,42 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class TaskDescription extends DynamicData
-{
+@SuppressWarnings("all")
+public class TaskDescription extends DynamicData {
   public ElementDescription[] methodInfo;
   public ElementDescription[] state;
   public TypeDescription[] reason;
 
-  public ElementDescription[] getMethodInfo()
-  {
+  public ElementDescription[] getMethodInfo() {
     return this.methodInfo;
   }
 
-  public ElementDescription[] getState()
-  {
+  public ElementDescription[] getState() {
     return this.state;
   }
 
-  public TypeDescription[] getReason()
-  {
+  public TypeDescription[] getReason() {
     return this.reason;
   }
 
-  public void setMethodInfo(ElementDescription[] methodInfo)
-  {
+  public void setMethodInfo(ElementDescription[] methodInfo) {
     this.methodInfo=methodInfo;
   }
 
-  public void setState(ElementDescription[] state)
-  {
+  public void setState(ElementDescription[] state) {
     this.state=state;
   }
 
-  public void setReason(TypeDescription[] reason)
-  {
+  public void setReason(TypeDescription[] reason) {
     this.reason=reason;
   }
 }

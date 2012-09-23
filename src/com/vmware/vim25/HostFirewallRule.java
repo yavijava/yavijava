@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,64 +30,55 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class HostFirewallRule extends DynamicData
-{
+@SuppressWarnings("all")
+public class HostFirewallRule extends DynamicData {
   public int port;
   public Integer endPort;
   public HostFirewallRuleDirection direction;
   public HostFirewallRulePortType portType;
   public String protocol;
 
-  public int getPort()
-  {
+  public int getPort() {
     return this.port;
   }
 
-  public Integer getEndPort()
-  {
+  public Integer getEndPort() {
     return this.endPort;
   }
 
-  public HostFirewallRuleDirection getDirection()
-  {
+  public HostFirewallRuleDirection getDirection() {
     return this.direction;
   }
 
-  public HostFirewallRulePortType getPortType()
-  {
+  public HostFirewallRulePortType getPortType() {
     return this.portType;
   }
 
-  public String getProtocol()
-  {
+  public String getProtocol() {
     return this.protocol;
   }
 
-  public void setPort(int port)
-  {
+  public void setPort(int port) {
     this.port=port;
   }
 
-  public void setEndPort(Integer endPort)
-  {
+  public void setEndPort(Integer endPort) {
     this.endPort=endPort;
   }
 
-  public void setDirection(HostFirewallRuleDirection direction)
-  {
+  public void setDirection(HostFirewallRuleDirection direction) {
     this.direction=direction;
   }
 
-  public void setPortType(HostFirewallRulePortType portType)
-  {
+  public void setPortType(HostFirewallRulePortType portType) {
     this.portType=portType;
   }
 
-  public void setProtocol(String protocol)
-  {
+  public void setProtocol(String protocol) {
     this.protocol=protocol;
   }
 }

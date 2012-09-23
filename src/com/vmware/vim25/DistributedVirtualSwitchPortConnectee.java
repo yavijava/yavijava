@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,53 +30,46 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class DistributedVirtualSwitchPortConnectee extends DynamicData
-{
+@SuppressWarnings("all")
+public class DistributedVirtualSwitchPortConnectee extends DynamicData {
   public ManagedObjectReference connectedEntity;
   public String nicKey;
   public String type;
   public String addressHint;
 
-  public ManagedObjectReference getConnectedEntity()
-  {
+  public ManagedObjectReference getConnectedEntity() {
     return this.connectedEntity;
   }
 
-  public String getNicKey()
-  {
+  public String getNicKey() {
     return this.nicKey;
   }
 
-  public String getType()
-  {
+  public String getType() {
     return this.type;
   }
 
-  public String getAddressHint()
-  {
+  public String getAddressHint() {
     return this.addressHint;
   }
 
-  public void setConnectedEntity(ManagedObjectReference connectedEntity)
-  {
+  public void setConnectedEntity(ManagedObjectReference connectedEntity) {
     this.connectedEntity=connectedEntity;
   }
 
-  public void setNicKey(String nicKey)
-  {
+  public void setNicKey(String nicKey) {
     this.nicKey=nicKey;
   }
 
-  public void setType(String type)
-  {
+  public void setType(String type) {
     this.type=type;
   }
 
-  public void setAddressHint(String addressHint)
-  {
+  public void setAddressHint(String addressHint) {
     this.addressHint=addressHint;
   }
 }

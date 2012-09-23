@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,42 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class PodDiskLocator extends DynamicData
-{
+@SuppressWarnings("all")
+public class PodDiskLocator extends DynamicData {
   public int diskId;
   public String diskMoveType;
   public VirtualDeviceBackingInfo diskBackingInfo;
 
-  public int getDiskId()
-  {
+  public int getDiskId() {
     return this.diskId;
   }
 
-  public String getDiskMoveType()
-  {
+  public String getDiskMoveType() {
     return this.diskMoveType;
   }
 
-  public VirtualDeviceBackingInfo getDiskBackingInfo()
-  {
+  public VirtualDeviceBackingInfo getDiskBackingInfo() {
     return this.diskBackingInfo;
   }
 
-  public void setDiskId(int diskId)
-  {
+  public void setDiskId(int diskId) {
     this.diskId=diskId;
   }
 
-  public void setDiskMoveType(String diskMoveType)
-  {
+  public void setDiskMoveType(String diskMoveType) {
     this.diskMoveType=diskMoveType;
   }
 
-  public void setDiskBackingInfo(VirtualDeviceBackingInfo diskBackingInfo)
-  {
+  public void setDiskBackingInfo(VirtualDeviceBackingInfo diskBackingInfo) {
     this.diskBackingInfo=diskBackingInfo;
   }
 }

@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,20 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class HostProfileSerializedHostProfileSpec extends ProfileSerializedCreateSpec
-{
+@SuppressWarnings("all")
+public class HostProfileSerializedHostProfileSpec extends ProfileSerializedCreateSpec {
   public ManagedObjectReference validatorHost;
 
-  public ManagedObjectReference getValidatorHost()
-  {
+  public ManagedObjectReference getValidatorHost() {
     return this.validatorHost;
   }
 
-  public void setValidatorHost(ManagedObjectReference validatorHost)
-  {
+  public void setValidatorHost(ManagedObjectReference validatorHost) {
     this.validatorHost=validatorHost;
   }
 }

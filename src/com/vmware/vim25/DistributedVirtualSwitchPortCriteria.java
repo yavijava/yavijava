@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,11 +30,12 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class DistributedVirtualSwitchPortCriteria extends DynamicData
-{
+@SuppressWarnings("all")
+public class DistributedVirtualSwitchPortCriteria extends DynamicData {
   public Boolean connected;
   public Boolean active;
   public Boolean uplinkPort;
@@ -43,73 +44,59 @@ public class DistributedVirtualSwitchPortCriteria extends DynamicData
   public Boolean inside;
   public String[] portKey;
 
-  public Boolean getConnected()
-  {
+  public Boolean getConnected() {
     return this.connected;
   }
 
-  public Boolean getActive()
-  {
+  public Boolean getActive() {
     return this.active;
   }
 
-  public Boolean getUplinkPort()
-  {
+  public Boolean getUplinkPort() {
     return this.uplinkPort;
   }
 
-  public ManagedObjectReference getScope()
-  {
+  public ManagedObjectReference getScope() {
     return this.scope;
   }
 
-  public String[] getPortgroupKey()
-  {
+  public String[] getPortgroupKey() {
     return this.portgroupKey;
   }
 
-  public Boolean getInside()
-  {
+  public Boolean getInside() {
     return this.inside;
   }
 
-  public String[] getPortKey()
-  {
+  public String[] getPortKey() {
     return this.portKey;
   }
 
-  public void setConnected(Boolean connected)
-  {
+  public void setConnected(Boolean connected) {
     this.connected=connected;
   }
 
-  public void setActive(Boolean active)
-  {
+  public void setActive(Boolean active) {
     this.active=active;
   }
 
-  public void setUplinkPort(Boolean uplinkPort)
-  {
+  public void setUplinkPort(Boolean uplinkPort) {
     this.uplinkPort=uplinkPort;
   }
 
-  public void setScope(ManagedObjectReference scope)
-  {
+  public void setScope(ManagedObjectReference scope) {
     this.scope=scope;
   }
 
-  public void setPortgroupKey(String[] portgroupKey)
-  {
+  public void setPortgroupKey(String[] portgroupKey) {
     this.portgroupKey=portgroupKey;
   }
 
-  public void setInside(Boolean inside)
-  {
+  public void setInside(Boolean inside) {
     this.inside=inside;
   }
 
-  public void setPortKey(String[] portKey)
-  {
+  public void setPortKey(String[] portKey) {
     this.portKey=portKey;
   }
 }

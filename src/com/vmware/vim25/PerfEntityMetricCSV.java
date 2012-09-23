@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,31 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class PerfEntityMetricCSV extends PerfEntityMetricBase
-{
+@SuppressWarnings("all")
+public class PerfEntityMetricCSV extends PerfEntityMetricBase {
   public String sampleInfoCSV;
   public PerfMetricSeriesCSV[] value;
 
-  public String getSampleInfoCSV()
-  {
+  public String getSampleInfoCSV() {
     return this.sampleInfoCSV;
   }
 
-  public PerfMetricSeriesCSV[] getValue()
-  {
+  public PerfMetricSeriesCSV[] getValue() {
     return this.value;
   }
 
-  public void setSampleInfoCSV(String sampleInfoCSV)
-  {
+  public void setSampleInfoCSV(String sampleInfoCSV) {
     this.sampleInfoCSV=sampleInfoCSV;
   }
 
-  public void setValue(PerfMetricSeriesCSV[] value)
-  {
+  public void setValue(PerfMetricSeriesCSV[] value) {
     this.value=value;
   }
 }

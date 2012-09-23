@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,53 +30,46 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class VirtualMachineFileInfo extends DynamicData
-{
+@SuppressWarnings("all")
+public class VirtualMachineFileInfo extends DynamicData {
   public String vmPathName;
   public String snapshotDirectory;
   public String suspendDirectory;
   public String logDirectory;
 
-  public String getVmPathName()
-  {
+  public String getVmPathName() {
     return this.vmPathName;
   }
 
-  public String getSnapshotDirectory()
-  {
+  public String getSnapshotDirectory() {
     return this.snapshotDirectory;
   }
 
-  public String getSuspendDirectory()
-  {
+  public String getSuspendDirectory() {
     return this.suspendDirectory;
   }
 
-  public String getLogDirectory()
-  {
+  public String getLogDirectory() {
     return this.logDirectory;
   }
 
-  public void setVmPathName(String vmPathName)
-  {
+  public void setVmPathName(String vmPathName) {
     this.vmPathName=vmPathName;
   }
 
-  public void setSnapshotDirectory(String snapshotDirectory)
-  {
+  public void setSnapshotDirectory(String snapshotDirectory) {
     this.snapshotDirectory=snapshotDirectory;
   }
 
-  public void setSuspendDirectory(String suspendDirectory)
-  {
+  public void setSuspendDirectory(String suspendDirectory) {
     this.suspendDirectory=suspendDirectory;
   }
 
-  public void setLogDirectory(String logDirectory)
-  {
+  public void setLogDirectory(String logDirectory) {
     this.logDirectory=logDirectory;
   }
 }

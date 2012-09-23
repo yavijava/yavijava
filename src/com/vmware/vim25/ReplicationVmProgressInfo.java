@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,64 +30,55 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class ReplicationVmProgressInfo extends DynamicData
-{
+@SuppressWarnings("all")
+public class ReplicationVmProgressInfo extends DynamicData {
   public int progress;
   public long bytesTransferred;
   public long bytesToTransfer;
   public Long checksumTotalBytes;
   public Long checksumComparedBytes;
 
-  public int getProgress()
-  {
+  public int getProgress() {
     return this.progress;
   }
 
-  public long getBytesTransferred()
-  {
+  public long getBytesTransferred() {
     return this.bytesTransferred;
   }
 
-  public long getBytesToTransfer()
-  {
+  public long getBytesToTransfer() {
     return this.bytesToTransfer;
   }
 
-  public Long getChecksumTotalBytes()
-  {
+  public Long getChecksumTotalBytes() {
     return this.checksumTotalBytes;
   }
 
-  public Long getChecksumComparedBytes()
-  {
+  public Long getChecksumComparedBytes() {
     return this.checksumComparedBytes;
   }
 
-  public void setProgress(int progress)
-  {
+  public void setProgress(int progress) {
     this.progress=progress;
   }
 
-  public void setBytesTransferred(long bytesTransferred)
-  {
+  public void setBytesTransferred(long bytesTransferred) {
     this.bytesTransferred=bytesTransferred;
   }
 
-  public void setBytesToTransfer(long bytesToTransfer)
-  {
+  public void setBytesToTransfer(long bytesToTransfer) {
     this.bytesToTransfer=bytesToTransfer;
   }
 
-  public void setChecksumTotalBytes(Long checksumTotalBytes)
-  {
+  public void setChecksumTotalBytes(Long checksumTotalBytes) {
     this.checksumTotalBytes=checksumTotalBytes;
   }
 
-  public void setChecksumComparedBytes(Long checksumComparedBytes)
-  {
+  public void setChecksumComparedBytes(Long checksumComparedBytes) {
     this.checksumComparedBytes=checksumComparedBytes;
   }
 }

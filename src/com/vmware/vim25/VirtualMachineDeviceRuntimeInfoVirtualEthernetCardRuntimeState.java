@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,53 +30,46 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class VirtualMachineDeviceRuntimeInfoVirtualEthernetCardRuntimeState extends VirtualMachineDeviceRuntimeInfoDeviceRuntimeState
-{
+@SuppressWarnings("all")
+public class VirtualMachineDeviceRuntimeInfoVirtualEthernetCardRuntimeState extends VirtualMachineDeviceRuntimeInfoDeviceRuntimeState {
   public boolean vmDirectPathGen2Active;
   public String[] vmDirectPathGen2InactiveReasonVm;
   public String[] vmDirectPathGen2InactiveReasonOther;
   public String vmDirectPathGen2InactiveReasonExtended;
 
-  public boolean isVmDirectPathGen2Active()
-  {
+  public boolean isVmDirectPathGen2Active() {
     return this.vmDirectPathGen2Active;
   }
 
-  public String[] getVmDirectPathGen2InactiveReasonVm()
-  {
+  public String[] getVmDirectPathGen2InactiveReasonVm() {
     return this.vmDirectPathGen2InactiveReasonVm;
   }
 
-  public String[] getVmDirectPathGen2InactiveReasonOther()
-  {
+  public String[] getVmDirectPathGen2InactiveReasonOther() {
     return this.vmDirectPathGen2InactiveReasonOther;
   }
 
-  public String getVmDirectPathGen2InactiveReasonExtended()
-  {
+  public String getVmDirectPathGen2InactiveReasonExtended() {
     return this.vmDirectPathGen2InactiveReasonExtended;
   }
 
-  public void setVmDirectPathGen2Active(boolean vmDirectPathGen2Active)
-  {
+  public void setVmDirectPathGen2Active(boolean vmDirectPathGen2Active) {
     this.vmDirectPathGen2Active=vmDirectPathGen2Active;
   }
 
-  public void setVmDirectPathGen2InactiveReasonVm(String[] vmDirectPathGen2InactiveReasonVm)
-  {
+  public void setVmDirectPathGen2InactiveReasonVm(String[] vmDirectPathGen2InactiveReasonVm) {
     this.vmDirectPathGen2InactiveReasonVm=vmDirectPathGen2InactiveReasonVm;
   }
 
-  public void setVmDirectPathGen2InactiveReasonOther(String[] vmDirectPathGen2InactiveReasonOther)
-  {
+  public void setVmDirectPathGen2InactiveReasonOther(String[] vmDirectPathGen2InactiveReasonOther) {
     this.vmDirectPathGen2InactiveReasonOther=vmDirectPathGen2InactiveReasonOther;
   }
 
-  public void setVmDirectPathGen2InactiveReasonExtended(String vmDirectPathGen2InactiveReasonExtended)
-  {
+  public void setVmDirectPathGen2InactiveReasonExtended(String vmDirectPathGen2InactiveReasonExtended) {
     this.vmDirectPathGen2InactiveReasonExtended=vmDirectPathGen2InactiveReasonExtended;
   }
 }

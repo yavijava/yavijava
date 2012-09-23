@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,42 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class LicenseAvailabilityInfo extends DynamicData
-{
+@SuppressWarnings("all")
+public class LicenseAvailabilityInfo extends DynamicData {
   public LicenseFeatureInfo feature;
   public int total;
   public int available;
 
-  public LicenseFeatureInfo getFeature()
-  {
+  public LicenseFeatureInfo getFeature() {
     return this.feature;
   }
 
-  public int getTotal()
-  {
+  public int getTotal() {
     return this.total;
   }
 
-  public int getAvailable()
-  {
+  public int getAvailable() {
     return this.available;
   }
 
-  public void setFeature(LicenseFeatureInfo feature)
-  {
+  public void setFeature(LicenseFeatureInfo feature) {
     this.feature=feature;
   }
 
-  public void setTotal(int total)
-  {
+  public void setTotal(int total) {
     this.total=total;
   }
 
-  public void setAvailable(int available)
-  {
+  public void setAvailable(int available) {
     this.available=available;
   }
 }

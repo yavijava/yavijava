@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,53 +30,46 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class VirtualPCIPassthroughDeviceBackingInfo extends VirtualDeviceDeviceBackingInfo
-{
+@SuppressWarnings("all")
+public class VirtualPCIPassthroughDeviceBackingInfo extends VirtualDeviceDeviceBackingInfo {
   public String id;
   public String deviceId;
   public String systemId;
   public short vendorId;
 
-  public String getId()
-  {
+  public String getId() {
     return this.id;
   }
 
-  public String getDeviceId()
-  {
+  public String getDeviceId() {
     return this.deviceId;
   }
 
-  public String getSystemId()
-  {
+  public String getSystemId() {
     return this.systemId;
   }
 
-  public short getVendorId()
-  {
+  public short getVendorId() {
     return this.vendorId;
   }
 
-  public void setId(String id)
-  {
+  public void setId(String id) {
     this.id=id;
   }
 
-  public void setDeviceId(String deviceId)
-  {
+  public void setDeviceId(String deviceId) {
     this.deviceId=deviceId;
   }
 
-  public void setSystemId(String systemId)
-  {
+  public void setSystemId(String systemId) {
     this.systemId=systemId;
   }
 
-  public void setVendorId(short vendorId)
-  {
+  public void setVendorId(short vendorId) {
     this.vendorId=vendorId;
   }
 }

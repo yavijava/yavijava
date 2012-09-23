@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,42 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class FailToEnableSPBM extends NotEnoughLicenses
-{
+@SuppressWarnings("all")
+public class FailToEnableSPBM extends NotEnoughLicenses {
   public ManagedObjectReference cs;
   public String csName;
   public ComputeResourceHostSPBMLicenseInfo[] hostLicenseStates;
 
-  public ManagedObjectReference getCs()
-  {
+  public ManagedObjectReference getCs() {
     return this.cs;
   }
 
-  public String getCsName()
-  {
+  public String getCsName() {
     return this.csName;
   }
 
-  public ComputeResourceHostSPBMLicenseInfo[] getHostLicenseStates()
-  {
+  public ComputeResourceHostSPBMLicenseInfo[] getHostLicenseStates() {
     return this.hostLicenseStates;
   }
 
-  public void setCs(ManagedObjectReference cs)
-  {
+  public void setCs(ManagedObjectReference cs) {
     this.cs=cs;
   }
 
-  public void setCsName(String csName)
-  {
+  public void setCsName(String csName) {
     this.csName=csName;
   }
 
-  public void setHostLicenseStates(ComputeResourceHostSPBMLicenseInfo[] hostLicenseStates)
-  {
+  public void setHostLicenseStates(ComputeResourceHostSPBMLicenseInfo[] hostLicenseStates) {
     this.hostLicenseStates=hostLicenseStates;
   }
 }

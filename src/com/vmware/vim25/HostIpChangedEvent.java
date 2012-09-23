@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,31 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class HostIpChangedEvent extends HostEvent
-{
+@SuppressWarnings("all")
+public class HostIpChangedEvent extends HostEvent {
   public String oldIP;
   public String newIP;
 
-  public String getOldIP()
-  {
+  public String getOldIP() {
     return this.oldIP;
   }
 
-  public String getNewIP()
-  {
+  public String getNewIP() {
     return this.newIP;
   }
 
-  public void setOldIP(String oldIP)
-  {
+  public void setOldIP(String oldIP) {
     this.oldIP=oldIP;
   }
 
-  public void setNewIP(String newIP)
-  {
+  public void setNewIP(String newIP) {
     this.newIP=newIP;
   }
 }

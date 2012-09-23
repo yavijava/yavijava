@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,53 +30,46 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class DistributedVirtualSwitchHostMemberConfigInfo extends DynamicData
-{
+@SuppressWarnings("all")
+public class DistributedVirtualSwitchHostMemberConfigInfo extends DynamicData {
   public ManagedObjectReference host;
   public int maxProxySwitchPorts;
   public DistributedVirtualSwitchKeyedOpaqueBlob[] vendorSpecificConfig;
   public DistributedVirtualSwitchHostMemberBacking backing;
 
-  public ManagedObjectReference getHost()
-  {
+  public ManagedObjectReference getHost() {
     return this.host;
   }
 
-  public int getMaxProxySwitchPorts()
-  {
+  public int getMaxProxySwitchPorts() {
     return this.maxProxySwitchPorts;
   }
 
-  public DistributedVirtualSwitchKeyedOpaqueBlob[] getVendorSpecificConfig()
-  {
+  public DistributedVirtualSwitchKeyedOpaqueBlob[] getVendorSpecificConfig() {
     return this.vendorSpecificConfig;
   }
 
-  public DistributedVirtualSwitchHostMemberBacking getBacking()
-  {
+  public DistributedVirtualSwitchHostMemberBacking getBacking() {
     return this.backing;
   }
 
-  public void setHost(ManagedObjectReference host)
-  {
+  public void setHost(ManagedObjectReference host) {
     this.host=host;
   }
 
-  public void setMaxProxySwitchPorts(int maxProxySwitchPorts)
-  {
+  public void setMaxProxySwitchPorts(int maxProxySwitchPorts) {
     this.maxProxySwitchPorts=maxProxySwitchPorts;
   }
 
-  public void setVendorSpecificConfig(DistributedVirtualSwitchKeyedOpaqueBlob[] vendorSpecificConfig)
-  {
+  public void setVendorSpecificConfig(DistributedVirtualSwitchKeyedOpaqueBlob[] vendorSpecificConfig) {
     this.vendorSpecificConfig=vendorSpecificConfig;
   }
 
-  public void setBacking(DistributedVirtualSwitchHostMemberBacking backing)
-  {
+  public void setBacking(DistributedVirtualSwitchHostMemberBacking backing) {
     this.backing=backing;
   }
 }

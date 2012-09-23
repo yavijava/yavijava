@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,42 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class ClusterDasDataSummary extends ClusterDasData
-{
+@SuppressWarnings("all")
+public class ClusterDasDataSummary extends ClusterDasData {
   public long hostListVersion;
   public long clusterConfigVersion;
   public long compatListVersion;
 
-  public long getHostListVersion()
-  {
+  public long getHostListVersion() {
     return this.hostListVersion;
   }
 
-  public long getClusterConfigVersion()
-  {
+  public long getClusterConfigVersion() {
     return this.clusterConfigVersion;
   }
 
-  public long getCompatListVersion()
-  {
+  public long getCompatListVersion() {
     return this.compatListVersion;
   }
 
-  public void setHostListVersion(long hostListVersion)
-  {
+  public void setHostListVersion(long hostListVersion) {
     this.hostListVersion=hostListVersion;
   }
 
-  public void setClusterConfigVersion(long clusterConfigVersion)
-  {
+  public void setClusterConfigVersion(long clusterConfigVersion) {
     this.clusterConfigVersion=clusterConfigVersion;
   }
 
-  public void setCompatListVersion(long compatListVersion)
-  {
+  public void setCompatListVersion(long compatListVersion) {
     this.compatListVersion=compatListVersion;
   }
 }

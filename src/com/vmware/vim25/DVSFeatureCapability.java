@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,64 +30,82 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class DVSFeatureCapability extends DynamicData
-{
+@SuppressWarnings("all")
+public class DVSFeatureCapability extends DynamicData {
   public boolean networkResourceManagementSupported;
   public boolean vmDirectPathGen2Supported;
   public String[] nicTeamingPolicy;
   public Integer networkResourcePoolHighShareValue;
   public DVSNetworkResourceManagementCapability networkResourceManagementCapability;
+  public DVSHealthCheckCapability healthCheckCapability;
+  public DVSRollbackCapability rollbackCapability;
+  public DVSBackupRestoreCapability backupRestoreCapability;
 
-  public boolean isNetworkResourceManagementSupported()
-  {
+  public boolean isNetworkResourceManagementSupported() {
     return this.networkResourceManagementSupported;
   }
 
-  public boolean isVmDirectPathGen2Supported()
-  {
+  public boolean isVmDirectPathGen2Supported() {
     return this.vmDirectPathGen2Supported;
   }
 
-  public String[] getNicTeamingPolicy()
-  {
+  public String[] getNicTeamingPolicy() {
     return this.nicTeamingPolicy;
   }
 
-  public Integer getNetworkResourcePoolHighShareValue()
-  {
+  public Integer getNetworkResourcePoolHighShareValue() {
     return this.networkResourcePoolHighShareValue;
   }
 
-  public DVSNetworkResourceManagementCapability getNetworkResourceManagementCapability()
-  {
+  public DVSNetworkResourceManagementCapability getNetworkResourceManagementCapability() {
     return this.networkResourceManagementCapability;
   }
 
-  public void setNetworkResourceManagementSupported(boolean networkResourceManagementSupported)
-  {
+  public DVSHealthCheckCapability getHealthCheckCapability() {
+    return this.healthCheckCapability;
+  }
+
+  public DVSRollbackCapability getRollbackCapability() {
+    return this.rollbackCapability;
+  }
+
+  public DVSBackupRestoreCapability getBackupRestoreCapability() {
+    return this.backupRestoreCapability;
+  }
+
+  public void setNetworkResourceManagementSupported(boolean networkResourceManagementSupported) {
     this.networkResourceManagementSupported=networkResourceManagementSupported;
   }
 
-  public void setVmDirectPathGen2Supported(boolean vmDirectPathGen2Supported)
-  {
+  public void setVmDirectPathGen2Supported(boolean vmDirectPathGen2Supported) {
     this.vmDirectPathGen2Supported=vmDirectPathGen2Supported;
   }
 
-  public void setNicTeamingPolicy(String[] nicTeamingPolicy)
-  {
+  public void setNicTeamingPolicy(String[] nicTeamingPolicy) {
     this.nicTeamingPolicy=nicTeamingPolicy;
   }
 
-  public void setNetworkResourcePoolHighShareValue(Integer networkResourcePoolHighShareValue)
-  {
+  public void setNetworkResourcePoolHighShareValue(Integer networkResourcePoolHighShareValue) {
     this.networkResourcePoolHighShareValue=networkResourcePoolHighShareValue;
   }
 
-  public void setNetworkResourceManagementCapability(DVSNetworkResourceManagementCapability networkResourceManagementCapability)
-  {
+  public void setNetworkResourceManagementCapability(DVSNetworkResourceManagementCapability networkResourceManagementCapability) {
     this.networkResourceManagementCapability=networkResourceManagementCapability;
+  }
+
+  public void setHealthCheckCapability(DVSHealthCheckCapability healthCheckCapability) {
+    this.healthCheckCapability=healthCheckCapability;
+  }
+
+  public void setRollbackCapability(DVSRollbackCapability rollbackCapability) {
+    this.rollbackCapability=rollbackCapability;
+  }
+
+  public void setBackupRestoreCapability(DVSBackupRestoreCapability backupRestoreCapability) {
+    this.backupRestoreCapability=backupRestoreCapability;
   }
 }

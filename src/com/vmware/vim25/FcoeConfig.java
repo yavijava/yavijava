@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,64 +30,55 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class FcoeConfig extends DynamicData
-{
+@SuppressWarnings("all")
+public class FcoeConfig extends DynamicData {
   public int priorityClass;
   public String sourceMac;
   public FcoeConfigVlanRange[] vlanRange;
   public FcoeConfigFcoeCapabilities capabilities;
   public boolean fcoeActive;
 
-  public int getPriorityClass()
-  {
+  public int getPriorityClass() {
     return this.priorityClass;
   }
 
-  public String getSourceMac()
-  {
+  public String getSourceMac() {
     return this.sourceMac;
   }
 
-  public FcoeConfigVlanRange[] getVlanRange()
-  {
+  public FcoeConfigVlanRange[] getVlanRange() {
     return this.vlanRange;
   }
 
-  public FcoeConfigFcoeCapabilities getCapabilities()
-  {
+  public FcoeConfigFcoeCapabilities getCapabilities() {
     return this.capabilities;
   }
 
-  public boolean isFcoeActive()
-  {
+  public boolean isFcoeActive() {
     return this.fcoeActive;
   }
 
-  public void setPriorityClass(int priorityClass)
-  {
+  public void setPriorityClass(int priorityClass) {
     this.priorityClass=priorityClass;
   }
 
-  public void setSourceMac(String sourceMac)
-  {
+  public void setSourceMac(String sourceMac) {
     this.sourceMac=sourceMac;
   }
 
-  public void setVlanRange(FcoeConfigVlanRange[] vlanRange)
-  {
+  public void setVlanRange(FcoeConfigVlanRange[] vlanRange) {
     this.vlanRange=vlanRange;
   }
 
-  public void setCapabilities(FcoeConfigFcoeCapabilities capabilities)
-  {
+  public void setCapabilities(FcoeConfigFcoeCapabilities capabilities) {
     this.capabilities=capabilities;
   }
 
-  public void setFcoeActive(boolean fcoeActive)
-  {
+  public void setFcoeActive(boolean fcoeActive) {
     this.fcoeActive=fcoeActive;
   }
 }

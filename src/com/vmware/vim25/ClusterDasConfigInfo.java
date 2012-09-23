@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,11 +30,12 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class ClusterDasConfigInfo extends DynamicData
-{
+@SuppressWarnings("all")
+public class ClusterDasConfigInfo extends DynamicData {
   public Boolean enabled;
   public String vmMonitoring;
   public String hostMonitoring;
@@ -46,103 +47,83 @@ public class ClusterDasConfigInfo extends DynamicData
   public ManagedObjectReference[] heartbeatDatastore;
   public String hBDatastoreCandidatePolicy;
 
-  public Boolean getEnabled()
-  {
+  public Boolean getEnabled() {
     return this.enabled;
   }
 
-  public String getVmMonitoring()
-  {
+  public String getVmMonitoring() {
     return this.vmMonitoring;
   }
 
-  public String getHostMonitoring()
-  {
+  public String getHostMonitoring() {
     return this.hostMonitoring;
   }
 
-  public Integer getFailoverLevel()
-  {
+  public Integer getFailoverLevel() {
     return this.failoverLevel;
   }
 
-  public ClusterDasAdmissionControlPolicy getAdmissionControlPolicy()
-  {
+  public ClusterDasAdmissionControlPolicy getAdmissionControlPolicy() {
     return this.admissionControlPolicy;
   }
 
-  public Boolean getAdmissionControlEnabled()
-  {
+  public Boolean getAdmissionControlEnabled() {
     return this.admissionControlEnabled;
   }
 
-  public ClusterDasVmSettings getDefaultVmSettings()
-  {
+  public ClusterDasVmSettings getDefaultVmSettings() {
     return this.defaultVmSettings;
   }
 
-  public OptionValue[] getOption()
-  {
+  public OptionValue[] getOption() {
     return this.option;
   }
 
-  public ManagedObjectReference[] getHeartbeatDatastore()
-  {
+  public ManagedObjectReference[] getHeartbeatDatastore() {
     return this.heartbeatDatastore;
   }
 
-  public String getHBDatastoreCandidatePolicy()
-  {
+  public String getHBDatastoreCandidatePolicy() {
     return this.hBDatastoreCandidatePolicy;
   }
 
-  public void setEnabled(Boolean enabled)
-  {
+  public void setEnabled(Boolean enabled) {
     this.enabled=enabled;
   }
 
-  public void setVmMonitoring(String vmMonitoring)
-  {
+  public void setVmMonitoring(String vmMonitoring) {
     this.vmMonitoring=vmMonitoring;
   }
 
-  public void setHostMonitoring(String hostMonitoring)
-  {
+  public void setHostMonitoring(String hostMonitoring) {
     this.hostMonitoring=hostMonitoring;
   }
 
-  public void setFailoverLevel(Integer failoverLevel)
-  {
+  public void setFailoverLevel(Integer failoverLevel) {
     this.failoverLevel=failoverLevel;
   }
 
-  public void setAdmissionControlPolicy(ClusterDasAdmissionControlPolicy admissionControlPolicy)
-  {
+  public void setAdmissionControlPolicy(ClusterDasAdmissionControlPolicy admissionControlPolicy) {
     this.admissionControlPolicy=admissionControlPolicy;
   }
 
-  public void setAdmissionControlEnabled(Boolean admissionControlEnabled)
-  {
+  public void setAdmissionControlEnabled(Boolean admissionControlEnabled) {
     this.admissionControlEnabled=admissionControlEnabled;
   }
 
-  public void setDefaultVmSettings(ClusterDasVmSettings defaultVmSettings)
-  {
+  public void setDefaultVmSettings(ClusterDasVmSettings defaultVmSettings) {
     this.defaultVmSettings=defaultVmSettings;
   }
 
-  public void setOption(OptionValue[] option)
-  {
+  public void setOption(OptionValue[] option) {
     this.option=option;
   }
 
-  public void setHeartbeatDatastore(ManagedObjectReference[] heartbeatDatastore)
-  {
+  public void setHeartbeatDatastore(ManagedObjectReference[] heartbeatDatastore) {
     this.heartbeatDatastore=heartbeatDatastore;
   }
 
-  public void setHBDatastoreCandidatePolicy(String hBDatastoreCandidatePolicy)
-  {
+  public void setHBDatastoreCandidatePolicy(String hBDatastoreCandidatePolicy) {
     this.hBDatastoreCandidatePolicy=hBDatastoreCandidatePolicy;
   }
 }

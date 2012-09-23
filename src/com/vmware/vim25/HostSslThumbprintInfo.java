@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,42 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class HostSslThumbprintInfo extends DynamicData
-{
+@SuppressWarnings("all")
+public class HostSslThumbprintInfo extends DynamicData {
   public String principal;
   public String ownerTag;
   public String[] sslThumbprints;
 
-  public String getPrincipal()
-  {
+  public String getPrincipal() {
     return this.principal;
   }
 
-  public String getOwnerTag()
-  {
+  public String getOwnerTag() {
     return this.ownerTag;
   }
 
-  public String[] getSslThumbprints()
-  {
+  public String[] getSslThumbprints() {
     return this.sslThumbprints;
   }
 
-  public void setPrincipal(String principal)
-  {
+  public void setPrincipal(String principal) {
     this.principal=principal;
   }
 
-  public void setOwnerTag(String ownerTag)
-  {
+  public void setOwnerTag(String ownerTag) {
     this.ownerTag=ownerTag;
   }
 
-  public void setSslThumbprints(String[] sslThumbprints)
-  {
+  public void setSslThumbprints(String[] sslThumbprints) {
     this.sslThumbprints=sslThumbprints;
   }
 }

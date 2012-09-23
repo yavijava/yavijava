@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,11 +30,11 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public enum VirtualMachineGuestOsIdentifier
-{
+public enum VirtualMachineGuestOsIdentifier {
   dosGuest ("dosGuest"),
   win31Guest ("win31Guest"),
   win95Guest ("win95Guest"),
@@ -108,6 +108,10 @@ public enum VirtualMachineGuestOsIdentifier
   asianux3_64Guest ("asianux3_64Guest"),
   asianux4Guest ("asianux4Guest"),
   asianux4_64Guest ("asianux4_64Guest"),
+  opensuseGuest ("opensuseGuest"),
+  opensuse64Guest ("opensuse64Guest"),
+  fedoraGuest ("fedoraGuest"),
+  fedora64Guest ("fedora64Guest"),
   other24xLinuxGuest ("other24xLinuxGuest"),
   other26xLinuxGuest ("other26xLinuxGuest"),
   otherLinuxGuest ("otherLinuxGuest"),
@@ -141,6 +145,7 @@ public enum VirtualMachineGuestOsIdentifier
   otherGuest ("otherGuest"),
   otherGuest64 ("otherGuest64");
 
+  @SuppressWarnings("unused")
   private final String val;
   private VirtualMachineGuestOsIdentifier(String val)
   {

@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,42 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class VspanDestPortConflict extends DvsFault
-{
+@SuppressWarnings("all")
+public class VspanDestPortConflict extends DvsFault {
   public String vspanSessionKey1;
   public String vspanSessionKey2;
   public String portKey;
 
-  public String getVspanSessionKey1()
-  {
+  public String getVspanSessionKey1() {
     return this.vspanSessionKey1;
   }
 
-  public String getVspanSessionKey2()
-  {
+  public String getVspanSessionKey2() {
     return this.vspanSessionKey2;
   }
 
-  public String getPortKey()
-  {
+  public String getPortKey() {
     return this.portKey;
   }
 
-  public void setVspanSessionKey1(String vspanSessionKey1)
-  {
+  public void setVspanSessionKey1(String vspanSessionKey1) {
     this.vspanSessionKey1=vspanSessionKey1;
   }
 
-  public void setVspanSessionKey2(String vspanSessionKey2)
-  {
+  public void setVspanSessionKey2(String vspanSessionKey2) {
     this.vspanSessionKey2=vspanSessionKey2;
   }
 
-  public void setPortKey(String portKey)
-  {
+  public void setPortKey(String portKey) {
     this.portKey=portKey;
   }
 }

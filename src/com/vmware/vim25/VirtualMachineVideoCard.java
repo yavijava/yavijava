@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,53 +30,55 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class VirtualMachineVideoCard extends VirtualDevice
-{
+@SuppressWarnings("all")
+public class VirtualMachineVideoCard extends VirtualDevice {
   public Long videoRamSizeInKB;
   public Integer numDisplays;
   public Boolean useAutoDetect;
   public Boolean enable3DSupport;
+  public String use3dRenderer;
 
-  public Long getVideoRamSizeInKB()
-  {
+  public Long getVideoRamSizeInKB() {
     return this.videoRamSizeInKB;
   }
 
-  public Integer getNumDisplays()
-  {
+  public Integer getNumDisplays() {
     return this.numDisplays;
   }
 
-  public Boolean getUseAutoDetect()
-  {
+  public Boolean getUseAutoDetect() {
     return this.useAutoDetect;
   }
 
-  public Boolean getEnable3DSupport()
-  {
+  public Boolean getEnable3DSupport() {
     return this.enable3DSupport;
   }
 
-  public void setVideoRamSizeInKB(Long videoRamSizeInKB)
-  {
+  public String getUse3dRenderer() {
+    return this.use3dRenderer;
+  }
+
+  public void setVideoRamSizeInKB(Long videoRamSizeInKB) {
     this.videoRamSizeInKB=videoRamSizeInKB;
   }
 
-  public void setNumDisplays(Integer numDisplays)
-  {
+  public void setNumDisplays(Integer numDisplays) {
     this.numDisplays=numDisplays;
   }
 
-  public void setUseAutoDetect(Boolean useAutoDetect)
-  {
+  public void setUseAutoDetect(Boolean useAutoDetect) {
     this.useAutoDetect=useAutoDetect;
   }
 
-  public void setEnable3DSupport(Boolean enable3DSupport)
-  {
+  public void setEnable3DSupport(Boolean enable3DSupport) {
     this.enable3DSupport=enable3DSupport;
+  }
+
+  public void setUse3dRenderer(String use3dRenderer) {
+    this.use3dRenderer=use3dRenderer;
   }
 }

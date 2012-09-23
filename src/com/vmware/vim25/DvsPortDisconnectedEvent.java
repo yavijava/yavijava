@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,31 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class DvsPortDisconnectedEvent extends DvsEvent
-{
+@SuppressWarnings("all")
+public class DvsPortDisconnectedEvent extends DvsEvent {
   public String portKey;
   public DistributedVirtualSwitchPortConnectee connectee;
 
-  public String getPortKey()
-  {
+  public String getPortKey() {
     return this.portKey;
   }
 
-  public DistributedVirtualSwitchPortConnectee getConnectee()
-  {
+  public DistributedVirtualSwitchPortConnectee getConnectee() {
     return this.connectee;
   }
 
-  public void setPortKey(String portKey)
-  {
+  public void setPortKey(String portKey) {
     this.portKey=portKey;
   }
 
-  public void setConnectee(DistributedVirtualSwitchPortConnectee connectee)
-  {
+  public void setConnectee(DistributedVirtualSwitchPortConnectee connectee) {
     this.connectee=connectee;
   }
 }

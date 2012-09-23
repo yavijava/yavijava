@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -31,11 +31,12 @@ package com.vmware.vim25;
 import java.util.Calendar;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class ScheduledTaskInfo extends ScheduledTaskSpec
-{
+@SuppressWarnings("all")
+public class ScheduledTaskInfo extends ScheduledTaskSpec {
   public ManagedObjectReference scheduledTask;
   public ManagedObjectReference entity;
   public Calendar lastModifiedTime;
@@ -49,123 +50,99 @@ public class ScheduledTaskInfo extends ScheduledTaskSpec
   public ManagedObjectReference activeTask;
   public ManagedObjectReference taskObject;
 
-  public ManagedObjectReference getScheduledTask()
-  {
+  public ManagedObjectReference getScheduledTask() {
     return this.scheduledTask;
   }
 
-  public ManagedObjectReference getEntity()
-  {
+  public ManagedObjectReference getEntity() {
     return this.entity;
   }
 
-  public Calendar getLastModifiedTime()
-  {
+  public Calendar getLastModifiedTime() {
     return this.lastModifiedTime;
   }
 
-  public String getLastModifiedUser()
-  {
+  public String getLastModifiedUser() {
     return this.lastModifiedUser;
   }
 
-  public Calendar getNextRunTime()
-  {
+  public Calendar getNextRunTime() {
     return this.nextRunTime;
   }
 
-  public Calendar getPrevRunTime()
-  {
+  public Calendar getPrevRunTime() {
     return this.prevRunTime;
   }
 
-  public TaskInfoState getState()
-  {
+  public TaskInfoState getState() {
     return this.state;
   }
 
-  public LocalizedMethodFault getError()
-  {
+  public LocalizedMethodFault getError() {
     return this.error;
   }
 
-  public Object getResult()
-  {
+  public Object getResult() {
     return this.result;
   }
 
-  public Integer getProgress()
-  {
+  public Integer getProgress() {
     return this.progress;
   }
 
-  public ManagedObjectReference getActiveTask()
-  {
+  public ManagedObjectReference getActiveTask() {
     return this.activeTask;
   }
 
-  public ManagedObjectReference getTaskObject()
-  {
+  public ManagedObjectReference getTaskObject() {
     return this.taskObject;
   }
 
-  public void setScheduledTask(ManagedObjectReference scheduledTask)
-  {
+  public void setScheduledTask(ManagedObjectReference scheduledTask) {
     this.scheduledTask=scheduledTask;
   }
 
-  public void setEntity(ManagedObjectReference entity)
-  {
+  public void setEntity(ManagedObjectReference entity) {
     this.entity=entity;
   }
 
-  public void setLastModifiedTime(Calendar lastModifiedTime)
-  {
+  public void setLastModifiedTime(Calendar lastModifiedTime) {
     this.lastModifiedTime=lastModifiedTime;
   }
 
-  public void setLastModifiedUser(String lastModifiedUser)
-  {
+  public void setLastModifiedUser(String lastModifiedUser) {
     this.lastModifiedUser=lastModifiedUser;
   }
 
-  public void setNextRunTime(Calendar nextRunTime)
-  {
+  public void setNextRunTime(Calendar nextRunTime) {
     this.nextRunTime=nextRunTime;
   }
 
-  public void setPrevRunTime(Calendar prevRunTime)
-  {
+  public void setPrevRunTime(Calendar prevRunTime) {
     this.prevRunTime=prevRunTime;
   }
 
-  public void setState(TaskInfoState state)
-  {
+  public void setState(TaskInfoState state) {
     this.state=state;
   }
 
-  public void setError(LocalizedMethodFault error)
-  {
+  public void setError(LocalizedMethodFault error) {
     this.error=error;
   }
 
-  public void setResult(Object result)
-  {
+  public void setResult(Object result) {
     this.result=result;
   }
 
-  public void setProgress(Integer progress)
-  {
+  public void setProgress(Integer progress) {
     this.progress=progress;
   }
 
-  public void setActiveTask(ManagedObjectReference activeTask)
-  {
+  public void setActiveTask(ManagedObjectReference activeTask) {
     this.activeTask=activeTask;
   }
 
-  public void setTaskObject(ManagedObjectReference taskObject)
-  {
+  public void setTaskObject(ManagedObjectReference taskObject) {
     this.taskObject=taskObject;
   }
 }

@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,31 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class VMwareUplinkPortOrderPolicy extends InheritablePolicy
-{
+@SuppressWarnings("all")
+public class VMwareUplinkPortOrderPolicy extends InheritablePolicy {
   public String[] activeUplinkPort;
   public String[] standbyUplinkPort;
 
-  public String[] getActiveUplinkPort()
-  {
+  public String[] getActiveUplinkPort() {
     return this.activeUplinkPort;
   }
 
-  public String[] getStandbyUplinkPort()
-  {
+  public String[] getStandbyUplinkPort() {
     return this.standbyUplinkPort;
   }
 
-  public void setActiveUplinkPort(String[] activeUplinkPort)
-  {
+  public void setActiveUplinkPort(String[] activeUplinkPort) {
     this.activeUplinkPort=activeUplinkPort;
   }
 
-  public void setStandbyUplinkPort(String[] standbyUplinkPort)
-  {
+  public void setStandbyUplinkPort(String[] standbyUplinkPort) {
     this.standbyUplinkPort=standbyUplinkPort;
   }
 }

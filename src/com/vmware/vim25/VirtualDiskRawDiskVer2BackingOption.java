@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,31 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class VirtualDiskRawDiskVer2BackingOption extends VirtualDeviceDeviceBackingOption
-{
+@SuppressWarnings("all")
+public class VirtualDiskRawDiskVer2BackingOption extends VirtualDeviceDeviceBackingOption {
   public ChoiceOption descriptorFileNameExtensions;
   public boolean uuid;
 
-  public ChoiceOption getDescriptorFileNameExtensions()
-  {
+  public ChoiceOption getDescriptorFileNameExtensions() {
     return this.descriptorFileNameExtensions;
   }
 
-  public boolean isUuid()
-  {
+  public boolean isUuid() {
     return this.uuid;
   }
 
-  public void setDescriptorFileNameExtensions(ChoiceOption descriptorFileNameExtensions)
-  {
+  public void setDescriptorFileNameExtensions(ChoiceOption descriptorFileNameExtensions) {
     this.descriptorFileNameExtensions=descriptorFileNameExtensions;
   }
 
-  public void setUuid(boolean uuid)
-  {
+  public void setUuid(boolean uuid) {
     this.uuid=uuid;
   }
 }

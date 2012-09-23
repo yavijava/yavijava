@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,64 +30,55 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class VirtualAppSummary extends ResourcePoolSummary
-{
+@SuppressWarnings("all")
+public class VirtualAppSummary extends ResourcePoolSummary {
   public VAppProductInfo product;
   public VirtualAppVAppState vAppState;
   public Boolean suspended;
   public Boolean installBootRequired;
   public String instanceUuid;
 
-  public VAppProductInfo getProduct()
-  {
+  public VAppProductInfo getProduct() {
     return this.product;
   }
 
-  public VirtualAppVAppState getVAppState()
-  {
+  public VirtualAppVAppState getVAppState() {
     return this.vAppState;
   }
 
-  public Boolean getSuspended()
-  {
+  public Boolean getSuspended() {
     return this.suspended;
   }
 
-  public Boolean getInstallBootRequired()
-  {
+  public Boolean getInstallBootRequired() {
     return this.installBootRequired;
   }
 
-  public String getInstanceUuid()
-  {
+  public String getInstanceUuid() {
     return this.instanceUuid;
   }
 
-  public void setProduct(VAppProductInfo product)
-  {
+  public void setProduct(VAppProductInfo product) {
     this.product=product;
   }
 
-  public void setVAppState(VirtualAppVAppState vAppState)
-  {
+  public void setVAppState(VirtualAppVAppState vAppState) {
     this.vAppState=vAppState;
   }
 
-  public void setSuspended(Boolean suspended)
-  {
+  public void setSuspended(Boolean suspended) {
     this.suspended=suspended;
   }
 
-  public void setInstallBootRequired(Boolean installBootRequired)
-  {
+  public void setInstallBootRequired(Boolean installBootRequired) {
     this.installBootRequired=installBootRequired;
   }
 
-  public void setInstanceUuid(String instanceUuid)
-  {
+  public void setInstanceUuid(String instanceUuid) {
     this.instanceUuid=instanceUuid;
   }
 }

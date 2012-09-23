@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,42 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class LongOption extends OptionType
-{
+@SuppressWarnings("all")
+public class LongOption extends OptionType {
   public long min;
   public long max;
   public long defaultValue;
 
-  public long getMin()
-  {
+  public long getMin() {
     return this.min;
   }
 
-  public long getMax()
-  {
+  public long getMax() {
     return this.max;
   }
 
-  public long getDefaultValue()
-  {
+  public long getDefaultValue() {
     return this.defaultValue;
   }
 
-  public void setMin(long min)
-  {
+  public void setMin(long min) {
     this.min=min;
   }
 
-  public void setMax(long max)
-  {
+  public void setMax(long max) {
     this.max=max;
   }
 
-  public void setDefaultValue(long defaultValue)
-  {
+  public void setDefaultValue(long defaultValue) {
     this.defaultValue=defaultValue;
   }
 }

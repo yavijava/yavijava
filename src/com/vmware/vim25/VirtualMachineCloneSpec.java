@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,11 +30,12 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class VirtualMachineCloneSpec extends DynamicData
-{
+@SuppressWarnings("all")
+public class VirtualMachineCloneSpec extends DynamicData {
   public VirtualMachineRelocateSpec location;
   public boolean template;
   public VirtualMachineConfigSpec config;
@@ -42,63 +43,51 @@ public class VirtualMachineCloneSpec extends DynamicData
   public boolean powerOn;
   public ManagedObjectReference snapshot;
 
-  public VirtualMachineRelocateSpec getLocation()
-  {
+  public VirtualMachineRelocateSpec getLocation() {
     return this.location;
   }
 
-  public boolean isTemplate()
-  {
+  public boolean isTemplate() {
     return this.template;
   }
 
-  public VirtualMachineConfigSpec getConfig()
-  {
+  public VirtualMachineConfigSpec getConfig() {
     return this.config;
   }
 
-  public CustomizationSpec getCustomization()
-  {
+  public CustomizationSpec getCustomization() {
     return this.customization;
   }
 
-  public boolean isPowerOn()
-  {
+  public boolean isPowerOn() {
     return this.powerOn;
   }
 
-  public ManagedObjectReference getSnapshot()
-  {
+  public ManagedObjectReference getSnapshot() {
     return this.snapshot;
   }
 
-  public void setLocation(VirtualMachineRelocateSpec location)
-  {
+  public void setLocation(VirtualMachineRelocateSpec location) {
     this.location=location;
   }
 
-  public void setTemplate(boolean template)
-  {
+  public void setTemplate(boolean template) {
     this.template=template;
   }
 
-  public void setConfig(VirtualMachineConfigSpec config)
-  {
+  public void setConfig(VirtualMachineConfigSpec config) {
     this.config=config;
   }
 
-  public void setCustomization(CustomizationSpec customization)
-  {
+  public void setCustomization(CustomizationSpec customization) {
     this.customization=customization;
   }
 
-  public void setPowerOn(boolean powerOn)
-  {
+  public void setPowerOn(boolean powerOn) {
     this.powerOn=powerOn;
   }
 
-  public void setSnapshot(ManagedObjectReference snapshot)
-  {
+  public void setSnapshot(ManagedObjectReference snapshot) {
     this.snapshot=snapshot;
   }
 }

@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,25 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class ArrayOfVirtualDeviceConfigSpec
-{
+public class ArrayOfVirtualDeviceConfigSpec {
   public VirtualDeviceConfigSpec[] VirtualDeviceConfigSpec;
 
-  public VirtualDeviceConfigSpec[] getVirtualDeviceConfigSpec()
-  {
+  public VirtualDeviceConfigSpec[] getVirtualDeviceConfigSpec() {
     return this.VirtualDeviceConfigSpec;
   }
 
-  public VirtualDeviceConfigSpec getVirtualDeviceConfigSpec(int i)
-  {
+  public VirtualDeviceConfigSpec getVirtualDeviceConfigSpec(int i) {
     return this.VirtualDeviceConfigSpec[i];
   }
 
-  public void setVirtualDeviceConfigSpec(VirtualDeviceConfigSpec[] VirtualDeviceConfigSpec)
-  {
+  public void setVirtualDeviceConfigSpec(VirtualDeviceConfigSpec[] VirtualDeviceConfigSpec) {
     this.VirtualDeviceConfigSpec=VirtualDeviceConfigSpec;
   }
 }

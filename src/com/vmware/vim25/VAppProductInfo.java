@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,11 +30,12 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class VAppProductInfo extends DynamicData
-{
+@SuppressWarnings("all")
+public class VAppProductInfo extends DynamicData {
   public int key;
   public String classId;
   public String instanceId;
@@ -46,103 +47,83 @@ public class VAppProductInfo extends DynamicData
   public String productUrl;
   public String appUrl;
 
-  public int getKey()
-  {
+  public int getKey() {
     return this.key;
   }
 
-  public String getClassId()
-  {
+  public String getClassId() {
     return this.classId;
   }
 
-  public String getInstanceId()
-  {
+  public String getInstanceId() {
     return this.instanceId;
   }
 
-  public String getName()
-  {
+  public String getName() {
     return this.name;
   }
 
-  public String getVendor()
-  {
+  public String getVendor() {
     return this.vendor;
   }
 
-  public String getVersion()
-  {
+  public String getVersion() {
     return this.version;
   }
 
-  public String getFullVersion()
-  {
+  public String getFullVersion() {
     return this.fullVersion;
   }
 
-  public String getVendorUrl()
-  {
+  public String getVendorUrl() {
     return this.vendorUrl;
   }
 
-  public String getProductUrl()
-  {
+  public String getProductUrl() {
     return this.productUrl;
   }
 
-  public String getAppUrl()
-  {
+  public String getAppUrl() {
     return this.appUrl;
   }
 
-  public void setKey(int key)
-  {
+  public void setKey(int key) {
     this.key=key;
   }
 
-  public void setClassId(String classId)
-  {
+  public void setClassId(String classId) {
     this.classId=classId;
   }
 
-  public void setInstanceId(String instanceId)
-  {
+  public void setInstanceId(String instanceId) {
     this.instanceId=instanceId;
   }
 
-  public void setName(String name)
-  {
+  public void setName(String name) {
     this.name=name;
   }
 
-  public void setVendor(String vendor)
-  {
+  public void setVendor(String vendor) {
     this.vendor=vendor;
   }
 
-  public void setVersion(String version)
-  {
+  public void setVersion(String version) {
     this.version=version;
   }
 
-  public void setFullVersion(String fullVersion)
-  {
+  public void setFullVersion(String fullVersion) {
     this.fullVersion=fullVersion;
   }
 
-  public void setVendorUrl(String vendorUrl)
-  {
+  public void setVendorUrl(String vendorUrl) {
     this.vendorUrl=vendorUrl;
   }
 
-  public void setProductUrl(String productUrl)
-  {
+  public void setProductUrl(String productUrl) {
     this.productUrl=productUrl;
   }
 
-  public void setAppUrl(String appUrl)
-  {
+  public void setAppUrl(String appUrl) {
     this.appUrl=appUrl;
   }
 }

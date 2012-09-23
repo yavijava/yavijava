@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,53 +30,64 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class StorageIORMConfigSpec extends DynamicData
-{
+@SuppressWarnings("all")
+public class StorageIORMConfigSpec extends DynamicData {
   public Boolean enabled;
+  public String congestionThresholdMode;
   public Integer congestionThreshold;
+  public Integer percentOfPeakThroughput;
   public Boolean statsCollectionEnabled;
   public Boolean statsAggregationDisabled;
 
-  public Boolean getEnabled()
-  {
+  public Boolean getEnabled() {
     return this.enabled;
   }
 
-  public Integer getCongestionThreshold()
-  {
+  public String getCongestionThresholdMode() {
+    return this.congestionThresholdMode;
+  }
+
+  public Integer getCongestionThreshold() {
     return this.congestionThreshold;
   }
 
-  public Boolean getStatsCollectionEnabled()
-  {
+  public Integer getPercentOfPeakThroughput() {
+    return this.percentOfPeakThroughput;
+  }
+
+  public Boolean getStatsCollectionEnabled() {
     return this.statsCollectionEnabled;
   }
 
-  public Boolean getStatsAggregationDisabled()
-  {
+  public Boolean getStatsAggregationDisabled() {
     return this.statsAggregationDisabled;
   }
 
-  public void setEnabled(Boolean enabled)
-  {
+  public void setEnabled(Boolean enabled) {
     this.enabled=enabled;
   }
 
-  public void setCongestionThreshold(Integer congestionThreshold)
-  {
+  public void setCongestionThresholdMode(String congestionThresholdMode) {
+    this.congestionThresholdMode=congestionThresholdMode;
+  }
+
+  public void setCongestionThreshold(Integer congestionThreshold) {
     this.congestionThreshold=congestionThreshold;
   }
 
-  public void setStatsCollectionEnabled(Boolean statsCollectionEnabled)
-  {
+  public void setPercentOfPeakThroughput(Integer percentOfPeakThroughput) {
+    this.percentOfPeakThroughput=percentOfPeakThroughput;
+  }
+
+  public void setStatsCollectionEnabled(Boolean statsCollectionEnabled) {
     this.statsCollectionEnabled=statsCollectionEnabled;
   }
 
-  public void setStatsAggregationDisabled(Boolean statsAggregationDisabled)
-  {
+  public void setStatsAggregationDisabled(Boolean statsAggregationDisabled) {
     this.statsAggregationDisabled=statsAggregationDisabled;
   }
 }

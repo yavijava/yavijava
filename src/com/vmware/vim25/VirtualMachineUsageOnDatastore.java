@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,53 +30,46 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class VirtualMachineUsageOnDatastore extends DynamicData
-{
+@SuppressWarnings("all")
+public class VirtualMachineUsageOnDatastore extends DynamicData {
   public ManagedObjectReference datastore;
   public long committed;
   public long uncommitted;
   public long unshared;
 
-  public ManagedObjectReference getDatastore()
-  {
+  public ManagedObjectReference getDatastore() {
     return this.datastore;
   }
 
-  public long getCommitted()
-  {
+  public long getCommitted() {
     return this.committed;
   }
 
-  public long getUncommitted()
-  {
+  public long getUncommitted() {
     return this.uncommitted;
   }
 
-  public long getUnshared()
-  {
+  public long getUnshared() {
     return this.unshared;
   }
 
-  public void setDatastore(ManagedObjectReference datastore)
-  {
+  public void setDatastore(ManagedObjectReference datastore) {
     this.datastore=datastore;
   }
 
-  public void setCommitted(long committed)
-  {
+  public void setCommitted(long committed) {
     this.committed=committed;
   }
 
-  public void setUncommitted(long uncommitted)
-  {
+  public void setUncommitted(long uncommitted) {
     this.uncommitted=uncommitted;
   }
 
-  public void setUnshared(long unshared)
-  {
+  public void setUnshared(long unshared) {
     this.unshared=unshared;
   }
 }

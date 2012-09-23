@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,31 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class HostIpRouteConfigSpec extends HostIpRouteConfig
-{
+@SuppressWarnings("all")
+public class HostIpRouteConfigSpec extends HostIpRouteConfig {
   public HostVirtualNicConnection gatewayDeviceConnection;
   public HostVirtualNicConnection ipV6GatewayDeviceConnection;
 
-  public HostVirtualNicConnection getGatewayDeviceConnection()
-  {
+  public HostVirtualNicConnection getGatewayDeviceConnection() {
     return this.gatewayDeviceConnection;
   }
 
-  public HostVirtualNicConnection getIpV6GatewayDeviceConnection()
-  {
+  public HostVirtualNicConnection getIpV6GatewayDeviceConnection() {
     return this.ipV6GatewayDeviceConnection;
   }
 
-  public void setGatewayDeviceConnection(HostVirtualNicConnection gatewayDeviceConnection)
-  {
+  public void setGatewayDeviceConnection(HostVirtualNicConnection gatewayDeviceConnection) {
     this.gatewayDeviceConnection=gatewayDeviceConnection;
   }
 
-  public void setIpV6GatewayDeviceConnection(HostVirtualNicConnection ipV6GatewayDeviceConnection)
-  {
+  public void setIpV6GatewayDeviceConnection(HostVirtualNicConnection ipV6GatewayDeviceConnection) {
     this.ipV6GatewayDeviceConnection=ipV6GatewayDeviceConnection;
   }
 }

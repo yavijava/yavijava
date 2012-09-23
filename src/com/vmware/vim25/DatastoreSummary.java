@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,11 +30,12 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class DatastoreSummary extends DynamicData
-{
+@SuppressWarnings("all")
+public class DatastoreSummary extends DynamicData {
   public ManagedObjectReference datastore;
   public String name;
   public String url;
@@ -46,103 +47,83 @@ public class DatastoreSummary extends DynamicData
   public String type;
   public String maintenanceMode;
 
-  public ManagedObjectReference getDatastore()
-  {
+  public ManagedObjectReference getDatastore() {
     return this.datastore;
   }
 
-  public String getName()
-  {
+  public String getName() {
     return this.name;
   }
 
-  public String getUrl()
-  {
+  public String getUrl() {
     return this.url;
   }
 
-  public long getCapacity()
-  {
+  public long getCapacity() {
     return this.capacity;
   }
 
-  public long getFreeSpace()
-  {
+  public long getFreeSpace() {
     return this.freeSpace;
   }
 
-  public Long getUncommitted()
-  {
+  public Long getUncommitted() {
     return this.uncommitted;
   }
 
-  public boolean isAccessible()
-  {
+  public boolean isAccessible() {
     return this.accessible;
   }
 
-  public Boolean getMultipleHostAccess()
-  {
+  public Boolean getMultipleHostAccess() {
     return this.multipleHostAccess;
   }
 
-  public String getType()
-  {
+  public String getType() {
     return this.type;
   }
 
-  public String getMaintenanceMode()
-  {
+  public String getMaintenanceMode() {
     return this.maintenanceMode;
   }
 
-  public void setDatastore(ManagedObjectReference datastore)
-  {
+  public void setDatastore(ManagedObjectReference datastore) {
     this.datastore=datastore;
   }
 
-  public void setName(String name)
-  {
+  public void setName(String name) {
     this.name=name;
   }
 
-  public void setUrl(String url)
-  {
+  public void setUrl(String url) {
     this.url=url;
   }
 
-  public void setCapacity(long capacity)
-  {
+  public void setCapacity(long capacity) {
     this.capacity=capacity;
   }
 
-  public void setFreeSpace(long freeSpace)
-  {
+  public void setFreeSpace(long freeSpace) {
     this.freeSpace=freeSpace;
   }
 
-  public void setUncommitted(Long uncommitted)
-  {
+  public void setUncommitted(Long uncommitted) {
     this.uncommitted=uncommitted;
   }
 
-  public void setAccessible(boolean accessible)
-  {
+  public void setAccessible(boolean accessible) {
     this.accessible=accessible;
   }
 
-  public void setMultipleHostAccess(Boolean multipleHostAccess)
-  {
+  public void setMultipleHostAccess(Boolean multipleHostAccess) {
     this.multipleHostAccess=multipleHostAccess;
   }
 
-  public void setType(String type)
-  {
+  public void setType(String type) {
     this.type=type;
   }
 
-  public void setMaintenanceMode(String maintenanceMode)
-  {
+  public void setMaintenanceMode(String maintenanceMode) {
     this.maintenanceMode=maintenanceMode;
   }
 }

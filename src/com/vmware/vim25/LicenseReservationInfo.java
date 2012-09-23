@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,42 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class LicenseReservationInfo extends DynamicData
-{
+@SuppressWarnings("all")
+public class LicenseReservationInfo extends DynamicData {
   public String key;
   public LicenseReservationInfoState state;
   public int required;
 
-  public String getKey()
-  {
+  public String getKey() {
     return this.key;
   }
 
-  public LicenseReservationInfoState getState()
-  {
+  public LicenseReservationInfoState getState() {
     return this.state;
   }
 
-  public int getRequired()
-  {
+  public int getRequired() {
     return this.required;
   }
 
-  public void setKey(String key)
-  {
+  public void setKey(String key) {
     this.key=key;
   }
 
-  public void setState(LicenseReservationInfoState state)
-  {
+  public void setState(LicenseReservationInfoState state) {
     this.state=state;
   }
 
-  public void setRequired(int required)
-  {
+  public void setRequired(int required) {
     this.required=required;
   }
 }

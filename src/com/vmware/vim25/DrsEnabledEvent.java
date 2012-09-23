@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,20 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class DrsEnabledEvent extends ClusterEvent
-{
+@SuppressWarnings("all")
+public class DrsEnabledEvent extends ClusterEvent {
   public String behavior;
 
-  public String getBehavior()
-  {
+  public String getBehavior() {
     return this.behavior;
   }
 
-  public void setBehavior(String behavior)
-  {
+  public void setBehavior(String behavior) {
     this.behavior=behavior;
   }
 }

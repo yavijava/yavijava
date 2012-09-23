@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,11 +30,12 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class PhysicalNicCdpDeviceCapability extends DynamicData
-{
+@SuppressWarnings("all")
+public class PhysicalNicCdpDeviceCapability extends DynamicData {
   public boolean router;
   public boolean transparentBridge;
   public boolean sourceRouteBridge;
@@ -43,73 +44,59 @@ public class PhysicalNicCdpDeviceCapability extends DynamicData
   public boolean igmpEnabled;
   public boolean repeater;
 
-  public boolean isRouter()
-  {
+  public boolean isRouter() {
     return this.router;
   }
 
-  public boolean isTransparentBridge()
-  {
+  public boolean isTransparentBridge() {
     return this.transparentBridge;
   }
 
-  public boolean isSourceRouteBridge()
-  {
+  public boolean isSourceRouteBridge() {
     return this.sourceRouteBridge;
   }
 
-  public boolean isNetworkSwitch()
-  {
+  public boolean isNetworkSwitch() {
     return this.networkSwitch;
   }
 
-  public boolean isHost()
-  {
+  public boolean isHost() {
     return this.host;
   }
 
-  public boolean isIgmpEnabled()
-  {
+  public boolean isIgmpEnabled() {
     return this.igmpEnabled;
   }
 
-  public boolean isRepeater()
-  {
+  public boolean isRepeater() {
     return this.repeater;
   }
 
-  public void setRouter(boolean router)
-  {
+  public void setRouter(boolean router) {
     this.router=router;
   }
 
-  public void setTransparentBridge(boolean transparentBridge)
-  {
+  public void setTransparentBridge(boolean transparentBridge) {
     this.transparentBridge=transparentBridge;
   }
 
-  public void setSourceRouteBridge(boolean sourceRouteBridge)
-  {
+  public void setSourceRouteBridge(boolean sourceRouteBridge) {
     this.sourceRouteBridge=sourceRouteBridge;
   }
 
-  public void setNetworkSwitch(boolean networkSwitch)
-  {
+  public void setNetworkSwitch(boolean networkSwitch) {
     this.networkSwitch=networkSwitch;
   }
 
-  public void setHost(boolean host)
-  {
+  public void setHost(boolean host) {
     this.host=host;
   }
 
-  public void setIgmpEnabled(boolean igmpEnabled)
-  {
+  public void setIgmpEnabled(boolean igmpEnabled) {
     this.igmpEnabled=igmpEnabled;
   }
 
-  public void setRepeater(boolean repeater)
-  {
+  public void setRepeater(boolean repeater) {
     this.repeater=repeater;
   }
 }

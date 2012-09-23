@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,64 +30,55 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class CpuIncompatible extends VirtualHardwareCompatibilityIssue
-{
+@SuppressWarnings("all")
+public class CpuIncompatible extends VirtualHardwareCompatibilityIssue {
   public int level;
   public String registerName;
   public String registerBits;
   public String desiredBits;
   public ManagedObjectReference host;
 
-  public int getLevel()
-  {
+  public int getLevel() {
     return this.level;
   }
 
-  public String getRegisterName()
-  {
+  public String getRegisterName() {
     return this.registerName;
   }
 
-  public String getRegisterBits()
-  {
+  public String getRegisterBits() {
     return this.registerBits;
   }
 
-  public String getDesiredBits()
-  {
+  public String getDesiredBits() {
     return this.desiredBits;
   }
 
-  public ManagedObjectReference getHost()
-  {
+  public ManagedObjectReference getHost() {
     return this.host;
   }
 
-  public void setLevel(int level)
-  {
+  public void setLevel(int level) {
     this.level=level;
   }
 
-  public void setRegisterName(String registerName)
-  {
+  public void setRegisterName(String registerName) {
     this.registerName=registerName;
   }
 
-  public void setRegisterBits(String registerBits)
-  {
+  public void setRegisterBits(String registerBits) {
     this.registerBits=registerBits;
   }
 
-  public void setDesiredBits(String desiredBits)
-  {
+  public void setDesiredBits(String desiredBits) {
     this.desiredBits=desiredBits;
   }
 
-  public void setHost(ManagedObjectReference host)
-  {
+  public void setHost(ManagedObjectReference host) {
     this.host=host;
   }
 }

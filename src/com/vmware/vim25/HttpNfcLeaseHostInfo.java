@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,31 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class HttpNfcLeaseHostInfo extends DynamicData
-{
+@SuppressWarnings("all")
+public class HttpNfcLeaseHostInfo extends DynamicData {
   public String url;
   public String sslThumbprint;
 
-  public String getUrl()
-  {
+  public String getUrl() {
     return this.url;
   }
 
-  public String getSslThumbprint()
-  {
+  public String getSslThumbprint() {
     return this.sslThumbprint;
   }
 
-  public void setUrl(String url)
-  {
+  public void setUrl(String url) {
     this.url=url;
   }
 
-  public void setSslThumbprint(String sslThumbprint)
-  {
+  public void setSslThumbprint(String sslThumbprint) {
     this.sslThumbprint=sslThumbprint;
   }
 }

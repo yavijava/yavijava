@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,11 +30,12 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class HostProxySwitch extends DynamicData
-{
+@SuppressWarnings("all")
+public class HostProxySwitch extends DynamicData {
   public String dvsUuid;
   public String dvsName;
   public String key;
@@ -46,103 +47,83 @@ public class HostProxySwitch extends DynamicData
   public String[] pnic;
   public HostProxySwitchSpec spec;
 
-  public String getDvsUuid()
-  {
+  public String getDvsUuid() {
     return this.dvsUuid;
   }
 
-  public String getDvsName()
-  {
+  public String getDvsName() {
     return this.dvsName;
   }
 
-  public String getKey()
-  {
+  public String getKey() {
     return this.key;
   }
 
-  public int getNumPorts()
-  {
+  public int getNumPorts() {
     return this.numPorts;
   }
 
-  public Integer getConfigNumPorts()
-  {
+  public Integer getConfigNumPorts() {
     return this.configNumPorts;
   }
 
-  public int getNumPortsAvailable()
-  {
+  public int getNumPortsAvailable() {
     return this.numPortsAvailable;
   }
 
-  public KeyValue[] getUplinkPort()
-  {
+  public KeyValue[] getUplinkPort() {
     return this.uplinkPort;
   }
 
-  public Integer getMtu()
-  {
+  public Integer getMtu() {
     return this.mtu;
   }
 
-  public String[] getPnic()
-  {
+  public String[] getPnic() {
     return this.pnic;
   }
 
-  public HostProxySwitchSpec getSpec()
-  {
+  public HostProxySwitchSpec getSpec() {
     return this.spec;
   }
 
-  public void setDvsUuid(String dvsUuid)
-  {
+  public void setDvsUuid(String dvsUuid) {
     this.dvsUuid=dvsUuid;
   }
 
-  public void setDvsName(String dvsName)
-  {
+  public void setDvsName(String dvsName) {
     this.dvsName=dvsName;
   }
 
-  public void setKey(String key)
-  {
+  public void setKey(String key) {
     this.key=key;
   }
 
-  public void setNumPorts(int numPorts)
-  {
+  public void setNumPorts(int numPorts) {
     this.numPorts=numPorts;
   }
 
-  public void setConfigNumPorts(Integer configNumPorts)
-  {
+  public void setConfigNumPorts(Integer configNumPorts) {
     this.configNumPorts=configNumPorts;
   }
 
-  public void setNumPortsAvailable(int numPortsAvailable)
-  {
+  public void setNumPortsAvailable(int numPortsAvailable) {
     this.numPortsAvailable=numPortsAvailable;
   }
 
-  public void setUplinkPort(KeyValue[] uplinkPort)
-  {
+  public void setUplinkPort(KeyValue[] uplinkPort) {
     this.uplinkPort=uplinkPort;
   }
 
-  public void setMtu(Integer mtu)
-  {
+  public void setMtu(Integer mtu) {
     this.mtu=mtu;
   }
 
-  public void setPnic(String[] pnic)
-  {
+  public void setPnic(String[] pnic) {
     this.pnic=pnic;
   }
 
-  public void setSpec(HostProxySwitchSpec spec)
-  {
+  public void setSpec(HostProxySwitchSpec spec) {
     this.spec=spec;
   }
 }

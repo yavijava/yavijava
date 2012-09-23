@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,11 +30,12 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class HostDhcpServiceSpec extends DynamicData
-{
+@SuppressWarnings("all")
+public class HostDhcpServiceSpec extends DynamicData {
   public String virtualSwitch;
   public int defaultLeaseDuration;
   public String leaseBeginIp;
@@ -44,83 +45,67 @@ public class HostDhcpServiceSpec extends DynamicData
   public String ipSubnetAddr;
   public String ipSubnetMask;
 
-  public String getVirtualSwitch()
-  {
+  public String getVirtualSwitch() {
     return this.virtualSwitch;
   }
 
-  public int getDefaultLeaseDuration()
-  {
+  public int getDefaultLeaseDuration() {
     return this.defaultLeaseDuration;
   }
 
-  public String getLeaseBeginIp()
-  {
+  public String getLeaseBeginIp() {
     return this.leaseBeginIp;
   }
 
-  public String getLeaseEndIp()
-  {
+  public String getLeaseEndIp() {
     return this.leaseEndIp;
   }
 
-  public int getMaxLeaseDuration()
-  {
+  public int getMaxLeaseDuration() {
     return this.maxLeaseDuration;
   }
 
-  public boolean isUnlimitedLease()
-  {
+  public boolean isUnlimitedLease() {
     return this.unlimitedLease;
   }
 
-  public String getIpSubnetAddr()
-  {
+  public String getIpSubnetAddr() {
     return this.ipSubnetAddr;
   }
 
-  public String getIpSubnetMask()
-  {
+  public String getIpSubnetMask() {
     return this.ipSubnetMask;
   }
 
-  public void setVirtualSwitch(String virtualSwitch)
-  {
+  public void setVirtualSwitch(String virtualSwitch) {
     this.virtualSwitch=virtualSwitch;
   }
 
-  public void setDefaultLeaseDuration(int defaultLeaseDuration)
-  {
+  public void setDefaultLeaseDuration(int defaultLeaseDuration) {
     this.defaultLeaseDuration=defaultLeaseDuration;
   }
 
-  public void setLeaseBeginIp(String leaseBeginIp)
-  {
+  public void setLeaseBeginIp(String leaseBeginIp) {
     this.leaseBeginIp=leaseBeginIp;
   }
 
-  public void setLeaseEndIp(String leaseEndIp)
-  {
+  public void setLeaseEndIp(String leaseEndIp) {
     this.leaseEndIp=leaseEndIp;
   }
 
-  public void setMaxLeaseDuration(int maxLeaseDuration)
-  {
+  public void setMaxLeaseDuration(int maxLeaseDuration) {
     this.maxLeaseDuration=maxLeaseDuration;
   }
 
-  public void setUnlimitedLease(boolean unlimitedLease)
-  {
+  public void setUnlimitedLease(boolean unlimitedLease) {
     this.unlimitedLease=unlimitedLease;
   }
 
-  public void setIpSubnetAddr(String ipSubnetAddr)
-  {
+  public void setIpSubnetAddr(String ipSubnetAddr) {
     this.ipSubnetAddr=ipSubnetAddr;
   }
 
-  public void setIpSubnetMask(String ipSubnetMask)
-  {
+  public void setIpSubnetMask(String ipSubnetMask) {
     this.ipSubnetMask=ipSubnetMask;
   }
 }

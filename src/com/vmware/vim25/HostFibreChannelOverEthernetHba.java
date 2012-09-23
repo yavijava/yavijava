@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,53 +30,46 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class HostFibreChannelOverEthernetHba extends HostFibreChannelHba
-{
+@SuppressWarnings("all")
+public class HostFibreChannelOverEthernetHba extends HostFibreChannelHba {
   public String underlyingNic;
   public HostFibreChannelOverEthernetHbaLinkInfo linkInfo;
   public boolean isSoftwareFcoe;
   public boolean markedForRemoval;
 
-  public String getUnderlyingNic()
-  {
+  public String getUnderlyingNic() {
     return this.underlyingNic;
   }
 
-  public HostFibreChannelOverEthernetHbaLinkInfo getLinkInfo()
-  {
+  public HostFibreChannelOverEthernetHbaLinkInfo getLinkInfo() {
     return this.linkInfo;
   }
 
-  public boolean isIsSoftwareFcoe()
-  {
+  public boolean isIsSoftwareFcoe() {
     return this.isSoftwareFcoe;
   }
 
-  public boolean isMarkedForRemoval()
-  {
+  public boolean isMarkedForRemoval() {
     return this.markedForRemoval;
   }
 
-  public void setUnderlyingNic(String underlyingNic)
-  {
+  public void setUnderlyingNic(String underlyingNic) {
     this.underlyingNic=underlyingNic;
   }
 
-  public void setLinkInfo(HostFibreChannelOverEthernetHbaLinkInfo linkInfo)
-  {
+  public void setLinkInfo(HostFibreChannelOverEthernetHbaLinkInfo linkInfo) {
     this.linkInfo=linkInfo;
   }
 
-  public void setIsSoftwareFcoe(boolean isSoftwareFcoe)
-  {
+  public void setIsSoftwareFcoe(boolean isSoftwareFcoe) {
     this.isSoftwareFcoe=isSoftwareFcoe;
   }
 
-  public void setMarkedForRemoval(boolean markedForRemoval)
-  {
+  public void setMarkedForRemoval(boolean markedForRemoval) {
     this.markedForRemoval=markedForRemoval;
   }
 }

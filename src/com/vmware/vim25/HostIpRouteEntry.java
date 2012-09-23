@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,53 +30,46 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class HostIpRouteEntry extends DynamicData
-{
+@SuppressWarnings("all")
+public class HostIpRouteEntry extends DynamicData {
   public String network;
   public int prefixLength;
   public String gateway;
   public String deviceName;
 
-  public String getNetwork()
-  {
+  public String getNetwork() {
     return this.network;
   }
 
-  public int getPrefixLength()
-  {
+  public int getPrefixLength() {
     return this.prefixLength;
   }
 
-  public String getGateway()
-  {
+  public String getGateway() {
     return this.gateway;
   }
 
-  public String getDeviceName()
-  {
+  public String getDeviceName() {
     return this.deviceName;
   }
 
-  public void setNetwork(String network)
-  {
+  public void setNetwork(String network) {
     this.network=network;
   }
 
-  public void setPrefixLength(int prefixLength)
-  {
+  public void setPrefixLength(int prefixLength) {
     this.prefixLength=prefixLength;
   }
 
-  public void setGateway(String gateway)
-  {
+  public void setGateway(String gateway) {
     this.gateway=gateway;
   }
 
-  public void setDeviceName(String deviceName)
-  {
+  public void setDeviceName(String deviceName) {
     this.deviceName=deviceName;
   }
 }

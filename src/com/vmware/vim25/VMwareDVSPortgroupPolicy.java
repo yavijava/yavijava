@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,53 +30,46 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class VMwareDVSPortgroupPolicy extends DVPortgroupPolicy
-{
+@SuppressWarnings("all")
+public class VMwareDVSPortgroupPolicy extends DVPortgroupPolicy {
   public boolean vlanOverrideAllowed;
   public boolean uplinkTeamingOverrideAllowed;
   public boolean securityPolicyOverrideAllowed;
   public Boolean ipfixOverrideAllowed;
 
-  public boolean isVlanOverrideAllowed()
-  {
+  public boolean isVlanOverrideAllowed() {
     return this.vlanOverrideAllowed;
   }
 
-  public boolean isUplinkTeamingOverrideAllowed()
-  {
+  public boolean isUplinkTeamingOverrideAllowed() {
     return this.uplinkTeamingOverrideAllowed;
   }
 
-  public boolean isSecurityPolicyOverrideAllowed()
-  {
+  public boolean isSecurityPolicyOverrideAllowed() {
     return this.securityPolicyOverrideAllowed;
   }
 
-  public Boolean getIpfixOverrideAllowed()
-  {
+  public Boolean getIpfixOverrideAllowed() {
     return this.ipfixOverrideAllowed;
   }
 
-  public void setVlanOverrideAllowed(boolean vlanOverrideAllowed)
-  {
+  public void setVlanOverrideAllowed(boolean vlanOverrideAllowed) {
     this.vlanOverrideAllowed=vlanOverrideAllowed;
   }
 
-  public void setUplinkTeamingOverrideAllowed(boolean uplinkTeamingOverrideAllowed)
-  {
+  public void setUplinkTeamingOverrideAllowed(boolean uplinkTeamingOverrideAllowed) {
     this.uplinkTeamingOverrideAllowed=uplinkTeamingOverrideAllowed;
   }
 
-  public void setSecurityPolicyOverrideAllowed(boolean securityPolicyOverrideAllowed)
-  {
+  public void setSecurityPolicyOverrideAllowed(boolean securityPolicyOverrideAllowed) {
     this.securityPolicyOverrideAllowed=securityPolicyOverrideAllowed;
   }
 
-  public void setIpfixOverrideAllowed(Boolean ipfixOverrideAllowed)
-  {
+  public void setIpfixOverrideAllowed(Boolean ipfixOverrideAllowed) {
     this.ipfixOverrideAllowed=ipfixOverrideAllowed;
   }
 }

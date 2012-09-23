@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,11 +30,12 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class IpPool extends DynamicData
-{
+@SuppressWarnings("all")
+public class IpPool extends DynamicData {
   public Integer id;
   public String name;
   public IpPoolIpPoolConfigInfo ipv4Config;
@@ -44,94 +45,112 @@ public class IpPool extends DynamicData
   public String hostPrefix;
   public String httpProxy;
   public IpPoolAssociation[] networkAssociation;
+  public Integer availableIpv4Addresses;
+  public Integer availableIpv6Addresses;
+  public Integer allocatedIpv4Addresses;
+  public Integer allocatedIpv6Addresses;
 
-  public Integer getId()
-  {
+  public Integer getId() {
     return this.id;
   }
 
-  public String getName()
-  {
+  public String getName() {
     return this.name;
   }
 
-  public IpPoolIpPoolConfigInfo getIpv4Config()
-  {
+  public IpPoolIpPoolConfigInfo getIpv4Config() {
     return this.ipv4Config;
   }
 
-  public IpPoolIpPoolConfigInfo getIpv6Config()
-  {
+  public IpPoolIpPoolConfigInfo getIpv6Config() {
     return this.ipv6Config;
   }
 
-  public String getDnsDomain()
-  {
+  public String getDnsDomain() {
     return this.dnsDomain;
   }
 
-  public String getDnsSearchPath()
-  {
+  public String getDnsSearchPath() {
     return this.dnsSearchPath;
   }
 
-  public String getHostPrefix()
-  {
+  public String getHostPrefix() {
     return this.hostPrefix;
   }
 
-  public String getHttpProxy()
-  {
+  public String getHttpProxy() {
     return this.httpProxy;
   }
 
-  public IpPoolAssociation[] getNetworkAssociation()
-  {
+  public IpPoolAssociation[] getNetworkAssociation() {
     return this.networkAssociation;
   }
 
-  public void setId(Integer id)
-  {
+  public Integer getAvailableIpv4Addresses() {
+    return this.availableIpv4Addresses;
+  }
+
+  public Integer getAvailableIpv6Addresses() {
+    return this.availableIpv6Addresses;
+  }
+
+  public Integer getAllocatedIpv4Addresses() {
+    return this.allocatedIpv4Addresses;
+  }
+
+  public Integer getAllocatedIpv6Addresses() {
+    return this.allocatedIpv6Addresses;
+  }
+
+  public void setId(Integer id) {
     this.id=id;
   }
 
-  public void setName(String name)
-  {
+  public void setName(String name) {
     this.name=name;
   }
 
-  public void setIpv4Config(IpPoolIpPoolConfigInfo ipv4Config)
-  {
+  public void setIpv4Config(IpPoolIpPoolConfigInfo ipv4Config) {
     this.ipv4Config=ipv4Config;
   }
 
-  public void setIpv6Config(IpPoolIpPoolConfigInfo ipv6Config)
-  {
+  public void setIpv6Config(IpPoolIpPoolConfigInfo ipv6Config) {
     this.ipv6Config=ipv6Config;
   }
 
-  public void setDnsDomain(String dnsDomain)
-  {
+  public void setDnsDomain(String dnsDomain) {
     this.dnsDomain=dnsDomain;
   }
 
-  public void setDnsSearchPath(String dnsSearchPath)
-  {
+  public void setDnsSearchPath(String dnsSearchPath) {
     this.dnsSearchPath=dnsSearchPath;
   }
 
-  public void setHostPrefix(String hostPrefix)
-  {
+  public void setHostPrefix(String hostPrefix) {
     this.hostPrefix=hostPrefix;
   }
 
-  public void setHttpProxy(String httpProxy)
-  {
+  public void setHttpProxy(String httpProxy) {
     this.httpProxy=httpProxy;
   }
 
-  public void setNetworkAssociation(IpPoolAssociation[] networkAssociation)
-  {
+  public void setNetworkAssociation(IpPoolAssociation[] networkAssociation) {
     this.networkAssociation=networkAssociation;
+  }
+
+  public void setAvailableIpv4Addresses(Integer availableIpv4Addresses) {
+    this.availableIpv4Addresses=availableIpv4Addresses;
+  }
+
+  public void setAvailableIpv6Addresses(Integer availableIpv6Addresses) {
+    this.availableIpv6Addresses=availableIpv6Addresses;
+  }
+
+  public void setAllocatedIpv4Addresses(Integer allocatedIpv4Addresses) {
+    this.allocatedIpv4Addresses=allocatedIpv4Addresses;
+  }
+
+  public void setAllocatedIpv6Addresses(Integer allocatedIpv6Addresses) {
+    this.allocatedIpv6Addresses=allocatedIpv6Addresses;
   }
 }

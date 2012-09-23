@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,11 +30,12 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class OvfFileItem extends DynamicData
-{
+@SuppressWarnings("all")
+public class OvfFileItem extends DynamicData {
   public String deviceId;
   public String path;
   public String compressionMethod;
@@ -43,73 +44,59 @@ public class OvfFileItem extends DynamicData
   public int cimType;
   public boolean create;
 
-  public String getDeviceId()
-  {
+  public String getDeviceId() {
     return this.deviceId;
   }
 
-  public String getPath()
-  {
+  public String getPath() {
     return this.path;
   }
 
-  public String getCompressionMethod()
-  {
+  public String getCompressionMethod() {
     return this.compressionMethod;
   }
 
-  public Long getChunkSize()
-  {
+  public Long getChunkSize() {
     return this.chunkSize;
   }
 
-  public Long getSize()
-  {
+  public Long getSize() {
     return this.size;
   }
 
-  public int getCimType()
-  {
+  public int getCimType() {
     return this.cimType;
   }
 
-  public boolean isCreate()
-  {
+  public boolean isCreate() {
     return this.create;
   }
 
-  public void setDeviceId(String deviceId)
-  {
+  public void setDeviceId(String deviceId) {
     this.deviceId=deviceId;
   }
 
-  public void setPath(String path)
-  {
+  public void setPath(String path) {
     this.path=path;
   }
 
-  public void setCompressionMethod(String compressionMethod)
-  {
+  public void setCompressionMethod(String compressionMethod) {
     this.compressionMethod=compressionMethod;
   }
 
-  public void setChunkSize(Long chunkSize)
-  {
+  public void setChunkSize(Long chunkSize) {
     this.chunkSize=chunkSize;
   }
 
-  public void setSize(Long size)
-  {
+  public void setSize(Long size) {
     this.size=size;
   }
 
-  public void setCimType(int cimType)
-  {
+  public void setCimType(int cimType) {
     this.cimType=cimType;
   }
 
-  public void setCreate(boolean create)
-  {
+  public void setCreate(boolean create) {
     this.create=create;
   }
 }

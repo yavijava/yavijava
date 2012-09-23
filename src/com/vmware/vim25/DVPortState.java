@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,42 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class DVPortState extends DynamicData
-{
+@SuppressWarnings("all")
+public class DVPortState extends DynamicData {
   public DVPortStatus runtimeInfo;
   public DistributedVirtualSwitchPortStatistics stats;
   public DistributedVirtualSwitchKeyedOpaqueBlob[] vendorSpecificState;
 
-  public DVPortStatus getRuntimeInfo()
-  {
+  public DVPortStatus getRuntimeInfo() {
     return this.runtimeInfo;
   }
 
-  public DistributedVirtualSwitchPortStatistics getStats()
-  {
+  public DistributedVirtualSwitchPortStatistics getStats() {
     return this.stats;
   }
 
-  public DistributedVirtualSwitchKeyedOpaqueBlob[] getVendorSpecificState()
-  {
+  public DistributedVirtualSwitchKeyedOpaqueBlob[] getVendorSpecificState() {
     return this.vendorSpecificState;
   }
 
-  public void setRuntimeInfo(DVPortStatus runtimeInfo)
-  {
+  public void setRuntimeInfo(DVPortStatus runtimeInfo) {
     this.runtimeInfo=runtimeInfo;
   }
 
-  public void setStats(DistributedVirtualSwitchPortStatistics stats)
-  {
+  public void setStats(DistributedVirtualSwitchPortStatistics stats) {
     this.stats=stats;
   }
 
-  public void setVendorSpecificState(DistributedVirtualSwitchKeyedOpaqueBlob[] vendorSpecificState)
-  {
+  public void setVendorSpecificState(DistributedVirtualSwitchKeyedOpaqueBlob[] vendorSpecificState) {
     this.vendorSpecificState=vendorSpecificState;
   }
 }

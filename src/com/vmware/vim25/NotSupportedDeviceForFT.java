@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,11 +30,12 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class NotSupportedDeviceForFT extends VmFaultToleranceIssue
-{
+@SuppressWarnings("all")
+public class NotSupportedDeviceForFT extends VmFaultToleranceIssue {
   public ManagedObjectReference host;
   public String hostName;
   public ManagedObjectReference vm;
@@ -42,63 +43,51 @@ public class NotSupportedDeviceForFT extends VmFaultToleranceIssue
   public String deviceType;
   public String deviceLabel;
 
-  public ManagedObjectReference getHost()
-  {
+  public ManagedObjectReference getHost() {
     return this.host;
   }
 
-  public String getHostName()
-  {
+  public String getHostName() {
     return this.hostName;
   }
 
-  public ManagedObjectReference getVm()
-  {
+  public ManagedObjectReference getVm() {
     return this.vm;
   }
 
-  public String getVmName()
-  {
+  public String getVmName() {
     return this.vmName;
   }
 
-  public String getDeviceType()
-  {
+  public String getDeviceType() {
     return this.deviceType;
   }
 
-  public String getDeviceLabel()
-  {
+  public String getDeviceLabel() {
     return this.deviceLabel;
   }
 
-  public void setHost(ManagedObjectReference host)
-  {
+  public void setHost(ManagedObjectReference host) {
     this.host=host;
   }
 
-  public void setHostName(String hostName)
-  {
+  public void setHostName(String hostName) {
     this.hostName=hostName;
   }
 
-  public void setVm(ManagedObjectReference vm)
-  {
+  public void setVm(ManagedObjectReference vm) {
     this.vm=vm;
   }
 
-  public void setVmName(String vmName)
-  {
+  public void setVmName(String vmName) {
     this.vmName=vmName;
   }
 
-  public void setDeviceType(String deviceType)
-  {
+  public void setDeviceType(String deviceType) {
     this.deviceType=deviceType;
   }
 
-  public void setDeviceLabel(String deviceLabel)
-  {
+  public void setDeviceLabel(String deviceLabel) {
     this.deviceLabel=deviceLabel;
   }
 }

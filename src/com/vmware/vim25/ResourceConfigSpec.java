@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -31,64 +31,55 @@ package com.vmware.vim25;
 import java.util.Calendar;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class ResourceConfigSpec extends DynamicData
-{
+@SuppressWarnings("all")
+public class ResourceConfigSpec extends DynamicData {
   public ManagedObjectReference entity;
   public String changeVersion;
   public Calendar lastModified;
   public ResourceAllocationInfo cpuAllocation;
   public ResourceAllocationInfo memoryAllocation;
 
-  public ManagedObjectReference getEntity()
-  {
+  public ManagedObjectReference getEntity() {
     return this.entity;
   }
 
-  public String getChangeVersion()
-  {
+  public String getChangeVersion() {
     return this.changeVersion;
   }
 
-  public Calendar getLastModified()
-  {
+  public Calendar getLastModified() {
     return this.lastModified;
   }
 
-  public ResourceAllocationInfo getCpuAllocation()
-  {
+  public ResourceAllocationInfo getCpuAllocation() {
     return this.cpuAllocation;
   }
 
-  public ResourceAllocationInfo getMemoryAllocation()
-  {
+  public ResourceAllocationInfo getMemoryAllocation() {
     return this.memoryAllocation;
   }
 
-  public void setEntity(ManagedObjectReference entity)
-  {
+  public void setEntity(ManagedObjectReference entity) {
     this.entity=entity;
   }
 
-  public void setChangeVersion(String changeVersion)
-  {
+  public void setChangeVersion(String changeVersion) {
     this.changeVersion=changeVersion;
   }
 
-  public void setLastModified(Calendar lastModified)
-  {
+  public void setLastModified(Calendar lastModified) {
     this.lastModified=lastModified;
   }
 
-  public void setCpuAllocation(ResourceAllocationInfo cpuAllocation)
-  {
+  public void setCpuAllocation(ResourceAllocationInfo cpuAllocation) {
     this.cpuAllocation=cpuAllocation;
   }
 
-  public void setMemoryAllocation(ResourceAllocationInfo memoryAllocation)
-  {
+  public void setMemoryAllocation(ResourceAllocationInfo memoryAllocation) {
     this.memoryAllocation=memoryAllocation;
   }
 }

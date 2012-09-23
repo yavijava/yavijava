@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,53 +30,46 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class HostVirtualSwitchSpec extends DynamicData
-{
+@SuppressWarnings("all")
+public class HostVirtualSwitchSpec extends DynamicData {
   public int numPorts;
   public HostVirtualSwitchBridge bridge;
   public HostNetworkPolicy policy;
   public Integer mtu;
 
-  public int getNumPorts()
-  {
+  public int getNumPorts() {
     return this.numPorts;
   }
 
-  public HostVirtualSwitchBridge getBridge()
-  {
+  public HostVirtualSwitchBridge getBridge() {
     return this.bridge;
   }
 
-  public HostNetworkPolicy getPolicy()
-  {
+  public HostNetworkPolicy getPolicy() {
     return this.policy;
   }
 
-  public Integer getMtu()
-  {
+  public Integer getMtu() {
     return this.mtu;
   }
 
-  public void setNumPorts(int numPorts)
-  {
+  public void setNumPorts(int numPorts) {
     this.numPorts=numPorts;
   }
 
-  public void setBridge(HostVirtualSwitchBridge bridge)
-  {
+  public void setBridge(HostVirtualSwitchBridge bridge) {
     this.bridge=bridge;
   }
 
-  public void setPolicy(HostNetworkPolicy policy)
-  {
+  public void setPolicy(HostNetworkPolicy policy) {
     this.policy=policy;
   }
 
-  public void setMtu(Integer mtu)
-  {
+  public void setMtu(Integer mtu) {
     this.mtu=mtu;
   }
 }

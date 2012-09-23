@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,64 +30,55 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class VMwareDVSConfigSpec extends DVSConfigSpec
-{
+@SuppressWarnings("all")
+public class VMwareDVSConfigSpec extends DVSConfigSpec {
   public VMwareDVSPvlanConfigSpec[] pvlanConfigSpec;
   public VMwareDVSVspanConfigSpec[] vspanConfigSpec;
   public Integer maxMtu;
   public LinkDiscoveryProtocolConfig linkDiscoveryProtocolConfig;
   public VMwareIpfixConfig ipfixConfig;
 
-  public VMwareDVSPvlanConfigSpec[] getPvlanConfigSpec()
-  {
+  public VMwareDVSPvlanConfigSpec[] getPvlanConfigSpec() {
     return this.pvlanConfigSpec;
   }
 
-  public VMwareDVSVspanConfigSpec[] getVspanConfigSpec()
-  {
+  public VMwareDVSVspanConfigSpec[] getVspanConfigSpec() {
     return this.vspanConfigSpec;
   }
 
-  public Integer getMaxMtu()
-  {
+  public Integer getMaxMtu() {
     return this.maxMtu;
   }
 
-  public LinkDiscoveryProtocolConfig getLinkDiscoveryProtocolConfig()
-  {
+  public LinkDiscoveryProtocolConfig getLinkDiscoveryProtocolConfig() {
     return this.linkDiscoveryProtocolConfig;
   }
 
-  public VMwareIpfixConfig getIpfixConfig()
-  {
+  public VMwareIpfixConfig getIpfixConfig() {
     return this.ipfixConfig;
   }
 
-  public void setPvlanConfigSpec(VMwareDVSPvlanConfigSpec[] pvlanConfigSpec)
-  {
+  public void setPvlanConfigSpec(VMwareDVSPvlanConfigSpec[] pvlanConfigSpec) {
     this.pvlanConfigSpec=pvlanConfigSpec;
   }
 
-  public void setVspanConfigSpec(VMwareDVSVspanConfigSpec[] vspanConfigSpec)
-  {
+  public void setVspanConfigSpec(VMwareDVSVspanConfigSpec[] vspanConfigSpec) {
     this.vspanConfigSpec=vspanConfigSpec;
   }
 
-  public void setMaxMtu(Integer maxMtu)
-  {
+  public void setMaxMtu(Integer maxMtu) {
     this.maxMtu=maxMtu;
   }
 
-  public void setLinkDiscoveryProtocolConfig(LinkDiscoveryProtocolConfig linkDiscoveryProtocolConfig)
-  {
+  public void setLinkDiscoveryProtocolConfig(LinkDiscoveryProtocolConfig linkDiscoveryProtocolConfig) {
     this.linkDiscoveryProtocolConfig=linkDiscoveryProtocolConfig;
   }
 
-  public void setIpfixConfig(VMwareIpfixConfig ipfixConfig)
-  {
+  public void setIpfixConfig(VMwareIpfixConfig ipfixConfig) {
     this.ipfixConfig=ipfixConfig;
   }
 }

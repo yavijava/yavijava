@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,53 +30,73 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class EVCMode extends ElementDescription
-{
+@SuppressWarnings("all")
+public class EVCMode extends ElementDescription {
   public HostCpuIdInfo[] guaranteedCPUFeatures;
+  public HostFeatureCapability[] featureCapability;
+  public HostFeatureMask[] featureMask;
+  public VirtualMachineFeatureRequirement[] featureRequirement;
   public String vendor;
   public String[] track;
   public int vendorTier;
 
-  public HostCpuIdInfo[] getGuaranteedCPUFeatures()
-  {
+  public HostCpuIdInfo[] getGuaranteedCPUFeatures() {
     return this.guaranteedCPUFeatures;
   }
 
-  public String getVendor()
-  {
+  public HostFeatureCapability[] getFeatureCapability() {
+    return this.featureCapability;
+  }
+
+  public HostFeatureMask[] getFeatureMask() {
+    return this.featureMask;
+  }
+
+  public VirtualMachineFeatureRequirement[] getFeatureRequirement() {
+    return this.featureRequirement;
+  }
+
+  public String getVendor() {
     return this.vendor;
   }
 
-  public String[] getTrack()
-  {
+  public String[] getTrack() {
     return this.track;
   }
 
-  public int getVendorTier()
-  {
+  public int getVendorTier() {
     return this.vendorTier;
   }
 
-  public void setGuaranteedCPUFeatures(HostCpuIdInfo[] guaranteedCPUFeatures)
-  {
+  public void setGuaranteedCPUFeatures(HostCpuIdInfo[] guaranteedCPUFeatures) {
     this.guaranteedCPUFeatures=guaranteedCPUFeatures;
   }
 
-  public void setVendor(String vendor)
-  {
+  public void setFeatureCapability(HostFeatureCapability[] featureCapability) {
+    this.featureCapability=featureCapability;
+  }
+
+  public void setFeatureMask(HostFeatureMask[] featureMask) {
+    this.featureMask=featureMask;
+  }
+
+  public void setFeatureRequirement(VirtualMachineFeatureRequirement[] featureRequirement) {
+    this.featureRequirement=featureRequirement;
+  }
+
+  public void setVendor(String vendor) {
     this.vendor=vendor;
   }
 
-  public void setTrack(String[] track)
-  {
+  public void setTrack(String[] track) {
     this.track=track;
   }
 
-  public void setVendorTier(int vendorTier)
-  {
+  public void setVendorTier(int vendorTier) {
     this.vendorTier=vendorTier;
   }
 }

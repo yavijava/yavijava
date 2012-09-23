@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,64 +30,55 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class ResourceAllocationInfo extends DynamicData
-{
+@SuppressWarnings("all")
+public class ResourceAllocationInfo extends DynamicData {
   public Long reservation;
   public Boolean expandableReservation;
   public Long limit;
   public SharesInfo shares;
   public Long overheadLimit;
 
-  public Long getReservation()
-  {
+  public Long getReservation() {
     return this.reservation;
   }
 
-  public Boolean getExpandableReservation()
-  {
+  public Boolean getExpandableReservation() {
     return this.expandableReservation;
   }
 
-  public Long getLimit()
-  {
+  public Long getLimit() {
     return this.limit;
   }
 
-  public SharesInfo getShares()
-  {
+  public SharesInfo getShares() {
     return this.shares;
   }
 
-  public Long getOverheadLimit()
-  {
+  public Long getOverheadLimit() {
     return this.overheadLimit;
   }
 
-  public void setReservation(Long reservation)
-  {
+  public void setReservation(Long reservation) {
     this.reservation=reservation;
   }
 
-  public void setExpandableReservation(Boolean expandableReservation)
-  {
+  public void setExpandableReservation(Boolean expandableReservation) {
     this.expandableReservation=expandableReservation;
   }
 
-  public void setLimit(Long limit)
-  {
+  public void setLimit(Long limit) {
     this.limit=limit;
   }
 
-  public void setShares(SharesInfo shares)
-  {
+  public void setShares(SharesInfo shares) {
     this.shares=shares;
   }
 
-  public void setOverheadLimit(Long overheadLimit)
-  {
+  public void setOverheadLimit(Long overheadLimit) {
     this.overheadLimit=overheadLimit;
   }
 }

@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,53 +30,46 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class HostNumaNode extends DynamicData
-{
+@SuppressWarnings("all")
+public class HostNumaNode extends DynamicData {
   public byte typeId;
   public short[] cpuID;
   public long memoryRangeBegin;
   public long memoryRangeLength;
 
-  public byte getTypeId()
-  {
+  public byte getTypeId() {
     return this.typeId;
   }
 
-  public short[] getCpuID()
-  {
+  public short[] getCpuID() {
     return this.cpuID;
   }
 
-  public long getMemoryRangeBegin()
-  {
+  public long getMemoryRangeBegin() {
     return this.memoryRangeBegin;
   }
 
-  public long getMemoryRangeLength()
-  {
+  public long getMemoryRangeLength() {
     return this.memoryRangeLength;
   }
 
-  public void setTypeId(byte typeId)
-  {
+  public void setTypeId(byte typeId) {
     this.typeId=typeId;
   }
 
-  public void setCpuID(short[] cpuID)
-  {
+  public void setCpuID(short[] cpuID) {
     this.cpuID=cpuID;
   }
 
-  public void setMemoryRangeBegin(long memoryRangeBegin)
-  {
+  public void setMemoryRangeBegin(long memoryRangeBegin) {
     this.memoryRangeBegin=memoryRangeBegin;
   }
 
-  public void setMemoryRangeLength(long memoryRangeLength)
-  {
+  public void setMemoryRangeLength(long memoryRangeLength) {
     this.memoryRangeLength=memoryRangeLength;
   }
 }

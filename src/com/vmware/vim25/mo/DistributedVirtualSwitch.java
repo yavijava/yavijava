@@ -1,4 +1,5 @@
 /*================================================================================
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 Copyright (c) 2008 VMware, Inc. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
@@ -38,8 +39,10 @@ import com.vmware.vim25.DVPortgroupConfigSpec;
 import com.vmware.vim25.DVSCapability;
 import com.vmware.vim25.DVSConfigInfo;
 import com.vmware.vim25.DVSConfigSpec;
+import com.vmware.vim25.DVSHealthCheckConfig;
 import com.vmware.vim25.DVSNetworkResourcePool;
 import com.vmware.vim25.DVSNetworkResourcePoolConfigSpec;
+import com.vmware.vim25.DVSRuntimeInfo;
 import com.vmware.vim25.DVSSummary;
 import com.vmware.vim25.DistributedVirtualPort;
 import com.vmware.vim25.DistributedVirtualSwitchPortCriteria;
@@ -47,6 +50,7 @@ import com.vmware.vim25.DistributedVirtualSwitchProductSpec;
 import com.vmware.vim25.DuplicateName;
 import com.vmware.vim25.DvsFault;
 import com.vmware.vim25.DvsNotAuthorized;
+import com.vmware.vim25.EntityBackupConfig;
 import com.vmware.vim25.InvalidHostState;
 import com.vmware.vim25.InvalidName;
 import com.vmware.vim25.InvalidState;
@@ -55,13 +59,14 @@ import com.vmware.vim25.ManagedObjectReference;
 import com.vmware.vim25.NotFound;
 import com.vmware.vim25.ResourceInUse;
 import com.vmware.vim25.ResourceNotAvailable;
+import com.vmware.vim25.RollbackFailure;
 import com.vmware.vim25.RuntimeFault;
 import com.vmware.vim25.TaskInProgress;
 import com.vmware.vim25.mo.util.MorUtil;
 
 /**
  * The managed object class corresponding to the one defined in VI SDK API reference.
- * @author Steve JIN (sjin@vmware.com)
+ * @author Steve JIN (http://www.doublecloud.org)
  * @since 4.0
  */
 
@@ -115,12 +120,46 @@ public class DistributedVirtualSwitch extends ManagedEntity
 		return (String) getCurrentProperty("uuid");
 	}
 	
+	/** @since SDK5.1 */
+	public DVSRuntimeInfo getRuntime()
+	{
+	    return (DVSRuntimeInfo) getCurrentProperty("runtime");
+	}
+	
 	public Task addDVPortgroup_Task(DVPortgroupConfigSpec[] spec) throws DvsFault, DuplicateName, InvalidName, RuntimeFault, RemoteException
 	{
 	  ManagedObjectReference taskMor = getVimService().addDVPortgroup_Task(getMOR(), spec);
 	  return new Task(getServerConnection(), taskMor);
 	}
 	
+	/** @since SDK5.1 */
+	public Task createDVPortgroup_Task(DVPortgroupConfigSpec spec) throws DvsFault, DuplicateName, InvalidName, RuntimeFault, RemoteException
+	{
+	    ManagedObjectReference taskMor = getVimService().createDVPortgroup_Task(getMOR(), spec);
+	    return new Task(getServerConnection(), taskMor);
+	}
+
+	/** @since SDK5.1 */
+	public Task dVSRollback_Task(EntityBackupConfig spec) throws RollbackFailure, DvsFault, RuntimeFault, RemoteException
+	{
+	    ManagedObjectReference taskMor = getVimService().dVSRollback_Task(getMOR(), spec);
+	    return new Task(getServerConnection(), taskMor);
+	}
+
+	/** @since SDK5.1 */
+	public DistributedVirtualPortgroup lookupDvPortGroup(String portgroupKey) throws NotFound, RuntimeFault, RemoteException
+	{
+	    ManagedObjectReference mor = getVimService().lookupDvPortGroup(getMOR(), portgroupKey);
+	    return new DistributedVirtualPortgroup(getServerConnection(), mor);
+	}
+	
+	/** @since SDK5.1 */
+	public Task updateDVSHealthCheckConfig_Task(DVSHealthCheckConfig[] healthCheckConfig) throws DvsFault, RuntimeFault, RemoteException
+	{
+	    ManagedObjectReference taskMor = getVimService().updateDVSHealthCheckConfig_Task(getMOR(), healthCheckConfig);
+	    return new Task(getServerConnection(), taskMor);
+	}
+
 	/**
 	 * @since SDK5.0
 	 */

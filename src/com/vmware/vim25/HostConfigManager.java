@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,11 +30,12 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class HostConfigManager extends DynamicData
-{
+@SuppressWarnings("all")
+public class HostConfigManager extends DynamicData {
   public ManagedObjectReference cpuScheduler;
   public ManagedObjectReference datastoreSystem;
   public ManagedObjectReference memoryManager;
@@ -63,273 +64,219 @@ public class HostConfigManager extends DynamicData
   public ManagedObjectReference esxAgentHostManager;
   public ManagedObjectReference iscsiManager;
 
-  public ManagedObjectReference getCpuScheduler()
-  {
+  public ManagedObjectReference getCpuScheduler() {
     return this.cpuScheduler;
   }
 
-  public ManagedObjectReference getDatastoreSystem()
-  {
+  public ManagedObjectReference getDatastoreSystem() {
     return this.datastoreSystem;
   }
 
-  public ManagedObjectReference getMemoryManager()
-  {
+  public ManagedObjectReference getMemoryManager() {
     return this.memoryManager;
   }
 
-  public ManagedObjectReference getStorageSystem()
-  {
+  public ManagedObjectReference getStorageSystem() {
     return this.storageSystem;
   }
 
-  public ManagedObjectReference getNetworkSystem()
-  {
+  public ManagedObjectReference getNetworkSystem() {
     return this.networkSystem;
   }
 
-  public ManagedObjectReference getVmotionSystem()
-  {
+  public ManagedObjectReference getVmotionSystem() {
     return this.vmotionSystem;
   }
 
-  public ManagedObjectReference getVirtualNicManager()
-  {
+  public ManagedObjectReference getVirtualNicManager() {
     return this.virtualNicManager;
   }
 
-  public ManagedObjectReference getServiceSystem()
-  {
+  public ManagedObjectReference getServiceSystem() {
     return this.serviceSystem;
   }
 
-  public ManagedObjectReference getFirewallSystem()
-  {
+  public ManagedObjectReference getFirewallSystem() {
     return this.firewallSystem;
   }
 
-  public ManagedObjectReference getAdvancedOption()
-  {
+  public ManagedObjectReference getAdvancedOption() {
     return this.advancedOption;
   }
 
-  public ManagedObjectReference getDiagnosticSystem()
-  {
+  public ManagedObjectReference getDiagnosticSystem() {
     return this.diagnosticSystem;
   }
 
-  public ManagedObjectReference getAutoStartManager()
-  {
+  public ManagedObjectReference getAutoStartManager() {
     return this.autoStartManager;
   }
 
-  public ManagedObjectReference getSnmpSystem()
-  {
+  public ManagedObjectReference getSnmpSystem() {
     return this.snmpSystem;
   }
 
-  public ManagedObjectReference getDateTimeSystem()
-  {
+  public ManagedObjectReference getDateTimeSystem() {
     return this.dateTimeSystem;
   }
 
-  public ManagedObjectReference getPatchManager()
-  {
+  public ManagedObjectReference getPatchManager() {
     return this.patchManager;
   }
 
-  public ManagedObjectReference getImageConfigManager()
-  {
+  public ManagedObjectReference getImageConfigManager() {
     return this.imageConfigManager;
   }
 
-  public ManagedObjectReference getBootDeviceSystem()
-  {
+  public ManagedObjectReference getBootDeviceSystem() {
     return this.bootDeviceSystem;
   }
 
-  public ManagedObjectReference getFirmwareSystem()
-  {
+  public ManagedObjectReference getFirmwareSystem() {
     return this.firmwareSystem;
   }
 
-  public ManagedObjectReference getHealthStatusSystem()
-  {
+  public ManagedObjectReference getHealthStatusSystem() {
     return this.healthStatusSystem;
   }
 
-  public ManagedObjectReference getPciPassthruSystem()
-  {
+  public ManagedObjectReference getPciPassthruSystem() {
     return this.pciPassthruSystem;
   }
 
-  public ManagedObjectReference getLicenseManager()
-  {
+  public ManagedObjectReference getLicenseManager() {
     return this.licenseManager;
   }
 
-  public ManagedObjectReference getKernelModuleSystem()
-  {
+  public ManagedObjectReference getKernelModuleSystem() {
     return this.kernelModuleSystem;
   }
 
-  public ManagedObjectReference getAuthenticationManager()
-  {
+  public ManagedObjectReference getAuthenticationManager() {
     return this.authenticationManager;
   }
 
-  public ManagedObjectReference getPowerSystem()
-  {
+  public ManagedObjectReference getPowerSystem() {
     return this.powerSystem;
   }
 
-  public ManagedObjectReference getCacheConfigurationManager()
-  {
+  public ManagedObjectReference getCacheConfigurationManager() {
     return this.cacheConfigurationManager;
   }
 
-  public ManagedObjectReference getEsxAgentHostManager()
-  {
+  public ManagedObjectReference getEsxAgentHostManager() {
     return this.esxAgentHostManager;
   }
 
-  public ManagedObjectReference getIscsiManager()
-  {
+  public ManagedObjectReference getIscsiManager() {
     return this.iscsiManager;
   }
 
-  public void setCpuScheduler(ManagedObjectReference cpuScheduler)
-  {
+  public void setCpuScheduler(ManagedObjectReference cpuScheduler) {
     this.cpuScheduler=cpuScheduler;
   }
 
-  public void setDatastoreSystem(ManagedObjectReference datastoreSystem)
-  {
+  public void setDatastoreSystem(ManagedObjectReference datastoreSystem) {
     this.datastoreSystem=datastoreSystem;
   }
 
-  public void setMemoryManager(ManagedObjectReference memoryManager)
-  {
+  public void setMemoryManager(ManagedObjectReference memoryManager) {
     this.memoryManager=memoryManager;
   }
 
-  public void setStorageSystem(ManagedObjectReference storageSystem)
-  {
+  public void setStorageSystem(ManagedObjectReference storageSystem) {
     this.storageSystem=storageSystem;
   }
 
-  public void setNetworkSystem(ManagedObjectReference networkSystem)
-  {
+  public void setNetworkSystem(ManagedObjectReference networkSystem) {
     this.networkSystem=networkSystem;
   }
 
-  public void setVmotionSystem(ManagedObjectReference vmotionSystem)
-  {
+  public void setVmotionSystem(ManagedObjectReference vmotionSystem) {
     this.vmotionSystem=vmotionSystem;
   }
 
-  public void setVirtualNicManager(ManagedObjectReference virtualNicManager)
-  {
+  public void setVirtualNicManager(ManagedObjectReference virtualNicManager) {
     this.virtualNicManager=virtualNicManager;
   }
 
-  public void setServiceSystem(ManagedObjectReference serviceSystem)
-  {
+  public void setServiceSystem(ManagedObjectReference serviceSystem) {
     this.serviceSystem=serviceSystem;
   }
 
-  public void setFirewallSystem(ManagedObjectReference firewallSystem)
-  {
+  public void setFirewallSystem(ManagedObjectReference firewallSystem) {
     this.firewallSystem=firewallSystem;
   }
 
-  public void setAdvancedOption(ManagedObjectReference advancedOption)
-  {
+  public void setAdvancedOption(ManagedObjectReference advancedOption) {
     this.advancedOption=advancedOption;
   }
 
-  public void setDiagnosticSystem(ManagedObjectReference diagnosticSystem)
-  {
+  public void setDiagnosticSystem(ManagedObjectReference diagnosticSystem) {
     this.diagnosticSystem=diagnosticSystem;
   }
 
-  public void setAutoStartManager(ManagedObjectReference autoStartManager)
-  {
+  public void setAutoStartManager(ManagedObjectReference autoStartManager) {
     this.autoStartManager=autoStartManager;
   }
 
-  public void setSnmpSystem(ManagedObjectReference snmpSystem)
-  {
+  public void setSnmpSystem(ManagedObjectReference snmpSystem) {
     this.snmpSystem=snmpSystem;
   }
 
-  public void setDateTimeSystem(ManagedObjectReference dateTimeSystem)
-  {
+  public void setDateTimeSystem(ManagedObjectReference dateTimeSystem) {
     this.dateTimeSystem=dateTimeSystem;
   }
 
-  public void setPatchManager(ManagedObjectReference patchManager)
-  {
+  public void setPatchManager(ManagedObjectReference patchManager) {
     this.patchManager=patchManager;
   }
 
-  public void setImageConfigManager(ManagedObjectReference imageConfigManager)
-  {
+  public void setImageConfigManager(ManagedObjectReference imageConfigManager) {
     this.imageConfigManager=imageConfigManager;
   }
 
-  public void setBootDeviceSystem(ManagedObjectReference bootDeviceSystem)
-  {
+  public void setBootDeviceSystem(ManagedObjectReference bootDeviceSystem) {
     this.bootDeviceSystem=bootDeviceSystem;
   }
 
-  public void setFirmwareSystem(ManagedObjectReference firmwareSystem)
-  {
+  public void setFirmwareSystem(ManagedObjectReference firmwareSystem) {
     this.firmwareSystem=firmwareSystem;
   }
 
-  public void setHealthStatusSystem(ManagedObjectReference healthStatusSystem)
-  {
+  public void setHealthStatusSystem(ManagedObjectReference healthStatusSystem) {
     this.healthStatusSystem=healthStatusSystem;
   }
 
-  public void setPciPassthruSystem(ManagedObjectReference pciPassthruSystem)
-  {
+  public void setPciPassthruSystem(ManagedObjectReference pciPassthruSystem) {
     this.pciPassthruSystem=pciPassthruSystem;
   }
 
-  public void setLicenseManager(ManagedObjectReference licenseManager)
-  {
+  public void setLicenseManager(ManagedObjectReference licenseManager) {
     this.licenseManager=licenseManager;
   }
 
-  public void setKernelModuleSystem(ManagedObjectReference kernelModuleSystem)
-  {
+  public void setKernelModuleSystem(ManagedObjectReference kernelModuleSystem) {
     this.kernelModuleSystem=kernelModuleSystem;
   }
 
-  public void setAuthenticationManager(ManagedObjectReference authenticationManager)
-  {
+  public void setAuthenticationManager(ManagedObjectReference authenticationManager) {
     this.authenticationManager=authenticationManager;
   }
 
-  public void setPowerSystem(ManagedObjectReference powerSystem)
-  {
+  public void setPowerSystem(ManagedObjectReference powerSystem) {
     this.powerSystem=powerSystem;
   }
 
-  public void setCacheConfigurationManager(ManagedObjectReference cacheConfigurationManager)
-  {
+  public void setCacheConfigurationManager(ManagedObjectReference cacheConfigurationManager) {
     this.cacheConfigurationManager=cacheConfigurationManager;
   }
 
-  public void setEsxAgentHostManager(ManagedObjectReference esxAgentHostManager)
-  {
+  public void setEsxAgentHostManager(ManagedObjectReference esxAgentHostManager) {
     this.esxAgentHostManager=esxAgentHostManager;
   }
 
-  public void setIscsiManager(ManagedObjectReference iscsiManager)
-  {
+  public void setIscsiManager(ManagedObjectReference iscsiManager) {
     this.iscsiManager=iscsiManager;
   }
 }

@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,11 +30,12 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class OvfFile extends DynamicData
-{
+@SuppressWarnings("all")
+public class OvfFile extends DynamicData {
   public String deviceId;
   public String path;
   public String compressionMethod;
@@ -43,73 +44,59 @@ public class OvfFile extends DynamicData
   public Long capacity;
   public Long populatedSize;
 
-  public String getDeviceId()
-  {
+  public String getDeviceId() {
     return this.deviceId;
   }
 
-  public String getPath()
-  {
+  public String getPath() {
     return this.path;
   }
 
-  public String getCompressionMethod()
-  {
+  public String getCompressionMethod() {
     return this.compressionMethod;
   }
 
-  public Long getChunkSize()
-  {
+  public Long getChunkSize() {
     return this.chunkSize;
   }
 
-  public long getSize()
-  {
+  public long getSize() {
     return this.size;
   }
 
-  public Long getCapacity()
-  {
+  public Long getCapacity() {
     return this.capacity;
   }
 
-  public Long getPopulatedSize()
-  {
+  public Long getPopulatedSize() {
     return this.populatedSize;
   }
 
-  public void setDeviceId(String deviceId)
-  {
+  public void setDeviceId(String deviceId) {
     this.deviceId=deviceId;
   }
 
-  public void setPath(String path)
-  {
+  public void setPath(String path) {
     this.path=path;
   }
 
-  public void setCompressionMethod(String compressionMethod)
-  {
+  public void setCompressionMethod(String compressionMethod) {
     this.compressionMethod=compressionMethod;
   }
 
-  public void setChunkSize(Long chunkSize)
-  {
+  public void setChunkSize(Long chunkSize) {
     this.chunkSize=chunkSize;
   }
 
-  public void setSize(long size)
-  {
+  public void setSize(long size) {
     this.size=size;
   }
 
-  public void setCapacity(Long capacity)
-  {
+  public void setCapacity(Long capacity) {
     this.capacity=capacity;
   }
 
-  public void setPopulatedSize(Long populatedSize)
-  {
+  public void setPopulatedSize(Long populatedSize) {
     this.populatedSize=populatedSize;
   }
 }

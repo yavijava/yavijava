@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,31 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class MigrationResourceErrorEvent extends MigrationEvent
-{
+@SuppressWarnings("all")
+public class MigrationResourceErrorEvent extends MigrationEvent {
   public ResourcePoolEventArgument dstPool;
   public HostEventArgument dstHost;
 
-  public ResourcePoolEventArgument getDstPool()
-  {
+  public ResourcePoolEventArgument getDstPool() {
     return this.dstPool;
   }
 
-  public HostEventArgument getDstHost()
-  {
+  public HostEventArgument getDstHost() {
     return this.dstHost;
   }
 
-  public void setDstPool(ResourcePoolEventArgument dstPool)
-  {
+  public void setDstPool(ResourcePoolEventArgument dstPool) {
     this.dstPool=dstPool;
   }
 
-  public void setDstHost(HostEventArgument dstHost)
-  {
+  public void setDstHost(HostEventArgument dstHost) {
     this.dstHost=dstHost;
   }
 }

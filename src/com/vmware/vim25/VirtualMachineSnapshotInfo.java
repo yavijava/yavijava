@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,31 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class VirtualMachineSnapshotInfo extends DynamicData
-{
+@SuppressWarnings("all")
+public class VirtualMachineSnapshotInfo extends DynamicData {
   public ManagedObjectReference currentSnapshot;
   public VirtualMachineSnapshotTree[] rootSnapshotList;
 
-  public ManagedObjectReference getCurrentSnapshot()
-  {
+  public ManagedObjectReference getCurrentSnapshot() {
     return this.currentSnapshot;
   }
 
-  public VirtualMachineSnapshotTree[] getRootSnapshotList()
-  {
+  public VirtualMachineSnapshotTree[] getRootSnapshotList() {
     return this.rootSnapshotList;
   }
 
-  public void setCurrentSnapshot(ManagedObjectReference currentSnapshot)
-  {
+  public void setCurrentSnapshot(ManagedObjectReference currentSnapshot) {
     this.currentSnapshot=currentSnapshot;
   }
 
-  public void setRootSnapshotList(VirtualMachineSnapshotTree[] rootSnapshotList)
-  {
+  public void setRootSnapshotList(VirtualMachineSnapshotTree[] rootSnapshotList) {
     this.rootSnapshotList=rootSnapshotList;
   }
 }

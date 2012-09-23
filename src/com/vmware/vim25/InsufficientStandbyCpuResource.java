@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,31 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class InsufficientStandbyCpuResource extends InsufficientStandbyResource
-{
+@SuppressWarnings("all")
+public class InsufficientStandbyCpuResource extends InsufficientStandbyResource {
   public long available;
   public long requested;
 
-  public long getAvailable()
-  {
+  public long getAvailable() {
     return this.available;
   }
 
-  public long getRequested()
-  {
+  public long getRequested() {
     return this.requested;
   }
 
-  public void setAvailable(long available)
-  {
+  public void setAvailable(long available) {
     this.available=available;
   }
 
-  public void setRequested(long requested)
-  {
+  public void setRequested(long requested) {
     this.requested=requested;
   }
 }

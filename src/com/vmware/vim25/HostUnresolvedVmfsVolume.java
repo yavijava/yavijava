@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,64 +30,55 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class HostUnresolvedVmfsVolume extends DynamicData
-{
+@SuppressWarnings("all")
+public class HostUnresolvedVmfsVolume extends DynamicData {
   public HostUnresolvedVmfsExtent[] extent;
   public String vmfsLabel;
   public String vmfsUuid;
   public int totalBlocks;
   public HostUnresolvedVmfsVolumeResolveStatus resolveStatus;
 
-  public HostUnresolvedVmfsExtent[] getExtent()
-  {
+  public HostUnresolvedVmfsExtent[] getExtent() {
     return this.extent;
   }
 
-  public String getVmfsLabel()
-  {
+  public String getVmfsLabel() {
     return this.vmfsLabel;
   }
 
-  public String getVmfsUuid()
-  {
+  public String getVmfsUuid() {
     return this.vmfsUuid;
   }
 
-  public int getTotalBlocks()
-  {
+  public int getTotalBlocks() {
     return this.totalBlocks;
   }
 
-  public HostUnresolvedVmfsVolumeResolveStatus getResolveStatus()
-  {
+  public HostUnresolvedVmfsVolumeResolveStatus getResolveStatus() {
     return this.resolveStatus;
   }
 
-  public void setExtent(HostUnresolvedVmfsExtent[] extent)
-  {
+  public void setExtent(HostUnresolvedVmfsExtent[] extent) {
     this.extent=extent;
   }
 
-  public void setVmfsLabel(String vmfsLabel)
-  {
+  public void setVmfsLabel(String vmfsLabel) {
     this.vmfsLabel=vmfsLabel;
   }
 
-  public void setVmfsUuid(String vmfsUuid)
-  {
+  public void setVmfsUuid(String vmfsUuid) {
     this.vmfsUuid=vmfsUuid;
   }
 
-  public void setTotalBlocks(int totalBlocks)
-  {
+  public void setTotalBlocks(int totalBlocks) {
     this.totalBlocks=totalBlocks;
   }
 
-  public void setResolveStatus(HostUnresolvedVmfsVolumeResolveStatus resolveStatus)
-  {
+  public void setResolveStatus(HostUnresolvedVmfsVolumeResolveStatus resolveStatus) {
     this.resolveStatus=resolveStatus;
   }
 }

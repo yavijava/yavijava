@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,42 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class IORMNotSupportedHostOnDatastore extends VimFault
-{
+@SuppressWarnings("all")
+public class IORMNotSupportedHostOnDatastore extends VimFault {
   public ManagedObjectReference datastore;
   public String datastoreName;
   public ManagedObjectReference[] host;
 
-  public ManagedObjectReference getDatastore()
-  {
+  public ManagedObjectReference getDatastore() {
     return this.datastore;
   }
 
-  public String getDatastoreName()
-  {
+  public String getDatastoreName() {
     return this.datastoreName;
   }
 
-  public ManagedObjectReference[] getHost()
-  {
+  public ManagedObjectReference[] getHost() {
     return this.host;
   }
 
-  public void setDatastore(ManagedObjectReference datastore)
-  {
+  public void setDatastore(ManagedObjectReference datastore) {
     this.datastore=datastore;
   }
 
-  public void setDatastoreName(String datastoreName)
-  {
+  public void setDatastoreName(String datastoreName) {
     this.datastoreName=datastoreName;
   }
 
-  public void setHost(ManagedObjectReference[] host)
-  {
+  public void setHost(ManagedObjectReference[] host) {
     this.host=host;
   }
 }

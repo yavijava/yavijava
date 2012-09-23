@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,31 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class HostInternetScsiHbaTargetSet extends DynamicData
-{
+@SuppressWarnings("all")
+public class HostInternetScsiHbaTargetSet extends DynamicData {
   public HostInternetScsiHbaStaticTarget[] staticTargets;
   public HostInternetScsiHbaSendTarget[] sendTargets;
 
-  public HostInternetScsiHbaStaticTarget[] getStaticTargets()
-  {
+  public HostInternetScsiHbaStaticTarget[] getStaticTargets() {
     return this.staticTargets;
   }
 
-  public HostInternetScsiHbaSendTarget[] getSendTargets()
-  {
+  public HostInternetScsiHbaSendTarget[] getSendTargets() {
     return this.sendTargets;
   }
 
-  public void setStaticTargets(HostInternetScsiHbaStaticTarget[] staticTargets)
-  {
+  public void setStaticTargets(HostInternetScsiHbaStaticTarget[] staticTargets) {
     this.staticTargets=staticTargets;
   }
 
-  public void setSendTargets(HostInternetScsiHbaSendTarget[] sendTargets)
-  {
+  public void setSendTargets(HostInternetScsiHbaSendTarget[] sendTargets) {
     this.sendTargets=sendTargets;
   }
 }

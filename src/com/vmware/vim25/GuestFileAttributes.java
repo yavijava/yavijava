@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -31,42 +31,37 @@ package com.vmware.vim25;
 import java.util.Calendar;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class GuestFileAttributes extends DynamicData
-{
+@SuppressWarnings("all")
+public class GuestFileAttributes extends DynamicData {
   public Calendar modificationTime;
   public Calendar accessTime;
   public String symlinkTarget;
 
-  public Calendar getModificationTime()
-  {
+  public Calendar getModificationTime() {
     return this.modificationTime;
   }
 
-  public Calendar getAccessTime()
-  {
+  public Calendar getAccessTime() {
     return this.accessTime;
   }
 
-  public String getSymlinkTarget()
-  {
+  public String getSymlinkTarget() {
     return this.symlinkTarget;
   }
 
-  public void setModificationTime(Calendar modificationTime)
-  {
+  public void setModificationTime(Calendar modificationTime) {
     this.modificationTime=modificationTime;
   }
 
-  public void setAccessTime(Calendar accessTime)
-  {
+  public void setAccessTime(Calendar accessTime) {
     this.accessTime=accessTime;
   }
 
-  public void setSymlinkTarget(String symlinkTarget)
-  {
+  public void setSymlinkTarget(String symlinkTarget) {
     this.symlinkTarget=symlinkTarget;
   }
 }

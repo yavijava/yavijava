@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,20 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class InvalidCAMServer extends ActiveDirectoryFault
-{
+@SuppressWarnings("all")
+public class InvalidCAMServer extends ActiveDirectoryFault {
   public String camServer;
 
-  public String getCamServer()
-  {
+  public String getCamServer() {
     return this.camServer;
   }
 
-  public void setCamServer(String camServer)
-  {
+  public void setCamServer(String camServer) {
     this.camServer=camServer;
   }
 }

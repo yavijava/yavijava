@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,31 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class HostNicOrderPolicy extends DynamicData
-{
+@SuppressWarnings("all")
+public class HostNicOrderPolicy extends DynamicData {
   public String[] activeNic;
   public String[] standbyNic;
 
-  public String[] getActiveNic()
-  {
+  public String[] getActiveNic() {
     return this.activeNic;
   }
 
-  public String[] getStandbyNic()
-  {
+  public String[] getStandbyNic() {
     return this.standbyNic;
   }
 
-  public void setActiveNic(String[] activeNic)
-  {
+  public void setActiveNic(String[] activeNic) {
     this.activeNic=activeNic;
   }
 
-  public void setStandbyNic(String[] standbyNic)
-  {
+  public void setStandbyNic(String[] standbyNic) {
     this.standbyNic=standbyNic;
   }
 }

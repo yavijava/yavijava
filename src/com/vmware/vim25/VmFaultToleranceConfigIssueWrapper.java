@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,42 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class VmFaultToleranceConfigIssueWrapper extends VmFaultToleranceIssue
-{
+@SuppressWarnings("all")
+public class VmFaultToleranceConfigIssueWrapper extends VmFaultToleranceIssue {
   public String entityName;
   public ManagedObjectReference entity;
   public LocalizedMethodFault error;
 
-  public String getEntityName()
-  {
+  public String getEntityName() {
     return this.entityName;
   }
 
-  public ManagedObjectReference getEntity()
-  {
+  public ManagedObjectReference getEntity() {
     return this.entity;
   }
 
-  public LocalizedMethodFault getError()
-  {
+  public LocalizedMethodFault getError() {
     return this.error;
   }
 
-  public void setEntityName(String entityName)
-  {
+  public void setEntityName(String entityName) {
     this.entityName=entityName;
   }
 
-  public void setEntity(ManagedObjectReference entity)
-  {
+  public void setEntity(ManagedObjectReference entity) {
     this.entity=entity;
   }
 
-  public void setError(LocalizedMethodFault error)
-  {
+  public void setError(LocalizedMethodFault error) {
     this.error=error;
   }
 }

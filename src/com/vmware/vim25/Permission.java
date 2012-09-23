@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,64 +30,55 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class Permission extends DynamicData
-{
+@SuppressWarnings("all")
+public class Permission extends DynamicData {
   public ManagedObjectReference entity;
   public String principal;
   public boolean group;
   public int roleId;
   public boolean propagate;
 
-  public ManagedObjectReference getEntity()
-  {
+  public ManagedObjectReference getEntity() {
     return this.entity;
   }
 
-  public String getPrincipal()
-  {
+  public String getPrincipal() {
     return this.principal;
   }
 
-  public boolean isGroup()
-  {
+  public boolean isGroup() {
     return this.group;
   }
 
-  public int getRoleId()
-  {
+  public int getRoleId() {
     return this.roleId;
   }
 
-  public boolean isPropagate()
-  {
+  public boolean isPropagate() {
     return this.propagate;
   }
 
-  public void setEntity(ManagedObjectReference entity)
-  {
+  public void setEntity(ManagedObjectReference entity) {
     this.entity=entity;
   }
 
-  public void setPrincipal(String principal)
-  {
+  public void setPrincipal(String principal) {
     this.principal=principal;
   }
 
-  public void setGroup(boolean group)
-  {
+  public void setGroup(boolean group) {
     this.group=group;
   }
 
-  public void setRoleId(int roleId)
-  {
+  public void setRoleId(int roleId) {
     this.roleId=roleId;
   }
 
-  public void setPropagate(boolean propagate)
-  {
+  public void setPropagate(boolean propagate) {
     this.propagate=propagate;
   }
 }

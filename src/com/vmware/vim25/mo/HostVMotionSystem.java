@@ -36,7 +36,7 @@ import com.vmware.vim25.*;
 /**
  * The managed object class corresponding to the one defined in VI SDK API reference.
  * @deprecated as of SDK4.0, use HostVirtualNicManager instead.
- * @author Steve JIN (sjin@vmware.com)
+ * @author Steve JIN (http://www.doublecloud.org)
  */
 
 public class HostVMotionSystem extends ExtensibleManagedObject 

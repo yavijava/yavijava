@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,11 +30,12 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class VmConfigSpec extends DynamicData
-{
+@SuppressWarnings("all")
+public class VmConfigSpec extends DynamicData {
   public VAppProductSpec[] product;
   public VAppPropertySpec[] property;
   public VAppIPAssignmentInfo ipAssignment;
@@ -44,83 +45,67 @@ public class VmConfigSpec extends DynamicData
   public Boolean installBootRequired;
   public Integer installBootStopDelay;
 
-  public VAppProductSpec[] getProduct()
-  {
+  public VAppProductSpec[] getProduct() {
     return this.product;
   }
 
-  public VAppPropertySpec[] getProperty()
-  {
+  public VAppPropertySpec[] getProperty() {
     return this.property;
   }
 
-  public VAppIPAssignmentInfo getIpAssignment()
-  {
+  public VAppIPAssignmentInfo getIpAssignment() {
     return this.ipAssignment;
   }
 
-  public String[] getEula()
-  {
+  public String[] getEula() {
     return this.eula;
   }
 
-  public VAppOvfSectionSpec[] getOvfSection()
-  {
+  public VAppOvfSectionSpec[] getOvfSection() {
     return this.ovfSection;
   }
 
-  public String[] getOvfEnvironmentTransport()
-  {
+  public String[] getOvfEnvironmentTransport() {
     return this.ovfEnvironmentTransport;
   }
 
-  public Boolean getInstallBootRequired()
-  {
+  public Boolean getInstallBootRequired() {
     return this.installBootRequired;
   }
 
-  public Integer getInstallBootStopDelay()
-  {
+  public Integer getInstallBootStopDelay() {
     return this.installBootStopDelay;
   }
 
-  public void setProduct(VAppProductSpec[] product)
-  {
+  public void setProduct(VAppProductSpec[] product) {
     this.product=product;
   }
 
-  public void setProperty(VAppPropertySpec[] property)
-  {
+  public void setProperty(VAppPropertySpec[] property) {
     this.property=property;
   }
 
-  public void setIpAssignment(VAppIPAssignmentInfo ipAssignment)
-  {
+  public void setIpAssignment(VAppIPAssignmentInfo ipAssignment) {
     this.ipAssignment=ipAssignment;
   }
 
-  public void setEula(String[] eula)
-  {
+  public void setEula(String[] eula) {
     this.eula=eula;
   }
 
-  public void setOvfSection(VAppOvfSectionSpec[] ovfSection)
-  {
+  public void setOvfSection(VAppOvfSectionSpec[] ovfSection) {
     this.ovfSection=ovfSection;
   }
 
-  public void setOvfEnvironmentTransport(String[] ovfEnvironmentTransport)
-  {
+  public void setOvfEnvironmentTransport(String[] ovfEnvironmentTransport) {
     this.ovfEnvironmentTransport=ovfEnvironmentTransport;
   }
 
-  public void setInstallBootRequired(Boolean installBootRequired)
-  {
+  public void setInstallBootRequired(Boolean installBootRequired) {
     this.installBootRequired=installBootRequired;
   }
 
-  public void setInstallBootStopDelay(Integer installBootStopDelay)
-  {
+  public void setInstallBootStopDelay(Integer installBootStopDelay) {
     this.installBootStopDelay=installBootStopDelay;
   }
 }

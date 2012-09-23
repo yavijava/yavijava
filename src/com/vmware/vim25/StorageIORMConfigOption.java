@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,42 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class StorageIORMConfigOption extends DynamicData
-{
+@SuppressWarnings("all")
+public class StorageIORMConfigOption extends DynamicData {
   public BoolOption enabledOption;
   public IntOption congestionThresholdOption;
   public BoolOption statsCollectionEnabledOption;
 
-  public BoolOption getEnabledOption()
-  {
+  public BoolOption getEnabledOption() {
     return this.enabledOption;
   }
 
-  public IntOption getCongestionThresholdOption()
-  {
+  public IntOption getCongestionThresholdOption() {
     return this.congestionThresholdOption;
   }
 
-  public BoolOption getStatsCollectionEnabledOption()
-  {
+  public BoolOption getStatsCollectionEnabledOption() {
     return this.statsCollectionEnabledOption;
   }
 
-  public void setEnabledOption(BoolOption enabledOption)
-  {
+  public void setEnabledOption(BoolOption enabledOption) {
     this.enabledOption=enabledOption;
   }
 
-  public void setCongestionThresholdOption(IntOption congestionThresholdOption)
-  {
+  public void setCongestionThresholdOption(IntOption congestionThresholdOption) {
     this.congestionThresholdOption=congestionThresholdOption;
   }
 
-  public void setStatsCollectionEnabledOption(BoolOption statsCollectionEnabledOption)
-  {
+  public void setStatsCollectionEnabledOption(BoolOption statsCollectionEnabledOption) {
     this.statsCollectionEnabledOption=statsCollectionEnabledOption;
   }
 }

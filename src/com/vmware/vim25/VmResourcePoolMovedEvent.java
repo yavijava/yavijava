@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,31 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class VmResourcePoolMovedEvent extends VmEvent
-{
+@SuppressWarnings("all")
+public class VmResourcePoolMovedEvent extends VmEvent {
   public ResourcePoolEventArgument oldParent;
   public ResourcePoolEventArgument newParent;
 
-  public ResourcePoolEventArgument getOldParent()
-  {
+  public ResourcePoolEventArgument getOldParent() {
     return this.oldParent;
   }
 
-  public ResourcePoolEventArgument getNewParent()
-  {
+  public ResourcePoolEventArgument getNewParent() {
     return this.newParent;
   }
 
-  public void setOldParent(ResourcePoolEventArgument oldParent)
-  {
+  public void setOldParent(ResourcePoolEventArgument oldParent) {
     this.oldParent=oldParent;
   }
 
-  public void setNewParent(ResourcePoolEventArgument newParent)
-  {
+  public void setNewParent(ResourcePoolEventArgument newParent) {
     this.newParent=newParent;
   }
 }

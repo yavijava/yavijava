@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,53 +30,46 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class CustomFieldValueChangedEvent extends CustomFieldEvent
-{
+@SuppressWarnings("all")
+public class CustomFieldValueChangedEvent extends CustomFieldEvent {
   public ManagedEntityEventArgument entity;
   public int fieldKey;
   public String name;
   public String value;
 
-  public ManagedEntityEventArgument getEntity()
-  {
+  public ManagedEntityEventArgument getEntity() {
     return this.entity;
   }
 
-  public int getFieldKey()
-  {
+  public int getFieldKey() {
     return this.fieldKey;
   }
 
-  public String getName()
-  {
+  public String getName() {
     return this.name;
   }
 
-  public String getValue()
-  {
+  public String getValue() {
     return this.value;
   }
 
-  public void setEntity(ManagedEntityEventArgument entity)
-  {
+  public void setEntity(ManagedEntityEventArgument entity) {
     this.entity=entity;
   }
 
-  public void setFieldKey(int fieldKey)
-  {
+  public void setFieldKey(int fieldKey) {
     this.fieldKey=fieldKey;
   }
 
-  public void setName(String name)
-  {
+  public void setName(String name) {
     this.name=name;
   }
 
-  public void setValue(String value)
-  {
+  public void setValue(String value) {
     this.value=value;
   }
 }

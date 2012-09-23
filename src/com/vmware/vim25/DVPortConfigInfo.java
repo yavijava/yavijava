@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,64 +30,55 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class DVPortConfigInfo extends DynamicData
-{
+@SuppressWarnings("all")
+public class DVPortConfigInfo extends DynamicData {
   public String name;
   public ManagedObjectReference[] scope;
   public String description;
   public DVPortSetting setting;
   public String configVersion;
 
-  public String getName()
-  {
+  public String getName() {
     return this.name;
   }
 
-  public ManagedObjectReference[] getScope()
-  {
+  public ManagedObjectReference[] getScope() {
     return this.scope;
   }
 
-  public String getDescription()
-  {
+  public String getDescription() {
     return this.description;
   }
 
-  public DVPortSetting getSetting()
-  {
+  public DVPortSetting getSetting() {
     return this.setting;
   }
 
-  public String getConfigVersion()
-  {
+  public String getConfigVersion() {
     return this.configVersion;
   }
 
-  public void setName(String name)
-  {
+  public void setName(String name) {
     this.name=name;
   }
 
-  public void setScope(ManagedObjectReference[] scope)
-  {
+  public void setScope(ManagedObjectReference[] scope) {
     this.scope=scope;
   }
 
-  public void setDescription(String description)
-  {
+  public void setDescription(String description) {
     this.description=description;
   }
 
-  public void setSetting(DVPortSetting setting)
-  {
+  public void setSetting(DVPortSetting setting) {
     this.setting=setting;
   }
 
-  public void setConfigVersion(String configVersion)
-  {
+  public void setConfigVersion(String configVersion) {
     this.configVersion=configVersion;
   }
 }

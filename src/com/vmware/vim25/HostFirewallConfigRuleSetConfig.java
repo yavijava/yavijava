@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,42 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class HostFirewallConfigRuleSetConfig extends DynamicData
-{
+@SuppressWarnings("all")
+public class HostFirewallConfigRuleSetConfig extends DynamicData {
   public String rulesetId;
   public boolean enabled;
   public HostFirewallRulesetIpList allowedHosts;
 
-  public String getRulesetId()
-  {
+  public String getRulesetId() {
     return this.rulesetId;
   }
 
-  public boolean isEnabled()
-  {
+  public boolean isEnabled() {
     return this.enabled;
   }
 
-  public HostFirewallRulesetIpList getAllowedHosts()
-  {
+  public HostFirewallRulesetIpList getAllowedHosts() {
     return this.allowedHosts;
   }
 
-  public void setRulesetId(String rulesetId)
-  {
+  public void setRulesetId(String rulesetId) {
     this.rulesetId=rulesetId;
   }
 
-  public void setEnabled(boolean enabled)
-  {
+  public void setEnabled(boolean enabled) {
     this.enabled=enabled;
   }
 
-  public void setAllowedHosts(HostFirewallRulesetIpList allowedHosts)
-  {
+  public void setAllowedHosts(HostFirewallRulesetIpList allowedHosts) {
     this.allowedHosts=allowedHosts;
   }
 }

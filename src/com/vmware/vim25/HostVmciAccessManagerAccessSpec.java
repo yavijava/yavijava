@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,42 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class HostVmciAccessManagerAccessSpec extends DynamicData
-{
+@SuppressWarnings("all")
+public class HostVmciAccessManagerAccessSpec extends DynamicData {
   public ManagedObjectReference vm;
   public String[] services;
   public String mode;
 
-  public ManagedObjectReference getVm()
-  {
+  public ManagedObjectReference getVm() {
     return this.vm;
   }
 
-  public String[] getServices()
-  {
+  public String[] getServices() {
     return this.services;
   }
 
-  public String getMode()
-  {
+  public String getMode() {
     return this.mode;
   }
 
-  public void setVm(ManagedObjectReference vm)
-  {
+  public void setVm(ManagedObjectReference vm) {
     this.vm=vm;
   }
 
-  public void setServices(String[] services)
-  {
+  public void setServices(String[] services) {
     this.services=services;
   }
 
-  public void setMode(String mode)
-  {
+  public void setMode(String mode) {
     this.mode=mode;
   }
 }

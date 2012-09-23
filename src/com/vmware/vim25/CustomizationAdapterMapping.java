@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,31 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class CustomizationAdapterMapping extends DynamicData
-{
+@SuppressWarnings("all")
+public class CustomizationAdapterMapping extends DynamicData {
   public String macAddress;
   public CustomizationIPSettings adapter;
 
-  public String getMacAddress()
-  {
+  public String getMacAddress() {
     return this.macAddress;
   }
 
-  public CustomizationIPSettings getAdapter()
-  {
+  public CustomizationIPSettings getAdapter() {
     return this.adapter;
   }
 
-  public void setMacAddress(String macAddress)
-  {
+  public void setMacAddress(String macAddress) {
     this.macAddress=macAddress;
   }
 
-  public void setAdapter(CustomizationIPSettings adapter)
-  {
+  public void setAdapter(CustomizationIPSettings adapter) {
     this.adapter=adapter;
   }
 }

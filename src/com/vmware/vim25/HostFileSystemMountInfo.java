@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,42 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class HostFileSystemMountInfo extends DynamicData
-{
+@SuppressWarnings("all")
+public class HostFileSystemMountInfo extends DynamicData {
   public HostMountInfo mountInfo;
   public HostFileSystemVolume volume;
   public String vStorageSupport;
 
-  public HostMountInfo getMountInfo()
-  {
+  public HostMountInfo getMountInfo() {
     return this.mountInfo;
   }
 
-  public HostFileSystemVolume getVolume()
-  {
+  public HostFileSystemVolume getVolume() {
     return this.volume;
   }
 
-  public String getVStorageSupport()
-  {
+  public String getVStorageSupport() {
     return this.vStorageSupport;
   }
 
-  public void setMountInfo(HostMountInfo mountInfo)
-  {
+  public void setMountInfo(HostMountInfo mountInfo) {
     this.mountInfo=mountInfo;
   }
 
-  public void setVolume(HostFileSystemVolume volume)
-  {
+  public void setVolume(HostFileSystemVolume volume) {
     this.volume=volume;
   }
 
-  public void setVStorageSupport(String vStorageSupport)
-  {
+  public void setVStorageSupport(String vStorageSupport) {
     this.vStorageSupport=vStorageSupport;
   }
 }

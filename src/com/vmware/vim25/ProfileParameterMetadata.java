@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,53 +30,46 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class ProfileParameterMetadata extends DynamicData
-{
+@SuppressWarnings("all")
+public class ProfileParameterMetadata extends DynamicData {
   public ExtendedElementDescription id;
   public String type;
   public boolean optional;
   public Object defaultValue;
 
-  public ExtendedElementDescription getId()
-  {
+  public ExtendedElementDescription getId() {
     return this.id;
   }
 
-  public String getType()
-  {
+  public String getType() {
     return this.type;
   }
 
-  public boolean isOptional()
-  {
+  public boolean isOptional() {
     return this.optional;
   }
 
-  public Object getDefaultValue()
-  {
+  public Object getDefaultValue() {
     return this.defaultValue;
   }
 
-  public void setId(ExtendedElementDescription id)
-  {
+  public void setId(ExtendedElementDescription id) {
     this.id=id;
   }
 
-  public void setType(String type)
-  {
+  public void setType(String type) {
     this.type=type;
   }
 
-  public void setOptional(boolean optional)
-  {
+  public void setOptional(boolean optional) {
     this.optional=optional;
   }
 
-  public void setDefaultValue(Object defaultValue)
-  {
+  public void setDefaultValue(Object defaultValue) {
     this.defaultValue=defaultValue;
   }
 }

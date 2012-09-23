@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,64 +30,55 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class HostPatchManagerPatchManagerOperationSpec extends DynamicData
-{
+@SuppressWarnings("all")
+public class HostPatchManagerPatchManagerOperationSpec extends DynamicData {
   public String proxy;
   public Integer port;
   public String userName;
   public String password;
   public String cmdOption;
 
-  public String getProxy()
-  {
+  public String getProxy() {
     return this.proxy;
   }
 
-  public Integer getPort()
-  {
+  public Integer getPort() {
     return this.port;
   }
 
-  public String getUserName()
-  {
+  public String getUserName() {
     return this.userName;
   }
 
-  public String getPassword()
-  {
+  public String getPassword() {
     return this.password;
   }
 
-  public String getCmdOption()
-  {
+  public String getCmdOption() {
     return this.cmdOption;
   }
 
-  public void setProxy(String proxy)
-  {
+  public void setProxy(String proxy) {
     this.proxy=proxy;
   }
 
-  public void setPort(Integer port)
-  {
+  public void setPort(Integer port) {
     this.port=port;
   }
 
-  public void setUserName(String userName)
-  {
+  public void setUserName(String userName) {
     this.userName=userName;
   }
 
-  public void setPassword(String password)
-  {
+  public void setPassword(String password) {
     this.password=password;
   }
 
-  public void setCmdOption(String cmdOption)
-  {
+  public void setCmdOption(String cmdOption) {
     this.cmdOption=cmdOption;
   }
 }

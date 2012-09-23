@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -31,31 +31,28 @@ package com.vmware.vim25;
 import java.util.Calendar;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class EventFilterSpecByTime extends DynamicData
-{
+@SuppressWarnings("all")
+public class EventFilterSpecByTime extends DynamicData {
   public Calendar beginTime;
   public Calendar endTime;
 
-  public Calendar getBeginTime()
-  {
+  public Calendar getBeginTime() {
     return this.beginTime;
   }
 
-  public Calendar getEndTime()
-  {
+  public Calendar getEndTime() {
     return this.endTime;
   }
 
-  public void setBeginTime(Calendar beginTime)
-  {
+  public void setBeginTime(Calendar beginTime) {
     this.beginTime=beginTime;
   }
 
-  public void setEndTime(Calendar endTime)
-  {
+  public void setEndTime(Calendar endTime) {
     this.endTime=endTime;
   }
 }

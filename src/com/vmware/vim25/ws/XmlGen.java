@@ -51,7 +51,7 @@ import com.vmware.vim25.ManagedObjectReference;
 
 /** 
  * The XML serialization/de-serialization engine.
- * @author Steve Jin (sjin@vmware.com)
+ * @author Steve Jin (http://www.doublecloud.org)
 */ 
 
 public final class XmlGen
@@ -59,7 +59,7 @@ public final class XmlGen
   private static String PACKAGE_NAME = "com.vmware.vim25";
   private static Namespace XSI = new Namespace("xsi", "http://www.w3.org/2001/XMLSchema-instance");
   private static QName XSI_TYPE = new QName("type", XSI);
-  private static String[] BASIC_TYPES = new String[] {"String", "int", "short", "long", "float", "Float", "byte", "boolean", "Boolean", "Calendar"};
+  private static String[] BASIC_TYPES = new String[] {"String", "int", "short", "long", "float", "Float", "byte", "boolean", "Boolean", "Calendar", "double"};
 
   public static SoapFaultException parseSoapFault(Element root) throws Exception
   {
@@ -162,6 +162,7 @@ public final class XmlGen
 	  PRIMITIVE_DATA_TYPES.add("float");
 	  PRIMITIVE_DATA_TYPES.add("byte");
 	  PRIMITIVE_DATA_TYPES.add("long");
+	  PRIMITIVE_DATA_TYPES.add("double");
   }
   
   private final static Map<String, Class> VimClasses = new ConcurrentHashMap<String, Class>();
@@ -409,6 +410,16 @@ public final class XmlGen
     }
     return fs;
   }
+  
+  private static double[] parseDoubleArray(String[] values)
+  {
+      double[] ds = new double[values.length];
+      for(int i=0; i<ds.length; i++)
+      {
+	  ds[i] = Double.parseDouble(values[i]);
+      }
+      return ds;
+  }
 
   private static int[] parseIntArray(String[] values)
   { 
@@ -493,6 +504,14 @@ public final class XmlGen
       Calendar cal = DatatypeConverter.parseTime(values[0]);
       return cal;
     }
+    else if("double".equals(type))
+    {
+	return new Double(values[0]);
+    }
+    else if("double[]".equals(type))
+    {
+	return parseDoubleArray(values);
+    }
     else
     {
       throw new RuntimeException("Unexpected Type@setField: " + type + values[0]);
@@ -557,6 +576,14 @@ public final class XmlGen
     {
       Calendar cal = DatatypeConverter.parseTime(value);
       f.set(obj, cal);
+    }
+    else if("double".equals(type))
+    {
+	f.set(obj, Double.parseDouble(value));
+    }
+    else if("Double".equals(type))
+    {
+	f.set(obj, new Double(value));
     }
     else
     {
@@ -820,6 +847,10 @@ public final class XmlGen
 	  else if(java.lang.Byte.class == type)
 	  {
 		  return "xsd:byte";
+	  }
+	  else if(java.lang.Double.class == type)
+	  {
+	          return "xsd:double";
 	  }
 	  else if(obj instanceof java.util.Calendar)
 	  {

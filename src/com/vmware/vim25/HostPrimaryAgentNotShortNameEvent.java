@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,20 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class HostPrimaryAgentNotShortNameEvent extends HostDasEvent
-{
+@SuppressWarnings("all")
+public class HostPrimaryAgentNotShortNameEvent extends HostDasEvent {
   public String primaryAgent;
 
-  public String getPrimaryAgent()
-  {
+  public String getPrimaryAgent() {
     return this.primaryAgent;
   }
 
-  public void setPrimaryAgent(String primaryAgent)
-  {
+  public void setPrimaryAgent(String primaryAgent) {
     this.primaryAgent=primaryAgent;
   }
 }

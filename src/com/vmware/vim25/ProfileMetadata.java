@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,53 +30,64 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class ProfileMetadata extends DynamicData
-{
+@SuppressWarnings("all")
+public class ProfileMetadata extends DynamicData {
   public String key;
   public String profileTypeName;
   public ExtendedDescription description;
   public ProfileMetadataProfileSortSpec[] sortSpec;
+  public String profileCategory;
+  public String profileComponent;
 
-  public String getKey()
-  {
+  public String getKey() {
     return this.key;
   }
 
-  public String getProfileTypeName()
-  {
+  public String getProfileTypeName() {
     return this.profileTypeName;
   }
 
-  public ExtendedDescription getDescription()
-  {
+  public ExtendedDescription getDescription() {
     return this.description;
   }
 
-  public ProfileMetadataProfileSortSpec[] getSortSpec()
-  {
+  public ProfileMetadataProfileSortSpec[] getSortSpec() {
     return this.sortSpec;
   }
 
-  public void setKey(String key)
-  {
+  public String getProfileCategory() {
+    return this.profileCategory;
+  }
+
+  public String getProfileComponent() {
+    return this.profileComponent;
+  }
+
+  public void setKey(String key) {
     this.key=key;
   }
 
-  public void setProfileTypeName(String profileTypeName)
-  {
+  public void setProfileTypeName(String profileTypeName) {
     this.profileTypeName=profileTypeName;
   }
 
-  public void setDescription(ExtendedDescription description)
-  {
+  public void setDescription(ExtendedDescription description) {
     this.description=description;
   }
 
-  public void setSortSpec(ProfileMetadataProfileSortSpec[] sortSpec)
-  {
+  public void setSortSpec(ProfileMetadataProfileSortSpec[] sortSpec) {
     this.sortSpec=sortSpec;
+  }
+
+  public void setProfileCategory(String profileCategory) {
+    this.profileCategory=profileCategory;
+  }
+
+  public void setProfileComponent(String profileComponent) {
+    this.profileComponent=profileComponent;
   }
 }

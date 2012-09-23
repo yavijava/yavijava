@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,53 +30,46 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class HostInternetScsiHbaDiscoveryCapabilities extends DynamicData
-{
+@SuppressWarnings("all")
+public class HostInternetScsiHbaDiscoveryCapabilities extends DynamicData {
   public boolean iSnsDiscoverySettable;
   public boolean slpDiscoverySettable;
   public boolean staticTargetDiscoverySettable;
   public boolean sendTargetsDiscoverySettable;
 
-  public boolean isISnsDiscoverySettable()
-  {
+  public boolean isISnsDiscoverySettable() {
     return this.iSnsDiscoverySettable;
   }
 
-  public boolean isSlpDiscoverySettable()
-  {
+  public boolean isSlpDiscoverySettable() {
     return this.slpDiscoverySettable;
   }
 
-  public boolean isStaticTargetDiscoverySettable()
-  {
+  public boolean isStaticTargetDiscoverySettable() {
     return this.staticTargetDiscoverySettable;
   }
 
-  public boolean isSendTargetsDiscoverySettable()
-  {
+  public boolean isSendTargetsDiscoverySettable() {
     return this.sendTargetsDiscoverySettable;
   }
 
-  public void setISnsDiscoverySettable(boolean iSnsDiscoverySettable)
-  {
+  public void setISnsDiscoverySettable(boolean iSnsDiscoverySettable) {
     this.iSnsDiscoverySettable=iSnsDiscoverySettable;
   }
 
-  public void setSlpDiscoverySettable(boolean slpDiscoverySettable)
-  {
+  public void setSlpDiscoverySettable(boolean slpDiscoverySettable) {
     this.slpDiscoverySettable=slpDiscoverySettable;
   }
 
-  public void setStaticTargetDiscoverySettable(boolean staticTargetDiscoverySettable)
-  {
+  public void setStaticTargetDiscoverySettable(boolean staticTargetDiscoverySettable) {
     this.staticTargetDiscoverySettable=staticTargetDiscoverySettable;
   }
 
-  public void setSendTargetsDiscoverySettable(boolean sendTargetsDiscoverySettable)
-  {
+  public void setSendTargetsDiscoverySettable(boolean sendTargetsDiscoverySettable) {
     this.sendTargetsDiscoverySettable=sendTargetsDiscoverySettable;
   }
 }

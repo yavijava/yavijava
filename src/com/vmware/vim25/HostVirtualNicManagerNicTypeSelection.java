@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,31 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class HostVirtualNicManagerNicTypeSelection extends DynamicData
-{
+@SuppressWarnings("all")
+public class HostVirtualNicManagerNicTypeSelection extends DynamicData {
   public HostVirtualNicConnection vnic;
   public String[] nicType;
 
-  public HostVirtualNicConnection getVnic()
-  {
+  public HostVirtualNicConnection getVnic() {
     return this.vnic;
   }
 
-  public String[] getNicType()
-  {
+  public String[] getNicType() {
     return this.nicType;
   }
 
-  public void setVnic(HostVirtualNicConnection vnic)
-  {
+  public void setVnic(HostVirtualNicConnection vnic) {
     this.vnic=vnic;
   }
 
-  public void setNicType(String[] nicType)
-  {
+  public void setNicType(String[] nicType) {
     this.nicType=nicType;
   }
 }

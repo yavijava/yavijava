@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,11 +30,12 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class VirtualMachineDefaultPowerOpInfo extends DynamicData
-{
+@SuppressWarnings("all")
+public class VirtualMachineDefaultPowerOpInfo extends DynamicData {
   public String powerOffType;
   public String suspendType;
   public String resetType;
@@ -43,73 +44,59 @@ public class VirtualMachineDefaultPowerOpInfo extends DynamicData
   public String defaultResetType;
   public String standbyAction;
 
-  public String getPowerOffType()
-  {
+  public String getPowerOffType() {
     return this.powerOffType;
   }
 
-  public String getSuspendType()
-  {
+  public String getSuspendType() {
     return this.suspendType;
   }
 
-  public String getResetType()
-  {
+  public String getResetType() {
     return this.resetType;
   }
 
-  public String getDefaultPowerOffType()
-  {
+  public String getDefaultPowerOffType() {
     return this.defaultPowerOffType;
   }
 
-  public String getDefaultSuspendType()
-  {
+  public String getDefaultSuspendType() {
     return this.defaultSuspendType;
   }
 
-  public String getDefaultResetType()
-  {
+  public String getDefaultResetType() {
     return this.defaultResetType;
   }
 
-  public String getStandbyAction()
-  {
+  public String getStandbyAction() {
     return this.standbyAction;
   }
 
-  public void setPowerOffType(String powerOffType)
-  {
+  public void setPowerOffType(String powerOffType) {
     this.powerOffType=powerOffType;
   }
 
-  public void setSuspendType(String suspendType)
-  {
+  public void setSuspendType(String suspendType) {
     this.suspendType=suspendType;
   }
 
-  public void setResetType(String resetType)
-  {
+  public void setResetType(String resetType) {
     this.resetType=resetType;
   }
 
-  public void setDefaultPowerOffType(String defaultPowerOffType)
-  {
+  public void setDefaultPowerOffType(String defaultPowerOffType) {
     this.defaultPowerOffType=defaultPowerOffType;
   }
 
-  public void setDefaultSuspendType(String defaultSuspendType)
-  {
+  public void setDefaultSuspendType(String defaultSuspendType) {
     this.defaultSuspendType=defaultSuspendType;
   }
 
-  public void setDefaultResetType(String defaultResetType)
-  {
+  public void setDefaultResetType(String defaultResetType) {
     this.defaultResetType=defaultResetType;
   }
 
-  public void setStandbyAction(String standbyAction)
-  {
+  public void setStandbyAction(String standbyAction) {
     this.standbyAction=standbyAction;
   }
 }

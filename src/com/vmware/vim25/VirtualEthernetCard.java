@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,42 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class VirtualEthernetCard extends VirtualDevice
-{
+@SuppressWarnings("all")
+public class VirtualEthernetCard extends VirtualDevice {
   public String addressType;
   public String macAddress;
   public Boolean wakeOnLanEnabled;
 
-  public String getAddressType()
-  {
+  public String getAddressType() {
     return this.addressType;
   }
 
-  public String getMacAddress()
-  {
+  public String getMacAddress() {
     return this.macAddress;
   }
 
-  public Boolean getWakeOnLanEnabled()
-  {
+  public Boolean getWakeOnLanEnabled() {
     return this.wakeOnLanEnabled;
   }
 
-  public void setAddressType(String addressType)
-  {
+  public void setAddressType(String addressType) {
     this.addressType=addressType;
   }
 
-  public void setMacAddress(String macAddress)
-  {
+  public void setMacAddress(String macAddress) {
     this.macAddress=macAddress;
   }
 
-  public void setWakeOnLanEnabled(Boolean wakeOnLanEnabled)
-  {
+  public void setWakeOnLanEnabled(Boolean wakeOnLanEnabled) {
     this.wakeOnLanEnabled=wakeOnLanEnabled;
   }
 }

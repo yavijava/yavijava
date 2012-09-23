@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,20 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class VmfsDatastoreInfo extends DatastoreInfo
-{
+@SuppressWarnings("all")
+public class VmfsDatastoreInfo extends DatastoreInfo {
+  public Long maxPhysicalRDMFileSize;
+  public Long maxVirtualRDMFileSize;
   public HostVmfsVolume vmfs;
 
-  public HostVmfsVolume getVmfs()
-  {
+  public Long getMaxPhysicalRDMFileSize() {
+    return this.maxPhysicalRDMFileSize;
+  }
+
+  public Long getMaxVirtualRDMFileSize() {
+    return this.maxVirtualRDMFileSize;
+  }
+
+  public HostVmfsVolume getVmfs() {
     return this.vmfs;
   }
 
-  public void setVmfs(HostVmfsVolume vmfs)
-  {
+  public void setMaxPhysicalRDMFileSize(Long maxPhysicalRDMFileSize) {
+    this.maxPhysicalRDMFileSize=maxPhysicalRDMFileSize;
+  }
+
+  public void setMaxVirtualRDMFileSize(Long maxVirtualRDMFileSize) {
+    this.maxVirtualRDMFileSize=maxVirtualRDMFileSize;
+  }
+
+  public void setVmfs(HostVmfsVolume vmfs) {
     this.vmfs=vmfs;
   }
 }

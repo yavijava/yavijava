@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,42 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class HostIpConfigIpV6AddressConfiguration extends DynamicData
-{
+@SuppressWarnings("all")
+public class HostIpConfigIpV6AddressConfiguration extends DynamicData {
   public HostIpConfigIpV6Address[] ipV6Address;
   public Boolean autoConfigurationEnabled;
   public Boolean dhcpV6Enabled;
 
-  public HostIpConfigIpV6Address[] getIpV6Address()
-  {
+  public HostIpConfigIpV6Address[] getIpV6Address() {
     return this.ipV6Address;
   }
 
-  public Boolean getAutoConfigurationEnabled()
-  {
+  public Boolean getAutoConfigurationEnabled() {
     return this.autoConfigurationEnabled;
   }
 
-  public Boolean getDhcpV6Enabled()
-  {
+  public Boolean getDhcpV6Enabled() {
     return this.dhcpV6Enabled;
   }
 
-  public void setIpV6Address(HostIpConfigIpV6Address[] ipV6Address)
-  {
+  public void setIpV6Address(HostIpConfigIpV6Address[] ipV6Address) {
     this.ipV6Address=ipV6Address;
   }
 
-  public void setAutoConfigurationEnabled(Boolean autoConfigurationEnabled)
-  {
+  public void setAutoConfigurationEnabled(Boolean autoConfigurationEnabled) {
     this.autoConfigurationEnabled=autoConfigurationEnabled;
   }
 
-  public void setDhcpV6Enabled(Boolean dhcpV6Enabled)
-  {
+  public void setDhcpV6Enabled(Boolean dhcpV6Enabled) {
     this.dhcpV6Enabled=dhcpV6Enabled;
   }
 }

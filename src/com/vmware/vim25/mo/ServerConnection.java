@@ -36,7 +36,7 @@ import com.vmware.vim25.ws.WSClient;
 
 /**
  * The class representing the connection to a server either VC server or ESX.
- * @author Steve JIN (sjin@vmware.com)
+ * @author Steve JIN (http://www.doublecloud.org)
  */
 final public class ServerConnection
 {

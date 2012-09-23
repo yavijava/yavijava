@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,42 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class DistributedVirtualSwitchInfo extends DynamicData
-{
+@SuppressWarnings("all")
+public class DistributedVirtualSwitchInfo extends DynamicData {
   public String switchName;
   public String switchUuid;
   public ManagedObjectReference distributedVirtualSwitch;
 
-  public String getSwitchName()
-  {
+  public String getSwitchName() {
     return this.switchName;
   }
 
-  public String getSwitchUuid()
-  {
+  public String getSwitchUuid() {
     return this.switchUuid;
   }
 
-  public ManagedObjectReference getDistributedVirtualSwitch()
-  {
+  public ManagedObjectReference getDistributedVirtualSwitch() {
     return this.distributedVirtualSwitch;
   }
 
-  public void setSwitchName(String switchName)
-  {
+  public void setSwitchName(String switchName) {
     this.switchName=switchName;
   }
 
-  public void setSwitchUuid(String switchUuid)
-  {
+  public void setSwitchUuid(String switchUuid) {
     this.switchUuid=switchUuid;
   }
 
-  public void setDistributedVirtualSwitch(ManagedObjectReference distributedVirtualSwitch)
-  {
+  public void setDistributedVirtualSwitch(ManagedObjectReference distributedVirtualSwitch) {
     this.distributedVirtualSwitch=distributedVirtualSwitch;
   }
 }

@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,64 +30,55 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class VirtualMachineDatastoreInfo extends VirtualMachineTargetInfo
-{
+@SuppressWarnings("all")
+public class VirtualMachineDatastoreInfo extends VirtualMachineTargetInfo {
   public DatastoreSummary datastore;
   public DatastoreCapability capability;
   public long maxFileSize;
   public String mode;
   public String vStorageSupport;
 
-  public DatastoreSummary getDatastore()
-  {
+  public DatastoreSummary getDatastore() {
     return this.datastore;
   }
 
-  public DatastoreCapability getCapability()
-  {
+  public DatastoreCapability getCapability() {
     return this.capability;
   }
 
-  public long getMaxFileSize()
-  {
+  public long getMaxFileSize() {
     return this.maxFileSize;
   }
 
-  public String getMode()
-  {
+  public String getMode() {
     return this.mode;
   }
 
-  public String getVStorageSupport()
-  {
+  public String getVStorageSupport() {
     return this.vStorageSupport;
   }
 
-  public void setDatastore(DatastoreSummary datastore)
-  {
+  public void setDatastore(DatastoreSummary datastore) {
     this.datastore=datastore;
   }
 
-  public void setCapability(DatastoreCapability capability)
-  {
+  public void setCapability(DatastoreCapability capability) {
     this.capability=capability;
   }
 
-  public void setMaxFileSize(long maxFileSize)
-  {
+  public void setMaxFileSize(long maxFileSize) {
     this.maxFileSize=maxFileSize;
   }
 
-  public void setMode(String mode)
-  {
+  public void setMode(String mode) {
     this.mode=mode;
   }
 
-  public void setVStorageSupport(String vStorageSupport)
-  {
+  public void setVStorageSupport(String vStorageSupport) {
     this.vStorageSupport=vStorageSupport;
   }
 }

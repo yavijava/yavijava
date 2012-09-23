@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,31 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class PermissionAddedEvent extends PermissionEvent
-{
+@SuppressWarnings("all")
+public class PermissionAddedEvent extends PermissionEvent {
   public RoleEventArgument role;
   public boolean propagate;
 
-  public RoleEventArgument getRole()
-  {
+  public RoleEventArgument getRole() {
     return this.role;
   }
 
-  public boolean isPropagate()
-  {
+  public boolean isPropagate() {
     return this.propagate;
   }
 
-  public void setRole(RoleEventArgument role)
-  {
+  public void setRole(RoleEventArgument role) {
     this.role=role;
   }
 
-  public void setPropagate(boolean propagate)
-  {
+  public void setPropagate(boolean propagate) {
     this.propagate=propagate;
   }
 }

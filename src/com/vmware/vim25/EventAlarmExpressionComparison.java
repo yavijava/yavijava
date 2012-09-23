@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,42 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class EventAlarmExpressionComparison extends DynamicData
-{
+@SuppressWarnings("all")
+public class EventAlarmExpressionComparison extends DynamicData {
   public String attributeName;
   public String operator;
   public String value;
 
-  public String getAttributeName()
-  {
+  public String getAttributeName() {
     return this.attributeName;
   }
 
-  public String getOperator()
-  {
+  public String getOperator() {
     return this.operator;
   }
 
-  public String getValue()
-  {
+  public String getValue() {
     return this.value;
   }
 
-  public void setAttributeName(String attributeName)
-  {
+  public void setAttributeName(String attributeName) {
     this.attributeName=attributeName;
   }
 
-  public void setOperator(String operator)
-  {
+  public void setOperator(String operator) {
     this.operator=operator;
   }
 
-  public void setValue(String value)
-  {
+  public void setValue(String value) {
     this.value=value;
   }
 }

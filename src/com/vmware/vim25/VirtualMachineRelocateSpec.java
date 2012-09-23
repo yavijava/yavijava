@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,11 +30,12 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class VirtualMachineRelocateSpec extends DynamicData
-{
+@SuppressWarnings("all")
+public class VirtualMachineRelocateSpec extends DynamicData {
   public ManagedObjectReference datastore;
   public String diskMoveType;
   public ManagedObjectReference pool;
@@ -42,63 +43,51 @@ public class VirtualMachineRelocateSpec extends DynamicData
   public VirtualMachineRelocateSpecDiskLocator[] disk;
   public VirtualMachineRelocateTransformation transform;
 
-  public ManagedObjectReference getDatastore()
-  {
+  public ManagedObjectReference getDatastore() {
     return this.datastore;
   }
 
-  public String getDiskMoveType()
-  {
+  public String getDiskMoveType() {
     return this.diskMoveType;
   }
 
-  public ManagedObjectReference getPool()
-  {
+  public ManagedObjectReference getPool() {
     return this.pool;
   }
 
-  public ManagedObjectReference getHost()
-  {
+  public ManagedObjectReference getHost() {
     return this.host;
   }
 
-  public VirtualMachineRelocateSpecDiskLocator[] getDisk()
-  {
+  public VirtualMachineRelocateSpecDiskLocator[] getDisk() {
     return this.disk;
   }
 
-  public VirtualMachineRelocateTransformation getTransform()
-  {
+  public VirtualMachineRelocateTransformation getTransform() {
     return this.transform;
   }
 
-  public void setDatastore(ManagedObjectReference datastore)
-  {
+  public void setDatastore(ManagedObjectReference datastore) {
     this.datastore=datastore;
   }
 
-  public void setDiskMoveType(String diskMoveType)
-  {
+  public void setDiskMoveType(String diskMoveType) {
     this.diskMoveType=diskMoveType;
   }
 
-  public void setPool(ManagedObjectReference pool)
-  {
+  public void setPool(ManagedObjectReference pool) {
     this.pool=pool;
   }
 
-  public void setHost(ManagedObjectReference host)
-  {
+  public void setHost(ManagedObjectReference host) {
     this.host=host;
   }
 
-  public void setDisk(VirtualMachineRelocateSpecDiskLocator[] disk)
-  {
+  public void setDisk(VirtualMachineRelocateSpecDiskLocator[] disk) {
     this.disk=disk;
   }
 
-  public void setTransform(VirtualMachineRelocateTransformation transform)
-  {
+  public void setTransform(VirtualMachineRelocateTransformation transform) {
     this.transform=transform;
   }
 }

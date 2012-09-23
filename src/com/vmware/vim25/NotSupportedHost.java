@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,31 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class NotSupportedHost extends HostConnectFault
-{
+@SuppressWarnings("all")
+public class NotSupportedHost extends HostConnectFault {
   public String productName;
   public String productVersion;
 
-  public String getProductName()
-  {
+  public String getProductName() {
     return this.productName;
   }
 
-  public String getProductVersion()
-  {
+  public String getProductVersion() {
     return this.productVersion;
   }
 
-  public void setProductName(String productName)
-  {
+  public void setProductName(String productName) {
     this.productName=productName;
   }
 
-  public void setProductVersion(String productVersion)
-  {
+  public void setProductVersion(String productVersion) {
     this.productVersion=productVersion;
   }
 }

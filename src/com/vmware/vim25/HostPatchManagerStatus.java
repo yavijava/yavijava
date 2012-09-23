@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,11 +30,12 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class HostPatchManagerStatus extends DynamicData
-{
+@SuppressWarnings("all")
+public class HostPatchManagerStatus extends DynamicData {
   public String id;
   public boolean applicable;
   public String[] reason;
@@ -47,113 +48,91 @@ public class HostPatchManagerStatus extends DynamicData
   public boolean vmOffRequired;
   public String[] supersededPatchIds;
 
-  public String getId()
-  {
+  public String getId() {
     return this.id;
   }
 
-  public boolean isApplicable()
-  {
+  public boolean isApplicable() {
     return this.applicable;
   }
 
-  public String[] getReason()
-  {
+  public String[] getReason() {
     return this.reason;
   }
 
-  public String getIntegrity()
-  {
+  public String getIntegrity() {
     return this.integrity;
   }
 
-  public boolean isInstalled()
-  {
+  public boolean isInstalled() {
     return this.installed;
   }
 
-  public String[] getInstallState()
-  {
+  public String[] getInstallState() {
     return this.installState;
   }
 
-  public HostPatchManagerStatusPrerequisitePatch[] getPrerequisitePatch()
-  {
+  public HostPatchManagerStatusPrerequisitePatch[] getPrerequisitePatch() {
     return this.prerequisitePatch;
   }
 
-  public boolean isRestartRequired()
-  {
+  public boolean isRestartRequired() {
     return this.restartRequired;
   }
 
-  public boolean isReconnectRequired()
-  {
+  public boolean isReconnectRequired() {
     return this.reconnectRequired;
   }
 
-  public boolean isVmOffRequired()
-  {
+  public boolean isVmOffRequired() {
     return this.vmOffRequired;
   }
 
-  public String[] getSupersededPatchIds()
-  {
+  public String[] getSupersededPatchIds() {
     return this.supersededPatchIds;
   }
 
-  public void setId(String id)
-  {
+  public void setId(String id) {
     this.id=id;
   }
 
-  public void setApplicable(boolean applicable)
-  {
+  public void setApplicable(boolean applicable) {
     this.applicable=applicable;
   }
 
-  public void setReason(String[] reason)
-  {
+  public void setReason(String[] reason) {
     this.reason=reason;
   }
 
-  public void setIntegrity(String integrity)
-  {
+  public void setIntegrity(String integrity) {
     this.integrity=integrity;
   }
 
-  public void setInstalled(boolean installed)
-  {
+  public void setInstalled(boolean installed) {
     this.installed=installed;
   }
 
-  public void setInstallState(String[] installState)
-  {
+  public void setInstallState(String[] installState) {
     this.installState=installState;
   }
 
-  public void setPrerequisitePatch(HostPatchManagerStatusPrerequisitePatch[] prerequisitePatch)
-  {
+  public void setPrerequisitePatch(HostPatchManagerStatusPrerequisitePatch[] prerequisitePatch) {
     this.prerequisitePatch=prerequisitePatch;
   }
 
-  public void setRestartRequired(boolean restartRequired)
-  {
+  public void setRestartRequired(boolean restartRequired) {
     this.restartRequired=restartRequired;
   }
 
-  public void setReconnectRequired(boolean reconnectRequired)
-  {
+  public void setReconnectRequired(boolean reconnectRequired) {
     this.reconnectRequired=reconnectRequired;
   }
 
-  public void setVmOffRequired(boolean vmOffRequired)
-  {
+  public void setVmOffRequired(boolean vmOffRequired) {
     this.vmOffRequired=vmOffRequired;
   }
 
-  public void setSupersededPatchIds(String[] supersededPatchIds)
-  {
+  public void setSupersededPatchIds(String[] supersededPatchIds) {
     this.supersededPatchIds=supersededPatchIds;
   }
 }

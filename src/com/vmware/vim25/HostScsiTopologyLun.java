@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,42 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class HostScsiTopologyLun extends DynamicData
-{
+@SuppressWarnings("all")
+public class HostScsiTopologyLun extends DynamicData {
   public String key;
   public int lun;
   public String scsiLun;
 
-  public String getKey()
-  {
+  public String getKey() {
     return this.key;
   }
 
-  public int getLun()
-  {
+  public int getLun() {
     return this.lun;
   }
 
-  public String getScsiLun()
-  {
+  public String getScsiLun() {
     return this.scsiLun;
   }
 
-  public void setKey(String key)
-  {
+  public void setKey(String key) {
     this.key=key;
   }
 
-  public void setLun(int lun)
-  {
+  public void setLun(int lun) {
     this.lun=lun;
   }
 
-  public void setScsiLun(String scsiLun)
-  {
+  public void setScsiLun(String scsiLun) {
     this.scsiLun=scsiLun;
   }
 }

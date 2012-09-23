@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,64 +30,55 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class ResourcePoolSummary extends DynamicData
-{
+@SuppressWarnings("all")
+public class ResourcePoolSummary extends DynamicData {
   public String name;
   public ResourceConfigSpec config;
   public ResourcePoolRuntimeInfo runtime;
   public ResourcePoolQuickStats quickStats;
   public Integer configuredMemoryMB;
 
-  public String getName()
-  {
+  public String getName() {
     return this.name;
   }
 
-  public ResourceConfigSpec getConfig()
-  {
+  public ResourceConfigSpec getConfig() {
     return this.config;
   }
 
-  public ResourcePoolRuntimeInfo getRuntime()
-  {
+  public ResourcePoolRuntimeInfo getRuntime() {
     return this.runtime;
   }
 
-  public ResourcePoolQuickStats getQuickStats()
-  {
+  public ResourcePoolQuickStats getQuickStats() {
     return this.quickStats;
   }
 
-  public Integer getConfiguredMemoryMB()
-  {
+  public Integer getConfiguredMemoryMB() {
     return this.configuredMemoryMB;
   }
 
-  public void setName(String name)
-  {
+  public void setName(String name) {
     this.name=name;
   }
 
-  public void setConfig(ResourceConfigSpec config)
-  {
+  public void setConfig(ResourceConfigSpec config) {
     this.config=config;
   }
 
-  public void setRuntime(ResourcePoolRuntimeInfo runtime)
-  {
+  public void setRuntime(ResourcePoolRuntimeInfo runtime) {
     this.runtime=runtime;
   }
 
-  public void setQuickStats(ResourcePoolQuickStats quickStats)
-  {
+  public void setQuickStats(ResourcePoolQuickStats quickStats) {
     this.quickStats=quickStats;
   }
 
-  public void setConfiguredMemoryMB(Integer configuredMemoryMB)
-  {
+  public void setConfiguredMemoryMB(Integer configuredMemoryMB) {
     this.configuredMemoryMB=configuredMemoryMB;
   }
 }

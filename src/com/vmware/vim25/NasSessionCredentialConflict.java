@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,42 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class NasSessionCredentialConflict extends NasConfigFault
-{
+@SuppressWarnings("all")
+public class NasSessionCredentialConflict extends NasConfigFault {
   public String remoteHost;
   public String remotePath;
   public String userName;
 
-  public String getRemoteHost()
-  {
+  public String getRemoteHost() {
     return this.remoteHost;
   }
 
-  public String getRemotePath()
-  {
+  public String getRemotePath() {
     return this.remotePath;
   }
 
-  public String getUserName()
-  {
+  public String getUserName() {
     return this.userName;
   }
 
-  public void setRemoteHost(String remoteHost)
-  {
+  public void setRemoteHost(String remoteHost) {
     this.remoteHost=remoteHost;
   }
 
-  public void setRemotePath(String remotePath)
-  {
+  public void setRemotePath(String remotePath) {
     this.remotePath=remotePath;
   }
 
-  public void setUserName(String userName)
-  {
+  public void setUserName(String userName) {
     this.userName=userName;
   }
 }

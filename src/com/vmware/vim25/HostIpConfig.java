@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,53 +30,46 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class HostIpConfig extends DynamicData
-{
+@SuppressWarnings("all")
+public class HostIpConfig extends DynamicData {
   public boolean dhcp;
   public String ipAddress;
   public String subnetMask;
   public HostIpConfigIpV6AddressConfiguration ipV6Config;
 
-  public boolean isDhcp()
-  {
+  public boolean isDhcp() {
     return this.dhcp;
   }
 
-  public String getIpAddress()
-  {
+  public String getIpAddress() {
     return this.ipAddress;
   }
 
-  public String getSubnetMask()
-  {
+  public String getSubnetMask() {
     return this.subnetMask;
   }
 
-  public HostIpConfigIpV6AddressConfiguration getIpV6Config()
-  {
+  public HostIpConfigIpV6AddressConfiguration getIpV6Config() {
     return this.ipV6Config;
   }
 
-  public void setDhcp(boolean dhcp)
-  {
+  public void setDhcp(boolean dhcp) {
     this.dhcp=dhcp;
   }
 
-  public void setIpAddress(String ipAddress)
-  {
+  public void setIpAddress(String ipAddress) {
     this.ipAddress=ipAddress;
   }
 
-  public void setSubnetMask(String subnetMask)
-  {
+  public void setSubnetMask(String subnetMask) {
     this.subnetMask=subnetMask;
   }
 
-  public void setIpV6Config(HostIpConfigIpV6AddressConfiguration ipV6Config)
-  {
+  public void setIpV6Config(HostIpConfigIpV6AddressConfiguration ipV6Config) {
     this.ipV6Config=ipV6Config;
   }
 }

@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,11 +30,12 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class DVSFailureCriteria extends InheritablePolicy
-{
+@SuppressWarnings("all")
+public class DVSFailureCriteria extends InheritablePolicy {
   public StringPolicy checkSpeed;
   public IntPolicy speed;
   public BoolPolicy checkDuplex;
@@ -43,73 +44,59 @@ public class DVSFailureCriteria extends InheritablePolicy
   public IntPolicy percentage;
   public BoolPolicy checkBeacon;
 
-  public StringPolicy getCheckSpeed()
-  {
+  public StringPolicy getCheckSpeed() {
     return this.checkSpeed;
   }
 
-  public IntPolicy getSpeed()
-  {
+  public IntPolicy getSpeed() {
     return this.speed;
   }
 
-  public BoolPolicy getCheckDuplex()
-  {
+  public BoolPolicy getCheckDuplex() {
     return this.checkDuplex;
   }
 
-  public BoolPolicy getFullDuplex()
-  {
+  public BoolPolicy getFullDuplex() {
     return this.fullDuplex;
   }
 
-  public BoolPolicy getCheckErrorPercent()
-  {
+  public BoolPolicy getCheckErrorPercent() {
     return this.checkErrorPercent;
   }
 
-  public IntPolicy getPercentage()
-  {
+  public IntPolicy getPercentage() {
     return this.percentage;
   }
 
-  public BoolPolicy getCheckBeacon()
-  {
+  public BoolPolicy getCheckBeacon() {
     return this.checkBeacon;
   }
 
-  public void setCheckSpeed(StringPolicy checkSpeed)
-  {
+  public void setCheckSpeed(StringPolicy checkSpeed) {
     this.checkSpeed=checkSpeed;
   }
 
-  public void setSpeed(IntPolicy speed)
-  {
+  public void setSpeed(IntPolicy speed) {
     this.speed=speed;
   }
 
-  public void setCheckDuplex(BoolPolicy checkDuplex)
-  {
+  public void setCheckDuplex(BoolPolicy checkDuplex) {
     this.checkDuplex=checkDuplex;
   }
 
-  public void setFullDuplex(BoolPolicy fullDuplex)
-  {
+  public void setFullDuplex(BoolPolicy fullDuplex) {
     this.fullDuplex=fullDuplex;
   }
 
-  public void setCheckErrorPercent(BoolPolicy checkErrorPercent)
-  {
+  public void setCheckErrorPercent(BoolPolicy checkErrorPercent) {
     this.checkErrorPercent=checkErrorPercent;
   }
 
-  public void setPercentage(IntPolicy percentage)
-  {
+  public void setPercentage(IntPolicy percentage) {
     this.percentage=percentage;
   }
 
-  public void setCheckBeacon(BoolPolicy checkBeacon)
-  {
+  public void setCheckBeacon(BoolPolicy checkBeacon) {
     this.checkBeacon=checkBeacon;
   }
 }

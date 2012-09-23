@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,11 +30,12 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class HostInternetScsiHbaDiscoveryProperties extends DynamicData
-{
+@SuppressWarnings("all")
+public class HostInternetScsiHbaDiscoveryProperties extends DynamicData {
   public boolean iSnsDiscoveryEnabled;
   public String iSnsDiscoveryMethod;
   public String iSnsHost;
@@ -44,83 +45,67 @@ public class HostInternetScsiHbaDiscoveryProperties extends DynamicData
   public boolean staticTargetDiscoveryEnabled;
   public boolean sendTargetsDiscoveryEnabled;
 
-  public boolean isISnsDiscoveryEnabled()
-  {
+  public boolean isISnsDiscoveryEnabled() {
     return this.iSnsDiscoveryEnabled;
   }
 
-  public String getISnsDiscoveryMethod()
-  {
+  public String getISnsDiscoveryMethod() {
     return this.iSnsDiscoveryMethod;
   }
 
-  public String getISnsHost()
-  {
+  public String getISnsHost() {
     return this.iSnsHost;
   }
 
-  public boolean isSlpDiscoveryEnabled()
-  {
+  public boolean isSlpDiscoveryEnabled() {
     return this.slpDiscoveryEnabled;
   }
 
-  public String getSlpDiscoveryMethod()
-  {
+  public String getSlpDiscoveryMethod() {
     return this.slpDiscoveryMethod;
   }
 
-  public String getSlpHost()
-  {
+  public String getSlpHost() {
     return this.slpHost;
   }
 
-  public boolean isStaticTargetDiscoveryEnabled()
-  {
+  public boolean isStaticTargetDiscoveryEnabled() {
     return this.staticTargetDiscoveryEnabled;
   }
 
-  public boolean isSendTargetsDiscoveryEnabled()
-  {
+  public boolean isSendTargetsDiscoveryEnabled() {
     return this.sendTargetsDiscoveryEnabled;
   }
 
-  public void setISnsDiscoveryEnabled(boolean iSnsDiscoveryEnabled)
-  {
+  public void setISnsDiscoveryEnabled(boolean iSnsDiscoveryEnabled) {
     this.iSnsDiscoveryEnabled=iSnsDiscoveryEnabled;
   }
 
-  public void setISnsDiscoveryMethod(String iSnsDiscoveryMethod)
-  {
+  public void setISnsDiscoveryMethod(String iSnsDiscoveryMethod) {
     this.iSnsDiscoveryMethod=iSnsDiscoveryMethod;
   }
 
-  public void setISnsHost(String iSnsHost)
-  {
+  public void setISnsHost(String iSnsHost) {
     this.iSnsHost=iSnsHost;
   }
 
-  public void setSlpDiscoveryEnabled(boolean slpDiscoveryEnabled)
-  {
+  public void setSlpDiscoveryEnabled(boolean slpDiscoveryEnabled) {
     this.slpDiscoveryEnabled=slpDiscoveryEnabled;
   }
 
-  public void setSlpDiscoveryMethod(String slpDiscoveryMethod)
-  {
+  public void setSlpDiscoveryMethod(String slpDiscoveryMethod) {
     this.slpDiscoveryMethod=slpDiscoveryMethod;
   }
 
-  public void setSlpHost(String slpHost)
-  {
+  public void setSlpHost(String slpHost) {
     this.slpHost=slpHost;
   }
 
-  public void setStaticTargetDiscoveryEnabled(boolean staticTargetDiscoveryEnabled)
-  {
+  public void setStaticTargetDiscoveryEnabled(boolean staticTargetDiscoveryEnabled) {
     this.staticTargetDiscoveryEnabled=staticTargetDiscoveryEnabled;
   }
 
-  public void setSendTargetsDiscoveryEnabled(boolean sendTargetsDiscoveryEnabled)
-  {
+  public void setSendTargetsDiscoveryEnabled(boolean sendTargetsDiscoveryEnabled) {
     this.sendTargetsDiscoveryEnabled=sendTargetsDiscoveryEnabled;
   }
 }

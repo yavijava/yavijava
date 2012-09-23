@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,42 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class HostDiskDimensionsChs extends DynamicData
-{
+@SuppressWarnings("all")
+public class HostDiskDimensionsChs extends DynamicData {
   public long cylinder;
   public int head;
   public int sector;
 
-  public long getCylinder()
-  {
+  public long getCylinder() {
     return this.cylinder;
   }
 
-  public int getHead()
-  {
+  public int getHead() {
     return this.head;
   }
 
-  public int getSector()
-  {
+  public int getSector() {
     return this.sector;
   }
 
-  public void setCylinder(long cylinder)
-  {
+  public void setCylinder(long cylinder) {
     this.cylinder=cylinder;
   }
 
-  public void setHead(int head)
-  {
+  public void setHead(int head) {
     this.head=head;
   }
 
-  public void setSector(int sector)
-  {
+  public void setSector(int sector) {
     this.sector=sector;
   }
 }

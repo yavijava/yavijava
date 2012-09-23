@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,42 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class HostHyperThreadScheduleInfo extends DynamicData
-{
+@SuppressWarnings("all")
+public class HostHyperThreadScheduleInfo extends DynamicData {
   public boolean available;
   public boolean active;
   public boolean config;
 
-  public boolean isAvailable()
-  {
+  public boolean isAvailable() {
     return this.available;
   }
 
-  public boolean isActive()
-  {
+  public boolean isActive() {
     return this.active;
   }
 
-  public boolean isConfig()
-  {
+  public boolean isConfig() {
     return this.config;
   }
 
-  public void setAvailable(boolean available)
-  {
+  public void setAvailable(boolean available) {
     this.available=available;
   }
 
-  public void setActive(boolean active)
-  {
+  public void setActive(boolean active) {
     this.active=active;
   }
 
-  public void setConfig(boolean config)
-  {
+  public void setConfig(boolean config) {
     this.config=config;
   }
 }

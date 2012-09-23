@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,42 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class NetIpConfigSpec extends DynamicData
-{
+@SuppressWarnings("all")
+public class NetIpConfigSpec extends DynamicData {
   public NetIpConfigSpecIpAddressSpec[] ipAddress;
   public NetDhcpConfigSpec dhcp;
   public Boolean autoConfigurationEnabled;
 
-  public NetIpConfigSpecIpAddressSpec[] getIpAddress()
-  {
+  public NetIpConfigSpecIpAddressSpec[] getIpAddress() {
     return this.ipAddress;
   }
 
-  public NetDhcpConfigSpec getDhcp()
-  {
+  public NetDhcpConfigSpec getDhcp() {
     return this.dhcp;
   }
 
-  public Boolean getAutoConfigurationEnabled()
-  {
+  public Boolean getAutoConfigurationEnabled() {
     return this.autoConfigurationEnabled;
   }
 
-  public void setIpAddress(NetIpConfigSpecIpAddressSpec[] ipAddress)
-  {
+  public void setIpAddress(NetIpConfigSpecIpAddressSpec[] ipAddress) {
     this.ipAddress=ipAddress;
   }
 
-  public void setDhcp(NetDhcpConfigSpec dhcp)
-  {
+  public void setDhcp(NetDhcpConfigSpec dhcp) {
     this.dhcp=dhcp;
   }
 
-  public void setAutoConfigurationEnabled(Boolean autoConfigurationEnabled)
-  {
+  public void setAutoConfigurationEnabled(Boolean autoConfigurationEnabled) {
     this.autoConfigurationEnabled=autoConfigurationEnabled;
   }
 }

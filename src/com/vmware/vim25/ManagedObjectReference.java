@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -29,59 +29,37 @@ POSSIBILITY OF SUCH DAMAGE.
 
 package com.vmware.vim25;
 
-/** The ManagedObjectReference pointing to managed objects on server side
-* @author Steve JIN (sjin@vmware.com)
+/**
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class ManagedObjectReference
-{
-  public String val;
-  public String type;
+@SuppressWarnings("all")
+public class ManagedObjectReference {
+   public String val;
+   public String type;
    
-  public String getVal() 
-  {
-	return val;
-  }
+   public String getVal() {
+ 	return val;
+   }
 
-  public void setVal(String val) 
-  {
-	this.val = val;
-  }
-  
-  public String getType() 
-  {
-	return type;
-  }
-  
-  public void setType(String type) 
-  {
-    this.type = type;
-  }
+   public void setVal(String val) {
+ 	this.val = val;
+   }
+   
+   public String getType() {
+ 	return type;
+   }
+   
+   public void setType(String type) {
+     this.type = type;
+   }
 
-  public String get_value() 
-  {
-    return val;
-  }
+   public String get_value() {
+     return val;
+   }
 
-  public void set_value(String val) 
-  {
-    this.val = val;
-  }
-  
-  public boolean equals(Object obj)
-  {
-    if(this == obj)
-      return true;
-    if((obj == null) || (obj.getClass() != this.getClass()))
-      return false;
-
-    ManagedObjectReference mor = (ManagedObjectReference)obj;
-    
-    return  mor.getType().equals(getType()) && mor.getVal().equals(getVal());
-  }
-
-  public int hashCode()
-  {
-    return val.hashCode() + type.hashCode();
-  }
+   public void set_value(String val) {
+     this.val = val;
+   }
 }

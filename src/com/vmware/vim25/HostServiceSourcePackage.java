@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,31 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class HostServiceSourcePackage extends DynamicData
-{
+@SuppressWarnings("all")
+public class HostServiceSourcePackage extends DynamicData {
   public String sourcePackageName;
   public String description;
 
-  public String getSourcePackageName()
-  {
+  public String getSourcePackageName() {
     return this.sourcePackageName;
   }
 
-  public String getDescription()
-  {
+  public String getDescription() {
     return this.description;
   }
 
-  public void setSourcePackageName(String sourcePackageName)
-  {
+  public void setSourcePackageName(String sourcePackageName) {
     this.sourcePackageName=sourcePackageName;
   }
 
-  public void setDescription(String description)
-  {
+  public void setDescription(String description) {
     this.description=description;
   }
 }

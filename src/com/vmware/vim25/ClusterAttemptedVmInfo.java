@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,31 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class ClusterAttemptedVmInfo extends DynamicData
-{
+@SuppressWarnings("all")
+public class ClusterAttemptedVmInfo extends DynamicData {
   public ManagedObjectReference vm;
   public ManagedObjectReference task;
 
-  public ManagedObjectReference getVm()
-  {
+  public ManagedObjectReference getVm() {
     return this.vm;
   }
 
-  public ManagedObjectReference getTask()
-  {
+  public ManagedObjectReference getTask() {
     return this.task;
   }
 
-  public void setVm(ManagedObjectReference vm)
-  {
+  public void setVm(ManagedObjectReference vm) {
     this.vm=vm;
   }
 
-  public void setTask(ManagedObjectReference task)
-  {
+  public void setTask(ManagedObjectReference task) {
     this.task=task;
   }
 }

@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,11 +30,12 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class HttpNfcLeaseDeviceUrl extends DynamicData
-{
+@SuppressWarnings("all")
+public class HttpNfcLeaseDeviceUrl extends DynamicData {
   public String key;
   public String importKey;
   public String url;
@@ -44,83 +45,67 @@ public class HttpNfcLeaseDeviceUrl extends DynamicData
   public String datastoreKey;
   public Long fileSize;
 
-  public String getKey()
-  {
+  public String getKey() {
     return this.key;
   }
 
-  public String getImportKey()
-  {
+  public String getImportKey() {
     return this.importKey;
   }
 
-  public String getUrl()
-  {
+  public String getUrl() {
     return this.url;
   }
 
-  public String getSslThumbprint()
-  {
+  public String getSslThumbprint() {
     return this.sslThumbprint;
   }
 
-  public Boolean getDisk()
-  {
+  public Boolean getDisk() {
     return this.disk;
   }
 
-  public String getTargetId()
-  {
+  public String getTargetId() {
     return this.targetId;
   }
 
-  public String getDatastoreKey()
-  {
+  public String getDatastoreKey() {
     return this.datastoreKey;
   }
 
-  public Long getFileSize()
-  {
+  public Long getFileSize() {
     return this.fileSize;
   }
 
-  public void setKey(String key)
-  {
+  public void setKey(String key) {
     this.key=key;
   }
 
-  public void setImportKey(String importKey)
-  {
+  public void setImportKey(String importKey) {
     this.importKey=importKey;
   }
 
-  public void setUrl(String url)
-  {
+  public void setUrl(String url) {
     this.url=url;
   }
 
-  public void setSslThumbprint(String sslThumbprint)
-  {
+  public void setSslThumbprint(String sslThumbprint) {
     this.sslThumbprint=sslThumbprint;
   }
 
-  public void setDisk(Boolean disk)
-  {
+  public void setDisk(Boolean disk) {
     this.disk=disk;
   }
 
-  public void setTargetId(String targetId)
-  {
+  public void setTargetId(String targetId) {
     this.targetId=targetId;
   }
 
-  public void setDatastoreKey(String datastoreKey)
-  {
+  public void setDatastoreKey(String datastoreKey) {
     this.datastoreKey=datastoreKey;
   }
 
-  public void setFileSize(Long fileSize)
-  {
+  public void setFileSize(Long fileSize) {
     this.fileSize=fileSize;
   }
 }

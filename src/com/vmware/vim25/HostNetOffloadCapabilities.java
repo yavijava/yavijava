@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,42 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class HostNetOffloadCapabilities extends DynamicData
-{
+@SuppressWarnings("all")
+public class HostNetOffloadCapabilities extends DynamicData {
   public Boolean csumOffload;
   public Boolean tcpSegmentation;
   public Boolean zeroCopyXmit;
 
-  public Boolean getCsumOffload()
-  {
+  public Boolean getCsumOffload() {
     return this.csumOffload;
   }
 
-  public Boolean getTcpSegmentation()
-  {
+  public Boolean getTcpSegmentation() {
     return this.tcpSegmentation;
   }
 
-  public Boolean getZeroCopyXmit()
-  {
+  public Boolean getZeroCopyXmit() {
     return this.zeroCopyXmit;
   }
 
-  public void setCsumOffload(Boolean csumOffload)
-  {
+  public void setCsumOffload(Boolean csumOffload) {
     this.csumOffload=csumOffload;
   }
 
-  public void setTcpSegmentation(Boolean tcpSegmentation)
-  {
+  public void setTcpSegmentation(Boolean tcpSegmentation) {
     this.tcpSegmentation=tcpSegmentation;
   }
 
-  public void setZeroCopyXmit(Boolean zeroCopyXmit)
-  {
+  public void setZeroCopyXmit(Boolean zeroCopyXmit) {
     this.zeroCopyXmit=zeroCopyXmit;
   }
 }

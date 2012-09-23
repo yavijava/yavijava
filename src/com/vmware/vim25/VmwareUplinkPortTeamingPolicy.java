@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,11 +30,12 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class VmwareUplinkPortTeamingPolicy extends InheritablePolicy
-{
+@SuppressWarnings("all")
+public class VmwareUplinkPortTeamingPolicy extends InheritablePolicy {
   public StringPolicy policy;
   public BoolPolicy reversePolicy;
   public BoolPolicy notifySwitches;
@@ -42,63 +43,51 @@ public class VmwareUplinkPortTeamingPolicy extends InheritablePolicy
   public DVSFailureCriteria failureCriteria;
   public VMwareUplinkPortOrderPolicy uplinkPortOrder;
 
-  public StringPolicy getPolicy()
-  {
+  public StringPolicy getPolicy() {
     return this.policy;
   }
 
-  public BoolPolicy getReversePolicy()
-  {
+  public BoolPolicy getReversePolicy() {
     return this.reversePolicy;
   }
 
-  public BoolPolicy getNotifySwitches()
-  {
+  public BoolPolicy getNotifySwitches() {
     return this.notifySwitches;
   }
 
-  public BoolPolicy getRollingOrder()
-  {
+  public BoolPolicy getRollingOrder() {
     return this.rollingOrder;
   }
 
-  public DVSFailureCriteria getFailureCriteria()
-  {
+  public DVSFailureCriteria getFailureCriteria() {
     return this.failureCriteria;
   }
 
-  public VMwareUplinkPortOrderPolicy getUplinkPortOrder()
-  {
+  public VMwareUplinkPortOrderPolicy getUplinkPortOrder() {
     return this.uplinkPortOrder;
   }
 
-  public void setPolicy(StringPolicy policy)
-  {
+  public void setPolicy(StringPolicy policy) {
     this.policy=policy;
   }
 
-  public void setReversePolicy(BoolPolicy reversePolicy)
-  {
+  public void setReversePolicy(BoolPolicy reversePolicy) {
     this.reversePolicy=reversePolicy;
   }
 
-  public void setNotifySwitches(BoolPolicy notifySwitches)
-  {
+  public void setNotifySwitches(BoolPolicy notifySwitches) {
     this.notifySwitches=notifySwitches;
   }
 
-  public void setRollingOrder(BoolPolicy rollingOrder)
-  {
+  public void setRollingOrder(BoolPolicy rollingOrder) {
     this.rollingOrder=rollingOrder;
   }
 
-  public void setFailureCriteria(DVSFailureCriteria failureCriteria)
-  {
+  public void setFailureCriteria(DVSFailureCriteria failureCriteria) {
     this.failureCriteria=failureCriteria;
   }
 
-  public void setUplinkPortOrder(VMwareUplinkPortOrderPolicy uplinkPortOrder)
-  {
+  public void setUplinkPortOrder(VMwareUplinkPortOrderPolicy uplinkPortOrder) {
     this.uplinkPortOrder=uplinkPortOrder;
   }
 }

@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,11 +30,12 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class CpuIncompatible1ECX extends CpuIncompatible
-{
+@SuppressWarnings("all")
+public class CpuIncompatible1ECX extends CpuIncompatible {
   public boolean sse3;
   public Boolean pclmulqdq;
   public boolean ssse3;
@@ -44,83 +45,67 @@ public class CpuIncompatible1ECX extends CpuIncompatible
   public boolean other;
   public boolean otherOnly;
 
-  public boolean isSse3()
-  {
+  public boolean isSse3() {
     return this.sse3;
   }
 
-  public Boolean getPclmulqdq()
-  {
+  public Boolean getPclmulqdq() {
     return this.pclmulqdq;
   }
 
-  public boolean isSsse3()
-  {
+  public boolean isSsse3() {
     return this.ssse3;
   }
 
-  public boolean isSse41()
-  {
+  public boolean isSse41() {
     return this.sse41;
   }
 
-  public boolean isSse42()
-  {
+  public boolean isSse42() {
     return this.sse42;
   }
 
-  public Boolean getAes()
-  {
+  public Boolean getAes() {
     return this.aes;
   }
 
-  public boolean isOther()
-  {
+  public boolean isOther() {
     return this.other;
   }
 
-  public boolean isOtherOnly()
-  {
+  public boolean isOtherOnly() {
     return this.otherOnly;
   }
 
-  public void setSse3(boolean sse3)
-  {
+  public void setSse3(boolean sse3) {
     this.sse3=sse3;
   }
 
-  public void setPclmulqdq(Boolean pclmulqdq)
-  {
+  public void setPclmulqdq(Boolean pclmulqdq) {
     this.pclmulqdq=pclmulqdq;
   }
 
-  public void setSsse3(boolean ssse3)
-  {
+  public void setSsse3(boolean ssse3) {
     this.ssse3=ssse3;
   }
 
-  public void setSse41(boolean sse41)
-  {
+  public void setSse41(boolean sse41) {
     this.sse41=sse41;
   }
 
-  public void setSse42(boolean sse42)
-  {
+  public void setSse42(boolean sse42) {
     this.sse42=sse42;
   }
 
-  public void setAes(Boolean aes)
-  {
+  public void setAes(Boolean aes) {
     this.aes=aes;
   }
 
-  public void setOther(boolean other)
-  {
+  public void setOther(boolean other) {
     this.other=other;
   }
 
-  public void setOtherOnly(boolean otherOnly)
-  {
+  public void setOtherOnly(boolean otherOnly) {
     this.otherOnly=otherOnly;
   }
 }

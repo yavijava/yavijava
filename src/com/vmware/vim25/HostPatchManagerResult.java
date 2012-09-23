@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,42 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class HostPatchManagerResult extends DynamicData
-{
+@SuppressWarnings("all")
+public class HostPatchManagerResult extends DynamicData {
   public String version;
   public HostPatchManagerStatus[] status;
   public String xmlResult;
 
-  public String getVersion()
-  {
+  public String getVersion() {
     return this.version;
   }
 
-  public HostPatchManagerStatus[] getStatus()
-  {
+  public HostPatchManagerStatus[] getStatus() {
     return this.status;
   }
 
-  public String getXmlResult()
-  {
+  public String getXmlResult() {
     return this.xmlResult;
   }
 
-  public void setVersion(String version)
-  {
+  public void setVersion(String version) {
     this.version=version;
   }
 
-  public void setStatus(HostPatchManagerStatus[] status)
-  {
+  public void setStatus(HostPatchManagerStatus[] status) {
     this.status=status;
   }
 
-  public void setXmlResult(String xmlResult)
-  {
+  public void setXmlResult(String xmlResult) {
     this.xmlResult=xmlResult;
   }
 }

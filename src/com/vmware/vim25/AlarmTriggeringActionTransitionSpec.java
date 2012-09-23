@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,42 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class AlarmTriggeringActionTransitionSpec extends DynamicData
-{
+@SuppressWarnings("all")
+public class AlarmTriggeringActionTransitionSpec extends DynamicData {
   public ManagedEntityStatus startState;
   public ManagedEntityStatus finalState;
   public boolean repeats;
 
-  public ManagedEntityStatus getStartState()
-  {
+  public ManagedEntityStatus getStartState() {
     return this.startState;
   }
 
-  public ManagedEntityStatus getFinalState()
-  {
+  public ManagedEntityStatus getFinalState() {
     return this.finalState;
   }
 
-  public boolean isRepeats()
-  {
+  public boolean isRepeats() {
     return this.repeats;
   }
 
-  public void setStartState(ManagedEntityStatus startState)
-  {
+  public void setStartState(ManagedEntityStatus startState) {
     this.startState=startState;
   }
 
-  public void setFinalState(ManagedEntityStatus finalState)
-  {
+  public void setFinalState(ManagedEntityStatus finalState) {
     this.finalState=finalState;
   }
 
-  public void setRepeats(boolean repeats)
-  {
+  public void setRepeats(boolean repeats) {
     this.repeats=repeats;
   }
 }

@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,31 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class VirtualSerialPortPipeBackingOption extends VirtualDevicePipeBackingOption
-{
+@SuppressWarnings("all")
+public class VirtualSerialPortPipeBackingOption extends VirtualDevicePipeBackingOption {
   public ChoiceOption endpoint;
   public BoolOption noRxLoss;
 
-  public ChoiceOption getEndpoint()
-  {
+  public ChoiceOption getEndpoint() {
     return this.endpoint;
   }
 
-  public BoolOption getNoRxLoss()
-  {
+  public BoolOption getNoRxLoss() {
     return this.noRxLoss;
   }
 
-  public void setEndpoint(ChoiceOption endpoint)
-  {
+  public void setEndpoint(ChoiceOption endpoint) {
     this.endpoint=endpoint;
   }
 
-  public void setNoRxLoss(BoolOption noRxLoss)
-  {
+  public void setNoRxLoss(BoolOption noRxLoss) {
     this.noRxLoss=noRxLoss;
   }
 }

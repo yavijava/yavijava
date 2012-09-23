@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,11 +30,12 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class DVPortSetting extends DynamicData
-{
+@SuppressWarnings("all")
+public class DVPortSetting extends DynamicData {
   public BoolPolicy blocked;
   public BoolPolicy vmDirectPathGen2Allowed;
   public DVSTrafficShapingPolicy inShapingPolicy;
@@ -42,63 +43,51 @@ public class DVPortSetting extends DynamicData
   public DVSVendorSpecificConfig vendorSpecificConfig;
   public StringPolicy networkResourcePoolKey;
 
-  public BoolPolicy getBlocked()
-  {
+  public BoolPolicy getBlocked() {
     return this.blocked;
   }
 
-  public BoolPolicy getVmDirectPathGen2Allowed()
-  {
+  public BoolPolicy getVmDirectPathGen2Allowed() {
     return this.vmDirectPathGen2Allowed;
   }
 
-  public DVSTrafficShapingPolicy getInShapingPolicy()
-  {
+  public DVSTrafficShapingPolicy getInShapingPolicy() {
     return this.inShapingPolicy;
   }
 
-  public DVSTrafficShapingPolicy getOutShapingPolicy()
-  {
+  public DVSTrafficShapingPolicy getOutShapingPolicy() {
     return this.outShapingPolicy;
   }
 
-  public DVSVendorSpecificConfig getVendorSpecificConfig()
-  {
+  public DVSVendorSpecificConfig getVendorSpecificConfig() {
     return this.vendorSpecificConfig;
   }
 
-  public StringPolicy getNetworkResourcePoolKey()
-  {
+  public StringPolicy getNetworkResourcePoolKey() {
     return this.networkResourcePoolKey;
   }
 
-  public void setBlocked(BoolPolicy blocked)
-  {
+  public void setBlocked(BoolPolicy blocked) {
     this.blocked=blocked;
   }
 
-  public void setVmDirectPathGen2Allowed(BoolPolicy vmDirectPathGen2Allowed)
-  {
+  public void setVmDirectPathGen2Allowed(BoolPolicy vmDirectPathGen2Allowed) {
     this.vmDirectPathGen2Allowed=vmDirectPathGen2Allowed;
   }
 
-  public void setInShapingPolicy(DVSTrafficShapingPolicy inShapingPolicy)
-  {
+  public void setInShapingPolicy(DVSTrafficShapingPolicy inShapingPolicy) {
     this.inShapingPolicy=inShapingPolicy;
   }
 
-  public void setOutShapingPolicy(DVSTrafficShapingPolicy outShapingPolicy)
-  {
+  public void setOutShapingPolicy(DVSTrafficShapingPolicy outShapingPolicy) {
     this.outShapingPolicy=outShapingPolicy;
   }
 
-  public void setVendorSpecificConfig(DVSVendorSpecificConfig vendorSpecificConfig)
-  {
+  public void setVendorSpecificConfig(DVSVendorSpecificConfig vendorSpecificConfig) {
     this.vendorSpecificConfig=vendorSpecificConfig;
   }
 
-  public void setNetworkResourcePoolKey(StringPolicy networkResourcePoolKey)
-  {
+  public void setNetworkResourcePoolKey(StringPolicy networkResourcePoolKey) {
     this.networkResourcePoolKey=networkResourcePoolKey;
   }
 }

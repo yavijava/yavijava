@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,11 +30,12 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class KernelModuleInfo extends DynamicData
-{
+@SuppressWarnings("all")
+public class KernelModuleInfo extends DynamicData {
   public int id;
   public String name;
   public String version;
@@ -49,133 +50,107 @@ public class KernelModuleInfo extends DynamicData
   public KernelModuleSectionInfo dataSection;
   public KernelModuleSectionInfo bssSection;
 
-  public int getId()
-  {
+  public int getId() {
     return this.id;
   }
 
-  public String getName()
-  {
+  public String getName() {
     return this.name;
   }
 
-  public String getVersion()
-  {
+  public String getVersion() {
     return this.version;
   }
 
-  public String getFilename()
-  {
+  public String getFilename() {
     return this.filename;
   }
 
-  public String getOptionString()
-  {
+  public String getOptionString() {
     return this.optionString;
   }
 
-  public boolean isLoaded()
-  {
+  public boolean isLoaded() {
     return this.loaded;
   }
 
-  public boolean isEnabled()
-  {
+  public boolean isEnabled() {
     return this.enabled;
   }
 
-  public int getUseCount()
-  {
+  public int getUseCount() {
     return this.useCount;
   }
 
-  public KernelModuleSectionInfo getReadOnlySection()
-  {
+  public KernelModuleSectionInfo getReadOnlySection() {
     return this.readOnlySection;
   }
 
-  public KernelModuleSectionInfo getWritableSection()
-  {
+  public KernelModuleSectionInfo getWritableSection() {
     return this.writableSection;
   }
 
-  public KernelModuleSectionInfo getTextSection()
-  {
+  public KernelModuleSectionInfo getTextSection() {
     return this.textSection;
   }
 
-  public KernelModuleSectionInfo getDataSection()
-  {
+  public KernelModuleSectionInfo getDataSection() {
     return this.dataSection;
   }
 
-  public KernelModuleSectionInfo getBssSection()
-  {
+  public KernelModuleSectionInfo getBssSection() {
     return this.bssSection;
   }
 
-  public void setId(int id)
-  {
+  public void setId(int id) {
     this.id=id;
   }
 
-  public void setName(String name)
-  {
+  public void setName(String name) {
     this.name=name;
   }
 
-  public void setVersion(String version)
-  {
+  public void setVersion(String version) {
     this.version=version;
   }
 
-  public void setFilename(String filename)
-  {
+  public void setFilename(String filename) {
     this.filename=filename;
   }
 
-  public void setOptionString(String optionString)
-  {
+  public void setOptionString(String optionString) {
     this.optionString=optionString;
   }
 
-  public void setLoaded(boolean loaded)
-  {
+  public void setLoaded(boolean loaded) {
     this.loaded=loaded;
   }
 
-  public void setEnabled(boolean enabled)
-  {
+  public void setEnabled(boolean enabled) {
     this.enabled=enabled;
   }
 
-  public void setUseCount(int useCount)
-  {
+  public void setUseCount(int useCount) {
     this.useCount=useCount;
   }
 
-  public void setReadOnlySection(KernelModuleSectionInfo readOnlySection)
-  {
+  public void setReadOnlySection(KernelModuleSectionInfo readOnlySection) {
     this.readOnlySection=readOnlySection;
   }
 
-  public void setWritableSection(KernelModuleSectionInfo writableSection)
-  {
+  public void setWritableSection(KernelModuleSectionInfo writableSection) {
     this.writableSection=writableSection;
   }
 
-  public void setTextSection(KernelModuleSectionInfo textSection)
-  {
+  public void setTextSection(KernelModuleSectionInfo textSection) {
     this.textSection=textSection;
   }
 
-  public void setDataSection(KernelModuleSectionInfo dataSection)
-  {
+  public void setDataSection(KernelModuleSectionInfo dataSection) {
     this.dataSection=dataSection;
   }
 
-  public void setBssSection(KernelModuleSectionInfo bssSection)
-  {
+  public void setBssSection(KernelModuleSectionInfo bssSection) {
     this.bssSection=bssSection;
   }
 }

@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,42 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class MemorySizeNotRecommended extends VirtualHardwareCompatibilityIssue
-{
+@SuppressWarnings("all")
+public class MemorySizeNotRecommended extends VirtualHardwareCompatibilityIssue {
   public int memorySizeMB;
   public int minMemorySizeMB;
   public int maxMemorySizeMB;
 
-  public int getMemorySizeMB()
-  {
+  public int getMemorySizeMB() {
     return this.memorySizeMB;
   }
 
-  public int getMinMemorySizeMB()
-  {
+  public int getMinMemorySizeMB() {
     return this.minMemorySizeMB;
   }
 
-  public int getMaxMemorySizeMB()
-  {
+  public int getMaxMemorySizeMB() {
     return this.maxMemorySizeMB;
   }
 
-  public void setMemorySizeMB(int memorySizeMB)
-  {
+  public void setMemorySizeMB(int memorySizeMB) {
     this.memorySizeMB=memorySizeMB;
   }
 
-  public void setMinMemorySizeMB(int minMemorySizeMB)
-  {
+  public void setMinMemorySizeMB(int minMemorySizeMB) {
     this.minMemorySizeMB=minMemorySizeMB;
   }
 
-  public void setMaxMemorySizeMB(int maxMemorySizeMB)
-  {
+  public void setMaxMemorySizeMB(int maxMemorySizeMB) {
     this.maxMemorySizeMB=maxMemorySizeMB;
   }
 }

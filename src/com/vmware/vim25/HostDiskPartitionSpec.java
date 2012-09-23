@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,53 +30,46 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class HostDiskPartitionSpec extends DynamicData
-{
+@SuppressWarnings("all")
+public class HostDiskPartitionSpec extends DynamicData {
   public String partitionFormat;
   public HostDiskDimensionsChs chs;
   public Long totalSectors;
   public HostDiskPartitionAttributes[] partition;
 
-  public String getPartitionFormat()
-  {
+  public String getPartitionFormat() {
     return this.partitionFormat;
   }
 
-  public HostDiskDimensionsChs getChs()
-  {
+  public HostDiskDimensionsChs getChs() {
     return this.chs;
   }
 
-  public Long getTotalSectors()
-  {
+  public Long getTotalSectors() {
     return this.totalSectors;
   }
 
-  public HostDiskPartitionAttributes[] getPartition()
-  {
+  public HostDiskPartitionAttributes[] getPartition() {
     return this.partition;
   }
 
-  public void setPartitionFormat(String partitionFormat)
-  {
+  public void setPartitionFormat(String partitionFormat) {
     this.partitionFormat=partitionFormat;
   }
 
-  public void setChs(HostDiskDimensionsChs chs)
-  {
+  public void setChs(HostDiskDimensionsChs chs) {
     this.chs=chs;
   }
 
-  public void setTotalSectors(Long totalSectors)
-  {
+  public void setTotalSectors(Long totalSectors) {
     this.totalSectors=totalSectors;
   }
 
-  public void setPartition(HostDiskPartitionAttributes[] partition)
-  {
+  public void setPartition(HostDiskPartitionAttributes[] partition) {
     this.partition=partition;
   }
 }

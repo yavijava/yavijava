@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,42 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class HostNetworkSecurityPolicy extends DynamicData
-{
+@SuppressWarnings("all")
+public class HostNetworkSecurityPolicy extends DynamicData {
   public Boolean allowPromiscuous;
   public Boolean macChanges;
   public Boolean forgedTransmits;
 
-  public Boolean getAllowPromiscuous()
-  {
+  public Boolean getAllowPromiscuous() {
     return this.allowPromiscuous;
   }
 
-  public Boolean getMacChanges()
-  {
+  public Boolean getMacChanges() {
     return this.macChanges;
   }
 
-  public Boolean getForgedTransmits()
-  {
+  public Boolean getForgedTransmits() {
     return this.forgedTransmits;
   }
 
-  public void setAllowPromiscuous(Boolean allowPromiscuous)
-  {
+  public void setAllowPromiscuous(Boolean allowPromiscuous) {
     this.allowPromiscuous=allowPromiscuous;
   }
 
-  public void setMacChanges(Boolean macChanges)
-  {
+  public void setMacChanges(Boolean macChanges) {
     this.macChanges=macChanges;
   }
 
-  public void setForgedTransmits(Boolean forgedTransmits)
-  {
+  public void setForgedTransmits(Boolean forgedTransmits) {
     this.forgedTransmits=forgedTransmits;
   }
 }

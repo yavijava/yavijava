@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,31 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class ClusterFailoverResourcesAdmissionControlPolicy extends ClusterDasAdmissionControlPolicy
-{
+@SuppressWarnings("all")
+public class ClusterFailoverResourcesAdmissionControlPolicy extends ClusterDasAdmissionControlPolicy {
   public int cpuFailoverResourcesPercent;
   public int memoryFailoverResourcesPercent;
 
-  public int getCpuFailoverResourcesPercent()
-  {
+  public int getCpuFailoverResourcesPercent() {
     return this.cpuFailoverResourcesPercent;
   }
 
-  public int getMemoryFailoverResourcesPercent()
-  {
+  public int getMemoryFailoverResourcesPercent() {
     return this.memoryFailoverResourcesPercent;
   }
 
-  public void setCpuFailoverResourcesPercent(int cpuFailoverResourcesPercent)
-  {
+  public void setCpuFailoverResourcesPercent(int cpuFailoverResourcesPercent) {
     this.cpuFailoverResourcesPercent=cpuFailoverResourcesPercent;
   }
 
-  public void setMemoryFailoverResourcesPercent(int memoryFailoverResourcesPercent)
-  {
+  public void setMemoryFailoverResourcesPercent(int memoryFailoverResourcesPercent) {
     this.memoryFailoverResourcesPercent=memoryFailoverResourcesPercent;
   }
 }

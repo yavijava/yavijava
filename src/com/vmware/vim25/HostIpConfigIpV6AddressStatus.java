@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,11 +30,11 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public enum HostIpConfigIpV6AddressStatus
-{
+public enum HostIpConfigIpV6AddressStatus {
   preferred ("preferred"),
   deprecated ("deprecated"),
   invalid ("invalid"),
@@ -43,6 +43,7 @@ public enum HostIpConfigIpV6AddressStatus
   tentative ("tentative"),
   duplicate ("duplicate");
 
+  @SuppressWarnings("unused")
   private final String val;
   private HostIpConfigIpV6AddressStatus(String val)
   {

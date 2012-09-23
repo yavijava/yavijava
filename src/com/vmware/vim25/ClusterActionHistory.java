@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -31,31 +31,28 @@ package com.vmware.vim25;
 import java.util.Calendar;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class ClusterActionHistory extends DynamicData
-{
+@SuppressWarnings("all")
+public class ClusterActionHistory extends DynamicData {
   public ClusterAction action;
   public Calendar time;
 
-  public ClusterAction getAction()
-  {
+  public ClusterAction getAction() {
     return this.action;
   }
 
-  public Calendar getTime()
-  {
+  public Calendar getTime() {
     return this.time;
   }
 
-  public void setAction(ClusterAction action)
-  {
+  public void setAction(ClusterAction action) {
     this.action=action;
   }
 
-  public void setTime(Calendar time)
-  {
+  public void setTime(Calendar time) {
     this.time=time;
   }
 }

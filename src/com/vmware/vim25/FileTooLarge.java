@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,42 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class FileTooLarge extends FileFault
-{
+@SuppressWarnings("all")
+public class FileTooLarge extends FileFault {
   public String datastore;
   public long fileSize;
   public Long maxFileSize;
 
-  public String getDatastore()
-  {
+  public String getDatastore() {
     return this.datastore;
   }
 
-  public long getFileSize()
-  {
+  public long getFileSize() {
     return this.fileSize;
   }
 
-  public Long getMaxFileSize()
-  {
+  public Long getMaxFileSize() {
     return this.maxFileSize;
   }
 
-  public void setDatastore(String datastore)
-  {
+  public void setDatastore(String datastore) {
     this.datastore=datastore;
   }
 
-  public void setFileSize(long fileSize)
-  {
+  public void setFileSize(long fileSize) {
     this.fileSize=fileSize;
   }
 
-  public void setMaxFileSize(Long maxFileSize)
-  {
+  public void setMaxFileSize(Long maxFileSize) {
     this.maxFileSize=maxFileSize;
   }
 }

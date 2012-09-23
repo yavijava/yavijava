@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,11 +30,12 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class ClusterComputeResourceSummary extends ComputeResourceSummary
-{
+@SuppressWarnings("all")
+public class ClusterComputeResourceSummary extends ComputeResourceSummary {
   public int currentFailoverLevel;
   public ClusterDasAdmissionControlInfo admissionControlInfo;
   public int numVmotions;
@@ -43,73 +44,59 @@ public class ClusterComputeResourceSummary extends ComputeResourceSummary
   public String currentEVCModeKey;
   public ClusterDasData dasData;
 
-  public int getCurrentFailoverLevel()
-  {
+  public int getCurrentFailoverLevel() {
     return this.currentFailoverLevel;
   }
 
-  public ClusterDasAdmissionControlInfo getAdmissionControlInfo()
-  {
+  public ClusterDasAdmissionControlInfo getAdmissionControlInfo() {
     return this.admissionControlInfo;
   }
 
-  public int getNumVmotions()
-  {
+  public int getNumVmotions() {
     return this.numVmotions;
   }
 
-  public Integer getTargetBalance()
-  {
+  public Integer getTargetBalance() {
     return this.targetBalance;
   }
 
-  public Integer getCurrentBalance()
-  {
+  public Integer getCurrentBalance() {
     return this.currentBalance;
   }
 
-  public String getCurrentEVCModeKey()
-  {
+  public String getCurrentEVCModeKey() {
     return this.currentEVCModeKey;
   }
 
-  public ClusterDasData getDasData()
-  {
+  public ClusterDasData getDasData() {
     return this.dasData;
   }
 
-  public void setCurrentFailoverLevel(int currentFailoverLevel)
-  {
+  public void setCurrentFailoverLevel(int currentFailoverLevel) {
     this.currentFailoverLevel=currentFailoverLevel;
   }
 
-  public void setAdmissionControlInfo(ClusterDasAdmissionControlInfo admissionControlInfo)
-  {
+  public void setAdmissionControlInfo(ClusterDasAdmissionControlInfo admissionControlInfo) {
     this.admissionControlInfo=admissionControlInfo;
   }
 
-  public void setNumVmotions(int numVmotions)
-  {
+  public void setNumVmotions(int numVmotions) {
     this.numVmotions=numVmotions;
   }
 
-  public void setTargetBalance(Integer targetBalance)
-  {
+  public void setTargetBalance(Integer targetBalance) {
     this.targetBalance=targetBalance;
   }
 
-  public void setCurrentBalance(Integer currentBalance)
-  {
+  public void setCurrentBalance(Integer currentBalance) {
     this.currentBalance=currentBalance;
   }
 
-  public void setCurrentEVCModeKey(String currentEVCModeKey)
-  {
+  public void setCurrentEVCModeKey(String currentEVCModeKey) {
     this.currentEVCModeKey=currentEVCModeKey;
   }
 
-  public void setDasData(ClusterDasData dasData)
-  {
+  public void setDasData(ClusterDasData dasData) {
     this.dasData=dasData;
   }
 }

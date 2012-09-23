@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,53 +30,46 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class VirtualDeviceConnectInfo extends DynamicData
-{
+@SuppressWarnings("all")
+public class VirtualDeviceConnectInfo extends DynamicData {
   public boolean startConnected;
   public boolean allowGuestControl;
   public boolean connected;
   public String status;
 
-  public boolean isStartConnected()
-  {
+  public boolean isStartConnected() {
     return this.startConnected;
   }
 
-  public boolean isAllowGuestControl()
-  {
+  public boolean isAllowGuestControl() {
     return this.allowGuestControl;
   }
 
-  public boolean isConnected()
-  {
+  public boolean isConnected() {
     return this.connected;
   }
 
-  public String getStatus()
-  {
+  public String getStatus() {
     return this.status;
   }
 
-  public void setStartConnected(boolean startConnected)
-  {
+  public void setStartConnected(boolean startConnected) {
     this.startConnected=startConnected;
   }
 
-  public void setAllowGuestControl(boolean allowGuestControl)
-  {
+  public void setAllowGuestControl(boolean allowGuestControl) {
     this.allowGuestControl=allowGuestControl;
   }
 
-  public void setConnected(boolean connected)
-  {
+  public void setConnected(boolean connected) {
     this.connected=connected;
   }
 
-  public void setStatus(String status)
-  {
+  public void setStatus(String status) {
     this.status=status;
   }
 }

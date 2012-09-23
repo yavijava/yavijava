@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,53 +30,46 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class DistributedVirtualSwitchHostMemberPnicSpec extends DynamicData
-{
+@SuppressWarnings("all")
+public class DistributedVirtualSwitchHostMemberPnicSpec extends DynamicData {
   public String pnicDevice;
   public String uplinkPortKey;
   public String uplinkPortgroupKey;
   public Integer connectionCookie;
 
-  public String getPnicDevice()
-  {
+  public String getPnicDevice() {
     return this.pnicDevice;
   }
 
-  public String getUplinkPortKey()
-  {
+  public String getUplinkPortKey() {
     return this.uplinkPortKey;
   }
 
-  public String getUplinkPortgroupKey()
-  {
+  public String getUplinkPortgroupKey() {
     return this.uplinkPortgroupKey;
   }
 
-  public Integer getConnectionCookie()
-  {
+  public Integer getConnectionCookie() {
     return this.connectionCookie;
   }
 
-  public void setPnicDevice(String pnicDevice)
-  {
+  public void setPnicDevice(String pnicDevice) {
     this.pnicDevice=pnicDevice;
   }
 
-  public void setUplinkPortKey(String uplinkPortKey)
-  {
+  public void setUplinkPortKey(String uplinkPortKey) {
     this.uplinkPortKey=uplinkPortKey;
   }
 
-  public void setUplinkPortgroupKey(String uplinkPortgroupKey)
-  {
+  public void setUplinkPortgroupKey(String uplinkPortgroupKey) {
     this.uplinkPortgroupKey=uplinkPortgroupKey;
   }
 
-  public void setConnectionCookie(Integer connectionCookie)
-  {
+  public void setConnectionCookie(Integer connectionCookie) {
     this.connectionCookie=connectionCookie;
   }
 }

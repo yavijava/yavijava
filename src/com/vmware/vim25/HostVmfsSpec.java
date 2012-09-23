@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,53 +30,46 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class HostVmfsSpec extends DynamicData
-{
+@SuppressWarnings("all")
+public class HostVmfsSpec extends DynamicData {
   public HostScsiDiskPartition extent;
   public Integer blockSizeMb;
   public int majorVersion;
   public String volumeName;
 
-  public HostScsiDiskPartition getExtent()
-  {
+  public HostScsiDiskPartition getExtent() {
     return this.extent;
   }
 
-  public Integer getBlockSizeMb()
-  {
+  public Integer getBlockSizeMb() {
     return this.blockSizeMb;
   }
 
-  public int getMajorVersion()
-  {
+  public int getMajorVersion() {
     return this.majorVersion;
   }
 
-  public String getVolumeName()
-  {
+  public String getVolumeName() {
     return this.volumeName;
   }
 
-  public void setExtent(HostScsiDiskPartition extent)
-  {
+  public void setExtent(HostScsiDiskPartition extent) {
     this.extent=extent;
   }
 
-  public void setBlockSizeMb(Integer blockSizeMb)
-  {
+  public void setBlockSizeMb(Integer blockSizeMb) {
     this.blockSizeMb=blockSizeMb;
   }
 
-  public void setMajorVersion(int majorVersion)
-  {
+  public void setMajorVersion(int majorVersion) {
     this.majorVersion=majorVersion;
   }
 
-  public void setVolumeName(String volumeName)
-  {
+  public void setVolumeName(String volumeName) {
     this.volumeName=volumeName;
   }
 }

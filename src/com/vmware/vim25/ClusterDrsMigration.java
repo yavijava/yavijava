@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -31,11 +31,12 @@ package com.vmware.vim25;
 import java.util.Calendar;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class ClusterDrsMigration extends DynamicData
-{
+@SuppressWarnings("all")
+public class ClusterDrsMigration extends DynamicData {
   public String key;
   public Calendar time;
   public ManagedObjectReference vm;
@@ -48,113 +49,91 @@ public class ClusterDrsMigration extends DynamicData
   public Integer destinationCpuLoad;
   public Long destinationMemoryLoad;
 
-  public String getKey()
-  {
+  public String getKey() {
     return this.key;
   }
 
-  public Calendar getTime()
-  {
+  public Calendar getTime() {
     return this.time;
   }
 
-  public ManagedObjectReference getVm()
-  {
+  public ManagedObjectReference getVm() {
     return this.vm;
   }
 
-  public Integer getCpuLoad()
-  {
+  public Integer getCpuLoad() {
     return this.cpuLoad;
   }
 
-  public Long getMemoryLoad()
-  {
+  public Long getMemoryLoad() {
     return this.memoryLoad;
   }
 
-  public ManagedObjectReference getSource()
-  {
+  public ManagedObjectReference getSource() {
     return this.source;
   }
 
-  public Integer getSourceCpuLoad()
-  {
+  public Integer getSourceCpuLoad() {
     return this.sourceCpuLoad;
   }
 
-  public Long getSourceMemoryLoad()
-  {
+  public Long getSourceMemoryLoad() {
     return this.sourceMemoryLoad;
   }
 
-  public ManagedObjectReference getDestination()
-  {
+  public ManagedObjectReference getDestination() {
     return this.destination;
   }
 
-  public Integer getDestinationCpuLoad()
-  {
+  public Integer getDestinationCpuLoad() {
     return this.destinationCpuLoad;
   }
 
-  public Long getDestinationMemoryLoad()
-  {
+  public Long getDestinationMemoryLoad() {
     return this.destinationMemoryLoad;
   }
 
-  public void setKey(String key)
-  {
+  public void setKey(String key) {
     this.key=key;
   }
 
-  public void setTime(Calendar time)
-  {
+  public void setTime(Calendar time) {
     this.time=time;
   }
 
-  public void setVm(ManagedObjectReference vm)
-  {
+  public void setVm(ManagedObjectReference vm) {
     this.vm=vm;
   }
 
-  public void setCpuLoad(Integer cpuLoad)
-  {
+  public void setCpuLoad(Integer cpuLoad) {
     this.cpuLoad=cpuLoad;
   }
 
-  public void setMemoryLoad(Long memoryLoad)
-  {
+  public void setMemoryLoad(Long memoryLoad) {
     this.memoryLoad=memoryLoad;
   }
 
-  public void setSource(ManagedObjectReference source)
-  {
+  public void setSource(ManagedObjectReference source) {
     this.source=source;
   }
 
-  public void setSourceCpuLoad(Integer sourceCpuLoad)
-  {
+  public void setSourceCpuLoad(Integer sourceCpuLoad) {
     this.sourceCpuLoad=sourceCpuLoad;
   }
 
-  public void setSourceMemoryLoad(Long sourceMemoryLoad)
-  {
+  public void setSourceMemoryLoad(Long sourceMemoryLoad) {
     this.sourceMemoryLoad=sourceMemoryLoad;
   }
 
-  public void setDestination(ManagedObjectReference destination)
-  {
+  public void setDestination(ManagedObjectReference destination) {
     this.destination=destination;
   }
 
-  public void setDestinationCpuLoad(Integer destinationCpuLoad)
-  {
+  public void setDestinationCpuLoad(Integer destinationCpuLoad) {
     this.destinationCpuLoad=destinationCpuLoad;
   }
 
-  public void setDestinationMemoryLoad(Long destinationMemoryLoad)
-  {
+  public void setDestinationMemoryLoad(Long destinationMemoryLoad) {
     this.destinationMemoryLoad=destinationMemoryLoad;
   }
 }

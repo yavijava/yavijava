@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,31 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class LocalizedMethodFault extends DynamicData
-{
+@SuppressWarnings("all")
+public class LocalizedMethodFault extends DynamicData {
   public MethodFault fault;
   public String localizedMessage;
 
-  public MethodFault getFault()
-  {
+  public MethodFault getFault() {
     return this.fault;
   }
 
-  public String getLocalizedMessage()
-  {
+  public String getLocalizedMessage() {
     return this.localizedMessage;
   }
 
-  public void setFault(MethodFault fault)
-  {
+  public void setFault(MethodFault fault) {
     this.fault=fault;
   }
 
-  public void setLocalizedMessage(String localizedMessage)
-  {
+  public void setLocalizedMessage(String localizedMessage) {
     this.localizedMessage=localizedMessage;
   }
 }

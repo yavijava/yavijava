@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,31 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class ProfileExpressionMetadata extends DynamicData
-{
+@SuppressWarnings("all")
+public class ProfileExpressionMetadata extends DynamicData {
   public ExtendedElementDescription expressionId;
   public ProfileParameterMetadata[] parameter;
 
-  public ExtendedElementDescription getExpressionId()
-  {
+  public ExtendedElementDescription getExpressionId() {
     return this.expressionId;
   }
 
-  public ProfileParameterMetadata[] getParameter()
-  {
+  public ProfileParameterMetadata[] getParameter() {
     return this.parameter;
   }
 
-  public void setExpressionId(ExtendedElementDescription expressionId)
-  {
+  public void setExpressionId(ExtendedElementDescription expressionId) {
     this.expressionId=expressionId;
   }
 
-  public void setParameter(ProfileParameterMetadata[] parameter)
-  {
+  public void setParameter(ProfileParameterMetadata[] parameter) {
     this.parameter=parameter;
   }
 }

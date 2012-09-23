@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,11 +30,12 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class HostServiceTicket extends DynamicData
-{
+@SuppressWarnings("all")
+public class HostServiceTicket extends DynamicData {
   public String host;
   public Integer port;
   public String sslThumbprint;
@@ -42,63 +43,51 @@ public class HostServiceTicket extends DynamicData
   public String serviceVersion;
   public String sessionId;
 
-  public String getHost()
-  {
+  public String getHost() {
     return this.host;
   }
 
-  public Integer getPort()
-  {
+  public Integer getPort() {
     return this.port;
   }
 
-  public String getSslThumbprint()
-  {
+  public String getSslThumbprint() {
     return this.sslThumbprint;
   }
 
-  public String getService()
-  {
+  public String getService() {
     return this.service;
   }
 
-  public String getServiceVersion()
-  {
+  public String getServiceVersion() {
     return this.serviceVersion;
   }
 
-  public String getSessionId()
-  {
+  public String getSessionId() {
     return this.sessionId;
   }
 
-  public void setHost(String host)
-  {
+  public void setHost(String host) {
     this.host=host;
   }
 
-  public void setPort(Integer port)
-  {
+  public void setPort(Integer port) {
     this.port=port;
   }
 
-  public void setSslThumbprint(String sslThumbprint)
-  {
+  public void setSslThumbprint(String sslThumbprint) {
     this.sslThumbprint=sslThumbprint;
   }
 
-  public void setService(String service)
-  {
+  public void setService(String service) {
     this.service=service;
   }
 
-  public void setServiceVersion(String serviceVersion)
-  {
+  public void setServiceVersion(String serviceVersion) {
     this.serviceVersion=serviceVersion;
   }
 
-  public void setSessionId(String sessionId)
-  {
+  public void setSessionId(String sessionId) {
     this.sessionId=sessionId;
   }
 }

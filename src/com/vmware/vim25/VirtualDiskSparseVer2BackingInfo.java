@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,11 +30,12 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class VirtualDiskSparseVer2BackingInfo extends VirtualDeviceFileBackingInfo
-{
+@SuppressWarnings("all")
+public class VirtualDiskSparseVer2BackingInfo extends VirtualDeviceFileBackingInfo {
   public String diskMode;
   public Boolean split;
   public Boolean writeThrough;
@@ -44,83 +45,67 @@ public class VirtualDiskSparseVer2BackingInfo extends VirtualDeviceFileBackingIn
   public String changeId;
   public VirtualDiskSparseVer2BackingInfo parent;
 
-  public String getDiskMode()
-  {
+  public String getDiskMode() {
     return this.diskMode;
   }
 
-  public Boolean getSplit()
-  {
+  public Boolean getSplit() {
     return this.split;
   }
 
-  public Boolean getWriteThrough()
-  {
+  public Boolean getWriteThrough() {
     return this.writeThrough;
   }
 
-  public Long getSpaceUsedInKB()
-  {
+  public Long getSpaceUsedInKB() {
     return this.spaceUsedInKB;
   }
 
-  public String getUuid()
-  {
+  public String getUuid() {
     return this.uuid;
   }
 
-  public String getContentId()
-  {
+  public String getContentId() {
     return this.contentId;
   }
 
-  public String getChangeId()
-  {
+  public String getChangeId() {
     return this.changeId;
   }
 
-  public VirtualDiskSparseVer2BackingInfo getParent()
-  {
+  public VirtualDiskSparseVer2BackingInfo getParent() {
     return this.parent;
   }
 
-  public void setDiskMode(String diskMode)
-  {
+  public void setDiskMode(String diskMode) {
     this.diskMode=diskMode;
   }
 
-  public void setSplit(Boolean split)
-  {
+  public void setSplit(Boolean split) {
     this.split=split;
   }
 
-  public void setWriteThrough(Boolean writeThrough)
-  {
+  public void setWriteThrough(Boolean writeThrough) {
     this.writeThrough=writeThrough;
   }
 
-  public void setSpaceUsedInKB(Long spaceUsedInKB)
-  {
+  public void setSpaceUsedInKB(Long spaceUsedInKB) {
     this.spaceUsedInKB=spaceUsedInKB;
   }
 
-  public void setUuid(String uuid)
-  {
+  public void setUuid(String uuid) {
     this.uuid=uuid;
   }
 
-  public void setContentId(String contentId)
-  {
+  public void setContentId(String contentId) {
     this.contentId=contentId;
   }
 
-  public void setChangeId(String changeId)
-  {
+  public void setChangeId(String changeId) {
     this.changeId=changeId;
   }
 
-  public void setParent(VirtualDiskSparseVer2BackingInfo parent)
-  {
+  public void setParent(VirtualDiskSparseVer2BackingInfo parent) {
     this.parent=parent;
   }
 }

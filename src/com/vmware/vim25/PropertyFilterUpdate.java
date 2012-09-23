@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,42 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class PropertyFilterUpdate extends DynamicData
-{
+@SuppressWarnings("all")
+public class PropertyFilterUpdate extends DynamicData {
   public ManagedObjectReference filter;
   public ObjectUpdate[] objectSet;
   public MissingObject[] missingSet;
 
-  public ManagedObjectReference getFilter()
-  {
+  public ManagedObjectReference getFilter() {
     return this.filter;
   }
 
-  public ObjectUpdate[] getObjectSet()
-  {
+  public ObjectUpdate[] getObjectSet() {
     return this.objectSet;
   }
 
-  public MissingObject[] getMissingSet()
-  {
+  public MissingObject[] getMissingSet() {
     return this.missingSet;
   }
 
-  public void setFilter(ManagedObjectReference filter)
-  {
+  public void setFilter(ManagedObjectReference filter) {
     this.filter=filter;
   }
 
-  public void setObjectSet(ObjectUpdate[] objectSet)
-  {
+  public void setObjectSet(ObjectUpdate[] objectSet) {
     this.objectSet=objectSet;
   }
 
-  public void setMissingSet(MissingObject[] missingSet)
-  {
+  public void setMissingSet(MissingObject[] missingSet) {
     this.missingSet=missingSet;
   }
 }

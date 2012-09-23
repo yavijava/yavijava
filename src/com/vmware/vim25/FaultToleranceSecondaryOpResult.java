@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,42 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class FaultToleranceSecondaryOpResult extends DynamicData
-{
+@SuppressWarnings("all")
+public class FaultToleranceSecondaryOpResult extends DynamicData {
   public ManagedObjectReference vm;
   public boolean powerOnAttempted;
   public ClusterPowerOnVmResult powerOnResult;
 
-  public ManagedObjectReference getVm()
-  {
+  public ManagedObjectReference getVm() {
     return this.vm;
   }
 
-  public boolean isPowerOnAttempted()
-  {
+  public boolean isPowerOnAttempted() {
     return this.powerOnAttempted;
   }
 
-  public ClusterPowerOnVmResult getPowerOnResult()
-  {
+  public ClusterPowerOnVmResult getPowerOnResult() {
     return this.powerOnResult;
   }
 
-  public void setVm(ManagedObjectReference vm)
-  {
+  public void setVm(ManagedObjectReference vm) {
     this.vm=vm;
   }
 
-  public void setPowerOnAttempted(boolean powerOnAttempted)
-  {
+  public void setPowerOnAttempted(boolean powerOnAttempted) {
     this.powerOnAttempted=powerOnAttempted;
   }
 
-  public void setPowerOnResult(ClusterPowerOnVmResult powerOnResult)
-  {
+  public void setPowerOnResult(ClusterPowerOnVmResult powerOnResult) {
     this.powerOnResult=powerOnResult;
   }
 }

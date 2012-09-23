@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -31,64 +31,55 @@ package com.vmware.vim25;
 import java.util.Calendar;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class DatastoreInfo extends DynamicData
-{
+@SuppressWarnings("all")
+public class DatastoreInfo extends DynamicData {
   public String name;
   public String url;
   public long freeSpace;
   public long maxFileSize;
   public Calendar timestamp;
 
-  public String getName()
-  {
+  public String getName() {
     return this.name;
   }
 
-  public String getUrl()
-  {
+  public String getUrl() {
     return this.url;
   }
 
-  public long getFreeSpace()
-  {
+  public long getFreeSpace() {
     return this.freeSpace;
   }
 
-  public long getMaxFileSize()
-  {
+  public long getMaxFileSize() {
     return this.maxFileSize;
   }
 
-  public Calendar getTimestamp()
-  {
+  public Calendar getTimestamp() {
     return this.timestamp;
   }
 
-  public void setName(String name)
-  {
+  public void setName(String name) {
     this.name=name;
   }
 
-  public void setUrl(String url)
-  {
+  public void setUrl(String url) {
     this.url=url;
   }
 
-  public void setFreeSpace(long freeSpace)
-  {
+  public void setFreeSpace(long freeSpace) {
     this.freeSpace=freeSpace;
   }
 
-  public void setMaxFileSize(long maxFileSize)
-  {
+  public void setMaxFileSize(long maxFileSize) {
     this.maxFileSize=maxFileSize;
   }
 
-  public void setTimestamp(Calendar timestamp)
-  {
+  public void setTimestamp(Calendar timestamp) {
     this.timestamp=timestamp;
   }
 }

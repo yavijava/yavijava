@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,11 +30,12 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class ClusterConfigInfoEx extends ComputeResourceConfigInfo
-{
+@SuppressWarnings("all")
+public class ClusterConfigInfoEx extends ComputeResourceConfigInfo {
   public ClusterDasConfigInfo dasConfig;
   public ClusterDasVmConfigInfo[] dasVmConfig;
   public ClusterDrsConfigInfo drsConfig;
@@ -44,83 +45,67 @@ public class ClusterConfigInfoEx extends ComputeResourceConfigInfo
   public ClusterDpmHostConfigInfo[] dpmHostConfig;
   public ClusterGroupInfo[] group;
 
-  public ClusterDasConfigInfo getDasConfig()
-  {
+  public ClusterDasConfigInfo getDasConfig() {
     return this.dasConfig;
   }
 
-  public ClusterDasVmConfigInfo[] getDasVmConfig()
-  {
+  public ClusterDasVmConfigInfo[] getDasVmConfig() {
     return this.dasVmConfig;
   }
 
-  public ClusterDrsConfigInfo getDrsConfig()
-  {
+  public ClusterDrsConfigInfo getDrsConfig() {
     return this.drsConfig;
   }
 
-  public ClusterDrsVmConfigInfo[] getDrsVmConfig()
-  {
+  public ClusterDrsVmConfigInfo[] getDrsVmConfig() {
     return this.drsVmConfig;
   }
 
-  public ClusterRuleInfo[] getRule()
-  {
+  public ClusterRuleInfo[] getRule() {
     return this.rule;
   }
 
-  public ClusterDpmConfigInfo getDpmConfigInfo()
-  {
+  public ClusterDpmConfigInfo getDpmConfigInfo() {
     return this.dpmConfigInfo;
   }
 
-  public ClusterDpmHostConfigInfo[] getDpmHostConfig()
-  {
+  public ClusterDpmHostConfigInfo[] getDpmHostConfig() {
     return this.dpmHostConfig;
   }
 
-  public ClusterGroupInfo[] getGroup()
-  {
+  public ClusterGroupInfo[] getGroup() {
     return this.group;
   }
 
-  public void setDasConfig(ClusterDasConfigInfo dasConfig)
-  {
+  public void setDasConfig(ClusterDasConfigInfo dasConfig) {
     this.dasConfig=dasConfig;
   }
 
-  public void setDasVmConfig(ClusterDasVmConfigInfo[] dasVmConfig)
-  {
+  public void setDasVmConfig(ClusterDasVmConfigInfo[] dasVmConfig) {
     this.dasVmConfig=dasVmConfig;
   }
 
-  public void setDrsConfig(ClusterDrsConfigInfo drsConfig)
-  {
+  public void setDrsConfig(ClusterDrsConfigInfo drsConfig) {
     this.drsConfig=drsConfig;
   }
 
-  public void setDrsVmConfig(ClusterDrsVmConfigInfo[] drsVmConfig)
-  {
+  public void setDrsVmConfig(ClusterDrsVmConfigInfo[] drsVmConfig) {
     this.drsVmConfig=drsVmConfig;
   }
 
-  public void setRule(ClusterRuleInfo[] rule)
-  {
+  public void setRule(ClusterRuleInfo[] rule) {
     this.rule=rule;
   }
 
-  public void setDpmConfigInfo(ClusterDpmConfigInfo dpmConfigInfo)
-  {
+  public void setDpmConfigInfo(ClusterDpmConfigInfo dpmConfigInfo) {
     this.dpmConfigInfo=dpmConfigInfo;
   }
 
-  public void setDpmHostConfig(ClusterDpmHostConfigInfo[] dpmHostConfig)
-  {
+  public void setDpmHostConfig(ClusterDpmHostConfigInfo[] dpmHostConfig) {
     this.dpmHostConfig=dpmHostConfig;
   }
 
-  public void setGroup(ClusterGroupInfo[] group)
-  {
+  public void setGroup(ClusterGroupInfo[] group) {
     this.group=group;
   }
 }

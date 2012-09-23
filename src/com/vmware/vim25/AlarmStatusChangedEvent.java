@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,53 +30,46 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class AlarmStatusChangedEvent extends AlarmEvent
-{
+@SuppressWarnings("all")
+public class AlarmStatusChangedEvent extends AlarmEvent {
   public ManagedEntityEventArgument source;
   public ManagedEntityEventArgument entity;
   public String from;
   public String to;
 
-  public ManagedEntityEventArgument getSource()
-  {
+  public ManagedEntityEventArgument getSource() {
     return this.source;
   }
 
-  public ManagedEntityEventArgument getEntity()
-  {
+  public ManagedEntityEventArgument getEntity() {
     return this.entity;
   }
 
-  public String getFrom()
-  {
+  public String getFrom() {
     return this.from;
   }
 
-  public String getTo()
-  {
+  public String getTo() {
     return this.to;
   }
 
-  public void setSource(ManagedEntityEventArgument source)
-  {
+  public void setSource(ManagedEntityEventArgument source) {
     this.source=source;
   }
 
-  public void setEntity(ManagedEntityEventArgument entity)
-  {
+  public void setEntity(ManagedEntityEventArgument entity) {
     this.entity=entity;
   }
 
-  public void setFrom(String from)
-  {
+  public void setFrom(String from) {
     this.from=from;
   }
 
-  public void setTo(String to)
-  {
+  public void setTo(String to) {
     this.to=to;
   }
 }

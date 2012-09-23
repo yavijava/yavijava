@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,11 +30,12 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class DistributedVirtualSwitchProductSpec extends DynamicData
-{
+@SuppressWarnings("all")
+public class DistributedVirtualSwitchProductSpec extends DynamicData {
   public String name;
   public String vendor;
   public String version;
@@ -43,73 +44,59 @@ public class DistributedVirtualSwitchProductSpec extends DynamicData
   public String bundleId;
   public String bundleUrl;
 
-  public String getName()
-  {
+  public String getName() {
     return this.name;
   }
 
-  public String getVendor()
-  {
+  public String getVendor() {
     return this.vendor;
   }
 
-  public String getVersion()
-  {
+  public String getVersion() {
     return this.version;
   }
 
-  public String getBuild()
-  {
+  public String getBuild() {
     return this.build;
   }
 
-  public String getForwardingClass()
-  {
+  public String getForwardingClass() {
     return this.forwardingClass;
   }
 
-  public String getBundleId()
-  {
+  public String getBundleId() {
     return this.bundleId;
   }
 
-  public String getBundleUrl()
-  {
+  public String getBundleUrl() {
     return this.bundleUrl;
   }
 
-  public void setName(String name)
-  {
+  public void setName(String name) {
     this.name=name;
   }
 
-  public void setVendor(String vendor)
-  {
+  public void setVendor(String vendor) {
     this.vendor=vendor;
   }
 
-  public void setVersion(String version)
-  {
+  public void setVersion(String version) {
     this.version=version;
   }
 
-  public void setBuild(String build)
-  {
+  public void setBuild(String build) {
     this.build=build;
   }
 
-  public void setForwardingClass(String forwardingClass)
-  {
+  public void setForwardingClass(String forwardingClass) {
     this.forwardingClass=forwardingClass;
   }
 
-  public void setBundleId(String bundleId)
-  {
+  public void setBundleId(String bundleId) {
     this.bundleId=bundleId;
   }
 
-  public void setBundleUrl(String bundleUrl)
-  {
+  public void setBundleUrl(String bundleUrl) {
     this.bundleUrl=bundleUrl;
   }
 }

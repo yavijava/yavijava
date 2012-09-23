@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,31 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class CreateTaskAction extends Action
-{
+@SuppressWarnings("all")
+public class CreateTaskAction extends Action {
   public String taskTypeId;
   public boolean cancelable;
 
-  public String getTaskTypeId()
-  {
+  public String getTaskTypeId() {
     return this.taskTypeId;
   }
 
-  public boolean isCancelable()
-  {
+  public boolean isCancelable() {
     return this.cancelable;
   }
 
-  public void setTaskTypeId(String taskTypeId)
-  {
+  public void setTaskTypeId(String taskTypeId) {
     this.taskTypeId=taskTypeId;
   }
 
-  public void setCancelable(boolean cancelable)
-  {
+  public void setCancelable(boolean cancelable) {
     this.cancelable=cancelable;
   }
 }

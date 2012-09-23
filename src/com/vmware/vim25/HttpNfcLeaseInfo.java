@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,11 +30,12 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class HttpNfcLeaseInfo extends DynamicData
-{
+@SuppressWarnings("all")
+public class HttpNfcLeaseInfo extends DynamicData {
   public ManagedObjectReference lease;
   public ManagedObjectReference entity;
   public HttpNfcLeaseDeviceUrl[] deviceUrl;
@@ -42,63 +43,51 @@ public class HttpNfcLeaseInfo extends DynamicData
   public int leaseTimeout;
   public HttpNfcLeaseDatastoreLeaseInfo[] hostMap;
 
-  public ManagedObjectReference getLease()
-  {
+  public ManagedObjectReference getLease() {
     return this.lease;
   }
 
-  public ManagedObjectReference getEntity()
-  {
+  public ManagedObjectReference getEntity() {
     return this.entity;
   }
 
-  public HttpNfcLeaseDeviceUrl[] getDeviceUrl()
-  {
+  public HttpNfcLeaseDeviceUrl[] getDeviceUrl() {
     return this.deviceUrl;
   }
 
-  public long getTotalDiskCapacityInKB()
-  {
+  public long getTotalDiskCapacityInKB() {
     return this.totalDiskCapacityInKB;
   }
 
-  public int getLeaseTimeout()
-  {
+  public int getLeaseTimeout() {
     return this.leaseTimeout;
   }
 
-  public HttpNfcLeaseDatastoreLeaseInfo[] getHostMap()
-  {
+  public HttpNfcLeaseDatastoreLeaseInfo[] getHostMap() {
     return this.hostMap;
   }
 
-  public void setLease(ManagedObjectReference lease)
-  {
+  public void setLease(ManagedObjectReference lease) {
     this.lease=lease;
   }
 
-  public void setEntity(ManagedObjectReference entity)
-  {
+  public void setEntity(ManagedObjectReference entity) {
     this.entity=entity;
   }
 
-  public void setDeviceUrl(HttpNfcLeaseDeviceUrl[] deviceUrl)
-  {
+  public void setDeviceUrl(HttpNfcLeaseDeviceUrl[] deviceUrl) {
     this.deviceUrl=deviceUrl;
   }
 
-  public void setTotalDiskCapacityInKB(long totalDiskCapacityInKB)
-  {
+  public void setTotalDiskCapacityInKB(long totalDiskCapacityInKB) {
     this.totalDiskCapacityInKB=totalDiskCapacityInKB;
   }
 
-  public void setLeaseTimeout(int leaseTimeout)
-  {
+  public void setLeaseTimeout(int leaseTimeout) {
     this.leaseTimeout=leaseTimeout;
   }
 
-  public void setHostMap(HttpNfcLeaseDatastoreLeaseInfo[] hostMap)
-  {
+  public void setHostMap(HttpNfcLeaseDatastoreLeaseInfo[] hostMap) {
     this.hostMap=hostMap;
   }
 }

@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,75 +30,73 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class VirtualDevice extends DynamicData
-{
+@SuppressWarnings("all")
+public class VirtualDevice extends DynamicData {
   public int key;
   public Description deviceInfo;
   public VirtualDeviceBackingInfo backing;
   public VirtualDeviceConnectInfo connectable;
+  public VirtualDeviceBusSlotInfo slotInfo;
   public Integer controllerKey;
   public Integer unitNumber;
 
-  public int getKey()
-  {
+  public int getKey() {
     return this.key;
   }
 
-  public Description getDeviceInfo()
-  {
+  public Description getDeviceInfo() {
     return this.deviceInfo;
   }
 
-  public VirtualDeviceBackingInfo getBacking()
-  {
+  public VirtualDeviceBackingInfo getBacking() {
     return this.backing;
   }
 
-  public VirtualDeviceConnectInfo getConnectable()
-  {
+  public VirtualDeviceConnectInfo getConnectable() {
     return this.connectable;
   }
 
-  public Integer getControllerKey()
-  {
+  public VirtualDeviceBusSlotInfo getSlotInfo() {
+    return this.slotInfo;
+  }
+
+  public Integer getControllerKey() {
     return this.controllerKey;
   }
 
-  public Integer getUnitNumber()
-  {
+  public Integer getUnitNumber() {
     return this.unitNumber;
   }
 
-  public void setKey(int key)
-  {
+  public void setKey(int key) {
     this.key=key;
   }
 
-  public void setDeviceInfo(Description deviceInfo)
-  {
+  public void setDeviceInfo(Description deviceInfo) {
     this.deviceInfo=deviceInfo;
   }
 
-  public void setBacking(VirtualDeviceBackingInfo backing)
-  {
+  public void setBacking(VirtualDeviceBackingInfo backing) {
     this.backing=backing;
   }
 
-  public void setConnectable(VirtualDeviceConnectInfo connectable)
-  {
+  public void setConnectable(VirtualDeviceConnectInfo connectable) {
     this.connectable=connectable;
   }
 
-  public void setControllerKey(Integer controllerKey)
-  {
+  public void setSlotInfo(VirtualDeviceBusSlotInfo slotInfo) {
+    this.slotInfo=slotInfo;
+  }
+
+  public void setControllerKey(Integer controllerKey) {
     this.controllerKey=controllerKey;
   }
 
-  public void setUnitNumber(Integer unitNumber)
-  {
+  public void setUnitNumber(Integer unitNumber) {
     this.unitNumber=unitNumber;
   }
 }

@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,11 +30,11 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public enum VirtualMachineFileLayoutExFileType
-{
+public enum VirtualMachineFileLayoutExFileType {
   config ("config"),
   extendedConfig ("extendedConfig"),
   diskDescriptor ("diskDescriptor"),
@@ -44,6 +44,7 @@ public enum VirtualMachineFileLayoutExFileType
   diskReplicationState ("diskReplicationState"),
   log ("log"),
   stat ("stat"),
+  namespaceData ("namespaceData"),
   nvram ("nvram"),
   snapshotData ("snapshotData"),
   snapshotList ("snapshotList"),
@@ -54,6 +55,7 @@ public enum VirtualMachineFileLayoutExFileType
   core ("core"),
   screenshot ("screenshot");
 
+  @SuppressWarnings("unused")
   private final String val;
   private VirtualMachineFileLayoutExFileType(String val)
   {

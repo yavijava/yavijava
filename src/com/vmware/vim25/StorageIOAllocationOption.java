@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,31 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class StorageIOAllocationOption extends DynamicData
-{
+@SuppressWarnings("all")
+public class StorageIOAllocationOption extends DynamicData {
   public LongOption limitOption;
   public SharesOption sharesOption;
 
-  public LongOption getLimitOption()
-  {
+  public LongOption getLimitOption() {
     return this.limitOption;
   }
 
-  public SharesOption getSharesOption()
-  {
+  public SharesOption getSharesOption() {
     return this.sharesOption;
   }
 
-  public void setLimitOption(LongOption limitOption)
-  {
+  public void setLimitOption(LongOption limitOption) {
     this.limitOption=limitOption;
   }
 
-  public void setSharesOption(SharesOption sharesOption)
-  {
+  public void setSharesOption(SharesOption sharesOption) {
     this.sharesOption=sharesOption;
   }
 }

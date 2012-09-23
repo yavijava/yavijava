@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,53 +30,46 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class HealthStatusChangedEvent extends Event
-{
+@SuppressWarnings("all")
+public class HealthStatusChangedEvent extends Event {
   public String componentId;
   public String oldStatus;
   public String newStatus;
   public String componentName;
 
-  public String getComponentId()
-  {
+  public String getComponentId() {
     return this.componentId;
   }
 
-  public String getOldStatus()
-  {
+  public String getOldStatus() {
     return this.oldStatus;
   }
 
-  public String getNewStatus()
-  {
+  public String getNewStatus() {
     return this.newStatus;
   }
 
-  public String getComponentName()
-  {
+  public String getComponentName() {
     return this.componentName;
   }
 
-  public void setComponentId(String componentId)
-  {
+  public void setComponentId(String componentId) {
     this.componentId=componentId;
   }
 
-  public void setOldStatus(String oldStatus)
-  {
+  public void setOldStatus(String oldStatus) {
     this.oldStatus=oldStatus;
   }
 
-  public void setNewStatus(String newStatus)
-  {
+  public void setNewStatus(String newStatus) {
     this.newStatus=newStatus;
   }
 
-  public void setComponentName(String componentName)
-  {
+  public void setComponentName(String componentName) {
     this.componentName=componentName;
   }
 }

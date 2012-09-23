@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,42 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class DvsPortJoinPortgroupEvent extends DvsEvent
-{
+@SuppressWarnings("all")
+public class DvsPortJoinPortgroupEvent extends DvsEvent {
   public String portKey;
   public String portgroupKey;
   public String portgroupName;
 
-  public String getPortKey()
-  {
+  public String getPortKey() {
     return this.portKey;
   }
 
-  public String getPortgroupKey()
-  {
+  public String getPortgroupKey() {
     return this.portgroupKey;
   }
 
-  public String getPortgroupName()
-  {
+  public String getPortgroupName() {
     return this.portgroupName;
   }
 
-  public void setPortKey(String portKey)
-  {
+  public void setPortKey(String portKey) {
     this.portKey=portKey;
   }
 
-  public void setPortgroupKey(String portgroupKey)
-  {
+  public void setPortgroupKey(String portgroupKey) {
     this.portgroupKey=portgroupKey;
   }
 
-  public void setPortgroupName(String portgroupName)
-  {
+  public void setPortgroupName(String portgroupName) {
     this.portgroupName=portgroupName;
   }
 }

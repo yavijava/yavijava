@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,31 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class VmUuidChangedEvent extends VmEvent
-{
+@SuppressWarnings("all")
+public class VmUuidChangedEvent extends VmEvent {
   public String oldUuid;
   public String newUuid;
 
-  public String getOldUuid()
-  {
+  public String getOldUuid() {
     return this.oldUuid;
   }
 
-  public String getNewUuid()
-  {
+  public String getNewUuid() {
     return this.newUuid;
   }
 
-  public void setOldUuid(String oldUuid)
-  {
+  public void setOldUuid(String oldUuid) {
     this.oldUuid=oldUuid;
   }
 
-  public void setNewUuid(String newUuid)
-  {
+  public void setNewUuid(String newUuid) {
     this.newUuid=newUuid;
   }
 }

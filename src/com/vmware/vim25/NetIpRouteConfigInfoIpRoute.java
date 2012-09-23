@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,42 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class NetIpRouteConfigInfoIpRoute extends DynamicData
-{
+@SuppressWarnings("all")
+public class NetIpRouteConfigInfoIpRoute extends DynamicData {
   public String network;
   public int prefixLength;
   public NetIpRouteConfigInfoGateway gateway;
 
-  public String getNetwork()
-  {
+  public String getNetwork() {
     return this.network;
   }
 
-  public int getPrefixLength()
-  {
+  public int getPrefixLength() {
     return this.prefixLength;
   }
 
-  public NetIpRouteConfigInfoGateway getGateway()
-  {
+  public NetIpRouteConfigInfoGateway getGateway() {
     return this.gateway;
   }
 
-  public void setNetwork(String network)
-  {
+  public void setNetwork(String network) {
     this.network=network;
   }
 
-  public void setPrefixLength(int prefixLength)
-  {
+  public void setPrefixLength(int prefixLength) {
     this.prefixLength=prefixLength;
   }
 
-  public void setGateway(NetIpRouteConfigInfoGateway gateway)
-  {
+  public void setGateway(NetIpRouteConfigInfoGateway gateway) {
     this.gateway=gateway;
   }
 }

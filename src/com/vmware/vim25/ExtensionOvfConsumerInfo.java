@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,31 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class ExtensionOvfConsumerInfo extends DynamicData
-{
+@SuppressWarnings("all")
+public class ExtensionOvfConsumerInfo extends DynamicData {
   public String callbackUrl;
   public String[] sectionType;
 
-  public String getCallbackUrl()
-  {
+  public String getCallbackUrl() {
     return this.callbackUrl;
   }
 
-  public String[] getSectionType()
-  {
+  public String[] getSectionType() {
     return this.sectionType;
   }
 
-  public void setCallbackUrl(String callbackUrl)
-  {
+  public void setCallbackUrl(String callbackUrl) {
     this.callbackUrl=callbackUrl;
   }
 
-  public void setSectionType(String[] sectionType)
-  {
+  public void setSectionType(String[] sectionType) {
     this.sectionType=sectionType;
   }
 }

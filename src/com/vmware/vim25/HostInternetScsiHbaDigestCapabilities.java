@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,53 +30,46 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class HostInternetScsiHbaDigestCapabilities extends DynamicData
-{
+@SuppressWarnings("all")
+public class HostInternetScsiHbaDigestCapabilities extends DynamicData {
   public Boolean headerDigestSettable;
   public Boolean dataDigestSettable;
   public Boolean targetHeaderDigestSettable;
   public Boolean targetDataDigestSettable;
 
-  public Boolean getHeaderDigestSettable()
-  {
+  public Boolean getHeaderDigestSettable() {
     return this.headerDigestSettable;
   }
 
-  public Boolean getDataDigestSettable()
-  {
+  public Boolean getDataDigestSettable() {
     return this.dataDigestSettable;
   }
 
-  public Boolean getTargetHeaderDigestSettable()
-  {
+  public Boolean getTargetHeaderDigestSettable() {
     return this.targetHeaderDigestSettable;
   }
 
-  public Boolean getTargetDataDigestSettable()
-  {
+  public Boolean getTargetDataDigestSettable() {
     return this.targetDataDigestSettable;
   }
 
-  public void setHeaderDigestSettable(Boolean headerDigestSettable)
-  {
+  public void setHeaderDigestSettable(Boolean headerDigestSettable) {
     this.headerDigestSettable=headerDigestSettable;
   }
 
-  public void setDataDigestSettable(Boolean dataDigestSettable)
-  {
+  public void setDataDigestSettable(Boolean dataDigestSettable) {
     this.dataDigestSettable=dataDigestSettable;
   }
 
-  public void setTargetHeaderDigestSettable(Boolean targetHeaderDigestSettable)
-  {
+  public void setTargetHeaderDigestSettable(Boolean targetHeaderDigestSettable) {
     this.targetHeaderDigestSettable=targetHeaderDigestSettable;
   }
 
-  public void setTargetDataDigestSettable(Boolean targetDataDigestSettable)
-  {
+  public void setTargetDataDigestSettable(Boolean targetDataDigestSettable) {
     this.targetDataDigestSettable=targetDataDigestSettable;
   }
 }

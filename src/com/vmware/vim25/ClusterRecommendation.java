@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -31,11 +31,12 @@ package com.vmware.vim25;
 import java.util.Calendar;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class ClusterRecommendation extends DynamicData
-{
+@SuppressWarnings("all")
+public class ClusterRecommendation extends DynamicData {
   public String key;
   public String type;
   public Calendar time;
@@ -46,93 +47,75 @@ public class ClusterRecommendation extends DynamicData
   public ClusterAction[] action;
   public ManagedObjectReference target;
 
-  public String getKey()
-  {
+  public String getKey() {
     return this.key;
   }
 
-  public String getType()
-  {
+  public String getType() {
     return this.type;
   }
 
-  public Calendar getTime()
-  {
+  public Calendar getTime() {
     return this.time;
   }
 
-  public int getRating()
-  {
+  public int getRating() {
     return this.rating;
   }
 
-  public String getReason()
-  {
+  public String getReason() {
     return this.reason;
   }
 
-  public String getReasonText()
-  {
+  public String getReasonText() {
     return this.reasonText;
   }
 
-  public String[] getPrerequisite()
-  {
+  public String[] getPrerequisite() {
     return this.prerequisite;
   }
 
-  public ClusterAction[] getAction()
-  {
+  public ClusterAction[] getAction() {
     return this.action;
   }
 
-  public ManagedObjectReference getTarget()
-  {
+  public ManagedObjectReference getTarget() {
     return this.target;
   }
 
-  public void setKey(String key)
-  {
+  public void setKey(String key) {
     this.key=key;
   }
 
-  public void setType(String type)
-  {
+  public void setType(String type) {
     this.type=type;
   }
 
-  public void setTime(Calendar time)
-  {
+  public void setTime(Calendar time) {
     this.time=time;
   }
 
-  public void setRating(int rating)
-  {
+  public void setRating(int rating) {
     this.rating=rating;
   }
 
-  public void setReason(String reason)
-  {
+  public void setReason(String reason) {
     this.reason=reason;
   }
 
-  public void setReasonText(String reasonText)
-  {
+  public void setReasonText(String reasonText) {
     this.reasonText=reasonText;
   }
 
-  public void setPrerequisite(String[] prerequisite)
-  {
+  public void setPrerequisite(String[] prerequisite) {
     this.prerequisite=prerequisite;
   }
 
-  public void setAction(ClusterAction[] action)
-  {
+  public void setAction(ClusterAction[] action) {
     this.action=action;
   }
 
-  public void setTarget(ManagedObjectReference target)
-  {
+  public void setTarget(ManagedObjectReference target) {
     this.target=target;
   }
 }

@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,11 +30,12 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class HttpNfcLeaseManifestEntry extends DynamicData
-{
+@SuppressWarnings("all")
+public class HttpNfcLeaseManifestEntry extends DynamicData {
   public String key;
   public String sha1;
   public long size;
@@ -42,63 +43,51 @@ public class HttpNfcLeaseManifestEntry extends DynamicData
   public Long capacity;
   public Long populatedSize;
 
-  public String getKey()
-  {
+  public String getKey() {
     return this.key;
   }
 
-  public String getSha1()
-  {
+  public String getSha1() {
     return this.sha1;
   }
 
-  public long getSize()
-  {
+  public long getSize() {
     return this.size;
   }
 
-  public boolean isDisk()
-  {
+  public boolean isDisk() {
     return this.disk;
   }
 
-  public Long getCapacity()
-  {
+  public Long getCapacity() {
     return this.capacity;
   }
 
-  public Long getPopulatedSize()
-  {
+  public Long getPopulatedSize() {
     return this.populatedSize;
   }
 
-  public void setKey(String key)
-  {
+  public void setKey(String key) {
     this.key=key;
   }
 
-  public void setSha1(String sha1)
-  {
+  public void setSha1(String sha1) {
     this.sha1=sha1;
   }
 
-  public void setSize(long size)
-  {
+  public void setSize(long size) {
     this.size=size;
   }
 
-  public void setDisk(boolean disk)
-  {
+  public void setDisk(boolean disk) {
     this.disk=disk;
   }
 
-  public void setCapacity(Long capacity)
-  {
+  public void setCapacity(Long capacity) {
     this.capacity=capacity;
   }
 
-  public void setPopulatedSize(Long populatedSize)
-  {
+  public void setPopulatedSize(Long populatedSize) {
     this.populatedSize=populatedSize;
   }
 }

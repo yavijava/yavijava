@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,53 +30,46 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class DistributedVirtualSwitchPortConnection extends DynamicData
-{
+@SuppressWarnings("all")
+public class DistributedVirtualSwitchPortConnection extends DynamicData {
   public String switchUuid;
   public String portgroupKey;
   public String portKey;
   public Integer connectionCookie;
 
-  public String getSwitchUuid()
-  {
+  public String getSwitchUuid() {
     return this.switchUuid;
   }
 
-  public String getPortgroupKey()
-  {
+  public String getPortgroupKey() {
     return this.portgroupKey;
   }
 
-  public String getPortKey()
-  {
+  public String getPortKey() {
     return this.portKey;
   }
 
-  public Integer getConnectionCookie()
-  {
+  public Integer getConnectionCookie() {
     return this.connectionCookie;
   }
 
-  public void setSwitchUuid(String switchUuid)
-  {
+  public void setSwitchUuid(String switchUuid) {
     this.switchUuid=switchUuid;
   }
 
-  public void setPortgroupKey(String portgroupKey)
-  {
+  public void setPortgroupKey(String portgroupKey) {
     this.portgroupKey=portgroupKey;
   }
 
-  public void setPortKey(String portKey)
-  {
+  public void setPortKey(String portKey) {
     this.portKey=portKey;
   }
 
-  public void setConnectionCookie(Integer connectionCookie)
-  {
+  public void setConnectionCookie(Integer connectionCookie) {
     this.connectionCookie=connectionCookie;
   }
 }

@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,31 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class VirtualMachineImportSpec extends ImportSpec
-{
+@SuppressWarnings("all")
+public class VirtualMachineImportSpec extends ImportSpec {
   public VirtualMachineConfigSpec configSpec;
   public ManagedObjectReference resPoolEntity;
 
-  public VirtualMachineConfigSpec getConfigSpec()
-  {
+  public VirtualMachineConfigSpec getConfigSpec() {
     return this.configSpec;
   }
 
-  public ManagedObjectReference getResPoolEntity()
-  {
+  public ManagedObjectReference getResPoolEntity() {
     return this.resPoolEntity;
   }
 
-  public void setConfigSpec(VirtualMachineConfigSpec configSpec)
-  {
+  public void setConfigSpec(VirtualMachineConfigSpec configSpec) {
     this.configSpec=configSpec;
   }
 
-  public void setResPoolEntity(ManagedObjectReference resPoolEntity)
-  {
+  public void setResPoolEntity(ManagedObjectReference resPoolEntity) {
     this.resPoolEntity=resPoolEntity;
   }
 }

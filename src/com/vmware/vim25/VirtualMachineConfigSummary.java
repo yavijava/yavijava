@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,11 +30,12 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class VirtualMachineConfigSummary extends DynamicData
-{
+@SuppressWarnings("all")
+public class VirtualMachineConfigSummary extends DynamicData {
   public String name;
   public boolean template;
   public String vmPathName;
@@ -54,183 +55,147 @@ public class VirtualMachineConfigSummary extends DynamicData
   public FaultToleranceConfigInfo ftInfo;
   public ManagedByInfo managedBy;
 
-  public String getName()
-  {
+  public String getName() {
     return this.name;
   }
 
-  public boolean isTemplate()
-  {
+  public boolean isTemplate() {
     return this.template;
   }
 
-  public String getVmPathName()
-  {
+  public String getVmPathName() {
     return this.vmPathName;
   }
 
-  public Integer getMemorySizeMB()
-  {
+  public Integer getMemorySizeMB() {
     return this.memorySizeMB;
   }
 
-  public Integer getCpuReservation()
-  {
+  public Integer getCpuReservation() {
     return this.cpuReservation;
   }
 
-  public Integer getMemoryReservation()
-  {
+  public Integer getMemoryReservation() {
     return this.memoryReservation;
   }
 
-  public Integer getNumCpu()
-  {
+  public Integer getNumCpu() {
     return this.numCpu;
   }
 
-  public Integer getNumEthernetCards()
-  {
+  public Integer getNumEthernetCards() {
     return this.numEthernetCards;
   }
 
-  public Integer getNumVirtualDisks()
-  {
+  public Integer getNumVirtualDisks() {
     return this.numVirtualDisks;
   }
 
-  public String getUuid()
-  {
+  public String getUuid() {
     return this.uuid;
   }
 
-  public String getInstanceUuid()
-  {
+  public String getInstanceUuid() {
     return this.instanceUuid;
   }
 
-  public String getGuestId()
-  {
+  public String getGuestId() {
     return this.guestId;
   }
 
-  public String getGuestFullName()
-  {
+  public String getGuestFullName() {
     return this.guestFullName;
   }
 
-  public String getAnnotation()
-  {
+  public String getAnnotation() {
     return this.annotation;
   }
 
-  public VAppProductInfo getProduct()
-  {
+  public VAppProductInfo getProduct() {
     return this.product;
   }
 
-  public Boolean getInstallBootRequired()
-  {
+  public Boolean getInstallBootRequired() {
     return this.installBootRequired;
   }
 
-  public FaultToleranceConfigInfo getFtInfo()
-  {
+  public FaultToleranceConfigInfo getFtInfo() {
     return this.ftInfo;
   }
 
-  public ManagedByInfo getManagedBy()
-  {
+  public ManagedByInfo getManagedBy() {
     return this.managedBy;
   }
 
-  public void setName(String name)
-  {
+  public void setName(String name) {
     this.name=name;
   }
 
-  public void setTemplate(boolean template)
-  {
+  public void setTemplate(boolean template) {
     this.template=template;
   }
 
-  public void setVmPathName(String vmPathName)
-  {
+  public void setVmPathName(String vmPathName) {
     this.vmPathName=vmPathName;
   }
 
-  public void setMemorySizeMB(Integer memorySizeMB)
-  {
+  public void setMemorySizeMB(Integer memorySizeMB) {
     this.memorySizeMB=memorySizeMB;
   }
 
-  public void setCpuReservation(Integer cpuReservation)
-  {
+  public void setCpuReservation(Integer cpuReservation) {
     this.cpuReservation=cpuReservation;
   }
 
-  public void setMemoryReservation(Integer memoryReservation)
-  {
+  public void setMemoryReservation(Integer memoryReservation) {
     this.memoryReservation=memoryReservation;
   }
 
-  public void setNumCpu(Integer numCpu)
-  {
+  public void setNumCpu(Integer numCpu) {
     this.numCpu=numCpu;
   }
 
-  public void setNumEthernetCards(Integer numEthernetCards)
-  {
+  public void setNumEthernetCards(Integer numEthernetCards) {
     this.numEthernetCards=numEthernetCards;
   }
 
-  public void setNumVirtualDisks(Integer numVirtualDisks)
-  {
+  public void setNumVirtualDisks(Integer numVirtualDisks) {
     this.numVirtualDisks=numVirtualDisks;
   }
 
-  public void setUuid(String uuid)
-  {
+  public void setUuid(String uuid) {
     this.uuid=uuid;
   }
 
-  public void setInstanceUuid(String instanceUuid)
-  {
+  public void setInstanceUuid(String instanceUuid) {
     this.instanceUuid=instanceUuid;
   }
 
-  public void setGuestId(String guestId)
-  {
+  public void setGuestId(String guestId) {
     this.guestId=guestId;
   }
 
-  public void setGuestFullName(String guestFullName)
-  {
+  public void setGuestFullName(String guestFullName) {
     this.guestFullName=guestFullName;
   }
 
-  public void setAnnotation(String annotation)
-  {
+  public void setAnnotation(String annotation) {
     this.annotation=annotation;
   }
 
-  public void setProduct(VAppProductInfo product)
-  {
+  public void setProduct(VAppProductInfo product) {
     this.product=product;
   }
 
-  public void setInstallBootRequired(Boolean installBootRequired)
-  {
+  public void setInstallBootRequired(Boolean installBootRequired) {
     this.installBootRequired=installBootRequired;
   }
 
-  public void setFtInfo(FaultToleranceConfigInfo ftInfo)
-  {
+  public void setFtInfo(FaultToleranceConfigInfo ftInfo) {
     this.ftInfo=ftInfo;
   }
 
-  public void setManagedBy(ManagedByInfo managedBy)
-  {
+  public void setManagedBy(ManagedByInfo managedBy) {
     this.managedBy=managedBy;
   }
 }

@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,11 +30,12 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class AutoStartPowerInfo extends DynamicData
-{
+@SuppressWarnings("all")
+public class AutoStartPowerInfo extends DynamicData {
   public ManagedObjectReference key;
   public int startOrder;
   public int startDelay;
@@ -43,73 +44,59 @@ public class AutoStartPowerInfo extends DynamicData
   public int stopDelay;
   public String stopAction;
 
-  public ManagedObjectReference getKey()
-  {
+  public ManagedObjectReference getKey() {
     return this.key;
   }
 
-  public int getStartOrder()
-  {
+  public int getStartOrder() {
     return this.startOrder;
   }
 
-  public int getStartDelay()
-  {
+  public int getStartDelay() {
     return this.startDelay;
   }
 
-  public AutoStartWaitHeartbeatSetting getWaitForHeartbeat()
-  {
+  public AutoStartWaitHeartbeatSetting getWaitForHeartbeat() {
     return this.waitForHeartbeat;
   }
 
-  public String getStartAction()
-  {
+  public String getStartAction() {
     return this.startAction;
   }
 
-  public int getStopDelay()
-  {
+  public int getStopDelay() {
     return this.stopDelay;
   }
 
-  public String getStopAction()
-  {
+  public String getStopAction() {
     return this.stopAction;
   }
 
-  public void setKey(ManagedObjectReference key)
-  {
+  public void setKey(ManagedObjectReference key) {
     this.key=key;
   }
 
-  public void setStartOrder(int startOrder)
-  {
+  public void setStartOrder(int startOrder) {
     this.startOrder=startOrder;
   }
 
-  public void setStartDelay(int startDelay)
-  {
+  public void setStartDelay(int startDelay) {
     this.startDelay=startDelay;
   }
 
-  public void setWaitForHeartbeat(AutoStartWaitHeartbeatSetting waitForHeartbeat)
-  {
+  public void setWaitForHeartbeat(AutoStartWaitHeartbeatSetting waitForHeartbeat) {
     this.waitForHeartbeat=waitForHeartbeat;
   }
 
-  public void setStartAction(String startAction)
-  {
+  public void setStartAction(String startAction) {
     this.startAction=startAction;
   }
 
-  public void setStopDelay(int stopDelay)
-  {
+  public void setStopDelay(int stopDelay) {
     this.stopDelay=stopDelay;
   }
 
-  public void setStopAction(String stopAction)
-  {
+  public void setStopAction(String stopAction) {
     this.stopAction=stopAction;
   }
 }

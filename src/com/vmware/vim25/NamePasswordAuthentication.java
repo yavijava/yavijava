@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,31 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class NamePasswordAuthentication extends GuestAuthentication
-{
+@SuppressWarnings("all")
+public class NamePasswordAuthentication extends GuestAuthentication {
   public String username;
   public String password;
 
-  public String getUsername()
-  {
+  public String getUsername() {
     return this.username;
   }
 
-  public String getPassword()
-  {
+  public String getPassword() {
     return this.password;
   }
 
-  public void setUsername(String username)
-  {
+  public void setUsername(String username) {
     this.username=username;
   }
 
-  public void setPassword(String password)
-  {
+  public void setPassword(String password) {
     this.password=password;
   }
 }

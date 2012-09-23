@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,53 +30,46 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class HostSystemInfo extends DynamicData
-{
+@SuppressWarnings("all")
+public class HostSystemInfo extends DynamicData {
   public String vendor;
   public String model;
   public String uuid;
   public HostSystemIdentificationInfo[] otherIdentifyingInfo;
 
-  public String getVendor()
-  {
+  public String getVendor() {
     return this.vendor;
   }
 
-  public String getModel()
-  {
+  public String getModel() {
     return this.model;
   }
 
-  public String getUuid()
-  {
+  public String getUuid() {
     return this.uuid;
   }
 
-  public HostSystemIdentificationInfo[] getOtherIdentifyingInfo()
-  {
+  public HostSystemIdentificationInfo[] getOtherIdentifyingInfo() {
     return this.otherIdentifyingInfo;
   }
 
-  public void setVendor(String vendor)
-  {
+  public void setVendor(String vendor) {
     this.vendor=vendor;
   }
 
-  public void setModel(String model)
-  {
+  public void setModel(String model) {
     this.model=model;
   }
 
-  public void setUuid(String uuid)
-  {
+  public void setUuid(String uuid) {
     this.uuid=uuid;
   }
 
-  public void setOtherIdentifyingInfo(HostSystemIdentificationInfo[] otherIdentifyingInfo)
-  {
+  public void setOtherIdentifyingInfo(HostSystemIdentificationInfo[] otherIdentifyingInfo) {
     this.otherIdentifyingInfo=otherIdentifyingInfo;
   }
 }

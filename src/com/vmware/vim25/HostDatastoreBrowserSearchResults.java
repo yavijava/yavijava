@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,42 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class HostDatastoreBrowserSearchResults extends DynamicData
-{
+@SuppressWarnings("all")
+public class HostDatastoreBrowserSearchResults extends DynamicData {
   public ManagedObjectReference datastore;
   public String folderPath;
   public FileInfo[] file;
 
-  public ManagedObjectReference getDatastore()
-  {
+  public ManagedObjectReference getDatastore() {
     return this.datastore;
   }
 
-  public String getFolderPath()
-  {
+  public String getFolderPath() {
     return this.folderPath;
   }
 
-  public FileInfo[] getFile()
-  {
+  public FileInfo[] getFile() {
     return this.file;
   }
 
-  public void setDatastore(ManagedObjectReference datastore)
-  {
+  public void setDatastore(ManagedObjectReference datastore) {
     this.datastore=datastore;
   }
 
-  public void setFolderPath(String folderPath)
-  {
+  public void setFolderPath(String folderPath) {
     this.folderPath=folderPath;
   }
 
-  public void setFile(FileInfo[] file)
-  {
+  public void setFile(FileInfo[] file) {
     this.file=file;
   }
 }

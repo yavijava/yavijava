@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,25 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class ArrayOfHostNatServicePortForwardSpec
-{
+public class ArrayOfHostNatServicePortForwardSpec {
   public HostNatServicePortForwardSpec[] HostNatServicePortForwardSpec;
 
-  public HostNatServicePortForwardSpec[] getHostNatServicePortForwardSpec()
-  {
+  public HostNatServicePortForwardSpec[] getHostNatServicePortForwardSpec() {
     return this.HostNatServicePortForwardSpec;
   }
 
-  public HostNatServicePortForwardSpec getHostNatServicePortForwardSpec(int i)
-  {
+  public HostNatServicePortForwardSpec getHostNatServicePortForwardSpec(int i) {
     return this.HostNatServicePortForwardSpec[i];
   }
 
-  public void setHostNatServicePortForwardSpec(HostNatServicePortForwardSpec[] HostNatServicePortForwardSpec)
-  {
+  public void setHostNatServicePortForwardSpec(HostNatServicePortForwardSpec[] HostNatServicePortForwardSpec) {
     this.HostNatServicePortForwardSpec=HostNatServicePortForwardSpec;
   }
 }

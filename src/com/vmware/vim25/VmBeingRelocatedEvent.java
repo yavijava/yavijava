@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,42 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class VmBeingRelocatedEvent extends VmRelocateSpecEvent
-{
+@SuppressWarnings("all")
+public class VmBeingRelocatedEvent extends VmRelocateSpecEvent {
   public HostEventArgument destHost;
   public DatacenterEventArgument destDatacenter;
   public DatastoreEventArgument destDatastore;
 
-  public HostEventArgument getDestHost()
-  {
+  public HostEventArgument getDestHost() {
     return this.destHost;
   }
 
-  public DatacenterEventArgument getDestDatacenter()
-  {
+  public DatacenterEventArgument getDestDatacenter() {
     return this.destDatacenter;
   }
 
-  public DatastoreEventArgument getDestDatastore()
-  {
+  public DatastoreEventArgument getDestDatastore() {
     return this.destDatastore;
   }
 
-  public void setDestHost(HostEventArgument destHost)
-  {
+  public void setDestHost(HostEventArgument destHost) {
     this.destHost=destHost;
   }
 
-  public void setDestDatacenter(DatacenterEventArgument destDatacenter)
-  {
+  public void setDestDatacenter(DatacenterEventArgument destDatacenter) {
     this.destDatacenter=destDatacenter;
   }
 
-  public void setDestDatastore(DatastoreEventArgument destDatastore)
-  {
+  public void setDestDatastore(DatastoreEventArgument destDatastore) {
     this.destDatastore=destDatastore;
   }
 }

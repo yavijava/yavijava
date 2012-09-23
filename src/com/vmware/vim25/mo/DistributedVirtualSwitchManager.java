@@ -1,4 +1,5 @@
 /*================================================================================
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 Copyright (c) 2008 VMware, Inc. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
@@ -31,7 +32,9 @@ package com.vmware.vim25.mo;
 
 import java.rmi.RemoteException;
 
+import com.vmware.vim25.BackupBlobWriteFailure;
 import com.vmware.vim25.DVSFeatureCapability;
+import com.vmware.vim25.DVSHealthCheckConfig;
 import com.vmware.vim25.DVSManagerDvsConfigTarget;
 import com.vmware.vim25.DistributedVirtualSwitchHostProductSpec;
 import com.vmware.vim25.DistributedVirtualSwitchManagerCompatibilityResult;
@@ -40,15 +43,17 @@ import com.vmware.vim25.DistributedVirtualSwitchManagerHostContainer;
 import com.vmware.vim25.DistributedVirtualSwitchManagerHostDvsFilterSpec;
 import com.vmware.vim25.DistributedVirtualSwitchProductSpec;
 import com.vmware.vim25.DvsFault;
+import com.vmware.vim25.EntityBackupConfig;
 import com.vmware.vim25.ManagedObjectReference;
 import com.vmware.vim25.NotFound;
 import com.vmware.vim25.RuntimeFault;
+import com.vmware.vim25.SelectionSet;
 import com.vmware.vim25.mo.util.MorUtil;
 
 /**
  * The managed object class corresponding to the one defined in VI SDK API reference.
  * @since 4.0
- * @author Steve JIN (sjin@vmware.com)
+ * @author Steve JIN (http://www.doublecloud.org)
  */
 
 public class DistributedVirtualSwitchManager extends ManagedObject 
@@ -128,5 +133,26 @@ public class DistributedVirtualSwitchManager extends ManagedObject
 	  ManagedObjectReference[] hostMors = MorUtil.createMORs(hosts);
 	  ManagedObjectReference taskMor = getVimService().rectifyDvsOnHost_Task(getMOR(), hostMors);
 	  return new Task(getServerConnection(), taskMor);
+	}
+
+	/** @since SDK5.1 */
+	public Task dVSManagerExportEntity_Task(SelectionSet[] selectionSet) throws BackupBlobWriteFailure, NotFound, RuntimeFault, RemoteException 
+	{
+	    ManagedObjectReference taskMor = getVimService().dVSManagerExportEntity_Task(getMOR(), selectionSet);
+	    return new Task(getServerConnection(), taskMor);
+	}
+
+	/** @since SDK5.1 */
+	public Task dVSManagerImportEntity_Task(EntityBackupConfig[] entityBackup, String importType) throws DvsFault, NotFound, RuntimeFault, RemoteException 
+	{
+	    ManagedObjectReference taskMor = getVimService().dVSManagerImportEntity_Task(getMOR(), entityBackup, importType);
+	    return new Task(getServerConnection(), taskMor);
+	}
+
+	/** @since SDK5.1 */
+	public DistributedVirtualPortgroup dVSManagerLookupDvPortGroup(String switchUuid, String portgroupKey) throws NotFound, RuntimeFault, RemoteException 
+	{
+	    ManagedObjectReference mor = getVimService().dVSManagerLookupDvPortGroup(getMOR(), switchUuid, portgroupKey);
+	    return new DistributedVirtualPortgroup(getServerConnection(), mor);
 	}
 }

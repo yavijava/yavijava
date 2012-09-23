@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,97 +30,91 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class HostInternetScsiHbaStaticTarget extends DynamicData
-{
+@SuppressWarnings("all")
+public class HostInternetScsiHbaStaticTarget extends DynamicData {
   public String address;
   public Integer port;
   public String iScsiName;
+  public String discoveryMethod;
   public HostInternetScsiHbaAuthenticationProperties authenticationProperties;
   public HostInternetScsiHbaDigestProperties digestProperties;
   public OptionDef[] supportedAdvancedOptions;
   public HostInternetScsiHbaParamValue[] advancedOptions;
   public String parent;
 
-  public String getAddress()
-  {
+  public String getAddress() {
     return this.address;
   }
 
-  public Integer getPort()
-  {
+  public Integer getPort() {
     return this.port;
   }
 
-  public String getIScsiName()
-  {
+  public String getIScsiName() {
     return this.iScsiName;
   }
 
-  public HostInternetScsiHbaAuthenticationProperties getAuthenticationProperties()
-  {
+  public String getDiscoveryMethod() {
+    return this.discoveryMethod;
+  }
+
+  public HostInternetScsiHbaAuthenticationProperties getAuthenticationProperties() {
     return this.authenticationProperties;
   }
 
-  public HostInternetScsiHbaDigestProperties getDigestProperties()
-  {
+  public HostInternetScsiHbaDigestProperties getDigestProperties() {
     return this.digestProperties;
   }
 
-  public OptionDef[] getSupportedAdvancedOptions()
-  {
+  public OptionDef[] getSupportedAdvancedOptions() {
     return this.supportedAdvancedOptions;
   }
 
-  public HostInternetScsiHbaParamValue[] getAdvancedOptions()
-  {
+  public HostInternetScsiHbaParamValue[] getAdvancedOptions() {
     return this.advancedOptions;
   }
 
-  public String getParent()
-  {
+  public String getParent() {
     return this.parent;
   }
 
-  public void setAddress(String address)
-  {
+  public void setAddress(String address) {
     this.address=address;
   }
 
-  public void setPort(Integer port)
-  {
+  public void setPort(Integer port) {
     this.port=port;
   }
 
-  public void setIScsiName(String iScsiName)
-  {
+  public void setIScsiName(String iScsiName) {
     this.iScsiName=iScsiName;
   }
 
-  public void setAuthenticationProperties(HostInternetScsiHbaAuthenticationProperties authenticationProperties)
-  {
+  public void setDiscoveryMethod(String discoveryMethod) {
+    this.discoveryMethod=discoveryMethod;
+  }
+
+  public void setAuthenticationProperties(HostInternetScsiHbaAuthenticationProperties authenticationProperties) {
     this.authenticationProperties=authenticationProperties;
   }
 
-  public void setDigestProperties(HostInternetScsiHbaDigestProperties digestProperties)
-  {
+  public void setDigestProperties(HostInternetScsiHbaDigestProperties digestProperties) {
     this.digestProperties=digestProperties;
   }
 
-  public void setSupportedAdvancedOptions(OptionDef[] supportedAdvancedOptions)
-  {
+  public void setSupportedAdvancedOptions(OptionDef[] supportedAdvancedOptions) {
     this.supportedAdvancedOptions=supportedAdvancedOptions;
   }
 
-  public void setAdvancedOptions(HostInternetScsiHbaParamValue[] advancedOptions)
-  {
+  public void setAdvancedOptions(HostInternetScsiHbaParamValue[] advancedOptions) {
     this.advancedOptions=advancedOptions;
   }
 
-  public void setParent(String parent)
-  {
+  public void setParent(String parent) {
     this.parent=parent;
   }
 }

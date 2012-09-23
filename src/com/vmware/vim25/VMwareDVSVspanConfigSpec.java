@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,31 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class VMwareDVSVspanConfigSpec extends DynamicData
-{
+@SuppressWarnings("all")
+public class VMwareDVSVspanConfigSpec extends DynamicData {
   public VMwareVspanSession vspanSession;
   public String operation;
 
-  public VMwareVspanSession getVspanSession()
-  {
+  public VMwareVspanSession getVspanSession() {
     return this.vspanSession;
   }
 
-  public String getOperation()
-  {
+  public String getOperation() {
     return this.operation;
   }
 
-  public void setVspanSession(VMwareVspanSession vspanSession)
-  {
+  public void setVspanSession(VMwareVspanSession vspanSession) {
     this.vspanSession=vspanSession;
   }
 
-  public void setOperation(String operation)
-  {
+  public void setOperation(String operation) {
     this.operation=operation;
   }
 }

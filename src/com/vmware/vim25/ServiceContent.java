@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,11 +30,12 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class ServiceContent extends DynamicData
-{
+@SuppressWarnings("all")
+public class ServiceContent extends DynamicData {
   public ManagedObjectReference rootFolder;
   public ManagedObjectReference propertyCollector;
   public ManagedObjectReference viewManager;
@@ -43,6 +44,7 @@ public class ServiceContent extends DynamicData
   public ManagedObjectReference userDirectory;
   public ManagedObjectReference sessionManager;
   public ManagedObjectReference authorizationManager;
+  public ManagedObjectReference serviceManager;
   public ManagedObjectReference perfManager;
   public ManagedObjectReference scheduledTaskManager;
   public ManagedObjectReference alarmManager;
@@ -71,353 +73,291 @@ public class ServiceContent extends DynamicData
   public ManagedObjectReference storageResourceManager;
   public ManagedObjectReference guestOperationsManager;
 
-  public ManagedObjectReference getRootFolder()
-  {
+  public ManagedObjectReference getRootFolder() {
     return this.rootFolder;
   }
 
-  public ManagedObjectReference getPropertyCollector()
-  {
+  public ManagedObjectReference getPropertyCollector() {
     return this.propertyCollector;
   }
 
-  public ManagedObjectReference getViewManager()
-  {
+  public ManagedObjectReference getViewManager() {
     return this.viewManager;
   }
 
-  public AboutInfo getAbout()
-  {
+  public AboutInfo getAbout() {
     return this.about;
   }
 
-  public ManagedObjectReference getSetting()
-  {
+  public ManagedObjectReference getSetting() {
     return this.setting;
   }
 
-  public ManagedObjectReference getUserDirectory()
-  {
+  public ManagedObjectReference getUserDirectory() {
     return this.userDirectory;
   }
 
-  public ManagedObjectReference getSessionManager()
-  {
+  public ManagedObjectReference getSessionManager() {
     return this.sessionManager;
   }
 
-  public ManagedObjectReference getAuthorizationManager()
-  {
+  public ManagedObjectReference getAuthorizationManager() {
     return this.authorizationManager;
   }
 
-  public ManagedObjectReference getPerfManager()
-  {
+  public ManagedObjectReference getServiceManager() {
+    return this.serviceManager;
+  }
+
+  public ManagedObjectReference getPerfManager() {
     return this.perfManager;
   }
 
-  public ManagedObjectReference getScheduledTaskManager()
-  {
+  public ManagedObjectReference getScheduledTaskManager() {
     return this.scheduledTaskManager;
   }
 
-  public ManagedObjectReference getAlarmManager()
-  {
+  public ManagedObjectReference getAlarmManager() {
     return this.alarmManager;
   }
 
-  public ManagedObjectReference getEventManager()
-  {
+  public ManagedObjectReference getEventManager() {
     return this.eventManager;
   }
 
-  public ManagedObjectReference getTaskManager()
-  {
+  public ManagedObjectReference getTaskManager() {
     return this.taskManager;
   }
 
-  public ManagedObjectReference getExtensionManager()
-  {
+  public ManagedObjectReference getExtensionManager() {
     return this.extensionManager;
   }
 
-  public ManagedObjectReference getCustomizationSpecManager()
-  {
+  public ManagedObjectReference getCustomizationSpecManager() {
     return this.customizationSpecManager;
   }
 
-  public ManagedObjectReference getCustomFieldsManager()
-  {
+  public ManagedObjectReference getCustomFieldsManager() {
     return this.customFieldsManager;
   }
 
-  public ManagedObjectReference getAccountManager()
-  {
+  public ManagedObjectReference getAccountManager() {
     return this.accountManager;
   }
 
-  public ManagedObjectReference getDiagnosticManager()
-  {
+  public ManagedObjectReference getDiagnosticManager() {
     return this.diagnosticManager;
   }
 
-  public ManagedObjectReference getLicenseManager()
-  {
+  public ManagedObjectReference getLicenseManager() {
     return this.licenseManager;
   }
 
-  public ManagedObjectReference getSearchIndex()
-  {
+  public ManagedObjectReference getSearchIndex() {
     return this.searchIndex;
   }
 
-  public ManagedObjectReference getFileManager()
-  {
+  public ManagedObjectReference getFileManager() {
     return this.fileManager;
   }
 
-  public ManagedObjectReference getVirtualDiskManager()
-  {
+  public ManagedObjectReference getVirtualDiskManager() {
     return this.virtualDiskManager;
   }
 
-  public ManagedObjectReference getVirtualizationManager()
-  {
+  public ManagedObjectReference getVirtualizationManager() {
     return this.virtualizationManager;
   }
 
-  public ManagedObjectReference getSnmpSystem()
-  {
+  public ManagedObjectReference getSnmpSystem() {
     return this.snmpSystem;
   }
 
-  public ManagedObjectReference getVmProvisioningChecker()
-  {
+  public ManagedObjectReference getVmProvisioningChecker() {
     return this.vmProvisioningChecker;
   }
 
-  public ManagedObjectReference getVmCompatibilityChecker()
-  {
+  public ManagedObjectReference getVmCompatibilityChecker() {
     return this.vmCompatibilityChecker;
   }
 
-  public ManagedObjectReference getOvfManager()
-  {
+  public ManagedObjectReference getOvfManager() {
     return this.ovfManager;
   }
 
-  public ManagedObjectReference getIpPoolManager()
-  {
+  public ManagedObjectReference getIpPoolManager() {
     return this.ipPoolManager;
   }
 
-  public ManagedObjectReference getDvSwitchManager()
-  {
+  public ManagedObjectReference getDvSwitchManager() {
     return this.dvSwitchManager;
   }
 
-  public ManagedObjectReference getHostProfileManager()
-  {
+  public ManagedObjectReference getHostProfileManager() {
     return this.hostProfileManager;
   }
 
-  public ManagedObjectReference getClusterProfileManager()
-  {
+  public ManagedObjectReference getClusterProfileManager() {
     return this.clusterProfileManager;
   }
 
-  public ManagedObjectReference getComplianceManager()
-  {
+  public ManagedObjectReference getComplianceManager() {
     return this.complianceManager;
   }
 
-  public ManagedObjectReference getLocalizationManager()
-  {
+  public ManagedObjectReference getLocalizationManager() {
     return this.localizationManager;
   }
 
-  public ManagedObjectReference getStorageResourceManager()
-  {
+  public ManagedObjectReference getStorageResourceManager() {
     return this.storageResourceManager;
   }
 
-  public ManagedObjectReference getGuestOperationsManager()
-  {
+  public ManagedObjectReference getGuestOperationsManager() {
     return this.guestOperationsManager;
   }
 
-  public void setRootFolder(ManagedObjectReference rootFolder)
-  {
+  public void setRootFolder(ManagedObjectReference rootFolder) {
     this.rootFolder=rootFolder;
   }
 
-  public void setPropertyCollector(ManagedObjectReference propertyCollector)
-  {
+  public void setPropertyCollector(ManagedObjectReference propertyCollector) {
     this.propertyCollector=propertyCollector;
   }
 
-  public void setViewManager(ManagedObjectReference viewManager)
-  {
+  public void setViewManager(ManagedObjectReference viewManager) {
     this.viewManager=viewManager;
   }
 
-  public void setAbout(AboutInfo about)
-  {
+  public void setAbout(AboutInfo about) {
     this.about=about;
   }
 
-  public void setSetting(ManagedObjectReference setting)
-  {
+  public void setSetting(ManagedObjectReference setting) {
     this.setting=setting;
   }
 
-  public void setUserDirectory(ManagedObjectReference userDirectory)
-  {
+  public void setUserDirectory(ManagedObjectReference userDirectory) {
     this.userDirectory=userDirectory;
   }
 
-  public void setSessionManager(ManagedObjectReference sessionManager)
-  {
+  public void setSessionManager(ManagedObjectReference sessionManager) {
     this.sessionManager=sessionManager;
   }
 
-  public void setAuthorizationManager(ManagedObjectReference authorizationManager)
-  {
+  public void setAuthorizationManager(ManagedObjectReference authorizationManager) {
     this.authorizationManager=authorizationManager;
   }
 
-  public void setPerfManager(ManagedObjectReference perfManager)
-  {
+  public void setServiceManager(ManagedObjectReference serviceManager) {
+    this.serviceManager=serviceManager;
+  }
+
+  public void setPerfManager(ManagedObjectReference perfManager) {
     this.perfManager=perfManager;
   }
 
-  public void setScheduledTaskManager(ManagedObjectReference scheduledTaskManager)
-  {
+  public void setScheduledTaskManager(ManagedObjectReference scheduledTaskManager) {
     this.scheduledTaskManager=scheduledTaskManager;
   }
 
-  public void setAlarmManager(ManagedObjectReference alarmManager)
-  {
+  public void setAlarmManager(ManagedObjectReference alarmManager) {
     this.alarmManager=alarmManager;
   }
 
-  public void setEventManager(ManagedObjectReference eventManager)
-  {
+  public void setEventManager(ManagedObjectReference eventManager) {
     this.eventManager=eventManager;
   }
 
-  public void setTaskManager(ManagedObjectReference taskManager)
-  {
+  public void setTaskManager(ManagedObjectReference taskManager) {
     this.taskManager=taskManager;
   }
 
-  public void setExtensionManager(ManagedObjectReference extensionManager)
-  {
+  public void setExtensionManager(ManagedObjectReference extensionManager) {
     this.extensionManager=extensionManager;
   }
 
-  public void setCustomizationSpecManager(ManagedObjectReference customizationSpecManager)
-  {
+  public void setCustomizationSpecManager(ManagedObjectReference customizationSpecManager) {
     this.customizationSpecManager=customizationSpecManager;
   }
 
-  public void setCustomFieldsManager(ManagedObjectReference customFieldsManager)
-  {
+  public void setCustomFieldsManager(ManagedObjectReference customFieldsManager) {
     this.customFieldsManager=customFieldsManager;
   }
 
-  public void setAccountManager(ManagedObjectReference accountManager)
-  {
+  public void setAccountManager(ManagedObjectReference accountManager) {
     this.accountManager=accountManager;
   }
 
-  public void setDiagnosticManager(ManagedObjectReference diagnosticManager)
-  {
+  public void setDiagnosticManager(ManagedObjectReference diagnosticManager) {
     this.diagnosticManager=diagnosticManager;
   }
 
-  public void setLicenseManager(ManagedObjectReference licenseManager)
-  {
+  public void setLicenseManager(ManagedObjectReference licenseManager) {
     this.licenseManager=licenseManager;
   }
 
-  public void setSearchIndex(ManagedObjectReference searchIndex)
-  {
+  public void setSearchIndex(ManagedObjectReference searchIndex) {
     this.searchIndex=searchIndex;
   }
 
-  public void setFileManager(ManagedObjectReference fileManager)
-  {
+  public void setFileManager(ManagedObjectReference fileManager) {
     this.fileManager=fileManager;
   }
 
-  public void setVirtualDiskManager(ManagedObjectReference virtualDiskManager)
-  {
+  public void setVirtualDiskManager(ManagedObjectReference virtualDiskManager) {
     this.virtualDiskManager=virtualDiskManager;
   }
 
-  public void setVirtualizationManager(ManagedObjectReference virtualizationManager)
-  {
+  public void setVirtualizationManager(ManagedObjectReference virtualizationManager) {
     this.virtualizationManager=virtualizationManager;
   }
 
-  public void setSnmpSystem(ManagedObjectReference snmpSystem)
-  {
+  public void setSnmpSystem(ManagedObjectReference snmpSystem) {
     this.snmpSystem=snmpSystem;
   }
 
-  public void setVmProvisioningChecker(ManagedObjectReference vmProvisioningChecker)
-  {
+  public void setVmProvisioningChecker(ManagedObjectReference vmProvisioningChecker) {
     this.vmProvisioningChecker=vmProvisioningChecker;
   }
 
-  public void setVmCompatibilityChecker(ManagedObjectReference vmCompatibilityChecker)
-  {
+  public void setVmCompatibilityChecker(ManagedObjectReference vmCompatibilityChecker) {
     this.vmCompatibilityChecker=vmCompatibilityChecker;
   }
 
-  public void setOvfManager(ManagedObjectReference ovfManager)
-  {
+  public void setOvfManager(ManagedObjectReference ovfManager) {
     this.ovfManager=ovfManager;
   }
 
-  public void setIpPoolManager(ManagedObjectReference ipPoolManager)
-  {
+  public void setIpPoolManager(ManagedObjectReference ipPoolManager) {
     this.ipPoolManager=ipPoolManager;
   }
 
-  public void setDvSwitchManager(ManagedObjectReference dvSwitchManager)
-  {
+  public void setDvSwitchManager(ManagedObjectReference dvSwitchManager) {
     this.dvSwitchManager=dvSwitchManager;
   }
 
-  public void setHostProfileManager(ManagedObjectReference hostProfileManager)
-  {
+  public void setHostProfileManager(ManagedObjectReference hostProfileManager) {
     this.hostProfileManager=hostProfileManager;
   }
 
-  public void setClusterProfileManager(ManagedObjectReference clusterProfileManager)
-  {
+  public void setClusterProfileManager(ManagedObjectReference clusterProfileManager) {
     this.clusterProfileManager=clusterProfileManager;
   }
 
-  public void setComplianceManager(ManagedObjectReference complianceManager)
-  {
+  public void setComplianceManager(ManagedObjectReference complianceManager) {
     this.complianceManager=complianceManager;
   }
 
-  public void setLocalizationManager(ManagedObjectReference localizationManager)
-  {
+  public void setLocalizationManager(ManagedObjectReference localizationManager) {
     this.localizationManager=localizationManager;
   }
 
-  public void setStorageResourceManager(ManagedObjectReference storageResourceManager)
-  {
+  public void setStorageResourceManager(ManagedObjectReference storageResourceManager) {
     this.storageResourceManager=storageResourceManager;
   }
 
-  public void setGuestOperationsManager(ManagedObjectReference guestOperationsManager)
-  {
+  public void setGuestOperationsManager(ManagedObjectReference guestOperationsManager) {
     this.guestOperationsManager=guestOperationsManager;
   }
 }

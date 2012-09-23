@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,42 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class AgentInstallFailed extends HostConnectFault
-{
+@SuppressWarnings("all")
+public class AgentInstallFailed extends HostConnectFault {
   public String reason;
   public Integer statusCode;
   public String installerOutput;
 
-  public String getReason()
-  {
+  public String getReason() {
     return this.reason;
   }
 
-  public Integer getStatusCode()
-  {
+  public Integer getStatusCode() {
     return this.statusCode;
   }
 
-  public String getInstallerOutput()
-  {
+  public String getInstallerOutput() {
     return this.installerOutput;
   }
 
-  public void setReason(String reason)
-  {
+  public void setReason(String reason) {
     this.reason=reason;
   }
 
-  public void setStatusCode(Integer statusCode)
-  {
+  public void setStatusCode(Integer statusCode) {
     this.statusCode=statusCode;
   }
 
-  public void setInstallerOutput(String installerOutput)
-  {
+  public void setInstallerOutput(String installerOutput) {
     this.installerOutput=installerOutput;
   }
 }

@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,53 +30,46 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class PrivilegePolicyDef extends DynamicData
-{
+@SuppressWarnings("all")
+public class PrivilegePolicyDef extends DynamicData {
   public String createPrivilege;
   public String readPrivilege;
   public String updatePrivilege;
   public String deletePrivilege;
 
-  public String getCreatePrivilege()
-  {
+  public String getCreatePrivilege() {
     return this.createPrivilege;
   }
 
-  public String getReadPrivilege()
-  {
+  public String getReadPrivilege() {
     return this.readPrivilege;
   }
 
-  public String getUpdatePrivilege()
-  {
+  public String getUpdatePrivilege() {
     return this.updatePrivilege;
   }
 
-  public String getDeletePrivilege()
-  {
+  public String getDeletePrivilege() {
     return this.deletePrivilege;
   }
 
-  public void setCreatePrivilege(String createPrivilege)
-  {
+  public void setCreatePrivilege(String createPrivilege) {
     this.createPrivilege=createPrivilege;
   }
 
-  public void setReadPrivilege(String readPrivilege)
-  {
+  public void setReadPrivilege(String readPrivilege) {
     this.readPrivilege=readPrivilege;
   }
 
-  public void setUpdatePrivilege(String updatePrivilege)
-  {
+  public void setUpdatePrivilege(String updatePrivilege) {
     this.updatePrivilege=updatePrivilege;
   }
 
-  public void setDeletePrivilege(String deletePrivilege)
-  {
+  public void setDeletePrivilege(String deletePrivilege) {
     this.deletePrivilege=deletePrivilege;
   }
 }

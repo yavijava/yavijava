@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,53 +30,55 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class Capability extends DynamicData
-{
+@SuppressWarnings("all")
+public class Capability extends DynamicData {
   public boolean provisioningSupported;
   public boolean multiHostSupported;
   public boolean userShellAccessSupported;
   public EVCMode[] supportedEVCMode;
+  public Boolean networkBackupAndRestoreSupported;
 
-  public boolean isProvisioningSupported()
-  {
+  public boolean isProvisioningSupported() {
     return this.provisioningSupported;
   }
 
-  public boolean isMultiHostSupported()
-  {
+  public boolean isMultiHostSupported() {
     return this.multiHostSupported;
   }
 
-  public boolean isUserShellAccessSupported()
-  {
+  public boolean isUserShellAccessSupported() {
     return this.userShellAccessSupported;
   }
 
-  public EVCMode[] getSupportedEVCMode()
-  {
+  public EVCMode[] getSupportedEVCMode() {
     return this.supportedEVCMode;
   }
 
-  public void setProvisioningSupported(boolean provisioningSupported)
-  {
+  public Boolean getNetworkBackupAndRestoreSupported() {
+    return this.networkBackupAndRestoreSupported;
+  }
+
+  public void setProvisioningSupported(boolean provisioningSupported) {
     this.provisioningSupported=provisioningSupported;
   }
 
-  public void setMultiHostSupported(boolean multiHostSupported)
-  {
+  public void setMultiHostSupported(boolean multiHostSupported) {
     this.multiHostSupported=multiHostSupported;
   }
 
-  public void setUserShellAccessSupported(boolean userShellAccessSupported)
-  {
+  public void setUserShellAccessSupported(boolean userShellAccessSupported) {
     this.userShellAccessSupported=userShellAccessSupported;
   }
 
-  public void setSupportedEVCMode(EVCMode[] supportedEVCMode)
-  {
+  public void setSupportedEVCMode(EVCMode[] supportedEVCMode) {
     this.supportedEVCMode=supportedEVCMode;
+  }
+
+  public void setNetworkBackupAndRestoreSupported(Boolean networkBackupAndRestoreSupported) {
+    this.networkBackupAndRestoreSupported=networkBackupAndRestoreSupported;
   }
 }

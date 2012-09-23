@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,42 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class HostScsiDisk extends ScsiLun
-{
+@SuppressWarnings("all")
+public class HostScsiDisk extends ScsiLun {
   public HostDiskDimensionsLba capacity;
   public String devicePath;
   public Boolean ssd;
 
-  public HostDiskDimensionsLba getCapacity()
-  {
+  public HostDiskDimensionsLba getCapacity() {
     return this.capacity;
   }
 
-  public String getDevicePath()
-  {
+  public String getDevicePath() {
     return this.devicePath;
   }
 
-  public Boolean getSsd()
-  {
+  public Boolean getSsd() {
     return this.ssd;
   }
 
-  public void setCapacity(HostDiskDimensionsLba capacity)
-  {
+  public void setCapacity(HostDiskDimensionsLba capacity) {
     this.capacity=capacity;
   }
 
-  public void setDevicePath(String devicePath)
-  {
+  public void setDevicePath(String devicePath) {
     this.devicePath=devicePath;
   }
 
-  public void setSsd(Boolean ssd)
-  {
+  public void setSsd(Boolean ssd) {
     this.ssd=ssd;
   }
 }

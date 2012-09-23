@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,42 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class NetDhcpConfigSpecDhcpOptionsSpec extends DynamicData
-{
+@SuppressWarnings("all")
+public class NetDhcpConfigSpecDhcpOptionsSpec extends DynamicData {
   public Boolean enable;
   public KeyValue[] config;
   public String operation;
 
-  public Boolean getEnable()
-  {
+  public Boolean getEnable() {
     return this.enable;
   }
 
-  public KeyValue[] getConfig()
-  {
+  public KeyValue[] getConfig() {
     return this.config;
   }
 
-  public String getOperation()
-  {
+  public String getOperation() {
     return this.operation;
   }
 
-  public void setEnable(Boolean enable)
-  {
+  public void setEnable(Boolean enable) {
     this.enable=enable;
   }
 
-  public void setConfig(KeyValue[] config)
-  {
+  public void setConfig(KeyValue[] config) {
     this.config=config;
   }
 
-  public void setOperation(String operation)
-  {
+  public void setOperation(String operation) {
     this.operation=operation;
   }
 }

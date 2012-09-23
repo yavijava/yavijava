@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,11 +30,12 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class ComputeResourceSummary extends DynamicData
-{
+@SuppressWarnings("all")
+public class ComputeResourceSummary extends DynamicData {
   public int totalCpu;
   public long totalMemory;
   public short numCpuCores;
@@ -45,93 +46,75 @@ public class ComputeResourceSummary extends DynamicData
   public int numEffectiveHosts;
   public ManagedEntityStatus overallStatus;
 
-  public int getTotalCpu()
-  {
+  public int getTotalCpu() {
     return this.totalCpu;
   }
 
-  public long getTotalMemory()
-  {
+  public long getTotalMemory() {
     return this.totalMemory;
   }
 
-  public short getNumCpuCores()
-  {
+  public short getNumCpuCores() {
     return this.numCpuCores;
   }
 
-  public short getNumCpuThreads()
-  {
+  public short getNumCpuThreads() {
     return this.numCpuThreads;
   }
 
-  public int getEffectiveCpu()
-  {
+  public int getEffectiveCpu() {
     return this.effectiveCpu;
   }
 
-  public long getEffectiveMemory()
-  {
+  public long getEffectiveMemory() {
     return this.effectiveMemory;
   }
 
-  public int getNumHosts()
-  {
+  public int getNumHosts() {
     return this.numHosts;
   }
 
-  public int getNumEffectiveHosts()
-  {
+  public int getNumEffectiveHosts() {
     return this.numEffectiveHosts;
   }
 
-  public ManagedEntityStatus getOverallStatus()
-  {
+  public ManagedEntityStatus getOverallStatus() {
     return this.overallStatus;
   }
 
-  public void setTotalCpu(int totalCpu)
-  {
+  public void setTotalCpu(int totalCpu) {
     this.totalCpu=totalCpu;
   }
 
-  public void setTotalMemory(long totalMemory)
-  {
+  public void setTotalMemory(long totalMemory) {
     this.totalMemory=totalMemory;
   }
 
-  public void setNumCpuCores(short numCpuCores)
-  {
+  public void setNumCpuCores(short numCpuCores) {
     this.numCpuCores=numCpuCores;
   }
 
-  public void setNumCpuThreads(short numCpuThreads)
-  {
+  public void setNumCpuThreads(short numCpuThreads) {
     this.numCpuThreads=numCpuThreads;
   }
 
-  public void setEffectiveCpu(int effectiveCpu)
-  {
+  public void setEffectiveCpu(int effectiveCpu) {
     this.effectiveCpu=effectiveCpu;
   }
 
-  public void setEffectiveMemory(long effectiveMemory)
-  {
+  public void setEffectiveMemory(long effectiveMemory) {
     this.effectiveMemory=effectiveMemory;
   }
 
-  public void setNumHosts(int numHosts)
-  {
+  public void setNumHosts(int numHosts) {
     this.numHosts=numHosts;
   }
 
-  public void setNumEffectiveHosts(int numEffectiveHosts)
-  {
+  public void setNumEffectiveHosts(int numEffectiveHosts) {
     this.numEffectiveHosts=numEffectiveHosts;
   }
 
-  public void setOverallStatus(ManagedEntityStatus overallStatus)
-  {
+  public void setOverallStatus(ManagedEntityStatus overallStatus) {
     this.overallStatus=overallStatus;
   }
 }

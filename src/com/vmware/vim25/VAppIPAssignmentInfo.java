@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,53 +30,46 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class VAppIPAssignmentInfo extends DynamicData
-{
+@SuppressWarnings("all")
+public class VAppIPAssignmentInfo extends DynamicData {
   public String[] supportedAllocationScheme;
   public String ipAllocationPolicy;
   public String[] supportedIpProtocol;
   public String ipProtocol;
 
-  public String[] getSupportedAllocationScheme()
-  {
+  public String[] getSupportedAllocationScheme() {
     return this.supportedAllocationScheme;
   }
 
-  public String getIpAllocationPolicy()
-  {
+  public String getIpAllocationPolicy() {
     return this.ipAllocationPolicy;
   }
 
-  public String[] getSupportedIpProtocol()
-  {
+  public String[] getSupportedIpProtocol() {
     return this.supportedIpProtocol;
   }
 
-  public String getIpProtocol()
-  {
+  public String getIpProtocol() {
     return this.ipProtocol;
   }
 
-  public void setSupportedAllocationScheme(String[] supportedAllocationScheme)
-  {
+  public void setSupportedAllocationScheme(String[] supportedAllocationScheme) {
     this.supportedAllocationScheme=supportedAllocationScheme;
   }
 
-  public void setIpAllocationPolicy(String ipAllocationPolicy)
-  {
+  public void setIpAllocationPolicy(String ipAllocationPolicy) {
     this.ipAllocationPolicy=ipAllocationPolicy;
   }
 
-  public void setSupportedIpProtocol(String[] supportedIpProtocol)
-  {
+  public void setSupportedIpProtocol(String[] supportedIpProtocol) {
     this.supportedIpProtocol=supportedIpProtocol;
   }
 
-  public void setIpProtocol(String ipProtocol)
-  {
+  public void setIpProtocol(String ipProtocol) {
     this.ipProtocol=ipProtocol;
   }
 }

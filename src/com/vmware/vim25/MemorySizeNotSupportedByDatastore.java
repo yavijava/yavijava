@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,42 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class MemorySizeNotSupportedByDatastore extends VirtualHardwareCompatibilityIssue
-{
+@SuppressWarnings("all")
+public class MemorySizeNotSupportedByDatastore extends VirtualHardwareCompatibilityIssue {
   public ManagedObjectReference datastore;
   public int memorySizeMB;
   public int maxMemorySizeMB;
 
-  public ManagedObjectReference getDatastore()
-  {
+  public ManagedObjectReference getDatastore() {
     return this.datastore;
   }
 
-  public int getMemorySizeMB()
-  {
+  public int getMemorySizeMB() {
     return this.memorySizeMB;
   }
 
-  public int getMaxMemorySizeMB()
-  {
+  public int getMaxMemorySizeMB() {
     return this.maxMemorySizeMB;
   }
 
-  public void setDatastore(ManagedObjectReference datastore)
-  {
+  public void setDatastore(ManagedObjectReference datastore) {
     this.datastore=datastore;
   }
 
-  public void setMemorySizeMB(int memorySizeMB)
-  {
+  public void setMemorySizeMB(int memorySizeMB) {
     this.memorySizeMB=memorySizeMB;
   }
 
-  public void setMaxMemorySizeMB(int maxMemorySizeMB)
-  {
+  public void setMaxMemorySizeMB(int maxMemorySizeMB) {
     this.maxMemorySizeMB=maxMemorySizeMB;
   }
 }

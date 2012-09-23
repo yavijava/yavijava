@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,53 +30,46 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class SendEmailAction extends Action
-{
+@SuppressWarnings("all")
+public class SendEmailAction extends Action {
   public String toList;
   public String ccList;
   public String subject;
   public String body;
 
-  public String getToList()
-  {
+  public String getToList() {
     return this.toList;
   }
 
-  public String getCcList()
-  {
+  public String getCcList() {
     return this.ccList;
   }
 
-  public String getSubject()
-  {
+  public String getSubject() {
     return this.subject;
   }
 
-  public String getBody()
-  {
+  public String getBody() {
     return this.body;
   }
 
-  public void setToList(String toList)
-  {
+  public void setToList(String toList) {
     this.toList=toList;
   }
 
-  public void setCcList(String ccList)
-  {
+  public void setCcList(String ccList) {
     this.ccList=ccList;
   }
 
-  public void setSubject(String subject)
-  {
+  public void setSubject(String subject) {
     this.subject=subject;
   }
 
-  public void setBody(String body)
-  {
+  public void setBody(String body) {
     this.body=body;
   }
 }

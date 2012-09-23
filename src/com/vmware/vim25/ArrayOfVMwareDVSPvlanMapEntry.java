@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,25 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class ArrayOfVMwareDVSPvlanMapEntry
-{
+public class ArrayOfVMwareDVSPvlanMapEntry {
   public VMwareDVSPvlanMapEntry[] VMwareDVSPvlanMapEntry;
 
-  public VMwareDVSPvlanMapEntry[] getVMwareDVSPvlanMapEntry()
-  {
+  public VMwareDVSPvlanMapEntry[] getVMwareDVSPvlanMapEntry() {
     return this.VMwareDVSPvlanMapEntry;
   }
 
-  public VMwareDVSPvlanMapEntry getVMwareDVSPvlanMapEntry(int i)
-  {
+  public VMwareDVSPvlanMapEntry getVMwareDVSPvlanMapEntry(int i) {
     return this.VMwareDVSPvlanMapEntry[i];
   }
 
-  public void setVMwareDVSPvlanMapEntry(VMwareDVSPvlanMapEntry[] VMwareDVSPvlanMapEntry)
-  {
+  public void setVMwareDVSPvlanMapEntry(VMwareDVSPvlanMapEntry[] VMwareDVSPvlanMapEntry) {
     this.VMwareDVSPvlanMapEntry=VMwareDVSPvlanMapEntry;
   }
 }

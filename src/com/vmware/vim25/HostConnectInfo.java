@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,11 +30,12 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class HostConnectInfo extends DynamicData
-{
+@SuppressWarnings("all")
+public class HostConnectInfo extends DynamicData {
   public String serverIp;
   public Boolean inDasCluster;
   public HostListSummary host;
@@ -45,93 +46,75 @@ public class HostConnectInfo extends DynamicData
   public HostDatastoreConnectInfo[] datastore;
   public HostLicenseConnectInfo license;
 
-  public String getServerIp()
-  {
+  public String getServerIp() {
     return this.serverIp;
   }
 
-  public Boolean getInDasCluster()
-  {
+  public Boolean getInDasCluster() {
     return this.inDasCluster;
   }
 
-  public HostListSummary getHost()
-  {
+  public HostListSummary getHost() {
     return this.host;
   }
 
-  public VirtualMachineSummary[] getVm()
-  {
+  public VirtualMachineSummary[] getVm() {
     return this.vm;
   }
 
-  public Boolean getVimAccountNameRequired()
-  {
+  public Boolean getVimAccountNameRequired() {
     return this.vimAccountNameRequired;
   }
 
-  public Boolean getClusterSupported()
-  {
+  public Boolean getClusterSupported() {
     return this.clusterSupported;
   }
 
-  public HostConnectInfoNetworkInfo[] getNetwork()
-  {
+  public HostConnectInfoNetworkInfo[] getNetwork() {
     return this.network;
   }
 
-  public HostDatastoreConnectInfo[] getDatastore()
-  {
+  public HostDatastoreConnectInfo[] getDatastore() {
     return this.datastore;
   }
 
-  public HostLicenseConnectInfo getLicense()
-  {
+  public HostLicenseConnectInfo getLicense() {
     return this.license;
   }
 
-  public void setServerIp(String serverIp)
-  {
+  public void setServerIp(String serverIp) {
     this.serverIp=serverIp;
   }
 
-  public void setInDasCluster(Boolean inDasCluster)
-  {
+  public void setInDasCluster(Boolean inDasCluster) {
     this.inDasCluster=inDasCluster;
   }
 
-  public void setHost(HostListSummary host)
-  {
+  public void setHost(HostListSummary host) {
     this.host=host;
   }
 
-  public void setVm(VirtualMachineSummary[] vm)
-  {
+  public void setVm(VirtualMachineSummary[] vm) {
     this.vm=vm;
   }
 
-  public void setVimAccountNameRequired(Boolean vimAccountNameRequired)
-  {
+  public void setVimAccountNameRequired(Boolean vimAccountNameRequired) {
     this.vimAccountNameRequired=vimAccountNameRequired;
   }
 
-  public void setClusterSupported(Boolean clusterSupported)
-  {
+  public void setClusterSupported(Boolean clusterSupported) {
     this.clusterSupported=clusterSupported;
   }
 
-  public void setNetwork(HostConnectInfoNetworkInfo[] network)
-  {
+  public void setNetwork(HostConnectInfoNetworkInfo[] network) {
     this.network=network;
   }
 
-  public void setDatastore(HostDatastoreConnectInfo[] datastore)
-  {
+  public void setDatastore(HostDatastoreConnectInfo[] datastore) {
     this.datastore=datastore;
   }
 
-  public void setLicense(HostLicenseConnectInfo license)
-  {
+  public void setLicense(HostLicenseConnectInfo license) {
     this.license=license;
   }
 }

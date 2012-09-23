@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,31 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class StringOption extends OptionType
-{
+@SuppressWarnings("all")
+public class StringOption extends OptionType {
   public String defaultValue;
   public String validCharacters;
 
-  public String getDefaultValue()
-  {
+  public String getDefaultValue() {
     return this.defaultValue;
   }
 
-  public String getValidCharacters()
-  {
+  public String getValidCharacters() {
     return this.validCharacters;
   }
 
-  public void setDefaultValue(String defaultValue)
-  {
+  public void setDefaultValue(String defaultValue) {
     this.defaultValue=defaultValue;
   }
 
-  public void setValidCharacters(String validCharacters)
-  {
+  public void setValidCharacters(String validCharacters) {
     this.validCharacters=validCharacters;
   }
 }

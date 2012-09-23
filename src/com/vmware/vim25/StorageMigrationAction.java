@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,11 +30,12 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class StorageMigrationAction extends ClusterAction
-{
+@SuppressWarnings("all")
+public class StorageMigrationAction extends ClusterAction {
   public ManagedObjectReference vm;
   public VirtualMachineRelocateSpec relocateSpec;
   public ManagedObjectReference source;
@@ -47,113 +48,91 @@ public class StorageMigrationAction extends ClusterAction
   public Float ioLatencySrcBefore;
   public Float ioLatencyDstBefore;
 
-  public ManagedObjectReference getVm()
-  {
+  public ManagedObjectReference getVm() {
     return this.vm;
   }
 
-  public VirtualMachineRelocateSpec getRelocateSpec()
-  {
+  public VirtualMachineRelocateSpec getRelocateSpec() {
     return this.relocateSpec;
   }
 
-  public ManagedObjectReference getSource()
-  {
+  public ManagedObjectReference getSource() {
     return this.source;
   }
 
-  public ManagedObjectReference getDestination()
-  {
+  public ManagedObjectReference getDestination() {
     return this.destination;
   }
 
-  public long getSizeTransferred()
-  {
+  public long getSizeTransferred() {
     return this.sizeTransferred;
   }
 
-  public Float getSpaceUtilSrcBefore()
-  {
+  public Float getSpaceUtilSrcBefore() {
     return this.spaceUtilSrcBefore;
   }
 
-  public Float getSpaceUtilDstBefore()
-  {
+  public Float getSpaceUtilDstBefore() {
     return this.spaceUtilDstBefore;
   }
 
-  public Float getSpaceUtilSrcAfter()
-  {
+  public Float getSpaceUtilSrcAfter() {
     return this.spaceUtilSrcAfter;
   }
 
-  public Float getSpaceUtilDstAfter()
-  {
+  public Float getSpaceUtilDstAfter() {
     return this.spaceUtilDstAfter;
   }
 
-  public Float getIoLatencySrcBefore()
-  {
+  public Float getIoLatencySrcBefore() {
     return this.ioLatencySrcBefore;
   }
 
-  public Float getIoLatencyDstBefore()
-  {
+  public Float getIoLatencyDstBefore() {
     return this.ioLatencyDstBefore;
   }
 
-  public void setVm(ManagedObjectReference vm)
-  {
+  public void setVm(ManagedObjectReference vm) {
     this.vm=vm;
   }
 
-  public void setRelocateSpec(VirtualMachineRelocateSpec relocateSpec)
-  {
+  public void setRelocateSpec(VirtualMachineRelocateSpec relocateSpec) {
     this.relocateSpec=relocateSpec;
   }
 
-  public void setSource(ManagedObjectReference source)
-  {
+  public void setSource(ManagedObjectReference source) {
     this.source=source;
   }
 
-  public void setDestination(ManagedObjectReference destination)
-  {
+  public void setDestination(ManagedObjectReference destination) {
     this.destination=destination;
   }
 
-  public void setSizeTransferred(long sizeTransferred)
-  {
+  public void setSizeTransferred(long sizeTransferred) {
     this.sizeTransferred=sizeTransferred;
   }
 
-  public void setSpaceUtilSrcBefore(Float spaceUtilSrcBefore)
-  {
+  public void setSpaceUtilSrcBefore(Float spaceUtilSrcBefore) {
     this.spaceUtilSrcBefore=spaceUtilSrcBefore;
   }
 
-  public void setSpaceUtilDstBefore(Float spaceUtilDstBefore)
-  {
+  public void setSpaceUtilDstBefore(Float spaceUtilDstBefore) {
     this.spaceUtilDstBefore=spaceUtilDstBefore;
   }
 
-  public void setSpaceUtilSrcAfter(Float spaceUtilSrcAfter)
-  {
+  public void setSpaceUtilSrcAfter(Float spaceUtilSrcAfter) {
     this.spaceUtilSrcAfter=spaceUtilSrcAfter;
   }
 
-  public void setSpaceUtilDstAfter(Float spaceUtilDstAfter)
-  {
+  public void setSpaceUtilDstAfter(Float spaceUtilDstAfter) {
     this.spaceUtilDstAfter=spaceUtilDstAfter;
   }
 
-  public void setIoLatencySrcBefore(Float ioLatencySrcBefore)
-  {
+  public void setIoLatencySrcBefore(Float ioLatencySrcBefore) {
     this.ioLatencySrcBefore=ioLatencySrcBefore;
   }
 
-  public void setIoLatencyDstBefore(Float ioLatencyDstBefore)
-  {
+  public void setIoLatencyDstBefore(Float ioLatencyDstBefore) {
     this.ioLatencyDstBefore=ioLatencyDstBefore;
   }
 }

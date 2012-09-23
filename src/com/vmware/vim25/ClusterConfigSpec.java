@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,64 +30,55 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class ClusterConfigSpec extends DynamicData
-{
+@SuppressWarnings("all")
+public class ClusterConfigSpec extends DynamicData {
   public ClusterDasConfigInfo dasConfig;
   public ClusterDasVmConfigSpec[] dasVmConfigSpec;
   public ClusterDrsConfigInfo drsConfig;
   public ClusterDrsVmConfigSpec[] drsVmConfigSpec;
   public ClusterRuleSpec[] rulesSpec;
 
-  public ClusterDasConfigInfo getDasConfig()
-  {
+  public ClusterDasConfigInfo getDasConfig() {
     return this.dasConfig;
   }
 
-  public ClusterDasVmConfigSpec[] getDasVmConfigSpec()
-  {
+  public ClusterDasVmConfigSpec[] getDasVmConfigSpec() {
     return this.dasVmConfigSpec;
   }
 
-  public ClusterDrsConfigInfo getDrsConfig()
-  {
+  public ClusterDrsConfigInfo getDrsConfig() {
     return this.drsConfig;
   }
 
-  public ClusterDrsVmConfigSpec[] getDrsVmConfigSpec()
-  {
+  public ClusterDrsVmConfigSpec[] getDrsVmConfigSpec() {
     return this.drsVmConfigSpec;
   }
 
-  public ClusterRuleSpec[] getRulesSpec()
-  {
+  public ClusterRuleSpec[] getRulesSpec() {
     return this.rulesSpec;
   }
 
-  public void setDasConfig(ClusterDasConfigInfo dasConfig)
-  {
+  public void setDasConfig(ClusterDasConfigInfo dasConfig) {
     this.dasConfig=dasConfig;
   }
 
-  public void setDasVmConfigSpec(ClusterDasVmConfigSpec[] dasVmConfigSpec)
-  {
+  public void setDasVmConfigSpec(ClusterDasVmConfigSpec[] dasVmConfigSpec) {
     this.dasVmConfigSpec=dasVmConfigSpec;
   }
 
-  public void setDrsConfig(ClusterDrsConfigInfo drsConfig)
-  {
+  public void setDrsConfig(ClusterDrsConfigInfo drsConfig) {
     this.drsConfig=drsConfig;
   }
 
-  public void setDrsVmConfigSpec(ClusterDrsVmConfigSpec[] drsVmConfigSpec)
-  {
+  public void setDrsVmConfigSpec(ClusterDrsVmConfigSpec[] drsVmConfigSpec) {
     this.drsVmConfigSpec=drsVmConfigSpec;
   }
 
-  public void setRulesSpec(ClusterRuleSpec[] rulesSpec)
-  {
+  public void setRulesSpec(ClusterRuleSpec[] rulesSpec) {
     this.rulesSpec=rulesSpec;
   }
 }

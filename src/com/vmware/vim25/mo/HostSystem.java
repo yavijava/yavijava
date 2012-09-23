@@ -1,4 +1,5 @@
 /*================================================================================
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 Copyright (c) 2008 VMware, Inc. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
@@ -35,7 +36,7 @@ import com.vmware.vim25.mo.util.*;
 
 /**
  * The managed object class corresponding to the one defined in VI SDK API reference.
- * @author Steve JIN (sjin@vmware.com)
+ * @author Steve JIN (http://www.doublecloud.org)
  */
 
 public class HostSystem extends ManagedEntity 
@@ -156,6 +157,18 @@ public class HostSystem extends ManagedEntity
 	public HostConnectInfo queryHostConnectionInfo() throws RuntimeFault, RemoteException 
 	{
 		return getVimService().queryHostConnectionInfo(getMOR());
+	}
+	
+	/** @since SDK5.1 */
+	public HostTpmAttestationReport queryTpmAttestationReport() throws RuntimeFault, RemoteException
+	{
+	    return getVimService().queryTpmAttestationReport(getMOR());
+	}
+	
+	/** @since SDK5.1 */
+	public void updateSystemSwapConfiguration(HostSystemSwapConfiguration sysSwapConfig) throws RuntimeFault, RemoteException
+	{
+	  getVimService().updateSystemSwapConfiguration(getMOR(), sysSwapConfig);
 	}
 	
 	public long queryMemoryOverhead(long memorySize, int videoRamSize, int numVcpus) throws RuntimeFault, RemoteException 

@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,11 +30,12 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class HostInternetScsiHbaAuthenticationCapabilities extends DynamicData
-{
+@SuppressWarnings("all")
+public class HostInternetScsiHbaAuthenticationCapabilities extends DynamicData {
   public boolean chapAuthSettable;
   public boolean krb5AuthSettable;
   public boolean srpAuthSettable;
@@ -43,73 +44,59 @@ public class HostInternetScsiHbaAuthenticationCapabilities extends DynamicData
   public Boolean targetChapSettable;
   public Boolean targetMutualChapSettable;
 
-  public boolean isChapAuthSettable()
-  {
+  public boolean isChapAuthSettable() {
     return this.chapAuthSettable;
   }
 
-  public boolean isKrb5AuthSettable()
-  {
+  public boolean isKrb5AuthSettable() {
     return this.krb5AuthSettable;
   }
 
-  public boolean isSrpAuthSettable()
-  {
+  public boolean isSrpAuthSettable() {
     return this.srpAuthSettable;
   }
 
-  public boolean isSpkmAuthSettable()
-  {
+  public boolean isSpkmAuthSettable() {
     return this.spkmAuthSettable;
   }
 
-  public Boolean getMutualChapSettable()
-  {
+  public Boolean getMutualChapSettable() {
     return this.mutualChapSettable;
   }
 
-  public Boolean getTargetChapSettable()
-  {
+  public Boolean getTargetChapSettable() {
     return this.targetChapSettable;
   }
 
-  public Boolean getTargetMutualChapSettable()
-  {
+  public Boolean getTargetMutualChapSettable() {
     return this.targetMutualChapSettable;
   }
 
-  public void setChapAuthSettable(boolean chapAuthSettable)
-  {
+  public void setChapAuthSettable(boolean chapAuthSettable) {
     this.chapAuthSettable=chapAuthSettable;
   }
 
-  public void setKrb5AuthSettable(boolean krb5AuthSettable)
-  {
+  public void setKrb5AuthSettable(boolean krb5AuthSettable) {
     this.krb5AuthSettable=krb5AuthSettable;
   }
 
-  public void setSrpAuthSettable(boolean srpAuthSettable)
-  {
+  public void setSrpAuthSettable(boolean srpAuthSettable) {
     this.srpAuthSettable=srpAuthSettable;
   }
 
-  public void setSpkmAuthSettable(boolean spkmAuthSettable)
-  {
+  public void setSpkmAuthSettable(boolean spkmAuthSettable) {
     this.spkmAuthSettable=spkmAuthSettable;
   }
 
-  public void setMutualChapSettable(Boolean mutualChapSettable)
-  {
+  public void setMutualChapSettable(Boolean mutualChapSettable) {
     this.mutualChapSettable=mutualChapSettable;
   }
 
-  public void setTargetChapSettable(Boolean targetChapSettable)
-  {
+  public void setTargetChapSettable(Boolean targetChapSettable) {
     this.targetChapSettable=targetChapSettable;
   }
 
-  public void setTargetMutualChapSettable(Boolean targetMutualChapSettable)
-  {
+  public void setTargetMutualChapSettable(Boolean targetMutualChapSettable) {
     this.targetMutualChapSettable=targetMutualChapSettable;
   }
 }

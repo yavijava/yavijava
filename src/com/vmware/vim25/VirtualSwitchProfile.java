@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,64 +30,55 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class VirtualSwitchProfile extends ApplyProfile
-{
+@SuppressWarnings("all")
+public class VirtualSwitchProfile extends ApplyProfile {
   public String key;
   public String name;
   public LinkProfile link;
   public NumPortsProfile numPorts;
   public NetworkPolicyProfile networkPolicy;
 
-  public String getKey()
-  {
+  public String getKey() {
     return this.key;
   }
 
-  public String getName()
-  {
+  public String getName() {
     return this.name;
   }
 
-  public LinkProfile getLink()
-  {
+  public LinkProfile getLink() {
     return this.link;
   }
 
-  public NumPortsProfile getNumPorts()
-  {
+  public NumPortsProfile getNumPorts() {
     return this.numPorts;
   }
 
-  public NetworkPolicyProfile getNetworkPolicy()
-  {
+  public NetworkPolicyProfile getNetworkPolicy() {
     return this.networkPolicy;
   }
 
-  public void setKey(String key)
-  {
+  public void setKey(String key) {
     this.key=key;
   }
 
-  public void setName(String name)
-  {
+  public void setName(String name) {
     this.name=name;
   }
 
-  public void setLink(LinkProfile link)
-  {
+  public void setLink(LinkProfile link) {
     this.link=link;
   }
 
-  public void setNumPorts(NumPortsProfile numPorts)
-  {
+  public void setNumPorts(NumPortsProfile numPorts) {
     this.numPorts=numPorts;
   }
 
-  public void setNetworkPolicy(NetworkPolicyProfile networkPolicy)
-  {
+  public void setNetworkPolicy(NetworkPolicyProfile networkPolicy) {
     this.networkPolicy=networkPolicy;
   }
 }

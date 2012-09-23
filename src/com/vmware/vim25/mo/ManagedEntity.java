@@ -45,7 +45,7 @@ import com.vmware.vim25.VimFault;
 
 /**
  * ManagedEntity represents the managed objects that can be listed in the inventory tree.
- * @author Steve JIN (sjin@vmware.com)
+ * @author Steve JIN (http://www.doublecloud.org)
  */
 
 public class ManagedEntity extends ExtensibleManagedObject 

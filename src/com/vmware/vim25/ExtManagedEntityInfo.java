@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,42 +30,46 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class ExtManagedEntityInfo extends DynamicData
-{
+@SuppressWarnings("all")
+public class ExtManagedEntityInfo extends DynamicData {
   public String type;
   public String smallIconUrl;
+  public String iconUrl;
   public String description;
 
-  public String getType()
-  {
+  public String getType() {
     return this.type;
   }
 
-  public String getSmallIconUrl()
-  {
+  public String getSmallIconUrl() {
     return this.smallIconUrl;
   }
 
-  public String getDescription()
-  {
+  public String getIconUrl() {
+    return this.iconUrl;
+  }
+
+  public String getDescription() {
     return this.description;
   }
 
-  public void setType(String type)
-  {
+  public void setType(String type) {
     this.type=type;
   }
 
-  public void setSmallIconUrl(String smallIconUrl)
-  {
+  public void setSmallIconUrl(String smallIconUrl) {
     this.smallIconUrl=smallIconUrl;
   }
 
-  public void setDescription(String description)
-  {
+  public void setIconUrl(String iconUrl) {
+    this.iconUrl=iconUrl;
+  }
+
+  public void setDescription(String description) {
     this.description=description;
   }
 }

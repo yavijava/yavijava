@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,11 +30,12 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class HostNasVolumeSpec extends DynamicData
-{
+@SuppressWarnings("all")
+public class HostNasVolumeSpec extends DynamicData {
   public String remoteHost;
   public String remotePath;
   public String localPath;
@@ -43,73 +44,59 @@ public class HostNasVolumeSpec extends DynamicData
   public String userName;
   public String password;
 
-  public String getRemoteHost()
-  {
+  public String getRemoteHost() {
     return this.remoteHost;
   }
 
-  public String getRemotePath()
-  {
+  public String getRemotePath() {
     return this.remotePath;
   }
 
-  public String getLocalPath()
-  {
+  public String getLocalPath() {
     return this.localPath;
   }
 
-  public String getAccessMode()
-  {
+  public String getAccessMode() {
     return this.accessMode;
   }
 
-  public String getType()
-  {
+  public String getType() {
     return this.type;
   }
 
-  public String getUserName()
-  {
+  public String getUserName() {
     return this.userName;
   }
 
-  public String getPassword()
-  {
+  public String getPassword() {
     return this.password;
   }
 
-  public void setRemoteHost(String remoteHost)
-  {
+  public void setRemoteHost(String remoteHost) {
     this.remoteHost=remoteHost;
   }
 
-  public void setRemotePath(String remotePath)
-  {
+  public void setRemotePath(String remotePath) {
     this.remotePath=remotePath;
   }
 
-  public void setLocalPath(String localPath)
-  {
+  public void setLocalPath(String localPath) {
     this.localPath=localPath;
   }
 
-  public void setAccessMode(String accessMode)
-  {
+  public void setAccessMode(String accessMode) {
     this.accessMode=accessMode;
   }
 
-  public void setType(String type)
-  {
+  public void setType(String type) {
     this.type=type;
   }
 
-  public void setUserName(String userName)
-  {
+  public void setUserName(String userName) {
     this.userName=userName;
   }
 
-  public void setPassword(String password)
-  {
+  public void setPassword(String password) {
     this.password=password;
   }
 }

@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,31 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class PosixUserSearchResult extends UserSearchResult
-{
+@SuppressWarnings("all")
+public class PosixUserSearchResult extends UserSearchResult {
   public int id;
   public Boolean shellAccess;
 
-  public int getId()
-  {
+  public int getId() {
     return this.id;
   }
 
-  public Boolean getShellAccess()
-  {
+  public Boolean getShellAccess() {
     return this.shellAccess;
   }
 
-  public void setId(int id)
-  {
+  public void setId(int id) {
     this.id=id;
   }
 
-  public void setShellAccess(Boolean shellAccess)
-  {
+  public void setShellAccess(Boolean shellAccess) {
     this.shellAccess=shellAccess;
   }
 }

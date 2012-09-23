@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,31 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class WaitOptions extends DynamicData
-{
+@SuppressWarnings("all")
+public class WaitOptions extends DynamicData {
   public Integer maxWaitSeconds;
   public Integer maxObjectUpdates;
 
-  public Integer getMaxWaitSeconds()
-  {
+  public Integer getMaxWaitSeconds() {
     return this.maxWaitSeconds;
   }
 
-  public Integer getMaxObjectUpdates()
-  {
+  public Integer getMaxObjectUpdates() {
     return this.maxObjectUpdates;
   }
 
-  public void setMaxWaitSeconds(Integer maxWaitSeconds)
-  {
+  public void setMaxWaitSeconds(Integer maxWaitSeconds) {
     this.maxWaitSeconds=maxWaitSeconds;
   }
 
-  public void setMaxObjectUpdates(Integer maxObjectUpdates)
-  {
+  public void setMaxObjectUpdates(Integer maxObjectUpdates) {
     this.maxObjectUpdates=maxObjectUpdates;
   }
 }

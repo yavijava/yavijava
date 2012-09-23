@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,53 +30,46 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class VmCloneFailedEvent extends VmCloneEvent
-{
+@SuppressWarnings("all")
+public class VmCloneFailedEvent extends VmCloneEvent {
   public FolderEventArgument destFolder;
   public String destName;
   public HostEventArgument destHost;
   public LocalizedMethodFault reason;
 
-  public FolderEventArgument getDestFolder()
-  {
+  public FolderEventArgument getDestFolder() {
     return this.destFolder;
   }
 
-  public String getDestName()
-  {
+  public String getDestName() {
     return this.destName;
   }
 
-  public HostEventArgument getDestHost()
-  {
+  public HostEventArgument getDestHost() {
     return this.destHost;
   }
 
-  public LocalizedMethodFault getReason()
-  {
+  public LocalizedMethodFault getReason() {
     return this.reason;
   }
 
-  public void setDestFolder(FolderEventArgument destFolder)
-  {
+  public void setDestFolder(FolderEventArgument destFolder) {
     this.destFolder=destFolder;
   }
 
-  public void setDestName(String destName)
-  {
+  public void setDestName(String destName) {
     this.destName=destName;
   }
 
-  public void setDestHost(HostEventArgument destHost)
-  {
+  public void setDestHost(HostEventArgument destHost) {
     this.destHost=destHost;
   }
 
-  public void setReason(LocalizedMethodFault reason)
-  {
+  public void setReason(LocalizedMethodFault reason) {
     this.reason=reason;
   }
 }

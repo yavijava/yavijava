@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,31 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class LinkDiscoveryProtocolConfig extends DynamicData
-{
+@SuppressWarnings("all")
+public class LinkDiscoveryProtocolConfig extends DynamicData {
   public String protocol;
   public String operation;
 
-  public String getProtocol()
-  {
+  public String getProtocol() {
     return this.protocol;
   }
 
-  public String getOperation()
-  {
+  public String getOperation() {
     return this.operation;
   }
 
-  public void setProtocol(String protocol)
-  {
+  public void setProtocol(String protocol) {
     this.protocol=protocol;
   }
 
-  public void setOperation(String operation)
-  {
+  public void setOperation(String operation) {
     this.operation=operation;
   }
 }

@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,11 +30,12 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class HostConfigInfo extends DynamicData
-{
+@SuppressWarnings("all")
+public class HostConfigInfo extends DynamicData {
   public ManagedObjectReference host;
   public AboutInfo product;
   public HostHyperThreadScheduleInfo hyperThread;
@@ -58,6 +59,7 @@ public class HostConfigInfo extends DynamicData
   public OptionDef[] optionDef;
   public String datastorePrincipal;
   public ManagedObjectReference localSwapDatastore;
+  public HostSystemSwapConfiguration systemSwapConfiguration;
   public HostSystemResourceInfo systemResources;
   public HostDateTimeInfo dateTimeInfo;
   public HostFlagInfo flags;
@@ -73,384 +75,334 @@ public class HostConfigInfo extends DynamicData
   public PowerSystemInfo powerSystemInfo;
   public HostCacheConfigurationInfo[] cacheConfigurationInfo;
   public Boolean wakeOnLanCapable;
+  public HostFeatureCapability[] featureCapability;
+  public HostFeatureCapability[] maskedFeatureCapability;
 
-  public ManagedObjectReference getHost()
-  {
+  public ManagedObjectReference getHost() {
     return this.host;
   }
 
-  public AboutInfo getProduct()
-  {
+  public AboutInfo getProduct() {
     return this.product;
   }
 
-  public HostHyperThreadScheduleInfo getHyperThread()
-  {
+  public HostHyperThreadScheduleInfo getHyperThread() {
     return this.hyperThread;
   }
 
-  public ServiceConsoleReservationInfo getConsoleReservation()
-  {
+  public ServiceConsoleReservationInfo getConsoleReservation() {
     return this.consoleReservation;
   }
 
-  public VirtualMachineMemoryReservationInfo getVirtualMachineReservation()
-  {
+  public VirtualMachineMemoryReservationInfo getVirtualMachineReservation() {
     return this.virtualMachineReservation;
   }
 
-  public HostStorageDeviceInfo getStorageDevice()
-  {
+  public HostStorageDeviceInfo getStorageDevice() {
     return this.storageDevice;
   }
 
-  public HostMultipathStateInfo getMultipathState()
-  {
+  public HostMultipathStateInfo getMultipathState() {
     return this.multipathState;
   }
 
-  public HostFileSystemVolumeInfo getFileSystemVolume()
-  {
+  public HostFileSystemVolumeInfo getFileSystemVolume() {
     return this.fileSystemVolume;
   }
 
-  public String[] getSystemFile()
-  {
+  public String[] getSystemFile() {
     return this.systemFile;
   }
 
-  public HostNetworkInfo getNetwork()
-  {
+  public HostNetworkInfo getNetwork() {
     return this.network;
   }
 
-  public HostVMotionInfo getVmotion()
-  {
+  public HostVMotionInfo getVmotion() {
     return this.vmotion;
   }
 
-  public HostVirtualNicManagerInfo getVirtualNicManagerInfo()
-  {
+  public HostVirtualNicManagerInfo getVirtualNicManagerInfo() {
     return this.virtualNicManagerInfo;
   }
 
-  public HostNetCapabilities getCapabilities()
-  {
+  public HostNetCapabilities getCapabilities() {
     return this.capabilities;
   }
 
-  public HostDatastoreSystemCapabilities getDatastoreCapabilities()
-  {
+  public HostDatastoreSystemCapabilities getDatastoreCapabilities() {
     return this.datastoreCapabilities;
   }
 
-  public HostNetOffloadCapabilities getOffloadCapabilities()
-  {
+  public HostNetOffloadCapabilities getOffloadCapabilities() {
     return this.offloadCapabilities;
   }
 
-  public HostServiceInfo getService()
-  {
+  public HostServiceInfo getService() {
     return this.service;
   }
 
-  public HostFirewallInfo getFirewall()
-  {
+  public HostFirewallInfo getFirewall() {
     return this.firewall;
   }
 
-  public HostAutoStartManagerConfig getAutoStart()
-  {
+  public HostAutoStartManagerConfig getAutoStart() {
     return this.autoStart;
   }
 
-  public HostDiagnosticPartition getActiveDiagnosticPartition()
-  {
+  public HostDiagnosticPartition getActiveDiagnosticPartition() {
     return this.activeDiagnosticPartition;
   }
 
-  public OptionValue[] getOption()
-  {
+  public OptionValue[] getOption() {
     return this.option;
   }
 
-  public OptionDef[] getOptionDef()
-  {
+  public OptionDef[] getOptionDef() {
     return this.optionDef;
   }
 
-  public String getDatastorePrincipal()
-  {
+  public String getDatastorePrincipal() {
     return this.datastorePrincipal;
   }
 
-  public ManagedObjectReference getLocalSwapDatastore()
-  {
+  public ManagedObjectReference getLocalSwapDatastore() {
     return this.localSwapDatastore;
   }
 
-  public HostSystemResourceInfo getSystemResources()
-  {
+  public HostSystemSwapConfiguration getSystemSwapConfiguration() {
+    return this.systemSwapConfiguration;
+  }
+
+  public HostSystemResourceInfo getSystemResources() {
     return this.systemResources;
   }
 
-  public HostDateTimeInfo getDateTimeInfo()
-  {
+  public HostDateTimeInfo getDateTimeInfo() {
     return this.dateTimeInfo;
   }
 
-  public HostFlagInfo getFlags()
-  {
+  public HostFlagInfo getFlags() {
     return this.flags;
   }
 
-  public Boolean getAdminDisabled()
-  {
+  public Boolean getAdminDisabled() {
     return this.adminDisabled;
   }
 
-  public HostIpmiInfo getIpmi()
-  {
+  public HostIpmiInfo getIpmi() {
     return this.ipmi;
   }
 
-  public HostSslThumbprintInfo getSslThumbprintInfo()
-  {
+  public HostSslThumbprintInfo getSslThumbprintInfo() {
     return this.sslThumbprintInfo;
   }
 
-  public HostSslThumbprintInfo[] getSslThumbprintData()
-  {
+  public HostSslThumbprintInfo[] getSslThumbprintData() {
     return this.sslThumbprintData;
   }
 
-  public byte[] getCertificate()
-  {
+  public byte[] getCertificate() {
     return this.certificate;
   }
 
-  public HostPciPassthruInfo[] getPciPassthruInfo()
-  {
+  public HostPciPassthruInfo[] getPciPassthruInfo() {
     return this.pciPassthruInfo;
   }
 
-  public HostAuthenticationManagerInfo getAuthenticationManagerInfo()
-  {
+  public HostAuthenticationManagerInfo getAuthenticationManagerInfo() {
     return this.authenticationManagerInfo;
   }
 
-  public HostFeatureVersionInfo[] getFeatureVersion()
-  {
+  public HostFeatureVersionInfo[] getFeatureVersion() {
     return this.featureVersion;
   }
 
-  public PowerSystemCapability getPowerSystemCapability()
-  {
+  public PowerSystemCapability getPowerSystemCapability() {
     return this.powerSystemCapability;
   }
 
-  public PowerSystemInfo getPowerSystemInfo()
-  {
+  public PowerSystemInfo getPowerSystemInfo() {
     return this.powerSystemInfo;
   }
 
-  public HostCacheConfigurationInfo[] getCacheConfigurationInfo()
-  {
+  public HostCacheConfigurationInfo[] getCacheConfigurationInfo() {
     return this.cacheConfigurationInfo;
   }
 
-  public Boolean getWakeOnLanCapable()
-  {
+  public Boolean getWakeOnLanCapable() {
     return this.wakeOnLanCapable;
   }
 
-  public void setHost(ManagedObjectReference host)
-  {
+  public HostFeatureCapability[] getFeatureCapability() {
+    return this.featureCapability;
+  }
+
+  public HostFeatureCapability[] getMaskedFeatureCapability() {
+    return this.maskedFeatureCapability;
+  }
+
+  public void setHost(ManagedObjectReference host) {
     this.host=host;
   }
 
-  public void setProduct(AboutInfo product)
-  {
+  public void setProduct(AboutInfo product) {
     this.product=product;
   }
 
-  public void setHyperThread(HostHyperThreadScheduleInfo hyperThread)
-  {
+  public void setHyperThread(HostHyperThreadScheduleInfo hyperThread) {
     this.hyperThread=hyperThread;
   }
 
-  public void setConsoleReservation(ServiceConsoleReservationInfo consoleReservation)
-  {
+  public void setConsoleReservation(ServiceConsoleReservationInfo consoleReservation) {
     this.consoleReservation=consoleReservation;
   }
 
-  public void setVirtualMachineReservation(VirtualMachineMemoryReservationInfo virtualMachineReservation)
-  {
+  public void setVirtualMachineReservation(VirtualMachineMemoryReservationInfo virtualMachineReservation) {
     this.virtualMachineReservation=virtualMachineReservation;
   }
 
-  public void setStorageDevice(HostStorageDeviceInfo storageDevice)
-  {
+  public void setStorageDevice(HostStorageDeviceInfo storageDevice) {
     this.storageDevice=storageDevice;
   }
 
-  public void setMultipathState(HostMultipathStateInfo multipathState)
-  {
+  public void setMultipathState(HostMultipathStateInfo multipathState) {
     this.multipathState=multipathState;
   }
 
-  public void setFileSystemVolume(HostFileSystemVolumeInfo fileSystemVolume)
-  {
+  public void setFileSystemVolume(HostFileSystemVolumeInfo fileSystemVolume) {
     this.fileSystemVolume=fileSystemVolume;
   }
 
-  public void setSystemFile(String[] systemFile)
-  {
+  public void setSystemFile(String[] systemFile) {
     this.systemFile=systemFile;
   }
 
-  public void setNetwork(HostNetworkInfo network)
-  {
+  public void setNetwork(HostNetworkInfo network) {
     this.network=network;
   }
 
-  public void setVmotion(HostVMotionInfo vmotion)
-  {
+  public void setVmotion(HostVMotionInfo vmotion) {
     this.vmotion=vmotion;
   }
 
-  public void setVirtualNicManagerInfo(HostVirtualNicManagerInfo virtualNicManagerInfo)
-  {
+  public void setVirtualNicManagerInfo(HostVirtualNicManagerInfo virtualNicManagerInfo) {
     this.virtualNicManagerInfo=virtualNicManagerInfo;
   }
 
-  public void setCapabilities(HostNetCapabilities capabilities)
-  {
+  public void setCapabilities(HostNetCapabilities capabilities) {
     this.capabilities=capabilities;
   }
 
-  public void setDatastoreCapabilities(HostDatastoreSystemCapabilities datastoreCapabilities)
-  {
+  public void setDatastoreCapabilities(HostDatastoreSystemCapabilities datastoreCapabilities) {
     this.datastoreCapabilities=datastoreCapabilities;
   }
 
-  public void setOffloadCapabilities(HostNetOffloadCapabilities offloadCapabilities)
-  {
+  public void setOffloadCapabilities(HostNetOffloadCapabilities offloadCapabilities) {
     this.offloadCapabilities=offloadCapabilities;
   }
 
-  public void setService(HostServiceInfo service)
-  {
+  public void setService(HostServiceInfo service) {
     this.service=service;
   }
 
-  public void setFirewall(HostFirewallInfo firewall)
-  {
+  public void setFirewall(HostFirewallInfo firewall) {
     this.firewall=firewall;
   }
 
-  public void setAutoStart(HostAutoStartManagerConfig autoStart)
-  {
+  public void setAutoStart(HostAutoStartManagerConfig autoStart) {
     this.autoStart=autoStart;
   }
 
-  public void setActiveDiagnosticPartition(HostDiagnosticPartition activeDiagnosticPartition)
-  {
+  public void setActiveDiagnosticPartition(HostDiagnosticPartition activeDiagnosticPartition) {
     this.activeDiagnosticPartition=activeDiagnosticPartition;
   }
 
-  public void setOption(OptionValue[] option)
-  {
+  public void setOption(OptionValue[] option) {
     this.option=option;
   }
 
-  public void setOptionDef(OptionDef[] optionDef)
-  {
+  public void setOptionDef(OptionDef[] optionDef) {
     this.optionDef=optionDef;
   }
 
-  public void setDatastorePrincipal(String datastorePrincipal)
-  {
+  public void setDatastorePrincipal(String datastorePrincipal) {
     this.datastorePrincipal=datastorePrincipal;
   }
 
-  public void setLocalSwapDatastore(ManagedObjectReference localSwapDatastore)
-  {
+  public void setLocalSwapDatastore(ManagedObjectReference localSwapDatastore) {
     this.localSwapDatastore=localSwapDatastore;
   }
 
-  public void setSystemResources(HostSystemResourceInfo systemResources)
-  {
+  public void setSystemSwapConfiguration(HostSystemSwapConfiguration systemSwapConfiguration) {
+    this.systemSwapConfiguration=systemSwapConfiguration;
+  }
+
+  public void setSystemResources(HostSystemResourceInfo systemResources) {
     this.systemResources=systemResources;
   }
 
-  public void setDateTimeInfo(HostDateTimeInfo dateTimeInfo)
-  {
+  public void setDateTimeInfo(HostDateTimeInfo dateTimeInfo) {
     this.dateTimeInfo=dateTimeInfo;
   }
 
-  public void setFlags(HostFlagInfo flags)
-  {
+  public void setFlags(HostFlagInfo flags) {
     this.flags=flags;
   }
 
-  public void setAdminDisabled(Boolean adminDisabled)
-  {
+  public void setAdminDisabled(Boolean adminDisabled) {
     this.adminDisabled=adminDisabled;
   }
 
-  public void setIpmi(HostIpmiInfo ipmi)
-  {
+  public void setIpmi(HostIpmiInfo ipmi) {
     this.ipmi=ipmi;
   }
 
-  public void setSslThumbprintInfo(HostSslThumbprintInfo sslThumbprintInfo)
-  {
+  public void setSslThumbprintInfo(HostSslThumbprintInfo sslThumbprintInfo) {
     this.sslThumbprintInfo=sslThumbprintInfo;
   }
 
-  public void setSslThumbprintData(HostSslThumbprintInfo[] sslThumbprintData)
-  {
+  public void setSslThumbprintData(HostSslThumbprintInfo[] sslThumbprintData) {
     this.sslThumbprintData=sslThumbprintData;
   }
 
-  public void setCertificate(byte[] certificate)
-  {
+  public void setCertificate(byte[] certificate) {
     this.certificate=certificate;
   }
 
-  public void setPciPassthruInfo(HostPciPassthruInfo[] pciPassthruInfo)
-  {
+  public void setPciPassthruInfo(HostPciPassthruInfo[] pciPassthruInfo) {
     this.pciPassthruInfo=pciPassthruInfo;
   }
 
-  public void setAuthenticationManagerInfo(HostAuthenticationManagerInfo authenticationManagerInfo)
-  {
+  public void setAuthenticationManagerInfo(HostAuthenticationManagerInfo authenticationManagerInfo) {
     this.authenticationManagerInfo=authenticationManagerInfo;
   }
 
-  public void setFeatureVersion(HostFeatureVersionInfo[] featureVersion)
-  {
+  public void setFeatureVersion(HostFeatureVersionInfo[] featureVersion) {
     this.featureVersion=featureVersion;
   }
 
-  public void setPowerSystemCapability(PowerSystemCapability powerSystemCapability)
-  {
+  public void setPowerSystemCapability(PowerSystemCapability powerSystemCapability) {
     this.powerSystemCapability=powerSystemCapability;
   }
 
-  public void setPowerSystemInfo(PowerSystemInfo powerSystemInfo)
-  {
+  public void setPowerSystemInfo(PowerSystemInfo powerSystemInfo) {
     this.powerSystemInfo=powerSystemInfo;
   }
 
-  public void setCacheConfigurationInfo(HostCacheConfigurationInfo[] cacheConfigurationInfo)
-  {
+  public void setCacheConfigurationInfo(HostCacheConfigurationInfo[] cacheConfigurationInfo) {
     this.cacheConfigurationInfo=cacheConfigurationInfo;
   }
 
-  public void setWakeOnLanCapable(Boolean wakeOnLanCapable)
-  {
+  public void setWakeOnLanCapable(Boolean wakeOnLanCapable) {
     this.wakeOnLanCapable=wakeOnLanCapable;
+  }
+
+  public void setFeatureCapability(HostFeatureCapability[] featureCapability) {
+    this.featureCapability=featureCapability;
+  }
+
+  public void setMaskedFeatureCapability(HostFeatureCapability[] maskedFeatureCapability) {
+    this.maskedFeatureCapability=maskedFeatureCapability;
   }
 }

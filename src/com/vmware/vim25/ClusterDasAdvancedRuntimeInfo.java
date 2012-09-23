@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,31 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class ClusterDasAdvancedRuntimeInfo extends DynamicData
-{
+@SuppressWarnings("all")
+public class ClusterDasAdvancedRuntimeInfo extends DynamicData {
   public ClusterDasHostInfo dasHostInfo;
   public DasHeartbeatDatastoreInfo[] heartbeatDatastoreInfo;
 
-  public ClusterDasHostInfo getDasHostInfo()
-  {
+  public ClusterDasHostInfo getDasHostInfo() {
     return this.dasHostInfo;
   }
 
-  public DasHeartbeatDatastoreInfo[] getHeartbeatDatastoreInfo()
-  {
+  public DasHeartbeatDatastoreInfo[] getHeartbeatDatastoreInfo() {
     return this.heartbeatDatastoreInfo;
   }
 
-  public void setDasHostInfo(ClusterDasHostInfo dasHostInfo)
-  {
+  public void setDasHostInfo(ClusterDasHostInfo dasHostInfo) {
     this.dasHostInfo=dasHostInfo;
   }
 
-  public void setHeartbeatDatastoreInfo(DasHeartbeatDatastoreInfo[] heartbeatDatastoreInfo)
-  {
+  public void setHeartbeatDatastoreInfo(DasHeartbeatDatastoreInfo[] heartbeatDatastoreInfo) {
     this.heartbeatDatastoreInfo=heartbeatDatastoreInfo;
   }
 }

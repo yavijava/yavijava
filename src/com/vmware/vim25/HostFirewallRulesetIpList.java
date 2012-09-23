@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,42 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class HostFirewallRulesetIpList extends DynamicData
-{
+@SuppressWarnings("all")
+public class HostFirewallRulesetIpList extends DynamicData {
   public String[] ipAddress;
   public HostFirewallRulesetIpNetwork[] ipNetwork;
   public boolean allIp;
 
-  public String[] getIpAddress()
-  {
+  public String[] getIpAddress() {
     return this.ipAddress;
   }
 
-  public HostFirewallRulesetIpNetwork[] getIpNetwork()
-  {
+  public HostFirewallRulesetIpNetwork[] getIpNetwork() {
     return this.ipNetwork;
   }
 
-  public boolean isAllIp()
-  {
+  public boolean isAllIp() {
     return this.allIp;
   }
 
-  public void setIpAddress(String[] ipAddress)
-  {
+  public void setIpAddress(String[] ipAddress) {
     this.ipAddress=ipAddress;
   }
 
-  public void setIpNetwork(HostFirewallRulesetIpNetwork[] ipNetwork)
-  {
+  public void setIpNetwork(HostFirewallRulesetIpNetwork[] ipNetwork) {
     this.ipNetwork=ipNetwork;
   }
 
-  public void setAllIp(boolean allIp)
-  {
+  public void setAllIp(boolean allIp) {
     this.allIp=allIp;
   }
 }

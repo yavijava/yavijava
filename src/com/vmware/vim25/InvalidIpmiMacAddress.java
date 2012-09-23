@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,31 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class InvalidIpmiMacAddress extends VimFault
-{
+@SuppressWarnings("all")
+public class InvalidIpmiMacAddress extends VimFault {
   public String userProvidedMacAddress;
   public String observedMacAddress;
 
-  public String getUserProvidedMacAddress()
-  {
+  public String getUserProvidedMacAddress() {
     return this.userProvidedMacAddress;
   }
 
-  public String getObservedMacAddress()
-  {
+  public String getObservedMacAddress() {
     return this.observedMacAddress;
   }
 
-  public void setUserProvidedMacAddress(String userProvidedMacAddress)
-  {
+  public void setUserProvidedMacAddress(String userProvidedMacAddress) {
     this.userProvidedMacAddress=userProvidedMacAddress;
   }
 
-  public void setObservedMacAddress(String observedMacAddress)
-  {
+  public void setObservedMacAddress(String observedMacAddress) {
     this.observedMacAddress=observedMacAddress;
   }
 }

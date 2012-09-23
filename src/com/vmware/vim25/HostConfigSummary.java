@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,11 +30,12 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class HostConfigSummary extends DynamicData
-{
+@SuppressWarnings("all")
+public class HostConfigSummary extends DynamicData {
   public String name;
   public int port;
   public String sslThumbprint;
@@ -45,93 +46,75 @@ public class HostConfigSummary extends DynamicData
   public ManagedObjectReference agentVmDatastore;
   public ManagedObjectReference agentVmNetwork;
 
-  public String getName()
-  {
+  public String getName() {
     return this.name;
   }
 
-  public int getPort()
-  {
+  public int getPort() {
     return this.port;
   }
 
-  public String getSslThumbprint()
-  {
+  public String getSslThumbprint() {
     return this.sslThumbprint;
   }
 
-  public AboutInfo getProduct()
-  {
+  public AboutInfo getProduct() {
     return this.product;
   }
 
-  public boolean isVmotionEnabled()
-  {
+  public boolean isVmotionEnabled() {
     return this.vmotionEnabled;
   }
 
-  public Boolean getFaultToleranceEnabled()
-  {
+  public Boolean getFaultToleranceEnabled() {
     return this.faultToleranceEnabled;
   }
 
-  public HostFeatureVersionInfo[] getFeatureVersion()
-  {
+  public HostFeatureVersionInfo[] getFeatureVersion() {
     return this.featureVersion;
   }
 
-  public ManagedObjectReference getAgentVmDatastore()
-  {
+  public ManagedObjectReference getAgentVmDatastore() {
     return this.agentVmDatastore;
   }
 
-  public ManagedObjectReference getAgentVmNetwork()
-  {
+  public ManagedObjectReference getAgentVmNetwork() {
     return this.agentVmNetwork;
   }
 
-  public void setName(String name)
-  {
+  public void setName(String name) {
     this.name=name;
   }
 
-  public void setPort(int port)
-  {
+  public void setPort(int port) {
     this.port=port;
   }
 
-  public void setSslThumbprint(String sslThumbprint)
-  {
+  public void setSslThumbprint(String sslThumbprint) {
     this.sslThumbprint=sslThumbprint;
   }
 
-  public void setProduct(AboutInfo product)
-  {
+  public void setProduct(AboutInfo product) {
     this.product=product;
   }
 
-  public void setVmotionEnabled(boolean vmotionEnabled)
-  {
+  public void setVmotionEnabled(boolean vmotionEnabled) {
     this.vmotionEnabled=vmotionEnabled;
   }
 
-  public void setFaultToleranceEnabled(Boolean faultToleranceEnabled)
-  {
+  public void setFaultToleranceEnabled(Boolean faultToleranceEnabled) {
     this.faultToleranceEnabled=faultToleranceEnabled;
   }
 
-  public void setFeatureVersion(HostFeatureVersionInfo[] featureVersion)
-  {
+  public void setFeatureVersion(HostFeatureVersionInfo[] featureVersion) {
     this.featureVersion=featureVersion;
   }
 
-  public void setAgentVmDatastore(ManagedObjectReference agentVmDatastore)
-  {
+  public void setAgentVmDatastore(ManagedObjectReference agentVmDatastore) {
     this.agentVmDatastore=agentVmDatastore;
   }
 
-  public void setAgentVmNetwork(ManagedObjectReference agentVmNetwork)
-  {
+  public void setAgentVmNetwork(ManagedObjectReference agentVmNetwork) {
     this.agentVmNetwork=agentVmNetwork;
   }
 }

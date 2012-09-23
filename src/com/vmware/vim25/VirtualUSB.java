@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,64 +30,55 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class VirtualUSB extends VirtualDevice
-{
+@SuppressWarnings("all")
+public class VirtualUSB extends VirtualDevice {
   public boolean connected;
   public Integer vendor;
   public Integer product;
   public String[] family;
   public String[] speed;
 
-  public boolean isConnected()
-  {
+  public boolean isConnected() {
     return this.connected;
   }
 
-  public Integer getVendor()
-  {
+  public Integer getVendor() {
     return this.vendor;
   }
 
-  public Integer getProduct()
-  {
+  public Integer getProduct() {
     return this.product;
   }
 
-  public String[] getFamily()
-  {
+  public String[] getFamily() {
     return this.family;
   }
 
-  public String[] getSpeed()
-  {
+  public String[] getSpeed() {
     return this.speed;
   }
 
-  public void setConnected(boolean connected)
-  {
+  public void setConnected(boolean connected) {
     this.connected=connected;
   }
 
-  public void setVendor(Integer vendor)
-  {
+  public void setVendor(Integer vendor) {
     this.vendor=vendor;
   }
 
-  public void setProduct(Integer product)
-  {
+  public void setProduct(Integer product) {
     this.product=product;
   }
 
-  public void setFamily(String[] family)
-  {
+  public void setFamily(String[] family) {
     this.family=family;
   }
 
-  public void setSpeed(String[] speed)
-  {
+  public void setSpeed(String[] speed) {
     this.speed=speed;
   }
 }

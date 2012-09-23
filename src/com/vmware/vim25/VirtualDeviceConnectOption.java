@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,31 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class VirtualDeviceConnectOption extends DynamicData
-{
+@SuppressWarnings("all")
+public class VirtualDeviceConnectOption extends DynamicData {
   public BoolOption startConnected;
   public BoolOption allowGuestControl;
 
-  public BoolOption getStartConnected()
-  {
+  public BoolOption getStartConnected() {
     return this.startConnected;
   }
 
-  public BoolOption getAllowGuestControl()
-  {
+  public BoolOption getAllowGuestControl() {
     return this.allowGuestControl;
   }
 
-  public void setStartConnected(BoolOption startConnected)
-  {
+  public void setStartConnected(BoolOption startConnected) {
     this.startConnected=startConnected;
   }
 
-  public void setAllowGuestControl(BoolOption allowGuestControl)
-  {
+  public void setAllowGuestControl(BoolOption allowGuestControl) {
     this.allowGuestControl=allowGuestControl;
   }
 }

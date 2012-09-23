@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,42 +30,55 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class VMwareDVSFeatureCapability extends DVSFeatureCapability
-{
+@SuppressWarnings("all")
+public class VMwareDVSFeatureCapability extends DVSFeatureCapability {
   public Boolean vspanSupported;
   public Boolean lldpSupported;
   public Boolean ipfixSupported;
+  public VMwareDVSVspanCapability vspanCapability;
+  public VMwareDvsLacpCapability lacpCapability;
 
-  public Boolean getVspanSupported()
-  {
+  public Boolean getVspanSupported() {
     return this.vspanSupported;
   }
 
-  public Boolean getLldpSupported()
-  {
+  public Boolean getLldpSupported() {
     return this.lldpSupported;
   }
 
-  public Boolean getIpfixSupported()
-  {
+  public Boolean getIpfixSupported() {
     return this.ipfixSupported;
   }
 
-  public void setVspanSupported(Boolean vspanSupported)
-  {
+  public VMwareDVSVspanCapability getVspanCapability() {
+    return this.vspanCapability;
+  }
+
+  public VMwareDvsLacpCapability getLacpCapability() {
+    return this.lacpCapability;
+  }
+
+  public void setVspanSupported(Boolean vspanSupported) {
     this.vspanSupported=vspanSupported;
   }
 
-  public void setLldpSupported(Boolean lldpSupported)
-  {
+  public void setLldpSupported(Boolean lldpSupported) {
     this.lldpSupported=lldpSupported;
   }
 
-  public void setIpfixSupported(Boolean ipfixSupported)
-  {
+  public void setIpfixSupported(Boolean ipfixSupported) {
     this.ipfixSupported=ipfixSupported;
+  }
+
+  public void setVspanCapability(VMwareDVSVspanCapability vspanCapability) {
+    this.vspanCapability=vspanCapability;
+  }
+
+  public void setLacpCapability(VMwareDvsLacpCapability lacpCapability) {
+    this.lacpCapability=lacpCapability;
   }
 }

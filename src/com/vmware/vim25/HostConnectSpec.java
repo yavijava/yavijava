@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,11 +30,12 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class HostConnectSpec extends DynamicData
-{
+@SuppressWarnings("all")
+public class HostConnectSpec extends DynamicData {
   public String hostName;
   public Integer port;
   public String sslThumbprint;
@@ -46,103 +47,83 @@ public class HostConnectSpec extends DynamicData
   public String vimAccountPassword;
   public String managementIp;
 
-  public String getHostName()
-  {
+  public String getHostName() {
     return this.hostName;
   }
 
-  public Integer getPort()
-  {
+  public Integer getPort() {
     return this.port;
   }
 
-  public String getSslThumbprint()
-  {
+  public String getSslThumbprint() {
     return this.sslThumbprint;
   }
 
-  public String getUserName()
-  {
+  public String getUserName() {
     return this.userName;
   }
 
-  public String getPassword()
-  {
+  public String getPassword() {
     return this.password;
   }
 
-  public ManagedObjectReference getVmFolder()
-  {
+  public ManagedObjectReference getVmFolder() {
     return this.vmFolder;
   }
 
-  public boolean isForce()
-  {
+  public boolean isForce() {
     return this.force;
   }
 
-  public String getVimAccountName()
-  {
+  public String getVimAccountName() {
     return this.vimAccountName;
   }
 
-  public String getVimAccountPassword()
-  {
+  public String getVimAccountPassword() {
     return this.vimAccountPassword;
   }
 
-  public String getManagementIp()
-  {
+  public String getManagementIp() {
     return this.managementIp;
   }
 
-  public void setHostName(String hostName)
-  {
+  public void setHostName(String hostName) {
     this.hostName=hostName;
   }
 
-  public void setPort(Integer port)
-  {
+  public void setPort(Integer port) {
     this.port=port;
   }
 
-  public void setSslThumbprint(String sslThumbprint)
-  {
+  public void setSslThumbprint(String sslThumbprint) {
     this.sslThumbprint=sslThumbprint;
   }
 
-  public void setUserName(String userName)
-  {
+  public void setUserName(String userName) {
     this.userName=userName;
   }
 
-  public void setPassword(String password)
-  {
+  public void setPassword(String password) {
     this.password=password;
   }
 
-  public void setVmFolder(ManagedObjectReference vmFolder)
-  {
+  public void setVmFolder(ManagedObjectReference vmFolder) {
     this.vmFolder=vmFolder;
   }
 
-  public void setForce(boolean force)
-  {
+  public void setForce(boolean force) {
     this.force=force;
   }
 
-  public void setVimAccountName(String vimAccountName)
-  {
+  public void setVimAccountName(String vimAccountName) {
     this.vimAccountName=vimAccountName;
   }
 
-  public void setVimAccountPassword(String vimAccountPassword)
-  {
+  public void setVimAccountPassword(String vimAccountPassword) {
     this.vimAccountPassword=vimAccountPassword;
   }
 
-  public void setManagementIp(String managementIp)
-  {
+  public void setManagementIp(String managementIp) {
     this.managementIp=managementIp;
   }
 }

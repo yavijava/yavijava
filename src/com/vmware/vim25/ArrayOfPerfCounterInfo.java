@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,25 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class ArrayOfPerfCounterInfo
-{
+public class ArrayOfPerfCounterInfo {
   public PerfCounterInfo[] PerfCounterInfo;
 
-  public PerfCounterInfo[] getPerfCounterInfo()
-  {
+  public PerfCounterInfo[] getPerfCounterInfo() {
     return this.PerfCounterInfo;
   }
 
-  public PerfCounterInfo getPerfCounterInfo(int i)
-  {
+  public PerfCounterInfo getPerfCounterInfo(int i) {
     return this.PerfCounterInfo[i];
   }
 
-  public void setPerfCounterInfo(PerfCounterInfo[] PerfCounterInfo)
-  {
+  public void setPerfCounterInfo(PerfCounterInfo[] PerfCounterInfo) {
     this.PerfCounterInfo=PerfCounterInfo;
   }
 }

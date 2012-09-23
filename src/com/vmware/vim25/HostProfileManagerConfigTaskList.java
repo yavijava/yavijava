@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,31 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class HostProfileManagerConfigTaskList extends DynamicData
-{
+@SuppressWarnings("all")
+public class HostProfileManagerConfigTaskList extends DynamicData {
   public HostConfigSpec configSpec;
   public LocalizableMessage[] taskDescription;
 
-  public HostConfigSpec getConfigSpec()
-  {
+  public HostConfigSpec getConfigSpec() {
     return this.configSpec;
   }
 
-  public LocalizableMessage[] getTaskDescription()
-  {
+  public LocalizableMessage[] getTaskDescription() {
     return this.taskDescription;
   }
 
-  public void setConfigSpec(HostConfigSpec configSpec)
-  {
+  public void setConfigSpec(HostConfigSpec configSpec) {
     this.configSpec=configSpec;
   }
 
-  public void setTaskDescription(LocalizableMessage[] taskDescription)
-  {
+  public void setTaskDescription(LocalizableMessage[] taskDescription) {
     this.taskDescription=taskDescription;
   }
 }

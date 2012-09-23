@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,64 +30,55 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class HostSnmpConfigSpec extends DynamicData
-{
+@SuppressWarnings("all")
+public class HostSnmpConfigSpec extends DynamicData {
   public Boolean enabled;
   public Integer port;
   public String[] readOnlyCommunities;
   public HostSnmpDestination[] trapTargets;
   public KeyValue[] option;
 
-  public Boolean getEnabled()
-  {
+  public Boolean getEnabled() {
     return this.enabled;
   }
 
-  public Integer getPort()
-  {
+  public Integer getPort() {
     return this.port;
   }
 
-  public String[] getReadOnlyCommunities()
-  {
+  public String[] getReadOnlyCommunities() {
     return this.readOnlyCommunities;
   }
 
-  public HostSnmpDestination[] getTrapTargets()
-  {
+  public HostSnmpDestination[] getTrapTargets() {
     return this.trapTargets;
   }
 
-  public KeyValue[] getOption()
-  {
+  public KeyValue[] getOption() {
     return this.option;
   }
 
-  public void setEnabled(Boolean enabled)
-  {
+  public void setEnabled(Boolean enabled) {
     this.enabled=enabled;
   }
 
-  public void setPort(Integer port)
-  {
+  public void setPort(Integer port) {
     this.port=port;
   }
 
-  public void setReadOnlyCommunities(String[] readOnlyCommunities)
-  {
+  public void setReadOnlyCommunities(String[] readOnlyCommunities) {
     this.readOnlyCommunities=readOnlyCommunities;
   }
 
-  public void setTrapTargets(HostSnmpDestination[] trapTargets)
-  {
+  public void setTrapTargets(HostSnmpDestination[] trapTargets) {
     this.trapTargets=trapTargets;
   }
 
-  public void setOption(KeyValue[] option)
-  {
+  public void setOption(KeyValue[] option) {
     this.option=option;
   }
 }

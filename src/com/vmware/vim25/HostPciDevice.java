@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,11 +30,12 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class HostPciDevice extends DynamicData
-{
+@SuppressWarnings("all")
+public class HostPciDevice extends DynamicData {
   public String id;
   public short classId;
   public byte bus;
@@ -48,123 +49,99 @@ public class HostPciDevice extends DynamicData
   public String parentBridge;
   public String deviceName;
 
-  public String getId()
-  {
+  public String getId() {
     return this.id;
   }
 
-  public short getClassId()
-  {
+  public short getClassId() {
     return this.classId;
   }
 
-  public byte getBus()
-  {
+  public byte getBus() {
     return this.bus;
   }
 
-  public byte getSlot()
-  {
+  public byte getSlot() {
     return this.slot;
   }
 
-  public byte getFunction()
-  {
+  public byte getFunction() {
     return this.function;
   }
 
-  public short getVendorId()
-  {
+  public short getVendorId() {
     return this.vendorId;
   }
 
-  public short getSubVendorId()
-  {
+  public short getSubVendorId() {
     return this.subVendorId;
   }
 
-  public String getVendorName()
-  {
+  public String getVendorName() {
     return this.vendorName;
   }
 
-  public short getDeviceId()
-  {
+  public short getDeviceId() {
     return this.deviceId;
   }
 
-  public short getSubDeviceId()
-  {
+  public short getSubDeviceId() {
     return this.subDeviceId;
   }
 
-  public String getParentBridge()
-  {
+  public String getParentBridge() {
     return this.parentBridge;
   }
 
-  public String getDeviceName()
-  {
+  public String getDeviceName() {
     return this.deviceName;
   }
 
-  public void setId(String id)
-  {
+  public void setId(String id) {
     this.id=id;
   }
 
-  public void setClassId(short classId)
-  {
+  public void setClassId(short classId) {
     this.classId=classId;
   }
 
-  public void setBus(byte bus)
-  {
+  public void setBus(byte bus) {
     this.bus=bus;
   }
 
-  public void setSlot(byte slot)
-  {
+  public void setSlot(byte slot) {
     this.slot=slot;
   }
 
-  public void setFunction(byte function)
-  {
+  public void setFunction(byte function) {
     this.function=function;
   }
 
-  public void setVendorId(short vendorId)
-  {
+  public void setVendorId(short vendorId) {
     this.vendorId=vendorId;
   }
 
-  public void setSubVendorId(short subVendorId)
-  {
+  public void setSubVendorId(short subVendorId) {
     this.subVendorId=subVendorId;
   }
 
-  public void setVendorName(String vendorName)
-  {
+  public void setVendorName(String vendorName) {
     this.vendorName=vendorName;
   }
 
-  public void setDeviceId(short deviceId)
-  {
+  public void setDeviceId(short deviceId) {
     this.deviceId=deviceId;
   }
 
-  public void setSubDeviceId(short subDeviceId)
-  {
+  public void setSubDeviceId(short subDeviceId) {
     this.subDeviceId=subDeviceId;
   }
 
-  public void setParentBridge(String parentBridge)
-  {
+  public void setParentBridge(String parentBridge) {
     this.parentBridge=parentBridge;
   }
 
-  public void setDeviceName(String deviceName)
-  {
+  public void setDeviceName(String deviceName) {
     this.deviceName=deviceName;
   }
 }

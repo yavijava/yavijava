@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,11 +30,12 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class GuestNicInfo extends DynamicData
-{
+@SuppressWarnings("all")
+public class GuestNicInfo extends DynamicData {
   public String network;
   public String[] ipAddress;
   public String macAddress;
@@ -44,83 +45,67 @@ public class GuestNicInfo extends DynamicData
   public NetIpConfigInfo ipConfig;
   public NetBIOSConfigInfo netBIOSConfig;
 
-  public String getNetwork()
-  {
+  public String getNetwork() {
     return this.network;
   }
 
-  public String[] getIpAddress()
-  {
+  public String[] getIpAddress() {
     return this.ipAddress;
   }
 
-  public String getMacAddress()
-  {
+  public String getMacAddress() {
     return this.macAddress;
   }
 
-  public boolean isConnected()
-  {
+  public boolean isConnected() {
     return this.connected;
   }
 
-  public int getDeviceConfigId()
-  {
+  public int getDeviceConfigId() {
     return this.deviceConfigId;
   }
 
-  public NetDnsConfigInfo getDnsConfig()
-  {
+  public NetDnsConfigInfo getDnsConfig() {
     return this.dnsConfig;
   }
 
-  public NetIpConfigInfo getIpConfig()
-  {
+  public NetIpConfigInfo getIpConfig() {
     return this.ipConfig;
   }
 
-  public NetBIOSConfigInfo getNetBIOSConfig()
-  {
+  public NetBIOSConfigInfo getNetBIOSConfig() {
     return this.netBIOSConfig;
   }
 
-  public void setNetwork(String network)
-  {
+  public void setNetwork(String network) {
     this.network=network;
   }
 
-  public void setIpAddress(String[] ipAddress)
-  {
+  public void setIpAddress(String[] ipAddress) {
     this.ipAddress=ipAddress;
   }
 
-  public void setMacAddress(String macAddress)
-  {
+  public void setMacAddress(String macAddress) {
     this.macAddress=macAddress;
   }
 
-  public void setConnected(boolean connected)
-  {
+  public void setConnected(boolean connected) {
     this.connected=connected;
   }
 
-  public void setDeviceConfigId(int deviceConfigId)
-  {
+  public void setDeviceConfigId(int deviceConfigId) {
     this.deviceConfigId=deviceConfigId;
   }
 
-  public void setDnsConfig(NetDnsConfigInfo dnsConfig)
-  {
+  public void setDnsConfig(NetDnsConfigInfo dnsConfig) {
     this.dnsConfig=dnsConfig;
   }
 
-  public void setIpConfig(NetIpConfigInfo ipConfig)
-  {
+  public void setIpConfig(NetIpConfigInfo ipConfig) {
     this.ipConfig=ipConfig;
   }
 
-  public void setNetBIOSConfig(NetBIOSConfigInfo netBIOSConfig)
-  {
+  public void setNetBIOSConfig(NetBIOSConfigInfo netBIOSConfig) {
     this.netBIOSConfig=netBIOSConfig;
   }
 }

@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,42 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class HostWwnConflictEvent extends HostEvent
-{
+@SuppressWarnings("all")
+public class HostWwnConflictEvent extends HostEvent {
   public VmEventArgument[] conflictedVms;
   public HostEventArgument[] conflictedHosts;
   public long wwn;
 
-  public VmEventArgument[] getConflictedVms()
-  {
+  public VmEventArgument[] getConflictedVms() {
     return this.conflictedVms;
   }
 
-  public HostEventArgument[] getConflictedHosts()
-  {
+  public HostEventArgument[] getConflictedHosts() {
     return this.conflictedHosts;
   }
 
-  public long getWwn()
-  {
+  public long getWwn() {
     return this.wwn;
   }
 
-  public void setConflictedVms(VmEventArgument[] conflictedVms)
-  {
+  public void setConflictedVms(VmEventArgument[] conflictedVms) {
     this.conflictedVms=conflictedVms;
   }
 
-  public void setConflictedHosts(HostEventArgument[] conflictedHosts)
-  {
+  public void setConflictedHosts(HostEventArgument[] conflictedHosts) {
     this.conflictedHosts=conflictedHosts;
   }
 
-  public void setWwn(long wwn)
-  {
+  public void setWwn(long wwn) {
     this.wwn=wwn;
   }
 }

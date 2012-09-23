@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,53 +30,55 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class DatastoreCapability extends DynamicData
-{
+@SuppressWarnings("all")
+public class DatastoreCapability extends DynamicData {
   public boolean directoryHierarchySupported;
   public boolean rawDiskMappingsSupported;
   public boolean perFileThinProvisioningSupported;
   public Boolean storageIORMSupported;
+  public Boolean nativeSnapshotSupported;
 
-  public boolean isDirectoryHierarchySupported()
-  {
+  public boolean isDirectoryHierarchySupported() {
     return this.directoryHierarchySupported;
   }
 
-  public boolean isRawDiskMappingsSupported()
-  {
+  public boolean isRawDiskMappingsSupported() {
     return this.rawDiskMappingsSupported;
   }
 
-  public boolean isPerFileThinProvisioningSupported()
-  {
+  public boolean isPerFileThinProvisioningSupported() {
     return this.perFileThinProvisioningSupported;
   }
 
-  public Boolean getStorageIORMSupported()
-  {
+  public Boolean getStorageIORMSupported() {
     return this.storageIORMSupported;
   }
 
-  public void setDirectoryHierarchySupported(boolean directoryHierarchySupported)
-  {
+  public Boolean getNativeSnapshotSupported() {
+    return this.nativeSnapshotSupported;
+  }
+
+  public void setDirectoryHierarchySupported(boolean directoryHierarchySupported) {
     this.directoryHierarchySupported=directoryHierarchySupported;
   }
 
-  public void setRawDiskMappingsSupported(boolean rawDiskMappingsSupported)
-  {
+  public void setRawDiskMappingsSupported(boolean rawDiskMappingsSupported) {
     this.rawDiskMappingsSupported=rawDiskMappingsSupported;
   }
 
-  public void setPerFileThinProvisioningSupported(boolean perFileThinProvisioningSupported)
-  {
+  public void setPerFileThinProvisioningSupported(boolean perFileThinProvisioningSupported) {
     this.perFileThinProvisioningSupported=perFileThinProvisioningSupported;
   }
 
-  public void setStorageIORMSupported(Boolean storageIORMSupported)
-  {
+  public void setStorageIORMSupported(Boolean storageIORMSupported) {
     this.storageIORMSupported=storageIORMSupported;
+  }
+
+  public void setNativeSnapshotSupported(Boolean nativeSnapshotSupported) {
+    this.nativeSnapshotSupported=nativeSnapshotSupported;
   }
 }

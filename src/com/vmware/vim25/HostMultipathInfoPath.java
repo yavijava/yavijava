@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,11 +30,12 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class HostMultipathInfoPath extends DynamicData
-{
+@SuppressWarnings("all")
+public class HostMultipathInfoPath extends DynamicData {
   public String key;
   public String name;
   public String pathState;
@@ -44,83 +45,67 @@ public class HostMultipathInfoPath extends DynamicData
   public String lun;
   public HostTargetTransport transport;
 
-  public String getKey()
-  {
+  public String getKey() {
     return this.key;
   }
 
-  public String getName()
-  {
+  public String getName() {
     return this.name;
   }
 
-  public String getPathState()
-  {
+  public String getPathState() {
     return this.pathState;
   }
 
-  public String getState()
-  {
+  public String getState() {
     return this.state;
   }
 
-  public Boolean getIsWorkingPath()
-  {
+  public Boolean getIsWorkingPath() {
     return this.isWorkingPath;
   }
 
-  public String getAdapter()
-  {
+  public String getAdapter() {
     return this.adapter;
   }
 
-  public String getLun()
-  {
+  public String getLun() {
     return this.lun;
   }
 
-  public HostTargetTransport getTransport()
-  {
+  public HostTargetTransport getTransport() {
     return this.transport;
   }
 
-  public void setKey(String key)
-  {
+  public void setKey(String key) {
     this.key=key;
   }
 
-  public void setName(String name)
-  {
+  public void setName(String name) {
     this.name=name;
   }
 
-  public void setPathState(String pathState)
-  {
+  public void setPathState(String pathState) {
     this.pathState=pathState;
   }
 
-  public void setState(String state)
-  {
+  public void setState(String state) {
     this.state=state;
   }
 
-  public void setIsWorkingPath(Boolean isWorkingPath)
-  {
+  public void setIsWorkingPath(Boolean isWorkingPath) {
     this.isWorkingPath=isWorkingPath;
   }
 
-  public void setAdapter(String adapter)
-  {
+  public void setAdapter(String adapter) {
     this.adapter=adapter;
   }
 
-  public void setLun(String lun)
-  {
+  public void setLun(String lun) {
     this.lun=lun;
   }
 
-  public void setTransport(HostTargetTransport transport)
-  {
+  public void setTransport(HostTargetTransport transport) {
     this.transport=transport;
   }
 }

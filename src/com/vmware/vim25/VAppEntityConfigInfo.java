@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,11 +30,12 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class VAppEntityConfigInfo extends DynamicData
-{
+@SuppressWarnings("all")
+public class VAppEntityConfigInfo extends DynamicData {
   public ManagedObjectReference key;
   public String tag;
   public Integer startOrder;
@@ -45,93 +46,75 @@ public class VAppEntityConfigInfo extends DynamicData
   public String stopAction;
   public Boolean destroyWithParent;
 
-  public ManagedObjectReference getKey()
-  {
+  public ManagedObjectReference getKey() {
     return this.key;
   }
 
-  public String getTag()
-  {
+  public String getTag() {
     return this.tag;
   }
 
-  public Integer getStartOrder()
-  {
+  public Integer getStartOrder() {
     return this.startOrder;
   }
 
-  public Integer getStartDelay()
-  {
+  public Integer getStartDelay() {
     return this.startDelay;
   }
 
-  public Boolean getWaitingForGuest()
-  {
+  public Boolean getWaitingForGuest() {
     return this.waitingForGuest;
   }
 
-  public String getStartAction()
-  {
+  public String getStartAction() {
     return this.startAction;
   }
 
-  public Integer getStopDelay()
-  {
+  public Integer getStopDelay() {
     return this.stopDelay;
   }
 
-  public String getStopAction()
-  {
+  public String getStopAction() {
     return this.stopAction;
   }
 
-  public Boolean getDestroyWithParent()
-  {
+  public Boolean getDestroyWithParent() {
     return this.destroyWithParent;
   }
 
-  public void setKey(ManagedObjectReference key)
-  {
+  public void setKey(ManagedObjectReference key) {
     this.key=key;
   }
 
-  public void setTag(String tag)
-  {
+  public void setTag(String tag) {
     this.tag=tag;
   }
 
-  public void setStartOrder(Integer startOrder)
-  {
+  public void setStartOrder(Integer startOrder) {
     this.startOrder=startOrder;
   }
 
-  public void setStartDelay(Integer startDelay)
-  {
+  public void setStartDelay(Integer startDelay) {
     this.startDelay=startDelay;
   }
 
-  public void setWaitingForGuest(Boolean waitingForGuest)
-  {
+  public void setWaitingForGuest(Boolean waitingForGuest) {
     this.waitingForGuest=waitingForGuest;
   }
 
-  public void setStartAction(String startAction)
-  {
+  public void setStartAction(String startAction) {
     this.startAction=startAction;
   }
 
-  public void setStopDelay(Integer stopDelay)
-  {
+  public void setStopDelay(Integer stopDelay) {
     this.stopDelay=stopDelay;
   }
 
-  public void setStopAction(String stopAction)
-  {
+  public void setStopAction(String stopAction) {
     this.stopAction=stopAction;
   }
 
-  public void setDestroyWithParent(Boolean destroyWithParent)
-  {
+  public void setDestroyWithParent(Boolean destroyWithParent) {
     this.destroyWithParent=destroyWithParent;
   }
 }

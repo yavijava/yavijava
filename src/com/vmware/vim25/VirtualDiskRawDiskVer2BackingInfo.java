@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,42 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class VirtualDiskRawDiskVer2BackingInfo extends VirtualDeviceDeviceBackingInfo
-{
+@SuppressWarnings("all")
+public class VirtualDiskRawDiskVer2BackingInfo extends VirtualDeviceDeviceBackingInfo {
   public String descriptorFileName;
   public String uuid;
   public String changeId;
 
-  public String getDescriptorFileName()
-  {
+  public String getDescriptorFileName() {
     return this.descriptorFileName;
   }
 
-  public String getUuid()
-  {
+  public String getUuid() {
     return this.uuid;
   }
 
-  public String getChangeId()
-  {
+  public String getChangeId() {
     return this.changeId;
   }
 
-  public void setDescriptorFileName(String descriptorFileName)
-  {
+  public void setDescriptorFileName(String descriptorFileName) {
     this.descriptorFileName=descriptorFileName;
   }
 
-  public void setUuid(String uuid)
-  {
+  public void setUuid(String uuid) {
     this.uuid=uuid;
   }
 
-  public void setChangeId(String changeId)
-  {
+  public void setChangeId(String changeId) {
     this.changeId=changeId;
   }
 }

@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,11 +30,12 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class HostListSummary extends DynamicData
-{
+@SuppressWarnings("all")
+public class HostListSummary extends DynamicData {
   public ManagedObjectReference host;
   public HostHardwareSummary hardware;
   public HostRuntimeInfo runtime;
@@ -47,113 +48,91 @@ public class HostListSummary extends DynamicData
   public String maxEVCModeKey;
   public String currentEVCModeKey;
 
-  public ManagedObjectReference getHost()
-  {
+  public ManagedObjectReference getHost() {
     return this.host;
   }
 
-  public HostHardwareSummary getHardware()
-  {
+  public HostHardwareSummary getHardware() {
     return this.hardware;
   }
 
-  public HostRuntimeInfo getRuntime()
-  {
+  public HostRuntimeInfo getRuntime() {
     return this.runtime;
   }
 
-  public HostConfigSummary getConfig()
-  {
+  public HostConfigSummary getConfig() {
     return this.config;
   }
 
-  public HostListSummaryQuickStats getQuickStats()
-  {
+  public HostListSummaryQuickStats getQuickStats() {
     return this.quickStats;
   }
 
-  public ManagedEntityStatus getOverallStatus()
-  {
+  public ManagedEntityStatus getOverallStatus() {
     return this.overallStatus;
   }
 
-  public boolean isRebootRequired()
-  {
+  public boolean isRebootRequired() {
     return this.rebootRequired;
   }
 
-  public CustomFieldValue[] getCustomValue()
-  {
+  public CustomFieldValue[] getCustomValue() {
     return this.customValue;
   }
 
-  public String getManagementServerIp()
-  {
+  public String getManagementServerIp() {
     return this.managementServerIp;
   }
 
-  public String getMaxEVCModeKey()
-  {
+  public String getMaxEVCModeKey() {
     return this.maxEVCModeKey;
   }
 
-  public String getCurrentEVCModeKey()
-  {
+  public String getCurrentEVCModeKey() {
     return this.currentEVCModeKey;
   }
 
-  public void setHost(ManagedObjectReference host)
-  {
+  public void setHost(ManagedObjectReference host) {
     this.host=host;
   }
 
-  public void setHardware(HostHardwareSummary hardware)
-  {
+  public void setHardware(HostHardwareSummary hardware) {
     this.hardware=hardware;
   }
 
-  public void setRuntime(HostRuntimeInfo runtime)
-  {
+  public void setRuntime(HostRuntimeInfo runtime) {
     this.runtime=runtime;
   }
 
-  public void setConfig(HostConfigSummary config)
-  {
+  public void setConfig(HostConfigSummary config) {
     this.config=config;
   }
 
-  public void setQuickStats(HostListSummaryQuickStats quickStats)
-  {
+  public void setQuickStats(HostListSummaryQuickStats quickStats) {
     this.quickStats=quickStats;
   }
 
-  public void setOverallStatus(ManagedEntityStatus overallStatus)
-  {
+  public void setOverallStatus(ManagedEntityStatus overallStatus) {
     this.overallStatus=overallStatus;
   }
 
-  public void setRebootRequired(boolean rebootRequired)
-  {
+  public void setRebootRequired(boolean rebootRequired) {
     this.rebootRequired=rebootRequired;
   }
 
-  public void setCustomValue(CustomFieldValue[] customValue)
-  {
+  public void setCustomValue(CustomFieldValue[] customValue) {
     this.customValue=customValue;
   }
 
-  public void setManagementServerIp(String managementServerIp)
-  {
+  public void setManagementServerIp(String managementServerIp) {
     this.managementServerIp=managementServerIp;
   }
 
-  public void setMaxEVCModeKey(String maxEVCModeKey)
-  {
+  public void setMaxEVCModeKey(String maxEVCModeKey) {
     this.maxEVCModeKey=maxEVCModeKey;
   }
 
-  public void setCurrentEVCModeKey(String currentEVCModeKey)
-  {
+  public void setCurrentEVCModeKey(String currentEVCModeKey) {
     this.currentEVCModeKey=currentEVCModeKey;
   }
 }

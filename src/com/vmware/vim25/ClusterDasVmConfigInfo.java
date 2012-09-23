@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,53 +30,46 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class ClusterDasVmConfigInfo extends DynamicData
-{
+@SuppressWarnings("all")
+public class ClusterDasVmConfigInfo extends DynamicData {
   public ManagedObjectReference key;
   public DasVmPriority restartPriority;
   public Boolean powerOffOnIsolation;
   public ClusterDasVmSettings dasSettings;
 
-  public ManagedObjectReference getKey()
-  {
+  public ManagedObjectReference getKey() {
     return this.key;
   }
 
-  public DasVmPriority getRestartPriority()
-  {
+  public DasVmPriority getRestartPriority() {
     return this.restartPriority;
   }
 
-  public Boolean getPowerOffOnIsolation()
-  {
+  public Boolean getPowerOffOnIsolation() {
     return this.powerOffOnIsolation;
   }
 
-  public ClusterDasVmSettings getDasSettings()
-  {
+  public ClusterDasVmSettings getDasSettings() {
     return this.dasSettings;
   }
 
-  public void setKey(ManagedObjectReference key)
-  {
+  public void setKey(ManagedObjectReference key) {
     this.key=key;
   }
 
-  public void setRestartPriority(DasVmPriority restartPriority)
-  {
+  public void setRestartPriority(DasVmPriority restartPriority) {
     this.restartPriority=restartPriority;
   }
 
-  public void setPowerOffOnIsolation(Boolean powerOffOnIsolation)
-  {
+  public void setPowerOffOnIsolation(Boolean powerOffOnIsolation) {
     this.powerOffOnIsolation=powerOffOnIsolation;
   }
 
-  public void setDasSettings(ClusterDasVmSettings dasSettings)
-  {
+  public void setDasSettings(ClusterDasVmSettings dasSettings) {
     this.dasSettings=dasSettings;
   }
 }

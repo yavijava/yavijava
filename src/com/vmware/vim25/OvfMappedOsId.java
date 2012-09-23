@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,42 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class OvfMappedOsId extends OvfImport
-{
+@SuppressWarnings("all")
+public class OvfMappedOsId extends OvfImport {
   public int ovfId;
   public String ovfDescription;
   public String targetDescription;
 
-  public int getOvfId()
-  {
+  public int getOvfId() {
     return this.ovfId;
   }
 
-  public String getOvfDescription()
-  {
+  public String getOvfDescription() {
     return this.ovfDescription;
   }
 
-  public String getTargetDescription()
-  {
+  public String getTargetDescription() {
     return this.targetDescription;
   }
 
-  public void setOvfId(int ovfId)
-  {
+  public void setOvfId(int ovfId) {
     this.ovfId=ovfId;
   }
 
-  public void setOvfDescription(String ovfDescription)
-  {
+  public void setOvfDescription(String ovfDescription) {
     this.ovfDescription=ovfDescription;
   }
 
-  public void setTargetDescription(String targetDescription)
-  {
+  public void setTargetDescription(String targetDescription) {
     this.targetDescription=targetDescription;
   }
 }

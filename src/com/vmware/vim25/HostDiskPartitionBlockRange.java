@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,53 +30,46 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class HostDiskPartitionBlockRange extends DynamicData
-{
+@SuppressWarnings("all")
+public class HostDiskPartitionBlockRange extends DynamicData {
   public Integer partition;
   public String type;
   public HostDiskDimensionsLba start;
   public HostDiskDimensionsLba end;
 
-  public Integer getPartition()
-  {
+  public Integer getPartition() {
     return this.partition;
   }
 
-  public String getType()
-  {
+  public String getType() {
     return this.type;
   }
 
-  public HostDiskDimensionsLba getStart()
-  {
+  public HostDiskDimensionsLba getStart() {
     return this.start;
   }
 
-  public HostDiskDimensionsLba getEnd()
-  {
+  public HostDiskDimensionsLba getEnd() {
     return this.end;
   }
 
-  public void setPartition(Integer partition)
-  {
+  public void setPartition(Integer partition) {
     this.partition=partition;
   }
 
-  public void setType(String type)
-  {
+  public void setType(String type) {
     this.type=type;
   }
 
-  public void setStart(HostDiskDimensionsLba start)
-  {
+  public void setStart(HostDiskDimensionsLba start) {
     this.start=start;
   }
 
-  public void setEnd(HostDiskDimensionsLba end)
-  {
+  public void setEnd(HostDiskDimensionsLba end) {
     this.end=end;
   }
 }

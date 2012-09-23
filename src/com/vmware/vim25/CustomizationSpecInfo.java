@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -31,64 +31,55 @@ package com.vmware.vim25;
 import java.util.Calendar;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class CustomizationSpecInfo extends DynamicData
-{
+@SuppressWarnings("all")
+public class CustomizationSpecInfo extends DynamicData {
   public String name;
   public String description;
   public String type;
   public String changeVersion;
   public Calendar lastUpdateTime;
 
-  public String getName()
-  {
+  public String getName() {
     return this.name;
   }
 
-  public String getDescription()
-  {
+  public String getDescription() {
     return this.description;
   }
 
-  public String getType()
-  {
+  public String getType() {
     return this.type;
   }
 
-  public String getChangeVersion()
-  {
+  public String getChangeVersion() {
     return this.changeVersion;
   }
 
-  public Calendar getLastUpdateTime()
-  {
+  public Calendar getLastUpdateTime() {
     return this.lastUpdateTime;
   }
 
-  public void setName(String name)
-  {
+  public void setName(String name) {
     this.name=name;
   }
 
-  public void setDescription(String description)
-  {
+  public void setDescription(String description) {
     this.description=description;
   }
 
-  public void setType(String type)
-  {
+  public void setType(String type) {
     this.type=type;
   }
 
-  public void setChangeVersion(String changeVersion)
-  {
+  public void setChangeVersion(String changeVersion) {
     this.changeVersion=changeVersion;
   }
 
-  public void setLastUpdateTime(Calendar lastUpdateTime)
-  {
+  public void setLastUpdateTime(Calendar lastUpdateTime) {
     this.lastUpdateTime=lastUpdateTime;
   }
 }

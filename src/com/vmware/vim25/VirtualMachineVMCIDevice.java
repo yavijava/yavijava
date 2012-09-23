@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,31 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class VirtualMachineVMCIDevice extends VirtualDevice
-{
+@SuppressWarnings("all")
+public class VirtualMachineVMCIDevice extends VirtualDevice {
   public Long id;
   public Boolean allowUnrestrictedCommunication;
 
-  public Long getId()
-  {
+  public Long getId() {
     return this.id;
   }
 
-  public Boolean getAllowUnrestrictedCommunication()
-  {
+  public Boolean getAllowUnrestrictedCommunication() {
     return this.allowUnrestrictedCommunication;
   }
 
-  public void setId(Long id)
-  {
+  public void setId(Long id) {
     this.id=id;
   }
 
-  public void setAllowUnrestrictedCommunication(Boolean allowUnrestrictedCommunication)
-  {
+  public void setAllowUnrestrictedCommunication(Boolean allowUnrestrictedCommunication) {
     this.allowUnrestrictedCommunication=allowUnrestrictedCommunication;
   }
 }

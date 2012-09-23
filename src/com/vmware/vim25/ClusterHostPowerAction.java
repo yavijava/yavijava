@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,53 +30,46 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class ClusterHostPowerAction extends ClusterAction
-{
+@SuppressWarnings("all")
+public class ClusterHostPowerAction extends ClusterAction {
   public HostPowerOperationType operationType;
   public Integer powerConsumptionWatt;
   public Integer cpuCapacityMHz;
   public Integer memCapacityMB;
 
-  public HostPowerOperationType getOperationType()
-  {
+  public HostPowerOperationType getOperationType() {
     return this.operationType;
   }
 
-  public Integer getPowerConsumptionWatt()
-  {
+  public Integer getPowerConsumptionWatt() {
     return this.powerConsumptionWatt;
   }
 
-  public Integer getCpuCapacityMHz()
-  {
+  public Integer getCpuCapacityMHz() {
     return this.cpuCapacityMHz;
   }
 
-  public Integer getMemCapacityMB()
-  {
+  public Integer getMemCapacityMB() {
     return this.memCapacityMB;
   }
 
-  public void setOperationType(HostPowerOperationType operationType)
-  {
+  public void setOperationType(HostPowerOperationType operationType) {
     this.operationType=operationType;
   }
 
-  public void setPowerConsumptionWatt(Integer powerConsumptionWatt)
-  {
+  public void setPowerConsumptionWatt(Integer powerConsumptionWatt) {
     this.powerConsumptionWatt=powerConsumptionWatt;
   }
 
-  public void setCpuCapacityMHz(Integer cpuCapacityMHz)
-  {
+  public void setCpuCapacityMHz(Integer cpuCapacityMHz) {
     this.cpuCapacityMHz=cpuCapacityMHz;
   }
 
-  public void setMemCapacityMB(Integer memCapacityMB)
-  {
+  public void setMemCapacityMB(Integer memCapacityMB) {
     this.memCapacityMB=memCapacityMB;
   }
 }

@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,31 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class HostEsxAgentHostManagerConfigInfo extends DynamicData
-{
+@SuppressWarnings("all")
+public class HostEsxAgentHostManagerConfigInfo extends DynamicData {
   public ManagedObjectReference agentVmDatastore;
   public ManagedObjectReference agentVmNetwork;
 
-  public ManagedObjectReference getAgentVmDatastore()
-  {
+  public ManagedObjectReference getAgentVmDatastore() {
     return this.agentVmDatastore;
   }
 
-  public ManagedObjectReference getAgentVmNetwork()
-  {
+  public ManagedObjectReference getAgentVmNetwork() {
     return this.agentVmNetwork;
   }
 
-  public void setAgentVmDatastore(ManagedObjectReference agentVmDatastore)
-  {
+  public void setAgentVmDatastore(ManagedObjectReference agentVmDatastore) {
     this.agentVmDatastore=agentVmDatastore;
   }
 
-  public void setAgentVmNetwork(ManagedObjectReference agentVmNetwork)
-  {
+  public void setAgentVmNetwork(ManagedObjectReference agentVmNetwork) {
     this.agentVmNetwork=agentVmNetwork;
   }
 }

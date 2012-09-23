@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,31 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class PatchMissingDependencies extends PatchNotApplicable
-{
+@SuppressWarnings("all")
+public class PatchMissingDependencies extends PatchNotApplicable {
   public String[] prerequisitePatch;
   public String[] prerequisiteLib;
 
-  public String[] getPrerequisitePatch()
-  {
+  public String[] getPrerequisitePatch() {
     return this.prerequisitePatch;
   }
 
-  public String[] getPrerequisiteLib()
-  {
+  public String[] getPrerequisiteLib() {
     return this.prerequisiteLib;
   }
 
-  public void setPrerequisitePatch(String[] prerequisitePatch)
-  {
+  public void setPrerequisitePatch(String[] prerequisitePatch) {
     this.prerequisitePatch=prerequisitePatch;
   }
 
-  public void setPrerequisiteLib(String[] prerequisiteLib)
-  {
+  public void setPrerequisiteLib(String[] prerequisiteLib) {
     this.prerequisiteLib=prerequisiteLib;
   }
 }

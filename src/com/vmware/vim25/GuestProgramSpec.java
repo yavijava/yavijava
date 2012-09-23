@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,53 +30,46 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class GuestProgramSpec extends DynamicData
-{
+@SuppressWarnings("all")
+public class GuestProgramSpec extends DynamicData {
   public String programPath;
   public String arguments;
   public String workingDirectory;
   public String[] envVariables;
 
-  public String getProgramPath()
-  {
+  public String getProgramPath() {
     return this.programPath;
   }
 
-  public String getArguments()
-  {
+  public String getArguments() {
     return this.arguments;
   }
 
-  public String getWorkingDirectory()
-  {
+  public String getWorkingDirectory() {
     return this.workingDirectory;
   }
 
-  public String[] getEnvVariables()
-  {
+  public String[] getEnvVariables() {
     return this.envVariables;
   }
 
-  public void setProgramPath(String programPath)
-  {
+  public void setProgramPath(String programPath) {
     this.programPath=programPath;
   }
 
-  public void setArguments(String arguments)
-  {
+  public void setArguments(String arguments) {
     this.arguments=arguments;
   }
 
-  public void setWorkingDirectory(String workingDirectory)
-  {
+  public void setWorkingDirectory(String workingDirectory) {
     this.workingDirectory=workingDirectory;
   }
 
-  public void setEnvVariables(String[] envVariables)
-  {
+  public void setEnvVariables(String[] envVariables) {
     this.envVariables=envVariables;
   }
 }

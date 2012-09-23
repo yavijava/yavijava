@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,64 +30,55 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class ClusterDrsRecommendation extends DynamicData
-{
+@SuppressWarnings("all")
+public class ClusterDrsRecommendation extends DynamicData {
   public String key;
   public int rating;
   public String reason;
   public String reasonText;
   public ClusterDrsMigration[] migrationList;
 
-  public String getKey()
-  {
+  public String getKey() {
     return this.key;
   }
 
-  public int getRating()
-  {
+  public int getRating() {
     return this.rating;
   }
 
-  public String getReason()
-  {
+  public String getReason() {
     return this.reason;
   }
 
-  public String getReasonText()
-  {
+  public String getReasonText() {
     return this.reasonText;
   }
 
-  public ClusterDrsMigration[] getMigrationList()
-  {
+  public ClusterDrsMigration[] getMigrationList() {
     return this.migrationList;
   }
 
-  public void setKey(String key)
-  {
+  public void setKey(String key) {
     this.key=key;
   }
 
-  public void setRating(int rating)
-  {
+  public void setRating(int rating) {
     this.rating=rating;
   }
 
-  public void setReason(String reason)
-  {
+  public void setReason(String reason) {
     this.reason=reason;
   }
 
-  public void setReasonText(String reasonText)
-  {
+  public void setReasonText(String reasonText) {
     this.reasonText=reasonText;
   }
 
-  public void setMigrationList(ClusterDrsMigration[] migrationList)
-  {
+  public void setMigrationList(ClusterDrsMigration[] migrationList) {
     this.migrationList=migrationList;
   }
 }

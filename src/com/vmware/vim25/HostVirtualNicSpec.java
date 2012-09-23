@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,11 +30,12 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class HostVirtualNicSpec extends DynamicData
-{
+@SuppressWarnings("all")
+public class HostVirtualNicSpec extends DynamicData {
   public HostIpConfig ip;
   public String mac;
   public DistributedVirtualSwitchPortConnection distributedVirtualPort;
@@ -42,63 +43,51 @@ public class HostVirtualNicSpec extends DynamicData
   public Integer mtu;
   public Boolean tsoEnabled;
 
-  public HostIpConfig getIp()
-  {
+  public HostIpConfig getIp() {
     return this.ip;
   }
 
-  public String getMac()
-  {
+  public String getMac() {
     return this.mac;
   }
 
-  public DistributedVirtualSwitchPortConnection getDistributedVirtualPort()
-  {
+  public DistributedVirtualSwitchPortConnection getDistributedVirtualPort() {
     return this.distributedVirtualPort;
   }
 
-  public String getPortgroup()
-  {
+  public String getPortgroup() {
     return this.portgroup;
   }
 
-  public Integer getMtu()
-  {
+  public Integer getMtu() {
     return this.mtu;
   }
 
-  public Boolean getTsoEnabled()
-  {
+  public Boolean getTsoEnabled() {
     return this.tsoEnabled;
   }
 
-  public void setIp(HostIpConfig ip)
-  {
+  public void setIp(HostIpConfig ip) {
     this.ip=ip;
   }
 
-  public void setMac(String mac)
-  {
+  public void setMac(String mac) {
     this.mac=mac;
   }
 
-  public void setDistributedVirtualPort(DistributedVirtualSwitchPortConnection distributedVirtualPort)
-  {
+  public void setDistributedVirtualPort(DistributedVirtualSwitchPortConnection distributedVirtualPort) {
     this.distributedVirtualPort=distributedVirtualPort;
   }
 
-  public void setPortgroup(String portgroup)
-  {
+  public void setPortgroup(String portgroup) {
     this.portgroup=portgroup;
   }
 
-  public void setMtu(Integer mtu)
-  {
+  public void setMtu(Integer mtu) {
     this.mtu=mtu;
   }
 
-  public void setTsoEnabled(Boolean tsoEnabled)
-  {
+  public void setTsoEnabled(Boolean tsoEnabled) {
     this.tsoEnabled=tsoEnabled;
   }
 }

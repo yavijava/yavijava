@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,31 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class BoolOption extends OptionType
-{
+@SuppressWarnings("all")
+public class BoolOption extends OptionType {
   public boolean supported;
   public boolean defaultValue;
 
-  public boolean isSupported()
-  {
+  public boolean isSupported() {
     return this.supported;
   }
 
-  public boolean isDefaultValue()
-  {
+  public boolean isDefaultValue() {
     return this.defaultValue;
   }
 
-  public void setSupported(boolean supported)
-  {
+  public void setSupported(boolean supported) {
     this.supported=supported;
   }
 
-  public void setDefaultValue(boolean defaultValue)
-  {
+  public void setDefaultValue(boolean defaultValue) {
     this.defaultValue=defaultValue;
   }
 }

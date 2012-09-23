@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,11 +30,12 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class VMwareIpfixConfig extends DynamicData
-{
+@SuppressWarnings("all")
+public class VMwareIpfixConfig extends DynamicData {
   public String collectorIpAddress;
   public Integer collectorPort;
   public int activeFlowTimeout;
@@ -42,63 +43,51 @@ public class VMwareIpfixConfig extends DynamicData
   public int samplingRate;
   public boolean internalFlowsOnly;
 
-  public String getCollectorIpAddress()
-  {
+  public String getCollectorIpAddress() {
     return this.collectorIpAddress;
   }
 
-  public Integer getCollectorPort()
-  {
+  public Integer getCollectorPort() {
     return this.collectorPort;
   }
 
-  public int getActiveFlowTimeout()
-  {
+  public int getActiveFlowTimeout() {
     return this.activeFlowTimeout;
   }
 
-  public int getIdleFlowTimeout()
-  {
+  public int getIdleFlowTimeout() {
     return this.idleFlowTimeout;
   }
 
-  public int getSamplingRate()
-  {
+  public int getSamplingRate() {
     return this.samplingRate;
   }
 
-  public boolean isInternalFlowsOnly()
-  {
+  public boolean isInternalFlowsOnly() {
     return this.internalFlowsOnly;
   }
 
-  public void setCollectorIpAddress(String collectorIpAddress)
-  {
+  public void setCollectorIpAddress(String collectorIpAddress) {
     this.collectorIpAddress=collectorIpAddress;
   }
 
-  public void setCollectorPort(Integer collectorPort)
-  {
+  public void setCollectorPort(Integer collectorPort) {
     this.collectorPort=collectorPort;
   }
 
-  public void setActiveFlowTimeout(int activeFlowTimeout)
-  {
+  public void setActiveFlowTimeout(int activeFlowTimeout) {
     this.activeFlowTimeout=activeFlowTimeout;
   }
 
-  public void setIdleFlowTimeout(int idleFlowTimeout)
-  {
+  public void setIdleFlowTimeout(int idleFlowTimeout) {
     this.idleFlowTimeout=idleFlowTimeout;
   }
 
-  public void setSamplingRate(int samplingRate)
-  {
+  public void setSamplingRate(int samplingRate) {
     this.samplingRate=samplingRate;
   }
 
-  public void setInternalFlowsOnly(boolean internalFlowsOnly)
-  {
+  public void setInternalFlowsOnly(boolean internalFlowsOnly) {
     this.internalFlowsOnly=internalFlowsOnly;
   }
 }

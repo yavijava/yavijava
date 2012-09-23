@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,53 +30,46 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class VirtualDiskSparseVer1BackingOption extends VirtualDeviceFileBackingOption
-{
+@SuppressWarnings("all")
+public class VirtualDiskSparseVer1BackingOption extends VirtualDeviceFileBackingOption {
   public ChoiceOption diskModes;
   public BoolOption split;
   public BoolOption writeThrough;
   public boolean growable;
 
-  public ChoiceOption getDiskModes()
-  {
+  public ChoiceOption getDiskModes() {
     return this.diskModes;
   }
 
-  public BoolOption getSplit()
-  {
+  public BoolOption getSplit() {
     return this.split;
   }
 
-  public BoolOption getWriteThrough()
-  {
+  public BoolOption getWriteThrough() {
     return this.writeThrough;
   }
 
-  public boolean isGrowable()
-  {
+  public boolean isGrowable() {
     return this.growable;
   }
 
-  public void setDiskModes(ChoiceOption diskModes)
-  {
+  public void setDiskModes(ChoiceOption diskModes) {
     this.diskModes=diskModes;
   }
 
-  public void setSplit(BoolOption split)
-  {
+  public void setSplit(BoolOption split) {
     this.split=split;
   }
 
-  public void setWriteThrough(BoolOption writeThrough)
-  {
+  public void setWriteThrough(BoolOption writeThrough) {
     this.writeThrough=writeThrough;
   }
 
-  public void setGrowable(boolean growable)
-  {
+  public void setGrowable(boolean growable) {
     this.growable=growable;
   }
 }

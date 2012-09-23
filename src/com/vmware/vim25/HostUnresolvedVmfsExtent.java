@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,11 +30,12 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class HostUnresolvedVmfsExtent extends DynamicData
-{
+@SuppressWarnings("all")
+public class HostUnresolvedVmfsExtent extends DynamicData {
   public HostScsiDiskPartition device;
   public String devicePath;
   public String vmfsUuid;
@@ -44,83 +45,67 @@ public class HostUnresolvedVmfsExtent extends DynamicData
   public int endBlock;
   public String reason;
 
-  public HostScsiDiskPartition getDevice()
-  {
+  public HostScsiDiskPartition getDevice() {
     return this.device;
   }
 
-  public String getDevicePath()
-  {
+  public String getDevicePath() {
     return this.devicePath;
   }
 
-  public String getVmfsUuid()
-  {
+  public String getVmfsUuid() {
     return this.vmfsUuid;
   }
 
-  public boolean isIsHeadExtent()
-  {
+  public boolean isIsHeadExtent() {
     return this.isHeadExtent;
   }
 
-  public int getOrdinal()
-  {
+  public int getOrdinal() {
     return this.ordinal;
   }
 
-  public int getStartBlock()
-  {
+  public int getStartBlock() {
     return this.startBlock;
   }
 
-  public int getEndBlock()
-  {
+  public int getEndBlock() {
     return this.endBlock;
   }
 
-  public String getReason()
-  {
+  public String getReason() {
     return this.reason;
   }
 
-  public void setDevice(HostScsiDiskPartition device)
-  {
+  public void setDevice(HostScsiDiskPartition device) {
     this.device=device;
   }
 
-  public void setDevicePath(String devicePath)
-  {
+  public void setDevicePath(String devicePath) {
     this.devicePath=devicePath;
   }
 
-  public void setVmfsUuid(String vmfsUuid)
-  {
+  public void setVmfsUuid(String vmfsUuid) {
     this.vmfsUuid=vmfsUuid;
   }
 
-  public void setIsHeadExtent(boolean isHeadExtent)
-  {
+  public void setIsHeadExtent(boolean isHeadExtent) {
     this.isHeadExtent=isHeadExtent;
   }
 
-  public void setOrdinal(int ordinal)
-  {
+  public void setOrdinal(int ordinal) {
     this.ordinal=ordinal;
   }
 
-  public void setStartBlock(int startBlock)
-  {
+  public void setStartBlock(int startBlock) {
     this.startBlock=startBlock;
   }
 
-  public void setEndBlock(int endBlock)
-  {
+  public void setEndBlock(int endBlock) {
     this.endBlock=endBlock;
   }
 
-  public void setReason(String reason)
-  {
+  public void setReason(String reason) {
     this.reason=reason;
   }
 }

@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,42 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class PerformanceManagerCounterLevelMapping extends DynamicData
-{
+@SuppressWarnings("all")
+public class PerformanceManagerCounterLevelMapping extends DynamicData {
   public int counterId;
   public Integer aggregateLevel;
   public Integer perDeviceLevel;
 
-  public int getCounterId()
-  {
+  public int getCounterId() {
     return this.counterId;
   }
 
-  public Integer getAggregateLevel()
-  {
+  public Integer getAggregateLevel() {
     return this.aggregateLevel;
   }
 
-  public Integer getPerDeviceLevel()
-  {
+  public Integer getPerDeviceLevel() {
     return this.perDeviceLevel;
   }
 
-  public void setCounterId(int counterId)
-  {
+  public void setCounterId(int counterId) {
     this.counterId=counterId;
   }
 
-  public void setAggregateLevel(Integer aggregateLevel)
-  {
+  public void setAggregateLevel(Integer aggregateLevel) {
     this.aggregateLevel=aggregateLevel;
   }
 
-  public void setPerDeviceLevel(Integer perDeviceLevel)
-  {
+  public void setPerDeviceLevel(Integer perDeviceLevel) {
     this.perDeviceLevel=perDeviceLevel;
   }
 }

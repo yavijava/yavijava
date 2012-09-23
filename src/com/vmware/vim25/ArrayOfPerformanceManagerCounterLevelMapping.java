@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,25 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class ArrayOfPerformanceManagerCounterLevelMapping
-{
+public class ArrayOfPerformanceManagerCounterLevelMapping {
   public PerformanceManagerCounterLevelMapping[] PerformanceManagerCounterLevelMapping;
 
-  public PerformanceManagerCounterLevelMapping[] getPerformanceManagerCounterLevelMapping()
-  {
+  public PerformanceManagerCounterLevelMapping[] getPerformanceManagerCounterLevelMapping() {
     return this.PerformanceManagerCounterLevelMapping;
   }
 
-  public PerformanceManagerCounterLevelMapping getPerformanceManagerCounterLevelMapping(int i)
-  {
+  public PerformanceManagerCounterLevelMapping getPerformanceManagerCounterLevelMapping(int i) {
     return this.PerformanceManagerCounterLevelMapping[i];
   }
 
-  public void setPerformanceManagerCounterLevelMapping(PerformanceManagerCounterLevelMapping[] PerformanceManagerCounterLevelMapping)
-  {
+  public void setPerformanceManagerCounterLevelMapping(PerformanceManagerCounterLevelMapping[] PerformanceManagerCounterLevelMapping) {
     this.PerformanceManagerCounterLevelMapping=PerformanceManagerCounterLevelMapping;
   }
 }

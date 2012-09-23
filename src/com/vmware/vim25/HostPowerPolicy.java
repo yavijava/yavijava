@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,53 +30,46 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class HostPowerPolicy extends DynamicData
-{
+@SuppressWarnings("all")
+public class HostPowerPolicy extends DynamicData {
   public int key;
   public String name;
   public String shortName;
   public String description;
 
-  public int getKey()
-  {
+  public int getKey() {
     return this.key;
   }
 
-  public String getName()
-  {
+  public String getName() {
     return this.name;
   }
 
-  public String getShortName()
-  {
+  public String getShortName() {
     return this.shortName;
   }
 
-  public String getDescription()
-  {
+  public String getDescription() {
     return this.description;
   }
 
-  public void setKey(int key)
-  {
+  public void setKey(int key) {
     this.key=key;
   }
 
-  public void setName(String name)
-  {
+  public void setName(String name) {
     this.name=name;
   }
 
-  public void setShortName(String shortName)
-  {
+  public void setShortName(String shortName) {
     this.shortName=shortName;
   }
 
-  public void setDescription(String description)
-  {
+  public void setDescription(String description) {
     this.description=description;
   }
 }

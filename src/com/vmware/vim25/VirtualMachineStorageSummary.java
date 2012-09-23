@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -31,53 +31,46 @@ package com.vmware.vim25;
 import java.util.Calendar;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class VirtualMachineStorageSummary extends DynamicData
-{
+@SuppressWarnings("all")
+public class VirtualMachineStorageSummary extends DynamicData {
   public long committed;
   public long uncommitted;
   public long unshared;
   public Calendar timestamp;
 
-  public long getCommitted()
-  {
+  public long getCommitted() {
     return this.committed;
   }
 
-  public long getUncommitted()
-  {
+  public long getUncommitted() {
     return this.uncommitted;
   }
 
-  public long getUnshared()
-  {
+  public long getUnshared() {
     return this.unshared;
   }
 
-  public Calendar getTimestamp()
-  {
+  public Calendar getTimestamp() {
     return this.timestamp;
   }
 
-  public void setCommitted(long committed)
-  {
+  public void setCommitted(long committed) {
     this.committed=committed;
   }
 
-  public void setUncommitted(long uncommitted)
-  {
+  public void setUncommitted(long uncommitted) {
     this.uncommitted=uncommitted;
   }
 
-  public void setUnshared(long unshared)
-  {
+  public void setUnshared(long unshared) {
     this.unshared=unshared;
   }
 
-  public void setTimestamp(Calendar timestamp)
-  {
+  public void setTimestamp(Calendar timestamp) {
     this.timestamp=timestamp;
   }
 }

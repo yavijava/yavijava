@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,53 +30,46 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class OvfUnsupportedSubType extends OvfUnsupportedPackage
-{
+@SuppressWarnings("all")
+public class OvfUnsupportedSubType extends OvfUnsupportedPackage {
   public String elementName;
   public String instanceId;
   public int deviceType;
   public String deviceSubType;
 
-  public String getElementName()
-  {
+  public String getElementName() {
     return this.elementName;
   }
 
-  public String getInstanceId()
-  {
+  public String getInstanceId() {
     return this.instanceId;
   }
 
-  public int getDeviceType()
-  {
+  public int getDeviceType() {
     return this.deviceType;
   }
 
-  public String getDeviceSubType()
-  {
+  public String getDeviceSubType() {
     return this.deviceSubType;
   }
 
-  public void setElementName(String elementName)
-  {
+  public void setElementName(String elementName) {
     this.elementName=elementName;
   }
 
-  public void setInstanceId(String instanceId)
-  {
+  public void setInstanceId(String instanceId) {
     this.instanceId=instanceId;
   }
 
-  public void setDeviceType(int deviceType)
-  {
+  public void setDeviceType(int deviceType) {
     this.deviceType=deviceType;
   }
 
-  public void setDeviceSubType(String deviceSubType)
-  {
+  public void setDeviceSubType(String deviceSubType) {
     this.deviceSubType=deviceSubType;
   }
 }

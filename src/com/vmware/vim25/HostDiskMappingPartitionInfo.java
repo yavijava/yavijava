@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,42 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class HostDiskMappingPartitionInfo extends DynamicData
-{
+@SuppressWarnings("all")
+public class HostDiskMappingPartitionInfo extends DynamicData {
   public String name;
   public String fileSystem;
   public long capacityInKb;
 
-  public String getName()
-  {
+  public String getName() {
     return this.name;
   }
 
-  public String getFileSystem()
-  {
+  public String getFileSystem() {
     return this.fileSystem;
   }
 
-  public long getCapacityInKb()
-  {
+  public long getCapacityInKb() {
     return this.capacityInKb;
   }
 
-  public void setName(String name)
-  {
+  public void setName(String name) {
     this.name=name;
   }
 
-  public void setFileSystem(String fileSystem)
-  {
+  public void setFileSystem(String fileSystem) {
     this.fileSystem=fileSystem;
   }
 
-  public void setCapacityInKb(long capacityInKb)
-  {
+  public void setCapacityInKb(long capacityInKb) {
     this.capacityInKb=capacityInKb;
   }
 }

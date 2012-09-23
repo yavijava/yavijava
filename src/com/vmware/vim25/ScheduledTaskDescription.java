@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,64 +30,55 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class ScheduledTaskDescription extends DynamicData
-{
+@SuppressWarnings("all")
+public class ScheduledTaskDescription extends DynamicData {
   public TypeDescription[] action;
   public ScheduledTaskDetail[] schedulerInfo;
   public ElementDescription[] state;
   public ElementDescription[] dayOfWeek;
   public ElementDescription[] weekOfMonth;
 
-  public TypeDescription[] getAction()
-  {
+  public TypeDescription[] getAction() {
     return this.action;
   }
 
-  public ScheduledTaskDetail[] getSchedulerInfo()
-  {
+  public ScheduledTaskDetail[] getSchedulerInfo() {
     return this.schedulerInfo;
   }
 
-  public ElementDescription[] getState()
-  {
+  public ElementDescription[] getState() {
     return this.state;
   }
 
-  public ElementDescription[] getDayOfWeek()
-  {
+  public ElementDescription[] getDayOfWeek() {
     return this.dayOfWeek;
   }
 
-  public ElementDescription[] getWeekOfMonth()
-  {
+  public ElementDescription[] getWeekOfMonth() {
     return this.weekOfMonth;
   }
 
-  public void setAction(TypeDescription[] action)
-  {
+  public void setAction(TypeDescription[] action) {
     this.action=action;
   }
 
-  public void setSchedulerInfo(ScheduledTaskDetail[] schedulerInfo)
-  {
+  public void setSchedulerInfo(ScheduledTaskDetail[] schedulerInfo) {
     this.schedulerInfo=schedulerInfo;
   }
 
-  public void setState(ElementDescription[] state)
-  {
+  public void setState(ElementDescription[] state) {
     this.state=state;
   }
 
-  public void setDayOfWeek(ElementDescription[] dayOfWeek)
-  {
+  public void setDayOfWeek(ElementDescription[] dayOfWeek) {
     this.dayOfWeek=dayOfWeek;
   }
 
-  public void setWeekOfMonth(ElementDescription[] weekOfMonth)
-  {
+  public void setWeekOfMonth(ElementDescription[] weekOfMonth) {
     this.weekOfMonth=weekOfMonth;
   }
 }

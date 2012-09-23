@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,11 +30,12 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class VmDiskFileQueryFlags extends DynamicData
-{
+@SuppressWarnings("all")
+public class VmDiskFileQueryFlags extends DynamicData {
   public boolean diskType;
   public boolean capacityKb;
   public boolean hardwareVersion;
@@ -42,63 +43,51 @@ public class VmDiskFileQueryFlags extends DynamicData
   public Boolean diskExtents;
   public Boolean thin;
 
-  public boolean isDiskType()
-  {
+  public boolean isDiskType() {
     return this.diskType;
   }
 
-  public boolean isCapacityKb()
-  {
+  public boolean isCapacityKb() {
     return this.capacityKb;
   }
 
-  public boolean isHardwareVersion()
-  {
+  public boolean isHardwareVersion() {
     return this.hardwareVersion;
   }
 
-  public Boolean getControllerType()
-  {
+  public Boolean getControllerType() {
     return this.controllerType;
   }
 
-  public Boolean getDiskExtents()
-  {
+  public Boolean getDiskExtents() {
     return this.diskExtents;
   }
 
-  public Boolean getThin()
-  {
+  public Boolean getThin() {
     return this.thin;
   }
 
-  public void setDiskType(boolean diskType)
-  {
+  public void setDiskType(boolean diskType) {
     this.diskType=diskType;
   }
 
-  public void setCapacityKb(boolean capacityKb)
-  {
+  public void setCapacityKb(boolean capacityKb) {
     this.capacityKb=capacityKb;
   }
 
-  public void setHardwareVersion(boolean hardwareVersion)
-  {
+  public void setHardwareVersion(boolean hardwareVersion) {
     this.hardwareVersion=hardwareVersion;
   }
 
-  public void setControllerType(Boolean controllerType)
-  {
+  public void setControllerType(Boolean controllerType) {
     this.controllerType=controllerType;
   }
 
-  public void setDiskExtents(Boolean diskExtents)
-  {
+  public void setDiskExtents(Boolean diskExtents) {
     this.diskExtents=diskExtents;
   }
 
-  public void setThin(Boolean thin)
-  {
+  public void setThin(Boolean thin) {
     this.thin=thin;
   }
 }

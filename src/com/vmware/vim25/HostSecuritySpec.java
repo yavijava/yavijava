@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,42 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class HostSecuritySpec extends DynamicData
-{
+@SuppressWarnings("all")
+public class HostSecuritySpec extends DynamicData {
   public String adminPassword;
   public Permission[] removePermission;
   public Permission[] addPermission;
 
-  public String getAdminPassword()
-  {
+  public String getAdminPassword() {
     return this.adminPassword;
   }
 
-  public Permission[] getRemovePermission()
-  {
+  public Permission[] getRemovePermission() {
     return this.removePermission;
   }
 
-  public Permission[] getAddPermission()
-  {
+  public Permission[] getAddPermission() {
     return this.addPermission;
   }
 
-  public void setAdminPassword(String adminPassword)
-  {
+  public void setAdminPassword(String adminPassword) {
     this.adminPassword=adminPassword;
   }
 
-  public void setRemovePermission(Permission[] removePermission)
-  {
+  public void setRemovePermission(Permission[] removePermission) {
     this.removePermission=removePermission;
   }
 
-  public void setAddPermission(Permission[] addPermission)
-  {
+  public void setAddPermission(Permission[] addPermission) {
     this.addPermission=addPermission;
   }
 }

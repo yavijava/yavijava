@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -31,11 +31,12 @@ package com.vmware.vim25;
 import java.util.Calendar;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class Event extends DynamicData
-{
+@SuppressWarnings("all")
+public class Event extends DynamicData {
   public int key;
   public int chainId;
   public Calendar createdTime;
@@ -50,133 +51,107 @@ public class Event extends DynamicData
   public String fullFormattedMessage;
   public String changeTag;
 
-  public int getKey()
-  {
+  public int getKey() {
     return this.key;
   }
 
-  public int getChainId()
-  {
+  public int getChainId() {
     return this.chainId;
   }
 
-  public Calendar getCreatedTime()
-  {
+  public Calendar getCreatedTime() {
     return this.createdTime;
   }
 
-  public String getUserName()
-  {
+  public String getUserName() {
     return this.userName;
   }
 
-  public DatacenterEventArgument getDatacenter()
-  {
+  public DatacenterEventArgument getDatacenter() {
     return this.datacenter;
   }
 
-  public ComputeResourceEventArgument getComputeResource()
-  {
+  public ComputeResourceEventArgument getComputeResource() {
     return this.computeResource;
   }
 
-  public HostEventArgument getHost()
-  {
+  public HostEventArgument getHost() {
     return this.host;
   }
 
-  public VmEventArgument getVm()
-  {
+  public VmEventArgument getVm() {
     return this.vm;
   }
 
-  public DatastoreEventArgument getDs()
-  {
+  public DatastoreEventArgument getDs() {
     return this.ds;
   }
 
-  public NetworkEventArgument getNet()
-  {
+  public NetworkEventArgument getNet() {
     return this.net;
   }
 
-  public DvsEventArgument getDvs()
-  {
+  public DvsEventArgument getDvs() {
     return this.dvs;
   }
 
-  public String getFullFormattedMessage()
-  {
+  public String getFullFormattedMessage() {
     return this.fullFormattedMessage;
   }
 
-  public String getChangeTag()
-  {
+  public String getChangeTag() {
     return this.changeTag;
   }
 
-  public void setKey(int key)
-  {
+  public void setKey(int key) {
     this.key=key;
   }
 
-  public void setChainId(int chainId)
-  {
+  public void setChainId(int chainId) {
     this.chainId=chainId;
   }
 
-  public void setCreatedTime(Calendar createdTime)
-  {
+  public void setCreatedTime(Calendar createdTime) {
     this.createdTime=createdTime;
   }
 
-  public void setUserName(String userName)
-  {
+  public void setUserName(String userName) {
     this.userName=userName;
   }
 
-  public void setDatacenter(DatacenterEventArgument datacenter)
-  {
+  public void setDatacenter(DatacenterEventArgument datacenter) {
     this.datacenter=datacenter;
   }
 
-  public void setComputeResource(ComputeResourceEventArgument computeResource)
-  {
+  public void setComputeResource(ComputeResourceEventArgument computeResource) {
     this.computeResource=computeResource;
   }
 
-  public void setHost(HostEventArgument host)
-  {
+  public void setHost(HostEventArgument host) {
     this.host=host;
   }
 
-  public void setVm(VmEventArgument vm)
-  {
+  public void setVm(VmEventArgument vm) {
     this.vm=vm;
   }
 
-  public void setDs(DatastoreEventArgument ds)
-  {
+  public void setDs(DatastoreEventArgument ds) {
     this.ds=ds;
   }
 
-  public void setNet(NetworkEventArgument net)
-  {
+  public void setNet(NetworkEventArgument net) {
     this.net=net;
   }
 
-  public void setDvs(DvsEventArgument dvs)
-  {
+  public void setDvs(DvsEventArgument dvs) {
     this.dvs=dvs;
   }
 
-  public void setFullFormattedMessage(String fullFormattedMessage)
-  {
+  public void setFullFormattedMessage(String fullFormattedMessage) {
     this.fullFormattedMessage=fullFormattedMessage;
   }
 
-  public void setChangeTag(String changeTag)
-  {
+  public void setChangeTag(String changeTag) {
     this.changeTag=changeTag;
   }
 }

@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,31 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class VmFaultToleranceOpIssuesList extends VmFaultToleranceIssue
-{
+@SuppressWarnings("all")
+public class VmFaultToleranceOpIssuesList extends VmFaultToleranceIssue {
   public LocalizedMethodFault[] errors;
   public LocalizedMethodFault[] warnings;
 
-  public LocalizedMethodFault[] getErrors()
-  {
+  public LocalizedMethodFault[] getErrors() {
     return this.errors;
   }
 
-  public LocalizedMethodFault[] getWarnings()
-  {
+  public LocalizedMethodFault[] getWarnings() {
     return this.warnings;
   }
 
-  public void setErrors(LocalizedMethodFault[] errors)
-  {
+  public void setErrors(LocalizedMethodFault[] errors) {
     this.errors=errors;
   }
 
-  public void setWarnings(LocalizedMethodFault[] warnings)
-  {
+  public void setWarnings(LocalizedMethodFault[] warnings) {
     this.warnings=warnings;
   }
 }

@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,11 +30,12 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class VirtualSCSIControllerOption extends VirtualControllerOption
-{
+@SuppressWarnings("all")
+public class VirtualSCSIControllerOption extends VirtualControllerOption {
   public IntOption numSCSIDisks;
   public IntOption numSCSICdroms;
   public IntOption numSCSIPassthrough;
@@ -43,73 +44,59 @@ public class VirtualSCSIControllerOption extends VirtualControllerOption
   public BoolOption hotAddRemove;
   public int scsiCtlrUnitNumber;
 
-  public IntOption getNumSCSIDisks()
-  {
+  public IntOption getNumSCSIDisks() {
     return this.numSCSIDisks;
   }
 
-  public IntOption getNumSCSICdroms()
-  {
+  public IntOption getNumSCSICdroms() {
     return this.numSCSICdroms;
   }
 
-  public IntOption getNumSCSIPassthrough()
-  {
+  public IntOption getNumSCSIPassthrough() {
     return this.numSCSIPassthrough;
   }
 
-  public VirtualSCSISharing[] getSharing()
-  {
+  public VirtualSCSISharing[] getSharing() {
     return this.sharing;
   }
 
-  public int getDefaultSharedIndex()
-  {
+  public int getDefaultSharedIndex() {
     return this.defaultSharedIndex;
   }
 
-  public BoolOption getHotAddRemove()
-  {
+  public BoolOption getHotAddRemove() {
     return this.hotAddRemove;
   }
 
-  public int getScsiCtlrUnitNumber()
-  {
+  public int getScsiCtlrUnitNumber() {
     return this.scsiCtlrUnitNumber;
   }
 
-  public void setNumSCSIDisks(IntOption numSCSIDisks)
-  {
+  public void setNumSCSIDisks(IntOption numSCSIDisks) {
     this.numSCSIDisks=numSCSIDisks;
   }
 
-  public void setNumSCSICdroms(IntOption numSCSICdroms)
-  {
+  public void setNumSCSICdroms(IntOption numSCSICdroms) {
     this.numSCSICdroms=numSCSICdroms;
   }
 
-  public void setNumSCSIPassthrough(IntOption numSCSIPassthrough)
-  {
+  public void setNumSCSIPassthrough(IntOption numSCSIPassthrough) {
     this.numSCSIPassthrough=numSCSIPassthrough;
   }
 
-  public void setSharing(VirtualSCSISharing[] sharing)
-  {
+  public void setSharing(VirtualSCSISharing[] sharing) {
     this.sharing=sharing;
   }
 
-  public void setDefaultSharedIndex(int defaultSharedIndex)
-  {
+  public void setDefaultSharedIndex(int defaultSharedIndex) {
     this.defaultSharedIndex=defaultSharedIndex;
   }
 
-  public void setHotAddRemove(BoolOption hotAddRemove)
-  {
+  public void setHotAddRemove(BoolOption hotAddRemove) {
     this.hotAddRemove=hotAddRemove;
   }
 
-  public void setScsiCtlrUnitNumber(int scsiCtlrUnitNumber)
-  {
+  public void setScsiCtlrUnitNumber(int scsiCtlrUnitNumber) {
     this.scsiCtlrUnitNumber=scsiCtlrUnitNumber;
   }
 }

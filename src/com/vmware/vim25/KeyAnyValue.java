@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,31 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class KeyAnyValue extends DynamicData
-{
+@SuppressWarnings("all")
+public class KeyAnyValue extends DynamicData {
   public String key;
   public Object value;
 
-  public String getKey()
-  {
+  public String getKey() {
     return this.key;
   }
 
-  public Object getValue()
-  {
+  public Object getValue() {
     return this.value;
   }
 
-  public void setKey(String key)
-  {
+  public void setKey(String key) {
     this.key=key;
   }
 
-  public void setValue(Object value)
-  {
+  public void setValue(Object value) {
     this.value=value;
   }
 }

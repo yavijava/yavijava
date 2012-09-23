@@ -32,7 +32,7 @@ import com.vmware.vim25.ManagedObjectReference;
 
 /**
  * The managed object class corresponding to the one defined in VI SDK API reference.
- * @author Steve JIN (sjin@vmware.com)
+ * @author Steve JIN (http://www.doublecloud.org)
  * @since 4.0
  */
 public class VmwareDistributedVirtualSwitch extends DistributedVirtualSwitch  

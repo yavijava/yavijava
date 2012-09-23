@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,11 +30,12 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class HostDiskPartitionAttributes extends DynamicData
-{
+@SuppressWarnings("all")
+public class HostDiskPartitionAttributes extends DynamicData {
   public int partition;
   public long startSector;
   public long endSector;
@@ -44,83 +45,67 @@ public class HostDiskPartitionAttributes extends DynamicData
   public byte attributes;
   public Long partitionAlignment;
 
-  public int getPartition()
-  {
+  public int getPartition() {
     return this.partition;
   }
 
-  public long getStartSector()
-  {
+  public long getStartSector() {
     return this.startSector;
   }
 
-  public long getEndSector()
-  {
+  public long getEndSector() {
     return this.endSector;
   }
 
-  public String getType()
-  {
+  public String getType() {
     return this.type;
   }
 
-  public String getGuid()
-  {
+  public String getGuid() {
     return this.guid;
   }
 
-  public boolean isLogical()
-  {
+  public boolean isLogical() {
     return this.logical;
   }
 
-  public byte getAttributes()
-  {
+  public byte getAttributes() {
     return this.attributes;
   }
 
-  public Long getPartitionAlignment()
-  {
+  public Long getPartitionAlignment() {
     return this.partitionAlignment;
   }
 
-  public void setPartition(int partition)
-  {
+  public void setPartition(int partition) {
     this.partition=partition;
   }
 
-  public void setStartSector(long startSector)
-  {
+  public void setStartSector(long startSector) {
     this.startSector=startSector;
   }
 
-  public void setEndSector(long endSector)
-  {
+  public void setEndSector(long endSector) {
     this.endSector=endSector;
   }
 
-  public void setType(String type)
-  {
+  public void setType(String type) {
     this.type=type;
   }
 
-  public void setGuid(String guid)
-  {
+  public void setGuid(String guid) {
     this.guid=guid;
   }
 
-  public void setLogical(boolean logical)
-  {
+  public void setLogical(boolean logical) {
     this.logical=logical;
   }
 
-  public void setAttributes(byte attributes)
-  {
+  public void setAttributes(byte attributes) {
     this.attributes=attributes;
   }
 
-  public void setPartitionAlignment(Long partitionAlignment)
-  {
+  public void setPartitionAlignment(Long partitionAlignment) {
     this.partitionAlignment=partitionAlignment;
   }
 }

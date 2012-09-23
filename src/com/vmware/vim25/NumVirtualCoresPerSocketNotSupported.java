@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,31 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class NumVirtualCoresPerSocketNotSupported extends VirtualHardwareCompatibilityIssue
-{
+@SuppressWarnings("all")
+public class NumVirtualCoresPerSocketNotSupported extends VirtualHardwareCompatibilityIssue {
   public int maxSupportedCoresPerSocketDest;
   public int numCoresPerSocketVm;
 
-  public int getMaxSupportedCoresPerSocketDest()
-  {
+  public int getMaxSupportedCoresPerSocketDest() {
     return this.maxSupportedCoresPerSocketDest;
   }
 
-  public int getNumCoresPerSocketVm()
-  {
+  public int getNumCoresPerSocketVm() {
     return this.numCoresPerSocketVm;
   }
 
-  public void setMaxSupportedCoresPerSocketDest(int maxSupportedCoresPerSocketDest)
-  {
+  public void setMaxSupportedCoresPerSocketDest(int maxSupportedCoresPerSocketDest) {
     this.maxSupportedCoresPerSocketDest=maxSupportedCoresPerSocketDest;
   }
 
-  public void setNumCoresPerSocketVm(int numCoresPerSocketVm)
-  {
+  public void setNumCoresPerSocketVm(int numCoresPerSocketVm) {
     this.numCoresPerSocketVm=numCoresPerSocketVm;
   }
 }

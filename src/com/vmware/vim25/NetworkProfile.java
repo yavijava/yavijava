@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,11 +30,12 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class NetworkProfile extends ApplyProfile
-{
+@SuppressWarnings("all")
+public class NetworkProfile extends ApplyProfile {
   public VirtualSwitchProfile[] vswitch;
   public VmPortGroupProfile[] vmPortGroup;
   public HostPortGroupProfile[] hostPortGroup;
@@ -47,113 +48,91 @@ public class NetworkProfile extends ApplyProfile
   public DvsServiceConsoleVNicProfile[] dvsServiceConsoleNic;
   public DvsHostVNicProfile[] dvsHostNic;
 
-  public VirtualSwitchProfile[] getVswitch()
-  {
+  public VirtualSwitchProfile[] getVswitch() {
     return this.vswitch;
   }
 
-  public VmPortGroupProfile[] getVmPortGroup()
-  {
+  public VmPortGroupProfile[] getVmPortGroup() {
     return this.vmPortGroup;
   }
 
-  public HostPortGroupProfile[] getHostPortGroup()
-  {
+  public HostPortGroupProfile[] getHostPortGroup() {
     return this.hostPortGroup;
   }
 
-  public ServiceConsolePortGroupProfile[] getServiceConsolePortGroup()
-  {
+  public ServiceConsolePortGroupProfile[] getServiceConsolePortGroup() {
     return this.serviceConsolePortGroup;
   }
 
-  public NetworkProfileDnsConfigProfile getDnsConfig()
-  {
+  public NetworkProfileDnsConfigProfile getDnsConfig() {
     return this.dnsConfig;
   }
 
-  public IpRouteProfile getIpRouteConfig()
-  {
+  public IpRouteProfile getIpRouteConfig() {
     return this.ipRouteConfig;
   }
 
-  public IpRouteProfile getConsoleIpRouteConfig()
-  {
+  public IpRouteProfile getConsoleIpRouteConfig() {
     return this.consoleIpRouteConfig;
   }
 
-  public PhysicalNicProfile[] getPnic()
-  {
+  public PhysicalNicProfile[] getPnic() {
     return this.pnic;
   }
 
-  public DvsProfile[] getDvswitch()
-  {
+  public DvsProfile[] getDvswitch() {
     return this.dvswitch;
   }
 
-  public DvsServiceConsoleVNicProfile[] getDvsServiceConsoleNic()
-  {
+  public DvsServiceConsoleVNicProfile[] getDvsServiceConsoleNic() {
     return this.dvsServiceConsoleNic;
   }
 
-  public DvsHostVNicProfile[] getDvsHostNic()
-  {
+  public DvsHostVNicProfile[] getDvsHostNic() {
     return this.dvsHostNic;
   }
 
-  public void setVswitch(VirtualSwitchProfile[] vswitch)
-  {
+  public void setVswitch(VirtualSwitchProfile[] vswitch) {
     this.vswitch=vswitch;
   }
 
-  public void setVmPortGroup(VmPortGroupProfile[] vmPortGroup)
-  {
+  public void setVmPortGroup(VmPortGroupProfile[] vmPortGroup) {
     this.vmPortGroup=vmPortGroup;
   }
 
-  public void setHostPortGroup(HostPortGroupProfile[] hostPortGroup)
-  {
+  public void setHostPortGroup(HostPortGroupProfile[] hostPortGroup) {
     this.hostPortGroup=hostPortGroup;
   }
 
-  public void setServiceConsolePortGroup(ServiceConsolePortGroupProfile[] serviceConsolePortGroup)
-  {
+  public void setServiceConsolePortGroup(ServiceConsolePortGroupProfile[] serviceConsolePortGroup) {
     this.serviceConsolePortGroup=serviceConsolePortGroup;
   }
 
-  public void setDnsConfig(NetworkProfileDnsConfigProfile dnsConfig)
-  {
+  public void setDnsConfig(NetworkProfileDnsConfigProfile dnsConfig) {
     this.dnsConfig=dnsConfig;
   }
 
-  public void setIpRouteConfig(IpRouteProfile ipRouteConfig)
-  {
+  public void setIpRouteConfig(IpRouteProfile ipRouteConfig) {
     this.ipRouteConfig=ipRouteConfig;
   }
 
-  public void setConsoleIpRouteConfig(IpRouteProfile consoleIpRouteConfig)
-  {
+  public void setConsoleIpRouteConfig(IpRouteProfile consoleIpRouteConfig) {
     this.consoleIpRouteConfig=consoleIpRouteConfig;
   }
 
-  public void setPnic(PhysicalNicProfile[] pnic)
-  {
+  public void setPnic(PhysicalNicProfile[] pnic) {
     this.pnic=pnic;
   }
 
-  public void setDvswitch(DvsProfile[] dvswitch)
-  {
+  public void setDvswitch(DvsProfile[] dvswitch) {
     this.dvswitch=dvswitch;
   }
 
-  public void setDvsServiceConsoleNic(DvsServiceConsoleVNicProfile[] dvsServiceConsoleNic)
-  {
+  public void setDvsServiceConsoleNic(DvsServiceConsoleVNicProfile[] dvsServiceConsoleNic) {
     this.dvsServiceConsoleNic=dvsServiceConsoleNic;
   }
 
-  public void setDvsHostNic(DvsHostVNicProfile[] dvsHostNic)
-  {
+  public void setDvsHostNic(DvsHostVNicProfile[] dvsHostNic) {
     this.dvsHostNic=dvsHostNic;
   }
 }

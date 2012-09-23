@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,42 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class VspanPortMoveFault extends DvsFault
-{
+@SuppressWarnings("all")
+public class VspanPortMoveFault extends DvsFault {
   public String srcPortgroupName;
   public String destPortgroupName;
   public String portKey;
 
-  public String getSrcPortgroupName()
-  {
+  public String getSrcPortgroupName() {
     return this.srcPortgroupName;
   }
 
-  public String getDestPortgroupName()
-  {
+  public String getDestPortgroupName() {
     return this.destPortgroupName;
   }
 
-  public String getPortKey()
-  {
+  public String getPortKey() {
     return this.portKey;
   }
 
-  public void setSrcPortgroupName(String srcPortgroupName)
-  {
+  public void setSrcPortgroupName(String srcPortgroupName) {
     this.srcPortgroupName=srcPortgroupName;
   }
 
-  public void setDestPortgroupName(String destPortgroupName)
-  {
+  public void setDestPortgroupName(String destPortgroupName) {
     this.destPortgroupName=destPortgroupName;
   }
 
-  public void setPortKey(String portKey)
-  {
+  public void setPortKey(String portKey) {
     this.portKey=portKey;
   }
 }

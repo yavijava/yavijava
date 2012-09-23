@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,64 +30,55 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class HostLowLevelProvisioningManagerDiskLayoutSpec extends DynamicData
-{
+@SuppressWarnings("all")
+public class HostLowLevelProvisioningManagerDiskLayoutSpec extends DynamicData {
   public String controllerType;
   public int busNumber;
   public int unitNumber;
   public String srcFilename;
   public String dstFilename;
 
-  public String getControllerType()
-  {
+  public String getControllerType() {
     return this.controllerType;
   }
 
-  public int getBusNumber()
-  {
+  public int getBusNumber() {
     return this.busNumber;
   }
 
-  public int getUnitNumber()
-  {
+  public int getUnitNumber() {
     return this.unitNumber;
   }
 
-  public String getSrcFilename()
-  {
+  public String getSrcFilename() {
     return this.srcFilename;
   }
 
-  public String getDstFilename()
-  {
+  public String getDstFilename() {
     return this.dstFilename;
   }
 
-  public void setControllerType(String controllerType)
-  {
+  public void setControllerType(String controllerType) {
     this.controllerType=controllerType;
   }
 
-  public void setBusNumber(int busNumber)
-  {
+  public void setBusNumber(int busNumber) {
     this.busNumber=busNumber;
   }
 
-  public void setUnitNumber(int unitNumber)
-  {
+  public void setUnitNumber(int unitNumber) {
     this.unitNumber=unitNumber;
   }
 
-  public void setSrcFilename(String srcFilename)
-  {
+  public void setSrcFilename(String srcFilename) {
     this.srcFilename=srcFilename;
   }
 
-  public void setDstFilename(String dstFilename)
-  {
+  public void setDstFilename(String dstFilename) {
     this.dstFilename=dstFilename;
   }
 }

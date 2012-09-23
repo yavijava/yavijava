@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,31 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class MonthlyByWeekdayTaskScheduler extends MonthlyTaskScheduler
-{
+@SuppressWarnings("all")
+public class MonthlyByWeekdayTaskScheduler extends MonthlyTaskScheduler {
   public WeekOfMonth offset;
   public DayOfWeek weekday;
 
-  public WeekOfMonth getOffset()
-  {
+  public WeekOfMonth getOffset() {
     return this.offset;
   }
 
-  public DayOfWeek getWeekday()
-  {
+  public DayOfWeek getWeekday() {
     return this.weekday;
   }
 
-  public void setOffset(WeekOfMonth offset)
-  {
+  public void setOffset(WeekOfMonth offset) {
     this.offset=offset;
   }
 
-  public void setWeekday(DayOfWeek weekday)
-  {
+  public void setWeekday(DayOfWeek weekday) {
     this.weekday=weekday;
   }
 }

@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,31 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class ClusterInitialPlacementAction extends ClusterAction
-{
+@SuppressWarnings("all")
+public class ClusterInitialPlacementAction extends ClusterAction {
   public ManagedObjectReference targetHost;
   public ManagedObjectReference pool;
 
-  public ManagedObjectReference getTargetHost()
-  {
+  public ManagedObjectReference getTargetHost() {
     return this.targetHost;
   }
 
-  public ManagedObjectReference getPool()
-  {
+  public ManagedObjectReference getPool() {
     return this.pool;
   }
 
-  public void setTargetHost(ManagedObjectReference targetHost)
-  {
+  public void setTargetHost(ManagedObjectReference targetHost) {
     this.targetHost=targetHost;
   }
 
-  public void setPool(ManagedObjectReference pool)
-  {
+  public void setPool(ManagedObjectReference pool) {
     this.pool=pool;
   }
 }

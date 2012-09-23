@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,11 +30,12 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class CustomizationIPSettings extends DynamicData
-{
+@SuppressWarnings("all")
+public class CustomizationIPSettings extends DynamicData {
   public CustomizationIpGenerator ip;
   public String subnetMask;
   public String[] gateway;
@@ -45,93 +46,75 @@ public class CustomizationIPSettings extends DynamicData
   public String secondaryWINS;
   public CustomizationNetBIOSMode netBIOS;
 
-  public CustomizationIpGenerator getIp()
-  {
+  public CustomizationIpGenerator getIp() {
     return this.ip;
   }
 
-  public String getSubnetMask()
-  {
+  public String getSubnetMask() {
     return this.subnetMask;
   }
 
-  public String[] getGateway()
-  {
+  public String[] getGateway() {
     return this.gateway;
   }
 
-  public CustomizationIPSettingsIpV6AddressSpec getIpV6Spec()
-  {
+  public CustomizationIPSettingsIpV6AddressSpec getIpV6Spec() {
     return this.ipV6Spec;
   }
 
-  public String[] getDnsServerList()
-  {
+  public String[] getDnsServerList() {
     return this.dnsServerList;
   }
 
-  public String getDnsDomain()
-  {
+  public String getDnsDomain() {
     return this.dnsDomain;
   }
 
-  public String getPrimaryWINS()
-  {
+  public String getPrimaryWINS() {
     return this.primaryWINS;
   }
 
-  public String getSecondaryWINS()
-  {
+  public String getSecondaryWINS() {
     return this.secondaryWINS;
   }
 
-  public CustomizationNetBIOSMode getNetBIOS()
-  {
+  public CustomizationNetBIOSMode getNetBIOS() {
     return this.netBIOS;
   }
 
-  public void setIp(CustomizationIpGenerator ip)
-  {
+  public void setIp(CustomizationIpGenerator ip) {
     this.ip=ip;
   }
 
-  public void setSubnetMask(String subnetMask)
-  {
+  public void setSubnetMask(String subnetMask) {
     this.subnetMask=subnetMask;
   }
 
-  public void setGateway(String[] gateway)
-  {
+  public void setGateway(String[] gateway) {
     this.gateway=gateway;
   }
 
-  public void setIpV6Spec(CustomizationIPSettingsIpV6AddressSpec ipV6Spec)
-  {
+  public void setIpV6Spec(CustomizationIPSettingsIpV6AddressSpec ipV6Spec) {
     this.ipV6Spec=ipV6Spec;
   }
 
-  public void setDnsServerList(String[] dnsServerList)
-  {
+  public void setDnsServerList(String[] dnsServerList) {
     this.dnsServerList=dnsServerList;
   }
 
-  public void setDnsDomain(String dnsDomain)
-  {
+  public void setDnsDomain(String dnsDomain) {
     this.dnsDomain=dnsDomain;
   }
 
-  public void setPrimaryWINS(String primaryWINS)
-  {
+  public void setPrimaryWINS(String primaryWINS) {
     this.primaryWINS=primaryWINS;
   }
 
-  public void setSecondaryWINS(String secondaryWINS)
-  {
+  public void setSecondaryWINS(String secondaryWINS) {
     this.secondaryWINS=secondaryWINS;
   }
 
-  public void setNetBIOS(CustomizationNetBIOSMode netBIOS)
-  {
+  public void setNetBIOS(CustomizationNetBIOSMode netBIOS) {
     this.netBIOS=netBIOS;
   }
 }

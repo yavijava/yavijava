@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,42 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class VirtualUSBControllerOption extends VirtualControllerOption
-{
+@SuppressWarnings("all")
+public class VirtualUSBControllerOption extends VirtualControllerOption {
   public BoolOption autoConnectDevices;
   public BoolOption ehciSupported;
   public String[] supportedSpeeds;
 
-  public BoolOption getAutoConnectDevices()
-  {
+  public BoolOption getAutoConnectDevices() {
     return this.autoConnectDevices;
   }
 
-  public BoolOption getEhciSupported()
-  {
+  public BoolOption getEhciSupported() {
     return this.ehciSupported;
   }
 
-  public String[] getSupportedSpeeds()
-  {
+  public String[] getSupportedSpeeds() {
     return this.supportedSpeeds;
   }
 
-  public void setAutoConnectDevices(BoolOption autoConnectDevices)
-  {
+  public void setAutoConnectDevices(BoolOption autoConnectDevices) {
     this.autoConnectDevices=autoConnectDevices;
   }
 
-  public void setEhciSupported(BoolOption ehciSupported)
-  {
+  public void setEhciSupported(BoolOption ehciSupported) {
     this.ehciSupported=ehciSupported;
   }
 
-  public void setSupportedSpeeds(String[] supportedSpeeds)
-  {
+  public void setSupportedSpeeds(String[] supportedSpeeds) {
     this.supportedSpeeds=supportedSpeeds;
   }
 }

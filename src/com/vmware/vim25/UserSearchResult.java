@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,42 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class UserSearchResult extends DynamicData
-{
+@SuppressWarnings("all")
+public class UserSearchResult extends DynamicData {
   public String principal;
   public String fullName;
   public boolean group;
 
-  public String getPrincipal()
-  {
+  public String getPrincipal() {
     return this.principal;
   }
 
-  public String getFullName()
-  {
+  public String getFullName() {
     return this.fullName;
   }
 
-  public boolean isGroup()
-  {
+  public boolean isGroup() {
     return this.group;
   }
 
-  public void setPrincipal(String principal)
-  {
+  public void setPrincipal(String principal) {
     this.principal=principal;
   }
 
-  public void setFullName(String fullName)
-  {
+  public void setFullName(String fullName) {
     this.fullName=fullName;
   }
 
-  public void setGroup(boolean group)
-  {
+  public void setGroup(boolean group) {
     this.group=group;
   }
 }

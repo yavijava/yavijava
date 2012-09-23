@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,64 +30,55 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class NetDnsConfigInfo extends DynamicData
-{
+@SuppressWarnings("all")
+public class NetDnsConfigInfo extends DynamicData {
   public boolean dhcp;
   public String hostName;
   public String domainName;
   public String[] ipAddress;
   public String[] searchDomain;
 
-  public boolean isDhcp()
-  {
+  public boolean isDhcp() {
     return this.dhcp;
   }
 
-  public String getHostName()
-  {
+  public String getHostName() {
     return this.hostName;
   }
 
-  public String getDomainName()
-  {
+  public String getDomainName() {
     return this.domainName;
   }
 
-  public String[] getIpAddress()
-  {
+  public String[] getIpAddress() {
     return this.ipAddress;
   }
 
-  public String[] getSearchDomain()
-  {
+  public String[] getSearchDomain() {
     return this.searchDomain;
   }
 
-  public void setDhcp(boolean dhcp)
-  {
+  public void setDhcp(boolean dhcp) {
     this.dhcp=dhcp;
   }
 
-  public void setHostName(String hostName)
-  {
+  public void setHostName(String hostName) {
     this.hostName=hostName;
   }
 
-  public void setDomainName(String domainName)
-  {
+  public void setDomainName(String domainName) {
     this.domainName=domainName;
   }
 
-  public void setIpAddress(String[] ipAddress)
-  {
+  public void setIpAddress(String[] ipAddress) {
     this.ipAddress=ipAddress;
   }
 
-  public void setSearchDomain(String[] searchDomain)
-  {
+  public void setSearchDomain(String[] searchDomain) {
     this.searchDomain=searchDomain;
   }
 }

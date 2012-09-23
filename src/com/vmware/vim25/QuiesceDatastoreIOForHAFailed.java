@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,53 +30,46 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class QuiesceDatastoreIOForHAFailed extends ResourceInUse
-{
+@SuppressWarnings("all")
+public class QuiesceDatastoreIOForHAFailed extends ResourceInUse {
   public ManagedObjectReference host;
   public String hostName;
   public ManagedObjectReference ds;
   public String dsName;
 
-  public ManagedObjectReference getHost()
-  {
+  public ManagedObjectReference getHost() {
     return this.host;
   }
 
-  public String getHostName()
-  {
+  public String getHostName() {
     return this.hostName;
   }
 
-  public ManagedObjectReference getDs()
-  {
+  public ManagedObjectReference getDs() {
     return this.ds;
   }
 
-  public String getDsName()
-  {
+  public String getDsName() {
     return this.dsName;
   }
 
-  public void setHost(ManagedObjectReference host)
-  {
+  public void setHost(ManagedObjectReference host) {
     this.host=host;
   }
 
-  public void setHostName(String hostName)
-  {
+  public void setHostName(String hostName) {
     this.hostName=hostName;
   }
 
-  public void setDs(ManagedObjectReference ds)
-  {
+  public void setDs(ManagedObjectReference ds) {
     this.ds=ds;
   }
 
-  public void setDsName(String dsName)
-  {
+  public void setDsName(String dsName) {
     this.dsName=dsName;
   }
 }

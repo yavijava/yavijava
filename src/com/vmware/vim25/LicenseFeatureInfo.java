@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -31,11 +31,12 @@ package com.vmware.vim25;
 import java.util.Calendar;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class LicenseFeatureInfo extends DynamicData
-{
+@SuppressWarnings("all")
+public class LicenseFeatureInfo extends DynamicData {
   public String key;
   public String featureName;
   public String featureDescription;
@@ -46,93 +47,75 @@ public class LicenseFeatureInfo extends DynamicData
   public Boolean edition;
   public Calendar expiresOn;
 
-  public String getKey()
-  {
+  public String getKey() {
     return this.key;
   }
 
-  public String getFeatureName()
-  {
+  public String getFeatureName() {
     return this.featureName;
   }
 
-  public String getFeatureDescription()
-  {
+  public String getFeatureDescription() {
     return this.featureDescription;
   }
 
-  public LicenseFeatureInfoState getState()
-  {
+  public LicenseFeatureInfoState getState() {
     return this.state;
   }
 
-  public String getCostUnit()
-  {
+  public String getCostUnit() {
     return this.costUnit;
   }
 
-  public String getSourceRestriction()
-  {
+  public String getSourceRestriction() {
     return this.sourceRestriction;
   }
 
-  public String[] getDependentKey()
-  {
+  public String[] getDependentKey() {
     return this.dependentKey;
   }
 
-  public Boolean getEdition()
-  {
+  public Boolean getEdition() {
     return this.edition;
   }
 
-  public Calendar getExpiresOn()
-  {
+  public Calendar getExpiresOn() {
     return this.expiresOn;
   }
 
-  public void setKey(String key)
-  {
+  public void setKey(String key) {
     this.key=key;
   }
 
-  public void setFeatureName(String featureName)
-  {
+  public void setFeatureName(String featureName) {
     this.featureName=featureName;
   }
 
-  public void setFeatureDescription(String featureDescription)
-  {
+  public void setFeatureDescription(String featureDescription) {
     this.featureDescription=featureDescription;
   }
 
-  public void setState(LicenseFeatureInfoState state)
-  {
+  public void setState(LicenseFeatureInfoState state) {
     this.state=state;
   }
 
-  public void setCostUnit(String costUnit)
-  {
+  public void setCostUnit(String costUnit) {
     this.costUnit=costUnit;
   }
 
-  public void setSourceRestriction(String sourceRestriction)
-  {
+  public void setSourceRestriction(String sourceRestriction) {
     this.sourceRestriction=sourceRestriction;
   }
 
-  public void setDependentKey(String[] dependentKey)
-  {
+  public void setDependentKey(String[] dependentKey) {
     this.dependentKey=dependentKey;
   }
 
-  public void setEdition(Boolean edition)
-  {
+  public void setEdition(Boolean edition) {
     this.edition=edition;
   }
 
-  public void setExpiresOn(Calendar expiresOn)
-  {
+  public void setExpiresOn(Calendar expiresOn) {
     this.expiresOn=expiresOn;
   }
 }

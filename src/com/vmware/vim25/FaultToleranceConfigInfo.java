@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,42 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class FaultToleranceConfigInfo extends DynamicData
-{
+@SuppressWarnings("all")
+public class FaultToleranceConfigInfo extends DynamicData {
   public int role;
   public String[] instanceUuids;
   public String[] configPaths;
 
-  public int getRole()
-  {
+  public int getRole() {
     return this.role;
   }
 
-  public String[] getInstanceUuids()
-  {
+  public String[] getInstanceUuids() {
     return this.instanceUuids;
   }
 
-  public String[] getConfigPaths()
-  {
+  public String[] getConfigPaths() {
     return this.configPaths;
   }
 
-  public void setRole(int role)
-  {
+  public void setRole(int role) {
     this.role=role;
   }
 
-  public void setInstanceUuids(String[] instanceUuids)
-  {
+  public void setInstanceUuids(String[] instanceUuids) {
     this.instanceUuids=instanceUuids;
   }
 
-  public void setConfigPaths(String[] configPaths)
-  {
+  public void setConfigPaths(String[] configPaths) {
     this.configPaths=configPaths;
   }
 }

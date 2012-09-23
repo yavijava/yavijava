@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,31 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class OvfUnsupportedAttribute extends OvfUnsupportedPackage
-{
+@SuppressWarnings("all")
+public class OvfUnsupportedAttribute extends OvfUnsupportedPackage {
   public String elementName;
   public String attributeName;
 
-  public String getElementName()
-  {
+  public String getElementName() {
     return this.elementName;
   }
 
-  public String getAttributeName()
-  {
+  public String getAttributeName() {
     return this.attributeName;
   }
 
-  public void setElementName(String elementName)
-  {
+  public void setElementName(String elementName) {
     this.elementName=elementName;
   }
 
-  public void setAttributeName(String attributeName)
-  {
+  public void setAttributeName(String attributeName) {
     this.attributeName=attributeName;
   }
 }

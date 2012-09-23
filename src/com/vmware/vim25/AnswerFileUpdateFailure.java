@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,31 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class AnswerFileUpdateFailure extends DynamicData
-{
+@SuppressWarnings("all")
+public class AnswerFileUpdateFailure extends DynamicData {
   public ProfilePropertyPath userInputPath;
   public LocalizableMessage errMsg;
 
-  public ProfilePropertyPath getUserInputPath()
-  {
+  public ProfilePropertyPath getUserInputPath() {
     return this.userInputPath;
   }
 
-  public LocalizableMessage getErrMsg()
-  {
+  public LocalizableMessage getErrMsg() {
     return this.errMsg;
   }
 
-  public void setUserInputPath(ProfilePropertyPath userInputPath)
-  {
+  public void setUserInputPath(ProfilePropertyPath userInputPath) {
     this.userInputPath=userInputPath;
   }
 
-  public void setErrMsg(LocalizableMessage errMsg)
-  {
+  public void setErrMsg(LocalizableMessage errMsg) {
     this.errMsg=errMsg;
   }
 }

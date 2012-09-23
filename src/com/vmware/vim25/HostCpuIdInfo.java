@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,11 +30,12 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class HostCpuIdInfo extends DynamicData
-{
+@SuppressWarnings("all")
+public class HostCpuIdInfo extends DynamicData {
   public int level;
   public String vendor;
   public String eax;
@@ -42,63 +43,51 @@ public class HostCpuIdInfo extends DynamicData
   public String ecx;
   public String edx;
 
-  public int getLevel()
-  {
+  public int getLevel() {
     return this.level;
   }
 
-  public String getVendor()
-  {
+  public String getVendor() {
     return this.vendor;
   }
 
-  public String getEax()
-  {
+  public String getEax() {
     return this.eax;
   }
 
-  public String getEbx()
-  {
+  public String getEbx() {
     return this.ebx;
   }
 
-  public String getEcx()
-  {
+  public String getEcx() {
     return this.ecx;
   }
 
-  public String getEdx()
-  {
+  public String getEdx() {
     return this.edx;
   }
 
-  public void setLevel(int level)
-  {
+  public void setLevel(int level) {
     this.level=level;
   }
 
-  public void setVendor(String vendor)
-  {
+  public void setVendor(String vendor) {
     this.vendor=vendor;
   }
 
-  public void setEax(String eax)
-  {
+  public void setEax(String eax) {
     this.eax=eax;
   }
 
-  public void setEbx(String ebx)
-  {
+  public void setEbx(String ebx) {
     this.ebx=ebx;
   }
 
-  public void setEcx(String ecx)
-  {
+  public void setEcx(String ecx) {
     this.ecx=ecx;
   }
 
-  public void setEdx(String edx)
-  {
+  public void setEdx(String edx) {
     this.edx=edx;
   }
 }

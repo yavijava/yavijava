@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,53 +30,46 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class FileQueryFlags extends DynamicData
-{
+@SuppressWarnings("all")
+public class FileQueryFlags extends DynamicData {
   public boolean fileType;
   public boolean fileSize;
   public boolean modification;
   public Boolean fileOwner;
 
-  public boolean isFileType()
-  {
+  public boolean isFileType() {
     return this.fileType;
   }
 
-  public boolean isFileSize()
-  {
+  public boolean isFileSize() {
     return this.fileSize;
   }
 
-  public boolean isModification()
-  {
+  public boolean isModification() {
     return this.modification;
   }
 
-  public Boolean getFileOwner()
-  {
+  public Boolean getFileOwner() {
     return this.fileOwner;
   }
 
-  public void setFileType(boolean fileType)
-  {
+  public void setFileType(boolean fileType) {
     this.fileType=fileType;
   }
 
-  public void setFileSize(boolean fileSize)
-  {
+  public void setFileSize(boolean fileSize) {
     this.fileSize=fileSize;
   }
 
-  public void setModification(boolean modification)
-  {
+  public void setModification(boolean modification) {
     this.modification=modification;
   }
 
-  public void setFileOwner(Boolean fileOwner)
-  {
+  public void setFileOwner(Boolean fileOwner) {
     this.fileOwner=fileOwner;
   }
 }

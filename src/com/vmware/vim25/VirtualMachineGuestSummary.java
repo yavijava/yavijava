@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,11 +30,12 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class VirtualMachineGuestSummary extends DynamicData
-{
+@SuppressWarnings("all")
+public class VirtualMachineGuestSummary extends DynamicData {
   public String guestId;
   public String guestFullName;
   public VirtualMachineToolsStatus toolsStatus;
@@ -44,83 +45,67 @@ public class VirtualMachineGuestSummary extends DynamicData
   public String hostName;
   public String ipAddress;
 
-  public String getGuestId()
-  {
+  public String getGuestId() {
     return this.guestId;
   }
 
-  public String getGuestFullName()
-  {
+  public String getGuestFullName() {
     return this.guestFullName;
   }
 
-  public VirtualMachineToolsStatus getToolsStatus()
-  {
+  public VirtualMachineToolsStatus getToolsStatus() {
     return this.toolsStatus;
   }
 
-  public String getToolsVersionStatus()
-  {
+  public String getToolsVersionStatus() {
     return this.toolsVersionStatus;
   }
 
-  public String getToolsVersionStatus2()
-  {
+  public String getToolsVersionStatus2() {
     return this.toolsVersionStatus2;
   }
 
-  public String getToolsRunningStatus()
-  {
+  public String getToolsRunningStatus() {
     return this.toolsRunningStatus;
   }
 
-  public String getHostName()
-  {
+  public String getHostName() {
     return this.hostName;
   }
 
-  public String getIpAddress()
-  {
+  public String getIpAddress() {
     return this.ipAddress;
   }
 
-  public void setGuestId(String guestId)
-  {
+  public void setGuestId(String guestId) {
     this.guestId=guestId;
   }
 
-  public void setGuestFullName(String guestFullName)
-  {
+  public void setGuestFullName(String guestFullName) {
     this.guestFullName=guestFullName;
   }
 
-  public void setToolsStatus(VirtualMachineToolsStatus toolsStatus)
-  {
+  public void setToolsStatus(VirtualMachineToolsStatus toolsStatus) {
     this.toolsStatus=toolsStatus;
   }
 
-  public void setToolsVersionStatus(String toolsVersionStatus)
-  {
+  public void setToolsVersionStatus(String toolsVersionStatus) {
     this.toolsVersionStatus=toolsVersionStatus;
   }
 
-  public void setToolsVersionStatus2(String toolsVersionStatus2)
-  {
+  public void setToolsVersionStatus2(String toolsVersionStatus2) {
     this.toolsVersionStatus2=toolsVersionStatus2;
   }
 
-  public void setToolsRunningStatus(String toolsRunningStatus)
-  {
+  public void setToolsRunningStatus(String toolsRunningStatus) {
     this.toolsRunningStatus=toolsRunningStatus;
   }
 
-  public void setHostName(String hostName)
-  {
+  public void setHostName(String hostName) {
     this.hostName=hostName;
   }
 
-  public void setIpAddress(String ipAddress)
-  {
+  public void setIpAddress(String ipAddress) {
     this.ipAddress=ipAddress;
   }
 }

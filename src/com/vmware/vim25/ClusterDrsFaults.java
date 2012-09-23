@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,31 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class ClusterDrsFaults extends DynamicData
-{
+@SuppressWarnings("all")
+public class ClusterDrsFaults extends DynamicData {
   public String reason;
   public ClusterDrsFaultsFaultsByVm[] faultsByVm;
 
-  public String getReason()
-  {
+  public String getReason() {
     return this.reason;
   }
 
-  public ClusterDrsFaultsFaultsByVm[] getFaultsByVm()
-  {
+  public ClusterDrsFaultsFaultsByVm[] getFaultsByVm() {
     return this.faultsByVm;
   }
 
-  public void setReason(String reason)
-  {
+  public void setReason(String reason) {
     this.reason=reason;
   }
 
-  public void setFaultsByVm(ClusterDrsFaultsFaultsByVm[] faultsByVm)
-  {
+  public void setFaultsByVm(ClusterDrsFaultsFaultsByVm[] faultsByVm) {
     this.faultsByVm=faultsByVm;
   }
 }

@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,11 +30,12 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class ExtensionServerInfo extends DynamicData
-{
+@SuppressWarnings("all")
+public class ExtensionServerInfo extends DynamicData {
   public String url;
   public Description description;
   public String company;
@@ -42,63 +43,51 @@ public class ExtensionServerInfo extends DynamicData
   public String[] adminEmail;
   public String serverThumbprint;
 
-  public String getUrl()
-  {
+  public String getUrl() {
     return this.url;
   }
 
-  public Description getDescription()
-  {
+  public Description getDescription() {
     return this.description;
   }
 
-  public String getCompany()
-  {
+  public String getCompany() {
     return this.company;
   }
 
-  public String getType()
-  {
+  public String getType() {
     return this.type;
   }
 
-  public String[] getAdminEmail()
-  {
+  public String[] getAdminEmail() {
     return this.adminEmail;
   }
 
-  public String getServerThumbprint()
-  {
+  public String getServerThumbprint() {
     return this.serverThumbprint;
   }
 
-  public void setUrl(String url)
-  {
+  public void setUrl(String url) {
     this.url=url;
   }
 
-  public void setDescription(Description description)
-  {
+  public void setDescription(Description description) {
     this.description=description;
   }
 
-  public void setCompany(String company)
-  {
+  public void setCompany(String company) {
     this.company=company;
   }
 
-  public void setType(String type)
-  {
+  public void setType(String type) {
     this.type=type;
   }
 
-  public void setAdminEmail(String[] adminEmail)
-  {
+  public void setAdminEmail(String[] adminEmail) {
     this.adminEmail=adminEmail;
   }
 
-  public void setServerThumbprint(String serverThumbprint)
-  {
+  public void setServerThumbprint(String serverThumbprint) {
     this.serverThumbprint=serverThumbprint;
   }
 }

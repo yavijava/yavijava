@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,42 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class ServiceConsoleReservationInfo extends DynamicData
-{
+@SuppressWarnings("all")
+public class ServiceConsoleReservationInfo extends DynamicData {
   public long serviceConsoleReservedCfg;
   public long serviceConsoleReserved;
   public long unreserved;
 
-  public long getServiceConsoleReservedCfg()
-  {
+  public long getServiceConsoleReservedCfg() {
     return this.serviceConsoleReservedCfg;
   }
 
-  public long getServiceConsoleReserved()
-  {
+  public long getServiceConsoleReserved() {
     return this.serviceConsoleReserved;
   }
 
-  public long getUnreserved()
-  {
+  public long getUnreserved() {
     return this.unreserved;
   }
 
-  public void setServiceConsoleReservedCfg(long serviceConsoleReservedCfg)
-  {
+  public void setServiceConsoleReservedCfg(long serviceConsoleReservedCfg) {
     this.serviceConsoleReservedCfg=serviceConsoleReservedCfg;
   }
 
-  public void setServiceConsoleReserved(long serviceConsoleReserved)
-  {
+  public void setServiceConsoleReserved(long serviceConsoleReserved) {
     this.serviceConsoleReserved=serviceConsoleReserved;
   }
 
-  public void setUnreserved(long unreserved)
-  {
+  public void setUnreserved(long unreserved) {
     this.unreserved=unreserved;
   }
 }

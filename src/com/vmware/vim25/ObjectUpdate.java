@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,53 +30,46 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class ObjectUpdate extends DynamicData
-{
+@SuppressWarnings("all")
+public class ObjectUpdate extends DynamicData {
   public ObjectUpdateKind kind;
   public ManagedObjectReference obj;
   public PropertyChange[] changeSet;
   public MissingProperty[] missingSet;
 
-  public ObjectUpdateKind getKind()
-  {
+  public ObjectUpdateKind getKind() {
     return this.kind;
   }
 
-  public ManagedObjectReference getObj()
-  {
+  public ManagedObjectReference getObj() {
     return this.obj;
   }
 
-  public PropertyChange[] getChangeSet()
-  {
+  public PropertyChange[] getChangeSet() {
     return this.changeSet;
   }
 
-  public MissingProperty[] getMissingSet()
-  {
+  public MissingProperty[] getMissingSet() {
     return this.missingSet;
   }
 
-  public void setKind(ObjectUpdateKind kind)
-  {
+  public void setKind(ObjectUpdateKind kind) {
     this.kind=kind;
   }
 
-  public void setObj(ManagedObjectReference obj)
-  {
+  public void setObj(ManagedObjectReference obj) {
     this.obj=obj;
   }
 
-  public void setChangeSet(PropertyChange[] changeSet)
-  {
+  public void setChangeSet(PropertyChange[] changeSet) {
     this.changeSet=changeSet;
   }
 
-  public void setMissingSet(MissingProperty[] missingSet)
-  {
+  public void setMissingSet(MissingProperty[] missingSet) {
     this.missingSet=missingSet;
   }
 }

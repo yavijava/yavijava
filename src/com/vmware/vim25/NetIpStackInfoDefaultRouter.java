@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -31,53 +31,46 @@ package com.vmware.vim25;
 import java.util.Calendar;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class NetIpStackInfoDefaultRouter extends DynamicData
-{
+@SuppressWarnings("all")
+public class NetIpStackInfoDefaultRouter extends DynamicData {
   public String ipAddress;
   public String device;
   public Calendar lifetime;
   public String preference;
 
-  public String getIpAddress()
-  {
+  public String getIpAddress() {
     return this.ipAddress;
   }
 
-  public String getDevice()
-  {
+  public String getDevice() {
     return this.device;
   }
 
-  public Calendar getLifetime()
-  {
+  public Calendar getLifetime() {
     return this.lifetime;
   }
 
-  public String getPreference()
-  {
+  public String getPreference() {
     return this.preference;
   }
 
-  public void setIpAddress(String ipAddress)
-  {
+  public void setIpAddress(String ipAddress) {
     this.ipAddress=ipAddress;
   }
 
-  public void setDevice(String device)
-  {
+  public void setDevice(String device) {
     this.device=device;
   }
 
-  public void setLifetime(Calendar lifetime)
-  {
+  public void setLifetime(Calendar lifetime) {
     this.lifetime=lifetime;
   }
 
-  public void setPreference(String preference)
-  {
+  public void setPreference(String preference) {
     this.preference=preference;
   }
 }

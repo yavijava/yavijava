@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,64 +30,55 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class HostListSummaryQuickStats extends DynamicData
-{
+@SuppressWarnings("all")
+public class HostListSummaryQuickStats extends DynamicData {
   public Integer overallCpuUsage;
   public Integer overallMemoryUsage;
   public Integer distributedCpuFairness;
   public Integer distributedMemoryFairness;
   public Integer uptime;
 
-  public Integer getOverallCpuUsage()
-  {
+  public Integer getOverallCpuUsage() {
     return this.overallCpuUsage;
   }
 
-  public Integer getOverallMemoryUsage()
-  {
+  public Integer getOverallMemoryUsage() {
     return this.overallMemoryUsage;
   }
 
-  public Integer getDistributedCpuFairness()
-  {
+  public Integer getDistributedCpuFairness() {
     return this.distributedCpuFairness;
   }
 
-  public Integer getDistributedMemoryFairness()
-  {
+  public Integer getDistributedMemoryFairness() {
     return this.distributedMemoryFairness;
   }
 
-  public Integer getUptime()
-  {
+  public Integer getUptime() {
     return this.uptime;
   }
 
-  public void setOverallCpuUsage(Integer overallCpuUsage)
-  {
+  public void setOverallCpuUsage(Integer overallCpuUsage) {
     this.overallCpuUsage=overallCpuUsage;
   }
 
-  public void setOverallMemoryUsage(Integer overallMemoryUsage)
-  {
+  public void setOverallMemoryUsage(Integer overallMemoryUsage) {
     this.overallMemoryUsage=overallMemoryUsage;
   }
 
-  public void setDistributedCpuFairness(Integer distributedCpuFairness)
-  {
+  public void setDistributedCpuFairness(Integer distributedCpuFairness) {
     this.distributedCpuFairness=distributedCpuFairness;
   }
 
-  public void setDistributedMemoryFairness(Integer distributedMemoryFairness)
-  {
+  public void setDistributedMemoryFairness(Integer distributedMemoryFairness) {
     this.distributedMemoryFairness=distributedMemoryFairness;
   }
 
-  public void setUptime(Integer uptime)
-  {
+  public void setUptime(Integer uptime) {
     this.uptime=uptime;
   }
 }

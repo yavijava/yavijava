@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,11 +30,12 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class DVSConfigSpec extends DynamicData
-{
+@SuppressWarnings("all")
+public class DVSConfigSpec extends DynamicData {
   public String configVersion;
   public String name;
   public Integer numStandalonePorts;
@@ -49,144 +50,125 @@ public class DVSConfigSpec extends DynamicData
   public DistributedVirtualSwitchKeyedOpaqueBlob[] vendorSpecificConfig;
   public DVSContactInfo contact;
   public String switchIpAddress;
+  public Integer defaultProxySwitchMaxNumPorts;
 
-  public String getConfigVersion()
-  {
+  public String getConfigVersion() {
     return this.configVersion;
   }
 
-  public String getName()
-  {
+  public String getName() {
     return this.name;
   }
 
-  public Integer getNumStandalonePorts()
-  {
+  public Integer getNumStandalonePorts() {
     return this.numStandalonePorts;
   }
 
-  public Integer getMaxPorts()
-  {
+  public Integer getMaxPorts() {
     return this.maxPorts;
   }
 
-  public DVSUplinkPortPolicy getUplinkPortPolicy()
-  {
+  public DVSUplinkPortPolicy getUplinkPortPolicy() {
     return this.uplinkPortPolicy;
   }
 
-  public ManagedObjectReference[] getUplinkPortgroup()
-  {
+  public ManagedObjectReference[] getUplinkPortgroup() {
     return this.uplinkPortgroup;
   }
 
-  public DVPortSetting getDefaultPortConfig()
-  {
+  public DVPortSetting getDefaultPortConfig() {
     return this.defaultPortConfig;
   }
 
-  public DistributedVirtualSwitchHostMemberConfigSpec[] getHost()
-  {
+  public DistributedVirtualSwitchHostMemberConfigSpec[] getHost() {
     return this.host;
   }
 
-  public String getExtensionKey()
-  {
+  public String getExtensionKey() {
     return this.extensionKey;
   }
 
-  public String getDescription()
-  {
+  public String getDescription() {
     return this.description;
   }
 
-  public DVSPolicy getPolicy()
-  {
+  public DVSPolicy getPolicy() {
     return this.policy;
   }
 
-  public DistributedVirtualSwitchKeyedOpaqueBlob[] getVendorSpecificConfig()
-  {
+  public DistributedVirtualSwitchKeyedOpaqueBlob[] getVendorSpecificConfig() {
     return this.vendorSpecificConfig;
   }
 
-  public DVSContactInfo getContact()
-  {
+  public DVSContactInfo getContact() {
     return this.contact;
   }
 
-  public String getSwitchIpAddress()
-  {
+  public String getSwitchIpAddress() {
     return this.switchIpAddress;
   }
 
-  public void setConfigVersion(String configVersion)
-  {
+  public Integer getDefaultProxySwitchMaxNumPorts() {
+    return this.defaultProxySwitchMaxNumPorts;
+  }
+
+  public void setConfigVersion(String configVersion) {
     this.configVersion=configVersion;
   }
 
-  public void setName(String name)
-  {
+  public void setName(String name) {
     this.name=name;
   }
 
-  public void setNumStandalonePorts(Integer numStandalonePorts)
-  {
+  public void setNumStandalonePorts(Integer numStandalonePorts) {
     this.numStandalonePorts=numStandalonePorts;
   }
 
-  public void setMaxPorts(Integer maxPorts)
-  {
+  public void setMaxPorts(Integer maxPorts) {
     this.maxPorts=maxPorts;
   }
 
-  public void setUplinkPortPolicy(DVSUplinkPortPolicy uplinkPortPolicy)
-  {
+  public void setUplinkPortPolicy(DVSUplinkPortPolicy uplinkPortPolicy) {
     this.uplinkPortPolicy=uplinkPortPolicy;
   }
 
-  public void setUplinkPortgroup(ManagedObjectReference[] uplinkPortgroup)
-  {
+  public void setUplinkPortgroup(ManagedObjectReference[] uplinkPortgroup) {
     this.uplinkPortgroup=uplinkPortgroup;
   }
 
-  public void setDefaultPortConfig(DVPortSetting defaultPortConfig)
-  {
+  public void setDefaultPortConfig(DVPortSetting defaultPortConfig) {
     this.defaultPortConfig=defaultPortConfig;
   }
 
-  public void setHost(DistributedVirtualSwitchHostMemberConfigSpec[] host)
-  {
+  public void setHost(DistributedVirtualSwitchHostMemberConfigSpec[] host) {
     this.host=host;
   }
 
-  public void setExtensionKey(String extensionKey)
-  {
+  public void setExtensionKey(String extensionKey) {
     this.extensionKey=extensionKey;
   }
 
-  public void setDescription(String description)
-  {
+  public void setDescription(String description) {
     this.description=description;
   }
 
-  public void setPolicy(DVSPolicy policy)
-  {
+  public void setPolicy(DVSPolicy policy) {
     this.policy=policy;
   }
 
-  public void setVendorSpecificConfig(DistributedVirtualSwitchKeyedOpaqueBlob[] vendorSpecificConfig)
-  {
+  public void setVendorSpecificConfig(DistributedVirtualSwitchKeyedOpaqueBlob[] vendorSpecificConfig) {
     this.vendorSpecificConfig=vendorSpecificConfig;
   }
 
-  public void setContact(DVSContactInfo contact)
-  {
+  public void setContact(DVSContactInfo contact) {
     this.contact=contact;
   }
 
-  public void setSwitchIpAddress(String switchIpAddress)
-  {
+  public void setSwitchIpAddress(String switchIpAddress) {
     this.switchIpAddress=switchIpAddress;
+  }
+
+  public void setDefaultProxySwitchMaxNumPorts(Integer defaultProxySwitchMaxNumPorts) {
+    this.defaultProxySwitchMaxNumPorts=defaultProxySwitchMaxNumPorts;
   }
 }

@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,11 +30,12 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class CustomFieldDef extends DynamicData
-{
+@SuppressWarnings("all")
+public class CustomFieldDef extends DynamicData {
   public int key;
   public String name;
   public String type;
@@ -42,63 +43,51 @@ public class CustomFieldDef extends DynamicData
   public PrivilegePolicyDef fieldDefPrivileges;
   public PrivilegePolicyDef fieldInstancePrivileges;
 
-  public int getKey()
-  {
+  public int getKey() {
     return this.key;
   }
 
-  public String getName()
-  {
+  public String getName() {
     return this.name;
   }
 
-  public String getType()
-  {
+  public String getType() {
     return this.type;
   }
 
-  public String getManagedObjectType()
-  {
+  public String getManagedObjectType() {
     return this.managedObjectType;
   }
 
-  public PrivilegePolicyDef getFieldDefPrivileges()
-  {
+  public PrivilegePolicyDef getFieldDefPrivileges() {
     return this.fieldDefPrivileges;
   }
 
-  public PrivilegePolicyDef getFieldInstancePrivileges()
-  {
+  public PrivilegePolicyDef getFieldInstancePrivileges() {
     return this.fieldInstancePrivileges;
   }
 
-  public void setKey(int key)
-  {
+  public void setKey(int key) {
     this.key=key;
   }
 
-  public void setName(String name)
-  {
+  public void setName(String name) {
     this.name=name;
   }
 
-  public void setType(String type)
-  {
+  public void setType(String type) {
     this.type=type;
   }
 
-  public void setManagedObjectType(String managedObjectType)
-  {
+  public void setManagedObjectType(String managedObjectType) {
     this.managedObjectType=managedObjectType;
   }
 
-  public void setFieldDefPrivileges(PrivilegePolicyDef fieldDefPrivileges)
-  {
+  public void setFieldDefPrivileges(PrivilegePolicyDef fieldDefPrivileges) {
     this.fieldDefPrivileges=fieldDefPrivileges;
   }
 
-  public void setFieldInstancePrivileges(PrivilegePolicyDef fieldInstancePrivileges)
-  {
+  public void setFieldInstancePrivileges(PrivilegePolicyDef fieldInstancePrivileges) {
     this.fieldInstancePrivileges=fieldInstancePrivileges;
   }
 }

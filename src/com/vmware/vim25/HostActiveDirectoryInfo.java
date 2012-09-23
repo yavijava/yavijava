@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,42 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class HostActiveDirectoryInfo extends HostDirectoryStoreInfo
-{
+@SuppressWarnings("all")
+public class HostActiveDirectoryInfo extends HostDirectoryStoreInfo {
   public String joinedDomain;
   public String[] trustedDomain;
   public String domainMembershipStatus;
 
-  public String getJoinedDomain()
-  {
+  public String getJoinedDomain() {
     return this.joinedDomain;
   }
 
-  public String[] getTrustedDomain()
-  {
+  public String[] getTrustedDomain() {
     return this.trustedDomain;
   }
 
-  public String getDomainMembershipStatus()
-  {
+  public String getDomainMembershipStatus() {
     return this.domainMembershipStatus;
   }
 
-  public void setJoinedDomain(String joinedDomain)
-  {
+  public void setJoinedDomain(String joinedDomain) {
     this.joinedDomain=joinedDomain;
   }
 
-  public void setTrustedDomain(String[] trustedDomain)
-  {
+  public void setTrustedDomain(String[] trustedDomain) {
     this.trustedDomain=trustedDomain;
   }
 
-  public void setDomainMembershipStatus(String domainMembershipStatus)
-  {
+  public void setDomainMembershipStatus(String domainMembershipStatus) {
     this.domainMembershipStatus=domainMembershipStatus;
   }
 }

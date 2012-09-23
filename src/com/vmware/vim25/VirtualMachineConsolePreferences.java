@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,42 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class VirtualMachineConsolePreferences extends DynamicData
-{
+@SuppressWarnings("all")
+public class VirtualMachineConsolePreferences extends DynamicData {
   public Boolean powerOnWhenOpened;
   public Boolean enterFullScreenOnPowerOn;
   public Boolean closeOnPowerOffOrSuspend;
 
-  public Boolean getPowerOnWhenOpened()
-  {
+  public Boolean getPowerOnWhenOpened() {
     return this.powerOnWhenOpened;
   }
 
-  public Boolean getEnterFullScreenOnPowerOn()
-  {
+  public Boolean getEnterFullScreenOnPowerOn() {
     return this.enterFullScreenOnPowerOn;
   }
 
-  public Boolean getCloseOnPowerOffOrSuspend()
-  {
+  public Boolean getCloseOnPowerOffOrSuspend() {
     return this.closeOnPowerOffOrSuspend;
   }
 
-  public void setPowerOnWhenOpened(Boolean powerOnWhenOpened)
-  {
+  public void setPowerOnWhenOpened(Boolean powerOnWhenOpened) {
     this.powerOnWhenOpened=powerOnWhenOpened;
   }
 
-  public void setEnterFullScreenOnPowerOn(Boolean enterFullScreenOnPowerOn)
-  {
+  public void setEnterFullScreenOnPowerOn(Boolean enterFullScreenOnPowerOn) {
     this.enterFullScreenOnPowerOn=enterFullScreenOnPowerOn;
   }
 
-  public void setCloseOnPowerOffOrSuspend(Boolean closeOnPowerOffOrSuspend)
-  {
+  public void setCloseOnPowerOffOrSuspend(Boolean closeOnPowerOffOrSuspend) {
     this.closeOnPowerOffOrSuspend=closeOnPowerOffOrSuspend;
   }
 }

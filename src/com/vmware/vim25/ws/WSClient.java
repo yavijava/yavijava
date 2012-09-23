@@ -72,11 +72,12 @@ public final class WSClient
   private final static String SOAP_ACTION_V40 = "urn:vim25/4.0";
   private final static String SOAP_ACTION_V41 = "urn:vim25/4.1";
   private final static String SOAP_ACTION_V50 = "urn:vim25/5.0";
+  private final static String SOAP_ACTION_V51 = "urn:vim25/5.1";
   
   private URL baseUrl = null;
   private String cookie = null;
   private String vimNameSpace = null;
-  private String soapAction = SOAP_ACTION_V40;
+  private String soapAction = null;
   private int connectTimeout = 0;
   private int readTimeout = 0;
   
@@ -331,17 +332,29 @@ public final class WSClient
   "4.0"       vSphere 4.0 (and u1)
   "4.1"       vSphere 4.1
   "5.0"       vSphere 5.0
+  "5.1"       vSphere 5.1
   ===============================================*/
   public void setSoapActionOnApiVersion(String apiVersion)
   {
-    //4.0 is set by default already, so skip it here
-    if("4.1".equals(apiVersion))
+    if("4.0".equals(apiVersion))
+    {
+      soapAction = SOAP_ACTION_V40;
+    }
+    else if("4.1".equals(apiVersion))
     {
       soapAction = SOAP_ACTION_V41;
     }
     else if("5.0".equals(apiVersion))
     {
       soapAction = SOAP_ACTION_V50;
+    }
+    else if("5.1".equals(apiVersion))
+    {
+      soapAction = SOAP_ACTION_V51;
+    }
+    else
+    { //always defaults to latest version 
+      soapAction = SOAP_ACTION_V51;
     }
   }
   

@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,42 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class HostLicenseConnectInfo extends DynamicData
-{
+@SuppressWarnings("all")
+public class HostLicenseConnectInfo extends DynamicData {
   public LicenseManagerLicenseInfo license;
   public LicenseManagerEvaluationInfo evaluation;
   public HostLicensableResourceInfo resource;
 
-  public LicenseManagerLicenseInfo getLicense()
-  {
+  public LicenseManagerLicenseInfo getLicense() {
     return this.license;
   }
 
-  public LicenseManagerEvaluationInfo getEvaluation()
-  {
+  public LicenseManagerEvaluationInfo getEvaluation() {
     return this.evaluation;
   }
 
-  public HostLicensableResourceInfo getResource()
-  {
+  public HostLicensableResourceInfo getResource() {
     return this.resource;
   }
 
-  public void setLicense(LicenseManagerLicenseInfo license)
-  {
+  public void setLicense(LicenseManagerLicenseInfo license) {
     this.license=license;
   }
 
-  public void setEvaluation(LicenseManagerEvaluationInfo evaluation)
-  {
+  public void setEvaluation(LicenseManagerEvaluationInfo evaluation) {
     this.evaluation=evaluation;
   }
 
-  public void setResource(HostLicensableResourceInfo resource)
-  {
+  public void setResource(HostLicensableResourceInfo resource) {
     this.resource=resource;
   }
 }

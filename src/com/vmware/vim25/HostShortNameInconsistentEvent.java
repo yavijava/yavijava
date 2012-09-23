@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,31 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class HostShortNameInconsistentEvent extends HostDasEvent
-{
+@SuppressWarnings("all")
+public class HostShortNameInconsistentEvent extends HostDasEvent {
   public String shortName;
   public String shortName2;
 
-  public String getShortName()
-  {
+  public String getShortName() {
     return this.shortName;
   }
 
-  public String getShortName2()
-  {
+  public String getShortName2() {
     return this.shortName2;
   }
 
-  public void setShortName(String shortName)
-  {
+  public void setShortName(String shortName) {
     this.shortName=shortName;
   }
 
-  public void setShortName2(String shortName2)
-  {
+  public void setShortName2(String shortName2) {
     this.shortName2=shortName2;
   }
 }

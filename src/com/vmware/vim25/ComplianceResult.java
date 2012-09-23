@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -31,64 +31,55 @@ package com.vmware.vim25;
 import java.util.Calendar;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class ComplianceResult extends DynamicData
-{
+@SuppressWarnings("all")
+public class ComplianceResult extends DynamicData {
   public ManagedObjectReference profile;
   public String complianceStatus;
   public ManagedObjectReference entity;
   public Calendar checkTime;
   public ComplianceFailure[] failure;
 
-  public ManagedObjectReference getProfile()
-  {
+  public ManagedObjectReference getProfile() {
     return this.profile;
   }
 
-  public String getComplianceStatus()
-  {
+  public String getComplianceStatus() {
     return this.complianceStatus;
   }
 
-  public ManagedObjectReference getEntity()
-  {
+  public ManagedObjectReference getEntity() {
     return this.entity;
   }
 
-  public Calendar getCheckTime()
-  {
+  public Calendar getCheckTime() {
     return this.checkTime;
   }
 
-  public ComplianceFailure[] getFailure()
-  {
+  public ComplianceFailure[] getFailure() {
     return this.failure;
   }
 
-  public void setProfile(ManagedObjectReference profile)
-  {
+  public void setProfile(ManagedObjectReference profile) {
     this.profile=profile;
   }
 
-  public void setComplianceStatus(String complianceStatus)
-  {
+  public void setComplianceStatus(String complianceStatus) {
     this.complianceStatus=complianceStatus;
   }
 
-  public void setEntity(ManagedObjectReference entity)
-  {
+  public void setEntity(ManagedObjectReference entity) {
     this.entity=entity;
   }
 
-  public void setCheckTime(Calendar checkTime)
-  {
+  public void setCheckTime(Calendar checkTime) {
     this.checkTime=checkTime;
   }
 
-  public void setFailure(ComplianceFailure[] failure)
-  {
+  public void setFailure(ComplianceFailure[] failure) {
     this.failure=failure;
   }
 }

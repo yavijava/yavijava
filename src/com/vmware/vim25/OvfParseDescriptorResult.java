@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,11 +30,12 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class OvfParseDescriptorResult extends DynamicData
-{
+@SuppressWarnings("all")
+public class OvfParseDescriptorResult extends DynamicData {
   public String[] eula;
   public OvfNetworkInfo[] network;
   public String[] ipAllocationScheme;
@@ -54,183 +55,147 @@ public class OvfParseDescriptorResult extends DynamicData
   public LocalizedMethodFault[] error;
   public LocalizedMethodFault[] warning;
 
-  public String[] getEula()
-  {
+  public String[] getEula() {
     return this.eula;
   }
 
-  public OvfNetworkInfo[] getNetwork()
-  {
+  public OvfNetworkInfo[] getNetwork() {
     return this.network;
   }
 
-  public String[] getIpAllocationScheme()
-  {
+  public String[] getIpAllocationScheme() {
     return this.ipAllocationScheme;
   }
 
-  public String[] getIpProtocols()
-  {
+  public String[] getIpProtocols() {
     return this.ipProtocols;
   }
 
-  public VAppPropertyInfo[] getProperty()
-  {
+  public VAppPropertyInfo[] getProperty() {
     return this.property;
   }
 
-  public VAppProductInfo getProductInfo()
-  {
+  public VAppProductInfo getProductInfo() {
     return this.productInfo;
   }
 
-  public String getAnnotation()
-  {
+  public String getAnnotation() {
     return this.annotation;
   }
 
-  public Long getApproximateDownloadSize()
-  {
+  public Long getApproximateDownloadSize() {
     return this.approximateDownloadSize;
   }
 
-  public Long getApproximateFlatDeploymentSize()
-  {
+  public Long getApproximateFlatDeploymentSize() {
     return this.approximateFlatDeploymentSize;
   }
 
-  public Long getApproximateSparseDeploymentSize()
-  {
+  public Long getApproximateSparseDeploymentSize() {
     return this.approximateSparseDeploymentSize;
   }
 
-  public String getDefaultEntityName()
-  {
+  public String getDefaultEntityName() {
     return this.defaultEntityName;
   }
 
-  public boolean isVirtualApp()
-  {
+  public boolean isVirtualApp() {
     return this.virtualApp;
   }
 
-  public OvfDeploymentOption[] getDeploymentOption()
-  {
+  public OvfDeploymentOption[] getDeploymentOption() {
     return this.deploymentOption;
   }
 
-  public String getDefaultDeploymentOption()
-  {
+  public String getDefaultDeploymentOption() {
     return this.defaultDeploymentOption;
   }
 
-  public KeyValue[] getEntityName()
-  {
+  public KeyValue[] getEntityName() {
     return this.entityName;
   }
 
-  public OvfConsumerOstNode getAnnotatedOst()
-  {
+  public OvfConsumerOstNode getAnnotatedOst() {
     return this.annotatedOst;
   }
 
-  public LocalizedMethodFault[] getError()
-  {
+  public LocalizedMethodFault[] getError() {
     return this.error;
   }
 
-  public LocalizedMethodFault[] getWarning()
-  {
+  public LocalizedMethodFault[] getWarning() {
     return this.warning;
   }
 
-  public void setEula(String[] eula)
-  {
+  public void setEula(String[] eula) {
     this.eula=eula;
   }
 
-  public void setNetwork(OvfNetworkInfo[] network)
-  {
+  public void setNetwork(OvfNetworkInfo[] network) {
     this.network=network;
   }
 
-  public void setIpAllocationScheme(String[] ipAllocationScheme)
-  {
+  public void setIpAllocationScheme(String[] ipAllocationScheme) {
     this.ipAllocationScheme=ipAllocationScheme;
   }
 
-  public void setIpProtocols(String[] ipProtocols)
-  {
+  public void setIpProtocols(String[] ipProtocols) {
     this.ipProtocols=ipProtocols;
   }
 
-  public void setProperty(VAppPropertyInfo[] property)
-  {
+  public void setProperty(VAppPropertyInfo[] property) {
     this.property=property;
   }
 
-  public void setProductInfo(VAppProductInfo productInfo)
-  {
+  public void setProductInfo(VAppProductInfo productInfo) {
     this.productInfo=productInfo;
   }
 
-  public void setAnnotation(String annotation)
-  {
+  public void setAnnotation(String annotation) {
     this.annotation=annotation;
   }
 
-  public void setApproximateDownloadSize(Long approximateDownloadSize)
-  {
+  public void setApproximateDownloadSize(Long approximateDownloadSize) {
     this.approximateDownloadSize=approximateDownloadSize;
   }
 
-  public void setApproximateFlatDeploymentSize(Long approximateFlatDeploymentSize)
-  {
+  public void setApproximateFlatDeploymentSize(Long approximateFlatDeploymentSize) {
     this.approximateFlatDeploymentSize=approximateFlatDeploymentSize;
   }
 
-  public void setApproximateSparseDeploymentSize(Long approximateSparseDeploymentSize)
-  {
+  public void setApproximateSparseDeploymentSize(Long approximateSparseDeploymentSize) {
     this.approximateSparseDeploymentSize=approximateSparseDeploymentSize;
   }
 
-  public void setDefaultEntityName(String defaultEntityName)
-  {
+  public void setDefaultEntityName(String defaultEntityName) {
     this.defaultEntityName=defaultEntityName;
   }
 
-  public void setVirtualApp(boolean virtualApp)
-  {
+  public void setVirtualApp(boolean virtualApp) {
     this.virtualApp=virtualApp;
   }
 
-  public void setDeploymentOption(OvfDeploymentOption[] deploymentOption)
-  {
+  public void setDeploymentOption(OvfDeploymentOption[] deploymentOption) {
     this.deploymentOption=deploymentOption;
   }
 
-  public void setDefaultDeploymentOption(String defaultDeploymentOption)
-  {
+  public void setDefaultDeploymentOption(String defaultDeploymentOption) {
     this.defaultDeploymentOption=defaultDeploymentOption;
   }
 
-  public void setEntityName(KeyValue[] entityName)
-  {
+  public void setEntityName(KeyValue[] entityName) {
     this.entityName=entityName;
   }
 
-  public void setAnnotatedOst(OvfConsumerOstNode annotatedOst)
-  {
+  public void setAnnotatedOst(OvfConsumerOstNode annotatedOst) {
     this.annotatedOst=annotatedOst;
   }
 
-  public void setError(LocalizedMethodFault[] error)
-  {
+  public void setError(LocalizedMethodFault[] error) {
     this.error=error;
   }
 
-  public void setWarning(LocalizedMethodFault[] warning)
-  {
+  public void setWarning(LocalizedMethodFault[] warning) {
     this.warning=warning;
   }
 }

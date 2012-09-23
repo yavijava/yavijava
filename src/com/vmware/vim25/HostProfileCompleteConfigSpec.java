@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,64 +30,55 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class HostProfileCompleteConfigSpec extends HostProfileConfigSpec
-{
+@SuppressWarnings("all")
+public class HostProfileCompleteConfigSpec extends HostProfileConfigSpec {
   public HostApplyProfile applyProfile;
   public ComplianceProfile customComplyProfile;
   public boolean disabledExpressionListChanged;
   public String[] disabledExpressionList;
   public ManagedObjectReference validatorHost;
 
-  public HostApplyProfile getApplyProfile()
-  {
+  public HostApplyProfile getApplyProfile() {
     return this.applyProfile;
   }
 
-  public ComplianceProfile getCustomComplyProfile()
-  {
+  public ComplianceProfile getCustomComplyProfile() {
     return this.customComplyProfile;
   }
 
-  public boolean isDisabledExpressionListChanged()
-  {
+  public boolean isDisabledExpressionListChanged() {
     return this.disabledExpressionListChanged;
   }
 
-  public String[] getDisabledExpressionList()
-  {
+  public String[] getDisabledExpressionList() {
     return this.disabledExpressionList;
   }
 
-  public ManagedObjectReference getValidatorHost()
-  {
+  public ManagedObjectReference getValidatorHost() {
     return this.validatorHost;
   }
 
-  public void setApplyProfile(HostApplyProfile applyProfile)
-  {
+  public void setApplyProfile(HostApplyProfile applyProfile) {
     this.applyProfile=applyProfile;
   }
 
-  public void setCustomComplyProfile(ComplianceProfile customComplyProfile)
-  {
+  public void setCustomComplyProfile(ComplianceProfile customComplyProfile) {
     this.customComplyProfile=customComplyProfile;
   }
 
-  public void setDisabledExpressionListChanged(boolean disabledExpressionListChanged)
-  {
+  public void setDisabledExpressionListChanged(boolean disabledExpressionListChanged) {
     this.disabledExpressionListChanged=disabledExpressionListChanged;
   }
 
-  public void setDisabledExpressionList(String[] disabledExpressionList)
-  {
+  public void setDisabledExpressionList(String[] disabledExpressionList) {
     this.disabledExpressionList=disabledExpressionList;
   }
 
-  public void setValidatorHost(ManagedObjectReference validatorHost)
-  {
+  public void setValidatorHost(ManagedObjectReference validatorHost) {
     this.validatorHost=validatorHost;
   }
 }

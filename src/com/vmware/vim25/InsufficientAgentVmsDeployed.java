@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,42 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class InsufficientAgentVmsDeployed extends InsufficientResourcesFault
-{
+@SuppressWarnings("all")
+public class InsufficientAgentVmsDeployed extends InsufficientResourcesFault {
   public String hostName;
   public int requiredNumAgentVms;
   public int currentNumAgentVms;
 
-  public String getHostName()
-  {
+  public String getHostName() {
     return this.hostName;
   }
 
-  public int getRequiredNumAgentVms()
-  {
+  public int getRequiredNumAgentVms() {
     return this.requiredNumAgentVms;
   }
 
-  public int getCurrentNumAgentVms()
-  {
+  public int getCurrentNumAgentVms() {
     return this.currentNumAgentVms;
   }
 
-  public void setHostName(String hostName)
-  {
+  public void setHostName(String hostName) {
     this.hostName=hostName;
   }
 
-  public void setRequiredNumAgentVms(int requiredNumAgentVms)
-  {
+  public void setRequiredNumAgentVms(int requiredNumAgentVms) {
     this.requiredNumAgentVms=requiredNumAgentVms;
   }
 
-  public void setCurrentNumAgentVms(int currentNumAgentVms)
-  {
+  public void setCurrentNumAgentVms(int currentNumAgentVms) {
     this.currentNumAgentVms=currentNumAgentVms;
   }
 }

@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,53 +30,46 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class VmPodConfigForPlacement extends DynamicData
-{
+@SuppressWarnings("all")
+public class VmPodConfigForPlacement extends DynamicData {
   public ManagedObjectReference storagePod;
   public PodDiskLocator[] disk;
   public StorageDrsVmConfigInfo vmConfig;
   public ClusterRuleInfo[] interVmRule;
 
-  public ManagedObjectReference getStoragePod()
-  {
+  public ManagedObjectReference getStoragePod() {
     return this.storagePod;
   }
 
-  public PodDiskLocator[] getDisk()
-  {
+  public PodDiskLocator[] getDisk() {
     return this.disk;
   }
 
-  public StorageDrsVmConfigInfo getVmConfig()
-  {
+  public StorageDrsVmConfigInfo getVmConfig() {
     return this.vmConfig;
   }
 
-  public ClusterRuleInfo[] getInterVmRule()
-  {
+  public ClusterRuleInfo[] getInterVmRule() {
     return this.interVmRule;
   }
 
-  public void setStoragePod(ManagedObjectReference storagePod)
-  {
+  public void setStoragePod(ManagedObjectReference storagePod) {
     this.storagePod=storagePod;
   }
 
-  public void setDisk(PodDiskLocator[] disk)
-  {
+  public void setDisk(PodDiskLocator[] disk) {
     this.disk=disk;
   }
 
-  public void setVmConfig(StorageDrsVmConfigInfo vmConfig)
-  {
+  public void setVmConfig(StorageDrsVmConfigInfo vmConfig) {
     this.vmConfig=vmConfig;
   }
 
-  public void setInterVmRule(ClusterRuleInfo[] interVmRule)
-  {
+  public void setInterVmRule(ClusterRuleInfo[] interVmRule) {
     this.interVmRule=interVmRule;
   }
 }

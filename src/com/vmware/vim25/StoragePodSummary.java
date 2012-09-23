@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,42 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class StoragePodSummary extends DynamicData
-{
+@SuppressWarnings("all")
+public class StoragePodSummary extends DynamicData {
   public String name;
   public long capacity;
   public long freeSpace;
 
-  public String getName()
-  {
+  public String getName() {
     return this.name;
   }
 
-  public long getCapacity()
-  {
+  public long getCapacity() {
     return this.capacity;
   }
 
-  public long getFreeSpace()
-  {
+  public long getFreeSpace() {
     return this.freeSpace;
   }
 
-  public void setName(String name)
-  {
+  public void setName(String name) {
     this.name=name;
   }
 
-  public void setCapacity(long capacity)
-  {
+  public void setCapacity(long capacity) {
     this.capacity=capacity;
   }
 
-  public void setFreeSpace(long freeSpace)
-  {
+  public void setFreeSpace(long freeSpace) {
     this.freeSpace=freeSpace;
   }
 }

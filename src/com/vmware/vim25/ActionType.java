@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,11 +30,11 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public enum ActionType
-{
+public enum ActionType {
   MigrationV1 ("MigrationV1"),
   VmPowerV1 ("VmPowerV1"),
   HostPowerV1 ("HostPowerV1"),
@@ -42,6 +42,7 @@ public enum ActionType
   StorageMigrationV1 ("StorageMigrationV1"),
   StoragePlacementV1 ("StoragePlacementV1");
 
+  @SuppressWarnings("unused")
   private final String val;
   private ActionType(String val)
   {

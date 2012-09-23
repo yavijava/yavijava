@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,11 +30,12 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class VirtualMachineConfigOption extends DynamicData
-{
+@SuppressWarnings("all")
+public class VirtualMachineConfigOption extends DynamicData {
   public String version;
   public String description;
   public GuestOsDescriptor[] guestOSDescriptor;
@@ -47,113 +48,91 @@ public class VirtualMachineConfigOption extends DynamicData
   public String[] supportedOvfEnvironmentTransport;
   public String[] supportedOvfInstallTransport;
 
-  public String getVersion()
-  {
+  public String getVersion() {
     return this.version;
   }
 
-  public String getDescription()
-  {
+  public String getDescription() {
     return this.description;
   }
 
-  public GuestOsDescriptor[] getGuestOSDescriptor()
-  {
+  public GuestOsDescriptor[] getGuestOSDescriptor() {
     return this.guestOSDescriptor;
   }
 
-  public int getGuestOSDefaultIndex()
-  {
+  public int getGuestOSDefaultIndex() {
     return this.guestOSDefaultIndex;
   }
 
-  public VirtualHardwareOption getHardwareOptions()
-  {
+  public VirtualHardwareOption getHardwareOptions() {
     return this.hardwareOptions;
   }
 
-  public VirtualMachineCapability getCapabilities()
-  {
+  public VirtualMachineCapability getCapabilities() {
     return this.capabilities;
   }
 
-  public DatastoreOption getDatastore()
-  {
+  public DatastoreOption getDatastore() {
     return this.datastore;
   }
 
-  public VirtualDevice[] getDefaultDevice()
-  {
+  public VirtualDevice[] getDefaultDevice() {
     return this.defaultDevice;
   }
 
-  public String[] getSupportedMonitorType()
-  {
+  public String[] getSupportedMonitorType() {
     return this.supportedMonitorType;
   }
 
-  public String[] getSupportedOvfEnvironmentTransport()
-  {
+  public String[] getSupportedOvfEnvironmentTransport() {
     return this.supportedOvfEnvironmentTransport;
   }
 
-  public String[] getSupportedOvfInstallTransport()
-  {
+  public String[] getSupportedOvfInstallTransport() {
     return this.supportedOvfInstallTransport;
   }
 
-  public void setVersion(String version)
-  {
+  public void setVersion(String version) {
     this.version=version;
   }
 
-  public void setDescription(String description)
-  {
+  public void setDescription(String description) {
     this.description=description;
   }
 
-  public void setGuestOSDescriptor(GuestOsDescriptor[] guestOSDescriptor)
-  {
+  public void setGuestOSDescriptor(GuestOsDescriptor[] guestOSDescriptor) {
     this.guestOSDescriptor=guestOSDescriptor;
   }
 
-  public void setGuestOSDefaultIndex(int guestOSDefaultIndex)
-  {
+  public void setGuestOSDefaultIndex(int guestOSDefaultIndex) {
     this.guestOSDefaultIndex=guestOSDefaultIndex;
   }
 
-  public void setHardwareOptions(VirtualHardwareOption hardwareOptions)
-  {
+  public void setHardwareOptions(VirtualHardwareOption hardwareOptions) {
     this.hardwareOptions=hardwareOptions;
   }
 
-  public void setCapabilities(VirtualMachineCapability capabilities)
-  {
+  public void setCapabilities(VirtualMachineCapability capabilities) {
     this.capabilities=capabilities;
   }
 
-  public void setDatastore(DatastoreOption datastore)
-  {
+  public void setDatastore(DatastoreOption datastore) {
     this.datastore=datastore;
   }
 
-  public void setDefaultDevice(VirtualDevice[] defaultDevice)
-  {
+  public void setDefaultDevice(VirtualDevice[] defaultDevice) {
     this.defaultDevice=defaultDevice;
   }
 
-  public void setSupportedMonitorType(String[] supportedMonitorType)
-  {
+  public void setSupportedMonitorType(String[] supportedMonitorType) {
     this.supportedMonitorType=supportedMonitorType;
   }
 
-  public void setSupportedOvfEnvironmentTransport(String[] supportedOvfEnvironmentTransport)
-  {
+  public void setSupportedOvfEnvironmentTransport(String[] supportedOvfEnvironmentTransport) {
     this.supportedOvfEnvironmentTransport=supportedOvfEnvironmentTransport;
   }
 
-  public void setSupportedOvfInstallTransport(String[] supportedOvfInstallTransport)
-  {
+  public void setSupportedOvfInstallTransport(String[] supportedOvfInstallTransport) {
     this.supportedOvfInstallTransport=supportedOvfInstallTransport;
   }
 }

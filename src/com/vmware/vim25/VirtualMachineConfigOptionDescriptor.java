@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,64 +30,73 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class VirtualMachineConfigOptionDescriptor extends DynamicData
-{
+@SuppressWarnings("all")
+public class VirtualMachineConfigOptionDescriptor extends DynamicData {
   public String key;
   public String description;
   public ManagedObjectReference[] host;
   public Boolean createSupported;
   public Boolean defaultConfigOption;
+  public Boolean runSupported;
+  public Boolean upgradeSupported;
 
-  public String getKey()
-  {
+  public String getKey() {
     return this.key;
   }
 
-  public String getDescription()
-  {
+  public String getDescription() {
     return this.description;
   }
 
-  public ManagedObjectReference[] getHost()
-  {
+  public ManagedObjectReference[] getHost() {
     return this.host;
   }
 
-  public Boolean getCreateSupported()
-  {
+  public Boolean getCreateSupported() {
     return this.createSupported;
   }
 
-  public Boolean getDefaultConfigOption()
-  {
+  public Boolean getDefaultConfigOption() {
     return this.defaultConfigOption;
   }
 
-  public void setKey(String key)
-  {
+  public Boolean getRunSupported() {
+    return this.runSupported;
+  }
+
+  public Boolean getUpgradeSupported() {
+    return this.upgradeSupported;
+  }
+
+  public void setKey(String key) {
     this.key=key;
   }
 
-  public void setDescription(String description)
-  {
+  public void setDescription(String description) {
     this.description=description;
   }
 
-  public void setHost(ManagedObjectReference[] host)
-  {
+  public void setHost(ManagedObjectReference[] host) {
     this.host=host;
   }
 
-  public void setCreateSupported(Boolean createSupported)
-  {
+  public void setCreateSupported(Boolean createSupported) {
     this.createSupported=createSupported;
   }
 
-  public void setDefaultConfigOption(Boolean defaultConfigOption)
-  {
+  public void setDefaultConfigOption(Boolean defaultConfigOption) {
     this.defaultConfigOption=defaultConfigOption;
+  }
+
+  public void setRunSupported(Boolean runSupported) {
+    this.runSupported=runSupported;
+  }
+
+  public void setUpgradeSupported(Boolean upgradeSupported) {
+    this.upgradeSupported=upgradeSupported;
   }
 }

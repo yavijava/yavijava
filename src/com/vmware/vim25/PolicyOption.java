@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,31 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class PolicyOption extends DynamicData
-{
+@SuppressWarnings("all")
+public class PolicyOption extends DynamicData {
   public String id;
   public KeyAnyValue[] parameter;
 
-  public String getId()
-  {
+  public String getId() {
     return this.id;
   }
 
-  public KeyAnyValue[] getParameter()
-  {
+  public KeyAnyValue[] getParameter() {
     return this.parameter;
   }
 
-  public void setId(String id)
-  {
+  public void setId(String id) {
     this.id=id;
   }
 
-  public void setParameter(KeyAnyValue[] parameter)
-  {
+  public void setParameter(KeyAnyValue[] parameter) {
     this.parameter=parameter;
   }
 }

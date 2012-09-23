@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,11 +30,12 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class ModeInfo extends DynamicData
-{
+@SuppressWarnings("all")
+public class ModeInfo extends DynamicData {
   public String browse;
   public String read;
   public String modify;
@@ -42,63 +43,51 @@ public class ModeInfo extends DynamicData
   public String admin;
   public String full;
 
-  public String getBrowse()
-  {
+  public String getBrowse() {
     return this.browse;
   }
 
-  public String getRead()
-  {
+  public String getRead() {
     return this.read;
   }
 
-  public String getModify()
-  {
+  public String getModify() {
     return this.modify;
   }
 
-  public String getUse()
-  {
+  public String getUse() {
     return this.use;
   }
 
-  public String getAdmin()
-  {
+  public String getAdmin() {
     return this.admin;
   }
 
-  public String getFull()
-  {
+  public String getFull() {
     return this.full;
   }
 
-  public void setBrowse(String browse)
-  {
+  public void setBrowse(String browse) {
     this.browse=browse;
   }
 
-  public void setRead(String read)
-  {
+  public void setRead(String read) {
     this.read=read;
   }
 
-  public void setModify(String modify)
-  {
+  public void setModify(String modify) {
     this.modify=modify;
   }
 
-  public void setUse(String use)
-  {
+  public void setUse(String use) {
     this.use=use;
   }
 
-  public void setAdmin(String admin)
-  {
+  public void setAdmin(String admin) {
     this.admin=admin;
   }
 
-  public void setFull(String full)
-  {
+  public void setFull(String full) {
     this.full=full;
   }
 }

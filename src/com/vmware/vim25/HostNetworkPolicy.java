@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,53 +30,46 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class HostNetworkPolicy extends DynamicData
-{
+@SuppressWarnings("all")
+public class HostNetworkPolicy extends DynamicData {
   public HostNetworkSecurityPolicy security;
   public HostNicTeamingPolicy nicTeaming;
   public HostNetOffloadCapabilities offloadPolicy;
   public HostNetworkTrafficShapingPolicy shapingPolicy;
 
-  public HostNetworkSecurityPolicy getSecurity()
-  {
+  public HostNetworkSecurityPolicy getSecurity() {
     return this.security;
   }
 
-  public HostNicTeamingPolicy getNicTeaming()
-  {
+  public HostNicTeamingPolicy getNicTeaming() {
     return this.nicTeaming;
   }
 
-  public HostNetOffloadCapabilities getOffloadPolicy()
-  {
+  public HostNetOffloadCapabilities getOffloadPolicy() {
     return this.offloadPolicy;
   }
 
-  public HostNetworkTrafficShapingPolicy getShapingPolicy()
-  {
+  public HostNetworkTrafficShapingPolicy getShapingPolicy() {
     return this.shapingPolicy;
   }
 
-  public void setSecurity(HostNetworkSecurityPolicy security)
-  {
+  public void setSecurity(HostNetworkSecurityPolicy security) {
     this.security=security;
   }
 
-  public void setNicTeaming(HostNicTeamingPolicy nicTeaming)
-  {
+  public void setNicTeaming(HostNicTeamingPolicy nicTeaming) {
     this.nicTeaming=nicTeaming;
   }
 
-  public void setOffloadPolicy(HostNetOffloadCapabilities offloadPolicy)
-  {
+  public void setOffloadPolicy(HostNetOffloadCapabilities offloadPolicy) {
     this.offloadPolicy=offloadPolicy;
   }
 
-  public void setShapingPolicy(HostNetworkTrafficShapingPolicy shapingPolicy)
-  {
+  public void setShapingPolicy(HostNetworkTrafficShapingPolicy shapingPolicy) {
     this.shapingPolicy=shapingPolicy;
   }
 }

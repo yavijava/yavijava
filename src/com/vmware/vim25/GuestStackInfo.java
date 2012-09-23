@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,53 +30,46 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class GuestStackInfo extends DynamicData
-{
+@SuppressWarnings("all")
+public class GuestStackInfo extends DynamicData {
   public NetDnsConfigInfo dnsConfig;
   public NetIpRouteConfigInfo ipRouteConfig;
   public KeyValue[] ipStackConfig;
   public NetDhcpConfigInfo dhcpConfig;
 
-  public NetDnsConfigInfo getDnsConfig()
-  {
+  public NetDnsConfigInfo getDnsConfig() {
     return this.dnsConfig;
   }
 
-  public NetIpRouteConfigInfo getIpRouteConfig()
-  {
+  public NetIpRouteConfigInfo getIpRouteConfig() {
     return this.ipRouteConfig;
   }
 
-  public KeyValue[] getIpStackConfig()
-  {
+  public KeyValue[] getIpStackConfig() {
     return this.ipStackConfig;
   }
 
-  public NetDhcpConfigInfo getDhcpConfig()
-  {
+  public NetDhcpConfigInfo getDhcpConfig() {
     return this.dhcpConfig;
   }
 
-  public void setDnsConfig(NetDnsConfigInfo dnsConfig)
-  {
+  public void setDnsConfig(NetDnsConfigInfo dnsConfig) {
     this.dnsConfig=dnsConfig;
   }
 
-  public void setIpRouteConfig(NetIpRouteConfigInfo ipRouteConfig)
-  {
+  public void setIpRouteConfig(NetIpRouteConfigInfo ipRouteConfig) {
     this.ipRouteConfig=ipRouteConfig;
   }
 
-  public void setIpStackConfig(KeyValue[] ipStackConfig)
-  {
+  public void setIpStackConfig(KeyValue[] ipStackConfig) {
     this.ipStackConfig=ipStackConfig;
   }
 
-  public void setDhcpConfig(NetDhcpConfigInfo dhcpConfig)
-  {
+  public void setDhcpConfig(NetDhcpConfigInfo dhcpConfig) {
     this.dhcpConfig=dhcpConfig;
   }
 }

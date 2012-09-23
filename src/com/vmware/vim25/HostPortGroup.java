@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,64 +30,55 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class HostPortGroup extends DynamicData
-{
+@SuppressWarnings("all")
+public class HostPortGroup extends DynamicData {
   public String key;
   public HostPortGroupPort[] port;
   public String vswitch;
   public HostNetworkPolicy computedPolicy;
   public HostPortGroupSpec spec;
 
-  public String getKey()
-  {
+  public String getKey() {
     return this.key;
   }
 
-  public HostPortGroupPort[] getPort()
-  {
+  public HostPortGroupPort[] getPort() {
     return this.port;
   }
 
-  public String getVswitch()
-  {
+  public String getVswitch() {
     return this.vswitch;
   }
 
-  public HostNetworkPolicy getComputedPolicy()
-  {
+  public HostNetworkPolicy getComputedPolicy() {
     return this.computedPolicy;
   }
 
-  public HostPortGroupSpec getSpec()
-  {
+  public HostPortGroupSpec getSpec() {
     return this.spec;
   }
 
-  public void setKey(String key)
-  {
+  public void setKey(String key) {
     this.key=key;
   }
 
-  public void setPort(HostPortGroupPort[] port)
-  {
+  public void setPort(HostPortGroupPort[] port) {
     this.port=port;
   }
 
-  public void setVswitch(String vswitch)
-  {
+  public void setVswitch(String vswitch) {
     this.vswitch=vswitch;
   }
 
-  public void setComputedPolicy(HostNetworkPolicy computedPolicy)
-  {
+  public void setComputedPolicy(HostNetworkPolicy computedPolicy) {
     this.computedPolicy=computedPolicy;
   }
 
-  public void setSpec(HostPortGroupSpec spec)
-  {
+  public void setSpec(HostPortGroupSpec spec) {
     this.spec=spec;
   }
 }

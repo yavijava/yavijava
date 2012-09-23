@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,11 +30,12 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class AlarmSpec extends DynamicData
-{
+@SuppressWarnings("all")
+public class AlarmSpec extends DynamicData {
   public String name;
   public String systemName;
   public String description;
@@ -44,83 +45,67 @@ public class AlarmSpec extends DynamicData
   public Integer actionFrequency;
   public AlarmSetting setting;
 
-  public String getName()
-  {
+  public String getName() {
     return this.name;
   }
 
-  public String getSystemName()
-  {
+  public String getSystemName() {
     return this.systemName;
   }
 
-  public String getDescription()
-  {
+  public String getDescription() {
     return this.description;
   }
 
-  public boolean isEnabled()
-  {
+  public boolean isEnabled() {
     return this.enabled;
   }
 
-  public AlarmExpression getExpression()
-  {
+  public AlarmExpression getExpression() {
     return this.expression;
   }
 
-  public AlarmAction getAction()
-  {
+  public AlarmAction getAction() {
     return this.action;
   }
 
-  public Integer getActionFrequency()
-  {
+  public Integer getActionFrequency() {
     return this.actionFrequency;
   }
 
-  public AlarmSetting getSetting()
-  {
+  public AlarmSetting getSetting() {
     return this.setting;
   }
 
-  public void setName(String name)
-  {
+  public void setName(String name) {
     this.name=name;
   }
 
-  public void setSystemName(String systemName)
-  {
+  public void setSystemName(String systemName) {
     this.systemName=systemName;
   }
 
-  public void setDescription(String description)
-  {
+  public void setDescription(String description) {
     this.description=description;
   }
 
-  public void setEnabled(boolean enabled)
-  {
+  public void setEnabled(boolean enabled) {
     this.enabled=enabled;
   }
 
-  public void setExpression(AlarmExpression expression)
-  {
+  public void setExpression(AlarmExpression expression) {
     this.expression=expression;
   }
 
-  public void setAction(AlarmAction action)
-  {
+  public void setAction(AlarmAction action) {
     this.action=action;
   }
 
-  public void setActionFrequency(Integer actionFrequency)
-  {
+  public void setActionFrequency(Integer actionFrequency) {
     this.actionFrequency=actionFrequency;
   }
 
-  public void setSetting(AlarmSetting setting)
-  {
+  public void setSetting(AlarmSetting setting) {
     this.setting=setting;
   }
 }

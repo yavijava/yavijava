@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,53 +30,46 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class VmDiskFileQueryFilter extends DynamicData
-{
+@SuppressWarnings("all")
+public class VmDiskFileQueryFilter extends DynamicData {
   public String[] diskType;
   public int[] matchHardwareVersion;
   public String[] controllerType;
   public Boolean thin;
 
-  public String[] getDiskType()
-  {
+  public String[] getDiskType() {
     return this.diskType;
   }
 
-  public int[] getMatchHardwareVersion()
-  {
+  public int[] getMatchHardwareVersion() {
     return this.matchHardwareVersion;
   }
 
-  public String[] getControllerType()
-  {
+  public String[] getControllerType() {
     return this.controllerType;
   }
 
-  public Boolean getThin()
-  {
+  public Boolean getThin() {
     return this.thin;
   }
 
-  public void setDiskType(String[] diskType)
-  {
+  public void setDiskType(String[] diskType) {
     this.diskType=diskType;
   }
 
-  public void setMatchHardwareVersion(int[] matchHardwareVersion)
-  {
+  public void setMatchHardwareVersion(int[] matchHardwareVersion) {
     this.matchHardwareVersion=matchHardwareVersion;
   }
 
-  public void setControllerType(String[] controllerType)
-  {
+  public void setControllerType(String[] controllerType) {
     this.controllerType=controllerType;
   }
 
-  public void setThin(Boolean thin)
-  {
+  public void setThin(Boolean thin) {
     this.thin=thin;
   }
 }

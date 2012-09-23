@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,11 +30,12 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class VAppCloneSpec extends DynamicData
-{
+@SuppressWarnings("all")
+public class VAppCloneSpec extends DynamicData {
   public ManagedObjectReference location;
   public ManagedObjectReference host;
   public ResourceConfigSpec resourceSpec;
@@ -44,83 +45,67 @@ public class VAppCloneSpec extends DynamicData
   public VAppCloneSpecResourceMap[] resourceMapping;
   public String provisioning;
 
-  public ManagedObjectReference getLocation()
-  {
+  public ManagedObjectReference getLocation() {
     return this.location;
   }
 
-  public ManagedObjectReference getHost()
-  {
+  public ManagedObjectReference getHost() {
     return this.host;
   }
 
-  public ResourceConfigSpec getResourceSpec()
-  {
+  public ResourceConfigSpec getResourceSpec() {
     return this.resourceSpec;
   }
 
-  public ManagedObjectReference getVmFolder()
-  {
+  public ManagedObjectReference getVmFolder() {
     return this.vmFolder;
   }
 
-  public VAppCloneSpecNetworkMappingPair[] getNetworkMapping()
-  {
+  public VAppCloneSpecNetworkMappingPair[] getNetworkMapping() {
     return this.networkMapping;
   }
 
-  public KeyValue[] getProperty()
-  {
+  public KeyValue[] getProperty() {
     return this.property;
   }
 
-  public VAppCloneSpecResourceMap[] getResourceMapping()
-  {
+  public VAppCloneSpecResourceMap[] getResourceMapping() {
     return this.resourceMapping;
   }
 
-  public String getProvisioning()
-  {
+  public String getProvisioning() {
     return this.provisioning;
   }
 
-  public void setLocation(ManagedObjectReference location)
-  {
+  public void setLocation(ManagedObjectReference location) {
     this.location=location;
   }
 
-  public void setHost(ManagedObjectReference host)
-  {
+  public void setHost(ManagedObjectReference host) {
     this.host=host;
   }
 
-  public void setResourceSpec(ResourceConfigSpec resourceSpec)
-  {
+  public void setResourceSpec(ResourceConfigSpec resourceSpec) {
     this.resourceSpec=resourceSpec;
   }
 
-  public void setVmFolder(ManagedObjectReference vmFolder)
-  {
+  public void setVmFolder(ManagedObjectReference vmFolder) {
     this.vmFolder=vmFolder;
   }
 
-  public void setNetworkMapping(VAppCloneSpecNetworkMappingPair[] networkMapping)
-  {
+  public void setNetworkMapping(VAppCloneSpecNetworkMappingPair[] networkMapping) {
     this.networkMapping=networkMapping;
   }
 
-  public void setProperty(KeyValue[] property)
-  {
+  public void setProperty(KeyValue[] property) {
     this.property=property;
   }
 
-  public void setResourceMapping(VAppCloneSpecResourceMap[] resourceMapping)
-  {
+  public void setResourceMapping(VAppCloneSpecResourceMap[] resourceMapping) {
     this.resourceMapping=resourceMapping;
   }
 
-  public void setProvisioning(String provisioning)
-  {
+  public void setProvisioning(String provisioning) {
     this.provisioning=provisioning;
   }
 }

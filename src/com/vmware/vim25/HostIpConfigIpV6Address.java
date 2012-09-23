@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -31,11 +31,12 @@ package com.vmware.vim25;
 import java.util.Calendar;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class HostIpConfigIpV6Address extends DynamicData
-{
+@SuppressWarnings("all")
+public class HostIpConfigIpV6Address extends DynamicData {
   public String ipAddress;
   public int prefixLength;
   public String origin;
@@ -43,63 +44,51 @@ public class HostIpConfigIpV6Address extends DynamicData
   public Calendar lifetime;
   public String operation;
 
-  public String getIpAddress()
-  {
+  public String getIpAddress() {
     return this.ipAddress;
   }
 
-  public int getPrefixLength()
-  {
+  public int getPrefixLength() {
     return this.prefixLength;
   }
 
-  public String getOrigin()
-  {
+  public String getOrigin() {
     return this.origin;
   }
 
-  public String getDadState()
-  {
+  public String getDadState() {
     return this.dadState;
   }
 
-  public Calendar getLifetime()
-  {
+  public Calendar getLifetime() {
     return this.lifetime;
   }
 
-  public String getOperation()
-  {
+  public String getOperation() {
     return this.operation;
   }
 
-  public void setIpAddress(String ipAddress)
-  {
+  public void setIpAddress(String ipAddress) {
     this.ipAddress=ipAddress;
   }
 
-  public void setPrefixLength(int prefixLength)
-  {
+  public void setPrefixLength(int prefixLength) {
     this.prefixLength=prefixLength;
   }
 
-  public void setOrigin(String origin)
-  {
+  public void setOrigin(String origin) {
     this.origin=origin;
   }
 
-  public void setDadState(String dadState)
-  {
+  public void setDadState(String dadState) {
     this.dadState=dadState;
   }
 
-  public void setLifetime(Calendar lifetime)
-  {
+  public void setLifetime(Calendar lifetime) {
     this.lifetime=lifetime;
   }
 
-  public void setOperation(String operation)
-  {
+  public void setOperation(String operation) {
     this.operation=operation;
   }
 }

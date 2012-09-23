@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,42 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class ClusterPowerOnVmResult extends DynamicData
-{
+@SuppressWarnings("all")
+public class ClusterPowerOnVmResult extends DynamicData {
   public ClusterAttemptedVmInfo[] attempted;
   public ClusterNotAttemptedVmInfo[] notAttempted;
   public ClusterRecommendation[] recommendations;
 
-  public ClusterAttemptedVmInfo[] getAttempted()
-  {
+  public ClusterAttemptedVmInfo[] getAttempted() {
     return this.attempted;
   }
 
-  public ClusterNotAttemptedVmInfo[] getNotAttempted()
-  {
+  public ClusterNotAttemptedVmInfo[] getNotAttempted() {
     return this.notAttempted;
   }
 
-  public ClusterRecommendation[] getRecommendations()
-  {
+  public ClusterRecommendation[] getRecommendations() {
     return this.recommendations;
   }
 
-  public void setAttempted(ClusterAttemptedVmInfo[] attempted)
-  {
+  public void setAttempted(ClusterAttemptedVmInfo[] attempted) {
     this.attempted=attempted;
   }
 
-  public void setNotAttempted(ClusterNotAttemptedVmInfo[] notAttempted)
-  {
+  public void setNotAttempted(ClusterNotAttemptedVmInfo[] notAttempted) {
     this.notAttempted=notAttempted;
   }
 
-  public void setRecommendations(ClusterRecommendation[] recommendations)
-  {
+  public void setRecommendations(ClusterRecommendation[] recommendations) {
     this.recommendations=recommendations;
   }
 }

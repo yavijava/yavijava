@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,31 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class NetDhcpConfigSpec extends DynamicData
-{
+@SuppressWarnings("all")
+public class NetDhcpConfigSpec extends DynamicData {
   public NetDhcpConfigSpecDhcpOptionsSpec ipv6;
   public NetDhcpConfigSpecDhcpOptionsSpec ipv4;
 
-  public NetDhcpConfigSpecDhcpOptionsSpec getIpv6()
-  {
+  public NetDhcpConfigSpecDhcpOptionsSpec getIpv6() {
     return this.ipv6;
   }
 
-  public NetDhcpConfigSpecDhcpOptionsSpec getIpv4()
-  {
+  public NetDhcpConfigSpecDhcpOptionsSpec getIpv4() {
     return this.ipv4;
   }
 
-  public void setIpv6(NetDhcpConfigSpecDhcpOptionsSpec ipv6)
-  {
+  public void setIpv6(NetDhcpConfigSpecDhcpOptionsSpec ipv6) {
     this.ipv6=ipv6;
   }
 
-  public void setIpv4(NetDhcpConfigSpecDhcpOptionsSpec ipv4)
-  {
+  public void setIpv4(NetDhcpConfigSpecDhcpOptionsSpec ipv4) {
     this.ipv4=ipv4;
   }
 }

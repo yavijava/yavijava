@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,42 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class VirtualMachineMessage extends DynamicData
-{
+@SuppressWarnings("all")
+public class VirtualMachineMessage extends DynamicData {
   public String id;
   public Object[] argument;
   public String text;
 
-  public String getId()
-  {
+  public String getId() {
     return this.id;
   }
 
-  public Object[] getArgument()
-  {
+  public Object[] getArgument() {
     return this.argument;
   }
 
-  public String getText()
-  {
+  public String getText() {
     return this.text;
   }
 
-  public void setId(String id)
-  {
+  public void setId(String id) {
     this.id=id;
   }
 
-  public void setArgument(Object[] argument)
-  {
+  public void setArgument(Object[] argument) {
     this.argument=argument;
   }
 
-  public void setText(String text)
-  {
+  public void setText(String text) {
     this.text=text;
   }
 }

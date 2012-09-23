@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,11 +30,12 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class MetricAlarmExpression extends AlarmExpression
-{
+@SuppressWarnings("all")
+public class MetricAlarmExpression extends AlarmExpression {
   public MetricAlarmOperator operator;
   public String type;
   public PerfMetricId metric;
@@ -43,73 +44,59 @@ public class MetricAlarmExpression extends AlarmExpression
   public Integer red;
   public Integer redInterval;
 
-  public MetricAlarmOperator getOperator()
-  {
+  public MetricAlarmOperator getOperator() {
     return this.operator;
   }
 
-  public String getType()
-  {
+  public String getType() {
     return this.type;
   }
 
-  public PerfMetricId getMetric()
-  {
+  public PerfMetricId getMetric() {
     return this.metric;
   }
 
-  public Integer getYellow()
-  {
+  public Integer getYellow() {
     return this.yellow;
   }
 
-  public Integer getYellowInterval()
-  {
+  public Integer getYellowInterval() {
     return this.yellowInterval;
   }
 
-  public Integer getRed()
-  {
+  public Integer getRed() {
     return this.red;
   }
 
-  public Integer getRedInterval()
-  {
+  public Integer getRedInterval() {
     return this.redInterval;
   }
 
-  public void setOperator(MetricAlarmOperator operator)
-  {
+  public void setOperator(MetricAlarmOperator operator) {
     this.operator=operator;
   }
 
-  public void setType(String type)
-  {
+  public void setType(String type) {
     this.type=type;
   }
 
-  public void setMetric(PerfMetricId metric)
-  {
+  public void setMetric(PerfMetricId metric) {
     this.metric=metric;
   }
 
-  public void setYellow(Integer yellow)
-  {
+  public void setYellow(Integer yellow) {
     this.yellow=yellow;
   }
 
-  public void setYellowInterval(Integer yellowInterval)
-  {
+  public void setYellowInterval(Integer yellowInterval) {
     this.yellowInterval=yellowInterval;
   }
 
-  public void setRed(Integer red)
-  {
+  public void setRed(Integer red) {
     this.red=red;
   }
 
-  public void setRedInterval(Integer redInterval)
-  {
+  public void setRedInterval(Integer redInterval) {
     this.redInterval=redInterval;
   }
 }

@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -31,11 +31,12 @@ package com.vmware.vim25;
 import java.util.Calendar;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class LicenseDiagnostics extends DynamicData
-{
+@SuppressWarnings("all")
+public class LicenseDiagnostics extends DynamicData {
   public Calendar sourceLastChanged;
   public String sourceLost;
   public float sourceLatency;
@@ -46,93 +47,75 @@ public class LicenseDiagnostics extends DynamicData
   public Calendar lastStatusUpdate;
   public String opFailureMessage;
 
-  public Calendar getSourceLastChanged()
-  {
+  public Calendar getSourceLastChanged() {
     return this.sourceLastChanged;
   }
 
-  public String getSourceLost()
-  {
+  public String getSourceLost() {
     return this.sourceLost;
   }
 
-  public float getSourceLatency()
-  {
+  public float getSourceLatency() {
     return this.sourceLatency;
   }
 
-  public String getLicenseRequests()
-  {
+  public String getLicenseRequests() {
     return this.licenseRequests;
   }
 
-  public String getLicenseRequestFailures()
-  {
+  public String getLicenseRequestFailures() {
     return this.licenseRequestFailures;
   }
 
-  public String getLicenseFeatureUnknowns()
-  {
+  public String getLicenseFeatureUnknowns() {
     return this.licenseFeatureUnknowns;
   }
 
-  public LicenseManagerState getOpState()
-  {
+  public LicenseManagerState getOpState() {
     return this.opState;
   }
 
-  public Calendar getLastStatusUpdate()
-  {
+  public Calendar getLastStatusUpdate() {
     return this.lastStatusUpdate;
   }
 
-  public String getOpFailureMessage()
-  {
+  public String getOpFailureMessage() {
     return this.opFailureMessage;
   }
 
-  public void setSourceLastChanged(Calendar sourceLastChanged)
-  {
+  public void setSourceLastChanged(Calendar sourceLastChanged) {
     this.sourceLastChanged=sourceLastChanged;
   }
 
-  public void setSourceLost(String sourceLost)
-  {
+  public void setSourceLost(String sourceLost) {
     this.sourceLost=sourceLost;
   }
 
-  public void setSourceLatency(float sourceLatency)
-  {
+  public void setSourceLatency(float sourceLatency) {
     this.sourceLatency=sourceLatency;
   }
 
-  public void setLicenseRequests(String licenseRequests)
-  {
+  public void setLicenseRequests(String licenseRequests) {
     this.licenseRequests=licenseRequests;
   }
 
-  public void setLicenseRequestFailures(String licenseRequestFailures)
-  {
+  public void setLicenseRequestFailures(String licenseRequestFailures) {
     this.licenseRequestFailures=licenseRequestFailures;
   }
 
-  public void setLicenseFeatureUnknowns(String licenseFeatureUnknowns)
-  {
+  public void setLicenseFeatureUnknowns(String licenseFeatureUnknowns) {
     this.licenseFeatureUnknowns=licenseFeatureUnknowns;
   }
 
-  public void setOpState(LicenseManagerState opState)
-  {
+  public void setOpState(LicenseManagerState opState) {
     this.opState=opState;
   }
 
-  public void setLastStatusUpdate(Calendar lastStatusUpdate)
-  {
+  public void setLastStatusUpdate(Calendar lastStatusUpdate) {
     this.lastStatusUpdate=lastStatusUpdate;
   }
 
-  public void setOpFailureMessage(String opFailureMessage)
-  {
+  public void setOpFailureMessage(String opFailureMessage) {
     this.opFailureMessage=opFailureMessage;
   }
 }

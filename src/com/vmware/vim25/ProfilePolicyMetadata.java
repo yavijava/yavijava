@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,31 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class ProfilePolicyMetadata extends DynamicData
-{
+@SuppressWarnings("all")
+public class ProfilePolicyMetadata extends DynamicData {
   public ExtendedElementDescription id;
   public ProfilePolicyOptionMetadata[] possibleOption;
 
-  public ExtendedElementDescription getId()
-  {
+  public ExtendedElementDescription getId() {
     return this.id;
   }
 
-  public ProfilePolicyOptionMetadata[] getPossibleOption()
-  {
+  public ProfilePolicyOptionMetadata[] getPossibleOption() {
     return this.possibleOption;
   }
 
-  public void setId(ExtendedElementDescription id)
-  {
+  public void setId(ExtendedElementDescription id) {
     this.id=id;
   }
 
-  public void setPossibleOption(ProfilePolicyOptionMetadata[] possibleOption)
-  {
+  public void setPossibleOption(ProfilePolicyOptionMetadata[] possibleOption) {
     this.possibleOption=possibleOption;
   }
 }

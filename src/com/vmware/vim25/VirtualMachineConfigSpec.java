@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,11 +30,12 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class VirtualMachineConfigSpec extends DynamicData
-{
+@SuppressWarnings("all")
+public class VirtualMachineConfigSpec extends DynamicData {
   public String changeVersion;
   public String name;
   public String version;
@@ -68,6 +69,7 @@ public class VirtualMachineConfigSpec extends DynamicData
   public VirtualDeviceConfigSpec[] deviceChange;
   public ResourceAllocationInfo cpuAllocation;
   public ResourceAllocationInfo memoryAllocation;
+  public LatencySensitivity latencySensitivity;
   public VirtualMachineAffinityInfo cpuAffinity;
   public VirtualMachineAffinityInfo memoryAffinity;
   public VirtualMachineNetworkShaperInfo networkShaper;
@@ -85,504 +87,439 @@ public class VirtualMachineConfigSpec extends DynamicData
   public Boolean guestAutoLockEnabled;
   public ManagedByInfo managedBy;
   public Boolean memoryReservationLockedToMax;
+  public Boolean nestedHVEnabled;
+  public Boolean vPMCEnabled;
+  public ScheduledHardwareUpgradeInfo scheduledHardwareUpgradeInfo;
 
-  public String getChangeVersion()
-  {
+  public String getChangeVersion() {
     return this.changeVersion;
   }
 
-  public String getName()
-  {
+  public String getName() {
     return this.name;
   }
 
-  public String getVersion()
-  {
+  public String getVersion() {
     return this.version;
   }
 
-  public String getUuid()
-  {
+  public String getUuid() {
     return this.uuid;
   }
 
-  public String getInstanceUuid()
-  {
+  public String getInstanceUuid() {
     return this.instanceUuid;
   }
 
-  public long[] getNpivNodeWorldWideName()
-  {
+  public long[] getNpivNodeWorldWideName() {
     return this.npivNodeWorldWideName;
   }
 
-  public long[] getNpivPortWorldWideName()
-  {
+  public long[] getNpivPortWorldWideName() {
     return this.npivPortWorldWideName;
   }
 
-  public String getNpivWorldWideNameType()
-  {
+  public String getNpivWorldWideNameType() {
     return this.npivWorldWideNameType;
   }
 
-  public Short getNpivDesiredNodeWwns()
-  {
+  public Short getNpivDesiredNodeWwns() {
     return this.npivDesiredNodeWwns;
   }
 
-  public Short getNpivDesiredPortWwns()
-  {
+  public Short getNpivDesiredPortWwns() {
     return this.npivDesiredPortWwns;
   }
 
-  public Boolean getNpivTemporaryDisabled()
-  {
+  public Boolean getNpivTemporaryDisabled() {
     return this.npivTemporaryDisabled;
   }
 
-  public Boolean getNpivOnNonRdmDisks()
-  {
+  public Boolean getNpivOnNonRdmDisks() {
     return this.npivOnNonRdmDisks;
   }
 
-  public String getNpivWorldWideNameOp()
-  {
+  public String getNpivWorldWideNameOp() {
     return this.npivWorldWideNameOp;
   }
 
-  public String getLocationId()
-  {
+  public String getLocationId() {
     return this.locationId;
   }
 
-  public String getGuestId()
-  {
+  public String getGuestId() {
     return this.guestId;
   }
 
-  public String getAlternateGuestName()
-  {
+  public String getAlternateGuestName() {
     return this.alternateGuestName;
   }
 
-  public String getAnnotation()
-  {
+  public String getAnnotation() {
     return this.annotation;
   }
 
-  public VirtualMachineFileInfo getFiles()
-  {
+  public VirtualMachineFileInfo getFiles() {
     return this.files;
   }
 
-  public ToolsConfigInfo getTools()
-  {
+  public ToolsConfigInfo getTools() {
     return this.tools;
   }
 
-  public VirtualMachineFlagInfo getFlags()
-  {
+  public VirtualMachineFlagInfo getFlags() {
     return this.flags;
   }
 
-  public VirtualMachineConsolePreferences getConsolePreferences()
-  {
+  public VirtualMachineConsolePreferences getConsolePreferences() {
     return this.consolePreferences;
   }
 
-  public VirtualMachineDefaultPowerOpInfo getPowerOpInfo()
-  {
+  public VirtualMachineDefaultPowerOpInfo getPowerOpInfo() {
     return this.powerOpInfo;
   }
 
-  public Integer getNumCPUs()
-  {
+  public Integer getNumCPUs() {
     return this.numCPUs;
   }
 
-  public Integer getNumCoresPerSocket()
-  {
+  public Integer getNumCoresPerSocket() {
     return this.numCoresPerSocket;
   }
 
-  public Long getMemoryMB()
-  {
+  public Long getMemoryMB() {
     return this.memoryMB;
   }
 
-  public Boolean getMemoryHotAddEnabled()
-  {
+  public Boolean getMemoryHotAddEnabled() {
     return this.memoryHotAddEnabled;
   }
 
-  public Boolean getCpuHotAddEnabled()
-  {
+  public Boolean getCpuHotAddEnabled() {
     return this.cpuHotAddEnabled;
   }
 
-  public Boolean getCpuHotRemoveEnabled()
-  {
+  public Boolean getCpuHotRemoveEnabled() {
     return this.cpuHotRemoveEnabled;
   }
 
-  public Boolean getVirtualICH7MPresent()
-  {
+  public Boolean getVirtualICH7MPresent() {
     return this.virtualICH7MPresent;
   }
 
-  public Boolean getVirtualSMCPresent()
-  {
+  public Boolean getVirtualSMCPresent() {
     return this.virtualSMCPresent;
   }
 
-  public VirtualDeviceConfigSpec[] getDeviceChange()
-  {
+  public VirtualDeviceConfigSpec[] getDeviceChange() {
     return this.deviceChange;
   }
 
-  public ResourceAllocationInfo getCpuAllocation()
-  {
+  public ResourceAllocationInfo getCpuAllocation() {
     return this.cpuAllocation;
   }
 
-  public ResourceAllocationInfo getMemoryAllocation()
-  {
+  public ResourceAllocationInfo getMemoryAllocation() {
     return this.memoryAllocation;
   }
 
-  public VirtualMachineAffinityInfo getCpuAffinity()
-  {
+  public LatencySensitivity getLatencySensitivity() {
+    return this.latencySensitivity;
+  }
+
+  public VirtualMachineAffinityInfo getCpuAffinity() {
     return this.cpuAffinity;
   }
 
-  public VirtualMachineAffinityInfo getMemoryAffinity()
-  {
+  public VirtualMachineAffinityInfo getMemoryAffinity() {
     return this.memoryAffinity;
   }
 
-  public VirtualMachineNetworkShaperInfo getNetworkShaper()
-  {
+  public VirtualMachineNetworkShaperInfo getNetworkShaper() {
     return this.networkShaper;
   }
 
-  public VirtualMachineCpuIdInfoSpec[] getCpuFeatureMask()
-  {
+  public VirtualMachineCpuIdInfoSpec[] getCpuFeatureMask() {
     return this.cpuFeatureMask;
   }
 
-  public OptionValue[] getExtraConfig()
-  {
+  public OptionValue[] getExtraConfig() {
     return this.extraConfig;
   }
 
-  public String getSwapPlacement()
-  {
+  public String getSwapPlacement() {
     return this.swapPlacement;
   }
 
-  public VirtualMachineBootOptions getBootOptions()
-  {
+  public VirtualMachineBootOptions getBootOptions() {
     return this.bootOptions;
   }
 
-  public VmConfigSpec getVAppConfig()
-  {
+  public VmConfigSpec getVAppConfig() {
     return this.vAppConfig;
   }
 
-  public FaultToleranceConfigInfo getFtInfo()
-  {
+  public FaultToleranceConfigInfo getFtInfo() {
     return this.ftInfo;
   }
 
-  public Boolean getVAppConfigRemoved()
-  {
+  public Boolean getVAppConfigRemoved() {
     return this.vAppConfigRemoved;
   }
 
-  public Boolean getVAssertsEnabled()
-  {
+  public Boolean getVAssertsEnabled() {
     return this.vAssertsEnabled;
   }
 
-  public Boolean getChangeTrackingEnabled()
-  {
+  public Boolean getChangeTrackingEnabled() {
     return this.changeTrackingEnabled;
   }
 
-  public String getFirmware()
-  {
+  public String getFirmware() {
     return this.firmware;
   }
 
-  public Integer getMaxMksConnections()
-  {
+  public Integer getMaxMksConnections() {
     return this.maxMksConnections;
   }
 
-  public Boolean getGuestAutoLockEnabled()
-  {
+  public Boolean getGuestAutoLockEnabled() {
     return this.guestAutoLockEnabled;
   }
 
-  public ManagedByInfo getManagedBy()
-  {
+  public ManagedByInfo getManagedBy() {
     return this.managedBy;
   }
 
-  public Boolean getMemoryReservationLockedToMax()
-  {
+  public Boolean getMemoryReservationLockedToMax() {
     return this.memoryReservationLockedToMax;
   }
 
-  public void setChangeVersion(String changeVersion)
-  {
+  public Boolean getNestedHVEnabled() {
+    return this.nestedHVEnabled;
+  }
+
+  public Boolean getVPMCEnabled() {
+    return this.vPMCEnabled;
+  }
+
+  public ScheduledHardwareUpgradeInfo getScheduledHardwareUpgradeInfo() {
+    return this.scheduledHardwareUpgradeInfo;
+  }
+
+  public void setChangeVersion(String changeVersion) {
     this.changeVersion=changeVersion;
   }
 
-  public void setName(String name)
-  {
+  public void setName(String name) {
     this.name=name;
   }
 
-  public void setVersion(String version)
-  {
+  public void setVersion(String version) {
     this.version=version;
   }
 
-  public void setUuid(String uuid)
-  {
+  public void setUuid(String uuid) {
     this.uuid=uuid;
   }
 
-  public void setInstanceUuid(String instanceUuid)
-  {
+  public void setInstanceUuid(String instanceUuid) {
     this.instanceUuid=instanceUuid;
   }
 
-  public void setNpivNodeWorldWideName(long[] npivNodeWorldWideName)
-  {
+  public void setNpivNodeWorldWideName(long[] npivNodeWorldWideName) {
     this.npivNodeWorldWideName=npivNodeWorldWideName;
   }
 
-  public void setNpivPortWorldWideName(long[] npivPortWorldWideName)
-  {
+  public void setNpivPortWorldWideName(long[] npivPortWorldWideName) {
     this.npivPortWorldWideName=npivPortWorldWideName;
   }
 
-  public void setNpivWorldWideNameType(String npivWorldWideNameType)
-  {
+  public void setNpivWorldWideNameType(String npivWorldWideNameType) {
     this.npivWorldWideNameType=npivWorldWideNameType;
   }
 
-  public void setNpivDesiredNodeWwns(Short npivDesiredNodeWwns)
-  {
+  public void setNpivDesiredNodeWwns(Short npivDesiredNodeWwns) {
     this.npivDesiredNodeWwns=npivDesiredNodeWwns;
   }
 
-  public void setNpivDesiredPortWwns(Short npivDesiredPortWwns)
-  {
+  public void setNpivDesiredPortWwns(Short npivDesiredPortWwns) {
     this.npivDesiredPortWwns=npivDesiredPortWwns;
   }
 
-  public void setNpivTemporaryDisabled(Boolean npivTemporaryDisabled)
-  {
+  public void setNpivTemporaryDisabled(Boolean npivTemporaryDisabled) {
     this.npivTemporaryDisabled=npivTemporaryDisabled;
   }
 
-  public void setNpivOnNonRdmDisks(Boolean npivOnNonRdmDisks)
-  {
+  public void setNpivOnNonRdmDisks(Boolean npivOnNonRdmDisks) {
     this.npivOnNonRdmDisks=npivOnNonRdmDisks;
   }
 
-  public void setNpivWorldWideNameOp(String npivWorldWideNameOp)
-  {
+  public void setNpivWorldWideNameOp(String npivWorldWideNameOp) {
     this.npivWorldWideNameOp=npivWorldWideNameOp;
   }
 
-  public void setLocationId(String locationId)
-  {
+  public void setLocationId(String locationId) {
     this.locationId=locationId;
   }
 
-  public void setGuestId(String guestId)
-  {
+  public void setGuestId(String guestId) {
     this.guestId=guestId;
   }
 
-  public void setAlternateGuestName(String alternateGuestName)
-  {
+  public void setAlternateGuestName(String alternateGuestName) {
     this.alternateGuestName=alternateGuestName;
   }
 
-  public void setAnnotation(String annotation)
-  {
+  public void setAnnotation(String annotation) {
     this.annotation=annotation;
   }
 
-  public void setFiles(VirtualMachineFileInfo files)
-  {
+  public void setFiles(VirtualMachineFileInfo files) {
     this.files=files;
   }
 
-  public void setTools(ToolsConfigInfo tools)
-  {
+  public void setTools(ToolsConfigInfo tools) {
     this.tools=tools;
   }
 
-  public void setFlags(VirtualMachineFlagInfo flags)
-  {
+  public void setFlags(VirtualMachineFlagInfo flags) {
     this.flags=flags;
   }
 
-  public void setConsolePreferences(VirtualMachineConsolePreferences consolePreferences)
-  {
+  public void setConsolePreferences(VirtualMachineConsolePreferences consolePreferences) {
     this.consolePreferences=consolePreferences;
   }
 
-  public void setPowerOpInfo(VirtualMachineDefaultPowerOpInfo powerOpInfo)
-  {
+  public void setPowerOpInfo(VirtualMachineDefaultPowerOpInfo powerOpInfo) {
     this.powerOpInfo=powerOpInfo;
   }
 
-  public void setNumCPUs(Integer numCPUs)
-  {
+  public void setNumCPUs(Integer numCPUs) {
     this.numCPUs=numCPUs;
   }
 
-  public void setNumCoresPerSocket(Integer numCoresPerSocket)
-  {
+  public void setNumCoresPerSocket(Integer numCoresPerSocket) {
     this.numCoresPerSocket=numCoresPerSocket;
   }
 
-  public void setMemoryMB(Long memoryMB)
-  {
+  public void setMemoryMB(Long memoryMB) {
     this.memoryMB=memoryMB;
   }
 
-  public void setMemoryHotAddEnabled(Boolean memoryHotAddEnabled)
-  {
+  public void setMemoryHotAddEnabled(Boolean memoryHotAddEnabled) {
     this.memoryHotAddEnabled=memoryHotAddEnabled;
   }
 
-  public void setCpuHotAddEnabled(Boolean cpuHotAddEnabled)
-  {
+  public void setCpuHotAddEnabled(Boolean cpuHotAddEnabled) {
     this.cpuHotAddEnabled=cpuHotAddEnabled;
   }
 
-  public void setCpuHotRemoveEnabled(Boolean cpuHotRemoveEnabled)
-  {
+  public void setCpuHotRemoveEnabled(Boolean cpuHotRemoveEnabled) {
     this.cpuHotRemoveEnabled=cpuHotRemoveEnabled;
   }
 
-  public void setVirtualICH7MPresent(Boolean virtualICH7MPresent)
-  {
+  public void setVirtualICH7MPresent(Boolean virtualICH7MPresent) {
     this.virtualICH7MPresent=virtualICH7MPresent;
   }
 
-  public void setVirtualSMCPresent(Boolean virtualSMCPresent)
-  {
+  public void setVirtualSMCPresent(Boolean virtualSMCPresent) {
     this.virtualSMCPresent=virtualSMCPresent;
   }
 
-  public void setDeviceChange(VirtualDeviceConfigSpec[] deviceChange)
-  {
+  public void setDeviceChange(VirtualDeviceConfigSpec[] deviceChange) {
     this.deviceChange=deviceChange;
   }
 
-  public void setCpuAllocation(ResourceAllocationInfo cpuAllocation)
-  {
+  public void setCpuAllocation(ResourceAllocationInfo cpuAllocation) {
     this.cpuAllocation=cpuAllocation;
   }
 
-  public void setMemoryAllocation(ResourceAllocationInfo memoryAllocation)
-  {
+  public void setMemoryAllocation(ResourceAllocationInfo memoryAllocation) {
     this.memoryAllocation=memoryAllocation;
   }
 
-  public void setCpuAffinity(VirtualMachineAffinityInfo cpuAffinity)
-  {
+  public void setLatencySensitivity(LatencySensitivity latencySensitivity) {
+    this.latencySensitivity=latencySensitivity;
+  }
+
+  public void setCpuAffinity(VirtualMachineAffinityInfo cpuAffinity) {
     this.cpuAffinity=cpuAffinity;
   }
 
-  public void setMemoryAffinity(VirtualMachineAffinityInfo memoryAffinity)
-  {
+  public void setMemoryAffinity(VirtualMachineAffinityInfo memoryAffinity) {
     this.memoryAffinity=memoryAffinity;
   }
 
-  public void setNetworkShaper(VirtualMachineNetworkShaperInfo networkShaper)
-  {
+  public void setNetworkShaper(VirtualMachineNetworkShaperInfo networkShaper) {
     this.networkShaper=networkShaper;
   }
 
-  public void setCpuFeatureMask(VirtualMachineCpuIdInfoSpec[] cpuFeatureMask)
-  {
+  public void setCpuFeatureMask(VirtualMachineCpuIdInfoSpec[] cpuFeatureMask) {
     this.cpuFeatureMask=cpuFeatureMask;
   }
 
-  public void setExtraConfig(OptionValue[] extraConfig)
-  {
+  public void setExtraConfig(OptionValue[] extraConfig) {
     this.extraConfig=extraConfig;
   }
 
-  public void setSwapPlacement(String swapPlacement)
-  {
+  public void setSwapPlacement(String swapPlacement) {
     this.swapPlacement=swapPlacement;
   }
 
-  public void setBootOptions(VirtualMachineBootOptions bootOptions)
-  {
+  public void setBootOptions(VirtualMachineBootOptions bootOptions) {
     this.bootOptions=bootOptions;
   }
 
-  public void setVAppConfig(VmConfigSpec vAppConfig)
-  {
+  public void setVAppConfig(VmConfigSpec vAppConfig) {
     this.vAppConfig=vAppConfig;
   }
 
-  public void setFtInfo(FaultToleranceConfigInfo ftInfo)
-  {
+  public void setFtInfo(FaultToleranceConfigInfo ftInfo) {
     this.ftInfo=ftInfo;
   }
 
-  public void setVAppConfigRemoved(Boolean vAppConfigRemoved)
-  {
+  public void setVAppConfigRemoved(Boolean vAppConfigRemoved) {
     this.vAppConfigRemoved=vAppConfigRemoved;
   }
 
-  public void setVAssertsEnabled(Boolean vAssertsEnabled)
-  {
+  public void setVAssertsEnabled(Boolean vAssertsEnabled) {
     this.vAssertsEnabled=vAssertsEnabled;
   }
 
-  public void setChangeTrackingEnabled(Boolean changeTrackingEnabled)
-  {
+  public void setChangeTrackingEnabled(Boolean changeTrackingEnabled) {
     this.changeTrackingEnabled=changeTrackingEnabled;
   }
 
-  public void setFirmware(String firmware)
-  {
+  public void setFirmware(String firmware) {
     this.firmware=firmware;
   }
 
-  public void setMaxMksConnections(Integer maxMksConnections)
-  {
+  public void setMaxMksConnections(Integer maxMksConnections) {
     this.maxMksConnections=maxMksConnections;
   }
 
-  public void setGuestAutoLockEnabled(Boolean guestAutoLockEnabled)
-  {
+  public void setGuestAutoLockEnabled(Boolean guestAutoLockEnabled) {
     this.guestAutoLockEnabled=guestAutoLockEnabled;
   }
 
-  public void setManagedBy(ManagedByInfo managedBy)
-  {
+  public void setManagedBy(ManagedByInfo managedBy) {
     this.managedBy=managedBy;
   }
 
-  public void setMemoryReservationLockedToMax(Boolean memoryReservationLockedToMax)
-  {
+  public void setMemoryReservationLockedToMax(Boolean memoryReservationLockedToMax) {
     this.memoryReservationLockedToMax=memoryReservationLockedToMax;
+  }
+
+  public void setNestedHVEnabled(Boolean nestedHVEnabled) {
+    this.nestedHVEnabled=nestedHVEnabled;
+  }
+
+  public void setVPMCEnabled(Boolean vPMCEnabled) {
+    this.vPMCEnabled=vPMCEnabled;
+  }
+
+  public void setScheduledHardwareUpgradeInfo(ScheduledHardwareUpgradeInfo scheduledHardwareUpgradeInfo) {
+    this.scheduledHardwareUpgradeInfo=scheduledHardwareUpgradeInfo;
   }
 }

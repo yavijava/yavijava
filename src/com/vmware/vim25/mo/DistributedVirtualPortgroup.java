@@ -1,4 +1,5 @@
 /*================================================================================
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 Copyright (c) 2008 VMware, Inc. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
@@ -36,13 +37,15 @@ import com.vmware.vim25.DVPortgroupConfigInfo;
 import com.vmware.vim25.DVPortgroupConfigSpec;
 import com.vmware.vim25.DuplicateName;
 import com.vmware.vim25.DvsFault;
+import com.vmware.vim25.EntityBackupConfig;
 import com.vmware.vim25.InvalidName;
 import com.vmware.vim25.ManagedObjectReference;
+import com.vmware.vim25.RollbackFailure;
 import com.vmware.vim25.RuntimeFault;
 
 /**
  * The managed object class corresponding to the one defined in VI SDK API reference.
- * @author Steve JIN (sjin@vmware.com)
+ * @author Steve JIN (http://www.doublecloud.org)
  * @since 4.0
  */
 
@@ -75,4 +78,10 @@ public class DistributedVirtualPortgroup extends Network
 		return new Task(getServerConnection(), mor);
 	}
 	
+	/** @since SDK5.1 */
+	public Task dVPortgroupRollback_Task(EntityBackupConfig entityBackup) throws RollbackFailure, DvsFault, RuntimeFault, RemoteException
+	{
+		ManagedObjectReference mor = getVimService().dVPortgroupRollback_Task(getMOR(), entityBackup);
+		return new Task(getServerConnection(), mor);
+	}
 }

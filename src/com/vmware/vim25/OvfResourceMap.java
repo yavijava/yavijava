@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,53 +30,46 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class OvfResourceMap extends DynamicData
-{
+@SuppressWarnings("all")
+public class OvfResourceMap extends DynamicData {
   public String source;
   public ManagedObjectReference parent;
   public ResourceConfigSpec resourceSpec;
   public ManagedObjectReference datastore;
 
-  public String getSource()
-  {
+  public String getSource() {
     return this.source;
   }
 
-  public ManagedObjectReference getParent()
-  {
+  public ManagedObjectReference getParent() {
     return this.parent;
   }
 
-  public ResourceConfigSpec getResourceSpec()
-  {
+  public ResourceConfigSpec getResourceSpec() {
     return this.resourceSpec;
   }
 
-  public ManagedObjectReference getDatastore()
-  {
+  public ManagedObjectReference getDatastore() {
     return this.datastore;
   }
 
-  public void setSource(String source)
-  {
+  public void setSource(String source) {
     this.source=source;
   }
 
-  public void setParent(ManagedObjectReference parent)
-  {
+  public void setParent(ManagedObjectReference parent) {
     this.parent=parent;
   }
 
-  public void setResourceSpec(ResourceConfigSpec resourceSpec)
-  {
+  public void setResourceSpec(ResourceConfigSpec resourceSpec) {
     this.resourceSpec=resourceSpec;
   }
 
-  public void setDatastore(ManagedObjectReference datastore)
-  {
+  public void setDatastore(ManagedObjectReference datastore) {
     this.datastore=datastore;
   }
 }

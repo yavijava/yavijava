@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,31 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class VirtualMachineMemoryReservationSpec extends DynamicData
-{
+@SuppressWarnings("all")
+public class VirtualMachineMemoryReservationSpec extends DynamicData {
   public Long virtualMachineReserved;
   public String allocationPolicy;
 
-  public Long getVirtualMachineReserved()
-  {
+  public Long getVirtualMachineReserved() {
     return this.virtualMachineReserved;
   }
 
-  public String getAllocationPolicy()
-  {
+  public String getAllocationPolicy() {
     return this.allocationPolicy;
   }
 
-  public void setVirtualMachineReserved(Long virtualMachineReserved)
-  {
+  public void setVirtualMachineReserved(Long virtualMachineReserved) {
     this.virtualMachineReserved=virtualMachineReserved;
   }
 
-  public void setAllocationPolicy(String allocationPolicy)
-  {
+  public void setAllocationPolicy(String allocationPolicy) {
     this.allocationPolicy=allocationPolicy;
   }
 }

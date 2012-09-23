@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,64 +30,55 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class ProfileExecuteResult extends DynamicData
-{
+@SuppressWarnings("all")
+public class ProfileExecuteResult extends DynamicData {
   public String status;
   public HostConfigSpec configSpec;
   public String[] inapplicablePath;
   public ProfileDeferredPolicyOptionParameter[] requireInput;
   public ProfileExecuteError[] error;
 
-  public String getStatus()
-  {
+  public String getStatus() {
     return this.status;
   }
 
-  public HostConfigSpec getConfigSpec()
-  {
+  public HostConfigSpec getConfigSpec() {
     return this.configSpec;
   }
 
-  public String[] getInapplicablePath()
-  {
+  public String[] getInapplicablePath() {
     return this.inapplicablePath;
   }
 
-  public ProfileDeferredPolicyOptionParameter[] getRequireInput()
-  {
+  public ProfileDeferredPolicyOptionParameter[] getRequireInput() {
     return this.requireInput;
   }
 
-  public ProfileExecuteError[] getError()
-  {
+  public ProfileExecuteError[] getError() {
     return this.error;
   }
 
-  public void setStatus(String status)
-  {
+  public void setStatus(String status) {
     this.status=status;
   }
 
-  public void setConfigSpec(HostConfigSpec configSpec)
-  {
+  public void setConfigSpec(HostConfigSpec configSpec) {
     this.configSpec=configSpec;
   }
 
-  public void setInapplicablePath(String[] inapplicablePath)
-  {
+  public void setInapplicablePath(String[] inapplicablePath) {
     this.inapplicablePath=inapplicablePath;
   }
 
-  public void setRequireInput(ProfileDeferredPolicyOptionParameter[] requireInput)
-  {
+  public void setRequireInput(ProfileDeferredPolicyOptionParameter[] requireInput) {
     this.requireInput=requireInput;
   }
 
-  public void setError(ProfileExecuteError[] error)
-  {
+  public void setError(ProfileExecuteError[] error) {
     this.error=error;
   }
 }

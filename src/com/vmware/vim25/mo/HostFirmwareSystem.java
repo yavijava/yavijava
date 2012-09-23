@@ -40,7 +40,7 @@ import com.vmware.vim25.RuntimeFault;
 
 /**
  * The managed object class corresponding to the one defined in VI SDK API reference.
- * @author Steve JIN (sjin@vmware.com)
+ * @author Steve JIN (http://www.doublecloud.org)
  */
 
 public class HostFirmwareSystem extends ManagedObject 

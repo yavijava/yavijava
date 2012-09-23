@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,31 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class DeviceUnsupportedForVmVersion extends InvalidDeviceSpec
-{
+@SuppressWarnings("all")
+public class DeviceUnsupportedForVmVersion extends InvalidDeviceSpec {
   public String currentVersion;
   public String expectedVersion;
 
-  public String getCurrentVersion()
-  {
+  public String getCurrentVersion() {
     return this.currentVersion;
   }
 
-  public String getExpectedVersion()
-  {
+  public String getExpectedVersion() {
     return this.expectedVersion;
   }
 
-  public void setCurrentVersion(String currentVersion)
-  {
+  public void setCurrentVersion(String currentVersion) {
     this.currentVersion=currentVersion;
   }
 
-  public void setExpectedVersion(String expectedVersion)
-  {
+  public void setExpectedVersion(String expectedVersion) {
     this.expectedVersion=expectedVersion;
   }
 }

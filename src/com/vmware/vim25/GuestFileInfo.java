@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,53 +30,46 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class GuestFileInfo extends DynamicData
-{
+@SuppressWarnings("all")
+public class GuestFileInfo extends DynamicData {
   public String path;
   public String type;
   public long size;
   public GuestFileAttributes attributes;
 
-  public String getPath()
-  {
+  public String getPath() {
     return this.path;
   }
 
-  public String getType()
-  {
+  public String getType() {
     return this.type;
   }
 
-  public long getSize()
-  {
+  public long getSize() {
     return this.size;
   }
 
-  public GuestFileAttributes getAttributes()
-  {
+  public GuestFileAttributes getAttributes() {
     return this.attributes;
   }
 
-  public void setPath(String path)
-  {
+  public void setPath(String path) {
     this.path=path;
   }
 
-  public void setType(String type)
-  {
+  public void setType(String type) {
     this.type=type;
   }
 
-  public void setSize(long size)
-  {
+  public void setSize(long size) {
     this.size=size;
   }
 
-  public void setAttributes(GuestFileAttributes attributes)
-  {
+  public void setAttributes(GuestFileAttributes attributes) {
     this.attributes=attributes;
   }
 }

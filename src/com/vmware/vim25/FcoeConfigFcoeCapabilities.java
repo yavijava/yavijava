@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,42 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class FcoeConfigFcoeCapabilities extends DynamicData
-{
+@SuppressWarnings("all")
+public class FcoeConfigFcoeCapabilities extends DynamicData {
   public boolean priorityClass;
   public boolean sourceMacAddress;
   public boolean vlanRange;
 
-  public boolean isPriorityClass()
-  {
+  public boolean isPriorityClass() {
     return this.priorityClass;
   }
 
-  public boolean isSourceMacAddress()
-  {
+  public boolean isSourceMacAddress() {
     return this.sourceMacAddress;
   }
 
-  public boolean isVlanRange()
-  {
+  public boolean isVlanRange() {
     return this.vlanRange;
   }
 
-  public void setPriorityClass(boolean priorityClass)
-  {
+  public void setPriorityClass(boolean priorityClass) {
     this.priorityClass=priorityClass;
   }
 
-  public void setSourceMacAddress(boolean sourceMacAddress)
-  {
+  public void setSourceMacAddress(boolean sourceMacAddress) {
     this.sourceMacAddress=sourceMacAddress;
   }
 
-  public void setVlanRange(boolean vlanRange)
-  {
+  public void setVlanRange(boolean vlanRange) {
     this.vlanRange=vlanRange;
   }
 }

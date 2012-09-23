@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,64 +30,55 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class VAppPropertyFault extends VmConfigFault
-{
+@SuppressWarnings("all")
+public class VAppPropertyFault extends VmConfigFault {
   public String id;
   public String category;
   public String label;
   public String type;
   public String value;
 
-  public String getId()
-  {
+  public String getId() {
     return this.id;
   }
 
-  public String getCategory()
-  {
+  public String getCategory() {
     return this.category;
   }
 
-  public String getLabel()
-  {
+  public String getLabel() {
     return this.label;
   }
 
-  public String getType()
-  {
+  public String getType() {
     return this.type;
   }
 
-  public String getValue()
-  {
+  public String getValue() {
     return this.value;
   }
 
-  public void setId(String id)
-  {
+  public void setId(String id) {
     this.id=id;
   }
 
-  public void setCategory(String category)
-  {
+  public void setCategory(String category) {
     this.category=category;
   }
 
-  public void setLabel(String label)
-  {
+  public void setLabel(String label) {
     this.label=label;
   }
 
-  public void setType(String type)
-  {
+  public void setType(String type) {
     this.type=type;
   }
 
-  public void setValue(String value)
-  {
+  public void setValue(String value) {
     this.value=value;
   }
 }

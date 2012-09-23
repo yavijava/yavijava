@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -31,31 +31,28 @@ package com.vmware.vim25;
 import java.util.Calendar;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class VirtualMachineStorageInfo extends DynamicData
-{
+@SuppressWarnings("all")
+public class VirtualMachineStorageInfo extends DynamicData {
   public VirtualMachineUsageOnDatastore[] perDatastoreUsage;
   public Calendar timestamp;
 
-  public VirtualMachineUsageOnDatastore[] getPerDatastoreUsage()
-  {
+  public VirtualMachineUsageOnDatastore[] getPerDatastoreUsage() {
     return this.perDatastoreUsage;
   }
 
-  public Calendar getTimestamp()
-  {
+  public Calendar getTimestamp() {
     return this.timestamp;
   }
 
-  public void setPerDatastoreUsage(VirtualMachineUsageOnDatastore[] perDatastoreUsage)
-  {
+  public void setPerDatastoreUsage(VirtualMachineUsageOnDatastore[] perDatastoreUsage) {
     this.perDatastoreUsage=perDatastoreUsage;
   }
 
-  public void setTimestamp(Calendar timestamp)
-  {
+  public void setTimestamp(Calendar timestamp) {
     this.timestamp=timestamp;
   }
 }

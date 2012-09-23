@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,64 +30,55 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class VirtualMachineMksTicket extends DynamicData
-{
+@SuppressWarnings("all")
+public class VirtualMachineMksTicket extends DynamicData {
   public String ticket;
   public String cfgFile;
   public String host;
   public Integer port;
   public String sslThumbprint;
 
-  public String getTicket()
-  {
+  public String getTicket() {
     return this.ticket;
   }
 
-  public String getCfgFile()
-  {
+  public String getCfgFile() {
     return this.cfgFile;
   }
 
-  public String getHost()
-  {
+  public String getHost() {
     return this.host;
   }
 
-  public Integer getPort()
-  {
+  public Integer getPort() {
     return this.port;
   }
 
-  public String getSslThumbprint()
-  {
+  public String getSslThumbprint() {
     return this.sslThumbprint;
   }
 
-  public void setTicket(String ticket)
-  {
+  public void setTicket(String ticket) {
     this.ticket=ticket;
   }
 
-  public void setCfgFile(String cfgFile)
-  {
+  public void setCfgFile(String cfgFile) {
     this.cfgFile=cfgFile;
   }
 
-  public void setHost(String host)
-  {
+  public void setHost(String host) {
     this.host=host;
   }
 
-  public void setPort(Integer port)
-  {
+  public void setPort(Integer port) {
     this.port=port;
   }
 
-  public void setSslThumbprint(String sslThumbprint)
-  {
+  public void setSslThumbprint(String sslThumbprint) {
     this.sslThumbprint=sslThumbprint;
   }
 }

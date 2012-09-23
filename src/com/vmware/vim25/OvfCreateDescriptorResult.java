@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,53 +30,46 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class OvfCreateDescriptorResult extends DynamicData
-{
+@SuppressWarnings("all")
+public class OvfCreateDescriptorResult extends DynamicData {
   public String ovfDescriptor;
   public LocalizedMethodFault[] error;
   public LocalizedMethodFault[] warning;
   public Boolean includeImageFiles;
 
-  public String getOvfDescriptor()
-  {
+  public String getOvfDescriptor() {
     return this.ovfDescriptor;
   }
 
-  public LocalizedMethodFault[] getError()
-  {
+  public LocalizedMethodFault[] getError() {
     return this.error;
   }
 
-  public LocalizedMethodFault[] getWarning()
-  {
+  public LocalizedMethodFault[] getWarning() {
     return this.warning;
   }
 
-  public Boolean getIncludeImageFiles()
-  {
+  public Boolean getIncludeImageFiles() {
     return this.includeImageFiles;
   }
 
-  public void setOvfDescriptor(String ovfDescriptor)
-  {
+  public void setOvfDescriptor(String ovfDescriptor) {
     this.ovfDescriptor=ovfDescriptor;
   }
 
-  public void setError(LocalizedMethodFault[] error)
-  {
+  public void setError(LocalizedMethodFault[] error) {
     this.error=error;
   }
 
-  public void setWarning(LocalizedMethodFault[] warning)
-  {
+  public void setWarning(LocalizedMethodFault[] warning) {
     this.warning=warning;
   }
 
-  public void setIncludeImageFiles(Boolean includeImageFiles)
-  {
+  public void setIncludeImageFiles(Boolean includeImageFiles) {
     this.includeImageFiles=includeImageFiles;
   }
 }

@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,11 +30,12 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class GuestOsDescriptor extends DynamicData
-{
+@SuppressWarnings("all")
+public class GuestOsDescriptor extends DynamicData {
   public String id;
   public String family;
   public String fullName;
@@ -65,6 +66,7 @@ public class GuestOsDescriptor extends DynamicData
   public String[] supportedUSBControllerList;
   public String recommendedUSBController;
   public Boolean supports3D;
+  public Boolean recommended3D;
   public Boolean smcRecommended;
   public Boolean ich7mRecommended;
   public Boolean usbRecommended;
@@ -72,363 +74,299 @@ public class GuestOsDescriptor extends DynamicData
   public Boolean supportedForCreate;
   public IntOption vRAMSizeInKB;
 
-  public String getId()
-  {
+  public String getId() {
     return this.id;
   }
 
-  public String getFamily()
-  {
+  public String getFamily() {
     return this.family;
   }
 
-  public String getFullName()
-  {
+  public String getFullName() {
     return this.fullName;
   }
 
-  public int getSupportedMaxCPUs()
-  {
+  public int getSupportedMaxCPUs() {
     return this.supportedMaxCPUs;
   }
 
-  public Integer getNumSupportedPhysicalSockets()
-  {
+  public Integer getNumSupportedPhysicalSockets() {
     return this.numSupportedPhysicalSockets;
   }
 
-  public Integer getNumSupportedCoresPerSocket()
-  {
+  public Integer getNumSupportedCoresPerSocket() {
     return this.numSupportedCoresPerSocket;
   }
 
-  public int getSupportedMinMemMB()
-  {
+  public int getSupportedMinMemMB() {
     return this.supportedMinMemMB;
   }
 
-  public int getSupportedMaxMemMB()
-  {
+  public int getSupportedMaxMemMB() {
     return this.supportedMaxMemMB;
   }
 
-  public int getRecommendedMemMB()
-  {
+  public int getRecommendedMemMB() {
     return this.recommendedMemMB;
   }
 
-  public int getRecommendedColorDepth()
-  {
+  public int getRecommendedColorDepth() {
     return this.recommendedColorDepth;
   }
 
-  public String[] getSupportedDiskControllerList()
-  {
+  public String[] getSupportedDiskControllerList() {
     return this.supportedDiskControllerList;
   }
 
-  public String getRecommendedSCSIController()
-  {
+  public String getRecommendedSCSIController() {
     return this.recommendedSCSIController;
   }
 
-  public String getRecommendedDiskController()
-  {
+  public String getRecommendedDiskController() {
     return this.recommendedDiskController;
   }
 
-  public int getSupportedNumDisks()
-  {
+  public int getSupportedNumDisks() {
     return this.supportedNumDisks;
   }
 
-  public int getRecommendedDiskSizeMB()
-  {
+  public int getRecommendedDiskSizeMB() {
     return this.recommendedDiskSizeMB;
   }
 
-  public String[] getSupportedEthernetCard()
-  {
+  public String[] getSupportedEthernetCard() {
     return this.supportedEthernetCard;
   }
 
-  public String getRecommendedEthernetCard()
-  {
+  public String getRecommendedEthernetCard() {
     return this.recommendedEthernetCard;
   }
 
-  public Boolean getSupportsSlaveDisk()
-  {
+  public Boolean getSupportsSlaveDisk() {
     return this.supportsSlaveDisk;
   }
 
-  public HostCpuIdInfo[] getCpuFeatureMask()
-  {
+  public HostCpuIdInfo[] getCpuFeatureMask() {
     return this.cpuFeatureMask;
   }
 
-  public Boolean getSmcRequired()
-  {
+  public Boolean getSmcRequired() {
     return this.smcRequired;
   }
 
-  public boolean isSupportsWakeOnLan()
-  {
+  public boolean isSupportsWakeOnLan() {
     return this.supportsWakeOnLan;
   }
 
-  public Boolean getSupportsVMI()
-  {
+  public Boolean getSupportsVMI() {
     return this.supportsVMI;
   }
 
-  public Boolean getSupportsMemoryHotAdd()
-  {
+  public Boolean getSupportsMemoryHotAdd() {
     return this.supportsMemoryHotAdd;
   }
 
-  public Boolean getSupportsCpuHotAdd()
-  {
+  public Boolean getSupportsCpuHotAdd() {
     return this.supportsCpuHotAdd;
   }
 
-  public Boolean getSupportsCpuHotRemove()
-  {
+  public Boolean getSupportsCpuHotRemove() {
     return this.supportsCpuHotRemove;
   }
 
-  public String[] getSupportedFirmware()
-  {
+  public String[] getSupportedFirmware() {
     return this.supportedFirmware;
   }
 
-  public String getRecommendedFirmware()
-  {
+  public String getRecommendedFirmware() {
     return this.recommendedFirmware;
   }
 
-  public String[] getSupportedUSBControllerList()
-  {
+  public String[] getSupportedUSBControllerList() {
     return this.supportedUSBControllerList;
   }
 
-  public String getRecommendedUSBController()
-  {
+  public String getRecommendedUSBController() {
     return this.recommendedUSBController;
   }
 
-  public Boolean getSupports3D()
-  {
+  public Boolean getSupports3D() {
     return this.supports3D;
   }
 
-  public Boolean getSmcRecommended()
-  {
+  public Boolean getRecommended3D() {
+    return this.recommended3D;
+  }
+
+  public Boolean getSmcRecommended() {
     return this.smcRecommended;
   }
 
-  public Boolean getIch7mRecommended()
-  {
+  public Boolean getIch7mRecommended() {
     return this.ich7mRecommended;
   }
 
-  public Boolean getUsbRecommended()
-  {
+  public Boolean getUsbRecommended() {
     return this.usbRecommended;
   }
 
-  public String getSupportLevel()
-  {
+  public String getSupportLevel() {
     return this.supportLevel;
   }
 
-  public Boolean getSupportedForCreate()
-  {
+  public Boolean getSupportedForCreate() {
     return this.supportedForCreate;
   }
 
-  public IntOption getVRAMSizeInKB()
-  {
+  public IntOption getVRAMSizeInKB() {
     return this.vRAMSizeInKB;
   }
 
-  public void setId(String id)
-  {
+  public void setId(String id) {
     this.id=id;
   }
 
-  public void setFamily(String family)
-  {
+  public void setFamily(String family) {
     this.family=family;
   }
 
-  public void setFullName(String fullName)
-  {
+  public void setFullName(String fullName) {
     this.fullName=fullName;
   }
 
-  public void setSupportedMaxCPUs(int supportedMaxCPUs)
-  {
+  public void setSupportedMaxCPUs(int supportedMaxCPUs) {
     this.supportedMaxCPUs=supportedMaxCPUs;
   }
 
-  public void setNumSupportedPhysicalSockets(Integer numSupportedPhysicalSockets)
-  {
+  public void setNumSupportedPhysicalSockets(Integer numSupportedPhysicalSockets) {
     this.numSupportedPhysicalSockets=numSupportedPhysicalSockets;
   }
 
-  public void setNumSupportedCoresPerSocket(Integer numSupportedCoresPerSocket)
-  {
+  public void setNumSupportedCoresPerSocket(Integer numSupportedCoresPerSocket) {
     this.numSupportedCoresPerSocket=numSupportedCoresPerSocket;
   }
 
-  public void setSupportedMinMemMB(int supportedMinMemMB)
-  {
+  public void setSupportedMinMemMB(int supportedMinMemMB) {
     this.supportedMinMemMB=supportedMinMemMB;
   }
 
-  public void setSupportedMaxMemMB(int supportedMaxMemMB)
-  {
+  public void setSupportedMaxMemMB(int supportedMaxMemMB) {
     this.supportedMaxMemMB=supportedMaxMemMB;
   }
 
-  public void setRecommendedMemMB(int recommendedMemMB)
-  {
+  public void setRecommendedMemMB(int recommendedMemMB) {
     this.recommendedMemMB=recommendedMemMB;
   }
 
-  public void setRecommendedColorDepth(int recommendedColorDepth)
-  {
+  public void setRecommendedColorDepth(int recommendedColorDepth) {
     this.recommendedColorDepth=recommendedColorDepth;
   }
 
-  public void setSupportedDiskControllerList(String[] supportedDiskControllerList)
-  {
+  public void setSupportedDiskControllerList(String[] supportedDiskControllerList) {
     this.supportedDiskControllerList=supportedDiskControllerList;
   }
 
-  public void setRecommendedSCSIController(String recommendedSCSIController)
-  {
+  public void setRecommendedSCSIController(String recommendedSCSIController) {
     this.recommendedSCSIController=recommendedSCSIController;
   }
 
-  public void setRecommendedDiskController(String recommendedDiskController)
-  {
+  public void setRecommendedDiskController(String recommendedDiskController) {
     this.recommendedDiskController=recommendedDiskController;
   }
 
-  public void setSupportedNumDisks(int supportedNumDisks)
-  {
+  public void setSupportedNumDisks(int supportedNumDisks) {
     this.supportedNumDisks=supportedNumDisks;
   }
 
-  public void setRecommendedDiskSizeMB(int recommendedDiskSizeMB)
-  {
+  public void setRecommendedDiskSizeMB(int recommendedDiskSizeMB) {
     this.recommendedDiskSizeMB=recommendedDiskSizeMB;
   }
 
-  public void setSupportedEthernetCard(String[] supportedEthernetCard)
-  {
+  public void setSupportedEthernetCard(String[] supportedEthernetCard) {
     this.supportedEthernetCard=supportedEthernetCard;
   }
 
-  public void setRecommendedEthernetCard(String recommendedEthernetCard)
-  {
+  public void setRecommendedEthernetCard(String recommendedEthernetCard) {
     this.recommendedEthernetCard=recommendedEthernetCard;
   }
 
-  public void setSupportsSlaveDisk(Boolean supportsSlaveDisk)
-  {
+  public void setSupportsSlaveDisk(Boolean supportsSlaveDisk) {
     this.supportsSlaveDisk=supportsSlaveDisk;
   }
 
-  public void setCpuFeatureMask(HostCpuIdInfo[] cpuFeatureMask)
-  {
+  public void setCpuFeatureMask(HostCpuIdInfo[] cpuFeatureMask) {
     this.cpuFeatureMask=cpuFeatureMask;
   }
 
-  public void setSmcRequired(Boolean smcRequired)
-  {
+  public void setSmcRequired(Boolean smcRequired) {
     this.smcRequired=smcRequired;
   }
 
-  public void setSupportsWakeOnLan(boolean supportsWakeOnLan)
-  {
+  public void setSupportsWakeOnLan(boolean supportsWakeOnLan) {
     this.supportsWakeOnLan=supportsWakeOnLan;
   }
 
-  public void setSupportsVMI(Boolean supportsVMI)
-  {
+  public void setSupportsVMI(Boolean supportsVMI) {
     this.supportsVMI=supportsVMI;
   }
 
-  public void setSupportsMemoryHotAdd(Boolean supportsMemoryHotAdd)
-  {
+  public void setSupportsMemoryHotAdd(Boolean supportsMemoryHotAdd) {
     this.supportsMemoryHotAdd=supportsMemoryHotAdd;
   }
 
-  public void setSupportsCpuHotAdd(Boolean supportsCpuHotAdd)
-  {
+  public void setSupportsCpuHotAdd(Boolean supportsCpuHotAdd) {
     this.supportsCpuHotAdd=supportsCpuHotAdd;
   }
 
-  public void setSupportsCpuHotRemove(Boolean supportsCpuHotRemove)
-  {
+  public void setSupportsCpuHotRemove(Boolean supportsCpuHotRemove) {
     this.supportsCpuHotRemove=supportsCpuHotRemove;
   }
 
-  public void setSupportedFirmware(String[] supportedFirmware)
-  {
+  public void setSupportedFirmware(String[] supportedFirmware) {
     this.supportedFirmware=supportedFirmware;
   }
 
-  public void setRecommendedFirmware(String recommendedFirmware)
-  {
+  public void setRecommendedFirmware(String recommendedFirmware) {
     this.recommendedFirmware=recommendedFirmware;
   }
 
-  public void setSupportedUSBControllerList(String[] supportedUSBControllerList)
-  {
+  public void setSupportedUSBControllerList(String[] supportedUSBControllerList) {
     this.supportedUSBControllerList=supportedUSBControllerList;
   }
 
-  public void setRecommendedUSBController(String recommendedUSBController)
-  {
+  public void setRecommendedUSBController(String recommendedUSBController) {
     this.recommendedUSBController=recommendedUSBController;
   }
 
-  public void setSupports3D(Boolean supports3D)
-  {
+  public void setSupports3D(Boolean supports3D) {
     this.supports3D=supports3D;
   }
 
-  public void setSmcRecommended(Boolean smcRecommended)
-  {
+  public void setRecommended3D(Boolean recommended3D) {
+    this.recommended3D=recommended3D;
+  }
+
+  public void setSmcRecommended(Boolean smcRecommended) {
     this.smcRecommended=smcRecommended;
   }
 
-  public void setIch7mRecommended(Boolean ich7mRecommended)
-  {
+  public void setIch7mRecommended(Boolean ich7mRecommended) {
     this.ich7mRecommended=ich7mRecommended;
   }
 
-  public void setUsbRecommended(Boolean usbRecommended)
-  {
+  public void setUsbRecommended(Boolean usbRecommended) {
     this.usbRecommended=usbRecommended;
   }
 
-  public void setSupportLevel(String supportLevel)
-  {
+  public void setSupportLevel(String supportLevel) {
     this.supportLevel=supportLevel;
   }
 
-  public void setSupportedForCreate(Boolean supportedForCreate)
-  {
+  public void setSupportedForCreate(Boolean supportedForCreate) {
     this.supportedForCreate=supportedForCreate;
   }
 
-  public void setVRAMSizeInKB(IntOption vRAMSizeInKB)
-  {
+  public void setVRAMSizeInKB(IntOption vRAMSizeInKB) {
     this.vRAMSizeInKB=vRAMSizeInKB;
   }
 }

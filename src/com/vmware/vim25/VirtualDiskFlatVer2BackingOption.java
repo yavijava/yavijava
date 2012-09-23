@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,11 +30,12 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class VirtualDiskFlatVer2BackingOption extends VirtualDeviceFileBackingOption
-{
+@SuppressWarnings("all")
+public class VirtualDiskFlatVer2BackingOption extends VirtualDeviceFileBackingOption {
   public ChoiceOption diskMode;
   public BoolOption split;
   public BoolOption writeThrough;
@@ -44,94 +45,85 @@ public class VirtualDiskFlatVer2BackingOption extends VirtualDeviceFileBackingOp
   public BoolOption thinProvisioned;
   public BoolOption eagerlyScrub;
   public ChoiceOption deltaDiskFormat;
+  public VirtualDiskDeltaDiskFormatsSupported[] deltaDiskFormatsSupported;
 
-  public ChoiceOption getDiskMode()
-  {
+  public ChoiceOption getDiskMode() {
     return this.diskMode;
   }
 
-  public BoolOption getSplit()
-  {
+  public BoolOption getSplit() {
     return this.split;
   }
 
-  public BoolOption getWriteThrough()
-  {
+  public BoolOption getWriteThrough() {
     return this.writeThrough;
   }
 
-  public boolean isGrowable()
-  {
+  public boolean isGrowable() {
     return this.growable;
   }
 
-  public boolean isHotGrowable()
-  {
+  public boolean isHotGrowable() {
     return this.hotGrowable;
   }
 
-  public boolean isUuid()
-  {
+  public boolean isUuid() {
     return this.uuid;
   }
 
-  public BoolOption getThinProvisioned()
-  {
+  public BoolOption getThinProvisioned() {
     return this.thinProvisioned;
   }
 
-  public BoolOption getEagerlyScrub()
-  {
+  public BoolOption getEagerlyScrub() {
     return this.eagerlyScrub;
   }
 
-  public ChoiceOption getDeltaDiskFormat()
-  {
+  public ChoiceOption getDeltaDiskFormat() {
     return this.deltaDiskFormat;
   }
 
-  public void setDiskMode(ChoiceOption diskMode)
-  {
+  public VirtualDiskDeltaDiskFormatsSupported[] getDeltaDiskFormatsSupported() {
+    return this.deltaDiskFormatsSupported;
+  }
+
+  public void setDiskMode(ChoiceOption diskMode) {
     this.diskMode=diskMode;
   }
 
-  public void setSplit(BoolOption split)
-  {
+  public void setSplit(BoolOption split) {
     this.split=split;
   }
 
-  public void setWriteThrough(BoolOption writeThrough)
-  {
+  public void setWriteThrough(BoolOption writeThrough) {
     this.writeThrough=writeThrough;
   }
 
-  public void setGrowable(boolean growable)
-  {
+  public void setGrowable(boolean growable) {
     this.growable=growable;
   }
 
-  public void setHotGrowable(boolean hotGrowable)
-  {
+  public void setHotGrowable(boolean hotGrowable) {
     this.hotGrowable=hotGrowable;
   }
 
-  public void setUuid(boolean uuid)
-  {
+  public void setUuid(boolean uuid) {
     this.uuid=uuid;
   }
 
-  public void setThinProvisioned(BoolOption thinProvisioned)
-  {
+  public void setThinProvisioned(BoolOption thinProvisioned) {
     this.thinProvisioned=thinProvisioned;
   }
 
-  public void setEagerlyScrub(BoolOption eagerlyScrub)
-  {
+  public void setEagerlyScrub(BoolOption eagerlyScrub) {
     this.eagerlyScrub=eagerlyScrub;
   }
 
-  public void setDeltaDiskFormat(ChoiceOption deltaDiskFormat)
-  {
+  public void setDeltaDiskFormat(ChoiceOption deltaDiskFormat) {
     this.deltaDiskFormat=deltaDiskFormat;
+  }
+
+  public void setDeltaDiskFormatsSupported(VirtualDiskDeltaDiskFormatsSupported[] deltaDiskFormatsSupported) {
+    this.deltaDiskFormatsSupported=deltaDiskFormatsSupported;
   }
 }

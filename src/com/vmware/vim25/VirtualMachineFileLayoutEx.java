@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -31,53 +31,46 @@ package com.vmware.vim25;
 import java.util.Calendar;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class VirtualMachineFileLayoutEx extends DynamicData
-{
+@SuppressWarnings("all")
+public class VirtualMachineFileLayoutEx extends DynamicData {
   public VirtualMachineFileLayoutExFileInfo[] file;
   public VirtualMachineFileLayoutExDiskLayout[] disk;
   public VirtualMachineFileLayoutExSnapshotLayout[] snapshot;
   public Calendar timestamp;
 
-  public VirtualMachineFileLayoutExFileInfo[] getFile()
-  {
+  public VirtualMachineFileLayoutExFileInfo[] getFile() {
     return this.file;
   }
 
-  public VirtualMachineFileLayoutExDiskLayout[] getDisk()
-  {
+  public VirtualMachineFileLayoutExDiskLayout[] getDisk() {
     return this.disk;
   }
 
-  public VirtualMachineFileLayoutExSnapshotLayout[] getSnapshot()
-  {
+  public VirtualMachineFileLayoutExSnapshotLayout[] getSnapshot() {
     return this.snapshot;
   }
 
-  public Calendar getTimestamp()
-  {
+  public Calendar getTimestamp() {
     return this.timestamp;
   }
 
-  public void setFile(VirtualMachineFileLayoutExFileInfo[] file)
-  {
+  public void setFile(VirtualMachineFileLayoutExFileInfo[] file) {
     this.file=file;
   }
 
-  public void setDisk(VirtualMachineFileLayoutExDiskLayout[] disk)
-  {
+  public void setDisk(VirtualMachineFileLayoutExDiskLayout[] disk) {
     this.disk=disk;
   }
 
-  public void setSnapshot(VirtualMachineFileLayoutExSnapshotLayout[] snapshot)
-  {
+  public void setSnapshot(VirtualMachineFileLayoutExSnapshotLayout[] snapshot) {
     this.snapshot=snapshot;
   }
 
-  public void setTimestamp(Calendar timestamp)
-  {
+  public void setTimestamp(Calendar timestamp) {
     this.timestamp=timestamp;
   }
 }

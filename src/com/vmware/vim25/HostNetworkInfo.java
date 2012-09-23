@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,11 +30,12 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class HostNetworkInfo extends DynamicData
-{
+@SuppressWarnings("all")
+public class HostNetworkInfo extends DynamicData {
   public HostVirtualSwitch[] vswitch;
   public HostProxySwitch[] proxySwitch;
   public HostPortGroup[] portgroup;
@@ -50,143 +51,115 @@ public class HostNetworkInfo extends DynamicData
   public Boolean ipV6Enabled;
   public Boolean atBootIpV6Enabled;
 
-  public HostVirtualSwitch[] getVswitch()
-  {
+  public HostVirtualSwitch[] getVswitch() {
     return this.vswitch;
   }
 
-  public HostProxySwitch[] getProxySwitch()
-  {
+  public HostProxySwitch[] getProxySwitch() {
     return this.proxySwitch;
   }
 
-  public HostPortGroup[] getPortgroup()
-  {
+  public HostPortGroup[] getPortgroup() {
     return this.portgroup;
   }
 
-  public PhysicalNic[] getPnic()
-  {
+  public PhysicalNic[] getPnic() {
     return this.pnic;
   }
 
-  public HostVirtualNic[] getVnic()
-  {
+  public HostVirtualNic[] getVnic() {
     return this.vnic;
   }
 
-  public HostVirtualNic[] getConsoleVnic()
-  {
+  public HostVirtualNic[] getConsoleVnic() {
     return this.consoleVnic;
   }
 
-  public HostDnsConfig getDnsConfig()
-  {
+  public HostDnsConfig getDnsConfig() {
     return this.dnsConfig;
   }
 
-  public HostIpRouteConfig getIpRouteConfig()
-  {
+  public HostIpRouteConfig getIpRouteConfig() {
     return this.ipRouteConfig;
   }
 
-  public HostIpRouteConfig getConsoleIpRouteConfig()
-  {
+  public HostIpRouteConfig getConsoleIpRouteConfig() {
     return this.consoleIpRouteConfig;
   }
 
-  public HostIpRouteTableInfo getRouteTableInfo()
-  {
+  public HostIpRouteTableInfo getRouteTableInfo() {
     return this.routeTableInfo;
   }
 
-  public HostDhcpService[] getDhcp()
-  {
+  public HostDhcpService[] getDhcp() {
     return this.dhcp;
   }
 
-  public HostNatService[] getNat()
-  {
+  public HostNatService[] getNat() {
     return this.nat;
   }
 
-  public Boolean getIpV6Enabled()
-  {
+  public Boolean getIpV6Enabled() {
     return this.ipV6Enabled;
   }
 
-  public Boolean getAtBootIpV6Enabled()
-  {
+  public Boolean getAtBootIpV6Enabled() {
     return this.atBootIpV6Enabled;
   }
 
-  public void setVswitch(HostVirtualSwitch[] vswitch)
-  {
+  public void setVswitch(HostVirtualSwitch[] vswitch) {
     this.vswitch=vswitch;
   }
 
-  public void setProxySwitch(HostProxySwitch[] proxySwitch)
-  {
+  public void setProxySwitch(HostProxySwitch[] proxySwitch) {
     this.proxySwitch=proxySwitch;
   }
 
-  public void setPortgroup(HostPortGroup[] portgroup)
-  {
+  public void setPortgroup(HostPortGroup[] portgroup) {
     this.portgroup=portgroup;
   }
 
-  public void setPnic(PhysicalNic[] pnic)
-  {
+  public void setPnic(PhysicalNic[] pnic) {
     this.pnic=pnic;
   }
 
-  public void setVnic(HostVirtualNic[] vnic)
-  {
+  public void setVnic(HostVirtualNic[] vnic) {
     this.vnic=vnic;
   }
 
-  public void setConsoleVnic(HostVirtualNic[] consoleVnic)
-  {
+  public void setConsoleVnic(HostVirtualNic[] consoleVnic) {
     this.consoleVnic=consoleVnic;
   }
 
-  public void setDnsConfig(HostDnsConfig dnsConfig)
-  {
+  public void setDnsConfig(HostDnsConfig dnsConfig) {
     this.dnsConfig=dnsConfig;
   }
 
-  public void setIpRouteConfig(HostIpRouteConfig ipRouteConfig)
-  {
+  public void setIpRouteConfig(HostIpRouteConfig ipRouteConfig) {
     this.ipRouteConfig=ipRouteConfig;
   }
 
-  public void setConsoleIpRouteConfig(HostIpRouteConfig consoleIpRouteConfig)
-  {
+  public void setConsoleIpRouteConfig(HostIpRouteConfig consoleIpRouteConfig) {
     this.consoleIpRouteConfig=consoleIpRouteConfig;
   }
 
-  public void setRouteTableInfo(HostIpRouteTableInfo routeTableInfo)
-  {
+  public void setRouteTableInfo(HostIpRouteTableInfo routeTableInfo) {
     this.routeTableInfo=routeTableInfo;
   }
 
-  public void setDhcp(HostDhcpService[] dhcp)
-  {
+  public void setDhcp(HostDhcpService[] dhcp) {
     this.dhcp=dhcp;
   }
 
-  public void setNat(HostNatService[] nat)
-  {
+  public void setNat(HostNatService[] nat) {
     this.nat=nat;
   }
 
-  public void setIpV6Enabled(Boolean ipV6Enabled)
-  {
+  public void setIpV6Enabled(Boolean ipV6Enabled) {
     this.ipV6Enabled=ipV6Enabled;
   }
 
-  public void setAtBootIpV6Enabled(Boolean atBootIpV6Enabled)
-  {
+  public void setAtBootIpV6Enabled(Boolean atBootIpV6Enabled) {
     this.atBootIpV6Enabled=atBootIpV6Enabled;
   }
 }

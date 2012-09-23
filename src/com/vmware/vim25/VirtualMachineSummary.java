@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,11 +30,12 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class VirtualMachineSummary extends DynamicData
-{
+@SuppressWarnings("all")
+public class VirtualMachineSummary extends DynamicData {
   public ManagedObjectReference vm;
   public VirtualMachineRuntimeInfo runtime;
   public VirtualMachineGuestSummary guest;
@@ -44,83 +45,67 @@ public class VirtualMachineSummary extends DynamicData
   public ManagedEntityStatus overallStatus;
   public CustomFieldValue[] customValue;
 
-  public ManagedObjectReference getVm()
-  {
+  public ManagedObjectReference getVm() {
     return this.vm;
   }
 
-  public VirtualMachineRuntimeInfo getRuntime()
-  {
+  public VirtualMachineRuntimeInfo getRuntime() {
     return this.runtime;
   }
 
-  public VirtualMachineGuestSummary getGuest()
-  {
+  public VirtualMachineGuestSummary getGuest() {
     return this.guest;
   }
 
-  public VirtualMachineConfigSummary getConfig()
-  {
+  public VirtualMachineConfigSummary getConfig() {
     return this.config;
   }
 
-  public VirtualMachineStorageSummary getStorage()
-  {
+  public VirtualMachineStorageSummary getStorage() {
     return this.storage;
   }
 
-  public VirtualMachineQuickStats getQuickStats()
-  {
+  public VirtualMachineQuickStats getQuickStats() {
     return this.quickStats;
   }
 
-  public ManagedEntityStatus getOverallStatus()
-  {
+  public ManagedEntityStatus getOverallStatus() {
     return this.overallStatus;
   }
 
-  public CustomFieldValue[] getCustomValue()
-  {
+  public CustomFieldValue[] getCustomValue() {
     return this.customValue;
   }
 
-  public void setVm(ManagedObjectReference vm)
-  {
+  public void setVm(ManagedObjectReference vm) {
     this.vm=vm;
   }
 
-  public void setRuntime(VirtualMachineRuntimeInfo runtime)
-  {
+  public void setRuntime(VirtualMachineRuntimeInfo runtime) {
     this.runtime=runtime;
   }
 
-  public void setGuest(VirtualMachineGuestSummary guest)
-  {
+  public void setGuest(VirtualMachineGuestSummary guest) {
     this.guest=guest;
   }
 
-  public void setConfig(VirtualMachineConfigSummary config)
-  {
+  public void setConfig(VirtualMachineConfigSummary config) {
     this.config=config;
   }
 
-  public void setStorage(VirtualMachineStorageSummary storage)
-  {
+  public void setStorage(VirtualMachineStorageSummary storage) {
     this.storage=storage;
   }
 
-  public void setQuickStats(VirtualMachineQuickStats quickStats)
-  {
+  public void setQuickStats(VirtualMachineQuickStats quickStats) {
     this.quickStats=quickStats;
   }
 
-  public void setOverallStatus(ManagedEntityStatus overallStatus)
-  {
+  public void setOverallStatus(ManagedEntityStatus overallStatus) {
     this.overallStatus=overallStatus;
   }
 
-  public void setCustomValue(CustomFieldValue[] customValue)
-  {
+  public void setCustomValue(CustomFieldValue[] customValue) {
     this.customValue=customValue;
   }
 }

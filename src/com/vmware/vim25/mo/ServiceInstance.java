@@ -40,7 +40,7 @@ import com.vmware.vim25.ws.WSClient;
 
 /**
  * The managed object class corresponding to the one defined in VI SDK API reference.
- * @author Steve JIN (sjin@vmware.com)
+ * @author Steve JIN (http://www.doublecloud.org)
  */
 
 public class ServiceInstance extends ManagedObject 
@@ -114,7 +114,7 @@ public class ServiceInstance extends ManagedObject
 		wsc.setVimNameSpace(namespace);
 		
 		serviceContent = vimService.retrieveServiceContent(SERVICE_INSTANCE_MOR);
-    wsc.setSoapActionOnApiVersion(serviceContent.getAbout().getApiVersion());
+		wsc.setSoapActionOnApiVersion(serviceContent.getAbout().getApiVersion());
 		setServerConnection(new ServerConnection(url, vimService, this));
 		serviceContent = vimService.retrieveServiceContent(SERVICE_INSTANCE_MOR); //with new SOAP_ACTION
 		UserSession userSession = (UserSession) getSessionManager().getCurrentProperty("currentSession");

@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,11 +30,12 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class CpuIncompatible81EDX extends CpuIncompatible
-{
+@SuppressWarnings("all")
+public class CpuIncompatible81EDX extends CpuIncompatible {
   public boolean nx;
   public boolean ffxsr;
   public boolean rdtscp;
@@ -42,63 +43,51 @@ public class CpuIncompatible81EDX extends CpuIncompatible
   public boolean other;
   public boolean otherOnly;
 
-  public boolean isNx()
-  {
+  public boolean isNx() {
     return this.nx;
   }
 
-  public boolean isFfxsr()
-  {
+  public boolean isFfxsr() {
     return this.ffxsr;
   }
 
-  public boolean isRdtscp()
-  {
+  public boolean isRdtscp() {
     return this.rdtscp;
   }
 
-  public boolean isLm()
-  {
+  public boolean isLm() {
     return this.lm;
   }
 
-  public boolean isOther()
-  {
+  public boolean isOther() {
     return this.other;
   }
 
-  public boolean isOtherOnly()
-  {
+  public boolean isOtherOnly() {
     return this.otherOnly;
   }
 
-  public void setNx(boolean nx)
-  {
+  public void setNx(boolean nx) {
     this.nx=nx;
   }
 
-  public void setFfxsr(boolean ffxsr)
-  {
+  public void setFfxsr(boolean ffxsr) {
     this.ffxsr=ffxsr;
   }
 
-  public void setRdtscp(boolean rdtscp)
-  {
+  public void setRdtscp(boolean rdtscp) {
     this.rdtscp=rdtscp;
   }
 
-  public void setLm(boolean lm)
-  {
+  public void setLm(boolean lm) {
     this.lm=lm;
   }
 
-  public void setOther(boolean other)
-  {
+  public void setOther(boolean other) {
     this.other=other;
   }
 
-  public void setOtherOnly(boolean otherOnly)
-  {
+  public void setOtherOnly(boolean otherOnly) {
     this.otherOnly=otherOnly;
   }
 }

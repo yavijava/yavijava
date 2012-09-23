@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,31 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class HostFirewallConfig extends DynamicData
-{
+@SuppressWarnings("all")
+public class HostFirewallConfig extends DynamicData {
   public HostFirewallConfigRuleSetConfig[] rule;
   public HostFirewallDefaultPolicy defaultBlockingPolicy;
 
-  public HostFirewallConfigRuleSetConfig[] getRule()
-  {
+  public HostFirewallConfigRuleSetConfig[] getRule() {
     return this.rule;
   }
 
-  public HostFirewallDefaultPolicy getDefaultBlockingPolicy()
-  {
+  public HostFirewallDefaultPolicy getDefaultBlockingPolicy() {
     return this.defaultBlockingPolicy;
   }
 
-  public void setRule(HostFirewallConfigRuleSetConfig[] rule)
-  {
+  public void setRule(HostFirewallConfigRuleSetConfig[] rule) {
     this.rule=rule;
   }
 
-  public void setDefaultBlockingPolicy(HostFirewallDefaultPolicy defaultBlockingPolicy)
-  {
+  public void setDefaultBlockingPolicy(HostFirewallDefaultPolicy defaultBlockingPolicy) {
     this.defaultBlockingPolicy=defaultBlockingPolicy;
   }
 }

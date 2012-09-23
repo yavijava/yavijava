@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,31 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class MismatchedVMotionNetworkNames extends MigrationFault
-{
+@SuppressWarnings("all")
+public class MismatchedVMotionNetworkNames extends MigrationFault {
   public String sourceNetwork;
   public String destNetwork;
 
-  public String getSourceNetwork()
-  {
+  public String getSourceNetwork() {
     return this.sourceNetwork;
   }
 
-  public String getDestNetwork()
-  {
+  public String getDestNetwork() {
     return this.destNetwork;
   }
 
-  public void setSourceNetwork(String sourceNetwork)
-  {
+  public void setSourceNetwork(String sourceNetwork) {
     this.sourceNetwork=sourceNetwork;
   }
 
-  public void setDestNetwork(String destNetwork)
-  {
+  public void setDestNetwork(String destNetwork) {
     this.destNetwork=destNetwork;
   }
 }

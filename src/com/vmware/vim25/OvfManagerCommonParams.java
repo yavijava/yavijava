@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,42 +30,46 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class OvfManagerCommonParams extends DynamicData
-{
+@SuppressWarnings("all")
+public class OvfManagerCommonParams extends DynamicData {
   public String locale;
   public String deploymentOption;
   public KeyValue[] msgBundle;
+  public String[] importOption;
 
-  public String getLocale()
-  {
+  public String getLocale() {
     return this.locale;
   }
 
-  public String getDeploymentOption()
-  {
+  public String getDeploymentOption() {
     return this.deploymentOption;
   }
 
-  public KeyValue[] getMsgBundle()
-  {
+  public KeyValue[] getMsgBundle() {
     return this.msgBundle;
   }
 
-  public void setLocale(String locale)
-  {
+  public String[] getImportOption() {
+    return this.importOption;
+  }
+
+  public void setLocale(String locale) {
     this.locale=locale;
   }
 
-  public void setDeploymentOption(String deploymentOption)
-  {
+  public void setDeploymentOption(String deploymentOption) {
     this.deploymentOption=deploymentOption;
   }
 
-  public void setMsgBundle(KeyValue[] msgBundle)
-  {
+  public void setMsgBundle(KeyValue[] msgBundle) {
     this.msgBundle=msgBundle;
+  }
+
+  public void setImportOption(String[] importOption) {
+    this.importOption=importOption;
   }
 }

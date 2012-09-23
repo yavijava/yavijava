@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,31 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class VmDiskFileQuery extends FileQuery
-{
+@SuppressWarnings("all")
+public class VmDiskFileQuery extends FileQuery {
   public VmDiskFileQueryFilter filter;
   public VmDiskFileQueryFlags details;
 
-  public VmDiskFileQueryFilter getFilter()
-  {
+  public VmDiskFileQueryFilter getFilter() {
     return this.filter;
   }
 
-  public VmDiskFileQueryFlags getDetails()
-  {
+  public VmDiskFileQueryFlags getDetails() {
     return this.details;
   }
 
-  public void setFilter(VmDiskFileQueryFilter filter)
-  {
+  public void setFilter(VmDiskFileQueryFilter filter) {
     this.filter=filter;
   }
 
-  public void setDetails(VmDiskFileQueryFlags details)
-  {
+  public void setDetails(VmDiskFileQueryFlags details) {
     this.details=details;
   }
 }

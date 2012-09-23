@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,53 +30,46 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class PodStorageDrsEntry extends DynamicData
-{
+@SuppressWarnings("all")
+public class PodStorageDrsEntry extends DynamicData {
   public StorageDrsConfigInfo storageDrsConfig;
   public ClusterRecommendation[] recommendation;
   public ClusterDrsFaults[] drsFault;
   public ClusterActionHistory[] actionHistory;
 
-  public StorageDrsConfigInfo getStorageDrsConfig()
-  {
+  public StorageDrsConfigInfo getStorageDrsConfig() {
     return this.storageDrsConfig;
   }
 
-  public ClusterRecommendation[] getRecommendation()
-  {
+  public ClusterRecommendation[] getRecommendation() {
     return this.recommendation;
   }
 
-  public ClusterDrsFaults[] getDrsFault()
-  {
+  public ClusterDrsFaults[] getDrsFault() {
     return this.drsFault;
   }
 
-  public ClusterActionHistory[] getActionHistory()
-  {
+  public ClusterActionHistory[] getActionHistory() {
     return this.actionHistory;
   }
 
-  public void setStorageDrsConfig(StorageDrsConfigInfo storageDrsConfig)
-  {
+  public void setStorageDrsConfig(StorageDrsConfigInfo storageDrsConfig) {
     this.storageDrsConfig=storageDrsConfig;
   }
 
-  public void setRecommendation(ClusterRecommendation[] recommendation)
-  {
+  public void setRecommendation(ClusterRecommendation[] recommendation) {
     this.recommendation=recommendation;
   }
 
-  public void setDrsFault(ClusterDrsFaults[] drsFault)
-  {
+  public void setDrsFault(ClusterDrsFaults[] drsFault) {
     this.drsFault=drsFault;
   }
 
-  public void setActionHistory(ClusterActionHistory[] actionHistory)
-  {
+  public void setActionHistory(ClusterActionHistory[] actionHistory) {
     this.actionHistory=actionHistory;
   }
 }

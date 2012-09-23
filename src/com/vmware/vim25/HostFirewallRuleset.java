@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,11 +30,12 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class HostFirewallRuleset extends DynamicData
-{
+@SuppressWarnings("all")
+public class HostFirewallRuleset extends DynamicData {
   public String key;
   public String label;
   public boolean required;
@@ -43,73 +44,59 @@ public class HostFirewallRuleset extends DynamicData
   public boolean enabled;
   public HostFirewallRulesetIpList allowedHosts;
 
-  public String getKey()
-  {
+  public String getKey() {
     return this.key;
   }
 
-  public String getLabel()
-  {
+  public String getLabel() {
     return this.label;
   }
 
-  public boolean isRequired()
-  {
+  public boolean isRequired() {
     return this.required;
   }
 
-  public HostFirewallRule[] getRule()
-  {
+  public HostFirewallRule[] getRule() {
     return this.rule;
   }
 
-  public String getService()
-  {
+  public String getService() {
     return this.service;
   }
 
-  public boolean isEnabled()
-  {
+  public boolean isEnabled() {
     return this.enabled;
   }
 
-  public HostFirewallRulesetIpList getAllowedHosts()
-  {
+  public HostFirewallRulesetIpList getAllowedHosts() {
     return this.allowedHosts;
   }
 
-  public void setKey(String key)
-  {
+  public void setKey(String key) {
     this.key=key;
   }
 
-  public void setLabel(String label)
-  {
+  public void setLabel(String label) {
     this.label=label;
   }
 
-  public void setRequired(boolean required)
-  {
+  public void setRequired(boolean required) {
     this.required=required;
   }
 
-  public void setRule(HostFirewallRule[] rule)
-  {
+  public void setRule(HostFirewallRule[] rule) {
     this.rule=rule;
   }
 
-  public void setService(String service)
-  {
+  public void setService(String service) {
     this.service=service;
   }
 
-  public void setEnabled(boolean enabled)
-  {
+  public void setEnabled(boolean enabled) {
     this.enabled=enabled;
   }
 
-  public void setAllowedHosts(HostFirewallRulesetIpList allowedHosts)
-  {
+  public void setAllowedHosts(HostFirewallRulesetIpList allowedHosts) {
     this.allowedHosts=allowedHosts;
   }
 }

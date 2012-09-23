@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,42 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class VirtualMachineScsiDiskDeviceInfo extends VirtualMachineDiskDeviceInfo
-{
+@SuppressWarnings("all")
+public class VirtualMachineScsiDiskDeviceInfo extends VirtualMachineDiskDeviceInfo {
   public HostScsiDisk disk;
   public String transportHint;
   public Integer lunNumber;
 
-  public HostScsiDisk getDisk()
-  {
+  public HostScsiDisk getDisk() {
     return this.disk;
   }
 
-  public String getTransportHint()
-  {
+  public String getTransportHint() {
     return this.transportHint;
   }
 
-  public Integer getLunNumber()
-  {
+  public Integer getLunNumber() {
     return this.lunNumber;
   }
 
-  public void setDisk(HostScsiDisk disk)
-  {
+  public void setDisk(HostScsiDisk disk) {
     this.disk=disk;
   }
 
-  public void setTransportHint(String transportHint)
-  {
+  public void setTransportHint(String transportHint) {
     this.transportHint=transportHint;
   }
 
-  public void setLunNumber(Integer lunNumber)
-  {
+  public void setLunNumber(Integer lunNumber) {
     this.lunNumber=lunNumber;
   }
 }

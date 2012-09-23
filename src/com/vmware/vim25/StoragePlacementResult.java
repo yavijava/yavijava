@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,42 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class StoragePlacementResult extends DynamicData
-{
+@SuppressWarnings("all")
+public class StoragePlacementResult extends DynamicData {
   public ClusterRecommendation[] recommendations;
   public ClusterDrsFaults drsFault;
   public ManagedObjectReference task;
 
-  public ClusterRecommendation[] getRecommendations()
-  {
+  public ClusterRecommendation[] getRecommendations() {
     return this.recommendations;
   }
 
-  public ClusterDrsFaults getDrsFault()
-  {
+  public ClusterDrsFaults getDrsFault() {
     return this.drsFault;
   }
 
-  public ManagedObjectReference getTask()
-  {
+  public ManagedObjectReference getTask() {
     return this.task;
   }
 
-  public void setRecommendations(ClusterRecommendation[] recommendations)
-  {
+  public void setRecommendations(ClusterRecommendation[] recommendations) {
     this.recommendations=recommendations;
   }
 
-  public void setDrsFault(ClusterDrsFaults drsFault)
-  {
+  public void setDrsFault(ClusterDrsFaults drsFault) {
     this.drsFault=drsFault;
   }
 
-  public void setTask(ManagedObjectReference task)
-  {
+  public void setTask(ManagedObjectReference task) {
     this.task=task;
   }
 }

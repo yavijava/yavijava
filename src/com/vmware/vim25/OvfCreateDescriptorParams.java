@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,53 +30,55 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class OvfCreateDescriptorParams extends DynamicData
-{
+@SuppressWarnings("all")
+public class OvfCreateDescriptorParams extends DynamicData {
   public OvfFile[] ovfFiles;
   public String name;
   public String description;
   public Boolean includeImageFiles;
+  public String[] exportOption;
 
-  public OvfFile[] getOvfFiles()
-  {
+  public OvfFile[] getOvfFiles() {
     return this.ovfFiles;
   }
 
-  public String getName()
-  {
+  public String getName() {
     return this.name;
   }
 
-  public String getDescription()
-  {
+  public String getDescription() {
     return this.description;
   }
 
-  public Boolean getIncludeImageFiles()
-  {
+  public Boolean getIncludeImageFiles() {
     return this.includeImageFiles;
   }
 
-  public void setOvfFiles(OvfFile[] ovfFiles)
-  {
+  public String[] getExportOption() {
+    return this.exportOption;
+  }
+
+  public void setOvfFiles(OvfFile[] ovfFiles) {
     this.ovfFiles=ovfFiles;
   }
 
-  public void setName(String name)
-  {
+  public void setName(String name) {
     this.name=name;
   }
 
-  public void setDescription(String description)
-  {
+  public void setDescription(String description) {
     this.description=description;
   }
 
-  public void setIncludeImageFiles(Boolean includeImageFiles)
-  {
+  public void setIncludeImageFiles(Boolean includeImageFiles) {
     this.includeImageFiles=includeImageFiles;
+  }
+
+  public void setExportOption(String[] exportOption) {
+    this.exportOption=exportOption;
   }
 }

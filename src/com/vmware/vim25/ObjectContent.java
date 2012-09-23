@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,42 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class ObjectContent extends DynamicData
-{
+@SuppressWarnings("all")
+public class ObjectContent extends DynamicData {
   public ManagedObjectReference obj;
   public DynamicProperty[] propSet;
   public MissingProperty[] missingSet;
 
-  public ManagedObjectReference getObj()
-  {
+  public ManagedObjectReference getObj() {
     return this.obj;
   }
 
-  public DynamicProperty[] getPropSet()
-  {
+  public DynamicProperty[] getPropSet() {
     return this.propSet;
   }
 
-  public MissingProperty[] getMissingSet()
-  {
+  public MissingProperty[] getMissingSet() {
     return this.missingSet;
   }
 
-  public void setObj(ManagedObjectReference obj)
-  {
+  public void setObj(ManagedObjectReference obj) {
     this.obj=obj;
   }
 
-  public void setPropSet(DynamicProperty[] propSet)
-  {
+  public void setPropSet(DynamicProperty[] propSet) {
     this.propSet=propSet;
   }
 
-  public void setMissingSet(MissingProperty[] missingSet)
-  {
+  public void setMissingSet(MissingProperty[] missingSet) {
     this.missingSet=missingSet;
   }
 }

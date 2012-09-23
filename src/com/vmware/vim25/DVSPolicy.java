@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,42 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class DVSPolicy extends DynamicData
-{
+@SuppressWarnings("all")
+public class DVSPolicy extends DynamicData {
   public Boolean autoPreInstallAllowed;
   public Boolean autoUpgradeAllowed;
   public Boolean partialUpgradeAllowed;
 
-  public Boolean getAutoPreInstallAllowed()
-  {
+  public Boolean getAutoPreInstallAllowed() {
     return this.autoPreInstallAllowed;
   }
 
-  public Boolean getAutoUpgradeAllowed()
-  {
+  public Boolean getAutoUpgradeAllowed() {
     return this.autoUpgradeAllowed;
   }
 
-  public Boolean getPartialUpgradeAllowed()
-  {
+  public Boolean getPartialUpgradeAllowed() {
     return this.partialUpgradeAllowed;
   }
 
-  public void setAutoPreInstallAllowed(Boolean autoPreInstallAllowed)
-  {
+  public void setAutoPreInstallAllowed(Boolean autoPreInstallAllowed) {
     this.autoPreInstallAllowed=autoPreInstallAllowed;
   }
 
-  public void setAutoUpgradeAllowed(Boolean autoUpgradeAllowed)
-  {
+  public void setAutoUpgradeAllowed(Boolean autoUpgradeAllowed) {
     this.autoUpgradeAllowed=autoUpgradeAllowed;
   }
 
-  public void setPartialUpgradeAllowed(Boolean partialUpgradeAllowed)
-  {
+  public void setPartialUpgradeAllowed(Boolean partialUpgradeAllowed) {
     this.partialUpgradeAllowed=partialUpgradeAllowed;
   }
 }

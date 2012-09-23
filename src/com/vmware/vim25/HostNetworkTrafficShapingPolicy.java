@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,53 +30,46 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class HostNetworkTrafficShapingPolicy extends DynamicData
-{
+@SuppressWarnings("all")
+public class HostNetworkTrafficShapingPolicy extends DynamicData {
   public Boolean enabled;
   public Long averageBandwidth;
   public Long peakBandwidth;
   public Long burstSize;
 
-  public Boolean getEnabled()
-  {
+  public Boolean getEnabled() {
     return this.enabled;
   }
 
-  public Long getAverageBandwidth()
-  {
+  public Long getAverageBandwidth() {
     return this.averageBandwidth;
   }
 
-  public Long getPeakBandwidth()
-  {
+  public Long getPeakBandwidth() {
     return this.peakBandwidth;
   }
 
-  public Long getBurstSize()
-  {
+  public Long getBurstSize() {
     return this.burstSize;
   }
 
-  public void setEnabled(Boolean enabled)
-  {
+  public void setEnabled(Boolean enabled) {
     this.enabled=enabled;
   }
 
-  public void setAverageBandwidth(Long averageBandwidth)
-  {
+  public void setAverageBandwidth(Long averageBandwidth) {
     this.averageBandwidth=averageBandwidth;
   }
 
-  public void setPeakBandwidth(Long peakBandwidth)
-  {
+  public void setPeakBandwidth(Long peakBandwidth) {
     this.peakBandwidth=peakBandwidth;
   }
 
-  public void setBurstSize(Long burstSize)
-  {
+  public void setBurstSize(Long burstSize) {
     this.burstSize=burstSize;
   }
 }

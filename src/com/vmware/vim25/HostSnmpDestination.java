@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,42 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class HostSnmpDestination extends DynamicData
-{
+@SuppressWarnings("all")
+public class HostSnmpDestination extends DynamicData {
   public String hostName;
   public int port;
   public String community;
 
-  public String getHostName()
-  {
+  public String getHostName() {
     return this.hostName;
   }
 
-  public int getPort()
-  {
+  public int getPort() {
     return this.port;
   }
 
-  public String getCommunity()
-  {
+  public String getCommunity() {
     return this.community;
   }
 
-  public void setHostName(String hostName)
-  {
+  public void setHostName(String hostName) {
     this.hostName=hostName;
   }
 
-  public void setPort(int port)
-  {
+  public void setPort(int port) {
     this.port=port;
   }
 
-  public void setCommunity(String community)
-  {
+  public void setCommunity(String community) {
     this.community=community;
   }
 }

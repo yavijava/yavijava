@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,31 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class VmConfigFileQuery extends FileQuery
-{
+@SuppressWarnings("all")
+public class VmConfigFileQuery extends FileQuery {
   public VmConfigFileQueryFilter filter;
   public VmConfigFileQueryFlags details;
 
-  public VmConfigFileQueryFilter getFilter()
-  {
+  public VmConfigFileQueryFilter getFilter() {
     return this.filter;
   }
 
-  public VmConfigFileQueryFlags getDetails()
-  {
+  public VmConfigFileQueryFlags getDetails() {
     return this.details;
   }
 
-  public void setFilter(VmConfigFileQueryFilter filter)
-  {
+  public void setFilter(VmConfigFileQueryFilter filter) {
     this.filter=filter;
   }
 
-  public void setDetails(VmConfigFileQueryFlags details)
-  {
+  public void setDetails(VmConfigFileQueryFlags details) {
     this.details=details;
   }
 }

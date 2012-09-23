@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,11 +30,12 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class HostStorageDeviceInfo extends DynamicData
-{
+@SuppressWarnings("all")
+public class HostStorageDeviceInfo extends DynamicData {
   public HostHostBusAdapter[] hostBusAdapter;
   public ScsiLun[] scsiLun;
   public HostScsiTopology scsiTopology;
@@ -42,63 +43,51 @@ public class HostStorageDeviceInfo extends DynamicData
   public HostPlugStoreTopology plugStoreTopology;
   public boolean softwareInternetScsiEnabled;
 
-  public HostHostBusAdapter[] getHostBusAdapter()
-  {
+  public HostHostBusAdapter[] getHostBusAdapter() {
     return this.hostBusAdapter;
   }
 
-  public ScsiLun[] getScsiLun()
-  {
+  public ScsiLun[] getScsiLun() {
     return this.scsiLun;
   }
 
-  public HostScsiTopology getScsiTopology()
-  {
+  public HostScsiTopology getScsiTopology() {
     return this.scsiTopology;
   }
 
-  public HostMultipathInfo getMultipathInfo()
-  {
+  public HostMultipathInfo getMultipathInfo() {
     return this.multipathInfo;
   }
 
-  public HostPlugStoreTopology getPlugStoreTopology()
-  {
+  public HostPlugStoreTopology getPlugStoreTopology() {
     return this.plugStoreTopology;
   }
 
-  public boolean isSoftwareInternetScsiEnabled()
-  {
+  public boolean isSoftwareInternetScsiEnabled() {
     return this.softwareInternetScsiEnabled;
   }
 
-  public void setHostBusAdapter(HostHostBusAdapter[] hostBusAdapter)
-  {
+  public void setHostBusAdapter(HostHostBusAdapter[] hostBusAdapter) {
     this.hostBusAdapter=hostBusAdapter;
   }
 
-  public void setScsiLun(ScsiLun[] scsiLun)
-  {
+  public void setScsiLun(ScsiLun[] scsiLun) {
     this.scsiLun=scsiLun;
   }
 
-  public void setScsiTopology(HostScsiTopology scsiTopology)
-  {
+  public void setScsiTopology(HostScsiTopology scsiTopology) {
     this.scsiTopology=scsiTopology;
   }
 
-  public void setMultipathInfo(HostMultipathInfo multipathInfo)
-  {
+  public void setMultipathInfo(HostMultipathInfo multipathInfo) {
     this.multipathInfo=multipathInfo;
   }
 
-  public void setPlugStoreTopology(HostPlugStoreTopology plugStoreTopology)
-  {
+  public void setPlugStoreTopology(HostPlugStoreTopology plugStoreTopology) {
     this.plugStoreTopology=plugStoreTopology;
   }
 
-  public void setSoftwareInternetScsiEnabled(boolean softwareInternetScsiEnabled)
-  {
+  public void setSoftwareInternetScsiEnabled(boolean softwareInternetScsiEnabled) {
     this.softwareInternetScsiEnabled=softwareInternetScsiEnabled;
   }
 }

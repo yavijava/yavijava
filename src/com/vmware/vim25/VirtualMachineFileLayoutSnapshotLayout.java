@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,31 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class VirtualMachineFileLayoutSnapshotLayout extends DynamicData
-{
+@SuppressWarnings("all")
+public class VirtualMachineFileLayoutSnapshotLayout extends DynamicData {
   public ManagedObjectReference key;
   public String[] snapshotFile;
 
-  public ManagedObjectReference getKey()
-  {
+  public ManagedObjectReference getKey() {
     return this.key;
   }
 
-  public String[] getSnapshotFile()
-  {
+  public String[] getSnapshotFile() {
     return this.snapshotFile;
   }
 
-  public void setKey(ManagedObjectReference key)
-  {
+  public void setKey(ManagedObjectReference key) {
     this.key=key;
   }
 
-  public void setSnapshotFile(String[] snapshotFile)
-  {
+  public void setSnapshotFile(String[] snapshotFile) {
     this.snapshotFile=snapshotFile;
   }
 }

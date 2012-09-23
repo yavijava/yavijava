@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,53 +30,46 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class HostCpuInfo extends DynamicData
-{
+@SuppressWarnings("all")
+public class HostCpuInfo extends DynamicData {
   public short numCpuPackages;
   public short numCpuCores;
   public short numCpuThreads;
   public long hz;
 
-  public short getNumCpuPackages()
-  {
+  public short getNumCpuPackages() {
     return this.numCpuPackages;
   }
 
-  public short getNumCpuCores()
-  {
+  public short getNumCpuCores() {
     return this.numCpuCores;
   }
 
-  public short getNumCpuThreads()
-  {
+  public short getNumCpuThreads() {
     return this.numCpuThreads;
   }
 
-  public long getHz()
-  {
+  public long getHz() {
     return this.hz;
   }
 
-  public void setNumCpuPackages(short numCpuPackages)
-  {
+  public void setNumCpuPackages(short numCpuPackages) {
     this.numCpuPackages=numCpuPackages;
   }
 
-  public void setNumCpuCores(short numCpuCores)
-  {
+  public void setNumCpuCores(short numCpuCores) {
     this.numCpuCores=numCpuCores;
   }
 
-  public void setNumCpuThreads(short numCpuThreads)
-  {
+  public void setNumCpuThreads(short numCpuThreads) {
     this.numCpuThreads=numCpuThreads;
   }
 
-  public void setHz(long hz)
-  {
+  public void setHz(long hz) {
     this.hz=hz;
   }
 }

@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,64 +30,55 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class LicenseAssignmentManagerLicenseAssignment extends DynamicData
-{
+@SuppressWarnings("all")
+public class LicenseAssignmentManagerLicenseAssignment extends DynamicData {
   public String entityId;
   public String scope;
   public String entityDisplayName;
   public LicenseManagerLicenseInfo assignedLicense;
   public KeyAnyValue[] properties;
 
-  public String getEntityId()
-  {
+  public String getEntityId() {
     return this.entityId;
   }
 
-  public String getScope()
-  {
+  public String getScope() {
     return this.scope;
   }
 
-  public String getEntityDisplayName()
-  {
+  public String getEntityDisplayName() {
     return this.entityDisplayName;
   }
 
-  public LicenseManagerLicenseInfo getAssignedLicense()
-  {
+  public LicenseManagerLicenseInfo getAssignedLicense() {
     return this.assignedLicense;
   }
 
-  public KeyAnyValue[] getProperties()
-  {
+  public KeyAnyValue[] getProperties() {
     return this.properties;
   }
 
-  public void setEntityId(String entityId)
-  {
+  public void setEntityId(String entityId) {
     this.entityId=entityId;
   }
 
-  public void setScope(String scope)
-  {
+  public void setScope(String scope) {
     this.scope=scope;
   }
 
-  public void setEntityDisplayName(String entityDisplayName)
-  {
+  public void setEntityDisplayName(String entityDisplayName) {
     this.entityDisplayName=entityDisplayName;
   }
 
-  public void setAssignedLicense(LicenseManagerLicenseInfo assignedLicense)
-  {
+  public void setAssignedLicense(LicenseManagerLicenseInfo assignedLicense) {
     this.assignedLicense=assignedLicense;
   }
 
-  public void setProperties(KeyAnyValue[] properties)
-  {
+  public void setProperties(KeyAnyValue[] properties) {
     this.properties=properties;
   }
 }

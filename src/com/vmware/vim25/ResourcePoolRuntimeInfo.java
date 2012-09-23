@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,42 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class ResourcePoolRuntimeInfo extends DynamicData
-{
+@SuppressWarnings("all")
+public class ResourcePoolRuntimeInfo extends DynamicData {
   public ResourcePoolResourceUsage memory;
   public ResourcePoolResourceUsage cpu;
   public ManagedEntityStatus overallStatus;
 
-  public ResourcePoolResourceUsage getMemory()
-  {
+  public ResourcePoolResourceUsage getMemory() {
     return this.memory;
   }
 
-  public ResourcePoolResourceUsage getCpu()
-  {
+  public ResourcePoolResourceUsage getCpu() {
     return this.cpu;
   }
 
-  public ManagedEntityStatus getOverallStatus()
-  {
+  public ManagedEntityStatus getOverallStatus() {
     return this.overallStatus;
   }
 
-  public void setMemory(ResourcePoolResourceUsage memory)
-  {
+  public void setMemory(ResourcePoolResourceUsage memory) {
     this.memory=memory;
   }
 
-  public void setCpu(ResourcePoolResourceUsage cpu)
-  {
+  public void setCpu(ResourcePoolResourceUsage cpu) {
     this.cpu=cpu;
   }
 
-  public void setOverallStatus(ManagedEntityStatus overallStatus)
-  {
+  public void setOverallStatus(ManagedEntityStatus overallStatus) {
     this.overallStatus=overallStatus;
   }
 }

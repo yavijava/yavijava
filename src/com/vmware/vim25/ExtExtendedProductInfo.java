@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,53 +30,46 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class ExtExtendedProductInfo extends DynamicData
-{
+@SuppressWarnings("all")
+public class ExtExtendedProductInfo extends DynamicData {
   public String companyUrl;
   public String productUrl;
   public String managementUrl;
   public ManagedObjectReference self;
 
-  public String getCompanyUrl()
-  {
+  public String getCompanyUrl() {
     return this.companyUrl;
   }
 
-  public String getProductUrl()
-  {
+  public String getProductUrl() {
     return this.productUrl;
   }
 
-  public String getManagementUrl()
-  {
+  public String getManagementUrl() {
     return this.managementUrl;
   }
 
-  public ManagedObjectReference getSelf()
-  {
+  public ManagedObjectReference getSelf() {
     return this.self;
   }
 
-  public void setCompanyUrl(String companyUrl)
-  {
+  public void setCompanyUrl(String companyUrl) {
     this.companyUrl=companyUrl;
   }
 
-  public void setProductUrl(String productUrl)
-  {
+  public void setProductUrl(String productUrl) {
     this.productUrl=productUrl;
   }
 
-  public void setManagementUrl(String managementUrl)
-  {
+  public void setManagementUrl(String managementUrl) {
     this.managementUrl=managementUrl;
   }
 
-  public void setSelf(ManagedObjectReference self)
-  {
+  public void setSelf(ManagedObjectReference self) {
     this.self=self;
   }
 }

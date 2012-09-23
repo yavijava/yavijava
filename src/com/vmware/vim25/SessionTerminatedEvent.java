@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,31 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class SessionTerminatedEvent extends SessionEvent
-{
+@SuppressWarnings("all")
+public class SessionTerminatedEvent extends SessionEvent {
   public String sessionId;
   public String terminatedUsername;
 
-  public String getSessionId()
-  {
+  public String getSessionId() {
     return this.sessionId;
   }
 
-  public String getTerminatedUsername()
-  {
+  public String getTerminatedUsername() {
     return this.terminatedUsername;
   }
 
-  public void setSessionId(String sessionId)
-  {
+  public void setSessionId(String sessionId) {
     this.sessionId=sessionId;
   }
 
-  public void setTerminatedUsername(String terminatedUsername)
-  {
+  public void setTerminatedUsername(String terminatedUsername) {
     this.terminatedUsername=terminatedUsername;
   }
 }

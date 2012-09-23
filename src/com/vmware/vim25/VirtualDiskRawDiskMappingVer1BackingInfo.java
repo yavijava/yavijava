@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,11 +30,12 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class VirtualDiskRawDiskMappingVer1BackingInfo extends VirtualDeviceFileBackingInfo
-{
+@SuppressWarnings("all")
+public class VirtualDiskRawDiskMappingVer1BackingInfo extends VirtualDeviceFileBackingInfo {
   public String lunUuid;
   public String deviceName;
   public String compatibilityMode;
@@ -44,83 +45,67 @@ public class VirtualDiskRawDiskMappingVer1BackingInfo extends VirtualDeviceFileB
   public String changeId;
   public VirtualDiskRawDiskMappingVer1BackingInfo parent;
 
-  public String getLunUuid()
-  {
+  public String getLunUuid() {
     return this.lunUuid;
   }
 
-  public String getDeviceName()
-  {
+  public String getDeviceName() {
     return this.deviceName;
   }
 
-  public String getCompatibilityMode()
-  {
+  public String getCompatibilityMode() {
     return this.compatibilityMode;
   }
 
-  public String getDiskMode()
-  {
+  public String getDiskMode() {
     return this.diskMode;
   }
 
-  public String getUuid()
-  {
+  public String getUuid() {
     return this.uuid;
   }
 
-  public String getContentId()
-  {
+  public String getContentId() {
     return this.contentId;
   }
 
-  public String getChangeId()
-  {
+  public String getChangeId() {
     return this.changeId;
   }
 
-  public VirtualDiskRawDiskMappingVer1BackingInfo getParent()
-  {
+  public VirtualDiskRawDiskMappingVer1BackingInfo getParent() {
     return this.parent;
   }
 
-  public void setLunUuid(String lunUuid)
-  {
+  public void setLunUuid(String lunUuid) {
     this.lunUuid=lunUuid;
   }
 
-  public void setDeviceName(String deviceName)
-  {
+  public void setDeviceName(String deviceName) {
     this.deviceName=deviceName;
   }
 
-  public void setCompatibilityMode(String compatibilityMode)
-  {
+  public void setCompatibilityMode(String compatibilityMode) {
     this.compatibilityMode=compatibilityMode;
   }
 
-  public void setDiskMode(String diskMode)
-  {
+  public void setDiskMode(String diskMode) {
     this.diskMode=diskMode;
   }
 
-  public void setUuid(String uuid)
-  {
+  public void setUuid(String uuid) {
     this.uuid=uuid;
   }
 
-  public void setContentId(String contentId)
-  {
+  public void setContentId(String contentId) {
     this.contentId=contentId;
   }
 
-  public void setChangeId(String changeId)
-  {
+  public void setChangeId(String changeId) {
     this.changeId=changeId;
   }
 
-  public void setParent(VirtualDiskRawDiskMappingVer1BackingInfo parent)
-  {
+  public void setParent(VirtualDiskRawDiskMappingVer1BackingInfo parent) {
     this.parent=parent;
   }
 }

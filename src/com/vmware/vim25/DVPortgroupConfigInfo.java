@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,11 +30,12 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class DVPortgroupConfigInfo extends DynamicData
-{
+@SuppressWarnings("all")
+public class DVPortgroupConfigInfo extends DynamicData {
   public String key;
   public String name;
   public int numPorts;
@@ -49,133 +50,107 @@ public class DVPortgroupConfigInfo extends DynamicData
   public String configVersion;
   public Boolean autoExpand;
 
-  public String getKey()
-  {
+  public String getKey() {
     return this.key;
   }
 
-  public String getName()
-  {
+  public String getName() {
     return this.name;
   }
 
-  public int getNumPorts()
-  {
+  public int getNumPorts() {
     return this.numPorts;
   }
 
-  public ManagedObjectReference getDistributedVirtualSwitch()
-  {
+  public ManagedObjectReference getDistributedVirtualSwitch() {
     return this.distributedVirtualSwitch;
   }
 
-  public DVPortSetting getDefaultPortConfig()
-  {
+  public DVPortSetting getDefaultPortConfig() {
     return this.defaultPortConfig;
   }
 
-  public String getDescription()
-  {
+  public String getDescription() {
     return this.description;
   }
 
-  public String getType()
-  {
+  public String getType() {
     return this.type;
   }
 
-  public DVPortgroupPolicy getPolicy()
-  {
+  public DVPortgroupPolicy getPolicy() {
     return this.policy;
   }
 
-  public String getPortNameFormat()
-  {
+  public String getPortNameFormat() {
     return this.portNameFormat;
   }
 
-  public ManagedObjectReference[] getScope()
-  {
+  public ManagedObjectReference[] getScope() {
     return this.scope;
   }
 
-  public DistributedVirtualSwitchKeyedOpaqueBlob[] getVendorSpecificConfig()
-  {
+  public DistributedVirtualSwitchKeyedOpaqueBlob[] getVendorSpecificConfig() {
     return this.vendorSpecificConfig;
   }
 
-  public String getConfigVersion()
-  {
+  public String getConfigVersion() {
     return this.configVersion;
   }
 
-  public Boolean getAutoExpand()
-  {
+  public Boolean getAutoExpand() {
     return this.autoExpand;
   }
 
-  public void setKey(String key)
-  {
+  public void setKey(String key) {
     this.key=key;
   }
 
-  public void setName(String name)
-  {
+  public void setName(String name) {
     this.name=name;
   }
 
-  public void setNumPorts(int numPorts)
-  {
+  public void setNumPorts(int numPorts) {
     this.numPorts=numPorts;
   }
 
-  public void setDistributedVirtualSwitch(ManagedObjectReference distributedVirtualSwitch)
-  {
+  public void setDistributedVirtualSwitch(ManagedObjectReference distributedVirtualSwitch) {
     this.distributedVirtualSwitch=distributedVirtualSwitch;
   }
 
-  public void setDefaultPortConfig(DVPortSetting defaultPortConfig)
-  {
+  public void setDefaultPortConfig(DVPortSetting defaultPortConfig) {
     this.defaultPortConfig=defaultPortConfig;
   }
 
-  public void setDescription(String description)
-  {
+  public void setDescription(String description) {
     this.description=description;
   }
 
-  public void setType(String type)
-  {
+  public void setType(String type) {
     this.type=type;
   }
 
-  public void setPolicy(DVPortgroupPolicy policy)
-  {
+  public void setPolicy(DVPortgroupPolicy policy) {
     this.policy=policy;
   }
 
-  public void setPortNameFormat(String portNameFormat)
-  {
+  public void setPortNameFormat(String portNameFormat) {
     this.portNameFormat=portNameFormat;
   }
 
-  public void setScope(ManagedObjectReference[] scope)
-  {
+  public void setScope(ManagedObjectReference[] scope) {
     this.scope=scope;
   }
 
-  public void setVendorSpecificConfig(DistributedVirtualSwitchKeyedOpaqueBlob[] vendorSpecificConfig)
-  {
+  public void setVendorSpecificConfig(DistributedVirtualSwitchKeyedOpaqueBlob[] vendorSpecificConfig) {
     this.vendorSpecificConfig=vendorSpecificConfig;
   }
 
-  public void setConfigVersion(String configVersion)
-  {
+  public void setConfigVersion(String configVersion) {
     this.configVersion=configVersion;
   }
 
-  public void setAutoExpand(Boolean autoExpand)
-  {
+  public void setAutoExpand(Boolean autoExpand) {
     this.autoExpand=autoExpand;
   }
 }

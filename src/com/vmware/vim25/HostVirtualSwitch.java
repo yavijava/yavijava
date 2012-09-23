@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,11 +30,12 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class HostVirtualSwitch extends DynamicData
-{
+@SuppressWarnings("all")
+public class HostVirtualSwitch extends DynamicData {
   public String name;
   public String key;
   public int numPorts;
@@ -44,83 +45,67 @@ public class HostVirtualSwitch extends DynamicData
   public String[] pnic;
   public HostVirtualSwitchSpec spec;
 
-  public String getName()
-  {
+  public String getName() {
     return this.name;
   }
 
-  public String getKey()
-  {
+  public String getKey() {
     return this.key;
   }
 
-  public int getNumPorts()
-  {
+  public int getNumPorts() {
     return this.numPorts;
   }
 
-  public int getNumPortsAvailable()
-  {
+  public int getNumPortsAvailable() {
     return this.numPortsAvailable;
   }
 
-  public Integer getMtu()
-  {
+  public Integer getMtu() {
     return this.mtu;
   }
 
-  public String[] getPortgroup()
-  {
+  public String[] getPortgroup() {
     return this.portgroup;
   }
 
-  public String[] getPnic()
-  {
+  public String[] getPnic() {
     return this.pnic;
   }
 
-  public HostVirtualSwitchSpec getSpec()
-  {
+  public HostVirtualSwitchSpec getSpec() {
     return this.spec;
   }
 
-  public void setName(String name)
-  {
+  public void setName(String name) {
     this.name=name;
   }
 
-  public void setKey(String key)
-  {
+  public void setKey(String key) {
     this.key=key;
   }
 
-  public void setNumPorts(int numPorts)
-  {
+  public void setNumPorts(int numPorts) {
     this.numPorts=numPorts;
   }
 
-  public void setNumPortsAvailable(int numPortsAvailable)
-  {
+  public void setNumPortsAvailable(int numPortsAvailable) {
     this.numPortsAvailable=numPortsAvailable;
   }
 
-  public void setMtu(Integer mtu)
-  {
+  public void setMtu(Integer mtu) {
     this.mtu=mtu;
   }
 
-  public void setPortgroup(String[] portgroup)
-  {
+  public void setPortgroup(String[] portgroup) {
     this.portgroup=portgroup;
   }
 
-  public void setPnic(String[] pnic)
-  {
+  public void setPnic(String[] pnic) {
     this.pnic=pnic;
   }
 
-  public void setSpec(HostVirtualSwitchSpec spec)
-  {
+  public void setSpec(HostVirtualSwitchSpec spec) {
     this.spec=spec;
   }
 }

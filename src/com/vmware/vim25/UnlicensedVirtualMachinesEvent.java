@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,31 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class UnlicensedVirtualMachinesEvent extends LicenseEvent
-{
+@SuppressWarnings("all")
+public class UnlicensedVirtualMachinesEvent extends LicenseEvent {
   public int unlicensed;
   public int available;
 
-  public int getUnlicensed()
-  {
+  public int getUnlicensed() {
     return this.unlicensed;
   }
 
-  public int getAvailable()
-  {
+  public int getAvailable() {
     return this.available;
   }
 
-  public void setUnlicensed(int unlicensed)
-  {
+  public void setUnlicensed(int unlicensed) {
     this.unlicensed=unlicensed;
   }
 
-  public void setAvailable(int available)
-  {
+  public void setAvailable(int available) {
     this.available=available;
   }
 }

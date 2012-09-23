@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,31 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class DvsNotAuthorized extends DvsFault
-{
+@SuppressWarnings("all")
+public class DvsNotAuthorized extends DvsFault {
   public String sessionExtensionKey;
   public String dvsExtensionKey;
 
-  public String getSessionExtensionKey()
-  {
+  public String getSessionExtensionKey() {
     return this.sessionExtensionKey;
   }
 
-  public String getDvsExtensionKey()
-  {
+  public String getDvsExtensionKey() {
     return this.dvsExtensionKey;
   }
 
-  public void setSessionExtensionKey(String sessionExtensionKey)
-  {
+  public void setSessionExtensionKey(String sessionExtensionKey) {
     this.sessionExtensionKey=sessionExtensionKey;
   }
 
-  public void setDvsExtensionKey(String dvsExtensionKey)
-  {
+  public void setDvsExtensionKey(String dvsExtensionKey) {
     this.dvsExtensionKey=dvsExtensionKey;
   }
 }

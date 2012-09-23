@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,31 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class VmMacAssignedEvent extends VmEvent
-{
+@SuppressWarnings("all")
+public class VmMacAssignedEvent extends VmEvent {
   public String adapter;
   public String mac;
 
-  public String getAdapter()
-  {
+  public String getAdapter() {
     return this.adapter;
   }
 
-  public String getMac()
-  {
+  public String getMac() {
     return this.mac;
   }
 
-  public void setAdapter(String adapter)
-  {
+  public void setAdapter(String adapter) {
     this.adapter=adapter;
   }
 
-  public void setMac(String mac)
-  {
+  public void setMac(String mac) {
     this.mac=mac;
   }
 }

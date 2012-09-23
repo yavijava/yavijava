@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,31 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class CannotMoveFaultToleranceVm extends VimFault
-{
+@SuppressWarnings("all")
+public class CannotMoveFaultToleranceVm extends VimFault {
   public String moveType;
   public String vmName;
 
-  public String getMoveType()
-  {
+  public String getMoveType() {
     return this.moveType;
   }
 
-  public String getVmName()
-  {
+  public String getVmName() {
     return this.vmName;
   }
 
-  public void setMoveType(String moveType)
-  {
+  public void setMoveType(String moveType) {
     this.moveType=moveType;
   }
 
-  public void setVmName(String vmName)
-  {
+  public void setVmName(String vmName) {
     this.vmName=vmName;
   }
 }

@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,31 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class ClusterStatusChangedEvent extends ClusterEvent
-{
+@SuppressWarnings("all")
+public class ClusterStatusChangedEvent extends ClusterEvent {
   public String oldStatus;
   public String newStatus;
 
-  public String getOldStatus()
-  {
+  public String getOldStatus() {
     return this.oldStatus;
   }
 
-  public String getNewStatus()
-  {
+  public String getNewStatus() {
     return this.newStatus;
   }
 
-  public void setOldStatus(String oldStatus)
-  {
+  public void setOldStatus(String oldStatus) {
     this.oldStatus=oldStatus;
   }
 
-  public void setNewStatus(String newStatus)
-  {
+  public void setNewStatus(String newStatus) {
     this.newStatus=newStatus;
   }
 }

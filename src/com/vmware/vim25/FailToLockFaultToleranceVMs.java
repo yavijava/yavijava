@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,42 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class FailToLockFaultToleranceVMs extends RuntimeFault
-{
+@SuppressWarnings("all")
+public class FailToLockFaultToleranceVMs extends RuntimeFault {
   public String vmName;
   public ManagedObjectReference vm;
   public ManagedObjectReference alreadyLockedVm;
 
-  public String getVmName()
-  {
+  public String getVmName() {
     return this.vmName;
   }
 
-  public ManagedObjectReference getVm()
-  {
+  public ManagedObjectReference getVm() {
     return this.vm;
   }
 
-  public ManagedObjectReference getAlreadyLockedVm()
-  {
+  public ManagedObjectReference getAlreadyLockedVm() {
     return this.alreadyLockedVm;
   }
 
-  public void setVmName(String vmName)
-  {
+  public void setVmName(String vmName) {
     this.vmName=vmName;
   }
 
-  public void setVm(ManagedObjectReference vm)
-  {
+  public void setVm(ManagedObjectReference vm) {
     this.vm=vm;
   }
 
-  public void setAlreadyLockedVm(ManagedObjectReference alreadyLockedVm)
-  {
+  public void setAlreadyLockedVm(ManagedObjectReference alreadyLockedVm) {
     this.alreadyLockedVm=alreadyLockedVm;
   }
 }

@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,42 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class SnapshotRevertIssue extends MigrationFault
-{
+@SuppressWarnings("all")
+public class SnapshotRevertIssue extends MigrationFault {
   public String snapshotName;
   public Event[] event;
   public boolean errors;
 
-  public String getSnapshotName()
-  {
+  public String getSnapshotName() {
     return this.snapshotName;
   }
 
-  public Event[] getEvent()
-  {
+  public Event[] getEvent() {
     return this.event;
   }
 
-  public boolean isErrors()
-  {
+  public boolean isErrors() {
     return this.errors;
   }
 
-  public void setSnapshotName(String snapshotName)
-  {
+  public void setSnapshotName(String snapshotName) {
     this.snapshotName=snapshotName;
   }
 
-  public void setEvent(Event[] event)
-  {
+  public void setEvent(Event[] event) {
     this.event=event;
   }
 
-  public void setErrors(boolean errors)
-  {
+  public void setErrors(boolean errors) {
     this.errors=errors;
   }
 }

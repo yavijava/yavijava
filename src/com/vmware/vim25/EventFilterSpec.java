@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,11 +30,12 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class EventFilterSpec extends DynamicData
-{
+@SuppressWarnings("all")
+public class EventFilterSpec extends DynamicData {
   public EventFilterSpecByEntity entity;
   public EventFilterSpecByTime time;
   public EventFilterSpecByUsername userName;
@@ -47,113 +48,91 @@ public class EventFilterSpec extends DynamicData
   public String[] tag;
   public String[] eventTypeId;
 
-  public EventFilterSpecByEntity getEntity()
-  {
+  public EventFilterSpecByEntity getEntity() {
     return this.entity;
   }
 
-  public EventFilterSpecByTime getTime()
-  {
+  public EventFilterSpecByTime getTime() {
     return this.time;
   }
 
-  public EventFilterSpecByUsername getUserName()
-  {
+  public EventFilterSpecByUsername getUserName() {
     return this.userName;
   }
 
-  public Integer getEventChainId()
-  {
+  public Integer getEventChainId() {
     return this.eventChainId;
   }
 
-  public ManagedObjectReference getAlarm()
-  {
+  public ManagedObjectReference getAlarm() {
     return this.alarm;
   }
 
-  public ManagedObjectReference getScheduledTask()
-  {
+  public ManagedObjectReference getScheduledTask() {
     return this.scheduledTask;
   }
 
-  public Boolean getDisableFullMessage()
-  {
+  public Boolean getDisableFullMessage() {
     return this.disableFullMessage;
   }
 
-  public String[] getCategory()
-  {
+  public String[] getCategory() {
     return this.category;
   }
 
-  public String[] getType()
-  {
+  public String[] getType() {
     return this.type;
   }
 
-  public String[] getTag()
-  {
+  public String[] getTag() {
     return this.tag;
   }
 
-  public String[] getEventTypeId()
-  {
+  public String[] getEventTypeId() {
     return this.eventTypeId;
   }
 
-  public void setEntity(EventFilterSpecByEntity entity)
-  {
+  public void setEntity(EventFilterSpecByEntity entity) {
     this.entity=entity;
   }
 
-  public void setTime(EventFilterSpecByTime time)
-  {
+  public void setTime(EventFilterSpecByTime time) {
     this.time=time;
   }
 
-  public void setUserName(EventFilterSpecByUsername userName)
-  {
+  public void setUserName(EventFilterSpecByUsername userName) {
     this.userName=userName;
   }
 
-  public void setEventChainId(Integer eventChainId)
-  {
+  public void setEventChainId(Integer eventChainId) {
     this.eventChainId=eventChainId;
   }
 
-  public void setAlarm(ManagedObjectReference alarm)
-  {
+  public void setAlarm(ManagedObjectReference alarm) {
     this.alarm=alarm;
   }
 
-  public void setScheduledTask(ManagedObjectReference scheduledTask)
-  {
+  public void setScheduledTask(ManagedObjectReference scheduledTask) {
     this.scheduledTask=scheduledTask;
   }
 
-  public void setDisableFullMessage(Boolean disableFullMessage)
-  {
+  public void setDisableFullMessage(Boolean disableFullMessage) {
     this.disableFullMessage=disableFullMessage;
   }
 
-  public void setCategory(String[] category)
-  {
+  public void setCategory(String[] category) {
     this.category=category;
   }
 
-  public void setType(String[] type)
-  {
+  public void setType(String[] type) {
     this.type=type;
   }
 
-  public void setTag(String[] tag)
-  {
+  public void setTag(String[] tag) {
     this.tag=tag;
   }
 
-  public void setEventTypeId(String[] eventTypeId)
-  {
+  public void setEventTypeId(String[] eventTypeId) {
     this.eventTypeId=eventTypeId;
   }
 }

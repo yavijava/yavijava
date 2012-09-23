@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,53 +30,46 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class HostLicenseSpec extends DynamicData
-{
+@SuppressWarnings("all")
+public class HostLicenseSpec extends DynamicData {
   public LicenseSource source;
   public String editionKey;
   public String[] disabledFeatureKey;
   public String[] enabledFeatureKey;
 
-  public LicenseSource getSource()
-  {
+  public LicenseSource getSource() {
     return this.source;
   }
 
-  public String getEditionKey()
-  {
+  public String getEditionKey() {
     return this.editionKey;
   }
 
-  public String[] getDisabledFeatureKey()
-  {
+  public String[] getDisabledFeatureKey() {
     return this.disabledFeatureKey;
   }
 
-  public String[] getEnabledFeatureKey()
-  {
+  public String[] getEnabledFeatureKey() {
     return this.enabledFeatureKey;
   }
 
-  public void setSource(LicenseSource source)
-  {
+  public void setSource(LicenseSource source) {
     this.source=source;
   }
 
-  public void setEditionKey(String editionKey)
-  {
+  public void setEditionKey(String editionKey) {
     this.editionKey=editionKey;
   }
 
-  public void setDisabledFeatureKey(String[] disabledFeatureKey)
-  {
+  public void setDisabledFeatureKey(String[] disabledFeatureKey) {
     this.disabledFeatureKey=disabledFeatureKey;
   }
 
-  public void setEnabledFeatureKey(String[] enabledFeatureKey)
-  {
+  public void setEnabledFeatureKey(String[] enabledFeatureKey) {
     this.enabledFeatureKey=enabledFeatureKey;
   }
 }

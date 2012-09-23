@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,53 +30,46 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class LinkLayerDiscoveryProtocolInfo extends DynamicData
-{
+@SuppressWarnings("all")
+public class LinkLayerDiscoveryProtocolInfo extends DynamicData {
   public String chassisId;
   public String portId;
   public int timeToLive;
   public KeyAnyValue[] parameter;
 
-  public String getChassisId()
-  {
+  public String getChassisId() {
     return this.chassisId;
   }
 
-  public String getPortId()
-  {
+  public String getPortId() {
     return this.portId;
   }
 
-  public int getTimeToLive()
-  {
+  public int getTimeToLive() {
     return this.timeToLive;
   }
 
-  public KeyAnyValue[] getParameter()
-  {
+  public KeyAnyValue[] getParameter() {
     return this.parameter;
   }
 
-  public void setChassisId(String chassisId)
-  {
+  public void setChassisId(String chassisId) {
     this.chassisId=chassisId;
   }
 
-  public void setPortId(String portId)
-  {
+  public void setPortId(String portId) {
     this.portId=portId;
   }
 
-  public void setTimeToLive(int timeToLive)
-  {
+  public void setTimeToLive(int timeToLive) {
     this.timeToLive=timeToLive;
   }
 
-  public void setParameter(KeyAnyValue[] parameter)
-  {
+  public void setParameter(KeyAnyValue[] parameter) {
     this.parameter=parameter;
   }
 }

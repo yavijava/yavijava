@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,11 +30,12 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class InventoryDescription extends DynamicData
-{
+@SuppressWarnings("all")
+public class InventoryDescription extends DynamicData {
   public int numHosts;
   public int numVirtualMachines;
   public Integer numResourcePools;
@@ -46,103 +47,83 @@ public class InventoryDescription extends DynamicData
   public Integer numvNetDev;
   public Integer numvDiskDev;
 
-  public int getNumHosts()
-  {
+  public int getNumHosts() {
     return this.numHosts;
   }
 
-  public int getNumVirtualMachines()
-  {
+  public int getNumVirtualMachines() {
     return this.numVirtualMachines;
   }
 
-  public Integer getNumResourcePools()
-  {
+  public Integer getNumResourcePools() {
     return this.numResourcePools;
   }
 
-  public Integer getNumClusters()
-  {
+  public Integer getNumClusters() {
     return this.numClusters;
   }
 
-  public Integer getNumCpuDev()
-  {
+  public Integer getNumCpuDev() {
     return this.numCpuDev;
   }
 
-  public Integer getNumNetDev()
-  {
+  public Integer getNumNetDev() {
     return this.numNetDev;
   }
 
-  public Integer getNumDiskDev()
-  {
+  public Integer getNumDiskDev() {
     return this.numDiskDev;
   }
 
-  public Integer getNumvCpuDev()
-  {
+  public Integer getNumvCpuDev() {
     return this.numvCpuDev;
   }
 
-  public Integer getNumvNetDev()
-  {
+  public Integer getNumvNetDev() {
     return this.numvNetDev;
   }
 
-  public Integer getNumvDiskDev()
-  {
+  public Integer getNumvDiskDev() {
     return this.numvDiskDev;
   }
 
-  public void setNumHosts(int numHosts)
-  {
+  public void setNumHosts(int numHosts) {
     this.numHosts=numHosts;
   }
 
-  public void setNumVirtualMachines(int numVirtualMachines)
-  {
+  public void setNumVirtualMachines(int numVirtualMachines) {
     this.numVirtualMachines=numVirtualMachines;
   }
 
-  public void setNumResourcePools(Integer numResourcePools)
-  {
+  public void setNumResourcePools(Integer numResourcePools) {
     this.numResourcePools=numResourcePools;
   }
 
-  public void setNumClusters(Integer numClusters)
-  {
+  public void setNumClusters(Integer numClusters) {
     this.numClusters=numClusters;
   }
 
-  public void setNumCpuDev(Integer numCpuDev)
-  {
+  public void setNumCpuDev(Integer numCpuDev) {
     this.numCpuDev=numCpuDev;
   }
 
-  public void setNumNetDev(Integer numNetDev)
-  {
+  public void setNumNetDev(Integer numNetDev) {
     this.numNetDev=numNetDev;
   }
 
-  public void setNumDiskDev(Integer numDiskDev)
-  {
+  public void setNumDiskDev(Integer numDiskDev) {
     this.numDiskDev=numDiskDev;
   }
 
-  public void setNumvCpuDev(Integer numvCpuDev)
-  {
+  public void setNumvCpuDev(Integer numvCpuDev) {
     this.numvCpuDev=numvCpuDev;
   }
 
-  public void setNumvNetDev(Integer numvNetDev)
-  {
+  public void setNumvNetDev(Integer numvNetDev) {
     this.numvNetDev=numvNetDev;
   }
 
-  public void setNumvDiskDev(Integer numvDiskDev)
-  {
+  public void setNumvDiskDev(Integer numvDiskDev) {
     this.numvDiskDev=numvDiskDev;
   }
 }

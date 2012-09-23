@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,31 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class DatabaseSizeParam extends DynamicData
-{
+@SuppressWarnings("all")
+public class DatabaseSizeParam extends DynamicData {
   public InventoryDescription inventoryDesc;
   public PerformanceStatisticsDescription perfStatsDesc;
 
-  public InventoryDescription getInventoryDesc()
-  {
+  public InventoryDescription getInventoryDesc() {
     return this.inventoryDesc;
   }
 
-  public PerformanceStatisticsDescription getPerfStatsDesc()
-  {
+  public PerformanceStatisticsDescription getPerfStatsDesc() {
     return this.perfStatsDesc;
   }
 
-  public void setInventoryDesc(InventoryDescription inventoryDesc)
-  {
+  public void setInventoryDesc(InventoryDescription inventoryDesc) {
     this.inventoryDesc=inventoryDesc;
   }
 
-  public void setPerfStatsDesc(PerformanceStatisticsDescription perfStatsDesc)
-  {
+  public void setPerfStatsDesc(PerformanceStatisticsDescription perfStatsDesc) {
     this.perfStatsDesc=perfStatsDesc;
   }
 }

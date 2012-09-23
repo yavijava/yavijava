@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,42 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class VMotionInterfaceIssue extends MigrationFault
-{
+@SuppressWarnings("all")
+public class VMotionInterfaceIssue extends MigrationFault {
   public boolean atSourceHost;
   public String failedHost;
   public ManagedObjectReference failedHostEntity;
 
-  public boolean isAtSourceHost()
-  {
+  public boolean isAtSourceHost() {
     return this.atSourceHost;
   }
 
-  public String getFailedHost()
-  {
+  public String getFailedHost() {
     return this.failedHost;
   }
 
-  public ManagedObjectReference getFailedHostEntity()
-  {
+  public ManagedObjectReference getFailedHostEntity() {
     return this.failedHostEntity;
   }
 
-  public void setAtSourceHost(boolean atSourceHost)
-  {
+  public void setAtSourceHost(boolean atSourceHost) {
     this.atSourceHost=atSourceHost;
   }
 
-  public void setFailedHost(String failedHost)
-  {
+  public void setFailedHost(String failedHost) {
     this.failedHost=failedHost;
   }
 
-  public void setFailedHostEntity(ManagedObjectReference failedHostEntity)
-  {
+  public void setFailedHostEntity(ManagedObjectReference failedHostEntity) {
     this.failedHostEntity=failedHostEntity;
   }
 }

@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,11 +30,12 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class ScheduledTaskSpec extends DynamicData
-{
+@SuppressWarnings("all")
+public class ScheduledTaskSpec extends DynamicData {
   public String name;
   public String description;
   public boolean enabled;
@@ -42,63 +43,51 @@ public class ScheduledTaskSpec extends DynamicData
   public Action action;
   public String notification;
 
-  public String getName()
-  {
+  public String getName() {
     return this.name;
   }
 
-  public String getDescription()
-  {
+  public String getDescription() {
     return this.description;
   }
 
-  public boolean isEnabled()
-  {
+  public boolean isEnabled() {
     return this.enabled;
   }
 
-  public TaskScheduler getScheduler()
-  {
+  public TaskScheduler getScheduler() {
     return this.scheduler;
   }
 
-  public Action getAction()
-  {
+  public Action getAction() {
     return this.action;
   }
 
-  public String getNotification()
-  {
+  public String getNotification() {
     return this.notification;
   }
 
-  public void setName(String name)
-  {
+  public void setName(String name) {
     this.name=name;
   }
 
-  public void setDescription(String description)
-  {
+  public void setDescription(String description) {
     this.description=description;
   }
 
-  public void setEnabled(boolean enabled)
-  {
+  public void setEnabled(boolean enabled) {
     this.enabled=enabled;
   }
 
-  public void setScheduler(TaskScheduler scheduler)
-  {
+  public void setScheduler(TaskScheduler scheduler) {
     this.scheduler=scheduler;
   }
 
-  public void setAction(Action action)
-  {
+  public void setAction(Action action) {
     this.action=action;
   }
 
-  public void setNotification(String notification)
-  {
+  public void setNotification(String notification) {
     this.notification=notification;
   }
 }

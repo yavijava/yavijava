@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,11 +30,12 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class IscsiPortInfo extends DynamicData
-{
+@SuppressWarnings("all")
+public class IscsiPortInfo extends DynamicData {
   public String vnicDevice;
   public HostVirtualNic vnic;
   public String pnicDevice;
@@ -47,113 +48,91 @@ public class IscsiPortInfo extends DynamicData
   public IscsiStatus complianceStatus;
   public String pathStatus;
 
-  public String getVnicDevice()
-  {
+  public String getVnicDevice() {
     return this.vnicDevice;
   }
 
-  public HostVirtualNic getVnic()
-  {
+  public HostVirtualNic getVnic() {
     return this.vnic;
   }
 
-  public String getPnicDevice()
-  {
+  public String getPnicDevice() {
     return this.pnicDevice;
   }
 
-  public PhysicalNic getPnic()
-  {
+  public PhysicalNic getPnic() {
     return this.pnic;
   }
 
-  public String getSwitchName()
-  {
+  public String getSwitchName() {
     return this.switchName;
   }
 
-  public String getSwitchUuid()
-  {
+  public String getSwitchUuid() {
     return this.switchUuid;
   }
 
-  public String getPortgroupName()
-  {
+  public String getPortgroupName() {
     return this.portgroupName;
   }
 
-  public String getPortgroupKey()
-  {
+  public String getPortgroupKey() {
     return this.portgroupKey;
   }
 
-  public String getPortKey()
-  {
+  public String getPortKey() {
     return this.portKey;
   }
 
-  public IscsiStatus getComplianceStatus()
-  {
+  public IscsiStatus getComplianceStatus() {
     return this.complianceStatus;
   }
 
-  public String getPathStatus()
-  {
+  public String getPathStatus() {
     return this.pathStatus;
   }
 
-  public void setVnicDevice(String vnicDevice)
-  {
+  public void setVnicDevice(String vnicDevice) {
     this.vnicDevice=vnicDevice;
   }
 
-  public void setVnic(HostVirtualNic vnic)
-  {
+  public void setVnic(HostVirtualNic vnic) {
     this.vnic=vnic;
   }
 
-  public void setPnicDevice(String pnicDevice)
-  {
+  public void setPnicDevice(String pnicDevice) {
     this.pnicDevice=pnicDevice;
   }
 
-  public void setPnic(PhysicalNic pnic)
-  {
+  public void setPnic(PhysicalNic pnic) {
     this.pnic=pnic;
   }
 
-  public void setSwitchName(String switchName)
-  {
+  public void setSwitchName(String switchName) {
     this.switchName=switchName;
   }
 
-  public void setSwitchUuid(String switchUuid)
-  {
+  public void setSwitchUuid(String switchUuid) {
     this.switchUuid=switchUuid;
   }
 
-  public void setPortgroupName(String portgroupName)
-  {
+  public void setPortgroupName(String portgroupName) {
     this.portgroupName=portgroupName;
   }
 
-  public void setPortgroupKey(String portgroupKey)
-  {
+  public void setPortgroupKey(String portgroupKey) {
     this.portgroupKey=portgroupKey;
   }
 
-  public void setPortKey(String portKey)
-  {
+  public void setPortKey(String portKey) {
     this.portKey=portKey;
   }
 
-  public void setComplianceStatus(IscsiStatus complianceStatus)
-  {
+  public void setComplianceStatus(IscsiStatus complianceStatus) {
     this.complianceStatus=complianceStatus;
   }
 
-  public void setPathStatus(String pathStatus)
-  {
+  public void setPathStatus(String pathStatus) {
     this.pathStatus=pathStatus;
   }
 }

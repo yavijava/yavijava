@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,31 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class VmMessageWarningEvent extends VmEvent
-{
+@SuppressWarnings("all")
+public class VmMessageWarningEvent extends VmEvent {
   public String message;
   public VirtualMachineMessage[] messageInfo;
 
-  public String getMessage()
-  {
+  public String getMessage() {
     return this.message;
   }
 
-  public VirtualMachineMessage[] getMessageInfo()
-  {
+  public VirtualMachineMessage[] getMessageInfo() {
     return this.messageInfo;
   }
 
-  public void setMessage(String message)
-  {
+  public void setMessage(String message) {
     this.message=message;
   }
 
-  public void setMessageInfo(VirtualMachineMessage[] messageInfo)
-  {
+  public void setMessageInfo(VirtualMachineMessage[] messageInfo) {
     this.messageInfo=messageInfo;
   }
 }

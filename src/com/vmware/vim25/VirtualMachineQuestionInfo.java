@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,53 +30,46 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class VirtualMachineQuestionInfo extends DynamicData
-{
+@SuppressWarnings("all")
+public class VirtualMachineQuestionInfo extends DynamicData {
   public String id;
   public String text;
   public ChoiceOption choice;
   public VirtualMachineMessage[] message;
 
-  public String getId()
-  {
+  public String getId() {
     return this.id;
   }
 
-  public String getText()
-  {
+  public String getText() {
     return this.text;
   }
 
-  public ChoiceOption getChoice()
-  {
+  public ChoiceOption getChoice() {
     return this.choice;
   }
 
-  public VirtualMachineMessage[] getMessage()
-  {
+  public VirtualMachineMessage[] getMessage() {
     return this.message;
   }
 
-  public void setId(String id)
-  {
+  public void setId(String id) {
     this.id=id;
   }
 
-  public void setText(String text)
-  {
+  public void setText(String text) {
     this.text=text;
   }
 
-  public void setChoice(ChoiceOption choice)
-  {
+  public void setChoice(ChoiceOption choice) {
     this.choice=choice;
   }
 
-  public void setMessage(VirtualMachineMessage[] message)
-  {
+  public void setMessage(VirtualMachineMessage[] message) {
     this.message=message;
   }
 }

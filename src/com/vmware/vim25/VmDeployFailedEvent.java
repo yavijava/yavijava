@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,31 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class VmDeployFailedEvent extends VmEvent
-{
+@SuppressWarnings("all")
+public class VmDeployFailedEvent extends VmEvent {
   public EntityEventArgument destDatastore;
   public LocalizedMethodFault reason;
 
-  public EntityEventArgument getDestDatastore()
-  {
+  public EntityEventArgument getDestDatastore() {
     return this.destDatastore;
   }
 
-  public LocalizedMethodFault getReason()
-  {
+  public LocalizedMethodFault getReason() {
     return this.reason;
   }
 
-  public void setDestDatastore(EntityEventArgument destDatastore)
-  {
+  public void setDestDatastore(EntityEventArgument destDatastore) {
     this.destDatastore=destDatastore;
   }
 
-  public void setReason(LocalizedMethodFault reason)
-  {
+  public void setReason(LocalizedMethodFault reason) {
     this.reason=reason;
   }
 }

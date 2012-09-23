@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,53 +30,46 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class HostDiagnosticPartition extends DynamicData
-{
+@SuppressWarnings("all")
+public class HostDiagnosticPartition extends DynamicData {
   public String storageType;
   public String diagnosticType;
   public int slots;
   public HostScsiDiskPartition id;
 
-  public String getStorageType()
-  {
+  public String getStorageType() {
     return this.storageType;
   }
 
-  public String getDiagnosticType()
-  {
+  public String getDiagnosticType() {
     return this.diagnosticType;
   }
 
-  public int getSlots()
-  {
+  public int getSlots() {
     return this.slots;
   }
 
-  public HostScsiDiskPartition getId()
-  {
+  public HostScsiDiskPartition getId() {
     return this.id;
   }
 
-  public void setStorageType(String storageType)
-  {
+  public void setStorageType(String storageType) {
     this.storageType=storageType;
   }
 
-  public void setDiagnosticType(String diagnosticType)
-  {
+  public void setDiagnosticType(String diagnosticType) {
     this.diagnosticType=diagnosticType;
   }
 
-  public void setSlots(int slots)
-  {
+  public void setSlots(int slots) {
     this.slots=slots;
   }
 
-  public void setId(HostScsiDiskPartition id)
-  {
+  public void setId(HostScsiDiskPartition id) {
     this.id=id;
   }
 }

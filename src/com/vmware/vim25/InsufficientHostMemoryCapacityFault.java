@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,31 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class InsufficientHostMemoryCapacityFault extends InsufficientHostCapacityFault
-{
+@SuppressWarnings("all")
+public class InsufficientHostMemoryCapacityFault extends InsufficientHostCapacityFault {
   public long unreserved;
   public long requested;
 
-  public long getUnreserved()
-  {
+  public long getUnreserved() {
     return this.unreserved;
   }
 
-  public long getRequested()
-  {
+  public long getRequested() {
     return this.requested;
   }
 
-  public void setUnreserved(long unreserved)
-  {
+  public void setUnreserved(long unreserved) {
     this.unreserved=unreserved;
   }
 
-  public void setRequested(long requested)
-  {
+  public void setRequested(long requested) {
     this.requested=requested;
   }
 }

@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,31 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class VmfsDatastoreBaseOption extends DynamicData
-{
+@SuppressWarnings("all")
+public class VmfsDatastoreBaseOption extends DynamicData {
   public HostDiskPartitionLayout layout;
   public Boolean partitionFormatChange;
 
-  public HostDiskPartitionLayout getLayout()
-  {
+  public HostDiskPartitionLayout getLayout() {
     return this.layout;
   }
 
-  public Boolean getPartitionFormatChange()
-  {
+  public Boolean getPartitionFormatChange() {
     return this.partitionFormatChange;
   }
 
-  public void setLayout(HostDiskPartitionLayout layout)
-  {
+  public void setLayout(HostDiskPartitionLayout layout) {
     this.layout=layout;
   }
 
-  public void setPartitionFormatChange(Boolean partitionFormatChange)
-  {
+  public void setPartitionFormatChange(Boolean partitionFormatChange) {
     this.partitionFormatChange=partitionFormatChange;
   }
 }

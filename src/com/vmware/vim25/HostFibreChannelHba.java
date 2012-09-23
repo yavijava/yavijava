@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,53 +30,46 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class HostFibreChannelHba extends HostHostBusAdapter
-{
+@SuppressWarnings("all")
+public class HostFibreChannelHba extends HostHostBusAdapter {
   public long portWorldWideName;
   public long nodeWorldWideName;
   public FibreChannelPortType portType;
   public long speed;
 
-  public long getPortWorldWideName()
-  {
+  public long getPortWorldWideName() {
     return this.portWorldWideName;
   }
 
-  public long getNodeWorldWideName()
-  {
+  public long getNodeWorldWideName() {
     return this.nodeWorldWideName;
   }
 
-  public FibreChannelPortType getPortType()
-  {
+  public FibreChannelPortType getPortType() {
     return this.portType;
   }
 
-  public long getSpeed()
-  {
+  public long getSpeed() {
     return this.speed;
   }
 
-  public void setPortWorldWideName(long portWorldWideName)
-  {
+  public void setPortWorldWideName(long portWorldWideName) {
     this.portWorldWideName=portWorldWideName;
   }
 
-  public void setNodeWorldWideName(long nodeWorldWideName)
-  {
+  public void setNodeWorldWideName(long nodeWorldWideName) {
     this.nodeWorldWideName=nodeWorldWideName;
   }
 
-  public void setPortType(FibreChannelPortType portType)
-  {
+  public void setPortType(FibreChannelPortType portType) {
     this.portType=portType;
   }
 
-  public void setSpeed(long speed)
-  {
+  public void setSpeed(long speed) {
     this.speed=speed;
   }
 }

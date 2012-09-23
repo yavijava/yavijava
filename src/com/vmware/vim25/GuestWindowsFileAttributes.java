@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -31,42 +31,37 @@ package com.vmware.vim25;
 import java.util.Calendar;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class GuestWindowsFileAttributes extends GuestFileAttributes
-{
+@SuppressWarnings("all")
+public class GuestWindowsFileAttributes extends GuestFileAttributes {
   public Boolean hidden;
   public Boolean readOnly;
   public Calendar createTime;
 
-  public Boolean getHidden()
-  {
+  public Boolean getHidden() {
     return this.hidden;
   }
 
-  public Boolean getReadOnly()
-  {
+  public Boolean getReadOnly() {
     return this.readOnly;
   }
 
-  public Calendar getCreateTime()
-  {
+  public Calendar getCreateTime() {
     return this.createTime;
   }
 
-  public void setHidden(Boolean hidden)
-  {
+  public void setHidden(Boolean hidden) {
     this.hidden=hidden;
   }
 
-  public void setReadOnly(Boolean readOnly)
-  {
+  public void setReadOnly(Boolean readOnly) {
     this.readOnly=readOnly;
   }
 
-  public void setCreateTime(Calendar createTime)
-  {
+  public void setCreateTime(Calendar createTime) {
     this.createTime=createTime;
   }
 }

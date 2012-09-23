@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,11 +30,12 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class HostCpuPackage extends DynamicData
-{
+@SuppressWarnings("all")
+public class HostCpuPackage extends DynamicData {
   public short index;
   public String vendor;
   public long hz;
@@ -43,73 +44,59 @@ public class HostCpuPackage extends DynamicData
   public short[] threadId;
   public HostCpuIdInfo[] cpuFeature;
 
-  public short getIndex()
-  {
+  public short getIndex() {
     return this.index;
   }
 
-  public String getVendor()
-  {
+  public String getVendor() {
     return this.vendor;
   }
 
-  public long getHz()
-  {
+  public long getHz() {
     return this.hz;
   }
 
-  public long getBusHz()
-  {
+  public long getBusHz() {
     return this.busHz;
   }
 
-  public String getDescription()
-  {
+  public String getDescription() {
     return this.description;
   }
 
-  public short[] getThreadId()
-  {
+  public short[] getThreadId() {
     return this.threadId;
   }
 
-  public HostCpuIdInfo[] getCpuFeature()
-  {
+  public HostCpuIdInfo[] getCpuFeature() {
     return this.cpuFeature;
   }
 
-  public void setIndex(short index)
-  {
+  public void setIndex(short index) {
     this.index=index;
   }
 
-  public void setVendor(String vendor)
-  {
+  public void setVendor(String vendor) {
     this.vendor=vendor;
   }
 
-  public void setHz(long hz)
-  {
+  public void setHz(long hz) {
     this.hz=hz;
   }
 
-  public void setBusHz(long busHz)
-  {
+  public void setBusHz(long busHz) {
     this.busHz=busHz;
   }
 
-  public void setDescription(String description)
-  {
+  public void setDescription(String description) {
     this.description=description;
   }
 
-  public void setThreadId(short[] threadId)
-  {
+  public void setThreadId(short[] threadId) {
     this.threadId=threadId;
   }
 
-  public void setCpuFeature(HostCpuIdInfo[] cpuFeature)
-  {
+  public void setCpuFeature(HostCpuIdInfo[] cpuFeature) {
     this.cpuFeature=cpuFeature;
   }
 }

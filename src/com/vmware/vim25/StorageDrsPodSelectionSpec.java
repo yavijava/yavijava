@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,31 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class StorageDrsPodSelectionSpec extends DynamicData
-{
+@SuppressWarnings("all")
+public class StorageDrsPodSelectionSpec extends DynamicData {
   public VmPodConfigForPlacement[] initialVmConfig;
   public ManagedObjectReference storagePod;
 
-  public VmPodConfigForPlacement[] getInitialVmConfig()
-  {
+  public VmPodConfigForPlacement[] getInitialVmConfig() {
     return this.initialVmConfig;
   }
 
-  public ManagedObjectReference getStoragePod()
-  {
+  public ManagedObjectReference getStoragePod() {
     return this.storagePod;
   }
 
-  public void setInitialVmConfig(VmPodConfigForPlacement[] initialVmConfig)
-  {
+  public void setInitialVmConfig(VmPodConfigForPlacement[] initialVmConfig) {
     this.initialVmConfig=initialVmConfig;
   }
 
-  public void setStoragePod(ManagedObjectReference storagePod)
-  {
+  public void setStoragePod(ManagedObjectReference storagePod) {
     this.storagePod=storagePod;
   }
 }

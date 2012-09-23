@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -31,11 +31,12 @@ package com.vmware.vim25;
 import java.util.Calendar;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class AlarmState extends DynamicData
-{
+@SuppressWarnings("all")
+public class AlarmState extends DynamicData {
   public String key;
   public ManagedObjectReference entity;
   public ManagedObjectReference alarm;
@@ -45,83 +46,67 @@ public class AlarmState extends DynamicData
   public String acknowledgedByUser;
   public Calendar acknowledgedTime;
 
-  public String getKey()
-  {
+  public String getKey() {
     return this.key;
   }
 
-  public ManagedObjectReference getEntity()
-  {
+  public ManagedObjectReference getEntity() {
     return this.entity;
   }
 
-  public ManagedObjectReference getAlarm()
-  {
+  public ManagedObjectReference getAlarm() {
     return this.alarm;
   }
 
-  public ManagedEntityStatus getOverallStatus()
-  {
+  public ManagedEntityStatus getOverallStatus() {
     return this.overallStatus;
   }
 
-  public Calendar getTime()
-  {
+  public Calendar getTime() {
     return this.time;
   }
 
-  public Boolean getAcknowledged()
-  {
+  public Boolean getAcknowledged() {
     return this.acknowledged;
   }
 
-  public String getAcknowledgedByUser()
-  {
+  public String getAcknowledgedByUser() {
     return this.acknowledgedByUser;
   }
 
-  public Calendar getAcknowledgedTime()
-  {
+  public Calendar getAcknowledgedTime() {
     return this.acknowledgedTime;
   }
 
-  public void setKey(String key)
-  {
+  public void setKey(String key) {
     this.key=key;
   }
 
-  public void setEntity(ManagedObjectReference entity)
-  {
+  public void setEntity(ManagedObjectReference entity) {
     this.entity=entity;
   }
 
-  public void setAlarm(ManagedObjectReference alarm)
-  {
+  public void setAlarm(ManagedObjectReference alarm) {
     this.alarm=alarm;
   }
 
-  public void setOverallStatus(ManagedEntityStatus overallStatus)
-  {
+  public void setOverallStatus(ManagedEntityStatus overallStatus) {
     this.overallStatus=overallStatus;
   }
 
-  public void setTime(Calendar time)
-  {
+  public void setTime(Calendar time) {
     this.time=time;
   }
 
-  public void setAcknowledged(Boolean acknowledged)
-  {
+  public void setAcknowledged(Boolean acknowledged) {
     this.acknowledged=acknowledged;
   }
 
-  public void setAcknowledgedByUser(String acknowledgedByUser)
-  {
+  public void setAcknowledgedByUser(String acknowledgedByUser) {
     this.acknowledgedByUser=acknowledgedByUser;
   }
 
-  public void setAcknowledgedTime(Calendar acknowledgedTime)
-  {
+  public void setAcknowledgedTime(Calendar acknowledgedTime) {
     this.acknowledgedTime=acknowledgedTime;
   }
 }

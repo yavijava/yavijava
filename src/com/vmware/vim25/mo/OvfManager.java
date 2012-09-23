@@ -39,6 +39,7 @@ import com.vmware.vim25.OvfCreateDescriptorParams;
 import com.vmware.vim25.OvfCreateDescriptorResult;
 import com.vmware.vim25.OvfCreateImportSpecParams;
 import com.vmware.vim25.OvfCreateImportSpecResult;
+import com.vmware.vim25.OvfOptionInfo;
 import com.vmware.vim25.OvfParseDescriptorParams;
 import com.vmware.vim25.OvfParseDescriptorResult;
 import com.vmware.vim25.OvfValidateHostParams;
@@ -49,7 +50,7 @@ import com.vmware.vim25.VmConfigFault;
 
 /**
  * The managed object class corresponding to the one defined in VI SDK API reference.
- * @author Steve JIN (sjin@vmware.com)
+ * @author Steve JIN (http://www.doublecloud.org)
  * @since 4.0
  */
 public class OvfManager extends ManagedObject 
@@ -57,6 +58,16 @@ public class OvfManager extends ManagedObject
 	public OvfManager(ServerConnection sc, ManagedObjectReference mor) 
 	{
 		super(sc, mor);
+	}
+	
+	public OvfOptionInfo[] getOvfExportOption()
+	{
+	    return (OvfOptionInfo[]) getCurrentProperty("ovfExportOption");
+	}
+	
+	public OvfOptionInfo[] getOvfImportOption()
+	{
+	    return (OvfOptionInfo[]) getCurrentProperty("ovfImportOption");
 	}
 	
 	public OvfCreateDescriptorResult createDescriptor(ManagedEntity obj, OvfCreateDescriptorParams cdp) throws TaskInProgress, VmConfigFault, ConcurrentAccess, FileFault, InvalidState, RuntimeFault, RemoteException

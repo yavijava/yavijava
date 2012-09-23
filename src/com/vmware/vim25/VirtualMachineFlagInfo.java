@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,11 +30,12 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class VirtualMachineFlagInfo extends DynamicData
-{
+@SuppressWarnings("all")
+public class VirtualMachineFlagInfo extends DynamicData {
   public Boolean disableAcceleration;
   public Boolean enableLogging;
   public Boolean useToe;
@@ -49,133 +50,107 @@ public class VirtualMachineFlagInfo extends DynamicData
   public String snapshotPowerOffBehavior;
   public Boolean recordReplayEnabled;
 
-  public Boolean getDisableAcceleration()
-  {
+  public Boolean getDisableAcceleration() {
     return this.disableAcceleration;
   }
 
-  public Boolean getEnableLogging()
-  {
+  public Boolean getEnableLogging() {
     return this.enableLogging;
   }
 
-  public Boolean getUseToe()
-  {
+  public Boolean getUseToe() {
     return this.useToe;
   }
 
-  public Boolean getRunWithDebugInfo()
-  {
+  public Boolean getRunWithDebugInfo() {
     return this.runWithDebugInfo;
   }
 
-  public String getMonitorType()
-  {
+  public String getMonitorType() {
     return this.monitorType;
   }
 
-  public String getHtSharing()
-  {
+  public String getHtSharing() {
     return this.htSharing;
   }
 
-  public Boolean getSnapshotDisabled()
-  {
+  public Boolean getSnapshotDisabled() {
     return this.snapshotDisabled;
   }
 
-  public Boolean getSnapshotLocked()
-  {
+  public Boolean getSnapshotLocked() {
     return this.snapshotLocked;
   }
 
-  public Boolean getDiskUuidEnabled()
-  {
+  public Boolean getDiskUuidEnabled() {
     return this.diskUuidEnabled;
   }
 
-  public String getVirtualMmuUsage()
-  {
+  public String getVirtualMmuUsage() {
     return this.virtualMmuUsage;
   }
 
-  public String getVirtualExecUsage()
-  {
+  public String getVirtualExecUsage() {
     return this.virtualExecUsage;
   }
 
-  public String getSnapshotPowerOffBehavior()
-  {
+  public String getSnapshotPowerOffBehavior() {
     return this.snapshotPowerOffBehavior;
   }
 
-  public Boolean getRecordReplayEnabled()
-  {
+  public Boolean getRecordReplayEnabled() {
     return this.recordReplayEnabled;
   }
 
-  public void setDisableAcceleration(Boolean disableAcceleration)
-  {
+  public void setDisableAcceleration(Boolean disableAcceleration) {
     this.disableAcceleration=disableAcceleration;
   }
 
-  public void setEnableLogging(Boolean enableLogging)
-  {
+  public void setEnableLogging(Boolean enableLogging) {
     this.enableLogging=enableLogging;
   }
 
-  public void setUseToe(Boolean useToe)
-  {
+  public void setUseToe(Boolean useToe) {
     this.useToe=useToe;
   }
 
-  public void setRunWithDebugInfo(Boolean runWithDebugInfo)
-  {
+  public void setRunWithDebugInfo(Boolean runWithDebugInfo) {
     this.runWithDebugInfo=runWithDebugInfo;
   }
 
-  public void setMonitorType(String monitorType)
-  {
+  public void setMonitorType(String monitorType) {
     this.monitorType=monitorType;
   }
 
-  public void setHtSharing(String htSharing)
-  {
+  public void setHtSharing(String htSharing) {
     this.htSharing=htSharing;
   }
 
-  public void setSnapshotDisabled(Boolean snapshotDisabled)
-  {
+  public void setSnapshotDisabled(Boolean snapshotDisabled) {
     this.snapshotDisabled=snapshotDisabled;
   }
 
-  public void setSnapshotLocked(Boolean snapshotLocked)
-  {
+  public void setSnapshotLocked(Boolean snapshotLocked) {
     this.snapshotLocked=snapshotLocked;
   }
 
-  public void setDiskUuidEnabled(Boolean diskUuidEnabled)
-  {
+  public void setDiskUuidEnabled(Boolean diskUuidEnabled) {
     this.diskUuidEnabled=diskUuidEnabled;
   }
 
-  public void setVirtualMmuUsage(String virtualMmuUsage)
-  {
+  public void setVirtualMmuUsage(String virtualMmuUsage) {
     this.virtualMmuUsage=virtualMmuUsage;
   }
 
-  public void setVirtualExecUsage(String virtualExecUsage)
-  {
+  public void setVirtualExecUsage(String virtualExecUsage) {
     this.virtualExecUsage=virtualExecUsage;
   }
 
-  public void setSnapshotPowerOffBehavior(String snapshotPowerOffBehavior)
-  {
+  public void setSnapshotPowerOffBehavior(String snapshotPowerOffBehavior) {
     this.snapshotPowerOffBehavior=snapshotPowerOffBehavior;
   }
 
-  public void setRecordReplayEnabled(Boolean recordReplayEnabled)
-  {
+  public void setRecordReplayEnabled(Boolean recordReplayEnabled) {
     this.recordReplayEnabled=recordReplayEnabled;
   }
 }

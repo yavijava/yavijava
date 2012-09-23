@@ -35,10 +35,12 @@ import java.rmi.RemoteException;
 import com.vmware.vim25.IORMNotSupportedHostOnDatastore;
 import com.vmware.vim25.InaccessibleDatastore;
 import com.vmware.vim25.ManagedObjectReference;
+import com.vmware.vim25.NotFound;
 import com.vmware.vim25.RuntimeFault;
 import com.vmware.vim25.StorageDrsConfigSpec;
 import com.vmware.vim25.StorageIORMConfigOption;
 import com.vmware.vim25.StorageIORMConfigSpec;
+import com.vmware.vim25.StoragePerformanceSummary;
 import com.vmware.vim25.StoragePlacementResult;
 import com.vmware.vim25.StoragePlacementSpec;
 
@@ -88,6 +90,12 @@ public class StorageResourceManager extends ManagedObject
   {
     ManagedObjectReference taskMor = getVimService().configureStorageDrsForPod_Task(getMOR(), pod.getMOR(), spec, modify);
     return new Task(getServerConnection(), taskMor);
+  }
+  
+  /** @since SDK5.1 */
+  public StoragePerformanceSummary[] queryDatastorePerformanceSummary(Datastore datastore) throws NotFound, RuntimeFault, RemoteException
+  {
+      return getVimService().queryDatastorePerformanceSummary(getMOR(), datastore.getMOR());
   }
   
   public StorageIORMConfigOption queryIORMConfigOption(HostSystem host) throws RuntimeFault, RemoteException

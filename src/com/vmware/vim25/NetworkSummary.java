@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,53 +30,55 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class NetworkSummary extends DynamicData
-{
+@SuppressWarnings("all")
+public class NetworkSummary extends DynamicData {
   public ManagedObjectReference network;
   public String name;
   public boolean accessible;
   public String ipPoolName;
+  public Integer ipPoolId;
 
-  public ManagedObjectReference getNetwork()
-  {
+  public ManagedObjectReference getNetwork() {
     return this.network;
   }
 
-  public String getName()
-  {
+  public String getName() {
     return this.name;
   }
 
-  public boolean isAccessible()
-  {
+  public boolean isAccessible() {
     return this.accessible;
   }
 
-  public String getIpPoolName()
-  {
+  public String getIpPoolName() {
     return this.ipPoolName;
   }
 
-  public void setNetwork(ManagedObjectReference network)
-  {
+  public Integer getIpPoolId() {
+    return this.ipPoolId;
+  }
+
+  public void setNetwork(ManagedObjectReference network) {
     this.network=network;
   }
 
-  public void setName(String name)
-  {
+  public void setName(String name) {
     this.name=name;
   }
 
-  public void setAccessible(boolean accessible)
-  {
+  public void setAccessible(boolean accessible) {
     this.accessible=accessible;
   }
 
-  public void setIpPoolName(String ipPoolName)
-  {
+  public void setIpPoolName(String ipPoolName) {
     this.ipPoolName=ipPoolName;
+  }
+
+  public void setIpPoolId(Integer ipPoolId) {
+    this.ipPoolId=ipPoolId;
   }
 }

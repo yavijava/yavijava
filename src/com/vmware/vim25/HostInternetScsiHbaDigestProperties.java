@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,53 +30,46 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class HostInternetScsiHbaDigestProperties extends DynamicData
-{
+@SuppressWarnings("all")
+public class HostInternetScsiHbaDigestProperties extends DynamicData {
   public String headerDigestType;
   public Boolean headerDigestInherited;
   public String dataDigestType;
   public Boolean dataDigestInherited;
 
-  public String getHeaderDigestType()
-  {
+  public String getHeaderDigestType() {
     return this.headerDigestType;
   }
 
-  public Boolean getHeaderDigestInherited()
-  {
+  public Boolean getHeaderDigestInherited() {
     return this.headerDigestInherited;
   }
 
-  public String getDataDigestType()
-  {
+  public String getDataDigestType() {
     return this.dataDigestType;
   }
 
-  public Boolean getDataDigestInherited()
-  {
+  public Boolean getDataDigestInherited() {
     return this.dataDigestInherited;
   }
 
-  public void setHeaderDigestType(String headerDigestType)
-  {
+  public void setHeaderDigestType(String headerDigestType) {
     this.headerDigestType=headerDigestType;
   }
 
-  public void setHeaderDigestInherited(Boolean headerDigestInherited)
-  {
+  public void setHeaderDigestInherited(Boolean headerDigestInherited) {
     this.headerDigestInherited=headerDigestInherited;
   }
 
-  public void setDataDigestType(String dataDigestType)
-  {
+  public void setDataDigestType(String dataDigestType) {
     this.dataDigestType=dataDigestType;
   }
 
-  public void setDataDigestInherited(Boolean dataDigestInherited)
-  {
+  public void setDataDigestInherited(Boolean dataDigestInherited) {
     this.dataDigestInherited=dataDigestInherited;
   }
 }

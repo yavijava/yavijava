@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,11 +30,12 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class HostService extends DynamicData
-{
+@SuppressWarnings("all")
+public class HostService extends DynamicData {
   public String key;
   public String label;
   public boolean required;
@@ -44,83 +45,67 @@ public class HostService extends DynamicData
   public String policy;
   public HostServiceSourcePackage sourcePackage;
 
-  public String getKey()
-  {
+  public String getKey() {
     return this.key;
   }
 
-  public String getLabel()
-  {
+  public String getLabel() {
     return this.label;
   }
 
-  public boolean isRequired()
-  {
+  public boolean isRequired() {
     return this.required;
   }
 
-  public boolean isUninstallable()
-  {
+  public boolean isUninstallable() {
     return this.uninstallable;
   }
 
-  public boolean isRunning()
-  {
+  public boolean isRunning() {
     return this.running;
   }
 
-  public String[] getRuleset()
-  {
+  public String[] getRuleset() {
     return this.ruleset;
   }
 
-  public String getPolicy()
-  {
+  public String getPolicy() {
     return this.policy;
   }
 
-  public HostServiceSourcePackage getSourcePackage()
-  {
+  public HostServiceSourcePackage getSourcePackage() {
     return this.sourcePackage;
   }
 
-  public void setKey(String key)
-  {
+  public void setKey(String key) {
     this.key=key;
   }
 
-  public void setLabel(String label)
-  {
+  public void setLabel(String label) {
     this.label=label;
   }
 
-  public void setRequired(boolean required)
-  {
+  public void setRequired(boolean required) {
     this.required=required;
   }
 
-  public void setUninstallable(boolean uninstallable)
-  {
+  public void setUninstallable(boolean uninstallable) {
     this.uninstallable=uninstallable;
   }
 
-  public void setRunning(boolean running)
-  {
+  public void setRunning(boolean running) {
     this.running=running;
   }
 
-  public void setRuleset(String[] ruleset)
-  {
+  public void setRuleset(String[] ruleset) {
     this.ruleset=ruleset;
   }
 
-  public void setPolicy(String policy)
-  {
+  public void setPolicy(String policy) {
     this.policy=policy;
   }
 
-  public void setSourcePackage(HostServiceSourcePackage sourcePackage)
-  {
+  public void setSourcePackage(HostServiceSourcePackage sourcePackage) {
     this.sourcePackage=sourcePackage;
   }
 }

@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,25 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class ArrayOfHostDiagnosticPartitionCreateOption
-{
+public class ArrayOfHostDiagnosticPartitionCreateOption {
   public HostDiagnosticPartitionCreateOption[] HostDiagnosticPartitionCreateOption;
 
-  public HostDiagnosticPartitionCreateOption[] getHostDiagnosticPartitionCreateOption()
-  {
+  public HostDiagnosticPartitionCreateOption[] getHostDiagnosticPartitionCreateOption() {
     return this.HostDiagnosticPartitionCreateOption;
   }
 
-  public HostDiagnosticPartitionCreateOption getHostDiagnosticPartitionCreateOption(int i)
-  {
+  public HostDiagnosticPartitionCreateOption getHostDiagnosticPartitionCreateOption(int i) {
     return this.HostDiagnosticPartitionCreateOption[i];
   }
 
-  public void setHostDiagnosticPartitionCreateOption(HostDiagnosticPartitionCreateOption[] HostDiagnosticPartitionCreateOption)
-  {
+  public void setHostDiagnosticPartitionCreateOption(HostDiagnosticPartitionCreateOption[] HostDiagnosticPartitionCreateOption) {
     this.HostDiagnosticPartitionCreateOption=HostDiagnosticPartitionCreateOption;
   }
 }

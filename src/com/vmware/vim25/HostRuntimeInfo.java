@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -31,11 +31,12 @@ package com.vmware.vim25;
 import java.util.Calendar;
 
 /**
-@author Steve Jin (sjin@vmware.com)
+* @author Steve Jin (http://www.doublecloud.org)
+* @version 5.1
 */
 
-public class HostRuntimeInfo extends DynamicData
-{
+@SuppressWarnings("all")
+public class HostRuntimeInfo extends DynamicData {
   public HostSystemConnectionState connectionState;
   public HostSystemPowerState powerState;
   public String standbyMode;
@@ -45,83 +46,67 @@ public class HostRuntimeInfo extends DynamicData
   public ClusterDasFdmHostState dasHostState;
   public HostTpmDigestInfo[] tpmPcrValues;
 
-  public HostSystemConnectionState getConnectionState()
-  {
+  public HostSystemConnectionState getConnectionState() {
     return this.connectionState;
   }
 
-  public HostSystemPowerState getPowerState()
-  {
+  public HostSystemPowerState getPowerState() {
     return this.powerState;
   }
 
-  public String getStandbyMode()
-  {
+  public String getStandbyMode() {
     return this.standbyMode;
   }
 
-  public boolean isInMaintenanceMode()
-  {
+  public boolean isInMaintenanceMode() {
     return this.inMaintenanceMode;
   }
 
-  public Calendar getBootTime()
-  {
+  public Calendar getBootTime() {
     return this.bootTime;
   }
 
-  public HealthSystemRuntime getHealthSystemRuntime()
-  {
+  public HealthSystemRuntime getHealthSystemRuntime() {
     return this.healthSystemRuntime;
   }
 
-  public ClusterDasFdmHostState getDasHostState()
-  {
+  public ClusterDasFdmHostState getDasHostState() {
     return this.dasHostState;
   }
 
-  public HostTpmDigestInfo[] getTpmPcrValues()
-  {
+  public HostTpmDigestInfo[] getTpmPcrValues() {
     return this.tpmPcrValues;
   }
 
-  public void setConnectionState(HostSystemConnectionState connectionState)
-  {
+  public void setConnectionState(HostSystemConnectionState connectionState) {
     this.connectionState=connectionState;
   }
 
-  public void setPowerState(HostSystemPowerState powerState)
-  {
+  public void setPowerState(HostSystemPowerState powerState) {
     this.powerState=powerState;
   }
 
-  public void setStandbyMode(String standbyMode)
-  {
+  public void setStandbyMode(String standbyMode) {
     this.standbyMode=standbyMode;
   }
 
-  public void setInMaintenanceMode(boolean inMaintenanceMode)
-  {
+  public void setInMaintenanceMode(boolean inMaintenanceMode) {
     this.inMaintenanceMode=inMaintenanceMode;
   }
 
-  public void setBootTime(Calendar bootTime)
-  {
+  public void setBootTime(Calendar bootTime) {
     this.bootTime=bootTime;
   }
 
-  public void setHealthSystemRuntime(HealthSystemRuntime healthSystemRuntime)
-  {
+  public void setHealthSystemRuntime(HealthSystemRuntime healthSystemRuntime) {
     this.healthSystemRuntime=healthSystemRuntime;
   }
 
-  public void setDasHostState(ClusterDasFdmHostState dasHostState)
-  {
+  public void setDasHostState(ClusterDasFdmHostState dasHostState) {
     this.dasHostState=dasHostState;
   }
 
-  public void setTpmPcrValues(HostTpmDigestInfo[] tpmPcrValues)
-  {
+  public void setTpmPcrValues(HostTpmDigestInfo[] tpmPcrValues) {
     this.tpmPcrValues=tpmPcrValues;
   }
 }
