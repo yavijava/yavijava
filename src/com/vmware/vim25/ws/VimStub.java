@@ -2418,7 +2418,7 @@ public class VimStub
     return (HostScsiDisk[]) wsc.invoke("QueryAvailableDisksForVmfs", paras, "HostScsiDisk[]");
   }
   public VmfsDatastoreOption[] queryVmfsDatastoreCreateOptions(ManagedObjectReference _this, String devicePath) throws java.rmi.RemoteException, NotFound, HostConfigFault, RuntimeFault {
-      Argument[] paras = new Argument[3];
+      Argument[] paras = new Argument[2];
       paras[0] = new Argument("_this", "ManagedObjectReference", _this);
       paras[1] = new Argument("devicePath", "String", devicePath);
       return (VmfsDatastoreOption[]) wsc.invoke("QueryVmfsDatastoreCreateOptions", paras, "VmfsDatastoreOption[]");
