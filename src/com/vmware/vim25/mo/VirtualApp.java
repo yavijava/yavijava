@@ -47,6 +47,7 @@ import com.vmware.vim25.VAppConfigFault;
 import com.vmware.vim25.VAppConfigInfo;
 import com.vmware.vim25.VAppConfigSpec;
 import com.vmware.vim25.VirtualAppLinkInfo;
+import com.vmware.vim25.VirtualAppSummary;
 import com.vmware.vim25.VmConfigFault;
 
 /**
@@ -74,6 +75,12 @@ public class VirtualApp extends ResourcePool
 	public Network[] getNetwork()
 	{
 		return getNetworks("network");
+	}
+	
+	@Override
+	public VirtualAppSummary getSummary()
+	{
+	  return (VirtualAppSummary) this.getCurrentProperty("summary");
 	}
 	
 	public Folder getParentFolder()
