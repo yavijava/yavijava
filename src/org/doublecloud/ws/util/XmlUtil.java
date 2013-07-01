@@ -1,6 +1,5 @@
 /*================================================================================
-Copyright (c) 2013 Steve Jin, All Rights Reserved.
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2013 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -28,41 +27,39 @@ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
 
-package com.vmware.vim25.ws;
+package org.doublecloud.ws.util;
 
-/** 
- * The SOAP Fault Exception.
- * @author Steve Jin (http://www.doublecloud.org)
-*/
-public class SoapFaultException extends java.rmi.RemoteException
+public class XmlUtil
 {
-  private static final long serialVersionUID = 1L;
-  protected String faultCode;
-  protected String faultString;
-  protected String faultActor ;
-  
-  public String getFaultCode()
+  private static char[] toBeEscaped = new char[] {'&',     '<',    '>',    '"',      '\''};
+  private static String[] escaped = new String[] {"&amp;", "&lt;", "&gt;", "&quot;", "&apos;" };
+
+  //escape 5 special chars http://en.wikipedia.org/wiki/List_of_XML_and_HTML_character_entity_references
+  public static String escapeForXML(String str)
   {
-    return faultCode;
-  }
-  public void setFaultCode(String faultCode)
-  {
-    this.faultCode = faultCode;
-  }
-  public String getFaultString()
-  {
-    return faultString;
-  }
-  public void setFaultString(String faultString)
-  {
-    this.faultString = faultString;
-  }
-  public String getFaultActor()
-  {
-    return faultActor;
-  }
-  public void setFaultActor(String faultActor)
-  {
-    this.faultActor = faultActor;
+    StringBuilder sb = new StringBuilder(str.length());
+    
+    for(int i=0; i<str.length(); i++)
+    {
+      char c = str.charAt(i);
+
+      boolean foundEscape = false;
+      for(int j=0; j<toBeEscaped.length; j++)
+      {
+        if(c==toBeEscaped[j])
+        {
+          sb.append(escaped[j]);
+          foundEscape = true;
+          break;
+        }
+      }
+      
+      if(foundEscape==false)
+      {
+        sb.append(c);
+        foundEscape = false;
+      }
+    }
+    return sb.toString();
   }
 }

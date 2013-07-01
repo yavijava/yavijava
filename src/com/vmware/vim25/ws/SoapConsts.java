@@ -1,6 +1,5 @@
 /*================================================================================
-Copyright (c) 2013 Steve Jin, All Rights Reserved.
-Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2013 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -27,42 +26,17 @@ WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWIS
 ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE 
 POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
-
 package com.vmware.vim25.ws;
 
-/** 
- * The SOAP Fault Exception.
- * @author Steve Jin (http://www.doublecloud.org)
-*/
-public class SoapFaultException extends java.rmi.RemoteException
+import org.dom4j.Namespace;
+import org.dom4j.QName;
+
+public class SoapConsts
 {
-  private static final long serialVersionUID = 1L;
-  protected String faultCode;
-  protected String faultString;
-  protected String faultActor ;
-  
-  public String getFaultCode()
-  {
-    return faultCode;
-  }
-  public void setFaultCode(String faultCode)
-  {
-    this.faultCode = faultCode;
-  }
-  public String getFaultString()
-  {
-    return faultString;
-  }
-  public void setFaultString(String faultString)
-  {
-    this.faultString = faultString;
-  }
-  public String getFaultActor()
-  {
-    return faultActor;
-  }
-  public void setFaultActor(String faultActor)
-  {
-    this.faultActor = faultActor;
-  }
+  final public static String XSI_NAMESPACE_URI = "http://www.w3.org/2001/XMLSchema-instance";
+  final public static Namespace XSI = new Namespace("xsi", "http://www.w3.org/2001/XMLSchema-instance");
+  final public static QName XSI_TYPE = new QName("type", XSI);
+
+  final public static String SOAP_HEADER = "<?xml version=\"1.0\" encoding=\"UTF-8\"?><soapenv:Envelope xmlns:soapenc=\"http://schemas.xmlsoap.org/soap/encoding/\" xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"><soapenv:Body>"; 
+  final public static String SOAP_END = "</soapenv:Body></soapenv:Envelope>";
 }

@@ -1,4 +1,5 @@
 /*================================================================================
+Copyright (c) 2013 Steve Jin, All Rights Reserved.
 Copyright (c) 2009 VMware, Inc. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
@@ -39,6 +40,7 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.ProtocolException;
 import java.net.URL;
+import java.rmi.RemoteException;
 import java.security.KeyManagementException;
 import java.security.NoSuchAlgorithmException;
 import java.security.cert.CertificateException;
@@ -51,23 +53,13 @@ import javax.net.ssl.SSLSession;
 import javax.net.ssl.TrustManager;
 import javax.net.ssl.X509TrustManager;
 
-import org.dom4j.Document;
-import org.dom4j.Element;
-import org.dom4j.io.SAXReader;
-
-import com.vmware.vim25.ManagedObjectReference;
-
-import java.rmi.RemoteException;
-
 /** 
  * The Web Service Engine
  * @author Steve Jin (sjin@vmware.com)
 */
 
-public final class WSClient
+final public class WSClient
 {
-  private final static String SOAP_HEADER = "<?xml version=\"1.0\" encoding=\"UTF-8\"?><soapenv:Envelope xmlns:soapenc=\"http://schemas.xmlsoap.org/soap/encoding/\" xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"><soapenv:Body>"; 
-  private final static String SOAP_END = "</soapenv:Body></soapenv:Envelope>";
   private final static String SOAP_ACTION_HEADER = "SOAPAction";
   private final static String SOAP_ACTION_V40 = "urn:vim25/4.0";
   private final static String SOAP_ACTION_V41 = "urn:vim25/4.1";
@@ -81,9 +73,11 @@ public final class WSClient
   private int connectTimeout = 0;
   private int readTimeout = 0;
   
+  XmlGen xmlGen = new XmlGenDom();
+  
   public WSClient(String serverUrl) throws MalformedURLException 
   {
-	this(serverUrl, true);
+    this(serverUrl, true);
   }
   
   public WSClient(String serverUrl, boolean ignoreCert) throws MalformedURLException 
@@ -112,88 +106,30 @@ public final class WSClient
     }
   }
   
-  public Object invoke(ManagedObjectReference mor, String methodName, Argument[] paras, String returnType) throws IOException
-  {
-    Argument[] fullParas = new Argument[paras.length + 1];
-    fullParas[0] = new Argument("_this", "ManagedObjectReference", mor);
-    System.arraycopy(paras, 0, fullParas, 1, paras.length);
-    return invoke(methodName, fullParas, returnType);
-  }
-
   public Object invoke(String methodName, Argument[] paras, String returnType) throws RemoteException
   {
-    Element root = invoke(methodName, paras);
-    Element body = (Element) root.elements().get(0);
-    Element resp = (Element) body.elements().get(0);
+    String soapMsg = XmlGen.toXML(methodName, paras, this.vimNameSpace);
     
-    if(resp.getName().indexOf("Fault")!=-1)
-    {
-    	SoapFaultException sfe = null;
-      try 
-      {
-        sfe = XmlGen.parseSoapFault(resp);
-      } 
-      catch (Exception e) 
-      {
-        throw new RemoteException("Exception in WSClient.invoke:", e);
-      }
-      if(sfe!=null && sfe.detail!=null)
-      {
-        throw (RemoteException) sfe.detail;
-      }
-      else
-      {
-      	throw sfe;
-      }
-    }
-    else
-    {
-      if(returnType!=null)
-      {
-        try 
-        {
-          return XmlGen.fromXML(returnType, resp);
-        } 
-        catch (Exception e) 
-        {
-          throw new RemoteException("Exception in WSClient.invoke:", e);
-        }
-      }
-      else
-      {
-        return null;
-      }
-    }
-  }
-  
-  public Element invoke(String methodName, Argument[] paras) throws RemoteException
-  {
-    String soapMsg = createSoapMessage(methodName, paras);
-
-    Element root = null;
     InputStream is = null;
     try 
     {
       is = post(soapMsg);
-      SAXReader reader = new SAXReader();
-      Document doc = reader.read(is);
-	    root = doc.getRootElement();
-    } catch (Exception e) 
+      return xmlGen.fromXML(returnType, is);
+    }
+    catch (Exception e1) 
     {
-      throw new RemoteException("VI SDK invoke exception:" + e);
+      throw new RemoteException("VI SDK invoke exception:" + e1);
     }
     finally
     {
       if(is!=null) 
         try { is.close(); } catch(IOException ioe) {}
     }
-    
-    return root;
   }
   
   public StringBuffer invokeAsString(String methodName, Argument[] paras) throws RemoteException
   {
-    String soapMsg = createSoapMessage(methodName, paras);
+    String soapMsg = XmlGen.toXML(methodName, paras, this.vimNameSpace);
 
     try 
     {
@@ -205,26 +141,6 @@ public final class WSClient
     }
   }
 
-  private String createSoapMessage(String methodName, Argument[] paras)
-  {
-    StringBuffer sb = new StringBuffer();
-    sb.append(SOAP_HEADER);
-
-    sb.append("<" + methodName + vimNameSpace);
-		
-    for(int i=0; i<paras.length; i++)
-    {
-      String key = paras[i].getName();
-      String type = paras[i].getType();
-      Object obj = paras[i].getValue();
-      sb.append(XmlGen.toXML(key, type, obj)); //, null));
-    }
-
-    sb.append("</" + methodName + ">");
-    sb.append(SOAP_END);
-    return sb.toString();
-  }
-  
   public InputStream post(String soapMsg) throws IOException
   {
     HttpURLConnection postCon = (HttpURLConnection) baseUrl.openConnection();

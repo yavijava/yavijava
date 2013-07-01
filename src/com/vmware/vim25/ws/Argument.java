@@ -1,4 +1,5 @@
 /*================================================================================
+Copyright (c) 2023 Steve Jin, All Rights Reserved.
 Copyright (c) 2009 VMware, Inc. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
@@ -34,7 +35,7 @@ package com.vmware.vim25.ws;
  * @author Steve Jin (sjin@vmware.com)
 */
 
-final public class Argument
+final class Argument
 {
   private String name;
   private String type;
