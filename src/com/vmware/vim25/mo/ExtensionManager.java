@@ -5,14 +5,14 @@ Copyright (c) 2008 VMware, Inc. All Rights Reserved.
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
 
-* Redistributions of source code must retain the above copyright notice, 
+ * Redistributions of source code must retain the above copyright notice, 
 this list of conditions and the following disclaimer.
 
-* Redistributions in binary form must reproduce the above copyright notice, 
+ * Redistributions in binary form must reproduce the above copyright notice, 
 this list of conditions and the following disclaimer in the documentation 
 and/or other materials provided with the distribution.
 
-* Neither the name of VMware, Inc. nor the names of its contributors may be used
+ * Neither the name of VMware, Inc. nor the names of its contributors may be used
 to endorse or promote products derived from this software without specific prior 
 written permission.
 
@@ -36,176 +36,198 @@ import com.vmware.vim25.Extension;
 import com.vmware.vim25.ExtensionClientInfo;
 import com.vmware.vim25.ExtensionManagerIpAllocationUsage;
 import com.vmware.vim25.ExtensionServerInfo;
-import com.vmware.vim25.InvalidLocale;
-import com.vmware.vim25.InvalidLogin;
 import com.vmware.vim25.ManagedObjectReference;
 import com.vmware.vim25.NoClientCertificate;
 import com.vmware.vim25.NotFound;
 import com.vmware.vim25.RuntimeFault;
-import com.vmware.vim25.UserSession;
 import com.vmware.vim25.mo.util.MorUtil;
 
 /**
- * The managed object class corresponding to the one defined in VI SDK API reference.
+ * The managed object class corresponding to the one defined in VI SDK API
+ * reference.
+ * 
  * @author Steve JIN (http://www.doublecloud.org)
  */
 
 public class ExtensionManager extends ManagedObject
 {
-	
-	public ExtensionManager(ServerConnection serverConnection, ManagedObjectReference mor) 
-	{
-		super(serverConnection, mor);
-	}
-	
-	/**
-	 * Retrieve all the registered plugins objects 
-	 * @return An array of extension objects. If no extension found, an empty array is returned.
-	 */
-	
-	public Extension[] getExtensionList() 
-	{
-		return (Extension[])getCurrentProperty("extensionList");
-	}
 
-	/** @since SDK5.1 */
-	public ExtensionManagerIpAllocationUsage[] queryExtensionIpAllocationUsage(String[] extensionKeys) throws RuntimeFault, RemoteException
-	{
-	    return getVimService().queryExtensionIpAllocationUsage(getMOR(), extensionKeys);
-	}
-	
-	/**
-	 * @since SDK5.0
-	 */
-	public ManagedEntity[] queryManagedBy(String extensionKey) throws RuntimeFault, RemoteException
-	{
-	  ManagedObjectReference[] mors = getVimService().queryManagedBy(getMOR(), extensionKey);
-	  return MorUtil.createManagedEntities(getServerConnection(), mors);
-	}
-	
-	public void setPublicKey(String extensionKey, String publicKey) throws RuntimeFault, RemoteException
-	{
-	  getVimService().setPublicKey(getMOR(), extensionKey, publicKey);
-	}
-	
-	/**
-	 * Un-register an existing plugin
-	 * If <code>keyStr</code> is null then a <code>NullPointerException</code>
-     * is thrown.
-	 * @param keyStr The unique key of the plugin
-	 * @throws RemoteException 
-	 * @throws RuntimeFault 
-	 * @throws NotFound 
-	 * either because of the web service itself, or because of the service
-	 * provider unable to handle the request. 
-	 */
-	public void unregisterExtension(String keyStr) throws NotFound, RuntimeFault, RemoteException
-	{
-		if (keyStr == null) {
-		    throw new NullPointerException();
-		}
-		getVimService().unregisterExtension(getMOR(), keyStr);
-	}
+  public ExtensionManager(ServerConnection serverConnection, ManagedObjectReference mor)
+  {
+    super(serverConnection, mor);
+  }
 
-	/**
-	 * Update an existing plugin with modified information
-	 * If <code>extension</code> is null then a <code>NullPointerException</code> is thrown.
-	 * @param extension The extension object with updated information
-	 * @throws RemoteException 
-	 * @throws RuntimeFault 
-	 * @throws NotFound 
-	 * either because of the web service itself, or because of the service
-	 * provider unable to handle the request. 
-	 */
-	public void updateExtension(Extension extension) throws NotFound, RuntimeFault, RemoteException
-	{
-		if (extension == null) {
-		    throw new NullPointerException();
-		}
-		
-		encodeUrl(extension);
+  /**
+   * Retrieve all the registered plugins objects
+   * 
+   * @return An array of extension objects. If no extension found, an empty
+   *         array is returned.
+   */
 
-		getVimService().updateExtension(getMOR(), extension);
-	}
+  public Extension[] getExtensionList()
+  {
+    return (Extension[]) getCurrentProperty("extensionList");
+  }
 
-	/**
-	 * Register a new plugin
-	 * If <code>extension</code> is null then a <code>NullPointerException</code> is thrown.
-	 * @param extension The extension object to be registered
-	 * @throws RemoteException 
-	 * @throws RuntimeFault 
-	 * either because of the web service itself, or because of the service
-	 * provider unable to handle the request. 
-	 */
-	public void registerExtension(Extension extension) throws RuntimeFault, RemoteException
-	{
-		if (extension == null) {
-		    throw new NullPointerException();
-		}
-		encodeUrl(extension);
-		getVimService().registerExtension(getMOR(), extension);
-	}
-	
-	/**
-	 * Find the extension based on the unique key of the plugin
- 	 * If <code>keyStr</code> is null then a <code>NullPointerException</code>
-	 * @param keyStr The unique key for the plugin
-	 * @return The extension object found with the unique key
-	 * @throws RemoteException 
-	 * @throws RuntimeFault 
-	 * @throws RemoteException if something is wrong with web service call, 
-	 * either because of the web service itself, or because of the service
-	 * provider unable to handle the request. 
-	 */
-	public Extension findExtension(String keyStr) throws RuntimeFault, RemoteException
-	{
-		if (keyStr == null) {
-		    throw new NullPointerException();
-		}
-		return getVimService().findExtension(getMOR(), keyStr);
-	}
-	
-	private void encodeUrl(Extension extension)
-	{
-		// replace all the & in the url with &amp;
-		for(int i=0; extension.client!=null && i<extension.client.length; i++)
-		{
-			ExtensionClientInfo eci = extension.client[i];
-			if(eci.url.indexOf("&")!=-1)
-			{
-				eci.url = eci.url.replaceAll("&", "&amp;");
-			}
-		}
-		for(int i=0; extension.server!=null && i<extension.server.length; i++)
-		{
-			ExtensionServerInfo esi = extension.server[i];
-			if(esi.url.indexOf("&")!=-1)
-			{
-				esi.url = esi.url.replaceAll("&", "&amp;");
-			}
-		}
-	}
+  /** @since SDK5.1 */
+  public ExtensionManagerIpAllocationUsage[] queryExtensionIpAllocationUsage(String[] extensionKeys) throws RuntimeFault, RemoteException
+  {
+    return getVimService().queryExtensionIpAllocationUsage(getMOR(), extensionKeys);
+  }
 
-	/**
-	 * Print out information of all the plugins to stdout
-	 * @throws RemoteException if something is wrong with web service call, 
-	 * either because of the web service itself, or because of the service
-	 * provider unable to handle the request. 
-	 * @deprecated
-	 */
-	public void printAllExtensions() 
-	{
-		Extension[] exts = getExtensionList();
+  /** @since SDK4.0 */
+  public void setExtensionCertificate(String extensionKey, String certificatePem) throws NotFound, NoClientCertificate, RuntimeFault, RemoteException
+  {
+    getVimService().setExtensionCertificate(getMOR(), extensionKey, certificatePem);
+  }
 
-		System.out.println("There are totally " + exts.length + " plugin(s) registered.");
-		
-		for(int i=0; exts!=null && i<exts.length; i++)
-		{
-			System.out.println("\n ---- Plugin # " + (i+1) + " ---- ");
-			System.out.println("Key: " + exts[i].getKey());
-			System.out.println("Version: " + exts[i].getVersion());
-			System.out.println("Registration Time: " + exts[i].getLastHeartbeatTime().getTime());
-			System.out.println("Configuration URL: " + exts[i].getServer()[0].getUrl());
-		}
-	}
+  /**
+   * @since SDK5.0
+   */
+  public ManagedEntity[] queryManagedBy(String extensionKey) throws RuntimeFault, RemoteException
+  {
+    ManagedObjectReference[] mors = getVimService().queryManagedBy(getMOR(), extensionKey);
+    return MorUtil.createManagedEntities(getServerConnection(), mors);
+  }
+
+  public void setPublicKey(String extensionKey, String publicKey) throws RuntimeFault, RemoteException
+  {
+    getVimService().setPublicKey(getMOR(), extensionKey, publicKey);
+  }
+
+  /**
+   * Un-register an existing plugin If <code>keyStr</code> is null then a
+   * <code>NullPointerException</code> is thrown.
+   * 
+   * @param keyStr
+   *          The unique key of the plugin
+   * @throws RemoteException
+   * @throws RuntimeFault
+   * @throws NotFound
+   *           either because of the web service itself, or because of the
+   *           service provider unable to handle the request.
+   */
+  public void unregisterExtension(String keyStr) throws NotFound, RuntimeFault, RemoteException
+  {
+    if (keyStr == null)
+    {
+      throw new NullPointerException();
+    }
+    getVimService().unregisterExtension(getMOR(), keyStr);
+  }
+
+  /**
+   * Update an existing plugin with modified information If
+   * <code>extension</code> is null then a <code>NullPointerException</code> is
+   * thrown.
+   * 
+   * @param extension
+   *          The extension object with updated information
+   * @throws RemoteException
+   * @throws RuntimeFault
+   * @throws NotFound
+   *           either because of the web service itself, or because of the
+   *           service provider unable to handle the request.
+   */
+  public void updateExtension(Extension extension) throws NotFound, RuntimeFault, RemoteException
+  {
+    if (extension == null)
+    {
+      throw new NullPointerException();
+    }
+
+    encodeUrl(extension);
+
+    getVimService().updateExtension(getMOR(), extension);
+  }
+
+  /**
+   * Register a new plugin If <code>extension</code> is null then a
+   * <code>NullPointerException</code> is thrown.
+   * 
+   * @param extension
+   *          The extension object to be registered
+   * @throws RemoteException
+   * @throws RuntimeFault
+   *           either because of the web service itself, or because of the
+   *           service provider unable to handle the request.
+   */
+  public void registerExtension(Extension extension) throws RuntimeFault, RemoteException
+  {
+    if (extension == null)
+    {
+      throw new NullPointerException();
+    }
+    encodeUrl(extension);
+    getVimService().registerExtension(getMOR(), extension);
+  }
+
+  /**
+   * Find the extension based on the unique key of the plugin If
+   * <code>keyStr</code> is null then a <code>NullPointerException</code>
+   * 
+   * @param keyStr
+   *          The unique key for the plugin
+   * @return The extension object found with the unique key
+   * @throws RemoteException
+   * @throws RuntimeFault
+   * @throws RemoteException
+   *           if something is wrong with web service call, either because of
+   *           the web service itself, or because of the service provider unable
+   *           to handle the request.
+   */
+  public Extension findExtension(String keyStr) throws RuntimeFault, RemoteException
+  {
+    if (keyStr == null)
+    {
+      throw new NullPointerException();
+    }
+    return getVimService().findExtension(getMOR(), keyStr);
+  }
+
+  private void encodeUrl(Extension extension)
+  {
+    // replace all the & in the url with &amp;
+    for (int i = 0; extension.client != null && i < extension.client.length; i++)
+    {
+      ExtensionClientInfo eci = extension.client[i];
+      if (eci.url.indexOf("&") != -1)
+      {
+        eci.url = eci.url.replaceAll("&", "&amp;");
+      }
+    }
+    for (int i = 0; extension.server != null && i < extension.server.length; i++)
+    {
+      ExtensionServerInfo esi = extension.server[i];
+      if (esi.url.indexOf("&") != -1)
+      {
+        esi.url = esi.url.replaceAll("&", "&amp;");
+      }
+    }
+  }
+
+  /**
+   * Print out information of all the plugins to stdout
+   * 
+   * @throws RemoteException
+   *           if something is wrong with web service call, either because of
+   *           the web service itself, or because of the service provider unable
+   *           to handle the request.
+   * @deprecated
+   */
+  public void printAllExtensions()
+  {
+    Extension[] exts = getExtensionList();
+
+    System.out.println("There are totally " + exts.length + " plugin(s) registered.");
+
+    for (int i = 0; exts != null && i < exts.length; i++)
+    {
+      System.out.println("\n ---- Plugin # " + (i + 1) + " ---- ");
+      System.out.println("Key: " + exts[i].getKey());
+      System.out.println("Version: " + exts[i].getVersion());
+      System.out.println("Registration Time: " + exts[i].getLastHeartbeatTime().getTime());
+      System.out.println("Configuration URL: " + exts[i].getServer()[0].getUrl());
+    }
+  }
 }
