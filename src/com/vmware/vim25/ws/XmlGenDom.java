@@ -276,33 +276,8 @@ final class XmlGenDom extends XmlGen
 	        i = i + sizeOfFieldArray -1;
       	}
       }
-      else if( fRealType.getPackage() == ManagedObjectReference.class.getPackage())
-      { //VIM type
-        if(isFieldArray)
-        {
-          int sizeOfFieldArray = getNumberOfSameTags(subNodes, sizeOfSubNodes, i, tagName);
-         // arrayTypeName = arrayTypeName.substring(0, arrayTypeName.length()-2);
-          Object ao = Array.newInstance(fType, sizeOfFieldArray);
-          String fGenericType = fType.getSimpleName();
-          for(int j=0; j<sizeOfFieldArray; j++)
-          {
-            Element elem = (Element) subNodes.get(j+i);
-            String elemXsiType = elem.attributeValue(SoapConsts.XSI_TYPE);
-            String elemType = elemXsiType!=null? elemXsiType : fGenericType;
-            Object o = fromXml(TypeUtil.getVimClass(elemType), elem);
-            Array.set(ao, j, o);
-          }
-          field.set(obj, ao);
-          i = i + sizeOfFieldArray -1;
-        }
-        else
-        { // single VIM
-          Object o = fromXml(fRealType, e);
-          field.set(obj, o);
-        }
-      }
-      else
-      { //basic data type
+      else if (TypeUtil.isBasicType(fRealType))
+      { // basic data types
         if(isFieldArray)
         {
           int sizeOfFieldArray = getNumberOfSameTags(subNodes, sizeOfSubNodes, i, tagName);
@@ -340,6 +315,31 @@ final class XmlGenDom extends XmlGen
           {
             ReflectUtil.setObjectField(obj, field, fRealType.getSimpleName(), e.getText());
           }
+        }
+      }
+      else
+      { //VIM type
+        if(isFieldArray)
+        {
+          int sizeOfFieldArray = getNumberOfSameTags(subNodes, sizeOfSubNodes, i, tagName);
+         // arrayTypeName = arrayTypeName.substring(0, arrayTypeName.length()-2);
+          Object ao = Array.newInstance(fType, sizeOfFieldArray);
+          String fGenericType = fType.getSimpleName();
+          for(int j=0; j<sizeOfFieldArray; j++)
+          {
+            Element elem = (Element) subNodes.get(j+i);
+            String elemXsiType = elem.attributeValue(SoapConsts.XSI_TYPE);
+            String elemType = elemXsiType!=null? elemXsiType : fGenericType;
+            Object o = fromXml(TypeUtil.getVimClass(elemType), elem);
+            Array.set(ao, j, o);
+          }
+          field.set(obj, ao);
+          i = i + sizeOfFieldArray -1;
+        }
+        else
+        { // single VIM
+          Object o = fromXml(fRealType, e);
+          field.set(obj, o);
         }
       }
     }

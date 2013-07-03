@@ -30,6 +30,7 @@ POSSIBILITY OF SUCH DAMAGE.
 package org.doublecloud.ws.util;
 
 import java.lang.reflect.Array;
+import java.util.Calendar;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
@@ -71,6 +72,17 @@ public class TypeUtil
     return false;
   }
   
+  final private static Package LANG_PKG = String.class.getPackage();
+  final private static Package UTIL_PKG = Calendar.class.getPackage();
+  public static boolean isBasicType(Class<?> clazz)
+  {
+    Package pkg = clazz.getPackage(); // for primitive type like int, the pkg is null 
+    if(pkg==null || pkg == LANG_PKG || pkg == UTIL_PKG)
+    {
+      return true;
+    }
+    return false;
+  }
   
   private static String PACKAGE_NAME = "com.vmware.vim25";
   private final static Map<String, Class<?>> VIM_CLASSES = new ConcurrentHashMap<String, Class<?>>();
