@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2013 Steve Jin. All Rights Reserved.
+Copyright (c) 2012 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -38,4 +38,28 @@ package com.vmware.vim25;
 public class ManagedObjectReference {
    public String val;
    public String type;
+   
+   public String getVal() {
+ 	return val;
+   }
+
+   public void setVal(String val) {
+ 	this.val = val;
+   }
+   
+   public String getType() {
+ 	return type;
+   }
+   
+   public void setType(String type) {
+     this.type = type;
+   }
+
+   public String get_value() {
+     return val;
+   }
+
+   public void set_value(String val) {
+     this.val = val;
+   }
 }
