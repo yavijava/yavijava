@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2012 Steve Jin. All Rights Reserved.
+Copyright (c) 2013 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
