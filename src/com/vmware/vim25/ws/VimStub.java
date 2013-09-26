@@ -1,5 +1,5 @@
 /*================================================================================
-Copyright (c) 2012 Steve Jin. All Rights Reserved.
+Copyright (c) 2013 Steve Jin. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -201,6 +201,14 @@ public class VimStub
     paras[2] = new Argument("sessionId", "String", sessionId);
     paras[3] = new Argument("privId", "String[]", privId);
     return (boolean[]) wsc.invoke("HasPrivilegeOnEntity", paras, "boolean[]");
+  }
+  public EntityPrivilege[] hasPrivilegeOnEntities(ManagedObjectReference _this, ManagedObjectReference[] entity, String sessionId, String[] privId) throws java.rmi.RemoteException, RuntimeFault {
+    Argument[] paras = new Argument[4];
+    paras[0] = new Argument("_this", "ManagedObjectReference", _this);
+    paras[1] = new Argument("entity", "ManagedObjectReference[]", entity);
+    paras[2] = new Argument("sessionId", "String", sessionId);
+    paras[3] = new Argument("privId", "String[]", privId);
+    return (EntityPrivilege[]) wsc.invoke("HasPrivilegeOnEntities", paras, "EntityPrivilege[]");
   }
   public ManagedObjectReference reconfigureCluster_Task(ManagedObjectReference _this, ClusterConfigSpec spec, boolean modify) throws java.rmi.RemoteException, RuntimeFault {
     Argument[] paras = new Argument[3];
@@ -432,6 +440,21 @@ public class VimStub
     Argument[] paras = new Argument[1];
     paras[0] = new Argument("_this", "ManagedObjectReference", _this);
     return (ManagedObjectReference) wsc.invoke("DatastoreExitMaintenanceMode_Task", paras, "ManagedObjectReference");
+  }
+  public String createDirectory(ManagedObjectReference _this, ManagedObjectReference datastore, String displayName, String policy) throws java.rmi.RemoteException, CannotCreateFile, FileAlreadyExists, InvalidDatastore, RuntimeFault {
+    Argument[] paras = new Argument[4];
+    paras[0] = new Argument("_this", "ManagedObjectReference", _this);
+    paras[1] = new Argument("datastore", "ManagedObjectReference", datastore);
+    paras[2] = new Argument("displayName", "String", displayName);
+    paras[3] = new Argument("policy", "String", policy);
+    return (String) wsc.invoke("CreateDirectory", paras, "String");
+  }
+  public void deleteDirectory(ManagedObjectReference _this, ManagedObjectReference datacenter, String datastorePath) throws java.rmi.RemoteException, FileFault, FileNotFound, InvalidDatastore, InvalidDatastorePath, RuntimeFault {
+    Argument[] paras = new Argument[3];
+    paras[0] = new Argument("_this", "ManagedObjectReference", _this);
+    paras[1] = new Argument("datacenter", "ManagedObjectReference", datacenter);
+    paras[2] = new Argument("datastorePath", "String", datastorePath);
+    wsc.invoke("DeleteDirectory", paras, null);
   }
   public DiagnosticManagerLogDescriptor[] queryDescriptions(ManagedObjectReference _this, ManagedObjectReference host) throws java.rmi.RemoteException, RuntimeFault {
     Argument[] paras = new Argument[2];
@@ -836,11 +859,12 @@ public class VimStub
     paras[0] = new Argument("_this", "ManagedObjectReference", _this);
     return (ManagedObjectReference) wsc.invoke("DisconnectHost_Task", paras, "ManagedObjectReference");
   }
-  public ManagedObjectReference enterMaintenanceMode_Task(ManagedObjectReference _this, int timeout, Boolean evacuatePoweredOffVms) throws java.rmi.RemoteException, InvalidState, Timedout, RuntimeFault {
-    Argument[] paras = new Argument[3];
+  public ManagedObjectReference enterMaintenanceMode_Task(ManagedObjectReference _this, int timeout, Boolean evacuatePoweredOffVms, HostMaintenanceSpec maintenanceSpec) throws java.rmi.RemoteException, InvalidState, Timedout, RuntimeFault {
+    Argument[] paras = new Argument[4];
     paras[0] = new Argument("_this", "ManagedObjectReference", _this);
     paras[1] = new Argument("timeout", "int", timeout);
     paras[2] = new Argument("evacuatePoweredOffVms", "Boolean", evacuatePoweredOffVms);
+    paras[3] = new Argument("maintenanceSpec", "HostMaintenanceSpec", maintenanceSpec);
     return (ManagedObjectReference) wsc.invoke("EnterMaintenanceMode_Task", paras, "ManagedObjectReference");
   }
   public ManagedObjectReference exitMaintenanceMode_Task(ManagedObjectReference _this, int timeout) throws java.rmi.RemoteException, InvalidState, Timedout, RuntimeFault {
@@ -1725,14 +1749,15 @@ public class VimStub
     paras[2] = new Argument("datacenter", "ManagedObjectReference", datacenter);
     return (ManagedObjectReference) wsc.invoke("DeleteVirtualDisk_Task", paras, "ManagedObjectReference");
   }
-  public ManagedObjectReference moveVirtualDisk_Task(ManagedObjectReference _this, String sourceName, ManagedObjectReference sourceDatacenter, String destName, ManagedObjectReference destDatacenter, Boolean force) throws java.rmi.RemoteException, FileFault, InvalidDatastore, RuntimeFault {
-    Argument[] paras = new Argument[6];
+  public ManagedObjectReference moveVirtualDisk_Task(ManagedObjectReference _this, String sourceName, ManagedObjectReference sourceDatacenter, String destName, ManagedObjectReference destDatacenter, Boolean force, VirtualMachineProfileSpec[] profile) throws java.rmi.RemoteException, FileFault, InvalidDatastore, RuntimeFault {
+    Argument[] paras = new Argument[7];
     paras[0] = new Argument("_this", "ManagedObjectReference", _this);
     paras[1] = new Argument("sourceName", "String", sourceName);
     paras[2] = new Argument("sourceDatacenter", "ManagedObjectReference", sourceDatacenter);
     paras[3] = new Argument("destName", "String", destName);
     paras[4] = new Argument("destDatacenter", "ManagedObjectReference", destDatacenter);
     paras[5] = new Argument("force", "Boolean", force);
+    paras[6] = new Argument("profile", "VirtualMachineProfileSpec[]", profile);
     return (ManagedObjectReference) wsc.invoke("MoveVirtualDisk_Task", paras, "ManagedObjectReference");
   }
   public ManagedObjectReference copyVirtualDisk_Task(ManagedObjectReference _this, String sourceName, ManagedObjectReference sourceDatacenter, String destName, ManagedObjectReference destDatacenter, VirtualDiskSpec destSpec, Boolean force) throws java.rmi.RemoteException, FileFault, InvalidDiskFormat, InvalidDatastore, RuntimeFault {
@@ -2270,6 +2295,12 @@ public class VimStub
     paras[2] = new Argument("portgroupKey", "String", portgroupKey);
     return (ManagedObjectReference) wsc.invoke("DVSManagerLookupDvPortGroup", paras, "ManagedObjectReference");
   }
+  public ManagedObjectReference updateDVSLacpGroupConfig_Task(ManagedObjectReference _this, VMwareDvsLacpGroupSpec[] lacpGroupSpec) throws java.rmi.RemoteException, DvsFault, RuntimeFault {
+    Argument[] paras = new Argument[2];
+    paras[0] = new Argument("_this", "ManagedObjectReference", _this);
+    paras[1] = new Argument("lacpGroupSpec", "VMwareDvsLacpGroupSpec[]", lacpGroupSpec);
+    return (ManagedObjectReference) wsc.invoke("UpdateDVSLacpGroupConfig_Task", paras, "ManagedObjectReference");
+  }
   public Event[] readNextEvents(ManagedObjectReference _this, int maxCount) throws java.rmi.RemoteException, RuntimeFault {
     Argument[] paras = new Argument[2];
     paras[0] = new Argument("_this", "ManagedObjectReference", _this);
@@ -2417,12 +2448,14 @@ public class VimStub
     paras[1] = new Argument("datastore", "ManagedObjectReference", datastore);
     return (HostScsiDisk[]) wsc.invoke("QueryAvailableDisksForVmfs", paras, "HostScsiDisk[]");
   }
+  
   public VmfsDatastoreOption[] queryVmfsDatastoreCreateOptions(ManagedObjectReference _this, String devicePath) throws java.rmi.RemoteException, NotFound, HostConfigFault, RuntimeFault {
-      Argument[] paras = new Argument[2];
-      paras[0] = new Argument("_this", "ManagedObjectReference", _this);
-      paras[1] = new Argument("devicePath", "String", devicePath);
-      return (VmfsDatastoreOption[]) wsc.invoke("QueryVmfsDatastoreCreateOptions", paras, "VmfsDatastoreOption[]");
-    }
+    Argument[] paras = new Argument[2];
+    paras[0] = new Argument("_this", "ManagedObjectReference", _this);
+    paras[1] = new Argument("devicePath", "String", devicePath);
+    return (VmfsDatastoreOption[]) wsc.invoke("QueryVmfsDatastoreCreateOptions", paras, "VmfsDatastoreOption[]");
+  }
+  
   public VmfsDatastoreOption[] queryVmfsDatastoreCreateOptions(ManagedObjectReference _this, String devicePath, int vmfsMajorVersion) throws java.rmi.RemoteException, NotFound, HostConfigFault, RuntimeFault {
     Argument[] paras = new Argument[3];
     paras[0] = new Argument("_this", "ManagedObjectReference", _this);
@@ -2615,6 +2648,17 @@ public class VimStub
     paras[0] = new Argument("_this", "ManagedObjectReference", _this);
     paras[1] = new Argument("force", "boolean", force);
     wsc.invoke("RestoreFirmwareConfiguration", paras, null);
+  }
+  public void refreshGraphicsManager(ManagedObjectReference _this) throws java.rmi.RemoteException, RuntimeFault {
+    Argument[] paras = new Argument[1];
+    paras[0] = new Argument("_this", "ManagedObjectReference", _this);
+    wsc.invoke("RefreshGraphicsManager", paras, null);
+  }
+  public boolean isSharedGraphicsActive(ManagedObjectReference _this) throws java.rmi.RemoteException, RuntimeFault {
+    Argument[] paras = new Argument[1];
+    paras[0] = new Argument("_this", "ManagedObjectReference", _this);
+    Boolean ret = (Boolean) wsc.invoke("IsSharedGraphicsActive", paras, "boolean");
+    return ret.booleanValue();
   }
   public void refreshHealthStatusSystem(ManagedObjectReference _this) throws java.rmi.RemoteException, RuntimeFault {
     Argument[] paras = new Argument[1];
@@ -3115,6 +3159,12 @@ public class VimStub
     paras[1] = new Argument("resolutionSpec", "HostUnresolvedVmfsResolutionSpec[]", resolutionSpec);
     return (HostUnresolvedVmfsResolutionResult[]) wsc.invoke("ResolveMultipleUnresolvedVmfsVolumes", paras, "HostUnresolvedVmfsResolutionResult[]");
   }
+  public ManagedObjectReference resolveMultipleUnresolvedVmfsVolumesEx_Task(ManagedObjectReference _this, HostUnresolvedVmfsResolutionSpec[] resolutionSpec) throws java.rmi.RemoteException, HostConfigFault, RuntimeFault {
+    Argument[] paras = new Argument[2];
+    paras[0] = new Argument("_this", "ManagedObjectReference", _this);
+    paras[1] = new Argument("resolutionSpec", "HostUnresolvedVmfsResolutionSpec[]", resolutionSpec);
+    return (ManagedObjectReference) wsc.invoke("ResolveMultipleUnresolvedVmfsVolumesEx_Task", paras, "ManagedObjectReference");
+  }
   public void unmountForceMountedVmfsVolume(ManagedObjectReference _this, String vmfsUuid) throws java.rmi.RemoteException, NotFound, HostConfigFault, RuntimeFault {
     Argument[] paras = new Argument[2];
     paras[0] = new Argument("_this", "ManagedObjectReference", _this);
@@ -3290,6 +3340,84 @@ public class VimStub
     paras[2] = new Argument("remove", "boolean", remove);
     wsc.invoke("MarkForRemoval", paras, null);
   }
+  public HostVffsVolume formatVffs(ManagedObjectReference _this, HostVffsSpec createSpec) throws java.rmi.RemoteException, AlreadyExists, HostConfigFault, ResourceInUse, RuntimeFault {
+    Argument[] paras = new Argument[2];
+    paras[0] = new Argument("_this", "ManagedObjectReference", _this);
+    paras[1] = new Argument("createSpec", "HostVffsSpec", createSpec);
+    return (HostVffsVolume) wsc.invoke("FormatVffs", paras, "HostVffsVolume");
+  }
+  public void extendVffs(ManagedObjectReference _this, String vffsPath, String devicePath, HostDiskPartitionSpec spec) throws java.rmi.RemoteException, NotFound, HostConfigFault, ResourceInUse, RuntimeFault {
+    Argument[] paras = new Argument[4];
+    paras[0] = new Argument("_this", "ManagedObjectReference", _this);
+    paras[1] = new Argument("vffsPath", "String", vffsPath);
+    paras[2] = new Argument("devicePath", "String", devicePath);
+    paras[3] = new Argument("spec", "HostDiskPartitionSpec", spec);
+    wsc.invoke("ExtendVffs", paras, null);
+  }
+  public void destroyVffs(ManagedObjectReference _this, String vffsPath) throws java.rmi.RemoteException, NotFound, HostConfigFault, ResourceInUse, RuntimeFault {
+    Argument[] paras = new Argument[2];
+    paras[0] = new Argument("_this", "ManagedObjectReference", _this);
+    paras[1] = new Argument("vffsPath", "String", vffsPath);
+    wsc.invoke("DestroyVffs", paras, null);
+  }
+  public void mountVffsVolume(ManagedObjectReference _this, String vffsUuid) throws java.rmi.RemoteException, NotFound, InvalidState, HostConfigFault, ResourceInUse, RuntimeFault {
+    Argument[] paras = new Argument[2];
+    paras[0] = new Argument("_this", "ManagedObjectReference", _this);
+    paras[1] = new Argument("vffsUuid", "String", vffsUuid);
+    wsc.invoke("MountVffsVolume", paras, null);
+  }
+  public void unmountVffsVolume(ManagedObjectReference _this, String vffsUuid) throws java.rmi.RemoteException, NotFound, InvalidState, HostConfigFault, ResourceInUse, RuntimeFault {
+    Argument[] paras = new Argument[2];
+    paras[0] = new Argument("_this", "ManagedObjectReference", _this);
+    paras[1] = new Argument("vffsUuid", "String", vffsUuid);
+    wsc.invoke("UnmountVffsVolume", paras, null);
+  }
+  public void deleteVffsVolumeState(ManagedObjectReference _this, String vffsUuid) throws java.rmi.RemoteException, HostConfigFault, RuntimeFault {
+    Argument[] paras = new Argument[2];
+    paras[0] = new Argument("_this", "ManagedObjectReference", _this);
+    paras[1] = new Argument("vffsUuid", "String", vffsUuid);
+    wsc.invoke("DeleteVffsVolumeState", paras, null);
+  }
+  public void rescanVffs(ManagedObjectReference _this) throws java.rmi.RemoteException, HostConfigFault, RuntimeFault {
+    Argument[] paras = new Argument[1];
+    paras[0] = new Argument("_this", "ManagedObjectReference", _this);
+    wsc.invoke("RescanVffs", paras, null);
+  }
+  public HostScsiDisk[] queryAvailableSsds(ManagedObjectReference _this, String vffsPath) throws java.rmi.RemoteException, NotFound, HostConfigFault, RuntimeFault {
+    Argument[] paras = new Argument[2];
+    paras[0] = new Argument("_this", "ManagedObjectReference", _this);
+    paras[1] = new Argument("vffsPath", "String", vffsPath);
+    return (HostScsiDisk[]) wsc.invoke("QueryAvailableSsds", paras, "HostScsiDisk[]");
+  }
+  public ManagedObjectReference configureVFlashResourceEx_Task(ManagedObjectReference _this, String[] devicePath) throws java.rmi.RemoteException, HostConfigFault, RuntimeFault {
+    Argument[] paras = new Argument[2];
+    paras[0] = new Argument("_this", "ManagedObjectReference", _this);
+    paras[1] = new Argument("devicePath", "String[]", devicePath);
+    return (ManagedObjectReference) wsc.invoke("ConfigureVFlashResourceEx_Task", paras, "ManagedObjectReference");
+  }
+  public void hostConfigureVFlashResource(ManagedObjectReference _this, HostVFlashManagerVFlashResourceConfigSpec spec) throws java.rmi.RemoteException, HostConfigFault, ResourceInUse, RuntimeFault {
+    Argument[] paras = new Argument[2];
+    paras[0] = new Argument("_this", "ManagedObjectReference", _this);
+    paras[1] = new Argument("spec", "HostVFlashManagerVFlashResourceConfigSpec", spec);
+    wsc.invoke("HostConfigureVFlashResource", paras, null);
+  }
+  public void hostRemoveVFlashResource(ManagedObjectReference _this) throws java.rmi.RemoteException, NotFound, HostConfigFault, ResourceInUse, RuntimeFault {
+    Argument[] paras = new Argument[1];
+    paras[0] = new Argument("_this", "ManagedObjectReference", _this);
+    wsc.invoke("HostRemoveVFlashResource", paras, null);
+  }
+  public void hostConfigVFlashCache(ManagedObjectReference _this, HostVFlashManagerVFlashCacheConfigSpec spec) throws java.rmi.RemoteException, HostConfigFault, InaccessibleVFlashSource, ResourceInUse, RuntimeFault {
+    Argument[] paras = new Argument[2];
+    paras[0] = new Argument("_this", "ManagedObjectReference", _this);
+    paras[1] = new Argument("spec", "HostVFlashManagerVFlashCacheConfigSpec", spec);
+    wsc.invoke("HostConfigVFlashCache", paras, null);
+  }
+  public VirtualDiskVFlashCacheConfigInfo hostGetVFlashModuleDefaultConfig(ManagedObjectReference _this, String vFlashModule) throws java.rmi.RemoteException, NotFound, HostConfigFault, RuntimeFault {
+    Argument[] paras = new Argument[2];
+    paras[0] = new Argument("_this", "ManagedObjectReference", _this);
+    paras[1] = new Argument("vFlashModule", "String", vFlashModule);
+    return (VirtualDiskVFlashCacheConfigInfo) wsc.invoke("HostGetVFlashModuleDefaultConfig", paras, "VirtualDiskVFlashCacheConfigInfo");
+  }
   public void updateIpConfig(ManagedObjectReference _this, HostIpConfig ipConfig) throws java.rmi.RemoteException, NotFound, HostConfigFault, RuntimeFault {
     Argument[] paras = new Argument[2];
     paras[0] = new Argument("_this", "ManagedObjectReference", _this);
@@ -3326,6 +3454,71 @@ public class VimStub
     paras[1] = new Argument("nicType", "String", nicType);
     paras[2] = new Argument("device", "String", device);
     wsc.invoke("DeselectVnicForNicType", paras, null);
+  }
+  public String queryCmmds(ManagedObjectReference _this, HostVsanInternalSystemCmmdsQuery[] queries) throws java.rmi.RemoteException, RuntimeFault {
+    Argument[] paras = new Argument[2];
+    paras[0] = new Argument("_this", "ManagedObjectReference", _this);
+    paras[1] = new Argument("queries", "HostVsanInternalSystemCmmdsQuery[]", queries);
+    return (String) wsc.invoke("QueryCmmds", paras, "String");
+  }
+  public String queryPhysicalVsanDisks(ManagedObjectReference _this, String[] props) throws java.rmi.RemoteException, RuntimeFault {
+    Argument[] paras = new Argument[2];
+    paras[0] = new Argument("_this", "ManagedObjectReference", _this);
+    paras[1] = new Argument("props", "String[]", props);
+    return (String) wsc.invoke("QueryPhysicalVsanDisks", paras, "String");
+  }
+  public String queryVsanObjects(ManagedObjectReference _this, String[] uuids) throws java.rmi.RemoteException, RuntimeFault {
+    Argument[] paras = new Argument[2];
+    paras[0] = new Argument("_this", "ManagedObjectReference", _this);
+    paras[1] = new Argument("uuids", "String[]", uuids);
+    return (String) wsc.invoke("QueryVsanObjects", paras, "String");
+  }
+  public String queryObjectsOnPhysicalVsanDisk(ManagedObjectReference _this, String[] disks) throws java.rmi.RemoteException, RuntimeFault {
+    Argument[] paras = new Argument[2];
+    paras[0] = new Argument("_this", "ManagedObjectReference", _this);
+    paras[1] = new Argument("disks", "String[]", disks);
+    return (String) wsc.invoke("QueryObjectsOnPhysicalVsanDisk", paras, "String");
+  }
+  public VsanHostDiskResult[] queryDisksForVsan(ManagedObjectReference _this, String[] canonicalName) throws java.rmi.RemoteException, RuntimeFault {
+    Argument[] paras = new Argument[2];
+    paras[0] = new Argument("_this", "ManagedObjectReference", _this);
+    paras[1] = new Argument("canonicalName", "String[]", canonicalName);
+    return (VsanHostDiskResult[]) wsc.invoke("QueryDisksForVsan", paras, "VsanHostDiskResult[]");
+  }
+  public ManagedObjectReference addDisks_Task(ManagedObjectReference _this, HostScsiDisk[] disk) throws java.rmi.RemoteException, RuntimeFault {
+    Argument[] paras = new Argument[2];
+    paras[0] = new Argument("_this", "ManagedObjectReference", _this);
+    paras[1] = new Argument("disk", "HostScsiDisk[]", disk);
+    return (ManagedObjectReference) wsc.invoke("AddDisks_Task", paras, "ManagedObjectReference");
+  }
+  public ManagedObjectReference initializeDisks_Task(ManagedObjectReference _this, VsanHostDiskMapping[] mapping) throws java.rmi.RemoteException, RuntimeFault {
+    Argument[] paras = new Argument[2];
+    paras[0] = new Argument("_this", "ManagedObjectReference", _this);
+    paras[1] = new Argument("mapping", "VsanHostDiskMapping[]", mapping);
+    return (ManagedObjectReference) wsc.invoke("InitializeDisks_Task", paras, "ManagedObjectReference");
+  }
+  public ManagedObjectReference removeDisk_Task(ManagedObjectReference _this, HostScsiDisk[] disk) throws java.rmi.RemoteException, RuntimeFault {
+    Argument[] paras = new Argument[2];
+    paras[0] = new Argument("_this", "ManagedObjectReference", _this);
+    paras[1] = new Argument("disk", "HostScsiDisk[]", disk);
+    return (ManagedObjectReference) wsc.invoke("RemoveDisk_Task", paras, "ManagedObjectReference");
+  }
+  public ManagedObjectReference removeDiskMapping_Task(ManagedObjectReference _this, VsanHostDiskMapping[] mapping) throws java.rmi.RemoteException, RuntimeFault {
+    Argument[] paras = new Argument[2];
+    paras[0] = new Argument("_this", "ManagedObjectReference", _this);
+    paras[1] = new Argument("mapping", "VsanHostDiskMapping[]", mapping);
+    return (ManagedObjectReference) wsc.invoke("RemoveDiskMapping_Task", paras, "ManagedObjectReference");
+  }
+  public ManagedObjectReference updateVsan_Task(ManagedObjectReference _this, VsanHostConfigInfo config) throws java.rmi.RemoteException, RuntimeFault {
+    Argument[] paras = new Argument[2];
+    paras[0] = new Argument("_this", "ManagedObjectReference", _this);
+    paras[1] = new Argument("config", "VsanHostConfigInfo", config);
+    return (ManagedObjectReference) wsc.invoke("UpdateVsan_Task", paras, "ManagedObjectReference");
+  }
+  public VsanHostClusterStatus queryHostStatus(ManagedObjectReference _this) throws java.rmi.RemoteException, RuntimeFault {
+    Argument[] paras = new Argument[1];
+    paras[0] = new Argument("_this", "ManagedObjectReference", _this);
+    return (VsanHostClusterStatus) wsc.invoke("QueryHostStatus", paras, "VsanHostClusterStatus");
   }
   public OptionValue[] queryOptions(ManagedObjectReference _this, String name) throws java.rmi.RemoteException, InvalidName, RuntimeFault {
     Argument[] paras = new Argument[2];
@@ -3458,6 +3651,13 @@ public class VimStub
     paras[1] = new Argument("configSpec", "HostConfigSpec", configSpec);
     paras[2] = new Argument("host", "ManagedObjectReference", host);
     return (HostProfileManagerConfigTaskList) wsc.invoke("GenerateConfigTaskList", paras, "HostProfileManagerConfigTaskList");
+  }
+  public ManagedObjectReference generateHostProfileTaskList_Task(ManagedObjectReference _this, HostConfigSpec configSpec, ManagedObjectReference host) throws java.rmi.RemoteException, RuntimeFault {
+    Argument[] paras = new Argument[3];
+    paras[0] = new Argument("_this", "ManagedObjectReference", _this);
+    paras[1] = new Argument("configSpec", "HostConfigSpec", configSpec);
+    paras[2] = new Argument("host", "ManagedObjectReference", host);
+    return (ManagedObjectReference) wsc.invoke("GenerateHostProfileTaskList_Task", paras, "ManagedObjectReference");
   }
   public ProfileMetadata[] queryHostProfileMetadata(ManagedObjectReference _this, String[] profileName, ManagedObjectReference profile) throws java.rmi.RemoteException, RuntimeFault {
     Argument[] paras = new Argument[3];
@@ -3641,6 +3841,11 @@ public class VimStub
     paras[1] = new Argument("name", "String", name);
     paras[2] = new Argument("description", "String", description);
     wsc.invoke("RenameSnapshot", paras, null);
+  }
+  public ManagedObjectReference exportSnapshot(ManagedObjectReference _this) throws java.rmi.RemoteException, TaskInProgress, InvalidState, FileFault, RuntimeFault {
+    Argument[] paras = new Argument[1];
+    paras[0] = new Argument("_this", "ManagedObjectReference", _this);
+    return (ManagedObjectReference) wsc.invoke("ExportSnapshot", paras, "ManagedObjectReference");
   }
   public ManagedObjectReference checkCompatibility_Task(ManagedObjectReference _this, ManagedObjectReference vm, ManagedObjectReference host, ManagedObjectReference pool, String[] testType) throws java.rmi.RemoteException, InvalidState, NoActiveHostInCluster, RuntimeFault {
     Argument[] paras = new Argument[5];

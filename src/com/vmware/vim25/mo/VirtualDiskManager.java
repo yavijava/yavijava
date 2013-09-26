@@ -99,12 +99,19 @@ public class VirtualDiskManager extends ManagedObject
 		return new Task(getServerConnection(),
 				getVimService().inflateVirtualDisk_Task(getMOR(), name, datacenter==null? null : datacenter.getMOR()));
 	}
+
+	/** keep the old signature for compability */
+  public Task moveVirtualDisk_Task(String sourceName, Datacenter sourceDatacenter, String destName, Datacenter destDatacenter, Boolean force) throws FileFault, RuntimeFault, RemoteException 
+  {
+    return moveVirtualDisk_Task(sourceName, sourceDatacenter, destName, destDatacenter, force, null);
+  }	
 	
-	public Task moveVirtualDisk_Task(String sourceName, Datacenter sourceDatacenter, String destName, Datacenter destDatacenter, Boolean force) throws FileFault, RuntimeFault, RemoteException 
+	/** @since SDK5.5 */
+	public Task moveVirtualDisk_Task(String sourceName, Datacenter sourceDatacenter, String destName, Datacenter destDatacenter, Boolean force, VirtualMachineProfileSpec[] profile) throws FileFault, RuntimeFault, RemoteException 
 	{
 		ManagedObjectReference taskMor = getVimService().moveVirtualDisk_Task(getMOR(), 
 				sourceName, sourceDatacenter==null? null : sourceDatacenter.getMOR(), 
-				destName, destDatacenter==null? null : destDatacenter.getMOR(), force);
+				destName, destDatacenter==null? null : destDatacenter.getMOR(), force, profile);
 		
 		return new Task(getServerConnection(), taskMor);
 	}

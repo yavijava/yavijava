@@ -1,6 +1,5 @@
 /*================================================================================
 Copyright (c) 2013 Steve Jin. All Rights Reserved.
-Copyright (c) 2008 VMware, Inc. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -27,30 +26,40 @@ WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWIS
 ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE 
 POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
+
 package com.vmware.vim25.mo;
 
 import java.rmi.RemoteException;
 
-import com.vmware.vim25.DvsFault;
+import com.vmware.vim25.HostGraphicsInfo;
 import com.vmware.vim25.ManagedObjectReference;
 import com.vmware.vim25.RuntimeFault;
-import com.vmware.vim25.VMwareDvsLacpGroupSpec;
 
 /**
  * The managed object class corresponding to the one defined in VI SDK API reference.
  * @author Steve JIN (http://www.doublecloud.org)
- * @since 4.0
+ * @since SDK5.5
  */
-public class VmwareDistributedVirtualSwitch extends DistributedVirtualSwitch  
+
+public class HostGraphicsManager extends ExtensibleManagedObject 
 {
-	public VmwareDistributedVirtualSwitch(ServerConnection sc, ManagedObjectReference mor) 
+	public HostGraphicsManager(ServerConnection serverConnection, ManagedObjectReference mor) 
 	{
-		super(sc, mor);
+		super(serverConnection, mor);
 	}
 	
-	public Task updateDVSLacpGroupConfig_Task(VMwareDvsLacpGroupSpec[] lacpGroupSpec) throws DvsFault, RuntimeFault, RemoteException
+	public HostGraphicsInfo[] getGraphicsInfo()
 	{
-	  ManagedObjectReference mor = getVimService().updateDVSLacpGroupConfig_Task(this.getMOR(), lacpGroupSpec);
-	  return new Task(this.getServerConnection(), mor);
+	  return (HostGraphicsInfo[]) getCurrentProperty("graphicsInfo");
+	}
+	
+	public boolean isSharedGraphicsActive() throws RuntimeFault, RemoteException 
+	{
+		return getVimService().isSharedGraphicsActive(this.getMOR());
+	}
+	
+	public void refreshGraphicsManager() throws RuntimeFault, RemoteException 
+	{
+		getVimService().queryFirmwareConfigUploadURL(this.getMOR());
 	}
 }

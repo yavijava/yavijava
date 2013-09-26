@@ -1,6 +1,5 @@
 /*================================================================================
 Copyright (c) 2013 Steve Jin. All Rights Reserved.
-Copyright (c) 2008 VMware, Inc. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -27,30 +26,29 @@ WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWIS
 ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE 
 POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
+
 package com.vmware.vim25.mo;
 
 import java.rmi.RemoteException;
 
-import com.vmware.vim25.DvsFault;
+import com.vmware.vim25.HostScsiDisk;
 import com.vmware.vim25.ManagedObjectReference;
 import com.vmware.vim25.RuntimeFault;
-import com.vmware.vim25.VMwareDvsLacpGroupSpec;
+import com.vmware.vim25.VsanHostClusterStatus;
+import com.vmware.vim25.VsanHostConfigInfo;
+import com.vmware.vim25.VsanHostDiskMapping;
+import com.vmware.vim25.VsanHostDiskResult;
 
 /**
  * The managed object class corresponding to the one defined in VI SDK API reference.
  * @author Steve JIN (http://www.doublecloud.org)
- * @since 4.0
+ * @since SDK5.5
  */
-public class VmwareDistributedVirtualSwitch extends DistributedVirtualSwitch  
+
+public class OpaqueNetwork extends Network 
 {
-	public VmwareDistributedVirtualSwitch(ServerConnection sc, ManagedObjectReference mor) 
+	public OpaqueNetwork(ServerConnection serverConnection, ManagedObjectReference mor) 
 	{
-		super(sc, mor);
-	}
-	
-	public Task updateDVSLacpGroupConfig_Task(VMwareDvsLacpGroupSpec[] lacpGroupSpec) throws DvsFault, RuntimeFault, RemoteException
-	{
-	  ManagedObjectReference mor = getVimService().updateDVSLacpGroupConfig_Task(this.getMOR(), lacpGroupSpec);
-	  return new Task(this.getServerConnection(), mor);
+		super(serverConnection, mor);
 	}
 }

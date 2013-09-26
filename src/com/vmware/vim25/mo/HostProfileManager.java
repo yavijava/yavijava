@@ -105,10 +105,20 @@ public class HostProfileManager extends ProfileManager
 	  return new Task(getServerConnection(), taskMor);
 	}
 	
+	/**
+	 * @deprecated as of SDK5.5, use generateHostProfileTaskList_Task() instead
+	 */
 	public HostProfileManagerConfigTaskList generateConfigTaskList(HostConfigSpec configSpec, HostSystem host) throws RuntimeFault, RemoteException
 	{
 		return getVimService().generateConfigTaskList(getMOR(), configSpec, host.getMOR());
 	}
+	
+	/** @since SDK5.5 */
+  public Task generateHostProfileTaskList_Task(HostConfigSpec configSpec, HostSystem host) throws RuntimeFault, RemoteException
+  {
+    ManagedObjectReference mor = getVimService().generateHostProfileTaskList_Task(getMOR(), configSpec, host.getMOR());
+    return new Task(getServerConnection(), mor);
+  }
 	
 	/**
 	 * @since SDK5.0 

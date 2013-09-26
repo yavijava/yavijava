@@ -1,4 +1,5 @@
 /*================================================================================
+Copyright (c) 2013 Steve Jin. All Rights Reserved.
 Copyright (c) 2008 VMware, Inc. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
@@ -32,6 +33,7 @@ package com.vmware.vim25.mo;
 import java.rmi.RemoteException;
 
 import com.vmware.vim25.*;
+import com.vmware.vim25.mo.util.MorUtil;
 
 /**
  * The managed object class corresponding to the one defined in VI SDK API reference.
@@ -70,12 +72,29 @@ public class AuthorizationManager extends ManagedObject
 	}
 
 	/**
-	 * @since SDK5.0 
-	 */
+	* @deprecated as of SDK5.5, use hasPrivilegeOnEntity instead, which fixed upper-case H typo in method name in 5.5
+	*/
 	public boolean[] HasPrivilegeOnEntity(ManagedEntity entity, String sessionId, String[] privId) throws RuntimeFault, RemoteException
 	{
 	  return getVimService().hasPrivilegeOnEntity(getMOR(), entity.getMOR(), sessionId, privId);
 	}
+
+	 /**
+   * @since SDK5.0
+   */
+  public boolean[] hasPrivilegeOnEntity(ManagedEntity entity, String sessionId, String[] privId) throws RuntimeFault, RemoteException
+  {
+    return getVimService().hasPrivilegeOnEntity(getMOR(), entity.getMOR(), sessionId, privId);
+  }
+
+	 /**
+	 * @since SDK5.5 
+   */
+  public EntityPrivilege[] hasPrivilegeOnEntities(ManagedEntity[] entity, String sessionId, String[] privId) throws RuntimeFault, RemoteException
+  {
+    ManagedObjectReference[] mors = MorUtil.createMORs(entity);
+    return getVimService().hasPrivilegeOnEntities(getMOR(), mors, sessionId, privId);
+  }
 
 	public void mergePermissions(int srcRoleId, int dstRoleId) throws AuthMinimumAdminPermission, NotFound, RuntimeFault, RemoteException  
 	{

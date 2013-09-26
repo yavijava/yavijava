@@ -1,4 +1,5 @@
 /*================================================================================
+Copyright (c) 2013 Steve Jin. All Rights Reserved.
 Copyright (c) 2008 VMware, Inc. All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
@@ -61,6 +62,13 @@ public class VirtualMachineSnapshot extends ManagedObject
 	public VirtualMachineConfigInfo getConfig()
 	{
 		return (VirtualMachineConfigInfo) getCurrentProperty("config");
+	}
+	
+	/** @since SDK5.5 */
+	public HttpNfcLease exportSnapshot() throws TaskInProgress, InvalidState, FileFault, RuntimeFault, RemoteException
+	{
+	  ManagedObjectReference mor = getVimService().exportSnapshot(this.getMOR());
+	  return new HttpNfcLease(this.getServerConnection(), mor);
 	}
 	
   //SDK4.1 signature for back compatibility

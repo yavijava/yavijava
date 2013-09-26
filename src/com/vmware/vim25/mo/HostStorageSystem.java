@@ -118,7 +118,19 @@ public class HostStorageSystem extends ExtensibleManagedObject
   {
     return getVimService().computeDiskPartitionInfoForResize(getMOR(), partition, blockRange, partitionFormat);
   }
+  
+  /** @since SDK5.5 */
+  public void deleteVffsVolumeState(String vffsUuid) throws HostConfigFault, RuntimeFault, RemoteException
+  {
+    getVimService().deleteVffsVolumeState(this.getMOR(), vffsUuid);
+  }
 	
+  /** @since SDK5.5 */
+  public void destroyVffs(String vffsPath) throws NotFound, HostConfigFault, ResourceInUse, RuntimeFault, RemoteException
+  {
+    getVimService().destroyVffs(this.getMOR(), vffsPath);
+  }
+  
 	/**
 	 * @since SDK5.0
 	 */
@@ -153,6 +165,18 @@ public class HostStorageSystem extends ExtensibleManagedObject
 		getVimService().expandVmfsExtent(getMOR(), vmfsPath, extent);
 	}
 	
+	/** @since SDK5.5 */
+	public void extendVffs(String vffsPath, String devicePath, HostDiskPartitionSpec spec) throws NotFound, HostConfigFault, ResourceInUse, RuntimeFault, RemoteException
+	{
+	  getVimService().extendVffs(this.getMOR(), vffsPath, devicePath, spec);
+	}
+	
+	/** @since SDK5.5 */
+  public void formatVffs(String vffsPath, String devicePath,  HostVffsSpec createSpec) throws AlreadyExists, HostConfigFault, ResourceInUse, RuntimeFault, RemoteException
+  {
+    getVimService().formatVffs(this.getMOR(), createSpec);
+  }
+	
 	public HostVmfsVolume formatVmfs(HostVmfsSpec createSpec) throws HostConfigFault, AlreadyExists, RuntimeFault, RemoteException
 	{
 		return getVimService().formatVmfs(getMOR(), createSpec);
@@ -167,11 +191,27 @@ public class HostStorageSystem extends ExtensibleManagedObject
 	}
 	
 	/**
+   * @since SDK5.5
+   */
+	public void mountVffsVolume(String vffsUuid) throws NotFound, InvalidState, HostConfigFault, ResourceInUse, RuntimeFault, RemoteException
+	{
+	  getVimService().mountVffsVolume(this.getMOR(), vffsUuid);
+	}
+	
+	/**
 	 * @since SDK5.0
 	 */
 	public void mountVmfsVolume(String vmfsUuid) throws NotFound, InvalidState, HostConfigFault, ResourceInUse, RuntimeFault, RemoteException
 	{
 	  getVimService().mountVmfsVolume(getMOR(), vmfsUuid);
+	}
+	
+	/**
+   * @since SDK5.5
+   */
+	public HostScsiDisk[] queryAvailableSsds(String vffsPath) throws NotFound, HostConfigFault, RuntimeFault, RemoteException
+	{
+	  return getVimService().queryAvailableSsds(this.getMOR(), vffsPath);
 	}
 	
 	/**
@@ -223,6 +263,12 @@ public class HostStorageSystem extends ExtensibleManagedObject
 		getVimService().rescanHba(getMOR(), hbaDevice);
 	}
 	
+	/** @since SDK5.5 */
+	public void rescanVffs() throws HostConfigFault, RuntimeFault, RemoteException
+	{
+	  getVimService().rescanVffs(this.getMOR());
+	}
+	
 	public void rescanVmfs() throws HostConfigFault, RuntimeFault, RemoteException
 	{
 		getVimService().rescanVmfs(getMOR());
@@ -236,6 +282,13 @@ public class HostStorageSystem extends ExtensibleManagedObject
 		return getVimService().resolveMultipleUnresolvedVmfsVolumes(getMOR(), resolutionSpec);
 	}
 	
+	/** @since SDK5.5 */
+	public Task resolveMultipleUnresolvedVmfsVolumesEx_Task(HostUnresolvedVmfsResolutionSpec[] resolutionSpec) throws HostConfigFault, RuntimeFault, RemoteException
+	{
+	  ManagedObjectReference mor = getVimService().resolveMultipleUnresolvedVmfsVolumesEx_Task(this.getMOR(), resolutionSpec);
+	  return new Task(this.getServerConnection(), mor);
+	}
+		
 	public HostDiskPartitionInfo[] retrieveDiskPartitionInfo(String[] devicePath) throws RuntimeFault, RemoteException
 	{
 		return getVimService().retrieveDiskPartitionInfo(getMOR(), devicePath);
@@ -252,6 +305,12 @@ public class HostStorageSystem extends ExtensibleManagedObject
 	public void unmountForceMountedVmfsVolume(String vmfsUuid) throws NotFound, HostConfigFault, RuntimeFault, RemoteException
 	{
 	  getVimService().unmountForceMountedVmfsVolume(getMOR(), vmfsUuid);
+	}
+	
+	/** @since SDK5.5 */
+	public void unmountVffsVolume(String vffsUuid) throws NotFound, InvalidState, HostConfigFault, ResourceInUse, RuntimeFault, RemoteException
+	{
+	  getVimService().unmountVffsVolume(this.getMOR(), vffsUuid);
 	}
 	
 	/**

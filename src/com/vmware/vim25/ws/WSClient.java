@@ -65,6 +65,7 @@ final public class WSClient
   private final static String SOAP_ACTION_V41 = "urn:vim25/4.1";
   private final static String SOAP_ACTION_V50 = "urn:vim25/5.0";
   private final static String SOAP_ACTION_V51 = "urn:vim25/5.1";
+  private final static String SOAP_ACTION_V55 = "urn:vim25/5.5";
   
   private URL baseUrl = null;
   private String cookie = null;
@@ -268,9 +269,13 @@ final public class WSClient
     {
       soapAction = SOAP_ACTION_V51;
     }
+    else if("5.5".equals(apiVersion))
+    {
+      soapAction = SOAP_ACTION_V55;
+    }
     else
     { //always defaults to latest version 
-      soapAction = SOAP_ACTION_V51;
+      soapAction = SOAP_ACTION_V55;
     }
   }
   
