@@ -53,7 +53,7 @@ public class TurnOnFirewallPolicy
     if(args.length != 4)
     {
       System.out.println("Usage: java TurnOnFirewallPolicy " +
-      		"<url> <username> <password> <hostname>");
+          "<url> <username> <password> <hostname>");
       return;
     }
 

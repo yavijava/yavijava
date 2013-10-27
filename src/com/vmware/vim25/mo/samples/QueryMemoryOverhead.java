@@ -52,48 +52,48 @@ import com.vmware.vim25.mo.util.*;
 
 public class QueryMemoryOverhead 
 {
-	public static void main(String[] args) throws Exception 
-	{
-		CommandLineParser clp = new CommandLineParser(constructOptions(), args);
-		String urlStr = clp.get_option("url");
-		String username = clp.get_option("username");
-		String password = clp.get_option("password");
-		String hostname = clp.get_option("hostname");
-		String memorysize = clp.get_option("memorysize");
-		String cpucount = clp.get_option("cpucount");
-			
-		ServiceInstance si = new ServiceInstance(new URL(urlStr), username, password, true);
+  public static void main(String[] args) throws Exception 
+  {
+    CommandLineParser clp = new CommandLineParser(constructOptions(), args);
+    String urlStr = clp.get_option("url");
+    String username = clp.get_option("username");
+    String password = clp.get_option("password");
+    String hostname = clp.get_option("hostname");
+    String memorysize = clp.get_option("memorysize");
+    String cpucount = clp.get_option("cpucount");
+      
+    ServiceInstance si = new ServiceInstance(new URL(urlStr), username, password, true);
 
-		HostSystem host = (HostSystem) new InventoryNavigator(si.getRootFolder()).searchManagedEntity("HostSystem",hostname);
+    HostSystem host = (HostSystem) new InventoryNavigator(si.getRootFolder()).searchManagedEntity("HostSystem",hostname);
 
-		VirtualMachineConfigInfo vmConfigInfo = new VirtualMachineConfigInfo();
+    VirtualMachineConfigInfo vmConfigInfo = new VirtualMachineConfigInfo();
             
-		vmConfigInfo.setChangeVersion("1");
-		Calendar cal = si.currentTime(); 
-		vmConfigInfo.setModified(cal);
+    vmConfigInfo.setChangeVersion("1");
+    Calendar cal = si.currentTime(); 
+    vmConfigInfo.setModified(cal);
            
-		VirtualMachineDefaultPowerOpInfo defaultInfo = new VirtualMachineDefaultPowerOpInfo();
-		vmConfigInfo.setDefaultPowerOps(defaultInfo);
+    VirtualMachineDefaultPowerOpInfo defaultInfo = new VirtualMachineDefaultPowerOpInfo();
+    vmConfigInfo.setDefaultPowerOps(defaultInfo);
            
-		VirtualMachineFileInfo fileInfo = new VirtualMachineFileInfo();
-		vmConfigInfo.setFiles(fileInfo);
+    VirtualMachineFileInfo fileInfo = new VirtualMachineFileInfo();
+    vmConfigInfo.setFiles(fileInfo);
             
-		VirtualMachineFlagInfo flagInfo = new VirtualMachineFlagInfo();
-		vmConfigInfo.setFlags(flagInfo);
+    VirtualMachineFlagInfo flagInfo = new VirtualMachineFlagInfo();
+    vmConfigInfo.setFlags(flagInfo);
             
-		vmConfigInfo.setGuestFullName("Full Name");
-		vmConfigInfo.setGuestId("Id");
+    vmConfigInfo.setGuestFullName("Full Name");
+    vmConfigInfo.setGuestId("Id");
             
-		VirtualHardware vhardware = new VirtualHardware();
-		vhardware.setMemoryMB(Integer.parseInt(memorysize));
-		vhardware.setNumCPU(Integer.parseInt(cpucount));
-		vmConfigInfo.setHardware(vhardware);
+    VirtualHardware vhardware = new VirtualHardware();
+    vhardware.setMemoryMB(Integer.parseInt(memorysize));
+    vhardware.setNumCPU(Integer.parseInt(cpucount));
+    vmConfigInfo.setHardware(vhardware);
             
-		vmConfigInfo.setName("OnlyFoeInfo");
-		vmConfigInfo.setUuid("12345678-abcd-1234-cdef-123456789abc");
-		vmConfigInfo.setVersion("First");
-		vmConfigInfo.setTemplate(false);
-		vmConfigInfo.setAlternateGuestName("Alternate");
+    vmConfigInfo.setName("OnlyFoeInfo");
+    vmConfigInfo.setUuid("12345678-abcd-1234-cdef-123456789abc");
+    vmConfigInfo.setVersion("First");
+    vmConfigInfo.setTemplate(false);
+    vmConfigInfo.setAlternateGuestName("Alternate");
             
        Long overhead = host.queryMemoryOverheadEx(vmConfigInfo);      
        System.out.println("Using queryMemoryOverheadEx API using vmReconfigInfo");
@@ -104,9 +104,9 @@ public class QueryMemoryOverhead
     public static OptionSpec[] constructOptions() 
     {
         return new OptionSpec [] {
-        		new OptionSpec("hostname", "String", 1 ,"Name of the host", null),
-        		new OptionSpec("memorysize", "Integer", 1, "Size of the memory", null),
-        		new OptionSpec("cpucount", "Integer", 1, "Number of the CPU count", null)
+            new OptionSpec("hostname", "String", 1 ,"Name of the host", null),
+            new OptionSpec("memorysize", "Integer", 1, "Size of the memory", null),
+            new OptionSpec("cpucount", "Integer", 1, "Number of the CPU count", null)
         };
      }  
 }

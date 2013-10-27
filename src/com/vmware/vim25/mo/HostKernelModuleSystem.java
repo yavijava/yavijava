@@ -9,24 +9,24 @@ import com.vmware.vim25.RuntimeFault;
 
 public class HostKernelModuleSystem extends ManagedObject 
 {
-	public HostKernelModuleSystem(ServerConnection sc, ManagedObjectReference mor) 
-	{
-		super(sc, mor);
-	}
-	
-	public String queryConfiguredModuleOptionString(String name) throws NotFound, RuntimeFault, RemoteException  
-	{
-		return getVimService().queryConfiguredModuleOptionString(getMOR(), name);
-	}
-	
-	public KernelModuleInfo[] queryModules() throws RemoteException, RuntimeFault
-	{
-		return getVimService().queryModules(getMOR());
-	}
-	
-	public void updateModuleOptionString(String name, String options) throws NotFound, RuntimeFault, RemoteException
-	{
-		getVimService().updateModuleOptionString(getMOR(), name, options);
-	}
+  public HostKernelModuleSystem(ServerConnection sc, ManagedObjectReference mor) 
+  {
+    super(sc, mor);
+  }
+  
+  public String queryConfiguredModuleOptionString(String name) throws NotFound, RuntimeFault, RemoteException  
+  {
+    return getVimService().queryConfiguredModuleOptionString(getMOR(), name);
+  }
+  
+  public KernelModuleInfo[] queryModules() throws RemoteException, RuntimeFault
+  {
+    return getVimService().queryModules(getMOR());
+  }
+  
+  public void updateModuleOptionString(String name, String options) throws NotFound, RuntimeFault, RemoteException
+  {
+    getVimService().updateModuleOptionString(getMOR(), name, options);
+  }
 
 }

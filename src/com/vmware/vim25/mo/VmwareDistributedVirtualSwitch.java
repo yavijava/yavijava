@@ -43,14 +43,14 @@ import com.vmware.vim25.VMwareDvsLacpGroupSpec;
  */
 public class VmwareDistributedVirtualSwitch extends DistributedVirtualSwitch  
 {
-	public VmwareDistributedVirtualSwitch(ServerConnection sc, ManagedObjectReference mor) 
-	{
-		super(sc, mor);
-	}
-	
-	public Task updateDVSLacpGroupConfig_Task(VMwareDvsLacpGroupSpec[] lacpGroupSpec) throws DvsFault, RuntimeFault, RemoteException
-	{
-	  ManagedObjectReference mor = getVimService().updateDVSLacpGroupConfig_Task(this.getMOR(), lacpGroupSpec);
-	  return new Task(this.getServerConnection(), mor);
-	}
+  public VmwareDistributedVirtualSwitch(ServerConnection sc, ManagedObjectReference mor) 
+  {
+    super(sc, mor);
+  }
+  
+  public Task updateDVSLacpGroupConfig_Task(VMwareDvsLacpGroupSpec[] lacpGroupSpec) throws DvsFault, RuntimeFault, RemoteException
+  {
+    ManagedObjectReference mor = getVimService().updateDVSLacpGroupConfig_Task(this.getMOR(), lacpGroupSpec);
+    return new Task(this.getServerConnection(), mor);
+  }
 }

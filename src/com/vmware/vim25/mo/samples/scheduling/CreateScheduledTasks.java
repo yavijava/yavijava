@@ -56,25 +56,25 @@ public class CreateScheduledTasks
     if(args.length != 4)
     {
       System.out.println("Usage: java CreateScheduledTasks " 
-	    + "<url> <username> <password> <vmname>");
-	  return;
+      + "<url> <username> <password> <vmname>");
+    return;
     }
     
     ServiceInstance si = new ServiceInstance(
-	              new URL(args[0]), args[1], args[2], true);
+                new URL(args[0]), args[1], args[2], true);
     Folder rootFolder = si.getRootFolder();
     
     InventoryNavigator inv = new InventoryNavigator(rootFolder);
     String vmname = args[3];
     VirtualMachine vm = (VirtualMachine)inv.searchManagedEntity(
             "VirtualMachine", vmname);
-	if(vm==null)
-	{
-	  System.out.println("Cannot find the VM " + vmname 
-	    + "\nExisting...");
-	  si.getServerConnection().logout();
-	  return;
-	}
+  if(vm==null)
+  {
+    System.out.println("Cannot find the VM " + vmname 
+      + "\nExisting...");
+    si.getServerConnection().logout();
+    return;
+  }
 
     ScheduledTaskManager stm = si.getScheduledTaskManager();
     if(stm!=null)
@@ -96,8 +96,8 @@ public class CreateScheduledTasks
 
       ScheduledTask st = stm.createScheduledTask(vm, oneSpec);
       ScheduledTask st1 = stm.createScheduledTask(vm, weekSpec);
-	  // sleep two minutes before deleting 
-	  // the one time scheduled task.
+    // sleep two minutes before deleting 
+    // the one time scheduled task.
       // An one time scheduled task has not to be deleted after
       // it's run. It can be run any time again by calling the 
       // runScheduledTask() method.
@@ -110,7 +110,7 @@ public class CreateScheduledTasks
         + "available on this target.");
     }
     
-	si.getServerConnection().logout();
+  si.getServerConnection().logout();
    }
   
   static ScheduledTaskSpec createOneTimeSchedulerSpec(

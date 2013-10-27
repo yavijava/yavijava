@@ -101,7 +101,7 @@ public class TaskHistoryMonitor
         printTaskInfos(tis);
       }
       System.out.println("\nTotal number " +
-      		"of tasks retrieved:" + total);
+          "of tasks retrieved:" + total);
       thc.destroyCollector();
     }
     si.getServerConnection().logout();

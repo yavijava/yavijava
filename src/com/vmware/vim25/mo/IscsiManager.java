@@ -43,44 +43,44 @@ import com.vmware.vim25.*;
 public class IscsiManager extends ManagedObject 
 {
 
-	public IscsiManager(ServerConnection serverConnection, ManagedObjectReference mor) 
-	{
-		super(serverConnection, mor);
-	}
+  public IscsiManager(ServerConnection serverConnection, ManagedObjectReference mor) 
+  {
+    super(serverConnection, mor);
+  }
 
-	public void bindVnic(String iScsiHbaName, String vnicDevice) throws IscsiFaultVnicAlreadyBound, IscsiFaultVnicHasNoUplinks, IscsiFaultVnicHasMultipleUplinks, IscsiFaultVnicHasWrongUplink, IscsiFaultVnicNotFound, IscsiFaultInvalidVnic, PlatformConfigFault, IscsiFault, NotFound, RuntimeFault, RemoteException
-	{
-	  getVimService().bindVnic(getMOR(), iScsiHbaName, vnicDevice);
-	}
-	
-	public IscsiPortInfo[] queryBoundVnics(String iScsiHbaName) throws IscsiFault, NotFound, RuntimeFault, RemoteException
-	{
-	  return getVimService().queryBoundVnics(getMOR(), iScsiHbaName);
-	}
-	
-	public IscsiPortInfo[] queryCandidateNics(String iScsiHbaName) throws IscsiFault, NotFound, RuntimeFault, RemoteException
-	{
-	  return getVimService().queryCandidateNics(getMOR(), iScsiHbaName);
-	}
-	
-	public IscsiMigrationDependency queryMigrationDependencies(String[] pnicDevice) throws RuntimeFault, RemoteException
-	{
-	  return getVimService().queryMigrationDependencies(getMOR(), pnicDevice);
-	}
-	
-	public IscsiStatus queryPnicStatus(String pnicDevice) throws IscsiFault, RuntimeFault, RemoteException
-	{
-	  return getVimService().queryPnicStatus(getMOR(), pnicDevice);
-	}
-	
-	public IscsiStatus queryVnicStatus(String vnicDevice) throws IscsiFault, RuntimeFault, RemoteException
-	{
-	  return getVimService().queryVnicStatus(getMOR(), vnicDevice);
-	}
-	
-	public void unbindVnic(String iScsiHbaName, String vnicDevice, boolean force) throws IscsiFaultVnicNotBound, IscsiFaultVnicHasActivePaths, IscsiFaultVnicIsLastPath, PlatformConfigFault, IscsiFault, NotFound, RuntimeFault, RemoteException
-	{
-	  getVimService().unbindVnic(getMOR(), iScsiHbaName, vnicDevice, force);
-	}
-	
+  public void bindVnic(String iScsiHbaName, String vnicDevice) throws IscsiFaultVnicAlreadyBound, IscsiFaultVnicHasNoUplinks, IscsiFaultVnicHasMultipleUplinks, IscsiFaultVnicHasWrongUplink, IscsiFaultVnicNotFound, IscsiFaultInvalidVnic, PlatformConfigFault, IscsiFault, NotFound, RuntimeFault, RemoteException
+  {
+    getVimService().bindVnic(getMOR(), iScsiHbaName, vnicDevice);
+  }
+  
+  public IscsiPortInfo[] queryBoundVnics(String iScsiHbaName) throws IscsiFault, NotFound, RuntimeFault, RemoteException
+  {
+    return getVimService().queryBoundVnics(getMOR(), iScsiHbaName);
+  }
+  
+  public IscsiPortInfo[] queryCandidateNics(String iScsiHbaName) throws IscsiFault, NotFound, RuntimeFault, RemoteException
+  {
+    return getVimService().queryCandidateNics(getMOR(), iScsiHbaName);
+  }
+  
+  public IscsiMigrationDependency queryMigrationDependencies(String[] pnicDevice) throws RuntimeFault, RemoteException
+  {
+    return getVimService().queryMigrationDependencies(getMOR(), pnicDevice);
+  }
+  
+  public IscsiStatus queryPnicStatus(String pnicDevice) throws IscsiFault, RuntimeFault, RemoteException
+  {
+    return getVimService().queryPnicStatus(getMOR(), pnicDevice);
+  }
+  
+  public IscsiStatus queryVnicStatus(String vnicDevice) throws IscsiFault, RuntimeFault, RemoteException
+  {
+    return getVimService().queryVnicStatus(getMOR(), vnicDevice);
+  }
+  
+  public void unbindVnic(String iScsiHbaName, String vnicDevice, boolean force) throws IscsiFaultVnicNotBound, IscsiFaultVnicHasActivePaths, IscsiFaultVnicIsLastPath, PlatformConfigFault, IscsiFault, NotFound, RuntimeFault, RemoteException
+  {
+    getVimService().unbindVnic(getMOR(), iScsiHbaName, vnicDevice, force);
+  }
+  
 }

@@ -41,25 +41,25 @@ import com.vmware.vim25.*;
 public class HostHealthStatusSystem extends ManagedObject 
 {
 
-	public HostHealthStatusSystem(ServerConnection serverConnection, ManagedObjectReference mor) 
-	{
-		super(serverConnection, mor);
-	}
-	
-	public HealthSystemRuntime getRuntime()
-	{
-		return (HealthSystemRuntime) getCurrentProperty("runtime");
-	}
+  public HostHealthStatusSystem(ServerConnection serverConnection, ManagedObjectReference mor) 
+  {
+    super(serverConnection, mor);
+  }
+  
+  public HealthSystemRuntime getRuntime()
+  {
+    return (HealthSystemRuntime) getCurrentProperty("runtime");
+  }
 
-	public void refreshHealthStatusSystem() throws RuntimeFault, RemoteException 
-	{
-		getVimService().refreshHealthStatusSystem(getMOR());
-	}
-	
-	public void resetSystemHealthInfo() throws RuntimeFault, RemoteException 
-	{
-		getVimService().resetSystemHealthInfo(getMOR());
-	}
-	
-	
+  public void refreshHealthStatusSystem() throws RuntimeFault, RemoteException 
+  {
+    getVimService().refreshHealthStatusSystem(getMOR());
+  }
+  
+  public void resetSystemHealthInfo() throws RuntimeFault, RemoteException 
+  {
+    getVimService().resetSystemHealthInfo(getMOR());
+  }
+  
+  
 }

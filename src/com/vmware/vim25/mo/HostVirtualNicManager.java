@@ -44,28 +44,28 @@ import com.vmware.vim25.VirtualNicManagerNetConfig;
  */
 public class HostVirtualNicManager extends ExtensibleManagedObject  
 {
-	public HostVirtualNicManager(ServerConnection sc, ManagedObjectReference mor) 
-	{
-		super(sc, mor);
-	}
+  public HostVirtualNicManager(ServerConnection sc, ManagedObjectReference mor) 
+  {
+    super(sc, mor);
+  }
 
-	public HostVirtualNicManagerInfo getInfo()
-	{
-		return (HostVirtualNicManagerInfo) getCurrentProperty("info");
-	}
-	
-	public VirtualNicManagerNetConfig queryNetConfig(String nicType) throws HostConfigFault, InvalidArgument, RuntimeFault, RemoteException
-	{
-		return getVimService().queryNetConfig(getMOR(), nicType);
-	}
-	
-	public void deselectVnicForNicType(String nicType, String device) throws HostConfigFault, InvalidArgument, RuntimeFault, RemoteException
-	{
-		getVimService().deselectVnicForNicType(getMOR(), nicType, device);
-	}
-	
-	public void selectVnicForNicType(String nicType, String device) throws HostConfigFault, InvalidArgument, RuntimeFault, RemoteException
-	{
-		getVimService().selectVnicForNicType(getMOR(), nicType, device);
-	}
+  public HostVirtualNicManagerInfo getInfo()
+  {
+    return (HostVirtualNicManagerInfo) getCurrentProperty("info");
+  }
+  
+  public VirtualNicManagerNetConfig queryNetConfig(String nicType) throws HostConfigFault, InvalidArgument, RuntimeFault, RemoteException
+  {
+    return getVimService().queryNetConfig(getMOR(), nicType);
+  }
+  
+  public void deselectVnicForNicType(String nicType, String device) throws HostConfigFault, InvalidArgument, RuntimeFault, RemoteException
+  {
+    getVimService().deselectVnicForNicType(getMOR(), nicType, device);
+  }
+  
+  public void selectVnicForNicType(String nicType, String device) throws HostConfigFault, InvalidArgument, RuntimeFault, RemoteException
+  {
+    getVimService().selectVnicForNicType(getMOR(), nicType, device);
+  }
 }

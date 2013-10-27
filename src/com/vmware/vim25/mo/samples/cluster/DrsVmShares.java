@@ -51,67 +51,67 @@ import com.vmware.vim25.mo.util.*;
 
 public class DrsVmShares
 {
-	public static void main(String[] args) throws Exception
-	{
-		if(args.length!=3)
-		{
-			System.out.println("Usage: DrsVmShares url username password");
-			System.exit(-1);
-		}
-		
-		URL url = null;
-		try 
-		{ 
-			url = new URL(args[0]); 
-		} catch ( MalformedURLException urlE)
-		{
-			System.out.println("The URL provided is NOT valid. Please check it.");
-			System.exit(-1);
-		}
-		String username = args[1];
-		String password = args[2];
-		String vm1_oid = "vm-26"; // The reference ID for VM 1
-		String vm2_oid = "vm-28"; // The reference ID for VM 2
-		
-		// initialize the system, set up web services
+  public static void main(String[] args) throws Exception
+  {
+    if(args.length!=3)
+    {
+      System.out.println("Usage: DrsVmShares url username password");
+      System.exit(-1);
+    }
+    
+    URL url = null;
+    try 
+    { 
+      url = new URL(args[0]); 
+    } catch ( MalformedURLException urlE)
+    {
+      System.out.println("The URL provided is NOT valid. Please check it.");
+      System.exit(-1);
+    }
+    String username = args[1];
+    String password = args[2];
+    String vm1_oid = "vm-26"; // The reference ID for VM 1
+    String vm2_oid = "vm-28"; // The reference ID for VM 2
+    
+    // initialize the system, set up web services
     ServiceInstance si = new ServiceInstance(url, username, password, true);
     
-		// create a new VirtualMachineConfigSpec for VM1
-		VirtualMachineConfigSpec vmcs1 = new VirtualMachineConfigSpec();
-		ResourceAllocationInfo rai1 = new ResourceAllocationInfo();
-		SharesInfo si1 = new SharesInfo();
-		si1.setLevel(SharesLevel.custom);
-		si1.setShares(1333);
-		rai1.setShares(si1);
-		vmcs1.setCpuAllocation(rai1);
+    // create a new VirtualMachineConfigSpec for VM1
+    VirtualMachineConfigSpec vmcs1 = new VirtualMachineConfigSpec();
+    ResourceAllocationInfo rai1 = new ResourceAllocationInfo();
+    SharesInfo si1 = new SharesInfo();
+    si1.setLevel(SharesLevel.custom);
+    si1.setShares(1333);
+    rai1.setShares(si1);
+    vmcs1.setCpuAllocation(rai1);
 
-		// do the same for VM2
-		VirtualMachineConfigSpec vmcs2 = new VirtualMachineConfigSpec();
-		ResourceAllocationInfo rai2 = new ResourceAllocationInfo();
-		SharesInfo si2 = new SharesInfo();
-		si2.setLevel(SharesLevel.high);
-		rai2.setShares(si2);
-		vmcs2.setCpuAllocation(rai2);
-		
-		ManagedObjectReference vm1_mor = createMOR("VirtualMachine", vm1_oid);
-		ManagedObjectReference vm2_mor = createMOR("VirtualMachine", vm2_oid);
-		VirtualMachine vm1 = (VirtualMachine) MorUtil.createExactManagedEntity(si.getServerConnection(), vm1_mor);
-		VirtualMachine vm2 = (VirtualMachine) MorUtil.createExactManagedEntity(si.getServerConnection(), vm2_mor);
-		
-		// make a web service call to set the configuration.
-		vm1.reconfigVM_Task(vmcs1);
-		vm2.reconfigVM_Task(vmcs2);			
+    // do the same for VM2
+    VirtualMachineConfigSpec vmcs2 = new VirtualMachineConfigSpec();
+    ResourceAllocationInfo rai2 = new ResourceAllocationInfo();
+    SharesInfo si2 = new SharesInfo();
+    si2.setLevel(SharesLevel.high);
+    rai2.setShares(si2);
+    vmcs2.setCpuAllocation(rai2);
+    
+    ManagedObjectReference vm1_mor = createMOR("VirtualMachine", vm1_oid);
+    ManagedObjectReference vm2_mor = createMOR("VirtualMachine", vm2_oid);
+    VirtualMachine vm1 = (VirtualMachine) MorUtil.createExactManagedEntity(si.getServerConnection(), vm1_mor);
+    VirtualMachine vm2 = (VirtualMachine) MorUtil.createExactManagedEntity(si.getServerConnection(), vm2_mor);
+    
+    // make a web service call to set the configuration.
+    vm1.reconfigVM_Task(vmcs1);
+    vm2.reconfigVM_Task(vmcs2);      
 
-		// log out from web service
-		si.getServerConnection().logout();
-		System.out.println("Done with setting VM CPU shares.");
-	}
-	
-	public static ManagedObjectReference createMOR(String type, String id)
-	{
-		ManagedObjectReference mor = new ManagedObjectReference();
-		mor.setType(type);
-		mor.set_value(id);
-		return mor; 
-	}
+    // log out from web service
+    si.getServerConnection().logout();
+    System.out.println("Done with setting VM CPU shares.");
+  }
+  
+  public static ManagedObjectReference createMOR(String type, String id)
+  {
+    ManagedObjectReference mor = new ManagedObjectReference();
+    mor.setType(type);
+    mor.set_value(id);
+    return mor; 
+  }
 }

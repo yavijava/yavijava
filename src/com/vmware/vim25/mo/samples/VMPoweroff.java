@@ -42,41 +42,41 @@ import com.vmware.vim25.mo.*;
 
 public class VMPoweroff 
 {
-	public static void main(String[] args) throws Exception
-	{
-		ServiceInstance si = new ServiceInstance(new URL("https://10.17.218.174/sdk"), "root", "password", true);
-		Folder rootFolder = si.getRootFolder();
-		
-		ManagedEntity[] mes = rootFolder.getChildEntity();
-		
-		for(int i=0; i<mes.length; i++)
-		{
-			if(mes[i] instanceof Datacenter)
-			{
-				Datacenter dc = (Datacenter) mes[i];
-				Folder vmFolder = dc.getVmFolder();
-				ManagedEntity[] vms = vmFolder.getChildEntity();
-				
-				for(int j=0; j<vms.length; j++)
-				{
-					if(vms[j] instanceof VirtualMachine)
-					{
-						VirtualMachine vm = (VirtualMachine) vms[j];
-						System.out.println((vm.getName()));
-						VirtualMachineSummary summary = (VirtualMachineSummary) (vm.getSummary());
-						System.out.println(summary.toString());
-						VirtualMachineRuntimeInfo vmri = (VirtualMachineRuntimeInfo) vm.getRuntime();
-						if(vmri.getPowerState() == VirtualMachinePowerState.poweredOn
-							&& "Ubuntu704Srv".equals(vm.getName()))
-						{
-							Task task = vm.powerOffVM_Task();
-							task.waitForMe();
-							System.out.println("vm:" + vm.getName() + " powered off.");
-						}
-					}
-				}
-			}
-		}
-		si.getServerConnection().logout();
-	}
+  public static void main(String[] args) throws Exception
+  {
+    ServiceInstance si = new ServiceInstance(new URL("https://10.17.218.174/sdk"), "root", "password", true);
+    Folder rootFolder = si.getRootFolder();
+    
+    ManagedEntity[] mes = rootFolder.getChildEntity();
+    
+    for(int i=0; i<mes.length; i++)
+    {
+      if(mes[i] instanceof Datacenter)
+      {
+        Datacenter dc = (Datacenter) mes[i];
+        Folder vmFolder = dc.getVmFolder();
+        ManagedEntity[] vms = vmFolder.getChildEntity();
+        
+        for(int j=0; j<vms.length; j++)
+        {
+          if(vms[j] instanceof VirtualMachine)
+          {
+            VirtualMachine vm = (VirtualMachine) vms[j];
+            System.out.println((vm.getName()));
+            VirtualMachineSummary summary = (VirtualMachineSummary) (vm.getSummary());
+            System.out.println(summary.toString());
+            VirtualMachineRuntimeInfo vmri = (VirtualMachineRuntimeInfo) vm.getRuntime();
+            if(vmri.getPowerState() == VirtualMachinePowerState.poweredOn
+              && "Ubuntu704Srv".equals(vm.getName()))
+            {
+              Task task = vm.powerOffVM_Task();
+              task.waitForMe();
+              System.out.println("vm:" + vm.getName() + " powered off.");
+            }
+          }
+        }
+      }
+    }
+    si.getServerConnection().logout();
+  }
 }

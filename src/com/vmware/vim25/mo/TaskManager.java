@@ -41,54 +41,54 @@ import com.vmware.vim25.*;
 public class TaskManager extends ManagedObject 
 {
 
-	public TaskManager(ServerConnection serverConnection, ManagedObjectReference mor) 
-	{
-		super(serverConnection, mor);
-	}
-	
-	/**
-	 * @deprecated the misspelled word. Use getDescription() instead 
-	 */
+  public TaskManager(ServerConnection serverConnection, ManagedObjectReference mor) 
+  {
+    super(serverConnection, mor);
+  }
+  
+  /**
+   * @deprecated the misspelled word. Use getDescription() instead 
+   */
   public TaskDescription getDescriptioin()
-	{
-	  return getDescription();
-	}
-	
-	public TaskDescription getDescription()
-	{
-		return (TaskDescription) getCurrentProperty("description");
-	}
-	
-	public int getMaxCollector()
-	{
-		return ((Integer)getCurrentProperty("maxCollector")).intValue(); 
-	}
-	
-	public Task[] getRecentTasks()
-	{
-		return getTasks("recentTask");
-	}
-	            
-	public TaskHistoryCollector createCollectorForTasks(TaskFilterSpec filter) throws InvalidState, RuntimeFault, RemoteException 
-	{
-		return new TaskHistoryCollector(getServerConnection(),
-				getVimService().createCollectorForTasks(getMOR(), filter));
-	}
-	
-	//SDK2.5 signature for back compatibility
-	public TaskInfo createTask(ManagedObject obj, String taskTypeId, String initiatedBy, boolean cancelable) throws RuntimeFault, RemoteException 
-	{
-		return createTask(obj, taskTypeId, initiatedBy, cancelable, null);
-	}
+  {
+    return getDescription();
+  }
+  
+  public TaskDescription getDescription()
+  {
+    return (TaskDescription) getCurrentProperty("description");
+  }
+  
+  public int getMaxCollector()
+  {
+    return ((Integer)getCurrentProperty("maxCollector")).intValue(); 
+  }
+  
+  public Task[] getRecentTasks()
+  {
+    return getTasks("recentTask");
+  }
+              
+  public TaskHistoryCollector createCollectorForTasks(TaskFilterSpec filter) throws InvalidState, RuntimeFault, RemoteException 
+  {
+    return new TaskHistoryCollector(getServerConnection(),
+        getVimService().createCollectorForTasks(getMOR(), filter));
+  }
+  
+  //SDK2.5 signature for back compatibility
+  public TaskInfo createTask(ManagedObject obj, String taskTypeId, String initiatedBy, boolean cancelable) throws RuntimeFault, RemoteException 
+  {
+    return createTask(obj, taskTypeId, initiatedBy, cancelable, null);
+  }
 
-	//SDK4.0 signature
-	public TaskInfo createTask(ManagedObject obj, String taskTypeId, String initiatedBy, boolean cancelable, String parentTaskKey) throws RuntimeFault, RemoteException 
-	{
-		if(obj==null)
-		{
-			throw new IllegalArgumentException("obj must not be null.");
-		}
-		return getVimService().createTask(getMOR(), obj.getMOR(), taskTypeId, initiatedBy, cancelable, parentTaskKey);
-	}
-	
+  //SDK4.0 signature
+  public TaskInfo createTask(ManagedObject obj, String taskTypeId, String initiatedBy, boolean cancelable, String parentTaskKey) throws RuntimeFault, RemoteException 
+  {
+    if(obj==null)
+    {
+      throw new IllegalArgumentException("obj must not be null.");
+    }
+    return getVimService().createTask(getMOR(), obj.getMOR(), taskTypeId, initiatedBy, cancelable, parentTaskKey);
+  }
+  
 }

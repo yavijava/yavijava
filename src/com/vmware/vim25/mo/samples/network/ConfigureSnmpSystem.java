@@ -51,7 +51,7 @@ public class ConfigureSnmpSystem
     if(args.length != 4)
     {
       System.out.println("Usage: java ConfigureSnmpSystem " +
-      		"<url> <username> <password> <hostname>");
+          "<url> <username> <password> <hostname>");
       return;
     }
 

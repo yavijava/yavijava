@@ -67,37 +67,37 @@ public class DeleteOneTimeScheduledTask
    
    public static void main(String [] args) throws Exception
    {
-	    CommandLineParser clp = new CommandLineParser(constructOptions(), args);
-	   	String urlStr = clp.get_option("url");
-  	    String username = clp.get_option("username");
-	    String password = clp.get_option("password");
-	    String taskname = clp.get_option("taskname");
+      CommandLineParser clp = new CommandLineParser(constructOptions(), args);
+       String urlStr = clp.get_option("url");
+        String username = clp.get_option("username");
+      String password = clp.get_option("password");
+      String taskname = clp.get_option("taskname");
 
-		ServiceInstance si = new ServiceInstance(new URL(urlStr), username, password, true);
-		ScheduledTaskManager stm = si.getScheduledTaskManager();
+    ServiceInstance si = new ServiceInstance(new URL(urlStr), username, password, true);
+    ScheduledTaskManager stm = si.getScheduledTaskManager();
 
-		if(stm!=null)
-		{
-			ScheduledTask[] tasks = stm.getScheduledTasks();
-			boolean found = false;
-			for(int i=0; i<tasks.length; i++)
-			{
-				if(taskname.equals(tasks[i].getInfo().getName()))
-				{
-					tasks[i].removeScheduledTask();
-					found = true;
-					System.out.println(taskname + " has been removed.");
-					break;
-				}
-			}
-			if(found==false)
-			{
-				System.out.println("There is no task found named as " + taskname);
-			}
-		}
-		else
-		{
-			System.out.println("SchduledTaskManager is not available on this target.");
-		}
+    if(stm!=null)
+    {
+      ScheduledTask[] tasks = stm.getScheduledTasks();
+      boolean found = false;
+      for(int i=0; i<tasks.length; i++)
+      {
+        if(taskname.equals(tasks[i].getInfo().getName()))
+        {
+          tasks[i].removeScheduledTask();
+          found = true;
+          System.out.println(taskname + " has been removed.");
+          break;
+        }
+      }
+      if(found==false)
+      {
+        System.out.println("There is no task found named as " + taskname);
+      }
+    }
+    else
+    {
+      System.out.println("SchduledTaskManager is not available on this target.");
+    }
    }
 }

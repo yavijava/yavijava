@@ -40,94 +40,94 @@ import com.vmware.vim25.ws.WSClient;
  */
 final public class ServerConnection
 {
-	private URL url = null;
-	private UserSession userSession = null;
-	private ServiceInstance serviceInstance = null;
-	private VimPortType vimService = null;
-	
-	public ServerConnection(URL url, VimPortType vimService, ServiceInstance serviceInstance)
-	{
-		this.url = url;
-		this.vimService = vimService;
-		this.serviceInstance = serviceInstance;
-	}
+  private URL url = null;
+  private UserSession userSession = null;
+  private ServiceInstance serviceInstance = null;
+  private VimPortType vimService = null;
+  
+  public ServerConnection(URL url, VimPortType vimService, ServiceInstance serviceInstance)
+  {
+    this.url = url;
+    this.vimService = vimService;
+    this.serviceInstance = serviceInstance;
+  }
 
-	/**
-	 * @return the current session string in format like:
-	 * vmware_soap_session="B3240D15-34DF-4BB8-B902-A844FDF42E85"
-	 */
-	public String getSessionStr()
-	{
-		WSClient wsc = vimService.getWsc();
-		return wsc.getCookie();
-	}
-	
-	/**
-	 * Disconnect from the server and clean up
-	 */
-	public void logout()
-	{
-		if(vimService!=null)
-		{
-			try
-			{
-				serviceInstance.getSessionManager().logout();
-			} catch (Exception e)
-			{
-				System.err.println("Failed to disconnect...");
-			}
-			vimService =null;
-			serviceInstance = null;
-		}
-	}
+  /**
+   * @return the current session string in format like:
+   * vmware_soap_session="B3240D15-34DF-4BB8-B902-A844FDF42E85"
+   */
+  public String getSessionStr()
+  {
+    WSClient wsc = vimService.getWsc();
+    return wsc.getCookie();
+  }
+  
+  /**
+   * Disconnect from the server and clean up
+   */
+  public void logout()
+  {
+    if(vimService!=null)
+    {
+      try
+      {
+        serviceInstance.getSessionManager().logout();
+      } catch (Exception e)
+      {
+        System.err.println("Failed to disconnect...");
+      }
+      vimService =null;
+      serviceInstance = null;
+    }
+  }
 
-	public ServiceInstance getServiceInstance()
-	{
-		return serviceInstance;
-	}
-	
-	public VimPortType getVimService() 
-	{
-		return vimService;
-	}
-	
-	public URL getUrl() 
-	{
-		return url;
-	}
-	
-	public String getUsername() 
-	{
-		return userSession.getUserName();
-	}
-	
-	/** 
-	 * @deprecated
-	 * This method returns a cached UserSession which holds dynamic properties,
-	 * for example, lastActiveTime, but are not updated. To avoid this confusion,
-	 * deprecate it. Also see bug: 3403474
-	 * To get updated UserSession, always use SessionManager. 
-	 */
-	public UserSession getUserSession() 
-	{
-		return userSession;
-	}
-	
-	void setUserSession(UserSession userSession) 
-	{
-		this.userSession = userSession;
-	}
-	
-	void setServiceInstance(ServiceInstance si)
-	{
-	  this.serviceInstance = si;
-	}
-//	@Override
-//	protected void finalize() throws Throwable 
-//	{
-//		logout(); //last defense to log out the connection
-//		super.finalize();
-//	}
-//	
-	
+  public ServiceInstance getServiceInstance()
+  {
+    return serviceInstance;
+  }
+  
+  public VimPortType getVimService() 
+  {
+    return vimService;
+  }
+  
+  public URL getUrl() 
+  {
+    return url;
+  }
+  
+  public String getUsername() 
+  {
+    return userSession.getUserName();
+  }
+  
+  /** 
+   * @deprecated
+   * This method returns a cached UserSession which holds dynamic properties,
+   * for example, lastActiveTime, but are not updated. To avoid this confusion,
+   * deprecate it. Also see bug: 3403474
+   * To get updated UserSession, always use SessionManager. 
+   */
+  public UserSession getUserSession() 
+  {
+    return userSession;
+  }
+  
+  void setUserSession(UserSession userSession) 
+  {
+    this.userSession = userSession;
+  }
+  
+  void setServiceInstance(ServiceInstance si)
+  {
+    this.serviceInstance = si;
+  }
+//  @Override
+//  protected void finalize() throws Throwable 
+//  {
+//    logout(); //last defense to log out the connection
+//    super.finalize();
+//  }
+//  
+  
 }

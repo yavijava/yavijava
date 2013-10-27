@@ -43,23 +43,23 @@ import com.vmware.vim25.RuntimeFault;
  */
 public class HostPciPassthruSystem extends ExtensibleManagedObject  
 {
-	public HostPciPassthruSystem(ServerConnection sc, ManagedObjectReference mor) 
-	{
-		super(sc, mor);
-	}
-	
-	public HostPciPassthruInfo[] getPciPassthruInfo()
-	{
-		return (HostPciPassthruInfo[])getCurrentProperty("pciPassthruInfo");
-	}
-	
-	public void refresh() throws RuntimeFault, RemoteException
-	{
-		getVimService().refresh(getMOR());
-	}
-	
-	public void updatePassthruConfig(HostPciPassthruConfig[] config) throws HostConfigFault, RuntimeFault, RemoteException
-	{
-		getVimService().updatePassthruConfig(getMOR(), config);
-	}
+  public HostPciPassthruSystem(ServerConnection sc, ManagedObjectReference mor) 
+  {
+    super(sc, mor);
+  }
+  
+  public HostPciPassthruInfo[] getPciPassthruInfo()
+  {
+    return (HostPciPassthruInfo[])getCurrentProperty("pciPassthruInfo");
+  }
+  
+  public void refresh() throws RuntimeFault, RemoteException
+  {
+    getVimService().refresh(getMOR());
+  }
+  
+  public void updatePassthruConfig(HostPciPassthruConfig[] config) throws HostConfigFault, RuntimeFault, RemoteException
+  {
+    getVimService().updatePassthruConfig(getMOR(), config);
+  }
 }

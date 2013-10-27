@@ -43,30 +43,30 @@ import com.vmware.vim25.mo.util.MorUtil;
 public class InventoryView extends ManagedObjectView 
 {
 
-	public InventoryView(ServerConnection serverConnection, ManagedObjectReference mor) 
-	{
-		super(serverConnection, mor);
-	}
+  public InventoryView(ServerConnection serverConnection, ManagedObjectReference mor) 
+  {
+    super(serverConnection, mor);
+  }
 
-	public ManagedEntity[] closeInventoryViewFolder(ManagedEntity[] entities) throws RuntimeFault, RemoteException 
-	{
-		if(entities==null)
-		{
-			throw new IllegalArgumentException("entities must not be null.");
-		}
-		ManagedObjectReference[] mors = getVimService().closeInventoryViewFolder(getMOR(),	MorUtil.createMORs(entities));
-		return MorUtil.createManagedEntities(getServerConnection(), mors);
-	}
-	
-	public ManagedEntity[] openInventoryViewFolder(ManagedEntity[] entities) throws RuntimeFault, RemoteException 
-	{
-		if(entities==null)
-		{
-			throw new IllegalArgumentException("entities must not be null.");
-		}
-		ManagedObjectReference[] mors = getVimService().openInventoryViewFolder(getMOR(), MorUtil.createMORs(entities));
-		return MorUtil.createManagedEntities(getServerConnection(), mors);
-	}
-	
-	
+  public ManagedEntity[] closeInventoryViewFolder(ManagedEntity[] entities) throws RuntimeFault, RemoteException 
+  {
+    if(entities==null)
+    {
+      throw new IllegalArgumentException("entities must not be null.");
+    }
+    ManagedObjectReference[] mors = getVimService().closeInventoryViewFolder(getMOR(),  MorUtil.createMORs(entities));
+    return MorUtil.createManagedEntities(getServerConnection(), mors);
+  }
+  
+  public ManagedEntity[] openInventoryViewFolder(ManagedEntity[] entities) throws RuntimeFault, RemoteException 
+  {
+    if(entities==null)
+    {
+      throw new IllegalArgumentException("entities must not be null.");
+    }
+    ManagedObjectReference[] mors = getVimService().openInventoryViewFolder(getMOR(), MorUtil.createMORs(entities));
+    return MorUtil.createManagedEntities(getServerConnection(), mors);
+  }
+  
+  
 }

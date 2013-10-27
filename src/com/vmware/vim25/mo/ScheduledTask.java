@@ -41,39 +41,39 @@ import com.vmware.vim25.*;
 public class ScheduledTask extends ExtensibleManagedObject 
 {
 
-	public ScheduledTask(ServerConnection serverConnection,	ManagedObjectReference mor) 
-	{
-		super(serverConnection, mor);
-	}
+  public ScheduledTask(ServerConnection serverConnection,  ManagedObjectReference mor) 
+  {
+    super(serverConnection, mor);
+  }
 
-	public 	ScheduledTaskInfo getInfo()
-	{
-		return (ScheduledTaskInfo) getCurrentProperty("info");
-	}
-	
-	public 	Task getActiveTask()
-	{
-		return (Task) getCurrentProperty("info.activeTask"); //only if the state is running
-	}
-	
-	public ManagedEntity getAssociatedManagedEntity()
-	{
-		return (ManagedEntity) getCurrentProperty("info.entity");
-	}
-	
-	public void reconfigureScheduledTask(ScheduledTaskSpec spec) throws InvalidName, DuplicateName, InvalidState, RuntimeFault, RemoteException 
-	{
-		getVimService().reconfigureScheduledTask(getMOR(), spec);
-	}
-	
-	public void removeScheduledTask() throws InvalidState, RuntimeFault, RemoteException 
-	{
-		getVimService().removeScheduledTask(getMOR());
-	}
-	
-	public void runScheduledTask() throws InvalidState, RuntimeFault, RemoteException 
-	{
-		getVimService().runScheduledTask(getMOR()); 
-	}
-	
+  public   ScheduledTaskInfo getInfo()
+  {
+    return (ScheduledTaskInfo) getCurrentProperty("info");
+  }
+  
+  public   Task getActiveTask()
+  {
+    return (Task) getCurrentProperty("info.activeTask"); //only if the state is running
+  }
+  
+  public ManagedEntity getAssociatedManagedEntity()
+  {
+    return (ManagedEntity) getCurrentProperty("info.entity");
+  }
+  
+  public void reconfigureScheduledTask(ScheduledTaskSpec spec) throws InvalidName, DuplicateName, InvalidState, RuntimeFault, RemoteException 
+  {
+    getVimService().reconfigureScheduledTask(getMOR(), spec);
+  }
+  
+  public void removeScheduledTask() throws InvalidState, RuntimeFault, RemoteException 
+  {
+    getVimService().removeScheduledTask(getMOR());
+  }
+  
+  public void runScheduledTask() throws InvalidState, RuntimeFault, RemoteException 
+  {
+    getVimService().runScheduledTask(getMOR()); 
+  }
+  
 }

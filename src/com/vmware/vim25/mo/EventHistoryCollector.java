@@ -40,30 +40,30 @@ import com.vmware.vim25.*;
 
 public class EventHistoryCollector extends HistoryCollector 
 {
-	
-	public EventHistoryCollector(ServerConnection serverConnection, ManagedObjectReference mor) 
-	{
-		super(serverConnection, mor);
-	}
-	
-	public EventFilterSpec getFilter()
-	{
-		return (EventFilterSpec) getCurrentProperty("filter");
-	}
-	
-	public Event[] getLatestPage()
-	{
-		return (Event[]) this.getCurrentProperty("latestPage");
-	}
-	
-	public Event[] readNextEvents(int maxCount) throws RuntimeFault, RemoteException 
-	{
-		return getVimService().readNextEvents(getMOR(), maxCount);
-	}
-	
-	public Event[] readPreviousEvents(int maxCount) throws RuntimeFault, RemoteException 
-	{
-		return getVimService().readPreviousEvents(getMOR(), maxCount);
-	}
+  
+  public EventHistoryCollector(ServerConnection serverConnection, ManagedObjectReference mor) 
+  {
+    super(serverConnection, mor);
+  }
+  
+  public EventFilterSpec getFilter()
+  {
+    return (EventFilterSpec) getCurrentProperty("filter");
+  }
+  
+  public Event[] getLatestPage()
+  {
+    return (Event[]) this.getCurrentProperty("latestPage");
+  }
+  
+  public Event[] readNextEvents(int maxCount) throws RuntimeFault, RemoteException 
+  {
+    return getVimService().readNextEvents(getMOR(), maxCount);
+  }
+  
+  public Event[] readPreviousEvents(int maxCount) throws RuntimeFault, RemoteException 
+  {
+    return getVimService().readPreviousEvents(getMOR(), maxCount);
+  }
 
 }

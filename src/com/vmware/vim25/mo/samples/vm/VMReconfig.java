@@ -71,10 +71,10 @@ import com.vmware.vim25.mo.util.*;
 
 public class VMReconfig 
 {    
-	static CommandLineParser clp = null;
+  static CommandLineParser clp = null;
    
-	private static void reConfig(CommandLineParser clp, VirtualMachine vm) throws Exception 
-	{
+  private static void reConfig(CommandLineParser clp, VirtualMachine vm) throws Exception 
+  {
       String deviceType = clp.get_option("device");
       VirtualMachineConfigSpec vmConfigSpec = new VirtualMachineConfigSpec();
       
@@ -129,7 +129,7 @@ public class VMReconfig
          }
          else 
          {
-        	 return;
+           return;
          }          
       }
       else if(deviceType.equalsIgnoreCase("cd")) 
@@ -138,8 +138,8 @@ public class VMReconfig
          VirtualDeviceConfigSpec cdSpec = getCDDeviceConfigSpec(vm);
          if(cdSpec != null) 
          {
-        	 VirtualDeviceConfigSpec [] cdSpecArray = {cdSpec};                     
-        	 vmConfigSpec.setDeviceChange(cdSpecArray);
+           VirtualDeviceConfigSpec [] cdSpecArray = {cdSpec};                     
+           vmConfigSpec.setDeviceChange(cdSpecArray);
          }
          else 
          {
@@ -157,12 +157,12 @@ public class VMReconfig
    
    private static VirtualDeviceConfigSpec getCDDeviceConfigSpec(VirtualMachine vm) throws Exception 
    {
-	   String ops = clp.get_option("operation");
-	   VirtualDeviceConfigSpec cdSpec = new VirtualDeviceConfigSpec();
-	   VirtualMachineConfigInfo vmConfigInfo = vm.getConfig(); 
+     String ops = clp.get_option("operation");
+     VirtualDeviceConfigSpec cdSpec = new VirtualDeviceConfigSpec();
+     VirtualMachineConfigInfo vmConfigInfo = vm.getConfig(); 
       
-	   if(ops.equalsIgnoreCase("Add")) 
-	   {                        
+     if(ops.equalsIgnoreCase("Add")) 
+     {                        
          cdSpec.setOperation(VirtualDeviceConfigSpecOperation.add);         
 
          VirtualCdrom cdrom =  new VirtualCdrom();
@@ -185,9 +185,9 @@ public class VMReconfig
       }
       else 
       {
-    	  VirtualCdrom cdRemove = null;
-    	  VirtualDevice [] test = vmConfigInfo.getHardware().getDevice();
-    	  cdSpec.setOperation(VirtualDeviceConfigSpecOperation.remove);
+        VirtualCdrom cdRemove = null;
+        VirtualDevice [] test = vmConfigInfo.getHardware().getDevice();
+        cdSpec.setOperation(VirtualDeviceConfigSpecOperation.remove);
          for(int k=0;k<test.length;k++)
          {
             if(test[k].getDeviceInfo().getLabel().equalsIgnoreCase(clp.get_option("value")))
@@ -217,9 +217,9 @@ public class VMReconfig
       
       if(hmor != null) 
       {       
-    	  ConfigTarget configTarget = envBrowser.queryConfigTarget(new HostSystem(vm.getServerConnection(), hmor));       
-    	  if(configTarget.getDatastore() != null)
-    	  {
+        ConfigTarget configTarget = envBrowser.queryConfigTarget(new HostSystem(vm.getServerConnection(), hmor));       
+        if(configTarget.getDatastore() != null)
+        {
             for (int i = 0; i < configTarget.getDatastore().length; i++) 
             {
                VirtualMachineDatastoreInfo vdsInfo = configTarget.getDatastore()[i];
@@ -267,7 +267,7 @@ public class VMReconfig
 
       if (cfgOpt == null) 
       {
-    	  throw new Exception("No VirtualHardwareInfo found in ComputeResource");
+        throw new Exception("No VirtualHardwareInfo found in ComputeResource");
       }
       else 
       {
@@ -313,10 +313,10 @@ public class VMReconfig
          nicSpec.setOperation(VirtualDeviceConfigSpecOperation.remove);
          for(int k=0;k<test.length;k++)
          {
-        	 if(test[k].getDeviceInfo().getLabel().equalsIgnoreCase( clp.get_option("value")))
-        	 {                             
-        		 nic = (VirtualEthernetCard)test[k];
-        	 }
+           if(test[k].getDeviceInfo().getLabel().equalsIgnoreCase( clp.get_option("value")))
+           {                             
+             nic = (VirtualEthernetCard)test[k];
+           }
          }
          if(nic != null) 
          {
@@ -449,7 +449,7 @@ public class VMReconfig
          DatastoreSummary ds = datastores[i].getSummary(); 
          if(ds.getFreeSpace() > size) 
          {
-        	dsName = ds.getName();
+          dsName = ds.getName();
             break;           
          }
       }
@@ -545,21 +545,21 @@ public class VMReconfig
    // TODO ** need to clean up more
    public static void main(String[] args) throws Exception 
    {     
-	    clp = new CommandLineParser(constructOptions(), args);
-	   	String urlStr = clp.get_option("url");
-  	    String username = clp.get_option("username");
-	    String password = clp.get_option("password");
-	    String vmname = clp.get_option("vmname");
-		ServiceInstance si = new ServiceInstance(new URL(urlStr), username, password, true);
-		
-		Folder rootFolder = si.getRootFolder();
-		VirtualMachine vm = (VirtualMachine) new InventoryNavigator(rootFolder).searchManagedEntity("VirtualMachine", vmname);
-	   
-		boolean valid = customValidation(clp);
-		if(valid) 
-		{
-			reConfig(clp, vm);
-		}
+      clp = new CommandLineParser(constructOptions(), args);
+       String urlStr = clp.get_option("url");
+        String username = clp.get_option("username");
+      String password = clp.get_option("password");
+      String vmname = clp.get_option("vmname");
+    ServiceInstance si = new ServiceInstance(new URL(urlStr), username, password, true);
+    
+    Folder rootFolder = si.getRootFolder();
+    VirtualMachine vm = (VirtualMachine) new InventoryNavigator(rootFolder).searchManagedEntity("VirtualMachine", vmname);
+     
+    boolean valid = customValidation(clp);
+    if(valid) 
+    {
+      reConfig(clp, vm);
+    }
         else 
         {
             System.out.println("Virtual Machine " + clp.get_option("vmname") + " Not Found");

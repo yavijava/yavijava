@@ -41,45 +41,45 @@ import com.vmware.vim25.*;
 public class HostDatastoreBrowser extends ManagedObject 
 {
 
-	public HostDatastoreBrowser(ServerConnection serverConnection, ManagedObjectReference mor) 
-	{
-		super(serverConnection, mor);
-	}
-	
-	public Datastore[] getDatastores()
-	{
-		return getDatastores("datastore");
-	}
-	
-	public FileQuery[] getSupportedType()
-	{
-		return (FileQuery[]) this.getCurrentProperty("supportedType");
-	}
-	
-	/**
-	 * @deprecated, use FileManager.DeleteDatastoreFile_Task
-	 * @throws RemoteException 
-	 * @throws RuntimeFault 
-	 * @throws InvalidDatastore 
-	 * @throws FileFault 
-	 * @
-	 */
-	public void deleteFile(String datastorePath) throws FileFault, InvalidDatastore, RuntimeFault, RemoteException 
-	{
-		getVimService().deleteFile(getMOR(), datastorePath);
-	}
-	
-	public Task searchDatastore_Task(String datastorePath, HostDatastoreBrowserSearchSpec searchSpec) throws FileFault, InvalidDatastore, RuntimeFault, RemoteException 
-	{
-		return new Task(getServerConnection(),
-		getVimService().searchDatastore_Task(getMOR(), datastorePath, searchSpec));
-	}
-	
-	public Task searchDatastoreSubFolders_Task(String datastorePath, HostDatastoreBrowserSearchSpec searchSpec) throws FileFault, InvalidDatastore, RuntimeFault, RemoteException 
-	{
-		return new Task(getServerConnection(),
-		getVimService().searchDatastoreSubFolders_Task(getMOR(), datastorePath, searchSpec));
-	}
-	
-	
+  public HostDatastoreBrowser(ServerConnection serverConnection, ManagedObjectReference mor) 
+  {
+    super(serverConnection, mor);
+  }
+  
+  public Datastore[] getDatastores()
+  {
+    return getDatastores("datastore");
+  }
+  
+  public FileQuery[] getSupportedType()
+  {
+    return (FileQuery[]) this.getCurrentProperty("supportedType");
+  }
+  
+  /**
+   * @deprecated, use FileManager.DeleteDatastoreFile_Task
+   * @throws RemoteException 
+   * @throws RuntimeFault 
+   * @throws InvalidDatastore 
+   * @throws FileFault 
+   * @
+   */
+  public void deleteFile(String datastorePath) throws FileFault, InvalidDatastore, RuntimeFault, RemoteException 
+  {
+    getVimService().deleteFile(getMOR(), datastorePath);
+  }
+  
+  public Task searchDatastore_Task(String datastorePath, HostDatastoreBrowserSearchSpec searchSpec) throws FileFault, InvalidDatastore, RuntimeFault, RemoteException 
+  {
+    return new Task(getServerConnection(),
+    getVimService().searchDatastore_Task(getMOR(), datastorePath, searchSpec));
+  }
+  
+  public Task searchDatastoreSubFolders_Task(String datastorePath, HostDatastoreBrowserSearchSpec searchSpec) throws FileFault, InvalidDatastore, RuntimeFault, RemoteException 
+  {
+    return new Task(getServerConnection(),
+    getVimService().searchDatastoreSubFolders_Task(getMOR(), datastorePath, searchSpec));
+  }
+  
+  
 }

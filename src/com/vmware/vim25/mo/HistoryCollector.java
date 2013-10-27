@@ -42,32 +42,32 @@ import com.vmware.vim25.RuntimeFault;
 abstract public class HistoryCollector extends ManagedObject 
 {
 
-	public HistoryCollector(ServerConnection serverConnection, ManagedObjectReference mor) 
-	{
-		super(serverConnection, mor);
-	}
-	
-	// The "filter" property type is different from EventHistoryCollector(TaskFilterSpec) and TaskHistoryCollector(EventFilterSpec)
-	// and these two *Spec are not inherited from each other. So getFilter() is moved to subclasses...
+  public HistoryCollector(ServerConnection serverConnection, ManagedObjectReference mor) 
+  {
+    super(serverConnection, mor);
+  }
+  
+  // The "filter" property type is different from EventHistoryCollector(TaskFilterSpec) and TaskHistoryCollector(EventFilterSpec)
+  // and these two *Spec are not inherited from each other. So getFilter() is moved to subclasses...
 
-	public void destroyCollector() throws RuntimeFault, RemoteException 
-	{
-		getVimService().destroyCollector(getMOR());
-	}
-	
-	public void resetCollector() throws RuntimeFault, RemoteException 
-	{
-		getVimService().resetCollector(getMOR());
-	}
-	
-	public void rewindCollector() throws RuntimeFault, RemoteException 
-	{
-		getVimService().rewindCollector(getMOR());
-	}
-	
-	public void setCollectorPageSize(int maxCount) throws RuntimeFault, RemoteException 
-	{
-		getVimService().setCollectorPageSize(getMOR(), maxCount);
-	}
-	
+  public void destroyCollector() throws RuntimeFault, RemoteException 
+  {
+    getVimService().destroyCollector(getMOR());
+  }
+  
+  public void resetCollector() throws RuntimeFault, RemoteException 
+  {
+    getVimService().resetCollector(getMOR());
+  }
+  
+  public void rewindCollector() throws RuntimeFault, RemoteException 
+  {
+    getVimService().rewindCollector(getMOR());
+  }
+  
+  public void setCollectorPageSize(int maxCount) throws RuntimeFault, RemoteException 
+  {
+    getVimService().setCollectorPageSize(getMOR(), maxCount);
+  }
+  
 }

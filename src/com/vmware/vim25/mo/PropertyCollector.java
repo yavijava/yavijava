@@ -50,79 +50,79 @@ import com.vmware.vim25.WaitOptions;
 public class PropertyCollector extends ManagedObject 
 {
 
-	public PropertyCollector(ServerConnection serverConnection, ManagedObjectReference mor) 
-	{
-		super(serverConnection, mor);
-	}
+  public PropertyCollector(ServerConnection serverConnection, ManagedObjectReference mor) 
+  {
+    super(serverConnection, mor);
+  }
 
-	public PropertyFilter[] getFilters()
-	{
-		return getFilter("filter");
-	}
-	
-	/** @since SDK4.1 */
-	public void cancelRetrievePropertiesEx(String token) throws InvalidProperty, RuntimeFault, RemoteException
-	{
-    getVimService().cancelRetrievePropertiesEx(getMOR(), token); 
-	}
-	
-	public void cancelWaitForUpdates() throws RuntimeFault, RemoteException
-	{
-		getVimService().cancelWaitForUpdates(getMOR());
-	}
-	
+  public PropertyFilter[] getFilters()
+  {
+    return getFilter("filter");
+  }
+  
   /** @since SDK4.1 */
-	public RetrieveResult continueRetrievePropertiesEx(String token) throws InvalidProperty, RuntimeFault, RemoteException
-	{
-	  return getVimService().continueRetrievePropertiesEx(getMOR(), token);
-	}
-	
-	public UpdateSet checkForUpdates(String version) throws InvalidCollectorVersion, RuntimeFault, RemoteException
-	{
-		return getVimService().checkForUpdates(getMOR(), version);
-	}
-	
-	public PropertyFilter createFilter(PropertyFilterSpec spec, boolean partialUpdates) throws InvalidProperty, RuntimeFault, RemoteException
-	{
-		ManagedObjectReference mor = getVimService().createFilter(getMOR(), spec, partialUpdates);
-		return new PropertyFilter(getServerConnection(), mor);
-	}
-	
-	/** @since SDK4.1 */
-	public PropertyCollector createPropertyCollector() throws RuntimeFault, RemoteException
-	{
-	  ManagedObjectReference mor = getVimService().createPropertyCollector(getMOR());
+  public void cancelRetrievePropertiesEx(String token) throws InvalidProperty, RuntimeFault, RemoteException
+  {
+    getVimService().cancelRetrievePropertiesEx(getMOR(), token); 
+  }
+  
+  public void cancelWaitForUpdates() throws RuntimeFault, RemoteException
+  {
+    getVimService().cancelWaitForUpdates(getMOR());
+  }
+  
+  /** @since SDK4.1 */
+  public RetrieveResult continueRetrievePropertiesEx(String token) throws InvalidProperty, RuntimeFault, RemoteException
+  {
+    return getVimService().continueRetrievePropertiesEx(getMOR(), token);
+  }
+  
+  public UpdateSet checkForUpdates(String version) throws InvalidCollectorVersion, RuntimeFault, RemoteException
+  {
+    return getVimService().checkForUpdates(getMOR(), version);
+  }
+  
+  public PropertyFilter createFilter(PropertyFilterSpec spec, boolean partialUpdates) throws InvalidProperty, RuntimeFault, RemoteException
+  {
+    ManagedObjectReference mor = getVimService().createFilter(getMOR(), spec, partialUpdates);
+    return new PropertyFilter(getServerConnection(), mor);
+  }
+  
+  /** @since SDK4.1 */
+  public PropertyCollector createPropertyCollector() throws RuntimeFault, RemoteException
+  {
+    ManagedObjectReference mor = getVimService().createPropertyCollector(getMOR());
     return new PropertyCollector(getServerConnection(), mor);
-	}
-	
-	 /** @since SDK4.1 */
-	public void destroyPropertyCollector() throws RuntimeFault, RemoteException
-	{
-	  getVimService().destroyPropertyCollector(getMOR());
-	}
-	
-	/** @deprecated as of SDK4.1 */
-	public ObjectContent[] retrieveProperties(PropertyFilterSpec[] specSet) throws InvalidProperty, RuntimeFault, RemoteException
-	{
-		return getVimService().retrieveProperties(getMOR(), specSet);
-	}
-	
-	/** @since SDK4.1 */
+  }
+  
+   /** @since SDK4.1 */
+  public void destroyPropertyCollector() throws RuntimeFault, RemoteException
+  {
+    getVimService().destroyPropertyCollector(getMOR());
+  }
+  
+  /** @deprecated as of SDK4.1 */
+  public ObjectContent[] retrieveProperties(PropertyFilterSpec[] specSet) throws InvalidProperty, RuntimeFault, RemoteException
+  {
+    return getVimService().retrieveProperties(getMOR(), specSet);
+  }
+  
+  /** @since SDK4.1 */
   public RetrieveResult retrievePropertiesEx(PropertyFilterSpec[] specSet, RetrieveOptions options) throws InvalidProperty, RuntimeFault, RemoteException
   {
     return getVimService().retrievePropertiesEx(getMOR(), specSet, options);
   }
-	
+  
   /** @deprecated as of SDK4.1 */
-	public UpdateSet waitForUpdates(String version) throws InvalidCollectorVersion, RuntimeFault, RemoteException
-	{
-		return getVimService().waitForUpdates(getMOR(), version);
-	}
-	
-	/** @since SDK4.1 */
+  public UpdateSet waitForUpdates(String version) throws InvalidCollectorVersion, RuntimeFault, RemoteException
+  {
+    return getVimService().waitForUpdates(getMOR(), version);
+  }
+  
+  /** @since SDK4.1 */
   public UpdateSet waitForUpdatesEx(String version, WaitOptions options) throws InvalidCollectorVersion, RuntimeFault, RemoteException
   {
-	  return getVimService().waitForUpdatesEx(getMOR(), version, options);
+    return getVimService().waitForUpdatesEx(getMOR(), version, options);
   }
 
 }

@@ -67,7 +67,7 @@ public class VmNicOp
             "<username> <password> <vmname> <op> <name>");
       System.out.println("op - add|remove");
       System.out.println("name - NIC name when remove; " +
-      		"Network name when add");
+          "Network name when add");
       System.exit(0);
     }
     String vmname = args[3];

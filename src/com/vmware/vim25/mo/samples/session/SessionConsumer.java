@@ -42,14 +42,14 @@ import com.vmware.vim25.*;
 
 public class SessionConsumer {
 
-	public static void main(String[] args) throws Exception
-	{
-		String session = "vmware_soap_session=\"5229c547-1342-47d1-e830-223d99a47fba\"";
-		ServiceInstance si = new ServiceInstance(new URL("https://10.17.218.174/sdk"), session , true);
+  public static void main(String[] args) throws Exception
+  {
+    String session = "vmware_soap_session=\"5229c547-1342-47d1-e830-223d99a47fba\"";
+    ServiceInstance si = new ServiceInstance(new URL("https://10.17.218.174/sdk"), session , true);
 
-		UserSession userSession = si.getSessionManager().getCurrentSession();
-		System.out.println("username=" + userSession.getUserName());
-		System.out.println("fullname=" + userSession.getFullName());
-	}
+    UserSession userSession = si.getSessionManager().getCurrentSession();
+    System.out.println("username=" + userSession.getUserName());
+    System.out.println("fullname=" + userSession.getFullName());
+  }
 
 }

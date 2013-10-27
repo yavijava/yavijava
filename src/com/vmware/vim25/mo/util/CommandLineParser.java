@@ -45,7 +45,7 @@ public class CommandLineParser
    
    public CommandLineParser(OptionSpec [] userOptions , String [] args)
    {
-	   builtinOptions();
+     builtinOptions();
 
       if(userOptions != null) 
       {
@@ -63,22 +63,22 @@ public class CommandLineParser
 
    public void addOptions(OptionSpec [] userOptions) 
    {          
-	   for(int i=0; i < userOptions.length; i++) 
-	   {
-		   if(userOptions[i].getOptionName() != null && userOptions[i].getOptionName().length() > 0 &&
-      	    userOptions[i].getOptionDesc() != null && userOptions[i].getOptionDesc().length() > 0 &&
-      	    userOptions[i].getOptionType() != null && userOptions[i].getOptionType().length() > 0 &&
-      	    (userOptions[i].getOptionRequired() == 0 || userOptions[i].getOptionName().length() > 1)) {
+     for(int i=0; i < userOptions.length; i++) 
+     {
+       if(userOptions[i].getOptionName() != null && userOptions[i].getOptionName().length() > 0 &&
+            userOptions[i].getOptionDesc() != null && userOptions[i].getOptionDesc().length() > 0 &&
+            userOptions[i].getOptionType() != null && userOptions[i].getOptionType().length() > 0 &&
+            (userOptions[i].getOptionRequired() == 0 || userOptions[i].getOptionName().length() > 1)) {
             userOpts.put(userOptions[i].getOptionName(),userOptions[i]);            
-		   }
-		   else 
-		   {
-			   System.out.println("Option " + userOptions[i].getOptionName() + " definition is not valid");
-			   throw new IllegalArgumentException("Option " + userOptions[i].getOptionName() 
+       }
+       else 
+       {
+         System.out.println("Option " + userOptions[i].getOptionName() + " definition is not valid");
+         throw new IllegalArgumentException("Option " + userOptions[i].getOptionName() 
                                                 + " definition is not valid");
-		   }
-	   }
-	}
+       }
+     }
+  }
    
    private void builtinOptions() 
    {
@@ -111,7 +111,7 @@ public class CommandLineParser
    {
       try
       {
-    	  getCmdArguments(args);
+        getCmdArguments(args);
       }
       catch(Exception e)
       {      
@@ -264,7 +264,7 @@ public class CommandLineParser
       for(int i=0;i<vec.size();i++){
          if(optsEntered.get(vec.get(i))==null){
             String missingArg = vec.get(i);
-         	if(missingArg.equalsIgnoreCase("password")) {
+           if(missingArg.equalsIgnoreCase("password")) {
                String password = readPassword("Enter password: ");               
                optsEntered.put("password", password); 
             }
@@ -391,15 +391,15 @@ public class CommandLineParser
    
    public String getOnelineInput(String prompt)
    {
-	   System.out.print(prompt);
+     System.out.print(prompt);
        BufferedReader stdin = new BufferedReader(new InputStreamReader(System.in));
        String pass = null;
        try
        {
-    	   pass = stdin.readLine();
+         pass = stdin.readLine();
        } catch(IOException ioe)
        {
-    	   System.out.println("Error in reading console input.");
+         System.out.println("Error in reading console input.");
        }
        return pass;
    }

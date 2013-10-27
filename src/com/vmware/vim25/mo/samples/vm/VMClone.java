@@ -76,55 +76,55 @@ public class VMClone
 {
    public static void main(String[] args) throws Exception
    {
-	   CommandLineParser clp = new CommandLineParser(constructOptions(), args);
-	   
-	   String urlStr = clp.get_option("url");
-	   String username = clp.get_option("username");
-	   String password = clp.get_option("password");
-	   String cloneName = clp.get_option("CloneName");
-	   String vmPath = clp.get_option("vmPath");
-	   String datacenterName= clp.get_option("DatacenterName");
+     CommandLineParser clp = new CommandLineParser(constructOptions(), args);
+     
+     String urlStr = clp.get_option("url");
+     String username = clp.get_option("username");
+     String password = clp.get_option("password");
+     String cloneName = clp.get_option("CloneName");
+     String vmPath = clp.get_option("vmPath");
+     String datacenterName= clp.get_option("DatacenterName");
 
-	   try
-	   {
-		   ServiceInstance si = new ServiceInstance(new URL(urlStr), username, password, true);
-		   VirtualMachine vm = (VirtualMachine) si.getSearchIndex().findByInventoryPath(vmPath);
-		   Datacenter dc = (Datacenter) si.getSearchIndex().findByInventoryPath(datacenterName);
-		   
-		   if(vm==null || dc ==null)
-		   {
-			   System.out.println("VirtualMachine or Datacenter path is NOT correct. Pls double check. ");
-			   return;
-		   }
-		   Folder vmFolder = dc.getVmFolder();
-	
-		   VirtualMachineCloneSpec cloneSpec = new VirtualMachineCloneSpec();
-		   cloneSpec.setLocation(new VirtualMachineRelocateSpec());
-		   cloneSpec.setPowerOn(false);
-		   cloneSpec.setTemplate(false);
+     try
+     {
+       ServiceInstance si = new ServiceInstance(new URL(urlStr), username, password, true);
+       VirtualMachine vm = (VirtualMachine) si.getSearchIndex().findByInventoryPath(vmPath);
+       Datacenter dc = (Datacenter) si.getSearchIndex().findByInventoryPath(datacenterName);
+       
+       if(vm==null || dc ==null)
+       {
+         System.out.println("VirtualMachine or Datacenter path is NOT correct. Pls double check. ");
+         return;
+       }
+       Folder vmFolder = dc.getVmFolder();
+  
+       VirtualMachineCloneSpec cloneSpec = new VirtualMachineCloneSpec();
+       cloneSpec.setLocation(new VirtualMachineRelocateSpec());
+       cloneSpec.setPowerOn(false);
+       cloneSpec.setTemplate(false);
 
-		   Task task = vm.cloneVM_Task(vmFolder, cloneName, cloneSpec);
-		   System.out.println("Launching the VM clone task. It might take a while. Please wait for the result ...");
-		   
-		   String status = 	task.waitForMe();
-		   if(status==Task.SUCCESS)
-		   {
-	            System.out.println("Virtual Machine got cloned successfully.");
-		   }
-		   else
-		   {
-			   System.out.println("Failure -: Virtual Machine cannot be cloned");
-		   }
-	   }
-	   catch(RemoteException re)
-	   {
-		   re.printStackTrace();
-	   }
-	   catch(MalformedURLException mue)
-	   {
-		   mue.printStackTrace();
-	   }
-	}
+       Task task = vm.cloneVM_Task(vmFolder, cloneName, cloneSpec);
+       System.out.println("Launching the VM clone task. It might take a while. Please wait for the result ...");
+       
+       String status =   task.waitForMe();
+       if(status==Task.SUCCESS)
+       {
+              System.out.println("Virtual Machine got cloned successfully.");
+       }
+       else
+       {
+         System.out.println("Failure -: Virtual Machine cannot be cloned");
+       }
+     }
+     catch(RemoteException re)
+     {
+       re.printStackTrace();
+     }
+     catch(MalformedURLException mue)
+     {
+       mue.printStackTrace();
+     }
+  }
 
    private static OptionSpec[] constructOptions() 
    {
@@ -132,7 +132,7 @@ public class VMClone
       useroptions[0] = new OptionSpec("DatacenterName","String",1
               ,"Name of the Datacenter", null);
       useroptions[1] = new OptionSpec("vmPath","String",1,
-    		  "Path to the VM inventory", null);
+          "Path to the VM inventory", null);
       useroptions[2] = new OptionSpec("CloneName","String",1,
               "Name of the Clone", null);
       return useroptions;

@@ -69,7 +69,7 @@ public class RealtimePerfMonitor
     ManagedEntity vm = new InventoryNavigator(
       si.getRootFolder()).searchManagedEntity(
         "VirtualMachine", vmname);
-		
+    
     if(vm == null)
     {
       System.out.println("Virtual Machine " + vmname 
@@ -139,7 +139,7 @@ public class RealtimePerfMonitor
       else
       {
         System.out.println("UnExpected sub-type of " +
-        		"PerfEntityMetricBase.");
+            "PerfEntityMetricBase.");
       }
     }
   }

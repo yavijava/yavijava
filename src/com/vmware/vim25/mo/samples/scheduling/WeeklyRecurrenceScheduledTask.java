@@ -60,27 +60,27 @@ import com.vmware.vim25.mo.util.*;
 
 public class WeeklyRecurrenceScheduledTask 
 {
-	public static ScheduledTaskSpec createSchedulerSpec(String taskName)
-	{
-		MethodAction action = new MethodAction();
-		action.setName("RebootGuest");
-		action.setArgument(new MethodActionArgument[] { });
-		
-		WeeklyTaskScheduler scheduler = new WeeklyTaskScheduler();
-		scheduler.setSaturday(true);
-		scheduler.setHour(23);
-		scheduler.setMinute(59);
-		scheduler.setInterval(1); // run the task only Once every Week at the specified time
-		
-		ScheduledTaskSpec scheduleSpec = new ScheduledTaskSpec();
-		scheduleSpec.setName(taskName);
-		scheduleSpec.setDescription("Reboot GuestOS at 23:59PM every other Saturday.");
-		scheduleSpec.setEnabled(true);
-		scheduleSpec.setAction(action);
-		scheduleSpec.setScheduler(scheduler);
-		
-		return scheduleSpec;
-	}
+  public static ScheduledTaskSpec createSchedulerSpec(String taskName)
+  {
+    MethodAction action = new MethodAction();
+    action.setName("RebootGuest");
+    action.setArgument(new MethodActionArgument[] { });
+    
+    WeeklyTaskScheduler scheduler = new WeeklyTaskScheduler();
+    scheduler.setSaturday(true);
+    scheduler.setHour(23);
+    scheduler.setMinute(59);
+    scheduler.setInterval(1); // run the task only Once every Week at the specified time
+    
+    ScheduledTaskSpec scheduleSpec = new ScheduledTaskSpec();
+    scheduleSpec.setName(taskName);
+    scheduleSpec.setDescription("Reboot GuestOS at 23:59PM every other Saturday.");
+    scheduleSpec.setEnabled(true);
+    scheduleSpec.setAction(action);
+    scheduleSpec.setScheduler(scheduler);
+    
+    return scheduleSpec;
+  }
 
    private static OptionSpec[] constructOptions() 
    {
@@ -94,30 +94,30 @@ public class WeeklyRecurrenceScheduledTask
    
    public static void main(String [] args) throws Exception
    {
-	    CommandLineParser clp = new CommandLineParser(constructOptions(), args);
-	   	String urlStr = clp.get_option("url");
-  	    String username = clp.get_option("username");
-	    String password = clp.get_option("password");
-	    String vmpath = clp.get_option("vmpath");
-	    String taskname = clp.get_option("taskname");
+      CommandLineParser clp = new CommandLineParser(constructOptions(), args);
+       String urlStr = clp.get_option("url");
+        String username = clp.get_option("username");
+      String password = clp.get_option("password");
+      String vmpath = clp.get_option("vmpath");
+      String taskname = clp.get_option("taskname");
 
-		ServiceInstance si = new ServiceInstance(new URL(urlStr), username, password, true);
+    ServiceInstance si = new ServiceInstance(new URL(urlStr), username, password, true);
         
-		VirtualMachine vm = (VirtualMachine) si.getSearchIndex().findByInventoryPath(vmpath);
-		
-		ScheduledTaskSpec spec = createSchedulerSpec(taskname);  
-		
-		ScheduledTaskManager stm = si.getScheduledTaskManager();
-		if(stm != null)
-		{
-			stm.createScheduledTask(vm, spec);
-			System.out.println("Task: " + taskname + " has been successfully added.");
-		}
-		else
-		{
-			System.out.println("SchduledTaskManager is not available on this target.");
-		}
-		
-		si.getServerConnection().logout();
+    VirtualMachine vm = (VirtualMachine) si.getSearchIndex().findByInventoryPath(vmpath);
+    
+    ScheduledTaskSpec spec = createSchedulerSpec(taskname);  
+    
+    ScheduledTaskManager stm = si.getScheduledTaskManager();
+    if(stm != null)
+    {
+      stm.createScheduledTask(vm, spec);
+      System.out.println("Task: " + taskname + " has been successfully added.");
+    }
+    else
+    {
+      System.out.println("SchduledTaskManager is not available on this target.");
+    }
+    
+    si.getServerConnection().logout();
    }
 }

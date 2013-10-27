@@ -90,7 +90,7 @@ public class RestManagedObject
   
   public String invoke(String method, Map<String, String> para) throws Exception
   {
-    return rc.post("moid=" + moid + "&method=" + method, para);    		
+    return rc.post("moid=" + moid + "&method=" + method, para);        
   }
   
   public String invoke(String method) throws Exception

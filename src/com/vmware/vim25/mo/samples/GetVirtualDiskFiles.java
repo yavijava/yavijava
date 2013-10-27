@@ -35,75 +35,75 @@ import com.vmware.vim25.mo.*;
 import com.vmware.vim25.mo.util.*;
 
 /**
-	*<pre>
-	*This sample searches the Virtual disk files in all the data stores available in
-	*specified host using Controller Type Property. 
-	*Note: This property is not available in VC 3.0.1 and ESX 3.0.1
-	*
-	*<b>Parameters:</b>
-	*	--hostname [hostname]
-	 *  --url [webserviceurl] 
-	 *  --username [username] 
-	 * 	--password [password]
-	*</pre>
-	* @author sjin
+  *<pre>
+  *This sample searches the Virtual disk files in all the data stores available in
+  *specified host using Controller Type Property. 
+  *Note: This property is not available in VC 3.0.1 and ESX 3.0.1
+  *
+  *<b>Parameters:</b>
+  *  --hostname [hostname]
+   *  --url [webserviceurl] 
+   *  --username [username] 
+   *   --password [password]
+  *</pre>
+  * @author sjin
 */
 
 public class GetVirtualDiskFiles 
 {
-	public static void main(String[] args) throws Exception
-	{
-	    CommandLineParser clp = new CommandLineParser(constructOptions(), args);
-	   	String urlStr = clp.get_option("url");
-  	    String username = clp.get_option("username");
-	    String password = clp.get_option("password");
-		String hostname = clp.get_option("hostname");
+  public static void main(String[] args) throws Exception
+  {
+      CommandLineParser clp = new CommandLineParser(constructOptions(), args);
+       String urlStr = clp.get_option("url");
+        String username = clp.get_option("username");
+      String password = clp.get_option("password");
+    String hostname = clp.get_option("hostname");
 
-		ServiceInstance si = new ServiceInstance(new URL(urlStr), username, password, true);
-		HostSystem host = (HostSystem) new InventoryNavigator(si.getRootFolder()).searchManagedEntity("HostSystem",hostname);
-		
-		Datastore[] datastores = host.getDatastores();
-	
-		System.out.println("Searching The Datastores using Controller Type Property");
-		for(int i = 0; i < datastores.length; i++) 
-		{
-			HostDatastoreBrowser dsBrowser = datastores[i].getBrowser();
-			DatastoreSummary ds =  datastores[i].getSummary();
-			String dsName = ds.getName();  
-			System.out.println("\nSearching The Datastore " + dsName);
+    ServiceInstance si = new ServiceInstance(new URL(urlStr), username, password, true);
+    HostSystem host = (HostSystem) new InventoryNavigator(si.getRootFolder()).searchManagedEntity("HostSystem",hostname);
+    
+    Datastore[] datastores = host.getDatastores();
+  
+    System.out.println("Searching The Datastores using Controller Type Property");
+    for(int i = 0; i < datastores.length; i++) 
+    {
+      HostDatastoreBrowser dsBrowser = datastores[i].getBrowser();
+      DatastoreSummary ds =  datastores[i].getSummary();
+      String dsName = ds.getName();  
+      System.out.println("\nSearching The Datastore " + dsName);
 
-			VmDiskFileQueryFilter vdiskFilter = new VmDiskFileQueryFilter();
-			vdiskFilter.setControllerType(new String [] {"VirtualIDEController"});
+      VmDiskFileQueryFilter vdiskFilter = new VmDiskFileQueryFilter();
+      vdiskFilter.setControllerType(new String [] {"VirtualIDEController"});
 
-			VmDiskFileQuery fQuery = new VmDiskFileQuery();
-			fQuery.setFilter(vdiskFilter);
+      VmDiskFileQuery fQuery = new VmDiskFileQuery();
+      fQuery.setFilter(vdiskFilter);
 
-			HostDatastoreBrowserSearchSpec searchSpec = new HostDatastoreBrowserSearchSpec();
-			searchSpec.setQuery(new FileQuery []{fQuery});
-			//searchSpec.setMatchPattern(matchPattern);
-			
-			Task task = dsBrowser.searchDatastoreSubFolders_Task("["+dsName+"]", searchSpec);
-			task.waitForMe();
-			TaskInfo tInfo = task.getTaskInfo();         
-			ArrayOfHostDatastoreBrowserSearchResults searchResult = 
-					(ArrayOfHostDatastoreBrowserSearchResults)tInfo.getResult();
+      HostDatastoreBrowserSearchSpec searchSpec = new HostDatastoreBrowserSearchSpec();
+      searchSpec.setQuery(new FileQuery []{fQuery});
+      //searchSpec.setMatchPattern(matchPattern);
+      
+      Task task = dsBrowser.searchDatastoreSubFolders_Task("["+dsName+"]", searchSpec);
+      task.waitForMe();
+      TaskInfo tInfo = task.getTaskInfo();         
+      ArrayOfHostDatastoreBrowserSearchResults searchResult = 
+          (ArrayOfHostDatastoreBrowserSearchResults)tInfo.getResult();
             
-			int len = searchResult.getHostDatastoreBrowserSearchResults().length;                        
-			for(int j=0 ; j<len; j++) 
-			{
-				HostDatastoreBrowserSearchResults sres =  searchResult.HostDatastoreBrowserSearchResults[j];
-				FileInfo [] fileArray = sres.getFile();
-				if(fileArray == null) continue;
-				for(int k=0 ; k<fileArray.length; k++) 
-				{
-					System.out.println("Virtual Disks Files " + fileArray[k].getPath());
-				}
-			}
-		}
+      int len = searchResult.getHostDatastoreBrowserSearchResults().length;                        
+      for(int j=0 ; j<len; j++) 
+      {
+        HostDatastoreBrowserSearchResults sres =  searchResult.HostDatastoreBrowserSearchResults[j];
+        FileInfo [] fileArray = sres.getFile();
+        if(fileArray == null) continue;
+        for(int k=0 ; k<fileArray.length; k++) 
+        {
+          System.out.println("Virtual Disks Files " + fileArray[k].getPath());
+        }
+      }
+    }
    }
     
-	public static OptionSpec[] constructOptions() 
-	{
+  public static OptionSpec[] constructOptions() 
+  {
         OptionSpec [] useroptions = new OptionSpec[1];
         useroptions[0] = new OptionSpec("hostname","String",1
                                         ,"Name of the host", null);

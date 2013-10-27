@@ -56,96 +56,96 @@ import com.vmware.vim25.VmConfigFault;
  */
 public class VirtualApp extends ResourcePool
 {
-	public VirtualApp(ServerConnection sc, ManagedObjectReference mor) 
-	{
-		super(sc, mor);
-	}
+  public VirtualApp(ServerConnection sc, ManagedObjectReference mor) 
+  {
+    super(sc, mor);
+  }
 
-	/** @since SDK4.1 */
-	public VirtualAppLinkInfo[] getChildLink()
-	{
-	  return (VirtualAppLinkInfo[]) getCurrentProperty("childLink");
-	}
-	
-	public Datastore[] getDatastore()
-	{
-		return getDatastores("datastore");
-	}
-	
-	public Network[] getNetwork()
-	{
-		return getNetworks("network");
-	}
-	
-	@Override
-	public VirtualAppSummary getSummary()
-	{
-	  return (VirtualAppSummary) this.getCurrentProperty("summary");
-	}
-	
-	public Folder getParentFolder()
-	{
-		ManagedObjectReference mor = (ManagedObjectReference) getCurrentProperty("parentFolder");
-		return new Folder(getServerConnection(), mor);
-	}
-	
-	/** @since SDK4.1 */
-	public ManagedEntity getParentVApp()
-	{
-	  ManagedObjectReference mor = (ManagedObjectReference) getCurrentProperty("parentVApp");
+  /** @since SDK4.1 */
+  public VirtualAppLinkInfo[] getChildLink()
+  {
+    return (VirtualAppLinkInfo[]) getCurrentProperty("childLink");
+  }
+  
+  public Datastore[] getDatastore()
+  {
+    return getDatastores("datastore");
+  }
+  
+  public Network[] getNetwork()
+  {
+    return getNetworks("network");
+  }
+  
+  @Override
+  public VirtualAppSummary getSummary()
+  {
+    return (VirtualAppSummary) this.getCurrentProperty("summary");
+  }
+  
+  public Folder getParentFolder()
+  {
+    ManagedObjectReference mor = (ManagedObjectReference) getCurrentProperty("parentFolder");
+    return new Folder(getServerConnection(), mor);
+  }
+  
+  /** @since SDK4.1 */
+  public ManagedEntity getParentVApp()
+  {
+    ManagedObjectReference mor = (ManagedObjectReference) getCurrentProperty("parentVApp");
     return new ManagedEntity(getServerConnection(), mor);
-	}
-	
-	public VAppConfigInfo getVAppConfig()
-	{
-		return (VAppConfigInfo) getCurrentProperty("vAppConfig");
-	}
-	
-	public Task cloneVApp_Task(String name, ManagedObjectReference target, VAppCloneSpec spec) throws InvalidState, InvalidDatastore, TaskInProgress, VmConfigFault, FileFault, MigrationFault, InsufficientResourcesFault, RuntimeFault, RemoteException
-	{
-		ManagedObjectReference taskMor = getVimService().cloneVApp_Task(getMOR(), name, target, spec);
-		return new Task(getServerConnection(), taskMor);
-	}
-	
-	public HttpNfcLease exportVApp() throws InvalidPowerState, TaskInProgress, InvalidState, FileFault, RuntimeFault, RemoteException
-	{
-		ManagedObjectReference mor = getVimService().exportVApp(getMOR());
-		return new HttpNfcLease(getServerConnection(), mor);
-	}
-	
-	public Task powerOffVApp_Task(boolean force) throws TaskInProgress, InvalidState, VAppConfigFault, RuntimeFault, RemoteException
-	{
-		ManagedObjectReference taskMor = getVimService().powerOffVApp_Task(getMOR(), force);
-		return new Task(getServerConnection(), taskMor);
-	}
-	
-	/** @since SDK4.1 */
-	public Task suspendVApp_Task() throws TaskInProgress, InvalidState, VAppConfigFault, RuntimeFault, RemoteException
-	{
-	  ManagedObjectReference taskMor = getVimService().suspendVApp_Task(getMOR());
-	  return new Task(getServerConnection(), taskMor);
-	}
-	
-	public Task powerOnVApp_Task() throws TaskInProgress, InvalidState, InsufficientResourcesFault, VmConfigFault, VAppConfigFault, FileFault, RuntimeFault, RemoteException
-	{
-		ManagedObjectReference taskMor = getVimService().powerOnVApp_Task(getMOR());
-		return new Task(getServerConnection(), taskMor);
-	}
-	
-	public Task unregisterVApp_Task() throws ConcurrentAccess, InvalidState, RuntimeFault, RemoteException
-	{
-		ManagedObjectReference taskMor = getVimService().unregisterVApp_Task(getMOR());
-		return new Task(getServerConnection(), taskMor);
-	}
-	
-	/** @since SDK4.1 */
-	public void updateLinkedChildren(VirtualAppLinkInfo[] addChangeSet, ManagedObjectReference[] removeSet) throws ConcurrentAccess, RuntimeFault, RemoteException
-	{
-	  getVimService().updateLinkedChildren(getMOR(), addChangeSet, removeSet);
-	}
-	
-	public void updateVAppConfig(VAppConfigSpec spec) throws TaskInProgress, VmConfigFault, ConcurrentAccess, FileFault, InvalidName, DuplicateName, InvalidState, InsufficientResourcesFault, InvalidDatastore, RuntimeFault, RemoteException
-	{
-		getVimService().updateVAppConfig(getMOR(), spec);
-	}
+  }
+  
+  public VAppConfigInfo getVAppConfig()
+  {
+    return (VAppConfigInfo) getCurrentProperty("vAppConfig");
+  }
+  
+  public Task cloneVApp_Task(String name, ManagedObjectReference target, VAppCloneSpec spec) throws InvalidState, InvalidDatastore, TaskInProgress, VmConfigFault, FileFault, MigrationFault, InsufficientResourcesFault, RuntimeFault, RemoteException
+  {
+    ManagedObjectReference taskMor = getVimService().cloneVApp_Task(getMOR(), name, target, spec);
+    return new Task(getServerConnection(), taskMor);
+  }
+  
+  public HttpNfcLease exportVApp() throws InvalidPowerState, TaskInProgress, InvalidState, FileFault, RuntimeFault, RemoteException
+  {
+    ManagedObjectReference mor = getVimService().exportVApp(getMOR());
+    return new HttpNfcLease(getServerConnection(), mor);
+  }
+  
+  public Task powerOffVApp_Task(boolean force) throws TaskInProgress, InvalidState, VAppConfigFault, RuntimeFault, RemoteException
+  {
+    ManagedObjectReference taskMor = getVimService().powerOffVApp_Task(getMOR(), force);
+    return new Task(getServerConnection(), taskMor);
+  }
+  
+  /** @since SDK4.1 */
+  public Task suspendVApp_Task() throws TaskInProgress, InvalidState, VAppConfigFault, RuntimeFault, RemoteException
+  {
+    ManagedObjectReference taskMor = getVimService().suspendVApp_Task(getMOR());
+    return new Task(getServerConnection(), taskMor);
+  }
+  
+  public Task powerOnVApp_Task() throws TaskInProgress, InvalidState, InsufficientResourcesFault, VmConfigFault, VAppConfigFault, FileFault, RuntimeFault, RemoteException
+  {
+    ManagedObjectReference taskMor = getVimService().powerOnVApp_Task(getMOR());
+    return new Task(getServerConnection(), taskMor);
+  }
+  
+  public Task unregisterVApp_Task() throws ConcurrentAccess, InvalidState, RuntimeFault, RemoteException
+  {
+    ManagedObjectReference taskMor = getVimService().unregisterVApp_Task(getMOR());
+    return new Task(getServerConnection(), taskMor);
+  }
+  
+  /** @since SDK4.1 */
+  public void updateLinkedChildren(VirtualAppLinkInfo[] addChangeSet, ManagedObjectReference[] removeSet) throws ConcurrentAccess, RuntimeFault, RemoteException
+  {
+    getVimService().updateLinkedChildren(getMOR(), addChangeSet, removeSet);
+  }
+  
+  public void updateVAppConfig(VAppConfigSpec spec) throws TaskInProgress, VmConfigFault, ConcurrentAccess, FileFault, InvalidName, DuplicateName, InvalidState, InsufficientResourcesFault, InvalidDatastore, RuntimeFault, RemoteException
+  {
+    getVimService().updateVAppConfig(getMOR(), spec);
+  }
 }

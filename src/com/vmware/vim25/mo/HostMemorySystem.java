@@ -41,29 +41,29 @@ import com.vmware.vim25.*;
 public class HostMemorySystem extends ExtensibleManagedObject 
 {
 
-	public HostMemorySystem(ServerConnection serverConnection, ManagedObjectReference mor) 
-	{
-		super(serverConnection, mor);
-	}
+  public HostMemorySystem(ServerConnection serverConnection, ManagedObjectReference mor) 
+  {
+    super(serverConnection, mor);
+  }
 
-	public ServiceConsoleReservationInfo getConsoleReservationInfo()
-	{
-		return (ServiceConsoleReservationInfo) getCurrentProperty("consoleReservationInfo");
-	}
-	
-	public VirtualMachineMemoryReservationInfo getVirtualMachineReservationInfo()
-	{
-		return (VirtualMachineMemoryReservationInfo) getCurrentProperty("virtualMachineReservationInfo");
-	}
-	
-	public void reconfigureServiceConsoleReservation(long cfgBytes) throws RuntimeFault, RemoteException 
-	{
-		getVimService().reconfigureServiceConsoleReservation(getMOR(), cfgBytes);
-	}
-	
-	public void reconfigureVirtualMachineReservation(VirtualMachineMemoryReservationSpec spec) throws RuntimeFault, RemoteException 
-	{
-		getVimService().reconfigureVirtualMachineReservation(getMOR(), spec);
-	}
+  public ServiceConsoleReservationInfo getConsoleReservationInfo()
+  {
+    return (ServiceConsoleReservationInfo) getCurrentProperty("consoleReservationInfo");
+  }
+  
+  public VirtualMachineMemoryReservationInfo getVirtualMachineReservationInfo()
+  {
+    return (VirtualMachineMemoryReservationInfo) getCurrentProperty("virtualMachineReservationInfo");
+  }
+  
+  public void reconfigureServiceConsoleReservation(long cfgBytes) throws RuntimeFault, RemoteException 
+  {
+    getVimService().reconfigureServiceConsoleReservation(getMOR(), cfgBytes);
+  }
+  
+  public void reconfigureVirtualMachineReservation(VirtualMachineMemoryReservationSpec spec) throws RuntimeFault, RemoteException 
+  {
+    getVimService().reconfigureVirtualMachineReservation(getMOR(), spec);
+  }
 
 }

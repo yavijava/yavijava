@@ -44,82 +44,82 @@ import com.vmware.vim25.*;
 public class PerformanceManager extends ManagedObject 
 {
 
-	public PerformanceManager(ServerConnection serverConnection, ManagedObjectReference mor) 
-	{
-		super(serverConnection, mor);
-	}
+  public PerformanceManager(ServerConnection serverConnection, ManagedObjectReference mor) 
+  {
+    super(serverConnection, mor);
+  }
 
-	public PerformanceDescription getDescription()
-	{
-		return (PerformanceDescription) getCurrentProperty("description");
-	}
-	
-	public PerfInterval[] getHistoricalInterval()
-	{
-		return (PerfInterval[]) getCurrentProperty("historicalInterval");
-	}
+  public PerformanceDescription getDescription()
+  {
+    return (PerformanceDescription) getCurrentProperty("description");
+  }
+  
+  public PerfInterval[] getHistoricalInterval()
+  {
+    return (PerfInterval[]) getCurrentProperty("historicalInterval");
+  }
 
-	public PerfCounterInfo[] getPerfCounter()
-	{
-		return (PerfCounterInfo[]) getCurrentProperty("perfCounter");
-	}
-	
-	/**
-	 * @throws RemoteException 
-	 * @throws RuntimeFault 
-	 * @deprecated use UpdatePerfInterval instead
-	 */
-	public void createPerfInterval(PerfInterval intervalId) throws RuntimeFault, RemoteException 
-	{
-		getVimService().createPerfInterval(getMOR(), intervalId);
-	}
+  public PerfCounterInfo[] getPerfCounter()
+  {
+    return (PerfCounterInfo[]) getCurrentProperty("perfCounter");
+  }
+  
+  /**
+   * @throws RemoteException 
+   * @throws RuntimeFault 
+   * @deprecated use UpdatePerfInterval instead
+   */
+  public void createPerfInterval(PerfInterval intervalId) throws RuntimeFault, RemoteException 
+  {
+    getVimService().createPerfInterval(getMOR(), intervalId);
+  }
 
-	public PerfMetricId[] queryAvailablePerfMetric(ManagedEntity entity, Calendar beginTime, Calendar endTime, Integer intervalId) throws RuntimeFault, RemoteException 
-	{
-		if(entity==null)
-		{
-			throw new IllegalArgumentException("entity must not be null.");
-		}
-		return getVimService().queryAvailablePerfMetric(getMOR(), entity.getMOR(), beginTime, endTime, intervalId);
-	}
-	 
-	public PerfEntityMetricBase[] queryPerf(PerfQuerySpec[] querySpec) throws RuntimeFault, RemoteException 
-	{
-		return getVimService().queryPerf(getMOR(), querySpec);
-	}
-	
-	public PerfCompositeMetric queryPerfComposite(PerfQuerySpec querySpec) throws RuntimeFault, RemoteException 
-	{
-		return getVimService().queryPerfComposite(getMOR(), querySpec);
-	}
-	
-	public PerfCounterInfo[] queryPerfCounter(int[] counterIds) throws RuntimeFault, RemoteException 
-	{
-		return getVimService().queryPerfCounter(getMOR(), counterIds);
-	}
-	
-	public PerfCounterInfo[] queryPerfCounterByLevel(int level) throws RuntimeFault, RemoteException 
-	{
-		return getVimService().queryPerfCounterByLevel(getMOR(), level);
-	}
-	
-	public PerfProviderSummary queryPerfProviderSummary(ManagedEntity entity) throws RuntimeFault, RemoteException 
-	{
-		if(entity==null)
-		{
-			throw new IllegalArgumentException("entity must not be null.");
-		}
-		return getVimService().queryPerfProviderSummary(getMOR(), entity.getMOR());
-	}
-	
-	public void removePerfInterval(int samplePeriod) throws RuntimeFault, RemoteException 
-	{
-		getVimService().removePerfInterval(getMOR(), samplePeriod);
-	}
-	
-	public void updatePerfInterval(PerfInterval interval) throws RuntimeFault, RemoteException 
-	{
-		getVimService().updatePerfInterval(getMOR(), interval);
-	}
+  public PerfMetricId[] queryAvailablePerfMetric(ManagedEntity entity, Calendar beginTime, Calendar endTime, Integer intervalId) throws RuntimeFault, RemoteException 
+  {
+    if(entity==null)
+    {
+      throw new IllegalArgumentException("entity must not be null.");
+    }
+    return getVimService().queryAvailablePerfMetric(getMOR(), entity.getMOR(), beginTime, endTime, intervalId);
+  }
+   
+  public PerfEntityMetricBase[] queryPerf(PerfQuerySpec[] querySpec) throws RuntimeFault, RemoteException 
+  {
+    return getVimService().queryPerf(getMOR(), querySpec);
+  }
+  
+  public PerfCompositeMetric queryPerfComposite(PerfQuerySpec querySpec) throws RuntimeFault, RemoteException 
+  {
+    return getVimService().queryPerfComposite(getMOR(), querySpec);
+  }
+  
+  public PerfCounterInfo[] queryPerfCounter(int[] counterIds) throws RuntimeFault, RemoteException 
+  {
+    return getVimService().queryPerfCounter(getMOR(), counterIds);
+  }
+  
+  public PerfCounterInfo[] queryPerfCounterByLevel(int level) throws RuntimeFault, RemoteException 
+  {
+    return getVimService().queryPerfCounterByLevel(getMOR(), level);
+  }
+  
+  public PerfProviderSummary queryPerfProviderSummary(ManagedEntity entity) throws RuntimeFault, RemoteException 
+  {
+    if(entity==null)
+    {
+      throw new IllegalArgumentException("entity must not be null.");
+    }
+    return getVimService().queryPerfProviderSummary(getMOR(), entity.getMOR());
+  }
+  
+  public void removePerfInterval(int samplePeriod) throws RuntimeFault, RemoteException 
+  {
+    getVimService().removePerfInterval(getMOR(), samplePeriod);
+  }
+  
+  public void updatePerfInterval(PerfInterval interval) throws RuntimeFault, RemoteException 
+  {
+    getVimService().updatePerfInterval(getMOR(), interval);
+  }
 
 }

@@ -300,7 +300,7 @@ public class VMEventsMonitor implements Runnable
                     }
                 } catch (Exception e)
                 {
-                	e.printStackTrace();
+                  e.printStackTrace();
                 }
             } while (shouldRun);
         } catch (Exception e)

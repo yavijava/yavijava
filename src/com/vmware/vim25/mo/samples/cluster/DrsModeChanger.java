@@ -48,40 +48,40 @@ import com.vmware.vim25.mo.util.*;
 
 public class DrsModeChanger 
 {
-	public static void main(String[] args) throws Exception 
-	{
-		if(args.length!=4)
-		{
-			System.out.println("Usage: DrsModeChanger url username password mode");
-			System.exit(-1);
-		}
+  public static void main(String[] args) throws Exception 
+  {
+    if(args.length!=4)
+    {
+      System.out.println("Usage: DrsModeChanger url username password mode");
+      System.exit(-1);
+    }
 
-		URL url = new URL(args[0]);
-		String username = args[1];
-		String password = args[2];
-		String mode = args[3];
-		String drs_obj_id = "domain-c5";
-		
-		ServiceInstance si = new ServiceInstance(url, username, password, true);
-		
-		ManagedObjectReference mref_drs = new ManagedObjectReference();
-		mref_drs.set_value(drs_obj_id);
-		mref_drs.setType("ClusterComputeResource");
-		
-		ClusterComputeResource ccr = (ClusterComputeResource )MorUtil.createExactManagedEntity(si.getServerConnection(), mref_drs);
-		
-		ClusterConfigSpec ccs = new ClusterConfigSpec();
-		ClusterDrsConfigInfo cdci = new ClusterDrsConfigInfo();
-		if("manual".equals(mode))
-			cdci.setDefaultVmBehavior(DrsBehavior.manual);
-		else 
-			cdci.setDefaultVmBehavior(DrsBehavior.fullyAutomated);
-		cdci.setVmotionRate(new Integer(5));
-		ccs.setDrsConfig(cdci);
-		
-		ccr.reconfigureCluster_Task(ccs, true);
-		
-		si.getServerConnection().logout();
-		System.out.println("End of changing DRS config to " + args[3]);
-	}
+    URL url = new URL(args[0]);
+    String username = args[1];
+    String password = args[2];
+    String mode = args[3];
+    String drs_obj_id = "domain-c5";
+    
+    ServiceInstance si = new ServiceInstance(url, username, password, true);
+    
+    ManagedObjectReference mref_drs = new ManagedObjectReference();
+    mref_drs.set_value(drs_obj_id);
+    mref_drs.setType("ClusterComputeResource");
+    
+    ClusterComputeResource ccr = (ClusterComputeResource )MorUtil.createExactManagedEntity(si.getServerConnection(), mref_drs);
+    
+    ClusterConfigSpec ccs = new ClusterConfigSpec();
+    ClusterDrsConfigInfo cdci = new ClusterDrsConfigInfo();
+    if("manual".equals(mode))
+      cdci.setDefaultVmBehavior(DrsBehavior.manual);
+    else 
+      cdci.setDefaultVmBehavior(DrsBehavior.fullyAutomated);
+    cdci.setVmotionRate(new Integer(5));
+    ccs.setDrsConfig(cdci);
+    
+    ccr.reconfigureCluster_Task(ccs, true);
+    
+    si.getServerConnection().logout();
+    System.out.println("End of changing DRS config to " + args[3]);
+  }
 }

@@ -45,29 +45,29 @@ import com.vmware.vim25.RuntimeFault;
  */
 public class HostProfile extends Profile 
 {
-	public HostProfile(ServerConnection sc, ManagedObjectReference mor) 
-	{
-		super(sc, mor);
-	}
-	
-	public HostSystem getReferenceHost()
-	{
-		return (HostSystem) getManagedObject("referenceHost");
-	}
-	
-	public ProfileExecuteResult executeHostProfile(HostSystem host, ProfileDeferredPolicyOptionParameter[] deferredParam) throws RuntimeFault, RemoteException
-	{
-		return getVimService().executeHostProfile(getMOR(), host.getMOR(), deferredParam);
-	}
-	
-	public void updateHostProfile(HostProfileConfigSpec config) throws DuplicateName, ProfileUpdateFailed, RuntimeFault, RemoteException
-	{
-		getVimService().updateHostProfile(getMOR(), config);
-	}
-	
-	public void updateReferenceHost(HostSystem host) throws RuntimeFault, RemoteException
-	{
-		getVimService().updateReferenceHost(getMOR(), 
-				host==null? null : host.getMOR());
-	}
+  public HostProfile(ServerConnection sc, ManagedObjectReference mor) 
+  {
+    super(sc, mor);
+  }
+  
+  public HostSystem getReferenceHost()
+  {
+    return (HostSystem) getManagedObject("referenceHost");
+  }
+  
+  public ProfileExecuteResult executeHostProfile(HostSystem host, ProfileDeferredPolicyOptionParameter[] deferredParam) throws RuntimeFault, RemoteException
+  {
+    return getVimService().executeHostProfile(getMOR(), host.getMOR(), deferredParam);
+  }
+  
+  public void updateHostProfile(HostProfileConfigSpec config) throws DuplicateName, ProfileUpdateFailed, RuntimeFault, RemoteException
+  {
+    getVimService().updateHostProfile(getMOR(), config);
+  }
+  
+  public void updateReferenceHost(HostSystem host) throws RuntimeFault, RemoteException
+  {
+    getVimService().updateReferenceHost(getMOR(), 
+        host==null? null : host.getMOR());
+  }
 }

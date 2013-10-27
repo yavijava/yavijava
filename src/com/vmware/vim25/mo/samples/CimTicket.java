@@ -56,7 +56,7 @@ public class CimTicket
     if(args.length!=3)
     {
       System.out.println("Usage: java CimTicket <url> " +
-      		"<username> <password>");
+          "<username> <password>");
       return;
     }
     String urlStr = args[0];
@@ -104,7 +104,7 @@ public class CimTicket
         "CIM_RegisteredProfile");
 
     System.out.println("Looking for children of " +
-    		"CIM_RegisteredProfile");
+        "CIM_RegisteredProfile");
 
     long enumerationStart = System.currentTimeMillis();
     Enumeration rpEnm = cimClient.enumerateInstances(rpCOP);

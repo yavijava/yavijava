@@ -68,41 +68,41 @@ public class AddVirtualNic
 {
    public static void main(String[] args) throws Exception 
    {
-	    CommandLineParser clp = new CommandLineParser(constructOptions(), args);
-	   	String urlStr = clp.get_option("url");
- 	    String username = clp.get_option("username");
-	    String password = clp.get_option("password");
-		String dcName = clp.get_option("datacenter");;
-		String hostname = clp.get_option("host");
-		//TODO *** vswitchid is NEVER used. need to find out why and how.
-//		String vswitchId = clp.get_option("vswitchid");
-		String portGroup = clp.get_option("portgroupname");
-		String ipAddr = clp.get_option("ipaddress");
+      CommandLineParser clp = new CommandLineParser(constructOptions(), args);
+       String urlStr = clp.get_option("url");
+       String username = clp.get_option("username");
+      String password = clp.get_option("password");
+    String dcName = clp.get_option("datacenter");;
+    String hostname = clp.get_option("host");
+    //TODO *** vswitchid is NEVER used. need to find out why and how.
+//    String vswitchId = clp.get_option("vswitchid");
+    String portGroup = clp.get_option("portgroupname");
+    String ipAddr = clp.get_option("ipaddress");
 
-		ServiceInstance si = new ServiceInstance(new URL(urlStr), username, password, true);
-		Folder rootFolder = si.getRootFolder();
-		HostSystem host = null;
-		
-		if(hostname==null)
-		{
-			System.out.println("Hostname cannot be empty!");
-			return;
-		}
-		if(dcName!=null)
-		{
-			Datacenter dc = (Datacenter) new InventoryNavigator(rootFolder).searchManagedEntity("Datacenter", dcName);
-			host = (HostSystem) new InventoryNavigator(dc).searchManagedEntity("HostSystem", hostname);
-		}
-		else
-		{
-			host = (HostSystem) new InventoryNavigator(rootFolder).searchManagedEntity("HostSystem", hostname);
-		}
+    ServiceInstance si = new ServiceInstance(new URL(urlStr), username, password, true);
+    Folder rootFolder = si.getRootFolder();
+    HostSystem host = null;
+    
+    if(hostname==null)
+    {
+      System.out.println("Hostname cannot be empty!");
+      return;
+    }
+    if(dcName!=null)
+    {
+      Datacenter dc = (Datacenter) new InventoryNavigator(rootFolder).searchManagedEntity("Datacenter", dcName);
+      host = (HostSystem) new InventoryNavigator(dc).searchManagedEntity("HostSystem", hostname);
+    }
+    else
+    {
+      host = (HostSystem) new InventoryNavigator(rootFolder).searchManagedEntity("HostSystem", hostname);
+    }
 
-		if(host==null)
-		{
-	           System.out.println("Host not found");
-	           return;
-		}
+    if(host==null)
+    {
+             System.out.println("Host not found");
+             return;
+    }
        HostNetworkSystem hns = host.getHostNetworkSystem();
        
        HostPortGroupSpec portgrp = new HostPortGroupSpec();
@@ -110,28 +110,28 @@ public class AddVirtualNic
        HostVirtualNicSpec vNicSpec = createVNicSpecification(ipAddr);
        try
        {
-    	   hns.addVirtualNic(portGroup, vNicSpec);
+         hns.addVirtualNic(portGroup, vNicSpec);
        }
        catch (InvalidArgument e) 
        {
-    	    System.out.println("Failed : IP address or subnet mask in the IP configuration are invalid ");
+          System.out.println("Failed : IP address or subnet mask in the IP configuration are invalid ");
        }
        catch (AlreadyExists e) 
        {
-    	   System.out.println("Failed : The specific key,name or identifier already exists ");
+         System.out.println("Failed : The specific key,name or identifier already exists ");
        }
        catch (HostConfigFault e) 
        {
-    	   System.out.println("Failed : Configuration failures. ");
+         System.out.println("Failed : Configuration failures. ");
        }
        catch (NotFound e) 
        {
-    	   System.out.println("Failed : switch not found ");
+         System.out.println("Failed : switch not found ");
        } 
        catch (Exception e) 
        {
-    	   System.out.println("Failed creating nic: "+ portGroup);
-    	   throw e;
+         System.out.println("Failed creating nic: "+ portGroup);
+         throw e;
        }
        
        System.out.println("Successful creating nic : " + portGroup);
@@ -139,23 +139,23 @@ public class AddVirtualNic
    
    private static HostVirtualNicSpec createVNicSpecification(String ipAddr) 
    {
-	   HostVirtualNicSpec vNicSpec = new HostVirtualNicSpec();
-	   HostIpConfig ipConfig = new HostIpConfig();
-	   ipConfig.setDhcp(false);
-	   ipConfig.setIpAddress(ipAddr);
-	   ipConfig.setSubnetMask("255.255.255.0");      
-	   vNicSpec.setIp(ipConfig);
-	   return vNicSpec;
+     HostVirtualNicSpec vNicSpec = new HostVirtualNicSpec();
+     HostIpConfig ipConfig = new HostIpConfig();
+     ipConfig.setDhcp(false);
+     ipConfig.setIpAddress(ipAddr);
+     ipConfig.setSubnetMask("255.255.255.0");      
+     vNicSpec.setIp(ipConfig);
+     return vNicSpec;
    }
 
    private static OptionSpec[] constructOptions() 
    {
       return new OptionSpec[] {
-    	new OptionSpec("vswitchid","String",1, "Name of the switch", null),
-      	new OptionSpec("host","String",0, "Name of the host", null),
-    	new OptionSpec("portgroupname","String", 1 ,"Name of the portgroup", null),
-    	new OptionSpec("ipaddress","String", 1 , "Ipaddress of the nic", null),
-    	new OptionSpec("datacenter","String",0, "Name of the datacenter", null)
+      new OptionSpec("vswitchid","String",1, "Name of the switch", null),
+        new OptionSpec("host","String",0, "Name of the host", null),
+      new OptionSpec("portgroupname","String", 1 ,"Name of the portgroup", null),
+      new OptionSpec("ipaddress","String", 1 , "Ipaddress of the nic", null),
+      new OptionSpec("datacenter","String",0, "Name of the datacenter", null)
       };
    }
 }

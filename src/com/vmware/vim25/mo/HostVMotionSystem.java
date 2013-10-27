@@ -42,34 +42,34 @@ import com.vmware.vim25.*;
 public class HostVMotionSystem extends ExtensibleManagedObject 
 {
 
-	public HostVMotionSystem(ServerConnection serverConnection, ManagedObjectReference mor) 
-	{
-		super(serverConnection, mor);
-	}
-	
-	public HostIpConfig getIpConfig()
-	{
-		return (HostIpConfig) getCurrentProperty("ipConfig");
-	}
-	
-	public HostVMotionNetConfig getNetConfig()
-	{
-		return (HostVMotionNetConfig) getCurrentProperty("netConfig");
-	}
+  public HostVMotionSystem(ServerConnection serverConnection, ManagedObjectReference mor) 
+  {
+    super(serverConnection, mor);
+  }
+  
+  public HostIpConfig getIpConfig()
+  {
+    return (HostIpConfig) getCurrentProperty("ipConfig");
+  }
+  
+  public HostVMotionNetConfig getNetConfig()
+  {
+    return (HostVMotionNetConfig) getCurrentProperty("netConfig");
+  }
 
-	public void deselectVnic() throws HostConfigFault, RuntimeFault, RemoteException 
-	{
-		getVimService().deselectVnic(getMOR());
-	}
-	
-	public void selectVnic(String device) throws HostConfigFault, RuntimeFault, RemoteException 
-	{
-		getVimService().selectVnic(getMOR(), device);
-	}
-	
-	public void updateIpConfig(HostIpConfig ipConfig) throws HostConfigFault, NotFound, RuntimeFault, RemoteException 
-	{
-		getVimService().updateIpConfig(getMOR(), ipConfig);
-	}
-	
+  public void deselectVnic() throws HostConfigFault, RuntimeFault, RemoteException 
+  {
+    getVimService().deselectVnic(getMOR());
+  }
+  
+  public void selectVnic(String device) throws HostConfigFault, RuntimeFault, RemoteException 
+  {
+    getVimService().selectVnic(getMOR(), device);
+  }
+  
+  public void updateIpConfig(HostIpConfig ipConfig) throws HostConfigFault, NotFound, RuntimeFault, RemoteException 
+  {
+    getVimService().updateIpConfig(getMOR(), ipConfig);
+  }
+  
 }

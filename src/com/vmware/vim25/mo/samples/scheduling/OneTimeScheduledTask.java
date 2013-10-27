@@ -70,54 +70,54 @@ public class OneTimeScheduledTask
       return useroptions;
    }
    
-	public static ScheduledTaskSpec createSchedulerSpec(String taskName, Calendar runTime)
-	{
-		MethodAction action = new MethodAction();
-		action.setName("PowerOffVM_Task");
-		action.setArgument(new MethodActionArgument[] { });
-		
-		runTime.add(Calendar.MINUTE, 01);
-		OnceTaskScheduler scheduler = new OnceTaskScheduler();
-		scheduler.setRunAt(runTime);
-		
-		ScheduledTaskSpec scheduleSpec = new ScheduledTaskSpec();
-		scheduleSpec.setName(taskName);
-		scheduleSpec.setDescription("PowerOff VM in 1 minutes");
-		scheduleSpec.setEnabled(true);
-		scheduleSpec.setAction(action);
-		scheduleSpec.setScheduler(scheduler);
-		
-		return scheduleSpec;
-	}
+  public static ScheduledTaskSpec createSchedulerSpec(String taskName, Calendar runTime)
+  {
+    MethodAction action = new MethodAction();
+    action.setName("PowerOffVM_Task");
+    action.setArgument(new MethodActionArgument[] { });
+    
+    runTime.add(Calendar.MINUTE, 01);
+    OnceTaskScheduler scheduler = new OnceTaskScheduler();
+    scheduler.setRunAt(runTime);
+    
+    ScheduledTaskSpec scheduleSpec = new ScheduledTaskSpec();
+    scheduleSpec.setName(taskName);
+    scheduleSpec.setDescription("PowerOff VM in 1 minutes");
+    scheduleSpec.setEnabled(true);
+    scheduleSpec.setAction(action);
+    scheduleSpec.setScheduler(scheduler);
+    
+    return scheduleSpec;
+  }
    
    public static void main(String [] args) throws Exception
    {
-	    CommandLineParser clp = new CommandLineParser(constructOptions(), args);
-	   	String urlStr = clp.get_option("url");
-  	    String username = clp.get_option("username");
-	    String password = clp.get_option("password");
-	    String vmname = clp.get_option("vmname");
-	    String taskname = clp.get_option("taskname");
+      CommandLineParser clp = new CommandLineParser(constructOptions(), args);
+       String urlStr = clp.get_option("url");
+        String username = clp.get_option("username");
+      String password = clp.get_option("password");
+      String vmname = clp.get_option("vmname");
+      String taskname = clp.get_option("taskname");
 
-		ServiceInstance si = new ServiceInstance(new URL(urlStr), username, password, true);
+    ServiceInstance si = new ServiceInstance(new URL(urlStr), username, password, true);
         
-		Folder rootFolder = si.getRootFolder();
-		VirtualMachine vm = (VirtualMachine) new InventoryNavigator(rootFolder).searchManagedEntity("VirtualMachine", vmname);
-		
-		//this runtime has to be fetched from server...
-		ScheduledTaskSpec spec = createSchedulerSpec(taskname, si.currentTime());  
-		
-		ScheduledTaskManager stm = si.getScheduledTaskManager();
-		if(stm!=null)
-		{
-			stm.createScheduledTask(vm, spec);
-			System.out.println("Task: " + taskname + " has been successfully added.");
-		}
-		else
-		{
-			System.out.println("SchduledTaskManager is not available on this target.");
-		}
-		
-		si.getServerConnection().logout();
+    Folder rootFolder = si.getRootFolder();
+    VirtualMachine vm = (VirtualMachine) new InventoryNavigator(rootFolder).searchManagedEntity("VirtualMachine", vmname);
+    
+    //this runtime has to be fetched from server...
+    ScheduledTaskSpec spec = createSchedulerSpec(taskname, si.currentTime());  
+    
+    ScheduledTaskManager stm = si.getScheduledTaskManager();
+    if(stm!=null)
+    {
+      stm.createScheduledTask(vm, spec);
+      System.out.println("Task: " + taskname + " has been successfully added.");
+    }
+    else
+    {
+      System.out.println("SchduledTaskManager is not available on this target.");
+    }
+    
+    si.getServerConnection().logout();
    }
 }

@@ -29,7 +29,7 @@ public class CacheFrameworkSample
     //check if the caching is ready to use; otherwise wait
     while(!vicf.isReady()) 
     {
-    	Thread.sleep(1000);
+      Thread.sleep(1000);
     }
     
     Thread[] vrs = new VimReader[2];
@@ -74,7 +74,7 @@ class VimReader extends Thread
         //show how to test the null value
         if(power==NULL) // or == NullObject.NULL
         {
-        	System.out.println("power is null");
+          System.out.println("power is null");
         }
         VirtualMachineSummary summary = (VirtualMachineSummary )vicf.get(vms[i], "summary");
         System.out.println(this.getName() + " reading vm: " + name + " = " + power + " @ " + sdf.format(new Date(System.currentTimeMillis())));//+ summary.getRuntime().getMaxMemoryUsage());

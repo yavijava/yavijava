@@ -42,51 +42,51 @@ import com.vmware.vim25.RuntimeFault;
  */
 public class ProfileManager extends ManagedObject 
 {
-	public ProfileManager(ServerConnection sc, ManagedObjectReference mor) 
-	{
-		super(sc, mor);
-	}
-	
-	public Profile[] getProfile()
-	{
-	  ManagedObjectReference[] mors = (ManagedObjectReference[])getCurrentProperty("profile");
-	  return convert2Profiles(mors);
-	}
-	
-	public Profile createProfile(ProfileCreateSpec createSpec) throws DuplicateName, RuntimeFault, RemoteException
-	{
-		ManagedObjectReference profileMor = getVimService().createProfile(getMOR(), createSpec);
-		return new Profile(getServerConnection(), profileMor); 
-	}
-	
-	public Profile[] findAssociatedProfile(ManagedEntity entity) throws RuntimeFault, RemoteException
-	{
-		ManagedObjectReference[] mors = getVimService().findAssociatedProfile(getMOR(), entity.getMOR());
-		return convert2Profiles(mors);
-	}
+  public ProfileManager(ServerConnection sc, ManagedObjectReference mor) 
+  {
+    super(sc, mor);
+  }
+  
+  public Profile[] getProfile()
+  {
+    ManagedObjectReference[] mors = (ManagedObjectReference[])getCurrentProperty("profile");
+    return convert2Profiles(mors);
+  }
+  
+  public Profile createProfile(ProfileCreateSpec createSpec) throws DuplicateName, RuntimeFault, RemoteException
+  {
+    ManagedObjectReference profileMor = getVimService().createProfile(getMOR(), createSpec);
+    return new Profile(getServerConnection(), profileMor); 
+  }
+  
+  public Profile[] findAssociatedProfile(ManagedEntity entity) throws RuntimeFault, RemoteException
+  {
+    ManagedObjectReference[] mors = getVimService().findAssociatedProfile(getMOR(), entity.getMOR());
+    return convert2Profiles(mors);
+  }
 
-	//SDK4.1 signature for back compatibility
-	public ProfilePolicyMetadata[] queryPolicyMetadata(String[] policyName) throws RuntimeFault, RemoteException
-	{
-		return queryPolicyMetadata(policyName, null);
-	}
+  //SDK4.1 signature for back compatibility
+  public ProfilePolicyMetadata[] queryPolicyMetadata(String[] policyName) throws RuntimeFault, RemoteException
+  {
+    return queryPolicyMetadata(policyName, null);
+  }
 
-	//SDK5.0 signature
+  //SDK5.0 signature
   public ProfilePolicyMetadata[] queryPolicyMetadata(String[] policyName, Profile profile) throws RuntimeFault, RemoteException
   {
     return getVimService().queryPolicyMetadata(getMOR(), policyName, profile==null? null : profile.getMOR());
   }
 
-	
-	private Profile[] convert2Profiles(ManagedObjectReference[] mors)
-	{
+  
+  private Profile[] convert2Profiles(ManagedObjectReference[] mors)
+  {
     Profile[] pfs = new Profile[mors.length];
   
     for(int i=0; i<mors.length; i++)
-	  {
-	    pfs[i] = new Profile(getServerConnection(), mors[i]);
-	  }
-	  return pfs;
-	}
-	
+    {
+      pfs[i] = new Profile(getServerConnection(), mors[i]);
+    }
+    return pfs;
+  }
+  
 }

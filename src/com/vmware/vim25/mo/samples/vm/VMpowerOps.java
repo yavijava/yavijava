@@ -51,7 +51,7 @@ public class VMpowerOps
       System.out.println("Usage: java VMpowerOps <url> " +
             "<username> <password> <vmname> <op>");
       System.out.println("op - reboot|poweron|poweroff" +
-      		"|reset|standby|suspend|shutdown");
+          "|reset|standby|suspend|shutdown");
       System.exit(0);
     }
 

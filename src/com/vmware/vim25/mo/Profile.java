@@ -44,91 +44,91 @@ import com.vmware.vim25.mo.util.MorUtil;
  */
 public class Profile extends ManagedObject 
 {
-	public Profile(ServerConnection sc, ManagedObjectReference mor) 
-	{
-		super(sc, mor);
-	}
-	
-	public String getComplianceStatus()
-	{
-		return (String) getCurrentProperty("info");
-	}
+  public Profile(ServerConnection sc, ManagedObjectReference mor) 
+  {
+    super(sc, mor);
+  }
+  
+  public String getComplianceStatus()
+  {
+    return (String) getCurrentProperty("info");
+  }
 
-	public ProfileConfigInfo getConfig()
-	{
-		return (ProfileConfigInfo) getCurrentProperty("config");
-	}
+  public ProfileConfigInfo getConfig()
+  {
+    return (ProfileConfigInfo) getCurrentProperty("config");
+  }
 
-	public Calendar getCreatedTime()
-	{
-		return (Calendar) getCurrentProperty("createdTime");
-	}
-	
-	public ProfileDescription getDescriptioin()
-	{
-		return (ProfileDescription) getCurrentProperty("description");
-	}
-	
-	public ManagedEntity[] getEntity()
-	{
-		Object[] objs = getManagedObjects("entity");
-		if(objs.length == 0)
-		{
-			return new ManagedEntity[]{};
-		}
-		ManagedEntity[] mes = new ManagedEntity[objs.length];
-		
-		for(int i=0; i<objs.length; i++)
-		{
-			mes[i] = (ManagedEntity) objs[i];
-		}
-		return mes;
-	}
-	
-	public Calendar getModifiedTime()
-	{
-		return (Calendar) getCurrentProperty("modifiedTime");
-	}
-	
-	public String getName()
-	{
-		return (String) getCurrentProperty("name");
-	}
-	
-	public void associateProfile(ManagedEntity[] mes) throws RuntimeFault, RemoteException
-	{
-		ManagedObjectReference[] mors = MorUtil.createMORs(mes);
-		getVimService().associateProfile(getMOR(), mors);
-	}
-	
-	public Task checkProfileCompliance_Task(ManagedEntity[] mes) throws RuntimeFault, RemoteException
-	{
-		ManagedObjectReference[] mors = MorUtil.createMORs(mes);
-		ManagedObjectReference taskMor = getVimService().checkProfileCompliance_Task(getMOR(), mors);
-		return new Task(getServerConnection(), taskMor);
-	}
-	
-	public void destroyProfile() throws RuntimeFault, RemoteException
-	{
-		getVimService().destroyProfile(getMOR());
-	}
-	
-	public String exportProfile() throws RuntimeFault, RemoteException
-	{
-		return (String) getVimService().exportProfile(getMOR());
-	}
-	
-	public void dissociateProfile(ManagedEntity[] mes) throws RuntimeFault, RemoteException
-	{
-		ManagedObjectReference[] mors = MorUtil.createMORs(mes);
-		getVimService().dissociateProfile(getMOR(), mors);
-	}
-	
-	/**
-	 * @since SDK5.0
-	 */
-	public ProfileDescription retrieveDescription() throws RuntimeFault, RemoteException
-	{
-	  return getVimService().retrieveDescription(getMOR());
-	}
+  public Calendar getCreatedTime()
+  {
+    return (Calendar) getCurrentProperty("createdTime");
+  }
+  
+  public ProfileDescription getDescriptioin()
+  {
+    return (ProfileDescription) getCurrentProperty("description");
+  }
+  
+  public ManagedEntity[] getEntity()
+  {
+    Object[] objs = getManagedObjects("entity");
+    if(objs.length == 0)
+    {
+      return new ManagedEntity[]{};
+    }
+    ManagedEntity[] mes = new ManagedEntity[objs.length];
+    
+    for(int i=0; i<objs.length; i++)
+    {
+      mes[i] = (ManagedEntity) objs[i];
+    }
+    return mes;
+  }
+  
+  public Calendar getModifiedTime()
+  {
+    return (Calendar) getCurrentProperty("modifiedTime");
+  }
+  
+  public String getName()
+  {
+    return (String) getCurrentProperty("name");
+  }
+  
+  public void associateProfile(ManagedEntity[] mes) throws RuntimeFault, RemoteException
+  {
+    ManagedObjectReference[] mors = MorUtil.createMORs(mes);
+    getVimService().associateProfile(getMOR(), mors);
+  }
+  
+  public Task checkProfileCompliance_Task(ManagedEntity[] mes) throws RuntimeFault, RemoteException
+  {
+    ManagedObjectReference[] mors = MorUtil.createMORs(mes);
+    ManagedObjectReference taskMor = getVimService().checkProfileCompliance_Task(getMOR(), mors);
+    return new Task(getServerConnection(), taskMor);
+  }
+  
+  public void destroyProfile() throws RuntimeFault, RemoteException
+  {
+    getVimService().destroyProfile(getMOR());
+  }
+  
+  public String exportProfile() throws RuntimeFault, RemoteException
+  {
+    return (String) getVimService().exportProfile(getMOR());
+  }
+  
+  public void dissociateProfile(ManagedEntity[] mes) throws RuntimeFault, RemoteException
+  {
+    ManagedObjectReference[] mors = MorUtil.createMORs(mes);
+    getVimService().dissociateProfile(getMOR(), mors);
+  }
+  
+  /**
+   * @since SDK5.0
+   */
+  public ProfileDescription retrieveDescription() throws RuntimeFault, RemoteException
+  {
+    return getVimService().retrieveDescription(getMOR());
+  }
 }

@@ -39,28 +39,28 @@ import com.vmware.vim25.*;
 
 public class Alarm extends ExtensibleManagedObject
 {
-	public Alarm(ServerConnection sc, ManagedObjectReference mor) 
-	{
-		super(sc, mor);
-	}
-	
-	public AlarmInfo getAlarmInfo()  
-	{
-		return (AlarmInfo) getCurrentProperty("info");
-	}
-	
-	public ManagedEntity getAssociatedEntity()
-	{
-		return (ManagedEntity) getManagedObject("info.entity");
-	}
-	
-	public void reconfigureAlarm(AlarmSpec alarmSpec) throws InvalidName, DuplicateName, RuntimeFault, RemoteException  
-	{
-		getVimService().reconfigureAlarm(getMOR(), alarmSpec);
-	}
-	
-	public void removeAlarm() throws RuntimeFault, RemoteException  
-	{
-		getVimService().removeAlarm(getMOR());
-	}
+  public Alarm(ServerConnection sc, ManagedObjectReference mor) 
+  {
+    super(sc, mor);
+  }
+  
+  public AlarmInfo getAlarmInfo()  
+  {
+    return (AlarmInfo) getCurrentProperty("info");
+  }
+  
+  public ManagedEntity getAssociatedEntity()
+  {
+    return (ManagedEntity) getManagedObject("info.entity");
+  }
+  
+  public void reconfigureAlarm(AlarmSpec alarmSpec) throws InvalidName, DuplicateName, RuntimeFault, RemoteException  
+  {
+    getVimService().reconfigureAlarm(getMOR(), alarmSpec);
+  }
+  
+  public void removeAlarm() throws RuntimeFault, RemoteException  
+  {
+    getVimService().removeAlarm(getMOR());
+  }
 }

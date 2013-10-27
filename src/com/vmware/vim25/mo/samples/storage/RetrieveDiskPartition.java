@@ -47,7 +47,7 @@ public class RetrieveDiskPartition
     if(args.length != 3)
     {
       System.out.println("Usage: java RetrieveDiskPartition " +
-      		"<url> <username> <password>");
+          "<url> <username> <password>");
       return;
     }
 

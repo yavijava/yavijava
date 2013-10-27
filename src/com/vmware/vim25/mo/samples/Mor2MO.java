@@ -45,67 +45,67 @@ import com.vmware.vim25.mo.util.*;
 
 public class Mor2MO 
 {
-	public final static String MOREF = "moref";
-	public final static String SESSION_ID = "sessionId";
-	public final static String SERVICE_URL = "serviceUrl";
-	public final static String LOCALE = "locale";
-	
-	public static void main(String[] args) throws Exception
-	{
-		String urlStr ="http://dev:8000/vmAction.cgi?cmd=powerOn&moref=VirtualMachine:16&sessionId=9241E7B8-A37B-4264-A8D1-945628F9E0D6&locale=en&serviceUrl=https://localhost/sdk";
-		
-		Map<String, String> kvPairs = parseURL(urlStr);
-		
-		String morStr = kvPairs.get(MOREF);
-		String type = morStr.substring(0, morStr.indexOf(":"));
-		String value = morStr.substring(morStr.indexOf(":")+1);
-		ManagedObjectReference mor = new ManagedObjectReference();
-		mor.setType(type);
-		mor.set_value(value);
+  public final static String MOREF = "moref";
+  public final static String SESSION_ID = "sessionId";
+  public final static String SERVICE_URL = "serviceUrl";
+  public final static String LOCALE = "locale";
+  
+  public static void main(String[] args) throws Exception
+  {
+    String urlStr ="http://dev:8000/vmAction.cgi?cmd=powerOn&moref=VirtualMachine:16&sessionId=9241E7B8-A37B-4264-A8D1-945628F9E0D6&locale=en&serviceUrl=https://localhost/sdk";
+    
+    Map<String, String> kvPairs = parseURL(urlStr);
+    
+    String morStr = kvPairs.get(MOREF);
+    String type = morStr.substring(0, morStr.indexOf(":"));
+    String value = morStr.substring(morStr.indexOf(":")+1);
+    ManagedObjectReference mor = new ManagedObjectReference();
+    mor.setType(type);
+    mor.set_value(value);
 
-		String sesssionStr = "vmware_soap_session=\"" + kvPairs.get(SESSION_ID) + "\"";
-		ServiceInstance si = new ServiceInstance(new URL(kvPairs.get(SERVICE_URL)),sesssionStr, true);
+    String sesssionStr = "vmware_soap_session=\"" + kvPairs.get(SESSION_ID) + "\"";
+    ServiceInstance si = new ServiceInstance(new URL(kvPairs.get(SERVICE_URL)),sesssionStr, true);
 
-		ManagedEntity me = MorUtil.createExactManagedEntity(si.getServerConnection(), mor);
-		
-		String name = me.getName();
-		System.out.println("name:" + name);
-		if(me instanceof VirtualMachine)
-		{
-			Task task = ((VirtualMachine)me).powerOffVM_Task();
-			task.waitForMe();
-		}
-		// si.getServerConnection().logout(); if you get access via sessionID, pls don't log out...
-	}
+    ManagedEntity me = MorUtil.createExactManagedEntity(si.getServerConnection(), mor);
+    
+    String name = me.getName();
+    System.out.println("name:" + name);
+    if(me instanceof VirtualMachine)
+    {
+      Task task = ((VirtualMachine)me).powerOffVM_Task();
+      task.waitForMe();
+    }
+    // si.getServerConnection().logout(); if you get access via sessionID, pls don't log out...
+  }
 
-	private static Map<String, String> parseURL(String urlStr)
-	{
-		Map<String, String> kvPairs = new Hashtable<String, String>();
-		
-		int start = 0;
-		int end = 0;
-		
-		while (true)
-		{
-			start = urlStr.indexOf("&", end);
-			if(start==-1)
-			{
-				break;
-			}
-			end = urlStr.indexOf("&", start+1);
-			if(end==-1)
-			{
-				end = urlStr.length();
-			}
-			
-			String data = urlStr.substring(start+1, end);
-			int loc = data.indexOf("=");
-			String key = data.substring(0, loc);
-			String value = data.substring(loc+1);
-			kvPairs.put(key, value);
-	    }
-		
-		return kvPairs;
-	}
-	
+  private static Map<String, String> parseURL(String urlStr)
+  {
+    Map<String, String> kvPairs = new Hashtable<String, String>();
+    
+    int start = 0;
+    int end = 0;
+    
+    while (true)
+    {
+      start = urlStr.indexOf("&", end);
+      if(start==-1)
+      {
+        break;
+      }
+      end = urlStr.indexOf("&", start+1);
+      if(end==-1)
+      {
+        end = urlStr.length();
+      }
+      
+      String data = urlStr.substring(start+1, end);
+      int loc = data.indexOf("=");
+      String key = data.substring(0, loc);
+      String value = data.substring(loc+1);
+      kvPairs.put(key, value);
+      }
+    
+    return kvPairs;
+  }
+  
 }

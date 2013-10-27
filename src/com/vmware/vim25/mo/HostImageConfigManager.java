@@ -43,24 +43,24 @@ import com.vmware.vim25.*;
 public class HostImageConfigManager extends ManagedObject 
 {
 
-	public HostImageConfigManager(ServerConnection serverConnection, ManagedObjectReference mor) 
-	{
-		super(serverConnection, mor);
-	}
-	
-	public String hostImageConfigGetAcceptance() throws HostConfigFault, RuntimeFault, RemoteException
-	{
-	  return getVimService().hostImageConfigGetAcceptance(getMOR());
-	}
-	
-	
-	public HostImageProfileSummary hostImageConfigGetProfile() throws RuntimeFault, RemoteException
-	{
-	  return getVimService().hostImageConfigGetProfile(getMOR());
-	}
-	
-	public void updateHostImageAcceptanceLevel(String newAcceptanceLevel) throws HostConfigFault, RuntimeFault, RemoteException
-	{
-	  getVimService().updateHostImageAcceptanceLevel(getMOR(), newAcceptanceLevel);
-	}
+  public HostImageConfigManager(ServerConnection serverConnection, ManagedObjectReference mor) 
+  {
+    super(serverConnection, mor);
+  }
+  
+  public String hostImageConfigGetAcceptance() throws HostConfigFault, RuntimeFault, RemoteException
+  {
+    return getVimService().hostImageConfigGetAcceptance(getMOR());
+  }
+  
+  
+  public HostImageProfileSummary hostImageConfigGetProfile() throws RuntimeFault, RemoteException
+  {
+    return getVimService().hostImageConfigGetProfile(getMOR());
+  }
+  
+  public void updateHostImageAcceptanceLevel(String newAcceptanceLevel) throws HostConfigFault, RuntimeFault, RemoteException
+  {
+    getVimService().updateHostImageAcceptanceLevel(getMOR(), newAcceptanceLevel);
+  }
 }

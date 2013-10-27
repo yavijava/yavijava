@@ -48,59 +48,59 @@ import com.vmware.vim25.mo.util.OptionSpec;
 public class QueryEvent 
 {
 
-	private static void usage() 
-	{
-		System.err.println("Usage: QueryEvent server username password");
-	}
+  private static void usage() 
+  {
+    System.err.println("Usage: QueryEvent server username password");
+  }
 
-	public static void main(String[] args) throws Exception 
-	{
+  public static void main(String[] args) throws Exception 
+  {
 
-		if (args.length != 3) 
-		{
-			usage();
-			return;
-		}
+    if (args.length != 3) 
+    {
+      usage();
+      return;
+    }
 
-		String urlStr = args[0];
-		String username = args[1];
-		String password = args[2];
+    String urlStr = args[0];
+    String username = args[1];
+    String password = args[2];
 
-		System.out.println("Connecting to " + urlStr + " as " + username);
+    System.out.println("Connecting to " + urlStr + " as " + username);
 
-		ServiceInstance si = new ServiceInstance(new URL(urlStr), username,
-				password, true);
+    ServiceInstance si = new ServiceInstance(new URL(urlStr), username,
+        password, true);
 
-		System.out.println("info---" + si.getAboutInfo().getFullName());
+    System.out.println("info---" + si.getAboutInfo().getFullName());
 
-		// Displays all the Events with Full Formatted message
-		try 
-		{
-			EventManager _eventManager = si.getEventManager();
-			EventFilterSpec eventFilter = new EventFilterSpec();
+    // Displays all the Events with Full Formatted message
+    try 
+    {
+      EventManager _eventManager = si.getEventManager();
+      EventFilterSpec eventFilter = new EventFilterSpec();
 
-			EventHistoryCollector history = _eventManager
-					.createCollectorForEvents(eventFilter);
-			Event[] events = history.getLatestPage();
+      EventHistoryCollector history = _eventManager
+          .createCollectorForEvents(eventFilter);
+      Event[] events = history.getLatestPage();
 
-			System.out.println("Events In the latestPage are : ");
-			for (int i = 0; i < events.length; i++) 
-			{
-				Event anEvent = events[i];
-				System.out.println("Event: " + anEvent.getClass().getName()
-						+ "  FullFormattedMessage: "
-						+ anEvent.getFullFormattedMessage());
-			}
-		} catch (Exception e)
-		{
-			System.out.println("Caught Exception : " + " Name : "
-					+ e.getClass().getName() + " Message : " + e.getMessage()
-					+ " Trace : ");
-			e.printStackTrace();
-		}
+      System.out.println("Events In the latestPage are : ");
+      for (int i = 0; i < events.length; i++) 
+      {
+        Event anEvent = events[i];
+        System.out.println("Event: " + anEvent.getClass().getName()
+            + "  FullFormattedMessage: "
+            + anEvent.getFullFormattedMessage());
+      }
+    } catch (Exception e)
+    {
+      System.out.println("Caught Exception : " + " Name : "
+          + e.getClass().getName() + " Message : " + e.getMessage()
+          + " Trace : ");
+      e.printStackTrace();
+    }
 
-		si.getServerConnection().logout();
+    si.getServerConnection().logout();
 
-	}
+  }
 
 }

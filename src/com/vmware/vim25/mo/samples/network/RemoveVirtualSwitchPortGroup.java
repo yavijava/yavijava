@@ -70,78 +70,78 @@ import com.vmware.vim25.ws.*;
 
 public class RemoveVirtualSwitchPortGroup 
 {
-	public static void main(String[] args) throws Exception 
-	{
-	    CommandLineParser clp = new CommandLineParser(constructOptions(), args);
-	   	String urlStr = clp.get_option("url");
- 	    String username = clp.get_option("username");
-	    String password = clp.get_option("password");
-		String dcname = clp.get_option("datacenter");;
-		String hostname = clp.get_option("host");
-		String portGroupName = clp.get_option("portgroupname");
+  public static void main(String[] args) throws Exception 
+  {
+      CommandLineParser clp = new CommandLineParser(constructOptions(), args);
+       String urlStr = clp.get_option("url");
+       String username = clp.get_option("username");
+      String password = clp.get_option("password");
+    String dcname = clp.get_option("datacenter");;
+    String hostname = clp.get_option("host");
+    String portGroupName = clp.get_option("portgroupname");
 
-		ServiceInstance si = new ServiceInstance(new URL(urlStr), username, password, true);
-		Folder rootFolder = si.getRootFolder();
-		HostSystem host = null;
-		
-		String apiType = si.getAboutInfo().getApiType();
-		if("HostAgent".equalsIgnoreCase(apiType) && dcname ==null)
-		{
-			dcname = "ha-datacenter";
-		}
-		else if("VirtualCenter".equalsIgnoreCase(apiType) && ((dcname == null) || (hostname ==null)))
-		{
-			System.out.println("datacenter and host should be specified");
-			return;
-		}
-		
-		Datacenter dc = (Datacenter) new InventoryNavigator(rootFolder).searchManagedEntity("Datacenter", dcname);
-		host = (HostSystem) new InventoryNavigator(dc).searchManagedEntity("HostSystem", hostname);
+    ServiceInstance si = new ServiceInstance(new URL(urlStr), username, password, true);
+    Folder rootFolder = si.getRootFolder();
+    HostSystem host = null;
+    
+    String apiType = si.getAboutInfo().getApiType();
+    if("HostAgent".equalsIgnoreCase(apiType) && dcname ==null)
+    {
+      dcname = "ha-datacenter";
+    }
+    else if("VirtualCenter".equalsIgnoreCase(apiType) && ((dcname == null) || (hostname ==null)))
+    {
+      System.out.println("datacenter and host should be specified");
+      return;
+    }
+    
+    Datacenter dc = (Datacenter) new InventoryNavigator(rootFolder).searchManagedEntity("Datacenter", dcname);
+    host = (HostSystem) new InventoryNavigator(dc).searchManagedEntity("HostSystem", hostname);
 
-		removeVirtualPortGroup(host, portGroupName);
-	}
+    removeVirtualPortGroup(host, portGroupName);
+  }
 
-	private static void removeVirtualPortGroup(HostSystem host, String portGroupName)
-	{
-		try
-		{
-			HostNetworkSystem hns = host.getHostNetworkSystem();
-			hns.removePortGroup(portGroupName);
-			 System.out.println("Successfully removed port group:" + portGroupName);
-		}
-	     catch (ResourceInUse e) 
-	     {
-	         System.out.println(" : Failed removing portgroup " + portGroupName);
-	         System.out.println("port group can not be removed because there are virtual network adapters associated with it.");
-	      }
-	     catch (InvalidArgument e) 
-	     {
-	         System.out.println("Failed removing  " + portGroupName);
-	         System.out.println("PortGroup vlanId or network policy may be invalid .\n");
-	     }   
-	     catch (NotFound e) {
-	         System.out.println("Failed removing "+ portGroupName);
-	         System.out.println(" Switch or portgroup not found.\n");
-	      }
-	     catch (NullPointerException e) 
-	      {
-	         System.out.println("Failed removing "+ portGroupName);
-	         System.out.println("Datacenter or Host may be invalid \n");
-	      }   
-	     catch (Exception e) 
-	      {
-	         System.out.println("Failed removing "+ portGroupName);
-	      }    
-	}
+  private static void removeVirtualPortGroup(HostSystem host, String portGroupName)
+  {
+    try
+    {
+      HostNetworkSystem hns = host.getHostNetworkSystem();
+      hns.removePortGroup(portGroupName);
+       System.out.println("Successfully removed port group:" + portGroupName);
+    }
+       catch (ResourceInUse e) 
+       {
+           System.out.println(" : Failed removing portgroup " + portGroupName);
+           System.out.println("port group can not be removed because there are virtual network adapters associated with it.");
+        }
+       catch (InvalidArgument e) 
+       {
+           System.out.println("Failed removing  " + portGroupName);
+           System.out.println("PortGroup vlanId or network policy may be invalid .\n");
+       }   
+       catch (NotFound e) {
+           System.out.println("Failed removing "+ portGroupName);
+           System.out.println(" Switch or portgroup not found.\n");
+        }
+       catch (NullPointerException e) 
+        {
+           System.out.println("Failed removing "+ portGroupName);
+           System.out.println("Datacenter or Host may be invalid \n");
+        }   
+       catch (Exception e) 
+        {
+           System.out.println("Failed removing "+ portGroupName);
+        }    
+  }
    
    private static OptionSpec[] constructOptions() 
    {
-	   return new OptionSpec[] 
+     return new OptionSpec[] 
        {
-	       	new OptionSpec("host","String",0, "Name of the host", null),
-	      	new OptionSpec("portgroupname","String", 1 ,"Name of the portgroup", null),
-	       	new OptionSpec("datacenter","String",0, "Name of the datacenter", null)
-	   };
+           new OptionSpec("host","String",0, "Name of the host", null),
+          new OptionSpec("portgroupname","String", 1 ,"Name of the portgroup", null),
+           new OptionSpec("datacenter","String",0, "Name of the datacenter", null)
+     };
    }
 }
 

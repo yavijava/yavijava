@@ -67,67 +67,67 @@ import com.vmware.vim25.ws.*;
 
 public class RemoveVirtualNic 
 {
-	public static void main(String[] args) throws Exception 
-	{
-	    CommandLineParser clp = new CommandLineParser(constructOptions(), args);
-	   	String urlStr = clp.get_option("url");
- 	    String username = clp.get_option("username");
-	    String password = clp.get_option("password");
-		String dcname = clp.get_option("datacenter");;
-		String hostname = clp.get_option("host");
-		String portGroupName = clp.get_option("portgroupname");
+  public static void main(String[] args) throws Exception 
+  {
+      CommandLineParser clp = new CommandLineParser(constructOptions(), args);
+       String urlStr = clp.get_option("url");
+       String username = clp.get_option("username");
+      String password = clp.get_option("password");
+    String dcname = clp.get_option("datacenter");;
+    String hostname = clp.get_option("host");
+    String portGroupName = clp.get_option("portgroupname");
 
-		ServiceInstance si = new ServiceInstance(new URL(urlStr), username, password, true);
-		Folder rootFolder = si.getRootFolder();
-		HostSystem host = null;
-		
-		String apiType = si.getAboutInfo().getApiType();
-		if("HostAgent".equalsIgnoreCase(apiType) && dcname ==null)
-		{
-			dcname = "ha-datacenter";
-		}
-		else if("VirtualCenter".equalsIgnoreCase(apiType) && ((dcname == null) || (hostname ==null)))
-		{
-			System.out.println("datacenter and host should be specified");
-			return;
-		}
-		
-		Datacenter dc = (Datacenter) new InventoryNavigator(rootFolder).searchManagedEntity("Datacenter", dcname);
-		host = (HostSystem) new InventoryNavigator(dc).searchManagedEntity("HostSystem", hostname);
+    ServiceInstance si = new ServiceInstance(new URL(urlStr), username, password, true);
+    Folder rootFolder = si.getRootFolder();
+    HostSystem host = null;
+    
+    String apiType = si.getAboutInfo().getApiType();
+    if("HostAgent".equalsIgnoreCase(apiType) && dcname ==null)
+    {
+      dcname = "ha-datacenter";
+    }
+    else if("VirtualCenter".equalsIgnoreCase(apiType) && ((dcname == null) || (hostname ==null)))
+    {
+      System.out.println("datacenter and host should be specified");
+      return;
+    }
+    
+    Datacenter dc = (Datacenter) new InventoryNavigator(rootFolder).searchManagedEntity("Datacenter", dcname);
+    host = (HostSystem) new InventoryNavigator(dc).searchManagedEntity("HostSystem", hostname);
 
-		removeVirtualNic(host, portGroupName);
-	}
+    removeVirtualNic(host, portGroupName);
+  }
 
    private static void removeVirtualNic(HostSystem host, String portGroupName) 
-	{
-		try
-		{
-			HostNetworkSystem hns = host.getHostNetworkSystem();
-			HostVirtualNic[] hvns = hns.getNetworkInfo().getVnic();
-			if(hvns==null)
-			{
-				return;
-			}
-			
-			boolean found = false;
-			// TODO ***** problem here!!!
-			for (int i=0; i<hvns.length; i++)
-			{
-				HostVirtualNic nic = hvns[i];
-	            String portGroup = nic.getPortgroup();
-	            if (portGroup!=null && portGroup.equals(portGroupName)) 
-	            {
-	            	found = true;
-	            	hns.removeVirtualNic(nic.getDevice());
-	    			System.out.println("Successful removing : " + portGroupName );
-	            }
-			}
-			if (!found)
-			{
-				System.out.println("PortGroupName not found failed removing : " + portGroupName );
-			}
-		}
-		catch (NotFound e) 
+  {
+    try
+    {
+      HostNetworkSystem hns = host.getHostNetworkSystem();
+      HostVirtualNic[] hvns = hns.getNetworkInfo().getVnic();
+      if(hvns==null)
+      {
+        return;
+      }
+      
+      boolean found = false;
+      // TODO ***** problem here!!!
+      for (int i=0; i<hvns.length; i++)
+      {
+        HostVirtualNic nic = hvns[i];
+              String portGroup = nic.getPortgroup();
+              if (portGroup!=null && portGroup.equals(portGroupName)) 
+              {
+                found = true;
+                hns.removeVirtualNic(nic.getDevice());
+            System.out.println("Successful removing : " + portGroupName );
+              }
+      }
+      if (!found)
+      {
+        System.out.println("PortGroupName not found failed removing : " + portGroupName );
+      }
+    }
+    catch (NotFound e) 
       {
          System.out.println("Failed : virtual network adapter cannot be found. ");
       }
@@ -143,12 +143,12 @@ public class RemoveVirtualNic
    
    private static OptionSpec[] constructOptions() 
    {
-	   return new OptionSpec[] 
+     return new OptionSpec[] 
        {
-	       	new OptionSpec("host","String",0, "Name of the host", null),
-	      	new OptionSpec("portgroupname","String", 1 ,"Name of the portgroup", null),
-	       	new OptionSpec("datacenter","String",0, "Name of the datacenter", null)
-	   };
+           new OptionSpec("host","String",0, "Name of the host", null),
+          new OptionSpec("portgroupname","String", 1 ,"Name of the portgroup", null),
+           new OptionSpec("datacenter","String",0, "Name of the datacenter", null)
+     };
    }
 }
 

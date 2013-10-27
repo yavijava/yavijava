@@ -82,7 +82,7 @@ public class CloneVM
     Task task = vm.cloneVM_Task((Folder) vm.getParent(), 
         cloneName, cloneSpec);
     System.out.println("Launching the VM clone task. " +
-    		"Please wait ...");
+        "Please wait ...");
 
     String status = task.waitForMe();
     if(status==Task.SUCCESS)

@@ -51,67 +51,67 @@ import com.vmware.vim25.mo.util.MorUtil;
 
 public class DrsAffRule 
 {
-	public static void main(String[] args) throws Exception
-	{
-		if(args.length!=3)
-		{
-			System.out.println("Usage: DrsAffRule url username password");
-			System.exit(-1);
-		}
-		
-		URL url = null;
-		try 
-		{ 
-			url = new URL(args[0]); 
-		} catch ( MalformedURLException urlE)
-		{
-			System.out.println("The URL provided is NOT valid. Please check it.");
-			System.exit(-1);
-		}
-		String username = args[1];
-		String password = args[2];
-		String drs_obj_id = "domain-c5"; // The reference ID for cluster
-		String vm1_oid = "vm-26"; // The reference ID for VM 1
-		String vm2_oid = "vm-28"; // The reference ID for VM 2
-		
-		// initialize the system, set up web services
-		ServiceInstance si = new ServiceInstance(url, username, password, true);
-		
-		//create the MOR object for DRS cluster
-		ManagedObjectReference mref_drs = createMOR("ClusterComputeResource", drs_obj_id);
-		ClusterComputeResource ccr = (ClusterComputeResource )
-		  MorUtil.createExactManagedEntity(si.getServerConnection(), mref_drs);
-		
-		// create a new ClusterConfigSpec and populate it with related data for affinity rule
-		ClusterConfigSpec ccs = new ClusterConfigSpec();
+  public static void main(String[] args) throws Exception
+  {
+    if(args.length!=3)
+    {
+      System.out.println("Usage: DrsAffRule url username password");
+      System.exit(-1);
+    }
+    
+    URL url = null;
+    try 
+    { 
+      url = new URL(args[0]); 
+    } catch ( MalformedURLException urlE)
+    {
+      System.out.println("The URL provided is NOT valid. Please check it.");
+      System.exit(-1);
+    }
+    String username = args[1];
+    String password = args[2];
+    String drs_obj_id = "domain-c5"; // The reference ID for cluster
+    String vm1_oid = "vm-26"; // The reference ID for VM 1
+    String vm2_oid = "vm-28"; // The reference ID for VM 2
+    
+    // initialize the system, set up web services
+    ServiceInstance si = new ServiceInstance(url, username, password, true);
+    
+    //create the MOR object for DRS cluster
+    ManagedObjectReference mref_drs = createMOR("ClusterComputeResource", drs_obj_id);
+    ClusterComputeResource ccr = (ClusterComputeResource )
+      MorUtil.createExactManagedEntity(si.getServerConnection(), mref_drs);
+    
+    // create a new ClusterConfigSpec and populate it with related data for affinity rule
+    ClusterConfigSpec ccs = new ClusterConfigSpec();
 
-		ClusterAffinityRuleSpec cars = new ClusterAffinityRuleSpec();
-		cars.setName("App and DB Appliance Bundle");
-		cars.setEnabled(Boolean.TRUE);
-		ManagedObjectReference vm1 = createMOR("VirtualMachine", vm1_oid);
-		ManagedObjectReference vm2 = createMOR("VirtualMachine", vm2_oid);
-		cars.setVm(new ManagedObjectReference[] {vm1, vm2});
-		
-		ClusterRuleSpec crs = new ClusterRuleSpec();
-		//*NOTE*: the following setOperation has to be called since operation must be set.
-		crs.setOperation(ArrayUpdateOperation.add);
-		crs.setInfo(cars);
+    ClusterAffinityRuleSpec cars = new ClusterAffinityRuleSpec();
+    cars.setName("App and DB Appliance Bundle");
+    cars.setEnabled(Boolean.TRUE);
+    ManagedObjectReference vm1 = createMOR("VirtualMachine", vm1_oid);
+    ManagedObjectReference vm2 = createMOR("VirtualMachine", vm2_oid);
+    cars.setVm(new ManagedObjectReference[] {vm1, vm2});
+    
+    ClusterRuleSpec crs = new ClusterRuleSpec();
+    //*NOTE*: the following setOperation has to be called since operation must be set.
+    crs.setOperation(ArrayUpdateOperation.add);
+    crs.setInfo(cars);
 
-		ccs.setRulesSpec(new ClusterRuleSpec[] {crs});
+    ccs.setRulesSpec(new ClusterRuleSpec[] {crs});
 
-		// make a call to set the configuration.
-		ccr.reconfigureCluster_Task(ccs, true);
+    // make a call to set the configuration.
+    ccr.reconfigureCluster_Task(ccs, true);
 
-		si.getServerConnection().logout();
-		
-		System.out.println("Done with setting affinity rule for DRS cluster.");
-	}
-	
-	public static ManagedObjectReference createMOR(String type, String id)
-	{
-		ManagedObjectReference mor = new ManagedObjectReference();
-		mor.setType(type);
-		mor.set_value(id);
-		return mor; 
-	}
+    si.getServerConnection().logout();
+    
+    System.out.println("Done with setting affinity rule for DRS cluster.");
+  }
+  
+  public static ManagedObjectReference createMOR(String type, String id)
+  {
+    ManagedObjectReference mor = new ManagedObjectReference();
+    mor.setType(type);
+    mor.set_value(id);
+    return mor; 
+  }
 }

@@ -62,15 +62,15 @@ import java.security.cert.*;
  */
 public class VerUtil 
 {
-	/**
-	 * Retrieve the target server's name space
-	 * @param target, either IP or host name
-	 * @return the namespace, e.g. urn:vim25Service
-	 * @throws IOException when there is a network issue or service issue on the target server
-	 * @throws RuntimeException wrapping NoSuchAlgorithmException, KeyManagementException which are
-	 *         not likely to happen. If it happens, you can catch the runtime exception and unwrapp it
-	 *         for the real exceptions.
-	 */
+  /**
+   * Retrieve the target server's name space
+   * @param target, either IP or host name
+   * @return the namespace, e.g. urn:vim25Service
+   * @throws IOException when there is a network issue or service issue on the target server
+   * @throws RuntimeException wrapping NoSuchAlgorithmException, KeyManagementException which are
+   *         not likely to happen. If it happens, you can catch the runtime exception and unwrapp it
+   *         for the real exceptions.
+   */
   public static String getTargetNameSpace(String target) throws IOException 
   {
     String version = "";
@@ -85,18 +85,18 @@ public class VerUtil
     }
     
     HttpsURLConnection.setDefaultHostnameVerifier(
-  	    new HostnameVerifier() {
-  	      public boolean verify(String urlHostName, SSLSession session) 
-  	      {
-  	    	  return true;
-  	      }
-  	});
-  	  
+        new HostnameVerifier() {
+          public boolean verify(String urlHostName, SSLSession session) 
+          {
+            return true;
+          }
+    });
+      
     URL url = new URL(urlStr);
     HttpURLConnection conn = (HttpURLConnection) url.openConnection();
     conn.connect();
     BufferedReader in = new BufferedReader(new InputStreamReader(conn.getInputStream()));
-  	  
+      
     String xmlWSDL = "";
     String line;
     while (( line = in.readLine()) != null) 

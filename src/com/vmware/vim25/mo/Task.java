@@ -49,87 +49,87 @@ import com.vmware.vim25.TaskInfoState;
 
 public class Task extends ExtensibleManagedObject 
 {
-	public static final String PROPNAME_INFO = "info";
-	public static final String SUCCESS = "success";
+  public static final String PROPNAME_INFO = "info";
+  public static final String SUCCESS = "success";
 
-	public Task(ServerConnection serverConnection, ManagedObjectReference mor) 
-	{
-		super(serverConnection, mor);
-	}
+  public Task(ServerConnection serverConnection, ManagedObjectReference mor) 
+  {
+    super(serverConnection, mor);
+  }
 
-	public TaskInfo getTaskInfo() throws InvalidProperty, RuntimeFault, RemoteException 
-	{
-		return (TaskInfo) getCurrentProperty(PROPNAME_INFO);
-	}
-	
-	public ManagedEntity getAssociatedManagedEntity()
-	{
-		return (ManagedEntity) getManagedObject("info.entity");
-	}
-	
-	public ManagedEntity[] getLockedManagedEntities()
-	{
-		return (ManagedEntity[]) getManagedObjects("info.locked");
-	}
-	
-	public void cancelTask() throws RuntimeFault, RemoteException 
-	{
-		getVimService().cancelTask(getMOR());
-	}
-	
-	public void setTaskState(TaskInfoState tis, Object result, LocalizedMethodFault fault) throws InvalidState, RuntimeFault, RemoteException 
-	{
-		getVimService().setTaskState(getMOR(), tis, result, fault);
-	}
-	
-	public void updateProgress(int percentDone) throws InvalidState, OutOfBounds, RuntimeFault, RemoteException 
-	{
-		getVimService().updateProgress(getMOR(), percentDone);
-	}
-	
+  public TaskInfo getTaskInfo() throws InvalidProperty, RuntimeFault, RemoteException 
+  {
+    return (TaskInfo) getCurrentProperty(PROPNAME_INFO);
+  }
+  
+  public ManagedEntity getAssociatedManagedEntity()
+  {
+    return (ManagedEntity) getManagedObject("info.entity");
+  }
+  
+  public ManagedEntity[] getLockedManagedEntities()
+  {
+    return (ManagedEntity[]) getManagedObjects("info.locked");
+  }
+  
+  public void cancelTask() throws RuntimeFault, RemoteException 
+  {
+    getVimService().cancelTask(getMOR());
+  }
+  
+  public void setTaskState(TaskInfoState tis, Object result, LocalizedMethodFault fault) throws InvalidState, RuntimeFault, RemoteException 
+  {
+    getVimService().setTaskState(getMOR(), tis, result, fault);
+  }
+  
+  public void updateProgress(int percentDone) throws InvalidState, OutOfBounds, RuntimeFault, RemoteException 
+  {
+    getVimService().updateProgress(getMOR(), percentDone);
+  }
+  
   /** @since SDK4.0 */
-	public void setTaskDescription(LocalizableMessage description) throws RuntimeFault, RemoteException
-	{
-	  getVimService().setTaskDescription(getMOR(), description);
-	}
-	
-	/**
-	 * If there is another thread or client calling waitForUpdate(), the behavior of this
-	 * method is not predictable. This usually happens with VI Client plug-in which shares
-	 * the session with the VI Client which use waitForUpdate() extensively.
-	 * The safer way is to poll the related info.state and check its value.
-	 * @return
-	 * @throws InvalidProperty
-	 * @throws RuntimeFault
-	 * @throws RemoteException
-	 * @deprecated
-	 */
-	public String waitForMe() throws InvalidProperty, RuntimeFault, RemoteException  
-	{   
-		
-		Object[] result = waitForValues(
+  public void setTaskDescription(LocalizableMessage description) throws RuntimeFault, RemoteException
+  {
+    getVimService().setTaskDescription(getMOR(), description);
+  }
+  
+  /**
+   * If there is another thread or client calling waitForUpdate(), the behavior of this
+   * method is not predictable. This usually happens with VI Client plug-in which shares
+   * the session with the VI Client which use waitForUpdate() extensively.
+   * The safer way is to poll the related info.state and check its value.
+   * @return
+   * @throws InvalidProperty
+   * @throws RuntimeFault
+   * @throws RemoteException
+   * @deprecated
+   */
+  public String waitForMe() throws InvalidProperty, RuntimeFault, RemoteException  
+  {   
+    
+    Object[] result = waitForValues(
                 new String[] { "info.state", "info.error" }, 
                 new String[] { "state" },
                 new Object[][] { new Object[] { TaskInfoState.success, TaskInfoState.error } });      
 
-		if (result[0].equals(TaskInfoState.success)) 
-		{      	 
-			return SUCCESS;
-		}
-		else 
-		{
-			TaskInfo tinfo = (TaskInfo) getCurrentProperty(PROPNAME_INFO);      	 
-			LocalizedMethodFault fault = tinfo.getError();
-			String error = "Error Occured";
-			if(fault!=null) 
-			{
-				MethodFault mf = fault.getFault();
-				throw mf;
-			}
-			return error;
-		}
-	}
-	
+    if (result[0].equals(TaskInfoState.success)) 
+    {         
+      return SUCCESS;
+    }
+    else 
+    {
+      TaskInfo tinfo = (TaskInfo) getCurrentProperty(PROPNAME_INFO);         
+      LocalizedMethodFault fault = tinfo.getError();
+      String error = "Error Occured";
+      if(fault!=null) 
+      {
+        MethodFault mf = fault.getFault();
+        throw mf;
+      }
+      return error;
+    }
+  }
+  
   /**
    * Copyright 2009 NetApp, contribution by Eric Forgette
    * 
@@ -151,7 +151,7 @@ public class Task extends ExtensibleManagedObject
   {  
     return waitForTask(500,1000);
   }
-	
+  
   /**
    * Copyright 2009 NetApp, contribution by Eric Forgette
    * 

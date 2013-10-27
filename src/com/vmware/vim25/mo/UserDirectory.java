@@ -40,21 +40,21 @@ import com.vmware.vim25.*;
 
 public class UserDirectory extends ManagedObject
 {
-	public UserDirectory(ServerConnection sc, ManagedObjectReference mor) 
-	{
-		super(sc, mor);
-	}
-	
-	public String[] getDomainList()
-	{
-		return (String[]) getCurrentProperty("domainList");
-	}
-	
-	public UserSearchResult[] retrieveUserGroups(String domain, String searchStr, String belongsToGroup, 
-			String belongsToUser, boolean exactMatch, boolean findUsers, boolean findGroups) throws NotFound, RuntimeFault, RemoteException 
-	{
-		return getVimService().retrieveUserGroups(getMOR(), domain, searchStr, belongsToGroup, 
-				belongsToUser, exactMatch, findUsers, findGroups);
-	}
+  public UserDirectory(ServerConnection sc, ManagedObjectReference mor) 
+  {
+    super(sc, mor);
+  }
+  
+  public String[] getDomainList()
+  {
+    return (String[]) getCurrentProperty("domainList");
+  }
+  
+  public UserSearchResult[] retrieveUserGroups(String domain, String searchStr, String belongsToGroup, 
+      String belongsToUser, boolean exactMatch, boolean findUsers, boolean findGroups) throws NotFound, RuntimeFault, RemoteException 
+  {
+    return getVimService().retrieveUserGroups(getMOR(), domain, searchStr, belongsToGroup, 
+        belongsToUser, exactMatch, findUsers, findGroups);
+  }
 
 }

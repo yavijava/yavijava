@@ -152,13 +152,13 @@ final class XmlGenDom extends XmlGen
     
     if(type.startsWith("ManagedObjectReference"))
     {
-    	if(! type.endsWith("[]"))
-    	{
-    		Element e = subNodes.get(0);
-    		return createMOR(e.attributeValue("type"), e.getText());
-    	}
-    	else
-    	{
+      if(! type.endsWith("[]"))
+      {
+        Element e = subNodes.get(0);
+        return createMOR(e.attributeValue("type"), e.getText());
+      }
+      else
+      {
         ManagedObjectReference[] mos = new ManagedObjectReference[subNodes.size()];
         for(int i=0; i<subNodes.size(); i++)
         {
@@ -166,7 +166,7 @@ final class XmlGenDom extends XmlGen
           mos[i] = createMOR(elem.attributeValue("type"), elem.getText());
         }
         return mos;
-    	}
+      }
     }
     else if(TypeUtil.isBasicType(type))
     {
@@ -185,8 +185,8 @@ final class XmlGenDom extends XmlGen
 
       for(int i=0; i<subNodes.size(); i++)
       {
-     	  Element e = subNodes.get(i);
-     	  String xsiType = e.attributeValue(SoapConsts.XSI_TYPE);
+         Element e = subNodes.get(i);
+         String xsiType = e.attributeValue(SoapConsts.XSI_TYPE);
         Object o = fromXml(TypeUtil.getVimClass(xsiType==null? arrayItemTypeName : xsiType), subNodes.get(i));
         Array.set(ao, i, o);
       }
@@ -227,7 +227,7 @@ final class XmlGenDom extends XmlGen
       //if field is an array, adjust it to the component type
       if(isFieldArray)
       {
-    	  fType = fType.getComponentType();
+        fType = fType.getComponentType();
       }
 
       Class fRealType = fType;
@@ -258,23 +258,23 @@ final class XmlGenDom extends XmlGen
       }
       else if(fRealType.isEnum())
       { // Enum type
-      	if(!isFieldArray)
-      	{
-	        Object fo = Enum.valueOf(fRealType, e.getText()); 
-	        field.set(obj, fo);
-      	}
-      	else
-      	{
-	        int sizeOfFieldArray = getNumberOfSameTags(subNodes, sizeOfSubNodes, i, tagName);
-	        Object ao = Array.newInstance(fRealType, sizeOfFieldArray);
-	        for(int j=0; j<sizeOfFieldArray; j++)
-	        {
-	          String enumStr = ((Element) subNodes.get(j+i)).getText();
-	          Array.set(ao, j, Enum.valueOf(fRealType, enumStr));
-	        }
-	        field.set(obj, ao);
-	        i = i + sizeOfFieldArray -1;
-      	}
+        if(!isFieldArray)
+        {
+          Object fo = Enum.valueOf(fRealType, e.getText()); 
+          field.set(obj, fo);
+        }
+        else
+        {
+          int sizeOfFieldArray = getNumberOfSameTags(subNodes, sizeOfSubNodes, i, tagName);
+          Object ao = Array.newInstance(fRealType, sizeOfFieldArray);
+          for(int j=0; j<sizeOfFieldArray; j++)
+          {
+            String enumStr = ((Element) subNodes.get(j+i)).getText();
+            Array.set(ao, j, Enum.valueOf(fRealType, enumStr));
+          }
+          field.set(obj, ao);
+          i = i + sizeOfFieldArray -1;
+        }
       }
       else if (TypeUtil.isBasicType(fRealType))
       { // basic data types
@@ -348,18 +348,18 @@ final class XmlGenDom extends XmlGen
 
   private final static int getNumberOfSameTags(List<Element> subNodes, int sizeOfSubNodes, int from, String tagName)
   {
-		int numOfTags = 1;
-		for(int j=from+1; j<sizeOfSubNodes; j++)
-		{
-		  if(subNodes.get(j).getName().equals(tagName))
-		  {
-		    numOfTags ++;
-		  }
-		  else
-		  {
-		    break;
-		  }
-		}
-		return numOfTags;
+    int numOfTags = 1;
+    for(int j=from+1; j<sizeOfSubNodes; j++)
+    {
+      if(subNodes.get(j).getName().equals(tagName))
+      {
+        numOfTags ++;
+      }
+      else
+      {
+        break;
+      }
+    }
+    return numOfTags;
   }
 }

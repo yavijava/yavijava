@@ -57,9 +57,9 @@ public class ExtMgrUtil
     if(args.length==0)
     {
       System.out.println("Usage: java ExtMgrUtil " +
-      	"[properties_file_path]");
+        "[properties_file_path]");
       System.out.println("Since no properties file is " +
-      	"specified, we will search for it in current path.");
+        "specified, we will search for it in current path.");
       filename = "extension.properties";
     }
     else
@@ -150,7 +150,7 @@ public class ExtMgrUtil
     else
     {
       System.out.println("Operation is not valide. " +
-      		"Please try again.");
+          "Please try again.");
     }
 
     si.getServerConnection().logout();
@@ -174,7 +174,7 @@ public class ExtMgrUtil
     {
       ioe.printStackTrace();
       System.out.println("Please check the parameters " +
-      		"in the properties file " + filename);
+          "in the properties file " + filename);
       return null;
     } 
     finally

@@ -46,49 +46,49 @@ import com.vmware.vim25.Timedout;
  */
 public class HttpNfcLease extends ManagedObject 
 {
-	public HttpNfcLease(ServerConnection sc, ManagedObjectReference mor) 
-	{
-		super(sc, mor);
-	}
-	
-	public LocalizedMethodFault getError()
-	{
-		return (LocalizedMethodFault) getCurrentProperty("error");
-	}
+  public HttpNfcLease(ServerConnection sc, ManagedObjectReference mor) 
+  {
+    super(sc, mor);
+  }
+  
+  public LocalizedMethodFault getError()
+  {
+    return (LocalizedMethodFault) getCurrentProperty("error");
+  }
 
-	public HttpNfcLeaseInfo getInfo()
-	{
-		return (HttpNfcLeaseInfo) getCurrentProperty("info");
-	}
+  public HttpNfcLeaseInfo getInfo()
+  {
+    return (HttpNfcLeaseInfo) getCurrentProperty("info");
+  }
 
-	public int getInitializeProgress()
-	{
-		return ((Integer)getCurrentProperty("initializeProgress")).intValue();
-	}
-	
-	public HttpNfcLeaseState getState()
-	{
-		return (HttpNfcLeaseState)getCurrentProperty("state");
-	}
-	
-	public void httpNfcLeaseAbort(LocalizedMethodFault fault) throws Timedout, InvalidState, RuntimeFault, RemoteException
-	{
-		getVimService().httpNfcLeaseAbort(getMOR(), fault);
-	}
-	
-	public void httpNfcLeaseComplete() throws Timedout, InvalidState, RuntimeFault, RemoteException
-	{
-		getVimService().httpNfcLeaseComplete(getMOR());
-	}
-	
-	/** @since SDK4.1 */
-	public HttpNfcLeaseManifestEntry[] httpNfcLeaseGetManifest() throws Timedout, InvalidState, RuntimeFault, RemoteException
-	{
+  public int getInitializeProgress()
+  {
+    return ((Integer)getCurrentProperty("initializeProgress")).intValue();
+  }
+  
+  public HttpNfcLeaseState getState()
+  {
+    return (HttpNfcLeaseState)getCurrentProperty("state");
+  }
+  
+  public void httpNfcLeaseAbort(LocalizedMethodFault fault) throws Timedout, InvalidState, RuntimeFault, RemoteException
+  {
+    getVimService().httpNfcLeaseAbort(getMOR(), fault);
+  }
+  
+  public void httpNfcLeaseComplete() throws Timedout, InvalidState, RuntimeFault, RemoteException
+  {
+    getVimService().httpNfcLeaseComplete(getMOR());
+  }
+  
+  /** @since SDK4.1 */
+  public HttpNfcLeaseManifestEntry[] httpNfcLeaseGetManifest() throws Timedout, InvalidState, RuntimeFault, RemoteException
+  {
     return getVimService().httpNfcLeaseGetManifest(getMOR());
-	}
-	
-	public void httpNfcLeaseProgress(int percent) throws Timedout, RuntimeFault, RemoteException
-	{
-		getVimService().httpNfcLeaseProgress(getMOR(), percent);
-	}
+  }
+  
+  public void httpNfcLeaseProgress(int percent) throws Timedout, RuntimeFault, RemoteException
+  {
+    getVimService().httpNfcLeaseProgress(getMOR(), percent);
+  }
 }

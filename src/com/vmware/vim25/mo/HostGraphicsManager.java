@@ -43,23 +43,23 @@ import com.vmware.vim25.RuntimeFault;
 
 public class HostGraphicsManager extends ExtensibleManagedObject 
 {
-	public HostGraphicsManager(ServerConnection serverConnection, ManagedObjectReference mor) 
-	{
-		super(serverConnection, mor);
-	}
-	
-	public HostGraphicsInfo[] getGraphicsInfo()
-	{
-	  return (HostGraphicsInfo[]) getCurrentProperty("graphicsInfo");
-	}
-	
-	public boolean isSharedGraphicsActive() throws RuntimeFault, RemoteException 
-	{
-		return getVimService().isSharedGraphicsActive(this.getMOR());
-	}
-	
-	public void refreshGraphicsManager() throws RuntimeFault, RemoteException 
-	{
-		getVimService().queryFirmwareConfigUploadURL(this.getMOR());
-	}
+  public HostGraphicsManager(ServerConnection serverConnection, ManagedObjectReference mor) 
+  {
+    super(serverConnection, mor);
+  }
+  
+  public HostGraphicsInfo[] getGraphicsInfo()
+  {
+    return (HostGraphicsInfo[]) getCurrentProperty("graphicsInfo");
+  }
+  
+  public boolean isSharedGraphicsActive() throws RuntimeFault, RemoteException 
+  {
+    return getVimService().isSharedGraphicsActive(this.getMOR());
+  }
+  
+  public void refreshGraphicsManager() throws RuntimeFault, RemoteException 
+  {
+    getVimService().queryFirmwareConfigUploadURL(this.getMOR());
+  }
 }

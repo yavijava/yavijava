@@ -42,13 +42,13 @@ import com.vmware.vim25.RuntimeFault;
  */
 public class ClusterProfile extends Profile 
 {
-	public ClusterProfile(ServerConnection sc, ManagedObjectReference mor) 
-	{
-		super(sc, mor);
-	}
-	
-	public void updateClusterProfile(ClusterProfileConfigSpec config) throws DuplicateName, RuntimeFault, RemoteException
-	{
-		getVimService().updateClusterProfile(getMOR(), config);
-	}
+  public ClusterProfile(ServerConnection sc, ManagedObjectReference mor) 
+  {
+    super(sc, mor);
+  }
+  
+  public void updateClusterProfile(ClusterProfileConfigSpec config) throws DuplicateName, RuntimeFault, RemoteException
+  {
+    getVimService().updateClusterProfile(getMOR(), config);
+  }
 }

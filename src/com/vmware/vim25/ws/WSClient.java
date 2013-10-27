@@ -177,11 +177,11 @@ final public class WSClient
     
     try
     {
-    	is = postCon.getInputStream();
+      is = postCon.getInputStream();
     } 
     catch(IOException ioe)
     {
-    	is = postCon.getErrorStream();
+      is = postCon.getErrorStream();
     }
     
     if(cookie==null)

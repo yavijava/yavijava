@@ -94,7 +94,7 @@ public class PrintAlarmManager
     printTypeDescriptions(ad.getAction());
     
     System.out.println("\nDescriptions of expressioin type " +
-    		"for triggers:");
+        "for triggers:");
     printTypeDescriptions(ad.getExpr());
   }
   

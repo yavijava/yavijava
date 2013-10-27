@@ -40,23 +40,23 @@ import com.vmware.vim25.*;
 
 public class PropertyFilter extends ManagedObject
 {
-	public PropertyFilter(ServerConnection serverConnection, ManagedObjectReference mor) 
-	{
-		super(serverConnection, mor);
-	}
+  public PropertyFilter(ServerConnection serverConnection, ManagedObjectReference mor) 
+  {
+    super(serverConnection, mor);
+  }
 
-	public boolean getPartialUpdates()
-	{
-		return ((Boolean)getCurrentProperty("partialUpdates")).booleanValue();
-	}
-	
-	public PropertyFilterSpec getSpec()
-	{
-		return (PropertyFilterSpec) this.getCurrentProperty("spec");
-	}
-	
-	public void destroyPropertyFilter() throws RuntimeFault, RemoteException 
-	{
-		getVimService().destroyPropertyFilter(getMOR());
-	}
+  public boolean getPartialUpdates()
+  {
+    return ((Boolean)getCurrentProperty("partialUpdates")).booleanValue();
+  }
+  
+  public PropertyFilterSpec getSpec()
+  {
+    return (PropertyFilterSpec) this.getCurrentProperty("spec");
+  }
+  
+  public void destroyPropertyFilter() throws RuntimeFault, RemoteException 
+  {
+    getVimService().destroyPropertyFilter(getMOR());
+  }
 }

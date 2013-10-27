@@ -42,31 +42,31 @@ import com.vmware.vim25.mo.util.OptionSpec;
 
 public class VmRename 
 {
-	public static void main(String[] args) throws Exception
-	{
-		
-	    CommandLineParser clp = new CommandLineParser(new OptionSpec[]{}, args);
-	   	String urlStr = clp.get_option("url");
-  	    String username = clp.get_option("username");
-	    String password = clp.get_option("password");
+  public static void main(String[] args) throws Exception
+  {
+    
+      CommandLineParser clp = new CommandLineParser(new OptionSpec[]{}, args);
+       String urlStr = clp.get_option("url");
+        String username = clp.get_option("username");
+      String password = clp.get_option("password");
 
-		ServiceInstance si = new ServiceInstance(new URL(urlStr), username, password, true);
-		Folder rootFolder = si.getRootFolder();
-		VirtualMachine vm = (VirtualMachine) new InventoryNavigator(rootFolder).searchManagedEntities("VirtualMachine")[0];
+    ServiceInstance si = new ServiceInstance(new URL(urlStr), username, password, true);
+    Folder rootFolder = si.getRootFolder();
+    VirtualMachine vm = (VirtualMachine) new InventoryNavigator(rootFolder).searchManagedEntities("VirtualMachine")[0];
 
-		Task task = vm.rename_Task("myvm");
-		String result = task.waitForMe();
-		
-		if(result == Task.SUCCESS)
-		{
-			System.out.println("The name has been successfully changed.");
-		}
-		else
-		{
-			System.out.println("The name cannot be changed.");
-		}
+    Task task = vm.rename_Task("myvm");
+    String result = task.waitForMe();
+    
+    if(result == Task.SUCCESS)
+    {
+      System.out.println("The name has been successfully changed.");
+    }
+    else
+    {
+      System.out.println("The name cannot be changed.");
+    }
 
-		si.getServerConnection().logout();
-	}
+    si.getServerConnection().logout();
+  }
 
 }

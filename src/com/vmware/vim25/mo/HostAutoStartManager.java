@@ -43,29 +43,29 @@ import com.vmware.vim25.RuntimeFault;
 public class HostAutoStartManager extends ManagedObject 
 {
 
-	public HostAutoStartManager(ServerConnection serverConnection, ManagedObjectReference mor) 
-	{
-		super(serverConnection, mor);
-	}
-	
-	public HostAutoStartManagerConfig getConfig()
-	{
-		return (HostAutoStartManagerConfig) getCurrentProperty("config");
-	}
-	
-	public void autoStartPowerOff() throws RuntimeFault, RemoteException 
-	{
-		getVimService().autoStartPowerOff(getMOR());
-	}
-	
-	public void autoStartPowerOn() throws RuntimeFault, RemoteException 
-	{
-		getVimService().autoStartPowerOn(getMOR());
-	}
-	
-	public void reconfigureAutostart(HostAutoStartManagerConfig spec) throws RuntimeFault, RemoteException 
-	{
-		getVimService().reconfigureAutostart(getMOR(), spec);
-	}
+  public HostAutoStartManager(ServerConnection serverConnection, ManagedObjectReference mor) 
+  {
+    super(serverConnection, mor);
+  }
+  
+  public HostAutoStartManagerConfig getConfig()
+  {
+    return (HostAutoStartManagerConfig) getCurrentProperty("config");
+  }
+  
+  public void autoStartPowerOff() throws RuntimeFault, RemoteException 
+  {
+    getVimService().autoStartPowerOff(getMOR());
+  }
+  
+  public void autoStartPowerOn() throws RuntimeFault, RemoteException 
+  {
+    getVimService().autoStartPowerOn(getMOR());
+  }
+  
+  public void reconfigureAutostart(HostAutoStartManagerConfig spec) throws RuntimeFault, RemoteException 
+  {
+    getVimService().reconfigureAutostart(getMOR(), spec);
+  }
 
 }

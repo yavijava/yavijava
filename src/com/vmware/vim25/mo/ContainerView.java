@@ -39,24 +39,24 @@ import com.vmware.vim25.*;
 public class ContainerView extends ManagedObjectView 
 {
 
-	public ContainerView(ServerConnection serverConnection,	ManagedObjectReference mor) 
-	{
-		super(serverConnection, mor);
-	}
-	
-	public ManagedEntity getContainer()
-	{
-		return (ManagedEntity) getManagedObject("container");
-	}
+  public ContainerView(ServerConnection serverConnection,  ManagedObjectReference mor) 
+  {
+    super(serverConnection, mor);
+  }
+  
+  public ManagedEntity getContainer()
+  {
+    return (ManagedEntity) getManagedObject("container");
+  }
 
-	public boolean getRecursive()
-	{
-		return ((Boolean) getCurrentProperty("recursive")).booleanValue();
-	}
+  public boolean getRecursive()
+  {
+    return ((Boolean) getCurrentProperty("recursive")).booleanValue();
+  }
 
-	public String[] getType()
-	{
-		return (String[]) getCurrentProperty("type");
-	}
-	
+  public String[] getType()
+  {
+    return (String[]) getCurrentProperty("type");
+  }
+  
 }

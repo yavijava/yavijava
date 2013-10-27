@@ -41,29 +41,29 @@ import com.vmware.vim25.*;
 public class HostSnmpSystem extends ManagedObject 
 {
 
-	public HostSnmpSystem(ServerConnection serverConnection, ManagedObjectReference mor) 
-	{
-		super(serverConnection, mor);
-	}
+  public HostSnmpSystem(ServerConnection serverConnection, ManagedObjectReference mor) 
+  {
+    super(serverConnection, mor);
+  }
 
-	public HostSnmpConfigSpec getConfiguration()
-	{
-		return (HostSnmpConfigSpec) getCurrentProperty("configuration");
-	}
-	
-	public HostSnmpSystemAgentLimits getLimits()
-	{
-		return (HostSnmpSystemAgentLimits) getCurrentProperty("limits");
-	}
-	
-	public void reconfigureSnmpAgent(HostSnmpConfigSpec spec) throws InsufficientResourcesFault, NotFound, RuntimeFault, RemoteException 
-	{
-		getVimService().reconfigureSnmpAgent(getMOR(), spec);
-	}
-	
-	public void sendTestNotification() throws InsufficientResourcesFault, NotFound, RuntimeFault, RemoteException 
-	{
-		getVimService().sendTestNotification(getMOR());
-	}
-	
+  public HostSnmpConfigSpec getConfiguration()
+  {
+    return (HostSnmpConfigSpec) getCurrentProperty("configuration");
+  }
+  
+  public HostSnmpSystemAgentLimits getLimits()
+  {
+    return (HostSnmpSystemAgentLimits) getCurrentProperty("limits");
+  }
+  
+  public void reconfigureSnmpAgent(HostSnmpConfigSpec spec) throws InsufficientResourcesFault, NotFound, RuntimeFault, RemoteException 
+  {
+    getVimService().reconfigureSnmpAgent(getMOR(), spec);
+  }
+  
+  public void sendTestNotification() throws InsufficientResourcesFault, NotFound, RuntimeFault, RemoteException 
+  {
+    getVimService().sendTestNotification(getMOR());
+  }
+  
 }

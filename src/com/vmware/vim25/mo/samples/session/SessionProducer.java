@@ -43,22 +43,22 @@ import com.vmware.vim25.mo.util.OptionSpec;
 
 public class SessionProducer 
 {
-	public static void main(String[] args) throws Exception
-	{
-	    CommandLineParser clp = new CommandLineParser(new OptionSpec[]{}, args);
-	   	String urlStr = clp.get_option("url");
-  	    String username = clp.get_option("username");
-	    String password = clp.get_option("password");
+  public static void main(String[] args) throws Exception
+  {
+      CommandLineParser clp = new CommandLineParser(new OptionSpec[]{}, args);
+       String urlStr = clp.get_option("url");
+        String username = clp.get_option("username");
+      String password = clp.get_option("password");
 
-		ServiceInstance si = new ServiceInstance(new URL(urlStr), username, password, true);
+    ServiceInstance si = new ServiceInstance(new URL(urlStr), username, password, true);
 
-		String sessionStr = si.getServerConnection().getSessionStr();
-		
-		System.out.println("sessionStr=" + sessionStr);
+    String sessionStr = si.getServerConnection().getSessionStr();
+    
+    System.out.println("sessionStr=" + sessionStr);
 
-		Thread.sleep(30*60*1000);
-		
-		si.getServerConnection().logout();
-	}
+    Thread.sleep(30*60*1000);
+    
+    si.getServerConnection().logout();
+  }
 
 }

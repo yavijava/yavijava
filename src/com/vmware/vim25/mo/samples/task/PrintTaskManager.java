@@ -62,7 +62,7 @@ public class PrintTaskManager
 
     int maxCollector = taskMgr.getMaxCollector();
     System.out.println("Maximum number of collectors to " +
-    		"retrive historical tasks: " + maxCollector);
+        "retrive historical tasks: " + maxCollector);
     
     System.out.println("\nTask description:");
     TaskDescription td = taskMgr.getDescriptioin();

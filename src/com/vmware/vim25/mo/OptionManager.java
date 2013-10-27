@@ -41,28 +41,28 @@ import com.vmware.vim25.*;
 public class OptionManager extends ManagedObject 
 {
 
-	public OptionManager(ServerConnection serverConnection,	ManagedObjectReference mor) 
-	{
-		super(serverConnection, mor);
-	}
-	
-	public 	OptionValue[] getSetting()
-	{
-		return (OptionValue[]) getCurrentProperty("setting");
-	}
+  public OptionManager(ServerConnection serverConnection,  ManagedObjectReference mor) 
+  {
+    super(serverConnection, mor);
+  }
+  
+  public   OptionValue[] getSetting()
+  {
+    return (OptionValue[]) getCurrentProperty("setting");
+  }
 
-	public 	OptionDef[] getSupportedOption()
-	{
-		return (OptionDef[]) getCurrentProperty("supportedOption");
-	}
-	
-	public OptionValue[] queryOptions(String name) throws InvalidName, RuntimeFault, RemoteException 
-	{
-		return getVimService().queryOptions(getMOR(), name);
-	}
-	
-	public void updateOptions(OptionValue[] changedValue) throws InvalidName, RuntimeFault, RemoteException 
-	{
-		getVimService().updateOptions(getMOR(), changedValue);
-	}
+  public   OptionDef[] getSupportedOption()
+  {
+    return (OptionDef[]) getCurrentProperty("supportedOption");
+  }
+  
+  public OptionValue[] queryOptions(String name) throws InvalidName, RuntimeFault, RemoteException 
+  {
+    return getVimService().queryOptions(getMOR(), name);
+  }
+  
+  public void updateOptions(OptionValue[] changedValue) throws InvalidName, RuntimeFault, RemoteException 
+  {
+    getVimService().updateOptions(getMOR(), changedValue);
+  }
 }

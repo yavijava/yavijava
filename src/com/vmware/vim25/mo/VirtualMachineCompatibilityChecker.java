@@ -42,16 +42,16 @@ import com.vmware.vim25.RuntimeFault;
  */
 public class VirtualMachineCompatibilityChecker extends ManagedObject 
 {
-	public VirtualMachineCompatibilityChecker(ServerConnection sc, ManagedObjectReference mor) 
-	{
-		super(sc, mor);
-	}
-	
-	public Task checkCompatibility_Task(VirtualMachine vm, HostSystem host, ResourcePool pool, String[] testType) throws NoActiveHostInCluster, InvalidState, RuntimeFault, RemoteException
-	{
-		ManagedObjectReference taskMor = getVimService().checkCompatibility_Task(getMOR(), 
-			vm==null?null:vm.getMOR(), host==null?null:host.getMOR(), 
-			pool==null?null:pool.getMOR(), testType);
-		return new Task(getServerConnection(), taskMor);
-	}
+  public VirtualMachineCompatibilityChecker(ServerConnection sc, ManagedObjectReference mor) 
+  {
+    super(sc, mor);
+  }
+  
+  public Task checkCompatibility_Task(VirtualMachine vm, HostSystem host, ResourcePool pool, String[] testType) throws NoActiveHostInCluster, InvalidState, RuntimeFault, RemoteException
+  {
+    ManagedObjectReference taskMor = getVimService().checkCompatibility_Task(getMOR(), 
+      vm==null?null:vm.getMOR(), host==null?null:host.getMOR(), 
+      pool==null?null:pool.getMOR(), testType);
+    return new Task(getServerConnection(), taskMor);
+  }
 }

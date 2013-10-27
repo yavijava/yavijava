@@ -47,26 +47,26 @@ import com.vmware.vim25.mo.util.MorUtil;
 public class DiagnosticManager extends ManagedObject 
 {
 
-	public DiagnosticManager(ServerConnection serverConnection, ManagedObjectReference mor) 
-	{
-		super(serverConnection, mor);
-	}
-	
-	public DiagnosticManagerLogHeader browseDiagnosticLog(HostSystem host, String key, int start, int lines) throws CannotAccessFile, RuntimeFault, RemoteException 
-	{
-		return getVimService().browseDiagnosticLog(getMOR(), host==null? null : host.getMOR(), key, start, lines);
-	}
-	
-	public Task generateLogBundles_Task(boolean includeDefault, HostSystem[] hosts) throws LogBundlingFailed, RuntimeFault, RemoteException 
-	{
-		ManagedObjectReference mor = getVimService().generateLogBundles_Task(getMOR(), 
-				includeDefault, hosts==null? null : MorUtil.createMORs(hosts));
-		return new Task(getServerConnection(), mor);
-	}
+  public DiagnosticManager(ServerConnection serverConnection, ManagedObjectReference mor) 
+  {
+    super(serverConnection, mor);
+  }
+  
+  public DiagnosticManagerLogHeader browseDiagnosticLog(HostSystem host, String key, int start, int lines) throws CannotAccessFile, RuntimeFault, RemoteException 
+  {
+    return getVimService().browseDiagnosticLog(getMOR(), host==null? null : host.getMOR(), key, start, lines);
+  }
+  
+  public Task generateLogBundles_Task(boolean includeDefault, HostSystem[] hosts) throws LogBundlingFailed, RuntimeFault, RemoteException 
+  {
+    ManagedObjectReference mor = getVimService().generateLogBundles_Task(getMOR(), 
+        includeDefault, hosts==null? null : MorUtil.createMORs(hosts));
+    return new Task(getServerConnection(), mor);
+  }
 
-	public DiagnosticManagerLogDescriptor[] queryDescriptions(HostSystem host) throws RuntimeFault, RemoteException 
-	{
-		return getVimService().queryDescriptions(getMOR(), host==null? null : host.getMOR());
-	}
-	
+  public DiagnosticManagerLogDescriptor[] queryDescriptions(HostSystem host) throws RuntimeFault, RemoteException 
+  {
+    return getVimService().queryDescriptions(getMOR(), host==null? null : host.getMOR());
+  }
+  
 }

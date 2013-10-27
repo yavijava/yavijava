@@ -96,7 +96,7 @@ public class CreateVmAlarm
     spec.setExpression(expression);
     spec.setName("VmPowerStateAlarm");
     spec.setDescription("Monitor VM state and send email " +
-    		"and power it on if VM powers off");
+        "and power it on if VM powers off");
     spec.setEnabled(true);    
     
     AlarmSetting as = new AlarmSetting();

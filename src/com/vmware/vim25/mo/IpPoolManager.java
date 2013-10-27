@@ -43,52 +43,52 @@ import com.vmware.vim25.RuntimeFault;
  */
 public class IpPoolManager extends ManagedObject 
 {
-	public IpPoolManager(ServerConnection sc, ManagedObjectReference mor) 
-	{
-		super(sc, mor);
-	}
+  public IpPoolManager(ServerConnection sc, ManagedObjectReference mor) 
+  {
+    super(sc, mor);
+  }
 
-	public int createIpPool(Datacenter dc, IpPool pool) throws RuntimeFault, RemoteException
-	{
-		return getVimService().createIpPool(getMOR(), dc.getMOR(), pool);
-	}
-	
-	public void destroyIpPool(Datacenter dc, int id, boolean force) throws RuntimeFault, RemoteException
-	{
-		getVimService().destroyIpPool(getMOR(), dc.getMOR(), id, force);
-	}
+  public int createIpPool(Datacenter dc, IpPool pool) throws RuntimeFault, RemoteException
+  {
+    return getVimService().createIpPool(getMOR(), dc.getMOR(), pool);
+  }
+  
+  public void destroyIpPool(Datacenter dc, int id, boolean force) throws RuntimeFault, RemoteException
+  {
+    getVimService().destroyIpPool(getMOR(), dc.getMOR(), id, force);
+  }
 
-	public IpPool[] queryIpPools(Datacenter dc) throws RuntimeFault, RemoteException
-	{
-		return getVimService().queryIpPools(getMOR(), dc.getMOR());
-	}
-	
-	public void updateIpPool(Datacenter dc, IpPool pool) throws RuntimeFault, RemoteException
-	{
-		getVimService().updateIpPool(getMOR(), dc.getMOR(), pool);
-	}
+  public IpPool[] queryIpPools(Datacenter dc) throws RuntimeFault, RemoteException
+  {
+    return getVimService().queryIpPools(getMOR(), dc.getMOR());
+  }
+  
+  public void updateIpPool(Datacenter dc, IpPool pool) throws RuntimeFault, RemoteException
+  {
+    getVimService().updateIpPool(getMOR(), dc.getMOR(), pool);
+  }
 
-	/** @since SDK5.1 */
-	public String  allocateIpv4Address(Datacenter dc, int poolId, String allocationId) throws RuntimeFault, RemoteException
-	{
-	    return getVimService().allocateIpv4Address(getMOR(), dc.getMOR(), poolId, allocationId);
-	}
+  /** @since SDK5.1 */
+  public String  allocateIpv4Address(Datacenter dc, int poolId, String allocationId) throws RuntimeFault, RemoteException
+  {
+      return getVimService().allocateIpv4Address(getMOR(), dc.getMOR(), poolId, allocationId);
+  }
 
-	/** @since SDK5.1 */
-	public String allocateIpv6Address(Datacenter dc, int poolId, String allocationId) throws RuntimeFault, RemoteException
-	{
-	    return getVimService().allocateIpv6Address(getMOR(), dc.getMOR(), poolId, allocationId);
-	}
+  /** @since SDK5.1 */
+  public String allocateIpv6Address(Datacenter dc, int poolId, String allocationId) throws RuntimeFault, RemoteException
+  {
+      return getVimService().allocateIpv6Address(getMOR(), dc.getMOR(), poolId, allocationId);
+  }
 
-	/** @since SDK5.1 */
-	public IpPoolManagerIpAllocation[] queryIPAllocations(Datacenter dc, int poolId, String extensionKey) throws RuntimeFault, RemoteException
-	{
-	    return getVimService().queryIPAllocations(getMOR(), dc.getMOR(), poolId, extensionKey);
-	}
+  /** @since SDK5.1 */
+  public IpPoolManagerIpAllocation[] queryIPAllocations(Datacenter dc, int poolId, String extensionKey) throws RuntimeFault, RemoteException
+  {
+      return getVimService().queryIPAllocations(getMOR(), dc.getMOR(), poolId, extensionKey);
+  }
 
-	/** @since SDK5.1 */
-	public void releaseIpAllocation(Datacenter dc, int poolId, String allocationId) throws RuntimeFault, RemoteException
-	{
-	    getVimService().releaseIpAllocation(getMOR(), dc.getMOR(), poolId, allocationId);
-	}
+  /** @since SDK5.1 */
+  public void releaseIpAllocation(Datacenter dc, int poolId, String allocationId) throws RuntimeFault, RemoteException
+  {
+      getVimService().releaseIpAllocation(getMOR(), dc.getMOR(), poolId, allocationId);
+  }
 }

@@ -53,9 +53,9 @@ public class VMSnapshot
     if(args.length!=5)
     {
       System.out.println("Usage: java VMSnapshot <url> " +
-      		"<username> <password> <vmname> <op>");
+          "<username> <password> <vmname> <op>");
       System.out.println("op - list, create, remove, " +
-      		"removeall, revert");
+          "removeall, revert");
       System.exit(0);
     }
 

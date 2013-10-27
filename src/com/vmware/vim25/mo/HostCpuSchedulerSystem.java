@@ -41,24 +41,24 @@ import com.vmware.vim25.*;
 public class HostCpuSchedulerSystem extends ManagedObject 
 {
 
-	public HostCpuSchedulerSystem(ServerConnection serverConnection, ManagedObjectReference mor) 
-	{
-		super(serverConnection, mor);
-	}
+  public HostCpuSchedulerSystem(ServerConnection serverConnection, ManagedObjectReference mor) 
+  {
+    super(serverConnection, mor);
+  }
 
-	public HostHyperThreadScheduleInfo getHyperthreadInfo()
-	{
-		return (HostHyperThreadScheduleInfo) this.getCurrentProperty("hyperthreadInfo");
-	}
-	
-	public void disableHyperThreading() throws RuntimeFault, RemoteException 
-	{
-		getVimService().disableHyperThreading(getMOR());
-	}
-	
-	public void enableHyperThreading() throws RuntimeFault, RemoteException 
-	{
-		getVimService().enableHyperThreading(getMOR());
-	}
-	
+  public HostHyperThreadScheduleInfo getHyperthreadInfo()
+  {
+    return (HostHyperThreadScheduleInfo) this.getCurrentProperty("hyperthreadInfo");
+  }
+  
+  public void disableHyperThreading() throws RuntimeFault, RemoteException 
+  {
+    getVimService().disableHyperThreading(getMOR());
+  }
+  
+  public void enableHyperThreading() throws RuntimeFault, RemoteException 
+  {
+    getVimService().enableHyperThreading(getMOR());
+  }
+  
 }

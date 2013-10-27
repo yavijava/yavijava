@@ -42,31 +42,31 @@ import com.vmware.vim25.ws.*;
 
 public class DrsVMotionHistory
 {
-	public static void main(String[] args) throws Exception
-	{
-		ServiceInstance si = new ServiceInstance(new URL("https://10.20.143.209/sdk"), "Administrator", "password", true);
-		ClusterComputeResource drsCluster = (ClusterComputeResource) new InventoryNavigator(
-				si.getRootFolder()).searchManagedEntity("ClusterComputeResource", "myDrs");
-		if(drsCluster==null)
-		{
-			System.out.println("There is no cluster called myDrs. Exiting...");
-		}
-		
-		ClusterDrsMigration[] histories = drsCluster.getMigrationHistory();
-		if(histories==null)
-		{
-			System.out.println("There is no migration history set. Please check whether it's running in automatic mode!\nExiting...");
-		}
-		
-		System.out.println("There were totally " + histories.length + " migration(s).");
-		
-		for(int i=0; i < histories.length; i++)
-		{   ServerConnection sc = si.getServerConnection();
-			VirtualMachine vm = (VirtualMachine) MorUtil.createExactManagedEntity(sc, histories[i].getVm());
-			HostSystem srcHost = (HostSystem) MorUtil.createExactManagedEntity(sc, histories[i].getSource());
-			HostSystem dstHost = (HostSystem) MorUtil.createExactManagedEntity(sc, histories[i].getDestination());
-			System.out.println("VM: " + vm.getName() + " migrated from " + srcHost.getName() + " to " + dstHost.getName());			
-		}
-		si.getServerConnection().logout();
-	}
+  public static void main(String[] args) throws Exception
+  {
+    ServiceInstance si = new ServiceInstance(new URL("https://10.20.143.209/sdk"), "Administrator", "password", true);
+    ClusterComputeResource drsCluster = (ClusterComputeResource) new InventoryNavigator(
+        si.getRootFolder()).searchManagedEntity("ClusterComputeResource", "myDrs");
+    if(drsCluster==null)
+    {
+      System.out.println("There is no cluster called myDrs. Exiting...");
+    }
+    
+    ClusterDrsMigration[] histories = drsCluster.getMigrationHistory();
+    if(histories==null)
+    {
+      System.out.println("There is no migration history set. Please check whether it's running in automatic mode!\nExiting...");
+    }
+    
+    System.out.println("There were totally " + histories.length + " migration(s).");
+    
+    for(int i=0; i < histories.length; i++)
+    {   ServerConnection sc = si.getServerConnection();
+      VirtualMachine vm = (VirtualMachine) MorUtil.createExactManagedEntity(sc, histories[i].getVm());
+      HostSystem srcHost = (HostSystem) MorUtil.createExactManagedEntity(sc, histories[i].getSource());
+      HostSystem dstHost = (HostSystem) MorUtil.createExactManagedEntity(sc, histories[i].getDestination());
+      System.out.println("VM: " + vm.getName() + " migrated from " + srcHost.getName() + " to " + dstHost.getName());      
+    }
+    si.getServerConnection().logout();
+  }
 }

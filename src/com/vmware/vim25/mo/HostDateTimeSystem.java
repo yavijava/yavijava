@@ -42,39 +42,39 @@ import com.vmware.vim25.*;
 public class HostDateTimeSystem extends ManagedObject 
 {
 
-	public HostDateTimeSystem(ServerConnection serverConnection, ManagedObjectReference mor) 
-	{
-		super(serverConnection, mor);
-	}
-	
-	public HostDateTimeInfo getDateTimeInfo()
-	{
-		return (HostDateTimeInfo) getCurrentProperty("dateTimeInfo");
-	}
-	
-	public HostDateTimeSystemTimeZone[] queryAvailableTimeZones() throws RuntimeFault, RemoteException 
-	{
-		return getVimService().queryAvailableTimeZones(getMOR());
-	}
-	
-	public Calendar queryDateTime() throws RuntimeFault, RemoteException 
-	{
-		return getVimService().queryDateTime(getMOR());
-	}
-	
-	public void refreshDateTimeSystem() throws RuntimeFault, RemoteException 
-	{
-		getVimService().refreshDateTimeSystem(getMOR());
-	}
-	
-	public void updateDateTime(Calendar dateTime) throws HostConfigFault, RuntimeFault, RemoteException 
-	{
-		getVimService().updateDateTime(getMOR(), dateTime);
-	}
-	
-	public void  updateDateTimeConfig(HostDateTimeConfig config) throws HostConfigFault, RuntimeFault, RemoteException 
-	{
-		getVimService().updateDateTimeConfig(getMOR(), config);
-	}
+  public HostDateTimeSystem(ServerConnection serverConnection, ManagedObjectReference mor) 
+  {
+    super(serverConnection, mor);
+  }
+  
+  public HostDateTimeInfo getDateTimeInfo()
+  {
+    return (HostDateTimeInfo) getCurrentProperty("dateTimeInfo");
+  }
+  
+  public HostDateTimeSystemTimeZone[] queryAvailableTimeZones() throws RuntimeFault, RemoteException 
+  {
+    return getVimService().queryAvailableTimeZones(getMOR());
+  }
+  
+  public Calendar queryDateTime() throws RuntimeFault, RemoteException 
+  {
+    return getVimService().queryDateTime(getMOR());
+  }
+  
+  public void refreshDateTimeSystem() throws RuntimeFault, RemoteException 
+  {
+    getVimService().refreshDateTimeSystem(getMOR());
+  }
+  
+  public void updateDateTime(Calendar dateTime) throws HostConfigFault, RuntimeFault, RemoteException 
+  {
+    getVimService().updateDateTime(getMOR(), dateTime);
+  }
+  
+  public void  updateDateTimeConfig(HostDateTimeConfig config) throws HostConfigFault, RuntimeFault, RemoteException 
+  {
+    getVimService().updateDateTimeConfig(getMOR(), config);
+  }
 
 }

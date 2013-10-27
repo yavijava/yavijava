@@ -51,7 +51,7 @@ public class FlipNetworkService
     if(args.length != 3)
     {
       System.out.println("Usage: java FlipNetworkService " +
-      		"<url> <username> <password>");
+          "<url> <username> <password>");
       return;
     }
 

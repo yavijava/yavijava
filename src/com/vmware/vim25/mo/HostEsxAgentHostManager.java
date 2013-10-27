@@ -43,18 +43,18 @@ import com.vmware.vim25.*;
 public class HostEsxAgentHostManager extends ManagedObject 
 {
 
-	public HostEsxAgentHostManager(ServerConnection serverConnection, ManagedObjectReference mor) 
-	{
-		super(serverConnection, mor);
-	}
+  public HostEsxAgentHostManager(ServerConnection serverConnection, ManagedObjectReference mor) 
+  {
+    super(serverConnection, mor);
+  }
 
-	public HostEsxAgentHostManagerConfigInfo getCacheConfigurationInfo()
-	{
-		return (HostEsxAgentHostManagerConfigInfo) getCurrentProperty("configInfo");
-	}
-	
-	public void esxAgentHostManagerUpdateConfig(HostEsxAgentHostManagerConfigInfo configInfo) throws RuntimeFault, RemoteException 
-	{
-		getVimService().esxAgentHostManagerUpdateConfig(getMOR(), configInfo);
-	}
+  public HostEsxAgentHostManagerConfigInfo getCacheConfigurationInfo()
+  {
+    return (HostEsxAgentHostManagerConfigInfo) getCurrentProperty("configInfo");
+  }
+  
+  public void esxAgentHostManagerUpdateConfig(HostEsxAgentHostManagerConfigInfo configInfo) throws RuntimeFault, RemoteException 
+  {
+    getVimService().esxAgentHostManagerUpdateConfig(getMOR(), configInfo);
+  }
 }

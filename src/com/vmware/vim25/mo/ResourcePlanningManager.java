@@ -42,13 +42,13 @@ import com.vmware.vim25.RuntimeFault;
  */
 public class ResourcePlanningManager extends Profile 
 {
-	public ResourcePlanningManager(ServerConnection sc, ManagedObjectReference mor) 
-	{
-		super(sc, mor);
-	}
-	
-	public DatabaseSizeEstimate estimateDatabaseSize(DatabaseSizeParam dbSizeParam) throws RuntimeFault, RemoteException
-	{
-		return getVimService().estimateDatabaseSize(getMOR(), dbSizeParam);
-	}
+  public ResourcePlanningManager(ServerConnection sc, ManagedObjectReference mor) 
+  {
+    super(sc, mor);
+  }
+  
+  public DatabaseSizeEstimate estimateDatabaseSize(DatabaseSizeParam dbSizeParam) throws RuntimeFault, RemoteException
+  {
+    return getVimService().estimateDatabaseSize(getMOR(), dbSizeParam);
+  }
 }

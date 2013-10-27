@@ -43,19 +43,19 @@ import com.vmware.vim25.RuntimeFault;
 public class HostBootDeviceSystem extends ManagedObject 
 {
 
-	public HostBootDeviceSystem(ServerConnection serverConnection, ManagedObjectReference mor) 
-	{
-		super(serverConnection, mor);
-	}
+  public HostBootDeviceSystem(ServerConnection serverConnection, ManagedObjectReference mor) 
+  {
+    super(serverConnection, mor);
+  }
 
-	public HostBootDeviceInfo queryBootDevices() throws RuntimeFault, RemoteException 
-	{
-		return getVimService().queryBootDevices(getMOR());
-	}
-	
-	public void updateBootDevice(String key) throws RuntimeFault, RemoteException 
-	{
-		getVimService().updateBootDevice(getMOR(), key);
-	}
-	
+  public HostBootDeviceInfo queryBootDevices() throws RuntimeFault, RemoteException 
+  {
+    return getVimService().queryBootDevices(getMOR());
+  }
+  
+  public void updateBootDevice(String key) throws RuntimeFault, RemoteException 
+  {
+    getVimService().updateBootDevice(getMOR(), key);
+  }
+  
 }

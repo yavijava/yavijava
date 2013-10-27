@@ -49,21 +49,21 @@ public class SCSILunName
 
    public static void main(String args[]) throws Exception
    {
-		CommandLineParser clp = new CommandLineParser(constructOptions(), args);
-		String urlStr = clp.get_option("url");
-		String username = clp.get_option("username");
-		String password = clp.get_option("password");
+    CommandLineParser clp = new CommandLineParser(constructOptions(), args);
+    String urlStr = clp.get_option("url");
+    String username = clp.get_option("username");
+    String password = clp.get_option("password");
         String hostname = clp.get_option("hostname");
 
-		ServiceInstance si = new ServiceInstance(new URL(urlStr), username, password, true);
-		HostSystem host = (HostSystem) new InventoryNavigator(si.getRootFolder()).searchManagedEntity("HostSystem", hostname);
+    ServiceInstance si = new ServiceInstance(new URL(urlStr), username, password, true);
+    HostSystem host = (HostSystem) new InventoryNavigator(si.getRootFolder()).searchManagedEntity("HostSystem", hostname);
 
-		if(host!=null)
-		{
-			ScsiLun[] scsiLuns = (ScsiLun[])host.getConfig().getStorageDevice().getScsiLun();
-			
-			try
-			{
+    if(host!=null)
+    {
+      ScsiLun[] scsiLuns = (ScsiLun[])host.getConfig().getStorageDevice().getScsiLun();
+      
+      try
+      {
               if (scsiLuns != null && scsiLuns.length > 0) 
               {
                  for (int i=0; i < scsiLuns.length; i++ )
@@ -91,18 +91,18 @@ public class SCSILunName
            System.out.println("Host "+ hostname + " not found");
         }
 
-		si.getServerConnection().logout();
+    si.getServerConnection().logout();
    }
    
    private static OptionSpec[] constructOptions() 
    {
       return new OptionSpec[] {
-    	  new OptionSpec("hostname","String",1 ,"Name of the host",null)
+        new OptionSpec("hostname","String",1 ,"Name of the host",null)
       };
    }
    
     static void printScsiLunInfo(ScsiLun scsiLun)
-	{
+  {
        String canName = scsiLun.getCanonicalName();
        String vendor = scsiLun.getVendor();
        String model = scsiLun.getModel();
@@ -124,29 +124,29 @@ public class SCSILunName
        System.out.println("Namespace ID    : " + namespaceId);
    }
     
-	/**This subroutine prints the virtual machine file system volumes affected by the given SCSI LUN.*/
+  /**This subroutine prints the virtual machine file system volumes affected by the given SCSI LUN.*/
 
-	static void printVMFS(Datastore[] datastores,String canName) throws Exception
-	{
+  static void printVMFS(Datastore[] datastores,String canName) throws Exception
+  {
       boolean vmfsFlag = false;
       for (int i=0;i<datastores.length ; i++ ) 
       {
-    	  DatastoreInfo dsInfo = datastores[i].getInfo();
-    	  if(dsInfo instanceof VmfsDatastoreInfo)
-    	  {
-    		  VmfsDatastoreInfo vds = (VmfsDatastoreInfo) dsInfo;
-    		  HostVmfsVolume hvms = vds.getVmfs();
-    		  String vmfsName  = vds.getName();
-    		  HostScsiDiskPartition hdp[] = hvms.getExtent();
-    		  for (int j =0;j< hdp.length ; j++ )  
-    		  {
-    			  if(hdp[j].getDiskName().equals(canName))
-    			  {
-    				  vmfsFlag = true;
-    				  System.out.println(" " + vmfsName + "\n");
-    			  }
-    		  }
-    	  }
+        DatastoreInfo dsInfo = datastores[i].getInfo();
+        if(dsInfo instanceof VmfsDatastoreInfo)
+        {
+          VmfsDatastoreInfo vds = (VmfsDatastoreInfo) dsInfo;
+          HostVmfsVolume hvms = vds.getVmfs();
+          String vmfsName  = vds.getName();
+          HostScsiDiskPartition hdp[] = hvms.getExtent();
+          for (int j =0;j< hdp.length ; j++ )  
+          {
+            if(hdp[j].getDiskName().equals(canName))
+            {
+              vmfsFlag = true;
+              System.out.println(" " + vmfsName + "\n");
+            }
+          }
+        }
       }
       if (!vmfsFlag) 
       {
@@ -158,33 +158,33 @@ public class SCSILunName
 
    static void printVMs(Datastore[] datastores,String canName) throws Exception 
    {
-	   boolean vmFlag = false;
-	   for (int i=0;i<datastores.length ; i++ ) 
-	   {
-		   DatastoreInfo dsInfo = datastores[i].getInfo();
-		   if(dsInfo instanceof VmfsDatastoreInfo)
-		   {
-			   VmfsDatastoreInfo vds = (VmfsDatastoreInfo) dsInfo;
-			   HostVmfsVolume hvms = vds.getVmfs();
-			   HostScsiDiskPartition hdp[] = hvms.getExtent();
-			   for (int j =0;j< hdp.length ; j++ ) 
-			   {
-				   if(hdp[j].getDiskName().equals(canName))
-				   {
-					   VirtualMachine[] vms = datastores[i].getVms();
-					   for (int k=0; k<vms.length ; k++ ) 
-					   {
+     boolean vmFlag = false;
+     for (int i=0;i<datastores.length ; i++ ) 
+     {
+       DatastoreInfo dsInfo = datastores[i].getInfo();
+       if(dsInfo instanceof VmfsDatastoreInfo)
+       {
+         VmfsDatastoreInfo vds = (VmfsDatastoreInfo) dsInfo;
+         HostVmfsVolume hvms = vds.getVmfs();
+         HostScsiDiskPartition hdp[] = hvms.getExtent();
+         for (int j =0;j< hdp.length ; j++ ) 
+         {
+           if(hdp[j].getDiskName().equals(canName))
+           {
+             VirtualMachine[] vms = datastores[i].getVms();
+             for (int k=0; k<vms.length ; k++ ) 
+             {
                            vmFlag = true;
                            System.out.println(" "+vms[k].getName());
                         }
                     }
-			   }
-		   }
-	   }
-	   if (!vmFlag) 
-	   {
+         }
+       }
+     }
+     if (!vmFlag) 
+     {
             System.out.println(" None\n");
-	   }
+     }
    }
    
 }

@@ -68,86 +68,86 @@ public class AddVirtualSwitchPortGroup
 {
    public static void main(String[] args) throws Exception 
    {
-	    CommandLineParser clp = new CommandLineParser(constructOptions(), args);
-	   	String urlStr = clp.get_option("url");
- 	    String username = clp.get_option("username");
-	    String password = clp.get_option("password");
-		String dcname = clp.get_option("datacenter");;
-		String hostname = clp.get_option("host");
-		String vswitchId = clp.get_option("vswitchid");
-		String portGroupName = clp.get_option("portgroupname");
+      CommandLineParser clp = new CommandLineParser(constructOptions(), args);
+       String urlStr = clp.get_option("url");
+       String username = clp.get_option("username");
+      String password = clp.get_option("password");
+    String dcname = clp.get_option("datacenter");;
+    String hostname = clp.get_option("host");
+    String vswitchId = clp.get_option("vswitchid");
+    String portGroupName = clp.get_option("portgroupname");
 
-		ServiceInstance si = new ServiceInstance(new URL(urlStr), username, password, true);
-		Folder rootFolder = si.getRootFolder();
-		HostSystem host = null;
-		
-		String apiType = si.getAboutInfo().getApiType();
-		if("HostAgent".equalsIgnoreCase(apiType) && dcname ==null)
-		{
-			dcname = "ha-datacenter";
-		}
-		else if("VirtualCenter".equalsIgnoreCase(apiType) && ((dcname == null) || (hostname ==null)))
-		{
-			System.out.println("datacenter and host should be specified");
-			return;
-		}
-		
-		Datacenter dc = (Datacenter) new InventoryNavigator(rootFolder).searchManagedEntity("Datacenter", dcname);
-		host = (HostSystem) new InventoryNavigator(dc).searchManagedEntity("HostSystem", hostname);
+    ServiceInstance si = new ServiceInstance(new URL(urlStr), username, password, true);
+    Folder rootFolder = si.getRootFolder();
+    HostSystem host = null;
+    
+    String apiType = si.getAboutInfo().getApiType();
+    if("HostAgent".equalsIgnoreCase(apiType) && dcname ==null)
+    {
+      dcname = "ha-datacenter";
+    }
+    else if("VirtualCenter".equalsIgnoreCase(apiType) && ((dcname == null) || (hostname ==null)))
+    {
+      System.out.println("datacenter and host should be specified");
+      return;
+    }
+    
+    Datacenter dc = (Datacenter) new InventoryNavigator(rootFolder).searchManagedEntity("Datacenter", dcname);
+    host = (HostSystem) new InventoryNavigator(dc).searchManagedEntity("HostSystem", hostname);
 
-		addVirtualSwitchPortGroup(host, vswitchId, portGroupName);
+    addVirtualSwitchPortGroup(host, vswitchId, portGroupName);
    }
 
 
    private static void addVirtualSwitchPortGroup(HostSystem host, String vswitchId, String portGroupName) throws Exception 
    {
-		HostNetworkSystem hns = host.getHostNetworkSystem();
-			
-		HostPortGroupSpec portgrp = new HostPortGroupSpec();
+    HostNetworkSystem hns = host.getHostNetworkSystem();
+      
+    HostPortGroupSpec portgrp = new HostPortGroupSpec();
         portgrp.setName(portGroupName);
         portgrp.setVswitchName(vswitchId);
         portgrp.setPolicy(new HostNetworkPolicy());
 
         try
         {
-        	hns.addPortGroup(portgrp);
-        	System.out.println("Successful creating : " + vswitchId +"/" + portGroupName);
+          hns.addPortGroup(portgrp);
+          System.out.println("Successful creating : " + vswitchId +"/" + portGroupName);
         }
-	      catch (AlreadyExists e) 
-	      {
-	         System.out.println("Failed to create : " + vswitchId + "/" + portGroupName);
-	         System.out.println("Portgroup name already exists");
-	      }
-	      catch (InvalidArgument e) 
-	      {
-	         System.out.println("Failed creating : " + vswitchId +"/"+ portGroupName);
-	         System.out.println("PortGroup vlanId or network policy may be invalid.");
-	      }   
-	      catch (NotFound e) 
-	      {
-	         System.out.println("Failed creating : " + vswitchId +"/"+ portGroupName);
-	         System.out.println("Switch Not found.");
-	      }
-	      catch (NullPointerException e) 
-	      {
-	         System.out.println("Failed creating : " + vswitchId +"/"+ portGroupName);
-	         System.out.println("Datacenter or Host may be invalid");
-	         throw e;
-	      }   
-	      catch (Exception e) {
-	         System.out.println("Failed creating : " + vswitchId +"/"+ portGroupName);
-	         throw e;
-	      }
+        catch (AlreadyExists e) 
+        {
+           System.out.println("Failed to create : " + vswitchId + "/" + portGroupName);
+           System.out.println("Portgroup name already exists");
+        }
+        catch (InvalidArgument e) 
+        {
+           System.out.println("Failed creating : " + vswitchId +"/"+ portGroupName);
+           System.out.println("PortGroup vlanId or network policy may be invalid.");
+        }   
+        catch (NotFound e) 
+        {
+           System.out.println("Failed creating : " + vswitchId +"/"+ portGroupName);
+           System.out.println("Switch Not found.");
+        }
+        catch (NullPointerException e) 
+        {
+           System.out.println("Failed creating : " + vswitchId +"/"+ portGroupName);
+           System.out.println("Datacenter or Host may be invalid");
+           throw e;
+        }   
+        catch (Exception e) {
+           System.out.println("Failed creating : " + vswitchId +"/"+ portGroupName);
+           throw e;
+        }
    }
    private static OptionSpec[] constructOptions() 
    {
       return new OptionSpec[]
-	  {
-    	new OptionSpec("vswitchid","String",1 ,"Name of the switch on which portgroup is to be added",null),
-      	new OptionSpec("host","String",0, "Name of the host", null),
-      	new OptionSpec("portgroupname","String",1, "Name of the portgroup",null),
-      	new OptionSpec("datacenter","String",0, "Name of the datacenter", null)
-	  };
+    {
+      new OptionSpec("vswitchid","String",1 ,"Name of the switch on which portgroup is to be added",null),
+        new OptionSpec("host","String",0, "Name of the host", null),
+        new OptionSpec("portgroupname","String",1, "Name of the portgroup",null),
+        new OptionSpec("datacenter","String",0, "Name of the datacenter", null)
+    };
    }
 }
 

@@ -50,39 +50,39 @@ import com.vmware.vim25.VirtualDiskVFlashCacheConfigInfo;
 
 public class HostVFlashManager extends ManagedObject 
 {
-	public HostVFlashManager(ServerConnection serverConnection, ManagedObjectReference mor) 
-	{
-		super(serverConnection, mor);
-	}
-	
-	public HostVFlashManagerVFlashConfigInfo getVFlashConfigInfo()
-	{
-	  return (HostVFlashManagerVFlashConfigInfo) getCurrentProperty("vFlashConfigInfo");
-	}
-	
-	public Task configureVFlashResourceEx_Task(String[] devicePath) throws HostConfigFault, RuntimeFault, RemoteException 
-	{
-		ManagedObjectReference mor = getVimService().configureVFlashResourceEx_Task(this.getMOR(), devicePath);
-		return new Task(getServerConnection(), mor);
-	}
-	
-	public void hostConfigureVFlashResource(HostVFlashManagerVFlashResourceConfigSpec spec) throws HostConfigFault, ResourceInUse, RuntimeFault, RemoteException
-	{
-	  getVimService().hostConfigureVFlashResource(this.getMOR(), spec);
-	}
-	
-	public void hostConfigVFlashCache(HostVFlashManagerVFlashCacheConfigSpec spec) throws HostConfigFault, InaccessibleVFlashSource, ResourceInUse, RuntimeFault, RemoteException
-	{
-	  getVimService().hostConfigVFlashCache(this.getMOR(), spec);
-	}
-	
-	public VirtualDiskVFlashCacheConfigInfo hostGetVFlashModuleDefaultConfig(String vFlashModule) throws NotFound, HostConfigFault, RuntimeFault, RemoteException
-	{
-	  return getVimService().hostGetVFlashModuleDefaultConfig(this.getMOR(), vFlashModule);
-	}
-	
-	public void hostRemoveVFlashResource() throws NotFound, HostConfigFault, ResourceInUse, RuntimeFault, RemoteException
-	{
-	  getVimService().hostRemoveVFlashResource(this.getMOR());
-	}
+  public HostVFlashManager(ServerConnection serverConnection, ManagedObjectReference mor) 
+  {
+    super(serverConnection, mor);
+  }
+  
+  public HostVFlashManagerVFlashConfigInfo getVFlashConfigInfo()
+  {
+    return (HostVFlashManagerVFlashConfigInfo) getCurrentProperty("vFlashConfigInfo");
+  }
+  
+  public Task configureVFlashResourceEx_Task(String[] devicePath) throws HostConfigFault, RuntimeFault, RemoteException 
+  {
+    ManagedObjectReference mor = getVimService().configureVFlashResourceEx_Task(this.getMOR(), devicePath);
+    return new Task(getServerConnection(), mor);
+  }
+  
+  public void hostConfigureVFlashResource(HostVFlashManagerVFlashResourceConfigSpec spec) throws HostConfigFault, ResourceInUse, RuntimeFault, RemoteException
+  {
+    getVimService().hostConfigureVFlashResource(this.getMOR(), spec);
+  }
+  
+  public void hostConfigVFlashCache(HostVFlashManagerVFlashCacheConfigSpec spec) throws HostConfigFault, InaccessibleVFlashSource, ResourceInUse, RuntimeFault, RemoteException
+  {
+    getVimService().hostConfigVFlashCache(this.getMOR(), spec);
+  }
+  
+  public VirtualDiskVFlashCacheConfigInfo hostGetVFlashModuleDefaultConfig(String vFlashModule) throws NotFound, HostConfigFault, RuntimeFault, RemoteException
+  {
+    return getVimService().hostGetVFlashModuleDefaultConfig(this.getMOR(), vFlashModule);
+  }
+  
+  public void hostRemoveVFlashResource() throws NotFound, HostConfigFault, ResourceInUse, RuntimeFault, RemoteException
+  {
+    getVimService().hostRemoveVFlashResource(this.getMOR());
+  }
 }

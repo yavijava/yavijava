@@ -58,29 +58,29 @@ import com.vmware.vim25.mo.util.OptionSpec;
 
 public class TaskList_New 
 {
-	private static void displayTasks(Task[] tasks) throws Exception
-	{
-		if(tasks.length == 0) 
-		{
-			System.out.println("Currently no task running");
-			return;
-		}
-		
-		for(int i=0; i<tasks.length; i++) 
-		{
-			System.out.println("Task");
-			
-			TaskInfo ti = tasks[i].getTaskInfo();
-			
-			ManagedObjectReference mor = (ManagedObjectReference)ti.getEntity();
-			String type = mor.getType();
-			String name = ti.getEntityName();
-			String op = ti.getName();
-			String state = "";
-			String error = "";
-			
-			TaskInfoState tis = ti.getState();
-			if(TaskInfoState.error.equals(tis)) {  state = "-Error"; }
+  private static void displayTasks(Task[] tasks) throws Exception
+  {
+    if(tasks.length == 0) 
+    {
+      System.out.println("Currently no task running");
+      return;
+    }
+    
+    for(int i=0; i<tasks.length; i++) 
+    {
+      System.out.println("Task");
+      
+      TaskInfo ti = tasks[i].getTaskInfo();
+      
+      ManagedObjectReference mor = (ManagedObjectReference)ti.getEntity();
+      String type = mor.getType();
+      String name = ti.getEntityName();
+      String op = ti.getName();
+      String state = "";
+      String error = "";
+      
+      TaskInfoState tis = ti.getState();
+      if(TaskInfoState.error.equals(tis)) {  state = "-Error"; }
             else if(TaskInfoState.queued.equals(tis))  { state = "-Queued";  } 
             else if(TaskInfoState.running.equals(tis)) { state = "-Running"; } 
             else if(TaskInfoState.success.equals(tis)) { state = "-Success"; }
@@ -89,12 +89,12 @@ public class TaskList_New
                      state += "-Cancelled";
             } 
             
-			LocalizedMethodFault lmf = ti.getError();
-			if (lmf!=null)
+      LocalizedMethodFault lmf = ti.getError();
+      if (lmf!=null)
             {
-            	error = lmf.getLocalizedMessage();
+              error = lmf.getLocalizedMessage();
             }
-			
+      
             System.out.println("Operation " + op);
             System.out.println("Name " + name);
             System.out.println("Type " + type);
@@ -106,14 +106,14 @@ public class TaskList_New
 
    public static void main(String [] args) throws Exception
    {
-	    CommandLineParser clp = new CommandLineParser(new OptionSpec[]{}, args);
-	   	String urlStr = clp.get_option("url");
-  	    String username = clp.get_option("username");
-	    String password = clp.get_option("password");
+      CommandLineParser clp = new CommandLineParser(new OptionSpec[]{}, args);
+       String urlStr = clp.get_option("url");
+        String username = clp.get_option("username");
+      String password = clp.get_option("password");
 
-		ServiceInstance si = new ServiceInstance(new URL(urlStr), username, password, true);
-		TaskManager tm = si.getTaskManager();
-		Task[] tasks = tm.getRecentTasks();
-		displayTasks(tasks);
+    ServiceInstance si = new ServiceInstance(new URL(urlStr), username, password, true);
+    TaskManager tm = si.getTaskManager();
+    Task[] tasks = tm.getRecentTasks();
+    displayTasks(tasks);
    }     
 }

@@ -65,71 +65,71 @@ import com.vmware.vim25.mo.util.*;
 
 public class RemoveVirtualSwitch  
 {
-	   public static void main(String[] args) throws Exception 
-	   {
-		    CommandLineParser clp = new CommandLineParser(constructOptions(), args);
-		   	String urlStr = clp.get_option("url");
-	 	    String username = clp.get_option("username");
-		    String password = clp.get_option("password");
-			String dcname = clp.get_option("datacenter");;
-			String hostname = clp.get_option("host");
-			String vswitchId = clp.get_option("vswitchid");
+     public static void main(String[] args) throws Exception 
+     {
+        CommandLineParser clp = new CommandLineParser(constructOptions(), args);
+         String urlStr = clp.get_option("url");
+         String username = clp.get_option("username");
+        String password = clp.get_option("password");
+      String dcname = clp.get_option("datacenter");;
+      String hostname = clp.get_option("host");
+      String vswitchId = clp.get_option("vswitchid");
 
-			ServiceInstance si = new ServiceInstance(new URL(urlStr), username, password, true);
-			Folder rootFolder = si.getRootFolder();
-			HostSystem host = null;
-			
-			String apiType = si.getAboutInfo().getApiType();
-			if("HostAgent".equalsIgnoreCase(apiType) && dcname ==null)
-			{
-				dcname = "ha-datacenter";
-			}
-			else if("VirtualCenter".equalsIgnoreCase(apiType) && ((dcname == null) || (hostname ==null)))
-			{
-				System.out.println("datacenter and host should be specified");
-				return;
-			}
-			
-			Datacenter dc = (Datacenter) new InventoryNavigator(rootFolder).searchManagedEntity("Datacenter", dcname);
-			host = (HostSystem) new InventoryNavigator(dc).searchManagedEntity("HostSystem", hostname);
+      ServiceInstance si = new ServiceInstance(new URL(urlStr), username, password, true);
+      Folder rootFolder = si.getRootFolder();
+      HostSystem host = null;
+      
+      String apiType = si.getAboutInfo().getApiType();
+      if("HostAgent".equalsIgnoreCase(apiType) && dcname ==null)
+      {
+        dcname = "ha-datacenter";
+      }
+      else if("VirtualCenter".equalsIgnoreCase(apiType) && ((dcname == null) || (hostname ==null)))
+      {
+        System.out.println("datacenter and host should be specified");
+        return;
+      }
+      
+      Datacenter dc = (Datacenter) new InventoryNavigator(rootFolder).searchManagedEntity("Datacenter", dcname);
+      host = (HostSystem) new InventoryNavigator(dc).searchManagedEntity("HostSystem", hostname);
 
-			removeVirtualSwitch(host, vswitchId);
-	   }   
+      removeVirtualSwitch(host, vswitchId);
+     }   
 
-	public static void removeVirtualSwitch(HostSystem host, String vswitchId) throws RemoteException
-	{
-		try
-		{
-			HostNetworkSystem hns = host.getHostNetworkSystem();
-			hns.removeVirtualSwitch(vswitchId);
-			System.out.println("Successful removed: " + vswitchId);
-		}
-	    catch (NotFound e) 
-	    {
-	    	System.out.println("Failed : virtual switch cannot be found. ");
-	    }
-	    catch (HostConfigFault e) 
-	    {
-	    	System.out.println("Failed : Configuration falilures. ");
-	    }
-	    catch (ResourceInUse e) 
-	    {
-	    	System.out.println("Failed removing switch "+ vswitchId);
-	    	System.out.println("There are virtual network adapters " + "associated with the virtual switch.");
-	    }
-	    catch (Exception e) 
-	    {
-	    	System.out.println("Failed removing switch: "+ vswitchId +"\n" + e);
-	    }
-	}
+  public static void removeVirtualSwitch(HostSystem host, String vswitchId) throws RemoteException
+  {
+    try
+    {
+      HostNetworkSystem hns = host.getHostNetworkSystem();
+      hns.removeVirtualSwitch(vswitchId);
+      System.out.println("Successful removed: " + vswitchId);
+    }
+      catch (NotFound e) 
+      {
+        System.out.println("Failed : virtual switch cannot be found. ");
+      }
+      catch (HostConfigFault e) 
+      {
+        System.out.println("Failed : Configuration falilures. ");
+      }
+      catch (ResourceInUse e) 
+      {
+        System.out.println("Failed removing switch "+ vswitchId);
+        System.out.println("There are virtual network adapters " + "associated with the virtual switch.");
+      }
+      catch (Exception e) 
+      {
+        System.out.println("Failed removing switch: "+ vswitchId +"\n" + e);
+      }
+  }
 
    private static OptionSpec[] constructOptions() 
    {
       return new OptionSpec[] 
       {
-    		  new OptionSpec("vswitchid","String",1,"Name of the switch", null),
-    		  new OptionSpec("host","String",0, "Name of the host", null),
-    		  new OptionSpec("datacenter","String",0, "Name of the datacenter", null)
+          new OptionSpec("vswitchid","String",1,"Name of the switch", null),
+          new OptionSpec("host","String",0, "Name of the host", null),
+          new OptionSpec("datacenter","String",0, "Name of the datacenter", null)
       };
    } 
 

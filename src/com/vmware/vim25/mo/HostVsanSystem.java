@@ -47,11 +47,11 @@ import com.vmware.vim25.VsanHostDiskResult;
 
 public class HostVsanSystem extends ManagedObject 
 {
-	public HostVsanSystem(ServerConnection serverConnection, ManagedObjectReference mor) 
-	{
-		super(serverConnection, mor);
-	}
-	
+  public HostVsanSystem(ServerConnection serverConnection, ManagedObjectReference mor) 
+  {
+    super(serverConnection, mor);
+  }
+  
   public VsanHostConfigInfo getConfig()
   {
     return (VsanHostConfigInfo) getCurrentProperty("config");

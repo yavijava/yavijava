@@ -56,51 +56,51 @@ public class LicenseUtil
 {
   public static void main(String[] args) throws Exception 
    {
-		CommandLineParser clp = new CommandLineParser(constructOptions(), args);
-		String urlStr = clp.get_option("url");
-		String username = clp.get_option("username");
-		String password = clp.get_option("password");
-		String action = clp.get_option("action");
-		String serverurl = clp.get_option("serverurl");
-		String edition = clp.get_option("edition");
-		String feature = clp.get_option("feature");
+    CommandLineParser clp = new CommandLineParser(constructOptions(), args);
+    String urlStr = clp.get_option("url");
+    String username = clp.get_option("username");
+    String password = clp.get_option("password");
+    String action = clp.get_option("action");
+    String serverurl = clp.get_option("serverurl");
+    String edition = clp.get_option("edition");
+    String feature = clp.get_option("feature");
 
-		if(!customValidation(clp))
-			return;
-		
-		ServiceInstance si = new ServiceInstance(new URL(urlStr), username, password, true);
-		LicenseManager licMgr = si.getLicenseManager();
-		if(licMgr==null)
-		{
-			System.out.println("There is NO LicMgr available...");
-			return;
-		}
-		
-		if(action.equalsIgnoreCase("browse")) 
-		{
-			System.out.println("Display the license usage. The license usage is a list of supported features"
+    if(!customValidation(clp))
+      return;
+    
+    ServiceInstance si = new ServiceInstance(new URL(urlStr), username, password, true);
+    LicenseManager licMgr = si.getLicenseManager();
+    if(licMgr==null)
+    {
+      System.out.println("There is NO LicMgr available...");
+      return;
+    }
+    
+    if(action.equalsIgnoreCase("browse")) 
+    {
+      System.out.println("Display the license usage. The license usage is a list of supported features"
                              + "and the number of licenses that have been reserved.");
-			displayLicenseUsage(licMgr);
-		}
-		else if(action.equalsIgnoreCase("setserver")) 
-		{
-			System.out.println("Set the License server.");
-			setLicenseServer(licMgr,serverurl);
-		}      
-		else if(action.equalsIgnoreCase("setedition")) 
-		{
-			System.out.println("Set the License Edition.");
-			setEdition(licMgr, edition);
-		}
-		else if(action.equalsIgnoreCase("featureinfo")) 
-		{         
-			displayFeatureInfo(licMgr, feature);
-		}      
-		else 
-		{
-			System.out.println("Invalid Action ");
-			System.out.println("Valid Actions [browse|setserver|setedition|featureinfo]");
-		}
+      displayLicenseUsage(licMgr);
+    }
+    else if(action.equalsIgnoreCase("setserver")) 
+    {
+      System.out.println("Set the License server.");
+      setLicenseServer(licMgr,serverurl);
+    }      
+    else if(action.equalsIgnoreCase("setedition")) 
+    {
+      System.out.println("Set the License Edition.");
+      setEdition(licMgr, edition);
+    }
+    else if(action.equalsIgnoreCase("featureinfo")) 
+    {         
+      displayFeatureInfo(licMgr, feature);
+    }      
+    else 
+    {
+      System.out.println("Invalid Action ");
+      System.out.println("Valid Actions [browse|setserver|setedition|featureinfo]");
+    }
    }
    
    private static void displayLicenseUsage(LicenseManager licMgr) throws Exception 
@@ -119,11 +119,11 @@ public class LicenseUtil
       source.setLicenseServer("serverurl");      
       try
       {
-    	  licMgr.configureLicenseSource(null, source);
+        licMgr.configureLicenseSource(null, source);
       }
       catch(RemoteException re) 
       {
-    	  re.printStackTrace();
+        re.printStackTrace();
       }
    }  
  
@@ -138,7 +138,7 @@ public class LicenseUtil
          }
          catch(RemoteException re) 
          {
-        	 re.printStackTrace();
+           re.printStackTrace();
          }
       }
    }
@@ -324,9 +324,9 @@ public class LicenseUtil
    {
       return new OptionSpec[]
       {
-    	new OptionSpec("action","String",1,"[browse|setserver|setedition|featureinfo]", null),
-    	new OptionSpec("serverurl","String",0, "License Server URL", null),
-    	new OptionSpec("edition","String",0, "License Edition", null),
+      new OptionSpec("action","String",1,"[browse|setserver|setedition|featureinfo]", null),
+      new OptionSpec("serverurl","String",0, "License Server URL", null),
+      new OptionSpec("edition","String",0, "License Edition", null),
         new OptionSpec("feature","String",0, "Name of the feature", null)
       };
    }   

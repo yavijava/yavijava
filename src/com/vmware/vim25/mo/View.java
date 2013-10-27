@@ -42,13 +42,13 @@ import com.vmware.vim25.RuntimeFault;
 abstract public class View extends ManagedObject 
 {
 
-	public View(ServerConnection serverConnection, ManagedObjectReference mor) {
-		super(serverConnection, mor);
-	}
+  public View(ServerConnection serverConnection, ManagedObjectReference mor) {
+    super(serverConnection, mor);
+  }
 
-	public void destroyView() throws RuntimeFault, RemoteException 
-	{
-		getVimService().destroyView(getMOR());
-	}
+  public void destroyView() throws RuntimeFault, RemoteException 
+  {
+    getVimService().destroyView(getMOR());
+  }
 
 }

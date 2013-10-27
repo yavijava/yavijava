@@ -40,37 +40,37 @@ import com.vmware.vim25.mo.*;
 
 public class PrintInventory 
 {
-	public static void main(String[] args) throws Exception
-	{
+  public static void main(String[] args) throws Exception
+  {
 
-		ServiceInstance si = new ServiceInstance(new URL("https://server/sdk"), "root", "password", true);
-		Folder rootFolder = si.getRootFolder();
-		
-		System.out.println("============ Data Centers ============");
-		ManagedEntity[] dcs = new InventoryNavigator(rootFolder).searchManagedEntities(
-				new String[][] { {"Datacenter", "name" }, }, true);
-		for(int i=0; i<dcs.length; i++)
-		{
-			System.out.println("Datacenter["+i+"]=" + dcs[i].getName());
-		}
-		
-		System.out.println("\n============ Virtual Machines ============");
-		ManagedEntity[] vms = new InventoryNavigator(rootFolder).searchManagedEntities(
-				new String[][] { {"VirtualMachine", "name" }, }, true);
-		for(int i=0; i<vms.length; i++)
-		{
-			System.out.println("vm["+i+"]=" + vms[i].getName());
-		}
+    ServiceInstance si = new ServiceInstance(new URL("https://server/sdk"), "root", "password", true);
+    Folder rootFolder = si.getRootFolder();
+    
+    System.out.println("============ Data Centers ============");
+    ManagedEntity[] dcs = new InventoryNavigator(rootFolder).searchManagedEntities(
+        new String[][] { {"Datacenter", "name" }, }, true);
+    for(int i=0; i<dcs.length; i++)
+    {
+      System.out.println("Datacenter["+i+"]=" + dcs[i].getName());
+    }
+    
+    System.out.println("\n============ Virtual Machines ============");
+    ManagedEntity[] vms = new InventoryNavigator(rootFolder).searchManagedEntities(
+        new String[][] { {"VirtualMachine", "name" }, }, true);
+    for(int i=0; i<vms.length; i++)
+    {
+      System.out.println("vm["+i+"]=" + vms[i].getName());
+    }
 
-		System.out.println("\n============ Hosts ============");
-		ManagedEntity[] hosts = new InventoryNavigator(rootFolder).searchManagedEntities(
-				new String[][] { {"HostSystem", "name" }, }, true);
-		for(int i=0; i<hosts.length; i++)
-		{
-			System.out.println("host["+i+"]=" + hosts[i].getName());
-		}
-		
-		si.getServerConnection().logout();
-	}
+    System.out.println("\n============ Hosts ============");
+    ManagedEntity[] hosts = new InventoryNavigator(rootFolder).searchManagedEntities(
+        new String[][] { {"HostSystem", "name" }, }, true);
+    for(int i=0; i<hosts.length; i++)
+    {
+      System.out.println("host["+i+"]=" + hosts[i].getName());
+    }
+    
+    si.getServerConnection().logout();
+  }
 
 }

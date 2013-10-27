@@ -74,73 +74,73 @@ import java.net.URL;
 
 public class GetUpdates 
 {
-	
-	public static void main(String [] args) throws Exception
-	{
-	    CommandLineParser clp = new CommandLineParser(constructOptions(), args);
-	   	String urlStr = clp.get_option("url");
-  	    String username = clp.get_option("username");
-	    String password = clp.get_option("password");
-	    String vmname = clp.get_option("vmname");
-	   
-		ServiceInstance si = new ServiceInstance(new URL(urlStr), username, password, true);
-		Folder rootFolder = si.getRootFolder();
-		VirtualMachine vm = (VirtualMachine) new InventoryNavigator(rootFolder).searchManagedEntity("VirtualMachine", vmname);
-		
-		if(vm == null) 
-		{
-			System.out.println("Virtual Machine " + vmname  + " Not Found");
-			return;
-		}
-		// "summary.quickStats" is taken out -- API ref says, 
-		// "A set of statistics that are typically updated with near real-time regularity. 
-		// This data object type does not support notification, for scalability reasons. 
-		// Therefore, changes in QuickStats do not generate property collector updates. 
-		// To monitor statistics values, use the statistics and alarms modules instead. 
-		String[][] typeInfo = { new String[]{"VirtualMachine", "name","runtime"}};
-		
-		PropertySpec[] pSpecs = PropertyCollectorUtil.buildPropertySpecArray(typeInfo);
-		ObjectSpec[] oSpecs = createObjectSpecs(vm);
-		PropertyFilterSpec pSpec = new PropertyFilterSpec();
-		pSpec.setPropSet(pSpecs);
-		pSpec.setObjectSet(oSpecs);
+  
+  public static void main(String [] args) throws Exception
+  {
+      CommandLineParser clp = new CommandLineParser(constructOptions(), args);
+       String urlStr = clp.get_option("url");
+        String username = clp.get_option("username");
+      String password = clp.get_option("password");
+      String vmname = clp.get_option("vmname");
+     
+    ServiceInstance si = new ServiceInstance(new URL(urlStr), username, password, true);
+    Folder rootFolder = si.getRootFolder();
+    VirtualMachine vm = (VirtualMachine) new InventoryNavigator(rootFolder).searchManagedEntity("VirtualMachine", vmname);
+    
+    if(vm == null) 
+    {
+      System.out.println("Virtual Machine " + vmname  + " Not Found");
+      return;
+    }
+    // "summary.quickStats" is taken out -- API ref says, 
+    // "A set of statistics that are typically updated with near real-time regularity. 
+    // This data object type does not support notification, for scalability reasons. 
+    // Therefore, changes in QuickStats do not generate property collector updates. 
+    // To monitor statistics values, use the statistics and alarms modules instead. 
+    String[][] typeInfo = { new String[]{"VirtualMachine", "name","runtime"}};
+    
+    PropertySpec[] pSpecs = PropertyCollectorUtil.buildPropertySpecArray(typeInfo);
+    ObjectSpec[] oSpecs = createObjectSpecs(vm);
+    PropertyFilterSpec pSpec = new PropertyFilterSpec();
+    pSpec.setPropSet(pSpecs);
+    pSpec.setObjectSet(oSpecs);
 
-		PropertyCollector pc = si.getPropertyCollector();
-		PropertyFilter pf = pc.createFilter(pSpec, false);
+    PropertyCollector pc = si.getPropertyCollector();
+    PropertyFilter pf = pc.createFilter(pSpec, false);
 
-		BufferedReader console = new BufferedReader(new InputStreamReader(System.in));
-		String version = "";
-		while(true)
-		{
-			UpdateSet update = pc.checkForUpdates(version);
-			if(update != null && update.getFilterSet() != null) 
-			{
-				handleUpdate(update);
-				version = update.getVersion();
-				System.out.println("version is:" + version);
-			} 
-			else
-			{
-				System.out.println("No update is present!");
-			}
-			
-			System.out.println("\nPress <Enter> to check for updates");
-			System.out.println("Enter 'exit' <Enter> to exit the program");
-			if(console.readLine().trim().equalsIgnoreCase("exit"))
-				break;
-		}
-		pf.destroyPropertyFilter();
-		si.getServerConnection().logout();
+    BufferedReader console = new BufferedReader(new InputStreamReader(System.in));
+    String version = "";
+    while(true)
+    {
+      UpdateSet update = pc.checkForUpdates(version);
+      if(update != null && update.getFilterSet() != null) 
+      {
+        handleUpdate(update);
+        version = update.getVersion();
+        System.out.println("version is:" + version);
+      } 
+      else
+      {
+        System.out.println("No update is present!");
+      }
+      
+      System.out.println("\nPress <Enter> to check for updates");
+      System.out.println("Enter 'exit' <Enter> to exit the program");
+      if(console.readLine().trim().equalsIgnoreCase("exit"))
+        break;
+    }
+    pf.destroyPropertyFilter();
+    si.getServerConnection().logout();
    }
-	
-	static ObjectSpec[] createObjectSpecs(ManagedObject mo)
-	{
-		ObjectSpec[] oSpecs = new ObjectSpec[] { new ObjectSpec() };            
-		oSpecs[0].setObj(mo.getMOR());
-		oSpecs[0].setSkip(Boolean.FALSE);
-		//oSpecs[0].setSelectSet(PropertyCollectorUtil.buildFullTraversal()); // in doubt here...
-		return oSpecs;
-	}
+  
+  static ObjectSpec[] createObjectSpecs(ManagedObject mo)
+  {
+    ObjectSpec[] oSpecs = new ObjectSpec[] { new ObjectSpec() };            
+    oSpecs[0].setObj(mo.getMOR());
+    oSpecs[0].setSkip(Boolean.FALSE);
+    //oSpecs[0].setSelectSet(PropertyCollectorUtil.buildFullTraversal()); // in doubt here...
+    return oSpecs;
+  }
    
    static void handleUpdate(UpdateSet update) 
    {
@@ -184,7 +184,7 @@ public class GetUpdates
    {
       PropertyChange[] pc = oUpdate.getChangeSet();
       System.out.println(oUpdate.getKind() + "Data:");
-	  handleChanges(pc);
+    handleChanges(pc);
    }   
    
    static void handleChanges(PropertyChange[] changes) 
@@ -196,9 +196,9 @@ public class GetUpdates
          PropertyChangeOp op = changes[i].getOp();
          if(op != PropertyChangeOp.remove)
          {
-        	 System.out.println("  Property Name: " + name);
-        	 if("summary.quickStats".equals(name)) 
-        	 {               
+           System.out.println("  Property Name: " + name);
+           if("summary.quickStats".equals(name)) 
+           {               
                if(value instanceof VirtualMachineQuickStats) 
                {
                   VirtualMachineQuickStats vmqs = (VirtualMachineQuickStats)value;
@@ -266,7 +266,7 @@ public class GetUpdates
    {
       return new OptionSpec[]
       {
-    	  new OptionSpec("vmname","String",1, "Name of the virtual machine", null)
+        new OptionSpec("vmname","String",1, "Name of the virtual machine", null)
       };
    }
 

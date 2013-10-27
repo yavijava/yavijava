@@ -45,15 +45,15 @@ import com.vmware.vim25.StoragePodSummary;
 
 public class StoragePod extends Folder 
 {
-	public StoragePod(ServerConnection serverConnection, ManagedObjectReference mor) 
-	{
-		super(serverConnection, mor);
-	}
+  public StoragePod(ServerConnection serverConnection, ManagedObjectReference mor) 
+  {
+    super(serverConnection, mor);
+  }
 
-	public PodStorageDrsEntry getPodStorageDrsEntry()
-	{
-		return (PodStorageDrsEntry) getCurrentProperty("podStorageDrsEntry");
-	}
+  public PodStorageDrsEntry getPodStorageDrsEntry()
+  {
+    return (PodStorageDrsEntry) getCurrentProperty("podStorageDrsEntry");
+  }
 
   public StoragePodSummary getSummary()
   {

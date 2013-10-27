@@ -42,19 +42,19 @@ import com.vmware.vim25.*;
 public class HostCacheConfigurationManager extends ManagedObject 
 {
 
-	public HostCacheConfigurationManager(ServerConnection serverConnection, ManagedObjectReference mor) 
-	{
-		super(serverConnection, mor);
-	}
+  public HostCacheConfigurationManager(ServerConnection serverConnection, ManagedObjectReference mor) 
+  {
+    super(serverConnection, mor);
+  }
 
-	public HostCacheConfigurationInfo[] getCacheConfigurationInfo()
-	{
-		return (HostCacheConfigurationInfo[]) getCurrentProperty("cacheConfigurationInfo");
-	}
-	
-	public Task configureHostCache_Task(HostCacheConfigurationSpec spec) throws RuntimeFault, RemoteException 
-	{
-		ManagedObjectReference taskMor = getVimService().configureHostCache_Task(getMOR(), spec);
-		return new Task(getServerConnection(), taskMor);
-	}
+  public HostCacheConfigurationInfo[] getCacheConfigurationInfo()
+  {
+    return (HostCacheConfigurationInfo[]) getCurrentProperty("cacheConfigurationInfo");
+  }
+  
+  public Task configureHostCache_Task(HostCacheConfigurationSpec spec) throws RuntimeFault, RemoteException 
+  {
+    ManagedObjectReference taskMor = getVimService().configureHostCache_Task(getMOR(), spec);
+    return new Task(getServerConnection(), taskMor);
+  }
 }

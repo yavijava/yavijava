@@ -42,40 +42,40 @@ import com.vmware.vim25.RuntimeFault;
  */
 public class ProfileComplianceManager extends ManagedObject 
 {
-	public ProfileComplianceManager(ServerConnection sc, ManagedObjectReference mor) 
-	{
-		super(sc, mor);
-	}
-	
-	public Task checkCompliance_Task(Profile[] profile, ManagedEntity[] entity) throws RuntimeFault, RemoteException
-	{
-		ManagedObjectReference[] ps = convertMors(profile);
-		ManagedObjectReference[] es = convertMors(entity);
-		
-		ManagedObjectReference taskMor = getVimService().checkCompliance_Task(getMOR(), ps, es);
-		return new Task(getServerConnection(), taskMor);
-	}
+  public ProfileComplianceManager(ServerConnection sc, ManagedObjectReference mor) 
+  {
+    super(sc, mor);
+  }
+  
+  public Task checkCompliance_Task(Profile[] profile, ManagedEntity[] entity) throws RuntimeFault, RemoteException
+  {
+    ManagedObjectReference[] ps = convertMors(profile);
+    ManagedObjectReference[] es = convertMors(entity);
+    
+    ManagedObjectReference taskMor = getVimService().checkCompliance_Task(getMOR(), ps, es);
+    return new Task(getServerConnection(), taskMor);
+  }
 
-	public void clearComplianceStatus(Profile[] profile, ManagedEntity[] entity) throws RuntimeFault, RemoteException
-	{
-		getVimService().clearComplianceStatus(getMOR(), 
-				convertMors(profile), convertMors(entity));
-	}
-	
-	public ComplianceResult[] queryComplianceStatus(Profile[] profile, ManagedEntity[] entity) throws RuntimeFault, RemoteException
-	{
-		return getVimService().queryComplianceStatus(getMOR(), convertMors(profile), convertMors(entity));
-	}
-	
+  public void clearComplianceStatus(Profile[] profile, ManagedEntity[] entity) throws RuntimeFault, RemoteException
+  {
+    getVimService().clearComplianceStatus(getMOR(), 
+        convertMors(profile), convertMors(entity));
+  }
+  
+  public ComplianceResult[] queryComplianceStatus(Profile[] profile, ManagedEntity[] entity) throws RuntimeFault, RemoteException
+  {
+    return getVimService().queryComplianceStatus(getMOR(), convertMors(profile), convertMors(entity));
+  }
+  
   //SDK4.1 signature for back compatibility
-	public ProfileExpressionMetadata[] queryExpressionMetadata(String[] expressionName) throws RuntimeFault, RemoteException
-	{
-		return queryExpressionMetadata(expressionName, null);
-	}
-	
+  public ProfileExpressionMetadata[] queryExpressionMetadata(String[] expressionName) throws RuntimeFault, RemoteException
+  {
+    return queryExpressionMetadata(expressionName, null);
+  }
+  
   //SDK5.0 signature
   public ProfileExpressionMetadata[] queryExpressionMetadata(String[] expressionName, Profile profile) throws RuntimeFault, RemoteException
   {
     return getVimService().queryExpressionMetadata(getMOR(), expressionName, profile==null? null : profile.getMOR());
-  }	
+  }  
 }

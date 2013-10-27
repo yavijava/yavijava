@@ -47,8 +47,8 @@ import com.vmware.vim25.VsanHostDiskResult;
 
 public class OpaqueNetwork extends Network 
 {
-	public OpaqueNetwork(ServerConnection serverConnection, ManagedObjectReference mor) 
-	{
-		super(serverConnection, mor);
-	}
+  public OpaqueNetwork(ServerConnection serverConnection, ManagedObjectReference mor) 
+  {
+    super(serverConnection, mor);
+  }
 }

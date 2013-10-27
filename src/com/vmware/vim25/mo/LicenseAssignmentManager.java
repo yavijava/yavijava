@@ -42,23 +42,23 @@ import com.vmware.vim25.RuntimeFault;
  */
 public class LicenseAssignmentManager extends ManagedObject 
 {
-	public LicenseAssignmentManager(ServerConnection sc, ManagedObjectReference mor) 
-	{
-		super(sc, mor);
-	}
-	
-	public LicenseAssignmentManagerLicenseAssignment[] queryAssignedLicenses(String entityId) throws RuntimeFault, RemoteException
-	{
-		return getVimService().queryAssignedLicenses(getMOR(), entityId);
-	}
-	
-	public void removeAssignedLicense(String entityId) throws RuntimeFault, RemoteException
-	{
-		getVimService().removeAssignedLicense(getMOR(), entityId);
-	}
-	
-	public LicenseManagerLicenseInfo updateAssignedLicense( String entity, String licenseKey, String entityDisplayName) throws RuntimeFault, RemoteException
-	{
-		return getVimService().updateAssignedLicense(getMOR(), entity, licenseKey, entityDisplayName);
-	}
+  public LicenseAssignmentManager(ServerConnection sc, ManagedObjectReference mor) 
+  {
+    super(sc, mor);
+  }
+  
+  public LicenseAssignmentManagerLicenseAssignment[] queryAssignedLicenses(String entityId) throws RuntimeFault, RemoteException
+  {
+    return getVimService().queryAssignedLicenses(getMOR(), entityId);
+  }
+  
+  public void removeAssignedLicense(String entityId) throws RuntimeFault, RemoteException
+  {
+    getVimService().removeAssignedLicense(getMOR(), entityId);
+  }
+  
+  public LicenseManagerLicenseInfo updateAssignedLicense( String entity, String licenseKey, String entityDisplayName) throws RuntimeFault, RemoteException
+  {
+    return getVimService().updateAssignedLicense(getMOR(), entity, licenseKey, entityDisplayName);
+  }
 }

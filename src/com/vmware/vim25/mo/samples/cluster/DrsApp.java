@@ -52,7 +52,7 @@ public class DrsApp
     if(args.length!=3)
     {
       System.out.println("Usage: java DrsApp " +
-      		"<url> <username> <password>");
+          "<url> <username> <password>");
       System.exit(0);
     }
 
@@ -84,12 +84,12 @@ public class DrsApp
           sb.append("\n\nRecommendation #" + (i+1));
           sb.append(recommendationToString(recs[i]));
           sb.append("\nPlease click the following URL " +
-          		"and enter " + recs[i].getKey() 
-          		+ " as key to apply this recommendation:");
+              "and enter " + recs[i].getKey() 
+              + " as key to apply this recommendation:");
           sb.append(createMobUrl(args[0], ccr) 
               + "&method=applyRecommendation");
           sb.append("\nThe time window for applying " +
-          		"recommendations is 5 mins. Please act ASAP!");
+              "recommendations is 5 mins. Please act ASAP!");
         }
 
         // the receiver's email address

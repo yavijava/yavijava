@@ -46,33 +46,33 @@ import com.vmware.vim25.VirtualMachineConfigOptionDescriptor;
 public class EnvironmentBrowser extends ManagedObject 
 {
 
-	public EnvironmentBrowser(ServerConnection serverConnection, ManagedObjectReference mor) 
-	{
-		super(serverConnection, mor);
-	}
+  public EnvironmentBrowser(ServerConnection serverConnection, ManagedObjectReference mor) 
+  {
+    super(serverConnection, mor);
+  }
 
-	public HostDatastoreBrowser getDatastoreBrowser()
-	{
-		return (HostDatastoreBrowser) this.getManagedObject("datastoreBrowser");
-	}
-	
-	public VirtualMachineConfigOption queryConfigOption(String key, HostSystem host) throws RuntimeFault, RemoteException 
-	{
-		return getVimService().queryConfigOption(getMOR(), key, host==null? null : host.getMOR());
-	}
-	
-	public VirtualMachineConfigOptionDescriptor[] queryConfigOptionDescriptor() throws RuntimeFault, RemoteException 
-	{
-		return getVimService().queryConfigOptionDescriptor(getMOR());
-	}
-	
-	public ConfigTarget queryConfigTarget(HostSystem host) throws RuntimeFault, RemoteException 
-	{
-		return getVimService().queryConfigTarget(getMOR(), host==null? null : host.getMOR());
-	}
-	
-	public HostCapability queryTargetCapabilities(HostSystem host) throws RuntimeFault, RemoteException
-	{
-		return getVimService().queryTargetCapabilities(getMOR(), host==null?null:host.getMOR());
-	}
+  public HostDatastoreBrowser getDatastoreBrowser()
+  {
+    return (HostDatastoreBrowser) this.getManagedObject("datastoreBrowser");
+  }
+  
+  public VirtualMachineConfigOption queryConfigOption(String key, HostSystem host) throws RuntimeFault, RemoteException 
+  {
+    return getVimService().queryConfigOption(getMOR(), key, host==null? null : host.getMOR());
+  }
+  
+  public VirtualMachineConfigOptionDescriptor[] queryConfigOptionDescriptor() throws RuntimeFault, RemoteException 
+  {
+    return getVimService().queryConfigOptionDescriptor(getMOR());
+  }
+  
+  public ConfigTarget queryConfigTarget(HostSystem host) throws RuntimeFault, RemoteException 
+  {
+    return getVimService().queryConfigTarget(getMOR(), host==null? null : host.getMOR());
+  }
+  
+  public HostCapability queryTargetCapabilities(HostSystem host) throws RuntimeFault, RemoteException
+  {
+    return getVimService().queryTargetCapabilities(getMOR(), host==null?null:host.getMOR());
+  }
 }
