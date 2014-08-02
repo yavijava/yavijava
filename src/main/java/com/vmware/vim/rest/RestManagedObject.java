@@ -31,44 +31,70 @@ package com.vmware.vim.rest;
 
 import java.io.IOException;
 import java.io.StringReader;
+import java.util.Map;
 import javax.xml.xpath.XPath;
 import javax.xml.xpath.XPathExpressionException;
 import javax.xml.xpath.XPathFactory;
 import org.xml.sax.InputSource;
 
-/** The cached managed object on the client side.
-* @author Steve JIN (sjin@vmware.com)
-*/
-
-public class CachedManagedObject
+public class RestManagedObject
 {
-  private String propXML = null;
+  private RestClient rc = null;
+  private String moid = null;
   private XPath xpath = null;
   
-  public CachedManagedObject(String propXML)
+  public RestManagedObject(RestClient rc, String moid)
   {
-    this.propXML = propXML;
+    this.rc = rc;
+    this.moid = moid;
     this.xpath = XPathFactory.newInstance().newXPath();
   }
   
-  public String getProperty(String path) throws XPathExpressionException, IOException
+  public String getPropertyDO(String path) throws IOException
   {
-    String propName = null;
-    int last = path.lastIndexOf(".");
-    if(last!=-1)
+    if(path.length()==0)
     {
-      propName = path.substring(last+1);
+      return rc.get("moid=" + moid + "doPath=" + path);
     }
     else
     {
-      propName = path;
+      return rc.get("moid=" + moid);
     }
-    xpath.reset();
-    return xpath.evaluate("//" + propName + "/text()", new InputSource(new StringReader(propXML)));
   }
   
-  public String getPropXML()
+  public String getAllProperties() throws IOException
   {
-    return propXML;
+    return rc.get("moid=" + moid);
+  }
+
+  public String getPropertyAsString(String path) throws IOException, XPathExpressionException
+  {
+    String propName = null;
+    String doName = "";
+    
+    int last = path.lastIndexOf("");
+    if(last!=-1)
+    {
+      doName = path.substring(0, last);
+      propName = path.substring(last+1);
+    }else
+    {
+      propName = path;
+    }
+    
+    String doXml = getPropertyDO(doName);
+    
+    xpath.reset();
+    return xpath.evaluate("//" + propName + "/text()", new InputSource(new StringReader(doXml)));
+  }
+  
+  public String invoke(String method, Map<String, String> para) throws Exception
+  {
+    return rc.post("moid=" + moid + "&method=" + method, para);        
+  }
+  
+  public String invoke(String method) throws Exception
+  {
+    return rc.post("moid=" + moid + "&method=" + method);          
   }
 }

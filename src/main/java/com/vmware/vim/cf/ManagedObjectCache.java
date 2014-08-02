@@ -129,7 +129,7 @@ class ManagedObjectCache implements Observer
       
       while(true)
       {
-        int lastDot = propName.lastIndexOf(".");
+        int lastDot = propName.lastIndexOf("");
         if(lastDot==-1)
         {
           return null;

@@ -99,7 +99,7 @@ public class TypeUtil
         Class<?> clazz = null;
         if(type.endsWith("[]")==false)
         {
-          clazz = Class.forName(PACKAGE_NAME + "." + type);
+          clazz = Class.forName(PACKAGE_NAME + "" + type);
         }
         else
         {

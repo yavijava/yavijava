@@ -31,70 +31,44 @@ package com.vmware.vim.rest;
 
 import java.io.IOException;
 import java.io.StringReader;
-import java.util.Map;
 import javax.xml.xpath.XPath;
 import javax.xml.xpath.XPathExpressionException;
 import javax.xml.xpath.XPathFactory;
 import org.xml.sax.InputSource;
 
-public class RestManagedObject
+/** The cached managed object on the client side.
+* @author Steve JIN (sjin@vmware.com)
+*/
+
+public class CachedManagedObject
 {
-  private RestClient rc = null;
-  private String moid = null;
+  private String propXML = null;
   private XPath xpath = null;
   
-  public RestManagedObject(RestClient rc, String moid)
+  public CachedManagedObject(String propXML)
   {
-    this.rc = rc;
-    this.moid = moid;
+    this.propXML = propXML;
     this.xpath = XPathFactory.newInstance().newXPath();
   }
   
-  public String getPropertyDO(String path) throws IOException
+  public String getProperty(String path) throws XPathExpressionException, IOException
   {
-    if(path.length()==0)
+    String propName = null;
+    int last = path.lastIndexOf("");
+    if(last!=-1)
     {
-      return rc.get("moid=" + moid + "doPath=" + path);
+      propName = path.substring(last+1);
     }
     else
     {
-      return rc.get("moid=" + moid);
-    }
-  }
-  
-  public String getAllProperties() throws IOException
-  {
-    return rc.get("moid=" + moid);
-  }
-
-  public String getPropertyAsString(String path) throws IOException, XPathExpressionException
-  {
-    String propName = null;
-    String doName = "";
-    
-    int last = path.lastIndexOf(".");
-    if(last!=-1)
-    {
-      doName = path.substring(0, last);
-      propName = path.substring(last+1);
-    }else
-    {
       propName = path;
     }
-    
-    String doXml = getPropertyDO(doName);
-    
     xpath.reset();
-    return xpath.evaluate("//" + propName + "/text()", new InputSource(new StringReader(doXml)));
+    return xpath.evaluate("//" + propName + "/text()", new InputSource(new StringReader(propXML)));
   }
   
-  public String invoke(String method, Map<String, String> para) throws Exception
+  public String getPropXML()
   {
-    return rc.post("moid=" + moid + "&method=" + method, para);        
-  }
-  
-  public String invoke(String method) throws Exception
-  {
-    return rc.post("moid=" + moid + "&method=" + method);          
+    return propXML;
   }
 }

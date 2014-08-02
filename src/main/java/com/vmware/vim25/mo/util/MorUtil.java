@@ -68,7 +68,7 @@ public class MorUtil
 
     try
     {
-      Class moClass = Class.forName(moPackageName + "." + moType);
+      Class moClass = Class.forName(moPackageName + "" + moType);
       Constructor constructor = moClass.getConstructor(
           new Class[] {ServerConnection.class, ManagedObjectReference.class});
       return (ManagedObject) constructor.newInstance( new Object[] { sc, mor} );

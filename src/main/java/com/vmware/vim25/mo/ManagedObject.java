@@ -238,7 +238,7 @@ abstract public class ManagedObject
       
       if(mixedType==false)
       {
-        moClass = Class.forName(MO_PACKAGE_NAME + "." + mors[0].getType());
+        moClass = Class.forName(MO_PACKAGE_NAME + "" + mors[0].getType());
           mos = Array.newInstance(moClass, mors.length);
       }
       
@@ -246,7 +246,7 @@ abstract public class ManagedObject
       {
         if(mixedType == true )
         {
-          moClass = Class.forName(MO_PACKAGE_NAME + "." + mors[i].getType());
+          moClass = Class.forName(MO_PACKAGE_NAME + "" + mors[i].getType());
         }
         Constructor constructor = moClass.getConstructor(
             new Class[] {ServerConnection.class, ManagedObjectReference.class});
