@@ -1,0 +1,20 @@
+apply plugin: 'java'
+apply plugin: 'idea'
+
+version = '5.5.10'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'org.apache.directory.studio:org.dom4j.dom4j:1.6.1'
+}
+
+sourceSets {
+    main {
+        java {
+            exclude 'com/vmware/vim25/mo/samples/**'
+        }
+    }
+}
