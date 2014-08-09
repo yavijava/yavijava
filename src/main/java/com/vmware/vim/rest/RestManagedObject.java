@@ -72,7 +72,7 @@ public class RestManagedObject
     String propName = null;
     String doName = "";
     
-    int last = path.lastIndexOf("");
+    int last = path.lastIndexOf(".");
     if(last!=-1)
     {
       doName = path.substring(0, last);
@@ -90,7 +90,7 @@ public class RestManagedObject
   
   public String invoke(String method, Map<String, String> para) throws Exception
   {
-    return rc.post("moid=" + moid + "&method=" + method, para);        
+    return rc.post("moid=" + moid + "&method=" + method, para);    		
   }
   
   public String invoke(String method) throws Exception

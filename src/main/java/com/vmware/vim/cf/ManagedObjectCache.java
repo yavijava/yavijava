@@ -91,26 +91,26 @@ class ManagedObjectCache implements Observer
                     }
                     for(int k=0; k < pcs.length; k++)
                     {
-                        Object value = pcs[k].getVal();
-                        value = value == null ? NULL : value; //null is not allowed as value in CHM
-                        String propName = pcs[k].getName();
-                        if(moMap.containsKey(propName))
-                        {
-                          moMap.put(propName, value);
-                        }
-                        else
-                        {
-                          String parentPropName = getExistingParentPropName(moMap, propName);
-                          if(parentPropName != null)
-                          {
-                            ManagedObject mo = MorUtil.createExactManagedObject(si.getServerConnection(), mor);
-                            moMap.put(parentPropName, mo.getPropertyByPath(parentPropName));
-                          }
-                          else
-                          { //almost impossible to be here.
-                            moMap.put(propName, value);
-                          }
-                        }
+                    	  Object value = pcs[k].getVal();
+                    	  value = value == null ? NULL : value; //null is not allowed as value in CHM
+                    	  String propName = pcs[k].getName();
+                    	  if(moMap.containsKey(propName))
+                    	  {
+                    	    moMap.put(propName, value);
+                    	  }
+                    	  else
+                    	  {
+                    	    String parentPropName = getExistingParentPropName(moMap, propName);
+                    	    if(parentPropName != null)
+                    	    {
+                    	      ManagedObject mo = MorUtil.createExactManagedObject(si.getServerConnection(), mor);
+                    	      moMap.put(parentPropName, mo.getPropertyByPath(parentPropName));
+                    	    }
+                    	    else
+                    	    { //almost impossible to be here.
+                    	      moMap.put(propName, value);
+                    	    }
+                    	  }
                     }
                 }
             }
@@ -129,7 +129,7 @@ class ManagedObjectCache implements Observer
       
       while(true)
       {
-        int lastDot = propName.lastIndexOf("");
+        int lastDot = propName.lastIndexOf(".");
         if(lastDot==-1)
         {
           return null;
@@ -144,6 +144,6 @@ class ManagedObjectCache implements Observer
     
     public boolean isReady()
     {
-      return isReady;
+    	return isReady;
     }
 }
