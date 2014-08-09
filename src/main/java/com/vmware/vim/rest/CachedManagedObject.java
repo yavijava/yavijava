@@ -54,7 +54,7 @@ public class CachedManagedObject
   public String getProperty(String path) throws XPathExpressionException, IOException
   {
     String propName = null;
-    int last = path.lastIndexOf("");
+    int last = path.lastIndexOf(".");
     if(last!=-1)
     {
       propName = path.substring(last+1);
