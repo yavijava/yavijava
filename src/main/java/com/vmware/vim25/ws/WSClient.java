@@ -148,6 +148,7 @@ final public class WSClient {
     public InputStream post(String soapMsg) throws IOException {
         HttpURLConnection postCon = (HttpURLConnection) baseUrl.openConnection();
 
+        log.trace("POST: " + soapAction);
         if (connectTimeout > 0) {
             postCon.setConnectTimeout(connectTimeout);
         }
@@ -159,14 +160,16 @@ final public class WSClient {
             postCon.setRequestMethod("POST");
         }
         catch (ProtocolException e) {
-            e.printStackTrace();
+            log.debug("ProtocolException caught.", e);
         }
+
         postCon.setDoOutput(true);
         postCon.setDoInput(true);
         postCon.setRequestProperty(SOAP_ACTION_HEADER, soapAction);
         postCon.setRequestProperty("Content-Type", "text/xml; charset=utf-8");
 
         if (cookie != null) {
+            log.trace("Setting Cookie.");
             postCon.setRequestProperty("Cookie", cookie);
         }
 
@@ -180,13 +183,16 @@ final public class WSClient {
 
         try {
             is = postCon.getInputStream();
+            log.trace("Read stream.");
         }
         catch (IOException ioe) {
+            log.debug("Caught an IOException. Reading ErrorStream for results.", ioe);
             is = postCon.getErrorStream();
         }
 
         if (cookie == null) {
             cookie = postCon.getHeaderField("Set-Cookie");
+            log.trace("Cookie was null. Fetching Set-Cookie header to get new Cookie.");
         }
         return is;
     }
@@ -260,9 +266,11 @@ final public class WSClient {
         else { //always defaults to latest version
             soapAction = SOAP_ACTION_V55;
         }
+        log.trace("Set soapAction to: " + soapAction);
     }
 
     private StringBuffer readStream(InputStream is) throws IOException {
+        log.trace("Building StringBuffer from InputStream response.");
         StringBuffer sb = new StringBuffer();
         BufferedReader in = new BufferedReader(new InputStreamReader(is));
         String lineStr;
