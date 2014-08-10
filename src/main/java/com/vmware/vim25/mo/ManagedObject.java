@@ -79,7 +79,7 @@ abstract public class ManagedObject
 	
 	/**
 	 * Constructor that reuse exiting web service connection
-	 * Use this contructor when you can re-use existing web service connection.
+	 * Use this constructor when you can re-use existing web service connection.
 	 * @param serverConnection
 	 * @param mor
 	 */
