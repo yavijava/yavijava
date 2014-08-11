@@ -75,7 +75,7 @@ final class XmlGenDom extends XmlGen
     Element body = (Element) root.elements().get(0);
     Element resp = (Element) body.elements().get(0);
     
-    if(resp.getName().indexOf("Fault")!=-1)
+    if(resp.getName().contains("Fault"))
     {
       SoapFaultException sfe = null;
       try 
@@ -84,7 +84,7 @@ final class XmlGenDom extends XmlGen
       } 
       catch (Exception e) 
       {
-        throw new RemoteException("Exception in WSClient.invoke:", e);
+        throw new RemoteException("Exception in SoapClient.invoke:", e);
       }
       if(sfe!=null && sfe.detail!=null)
       {
@@ -105,7 +105,7 @@ final class XmlGenDom extends XmlGen
         } 
         catch (Exception e) 
         {
-          throw new RemoteException("Exception in WSClient.invoke:", e);
+          throw new RemoteException("Exception in SoapClient.invoke:", e);
         }
       }
       else

@@ -30,6 +30,7 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25.ws;
 import com.vmware.vim25.*;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.Calendar;
 
 /**
@@ -39,17 +40,31 @@ import java.util.Calendar;
 
 public class VimStub
 {
-  private WSClient wsc = null;
+  private SoapClient wsc = null;
 
   public VimStub(String url, boolean ignoreCert) throws java.net.MalformedURLException {
-    this.wsc = new WSClient(url, ignoreCert);
+      try {
+          this.wsc = (SoapClient) ClientCreator.getClient(url, ignoreCert);
+      }
+      catch (NoSuchMethodException e) {
+          e.printStackTrace();
+      }
+      catch (IllegalAccessException e) {
+          e.printStackTrace();
+      }
+      catch (InvocationTargetException e) {
+          e.printStackTrace();
+      }
+      catch (InstantiationException e) {
+          e.printStackTrace();
+      }
   }
 
-  public VimStub(WSClient wsc) {
+  public VimStub(SoapClient wsc) {
     this.wsc = wsc;
   }
 
-  public WSClient getWsc() {
+  public SoapClient getWsc() {
     return wsc;
   }
 
