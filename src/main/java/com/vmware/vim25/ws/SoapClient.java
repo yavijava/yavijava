@@ -2,6 +2,12 @@ package com.vmware.vim25.ws;
 
 import org.apache.log4j.Logger;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.URL;
+
 /**
  * Created by Michael Rice on 8/10/14.
  *
@@ -22,6 +28,12 @@ import org.apache.log4j.Logger;
 public abstract class SoapClient implements Client {
 
     public String soapAction;
+    public URL baseUrl = null;
+    public String cookie = null;
+    public String vimNameSpace = null;
+    public int connectTimeout = 0;
+    public int readTimeout = 0;
+
     private static Logger log = Logger.getLogger(SoapClient.class);
 
     /*===============================================
@@ -57,4 +69,113 @@ public abstract class SoapClient implements Client {
         log.trace("Set soapAction to: " + soapAction);
     }
 
+    /**
+     * Returns the {@link java.net.URL} that will be used in the connection.
+     *
+     * @return <code>URL</code> of the vi server used by this Client
+     */
+    public URL getBaseUrl() {
+        return this.baseUrl;
+    }
+
+    /**
+     * Set the baseUrl for use in this Client
+     *
+     * @param baseUrl
+     */
+    public void setBaseUrl(URL baseUrl) {
+        this.baseUrl = baseUrl;
+    }
+
+    /**
+     * Returns the <code>String</code> of the Cookie from the Set-Cookie header
+     * unless it was manually set in which case it returns that.
+     *
+     * @return String from the Set-Cookie header
+     */
+    public String getCookie() {
+        return cookie;
+    }
+
+    /**
+     * Primarily used to set the cookie from the Set-Cookie header
+     *
+     * @param cookie String from the Set-Cookie header
+     */
+    public void setCookie(String cookie) {
+        this.cookie = cookie;
+    }
+
+    /**
+     *
+     * @return
+     */
+    public String getVimNameSpace() {
+        return vimNameSpace;
+    }
+
+    /**
+     *
+     * @param vimNameSpace
+     */
+    public void setVimNameSpace(String vimNameSpace) {
+        this.vimNameSpace = vimNameSpace;
+    }
+
+    /**
+     *
+     * @param timeoutMilliSec
+     */
+    public void setConnectTimeout(int timeoutMilliSec) {
+        this.connectTimeout = timeoutMilliSec;
+    }
+
+    public int getConnectTimeout() {
+        return this.connectTimeout;
+    }
+
+    /**
+     * Set the read timeout.
+     *
+     * Sets the read timeout to a specified timeout, in milliseconds.
+     * A non-zero value specifies the timeout when reading from Input
+     * stream when a connection is established to a resource. If the
+     * timeout expires before there is data available for read, a
+     * java.net.SocketTimeoutException is raised. A timeout of zero
+     * is interpreted as an infinite timeout.
+     *
+     * This value will be used by the underlying http client used if
+     * it is supported. By default that is the WSClient which uses
+     * HTTPURLConnection which uses URLConnection
+     *
+     * @param timeoutMilliSec int
+     */
+    public void setReadTimeout(int timeoutMilliSec) {
+        this.readTimeout = timeoutMilliSec;
+    }
+
+    /**
+     * Returns the time in milliseconds that is set for the read timeout
+     *
+     * This time may not be the same as what the underlying client uses. If
+     * for example the client does not support this and is for some reason
+     * hard coded to some value this value.
+     *
+     * @return int
+     */
+    public int getReadTimeout() {
+        return this.readTimeout;
+    }
+
+    public StringBuffer readStream(InputStream is) throws IOException {
+        log.trace("Building StringBuffer from InputStream response.");
+        StringBuffer sb = new StringBuffer();
+        BufferedReader in = new BufferedReader(new InputStreamReader(is));
+        String lineStr;
+        while ((lineStr = in.readLine()) != null) {
+            sb.append(lineStr);
+        }
+        in.close();
+        return sb;
+    }
 }

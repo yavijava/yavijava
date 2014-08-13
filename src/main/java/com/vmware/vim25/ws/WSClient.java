@@ -52,12 +52,6 @@ import java.rmi.RemoteException;
 
 final public class WSClient extends SoapClient {
 
-    private URL baseUrl = null;
-    private String cookie = null;
-    private String vimNameSpace = null;
-    private int connectTimeout = 0;
-    private int readTimeout = 0;
-
     private static final Logger log = Logger.getLogger(WSClient.class);
 
     XmlGen xmlGen = new XmlGenDom();
@@ -126,7 +120,7 @@ final public class WSClient extends SoapClient {
         }
     }
 
-    public InputStream post(String soapMsg) throws IOException {
+    private InputStream post(String soapMsg) throws IOException {
         HttpURLConnection postCon = (HttpURLConnection) baseUrl.openConnection();
 
         log.trace("POST: " + soapAction);
@@ -179,55 +173,4 @@ final public class WSClient extends SoapClient {
         return is;
     }
 
-    public URL getBaseUrl() {
-        return this.baseUrl;
-    }
-
-    public void setBaseUrl(URL baseUrl) {
-        this.baseUrl = baseUrl;
-    }
-
-    public String getCookie() {
-        return cookie;
-    }
-
-    public void setCookie(String cookie) {
-        this.cookie = cookie;
-    }
-
-    public String getVimNameSpace() {
-        return vimNameSpace;
-    }
-
-    public void setVimNameSpace(String vimNameSpace) {
-        this.vimNameSpace = vimNameSpace;
-    }
-
-    public void setConnectTimeout(int timeoutMilliSec) {
-        this.connectTimeout = timeoutMilliSec;
-    }
-
-    public int getConnectTimeout() {
-        return this.connectTimeout;
-    }
-
-    public void setReadTimeout(int timeoutMilliSec) {
-        this.readTimeout = timeoutMilliSec;
-    }
-
-    public int getReadTimeout() {
-        return this.readTimeout;
-    }
-
-    private StringBuffer readStream(InputStream is) throws IOException {
-        log.trace("Building StringBuffer from InputStream response.");
-        StringBuffer sb = new StringBuffer();
-        BufferedReader in = new BufferedReader(new InputStreamReader(is));
-        String lineStr;
-        while ((lineStr = in.readLine()) != null) {
-            sb.append(lineStr);
-        }
-        in.close();
-        return sb;
-    }
 }
