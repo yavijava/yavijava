@@ -1,6 +1,7 @@
 package com.vmware.vim25.ws;
 
 import org.apache.http.Header;
+import org.apache.http.HeaderIterator;
 import org.apache.http.client.config.RequestConfig;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpPost;
@@ -17,6 +18,7 @@ import java.net.MalformedURLException;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.rmi.RemoteException;
+import java.util.Iterator;
 
 /**
  * Created by Michael Rice on 8/12/14.
@@ -205,8 +207,14 @@ public class ApacheHttpClient extends SoapClient {
             CloseableHttpResponse response = httpclient.execute(httpPost);
             InputStream inputStream = response.getEntity().getContent();
             if (cookie == null) {
-                Header cookieHeader = (Header) response.headerIterator("Set-Cookie");
-                cookie = cookieHeader.getValue();
+
+                Header[] headers = response.getAllHeaders();
+                for (Header header : headers) {
+                    if (header.getName().equals("Set-Cookie")) {
+                        cookie = header.getValue();
+                        break;
+                    }
+                }
             }
             return inputStream;
         }

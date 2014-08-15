@@ -1,5 +1,6 @@
 package com.vmware.vim25.ws;
 
+import org.apache.http.conn.ssl.AllowAllHostnameVerifier;
 import org.apache.http.conn.ssl.SSLConnectionSocketFactory;
 import org.apache.http.conn.ssl.SSLContextBuilder;
 import org.apache.http.conn.ssl.TrustSelfSignedStrategy;
@@ -47,7 +48,7 @@ public class ApacheTrustSelfSigned {
         }
         SSLConnectionSocketFactory sslConnectionSocketFactory;
         try {
-            sslConnectionSocketFactory = new SSLConnectionSocketFactory(builder.build());
+            sslConnectionSocketFactory = new SSLConnectionSocketFactory(builder.build(), new AllowAllHostnameVerifier());
             log.trace("Added SSLConnectionSocketFactory to builder.");
         }
         catch (NoSuchAlgorithmException e) {
