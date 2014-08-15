@@ -39,7 +39,7 @@ public interface Client {
     public Object invoke(String methodName, Argument[] paras, String returnType) throws RemoteException;
 
     /**
-     * Invoken a given method with supplied {@link com.vmware.vim25.ws.Argument} on the remote vi server.
+     * Invoke a given method with supplied {@link com.vmware.vim25.ws.Argument} on the remote vi server.
      * Returns a {@link java.lang.StringBuffer} This works the same as the above call except there is no
      * conversion done on the return data and instead you just get back the StringBuffer content.
      *
