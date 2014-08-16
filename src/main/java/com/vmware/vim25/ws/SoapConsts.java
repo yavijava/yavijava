@@ -31,12 +31,11 @@ package com.vmware.vim25.ws;
 import org.dom4j.Namespace;
 import org.dom4j.QName;
 
-public class SoapConsts
-{
-  final public static String XSI_NAMESPACE_URI = "http://www.w3.org/2001/XMLSchema-instance";
-  final public static Namespace XSI = new Namespace("xsi", "http://www.w3.org/2001/XMLSchema-instance");
-  final public static QName XSI_TYPE = new QName("type", XSI);
+public class SoapConsts {
+    final public static String XSI_NAMESPACE_URI = "http://www.w3.org/2001/XMLSchema-instance";
+    final public static Namespace XSI = new Namespace("xsi", "http://www.w3.org/2001/XMLSchema-instance");
+    final public static QName XSI_TYPE = new QName("type", XSI);
 
-  final public static String SOAP_HEADER = "<?xml version=\"1.0\" encoding=\"UTF-8\"?><soapenv:Envelope xmlns:soapenc=\"http://schemas.xmlsoap.org/soap/encoding/\" xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"><soapenv:Body>"; 
-  final public static String SOAP_END = "</soapenv:Body></soapenv:Envelope>";
+    final public static String SOAP_HEADER = "<?xml version=\"1.0\" encoding=\"UTF-8\"?><soapenv:Envelope xmlns:soapenc=\"http://schemas.xmlsoap.org/soap/encoding/\" xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"><soapenv:Body>";
+    final public static String SOAP_END = "</soapenv:Body></soapenv:Envelope>";
 }

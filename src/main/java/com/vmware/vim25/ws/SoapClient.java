@@ -10,15 +10,15 @@ import java.net.URL;
 
 /**
  * Created by Michael Rice on 8/10/14.
- *
+ * <p/>
  * Copyright 2014 Michael Rice
- *
+ * <p/>
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
+ * <p/>
  * http://www.apache.org/licenses/LICENSE-2.0
- *
+ * <p/>
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -27,14 +27,13 @@ import java.net.URL;
  */
 public abstract class SoapClient implements Client {
 
+    private static Logger log = Logger.getLogger(SoapClient.class);
     public String soapAction;
     public URL baseUrl = null;
     public String cookie = null;
     public String vimNameSpace = null;
     public int connectTimeout = 0;
     public int readTimeout = 0;
-
-    private static Logger log = Logger.getLogger(SoapClient.class);
 
     /*===============================================
        * API versions *
@@ -107,7 +106,6 @@ public abstract class SoapClient implements Client {
     }
 
     /**
-     *
      * @return
      */
     public String getVimNameSpace() {
@@ -115,19 +113,10 @@ public abstract class SoapClient implements Client {
     }
 
     /**
-     *
      * @param vimNameSpace
      */
     public void setVimNameSpace(String vimNameSpace) {
         this.vimNameSpace = vimNameSpace;
-    }
-
-    /**
-     *
-     * @param timeoutMilliSec
-     */
-    public void setConnectTimeout(int timeoutMilliSec) {
-        this.connectTimeout = timeoutMilliSec;
     }
 
     public int getConnectTimeout() {
@@ -135,28 +124,15 @@ public abstract class SoapClient implements Client {
     }
 
     /**
-     * Set the read timeout.
-     *
-     * Sets the read timeout to a specified timeout, in milliseconds.
-     * A non-zero value specifies the timeout when reading from Input
-     * stream when a connection is established to a resource. If the
-     * timeout expires before there is data available for read, a
-     * java.net.SocketTimeoutException is raised. A timeout of zero
-     * is interpreted as an infinite timeout.
-     *
-     * This value will be used by the underlying http client used if
-     * it is supported. By default that is the WSClient which uses
-     * HTTPURLConnection which uses URLConnection
-     *
-     * @param timeoutMilliSec int
+     * @param timeoutMilliSec
      */
-    public void setReadTimeout(int timeoutMilliSec) {
-        this.readTimeout = timeoutMilliSec;
+    public void setConnectTimeout(int timeoutMilliSec) {
+        this.connectTimeout = timeoutMilliSec;
     }
 
     /**
      * Returns the time in milliseconds that is set for the read timeout
-     *
+     * <p/>
      * This time may not be the same as what the underlying client uses. If
      * for example the client does not support this and is for some reason
      * hard coded to some value this value.
@@ -165,6 +141,26 @@ public abstract class SoapClient implements Client {
      */
     public int getReadTimeout() {
         return this.readTimeout;
+    }
+
+    /**
+     * Set the read timeout.
+     * <p/>
+     * Sets the read timeout to a specified timeout, in milliseconds.
+     * A non-zero value specifies the timeout when reading from Input
+     * stream when a connection is established to a resource. If the
+     * timeout expires before there is data available for read, a
+     * java.net.SocketTimeoutException is raised. A timeout of zero
+     * is interpreted as an infinite timeout.
+     * <p/>
+     * This value will be used by the underlying http client used if
+     * it is supported. By default that is the WSClient which uses
+     * HTTPURLConnection which uses URLConnection
+     *
+     * @param timeoutMilliSec int
+     */
+    public void setReadTimeout(int timeoutMilliSec) {
+        this.readTimeout = timeoutMilliSec;
     }
 
     public StringBuffer readStream(InputStream is) throws IOException {

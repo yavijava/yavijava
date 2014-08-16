@@ -1,7 +1,6 @@
 package com.vmware.vim25.ws;
 
 import org.apache.http.Header;
-import org.apache.http.HeaderIterator;
 import org.apache.http.client.config.RequestConfig;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpPost;
@@ -13,24 +12,25 @@ import org.apache.log4j.Logger;
 import javax.net.ssl.HostnameVerifier;
 import javax.net.ssl.HttpsURLConnection;
 import javax.net.ssl.SSLSession;
-import java.io.*;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.UnsupportedEncodingException;
 import java.net.MalformedURLException;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.rmi.RemoteException;
-import java.util.Iterator;
 
 /**
  * Created by Michael Rice on 8/12/14.
- *
+ * <p/>
  * Copyright 2014 Michael Rice
- *
+ * <p/>
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
+ * <p/>
  * http://www.apache.org/licenses/LICENSE-2.0
- *
+ * <p/>
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -46,22 +46,22 @@ public class ApacheHttpClient extends SoapClient {
     private static final Logger log = Logger.getLogger(ApacheHttpClient.class);
 
     /**
+     * The XML serialization/de-serialization engine
+     */
+    XmlGen xmlGen = new XmlGenDom();
+
+    /**
      * Trust all the ssl stuff no matter what!?!
-     *
+     * <p/>
      * We do true here because by default all the vsphere stuff
      * is self signed.
      */
     private boolean trustAllSSL = true;
 
     /**
-     * The XML serialization/de-serialization engine
-     */
-    XmlGen xmlGen = new XmlGenDom();
-
-    /**
      * Primary constructor
      *
-     * @param serverUrl <code>String</code> of the url to the vi server
+     * @param serverUrl  <code>String</code> of the url to the vi server
      * @param ignoreCert <code>boolean</code> to check or ignore ssl. Default ignore
      * @throws MalformedURLException
      */
@@ -73,25 +73,9 @@ public class ApacheHttpClient extends SoapClient {
         log.trace("Creating ApacheHttpClient to server URL: " + serverUrl);
         log.trace("Ignore ssl: " + ignoreCert);
         this.baseUrl = new URL(serverUrl);
-        if (trustAllSSL) {
-            try {
-                TrustAllSSL.trustAllHttpsCertificates();
-                HttpsURLConnection.setDefaultHostnameVerifier(
-                    new HostnameVerifier() {
-                        public boolean verify(String urlHostName, SSLSession session) {
-                            return true;
-                        }
-                    }
-                );
-            }
-            catch (Exception ignored) {
-                log.error("An exception was caught while trying to trust all SSL.", ignored);
-            }
-        }
     }
 
     /**
-     *
      * @param url
      * @throws MalformedURLException
      */

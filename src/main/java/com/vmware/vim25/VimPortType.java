@@ -32,15 +32,12 @@ package com.vmware.vim25;
 
 import com.vmware.vim25.ws.SoapClient;
 
-public class VimPortType extends com.vmware.vim25.ws.VimStub
-{
-  public VimPortType(String url, boolean ignoreCert) throws java.net.MalformedURLException
-  {
-    super(url, ignoreCert);
-  }
-  
-  public VimPortType(SoapClient url) throws java.net.MalformedURLException
-  {
-    super(url);
-  }
+public class VimPortType extends com.vmware.vim25.ws.VimStub {
+    public VimPortType(String url, boolean ignoreCert) throws java.net.MalformedURLException {
+        super(url, ignoreCert);
+    }
+
+    public VimPortType(SoapClient url) throws java.net.MalformedURLException {
+        super(url);
+    }
 }
