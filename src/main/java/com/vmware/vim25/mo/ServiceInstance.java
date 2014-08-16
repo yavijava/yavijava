@@ -36,7 +36,7 @@ import java.util.Calendar;
 
 import com.vmware.vim25.*;
 import com.vmware.vim25.mo.util.*;
-import com.vmware.vim25.ws.WSClient;
+import com.vmware.vim25.ws.SoapClient;
 
 /**
  * The managed object class corresponding to the one defined in VI SDK API reference.
@@ -109,7 +109,7 @@ public class ServiceInstance extends ManagedObject
 		setMOR(SERVICE_INSTANCE_MOR);
 		
 		VimPortType vimService = new VimPortType(url.toString(), ignoreCert);
-		WSClient wsc = vimService.getWsc();
+		SoapClient wsc = (SoapClient) vimService.getWsc();
 		wsc.setCookie(sessionStr);
 		wsc.setVimNameSpace(namespace);
 		

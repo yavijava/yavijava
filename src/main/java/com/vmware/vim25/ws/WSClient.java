@@ -1,6 +1,7 @@
 /*================================================================================
 Copyright (c) 2013 Steve Jin, All Rights Reserved.
 Copyright (c) 2009 VMware, Inc. All Rights Reserved.
+Copyright (c) 2014 Michael Rice, All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -30,10 +31,13 @@ POSSIBILITY OF SUCH DAMAGE.
 
 package com.vmware.vim25.ws;
 
-import java.io.BufferedReader;
+import org.apache.log4j.Logger;
+
+import javax.net.ssl.HostnameVerifier;
+import javax.net.ssl.HttpsURLConnection;
+import javax.net.ssl.SSLSession;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
@@ -41,40 +45,15 @@ import java.net.MalformedURLException;
 import java.net.ProtocolException;
 import java.net.URL;
 import java.rmi.RemoteException;
-import java.security.KeyManagementException;
-import java.security.NoSuchAlgorithmException;
-import java.security.cert.CertificateException;
-import java.security.cert.X509Certificate;
-
-import javax.net.ssl.HostnameVerifier;
-import javax.net.ssl.HttpsURLConnection;
-import javax.net.ssl.SSLContext;
-import javax.net.ssl.SSLSession;
-import javax.net.ssl.TrustManager;
-import javax.net.ssl.X509TrustManager;
-
-import org.apache.log4j.*;
 
 /**
  * The Web Service Engine
  *
  * @author Steve Jin (sjin@vmware.com)
+ * @author Michael Rice (michael@michaelrice.org)
  */
 
-final public class WSClient {
-    private final static String SOAP_ACTION_HEADER = "SOAPAction";
-    private final static String SOAP_ACTION_V40 = "urn:vim25/4.0";
-    private final static String SOAP_ACTION_V41 = "urn:vim25/4.1";
-    private final static String SOAP_ACTION_V50 = "urn:vim25/5.0";
-    private final static String SOAP_ACTION_V51 = "urn:vim25/5.1";
-    private final static String SOAP_ACTION_V55 = "urn:vim25/5.5";
-
-    private URL baseUrl = null;
-    private String cookie = null;
-    private String vimNameSpace = null;
-    private String soapAction = null;
-    private int connectTimeout = 0;
-    private int readTimeout = 0;
+final public class WSClient extends SoapClient {
 
     private static final Logger log = Logger.getLogger(WSClient.class);
 
@@ -93,15 +72,14 @@ final public class WSClient {
         this.baseUrl = new URL(serverUrl);
         if (ignoreCert) {
             try {
-                trustAllHttpsCertificates();
-                HttpsURLConnection.setDefaultHostnameVerifier
-                    (
-                        new HostnameVerifier() {
-                            public boolean verify(String urlHostName, SSLSession session) {
-                                return true;
-                            }
+                TrustAllSSL.trustAllHttpsCertificates();
+                HttpsURLConnection.setDefaultHostnameVerifier(
+                    new HostnameVerifier() {
+                        public boolean verify(String urlHostName, SSLSession session) {
+                            return true;
                         }
-                    );
+                    }
+                );
             }
             catch (Exception ignored) {
             }
@@ -115,7 +93,7 @@ final public class WSClient {
         InputStream is = null;
         try {
             is = post(soapMsg);
-            log.trace("Converting xml response from server.");
+            log.trace("Converting xml response from server to: " + returnType);
             return xmlGen.fromXML(returnType, is);
         }
         catch (Exception e1) {
@@ -145,10 +123,11 @@ final public class WSClient {
         }
     }
 
-    public InputStream post(String soapMsg) throws IOException {
+    private InputStream post(String soapMsg) throws IOException {
         HttpURLConnection postCon = (HttpURLConnection) baseUrl.openConnection();
 
         log.trace("POST: " + soapAction);
+        log.trace("Payload: " + soapMsg);
         if (connectTimeout > 0) {
             postCon.setConnectTimeout(connectTimeout);
         }
@@ -165,7 +144,7 @@ final public class WSClient {
 
         postCon.setDoOutput(true);
         postCon.setDoInput(true);
-        postCon.setRequestProperty(SOAP_ACTION_HEADER, soapAction);
+        postCon.setRequestProperty(SoapAction.SOAP_ACTION_HEADER.toString(), soapAction);
         postCon.setRequestProperty("Content-Type", "text/xml; charset=utf-8");
 
         if (cookie != null) {
@@ -183,7 +162,7 @@ final public class WSClient {
 
         try {
             is = postCon.getInputStream();
-            log.trace("Read stream.");
+            log.trace("Successfully fetched InputStream.");
         }
         catch (IOException ioe) {
             log.debug("Caught an IOException. Reading ErrorStream for results.", ioe);
@@ -197,113 +176,4 @@ final public class WSClient {
         return is;
     }
 
-    public URL getBaseUrl() {
-        return this.baseUrl;
-    }
-
-    public void setBaseUrl(URL baseUrl) {
-        this.baseUrl = baseUrl;
-    }
-
-    public String getCookie() {
-        return cookie;
-    }
-
-    public void setCookie(String cookie) {
-        this.cookie = cookie;
-    }
-
-    public String getVimNameSpace() {
-        return vimNameSpace;
-    }
-
-    public void setVimNameSpace(String vimNameSpace) {
-        this.vimNameSpace = vimNameSpace;
-    }
-
-    public void setConnectTimeout(int timeoutMilliSec) {
-        this.connectTimeout = timeoutMilliSec;
-    }
-
-    public int getConnectTimeout() {
-        return this.connectTimeout;
-    }
-
-    public void setReadTimeout(int timeoutMilliSec) {
-        this.readTimeout = timeoutMilliSec;
-    }
-
-    public int getReadTimeout() {
-        return this.readTimeout;
-    }
-
-    /*===============================================
-       * API versions *
-      "2.0.0"    VI 3.0
-      "2.5.0"    VI 3.5 (and u1)
-      "2.5u2"   VI 3.5u2 (and u3, u4)
-      "4.0"       vSphere 4.0 (and u1)
-      "4.1"       vSphere 4.1
-      "5.0"       vSphere 5.0
-      "5.1"       vSphere 5.1
-      ===============================================*/
-    public void setSoapActionOnApiVersion(String apiVersion) {
-        if ("4.0".equals(apiVersion)) {
-            soapAction = SOAP_ACTION_V40;
-        }
-        else if ("4.1".equals(apiVersion)) {
-            soapAction = SOAP_ACTION_V41;
-        }
-        else if ("5.0".equals(apiVersion)) {
-            soapAction = SOAP_ACTION_V50;
-        }
-        else if ("5.1".equals(apiVersion)) {
-            soapAction = SOAP_ACTION_V51;
-        }
-        else if ("5.5".equals(apiVersion)) {
-            soapAction = SOAP_ACTION_V55;
-        }
-        else { //always defaults to latest version
-            soapAction = SOAP_ACTION_V55;
-        }
-        log.trace("Set soapAction to: " + soapAction);
-    }
-
-    private StringBuffer readStream(InputStream is) throws IOException {
-        log.trace("Building StringBuffer from InputStream response.");
-        StringBuffer sb = new StringBuffer();
-        BufferedReader in = new BufferedReader(new InputStreamReader(is));
-        String lineStr;
-        while ((lineStr = in.readLine()) != null) {
-            sb.append(lineStr);
-        }
-        in.close();
-        return sb;
-    }
-
-    private static void trustAllHttpsCertificates()
-        throws NoSuchAlgorithmException, KeyManagementException {
-        TrustManager[] trustAllCerts = new TrustManager[1];
-        trustAllCerts[0] = new TrustAllManager();
-        SSLContext sc = SSLContext.getInstance("SSL");
-        sc.init(null, trustAllCerts, null);
-        HttpsURLConnection.setDefaultSSLSocketFactory(
-            sc.getSocketFactory());
-    }
-
-    private static class TrustAllManager implements X509TrustManager {
-        public X509Certificate[] getAcceptedIssuers() {
-            return null;
-        }
-
-        public void checkServerTrusted(X509Certificate[] certs,
-                                       String authType)
-            throws CertificateException {
-        }
-
-        public void checkClientTrusted(X509Certificate[] certs,
-                                       String authType)
-            throws CertificateException {
-        }
-    }
 }

@@ -32,7 +32,7 @@ package com.vmware.vim25.mo;
 import java.net.URL;
 
 import com.vmware.vim25.*;
-import com.vmware.vim25.ws.WSClient;
+import com.vmware.vim25.ws.SoapClient;
 
 /**
  * The class representing the connection to a server either VC server or ESX.
@@ -58,7 +58,7 @@ final public class ServerConnection
 	 */
 	public String getSessionStr()
 	{
-		WSClient wsc = vimService.getWsc();
+		SoapClient wsc = (SoapClient) vimService.getWsc();
 		return wsc.getCookie();
 	}
 	
@@ -122,12 +122,5 @@ final public class ServerConnection
 	{
 	  this.serviceInstance = si;
 	}
-//	@Override
-//	protected void finalize() throws Throwable 
-//	{
-//		logout(); //last defense to log out the connection
-//		super.finalize();
-//	}
-//	
-	
+
 }
