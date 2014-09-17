@@ -63,6 +63,12 @@ public class HostStorageDeviceInfoEx {
         // To hold all the Scsi Luns that are disks
         ArrayList<ScsiLun> sortedScsiLuns = new ArrayList<ScsiLun>();
 
+        // Check to see that this device has luns
+        if (storageDeviceInfo.getScsiLun().length == 0) {
+            log.trace("There are no Scsi LUNS on this storage device.");
+            return;
+        }
+
         // Collect all the scsi luns which are disks
         for (ScsiLun lun : storageDeviceInfo.getScsiLun()) {
             if (lun.lunType.equals("disk")) {
@@ -73,11 +79,32 @@ public class HostStorageDeviceInfoEx {
         // To collect the Scsi Topology information
         ArrayList<Map> scsiTopologyInfo = new ArrayList<Map>();
 
+        // Get the HostScsiTopology information
+        HostScsiTopology scsiTopology = storageDeviceInfo.scsiTopology;
+
+        // Check to see that adapters are present
+        if (null == scsiTopology.adapter || scsiTopology.adapter.length == 0) {
+            log.trace("There are no adapters on this storage device.");
+            return;
+        }
+
         // Get the adapters from scsi topology
-        for (HostScsiTopologyInterface adapter : storageDeviceInfo.scsiTopology.adapter) {
+        for (HostScsiTopologyInterface adapter : scsiTopology.adapter) {
+
+            // Check to see that these adapters have targets
+            if (null == adapter.target || adapter.target.length == 0) {
+                log.trace("This adapter has no targets. Adapter:" + adapter.adapter);
+                continue;
+            }
 
             // For each target on these adapters
             for (HostScsiTopologyTarget target : adapter.target) {
+
+                // Check to see that the target has LUNs
+                if (null == target.lun || target.lun.length == 0) {
+                    log.trace("This target has no LUNs on it. Target:" + target.key);
+                    continue;
+                }
 
                 // For each lun on these targets
                 for (HostScsiTopologyLun lun : target.lun) {
@@ -93,6 +120,12 @@ public class HostStorageDeviceInfoEx {
                     scsiTopologyInfo.add(scsiInfo);
                 }
             }
+        }
+
+        // Make sure that information is available.
+        if (sortedScsiLuns.size() == 0 || scsiTopologyInfo.size() == 0) {
+            log.trace("There is no SCSI Lun information on this host");
+            return;
         }
 
         // For each Lun in sortedScsiLuns
