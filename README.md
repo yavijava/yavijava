@@ -20,7 +20,7 @@ and much more readable than the equivalent using web service interfaces
 directly. The API itself is straight-forward and easy to learn and use. 
 
 ## WHO CREATED THE API?
-To find out more about the original VI Java API see http://vivaja.sf.net
+To find out more about the original VI Java API see http://vijava.sf.net
 
 As for who created this fork called YAVI Java that is Michael Rice.
 
