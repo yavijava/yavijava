@@ -48,6 +48,7 @@ dependencies:
 
 ## WHERE CAN I GET HELP?
 File a bug: https://github.com/michaelrice/yavijava/issues
+
 IRC: Freenode IRC #vijava 
 
 COPYRIGHT & LICENSE:
