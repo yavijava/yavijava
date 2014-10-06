@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+                  xmlns:wst="http://docs.oasis-open.org/ws-sx/ws-trust/200512"
+                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:wsp="http://www.w3.org/ns/ws-policy"
+                  xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+                  xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702"
+                  xmlns:tns="http://www.rsa.com/names/2009/12/product/riat/wsdl" name="STSService"
+                  targetNamespace="http://www.rsa.com/names/2009/12/product/riat/wsdl" xsi:schemaLocation="http://schemas.xmlsoap.org/wsdl/                                                   http://schemas.xmlsoap.org/wsdl/
+                                      http://www.w3.org/ns/ws-policy                                                     http://www.w3.org/2007/02/ws-policy.xsd
+                                      http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702                          http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702/ws-securitypolicy-1.2.xsd
+                                      http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+    <wsdl:types>
+        <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:import namespace="http://docs.oasis-open.org/ws-sx/ws-trust/200512"
+                        schemaLocation="profiled-ws-trust.xsd"/>
+        </xsd:schema>
+    </wsdl:types>
+    <wsdl:message name="RequestSecurityTokenMsg">
+        <wsdl:part name="RequestSecurityToken" element="wst:RequestSecurityToken"/>
+    </wsdl:message>
+    <wsdl:message name="RequestSecurityTokenResponseCollectionMsg">
+        <wsdl:part name="RequestSecurityTokenResponseCollection" element="wst:RequestSecurityTokenResponseCollection"/>
+    </wsdl:message>
+    <wsdl:message name="RequestSecurityTokenResponseMsg">
+        <wsdl:part name="RequestSecurityTokenResponse" element="wst:RequestSecurityTokenResponse"/>
+    </wsdl:message>
+    <wsdl:portType name="STSService_PortType">
+        <wsdl:operation name="Issue">
+            <wsdl:input message="tns:RequestSecurityTokenMsg"/>
+            <wsdl:output message="tns:RequestSecurityTokenResponseCollectionMsg"/>
+        </wsdl:operation>
+        <wsdl:operation name="Renew">
+            <wsdl:input message="tns:RequestSecurityTokenMsg"/>
+            <wsdl:output message="tns:RequestSecurityTokenResponseMsg"/>
+        </wsdl:operation>
+        <wsdl:operation name="Validate">
+            <wsdl:input message="tns:RequestSecurityTokenMsg"/>
+            <wsdl:output message="tns:RequestSecurityTokenResponseMsg"/>
+        </wsdl:operation>
+        <wsdl:operation name="Challenge">
+            <wsdl:input message="tns:RequestSecurityTokenResponseMsg"></wsdl:input>
+            <wsdl:output message="tns:RequestSecurityTokenResponseCollectionMsg"></wsdl:output>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="STSService_Binding" type="tns:STSService_PortType"
+                  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsp:PolicyReference URI="#STSSecPolicy" wsdl:required="true"/>
+        <wsdl:operation name="Issue">
+            <soap:operation soapAction="http://docs.oasis-open.org/ws-sx/ws-trust/200512/RST/Issue" style="document"/>
+            <wsdl:input>
+                <wsp:PolicyReference wsdl:required="true" URI="#IssueRequestPolicy"/>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="Renew">
+            <soap:operation soapAction="http://docs.oasis-open.org/ws-sx/ws-trust/200512/RST/Renew" style="document"/>
+            <wsdl:input>
+                <wsp:PolicyReference wsdl:required="true" URI="#RenewRequestPolicy"/>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="Validate">
+            <soap:operation soapAction="http://docs.oasis-open.org/ws-sx/ws-trust/200512/RST/Validate"
+                            style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="Challenge">
+            <soap:operation soapAction="http://docs.oasis-open.org/ws-sx/ws-trust/200512/RSTR/Issue" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="STSService">
+        <wsdl:port name="STSService_Port" binding="tns:STSService_Binding">
+            <soap:address location="https://localhost:8444/ims/STSService"
+                          xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+            <jaxws:bindings xmlns:jaxws="http://java.sun.com/xml/ns/jaxws">
+                <jaxws:provider>false</jaxws:provider>
+            </jaxws:bindings>
+        </wsdl:port>
+    </wsdl:service>
+    <!-- Security Policy for renew requests -->
+    <wsp:Policy wsu:Id="RenewRequestPolicy">
+        <wsp:ExactlyOne>
+            <sp:EndorsingSupportingTokens>
+                <wsp:Policy>
+                    <sp:X509Token
+                            sp:IncludeToken="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702/IncludeToken/AlwaysToRecipient">
+                        <wsp:Policy>
+                            <wsp:ExactlyOne>
+                                <sp:WssX509V3Token11/>
+                                <sp:WssX509PkiPathV1Token11/>
+                                <sp:WssX509Pkcs7Token10/>
+                            </wsp:ExactlyOne>
+                        </wsp:Policy>
+                    </sp:X509Token>
+                    <sp:SignedParts>
+                        <sp:Body/>
+                    </sp:SignedParts>
+                </wsp:Policy>
+            </sp:EndorsingSupportingTokens>
+        </wsp:ExactlyOne>
+    </wsp:Policy>
+    <!-- Security policy for issue requests -->
+    <wsp:Policy wsu:Id="IssueRequestPolicy">
+        <wsp:ExactlyOne>
+            <!-- HoK SAML Token Support -->
+            <!-- The token must be a SAML 2.0 token, referenced using a Key Identifier from the signature -->
+            <!-- The signature must be over the SOAP body and the timestamp. -->
+            <sp:EndorsingSupportingTokens>
+                <wsp:Policy>
+                    <sp:SamlToken
+                            sp:IncludeToken="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702/IncludeToken/AlwaysToRecipient">
+                        <wsp:Policy>
+                            <!--Token must be referenced using a KeyIdentifier-->
+                            <sp:RequireKeyIdentifierReference/>
+                            <!--SAML v2.0 tokens must be used as described in SAML Token Profile v1.1-->
+                            <sp:WssSamlV20Token11/>
+                        </wsp:Policy>
+                    </sp:SamlToken>
+                    <sp:SignedParts>
+                        <!--Token must be used to sign SOAP Body -->
+                        <sp:Body/>
+                    </sp:SignedParts>
+                </wsp:Policy>
+            </sp:EndorsingSupportingTokens>
+            <!-- There is also support for a request that contains a UsernameToken and is signed -->
+            <wsp:All>
+                <sp:EndorsingSupportingTokens>
+                    <wsp:Policy>
+                        <sp:X509Token
+                                sp:IncludeToken="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702/IncludeToken/AlwaysToRecipient">
+                            <wsp:Policy>
+                                <wsp:ExactlyOne>
+                                    <!--The token must either be an X509v3, X509PKIPathV1 or X509PKCS7 token as described in X509 Token Profile v1.1 -->
+                                    <sp:WssX509V3Token11/>
+                                    <sp:WssX509PkiPathV1Token11/>
+                                    <sp:WssX509Pkcs7Token10/>
+                                </wsp:ExactlyOne>
+                            </wsp:Policy>
+                        </sp:X509Token>
+                        <sp:SignedParts>
+                            <sp:Body/>
+                        </sp:SignedParts>
+                    </wsp:Policy>
+                </sp:EndorsingSupportingTokens>
+                <sp:SignedSupportingTokens>
+                    <wsp:Policy>
+                        <sp:UsernameToken
+                                sp:IncludeToken="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702/IncludeToken/AlwaysToRecipient">
+                            <wsp:Policy>
+                                <!--Token must conform to WSS UsernameToken profile v1.1-->
+                                <sp:WssUsernameToken11/>
+                            </wsp:Policy>
+                        </sp:UsernameToken>
+                    </wsp:Policy>
+                </sp:SignedSupportingTokens>
+            </wsp:All>
+            <!-- X509 Token Support -->
+            <!-- The signature must be over the SOAP body and the timestamp. -->
+            <sp:EndorsingSupportingTokens>
+                <wsp:Policy>
+                    <sp:X509Token
+                            sp:IncludeToken="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702/IncludeToken/AlwaysToRecipient">
+                        <wsp:Policy>
+                            <wsp:ExactlyOne>
+                                <!--The token must either be an X509v3, X509PKIPathV1 or X509PKCS7 token as described in X509 Token Profile v1.1 -->
+                                <sp:WssX509V3Token11/>
+                                <sp:WssX509PkiPathV1Token11/>
+                                <sp:WssX509Pkcs7Token10/>
+                            </wsp:ExactlyOne>
+                        </wsp:Policy>
+                    </sp:X509Token>
+                    <sp:SignedParts>
+                        <!-- Token must be used to sign the SOAP Body -->
+                        <sp:Body/>
+                    </sp:SignedParts>
+                </wsp:Policy>
+            </sp:EndorsingSupportingTokens>
+            <!-- Username Token Support -->
+            <!-- Only plaintext passwords are supported.  That is, no digest or nonce values -->
+            <sp:SignedSupportingTokens>
+                <wsp:Policy>
+                    <sp:UsernameToken
+                            sp:IncludeToken="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702/IncludeToken/AlwaysToRecipient">
+                        <wsp:Policy>
+                            <!--Token must conform to WSS UsernameToken profile v1.1-->
+                            <sp:WssUsernameToken11/>
+                        </wsp:Policy>
+                    </sp:UsernameToken>
+                </wsp:Policy>
+            </sp:SignedSupportingTokens>
+            <!-- Not having a Supporting Token is also valid
+           This covers the SSPI case -->
+            <wsp:All/>
+        </wsp:ExactlyOne>
+    </wsp:Policy>
+    <!--
+  **     Policy requiring message to be sent over server-side SSL
+  **     with a Timestamp element in the security header.
+  -->
+    <wsp:Policy wsu:Id="STSSecPolicy">
+        <wsp:ExactlyOne>
+            <wsp:All>
+                <sp:TransportBinding>
+                    <wsp:Policy>
+                        <sp:TransportToken>
+                            <wsp:Policy>
+                                <!-- Server-side HTTPS must be used -->
+                                <sp:HttpsToken RequireClientCertificate="false"/>
+                            </wsp:Policy>
+                        </sp:TransportToken>
+                        <sp:AlgorithmSuite>
+                            <wsp:Policy>
+                                <sp:Basic256Sha256/>
+                            </wsp:Policy>
+                        </sp:AlgorithmSuite>
+                        <sp:Layout>
+                            <wsp:Policy>
+                                <!--Follow strict layout rules-->
+                                <sp:Strict/>
+                            </wsp:Policy>
+                        </sp:Layout>
+                        <!--Timestamp must be included-->
+                        <sp:IncludeTimestamp/>
+                    </wsp:Policy>
+                </sp:TransportBinding>
+            </wsp:All>
+        </wsp:ExactlyOne>
+    </wsp:Policy>
+</wsdl:definitions>

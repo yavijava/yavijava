@@ -20,4 +20,8 @@ sourceSets {
         java {
         }
     }
+    test {
+        java {
+        }
+    }
 }
