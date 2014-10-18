@@ -33,6 +33,7 @@ import java.lang.reflect.Array;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Collections;
 import java.util.List;
 
 import javax.xml.bind.DatatypeConverter;
@@ -55,12 +56,10 @@ public class ReflectUtil {
         }
 
         Field[] fields = clazz.getDeclaredFields();
-        for (int i = 0; i < fields.length; i++) {
-            listOfFields.add(fields[i]);
-        }
+        Collections.addAll(listOfFields, fields);
     }
 
-    public final static void setArrayField(Object obj, List<Object> vimObjList, Field vimArrayField, Class<?> vimArrayType) throws IllegalAccessException {
+    public static void setArrayField(Object obj, List<Object> vimObjList, Field vimArrayField, Class<?> vimArrayType) throws IllegalAccessException {
         Object ao = Array.newInstance(vimArrayType, vimObjList.size());
         for (int i = 0; i < vimObjList.size(); i++) {
             Array.set(ao, i, vimObjList.get(i));
@@ -70,7 +69,7 @@ public class ReflectUtil {
         vimObjList.clear();
     }
 
-    public final static void setObjectField(Object object, Field field, String type, String value) throws IllegalArgumentException, IllegalAccessException {
+    public static void setObjectField(Object object, Field field, String type, String value) throws IllegalArgumentException, IllegalAccessException {
         if ("String".equals(type) || "string".equals(type)) {
             field.set(object, value);
         }
@@ -108,7 +107,7 @@ public class ReflectUtil {
             field.set(object, Boolean.parseBoolean(value));
         }
         else if ("Boolean".equals(type)) {
-            field.set(object, new Boolean(value));
+            field.set(object, Boolean.valueOf(value));
         }
         else if ("Calendar".equals(type) || "dateTime".equals(type)) {
             Calendar cal = DatatypeConverter.parseTime(value);
@@ -247,14 +246,13 @@ public class ReflectUtil {
             return toFloatArray(values);
         }
         else if ("boolean".equals(type)) {
-            return new Boolean(values.get(0));
+            return Boolean.valueOf(values.get(0));
         }
         else if ("boolean[]".equals(type)) {
             return toBooleanArray(values);
         }
         else if ("Calendar".equals(type) || "dateTime".equals(type)) {
-            Calendar cal = DatatypeConverter.parseTime(values.get(0));
-            return cal;
+            return DatatypeConverter.parseTime(values.get(0));
         }
         else if ("double".equals(type)) {
             return new Double(values.get(0));
