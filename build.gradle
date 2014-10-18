@@ -1,7 +1,7 @@
 apply plugin: 'java'
 apply plugin: 'idea'
 
-version = '5.5b.06'
+version = '5.5b.06-DEVELOPMENT'
 
 repositories {
     mavenCentral()
