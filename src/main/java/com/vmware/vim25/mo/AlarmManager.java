@@ -60,6 +60,14 @@ public class AlarmManager extends ManagedObject {
     }
 
     /**
+     * @since 4.x
+     * added to yavija for 5.5b.07
+     */
+    public void setAlarmStatus(Alarm alarm, ManagedEntity entity, String status) throws RuntimeFault, RemoteException {
+        getVimService().setAlarmStatus(getMOR(), alarm.getMOR(), entity.getMOR(), status);
+    }
+
+    /**
      * @since 4.0
      */
     public boolean areAlarmActionsEnabled(ManagedEntity entity) throws RuntimeFault, RemoteException {

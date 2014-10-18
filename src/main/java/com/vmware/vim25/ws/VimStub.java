@@ -32,6 +32,7 @@ package com.vmware.vim25.ws;
 import com.vmware.vim25.*;
 
 import java.lang.reflect.InvocationTargetException;
+import java.rmi.RemoteException;
 import java.util.Calendar;
 
 /**
@@ -2547,6 +2548,15 @@ public class VimStub {
         paras[1] = new Argument("alarm", "ManagedObjectReference", alarm);
         paras[2] = new Argument("entity", "ManagedObjectReference", entity);
         wsc.invoke("AcknowledgeAlarm", paras, null);
+    }
+
+    public void setAlarmStatus(ManagedObjectReference _this, ManagedObjectReference alarm, ManagedObjectReference entity, String status) throws RemoteException, RuntimeFault {
+        Argument[] params = new Argument[4];
+        params[0] = new Argument("_this", "ManagedObjectReference", _this);
+        params[1] = new Argument("alarm", "ManagedObjectReference", alarm);
+        params[2] = new Argument("entity", "ManagedObjectReference", entity);
+        params[3] = new Argument("status", "String", status);
+        wsc.invoke("SetAlarmStatus", params, null);
     }
 
     public ManagedObjectReference reconfigureDVPortgroup_Task(ManagedObjectReference _this, DVPortgroupConfigSpec spec) throws java.rmi.RemoteException, DvsFault, ConcurrentAccess, DuplicateName, InvalidName, RuntimeFault {
