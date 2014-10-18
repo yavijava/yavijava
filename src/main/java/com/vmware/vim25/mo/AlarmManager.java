@@ -35,83 +35,78 @@ import com.vmware.vim25.*;
 
 /**
  * The managed object class corresponding to the one defined in VI SDK API reference.
+ *
  * @author Steve JIN (http://www.doublecloud.org)
  */
 
-public class AlarmManager extends ManagedObject 
-{
-	public AlarmManager(ServerConnection sc, ManagedObjectReference mor) 
-	{
-		super(sc, mor);
-	}
+public class AlarmManager extends ManagedObject {
+    public AlarmManager(ServerConnection sc, ManagedObjectReference mor) {
+        super(sc, mor);
+    }
 
-	public AlarmExpression[] getDefaultExpression()
-	{
-		return (AlarmExpression[]) getCurrentProperty("defaultExpression");
-	}
-	
-	public AlarmDescription getDescription()
-	{
-		return (AlarmDescription) this.getCurrentProperty("description");
-	}
+    public AlarmExpression[] getDefaultExpression() {
+        return (AlarmExpression[]) getCurrentProperty("defaultExpression");
+    }
 
-	/**
-	 * @since 4.0
-	 */
-	public void acknowledgeAlarm(Alarm alarm, ManagedEntity entity) throws RuntimeFault, RemoteException
-	{
-		getVimService().acknowledgeAlarm(getMOR(), alarm.getMOR(), entity.getMOR());
-	}
-	
-	/**
-	 * @since 4.0
-	 */
-	public boolean areAlarmActionsEnabled(ManagedEntity entity) throws RuntimeFault, RemoteException
-	{
-		return getVimService().areAlarmActionsEnabled(getMOR(), entity.getMOR());
-	}
+    public AlarmDescription getDescription() {
+        return (AlarmDescription) this.getCurrentProperty("description");
+    }
 
-	/**
-	 * @since 4.0
-	 */
-	public void enableAlarmActions(ManagedEntity entity, boolean enabled) throws RuntimeFault, RemoteException
-	{
-		getVimService().enableAlarmActions(getMOR(), entity.getMOR(), enabled);
-	}
-	
-	public Alarm createAlarm(ManagedEntity me, AlarmSpec as) throws InvalidName, DuplicateName, RuntimeFault, RemoteException  
-	{
-		if(me==null)
-		{
-			throw new IllegalArgumentException("entity must not be null.");
-		}
-		ManagedObjectReference mor = getVimService().createAlarm(getMOR(), me.getMOR(), as);
-		return new Alarm(getServerConnection(), mor);
-	}
-	
-	public Alarm[] getAlarm(ManagedEntity me) throws RuntimeFault, RemoteException  
-	{
-		ManagedObjectReference[] mors = getVimService().getAlarm(getMOR(), me==null? null : me.getMOR());
-		
-		if(mors==null) 
-		{
-			return new Alarm[] {};
-		}
-		
-		Alarm[] alarms = new Alarm[mors.length];
-		for(int i=0; i<mors.length; i++)
-		{
-			alarms[i] = new Alarm(getServerConnection(), mors[i]);
-		}
-		return alarms;
-	}
-	
-	public AlarmState[] getAlarmState(ManagedEntity me) throws RuntimeFault, RemoteException  
-	{
-		if(me==null)
-		{
-			throw new IllegalArgumentException("entity must not be null.");
-		}
-		return getVimService().getAlarmState(getMOR(), me.getMOR());
-	}
+    /**
+     * @since 4.0
+     */
+    public void acknowledgeAlarm(Alarm alarm, ManagedEntity entity) throws RuntimeFault, RemoteException {
+        getVimService().acknowledgeAlarm(getMOR(), alarm.getMOR(), entity.getMOR());
+    }
+
+    /**
+     * @since 4.x
+     * added to yavija for 5.5b.07
+     */
+    public void setAlarmStatus(Alarm alarm, ManagedEntity entity, String status) throws RuntimeFault, RemoteException {
+        getVimService().setAlarmStatus(getMOR(), alarm.getMOR(), entity.getMOR(), status);
+    }
+
+    /**
+     * @since 4.0
+     */
+    public boolean areAlarmActionsEnabled(ManagedEntity entity) throws RuntimeFault, RemoteException {
+        return getVimService().areAlarmActionsEnabled(getMOR(), entity.getMOR());
+    }
+
+    /**
+     * @since 4.0
+     */
+    public void enableAlarmActions(ManagedEntity entity, boolean enabled) throws RuntimeFault, RemoteException {
+        getVimService().enableAlarmActions(getMOR(), entity.getMOR(), enabled);
+    }
+
+    public Alarm createAlarm(ManagedEntity me, AlarmSpec as) throws InvalidName, DuplicateName, RuntimeFault, RemoteException {
+        if (me == null) {
+            throw new IllegalArgumentException("entity must not be null.");
+        }
+        ManagedObjectReference mor = getVimService().createAlarm(getMOR(), me.getMOR(), as);
+        return new Alarm(getServerConnection(), mor);
+    }
+
+    public Alarm[] getAlarm(ManagedEntity me) throws RuntimeFault, RemoteException {
+        ManagedObjectReference[] mors = getVimService().getAlarm(getMOR(), me == null ? null : me.getMOR());
+
+        if (mors == null) {
+            return new Alarm[]{};
+        }
+
+        Alarm[] alarms = new Alarm[mors.length];
+        for (int i = 0; i < mors.length; i++) {
+            alarms[i] = new Alarm(getServerConnection(), mors[i]);
+        }
+        return alarms;
+    }
+
+    public AlarmState[] getAlarmState(ManagedEntity me) throws RuntimeFault, RemoteException {
+        if (me == null) {
+            throw new IllegalArgumentException("entity must not be null.");
+        }
+        return getVimService().getAlarmState(getMOR(), me.getMOR());
+    }
 }

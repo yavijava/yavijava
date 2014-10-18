@@ -29,37 +29,30 @@ POSSIBILITY OF SUCH DAMAGE.
 
 package org.doublecloud.ws.util;
 
-public class XmlUtil
-{
-  private static char[] toBeEscaped = new char[] {'&',     '<',    '>',    '"',      '\''};
-  private static String[] escaped = new String[] {"&amp;", "&lt;", "&gt;", "&quot;", "&apos;" };
+public class XmlUtil {
+    private static char[] toBeEscaped = new char[]{'&', '<', '>', '"', '\''};
+    private static String[] escaped = new String[]{"&amp;", "&lt;", "&gt;", "&quot;", "&apos;"};
 
-  //escape 5 special chars http://en.wikipedia.org/wiki/List_of_XML_and_HTML_character_entity_references
-  public static String escapeForXML(String str)
-  {
-    StringBuilder sb = new StringBuilder(str.length());
-    
-    for(int i=0; i<str.length(); i++)
-    {
-      char c = str.charAt(i);
+    //escape 5 special chars http://en.wikipedia.org/wiki/List_of_XML_and_HTML_character_entity_references
+    public static String escapeForXML(String str) {
+        StringBuilder sb = new StringBuilder(str.length());
 
-      boolean foundEscape = false;
-      for(int j=0; j<toBeEscaped.length; j++)
-      {
-        if(c==toBeEscaped[j])
-        {
-          sb.append(escaped[j]);
-          foundEscape = true;
-          break;
+        for (int i = 0; i < str.length(); i++) {
+            char c = str.charAt(i);
+
+            boolean foundEscape = false;
+            for (int j = 0; j < toBeEscaped.length; j++) {
+                if (c == toBeEscaped[j]) {
+                    sb.append(escaped[j]);
+                    foundEscape = true;
+                    break;
+                }
+            }
+
+            if (!foundEscape) {
+                sb.append(c);
+            }
         }
-      }
-      
-      if(foundEscape==false)
-      {
-        sb.append(c);
-        foundEscape = false;
-      }
+        return sb.toString();
     }
-    return sb.toString();
-  }
 }
