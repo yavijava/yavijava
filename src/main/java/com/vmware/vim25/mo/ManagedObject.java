@@ -50,6 +50,7 @@ import com.vmware.vim25.UpdateSet;
 import com.vmware.vim25.VimPortType;
 import com.vmware.vim25.mo.util.MorUtil;
 import com.vmware.vim25.mo.util.PropertyCollectorUtil;
+import org.apache.log4j.Logger;
 
 /**
  * This class is intended to provide a wrapper around a managed object class.
@@ -63,6 +64,11 @@ import com.vmware.vim25.mo.util.PropertyCollectorUtil;
 
 abstract public class ManagedObject {
     private static String MO_PACKAGE_NAME = null;
+
+    /**
+     * Create Logger
+     */
+    private static Logger log = Logger.getLogger(ManagedObject.class);
 
     static {
         MO_PACKAGE_NAME = ManagedObject.class.getPackage().getName();
@@ -226,21 +232,20 @@ abstract public class ManagedObject {
         }
 
         Object mos = new ManagedObject[mors.length];
-        ;
 
         try {
-            Class moClass = null;
+            Class<?> moClass = null;
 
-            if (mixedType == false) {
+            if (!mixedType) {
                 moClass = Class.forName(MO_PACKAGE_NAME + "." + mors[0].getType());
                 mos = Array.newInstance(moClass, mors.length);
             }
 
             for (int i = 0; i < mors.length; i++) {
-                if (mixedType == true) {
+                if (mixedType) {
                     moClass = Class.forName(MO_PACKAGE_NAME + "." + mors[i].getType());
                 }
-                Constructor constructor = moClass.getConstructor(
+                Constructor<?> constructor = moClass.getConstructor(
                     new Class[]{ServerConnection.class, ManagedObjectReference.class});
 
                 Array.set(mos, i,
@@ -248,7 +253,7 @@ abstract public class ManagedObject {
             }
         }
         catch (Exception e) {
-            e.printStackTrace();
+            log.error("Exception caught trying to getManagedObjects.", e);
         }
 
         return (ManagedObject[]) mos;
@@ -378,7 +383,8 @@ abstract public class ManagedObject {
         boolean reached = false;
 
         while (!reached) {
-            UpdateSet updateset = pc.waitForUpdates(version);
+            // Updated to waitForUpdatesEx as of 5.5.06-dev
+            UpdateSet updateset = pc.waitForUpdatesEx(version, null);
             if (updateset == null) {
                 continue;
             }
@@ -389,8 +395,7 @@ abstract public class ManagedObject {
             }
 
             // Make this code more general purpose when PropCol changes later.
-            for (int i = 0; i < filtupary.length; i++) {
-                PropertyFilterUpdate filtup = filtupary[i];
+            for (PropertyFilterUpdate filtup : filtupary) {
                 if (filtup == null) {
                     continue;
                 }

@@ -30,6 +30,7 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25.ws;
 
 import com.vmware.vim25.*;
+import org.apache.log4j.Logger;
 
 import java.lang.reflect.InvocationTargetException;
 import java.rmi.RemoteException;
@@ -41,23 +42,28 @@ import java.util.Calendar;
  */
 
 public class VimStub {
+
     private SoapClient wsc = null;
+    /**
+     * Setup logger
+     */
+    private static Logger log = Logger.getLogger(VimStub.class);
 
     public VimStub(String url, boolean ignoreCert) throws java.net.MalformedURLException {
         try {
             this.wsc = (SoapClient) ClientCreator.getClient(url, ignoreCert);
         }
         catch (NoSuchMethodException e) {
-            e.printStackTrace();
+            log.error("Error detected for url: " + url + " ignoreSSL: " + ignoreCert, e);
         }
         catch (IllegalAccessException e) {
-            e.printStackTrace();
+            log.error("Error detected for url: " + url + " ignoreSSL: " + ignoreCert, e);
         }
         catch (InvocationTargetException e) {
-            e.printStackTrace();
+            log.error("Error detected for url: " + url + " ignoreSSL: " + ignoreCert, e);
         }
         catch (InstantiationException e) {
-            e.printStackTrace();
+            log.error("Error detected for url: " + url + " ignoreSSL: " + ignoreCert, e);
         }
     }
 
