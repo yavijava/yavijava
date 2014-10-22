@@ -29,6 +29,8 @@ POSSIBILITY OF SUCH DAMAGE.
 
 package org.doublecloud.ws.util;
 
+import org.apache.log4j.Logger;
+
 import java.lang.reflect.Array;
 import java.util.Calendar;
 import java.util.HashSet;
@@ -42,6 +44,7 @@ public class TypeUtil {
     final public static Class<?> BYTE_ARRAY_CLASS = byte[].class;
     final public static Class<?> LONG_ARRAY_CLASS = long[].class;
 
+    private static Logger log = Logger.getLogger(TypeUtil.class);
 
     private final static Set<String> PRIMITIVE_TYPES = new HashSet<String>();
 
@@ -106,7 +109,7 @@ public class TypeUtil {
                 return clazz;
             }
             catch (ClassNotFoundException cnfe) {
-                cnfe.printStackTrace();
+                log.error("ClassNotFoundException caught for type: " + type, cnfe);
                 return null;
             }
         }
