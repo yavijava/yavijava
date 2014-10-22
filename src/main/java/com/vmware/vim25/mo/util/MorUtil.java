@@ -33,71 +33,98 @@ import java.lang.reflect.Constructor;
 
 import com.vmware.vim25.*;
 import com.vmware.vim25.mo.*;
+import org.apache.log4j.Logger;
 
 /**
  * Utility class for the Managed Object and ManagedObjectReference.
+ *
  * @author Steve JIN (sjin@vmware.com)
  */
 
-public class MorUtil 
-{
-	final public static String moPackageName = "com.vmware.vim25.mo";
+public class MorUtil {
 
-	public static ManagedObjectReference[] createMORs(ManagedObject[] mos)
-	{
-		if(mos==null)
-		{
-			throw new IllegalArgumentException();
-		}
-		ManagedObjectReference[] mors = new ManagedObjectReference[mos.length];
-		for(int i=0; i<mos.length; i++)
-		{
-			mors[i] = mos[i].getMOR();
-		}
-		return mors;
-	}
+    /**
+     * Package name used for class generation
+     */
+    final public static String moPackageName = "com.vmware.vim25.mo";
 
-	public static ManagedObject createExactManagedObject(ServerConnection sc, ManagedObjectReference mor)
-	{
-		if(mor==null)
-		{
-			return null;
-		}
-		
-		String moType = mor.getType();
+    /**
+     * Create a logger
+     */
+    private static Logger log = Logger.getLogger(MorUtil.class);
 
-		try
-		{
-			Class moClass = Class.forName(moPackageName + "." + moType);
-			Constructor constructor = moClass.getConstructor(
-					new Class[] {ServerConnection.class, ManagedObjectReference.class});
-			return (ManagedObject) constructor.newInstance( new Object[] { sc, mor} );
-		} catch(Exception e)
-		{
-			e.printStackTrace();
-			return null;
-		}
-	}
+    /**
+     * Takes an array of ManagedObjects and returns the MOR for each MO
+     *
+     * @param mos
+     * @return
+     */
+    public static ManagedObjectReference[] createMORs(ManagedObject[] mos) {
+        if (mos == null) {
+            throw new IllegalArgumentException();
+        }
+        ManagedObjectReference[] mors = new ManagedObjectReference[mos.length];
+        for (int i = 0; i < mos.length; i++) {
+            mors[i] = mos[i].getMOR();
+        }
+        return mors;
+    }
 
-	public static ManagedEntity createExactManagedEntity(ServerConnection sc, ManagedObjectReference mor) 
-	{
-		return (ManagedEntity) createExactManagedObject(sc, mor);
-	}
-	
-	public static ManagedEntity[] createManagedEntities(ServerConnection sc, ManagedObjectReference[] mors) 
-	{
-	  if(mors==null)
-	  {
-	    return new ManagedEntity[0];
-	  }
-		ManagedEntity[] mes = new ManagedEntity[mors.length];
-		
-		for(int i=0; i< mors.length; i++)
-		{
-			mes[i] = createExactManagedEntity(sc, mors[i]);
-		}
-		
-		return mes;
-	}
+    /**
+     * Given the ServerConnection and a MOR return the MO
+     *
+     * @param sc
+     * @param mor
+     * @return
+     */
+    public static ManagedObject createExactManagedObject(ServerConnection sc, ManagedObjectReference mor) {
+        if (mor == null) {
+            return null;
+        }
 
+        String moType = mor.getType();
+
+        try {
+            Class<?> moClass = Class.forName(moPackageName + "." + moType);
+            Constructor constructor = moClass.getConstructor(
+                new Class[]{ServerConnection.class, ManagedObjectReference.class});
+            return (ManagedObject) constructor.newInstance(new Object[]{sc, mor});
+        }
+        catch (Exception e) {
+            log.error("Failed to create MO for " + mor.toString(), e);
+            return null;
+        }
+    }
+
+    /**
+     * Given a ServerConnection and a MOR return the ME
+     *
+     * @param sc
+     * @param mor
+     * @return
+     */
+    public static ManagedEntity createExactManagedEntity(ServerConnection sc, ManagedObjectReference mor) {
+        return (ManagedEntity) createExactManagedObject(sc, mor);
+    }
+
+    /**
+     * Given a ServerConnection and an array of MORs return an array
+     * of MEs
+     *
+     * @param sc
+     * @param mors
+     * @return
+     */
+    public static ManagedEntity[] createManagedEntities(ServerConnection sc, ManagedObjectReference[] mors) {
+        if (mors == null) {
+            return new ManagedEntity[0];
+        }
+        ManagedEntity[] mes = new ManagedEntity[mors.length];
+
+        for (int i = 0; i < mors.length; i++) {
+            mes[i] = createExactManagedEntity(sc, mors[i]);
+        }
+
+        return mes;
+    }
 }
