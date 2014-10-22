@@ -28,6 +28,7 @@ POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
 
 package com.vmware.vim.cf;
+
 import java.rmi.RemoteException;
 import java.util.Observable;
 import java.util.Vector;
@@ -41,88 +42,105 @@ import com.vmware.vim25.UpdateSet;
 import com.vmware.vim25.mo.ManagedObject;
 import com.vmware.vim25.mo.PropertyCollector;
 import com.vmware.vim25.mo.PropertyFilter;
+import org.apache.log4j.Logger;
 
 /**
  * @author Steve JIN (sjin@vmware.com)
  */
 
-class ManagedObjectWatcher extends Observable implements Runnable 
-{
+class ManagedObjectWatcher extends Observable implements Runnable {
+
+    /**
+     * PropertyCollector
+     */
     private PropertyCollector pc;
+    /**
+     * Vector containing PropertyFilters
+     */
     private Vector<PropertyFilter> filters = new Vector<PropertyFilter>();
+    /**
+     * Version
+     */
     private String version = "";
-    
-    public ManagedObjectWatcher(PropertyCollector pc)
-    {
+    /**
+     * Logger
+     */
+    private static Logger log = Logger.getLogger(ManagedObjectWatcher.class);
+
+    public ManagedObjectWatcher(PropertyCollector pc) {
         this.pc = pc;
     }
-    
-    public void watch(ManagedObject[] mos, String[] propNames)
-    {
+
+    /**
+     *
+     * @param mos
+     * @param propNames
+     */
+    public void watch(ManagedObject[] mos, String[] propNames) {
         PropertyFilterSpec pfs = new PropertyFilterSpec();
-        
+
         ObjectSpec[] oss = new ObjectSpec[mos.length];
-        for(int i=0; i<oss.length; i++)
-        {
+        for (int i = 0; i < oss.length; i++) {
             oss[i] = new ObjectSpec();
             oss[i].setObj(mos[i].getMOR());
         }
         pfs.setObjectSet(oss);
-        
+
         PropertySpec ps = new PropertySpec();
         ps.setType(mos[0].getMOR().getType());
         ps.setPathSet(propNames);
-        pfs.setPropSet(new PropertySpec[] { ps });
+        pfs.setPropSet(new PropertySpec[]{ps});
 
         watch(pfs);
     }
-    
-    public void watch(PropertyFilterSpec pfs) 
-    {
-        try
-        {
+
+    /**
+     *
+     * @param pfs
+     */
+    public void watch(PropertyFilterSpec pfs) {
+        try {
             PropertyFilter pf = pc.createFilter(pfs, true); //report only nesting properties, not enclosing ones.
             filters.add(pf);
-        } catch(RemoteException re)
-        {
+        }
+        catch (RemoteException re) {
+            log.error("RemoteException caught trying to watch on a PropertyFilterSpec", re);
             throw new RuntimeException(re);
         }
     }
 
-    public void run()
-    {
-        while(true)
-        {
-            try
-            {
+    /**
+     *
+     */
+    public void run() {
+        while (true) {
+            try {
                 UpdateSet update = pc.waitForUpdates(version);
                 PropertyFilterUpdate[] pfu = update.getFilterSet();
                 this.setChanged();
                 this.notifyObservers(pfu);
                 version = update.getVersion();
             }
-            catch(NotAuthenticated na)
-            {
-              na.printStackTrace();
-              break;
+            catch (NotAuthenticated na) {
+                log.error("NotAuthenticated Exception caught.", na);
+                break;
             }
-            catch(Exception e)
-            {
-              e.printStackTrace();
+            catch (Exception e) {
+                log.error("Generic Exception caught in run block of ManagedObjectWatcher.", e);
             }
         }
     }
-    
-    public void cleanUp()
-    {
-        for(int i=0; i<filters.size(); i++)
-        {
-            try 
-            {
-                filters.get(i).destroyPropertyFilter();
-            } catch (RemoteException e) 
-            {
-                e.printStackTrace();
+
+    /**
+     *
+     */
+    public void cleanUp() {
+        for (PropertyFilter filter : filters) {
+            try {
+                filter.destroyPropertyFilter();
+            }
+            catch (RemoteException e) {
+                log.error("RemoteException caught in cleanUp", e);
             }
         }
     }

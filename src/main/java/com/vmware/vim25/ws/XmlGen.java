@@ -31,6 +31,7 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25.ws;
 
 import com.vmware.vim25.ManagedObjectReference;
+import org.apache.log4j.Logger;
 import org.doublecloud.ws.util.ReflectUtil;
 import org.doublecloud.ws.util.TypeUtil;
 import org.doublecloud.ws.util.XmlUtil;
@@ -41,20 +42,23 @@ import java.lang.reflect.Field;
 import java.util.Calendar;
 
 public abstract class XmlGen {
+
+    private static Logger log = Logger.getLogger(XmlGen.class);
+
     public static String toXML(String methodName, Argument[] paras, String vimNameSpace) {
-        StringBuffer sb = new StringBuffer();
+        StringBuilder sb = new StringBuilder();
         sb.append(SoapConsts.SOAP_HEADER);
 
-        sb.append("<" + methodName + vimNameSpace);
+        sb.append("<").append(methodName).append(vimNameSpace);
 
-        for (int i = 0; i < paras.length; i++) {
-            String key = paras[i].getName();
-            String type = paras[i].getType();
-            Object obj = paras[i].getValue();
+        for (Argument para : paras) {
+            String key = para.getName();
+            String type = para.getType();
+            Object obj = para.getValue();
             sb.append(toXML(key, type, obj)); //, null));
         }
 
-        sb.append("</" + methodName + ">");
+        sb.append("</").append(methodName).append(">");
         sb.append(SoapConsts.SOAP_END);
         return sb.toString();
     }
@@ -80,32 +84,32 @@ public abstract class XmlGen {
         if (clazz.isArray()) {
             if (obj.getClass() == TypeUtil.INT_ARRAY_CLASS) {
                 int[] objs = (int[]) obj;
-                for (int i = 0; i < objs.length; i++) {
-                    sb.append("<" + tagName + ">");
-                    sb.append(objs[i]);
-                    sb.append("</" + tagName + ">");
+                for (int obj1 : objs) {
+                    sb.append("<").append(tagName).append(">");
+                    sb.append(obj1);
+                    sb.append("</").append(tagName).append(">");
                 }
             }
             else if (obj.getClass() == TypeUtil.BYTE_ARRAY_CLASS) {
                 byte[] objs = (byte[]) obj;
-                for (int i = 0; i < objs.length; i++) {
-                    sb.append("<" + tagName + ">");
-                    sb.append(objs[i]);
-                    sb.append("</" + tagName + ">");
+                for (byte obj1 : objs) {
+                    sb.append("<").append(tagName).append(">");
+                    sb.append(obj1);
+                    sb.append("</").append(tagName).append(">");
                 }
             }
             else if (obj.getClass() == TypeUtil.LONG_ARRAY_CLASS) {
                 long[] objs = (long[]) obj;
-                for (int i = 0; i < objs.length; i++) {
-                    sb.append("<" + tagName + ">");
-                    sb.append(objs[i]);
-                    sb.append("</" + tagName + ">");
+                for (long obj1 : objs) {
+                    sb.append("<").append(tagName).append(">");
+                    sb.append(obj1);
+                    sb.append("</").append(tagName).append(">");
                 }
             }
             else {
                 Object[] objs = (Object[]) obj;
-                for (int i = 0; i < objs.length; i++) {
-                    toXML(sb, tagName, type.getComponentType(), objs[i]);
+                for (Object obj1 : objs) {
+                    toXML(sb, tagName, type.getComponentType(), obj1);
                 }
             }
         }
@@ -114,21 +118,21 @@ public abstract class XmlGen {
         else if (clazz == ManagedObjectReference.class) { //MOR]
             ManagedObjectReference mor = (ManagedObjectReference) obj;
             if (clazz == type) {
-                sb.append("<" + tagName + " type=\"" + mor.type + "\">");
+                sb.append("<").append(tagName).append(" type=\"").append(mor.type).append("\">");
             }
             else {
-                sb.append("<" + tagName + " xsi:type=\"ManagedObjectReference\" type=\"" + mor.type + "\">");
+                sb.append("<").append(tagName).append(" xsi:type=\"ManagedObjectReference\" type=\"").append(mor.type).append("\">");
             }
             sb.append(mor.val);
-            sb.append("</" + tagName + ">");
+            sb.append("</").append(tagName).append(">");
         }
         else if (clazz.getCanonicalName().startsWith("java.lang")) //basic data type
         {
             if (clazz != type) {
-                sb.append("<" + tagName + " xsi:type=\"" + TypeUtil.getXSIType(obj) + "\">");
+                sb.append("<").append(tagName).append(" xsi:type=\"").append(TypeUtil.getXSIType(obj)).append("\">");
             }
             else {
-                sb.append("<" + tagName + ">");
+                sb.append("<").append(tagName).append(">");
             }
 
             if (clazz == String.class) {
@@ -137,28 +141,27 @@ public abstract class XmlGen {
             }
 
             sb.append(obj);
-            sb.append("</" + tagName + ">");
+            sb.append("</").append(tagName).append(">");
         }
         else if (clazz.isEnum()) //enum data type
         {
-            sb.append("<" + tagName + ">" + obj + "</" + tagName + ">");
+            sb.append("<").append(tagName).append(">").append(obj).append("</").append(tagName).append(">");
         }
         else if (obj instanceof Calendar) {
-            sb.append("<" + tagName + " xsi:type=\"xsd:dateTime\">" + DatatypeConverter.printDateTime((Calendar) obj) + "</" + tagName + ">");
+            sb.append("<").append(tagName).append(" xsi:type=\"xsd:dateTime\">").append(DatatypeConverter.printDateTime((Calendar) obj)).append("</").append(tagName).append(">");
         }
         else { // VIM type
             if (clazz == type) {
-                sb.append("<" + tagName + ">");
+                sb.append("<").append(tagName).append(">");
             }
             else {
                 String nameSpaceType = clazz.getSimpleName();
-                sb.append("<" + tagName + " xsi:type=\"" + nameSpaceType + "\">");
+                sb.append("<").append(tagName).append(" xsi:type=\"").append(nameSpaceType).append("\">");
             }
 
             Field[] fields = ReflectUtil.getAllFields(clazz);
 
-            for (int i = 0; i < fields.length; i++) {
-                Field f = fields[i];
+            for (Field f : fields) {
                 String fName = f.getName();
 
                 Object value = null;
@@ -166,7 +169,7 @@ public abstract class XmlGen {
                     value = f.get(obj);
                 }
                 catch (IllegalAccessException iae) {
-                    iae.printStackTrace();
+                    log.error("IllegalAccessException caught.", iae);
                 }
                 if (value == null) {
                     continue;
@@ -175,7 +178,7 @@ public abstract class XmlGen {
                 Class<?> fType = f.getType();
                 toXML(sb, fName, fType, value);
             }
-            sb.append("</" + tagName + ">");
+            sb.append("</").append(tagName).append(">");
         }
     }
 
