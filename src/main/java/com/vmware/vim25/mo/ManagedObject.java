@@ -177,7 +177,6 @@ abstract public class ManagedObject {
      * @throws RemoteException
      * @throws RuntimeFault
      * @throws InvalidProperty
-     * @
      */
 
     protected Object getCurrentProperty(String propertyName) {
