@@ -14,7 +14,7 @@ import java.rmi.RemoteException;
  * <p/>
  * Copyright 2014 Michael Rice
  * <p/>
- * Licensed under the Apache License, Version 2.0 (the "License"); 
+ * Licensed under the Apache License, Version 2.0 (th "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  * <p/>
