@@ -207,7 +207,6 @@ public abstract class SoapClient implements Client {
             log.error(
                     "Exception Occured while unmarshalling the inputstream to java object of type:"
                             + returnType, e);
-            e.printStackTrace();
         }
         return unMarshalledObj;
     }
