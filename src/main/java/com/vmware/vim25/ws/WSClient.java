@@ -36,6 +36,7 @@ import org.apache.log4j.Logger;
 import javax.net.ssl.HostnameVerifier;
 import javax.net.ssl.HttpsURLConnection;
 import javax.net.ssl.SSLSession;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -88,13 +89,13 @@ final public class WSClient extends SoapClient {
 
     public Object invoke(String methodName, Argument[] paras, String returnType) throws RemoteException {
         log.trace("Invoking method: " + methodName);
-        String soapMsg = XmlGen.toXML(methodName, paras, this.vimNameSpace);
+        String soapMsg = marshall(methodName, paras);
 
         InputStream is = null;
         try {
             is = post(soapMsg);
             log.trace("Converting xml response from server to: " + returnType);
-            return xmlGen.fromXML(returnType, is);
+            return unMarshall(returnType, is);
         }
         catch (Exception e1) {
             log.error("Exception caught while invoking method.", e1);

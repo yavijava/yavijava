@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.URL;
+import java.rmi.RemoteException;
 
 /**
  * Created by Michael Rice on 8/10/14.
@@ -34,6 +35,8 @@ public abstract class SoapClient implements Client {
     public String vimNameSpace = null;
     public int connectTimeout = 0;
     public int readTimeout = 0;
+
+    XmlGen xmlGen = new XmlGenDom();
 
     /*===============================================
        * API versions *
@@ -173,5 +176,38 @@ public abstract class SoapClient implements Client {
         }
         in.close();
         return sb;
+    }
+
+    /**
+     * This method will marshall the java payload object in to xml payload.
+     * 
+     * @param methodName
+     * @param paras
+     * @return String - XML SoapMessage
+     */
+    public String marshall(String methodName, Argument[] paras) {
+        String soapMsg = XmlGen.toXML(methodName, paras, vimNameSpace);
+        log.trace("Marshalled Response String xml:" + soapMsg);
+        return soapMsg;
+    }
+
+    /**
+     * This method will unmarshall the response inputstream to Java Object of
+     * returnType type.
+     * 
+     * @param returnType
+     * @param is
+     * @return Object - Converted Response inputstream
+     */
+    public Object unMarshall(String returnType, InputStream is) {
+        Object unMarshalledObj = null;
+        try {
+            unMarshalledObj = xmlGen.fromXML(returnType, is);
+        } catch (Exception e) {
+            log.error(
+                    "Exception Occured while unmarshalling the inputstream to java object of type:"
+                            + returnType, e);
+        }
+        return unMarshalledObj;
     }
 }
