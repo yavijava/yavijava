@@ -64,7 +64,7 @@ public class VerUtil
 {
 	/**
 	 * Retrieve the target server's name space
-	 * @param target, either IP or host name
+	 * @param target either IP or host name
 	 * @return the namespace, e.g. urn:vim25Service
 	 * @throws IOException when there is a network issue or service issue on the target server
 	 * @throws RuntimeException wrapping NoSuchAlgorithmException, KeyManagementException which are

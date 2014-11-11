@@ -57,12 +57,11 @@ public class HostDatastoreBrowser extends ManagedObject
 	}
 	
 	/**
-	 * @deprecated, use FileManager.DeleteDatastoreFile_Task
+	 * @deprecated use FileManager.DeleteDatastoreFile_Task
 	 * @throws RemoteException 
 	 * @throws RuntimeFault 
 	 * @throws InvalidDatastore 
 	 * @throws FileFault 
-	 * @
 	 */
 	public void deleteFile(String datastorePath) throws FileFault, InvalidDatastore, RuntimeFault, RemoteException 
 	{
