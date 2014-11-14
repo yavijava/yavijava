@@ -39,6 +39,7 @@ import org.doublecloud.ws.util.XmlUtil;
 import javax.xml.bind.DatatypeConverter;
 import java.io.InputStream;
 import java.lang.reflect.Field;
+import java.lang.reflect.Modifier;
 import java.util.Calendar;
 
 public abstract class XmlGen {
@@ -165,11 +166,13 @@ public abstract class XmlGen {
                 String fName = f.getName();
 
                 Object value = null;
-                try {
-                    value = f.get(obj);
-                }
-                catch (IllegalAccessException iae) {
-                    log.error("IllegalAccessException caught.", iae);
+                if (! Modifier.isTransient(f.getModifiers())) {
+                    try {
+                        value = f.get(obj);
+                    }
+                    catch (IllegalAccessException iae) {
+                        log.error("IllegalAccessException caught.", iae);
+                    }
                 }
                 if (value == null) {
                     continue;
