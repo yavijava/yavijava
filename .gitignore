@@ -7,3 +7,9 @@ build/
 *.iml
 *.ipr
 *.iws
+
+#Eclipse specific
+bin/
+.settings/
+.classpath
+.project
