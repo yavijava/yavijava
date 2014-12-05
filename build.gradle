@@ -26,6 +26,23 @@ sourceSets {
         java {
         }
     }
+    intTest {
+        java {
+            compileClasspath += main.output + test.output
+            runtimeClasspath += main.output + test.output
+        }
+    }
+}
+
+configurations {
+    intTestCompile.extendsFrom testCompile
+    intTestRuntime.extendsFrom testRuntime
+}
+
+task intTest(type:Test){
+    description = "Run integration tests (located in src/intTest/...)."
+    testClassesDir = project.sourceSets.intTest.output.classesDir
+    classpath = project.sourceSets.intTest.runtimeClasspath
 }
 
 test {
