@@ -1,8 +1,12 @@
 apply plugin: 'java'
 apply plugin: 'idea'
-//apply plugin: 'eclipse'
+apply plugin: 'eclipse'
+apply plugin: 'maven'
+apply plugin: 'signing'
 
-version = '5.5b.06-DEVELOPMENT'
+group = "com.toastcoders"
+archivesBaseName = "yavijava"
+version = '5.5.07'
 
 repositories {
     mavenCentral()
@@ -14,7 +18,7 @@ dependencies {
     compile 'org.apache.httpcomponents:httpclient:4.3.5'
     testCompile 'javax.servlet:javax.servlet-api:3.1.0'
     testCompile 'org.mockito:mockito-all:1.9.5'
-    testCompile group: 'junit', name: 'junit', version: '4.+'
+    testCompile 'junit:junit:4.12-beta-3'
 }
 
 sourceSets {
@@ -44,5 +48,68 @@ task intTest(type:Test){
 test {
     testLogging {
         events 'started', 'passed'
+    }
+}
+
+task javadocJar(type: Jar) {
+    classifier = 'javadoc'
+    from javadoc
+}
+
+task sourcesJar(type: Jar) {
+    classifier = 'sources'
+    from sourceSets.main.allSource
+}
+
+artifacts {
+    archives javadocJar, sourcesJar
+}
+
+signing {
+    sign configurations.archives
+}
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            beforeDeployment { MavenDeployment deployment -> signing.signPom(deployment) }
+
+            repository(url: "https://oss.sonatype.org/service/local/staging/deploy/maven2/") {
+                authentication(userName: ossrhUsername, password: ossrhPassword)
+            }
+
+            snapshotRepository(url: "https://oss.sonatype.org/content/repositories/snapshots/") {
+                authentication(userName: ossrhUsername, password: ossrhPassword)
+            }
+
+            pom.project {
+                name 'yavijava'
+                packaging 'jar'
+                // optionally artifactId can be defined here
+                description 'Java library for VMware vSphere'
+                url 'https://github.com/michaelrice/yavijava'
+
+                scm {
+                    connection 'scm:git:https://github.com/michaelrice/yavijava.git'
+                    developerConnection 'scm:git:https://github.com/michaelrice/yavijava.git'
+                    url 'https://github.com/michaelrice/yavijava'
+                }
+
+                licenses {
+                    license {
+                        name 'BSD'
+                        url 'http://opensource.org/licenses/BSD-3-Clause'
+                    }
+                }
+
+                developers {
+                    developer {
+                        id 'michaelrice'
+                        name 'Michael Rice'
+                        email 'michael@michaelrice.org'
+                    }
+                }
+            }
+        }
     }
 }
