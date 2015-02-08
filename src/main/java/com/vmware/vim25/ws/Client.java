@@ -1,5 +1,6 @@
 package com.vmware.vim25.ws;
 
+import java.io.InputStream;
 import java.net.URL;
 import java.rmi.RemoteException;
 
@@ -155,4 +156,23 @@ public interface Client {
      */
     public void setSoapActionOnApiVersion(String apiVersion);
 
+    /**
+     * Marshall the JAVA Object into a XML payload to send to the
+     * server
+     *
+     * @param methodName String Name of the method to execute
+     * @param paras Array of Arguments aka params for the method
+     * @return
+     */
+    public String marshall(String methodName, Argument[] paras);
+
+    /**
+     * Convert from an InputStream filled with an XML response
+     * from the server to a given JAVA Object of returnType
+     *
+     * @param returnType
+     * @param is
+     * @return
+     */
+    public Object unMarshall(String returnType, InputStream is) throws Exception;
 }
