@@ -1,7 +1,7 @@
 /*================================================================================
 Copyright (c) 2013 Steve Jin, All Rights Reserved.
 Copyright (c) 2009 VMware, Inc. All Rights Reserved.
-Copyright (c) 2014 Michael Rice, All Rights Reserved.
+Copyright (c) 2014, 2015 Michael Rice, All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -99,7 +99,9 @@ final public class WSClient extends SoapClient {
         }
         catch (Exception e1) {
             log.error("Exception caught while invoking method.", e1);
-            throw new RemoteException("VI SDK invoke exception:" + e1);
+            // Fixes issue-28 still need to write a test which may require
+            // further refacotring but this at least gets the InvalidLogin working.
+            throw (RemoteException) e1;
         }
         finally {
             if (is != null) {

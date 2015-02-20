@@ -1,25 +1,37 @@
 package com.vmware.vim25.ws;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.InputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.rmi.RemoteException;
 
+import com.vmware.vim25.*;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
 import com.utility.LoadVcenterProps;
-import com.vmware.vim25.ManagedObjectReference;
-import com.vmware.vim25.ObjectContent;
-import com.vmware.vim25.ObjectSpec;
-import com.vmware.vim25.PropertyFilterSpec;
-import com.vmware.vim25.PropertySpec;
-import com.vmware.vim25.SelectionSpec;
 import com.vmware.vim25.mo.ServiceInstance;
 import com.vmware.vim25.mo.util.PropertyCollectorUtil;
 
 public class WSClientTest {
     SoapClient wsClient = null;
+
+    @Test(expected = InvalidLogin.class)
+    public void testUnMarshall_Throws_InvalidLogin_When_Login_is_Invalid() throws RemoteException {
+        InputStream inputStream = null;
+        try {
+            inputStream = new FileInputStream(new File("src/test/java/com/vmware/vim25/ws/xml/InvalidLoginFault.xml"));
+        }
+        catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        XmlGenDom xmlGenDom = new XmlGenDom();
+        xmlGenDom.fromXML("Login", inputStream);
+    }
 
     @Before
     public void setUp() throws Exception {
