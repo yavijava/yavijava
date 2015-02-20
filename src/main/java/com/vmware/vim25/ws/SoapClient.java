@@ -187,7 +187,7 @@ public abstract class SoapClient implements Client {
      */
     public String marshall(String methodName, Argument[] paras) {
         String soapMsg = XmlGen.toXML(methodName, paras, vimNameSpace);
-        log.trace("Marshalled Response String xml:" + soapMsg);
+        log.trace("Marshalled Payload String xml: " + soapMsg);
         return soapMsg;
     }
 
@@ -199,15 +199,7 @@ public abstract class SoapClient implements Client {
      * @param is
      * @return Object - Converted Response inputstream
      */
-    public Object unMarshall(String returnType, InputStream is) {
-        Object unMarshalledObj = null;
-        try {
-            unMarshalledObj = xmlGen.fromXML(returnType, is);
-        } catch (Exception e) {
-            log.error(
-                    "Exception Occured while unmarshalling the inputstream to java object of type:"
-                            + returnType, e);
-        }
-        return unMarshalledObj;
+    public Object unMarshall(String returnType, InputStream is) throws Exception {
+        return xmlGen.fromXML(returnType, is);
     }
 }
