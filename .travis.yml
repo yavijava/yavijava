@@ -1,12 +1,12 @@
 language: java
 
-before_install:
-- mkdir -p ~/.gradle
-- touch ~/.gradle/gradle.properties
-- echo "ossrhUsername=foo" >> ~/.gradle/gradle.properties
-- echo "ossrhPassword=bar" >> ~/.gradle/gradle.properties
-
 jdk:
 - oraclejdk7
 - oraclejdk8
 - openjdk7
+
+script:
+- gradle test
+
+install:
+- /bin/true

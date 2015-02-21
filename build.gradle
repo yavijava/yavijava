@@ -79,6 +79,9 @@ signing {
     sign configurations.archives
 }
 
+def ossrhUsername = hasProperty('ossrhUsername') ? ossrhUsername : ''
+def ossrhPassword = hasProperty('ossrhPassword') ? ossrhPassword : ''
+
 uploadArchives {
     repositories {
         mavenDeployer {
