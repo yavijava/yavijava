@@ -37,10 +37,7 @@ import javax.net.ssl.HostnameVerifier;
 import javax.net.ssl.HttpsURLConnection;
 import javax.net.ssl.SSLSession;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.io.OutputStreamWriter;
+import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.ProtocolException;
@@ -54,7 +51,7 @@ import java.rmi.RemoteException;
  * @author Michael Rice (michael@michaelrice.org)
  */
 
-final public class WSClient extends SoapClient {
+public class WSClient extends SoapClient {
 
     private static final Logger log = Logger.getLogger(WSClient.class);
 
@@ -98,7 +95,7 @@ final public class WSClient extends SoapClient {
             return unMarshall(returnType, is);
         }
         catch (Exception e1) {
-            log.error("Exception caught while invoking method.", e1);
+            log.error("Exception caught while invoking method: " + methodName, e1);
             // Fixes issue-28 still need to write a test which may require
             // further refacotring but this at least gets the InvalidLogin working.
             throw (RemoteException) e1;
@@ -126,7 +123,7 @@ final public class WSClient extends SoapClient {
         }
     }
 
-    private InputStream post(String soapMsg) throws IOException {
+    protected InputStream post(String soapMsg) throws IOException {
         HttpURLConnection postCon = (HttpURLConnection) baseUrl.openConnection();
 
         log.trace("POST: " + soapAction);
@@ -156,7 +153,7 @@ final public class WSClient extends SoapClient {
         }
 
         OutputStream os = postCon.getOutputStream();
-        OutputStreamWriter out = new OutputStreamWriter(os, "UTF8");
+        OutputStreamWriter out = createOutputStreamWriter(os);
 
         out.write(soapMsg);
         out.close();
@@ -177,6 +174,10 @@ final public class WSClient extends SoapClient {
             log.trace("Cookie was null. Fetching Set-Cookie header to get new Cookie.");
         }
         return is;
+    }
+
+    protected OutputStreamWriter createOutputStreamWriter(OutputStream os) throws UnsupportedEncodingException {
+        return new OutputStreamWriter(os, "UTF8");
     }
 
 }

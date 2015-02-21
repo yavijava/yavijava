@@ -6,7 +6,7 @@ apply plugin: 'signing'
 
 group = "com.toastcoders"
 archivesBaseName = "yavijava"
-version = '5.5.07'
+version = '5.5.08-DEVELOPMENT'
 
 repositories {
     mavenCentral()
@@ -17,15 +17,42 @@ dependencies {
     compile 'log4j:log4j:1.2.17'
     compile 'org.apache.httpcomponents:httpclient:4.3.5'
     testCompile 'javax.servlet:javax.servlet-api:3.1.0'
-    testCompile 'org.mockito:mockito-all:1.9.5'
     testCompile 'junit:junit:4.12-beta-3'
+    testCompile 'org.spockframework:spock-core:0.7-groovy-2.0'
+    testCompile 'cglib:cglib-nodep:3.1'
 }
 
 sourceSets {
+
     main {
         java {
         }
     }
+
+    intTest {
+        java {
+            compileClasspath += main.output + test.output
+            runtimeClasspath += main.output + test.output
+        }
+    }
+
+    test {
+        java {
+        }
+        groovy {
+        }
+    }
+}
+
+configurations {
+    intTestCompile.extendsFrom testCompile
+    intTestRuntime.extendsFrom testRuntime
+}
+
+task intTest(type:Test){
+    description = "Run integration tests (located in src/intTest/...)."
+    testClassesDir = project.sourceSets.intTest.output.classesDir
+    classpath = project.sourceSets.intTest.runtimeClasspath
 }
 
 test {
@@ -51,6 +78,9 @@ artifacts {
 signing {
     sign configurations.archives
 }
+
+def ossrhUsername = hasProperty('ossrhUsername') ? ossrhUsername : ''
+def ossrhPassword = hasProperty('ossrhPassword') ? ossrhPassword : ''
 
 uploadArchives {
     repositories {

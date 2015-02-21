@@ -1,0 +1,12 @@
+language: java
+
+jdk:
+- oraclejdk7
+- oraclejdk8
+- openjdk7
+
+script:
+- gradle test
+
+install:
+- /bin/true

@@ -15,7 +15,7 @@ public class LoadVcenterProps {
 
         try {
 
-            input = new FileInputStream("src/test/java/VcenterInfo.properties");
+            input = new FileInputStream("src/intTest/java/VcenterInfo.properties");
 
             // load a properties file
             prop.load(input);
