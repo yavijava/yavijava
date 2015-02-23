@@ -38,7 +38,7 @@ import com.vmware.vim25.ws.SoapClient;
  * The class representing the connection to a server either VC server or ESX.
  * @author Steve JIN (http://www.doublecloud.org)
  */
-final public class ServerConnection
+public class ServerConnection
 {
 	private URL url = null;
 	private UserSession userSession = null;
