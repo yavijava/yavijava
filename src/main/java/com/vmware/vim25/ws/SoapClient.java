@@ -50,6 +50,7 @@ public abstract class SoapClient implements Client {
       ===============================================
     */
     public void setSoapActionOnApiVersion(String apiVersion) {
+        log.trace("API Version detected: " + apiVersion);
         if ("4.0".equals(apiVersion)) {
             soapAction = SoapAction.SOAP_ACTION_V40.toString();
         }
@@ -65,8 +66,11 @@ public abstract class SoapClient implements Client {
         else if ("5.5".equals(apiVersion)) {
             soapAction = SoapAction.SOAP_ACTION_V55.toString();
         }
+        else if ("6.0".equals(apiVersion)) {
+            soapAction = SoapAction.SOAP_ACTION_V60.toString();
+        }
         else { //always defaults to latest version
-            soapAction = SoapAction.SOAP_ACTION_V55.toString();
+            soapAction = SoapAction.SOAP_ACTION_V60.toString();
         }
         log.trace("Set soapAction to: " + soapAction);
     }
