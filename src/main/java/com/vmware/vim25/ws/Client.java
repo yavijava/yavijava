@@ -1,5 +1,6 @@
 package com.vmware.vim25.ws;
 
+import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
 import java.rmi.RemoteException;
@@ -175,4 +176,14 @@ public interface Client {
      * @return
      */
     public Object unMarshall(String returnType, InputStream is) throws Exception;
+
+    /**
+     * Read an InputStream filled with an XML response
+     * from the server.
+     *
+     * @param stream
+     * @return
+     * @throws IOException
+     */
+    public StringBuffer readStream(InputStream stream) throws IOException;
 }
