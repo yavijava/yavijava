@@ -7,7 +7,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.URL;
-import java.rmi.RemoteException;
 
 /**
  * Created by Michael Rice on 8/10/14.

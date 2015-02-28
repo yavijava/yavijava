@@ -43,7 +43,7 @@ import java.util.Calendar;
 
 public class VimStub {
 
-    private SoapClient wsc = null;
+    private Client wsc = null;
     /**
      * Setup logger
      */
@@ -51,7 +51,7 @@ public class VimStub {
 
     public VimStub(String url, boolean ignoreCert) throws java.net.MalformedURLException {
         try {
-            this.wsc = (SoapClient) ClientCreator.getClient(url, ignoreCert);
+            this.wsc = (Client) ClientCreator.getClient(url, ignoreCert);
         }
         catch (NoSuchMethodException e) {
             log.error("Error detected for url: " + url + " ignoreSSL: " + ignoreCert, e);
@@ -67,11 +67,11 @@ public class VimStub {
         }
     }
 
-    public VimStub(SoapClient wsc) {
+    public VimStub(Client wsc) {
         this.wsc = wsc;
     }
 
-    public SoapClient getWsc() {
+    public Client getWsc() {
         return wsc;
     }
 
