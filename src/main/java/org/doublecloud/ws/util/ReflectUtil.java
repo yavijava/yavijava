@@ -39,6 +39,13 @@ import java.util.List;
 import javax.xml.bind.DatatypeConverter;
 
 public class ReflectUtil {
+
+    /**
+     * Given any class return an Array of Fields in the class
+     *
+     * @param c Class
+     * @return Field[]
+     */
     public static Field[] getAllFields(Class<?> c) {
         List<Field> listOfFields = new ArrayList<Field>();
         getAllFields(c, listOfFields);

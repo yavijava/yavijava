@@ -17,20 +17,44 @@ import spock.lang.Specification
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-class MorUtilTestSpec extends Specification {
-    def "CreateMORs"() {
+class PropertyCollectorUtilTestSpec extends Specification {
+    def "RetrieveProperties"() {
 
     }
 
-    def "CreateExactManagedObject"() {
+    def "ConvertProperty"() {
 
     }
 
-    def "CreateExactManagedEntity"() {
+    def "CreatObjectSpec"() {
 
     }
 
-    def "CreateManagedEntities"() {
+    def "CreatePropertySpec"() {
+
+    }
+
+    def "CreateSelectionSpec"() {
+
+    }
+
+    def "CreateTraversalSpec"() {
+
+    }
+
+    def "CreateTraversalSpec1"() {
+
+    }
+
+    def "BuildPropertySpecArray"() {
+
+    }
+
+    def "BuildFullTraversal"() {
+
+    }
+
+    def "BuildFullTraversalV4"() {
 
     }
 }

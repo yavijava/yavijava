@@ -17,20 +17,8 @@ import spock.lang.Specification
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-class MorUtilTestSpec extends Specification {
-    def "CreateMORs"() {
-
-    }
-
-    def "CreateExactManagedObject"() {
-
-    }
-
-    def "CreateExactManagedEntity"() {
-
-    }
-
-    def "CreateManagedEntities"() {
+class VerUtilTestSpec extends Specification {
+    def "GetTargetNameSpace"() {
 
     }
 }
