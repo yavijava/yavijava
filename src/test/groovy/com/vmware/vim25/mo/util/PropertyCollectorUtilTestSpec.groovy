@@ -1,6 +1,12 @@
 package com.vmware.vim25.mo.util
 
+import com.vmware.vim25.ArrayOfManagedObjectReference
+import com.vmware.vim25.ManagedObjectReference
+import com.vmware.vim25.ObjectSpec
+import com.vmware.vim25.SelectionSpec
+import org.apache.log4j.Logger
 import spock.lang.Specification
+
 
 /**
  *  Copyright 2015 Michael Rice <michael@michaelrice.org>
@@ -18,43 +24,89 @@ import spock.lang.Specification
  *  limitations under the License.
  */
 class PropertyCollectorUtilTestSpec extends Specification {
-    def "RetrieveProperties"() {
 
+    PropertyCollectorUtil propertyCollectorUtil
+
+    def setup() {
+        propertyCollectorUtil = new PropertyCollectorUtil()
     }
 
-    def "ConvertProperty"() {
+    def "ConvertProperty when passed a string returns that string"() {
+        setup:
+        String foo = "foo"
 
+        when:
+        Object thing = propertyCollectorUtil.convertProperty(foo)
+        then:
+        thing == "foo"
     }
 
-    def "CreatObjectSpec"() {
-
+    def "ConvertProperty when passed a null throws IllegalArgumentException"() {
+        when:
+        propertyCollectorUtil.convertProperty(null)
+        then:
+        thrown(IllegalArgumentException)
     }
 
-    def "CreatePropertySpec"() {
+    def "ConvertProperty when passed an ArrayOfManagedObjectRefrence returns ManagedObjectRefrence[]"() {
+        setup:
+        ManagedObjectReference mor1 = new ManagedObjectReference()
+        mor1.setType("VirtualMachine")
+        mor1.setVal("vm-12345")
+        ManagedObjectReference mor2 = new ManagedObjectReference()
+        mor2.setType("VirtualMachine")
+        mor2.setVal("vm-12346")
 
+        ArrayOfManagedObjectReference arrayOfManagedObjectReference = new ArrayOfManagedObjectReference()
+        arrayOfManagedObjectReference.managedObjectReference = [mor1, mor2]
+        when:
+        Object foo = propertyCollectorUtil.convertProperty(arrayOfManagedObjectReference)
+        then:
+        foo instanceof ManagedObjectReference[]
     }
 
-    def "CreateSelectionSpec"() {
+    def "ConvertProperty when passed a string[] returns that string[]"() {
+        setup:
+        String[] foo = ["string1", "string2"] as String[]
 
+        when:
+        Object thing = propertyCollectorUtil.convertProperty(foo)
+        then:
+        thing == foo
+        thing instanceof String[]
     }
 
-    def "CreateTraversalSpec"() {
+    class ArrayOfBad {}
 
+    def "ConvertProperty when passed an ArrayOfBad returns null and logger is called"() {
+        setup:
+        def log = Mock(Logger)
+        ArrayOfBad bad = new ArrayOfBad()
+        propertyCollectorUtil.log = log
+        when:
+        Object thing = propertyCollectorUtil.convertProperty(bad)
+        then:
+        thing == null
+        1 * log.error("Exception caught trying to convertProperty",*_)
     }
 
-    def "CreateTraversalSpec1"() {
+    def "CreatObjectSpec returns valid objectspec"() {
+        setup:
+        ManagedObjectReference mor1 = new ManagedObjectReference()
+        mor1.type = "VirtualMachine"
+        mor1.val = "vm-12345"
+        SelectionSpec[] sets = new SelectionSpec[2]
+        SelectionSpec spec1 = new SelectionSpec()
+        spec1.name = "name"
+        SelectionSpec spec2 = new SelectionSpec()
+        spec2.name = "memory"
+        sets[0] = spec1
+        sets[1] = spec2
 
-    }
+        when:
+        ObjectSpec objectSpec = propertyCollectorUtil.creatObjectSpec(mor1, true, sets)
 
-    def "BuildPropertySpecArray"() {
-
-    }
-
-    def "BuildFullTraversal"() {
-
-    }
-
-    def "BuildFullTraversalV4"() {
-
+        then:
+        objectSpec.getObj() == mor1
     }
 }

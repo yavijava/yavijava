@@ -137,9 +137,19 @@ public class PropertyCollectorUtil {
         return -1;
     }
 
+    /**
+     * Method to convert an object to its type
+     * For example when ArrayOfManagedObject is passed in
+     * return a ManagedObject[]
+     *
+     * @param dynaPropVal
+     * @return
+     */
     public static Object convertProperty(Object dynaPropVal) {
         Object propertyValue = null;
-
+        if (dynaPropVal == null) {
+            throw new IllegalArgumentException("Unable to convertProperty on null object.");
+        }
         Class<?> propClass = dynaPropVal.getClass();
         String propName = propClass.getName();
         //Check the dynamic propery for ArrayOfXXX object
