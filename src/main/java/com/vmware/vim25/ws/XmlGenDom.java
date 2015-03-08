@@ -51,7 +51,7 @@ import java.util.List;
  * @author Steve Jin (http://www.doublecloud.org)
  */
 
-final class XmlGenDom extends XmlGen {
+class XmlGenDom extends XmlGen {
     private final static int getNumberOfSameTags(List<Element> subNodes, int sizeOfSubNodes, int from, String tagName) {
         int numOfTags = 1;
         for (int j = from + 1; j < sizeOfSubNodes; j++) {

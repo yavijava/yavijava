@@ -1,5 +1,9 @@
 package com.vmware.vim25.mo.util
 
+import com.vmware.vim25.ManagedObjectReference
+import com.vmware.vim25.mo.ManagedObject
+import com.vmware.vim25.mo.ServerConnection
+import com.vmware.vim25.mo.VirtualMachine
 import spock.lang.Specification
 
 /**
@@ -18,19 +22,36 @@ import spock.lang.Specification
  *  limitations under the License.
  */
 class MorUtilTestSpec extends Specification {
-    def "CreateMORs"() {
 
+    def "test MorUtil createMORs returns properly formatted MOR[]"() {
+        setup:
+        ServerConnection sc = Mock(ServerConnection)
+        ManagedObjectReference mor1 = new ManagedObjectReference()
+        mor1.type = "VirtualMachine"
+        mor1.val = "vm-12345"
+        ManagedObject mo1 = new VirtualMachine(sc, mor1)
+        ManagedObject[] mos = new ManagedObject[1]
+        mos[0] = mo1
+
+        when:
+        ManagedObjectReference[] mors = MorUtil.createMORs(mos)
+
+        then:
+        mors[0].val == mo1.getMOR().val
     }
 
-    def "CreateExactManagedObject"() {
+    def "test CreateExactManagedObject returns a VirtualMachine when passed a Mor of a vm"() {
+        setup:
+        ManagedObjectReference mor1 = new ManagedObjectReference()
+        mor1.type = "VirtualMachine"
+        mor1.val = "vm-12345"
+        ServerConnection sc = Mock(ServerConnection)
 
+        when:
+        ManagedObject vm1 = MorUtil.createExactManagedObject(sc, mor1)
+
+        then:
+        vm1 instanceof VirtualMachine
     }
 
-    def "CreateExactManagedEntity"() {
-
-    }
-
-    def "CreateManagedEntities"() {
-
-    }
 }
