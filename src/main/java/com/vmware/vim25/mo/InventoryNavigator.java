@@ -5,10 +5,13 @@ import java.rmi.RemoteException;
 import com.vmware.vim25.*;
 import com.vmware.vim25.mo.util.*;
 import com.vmware.vim25.mo.util.PropertyCollectorUtil;
+import org.apache.log4j.Logger;
 
 public class InventoryNavigator {
     private ManagedEntity rootEntity = null;
     private SelectionSpec[] selectionSpecs = null;
+
+    private static Logger log = Logger.getLogger(InventoryNavigator.class);
 
     public InventoryNavigator(ManagedEntity rootEntity) {
         this.rootEntity = rootEntity;
@@ -68,10 +71,20 @@ public class InventoryNavigator {
             //  "4.0"       vSphere 4.0 (and u1)
             //  "4.1"       vSphere 4.1
             //  "5.0"       vSphere 5.0
-            if (ai.apiVersion.startsWith("4") || ai.apiVersion.startsWith("5")) {
+            String[] versionArray = ai.apiVersion.split("\\.");
+            int majorVersion;
+            try {
+                majorVersion = Integer.parseInt(versionArray[0]);
+            }
+            catch (NumberFormatException ignore) {
+                majorVersion = 0;
+            }
+            if (majorVersion >= 4) {
+                log.debug("API version >= 4 detected. Using buildFullTraversalV4.");
                 selectionSpecs = PropertyCollectorUtil.buildFullTraversalV4();
             }
             else {
+                log.debug("API version < 4 detected. Using buildFullTraversal");
                 selectionSpecs = PropertyCollectorUtil.buildFullTraversal();
             }
         }
