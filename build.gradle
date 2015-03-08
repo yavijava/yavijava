@@ -6,7 +6,7 @@ apply plugin: 'signing'
 
 group = "com.toastcoders"
 archivesBaseName = "yavijava"
-version = '5.5.09'
+version = '5.5.10-DEVELOPMENT'
 targetCompatibility = 1.6
 sourceCompatibility = 1.6
 
