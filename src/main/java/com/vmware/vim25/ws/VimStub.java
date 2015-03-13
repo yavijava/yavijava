@@ -30,6 +30,7 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25.ws;
 
 import com.vmware.vim25.*;
+import com.vmware.vim25.mo.ManagedObject;
 import org.apache.log4j.Logger;
 
 import java.lang.reflect.InvocationTargetException;
@@ -4704,5 +4705,32 @@ public class VimStub {
         params[0] = new Argument("_this", "ManagedObjectReference", _this);
         params[1] = new Argument("host", "ManagedObjectReference[]", hosts);
         return (ManagedObjectReference) wsc.invoke("CertMgrRevokeCertificates_Task", params, "ManagedObjectReference");
+    }
+
+    public ManagedObjectReference checkAddHostEvc_Task(ManagedObjectReference _this, HostConnectSpec hostConnectSpec) throws GatewayConnectFault, HostConnectFault, InvalidLogin, RuntimeFault, RemoteException {
+        Argument[] params = new Argument[2];
+        params[0] = new Argument("_this", "ManagedObjectReference", _this);
+        params[1] = new Argument("cnxSpec", "HostConnectSpec", hostConnectSpec);
+        return (ManagedObjectReference) wsc.invoke("CheckAddHostEvc_Task", params, "ManagedObjectReference");
+    }
+
+    public ManagedObjectReference checkConfigureEvcMode_Task(ManagedObjectReference _this, String evcModeKey) throws RuntimeFault, RemoteException {
+        Argument[] params = new Argument[2];
+        params[0] = new Argument("_this", "ManagedObjectReference", _this);
+        params[1] = new Argument("evcModeKey", "String", evcModeKey);
+        return (ManagedObjectReference) wsc.invoke("CheckConfigureEvcMode_Task", params, "ManagedObjectReference");
+    }
+
+    public ManagedObjectReference configureEvcMode_Task(ManagedObjectReference _this, String evcModeKey) throws RuntimeFault, RemoteException, EVCConfigFault {
+        Argument[] params = new Argument[2];
+        params[0] = new Argument("_this", "ManagedObjectReference", _this);
+        params[1] = new Argument("evcModeKey", "String", evcModeKey);
+        return (ManagedObjectReference) wsc.invoke("ConfigureEvcMode_Task", params, "ManagedObjectReference");
+    }
+
+    public ManagedObjectReference disableEvcMode_Taks(ManagedObjectReference _this) throws RemoteException, RuntimeFault {
+        Argument[] params = new Argument[1];
+        params[0] = new Argument("_this", "ManagedObjectReference", _this);
+        return (ManagedObjectReference) wsc.invoke("DisableEvcMode_Task", params, "ManagedObjectReference");
     }
 }
