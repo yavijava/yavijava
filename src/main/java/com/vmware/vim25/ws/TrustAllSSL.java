@@ -10,7 +10,7 @@ import java.security.cert.CertificateException;
 import java.security.cert.X509Certificate;
 
 /**
- * Copyright 2014 Michael Rice
+ * Copyright 2014-2015 Michael Rice
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -25,7 +25,13 @@ import java.security.cert.X509Certificate;
  */
 public class TrustAllSSL {
 
+    private static boolean alreadyCreated = false;
+
     public static void trustAllHttpsCertificates() throws NoSuchAlgorithmException, KeyManagementException {
+        if (getAlreadyCreated()) {
+            return;
+        }
+        setAlreadyCreated();
         TrustManager[] trustAllCerts = new TrustManager[1];
         trustAllCerts[0] = new TrustAllManager();
         SSLContext sc = SSLContext.getInstance("SSL");
@@ -48,5 +54,13 @@ public class TrustAllSSL {
                                        String authType)
             throws CertificateException {
         }
+    }
+
+    private static boolean getAlreadyCreated() {
+        return alreadyCreated;
+    }
+
+    private static void setAlreadyCreated() {
+        alreadyCreated = true;
     }
 }
