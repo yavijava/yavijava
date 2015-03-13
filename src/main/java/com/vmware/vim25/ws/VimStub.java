@@ -4685,4 +4685,24 @@ public class VimStub {
         return (String[]) wsc.invoke("ReadEnvironmentVariableInGuest", paras, "String[]");
     }
 
+    public ManagedObjectReference certMgrRefreshCACertificatesAndCRLs_Task(ManagedObjectReference _this, ManagedObjectReference host) throws RuntimeFault, SystemError, RemoteException {
+        Argument[] params = new Argument[2];
+        params[0] = new Argument("_this", "ManagedObjectReference", _this);
+        params[1] = new Argument("host", "ManagedObjectReference", host);
+        return (ManagedObjectReference) wsc.invoke("CertMgrRefreshCACertificatesAndCRLs_Task", params, "ManagedObjectReference");
+    }
+
+    public ManagedObjectReference certMgrRefreshCertificates_Task(ManagedObjectReference _this, ManagedObjectReference[] hosts) throws RuntimeFault, SystemError, RemoteException {
+        Argument[] params = new Argument[2];
+        params[0] = new Argument("_this", "ManagedObjectReference", _this);
+        params[1] = new Argument("host", "ManagedObjectReference[]", hosts);
+        return (ManagedObjectReference) wsc.invoke("CertMgrRefreshCertificates_Task", params, "ManagedObjectReference");
+    }
+
+    public ManagedObjectReference certMgrRevokeCertificates_Task(ManagedObjectReference _this, ManagedObjectReference[] hosts) throws RuntimeFault, SystemError, RemoteException {
+        Argument[] params = new Argument[2];
+        params[0] = new Argument("_this", "ManagedObjectReference", _this);
+        params[1] = new Argument("host", "ManagedObjectReference[]", hosts);
+        return (ManagedObjectReference) wsc.invoke("CertMgrRevokeCertificates_Task", params, "ManagedObjectReference");
+    }
 }
