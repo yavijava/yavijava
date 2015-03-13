@@ -1,5 +1,9 @@
 package com.vmware.vim25.mo;
 
+import com.vmware.vim25.*;
+
+import java.rmi.RemoteException;
+
 /**
  * Copyright 2015 Michael Rice <michael@michaelrice.org>
  * <p/>
@@ -15,5 +19,91 @@ package com.vmware.vim25.mo;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-public class ClusterEVCManager extends ManagedObject {
+
+/**
+ * @since 6.0
+ */
+public class ClusterEVCManager extends ExtensibleManagedObject {
+
+    /**
+     * EVC-related state of the managed cluster.
+     */
+    public ClusterEVCManagerEVCState evcState;
+
+    /**
+     * Cluster associated with this manager object.
+     */
+    public ClusterComputeResource managedCluster;
+
+    /**
+     * Class Constructor
+     *
+     * @param serverConnection ServerConnection
+     * @see com.vmware.vim25.mo.ServerConnection
+     * @param mor ManagedObjectReference
+     * @see com.vmware.vim25.ManagedObjectReference
+     */
+    public ClusterEVCManager(ServerConnection serverConnection, ManagedObjectReference mor) {
+        super(serverConnection, mor);
+    }
+
+    /**
+     * Test the validity of adding a host into the managed cluster.
+     * Note that this method only tests EVC admission control; host-add may fail for other reasons.
+     *
+     * @param hostConnectSpec The spec that will be used to add the host.
+     * @see com.vmware.vim25.HostConnectSpec
+     * @return Task with which to monitor the operation.
+     * @throws GatewayConnectFault Thrown if the host is managed via gateway and attempts to connect to the host have failed. A more specific subclass may be thrown.
+     * @throws HostConnectFault Thrown if an error occurred when attempting to connect to the host. Typically, a more specific subclass is thrown.
+     * @throws InvalidLogin Thrown if authentication with the host fails.
+     * @throws RuntimeFault Thrown if any type of runtime fault is thrown that is not covered by the other faults; for example, a communication error.
+     * @throws RemoteException
+     */
+    public Task checkAddHostEvc_Task(HostConnectSpec hostConnectSpec) throws GatewayConnectFault, HostConnectFault, InvalidLogin, RuntimeFault, RemoteException {
+        ManagedObjectReference task = getVimService().checkAddHostEvc_Task(getMOR(), hostConnectSpec);
+        return new Task(getServerConnection(), task);
+    }
+
+    /**
+     * Test the validity of configuring an EVC mode on the managed cluster.
+     *
+     * @param evcModeKey A key referencing the desired EVC mode.
+     * @return Task with which to monitor the operation.
+     * @throws RuntimeFault Thrown if any type of runtime fault is thrown that is not covered by the other faults; for example, a communication error.
+     * @throws RemoteException
+     */
+    public Task checkConfigureEvcMode_Task(String evcModeKey) throws RuntimeFault, RemoteException {
+        ManagedObjectReference task = getVimService().checkConfigureEvcMode_Task(getMOR(), evcModeKey);
+        return new Task(getServerConnection(), task);
+    }
+
+    /**
+     * Set the EVC mode. If EVC is currently disabled, then this will enable EVC.
+     * The parameter must specify a key to one of the EVC modes listed in the supportedEVCMode
+     * array property. If there are no modes listed there, then EVC may not currently be enabled;
+     * reference the other properties in EVCState to determine what conditions are blocking EVC.
+     *
+     * @param evcModeKey A key referencing the desired EVC mode.
+     * @return Task with which to monitor the operation
+     * @throws RuntimeFault
+     * @throws RemoteException
+     */
+    public Task configureEvcMode_Task(String evcModeKey) throws RuntimeFault, RemoteException, EVCConfigFault {
+        ManagedObjectReference task = getVimService().configureEvcMode_Task(getMOR(), evcModeKey);
+        return new Task(getServerConnection(), task);
+    }
+
+    /**
+     * Disable EVC. EVC may be disabled at any time.
+     *
+     * @return Task with which to monitor the operation.
+     *
+     * @throws RuntimeFault Thrown if any type of runtime fault is thrown that is not covered by the other faults; for example, a communication error.
+     * @throws RemoteException
+     */
+    public Task disableEvcMode_Task() throws RuntimeFault, RemoteException {
+        ManagedObjectReference task = getVimService().disableEvcMode_Taks(getMOR());
+        return new Task(getServerConnection(), task);
+    }
 }
