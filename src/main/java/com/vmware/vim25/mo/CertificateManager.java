@@ -37,15 +37,15 @@ public class CertificateManager extends ManagedObject {
      * Revocation Lists (CRL) from the appropriate authoritative
      * source and pushes them to the hosts
      *
-     * @param hostSystem a com.vmware.vim25.mo.HostSystem
+     * @param hostSystems an Array of HostSystem objects
      * @return   Task from vSphere
      * @see com.vmware.vim25.mo.Task
      * @throws RuntimeFault  Thrown if any type of runtime fault is thrown that is not covered by the other faults; for example, a communication error.
      * @throws SystemError   Thrown if any of the needed actions fails.
      * @throws RemoteException
      */
-    public Task certMgrRefreshCACertificatesAndCRLs_Task(HostSystem hostSystem) throws RuntimeFault, SystemError, RemoteException {
-        ManagedObjectReference taskMor = getVimService().certMgrRefreshCACertificatesAndCRLs_Task(getMOR(), hostSystem.getMOR());
+    public Task certMgrRefreshCACertificatesAndCRLs_Task(HostSystem[] hostSystems) throws RuntimeFault, SystemError, RemoteException {
+        ManagedObjectReference taskMor = getVimService().certMgrRefreshCACertificatesAndCRLs_Task(getMOR(), MorUtil.createMORs(hostSystems));
         return new Task(getServerConnection(), taskMor);
     }
 
