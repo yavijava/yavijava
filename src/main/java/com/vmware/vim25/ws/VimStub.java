@@ -4728,7 +4728,7 @@ public class VimStub {
         return (ManagedObjectReference) wsc.invoke("ConfigureEvcMode_Task", params, "ManagedObjectReference");
     }
 
-    public ManagedObjectReference disableEvcMode_Taks(ManagedObjectReference _this) throws RemoteException, RuntimeFault {
+    public ManagedObjectReference disableEvcMode_Task(ManagedObjectReference _this) throws RemoteException, RuntimeFault {
         Argument[] params = new Argument[1];
         params[0] = new Argument("_this", "ManagedObjectReference", _this);
         return (ManagedObjectReference) wsc.invoke("DisableEvcMode_Task", params, "ManagedObjectReference");

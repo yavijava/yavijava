@@ -103,7 +103,7 @@ public class ClusterEVCManager extends ExtensibleManagedObject {
      * @throws RemoteException
      */
     public Task disableEvcMode_Task() throws RuntimeFault, RemoteException {
-        ManagedObjectReference task = getVimService().disableEvcMode_Taks(getMOR());
+        ManagedObjectReference task = getVimService().disableEvcMode_Task(getMOR());
         return new Task(getServerConnection(), task);
     }
 }
