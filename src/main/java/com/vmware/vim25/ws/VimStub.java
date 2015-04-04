@@ -31,6 +31,7 @@ package com.vmware.vim25.ws;
 
 import com.vmware.vim25.*;
 import com.vmware.vim25.mo.ManagedObject;
+import com.vmware.vim25.mo.VirtualMachine;
 import org.apache.log4j.Logger;
 
 import java.lang.reflect.InvocationTargetException;
@@ -4732,5 +4733,66 @@ public class VimStub {
         Argument[] params = new Argument[1];
         params[0] = new Argument("_this", "ManagedObjectReference", _this);
         return (ManagedObjectReference) wsc.invoke("DisableEvcMode_Task", params, "ManagedObjectReference");
+    }
+
+    public void addGuestAlias(ManagedObjectReference _this, ManagedObjectReference vm, GuestAuthentication guestAuthentication,
+                              String userName, boolean mapCert, String base64Cert, GuestAuthAliasInfo guestAuthAliasInfo)
+        throws GuestComponentsOutOfDate, GuestMultipleMappings, GuestOperationsFault, GuestOperationsUnavailable,
+        GuestPermissionDenied, InvalidArgument, InvalidGuestLogin, InvalidPowerState, InvalidState, OperationDisabledByGuest,
+        OperationNotSupportedByGuest, RuntimeFault, TaskInProgress, RemoteException {
+        Argument[] params = new Argument[7];
+        params[0] = new Argument("_this", "ManagedObjectReference", _this);
+        params[1] = new Argument("vm", "ManagedObjectReference", vm);
+        params[2] = new Argument("auth","GuestAuthentication", guestAuthentication);
+        params[3] = new Argument("username","String",userName);
+        params[4] = new Argument("mapCert","boolean",mapCert);
+        params[5] = new Argument("base64Cert","String",base64Cert);
+        params[6] = new Argument("aliasInfo","GuestAuthAliasInfo",guestAuthAliasInfo);
+        wsc.invoke("AddGuestAlias", params, null);
+    }
+
+    public GuestAliases[] listGuestAliases(ManagedObjectReference _this, ManagedObjectReference vm, GuestAuthentication auth, String userName) throws RemoteException {
+        Argument[] params = new Argument[4];
+        params[0] = new Argument("_this", "ManagedObjectReference", _this);
+        params[1] = new Argument("vm", "ManagedObjectReference", vm);
+        params[2] = new Argument("auth", "GuestAuthentication", auth);
+        params[3] = new Argument("username", "String", userName);
+        return (GuestAliases[]) wsc.invoke("ListGuestAliases", params, "GuestAliases[]");
+    }
+
+
+    public GuestMappedAliases[] listGuestMappedAliases(ManagedObjectReference _this, ManagedObjectReference vm, GuestAuthentication auth) throws GuestComponentsOutOfDate, GuestOperationsFault, GuestOperationsUnavailable,
+        GuestPermissionDenied, InvalidGuestLogin, InvalidPowerState, InvalidState, OperationDisabledByGuest, OperationNotSupportedByGuest,
+        RuntimeFault, TaskInProgress, RemoteException {
+        Argument[] params = new Argument[3];
+        params[0] = new Argument("_this", "ManagedObjectReference", _this);
+        params[1] = new Argument("vm", "ManagedObjectReference", vm);
+        params[2] = new Argument("auth", "GuestAuthentication", auth);
+        return (GuestMappedAliases[]) wsc.invoke("ListGuestMappedAliases", params, "GuestMappedAliases[]");
+    }
+
+    public void removeGuestAlias(ManagedObjectReference _this, ManagedObjectReference vm, GuestAuthentication auth, String userName, String base64Cert, GuestAuthSubject subject) throws GuestComponentsOutOfDate, GuestOperationsFault,
+        GuestOperationsUnavailable, GuestPermissionDenied, InvalidArgument, InvalidGuestLogin, InvalidPowerState, InvalidState, OperationDisabledByGuest, OperationNotSupportedByGuest,
+        RuntimeFault, TaskInProgress, RemoteException {
+        Argument[] params = new Argument[6];
+        params[0] = new Argument("_this", "ManagedObjectReference", _this);
+        params[1] = new Argument("vm", "ManagedObjectReference", vm);
+        params[2] = new Argument("auth", "GuestAuthentication", auth);
+        params[3] = new Argument("username", "String", userName);
+        params[4] = new Argument("base64Cert", "String", base64Cert);
+        params[5] = new Argument("subject", "GuestAuthSubject", subject);
+        wsc.invoke("RemoveGuestAlias", params, null);
+    }
+
+    public void removeGuestAliasByCert(ManagedObjectReference _this, ManagedObjectReference vm, GuestAuthentication auth, String userName, String base64Cert) throws GuestComponentsOutOfDate, GuestOperationsFault,
+        GuestOperationsUnavailable, GuestPermissionDenied, InvalidArgument, InvalidGuestLogin, InvalidPowerState, InvalidState, OperationDisabledByGuest, OperationNotSupportedByGuest,
+        RuntimeFault, TaskInProgress, RemoteException {
+        Argument[] params = new Argument[5];
+        params[0] = new Argument("_this", "ManagedObjectReference", _this);
+        params[1] = new Argument("vm", "ManagedObjectReference", vm);
+        params[2] = new Argument("auth", "GuestAuthentication", auth);
+        params[3] = new Argument("username", "String", userName);
+        params[4] = new Argument("base64Cert", "String", base64Cert);
+        wsc.invoke("RemoveGuestAliasByCert", params, null);
     }
 }
