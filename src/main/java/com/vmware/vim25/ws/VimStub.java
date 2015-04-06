@@ -31,7 +31,6 @@ package com.vmware.vim25.ws;
 
 import com.vmware.vim25.*;
 import com.vmware.vim25.mo.ManagedObject;
-import com.vmware.vim25.mo.VirtualMachine;
 import org.apache.log4j.Logger;
 
 import java.lang.reflect.InvocationTargetException;
@@ -4794,5 +4793,76 @@ public class VimStub {
         params[3] = new Argument("username", "String", userName);
         params[4] = new Argument("base64Cert", "String", base64Cert);
         wsc.invoke("RemoveGuestAliasByCert", params, null);
+    }
+
+    public void createRegistryKeyInGuest(ManagedObjectReference _this, ManagedObjectReference vm, GuestAuthentication auth, GuestRegKeyNameSpec keyName, boolean isVolatile, String classType) throws GuestComponentsOutOfDate, GuestOperationsFault, GuestOperationsUnavailable,
+        GuestPermissionDenied, GuestRegistryKeyAlreadyExists, GuestRegistryKeyInvalid, GuestRegistryKeyParentVolatile, InvalidGuestLogin, InvalidPowerState, InvalidState, OperationDisabledByGuest, OperationNotSupportedByGuest, RuntimeFault, TaskInProgress, RemoteException {
+        Argument[] params = new Argument[6];
+        params[0] = new Argument("_this", "ManagedObjectReference", _this);
+        params[1] = new Argument("vm", "ManagedObjectReference", vm);
+        params[2] = new Argument("auth", "GuestAuthentication", auth);
+        params[3] = new Argument("keyName", "GuestRegKeyNameSpec", keyName);
+        params[4] = new Argument("isVolatile", "boolean", isVolatile);
+        params[5] = new Argument("classType", "String", classType);
+        wsc.invoke("CreateRegistryKeyInGuest", params, null);
+    }
+
+    public void deleteRegistryKeyInGuest(ManagedObjectReference _this, ManagedObjectReference vm, GuestAuthentication auth, GuestRegKeyNameSpec keyName, boolean recursive) throws GuestComponentsOutOfDate, GuestOperationsFault,
+        GuestOperationsUnavailable, GuestPermissionDenied, GuestRegistryKeyHasSubkeys, GuestRegistryKeyInvalid, InvalidGuestLogin, InvalidPowerState, InvalidState, OperationDisabledByGuest,
+        OperationNotSupportedByGuest, RuntimeFault, TaskInProgress, RemoteException {
+        Argument[] params = new Argument[5];
+        params[0] = new Argument("_this", "ManagedObjectReference", _this);
+        params[1] = new Argument("vm", "ManagedObjectReference", vm);
+        params[2] = new Argument("auth", "GuestAuthentication", auth);
+        params[3] = new Argument("keyName", "GuestRegKeyNameSpec", keyName);
+        params[4] = new Argument("recursive", "boolean", recursive);
+        wsc.invoke("DeleteRegistryKeyInGuest", params, null);
+    }
+
+    public void deleteRegistryValueInGuest(ManagedObjectReference _this, ManagedObjectReference vm, GuestAuthentication auth, GuestRegValueNameSpec valueName) throws GuestComponentsOutOfDate, GuestOperationsFault,
+        GuestOperationsUnavailable, GuestPermissionDenied, GuestRegistryKeyInvalid, GuestRegistryValueNotFound, InvalidGuestLogin, InvalidPowerState, InvalidState, OperationDisabledByGuest, OperationNotSupportedByGuest,
+        RuntimeFault, TaskInProgress, RemoteException {
+        Argument[] params = new Argument[4];
+        params[0] = new Argument("_this", "ManagedObjectReference", _this);
+        params[1] = new Argument("vm", "ManagedObjectReference", vm);
+        params[2] = new Argument("auth", "GuestAuthentication", auth);
+        params[3] = new Argument("valueName", "GuestRegValueNameSpec", valueName);
+        wsc.invoke("DeleteRegistryValueInGuest", params, null);
+    }
+
+    public GuestRegKeyRecordSpec[] listRegistryKeysInGuest(ManagedObjectReference _this, ManagedObjectReference vm, GuestAuthentication auth, GuestRegKeyNameSpec keyName, boolean recursive, String matchPattern)
+        throws GuestComponentsOutOfDate, GuestOperationsFault, GuestOperationsUnavailable, GuestPermissionDenied, GuestRegistryKeyInvalid, InvalidGuestLogin, InvalidPowerState,
+        InvalidState, OperationDisabledByGuest, OperationNotSupportedByGuest, RuntimeFault, TaskInProgress, RemoteException {
+        Argument[] params = new Argument[6];
+        params[0] = new Argument("_this", "ManagedObjectReference", _this);
+        params[1] = new Argument("vm", "ManagedObjectReference", vm);
+        params[2] = new Argument("auth", "GuestAuthentication", auth);
+        params[3] = new Argument("keyName", "GuestRegKeyNameSpec", keyName);
+        params[4] = new Argument("recursive", "boolean", recursive);
+        params[5] = new Argument("matchPattern", "String", matchPattern);
+        return (GuestRegKeyRecordSpec[]) wsc.invoke("ListRegistryKeysInGuest", params, "GuestRegKeyRecordSpec[]");
+    }
+
+    public GuestRegValueSpec[] listRegistryValuesInGuest(ManagedObjectReference _this, ManagedObjectReference vm, GuestAuthentication auth, GuestRegKeyNameSpec keyName, boolean expandStrings, String matchPattern) throws GuestComponentsOutOfDate, GuestOperationsFault, GuestOperationsUnavailable, GuestPermissionDenied, GuestRegistryKeyInvalid, InvalidGuestLogin, InvalidPowerState,
+        InvalidState, OperationDisabledByGuest, OperationNotSupportedByGuest, RuntimeFault, TaskInProgress, RemoteException {
+        Argument[] params = new Argument[6];
+        params[0] = new Argument("_this", "ManagedObjectReference", _this);
+        params[1] = new Argument("vm", "ManagedObjectReference", vm);
+        params[2] = new Argument("auth", "GuestAuthentication", auth);
+        params[3] = new Argument("keyName", "GuestRegKeyNameSpec", keyName);
+        params[4] = new Argument("expandStrings", "boolean", expandStrings);
+        params[5] = new Argument("matchPattern", "String", matchPattern);
+        return (GuestRegValueSpec[]) wsc.invoke("ListRegistryValuesInGuest", params, "GuestRegValueSpec[]");
+    }
+
+    public void setRegistryValueInGuest(ManagedObjectReference _this, ManagedObjectReference vm, GuestAuthentication auth, GuestRegValueSpec value)
+        throws GuestComponentsOutOfDate, GuestOperationsFault, GuestOperationsUnavailable, GuestPermissionDenied, GuestRegistryKeyInvalid, InvalidGuestLogin,
+        InvalidPowerState, InvalidState, OperationDisabledByGuest, OperationNotSupportedByGuest, RuntimeFault, TaskInProgress, RemoteException {
+        Argument[] params = new Argument[4];
+        params[0] = new Argument("_this", "ManagedObjectReference", _this);
+        params[1] = new Argument("vm", "ManagedObjectReference", vm);
+        params[2] = new Argument("auth", "GuestAuthentication", auth);
+        params[3] = new Argument("value", "GuestRegValueSpec", value);
+        wsc.invoke("SetRegistryValueInGuest", params, null);
     }
 }
