@@ -35,4 +35,35 @@ public class GatewayConnectFault extends HostConnectFault {
      */
     public String gatewayType;
 
+    public LocalizableMessage getDetails() {
+        return details;
+    }
+
+    public void setDetails(LocalizableMessage details) {
+        this.details = details;
+    }
+
+    public String getGatewayId() {
+        return gatewayId;
+    }
+
+    public void setGatewayId(String gatewayId) {
+        this.gatewayId = gatewayId;
+    }
+
+    public String getGatewayInfo() {
+        return gatewayInfo;
+    }
+
+    public void setGatewayInfo(String gatewayInfo) {
+        this.gatewayInfo = gatewayInfo;
+    }
+
+    public String getGatewayType() {
+        return gatewayType;
+    }
+
+    public void setGatewayType(String gatewayType) {
+        this.gatewayType = gatewayType;
+    }
 }
