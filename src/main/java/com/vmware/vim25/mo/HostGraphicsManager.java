@@ -58,4 +58,15 @@ public class HostGraphicsManager extends ExtensibleManagedObject {
     public void refreshGraphicsManager() throws RuntimeFault, RemoteException {
         getVimService().queryFirmwareConfigUploadURL(this.getMOR());
     }
+
+    /**
+     * Array of shared passthru GPU types. These GPU types may be enabled when specific host hardware is present.
+     * Example values are "grid_k120q" and "grid_k240q".
+     *
+     * @since 6.0
+     * @return String[]
+     */
+    public String[] getSharedPassthruGpuTypes() {
+        return (String[]) getCurrentProperty("sharedPassthruGpuTypes");
+    }
 }
