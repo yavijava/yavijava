@@ -36,6 +36,7 @@ import com.vmware.vim25.ManagedObjectReference;
  * provides access to three different APIs to managed guests: file, process, auth.
  *
  * @author Steve Jin (http://www.doublecloud.org)
+ * @author Michael Rice (http://errr-online.com/)
  * @since SDK5.0
  */
 
@@ -60,4 +61,24 @@ public class GuestOperationsManager extends ManagedObject {
         return new GuestProcessManager(getServerConnection(), mor, vm);
     }
 
+    /**
+     * A managed object that provides methods to support single sign-on in the guest operating system.
+     *
+     * @since 6.0
+     * @return {@link com.vmware.vim25.mo.GuestAliasManager GuestAliasManager}
+     */
+    public GuestAliasManager getAliasManager() {
+        ManagedObjectReference mor = (ManagedObjectReference) getCurrentProperty("aliasManager");
+        return new GuestAliasManager(getServerConnection(), mor);
+    }
+
+    /**
+     * A singleton managed object that provides methods for guest windows registry operations.
+     *
+     * @return GuestWindowsRegistryManager
+     */
+    public GuestWindowsRegistryManager getGuestWindowsRegistryManager() {
+        ManagedObjectReference mor = (ManagedObjectReference) getCurrentProperty("guestWindowsRegistryManager");
+        return new GuestWindowsRegistryManager(getServerConnection(), mor);
+    }
 }
