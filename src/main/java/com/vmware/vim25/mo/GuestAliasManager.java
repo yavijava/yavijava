@@ -22,6 +22,16 @@ import java.rmi.RemoteException;
 public class GuestAliasManager extends ManagedObject {
 
     /**
+     * Constructor
+     *
+     * @param sc {@link com.vmware.vim25.mo.ServerConnection ServerConnection}
+     * @param mor {@link com.vmware.vim25.ManagedObjectReference ManagedObjectReference} to a GuestAliasManager
+     */
+    public GuestAliasManager(ServerConnection sc, ManagedObjectReference mor) {
+        super(sc, mor);
+    }
+
+    /**
      * Defines an alias for a guest account in a virtual machine.
      * After the alias is defined, the ESXi Server will use the alias to authenticate guest operations requests.
      *
