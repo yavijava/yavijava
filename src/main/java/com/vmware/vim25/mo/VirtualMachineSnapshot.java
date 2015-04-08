@@ -96,4 +96,14 @@ public class VirtualMachineSnapshot extends ManagedObject {
             getVimService().revertToSnapshot_Task(getMOR(), host == null ? null : host.getMOR(), suppressPowerOn));
     }
 
+    /**
+     * Get the virtual machine for which the snapshot was taken.
+     *
+     * @since 6.0
+     * @return {@link com.vmware.vim25.mo.VirtualMachine VirtualMachine}
+     */
+    public VirtualMachine getVm() {
+        ManagedObjectReference mor = (ManagedObjectReference) getCurrentProperty("vm");
+        return new VirtualMachine(getServerConnection(), mor);
+    }
 }
