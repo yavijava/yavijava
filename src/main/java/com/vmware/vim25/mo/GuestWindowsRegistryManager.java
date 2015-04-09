@@ -18,8 +18,20 @@ import java.rmi.RemoteException;
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
+ *
+ * @since 6.0
  */
 public class GuestWindowsRegistryManager extends ManagedObject {
+
+    /**
+     * Constructor
+     *
+     * @param sc {@link com.vmware.vim25.mo.ServerConnection ServerConnection}
+     * @param mor {@link com.vmware.vim25.ManagedObjectReference ManagedObjectReference} to a GuestWindowsRegistryManager
+     */
+    public GuestWindowsRegistryManager(ServerConnection sc, ManagedObjectReference mor) {
+        super(sc, mor);
+    }
 
     /**
      * Create a registry key.
