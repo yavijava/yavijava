@@ -79,7 +79,14 @@ public class TaskManager extends ManagedObject {
         if (obj == null) {
             throw new IllegalArgumentException("obj must not be null.");
         }
-        return getVimService().createTask(getMOR(), obj.getMOR(), taskTypeId, initiatedBy, cancelable, parentTaskKey);
+        return createTask(obj, taskTypeId, initiatedBy, cancelable, parentTaskKey, null);
     }
 
+    // SDK 6.0
+    public TaskInfo createTask(ManagedObject obj, String taskTypeId, String initiatedBy, boolean cancelable, String parentTaskKey, String activationId) throws RuntimeFault, RemoteException {
+        if (obj == null) {
+            throw new IllegalArgumentException("obj must not be null.");
+        }
+        return getVimService().createTask(getMOR(), obj.getMOR(), taskTypeId, initiatedBy, cancelable, parentTaskKey, activationId);
+    }
 }

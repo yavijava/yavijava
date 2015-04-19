@@ -1935,14 +1935,15 @@ public class VimStub {
         return (ManagedObjectReference) wsc.invoke("CreateCollectorForTasks", paras, "ManagedObjectReference");
     }
 
-    public TaskInfo createTask(ManagedObjectReference _this, ManagedObjectReference obj, String taskTypeId, String initiatedBy, boolean cancelable, String parentTaskKey) throws java.rmi.RemoteException, RuntimeFault {
-        Argument[] paras = new Argument[6];
+    public TaskInfo createTask(ManagedObjectReference _this, ManagedObjectReference obj, String taskTypeId, String initiatedBy, boolean cancelable, String parentTaskKey, String activationId) throws java.rmi.RemoteException, RuntimeFault {
+        Argument[] paras = new Argument[7];
         paras[0] = new Argument("_this", "ManagedObjectReference", _this);
         paras[1] = new Argument("obj", "ManagedObjectReference", obj);
         paras[2] = new Argument("taskTypeId", "String", taskTypeId);
         paras[3] = new Argument("initiatedBy", "String", initiatedBy);
         paras[4] = new Argument("cancelable", "boolean", cancelable);
         paras[5] = new Argument("parentTaskKey", "String", parentTaskKey);
+        paras[6] = new Argument("activationId", "String", activationId);
         return (TaskInfo) wsc.invoke("CreateTask", paras, "TaskInfo");
     }
 
