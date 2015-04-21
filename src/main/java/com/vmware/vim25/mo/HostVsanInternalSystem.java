@@ -37,35 +37,31 @@ import com.vmware.vim25.RuntimeFault;
 
 /**
  * The managed object class corresponding to the one defined in VI SDK API reference.
+ *
  * @author Steve JIN (http://www.doublecloud.org)
  * @since SDK5.5
  */
 
-public class HostVsanInternalSystem extends ManagedObject 
-{
-	public HostVsanInternalSystem(ServerConnection serverConnection, ManagedObjectReference mor) 
-	{
-		super(serverConnection, mor);
-	}
-	
-	public String QueryCmmds(HostVsanInternalSystemCmmdsQuery[] queries) throws RuntimeFault, RemoteException
-	{
-	  return getVimService().queryCmmds(this.getMOR(), queries);
-	}
+public class HostVsanInternalSystem extends ManagedObject {
 
-	public String queryObjectsOnPhysicalVsanDisk(String[] disks) throws RuntimeFault, RemoteException
-	{
-	  return getVimService().queryObjectsOnPhysicalVsanDisk(this.getMOR(), disks);
-	}
-	
-	public String queryPhysicalVsanDisks(String[] props) throws RuntimeFault, RemoteException
-	{
-	  return getVimService().queryPhysicalVsanDisks(this.getMOR(), props);
-	}
-	
-	public String queryVsanObjects(String[] uuids) throws RuntimeFault, RemoteException
-	{
-	  return getVimService().queryVsanObjects(this.getMOR(), uuids);
-	}
-	
+    public HostVsanInternalSystem(ServerConnection serverConnection, ManagedObjectReference mor) {
+        super(serverConnection, mor);
+    }
+
+    public String QueryCmmds(HostVsanInternalSystemCmmdsQuery[] queries) throws RuntimeFault, RemoteException {
+        return getVimService().queryCmmds(this.getMOR(), queries);
+    }
+
+    public String queryObjectsOnPhysicalVsanDisk(String[] disks) throws RuntimeFault, RemoteException {
+        return getVimService().queryObjectsOnPhysicalVsanDisk(this.getMOR(), disks);
+    }
+
+    public String queryPhysicalVsanDisks(String[] props) throws RuntimeFault, RemoteException {
+        return getVimService().queryPhysicalVsanDisks(this.getMOR(), props);
+    }
+
+    public String queryVsanObjects(String[] uuids) throws RuntimeFault, RemoteException {
+        return getVimService().queryVsanObjects(this.getMOR(), uuids);
+    }
+
 }
