@@ -2581,9 +2581,10 @@ public class VimStub {
         return (ManagedObjectReference) wsc.invoke("DVPortgroupRollback_Task", paras, "ManagedObjectReference");
     }
 
-    public DistributedVirtualSwitchProductSpec[] queryAvailableDvsSpec(ManagedObjectReference _this) throws java.rmi.RemoteException, RuntimeFault {
-        Argument[] paras = new Argument[1];
+    public DistributedVirtualSwitchProductSpec[] queryAvailableDvsSpec(ManagedObjectReference _this, Boolean recommended) throws java.rmi.RemoteException, RuntimeFault {
+        Argument[] paras = new Argument[2];
         paras[0] = new Argument("_this", "ManagedObjectReference", _this);
+        paras[1] = new Argument("recommended", "Boolean", recommended);
         return (DistributedVirtualSwitchProductSpec[]) wsc.invoke("QueryAvailableDvsSpec", paras, "DistributedVirtualSwitchProductSpec[]");
     }
 
