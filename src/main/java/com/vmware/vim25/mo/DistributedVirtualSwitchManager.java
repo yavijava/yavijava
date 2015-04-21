@@ -62,7 +62,21 @@ public class DistributedVirtualSwitchManager extends ManagedObject {
     }
 
     public DistributedVirtualSwitchProductSpec[] queryAvailableDvsSpec() throws RuntimeFault, RemoteException {
-        return getVimService().queryAvailableDvsSpec(getMOR());
+        return queryAvailableDvsSpec(null);
+    }
+
+    /**
+     * This operation returns a list of switch product specifications that are supported by the vCenter Server.
+     *
+     * @param recommended If set to true, return only the recommened versions. If set to false, return only the not recommended versions. If unset, return all supported versions.
+     * @return DistributedVirtualSwitchProductSpec[]
+     * 
+     * @throws RuntimeFault
+     * @throws RemoteException
+     * @since 6.0
+     */
+    public DistributedVirtualSwitchProductSpec[] queryAvailableDvsSpec(Boolean recommended) throws RuntimeFault, RemoteException {
+        return getVimService().queryAvailableDvsSpec(getMOR(), recommended);
     }
 
     public HostSystem[] queryCompatibleHostForExistingDvs(ManagedEntity container, boolean recursive, DistributedVirtualSwitch dvs) throws RuntimeFault, RemoteException {
