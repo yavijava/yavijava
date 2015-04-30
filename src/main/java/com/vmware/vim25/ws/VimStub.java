@@ -4053,6 +4053,13 @@ public class VimStub {
         return (VsanHostDiskResult[]) wsc.invoke("QueryDisksForVsan", paras, "VsanHostDiskResult[]");
     }
 
+    public String[] abdicateDomOwnership(ManagedObjectReference _this, String[] uuids) throws RuntimeFault, RemoteException {
+        Argument[] params = new Argument[2];
+        params[0] = new Argument("_this", "ManagedObjectReference", _this);
+        params[1] = new Argument("uuids", "String[]", uuids);
+        return (String[]) wsc.invoke("AbdicateDomOwnership", params, "Sring[]");
+    }
+
     public ManagedObjectReference addDisks_Task(ManagedObjectReference _this, HostScsiDisk[] disk) throws java.rmi.RemoteException, RuntimeFault {
         Argument[] paras = new Argument[2];
         paras[0] = new Argument("_this", "ManagedObjectReference", _this);
@@ -4866,5 +4873,81 @@ public class VimStub {
         params[2] = new Argument("auth", "GuestAuthentication", auth);
         params[3] = new Argument("value", "GuestRegValueSpec", value);
         wsc.invoke("SetRegistryValueInGuest", params, null);
+    }
+
+    public VsanPolicySatisfiability[] canProvisionObjects(ManagedObjectReference _this, VsanNewPolicyBatch[] npbs, Boolean ignoreSatisfiability) throws VimFault, RuntimeFault, RemoteException {
+        Argument[] params = new Argument[3];
+        params[0] = new Argument("_this", "ManagedObjectReference", _this);
+        params[1] = new Argument("npbs", "VsanNewPolicyBatch[]", npbs);
+        params[2] = new Argument("ignoreSatisfiability", "Boolean", ignoreSatisfiability);
+        return (VsanPolicySatisfiability[]) wsc.invoke("CanProvisionObjects", params, "VsanPolicySatisfiability[]");
+    }
+
+    public HostVsanInternalSystemDeleteVsanObjectsResult[] deleteVsanObjects(ManagedObjectReference _this, String[] uuids, Boolean force) throws VimFault, RemoteException, RuntimeFault {
+        Argument[] params = new Argument[3];
+        params[0] = new Argument("_this", "ManagedObjectReference", _this);
+        params[1] = new Argument("uuids", "String[]", uuids);
+        params[2] = new Argument("force", "Boolean", force);
+        return (HostVsanInternalSystemDeleteVsanObjectsResult[]) wsc.invoke("DeleteVsanObjects", params, "HostVsanInternalSystemDeleteVsanObjectsResult[]");
+    }
+
+    public String getVsanObjExtAttrs(ManagedObjectReference _this, String[] uuids) throws RuntimeFault, VimFault, RemoteException {
+        Argument[] params = new Argument[2];
+        params[0] = new Argument("_this", "ManagedObjectReference", _this);
+        params[1] = new Argument("uuids", "String[]", uuids);
+        return (String) wsc.invoke("GetVsanObjExtAttrs", params, "String");
+    }
+
+    public String querySyncingVsanObjects(ManagedObjectReference _this, String[] uuids) throws RemoteException, RuntimeFault {
+        Argument[] params = new Argument[2];
+        params[0] = new Argument("_this", "ManagedObjectReference", _this);
+        params[1] = new Argument("uuids", "String[]", uuids);
+        return (String) wsc.invoke("QuerySyncingVsanObjects", params, "String");
+    }
+
+    public String[] queryVsanObjectUuidsByFilter(ManagedObjectReference _this, String[] uuids, int limit, int version) throws RuntimeFault, VsanFault, RemoteException {
+        Argument[] params = new Argument[4];
+        params[0] = new Argument("_this", "ManagedObjectReference", _this);
+        params[1] = new Argument("uuids", "String[]", uuids);
+        params[2] = new Argument("limit", "int", limit);
+        params[3] = new Argument("version", "int", version);
+        return (String[]) wsc.invoke("QueryVsanObjectUuidsByFilter", params, "String[]");
+    }
+
+    public String queryVsanStatistics(ManagedObjectReference _this, String[] labels) throws RuntimeFault, RemoteException {
+        Argument[] params = new Argument[2];
+        params[0] = new Argument("_this", "ManagedObjectReference", _this);
+        params[1] = new Argument("labels", "String[]", labels);
+        return (String) wsc.invoke("QueryVsanStatistics", params, "String");
+    }
+
+    public VsanPolicySatisfiability[] reconfigurationSatisfiable(ManagedObjectReference _this, VsanPolicyChangeBatch[] pcbs, Boolean ignoreSatisfiability) throws RuntimeFault, VimFault, RemoteException {
+        Argument[] params = new Argument[2];
+        params[0] = new Argument("_this", "ManagedObjectReference", _this);
+        params[1] = new Argument("ignoreSatisfiability", "Boolean", ignoreSatisfiability);
+        return (VsanPolicySatisfiability[]) wsc.invoke("ReconfigurationSatisfiable", params, "VsanPolicySatisfiability[]");
+    }
+
+    public void reconfigureDomObject(ManagedObjectReference _this, String uuid, String policy) throws RemoteException, RuntimeFault {
+        Argument[] params = new Argument[3];
+        params[0] = new Argument("_this", "ManagedObjectReference", _this);
+        params[1] = new Argument("uuid", "String", uuid);
+        params[2] = new Argument("policy", "String", policy);
+        wsc.invoke("ReconfigureDomObject", params, null);
+    }
+
+    public HostVsanInternalSystemVsanPhysicalDiskDiagnosticsResult[] runVsanPhysicalDiskDiagnostics(ManagedObjectReference _this, String[] disks) throws RuntimeFault, RemoteException {
+        Argument[] params = new Argument[2];
+        params[0] = new Argument("_this", "ManagedObjectReference", _this);
+        params[1] = new Argument("disks", "String[]", disks);
+        return (HostVsanInternalSystemVsanPhysicalDiskDiagnosticsResult[]) getWsc().invoke("RunVsanPhysicalDiskDiagnostics", params, "HostVsanInternalSystemVsanPhysicalDiskDiagnosticsResult[]");
+    }
+
+    public HostVsanInternalSystemVsanObjectOperationResult[] upgradeVsanObjects(ManagedObjectReference _this, String[] uuids, int newVersion) throws RuntimeFault, VsanFault, RemoteException {
+        Argument[] params = new Argument[2];
+        params[0] = new Argument("_this", "ManagedObjectReference", _this);
+        params[1] = new Argument("uuids", "String[]", uuids);
+        params[2] = new Argument("newVersion", "int", newVersion);
+        return (HostVsanInternalSystemVsanObjectOperationResult[]) getWsc().invoke("UpgradeVsanObjects", params, "HostVsanInternalSystemVsanObjectOperationResult[]");
     }
 }
