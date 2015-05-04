@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/michaelrice/yavijava.svg?branch=gradle)](https://travis-ci.org/michaelrice/yavijava)
+[![Build Status](https://travis-ci.org/yavijava/yavijava.svg?branch=gradle)](https://travis-ci.org/yavijava/yavijava)
 
 Welcome to the YAVI Java API
 
