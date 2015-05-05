@@ -36,6 +36,7 @@ import org.apache.log4j.Logger;
 import java.lang.reflect.InvocationTargetException;
 import java.rmi.RemoteException;
 import java.util.Calendar;
+import java.lang.Object;
 
 /**
  * @author Steve Jin (http://www.doublecloud.org)
@@ -52,7 +53,7 @@ public class VimStub {
 
     public VimStub(String url, boolean ignoreCert) throws java.net.MalformedURLException {
         try {
-            this.wsc = (Client) ClientCreator.getClient(url, ignoreCert);
+            this.wsc = ClientCreator.getClient(url, ignoreCert);
         }
         catch (NoSuchMethodException e) {
             log.error("Error detected for url: " + url + " ignoreSSL: " + ignoreCert, e);

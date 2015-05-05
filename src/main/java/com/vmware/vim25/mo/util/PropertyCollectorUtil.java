@@ -78,7 +78,7 @@ public class PropertyCollectorUtil {
             return new Hashtable[]{};
         }
 
-        PropertyCollector pc = mos[0].getServerConnection().getServiceInstance().getPropertyCollector();
+        PropertyCollector pc = getPropertyCollector(mos[0]);
         ObjectSpec[] oss = new ObjectSpec[mos.length];
         for (int i = 0; i < oss.length; i++) {
             oss[i] = new ObjectSpec();
@@ -123,6 +123,10 @@ public class PropertyCollectorUtil {
         return pTables;
     }
 
+    protected static PropertyCollector getPropertyCollector(ManagedObject mo) {
+        return mo.getServerConnection().getServiceInstance().getPropertyCollector();
+    }
+
     private static int findIndex(ManagedObject[] mos, ManagedObjectReference mor) {
         for (int i = 0; i < mos.length; i++) {
             if (mor.getType().equals(mos[i].getMOR().getType()) &&
@@ -133,9 +137,19 @@ public class PropertyCollectorUtil {
         return -1;
     }
 
+    /**
+     * Method to convert an object to its type
+     * For example when ArrayOfManagedObject is passed in
+     * return a ManagedObject[]
+     *
+     * @param dynaPropVal
+     * @return
+     */
     public static Object convertProperty(Object dynaPropVal) {
         Object propertyValue = null;
-
+        if (dynaPropVal == null) {
+            throw new IllegalArgumentException("Unable to convertProperty on null object.");
+        }
         Class<?> propClass = dynaPropVal.getClass();
         String propName = propClass.getName();
         //Check the dynamic propery for ArrayOfXXX object
@@ -148,7 +162,7 @@ public class PropertyCollectorUtil {
                 try {
                     getMethod = propClass.getMethod("get" + methodName, (Class[]) null);
                 }
-                catch (NoSuchMethodException nsme) {
+                catch (NoSuchMethodException ignore) {
                     getMethod = propClass.getMethod("get_" + methodName.toLowerCase(), (Class[]) null);
                 }
                 propertyValue = getMethod.invoke(dynaPropVal, (Object[]) null);
