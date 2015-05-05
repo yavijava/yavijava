@@ -1,8 +1,10 @@
-[![Build Status](https://travis-ci.org/michaelrice/yavijava.svg?branch=gradle)](https://travis-ci.org/michaelrice/yavijava)
+[![Build Status](https://travis-ci.org/yavijava/yavijava.svg?branch=gradle)](https://travis-ci.org/yavijava/yavijava)
 
 Welcome to the YAVI Java API
 
 ## WHAT IS YAVI JAVA API?
+
+[![Join the chat at https://gitter.im/yavijava/yavijava](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/yavijava/yavijava?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 It is a fork of the VI Java API which is a set of Java libraries that aim to ease the usage of VI 
 SDK Web Services interfaces. It's now open-sourced under a mixed BSD license and Apache-2.0 license.
 
