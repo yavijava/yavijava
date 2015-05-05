@@ -4950,4 +4950,52 @@ public class VimStub {
         params[2] = new Argument("newVersion", "int", newVersion);
         return (HostVsanInternalSystemVsanObjectOperationResult[]) getWsc().invoke("UpgradeVsanObjects", params, "HostVsanInternalSystemVsanObjectOperationResult[]");
     }
+
+    public void changeAccessMode(ManagedObjectReference _this, String principal, boolean isGroup, HostAccessMode accessMode) throws AuthMinimumAdminPermission, InvalidArgument, RuntimeFault, SecurityError, UserNotFound, RemoteException {
+        Argument[] params = new Argument[4];
+        params[0] = new Argument("_this", "ManagedObjectReference", _this);
+        params[1] = new Argument("principal", "String", principal);
+        params[2] = new Argument("isGroup", "boolean", isGroup);
+        params[3] = new Argument("accessMode", "HostAccessMode", accessMode);
+        getWsc().invoke("ChangeAccessMode", params, null);
+    }
+
+    public void changeHostLockdownMode(ManagedObjectReference _this, HostLockdownMode mode) throws AuthMinimumAdminPermission, NoPermission, RuntimeFault, RemoteException {
+        Argument[] params = new Argument[2];
+        params[0] = new Argument("_this", "ManagedObjectReference", _this);
+        params[1] = new Argument("mode", "HostLockdownMode", mode);
+        getWsc().invoke("ChangeHostLockdownMode", params, null);
+    }
+
+    public String[] queryLockdownExceptions(ManagedObjectReference _this) throws RuntimeFault, RemoteException {
+        Argument[] params = new Argument[1];
+        params[0] = new Argument("_this", "ManagedObjectReference", _this);
+        return (String[]) getWsc().invoke("QueryLockdownExceptions", params, "String[]");
+    }
+
+    public String[] querySystemUsers(ManagedObjectReference _this) throws RuntimeFault, RemoteException {
+        Argument[] params = new Argument[1];
+        params[0] = new Argument("_this", "ManagedObjectReference", _this);
+        return (String[]) getWsc().invoke("QuerySystemUsers", params, "String[]");
+    }
+
+    public HostAccessControlEntry[] retrieveHostAccessControlEntries(ManagedObjectReference _this) throws RuntimeFault, RemoteException {
+        Argument[] params = new Argument[1];
+        params[0] = new Argument("_this", "ManagedObjectReference", _this);
+        return (HostAccessControlEntry[]) getWsc().invoke("RetrieveHostAccessControlEntries", params, "HostAccessControlEntry[]");
+    }
+
+    public void updateLockdownExceptions(ManagedObjectReference _this, String[] users) throws AuthMinimumAdminPermission, RemoteException, RuntimeFault, UserNotFound {
+        Argument[] params = new Argument[2];
+        params[0] = new Argument("_this", "ManagedObjectReference", _this);
+        params[1] = new Argument("users", "String[]", users);
+        getWsc().invoke("UpdateLockdownExceptions", params, null);
+    }
+
+    public void updateSystemUsers(ManagedObjectReference _this, String[] users) throws InvalidArgument, RemoteException, RuntimeFault, UserNotFound {
+        Argument[] params = new Argument[2];
+        params[0] = new Argument("_this", "ManagedObjectReference", _this);
+        params[1] = new Argument("users", "String[]", users);
+        getWsc().invoke("UpdateSystemUsers", params, null);
+    }
 }
