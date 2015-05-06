@@ -4999,4 +4999,45 @@ public class VimStub {
         params[1] = new Argument("users", "String[]", users);
         getWsc().invoke("UpdateSystemUsers", params, null);
     }
+
+    public String generateCertificateSigningRequest(ManagedObjectReference _this, boolean useIpAddressAsCommonName) throws HostConfigFault, RuntimeFault, RemoteException {
+        Argument[] params = new Argument[2];
+        params[0] = new Argument("_this", "ManagedObjectReference", _this);
+        params[1] = new Argument("useIpAddressAsCommonName", "boolean", useIpAddressAsCommonName);
+        return (String) getWsc().invoke("GenerateCertificateSigningRequest", params, "String");
+    }
+
+    public String generateCertificateSigningRequestByDn(ManagedObjectReference _this, String distinguishedName) throws HostConfigFault, RuntimeFault, RemoteException {
+        Argument[] params = new Argument[2];
+        params[0] = new Argument("_this", "ManagedObjectReference", _this);
+        params[1] = new Argument("distinguishedName", "String", distinguishedName);
+        return (String) getWsc().invoke("GenerateCertificateSigningRequestByDn", params, "String");
+    }
+
+    public void installServerCertificate(ManagedObjectReference _this, String cert) throws HostConfigFault, RuntimeFault, RemoteException {
+        Argument[] params = new Argument[2];
+        params[0] = new Argument("_this", "ManagedObjectReference", _this);
+        params[1] = new Argument("cert", "String", cert);
+        getWsc().invoke("InstallServerCertificate", params, null);
+    }
+
+    public String[] listCACertificateRevocationLists(ManagedObjectReference _this) throws HostConfigFault, RuntimeFault, RemoteException {
+        Argument[] params = new Argument[1];
+        params[0] = new Argument("_this", "ManagedObjectReference", _this);
+        return (String[]) getWsc().invoke("ListCACertificateRevocationLists", params, "String[]");
+    }
+
+    public String[] listCACertificates(ManagedObjectReference _this) throws HostConfigFault, RuntimeFault, RemoteException {
+        Argument[] params = new Argument[1];
+        params[0] = new Argument("_this", "ManagedObjectReference", _this);
+        return (String[]) getWsc().invoke("ListCACertificates", params, "String[]");
+    }
+
+    public void replaceCACertificatesAndCRLs(ManagedObjectReference _this, String[] caCert, String[] caCrl) throws HostConfigFault, RuntimeFault, RemoteException {
+        Argument[] params = new Argument[3];
+        params[0] = new Argument("_this", "ManagedObjectReference", _this);
+        params[1] = new Argument("caCert", "String[]", caCert);
+        params[2] = new Argument("caCrl", "String[]", caCrl);
+        getWsc().invoke("ReplaceCACertificatesAndCRLs", params, null);
+    }
 }
