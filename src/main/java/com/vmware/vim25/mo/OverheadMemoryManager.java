@@ -1,6 +1,8 @@
 package com.vmware.vim25.mo;
 
-import com.vmware.vim25.ManagedObjectReference;
+import com.vmware.vim25.*;
+
+import java.rmi.RemoteException;
 
 /**
  * Copyright 2015 Michael Rice <michael@michaelrice.org>
@@ -16,6 +18,26 @@ import com.vmware.vim25.ManagedObjectReference;
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
+ *
+ * @since 6.0
  */
 public class OverheadMemoryManager extends ManagedObject {
+
+    /**
+     * Return static VM overhead memory value in bytes for a (vm, host) pair from the overhead memory module (OMM)
+     * in Virtual Center.
+     *
+     * @param vm The Virtual Machine
+     * @param host The Host
+     * @return Overhead memory value, if found in the OMM.
+     * @throws InvalidArgument
+     * @throws InvalidType
+     * @throws ManagedObjectNotFound
+     * @throws NotFound
+     * @throws RuntimeFault
+     * @throws RemoteException
+     */
+    public long lookupVmOverheadMemory(VirtualMachine vm, HostSystem host) throws InvalidArgument, InvalidType, ManagedObjectNotFound, NotFound, RuntimeFault, RemoteException {
+        return getVimService().lookupVmOverheadMemory(getMOR(), vm.getMOR(), host.getMOR());
+    }
 }
