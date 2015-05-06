@@ -5040,4 +5040,13 @@ public class VimStub {
         params[2] = new Argument("caCrl", "String[]", caCrl);
         getWsc().invoke("ReplaceCACertificatesAndCRLs", params, null);
     }
+
+    public long lookupVmOverheadMemory(ManagedObjectReference _this, ManagedObjectReference vm, ManagedObjectReference host) throws InvalidArgument, InvalidType, ManagedObjectNotFound, NotFound, RuntimeFault, RemoteException {
+        Argument[] params = new Argument[3];
+        params[0] = new Argument("_this", "ManagedObjectReference", _this);
+        params[1] = new Argument("vm", "ManagedObjectReference", vm);
+        params[2] = new Argument("host", "ManagedObjectReference", host);
+        Long ret = (Long) getWsc().invoke("LookupVmOverheadMemory", params, "long");
+        return ret.longValue();
+    }
 }
