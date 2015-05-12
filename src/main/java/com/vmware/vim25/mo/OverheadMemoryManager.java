@@ -23,6 +23,10 @@ import java.rmi.RemoteException;
  */
 public class OverheadMemoryManager extends ManagedObject {
 
+    public OverheadMemoryManager(ServerConnection sc, ManagedObjectReference mor) {
+        super(sc, mor);
+    }
+
     /**
      * Return static VM overhead memory value in bytes for a (vm, host) pair from the overhead memory module (OMM)
      * in Virtual Center.

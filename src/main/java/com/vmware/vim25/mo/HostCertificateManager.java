@@ -2,6 +2,7 @@ package com.vmware.vim25.mo;
 
 import com.vmware.vim25.HostCertificateManagerCertificateInfo;
 import com.vmware.vim25.HostConfigFault;
+import com.vmware.vim25.ManagedObjectReference;
 import com.vmware.vim25.RuntimeFault;
 
 import java.rmi.RemoteException;
@@ -24,6 +25,10 @@ import java.rmi.RemoteException;
  * @since 6.0
  */
 public class HostCertificateManager extends ManagedObject {
+
+    public HostCertificateManager(ServerConnection sc, ManagedObjectReference mor) {
+        super(sc, mor);
+    }
 
     public HostCertificateManagerCertificateInfo getCertificateInfo() {
         return (HostCertificateManagerCertificateInfo) getCurrentProperty("certificateInfo");
