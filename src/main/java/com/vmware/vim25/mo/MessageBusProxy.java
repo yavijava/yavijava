@@ -1,5 +1,7 @@
 package com.vmware.vim25.mo;
 
+import com.vmware.vim25.ManagedObjectReference;
+
 /**
  * Copyright 2015 Michael Rice <michael@michaelrice.org>
  * <p/>
@@ -16,4 +18,8 @@ package com.vmware.vim25.mo;
  * limitations under the License.
  */
 public class MessageBusProxy extends ManagedObject {
+
+    public MessageBusProxy(ServerConnection sc, ManagedObjectReference mor) {
+        super(sc, mor);
+    }
 }

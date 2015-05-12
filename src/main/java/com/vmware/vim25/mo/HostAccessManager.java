@@ -24,6 +24,16 @@ import java.rmi.RemoteException;
 public class HostAccessManager extends ManagedObject {
 
     /**
+     * Constructor
+     *
+     * @param sc ServerConnection
+     * @param mor ManagedObjectReference
+     */
+    public HostAccessManager(ServerConnection sc, ManagedObjectReference mor) {
+        super(sc, mor);
+    }
+
+    /**
      * Current lockdown state of the host.
      *
      * @return {@link com.vmware.vim25.HostLockdownMode HostLockdownMode}

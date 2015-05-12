@@ -24,6 +24,10 @@ import java.rmi.RemoteException;
  */
 public class VsanUpgradeSystem extends ManagedObject {
 
+    public VsanUpgradeSystem(ServerConnection sc, ManagedObjectReference mor) {
+        super(sc, mor);
+    }
+
     /**
      * Start VSAN on-disk format upgrade process on a particular cluster. In order to perform this on-disk format
      * upgrade, the upgrade process will perform a rolling evacuation/remove/re-add operation to accomplish the upgrade.
