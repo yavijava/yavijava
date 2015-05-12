@@ -5049,4 +5049,32 @@ public class VimStub {
         Long ret = (Long) getWsc().invoke("LookupVmOverheadMemory", params, "long");
         return ret.longValue();
     }
+
+    public ManagedObjectReference performVsanUpgrade_Task(ManagedObjectReference _this, ManagedObjectReference cluster, Boolean performObjectUpgrade,
+                                        Boolean downgradeFormat, Boolean allowReducedRedundancy, ManagedObjectReference[] excludeHosts)
+        throws RuntimeFault, VsanFault, RemoteException {
+        Argument[] params = new Argument[6];
+        params[0] = new Argument("_this", "ManagedObjectReference", _this);
+        params[1] = new Argument("cluster", "ManagedObjectReference", cluster);
+        params[2] = new Argument("performObjectUpgrade", "Boolean", performObjectUpgrade);
+        params[3] = new Argument("downgradeFormat", "Boolean", downgradeFormat);
+        params[4] = new Argument("allowReducedRedundancy", "Boolean", allowReducedRedundancy);
+        params[5] = new Argument("excludeHosts", "ManagedObjectReference[]", excludeHosts);
+        return (ManagedObjectReference) getWsc().invoke("PerformVsanUpgrade_Task", params, "ManagedObjectReference");
+    }
+
+    public VsanUpgradeSystemPreflightCheckResult performVsanUpgradePreflightCheck(ManagedObjectReference _this, ManagedObjectReference cluster, Boolean downgradeFormat) throws RemoteException, RuntimeFault, VsanFault {
+        Argument[] params = new Argument[3];
+        params[0] = new Argument("_this", "ManagedObjectReference", _this);
+        params[1] = new Argument("cluster", "ManagedObjectReference", cluster);
+        params[2] = new Argument("downgradeFormat", "Boolean", downgradeFormat);
+        return (VsanUpgradeSystemPreflightCheckResult) getWsc().invoke("PerformVsanUpgradePreflightCheck", params, "VsanUpgradeSystemPreflightCheckResult");
+    }
+
+    public VsanUpgradeSystemUpgradeStatus queryVsanUpgradeStatus(ManagedObjectReference _this, ManagedObjectReference cluster) throws RuntimeFault, VsanFault, RemoteException {
+        Argument[] params = new Argument[2];
+        params[0] = new Argument("_this", "ManagedObjectReference", _this);
+        params[1] = new Argument("cluster", "ManagedObjectReference", cluster);
+        return (VsanUpgradeSystemUpgradeStatus) getWsc().invoke("QueryVsanUpgradeStatus", params, "VsanUpgradeSystemUpgradeStatus");
+    }
 }
