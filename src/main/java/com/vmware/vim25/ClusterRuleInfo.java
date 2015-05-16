@@ -30,73 +30,73 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class ClusterRuleInfo extends DynamicData {
-  public Integer key;
-  public ManagedEntityStatus status;
-  public Boolean enabled;
-  public String name;
-  public Boolean mandatory;
-  public Boolean userCreated;
-  public Boolean inCompliance;
+    public Integer key;
+    public ManagedEntityStatus status;
+    public Boolean enabled;
+    public String name;
+    public Boolean mandatory;
+    public Boolean userCreated;
+    public Boolean inCompliance;
 
-  public Integer getKey() {
-    return this.key;
-  }
+    public Integer getKey() {
+        return this.key;
+    }
 
-  public ManagedEntityStatus getStatus() {
-    return this.status;
-  }
+    public ManagedEntityStatus getStatus() {
+        return this.status;
+    }
 
-  public Boolean getEnabled() {
-    return this.enabled;
-  }
+    public Boolean getEnabled() {
+        return this.enabled;
+    }
 
-  public String getName() {
-    return this.name;
-  }
+    public String getName() {
+        return this.name;
+    }
 
-  public Boolean getMandatory() {
-    return this.mandatory;
-  }
+    public Boolean getMandatory() {
+        return this.mandatory;
+    }
 
-  public Boolean getUserCreated() {
-    return this.userCreated;
-  }
+    public Boolean getUserCreated() {
+        return this.userCreated;
+    }
 
-  public Boolean getInCompliance() {
-    return this.inCompliance;
-  }
+    public Boolean getInCompliance() {
+        return this.inCompliance;
+    }
 
-  public void setKey(Integer key) {
-    this.key=key;
-  }
+    public void setKey(Integer key) {
+        this.key = key;
+    }
 
-  public void setStatus(ManagedEntityStatus status) {
-    this.status=status;
-  }
+    public void setStatus(ManagedEntityStatus status) {
+        this.status = status;
+    }
 
-  public void setEnabled(Boolean enabled) {
-    this.enabled=enabled;
-  }
+    public void setEnabled(Boolean enabled) {
+        this.enabled = enabled;
+    }
 
-  public void setName(String name) {
-    this.name=name;
-  }
+    public void setName(String name) {
+        this.name = name;
+    }
 
-  public void setMandatory(Boolean mandatory) {
-    this.mandatory=mandatory;
-  }
+    public void setMandatory(Boolean mandatory) {
+        this.mandatory = mandatory;
+    }
 
-  public void setUserCreated(Boolean userCreated) {
-    this.userCreated=userCreated;
-  }
+    public void setUserCreated(Boolean userCreated) {
+        this.userCreated = userCreated;
+    }
 
-  public void setInCompliance(Boolean inCompliance) {
-    this.inCompliance=inCompliance;
-  }
+    public void setInCompliance(Boolean inCompliance) {
+        this.inCompliance = inCompliance;
+    }
 }
