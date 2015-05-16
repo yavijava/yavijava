@@ -5077,4 +5077,93 @@ public class VimStub {
         params[1] = new Argument("cluster", "ManagedObjectReference", cluster);
         return (VsanUpgradeSystemUpgradeStatus) getWsc().invoke("QueryVsanUpgradeStatus", params, "VsanUpgradeSystemUpgradeStatus");
     }
+
+    public String createVRP(ManagedObjectReference _this, VirtualResourcePoolSpec spec) throws InsufficientResourcesFault, InvalidState, RuntimeFault, RemoteException {
+        Argument[] params = new Argument[2];
+        params[0] = new Argument("_this", "ManagedObjectReference", _this);
+        params[1] = new Argument("spec", "VirtualResourcePoolSpec", spec);
+        return (String) getWsc().invoke("CreateVRP", params, "String");
+    }
+
+    public void deleteVRP(ManagedObjectReference _this, String vrpId) throws InvalidState, NotFound, RuntimeFault, RemoteException {
+        Argument[] params = new Argument[2];
+        params[0] = new Argument("_this", "ManagedObjectReference", _this);
+        params[1] = new Argument("vrpId", "String", vrpId);
+        getWsc().invoke("DeleteVRP", params, null);
+    }
+
+    public void deployVM(ManagedObjectReference _this, String vrpId, ManagedObjectReference vm, ManagedObjectReference cluster) throws InsufficientResourcesFault, InvalidState, NotFound, RuntimeFault, RemoteException {
+        Argument[] params = new Argument[4];
+        params[0] = new Argument("_this", "ManagedObjectReference", _this);
+        params[1] = new Argument("vrpId", "String", vrpId);
+        params[2] = new Argument("vm", "ManagedObjectReference", vm);
+        params[3] = new Argument("cluster", "ManagedObjectReference", cluster);
+        getWsc().invoke("DeployVM", params, null);
+    }
+
+    public String[] getAllVRPIds(ManagedObjectReference _this) throws InvalidState, RuntimeFault, RemoteException {
+        Argument[] params = new Argument[1];
+        params[0] = new Argument("_this", "ManagedObjectReference", _this);
+        return (String[]) getWsc().invoke("GetAllVRPIds", params, "String[]");
+    }
+
+    public ManagedObjectReference getChildRPforHub(ManagedObjectReference _this, String vrpId, ManagedObjectReference hub) throws InvalidState, RuntimeFault, NotFound, RemoteException {
+        Argument[] params = new Argument[3];
+        params[0] = new Argument("_this", "ManagedObjectReference", _this);
+        params[1] = new Argument("vrpId", "String", vrpId);
+        params[2] = new Argument("hub", "ManagedObjectreference", hub);
+        return (ManagedObjectReference) getWsc().invoke("GetChildRPforHub", params, "ManagedObjectReference");
+    }
+
+    public ResourceConfigSpec getRPSettings(ManagedObjectReference _this, ManagedObjectReference resourcePool) throws NotFound, RuntimeFault, RemoteException {
+        Argument[] params = new Argument[2];
+        params[0] = new Argument("_this", "ManagedObjectReference", _this);
+        params[1] = new Argument("resourcePool", "ManagedObjectReference", resourcePool);
+        return (ResourceConfigSpec) getWsc().invoke("GetRPSettings", params, "ResourceConfigSpec");
+    }
+
+    public String getVRPofVM(ManagedObjectReference _this, ManagedObjectReference vm) throws InvalidState, NotFound, RuntimeFault, RemoteException {
+        Argument[] params = new Argument[2];
+        params[0] = new Argument("_this", "ManagedObjectReference", _this);
+        params[1] = new Argument("vm", "ManagedObjectReference", vm);
+        return (String) getWsc().invoke("GetVRPofVM", params, "String");
+    }
+
+    public VirtualResourcePoolSpec getVRPSettings(ManagedObjectReference _this, String vrpId) throws InvalidState, NotFound, RuntimeException, RemoteException {
+        Argument[] params = new Argument[2];
+        params[0] = new Argument("_this", "ManagedObjectReference", _this);
+        params[1] = new Argument("vrpId", "String", vrpId);
+        return (VirtualResourcePoolSpec) getWsc().invoke("GetVRPSettings", params, "VirtualResourcePoolSpec");
+    }
+
+    public VirtualResourcePoolUsage getVRPUsage(ManagedObjectReference _this, String vrpId) throws InvalidState, NotFound, RuntimeFault, RemoteException {
+        Argument[] params = new Argument[2];
+        params[0] = new Argument("_this", "ManagedObjectReference", _this);
+        params[1] = new Argument("vm", "ManagedObjectReference", vrpId);
+        return (VirtualResourcePoolUsage) getWsc().invoke("GetVRPofVM", params, "VirtualResourcePoolUsage");
+    }
+
+    public void setManagedByVDC(ManagedObjectReference _this, ManagedObjectReference cluster, boolean status) throws InvalidState, NotFound, RuntimeFault, RemoteException {
+        Argument[] params = new Argument[3];
+        params[0] = new Argument("_this", "ManagedObjectReference", _this);
+        params[1] = new Argument("cluster", "ManagedObjectReference", cluster);
+        params[2] = new Argument("status", "boolean", status);
+        getWsc().invoke("SetManagedByVDC", params, null);
+    }
+
+    public void undeployVM(ManagedObjectReference _this, String vrpId, ManagedObjectReference vm, ManagedObjectReference cluster) throws InvalidState, NotFound, RuntimeFault, RemoteException {
+        Argument[] params = new Argument[4];
+        params[0] = new Argument("_this", "ManagedObjectReference", _this);
+        params[1] = new Argument("vrpId", "String", vrpId);
+        params[2] = new Argument("vm", "ManagedObjectReference", vm);
+        params[3] = new Argument("cluster", "ManagedObjectReference", cluster);
+        getWsc().invoke("UndeployVM", params, null);
+    }
+
+    public void updateVRP(ManagedObjectReference _this, VRPEditSpec spec) throws InvalidState, NotFound, RuntimeFault, RemoteException, InsufficientResourcesFault {
+        Argument[] params = new Argument[2];
+        params[0] = new Argument("_this", "ManagedObjectReference", _this);
+        params[1] = new Argument("spec", "VRPEditSpec", spec);
+        getWsc().invoke("UpdateVRP", params, null);
+    }
 }
