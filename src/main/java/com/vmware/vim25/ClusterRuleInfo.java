@@ -43,6 +43,15 @@ public class ClusterRuleInfo extends DynamicData {
     public Boolean mandatory;
     public Boolean userCreated;
     public Boolean inCompliance;
+    public String ruleUuid;
+
+    public String getRuleUuid() {
+        return ruleUuid;
+    }
+
+    public void setRuleUuid(String ruleUuid) {
+        this.ruleUuid = ruleUuid;
+    }
 
     public Integer getKey() {
         return this.key;
