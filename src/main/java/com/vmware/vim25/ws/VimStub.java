@@ -5166,4 +5166,36 @@ public class VimStub {
         params[1] = new Argument("spec", "VRPEditSpec", spec);
         getWsc().invoke("UpdateVRP", params, null);
     }
+
+    public ManagedObjectReference evcManager(ManagedObjectReference _this) throws RuntimeFault, RemoteException {
+        Argument[] params = new Argument[1];
+        params[0] = new Argument("_this", "ManagedObjectReference", _this);
+        return (ManagedObjectReference) getWsc().invoke("EvcManager", params, "ManagedObjectReference");
+    }
+
+    public ClusterRuleInfo[] findRulesForVm(ManagedObjectReference _this, ManagedObjectReference vm) throws RuntimeFault, RemoteException {
+        Argument[] params = new Argument[2];
+        params[0] = new Argument("_this", "ManagedObjectReference", _this);
+        params[1] = new Argument("vm", "ManagedObjectReference", vm);
+        return (ClusterRuleInfo[]) getWsc().invoke("FindRulesForVm", params, "ClusterRuleInfo[]");
+    }
+
+    public ClusterResourceUsageSummary getResourceUsage(ManagedObjectReference _this) throws RuntimeFault, RemoteException {
+        Argument[] params = new Argument[1];
+        params[0] = new Argument("_this", "ManagedObjectReference", _this);
+        return (ClusterResourceUsageSummary) getWsc().invoke("GetResourceUsage", params, "ClusterResourceUsageSummary");
+    }
+
+    public PlacementResult placeVm(ManagedObjectReference _this, PlacementSpec placementSpec) throws InvalidArgument, InvalidState, RuntimeFault, RemoteException {
+        Argument[] params = new Argument[2];
+        params[0] = new Argument("_this", "ManagedObjectReference", _this);
+        params[1] = new Argument("placementSpec", "PlacementSpec", placementSpec);
+        return (PlacementResult) getWsc().invoke("PlaceVm", params, "PlacementResult");
+    }
+
+    public ManagedObjectReference stampAllRulesWithUuid_Task(ManagedObjectReference _this) throws RuntimeFault, RemoteException {
+        Argument[] params = new Argument[1];
+        params[0] = new Argument("_this", "ManagedObjectReference", _this);
+        return (ManagedObjectReference) getWsc().invoke("StampAllRulesWithUuid_Task", params, "ManagedObjectReference");
+    }
 }

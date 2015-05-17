@@ -30,73 +30,82 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class ClusterRuleInfo extends DynamicData {
-  public Integer key;
-  public ManagedEntityStatus status;
-  public Boolean enabled;
-  public String name;
-  public Boolean mandatory;
-  public Boolean userCreated;
-  public Boolean inCompliance;
+    public Integer key;
+    public ManagedEntityStatus status;
+    public Boolean enabled;
+    public String name;
+    public Boolean mandatory;
+    public Boolean userCreated;
+    public Boolean inCompliance;
+    public String ruleUuid;
 
-  public Integer getKey() {
-    return this.key;
-  }
+    public String getRuleUuid() {
+        return ruleUuid;
+    }
 
-  public ManagedEntityStatus getStatus() {
-    return this.status;
-  }
+    public void setRuleUuid(String ruleUuid) {
+        this.ruleUuid = ruleUuid;
+    }
 
-  public Boolean getEnabled() {
-    return this.enabled;
-  }
+    public Integer getKey() {
+        return this.key;
+    }
 
-  public String getName() {
-    return this.name;
-  }
+    public ManagedEntityStatus getStatus() {
+        return this.status;
+    }
 
-  public Boolean getMandatory() {
-    return this.mandatory;
-  }
+    public Boolean getEnabled() {
+        return this.enabled;
+    }
 
-  public Boolean getUserCreated() {
-    return this.userCreated;
-  }
+    public String getName() {
+        return this.name;
+    }
 
-  public Boolean getInCompliance() {
-    return this.inCompliance;
-  }
+    public Boolean getMandatory() {
+        return this.mandatory;
+    }
 
-  public void setKey(Integer key) {
-    this.key=key;
-  }
+    public Boolean getUserCreated() {
+        return this.userCreated;
+    }
 
-  public void setStatus(ManagedEntityStatus status) {
-    this.status=status;
-  }
+    public Boolean getInCompliance() {
+        return this.inCompliance;
+    }
 
-  public void setEnabled(Boolean enabled) {
-    this.enabled=enabled;
-  }
+    public void setKey(Integer key) {
+        this.key = key;
+    }
 
-  public void setName(String name) {
-    this.name=name;
-  }
+    public void setStatus(ManagedEntityStatus status) {
+        this.status = status;
+    }
 
-  public void setMandatory(Boolean mandatory) {
-    this.mandatory=mandatory;
-  }
+    public void setEnabled(Boolean enabled) {
+        this.enabled = enabled;
+    }
 
-  public void setUserCreated(Boolean userCreated) {
-    this.userCreated=userCreated;
-  }
+    public void setName(String name) {
+        this.name = name;
+    }
 
-  public void setInCompliance(Boolean inCompliance) {
-    this.inCompliance=inCompliance;
-  }
+    public void setMandatory(Boolean mandatory) {
+        this.mandatory = mandatory;
+    }
+
+    public void setUserCreated(Boolean userCreated) {
+        this.userCreated = userCreated;
+    }
+
+    public void setInCompliance(Boolean inCompliance) {
+        this.inCompliance = inCompliance;
+    }
 }

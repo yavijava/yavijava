@@ -28,12 +28,16 @@ public class ClusterEVCManager extends ExtensibleManagedObject {
     /**
      * EVC-related state of the managed cluster.
      */
-    public ClusterEVCManagerEVCState evcState;
+    public ClusterEVCManagerEVCState getEvcState() {
+        return (ClusterEVCManagerEVCState) getCurrentProperty("evcState");
+    }
 
     /**
      * Cluster associated with this manager object.
      */
-    public ClusterComputeResource managedCluster;
+    public ClusterComputeResource getManagedCluster() {
+        return (ClusterComputeResource) getCurrentProperty("managedCluster");
+    }
 
     /**
      * Class Constructor
