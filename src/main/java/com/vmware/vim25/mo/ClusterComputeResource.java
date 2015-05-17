@@ -144,4 +144,72 @@ public class ClusterComputeResource extends ComputeResource {
     public ClusterDasAdvancedRuntimeInfo retrieveDasAdvancedRuntimeInfo() throws RuntimeFault, RemoteException {
         return getVimService().retrieveDasAdvancedRuntimeInfo(getMOR());
     }
+
+    /**
+     * Returns A managed object that controls Enhanced vMotion Compatibility mode for this cluster.
+     *
+     * @since 6.0
+     * @return EvcManager
+     * @throws RuntimeFault
+     * @throws RemoteException
+     */
+    public ClusterEVCManager evcManager() throws RuntimeFault, RemoteException {
+        ManagedObjectReference cevcmgrMor = getVimService().evcManager(getMOR());
+        return new ClusterEVCManager(getServerConnection(), cevcmgrMor);
+    }
+
+    /**
+     * Finds all enabled and disabled VM-VM Affinity and Anti-Affinity rules, involving the given Virtual Machine.
+     *
+     * @since 6.0
+     * @param vm The vm whose rules need to be looked up.
+     * @return Array of rule info
+     * @throws RuntimeFault
+     * @throws RemoteException
+     */
+    public ClusterRuleInfo[] findRulesForVm(VirtualMachine vm) throws RuntimeFault, RemoteException {
+        return getVimService().findRulesForVm(getMOR(), vm.getMOR());
+    }
+
+    /**
+     * This API can be invoked to get the current CPU, memory and storage usage in the cluster.
+     *
+     * @since 6.0
+     * @return An instance of ClusterResourceUsageSummary
+     * @throws RuntimeFault
+     * @throws RemoteException
+     */
+    public ClusterResourceUsageSummary getResourceUsage() throws RuntimeFault, RemoteException {
+        return getVimService().getResourceUsage(getMOR());
+    }
+
+    /**
+     * This method returns a PlacementResult object. This API can be invoked to ask DRS for a set of recommendations for
+     * moving a virtual machine and its virtual disks into a cluster.
+     *
+     * @since 6.0
+     * @param placementSpec Specification for placing a virtual machine and its virtual disks
+     * @return PlacementResult
+     * @throws InvalidArgument
+     * @throws InvalidState
+     * @throws RuntimeFault
+     * @throws RemoteException
+     */
+    public PlacementResult placeVm(PlacementSpec placementSpec) throws InvalidArgument, InvalidState, RuntimeFault, RemoteException {
+        return getVimService().placeVm(getMOR(), placementSpec);
+    }
+
+    /**
+     * Stamp all rules in the cluster with ruleUuid. If a rule has ruleUuid field set, and it has a value, leave it
+     * untouched. If rule's ruleUuid field is unset, generate a UUID and stamp the rule.
+     *
+     * @since 6.0
+     * @return Task
+     * @throws RuntimeFault
+     * @throws RemoteException
+     */
+    public Task stampAllRulesWithUuid_Task() throws RuntimeFault, RemoteException {
+        ManagedObjectReference taskMor = getVimService().stampAllRulesWithUuid_Task(getMOR());
+        return new Task(getServerConnection(), taskMor);
+    }
 }
