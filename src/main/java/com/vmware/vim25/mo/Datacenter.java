@@ -37,93 +37,114 @@ import com.vmware.vim25.mo.util.*;
 
 /**
  * The managed object class corresponding to the one defined in VI SDK API reference.
+ *
  * @author Steve JIN (http://www.doublecloud.org)
  */
 
-public class Datacenter extends ManagedEntity 
-{
+public class Datacenter extends ManagedEntity {
 
-	public Datacenter(ServerConnection sc, ManagedObjectReference mor) 
-	{
-		super(sc, mor);
-	}
-	
-	public Folder getVmFolder() throws InvalidProperty, RuntimeFault, RemoteException  
-	{
-		return (Folder) this.getManagedObject("vmFolder");
-	}
-	
-	public Folder getHostFolder() throws InvalidProperty, RuntimeFault, RemoteException  
-	{
-		return (Folder) this.getManagedObject("hostFolder");
-	}
+    public Datacenter(ServerConnection sc, ManagedObjectReference mor) {
+        super(sc, mor);
+    }
 
-	public Datastore[] getDatastores()
-	{
-		return getDatastores("datastore");
-	}
-	
-	/** @since SDK5.1 */
-	public DatacenterConfigInfo getConfiguration()
-	{
-	    return (DatacenterConfigInfo) getCurrentProperty("configuration");
-	}
-	
-	/**
-	 * @since 4.0
-	 */
-	public Folder getDatastoreFolder()
-	{
-		return (Folder) getManagedObject("datastoreFolder");
-	}
-	
-	/**
-	 * @since 4.0
-	 */
-	public Folder getNetworkFolder()
-	{
-		return (Folder) getManagedObject("networkFolder");
-	}
-	
-	public Network[] getNetworks() throws InvalidProperty, RuntimeFault, RemoteException  
-	{
-		return getNetworks("network");
-	}
-	
-	/** old signature for back compatibility with 2.5 and 4.0 */
-  public Task powerOnMultiVM_Task(VirtualMachine[] vms) throws RuntimeFault, RemoteException  
-  {
-    return powerOnMultiVM_Task(vms, null);
-  }
-	
-  /** @since SDK4.1 */
-	public Task powerOnMultiVM_Task(VirtualMachine[] vms, OptionValue[] option) throws RuntimeFault, RemoteException  
-	{
-		if(vms==null)
-		{
-			throw new IllegalArgumentException("vms must not be null.");
-		}
-		ManagedObjectReference[] mors = MorUtil.createMORs(vms);
-		ManagedObjectReference tmor = getVimService().powerOnMultiVM_Task(getMOR(), mors, option);
-		return new Task(getServerConnection(), tmor);
-	}
-	
-	/** @since SDK5.1 */
-	public Task reconfigureDatacenter_Task(DatacenterConfigSpec spec, boolean modify) throws RuntimeFault, RemoteException
-	{
-	    ManagedObjectReference tmor = getVimService().reconfigureDatacenter_Task(getMOR(), spec, modify);
-	    return new Task(getServerConnection(), tmor);
-	}
-	
-	public HostConnectInfo queryConnectionInfo(String hostname, int port, String username, String password,
-			String sslThumbprint) throws InvalidLogin, HostConnectFault, RuntimeFault, RemoteException  
-	{
-		return getVimService().queryConnectionInfo(getMOR(), hostname, port, username, password, sslThumbprint);
-	}
+    public Folder getVmFolder() throws InvalidProperty, RuntimeFault, RemoteException {
+        return (Folder) this.getManagedObject("vmFolder");
+    }
 
-	/** @since SDK5.1 */
-	public VirtualMachineConfigOptionDescriptor[] queryDatacenterConfigOptionDescriptor() throws RuntimeFault, RemoteException
-	{
-	    return getVimService().queryDatacenterConfigOptionDescriptor(getMOR());
-	}
+    public Folder getHostFolder() throws InvalidProperty, RuntimeFault, RemoteException {
+        return (Folder) this.getManagedObject("hostFolder");
+    }
+
+    public Datastore[] getDatastores() {
+        return getDatastores("datastore");
+    }
+
+    /**
+     * @since SDK5.1
+     */
+    public DatacenterConfigInfo getConfiguration() {
+        return (DatacenterConfigInfo) getCurrentProperty("configuration");
+    }
+
+    /**
+     * @since 4.0
+     */
+    public Folder getDatastoreFolder() {
+        return (Folder) getManagedObject("datastoreFolder");
+    }
+
+    /**
+     * @since 4.0
+     */
+    public Folder getNetworkFolder() {
+        return (Folder) getManagedObject("networkFolder");
+    }
+
+    public Network[] getNetworks() throws InvalidProperty, RuntimeFault, RemoteException {
+        return getNetworks("network");
+    }
+
+    /**
+     * old signature for back compatibility with 2.5 and 4.0
+     */
+    public Task powerOnMultiVM_Task(VirtualMachine[] vms) throws RuntimeFault, RemoteException {
+        return powerOnMultiVM_Task(vms, null);
+    }
+
+    /**
+     * @since SDK4.1
+     */
+    public Task powerOnMultiVM_Task(VirtualMachine[] vms, OptionValue[] option) throws RuntimeFault, RemoteException {
+        if (vms == null) {
+            throw new IllegalArgumentException("vms must not be null.");
+        }
+        ManagedObjectReference[] mors = MorUtil.createMORs(vms);
+        ManagedObjectReference tmor = getVimService().powerOnMultiVM_Task(getMOR(), mors, option);
+        return new Task(getServerConnection(), tmor);
+    }
+
+    /**
+     * @since SDK5.1
+     */
+    public Task reconfigureDatacenter_Task(DatacenterConfigSpec spec, boolean modify) throws RuntimeFault, RemoteException {
+        ManagedObjectReference tmor = getVimService().reconfigureDatacenter_Task(getMOR(), spec, modify);
+        return new Task(getServerConnection(), tmor);
+    }
+
+    public HostConnectInfo queryConnectionInfo(String hostname, int port, String username, String password,
+                                               String sslThumbprint) throws InvalidLogin, HostConnectFault, RuntimeFault, RemoteException {
+        return getVimService().queryConnectionInfo(getMOR(), hostname, port, username, password, sslThumbprint);
+    }
+
+    /**
+     * @since SDK5.1
+     */
+    public VirtualMachineConfigOptionDescriptor[] queryDatacenterConfigOptionDescriptor() throws RuntimeFault, RemoteException {
+        return getVimService().queryDatacenterConfigOptionDescriptor(getMOR());
+    }
+
+    /**
+     * This method provides a way of getting basic information about a host without adding it to a datacenter. This
+     * method is similar to QueryConnectionInfo, but it takes a HostConnectSpec as argument, instead of list of
+     * parameters.
+     *
+     * @since 6.0
+     * @param spec The connection spec for the host to be queried. It must contain values for all parameters required by QueryConnectionInfo See QueryConnectionInfo or a list of thrown expections.
+     * @return HostConnectInfo
+     * @throws GatewayConnectFault
+     * @throws GatewayHostNotReachable
+     * @throws GatewayNotFound
+     * @throws GatewayNotReachable
+     * @throws GatewayOperationRefused
+     * @throws GatewayToHostAuthFault
+     * @throws GatewayToHostTrustVerifyFault
+     * @throws HostConnectFault
+     * @throws InvalidArgument
+     * @throws InvalidLogin
+     * @throws RuntimeFault
+     * @throws RemoteException
+     */
+    public HostConnectInfo queryConnectionInfoViaSpec(HostConnectSpec spec) throws GatewayConnectFault, GatewayHostNotReachable, GatewayNotFound, GatewayNotReachable, GatewayOperationRefused, GatewayToHostAuthFault, GatewayToHostTrustVerifyFault, HostConnectFault, InvalidArgument, InvalidLogin, RuntimeFault, RemoteException {
+        return getVimService().queryConnectionInfoViaSpec(getMOR(), spec);
+    }
 }
