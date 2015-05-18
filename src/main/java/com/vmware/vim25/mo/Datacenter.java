@@ -122,4 +122,29 @@ public class Datacenter extends ManagedEntity {
     public VirtualMachineConfigOptionDescriptor[] queryDatacenterConfigOptionDescriptor() throws RuntimeFault, RemoteException {
         return getVimService().queryDatacenterConfigOptionDescriptor(getMOR());
     }
+
+    /**
+     * This method provides a way of getting basic information about a host without adding it to a datacenter. This
+     * method is similar to QueryConnectionInfo, but it takes a HostConnectSpec as argument, instead of list of
+     * parameters.
+     *
+     * @since 6.0
+     * @param spec The connection spec for the host to be queried. It must contain values for all parameters required by QueryConnectionInfo See QueryConnectionInfo or a list of thrown expections.
+     * @return HostConnectInfo
+     * @throws GatewayConnectFault
+     * @throws GatewayHostNotReachable
+     * @throws GatewayNotFound
+     * @throws GatewayNotReachable
+     * @throws GatewayOperationRefused
+     * @throws GatewayToHostAuthFault
+     * @throws GatewayToHostTrustVerifyFault
+     * @throws HostConnectFault
+     * @throws InvalidArgument
+     * @throws InvalidLogin
+     * @throws RuntimeFault
+     * @throws RemoteException
+     */
+    public HostConnectInfo queryConnectionInfoViaSpec(HostConnectSpec spec) throws GatewayConnectFault, GatewayHostNotReachable, GatewayNotFound, GatewayNotReachable, GatewayOperationRefused, GatewayToHostAuthFault, GatewayToHostTrustVerifyFault, HostConnectFault, InvalidArgument, InvalidLogin, RuntimeFault, RemoteException {
+        return getVimService().queryConnectionInfoViaSpec(getMOR(), spec);
+    }
 }

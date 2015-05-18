@@ -5198,4 +5198,11 @@ public class VimStub {
         params[0] = new Argument("_this", "ManagedObjectReference", _this);
         return (ManagedObjectReference) getWsc().invoke("StampAllRulesWithUuid_Task", params, "ManagedObjectReference");
     }
+
+    public HostConnectInfo queryConnectionInfoViaSpec(ManagedObjectReference _this, HostConnectSpec spec) throws GatewayConnectFault, GatewayHostNotReachable, GatewayNotFound, GatewayNotReachable, GatewayOperationRefused, GatewayToHostAuthFault, GatewayToHostTrustVerifyFault, HostConnectFault, InvalidArgument, InvalidLogin, RuntimeFault, RemoteException {
+        Argument[] params = new Argument[2];
+        params[0] = new Argument("_this", "ManagedObjectReference", _this);
+        params[1] = new Argument("spec", "HostConnectSpec", spec);
+        return (HostConnectInfo) getWsc().invoke("QueryConnectionInfoViaSpec", params, "HostConnectInfo");
+    }
 }
