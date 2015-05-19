@@ -98,7 +98,12 @@ public class WSClient extends SoapClient {
             log.error("Exception caught while invoking method: " + methodName, e1);
             // Fixes issue-28 still need to write a test which may require
             // further refacotring but this at least gets the InvalidLogin working.
-            throw (RemoteException) e1;
+            try {
+                throw (RemoteException) e1;
+            }
+            catch (ClassCastException ignore) {
+                throw new RemoteException("Exception caught trying to invoke method " + methodName, e1);
+            }
         }
         finally {
             if (is != null) {
