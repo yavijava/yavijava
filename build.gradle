@@ -7,7 +7,7 @@ apply plugin: 'groovy'
 
 group = "com.toastcoders"
 archivesBaseName = "yavijava"
-version = '5.5.10'
+version = '5.5.11'
 targetCompatibility = 1.6
 sourceCompatibility = 1.6
 
@@ -35,6 +35,10 @@ sourceSets {
 
     intTest {
         java {
+            compileClasspath += main.output + test.output
+            runtimeClasspath += main.output + test.output
+        }
+        groovy {
             compileClasspath += main.output + test.output
             runtimeClasspath += main.output + test.output
         }
