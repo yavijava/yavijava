@@ -38,6 +38,7 @@ package com.vmware.vim25;
 public class VirtualMachineVMCIDevice extends VirtualDevice {
   public Long id;
   public Boolean allowUnrestrictedCommunication;
+  public Boolean filterEnable;
 
   public Long getId() {
     return this.id;
@@ -54,4 +55,14 @@ public class VirtualMachineVMCIDevice extends VirtualDevice {
   public void setAllowUnrestrictedCommunication(Boolean allowUnrestrictedCommunication) {
     this.allowUnrestrictedCommunication=allowUnrestrictedCommunication;
   }
+
+public Boolean getFilterEnable() {
+    return filterEnable;
+}
+
+public void setFilterEnable(Boolean filterEnable) {
+    this.filterEnable = filterEnable;
+}
+  
+  
 }

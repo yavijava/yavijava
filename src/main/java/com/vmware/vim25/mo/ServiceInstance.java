@@ -353,6 +353,11 @@ public class ServiceInstance extends ManagedObject
 		return (OvfManager) createMO(getServiceContent().getOvfManager());
 	}
 	
+	public IoFilterManager getIoFilterManager()
+    {
+        return (IoFilterManager) createMO(getServiceContent().getIoFilterManager());
+    }
+	
 	private ManagedObject createMO(ManagedObjectReference mor)
 	{
 		return MorUtil.createExactManagedObject(getServerConnection(), mor);

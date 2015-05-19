@@ -42,6 +42,7 @@ public class VirtualDisk extends VirtualDevice {
   public StorageIOAllocationInfo storageIOAllocation;
   public String diskObjectId;
   public VirtualDiskVFlashCacheConfigInfo vFlashCacheConfigInfo;
+  public String[] iofilter;
 
   public long getCapacityInKB() {
     return this.capacityInKB;
@@ -90,4 +91,17 @@ public class VirtualDisk extends VirtualDevice {
   public void setVFlashCacheConfigInfo(VirtualDiskVFlashCacheConfigInfo vFlashCacheConfigInfo) {
     this.vFlashCacheConfigInfo=vFlashCacheConfigInfo;
   }
+
+public VirtualDiskVFlashCacheConfigInfo getvFlashCacheConfigInfo() {
+    return vFlashCacheConfigInfo;
+}
+
+public String[] getIofilter() {
+    return iofilter;
+}
+
+public void setIofilter(String[] iofilter) {
+    this.iofilter = iofilter;
+}
+  
 }

@@ -41,6 +41,7 @@ public class VirtualMachineVideoCard extends VirtualDevice {
   public Boolean useAutoDetect;
   public Boolean enable3DSupport;
   public String use3dRenderer;
+  public Long graphicsMemorySizeInKB;
 
   public Long getVideoRamSizeInKB() {
     return this.videoRamSizeInKB;
@@ -81,4 +82,13 @@ public class VirtualMachineVideoCard extends VirtualDevice {
   public void setUse3dRenderer(String use3dRenderer) {
     this.use3dRenderer=use3dRenderer;
   }
+
+public Long getGraphicsMemorySizeInKB() {
+    return graphicsMemorySizeInKB;
+}
+
+public void setGraphicsMemorySizeInKB(Long graphicsMemorySizeInKB) {
+    this.graphicsMemorySizeInKB = graphicsMemorySizeInKB;
+}
+  
 }

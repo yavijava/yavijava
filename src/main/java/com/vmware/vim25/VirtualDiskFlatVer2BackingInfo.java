@@ -48,6 +48,8 @@ public class VirtualDiskFlatVer2BackingInfo extends VirtualDeviceFileBackingInfo
   public String deltaDiskFormat;
   public Boolean digestEnabled;
   public Integer deltaGrainSize;
+  public String sharing;
+  public String deltaDiskFormatVariant;
 
   public String getDiskMode() {
     return this.diskMode;
@@ -144,4 +146,22 @@ public class VirtualDiskFlatVer2BackingInfo extends VirtualDeviceFileBackingInfo
   public void setDeltaGrainSize(Integer deltaGrainSize) {
     this.deltaGrainSize=deltaGrainSize;
   }
+
+    public String getSharing() {
+        return sharing;
+    }
+
+    public void setSharing(String sharing) {
+        this.sharing = sharing;
+    }
+
+    public String getDeltaDiskFormatVariant() {
+        return deltaDiskFormatVariant;
+    }
+
+    public void setDeltaDiskFormatVariant(String deltaDiskFormatVariant) {
+        this.deltaDiskFormatVariant = deltaDiskFormatVariant;
+    }
+  
+  
 }

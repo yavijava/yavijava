@@ -39,6 +39,9 @@ public class VirtualEthernetCard extends VirtualDevice {
   public String addressType;
   public String macAddress;
   public Boolean wakeOnLanEnabled;
+  public String externalId;
+  public VirtualEthernetCardResourceAllocation resourceAllocation;
+  public Boolean uptCompatibilityEnabled;
 
   public String getAddressType() {
     return this.addressType;
