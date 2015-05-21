@@ -5205,4 +5205,11 @@ public class VimStub {
         params[1] = new Argument("spec", "HostConnectSpec", spec);
         return (HostConnectInfo) getWsc().invoke("QueryConnectionInfoViaSpec", params, "HostConnectInfo");
     }
+
+    public ManagedObjectReference dvsReconfigureVmVnicNetworkResourcePool_Task(ManagedObjectReference _this, DvsVmVnicResourcePoolConfigSpec[] configSpec) throws ConcurrentAccess, ConflictingConfiguration, DvsFault, DvsNotAuthorized, InvalidName, NotFound, NotSupported, ResourceInUse, RuntimeFault, RemoteException {
+        Argument[] params = new Argument[2];
+        params[0] = new Argument("_this", "ManagedObjectReference", _this);
+        params[1] = new Argument("configSpec", "DvsVmVnicResourcePoolConfigSpec[]", configSpec);
+        return (ManagedObjectReference) getWsc().invoke("DvsReconfigureVmVnicNetworkResourcePool_Task", params, "ManagedObjectReference");
+    }
 }

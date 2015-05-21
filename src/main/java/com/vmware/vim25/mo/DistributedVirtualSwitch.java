@@ -32,36 +32,7 @@ package com.vmware.vim25.mo;
 
 import java.rmi.RemoteException;
 
-import com.vmware.vim25.AlreadyExists;
-import com.vmware.vim25.ConcurrentAccess;
-import com.vmware.vim25.DVPortConfigSpec;
-import com.vmware.vim25.DVPortgroupConfigSpec;
-import com.vmware.vim25.DVSCapability;
-import com.vmware.vim25.DVSConfigInfo;
-import com.vmware.vim25.DVSConfigSpec;
-import com.vmware.vim25.DVSHealthCheckConfig;
-import com.vmware.vim25.DVSNetworkResourcePool;
-import com.vmware.vim25.DVSNetworkResourcePoolConfigSpec;
-import com.vmware.vim25.DVSRuntimeInfo;
-import com.vmware.vim25.DVSSummary;
-import com.vmware.vim25.DistributedVirtualPort;
-import com.vmware.vim25.DistributedVirtualSwitchPortCriteria;
-import com.vmware.vim25.DistributedVirtualSwitchProductSpec;
-import com.vmware.vim25.DuplicateName;
-import com.vmware.vim25.DvsFault;
-import com.vmware.vim25.DvsNotAuthorized;
-import com.vmware.vim25.EntityBackupConfig;
-import com.vmware.vim25.InvalidHostState;
-import com.vmware.vim25.InvalidName;
-import com.vmware.vim25.InvalidState;
-import com.vmware.vim25.LimitExceeded;
-import com.vmware.vim25.ManagedObjectReference;
-import com.vmware.vim25.NotFound;
-import com.vmware.vim25.ResourceInUse;
-import com.vmware.vim25.ResourceNotAvailable;
-import com.vmware.vim25.RollbackFailure;
-import com.vmware.vim25.RuntimeFault;
-import com.vmware.vim25.TaskInProgress;
+import com.vmware.vim25.*;
 import com.vmware.vim25.mo.util.MorUtil;
 
 /**
@@ -159,6 +130,7 @@ public class DistributedVirtualSwitch extends ManagedEntity {
 
     /**
      * @since SDK5.0
+     * @deprecated Use {@link #dvsReconfigureVmVnicNetworkResourcePool_Task dvsReconfigureVmVnicNetworkResourcePool_Task}
      */
     public void addNetworkResourcePool(DVSNetworkResourcePoolConfigSpec[] configSpec) throws DvsFault, InvalidName, RuntimeFault, RemoteException {
         getVimService().addNetworkResourcePool(getMOR(), configSpec);
@@ -234,6 +206,28 @@ public class DistributedVirtualSwitch extends ManagedEntity {
     public Task reconfigureDVPort_Task(DVPortConfigSpec[] port) throws DvsFault, NotFound, ResourceInUse, ConcurrentAccess, RuntimeFault, RemoteException {
         ManagedObjectReference mor = getVimService().reconfigureDVPort_Task(getMOR(), port);
         return new Task(getServerConnection(), mor);
+    }
+
+    /**
+     * Reconfigure the Virtual NIC network resource pool configuration.
+     *
+     * @param configSpec The Virtual NIC network resource pool configuration specification and operation type.
+     * @return Returns a {@link com.vmware.vim25.mo.Task Task} with which to monitor the operation.
+     * @throws ConcurrentAccess
+     * @throws ConflictingConfiguration
+     * @throws DvsFault
+     * @throws DvsNotAuthorized
+     * @throws InvalidName
+     * @throws NotFound
+     * @throws NotSupported
+     * @throws ResourceInUse
+     * @throws RuntimeFault
+     * @throws RemoteException
+     * @since 6.0
+     */
+    public Task dvsReconfigureVmVnicNetworkResourcePool_Task(DvsVmVnicResourcePoolConfigSpec[] configSpec) throws ConcurrentAccess, ConflictingConfiguration, DvsFault, DvsNotAuthorized, InvalidName, NotFound, NotSupported, ResourceInUse, RuntimeFault, RemoteException {
+        ManagedObjectReference taskMor = getVimService().dvsReconfigureVmVnicNetworkResourcePool_Task(getMOR(), configSpec);
+        return new Task(getServerConnection(), taskMor);
     }
 
 }
