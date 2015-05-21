@@ -5212,4 +5212,11 @@ public class VimStub {
         params[1] = new Argument("configSpec", "DvsVmVnicResourcePoolConfigSpec[]", configSpec);
         return (ManagedObjectReference) getWsc().invoke("DvsReconfigureVmVnicNetworkResourcePool_Task", params, "ManagedObjectReference");
     }
+
+    public VirtualMachineConfigOption queryConfigOptionEx(ManagedObjectReference _this, EnvironmentBrowserConfigOptionQuerySpec spec) throws InvalidArgument, RuntimeFault, RemoteException {
+        Argument[] params = new Argument[2];
+        params[0] = new Argument("_this", "ManagedObjectReference", _this);
+        params[1] = new Argument("spec", "EnvironmentBrowserConfigOptionQuerySpec", spec);
+        return (VirtualMachineConfigOption) getWsc().invoke("QueryConfigOptionEx", params, "VirtualMachineConfigOption");
+    }
 }
