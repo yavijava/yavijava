@@ -5219,4 +5219,13 @@ public class VimStub {
         params[1] = new Argument("spec", "EnvironmentBrowserConfigOptionQuerySpec", spec);
         return (VirtualMachineConfigOption) getWsc().invoke("QueryConfigOptionEx", params, "VirtualMachineConfigOption");
     }
+
+    public void importUnmanagedSnapshot(ManagedObjectReference _this, String vdisk, ManagedObjectReference datacenter, String vvolId) throws InvalidDatastore, NotFound, RuntimeFault, RemoteException {
+        Argument[] params = new Argument[4];
+        params[0] = new Argument("_this", "ManagedObjectReference", _this);
+        params[1] = new Argument("vdisk", "String", vdisk);
+        params[2] = new Argument("datacenter", "ManagedObjectReference", datacenter);
+        params[3] = new Argument("vvolId", "String", vvolId);
+        getWsc().invoke("ImportUnmanagedSnapshot", params, null);
+    }
 }

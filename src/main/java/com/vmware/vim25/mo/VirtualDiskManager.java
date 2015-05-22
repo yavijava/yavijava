@@ -137,4 +137,36 @@ public class VirtualDiskManager extends ManagedObject {
             getVimService().zeroFillVirtualDisk_Task(getMOR(), name, datacenter == null ? null : datacenter.getMOR()));
     }
 
+    /**
+     * Import an unmanaged-snapshot from Virtual-Volume(VVol) enabled Storage Array.
+     *
+     * Storage Array may support users to take snapshots indepedent of VMware stack. Such copies or snapshots are known
+     * as 'Unmanaged-Snapshots'. We are providing an ability to end-users to import such unmanaged-snapshots as Virtual
+     * Disks.
+     *
+     * End-user needs to know the VVol-Identifier to import unmanaged snapshot as VirtualDisk.
+     *
+     * Once VirtualDisk is created, user can use 'Datastore Browser' to use with rest of Virtual Machine provisioning
+     * APIs.
+     *
+     * @param vdisk -
+     *              The name of the disk to import, either a datastore path or a URL referring to the virtual disk from
+     *              which to get geometry information.
+     * @param datacenter -
+     *                   If vdisk is a datastore path, the datacenter for that datastore path. Not needed when invoked
+     *                   directly on ESX. If not specified on a call to VirtualCenter, vdisk must be a URL.
+     * @param vvolId Unmanaged snapshot identifier
+     * @throws InvalidDatastore
+     * @throws NotFound
+     * @throws RuntimeFault
+     * @throws RemoteException
+     * @since 6.0
+     */
+    public void importUnmanagedSnapshot(String vdisk, Datacenter datacenter, String vvolId) throws InvalidDatastore, NotFound, RuntimeFault, RemoteException {
+        getVimService().importUnmanagedSnapshot(getMOR(), vdisk, datacenter == null ? null : datacenter.getMOR(), vvolId);
+    }
+
+    public void importUnmanagedSnapshot(String vdisk, String vvolId) throws InvalidDatastore, NotFound, RuntimeFault, RemoteException {
+        importUnmanagedSnapshot(vdisk, null, vvolId);
+    }
 }
