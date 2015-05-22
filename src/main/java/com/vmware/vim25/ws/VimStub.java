@@ -5228,4 +5228,18 @@ public class VimStub {
         params[3] = new Argument("vvolId", "String", vvolId);
         getWsc().invoke("ImportUnmanagedSnapshot", params, null);
     }
+
+    public ManagedObjectReference createVvolDatastore(ManagedObjectReference _this, HostDatastoreSystemVvolDatastoreSpec spec) throws DuplicateName, HostConfigFault, InvalidName, NotFound, RuntimeFault, RemoteException {
+        Argument[] params = new Argument[2];
+        params[0] = new Argument("_this", "ManagedObjectReference", _this);
+        params[1] = new Argument("spec", "HostDatastoreSystemVvolDatastoreSpec", spec);
+        return (ManagedObjectReference) getWsc().invoke("CreateVvolDatastore", params, "ManagedObjectReference");
+    }
+
+    public ManagedObjectReference removeDatastoreEx_Task(ManagedObjectReference _this, ManagedObjectReference[] datastore) throws HostConfigFault, RuntimeFault, RemoteException {
+        Argument[] params = new Argument[2];
+        params[0] = new Argument("_this", "ManagedObjectReference", _this);
+        params[1] = new Argument("datastore", "ManagedObjectReference[]", datastore);
+        return (ManagedObjectReference) getWsc().invoke("RemoveDatastoreEx_Task", params, "ManagedObjectReference");
+    }
 }

@@ -32,6 +32,7 @@ package com.vmware.vim25.mo;
 import java.rmi.RemoteException;
 
 import com.vmware.vim25.*;
+import com.vmware.vim25.mo.util.MorUtil;
 
 /**
  * The managed object class corresponding to the one defined in VI SDK API reference.
@@ -148,4 +149,37 @@ public class HostDatastoreSystem extends ManagedObject {
         getVimService().updateLocalSwapDatastore(getMOR(), datastore == null ? null : datastore.getMOR());
     }
 
+    /**
+     * Create a Virtual-Volume based datastore
+     *
+     * @param spec Specification for creating a Virtual-Volume based datastore.
+     * @return The newly created datastore.
+     * @throws DuplicateName
+     * @throws HostConfigFault
+     * @throws InvalidName
+     * @throws NotFound
+     * @throws RuntimeFault
+     * @throws RemoteException
+     * @since 6.0
+     */
+    public Datastore createVvolDatastore(HostDatastoreSystemVvolDatastoreSpec spec) throws DuplicateName, HostConfigFault, InvalidName, NotFound, RuntimeFault, RemoteException {
+        ManagedObjectReference dsMor = getVimService().createVvolDatastore(getMOR(), spec);
+        return new Datastore(getServerConnection(), dsMor);
+    }
+
+    /**
+     * Remove one or more datastores. This is an asynchronous, batch operation of removeDatastore. Please see
+     * {@link #removeDatastore(Datastore) RemoveDatastore} for operational details. Note: This API currently supports
+     * removal of only NFS datastores.
+     *
+     * @param datastore Each element specifies one datastore to be removed.
+     * @return Task to monitor
+     * @throws HostConfigFault
+     * @throws RuntimeFault
+     * @throws RemoteException
+     */
+    public Task removeDatastoreEx_Task(Datastore[] datastore) throws HostConfigFault, RuntimeFault, RemoteException {
+        ManagedObjectReference taskMor = getVimService().removeDatastoreEx_Task(getMOR(), MorUtil.createMORs(datastore));
+        return new Task(getServerConnection(), taskMor);
+    }
 }
