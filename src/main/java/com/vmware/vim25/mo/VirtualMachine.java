@@ -190,10 +190,68 @@ public class VirtualMachine extends ManagedEntity {
 
     /**
      * @since SDK4.0
+     * @deprecated
+     * As of vSphere API 6.0, use {@link #createSecondaryVMEx_Task createSecondaryVMEx_Task} instead.
      */
     public Task createSecondaryVM_Task(HostSystem host) throws TaskInProgress, InvalidState, InsufficientResourcesFault, VmFaultToleranceIssue, FileFault, VmConfigFault, RuntimeFault, RemoteException {
         ManagedObjectReference mor = getVimService().createSecondaryVM_Task(getMOR(), host == null ? null : host.getMOR());
         return new Task(getServerConnection(), mor);
+    }
+
+    /**
+     * Creates a secondary virtual machine to be part of this fault tolerant group.
+     *
+     * If a host is specified, the secondary virtual machine will be created on it. Otherwise, a host will be selected
+     * by the system.
+     *
+     * If a FaultToleranceConfigSpec is specified, the virtual machine's configuration files and disks will be created
+     * in the specified datastores.
+     *
+     * If the primary virtual machine (i.e., this virtual machine) is powered on when the secondary is created, an
+     * attempt will be made to power on the secondary on a system selected host. If the cluster is a DRS cluster, DRS
+     * will be invoked to obtain a placement for the new secondary virtual machine. If the DRS recommendation
+     * (see {@link com.vmware.vim25.ClusterRecommendation ClusterRecommendation}) is automatic, it will be automatically
+     * executed. Otherwise, the recommendation will be returned to the caller of this method and the secondary will
+     * remain powered off until the recommendation is approved using
+     * {@link com.vmware.vim25.mo.ClusterComputeResource#applyRecommendation applyRecommendation}. Failure to power on the
+     * secondary virtual machine will not fail the creation of the secondary. This method creates a Record-Replay FT VM
+     * for single vCPU VMs only when vm.useLegacyFt is set to true in vm.config.extraConfig.
+     *
+     * @param host -
+     *             The host where the secondary virtual machine is to be created and powered on. If no host is specified,
+     *             a compatible host will be selected by the system. If a host cannot be found for the secondary or the
+     *             specified host is not suitable, the secondary will not be created and a fault will be returned.
+     * @param spec contains information about the metadata file and vmdk files for a fault tolerant VM pair.
+     * @return This method returns a Task object with which to monitor the operation. The info.result property in the Task returns an instance of the FaultToleranceSecondaryOpResult data object, which contains a reference to the created VirtualMachine and the status of powering it on, if attempted.
+     * @throws FileFault
+     * @throws InsufficientResourcesFault
+     * @throws InvalidState
+     * @throws ManagedObjectNotFound
+     * @throws NotSupported
+     * @throws RuntimeFault
+     * @throws TaskInProgress
+     * @throws VmConfigFault
+     * @throws VmFaultToleranceIssue
+     * @throws RemoteException
+     * @since 6.0
+     */
+    public Task createSecondaryVMEx_Task(HostSystem host, FaultToleranceConfigSpec spec) throws FileFault, InsufficientResourcesFault, InvalidState, ManagedObjectNotFound, NotSupported, RuntimeFault, TaskInProgress, VmConfigFault, VmFaultToleranceIssue, RemoteException {
+        ManagedObjectReference taskMor = getVimService().createSecondaryVMEx_Task(getMOR(), host == null ? null : host.getMOR(), spec);
+        return new Task(getServerConnection(), taskMor);
+    }
+
+    /**
+     * @since 6.0
+     */
+    public Task createSecondaryVMEx_Task(HostSystem host) throws FileFault, InsufficientResourcesFault, InvalidState, ManagedObjectNotFound, NotSupported, RuntimeFault, TaskInProgress, VmConfigFault, VmFaultToleranceIssue, RemoteException {
+        return createSecondaryVMEx_Task(host, null);
+    }
+
+    /**
+     * @since 6.0
+     */
+    public Task createSecondaryVMEx_Task(FaultToleranceConfigSpec spec) throws FileFault, InsufficientResourcesFault, InvalidState, ManagedObjectNotFound, NotSupported, RuntimeFault, TaskInProgress, VmConfigFault, VmFaultToleranceIssue, RemoteException {
+        return createSecondaryVMEx_Task(null, spec);
     }
 
     /**
@@ -303,9 +361,37 @@ public class VirtualMachine extends ManagedEntity {
 
     /**
      * @since SDK4.1
+     * @deprecated
+     * As of 6.0 use {@link #queryFaultToleranceCompatibilityEx}
      */
     public LocalizedMethodFault[] queryFaultToleranceCompatibility() throws InvalidState, VmConfigFault, RuntimeFault, RemoteException {
         return getVimService().queryFaultToleranceCompatibility(getMOR());
+    }
+
+    /**
+     * This API can be invoked to determine whether a virtual machine is compatible for Fault Tolerance. The API only
+     * checks for VM-specific factors that impact compatibility for Fault Tolerance. Other requirements for Fault
+     * Tolerance such as host processor compatibility, logging nic configuration and licensing are not covered by this
+     * API. The query returns a list of faults, each fault corresponding to a specific incompatibility. If a given
+     * virtual machine is compatible for Fault Tolerance, then the fault list returned will be empty.
+     *
+     * @param forLegacyFt checks for legacy record-replay FT compatibility only if this is set to true.
+     * @return Localized Method Fault
+     * @throws InvalidState
+     * @throws VmConfigFault
+     * @throws RuntimeFault
+     * @throws RemoteException
+     * @since 6.0
+     */
+    public LocalizedMethodFault[] queryFaultToleranceCompatibilityEx(Boolean forLegacyFt) throws InvalidState, VmConfigFault, RuntimeFault, RemoteException {
+        return getVimService().queryFaultToleranceCompatibilityEx(getMOR(), forLegacyFt);
+    }
+
+    /**
+     * @since 6.0
+     */
+    public LocalizedMethodFault[] queryFaultToleranceCompatibilityEx() throws InvalidState, VmConfigFault, RuntimeFault, RemoteException {
+        return queryFaultToleranceCompatibilityEx(null);
     }
 
     /**
@@ -470,5 +556,18 @@ public class VirtualMachine extends ManagedEntity {
     public Task upgradeVM_Task(String version) throws TaskInProgress, InvalidState, AlreadyUpgraded, NoDiskFound, RuntimeFault, RemoteException {
         ManagedObjectReference mor = getVimService().upgradeVM_Task(getMOR(), version);
         return new Task(getServerConnection(), mor);
+    }
+
+    /**
+     * Send a non-maskable interrupt (NMI). Currently, there is no way to verify if the NMI was actually received by
+     * the guest OS.
+     *
+     * @throws InvalidState
+     * @throws RuntimeFault
+     * @throws RemoteException
+     * @since 6.0
+     */
+    public void sendNMI() throws InvalidState, RuntimeFault, RemoteException {
+        getVimService().sendNMI(getMOR());
     }
 }

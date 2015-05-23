@@ -2382,6 +2382,14 @@ public class VimStub {
         return (ManagedObjectReference) getWsc().invoke("CreateSecondaryVM_Task", paras, "ManagedObjectReference");
     }
 
+    public ManagedObjectReference createSecondaryVMEx_Task(ManagedObjectReference _this, ManagedObjectReference host, FaultToleranceConfigSpec spec) throws FileFault, InsufficientResourcesFault, InvalidState, ManagedObjectNotFound, NotSupported, RuntimeFault, TaskInProgress, VmConfigFault, VmFaultToleranceIssue, RemoteException {
+        Argument[] params = new Argument[3];
+        params[0] = new Argument("_this", "ManagedObjectReference", _this);
+        params[1] = new Argument("host", "ManagedObjectReference", host);
+        params[2] = new Argument("spec", "FaultToleranceConfigSpec", host);
+        return (ManagedObjectReference) getWsc().invoke("CreateSecondaryVMEx_Task", params, "ManagedObjectReference");
+    }
+
     public ManagedObjectReference turnOffFaultToleranceForVM_Task(ManagedObjectReference _this) throws java.rmi.RemoteException, TaskInProgress, VmFaultToleranceIssue, InvalidState, RuntimeFault {
         Argument[] paras = new Argument[1];
         paras[0] = new Argument("_this", "ManagedObjectReference", _this);
@@ -2492,6 +2500,13 @@ public class VimStub {
         Argument[] paras = new Argument[1];
         paras[0] = new Argument("_this", "ManagedObjectReference", _this);
         return (LocalizedMethodFault[]) getWsc().invoke("QueryFaultToleranceCompatibility", paras, "LocalizedMethodFault[]");
+    }
+
+    public LocalizedMethodFault[] queryFaultToleranceCompatibilityEx(ManagedObjectReference _this, Boolean forLegacyFt) throws java.rmi.RemoteException, InvalidState, VmConfigFault, RuntimeFault {
+        Argument[] params = new Argument[2];
+        params[0] = new Argument("_this", "ManagedObjectReference", _this);
+        params[1] = new Argument("forLegacyFt", "Boolean", forLegacyFt);
+        return (LocalizedMethodFault[]) getWsc().invoke("QueryFaultToleranceCompatibilityEx", params, "LocalizedMethodFault[]");
     }
 
     public void terminateVM(ManagedObjectReference _this) throws java.rmi.RemoteException, InvalidState, TaskInProgress, RuntimeFault {
@@ -5241,5 +5256,11 @@ public class VimStub {
         params[0] = new Argument("_this", "ManagedObjectReference", _this);
         params[1] = new Argument("datastore", "ManagedObjectReference[]", datastore);
         return (ManagedObjectReference) getWsc().invoke("RemoveDatastoreEx_Task", params, "ManagedObjectReference");
+    }
+
+    public void sendNMI(ManagedObjectReference _this) throws InvalidState, RuntimeFault, RemoteException {
+        Argument[] params = new Argument[1];
+        params[0] = new Argument("_this", "ManagedObjectReference", _this);
+        getWsc().invoke("SendNMI", params, null);
     }
 }
