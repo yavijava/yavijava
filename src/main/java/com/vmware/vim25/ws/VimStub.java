@@ -4090,10 +4090,12 @@ public class VimStub {
         return (ManagedObjectReference) getWsc().invoke("InitializeDisks_Task", paras, "ManagedObjectReference");
     }
 
-    public ManagedObjectReference removeDisk_Task(ManagedObjectReference _this, HostScsiDisk[] disk) throws java.rmi.RemoteException, RuntimeFault {
-        Argument[] paras = new Argument[2];
+    public ManagedObjectReference removeDisk_Task(ManagedObjectReference _this, HostScsiDisk[] disk, HostMaintenanceSpec maintenanceSpec, int timeout) throws java.rmi.RemoteException, RuntimeFault {
+        Argument[] paras = new Argument[4];
         paras[0] = new Argument("_this", "ManagedObjectReference", _this);
         paras[1] = new Argument("disk", "HostScsiDisk[]", disk);
+        paras[2] = new Argument("maintenanceSpec", "HostMaintenanceSpec", maintenanceSpec);
+        paras[3] = new Argument("timeout", "int", timeout);
         return (ManagedObjectReference) getWsc().invoke("RemoveDisk_Task", paras, "ManagedObjectReference");
     }
 
@@ -5262,5 +5264,26 @@ public class VimStub {
         Argument[] params = new Argument[1];
         params[0] = new Argument("_this", "ManagedObjectReference", _this);
         getWsc().invoke("SendNMI", params, null);
+    }
+
+    public ManagedObjectReference evacuateVsanNode_Task(ManagedObjectReference _this, HostMaintenanceSpec maintenanceSpec, int timeout) throws InvalidState, RequestCanceled, RuntimeFault, Timedout, VsanFault, RemoteException {
+        Argument[] params = new Argument[3];
+        params[0] = new Argument("_this", "ManagedObjectReference", _this);
+        params[1] = new Argument("maintenanceSpec", "HostMaintenanceSpec", maintenanceSpec);
+        params[2] = new Argument("timeout", "int", timeout);
+        return (ManagedObjectReference) getWsc().invoke("EvacuateVsanNode_Task", params, "ManagedObjectReference");
+    }
+
+    public ManagedObjectReference recommissionVsanNode_Task(ManagedObjectReference _this) throws InvalidState, RuntimeFault, VsanFault, RemoteException {
+        Argument[] params = new Argument[1];
+        params[0] = new Argument("_this", "ManagedObjectReference", _this);
+        return (ManagedObjectReference) getWsc().invoke("RecommissionVsanNode_Task", params, "ManagedObjectReference");
+    }
+
+    public ManagedObjectReference unmountDiskMapping_Task(ManagedObjectReference _this, VsanHostDiskMapping[] mapping) throws InvalidState, RuntimeFault, VsanFault, RemoteException {
+        Argument[] params = new Argument[2];
+        params[0] = new Argument("_this", "ManagedObjectReference", _this);
+        params[1] = new Argument("mapping", "VsanHostDiskMapping[]", mapping);
+        return (ManagedObjectReference) getWsc().invoke("UnmountDiskMapping_Task", params, "ManagedObjectReference");
     }
 }
