@@ -104,7 +104,11 @@ public class HostVsanSystem extends ManagedObject {
     }
 
     public Task removeDiskMapping_Task(VsanHostDiskMapping[] mapping) throws RuntimeFault, RemoteException {
-        ManagedObjectReference mor = getVimService().removeDiskMapping_Task(this.getMOR(), mapping);
+        return removeDiskMapping_Task(mapping, null, 0);
+    }
+
+    public Task removeDiskMapping_Task(VsanHostDiskMapping[] mapping, HostMaintenanceSpec maintenanceSpec, int timeout) throws RuntimeFault, RemoteException {
+        ManagedObjectReference mor = getVimService().removeDiskMapping_Task(this.getMOR(), mapping, maintenanceSpec, timeout);
         return new Task(getServerConnection(), mor);
     }
 

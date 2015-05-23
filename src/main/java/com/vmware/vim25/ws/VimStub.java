@@ -4099,10 +4099,12 @@ public class VimStub {
         return (ManagedObjectReference) getWsc().invoke("RemoveDisk_Task", paras, "ManagedObjectReference");
     }
 
-    public ManagedObjectReference removeDiskMapping_Task(ManagedObjectReference _this, VsanHostDiskMapping[] mapping) throws java.rmi.RemoteException, RuntimeFault {
-        Argument[] paras = new Argument[2];
+    public ManagedObjectReference removeDiskMapping_Task(ManagedObjectReference _this, VsanHostDiskMapping[] mapping, HostMaintenanceSpec maintenanceSpec, int timeout) throws java.rmi.RemoteException, RuntimeFault {
+        Argument[] paras = new Argument[4];
         paras[0] = new Argument("_this", "ManagedObjectReference", _this);
         paras[1] = new Argument("mapping", "VsanHostDiskMapping[]", mapping);
+        paras[2] = new Argument("maintenanceSpec", "HostMaintenanceSpec", maintenanceSpec);
+        paras[3] = new Argument("timeout", "int", timeout);
         return (ManagedObjectReference) getWsc().invoke("RemoveDiskMapping_Task", paras, "ManagedObjectReference");
     }
 
