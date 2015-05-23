@@ -5288,4 +5288,52 @@ public class VimStub {
         params[1] = new Argument("mapping", "VsanHostDiskMapping[]", mapping);
         return (ManagedObjectReference) getWsc().invoke("UnmountDiskMapping_Task", params, "ManagedObjectReference");
     }
+
+    public void disableSmartCardAuthentication(ManagedObjectReference _this) throws ActiveDirectoryFault, HostConfigFault, RuntimeFault, RemoteException {
+        Argument[] params = new Argument[1];
+        params[0] = new Argument("_this", "ManagedObjectReference", _this);
+        getWsc().invoke("DisableSmartCardAuthentication", params, null);
+    }
+
+    public void enableSmartCardAuthentication(ManagedObjectReference _this) throws ActiveDirectoryFault, HostConfigFault, RuntimeFault, RemoteException {
+        Argument[] params = new Argument[1];
+        params[0] = new Argument("_this", "ManagedObjectReference", _this);
+        getWsc().invoke("EnbleSmartCardAuthentication", params, null);
+    }
+
+    public void installSmartCardTrustAnchor(ManagedObjectReference _this, String cert) throws HostConfigFault, RuntimeFault, RemoteException {
+        Argument[] params = new Argument[2];
+        params[0] = new Argument("_this", "ManagedObjectReference", _this);
+        params[1] = new Argument("cert", "String", cert);
+        getWsc().invoke("InstallSmartCardTrustAnchor", params, null);
+    }
+
+    public String[] listSmartCardTrustAnchors(ManagedObjectReference _this) throws HostConfigFault, RuntimeFault, RemoteException {
+        Argument[] params = new Argument[1];
+        params[0] = new Argument("_this", "ManagedObjectReference", _this);
+        return (String[]) getWsc().invoke("ListSmartCardTrustAnchors", params, "String[]");
+    }
+
+    public void removeSmartCardTrustAnchor(ManagedObjectReference _this, String issuer, String serial) throws HostConfigFault, RuntimeFault, RemoteException {
+        Argument[] params = new Argument[3];
+        params[0] = new Argument("_this", "ManagedObjectReference", _this);
+        params[1] = new Argument("issuer", "String", issuer);
+        params[2] = new Argument("serial", "String", serial);
+        getWsc().invoke("RemoveSmartCardTrustAnchor", params, null);
+    }
+
+    public void removeSmartCardTrustAnchorByFingerprint(ManagedObjectReference _this, String fingerprint, String digest) throws HostConfigFault, RuntimeFault, RemoteException {
+        Argument[] params = new Argument[3];
+        params[0] = new Argument("_this", "ManagedObjectReference", _this);
+        params[1] = new Argument("fingerprint", "String", fingerprint);
+        params[2] = new Argument("digest", "String", digest);
+        getWsc().invoke("RemoveSmartCardTrustAnchorByFingerprint", params, null);
+    }
+
+    public void replaceSmartCardTrustAnchors(ManagedObjectReference _this, String[] certs) throws RuntimeFault, RemoteException {
+        Argument[] params = new Argument[2];
+        params[0] = new Argument("_this", "ManagedObjectReference", _this);
+        params[1] = new Argument("certs", "String[]", certs);
+        getWsc().invoke("ReplaceSmartCardTrustAnchors", params, null);
+    }
 }
