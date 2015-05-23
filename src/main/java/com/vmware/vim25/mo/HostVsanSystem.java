@@ -41,59 +41,50 @@ import com.vmware.vim25.VsanHostDiskResult;
 
 /**
  * The managed object class corresponding to the one defined in VI SDK API reference.
+ *
  * @author Steve JIN (http://www.doublecloud.org)
  * @since SDK5.5
  */
 
-public class HostVsanSystem extends ManagedObject 
-{
-	public HostVsanSystem(ServerConnection serverConnection, ManagedObjectReference mor) 
-	{
-		super(serverConnection, mor);
-	}
-	
-  public VsanHostConfigInfo getConfig()
-  {
-    return (VsanHostConfigInfo) getCurrentProperty("config");
-  }
-  
-  public Task addDisks_Task(HostScsiDisk[] disk) throws RuntimeFault, RemoteException
-  {
-    ManagedObjectReference mor = getVimService().addDisks_Task(this.getMOR(), disk);
-    return new Task(getServerConnection(), mor);
-  }
-  
-  public Task initializeDisks_Task(VsanHostDiskMapping[] mapping) throws RuntimeFault, RemoteException
-  {
-    ManagedObjectReference mor = getVimService().initializeDisks_Task(this.getMOR(), mapping);
-    return new Task(getServerConnection(), mor);
-  }
-  
-  public VsanHostDiskResult[] queryDisksForVsan(String[] canonicalName) throws RuntimeFault, RemoteException
-  {
-    return getVimService().queryDisksForVsan(this.getMOR(), canonicalName);
-  }
-  
-  public VsanHostClusterStatus queryHostStatus() throws RuntimeFault, RemoteException
-  {
-    return getVimService().queryHostStatus(this.getMOR());
-  }
-  
-  public Task removeDisk_Task(HostScsiDisk[] disk) throws RuntimeFault, RemoteException
-  {
-    ManagedObjectReference mor = getVimService().removeDisk_Task(this.getMOR(), disk);
-    return new Task(getServerConnection(), mor);
-  }
-  
-  public Task removeDiskMapping_Task( VsanHostDiskMapping[] mapping) throws RuntimeFault, RemoteException
-  {
-    ManagedObjectReference mor = getVimService().removeDiskMapping_Task(this.getMOR(), mapping);
-    return new Task(getServerConnection(), mor);
-  }
-  
-  public Task updateVsan_Task(VsanHostConfigInfo config) throws RuntimeFault, RemoteException
-  {
-    ManagedObjectReference mor = getVimService().updateVsan_Task(this.getMOR(), config);
-    return new Task(getServerConnection(), mor);
-  }
+public class HostVsanSystem extends ManagedObject {
+    public HostVsanSystem(ServerConnection serverConnection, ManagedObjectReference mor) {
+        super(serverConnection, mor);
+    }
+
+    public VsanHostConfigInfo getConfig() {
+        return (VsanHostConfigInfo) getCurrentProperty("config");
+    }
+
+    public Task addDisks_Task(HostScsiDisk[] disk) throws RuntimeFault, RemoteException {
+        ManagedObjectReference mor = getVimService().addDisks_Task(this.getMOR(), disk);
+        return new Task(getServerConnection(), mor);
+    }
+
+    public Task initializeDisks_Task(VsanHostDiskMapping[] mapping) throws RuntimeFault, RemoteException {
+        ManagedObjectReference mor = getVimService().initializeDisks_Task(this.getMOR(), mapping);
+        return new Task(getServerConnection(), mor);
+    }
+
+    public VsanHostDiskResult[] queryDisksForVsan(String[] canonicalName) throws RuntimeFault, RemoteException {
+        return getVimService().queryDisksForVsan(this.getMOR(), canonicalName);
+    }
+
+    public VsanHostClusterStatus queryHostStatus() throws RuntimeFault, RemoteException {
+        return getVimService().queryHostStatus(this.getMOR());
+    }
+
+    public Task removeDisk_Task(HostScsiDisk[] disk) throws RuntimeFault, RemoteException {
+        ManagedObjectReference mor = getVimService().removeDisk_Task(this.getMOR(), disk);
+        return new Task(getServerConnection(), mor);
+    }
+
+    public Task removeDiskMapping_Task(VsanHostDiskMapping[] mapping) throws RuntimeFault, RemoteException {
+        ManagedObjectReference mor = getVimService().removeDiskMapping_Task(this.getMOR(), mapping);
+        return new Task(getServerConnection(), mor);
+    }
+
+    public Task updateVsan_Task(VsanHostConfigInfo config) throws RuntimeFault, RemoteException {
+        ManagedObjectReference mor = getVimService().updateVsan_Task(this.getMOR(), config);
+        return new Task(getServerConnection(), mor);
+    }
 }
