@@ -360,4 +360,244 @@ public class HostStorageSystem extends ExtensibleManagedObject {
     public void upgradeVmLayout(String vmfsPath) throws HostConfigFault, NotFound, RuntimeFault, RemoteException {
         getVimService().upgradeVmfs(getMOR(), vmfsPath);
     }
+
+    /**
+     * Attach one or more SCSI LUNs. This is an asynchronous, batch operation of attachScisLun.
+     * @see #attachScsiLun(String) for operational details.
+     *
+     * @param lunUuid each element specifies UUID of LUN to be attached.
+     * @return Task
+     * @throws HostConfigFault
+     * @throws RuntimeFault
+     * @throws RemoteException
+     * @since 6.0
+     */
+    public Task attachScsiLunEx_Task(String[] lunUuid) throws HostConfigFault, RuntimeFault, RemoteException {
+        ManagedObjectReference taskMor = getVimService().attachScsiLunEx_Task(getMOR(), lunUuid);
+        return new Task(getServerConnection(), taskMor);
+    }
+
+    /**
+     * Change password for existing NFS user. This method shall be called after the NFS user has been created on the host.
+     *
+     * @param password New Password
+     * @throws HostConfigFault
+     * @throws NotFound
+     * @throws RuntimeFault
+     * @throws RemoteException
+     * @since 6.0
+     */
+    public void changeNFSUserPassword(String password) throws HostConfigFault, NotFound, RuntimeFault, RemoteException {
+        getVimService().changeNFSUserPassword(getMOR(), password);
+    }
+
+    /**
+     * Clear the NFS user configured on the esx host
+     *
+     * @throws HostConfigFault
+     * @throws RuntimeFault
+     * @throws RemoteException
+     * @since 6.0
+     */
+    public void clearNFSUser() throws HostConfigFault, RuntimeFault, RemoteException {
+        getVimService().clearNFSUser(getMOR());
+    }
+
+    /**
+     * Detach one or more SCSI LUNs. This is an asynchronous, batch operation of detachScisLun.
+     * @see #detachScsiLun(String) ScsiLun for operational details.
+     * @param lunUuid each element specifies UUID of LUN to be detached.
+     * @return Task
+     * @throws HostConfigFault
+     * @throws RuntimeFault
+     * @throws RemoteException
+     * @since 6.0
+     */
+    public Task detachScsiLunEx_Task(String[] lunUuid) throws HostConfigFault, RuntimeFault, RemoteException {
+        ManagedObjectReference taskMor = getVimService().detachScsiLunEx_Task(getMOR(), lunUuid);
+        return new Task(getServerConnection(), taskMor);
+    }
+
+    /**
+     * Mark a disk to local disk, due to the reason that local disks behind some controllers might not be recongized as
+     * local correctly. Task failure might lose existing claim rules on the disk.
+     *
+     * @param scsiDiskUuid The SCSI disk UUID.
+     * @return Task
+     * @throws HostConfigFault
+     * @throws NotFound
+     * @throws RuntimeFault
+     * @throws RemoteException
+     * @since 6.0
+     */
+    public Task markAsLocal_Task(String scsiDiskUuid) throws HostConfigFault, NotFound, RuntimeFault, RemoteException {
+        ManagedObjectReference taskMor = getVimService().markAsLocal_Task(getMOR(), scsiDiskUuid);
+        return new Task(getServerConnection(), taskMor);
+    }
+
+    /**
+     * Mark a disk to remote disk, which is the opposite operation of {@link #markAsLocal_Task} Task failure might lose existing
+     * claim rules on the disk.
+     *
+     * @param scsiDiskUuid The SCSI disk UUID.
+     * @return Task
+     * @throws HostConfigFault
+     * @throws NotFound
+     * @throws RuntimeFault
+     * @throws RemoteException
+     * @since 6.0
+     */
+    public Task markAsNonLocal_Task(String scsiDiskUuid) throws HostConfigFault, NotFound, RuntimeFault, RemoteException {
+        ManagedObjectReference taskMor = getVimService().markAsNonLocal_Task(getMOR(), scsiDiskUuid);
+        return new Task(getServerConnection(), taskMor);
+    }
+
+    /**
+     * Mark a disk to SSD, due to the reason that SSDs behind some controllers might not be recongized as SSD correctly.
+     * Task failure might lose existing claim rules on the disk.
+     *
+     * @param scsiDiskUuid The SCSI disk UUID.
+     * @return Task
+     * @throws HostConfigFault
+     * @throws NotFound
+     * @throws RuntimeFault
+     * @throws RemoteException
+     * @since 6.0
+     */
+    public Task markAsNonSsd_Task(String scsiDiskUuid) throws HostConfigFault, NotFound, RuntimeFault, RemoteException {
+        ManagedObjectReference taskMor = getVimService().markAsNonSsd_Task(getMOR(), scsiDiskUuid);
+        return new Task(getServerConnection(), taskMor);
+    }
+
+    /**
+     * Mark a disk to SSD, due to the reason that SSDs behind some controllers might not be recongized as SSD correctly.
+     * Task failure might lose existing claim rules on the disk.
+     *
+     * @param scsiDiskUuid The SCSI disk UUID.
+     * @return Task
+     * @throws HostConfigFault
+     * @throws NotFound
+     * @throws RuntimeFault
+     * @throws RemoteException
+     * @since 6.0
+     */
+    public Task markAsSsd_Task(String scsiDiskUuid) throws HostConfigFault, NotFound, RuntimeFault, RemoteException {
+        ManagedObjectReference taskMor = getVimService().markAsSsd_Task(getMOR(), scsiDiskUuid);
+        return new Task(getServerConnection(), taskMor);
+    }
+
+    /**
+     * Mount one or more VMFS volumes. This is an asynchronous, batch operation of mountVmfsVolume.
+     * @see #mountVmfsVolume for operational details.
+     *
+     * @param vmfsUuid each element specifies the UUID of a VMFS volume to be unmounted.
+     * @return Task
+     * @throws HostConfigFault
+     * @throws RuntimeFault
+     * @throws RemoteException
+     * @since 6.0
+     */
+    public Task mountVmfsVolumeEx_Task(String[] vmfsUuid) throws HostConfigFault, RuntimeFault, RemoteException {
+        ManagedObjectReference taskMor = getVimService().mountVmfsVolumeEx_Task(getMOR(), vmfsUuid);
+        return new Task(getServerConnection(), taskMor);
+    }
+
+    /**
+     * Query the NFS user configured on the esx host
+     *
+     * @return UserInfo objects. See {@link com.vmware.vim25.HostNasVolumeUserInfo}
+     * @throws HostConfigFault
+     * @throws RuntimeFault
+     * @throws RemoteException
+     * @since 6.0
+     */
+    public HostNasVolumeUserInfo queryNFSUser() throws HostConfigFault, RuntimeFault, RemoteException {
+        return getVimService().queryNFSUser(getMOR());
+    }
+
+    /**
+     * Set NFS username and password on the host. The specified password is stored encrypted at the host and overwrites
+     * any previous password configuration. This information is only needed when the host has mounted NFS volumes with
+     * security types that require user credentials for accessing data. The password is used to acquire credentials that
+     * the NFS client needs to use in order to secure NFS traffic using RPCSECGSS. The client will access files on all
+     * volumes mounted on this host (that are mounted with the relevant security type) on behalf of specified user.
+     *
+     * At present, this API supports only file system NFSv4.1.
+     *
+     * @param user Username
+     * @param password Passowrd
+     * @throws HostConfigFault
+     * @throws RuntimeFault
+     * @throws RemoteException
+     * @since 6.0
+     */
+    public void setNFSUser(String user, String password) throws HostConfigFault, RuntimeFault, RemoteException {
+        getVimService().setNFSUser(getMOR(), user, password);
+    }
+
+    /**
+     * Turn off one or more disk locator LEDs. This is a batch operation to turn off one or more disk locator LEDs,
+     * which is the opposite operation of {@link #turnDiskLocatorLedOn_Task}
+     *
+     * @param scsiDiskUuids The SCSI disk UUIDs for which the disk locator LED should be turned off.
+     * @return Task
+     * @throws HostConfigFault
+     * @throws RuntimeFault
+     * @throws RemoteException
+     * @since 6.0
+     */
+    public Task turnDiskLocatorLedOff_Task(String[] scsiDiskUuids) throws HostConfigFault, RuntimeFault, RemoteException {
+        ManagedObjectReference taskMor = getVimService().turnDiskLocatorLedOff_Task(getMOR(), scsiDiskUuids);
+        return new Task(getServerConnection(), taskMor);
+    }
+
+    /**
+     * Turn on one or more disk locator LEDs, duration is the maximum that hardware can support. This is a batch
+     * operation to turn on one or more disk locator LEDs, so that user can easily locate the ScsiDisk on physical
+     * infrastructure.
+     *
+     * @param scsiDiskUuids The SCSI disk UUIDs for which the disk locator LED should be turned on.
+     * @return Task
+     * @throws HostConfigFault
+     * @throws RuntimeFault
+     * @throws RemoteException
+     * @since 6.0
+     */
+    public Task turnDiskLocatorLedOn_Task(String[] scsiDiskUuids) throws HostConfigFault, RuntimeFault, RemoteException {
+        ManagedObjectReference taskMor = getVimService().turnDiskLocatorLedOn_Task(getMOR(), scsiDiskUuids);
+        return new Task(getServerConnection(), taskMor);
+    }
+
+    /**
+     * Unmap one or more VMFS volumes. This is an asynchronous, batch operation. The operation unmaps free blocks in
+     * each VMFS volume.
+     *
+     * @param vmfsUuid each element specifies the UUID of a VMFS volume to be unmapped.
+     * @return Task
+     * @throws HostConfigFault
+     * @throws RuntimeFault
+     * @throws RemoteException
+     * @since 6.0
+     */
+    public Task unmapVmfsVolumeEx_Task(String[] vmfsUuid) throws HostConfigFault, RuntimeFault, RemoteException {
+        ManagedObjectReference taskMor = getVimService().unmapVmfsVolumeEx_Task(getMOR(), vmfsUuid);
+        return new Task(getServerConnection(), taskMor);
+    }
+
+    /**
+     * Unmount one or more VMFS volumes. This is an asynchronous, batch operation of unmountVmfsVolume.
+     *
+     * @see #unmountVmfsVolume for operational details.
+     *
+     * @param vmfsUuid each element specifies the UUID of a VMFS volume to be unmounted.
+     * @return Task
+     * @throws HostConfigFault
+     * @throws RuntimeFault
+     * @throws RemoteException
+     * @since 6.0
+     */
+    public Task unmountVmfsVolumeEx_Task(String[] vmfsUuid) throws HostConfigFault, RuntimeFault, RemoteException {
+        ManagedObjectReference taskMor = getVimService().unmountVmfsVolumeEx_Task(getMOR(), vmfsUuid);
+        return new Task(getServerConnection(), taskMor);
+    }
 }
