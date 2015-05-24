@@ -21,6 +21,15 @@ import lombok.Setter;
  * @since 6.0
  */
 
-public class GuestRegValueQwordSpec extends GuestRegValueDataSpec {
-    @Getter @Setter public long value;
+public class ReplicationConfigSpec extends DynamicData {
+    @Getter @Setter public long generation;
+    @Getter @Setter public String vmReplicationId;
+    @Getter @Setter public String destination;
+    @Getter @Setter public int port;
+    @Getter @Setter public long rpo;
+    @Getter @Setter public boolean quiesceGuestEnabled;
+    @Getter @Setter public boolean paused;
+    @Getter @Setter public boolean oppUpdatesEnabled;
+    @Getter @Setter public Boolean netCompressionEnabled;
+    @Getter @Setter public ReplicationInfoDiskSettings[] disk;
 }
