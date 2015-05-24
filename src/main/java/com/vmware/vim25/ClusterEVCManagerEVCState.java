@@ -1,78 +1,31 @@
 package com.vmware.vim25;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
- * Copyright 2015 Michael Rice <michael@michaelrice.org>
- * <p/>
+ * Created by Michael Rice on Sun May 24 16:15:34 CDT 2015
+ *
+ * Copyright 2015 Michael Rice
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * <p/>
- * http://www.apache.org/licenses/LICENSE-2.0
- * <p/>
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- */
-
-/**
  * @since 6.0
  */
+
 public class ClusterEVCManagerEVCState extends DynamicData {
-
-    public String currentEVCModeKey;
-    public HostFeatureCapability[] featureCapability;
-    public HostFeatureMask[] featureMask;
-    public VirtualMachineFeatureRequirement[] featureRequirement;
-    public HostCpuIdInfo[] guaranteedCPUFeatures;
-    public EVCMode[] supportedEVCMode;
-
-    public String getCurrentEVCModeKey() {
-        return currentEVCModeKey;
-    }
-
-    public void setCurrentEVCModeKey(String currentEVCModeKey) {
-        this.currentEVCModeKey = currentEVCModeKey;
-    }
-
-    public HostFeatureCapability[] getFeatureCapability() {
-        return featureCapability;
-    }
-
-    public void setFeatureCapability(HostFeatureCapability[] featureCapability) {
-        this.featureCapability = featureCapability;
-    }
-
-    public HostFeatureMask[] getFeatureMask() {
-        return featureMask;
-    }
-
-    public void setFeatureMask(HostFeatureMask[] featureMask) {
-        this.featureMask = featureMask;
-    }
-
-    public VirtualMachineFeatureRequirement[] getFeatureRequirement() {
-        return featureRequirement;
-    }
-
-    public void setFeatureRequirement(VirtualMachineFeatureRequirement[] featureRequirement) {
-        this.featureRequirement = featureRequirement;
-    }
-
-    public HostCpuIdInfo[] getGuaranteedCPUFeatures() {
-        return guaranteedCPUFeatures;
-    }
-
-    public void setGuaranteedCPUFeatures(HostCpuIdInfo[] guaranteedCPUFeatures) {
-        this.guaranteedCPUFeatures = guaranteedCPUFeatures;
-    }
-
-    public EVCMode[] getSupportedEVCMode() {
-        return supportedEVCMode;
-    }
-
-    public void setSupportedEVCMode(EVCMode[] supportedEVCMode) {
-        this.supportedEVCMode = supportedEVCMode;
-    }
+    @Getter @Setter public EVCMode[] supportedEVCMode;
+    @Getter @Setter public String currentEVCModeKey;
+    @Getter @Setter public HostCpuIdInfo[] guaranteedCPUFeatures;
+    @Getter @Setter public HostFeatureCapability[] featureCapability;
+    @Getter @Setter public HostFeatureMask[] featureMask;
+    @Getter @Setter public VirtualMachineFeatureRequirement[] featureRequirement;
 }
