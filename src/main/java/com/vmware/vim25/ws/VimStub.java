@@ -5336,4 +5336,108 @@ public class VimStub {
         params[1] = new Argument("certs", "String[]", certs);
         getWsc().invoke("ReplaceSmartCardTrustAnchors", params, null);
     }
+
+    public ManagedObjectReference attachScsiLunEx_Task(ManagedObjectReference _this, String[] lunUuid) throws HostConfigFault, RuntimeFault, RemoteException {
+        Argument[] params = new Argument[2];
+        params[0] = new Argument("_this", "ManagedObjectReference", _this);
+        params[1] = new Argument("lunUuid", "String[]", lunUuid);
+        return (ManagedObjectReference) getWsc().invoke("AttachScsiLunEx_Task", params, "ManagedObjectReference");
+    }
+
+    public void changeNFSUserPassword(ManagedObjectReference _this, String password) throws HostConfigFault, NotFound, RuntimeFault, RemoteException {
+        Argument[] params = new Argument[2];
+        params[0] = new Argument("_this", "ManagedObjectReference", _this);
+        params[1] = new Argument("password", "String", password);
+        getWsc().invoke("ChangeNFSUserPassword", params, null);
+    }
+
+    public void clearNFSUser(ManagedObjectReference _this) throws HostConfigFault, RuntimeFault, RemoteException {
+        Argument[] params = new Argument[1];
+        params[0] = new Argument("_this", "ManagedObjectReference", _this);
+        getWsc().invoke("ClearNFSUser", params, null);
+    }
+
+    public ManagedObjectReference detachScsiLunEx_Task(ManagedObjectReference _this, String[] lunUuid) throws HostConfigFault, RuntimeFault, RemoteException {
+        Argument[] params = new Argument[2];
+        params[0] = new Argument("_this", "ManagedObjectReference", _this);
+        params[1] = new Argument("lunUuid", "String[]", lunUuid);
+        return (ManagedObjectReference) getWsc().invoke("DetachScsiLunEx_Task", params, "ManagedObjectReference");
+    }
+
+    public ManagedObjectReference markAsLocal_Task(ManagedObjectReference _this, String scsiDiskUuid) throws HostConfigFault, NotFound, RuntimeFault, RemoteException {
+        Argument[] params = new Argument[2];
+        params[0] = new Argument("_this", "ManagedObjectReference", _this);
+        params[1] = new Argument("scsiDiskUuid", "String", scsiDiskUuid);
+        return (ManagedObjectReference) getWsc().invoke("MarkAsLocal_Task", params, "ManagedObjectReference");
+    }
+
+    public ManagedObjectReference markAsNonLocal_Task(ManagedObjectReference _this, String scsiDiskUuid) throws HostConfigFault, NotFound, RuntimeFault, RemoteException {
+        Argument[] params = new Argument[2];
+        params[0] = new Argument("_this", "ManagedObjectReference", _this);
+        params[1] = new Argument("scsiDiskUuid", "String", scsiDiskUuid);
+        return (ManagedObjectReference) getWsc().invoke("MarkAsNonLocal_Task", params, "ManagedObjectReference");
+    }
+
+    public ManagedObjectReference markAsNonSsd_Task(ManagedObjectReference _this, String scsiDiskUuid) throws HostConfigFault, NotFound, RuntimeFault, RemoteException {
+        Argument[] params = new Argument[2];
+        params[0] = new Argument("_this", "ManagedObjectReference", _this);
+        params[1] = new Argument("scsiDiskUuid", "String", scsiDiskUuid);
+        return (ManagedObjectReference) getWsc().invoke("MarkAsNonSsd_Task", params, "ManagedObjectReference");
+    }
+
+    public ManagedObjectReference markAsSsd_Task(ManagedObjectReference _this, String scsiDiskUuid) throws HostConfigFault, NotFound, RuntimeFault, RemoteException {
+        Argument[] params = new Argument[2];
+        params[0] = new Argument("_this", "ManagedObjectReference", _this);
+        params[1] = new Argument("scsiDiskUuid", "String", scsiDiskUuid);
+        return (ManagedObjectReference) getWsc().invoke("MarkAsSsd_Task", params, "ManagedObjectReference");
+    }
+
+    public ManagedObjectReference mountVmfsVolumeEx_Task(ManagedObjectReference _this, String[] vmfsUuid) throws HostConfigFault, RuntimeFault, RemoteException {
+        Argument[] params = new Argument[2];
+        params[0] = new Argument("_this", "ManagedObjectReference", _this);
+        params[1] = new Argument("vmfsUuid", "String[]", vmfsUuid);
+        return (ManagedObjectReference) getWsc().invoke("MountVmfsVolumeEx_Task", params, "ManagedObjectReference");
+    }
+
+    public HostNasVolumeUserInfo queryNFSUser(ManagedObjectReference _this) throws HostConfigFault, RuntimeFault, RemoteException {
+        Argument[] params = new Argument[1];
+        params[0] = new Argument("_this", "ManagedObjectReference", _this);
+        return (HostNasVolumeUserInfo) getWsc().invoke("QueryNFSUser", params, "HostNasVolumeUserInfo");
+    }
+
+    public void setNFSUser(ManagedObjectReference _this, String user, String password) throws HostConfigFault, RuntimeFault, RemoteException {
+        Argument[] params = new Argument[3];
+        params[0] = new Argument("_this", "ManagedObjectReference", _this);
+        params[1] = new Argument("user", "String", user);
+        params[2] = new Argument("password", "String", password);
+        getWsc().invoke("SetNFSUser", params, null);
+    }
+
+    public ManagedObjectReference turnDiskLocatorLedOff_Task(ManagedObjectReference _this, String[] scsiDiskUuids) throws HostConfigFault, RuntimeFault, RemoteException {
+        Argument[] params = new Argument[2];
+        params[0] = new Argument("_this", "ManagedObjectReference", _this);
+        params[1] = new Argument("scsiDiskUuids", "String[]", scsiDiskUuids);
+        return (ManagedObjectReference) getWsc().invoke("TurnDiskLocatorLedOff_Task", params, "ManagedObjectReference");
+    }
+
+    public ManagedObjectReference turnDiskLocatorLedOn_Task(ManagedObjectReference _this, String[] scsiDiskUuids) throws HostConfigFault, RuntimeFault, RemoteException {
+        Argument[] params = new Argument[2];
+        params[0] = new Argument("_this", "ManagedObjectReference", _this);
+        params[1] = new Argument("scsiDiskUuids", "String[]", scsiDiskUuids);
+        return (ManagedObjectReference) getWsc().invoke("TurnDiskLocatorLedOn_Task", params, "ManagedObjectReference");
+    }
+
+    public ManagedObjectReference unmapVmfsVolumeEx_Task(ManagedObjectReference _this, String[] vmfsUuid) throws HostConfigFault, RuntimeFault, RemoteException {
+        Argument[] params = new Argument[2];
+        params[0] = new Argument("_this", "ManagedObjectReference", _this);
+        params[1] = new Argument("vmfsUuid", "String[]", vmfsUuid);
+        return (ManagedObjectReference) getWsc().invoke("UnmapVmfsVolumeEx_Task", params, "ManagedObjectReference");
+    }
+
+    public ManagedObjectReference unmountVmfsVolumeEx_Task(ManagedObjectReference _this, String[] vmfsUuid) throws HostConfigFault, RuntimeFault, RemoteException {
+        Argument[] params = new Argument[2];
+        params[0] = new Argument("_this", "ManagedObjectReference", _this);
+        params[1] = new Argument("vmfsUuid", "String[]", vmfsUuid);
+        return (ManagedObjectReference) getWsc().invoke("UnmountVmfsVolumeEx_Task", params, "ManagedObjectReference");
+    }
 }
