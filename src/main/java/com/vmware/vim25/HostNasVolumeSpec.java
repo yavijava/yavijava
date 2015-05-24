@@ -30,73 +30,73 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostNasVolumeSpec extends DynamicData {
-  public String remoteHost;
-  public String remotePath;
-  public String localPath;
-  public String accessMode;
-  public String type;
-  public String userName;
-  public String password;
+    public String remoteHost;
+    public String remotePath;
+    public String localPath;
+    public String accessMode;
+    public String type;
+    public String userName;
+    public String password;
 
-  public String getRemoteHost() {
-    return this.remoteHost;
-  }
+    public String getRemoteHost() {
+        return this.remoteHost;
+    }
 
-  public String getRemotePath() {
-    return this.remotePath;
-  }
+    public String getRemotePath() {
+        return this.remotePath;
+    }
 
-  public String getLocalPath() {
-    return this.localPath;
-  }
+    public String getLocalPath() {
+        return this.localPath;
+    }
 
-  public String getAccessMode() {
-    return this.accessMode;
-  }
+    public String getAccessMode() {
+        return this.accessMode;
+    }
 
-  public String getType() {
-    return this.type;
-  }
+    public String getType() {
+        return this.type;
+    }
 
-  public String getUserName() {
-    return this.userName;
-  }
+    public String getUserName() {
+        return this.userName;
+    }
 
-  public String getPassword() {
-    return this.password;
-  }
+    public String getPassword() {
+        return this.password;
+    }
 
-  public void setRemoteHost(String remoteHost) {
-    this.remoteHost=remoteHost;
-  }
+    public void setRemoteHost(String remoteHost) {
+        this.remoteHost = remoteHost;
+    }
 
-  public void setRemotePath(String remotePath) {
-    this.remotePath=remotePath;
-  }
+    public void setRemotePath(String remotePath) {
+        this.remotePath = remotePath;
+    }
 
-  public void setLocalPath(String localPath) {
-    this.localPath=localPath;
-  }
+    public void setLocalPath(String localPath) {
+        this.localPath = localPath;
+    }
 
-  public void setAccessMode(String accessMode) {
-    this.accessMode=accessMode;
-  }
+    public void setAccessMode(String accessMode) {
+        this.accessMode = accessMode;
+    }
 
-  public void setType(String type) {
-    this.type=type;
-  }
+    public void setType(String type) {
+        this.type = type;
+    }
 
-  public void setUserName(String userName) {
-    this.userName=userName;
-  }
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
 
-  public void setPassword(String password) {
-    this.password=password;
-  }
+    public void setPassword(String password) {
+        this.password = password;
+    }
 }

@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfHostFeatureCapability {
-  public HostFeatureCapability[] HostFeatureCapability;
+    public HostFeatureCapability[] HostFeatureCapability;
 
-  public HostFeatureCapability[] getHostFeatureCapability() {
-    return this.HostFeatureCapability;
-  }
+    public HostFeatureCapability[] getHostFeatureCapability() {
+        return this.HostFeatureCapability;
+    }
 
-  public HostFeatureCapability getHostFeatureCapability(int i) {
-    return this.HostFeatureCapability[i];
-  }
+    public HostFeatureCapability getHostFeatureCapability(int i) {
+        return this.HostFeatureCapability[i];
+    }
 
-  public void setHostFeatureCapability(HostFeatureCapability[] HostFeatureCapability) {
-    this.HostFeatureCapability=HostFeatureCapability;
-  }
+    public void setHostFeatureCapability(HostFeatureCapability[] HostFeatureCapability) {
+        this.HostFeatureCapability = HostFeatureCapability;
+    }
 }

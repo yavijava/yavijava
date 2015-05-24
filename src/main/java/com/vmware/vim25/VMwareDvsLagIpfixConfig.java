@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VMwareDvsLagIpfixConfig extends DynamicData {
-  public Boolean ipfixEnabled;
+    public Boolean ipfixEnabled;
 
-  public Boolean getIpfixEnabled() {
-    return this.ipfixEnabled;
-  }
+    public Boolean getIpfixEnabled() {
+        return this.ipfixEnabled;
+    }
 
-  public void setIpfixEnabled(Boolean ipfixEnabled) {
-    this.ipfixEnabled=ipfixEnabled;
-  }
+    public void setIpfixEnabled(Boolean ipfixEnabled) {
+        this.ipfixEnabled = ipfixEnabled;
+    }
 }

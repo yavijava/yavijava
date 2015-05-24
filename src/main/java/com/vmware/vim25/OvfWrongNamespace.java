@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class OvfWrongNamespace extends OvfInvalidPackage {
-  public String namespaceName;
+    public String namespaceName;
 
-  public String getNamespaceName() {
-    return this.namespaceName;
-  }
+    public String getNamespaceName() {
+        return this.namespaceName;
+    }
 
-  public void setNamespaceName(String namespaceName) {
-    this.namespaceName=namespaceName;
-  }
+    public void setNamespaceName(String namespaceName) {
+        this.namespaceName = namespaceName;
+    }
 }

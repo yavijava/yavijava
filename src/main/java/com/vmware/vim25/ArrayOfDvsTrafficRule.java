@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfDvsTrafficRule {
-  public DvsTrafficRule[] DvsTrafficRule;
+    public DvsTrafficRule[] DvsTrafficRule;
 
-  public DvsTrafficRule[] getDvsTrafficRule() {
-    return this.DvsTrafficRule;
-  }
+    public DvsTrafficRule[] getDvsTrafficRule() {
+        return this.DvsTrafficRule;
+    }
 
-  public DvsTrafficRule getDvsTrafficRule(int i) {
-    return this.DvsTrafficRule[i];
-  }
+    public DvsTrafficRule getDvsTrafficRule(int i) {
+        return this.DvsTrafficRule[i];
+    }
 
-  public void setDvsTrafficRule(DvsTrafficRule[] DvsTrafficRule) {
-    this.DvsTrafficRule=DvsTrafficRule;
-  }
+    public void setDvsTrafficRule(DvsTrafficRule[] DvsTrafficRule) {
+        this.DvsTrafficRule = DvsTrafficRule;
+    }
 }

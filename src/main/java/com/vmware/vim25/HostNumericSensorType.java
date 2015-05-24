@@ -30,21 +30,21 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public enum HostNumericSensorType {
-  fan ("fan"),
-  power ("power"),
-  temperature ("temperature"),
-  voltage ("voltage"),
-  other ("other");
+    fan("fan"),
+    power("power"),
+    temperature("temperature"),
+    voltage("voltage"),
+    other("other");
 
-  @SuppressWarnings("unused")
-  private final String val;
-  private HostNumericSensorType(String val)
-  {
-    this.val = val;
-  }
+    @SuppressWarnings("unused")
+    private final String val;
+
+    private HostNumericSensorType(String val) {
+        this.val = val;
+    }
 }

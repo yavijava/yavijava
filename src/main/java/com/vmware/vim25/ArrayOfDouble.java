@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfDouble {
-  public double[] _double;
+    public double[] _double;
 
-  public double[] get_double() {
-    return this._double;
-  }
+    public double[] get_double() {
+        return this._double;
+    }
 
-  public double get_double(int i) {
-    return this._double[i];
-  }
+    public double get_double(int i) {
+        return this._double[i];
+    }
 
-  public void set_double(double[] _double) {
-    this._double=_double;
-  }
+    public void set_double(double[] _double) {
+        this._double = _double;
+    }
 }

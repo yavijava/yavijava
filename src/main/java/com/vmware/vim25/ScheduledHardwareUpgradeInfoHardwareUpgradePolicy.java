@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public enum ScheduledHardwareUpgradeInfoHardwareUpgradePolicy {
-  never ("never"),
-  onSoftPowerOff ("onSoftPowerOff"),
-  always ("always");
+    never("never"),
+    onSoftPowerOff("onSoftPowerOff"),
+    always("always");
 
-  @SuppressWarnings("unused")
-  private final String val;
-  private ScheduledHardwareUpgradeInfoHardwareUpgradePolicy(String val)
-  {
-    this.val = val;
-  }
+    @SuppressWarnings("unused")
+    private final String val;
+
+    private ScheduledHardwareUpgradeInfoHardwareUpgradePolicy(String val) {
+        this.val = val;
+    }
 }

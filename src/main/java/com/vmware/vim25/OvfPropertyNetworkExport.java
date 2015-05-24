@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class OvfPropertyNetworkExport extends OvfExport {
-  public String network;
+    public String network;
 
-  public String getNetwork() {
-    return this.network;
-  }
+    public String getNetwork() {
+        return this.network;
+    }
 
-  public void setNetwork(String network) {
-    this.network=network;
-  }
+    public void setNetwork(String network) {
+        this.network = network;
+    }
 }

@@ -28,76 +28,77 @@ POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
 
 package com.vmware.vim25;
+
 import java.util.Calendar;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class DatastoreInfo extends DynamicData {
-  public String name;
-  public String url;
-  public long freeSpace;
-  public long maxFileSize;
-  public Long maxVirtualDiskCapacity;
-  public Calendar timestamp;
-  public String containerId;
+    public String name;
+    public String url;
+    public long freeSpace;
+    public long maxFileSize;
+    public Long maxVirtualDiskCapacity;
+    public Calendar timestamp;
+    public String containerId;
 
-  public String getName() {
-    return this.name;
-  }
+    public String getName() {
+        return this.name;
+    }
 
-  public String getUrl() {
-    return this.url;
-  }
+    public String getUrl() {
+        return this.url;
+    }
 
-  public long getFreeSpace() {
-    return this.freeSpace;
-  }
+    public long getFreeSpace() {
+        return this.freeSpace;
+    }
 
-  public long getMaxFileSize() {
-    return this.maxFileSize;
-  }
+    public long getMaxFileSize() {
+        return this.maxFileSize;
+    }
 
-  public Long getMaxVirtualDiskCapacity() {
-    return this.maxVirtualDiskCapacity;
-  }
+    public Long getMaxVirtualDiskCapacity() {
+        return this.maxVirtualDiskCapacity;
+    }
 
-  public Calendar getTimestamp() {
-    return this.timestamp;
-  }
+    public Calendar getTimestamp() {
+        return this.timestamp;
+    }
 
-  public String getContainerId() {
-    return this.containerId;
-  }
+    public String getContainerId() {
+        return this.containerId;
+    }
 
-  public void setName(String name) {
-    this.name=name;
-  }
+    public void setName(String name) {
+        this.name = name;
+    }
 
-  public void setUrl(String url) {
-    this.url=url;
-  }
+    public void setUrl(String url) {
+        this.url = url;
+    }
 
-  public void setFreeSpace(long freeSpace) {
-    this.freeSpace=freeSpace;
-  }
+    public void setFreeSpace(long freeSpace) {
+        this.freeSpace = freeSpace;
+    }
 
-  public void setMaxFileSize(long maxFileSize) {
-    this.maxFileSize=maxFileSize;
-  }
+    public void setMaxFileSize(long maxFileSize) {
+        this.maxFileSize = maxFileSize;
+    }
 
-  public void setMaxVirtualDiskCapacity(Long maxVirtualDiskCapacity) {
-    this.maxVirtualDiskCapacity=maxVirtualDiskCapacity;
-  }
+    public void setMaxVirtualDiskCapacity(Long maxVirtualDiskCapacity) {
+        this.maxVirtualDiskCapacity = maxVirtualDiskCapacity;
+    }
 
-  public void setTimestamp(Calendar timestamp) {
-    this.timestamp=timestamp;
-  }
+    public void setTimestamp(Calendar timestamp) {
+        this.timestamp = timestamp;
+    }
 
-  public void setContainerId(String containerId) {
-    this.containerId=containerId;
-  }
+    public void setContainerId(String containerId) {
+        this.containerId = containerId;
+    }
 }

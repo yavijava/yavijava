@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class UncustomizableGuest extends CustomizationFault {
-  public String uncustomizableGuestOS;
+    public String uncustomizableGuestOS;
 
-  public String getUncustomizableGuestOS() {
-    return this.uncustomizableGuestOS;
-  }
+    public String getUncustomizableGuestOS() {
+        return this.uncustomizableGuestOS;
+    }
 
-  public void setUncustomizableGuestOS(String uncustomizableGuestOS) {
-    this.uncustomizableGuestOS=uncustomizableGuestOS;
-  }
+    public void setUncustomizableGuestOS(String uncustomizableGuestOS) {
+        this.uncustomizableGuestOS = uncustomizableGuestOS;
+    }
 }

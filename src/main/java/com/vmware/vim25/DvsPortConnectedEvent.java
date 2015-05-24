@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class DvsPortConnectedEvent extends DvsEvent {
-  public String portKey;
-  public DistributedVirtualSwitchPortConnectee connectee;
+    public String portKey;
+    public DistributedVirtualSwitchPortConnectee connectee;
 
-  public String getPortKey() {
-    return this.portKey;
-  }
+    public String getPortKey() {
+        return this.portKey;
+    }
 
-  public DistributedVirtualSwitchPortConnectee getConnectee() {
-    return this.connectee;
-  }
+    public DistributedVirtualSwitchPortConnectee getConnectee() {
+        return this.connectee;
+    }
 
-  public void setPortKey(String portKey) {
-    this.portKey=portKey;
-  }
+    public void setPortKey(String portKey) {
+        this.portKey = portKey;
+    }
 
-  public void setConnectee(DistributedVirtualSwitchPortConnectee connectee) {
-    this.connectee=connectee;
-  }
+    public void setConnectee(DistributedVirtualSwitchPortConnectee connectee) {
+        this.connectee = connectee;
+    }
 }

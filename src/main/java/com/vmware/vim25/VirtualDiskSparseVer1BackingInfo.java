@@ -30,64 +30,64 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VirtualDiskSparseVer1BackingInfo extends VirtualDeviceFileBackingInfo {
-  public String diskMode;
-  public Boolean split;
-  public Boolean writeThrough;
-  public Long spaceUsedInKB;
-  public String contentId;
-  public VirtualDiskSparseVer1BackingInfo parent;
+    public String diskMode;
+    public Boolean split;
+    public Boolean writeThrough;
+    public Long spaceUsedInKB;
+    public String contentId;
+    public VirtualDiskSparseVer1BackingInfo parent;
 
-  public String getDiskMode() {
-    return this.diskMode;
-  }
+    public String getDiskMode() {
+        return this.diskMode;
+    }
 
-  public Boolean getSplit() {
-    return this.split;
-  }
+    public Boolean getSplit() {
+        return this.split;
+    }
 
-  public Boolean getWriteThrough() {
-    return this.writeThrough;
-  }
+    public Boolean getWriteThrough() {
+        return this.writeThrough;
+    }
 
-  public Long getSpaceUsedInKB() {
-    return this.spaceUsedInKB;
-  }
+    public Long getSpaceUsedInKB() {
+        return this.spaceUsedInKB;
+    }
 
-  public String getContentId() {
-    return this.contentId;
-  }
+    public String getContentId() {
+        return this.contentId;
+    }
 
-  public VirtualDiskSparseVer1BackingInfo getParent() {
-    return this.parent;
-  }
+    public VirtualDiskSparseVer1BackingInfo getParent() {
+        return this.parent;
+    }
 
-  public void setDiskMode(String diskMode) {
-    this.diskMode=diskMode;
-  }
+    public void setDiskMode(String diskMode) {
+        this.diskMode = diskMode;
+    }
 
-  public void setSplit(Boolean split) {
-    this.split=split;
-  }
+    public void setSplit(Boolean split) {
+        this.split = split;
+    }
 
-  public void setWriteThrough(Boolean writeThrough) {
-    this.writeThrough=writeThrough;
-  }
+    public void setWriteThrough(Boolean writeThrough) {
+        this.writeThrough = writeThrough;
+    }
 
-  public void setSpaceUsedInKB(Long spaceUsedInKB) {
-    this.spaceUsedInKB=spaceUsedInKB;
-  }
+    public void setSpaceUsedInKB(Long spaceUsedInKB) {
+        this.spaceUsedInKB = spaceUsedInKB;
+    }
 
-  public void setContentId(String contentId) {
-    this.contentId=contentId;
-  }
+    public void setContentId(String contentId) {
+        this.contentId = contentId;
+    }
 
-  public void setParent(VirtualDiskSparseVer1BackingInfo parent) {
-    this.parent=parent;
-  }
+    public void setParent(VirtualDiskSparseVer1BackingInfo parent) {
+        this.parent = parent;
+    }
 }

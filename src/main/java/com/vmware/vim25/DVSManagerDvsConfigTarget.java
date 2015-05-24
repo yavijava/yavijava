@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class DVSManagerDvsConfigTarget extends DynamicData {
-  public DistributedVirtualPortgroupInfo[] distributedVirtualPortgroup;
-  public DistributedVirtualSwitchInfo[] distributedVirtualSwitch;
+    public DistributedVirtualPortgroupInfo[] distributedVirtualPortgroup;
+    public DistributedVirtualSwitchInfo[] distributedVirtualSwitch;
 
-  public DistributedVirtualPortgroupInfo[] getDistributedVirtualPortgroup() {
-    return this.distributedVirtualPortgroup;
-  }
+    public DistributedVirtualPortgroupInfo[] getDistributedVirtualPortgroup() {
+        return this.distributedVirtualPortgroup;
+    }
 
-  public DistributedVirtualSwitchInfo[] getDistributedVirtualSwitch() {
-    return this.distributedVirtualSwitch;
-  }
+    public DistributedVirtualSwitchInfo[] getDistributedVirtualSwitch() {
+        return this.distributedVirtualSwitch;
+    }
 
-  public void setDistributedVirtualPortgroup(DistributedVirtualPortgroupInfo[] distributedVirtualPortgroup) {
-    this.distributedVirtualPortgroup=distributedVirtualPortgroup;
-  }
+    public void setDistributedVirtualPortgroup(DistributedVirtualPortgroupInfo[] distributedVirtualPortgroup) {
+        this.distributedVirtualPortgroup = distributedVirtualPortgroup;
+    }
 
-  public void setDistributedVirtualSwitch(DistributedVirtualSwitchInfo[] distributedVirtualSwitch) {
-    this.distributedVirtualSwitch=distributedVirtualSwitch;
-  }
+    public void setDistributedVirtualSwitch(DistributedVirtualSwitchInfo[] distributedVirtualSwitch) {
+        this.distributedVirtualSwitch = distributedVirtualSwitch;
+    }
 }

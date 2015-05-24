@@ -30,46 +30,46 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class OvfCreateImportSpecResult extends DynamicData {
-  public ImportSpec importSpec;
-  public OvfFileItem[] fileItem;
-  public LocalizedMethodFault[] warning;
-  public LocalizedMethodFault[] error;
+    public ImportSpec importSpec;
+    public OvfFileItem[] fileItem;
+    public LocalizedMethodFault[] warning;
+    public LocalizedMethodFault[] error;
 
-  public ImportSpec getImportSpec() {
-    return this.importSpec;
-  }
+    public ImportSpec getImportSpec() {
+        return this.importSpec;
+    }
 
-  public OvfFileItem[] getFileItem() {
-    return this.fileItem;
-  }
+    public OvfFileItem[] getFileItem() {
+        return this.fileItem;
+    }
 
-  public LocalizedMethodFault[] getWarning() {
-    return this.warning;
-  }
+    public LocalizedMethodFault[] getWarning() {
+        return this.warning;
+    }
 
-  public LocalizedMethodFault[] getError() {
-    return this.error;
-  }
+    public LocalizedMethodFault[] getError() {
+        return this.error;
+    }
 
-  public void setImportSpec(ImportSpec importSpec) {
-    this.importSpec=importSpec;
-  }
+    public void setImportSpec(ImportSpec importSpec) {
+        this.importSpec = importSpec;
+    }
 
-  public void setFileItem(OvfFileItem[] fileItem) {
-    this.fileItem=fileItem;
-  }
+    public void setFileItem(OvfFileItem[] fileItem) {
+        this.fileItem = fileItem;
+    }
 
-  public void setWarning(LocalizedMethodFault[] warning) {
-    this.warning=warning;
-  }
+    public void setWarning(LocalizedMethodFault[] warning) {
+        this.warning = warning;
+    }
 
-  public void setError(LocalizedMethodFault[] error) {
-    this.error=error;
-  }
+    public void setError(LocalizedMethodFault[] error) {
+        this.error = error;
+    }
 }

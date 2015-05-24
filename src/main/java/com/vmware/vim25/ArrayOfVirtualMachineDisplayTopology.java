@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfVirtualMachineDisplayTopology {
-  public VirtualMachineDisplayTopology[] VirtualMachineDisplayTopology;
+    public VirtualMachineDisplayTopology[] VirtualMachineDisplayTopology;
 
-  public VirtualMachineDisplayTopology[] getVirtualMachineDisplayTopology() {
-    return this.VirtualMachineDisplayTopology;
-  }
+    public VirtualMachineDisplayTopology[] getVirtualMachineDisplayTopology() {
+        return this.VirtualMachineDisplayTopology;
+    }
 
-  public VirtualMachineDisplayTopology getVirtualMachineDisplayTopology(int i) {
-    return this.VirtualMachineDisplayTopology[i];
-  }
+    public VirtualMachineDisplayTopology getVirtualMachineDisplayTopology(int i) {
+        return this.VirtualMachineDisplayTopology[i];
+    }
 
-  public void setVirtualMachineDisplayTopology(VirtualMachineDisplayTopology[] VirtualMachineDisplayTopology) {
-    this.VirtualMachineDisplayTopology=VirtualMachineDisplayTopology;
-  }
+    public void setVirtualMachineDisplayTopology(VirtualMachineDisplayTopology[] VirtualMachineDisplayTopology) {
+        this.VirtualMachineDisplayTopology = VirtualMachineDisplayTopology;
+    }
 }

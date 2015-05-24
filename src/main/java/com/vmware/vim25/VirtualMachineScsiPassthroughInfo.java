@@ -30,37 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VirtualMachineScsiPassthroughInfo extends VirtualMachineTargetInfo {
-  public String scsiClass;
-  public String vendor;
-  public int physicalUnitNumber;
+    public String scsiClass;
+    public String vendor;
+    public int physicalUnitNumber;
 
-  public String getScsiClass() {
-    return this.scsiClass;
-  }
+    public String getScsiClass() {
+        return this.scsiClass;
+    }
 
-  public String getVendor() {
-    return this.vendor;
-  }
+    public String getVendor() {
+        return this.vendor;
+    }
 
-  public int getPhysicalUnitNumber() {
-    return this.physicalUnitNumber;
-  }
+    public int getPhysicalUnitNumber() {
+        return this.physicalUnitNumber;
+    }
 
-  public void setScsiClass(String scsiClass) {
-    this.scsiClass=scsiClass;
-  }
+    public void setScsiClass(String scsiClass) {
+        this.scsiClass = scsiClass;
+    }
 
-  public void setVendor(String vendor) {
-    this.vendor=vendor;
-  }
+    public void setVendor(String vendor) {
+        this.vendor = vendor;
+    }
 
-  public void setPhysicalUnitNumber(int physicalUnitNumber) {
-    this.physicalUnitNumber=physicalUnitNumber;
-  }
+    public void setPhysicalUnitNumber(int physicalUnitNumber) {
+        this.physicalUnitNumber = physicalUnitNumber;
+    }
 }

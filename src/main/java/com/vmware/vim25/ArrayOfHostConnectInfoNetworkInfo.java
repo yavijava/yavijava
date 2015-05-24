@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfHostConnectInfoNetworkInfo {
-  public HostConnectInfoNetworkInfo[] HostConnectInfoNetworkInfo;
+    public HostConnectInfoNetworkInfo[] HostConnectInfoNetworkInfo;
 
-  public HostConnectInfoNetworkInfo[] getHostConnectInfoNetworkInfo() {
-    return this.HostConnectInfoNetworkInfo;
-  }
+    public HostConnectInfoNetworkInfo[] getHostConnectInfoNetworkInfo() {
+        return this.HostConnectInfoNetworkInfo;
+    }
 
-  public HostConnectInfoNetworkInfo getHostConnectInfoNetworkInfo(int i) {
-    return this.HostConnectInfoNetworkInfo[i];
-  }
+    public HostConnectInfoNetworkInfo getHostConnectInfoNetworkInfo(int i) {
+        return this.HostConnectInfoNetworkInfo[i];
+    }
 
-  public void setHostConnectInfoNetworkInfo(HostConnectInfoNetworkInfo[] HostConnectInfoNetworkInfo) {
-    this.HostConnectInfoNetworkInfo=HostConnectInfoNetworkInfo;
-  }
+    public void setHostConnectInfoNetworkInfo(HostConnectInfoNetworkInfo[] HostConnectInfoNetworkInfo) {
+        this.HostConnectInfoNetworkInfo = HostConnectInfoNetworkInfo;
+    }
 }

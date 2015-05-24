@@ -28,85 +28,86 @@ POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
 
 package com.vmware.vim25;
+
 import java.util.Calendar;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class AlarmState extends DynamicData {
-  public String key;
-  public ManagedObjectReference entity;
-  public ManagedObjectReference alarm;
-  public ManagedEntityStatus overallStatus;
-  public Calendar time;
-  public Boolean acknowledged;
-  public String acknowledgedByUser;
-  public Calendar acknowledgedTime;
+    public String key;
+    public ManagedObjectReference entity;
+    public ManagedObjectReference alarm;
+    public ManagedEntityStatus overallStatus;
+    public Calendar time;
+    public Boolean acknowledged;
+    public String acknowledgedByUser;
+    public Calendar acknowledgedTime;
 
-  public String getKey() {
-    return this.key;
-  }
+    public String getKey() {
+        return this.key;
+    }
 
-  public ManagedObjectReference getEntity() {
-    return this.entity;
-  }
+    public ManagedObjectReference getEntity() {
+        return this.entity;
+    }
 
-  public ManagedObjectReference getAlarm() {
-    return this.alarm;
-  }
+    public ManagedObjectReference getAlarm() {
+        return this.alarm;
+    }
 
-  public ManagedEntityStatus getOverallStatus() {
-    return this.overallStatus;
-  }
+    public ManagedEntityStatus getOverallStatus() {
+        return this.overallStatus;
+    }
 
-  public Calendar getTime() {
-    return this.time;
-  }
+    public Calendar getTime() {
+        return this.time;
+    }
 
-  public Boolean getAcknowledged() {
-    return this.acknowledged;
-  }
+    public Boolean getAcknowledged() {
+        return this.acknowledged;
+    }
 
-  public String getAcknowledgedByUser() {
-    return this.acknowledgedByUser;
-  }
+    public String getAcknowledgedByUser() {
+        return this.acknowledgedByUser;
+    }
 
-  public Calendar getAcknowledgedTime() {
-    return this.acknowledgedTime;
-  }
+    public Calendar getAcknowledgedTime() {
+        return this.acknowledgedTime;
+    }
 
-  public void setKey(String key) {
-    this.key=key;
-  }
+    public void setKey(String key) {
+        this.key = key;
+    }
 
-  public void setEntity(ManagedObjectReference entity) {
-    this.entity=entity;
-  }
+    public void setEntity(ManagedObjectReference entity) {
+        this.entity = entity;
+    }
 
-  public void setAlarm(ManagedObjectReference alarm) {
-    this.alarm=alarm;
-  }
+    public void setAlarm(ManagedObjectReference alarm) {
+        this.alarm = alarm;
+    }
 
-  public void setOverallStatus(ManagedEntityStatus overallStatus) {
-    this.overallStatus=overallStatus;
-  }
+    public void setOverallStatus(ManagedEntityStatus overallStatus) {
+        this.overallStatus = overallStatus;
+    }
 
-  public void setTime(Calendar time) {
-    this.time=time;
-  }
+    public void setTime(Calendar time) {
+        this.time = time;
+    }
 
-  public void setAcknowledged(Boolean acknowledged) {
-    this.acknowledged=acknowledged;
-  }
+    public void setAcknowledged(Boolean acknowledged) {
+        this.acknowledged = acknowledged;
+    }
 
-  public void setAcknowledgedByUser(String acknowledgedByUser) {
-    this.acknowledgedByUser=acknowledgedByUser;
-  }
+    public void setAcknowledgedByUser(String acknowledgedByUser) {
+        this.acknowledgedByUser = acknowledgedByUser;
+    }
 
-  public void setAcknowledgedTime(Calendar acknowledgedTime) {
-    this.acknowledgedTime=acknowledgedTime;
-  }
+    public void setAcknowledgedTime(Calendar acknowledgedTime) {
+        this.acknowledgedTime = acknowledgedTime;
+    }
 }

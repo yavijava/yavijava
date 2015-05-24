@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VsanClusterConfigInfoHostDefaultInfo extends DynamicData {
-  public String uuid;
-  public Boolean autoClaimStorage;
+    public String uuid;
+    public Boolean autoClaimStorage;
 
-  public String getUuid() {
-    return this.uuid;
-  }
+    public String getUuid() {
+        return this.uuid;
+    }
 
-  public Boolean getAutoClaimStorage() {
-    return this.autoClaimStorage;
-  }
+    public Boolean getAutoClaimStorage() {
+        return this.autoClaimStorage;
+    }
 
-  public void setUuid(String uuid) {
-    this.uuid=uuid;
-  }
+    public void setUuid(String uuid) {
+        this.uuid = uuid;
+    }
 
-  public void setAutoClaimStorage(Boolean autoClaimStorage) {
-    this.autoClaimStorage=autoClaimStorage;
-  }
+    public void setAutoClaimStorage(Boolean autoClaimStorage) {
+        this.autoClaimStorage = autoClaimStorage;
+    }
 }

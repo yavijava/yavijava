@@ -30,31 +30,26 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
-*/
+ * @author Steve Jin (sjin@vmware.com)
+ */
 
-public class ISCSIInitiatorCHAPProfile extends ApplyProfile
-{
-  public CHAPProfile chapProfile;
-  public CHAPProfile mutualCHAPProfile;
+public class ISCSIInitiatorCHAPProfile extends ApplyProfile {
+    public CHAPProfile chapProfile;
+    public CHAPProfile mutualCHAPProfile;
 
-  public CHAPProfile getChapProfile()
-  {
-    return this.chapProfile;
-  }
+    public CHAPProfile getChapProfile() {
+        return this.chapProfile;
+    }
 
-  public CHAPProfile getMutualCHAPProfile()
-  {
-    return this.mutualCHAPProfile;
-  }
+    public CHAPProfile getMutualCHAPProfile() {
+        return this.mutualCHAPProfile;
+    }
 
-  public void setChapProfile(CHAPProfile chapProfile)
-  {
-    this.chapProfile=chapProfile;
-  }
+    public void setChapProfile(CHAPProfile chapProfile) {
+        this.chapProfile = chapProfile;
+    }
 
-  public void setMutualCHAPProfile(CHAPProfile mutualCHAPProfile)
-  {
-    this.mutualCHAPProfile=mutualCHAPProfile;
-  }
+    public void setMutualCHAPProfile(CHAPProfile mutualCHAPProfile) {
+        this.mutualCHAPProfile = mutualCHAPProfile;
+    }
 }

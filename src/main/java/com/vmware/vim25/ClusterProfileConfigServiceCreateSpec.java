@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class ClusterProfileConfigServiceCreateSpec extends ClusterProfileConfigSpec {
-  public String[] serviceType;
+    public String[] serviceType;
 
-  public String[] getServiceType() {
-    return this.serviceType;
-  }
+    public String[] getServiceType() {
+        return this.serviceType;
+    }
 
-  public void setServiceType(String[] serviceType) {
-    this.serviceType=serviceType;
-  }
+    public void setServiceType(String[] serviceType) {
+        this.serviceType = serviceType;
+    }
 }

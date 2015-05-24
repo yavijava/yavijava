@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class DvsPortCreatedEvent extends DvsEvent {
-  public String[] portKey;
+    public String[] portKey;
 
-  public String[] getPortKey() {
-    return this.portKey;
-  }
+    public String[] getPortKey() {
+        return this.portKey;
+    }
 
-  public void setPortKey(String[] portKey) {
-    this.portKey=portKey;
-  }
+    public void setPortKey(String[] portKey) {
+        this.portKey = portKey;
+    }
 }

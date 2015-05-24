@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class OvfUnknownDevice extends OvfSystemFault {
-  public VirtualDevice device;
-  public String vmName;
+    public VirtualDevice device;
+    public String vmName;
 
-  public VirtualDevice getDevice() {
-    return this.device;
-  }
+    public VirtualDevice getDevice() {
+        return this.device;
+    }
 
-  public String getVmName() {
-    return this.vmName;
-  }
+    public String getVmName() {
+        return this.vmName;
+    }
 
-  public void setDevice(VirtualDevice device) {
-    this.device=device;
-  }
+    public void setDevice(VirtualDevice device) {
+        this.device = device;
+    }
 
-  public void setVmName(String vmName) {
-    this.vmName=vmName;
-  }
+    public void setVmName(String vmName) {
+        this.vmName = vmName;
+    }
 }

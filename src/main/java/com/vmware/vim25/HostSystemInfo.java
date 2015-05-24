@@ -30,46 +30,46 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostSystemInfo extends DynamicData {
-  public String vendor;
-  public String model;
-  public String uuid;
-  public HostSystemIdentificationInfo[] otherIdentifyingInfo;
+    public String vendor;
+    public String model;
+    public String uuid;
+    public HostSystemIdentificationInfo[] otherIdentifyingInfo;
 
-  public String getVendor() {
-    return this.vendor;
-  }
+    public String getVendor() {
+        return this.vendor;
+    }
 
-  public String getModel() {
-    return this.model;
-  }
+    public String getModel() {
+        return this.model;
+    }
 
-  public String getUuid() {
-    return this.uuid;
-  }
+    public String getUuid() {
+        return this.uuid;
+    }
 
-  public HostSystemIdentificationInfo[] getOtherIdentifyingInfo() {
-    return this.otherIdentifyingInfo;
-  }
+    public HostSystemIdentificationInfo[] getOtherIdentifyingInfo() {
+        return this.otherIdentifyingInfo;
+    }
 
-  public void setVendor(String vendor) {
-    this.vendor=vendor;
-  }
+    public void setVendor(String vendor) {
+        this.vendor = vendor;
+    }
 
-  public void setModel(String model) {
-    this.model=model;
-  }
+    public void setModel(String model) {
+        this.model = model;
+    }
 
-  public void setUuid(String uuid) {
-    this.uuid=uuid;
-  }
+    public void setUuid(String uuid) {
+        this.uuid = uuid;
+    }
 
-  public void setOtherIdentifyingInfo(HostSystemIdentificationInfo[] otherIdentifyingInfo) {
-    this.otherIdentifyingInfo=otherIdentifyingInfo;
-  }
+    public void setOtherIdentifyingInfo(HostSystemIdentificationInfo[] otherIdentifyingInfo) {
+        this.otherIdentifyingInfo = otherIdentifyingInfo;
+    }
 }

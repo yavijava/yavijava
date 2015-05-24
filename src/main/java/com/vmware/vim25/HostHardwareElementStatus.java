@@ -30,20 +30,20 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public enum HostHardwareElementStatus {
-  Unknown ("Unknown"),
-  Green ("Green"),
-  Yellow ("Yellow"),
-  Red ("Red");
+    Unknown("Unknown"),
+    Green("Green"),
+    Yellow("Yellow"),
+    Red("Red");
 
-  @SuppressWarnings("unused")
-  private final String val;
-  private HostHardwareElementStatus(String val)
-  {
-    this.val = val;
-  }
+    @SuppressWarnings("unused")
+    private final String val;
+
+    private HostHardwareElementStatus(String val) {
+        this.val = val;
+    }
 }

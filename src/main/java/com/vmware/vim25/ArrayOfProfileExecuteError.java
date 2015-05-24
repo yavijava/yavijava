@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfProfileExecuteError {
-  public ProfileExecuteError[] ProfileExecuteError;
+    public ProfileExecuteError[] ProfileExecuteError;
 
-  public ProfileExecuteError[] getProfileExecuteError() {
-    return this.ProfileExecuteError;
-  }
+    public ProfileExecuteError[] getProfileExecuteError() {
+        return this.ProfileExecuteError;
+    }
 
-  public ProfileExecuteError getProfileExecuteError(int i) {
-    return this.ProfileExecuteError[i];
-  }
+    public ProfileExecuteError getProfileExecuteError(int i) {
+        return this.ProfileExecuteError[i];
+    }
 
-  public void setProfileExecuteError(ProfileExecuteError[] ProfileExecuteError) {
-    this.ProfileExecuteError=ProfileExecuteError;
-  }
+    public void setProfileExecuteError(ProfileExecuteError[] ProfileExecuteError) {
+        this.ProfileExecuteError = ProfileExecuteError;
+    }
 }

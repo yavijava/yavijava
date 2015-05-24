@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class DeviceControllerNotSupported extends DeviceNotSupported {
-  public String controller;
+    public String controller;
 
-  public String getController() {
-    return this.controller;
-  }
+    public String getController() {
+        return this.controller;
+    }
 
-  public void setController(String controller) {
-    this.controller=controller;
-  }
+    public void setController(String controller) {
+        this.controller = controller;
+    }
 }

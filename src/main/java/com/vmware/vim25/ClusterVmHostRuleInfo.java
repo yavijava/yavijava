@@ -30,37 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class ClusterVmHostRuleInfo extends ClusterRuleInfo {
-  public String vmGroupName;
-  public String affineHostGroupName;
-  public String antiAffineHostGroupName;
+    public String vmGroupName;
+    public String affineHostGroupName;
+    public String antiAffineHostGroupName;
 
-  public String getVmGroupName() {
-    return this.vmGroupName;
-  }
+    public String getVmGroupName() {
+        return this.vmGroupName;
+    }
 
-  public String getAffineHostGroupName() {
-    return this.affineHostGroupName;
-  }
+    public String getAffineHostGroupName() {
+        return this.affineHostGroupName;
+    }
 
-  public String getAntiAffineHostGroupName() {
-    return this.antiAffineHostGroupName;
-  }
+    public String getAntiAffineHostGroupName() {
+        return this.antiAffineHostGroupName;
+    }
 
-  public void setVmGroupName(String vmGroupName) {
-    this.vmGroupName=vmGroupName;
-  }
+    public void setVmGroupName(String vmGroupName) {
+        this.vmGroupName = vmGroupName;
+    }
 
-  public void setAffineHostGroupName(String affineHostGroupName) {
-    this.affineHostGroupName=affineHostGroupName;
-  }
+    public void setAffineHostGroupName(String affineHostGroupName) {
+        this.affineHostGroupName = affineHostGroupName;
+    }
 
-  public void setAntiAffineHostGroupName(String antiAffineHostGroupName) {
-    this.antiAffineHostGroupName=antiAffineHostGroupName;
-  }
+    public void setAntiAffineHostGroupName(String antiAffineHostGroupName) {
+        this.antiAffineHostGroupName = antiAffineHostGroupName;
+    }
 }

@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostVirtualSwitchAutoBridge extends HostVirtualSwitchBridge {
-  public String[] excludedNicDevice;
+    public String[] excludedNicDevice;
 
-  public String[] getExcludedNicDevice() {
-    return this.excludedNicDevice;
-  }
+    public String[] getExcludedNicDevice() {
+        return this.excludedNicDevice;
+    }
 
-  public void setExcludedNicDevice(String[] excludedNicDevice) {
-    this.excludedNicDevice=excludedNicDevice;
-  }
+    public void setExcludedNicDevice(String[] excludedNicDevice) {
+        this.excludedNicDevice = excludedNicDevice;
+    }
 }

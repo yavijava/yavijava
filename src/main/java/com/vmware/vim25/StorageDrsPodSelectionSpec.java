@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class StorageDrsPodSelectionSpec extends DynamicData {
-  public VmPodConfigForPlacement[] initialVmConfig;
-  public ManagedObjectReference storagePod;
+    public VmPodConfigForPlacement[] initialVmConfig;
+    public ManagedObjectReference storagePod;
 
-  public VmPodConfigForPlacement[] getInitialVmConfig() {
-    return this.initialVmConfig;
-  }
+    public VmPodConfigForPlacement[] getInitialVmConfig() {
+        return this.initialVmConfig;
+    }
 
-  public ManagedObjectReference getStoragePod() {
-    return this.storagePod;
-  }
+    public ManagedObjectReference getStoragePod() {
+        return this.storagePod;
+    }
 
-  public void setInitialVmConfig(VmPodConfigForPlacement[] initialVmConfig) {
-    this.initialVmConfig=initialVmConfig;
-  }
+    public void setInitialVmConfig(VmPodConfigForPlacement[] initialVmConfig) {
+        this.initialVmConfig = initialVmConfig;
+    }
 
-  public void setStoragePod(ManagedObjectReference storagePod) {
-    this.storagePod=storagePod;
-  }
+    public void setStoragePod(ManagedObjectReference storagePod) {
+        this.storagePod = storagePod;
+    }
 }

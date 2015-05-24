@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfAnyType {
-  public Object[] anyType;
+    public Object[] anyType;
 
-  public Object[] getAnyType() {
-    return this.anyType;
-  }
+    public Object[] getAnyType() {
+        return this.anyType;
+    }
 
-  public Object getAnyType(int i) {
-    return this.anyType[i];
-  }
+    public Object getAnyType(int i) {
+        return this.anyType[i];
+    }
 
-  public void setAnyType(Object[] anyType) {
-    this.anyType=anyType;
-  }
+    public void setAnyType(Object[] anyType) {
+        this.anyType = anyType;
+    }
 }

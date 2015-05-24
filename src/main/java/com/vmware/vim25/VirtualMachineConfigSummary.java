@@ -30,172 +30,172 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VirtualMachineConfigSummary extends DynamicData {
-  public String name;
-  public boolean template;
-  public String vmPathName;
-  public Integer memorySizeMB;
-  public Integer cpuReservation;
-  public Integer memoryReservation;
-  public Integer numCpu;
-  public Integer numEthernetCards;
-  public Integer numVirtualDisks;
-  public String uuid;
-  public String instanceUuid;
-  public String guestId;
-  public String guestFullName;
-  public String annotation;
-  public VAppProductInfo product;
-  public Boolean installBootRequired;
-  public FaultToleranceConfigInfo ftInfo;
-  public ManagedByInfo managedBy;
+    public String name;
+    public boolean template;
+    public String vmPathName;
+    public Integer memorySizeMB;
+    public Integer cpuReservation;
+    public Integer memoryReservation;
+    public Integer numCpu;
+    public Integer numEthernetCards;
+    public Integer numVirtualDisks;
+    public String uuid;
+    public String instanceUuid;
+    public String guestId;
+    public String guestFullName;
+    public String annotation;
+    public VAppProductInfo product;
+    public Boolean installBootRequired;
+    public FaultToleranceConfigInfo ftInfo;
+    public ManagedByInfo managedBy;
 
-  public String getName() {
-    return this.name;
-  }
+    public String getName() {
+        return this.name;
+    }
 
-  public boolean isTemplate() {
-    return this.template;
-  }
+    public boolean isTemplate() {
+        return this.template;
+    }
 
-  public String getVmPathName() {
-    return this.vmPathName;
-  }
+    public String getVmPathName() {
+        return this.vmPathName;
+    }
 
-  public Integer getMemorySizeMB() {
-    return this.memorySizeMB;
-  }
+    public Integer getMemorySizeMB() {
+        return this.memorySizeMB;
+    }
 
-  public Integer getCpuReservation() {
-    return this.cpuReservation;
-  }
+    public Integer getCpuReservation() {
+        return this.cpuReservation;
+    }
 
-  public Integer getMemoryReservation() {
-    return this.memoryReservation;
-  }
+    public Integer getMemoryReservation() {
+        return this.memoryReservation;
+    }
 
-  public Integer getNumCpu() {
-    return this.numCpu;
-  }
+    public Integer getNumCpu() {
+        return this.numCpu;
+    }
 
-  public Integer getNumEthernetCards() {
-    return this.numEthernetCards;
-  }
+    public Integer getNumEthernetCards() {
+        return this.numEthernetCards;
+    }
 
-  public Integer getNumVirtualDisks() {
-    return this.numVirtualDisks;
-  }
+    public Integer getNumVirtualDisks() {
+        return this.numVirtualDisks;
+    }
 
-  public String getUuid() {
-    return this.uuid;
-  }
+    public String getUuid() {
+        return this.uuid;
+    }
 
-  public String getInstanceUuid() {
-    return this.instanceUuid;
-  }
+    public String getInstanceUuid() {
+        return this.instanceUuid;
+    }
 
-  public String getGuestId() {
-    return this.guestId;
-  }
+    public String getGuestId() {
+        return this.guestId;
+    }
 
-  public String getGuestFullName() {
-    return this.guestFullName;
-  }
+    public String getGuestFullName() {
+        return this.guestFullName;
+    }
 
-  public String getAnnotation() {
-    return this.annotation;
-  }
+    public String getAnnotation() {
+        return this.annotation;
+    }
 
-  public VAppProductInfo getProduct() {
-    return this.product;
-  }
+    public VAppProductInfo getProduct() {
+        return this.product;
+    }
 
-  public Boolean getInstallBootRequired() {
-    return this.installBootRequired;
-  }
+    public Boolean getInstallBootRequired() {
+        return this.installBootRequired;
+    }
 
-  public FaultToleranceConfigInfo getFtInfo() {
-    return this.ftInfo;
-  }
+    public FaultToleranceConfigInfo getFtInfo() {
+        return this.ftInfo;
+    }
 
-  public ManagedByInfo getManagedBy() {
-    return this.managedBy;
-  }
+    public ManagedByInfo getManagedBy() {
+        return this.managedBy;
+    }
 
-  public void setName(String name) {
-    this.name=name;
-  }
+    public void setName(String name) {
+        this.name = name;
+    }
 
-  public void setTemplate(boolean template) {
-    this.template=template;
-  }
+    public void setTemplate(boolean template) {
+        this.template = template;
+    }
 
-  public void setVmPathName(String vmPathName) {
-    this.vmPathName=vmPathName;
-  }
+    public void setVmPathName(String vmPathName) {
+        this.vmPathName = vmPathName;
+    }
 
-  public void setMemorySizeMB(Integer memorySizeMB) {
-    this.memorySizeMB=memorySizeMB;
-  }
+    public void setMemorySizeMB(Integer memorySizeMB) {
+        this.memorySizeMB = memorySizeMB;
+    }
 
-  public void setCpuReservation(Integer cpuReservation) {
-    this.cpuReservation=cpuReservation;
-  }
+    public void setCpuReservation(Integer cpuReservation) {
+        this.cpuReservation = cpuReservation;
+    }
 
-  public void setMemoryReservation(Integer memoryReservation) {
-    this.memoryReservation=memoryReservation;
-  }
+    public void setMemoryReservation(Integer memoryReservation) {
+        this.memoryReservation = memoryReservation;
+    }
 
-  public void setNumCpu(Integer numCpu) {
-    this.numCpu=numCpu;
-  }
+    public void setNumCpu(Integer numCpu) {
+        this.numCpu = numCpu;
+    }
 
-  public void setNumEthernetCards(Integer numEthernetCards) {
-    this.numEthernetCards=numEthernetCards;
-  }
+    public void setNumEthernetCards(Integer numEthernetCards) {
+        this.numEthernetCards = numEthernetCards;
+    }
 
-  public void setNumVirtualDisks(Integer numVirtualDisks) {
-    this.numVirtualDisks=numVirtualDisks;
-  }
+    public void setNumVirtualDisks(Integer numVirtualDisks) {
+        this.numVirtualDisks = numVirtualDisks;
+    }
 
-  public void setUuid(String uuid) {
-    this.uuid=uuid;
-  }
+    public void setUuid(String uuid) {
+        this.uuid = uuid;
+    }
 
-  public void setInstanceUuid(String instanceUuid) {
-    this.instanceUuid=instanceUuid;
-  }
+    public void setInstanceUuid(String instanceUuid) {
+        this.instanceUuid = instanceUuid;
+    }
 
-  public void setGuestId(String guestId) {
-    this.guestId=guestId;
-  }
+    public void setGuestId(String guestId) {
+        this.guestId = guestId;
+    }
 
-  public void setGuestFullName(String guestFullName) {
-    this.guestFullName=guestFullName;
-  }
+    public void setGuestFullName(String guestFullName) {
+        this.guestFullName = guestFullName;
+    }
 
-  public void setAnnotation(String annotation) {
-    this.annotation=annotation;
-  }
+    public void setAnnotation(String annotation) {
+        this.annotation = annotation;
+    }
 
-  public void setProduct(VAppProductInfo product) {
-    this.product=product;
-  }
+    public void setProduct(VAppProductInfo product) {
+        this.product = product;
+    }
 
-  public void setInstallBootRequired(Boolean installBootRequired) {
-    this.installBootRequired=installBootRequired;
-  }
+    public void setInstallBootRequired(Boolean installBootRequired) {
+        this.installBootRequired = installBootRequired;
+    }
 
-  public void setFtInfo(FaultToleranceConfigInfo ftInfo) {
-    this.ftInfo=ftInfo;
-  }
+    public void setFtInfo(FaultToleranceConfigInfo ftInfo) {
+        this.ftInfo = ftInfo;
+    }
 
-  public void setManagedBy(ManagedByInfo managedBy) {
-    this.managedBy=managedBy;
-  }
+    public void setManagedBy(ManagedByInfo managedBy) {
+        this.managedBy = managedBy;
+    }
 }

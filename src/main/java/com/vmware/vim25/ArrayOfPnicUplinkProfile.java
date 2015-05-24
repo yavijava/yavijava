@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfPnicUplinkProfile {
-  public PnicUplinkProfile[] PnicUplinkProfile;
+    public PnicUplinkProfile[] PnicUplinkProfile;
 
-  public PnicUplinkProfile[] getPnicUplinkProfile() {
-    return this.PnicUplinkProfile;
-  }
+    public PnicUplinkProfile[] getPnicUplinkProfile() {
+        return this.PnicUplinkProfile;
+    }
 
-  public PnicUplinkProfile getPnicUplinkProfile(int i) {
-    return this.PnicUplinkProfile[i];
-  }
+    public PnicUplinkProfile getPnicUplinkProfile(int i) {
+        return this.PnicUplinkProfile[i];
+    }
 
-  public void setPnicUplinkProfile(PnicUplinkProfile[] PnicUplinkProfile) {
-    this.PnicUplinkProfile=PnicUplinkProfile;
-  }
+    public void setPnicUplinkProfile(PnicUplinkProfile[] PnicUplinkProfile) {
+        this.PnicUplinkProfile = PnicUplinkProfile;
+    }
 }

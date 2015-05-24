@@ -30,37 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class ClusterDasFailoverLevelAdvancedRuntimeInfoSlotInfo extends DynamicData {
-  public int numVcpus;
-  public int cpuMHz;
-  public int memoryMB;
+    public int numVcpus;
+    public int cpuMHz;
+    public int memoryMB;
 
-  public int getNumVcpus() {
-    return this.numVcpus;
-  }
+    public int getNumVcpus() {
+        return this.numVcpus;
+    }
 
-  public int getCpuMHz() {
-    return this.cpuMHz;
-  }
+    public int getCpuMHz() {
+        return this.cpuMHz;
+    }
 
-  public int getMemoryMB() {
-    return this.memoryMB;
-  }
+    public int getMemoryMB() {
+        return this.memoryMB;
+    }
 
-  public void setNumVcpus(int numVcpus) {
-    this.numVcpus=numVcpus;
-  }
+    public void setNumVcpus(int numVcpus) {
+        this.numVcpus = numVcpus;
+    }
 
-  public void setCpuMHz(int cpuMHz) {
-    this.cpuMHz=cpuMHz;
-  }
+    public void setCpuMHz(int cpuMHz) {
+        this.cpuMHz = cpuMHz;
+    }
 
-  public void setMemoryMB(int memoryMB) {
-    this.memoryMB=memoryMB;
-  }
+    public void setMemoryMB(int memoryMB) {
+        this.memoryMB = memoryMB;
+    }
 }

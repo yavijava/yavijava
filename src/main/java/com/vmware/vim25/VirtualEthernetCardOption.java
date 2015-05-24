@@ -30,46 +30,46 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VirtualEthernetCardOption extends VirtualDeviceOption {
-  public ChoiceOption supportedOUI;
-  public ChoiceOption macType;
-  public BoolOption wakeOnLanEnabled;
-  public Boolean vmDirectPathGen2Supported;
+    public ChoiceOption supportedOUI;
+    public ChoiceOption macType;
+    public BoolOption wakeOnLanEnabled;
+    public Boolean vmDirectPathGen2Supported;
 
-  public ChoiceOption getSupportedOUI() {
-    return this.supportedOUI;
-  }
+    public ChoiceOption getSupportedOUI() {
+        return this.supportedOUI;
+    }
 
-  public ChoiceOption getMacType() {
-    return this.macType;
-  }
+    public ChoiceOption getMacType() {
+        return this.macType;
+    }
 
-  public BoolOption getWakeOnLanEnabled() {
-    return this.wakeOnLanEnabled;
-  }
+    public BoolOption getWakeOnLanEnabled() {
+        return this.wakeOnLanEnabled;
+    }
 
-  public Boolean getVmDirectPathGen2Supported() {
-    return this.vmDirectPathGen2Supported;
-  }
+    public Boolean getVmDirectPathGen2Supported() {
+        return this.vmDirectPathGen2Supported;
+    }
 
-  public void setSupportedOUI(ChoiceOption supportedOUI) {
-    this.supportedOUI=supportedOUI;
-  }
+    public void setSupportedOUI(ChoiceOption supportedOUI) {
+        this.supportedOUI = supportedOUI;
+    }
 
-  public void setMacType(ChoiceOption macType) {
-    this.macType=macType;
-  }
+    public void setMacType(ChoiceOption macType) {
+        this.macType = macType;
+    }
 
-  public void setWakeOnLanEnabled(BoolOption wakeOnLanEnabled) {
-    this.wakeOnLanEnabled=wakeOnLanEnabled;
-  }
+    public void setWakeOnLanEnabled(BoolOption wakeOnLanEnabled) {
+        this.wakeOnLanEnabled = wakeOnLanEnabled;
+    }
 
-  public void setVmDirectPathGen2Supported(Boolean vmDirectPathGen2Supported) {
-    this.vmDirectPathGen2Supported=vmDirectPathGen2Supported;
-  }
+    public void setVmDirectPathGen2Supported(Boolean vmDirectPathGen2Supported) {
+        this.vmDirectPathGen2Supported = vmDirectPathGen2Supported;
+    }
 }

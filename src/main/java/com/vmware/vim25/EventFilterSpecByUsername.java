@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class EventFilterSpecByUsername extends DynamicData {
-  public boolean systemUser;
-  public String[] userList;
+    public boolean systemUser;
+    public String[] userList;
 
-  public boolean isSystemUser() {
-    return this.systemUser;
-  }
+    public boolean isSystemUser() {
+        return this.systemUser;
+    }
 
-  public String[] getUserList() {
-    return this.userList;
-  }
+    public String[] getUserList() {
+        return this.userList;
+    }
 
-  public void setSystemUser(boolean systemUser) {
-    this.systemUser=systemUser;
-  }
+    public void setSystemUser(boolean systemUser) {
+        this.systemUser = systemUser;
+    }
 
-  public void setUserList(String[] userList) {
-    this.userList=userList;
-  }
+    public void setUserList(String[] userList) {
+        this.userList = userList;
+    }
 }

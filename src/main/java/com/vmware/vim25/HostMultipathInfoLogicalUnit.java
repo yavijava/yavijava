@@ -30,64 +30,64 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostMultipathInfoLogicalUnit extends DynamicData {
-  public String key;
-  public String id;
-  public String lun;
-  public HostMultipathInfoPath[] path;
-  public HostMultipathInfoLogicalUnitPolicy policy;
-  public HostMultipathInfoLogicalUnitStorageArrayTypePolicy storageArrayTypePolicy;
+    public String key;
+    public String id;
+    public String lun;
+    public HostMultipathInfoPath[] path;
+    public HostMultipathInfoLogicalUnitPolicy policy;
+    public HostMultipathInfoLogicalUnitStorageArrayTypePolicy storageArrayTypePolicy;
 
-  public String getKey() {
-    return this.key;
-  }
+    public String getKey() {
+        return this.key;
+    }
 
-  public String getId() {
-    return this.id;
-  }
+    public String getId() {
+        return this.id;
+    }
 
-  public String getLun() {
-    return this.lun;
-  }
+    public String getLun() {
+        return this.lun;
+    }
 
-  public HostMultipathInfoPath[] getPath() {
-    return this.path;
-  }
+    public HostMultipathInfoPath[] getPath() {
+        return this.path;
+    }
 
-  public HostMultipathInfoLogicalUnitPolicy getPolicy() {
-    return this.policy;
-  }
+    public HostMultipathInfoLogicalUnitPolicy getPolicy() {
+        return this.policy;
+    }
 
-  public HostMultipathInfoLogicalUnitStorageArrayTypePolicy getStorageArrayTypePolicy() {
-    return this.storageArrayTypePolicy;
-  }
+    public HostMultipathInfoLogicalUnitStorageArrayTypePolicy getStorageArrayTypePolicy() {
+        return this.storageArrayTypePolicy;
+    }
 
-  public void setKey(String key) {
-    this.key=key;
-  }
+    public void setKey(String key) {
+        this.key = key;
+    }
 
-  public void setId(String id) {
-    this.id=id;
-  }
+    public void setId(String id) {
+        this.id = id;
+    }
 
-  public void setLun(String lun) {
-    this.lun=lun;
-  }
+    public void setLun(String lun) {
+        this.lun = lun;
+    }
 
-  public void setPath(HostMultipathInfoPath[] path) {
-    this.path=path;
-  }
+    public void setPath(HostMultipathInfoPath[] path) {
+        this.path = path;
+    }
 
-  public void setPolicy(HostMultipathInfoLogicalUnitPolicy policy) {
-    this.policy=policy;
-  }
+    public void setPolicy(HostMultipathInfoLogicalUnitPolicy policy) {
+        this.policy = policy;
+    }
 
-  public void setStorageArrayTypePolicy(HostMultipathInfoLogicalUnitStorageArrayTypePolicy storageArrayTypePolicy) {
-    this.storageArrayTypePolicy=storageArrayTypePolicy;
-  }
+    public void setStorageArrayTypePolicy(HostMultipathInfoLogicalUnitStorageArrayTypePolicy storageArrayTypePolicy) {
+        this.storageArrayTypePolicy = storageArrayTypePolicy;
+    }
 }

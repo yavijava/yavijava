@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class DvsFilterParameter extends DynamicData {
-  public String[] parameters;
+    public String[] parameters;
 
-  public String[] getParameters() {
-    return this.parameters;
-  }
+    public String[] getParameters() {
+        return this.parameters;
+    }
 
-  public void setParameters(String[] parameters) {
-    this.parameters=parameters;
-  }
+    public void setParameters(String[] parameters) {
+        this.parameters = parameters;
+    }
 }

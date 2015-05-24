@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfUserSession {
-  public UserSession[] UserSession;
+    public UserSession[] UserSession;
 
-  public UserSession[] getUserSession() {
-    return this.UserSession;
-  }
+    public UserSession[] getUserSession() {
+        return this.UserSession;
+    }
 
-  public UserSession getUserSession(int i) {
-    return this.UserSession[i];
-  }
+    public UserSession getUserSession(int i) {
+        return this.UserSession[i];
+    }
 
-  public void setUserSession(UserSession[] UserSession) {
-    this.UserSession=UserSession;
-  }
+    public void setUserSession(UserSession[] UserSession) {
+        this.UserSession = UserSession;
+    }
 }

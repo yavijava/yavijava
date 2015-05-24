@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class ServerLicenseExpiredEvent extends LicenseEvent {
-  public String product;
+    public String product;
 
-  public String getProduct() {
-    return this.product;
-  }
+    public String getProduct() {
+        return this.product;
+    }
 
-  public void setProduct(String product) {
-    this.product=product;
-  }
+    public void setProduct(String product) {
+        this.product = product;
+    }
 }

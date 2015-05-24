@@ -30,37 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VirtualEthernetCard extends VirtualDevice {
-  public String addressType;
-  public String macAddress;
-  public Boolean wakeOnLanEnabled;
+    public String addressType;
+    public String macAddress;
+    public Boolean wakeOnLanEnabled;
 
-  public String getAddressType() {
-    return this.addressType;
-  }
+    public String getAddressType() {
+        return this.addressType;
+    }
 
-  public String getMacAddress() {
-    return this.macAddress;
-  }
+    public String getMacAddress() {
+        return this.macAddress;
+    }
 
-  public Boolean getWakeOnLanEnabled() {
-    return this.wakeOnLanEnabled;
-  }
+    public Boolean getWakeOnLanEnabled() {
+        return this.wakeOnLanEnabled;
+    }
 
-  public void setAddressType(String addressType) {
-    this.addressType=addressType;
-  }
+    public void setAddressType(String addressType) {
+        this.addressType = addressType;
+    }
 
-  public void setMacAddress(String macAddress) {
-    this.macAddress=macAddress;
-  }
+    public void setMacAddress(String macAddress) {
+        this.macAddress = macAddress;
+    }
 
-  public void setWakeOnLanEnabled(Boolean wakeOnLanEnabled) {
-    this.wakeOnLanEnabled=wakeOnLanEnabled;
-  }
+    public void setWakeOnLanEnabled(Boolean wakeOnLanEnabled) {
+        this.wakeOnLanEnabled = wakeOnLanEnabled;
+    }
 }

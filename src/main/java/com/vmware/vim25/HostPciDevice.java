@@ -30,118 +30,118 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostPciDevice extends DynamicData {
-  public String id;
-  public short classId;
-  public byte bus;
-  public byte slot;
-  public byte function;
-  public short vendorId;
-  public short subVendorId;
-  public String vendorName;
-  public short deviceId;
-  public short subDeviceId;
-  public String parentBridge;
-  public String deviceName;
+    public String id;
+    public short classId;
+    public byte bus;
+    public byte slot;
+    public byte function;
+    public short vendorId;
+    public short subVendorId;
+    public String vendorName;
+    public short deviceId;
+    public short subDeviceId;
+    public String parentBridge;
+    public String deviceName;
 
-  public String getId() {
-    return this.id;
-  }
+    public String getId() {
+        return this.id;
+    }
 
-  public short getClassId() {
-    return this.classId;
-  }
+    public short getClassId() {
+        return this.classId;
+    }
 
-  public byte getBus() {
-    return this.bus;
-  }
+    public byte getBus() {
+        return this.bus;
+    }
 
-  public byte getSlot() {
-    return this.slot;
-  }
+    public byte getSlot() {
+        return this.slot;
+    }
 
-  public byte getFunction() {
-    return this.function;
-  }
+    public byte getFunction() {
+        return this.function;
+    }
 
-  public short getVendorId() {
-    return this.vendorId;
-  }
+    public short getVendorId() {
+        return this.vendorId;
+    }
 
-  public short getSubVendorId() {
-    return this.subVendorId;
-  }
+    public short getSubVendorId() {
+        return this.subVendorId;
+    }
 
-  public String getVendorName() {
-    return this.vendorName;
-  }
+    public String getVendorName() {
+        return this.vendorName;
+    }
 
-  public short getDeviceId() {
-    return this.deviceId;
-  }
+    public short getDeviceId() {
+        return this.deviceId;
+    }
 
-  public short getSubDeviceId() {
-    return this.subDeviceId;
-  }
+    public short getSubDeviceId() {
+        return this.subDeviceId;
+    }
 
-  public String getParentBridge() {
-    return this.parentBridge;
-  }
+    public String getParentBridge() {
+        return this.parentBridge;
+    }
 
-  public String getDeviceName() {
-    return this.deviceName;
-  }
+    public String getDeviceName() {
+        return this.deviceName;
+    }
 
-  public void setId(String id) {
-    this.id=id;
-  }
+    public void setId(String id) {
+        this.id = id;
+    }
 
-  public void setClassId(short classId) {
-    this.classId=classId;
-  }
+    public void setClassId(short classId) {
+        this.classId = classId;
+    }
 
-  public void setBus(byte bus) {
-    this.bus=bus;
-  }
+    public void setBus(byte bus) {
+        this.bus = bus;
+    }
 
-  public void setSlot(byte slot) {
-    this.slot=slot;
-  }
+    public void setSlot(byte slot) {
+        this.slot = slot;
+    }
 
-  public void setFunction(byte function) {
-    this.function=function;
-  }
+    public void setFunction(byte function) {
+        this.function = function;
+    }
 
-  public void setVendorId(short vendorId) {
-    this.vendorId=vendorId;
-  }
+    public void setVendorId(short vendorId) {
+        this.vendorId = vendorId;
+    }
 
-  public void setSubVendorId(short subVendorId) {
-    this.subVendorId=subVendorId;
-  }
+    public void setSubVendorId(short subVendorId) {
+        this.subVendorId = subVendorId;
+    }
 
-  public void setVendorName(String vendorName) {
-    this.vendorName=vendorName;
-  }
+    public void setVendorName(String vendorName) {
+        this.vendorName = vendorName;
+    }
 
-  public void setDeviceId(short deviceId) {
-    this.deviceId=deviceId;
-  }
+    public void setDeviceId(short deviceId) {
+        this.deviceId = deviceId;
+    }
 
-  public void setSubDeviceId(short subDeviceId) {
-    this.subDeviceId=subDeviceId;
-  }
+    public void setSubDeviceId(short subDeviceId) {
+        this.subDeviceId = subDeviceId;
+    }
 
-  public void setParentBridge(String parentBridge) {
-    this.parentBridge=parentBridge;
-  }
+    public void setParentBridge(String parentBridge) {
+        this.parentBridge = parentBridge;
+    }
 
-  public void setDeviceName(String deviceName) {
-    this.deviceName=deviceName;
-  }
+    public void setDeviceName(String deviceName) {
+        this.deviceName = deviceName;
+    }
 }

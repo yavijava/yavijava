@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class ClusterEnterMaintenanceResult extends DynamicData {
-  public ClusterRecommendation[] recommendations;
-  public ClusterDrsFaults fault;
+    public ClusterRecommendation[] recommendations;
+    public ClusterDrsFaults fault;
 
-  public ClusterRecommendation[] getRecommendations() {
-    return this.recommendations;
-  }
+    public ClusterRecommendation[] getRecommendations() {
+        return this.recommendations;
+    }
 
-  public ClusterDrsFaults getFault() {
-    return this.fault;
-  }
+    public ClusterDrsFaults getFault() {
+        return this.fault;
+    }
 
-  public void setRecommendations(ClusterRecommendation[] recommendations) {
-    this.recommendations=recommendations;
-  }
+    public void setRecommendations(ClusterRecommendation[] recommendations) {
+        this.recommendations = recommendations;
+    }
 
-  public void setFault(ClusterDrsFaults fault) {
-    this.fault=fault;
-  }
+    public void setFault(ClusterDrsFaults fault) {
+        this.fault = fault;
+    }
 }

@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class RoleAddedEvent extends RoleEvent {
-  public String[] privilegeList;
+    public String[] privilegeList;
 
-  public String[] getPrivilegeList() {
-    return this.privilegeList;
-  }
+    public String[] getPrivilegeList() {
+        return this.privilegeList;
+    }
 
-  public void setPrivilegeList(String[] privilegeList) {
-    this.privilegeList=privilegeList;
-  }
+    public void setPrivilegeList(String[] privilegeList) {
+        this.privilegeList = privilegeList;
+    }
 }

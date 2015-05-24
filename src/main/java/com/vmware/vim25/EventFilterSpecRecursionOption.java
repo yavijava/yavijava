@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public enum EventFilterSpecRecursionOption {
-  self ("self"),
-  children ("children"),
-  all ("all");
+    self("self"),
+    children("children"),
+    all("all");
 
-  @SuppressWarnings("unused")
-  private final String val;
-  private EventFilterSpecRecursionOption(String val)
-  {
-    this.val = val;
-  }
+    @SuppressWarnings("unused")
+    private final String val;
+
+    private EventFilterSpecRecursionOption(String val) {
+        this.val = val;
+    }
 }

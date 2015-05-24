@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class ClusterGroupInfo extends DynamicData {
-  public String name;
-  public Boolean userCreated;
+    public String name;
+    public Boolean userCreated;
 
-  public String getName() {
-    return this.name;
-  }
+    public String getName() {
+        return this.name;
+    }
 
-  public Boolean getUserCreated() {
-    return this.userCreated;
-  }
+    public Boolean getUserCreated() {
+        return this.userCreated;
+    }
 
-  public void setName(String name) {
-    this.name=name;
-  }
+    public void setName(String name) {
+        this.name = name;
+    }
 
-  public void setUserCreated(Boolean userCreated) {
-    this.userCreated=userCreated;
-  }
+    public void setUserCreated(Boolean userCreated) {
+        this.userCreated = userCreated;
+    }
 }

@@ -28,40 +28,41 @@ POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
 
 package com.vmware.vim25;
+
 import java.util.Calendar;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class ExpiredFeatureLicense extends NotEnoughLicenses {
-  public String feature;
-  public int count;
-  public Calendar expirationDate;
+    public String feature;
+    public int count;
+    public Calendar expirationDate;
 
-  public String getFeature() {
-    return this.feature;
-  }
+    public String getFeature() {
+        return this.feature;
+    }
 
-  public int getCount() {
-    return this.count;
-  }
+    public int getCount() {
+        return this.count;
+    }
 
-  public Calendar getExpirationDate() {
-    return this.expirationDate;
-  }
+    public Calendar getExpirationDate() {
+        return this.expirationDate;
+    }
 
-  public void setFeature(String feature) {
-    this.feature=feature;
-  }
+    public void setFeature(String feature) {
+        this.feature = feature;
+    }
 
-  public void setCount(int count) {
-    this.count=count;
-  }
+    public void setCount(int count) {
+        this.count = count;
+    }
 
-  public void setExpirationDate(Calendar expirationDate) {
-    this.expirationDate=expirationDate;
-  }
+    public void setExpirationDate(Calendar expirationDate) {
+        this.expirationDate = expirationDate;
+    }
 }

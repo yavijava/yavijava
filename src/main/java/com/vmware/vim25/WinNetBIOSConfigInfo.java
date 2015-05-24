@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class WinNetBIOSConfigInfo extends NetBIOSConfigInfo {
-  public String primaryWINS;
-  public String secondaryWINS;
+    public String primaryWINS;
+    public String secondaryWINS;
 
-  public String getPrimaryWINS() {
-    return this.primaryWINS;
-  }
+    public String getPrimaryWINS() {
+        return this.primaryWINS;
+    }
 
-  public String getSecondaryWINS() {
-    return this.secondaryWINS;
-  }
+    public String getSecondaryWINS() {
+        return this.secondaryWINS;
+    }
 
-  public void setPrimaryWINS(String primaryWINS) {
-    this.primaryWINS=primaryWINS;
-  }
+    public void setPrimaryWINS(String primaryWINS) {
+        this.primaryWINS = primaryWINS;
+    }
 
-  public void setSecondaryWINS(String secondaryWINS) {
-    this.secondaryWINS=secondaryWINS;
-  }
+    public void setSecondaryWINS(String secondaryWINS) {
+        this.secondaryWINS = secondaryWINS;
+    }
 }

@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class DatabaseSizeParam extends DynamicData {
-  public InventoryDescription inventoryDesc;
-  public PerformanceStatisticsDescription perfStatsDesc;
+    public InventoryDescription inventoryDesc;
+    public PerformanceStatisticsDescription perfStatsDesc;
 
-  public InventoryDescription getInventoryDesc() {
-    return this.inventoryDesc;
-  }
+    public InventoryDescription getInventoryDesc() {
+        return this.inventoryDesc;
+    }
 
-  public PerformanceStatisticsDescription getPerfStatsDesc() {
-    return this.perfStatsDesc;
-  }
+    public PerformanceStatisticsDescription getPerfStatsDesc() {
+        return this.perfStatsDesc;
+    }
 
-  public void setInventoryDesc(InventoryDescription inventoryDesc) {
-    this.inventoryDesc=inventoryDesc;
-  }
+    public void setInventoryDesc(InventoryDescription inventoryDesc) {
+        this.inventoryDesc = inventoryDesc;
+    }
 
-  public void setPerfStatsDesc(PerformanceStatisticsDescription perfStatsDesc) {
-    this.perfStatsDesc=perfStatsDesc;
-  }
+    public void setPerfStatsDesc(PerformanceStatisticsDescription perfStatsDesc) {
+        this.perfStatsDesc = perfStatsDesc;
+    }
 }

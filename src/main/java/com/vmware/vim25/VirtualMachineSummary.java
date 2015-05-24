@@ -30,82 +30,82 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VirtualMachineSummary extends DynamicData {
-  public ManagedObjectReference vm;
-  public VirtualMachineRuntimeInfo runtime;
-  public VirtualMachineGuestSummary guest;
-  public VirtualMachineConfigSummary config;
-  public VirtualMachineStorageSummary storage;
-  public VirtualMachineQuickStats quickStats;
-  public ManagedEntityStatus overallStatus;
-  public CustomFieldValue[] customValue;
+    public ManagedObjectReference vm;
+    public VirtualMachineRuntimeInfo runtime;
+    public VirtualMachineGuestSummary guest;
+    public VirtualMachineConfigSummary config;
+    public VirtualMachineStorageSummary storage;
+    public VirtualMachineQuickStats quickStats;
+    public ManagedEntityStatus overallStatus;
+    public CustomFieldValue[] customValue;
 
-  public ManagedObjectReference getVm() {
-    return this.vm;
-  }
+    public ManagedObjectReference getVm() {
+        return this.vm;
+    }
 
-  public VirtualMachineRuntimeInfo getRuntime() {
-    return this.runtime;
-  }
+    public VirtualMachineRuntimeInfo getRuntime() {
+        return this.runtime;
+    }
 
-  public VirtualMachineGuestSummary getGuest() {
-    return this.guest;
-  }
+    public VirtualMachineGuestSummary getGuest() {
+        return this.guest;
+    }
 
-  public VirtualMachineConfigSummary getConfig() {
-    return this.config;
-  }
+    public VirtualMachineConfigSummary getConfig() {
+        return this.config;
+    }
 
-  public VirtualMachineStorageSummary getStorage() {
-    return this.storage;
-  }
+    public VirtualMachineStorageSummary getStorage() {
+        return this.storage;
+    }
 
-  public VirtualMachineQuickStats getQuickStats() {
-    return this.quickStats;
-  }
+    public VirtualMachineQuickStats getQuickStats() {
+        return this.quickStats;
+    }
 
-  public ManagedEntityStatus getOverallStatus() {
-    return this.overallStatus;
-  }
+    public ManagedEntityStatus getOverallStatus() {
+        return this.overallStatus;
+    }
 
-  public CustomFieldValue[] getCustomValue() {
-    return this.customValue;
-  }
+    public CustomFieldValue[] getCustomValue() {
+        return this.customValue;
+    }
 
-  public void setVm(ManagedObjectReference vm) {
-    this.vm=vm;
-  }
+    public void setVm(ManagedObjectReference vm) {
+        this.vm = vm;
+    }
 
-  public void setRuntime(VirtualMachineRuntimeInfo runtime) {
-    this.runtime=runtime;
-  }
+    public void setRuntime(VirtualMachineRuntimeInfo runtime) {
+        this.runtime = runtime;
+    }
 
-  public void setGuest(VirtualMachineGuestSummary guest) {
-    this.guest=guest;
-  }
+    public void setGuest(VirtualMachineGuestSummary guest) {
+        this.guest = guest;
+    }
 
-  public void setConfig(VirtualMachineConfigSummary config) {
-    this.config=config;
-  }
+    public void setConfig(VirtualMachineConfigSummary config) {
+        this.config = config;
+    }
 
-  public void setStorage(VirtualMachineStorageSummary storage) {
-    this.storage=storage;
-  }
+    public void setStorage(VirtualMachineStorageSummary storage) {
+        this.storage = storage;
+    }
 
-  public void setQuickStats(VirtualMachineQuickStats quickStats) {
-    this.quickStats=quickStats;
-  }
+    public void setQuickStats(VirtualMachineQuickStats quickStats) {
+        this.quickStats = quickStats;
+    }
 
-  public void setOverallStatus(ManagedEntityStatus overallStatus) {
-    this.overallStatus=overallStatus;
-  }
+    public void setOverallStatus(ManagedEntityStatus overallStatus) {
+        this.overallStatus = overallStatus;
+    }
 
-  public void setCustomValue(CustomFieldValue[] customValue) {
-    this.customValue=customValue;
-  }
+    public void setCustomValue(CustomFieldValue[] customValue) {
+        this.customValue = customValue;
+    }
 }

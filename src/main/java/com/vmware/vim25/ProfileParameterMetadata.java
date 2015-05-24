@@ -30,46 +30,46 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class ProfileParameterMetadata extends DynamicData {
-  public ExtendedElementDescription id;
-  public String type;
-  public boolean optional;
-  public Object defaultValue;
+    public ExtendedElementDescription id;
+    public String type;
+    public boolean optional;
+    public Object defaultValue;
 
-  public ExtendedElementDescription getId() {
-    return this.id;
-  }
+    public ExtendedElementDescription getId() {
+        return this.id;
+    }
 
-  public String getType() {
-    return this.type;
-  }
+    public String getType() {
+        return this.type;
+    }
 
-  public boolean isOptional() {
-    return this.optional;
-  }
+    public boolean isOptional() {
+        return this.optional;
+    }
 
-  public Object getDefaultValue() {
-    return this.defaultValue;
-  }
+    public Object getDefaultValue() {
+        return this.defaultValue;
+    }
 
-  public void setId(ExtendedElementDescription id) {
-    this.id=id;
-  }
+    public void setId(ExtendedElementDescription id) {
+        this.id = id;
+    }
 
-  public void setType(String type) {
-    this.type=type;
-  }
+    public void setType(String type) {
+        this.type = type;
+    }
 
-  public void setOptional(boolean optional) {
-    this.optional=optional;
-  }
+    public void setOptional(boolean optional) {
+        this.optional = optional;
+    }
 
-  public void setDefaultValue(Object defaultValue) {
-    this.defaultValue=defaultValue;
-  }
+    public void setDefaultValue(Object defaultValue) {
+        this.defaultValue = defaultValue;
+    }
 }

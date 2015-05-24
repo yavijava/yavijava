@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class PhysicalNicLinkInfo extends DynamicData {
-  public int speedMb;
-  public boolean duplex;
+    public int speedMb;
+    public boolean duplex;
 
-  public int getSpeedMb() {
-    return this.speedMb;
-  }
+    public int getSpeedMb() {
+        return this.speedMb;
+    }
 
-  public boolean isDuplex() {
-    return this.duplex;
-  }
+    public boolean isDuplex() {
+        return this.duplex;
+    }
 
-  public void setSpeedMb(int speedMb) {
-    this.speedMb=speedMb;
-  }
+    public void setSpeedMb(int speedMb) {
+        this.speedMb = speedMb;
+    }
 
-  public void setDuplex(boolean duplex) {
-    this.duplex=duplex;
-  }
+    public void setDuplex(boolean duplex) {
+        this.duplex = duplex;
+    }
 }

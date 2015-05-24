@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VmfsDatastoreExpandSpec extends VmfsDatastoreSpec {
-  public HostDiskPartitionSpec partition;
-  public HostScsiDiskPartition extent;
+    public HostDiskPartitionSpec partition;
+    public HostScsiDiskPartition extent;
 
-  public HostDiskPartitionSpec getPartition() {
-    return this.partition;
-  }
+    public HostDiskPartitionSpec getPartition() {
+        return this.partition;
+    }
 
-  public HostScsiDiskPartition getExtent() {
-    return this.extent;
-  }
+    public HostScsiDiskPartition getExtent() {
+        return this.extent;
+    }
 
-  public void setPartition(HostDiskPartitionSpec partition) {
-    this.partition=partition;
-  }
+    public void setPartition(HostDiskPartitionSpec partition) {
+        this.partition = partition;
+    }
 
-  public void setExtent(HostScsiDiskPartition extent) {
-    this.extent=extent;
-  }
+    public void setExtent(HostScsiDiskPartition extent) {
+        this.extent = extent;
+    }
 }

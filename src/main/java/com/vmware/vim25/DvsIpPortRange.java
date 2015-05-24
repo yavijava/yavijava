@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class DvsIpPortRange extends DvsIpPort {
-  public int startPortNumber;
-  public int endPortNumber;
+    public int startPortNumber;
+    public int endPortNumber;
 
-  public int getStartPortNumber() {
-    return this.startPortNumber;
-  }
+    public int getStartPortNumber() {
+        return this.startPortNumber;
+    }
 
-  public int getEndPortNumber() {
-    return this.endPortNumber;
-  }
+    public int getEndPortNumber() {
+        return this.endPortNumber;
+    }
 
-  public void setStartPortNumber(int startPortNumber) {
-    this.startPortNumber=startPortNumber;
-  }
+    public void setStartPortNumber(int startPortNumber) {
+        this.startPortNumber = startPortNumber;
+    }
 
-  public void setEndPortNumber(int endPortNumber) {
-    this.endPortNumber=endPortNumber;
-  }
+    public void setEndPortNumber(int endPortNumber) {
+        this.endPortNumber = endPortNumber;
+    }
 }

@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VmDasBeingResetWithScreenshotEvent extends VmDasBeingResetEvent {
-  public String screenshotFilePath;
+    public String screenshotFilePath;
 
-  public String getScreenshotFilePath() {
-    return this.screenshotFilePath;
-  }
+    public String getScreenshotFilePath() {
+        return this.screenshotFilePath;
+    }
 
-  public void setScreenshotFilePath(String screenshotFilePath) {
-    this.screenshotFilePath=screenshotFilePath;
-  }
+    public void setScreenshotFilePath(String screenshotFilePath) {
+        this.screenshotFilePath = screenshotFilePath;
+    }
 }

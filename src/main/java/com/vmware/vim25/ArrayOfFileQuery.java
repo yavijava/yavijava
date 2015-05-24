@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfFileQuery {
-  public FileQuery[] FileQuery;
+    public FileQuery[] FileQuery;
 
-  public FileQuery[] getFileQuery() {
-    return this.FileQuery;
-  }
+    public FileQuery[] getFileQuery() {
+        return this.FileQuery;
+    }
 
-  public FileQuery getFileQuery(int i) {
-    return this.FileQuery[i];
-  }
+    public FileQuery getFileQuery(int i) {
+        return this.FileQuery[i];
+    }
 
-  public void setFileQuery(FileQuery[] FileQuery) {
-    this.FileQuery=FileQuery;
-  }
+    public void setFileQuery(FileQuery[] FileQuery) {
+        this.FileQuery = FileQuery;
+    }
 }

@@ -30,9 +30,8 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
-*/
+ * @author Steve Jin (sjin@vmware.com)
+ */
 
-public class HardwareISCSIInitiatorProfile extends ISCSIInitiatorProfile
-{
+public class HardwareISCSIInitiatorProfile extends ISCSIInitiatorProfile {
 }

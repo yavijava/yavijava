@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public enum VirtualMachineHtSharing {
-  any ("any"),
-  none ("none"),
-  internal ("internal");
+    any("any"),
+    none("none"),
+    internal("internal");
 
-  @SuppressWarnings("unused")
-  private final String val;
-  private VirtualMachineHtSharing(String val)
-  {
-    this.val = val;
-  }
+    @SuppressWarnings("unused")
+    private final String val;
+
+    private VirtualMachineHtSharing(String val) {
+        this.val = val;
+    }
 }

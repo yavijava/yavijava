@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VirtualEthernetCardNetworkBackingInfo extends VirtualDeviceDeviceBackingInfo {
-  public ManagedObjectReference network;
-  public Boolean inPassthroughMode;
+    public ManagedObjectReference network;
+    public Boolean inPassthroughMode;
 
-  public ManagedObjectReference getNetwork() {
-    return this.network;
-  }
+    public ManagedObjectReference getNetwork() {
+        return this.network;
+    }
 
-  public Boolean getInPassthroughMode() {
-    return this.inPassthroughMode;
-  }
+    public Boolean getInPassthroughMode() {
+        return this.inPassthroughMode;
+    }
 
-  public void setNetwork(ManagedObjectReference network) {
-    this.network=network;
-  }
+    public void setNetwork(ManagedObjectReference network) {
+        this.network = network;
+    }
 
-  public void setInPassthroughMode(Boolean inPassthroughMode) {
-    this.inPassthroughMode=inPassthroughMode;
-  }
+    public void setInPassthroughMode(Boolean inPassthroughMode) {
+        this.inPassthroughMode = inPassthroughMode;
+    }
 }

@@ -30,64 +30,64 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VirtualDisk extends VirtualDevice {
-  public long capacityInKB;
-  public Long capacityInBytes;
-  public SharesInfo shares;
-  public StorageIOAllocationInfo storageIOAllocation;
-  public String diskObjectId;
-  public VirtualDiskVFlashCacheConfigInfo vFlashCacheConfigInfo;
+    public long capacityInKB;
+    public Long capacityInBytes;
+    public SharesInfo shares;
+    public StorageIOAllocationInfo storageIOAllocation;
+    public String diskObjectId;
+    public VirtualDiskVFlashCacheConfigInfo vFlashCacheConfigInfo;
 
-  public long getCapacityInKB() {
-    return this.capacityInKB;
-  }
+    public long getCapacityInKB() {
+        return this.capacityInKB;
+    }
 
-  public Long getCapacityInBytes() {
-    return this.capacityInBytes;
-  }
+    public Long getCapacityInBytes() {
+        return this.capacityInBytes;
+    }
 
-  public SharesInfo getShares() {
-    return this.shares;
-  }
+    public SharesInfo getShares() {
+        return this.shares;
+    }
 
-  public StorageIOAllocationInfo getStorageIOAllocation() {
-    return this.storageIOAllocation;
-  }
+    public StorageIOAllocationInfo getStorageIOAllocation() {
+        return this.storageIOAllocation;
+    }
 
-  public String getDiskObjectId() {
-    return this.diskObjectId;
-  }
+    public String getDiskObjectId() {
+        return this.diskObjectId;
+    }
 
-  public VirtualDiskVFlashCacheConfigInfo getVFlashCacheConfigInfo() {
-    return this.vFlashCacheConfigInfo;
-  }
+    public VirtualDiskVFlashCacheConfigInfo getVFlashCacheConfigInfo() {
+        return this.vFlashCacheConfigInfo;
+    }
 
-  public void setCapacityInKB(long capacityInKB) {
-    this.capacityInKB=capacityInKB;
-  }
+    public void setCapacityInKB(long capacityInKB) {
+        this.capacityInKB = capacityInKB;
+    }
 
-  public void setCapacityInBytes(Long capacityInBytes) {
-    this.capacityInBytes=capacityInBytes;
-  }
+    public void setCapacityInBytes(Long capacityInBytes) {
+        this.capacityInBytes = capacityInBytes;
+    }
 
-  public void setShares(SharesInfo shares) {
-    this.shares=shares;
-  }
+    public void setShares(SharesInfo shares) {
+        this.shares = shares;
+    }
 
-  public void setStorageIOAllocation(StorageIOAllocationInfo storageIOAllocation) {
-    this.storageIOAllocation=storageIOAllocation;
-  }
+    public void setStorageIOAllocation(StorageIOAllocationInfo storageIOAllocation) {
+        this.storageIOAllocation = storageIOAllocation;
+    }
 
-  public void setDiskObjectId(String diskObjectId) {
-    this.diskObjectId=diskObjectId;
-  }
+    public void setDiskObjectId(String diskObjectId) {
+        this.diskObjectId = diskObjectId;
+    }
 
-  public void setVFlashCacheConfigInfo(VirtualDiskVFlashCacheConfigInfo vFlashCacheConfigInfo) {
-    this.vFlashCacheConfigInfo=vFlashCacheConfigInfo;
-  }
+    public void setVFlashCacheConfigInfo(VirtualDiskVFlashCacheConfigInfo vFlashCacheConfigInfo) {
+        this.vFlashCacheConfigInfo = vFlashCacheConfigInfo;
+    }
 }

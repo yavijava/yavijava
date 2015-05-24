@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VirtualDiskSpec extends DynamicData {
-  public String diskType;
-  public String adapterType;
+    public String diskType;
+    public String adapterType;
 
-  public String getDiskType() {
-    return this.diskType;
-  }
+    public String getDiskType() {
+        return this.diskType;
+    }
 
-  public String getAdapterType() {
-    return this.adapterType;
-  }
+    public String getAdapterType() {
+        return this.adapterType;
+    }
 
-  public void setDiskType(String diskType) {
-    this.diskType=diskType;
-  }
+    public void setDiskType(String diskType) {
+        this.diskType = diskType;
+    }
 
-  public void setAdapterType(String adapterType) {
-    this.adapterType=adapterType;
-  }
+    public void setAdapterType(String adapterType) {
+        this.adapterType = adapterType;
+    }
 }

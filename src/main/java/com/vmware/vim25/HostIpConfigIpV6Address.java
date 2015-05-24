@@ -28,67 +28,68 @@ POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
 
 package com.vmware.vim25;
+
 import java.util.Calendar;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostIpConfigIpV6Address extends DynamicData {
-  public String ipAddress;
-  public int prefixLength;
-  public String origin;
-  public String dadState;
-  public Calendar lifetime;
-  public String operation;
+    public String ipAddress;
+    public int prefixLength;
+    public String origin;
+    public String dadState;
+    public Calendar lifetime;
+    public String operation;
 
-  public String getIpAddress() {
-    return this.ipAddress;
-  }
+    public String getIpAddress() {
+        return this.ipAddress;
+    }
 
-  public int getPrefixLength() {
-    return this.prefixLength;
-  }
+    public int getPrefixLength() {
+        return this.prefixLength;
+    }
 
-  public String getOrigin() {
-    return this.origin;
-  }
+    public String getOrigin() {
+        return this.origin;
+    }
 
-  public String getDadState() {
-    return this.dadState;
-  }
+    public String getDadState() {
+        return this.dadState;
+    }
 
-  public Calendar getLifetime() {
-    return this.lifetime;
-  }
+    public Calendar getLifetime() {
+        return this.lifetime;
+    }
 
-  public String getOperation() {
-    return this.operation;
-  }
+    public String getOperation() {
+        return this.operation;
+    }
 
-  public void setIpAddress(String ipAddress) {
-    this.ipAddress=ipAddress;
-  }
+    public void setIpAddress(String ipAddress) {
+        this.ipAddress = ipAddress;
+    }
 
-  public void setPrefixLength(int prefixLength) {
-    this.prefixLength=prefixLength;
-  }
+    public void setPrefixLength(int prefixLength) {
+        this.prefixLength = prefixLength;
+    }
 
-  public void setOrigin(String origin) {
-    this.origin=origin;
-  }
+    public void setOrigin(String origin) {
+        this.origin = origin;
+    }
 
-  public void setDadState(String dadState) {
-    this.dadState=dadState;
-  }
+    public void setDadState(String dadState) {
+        this.dadState = dadState;
+    }
 
-  public void setLifetime(Calendar lifetime) {
-    this.lifetime=lifetime;
-  }
+    public void setLifetime(Calendar lifetime) {
+        this.lifetime = lifetime;
+    }
 
-  public void setOperation(String operation) {
-    this.operation=operation;
-  }
+    public void setOperation(String operation) {
+        this.operation = operation;
+    }
 }

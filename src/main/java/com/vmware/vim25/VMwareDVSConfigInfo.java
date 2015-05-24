@@ -30,73 +30,73 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VMwareDVSConfigInfo extends DVSConfigInfo {
-  public VMwareVspanSession[] vspanSession;
-  public VMwareDVSPvlanMapEntry[] pvlanConfig;
-  public int maxMtu;
-  public LinkDiscoveryProtocolConfig linkDiscoveryProtocolConfig;
-  public VMwareIpfixConfig ipfixConfig;
-  public VMwareDvsLacpGroupConfig[] lacpGroupConfig;
-  public String lacpApiVersion;
+    public VMwareVspanSession[] vspanSession;
+    public VMwareDVSPvlanMapEntry[] pvlanConfig;
+    public int maxMtu;
+    public LinkDiscoveryProtocolConfig linkDiscoveryProtocolConfig;
+    public VMwareIpfixConfig ipfixConfig;
+    public VMwareDvsLacpGroupConfig[] lacpGroupConfig;
+    public String lacpApiVersion;
 
-  public VMwareVspanSession[] getVspanSession() {
-    return this.vspanSession;
-  }
+    public VMwareVspanSession[] getVspanSession() {
+        return this.vspanSession;
+    }
 
-  public VMwareDVSPvlanMapEntry[] getPvlanConfig() {
-    return this.pvlanConfig;
-  }
+    public VMwareDVSPvlanMapEntry[] getPvlanConfig() {
+        return this.pvlanConfig;
+    }
 
-  public int getMaxMtu() {
-    return this.maxMtu;
-  }
+    public int getMaxMtu() {
+        return this.maxMtu;
+    }
 
-  public LinkDiscoveryProtocolConfig getLinkDiscoveryProtocolConfig() {
-    return this.linkDiscoveryProtocolConfig;
-  }
+    public LinkDiscoveryProtocolConfig getLinkDiscoveryProtocolConfig() {
+        return this.linkDiscoveryProtocolConfig;
+    }
 
-  public VMwareIpfixConfig getIpfixConfig() {
-    return this.ipfixConfig;
-  }
+    public VMwareIpfixConfig getIpfixConfig() {
+        return this.ipfixConfig;
+    }
 
-  public VMwareDvsLacpGroupConfig[] getLacpGroupConfig() {
-    return this.lacpGroupConfig;
-  }
+    public VMwareDvsLacpGroupConfig[] getLacpGroupConfig() {
+        return this.lacpGroupConfig;
+    }
 
-  public String getLacpApiVersion() {
-    return this.lacpApiVersion;
-  }
+    public String getLacpApiVersion() {
+        return this.lacpApiVersion;
+    }
 
-  public void setVspanSession(VMwareVspanSession[] vspanSession) {
-    this.vspanSession=vspanSession;
-  }
+    public void setVspanSession(VMwareVspanSession[] vspanSession) {
+        this.vspanSession = vspanSession;
+    }
 
-  public void setPvlanConfig(VMwareDVSPvlanMapEntry[] pvlanConfig) {
-    this.pvlanConfig=pvlanConfig;
-  }
+    public void setPvlanConfig(VMwareDVSPvlanMapEntry[] pvlanConfig) {
+        this.pvlanConfig = pvlanConfig;
+    }
 
-  public void setMaxMtu(int maxMtu) {
-    this.maxMtu=maxMtu;
-  }
+    public void setMaxMtu(int maxMtu) {
+        this.maxMtu = maxMtu;
+    }
 
-  public void setLinkDiscoveryProtocolConfig(LinkDiscoveryProtocolConfig linkDiscoveryProtocolConfig) {
-    this.linkDiscoveryProtocolConfig=linkDiscoveryProtocolConfig;
-  }
+    public void setLinkDiscoveryProtocolConfig(LinkDiscoveryProtocolConfig linkDiscoveryProtocolConfig) {
+        this.linkDiscoveryProtocolConfig = linkDiscoveryProtocolConfig;
+    }
 
-  public void setIpfixConfig(VMwareIpfixConfig ipfixConfig) {
-    this.ipfixConfig=ipfixConfig;
-  }
+    public void setIpfixConfig(VMwareIpfixConfig ipfixConfig) {
+        this.ipfixConfig = ipfixConfig;
+    }
 
-  public void setLacpGroupConfig(VMwareDvsLacpGroupConfig[] lacpGroupConfig) {
-    this.lacpGroupConfig=lacpGroupConfig;
-  }
+    public void setLacpGroupConfig(VMwareDvsLacpGroupConfig[] lacpGroupConfig) {
+        this.lacpGroupConfig = lacpGroupConfig;
+    }
 
-  public void setLacpApiVersion(String lacpApiVersion) {
-    this.lacpApiVersion=lacpApiVersion;
-  }
+    public void setLacpApiVersion(String lacpApiVersion) {
+        this.lacpApiVersion = lacpApiVersion;
+    }
 }

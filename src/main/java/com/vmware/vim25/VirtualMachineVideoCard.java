@@ -30,55 +30,55 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VirtualMachineVideoCard extends VirtualDevice {
-  public Long videoRamSizeInKB;
-  public Integer numDisplays;
-  public Boolean useAutoDetect;
-  public Boolean enable3DSupport;
-  public String use3dRenderer;
+    public Long videoRamSizeInKB;
+    public Integer numDisplays;
+    public Boolean useAutoDetect;
+    public Boolean enable3DSupport;
+    public String use3dRenderer;
 
-  public Long getVideoRamSizeInKB() {
-    return this.videoRamSizeInKB;
-  }
+    public Long getVideoRamSizeInKB() {
+        return this.videoRamSizeInKB;
+    }
 
-  public Integer getNumDisplays() {
-    return this.numDisplays;
-  }
+    public Integer getNumDisplays() {
+        return this.numDisplays;
+    }
 
-  public Boolean getUseAutoDetect() {
-    return this.useAutoDetect;
-  }
+    public Boolean getUseAutoDetect() {
+        return this.useAutoDetect;
+    }
 
-  public Boolean getEnable3DSupport() {
-    return this.enable3DSupport;
-  }
+    public Boolean getEnable3DSupport() {
+        return this.enable3DSupport;
+    }
 
-  public String getUse3dRenderer() {
-    return this.use3dRenderer;
-  }
+    public String getUse3dRenderer() {
+        return this.use3dRenderer;
+    }
 
-  public void setVideoRamSizeInKB(Long videoRamSizeInKB) {
-    this.videoRamSizeInKB=videoRamSizeInKB;
-  }
+    public void setVideoRamSizeInKB(Long videoRamSizeInKB) {
+        this.videoRamSizeInKB = videoRamSizeInKB;
+    }
 
-  public void setNumDisplays(Integer numDisplays) {
-    this.numDisplays=numDisplays;
-  }
+    public void setNumDisplays(Integer numDisplays) {
+        this.numDisplays = numDisplays;
+    }
 
-  public void setUseAutoDetect(Boolean useAutoDetect) {
-    this.useAutoDetect=useAutoDetect;
-  }
+    public void setUseAutoDetect(Boolean useAutoDetect) {
+        this.useAutoDetect = useAutoDetect;
+    }
 
-  public void setEnable3DSupport(Boolean enable3DSupport) {
-    this.enable3DSupport=enable3DSupport;
-  }
+    public void setEnable3DSupport(Boolean enable3DSupport) {
+        this.enable3DSupport = enable3DSupport;
+    }
 
-  public void setUse3dRenderer(String use3dRenderer) {
-    this.use3dRenderer=use3dRenderer;
-  }
+    public void setUse3dRenderer(String use3dRenderer) {
+        this.use3dRenderer = use3dRenderer;
+    }
 }

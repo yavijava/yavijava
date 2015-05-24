@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class NetworkRollbackEvent extends Event {
-  public String methodName;
-  public String transactionId;
+    public String methodName;
+    public String transactionId;
 
-  public String getMethodName() {
-    return this.methodName;
-  }
+    public String getMethodName() {
+        return this.methodName;
+    }
 
-  public String getTransactionId() {
-    return this.transactionId;
-  }
+    public String getTransactionId() {
+        return this.transactionId;
+    }
 
-  public void setMethodName(String methodName) {
-    this.methodName=methodName;
-  }
+    public void setMethodName(String methodName) {
+        this.methodName = methodName;
+    }
 
-  public void setTransactionId(String transactionId) {
-    this.transactionId=transactionId;
-  }
+    public void setTransactionId(String transactionId) {
+        this.transactionId = transactionId;
+    }
 }

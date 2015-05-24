@@ -30,37 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class ScsiLunDurableName extends DynamicData {
-  public String namespace;
-  public byte namespaceId;
-  public byte[] data;
+    public String namespace;
+    public byte namespaceId;
+    public byte[] data;
 
-  public String getNamespace() {
-    return this.namespace;
-  }
+    public String getNamespace() {
+        return this.namespace;
+    }
 
-  public byte getNamespaceId() {
-    return this.namespaceId;
-  }
+    public byte getNamespaceId() {
+        return this.namespaceId;
+    }
 
-  public byte[] getData() {
-    return this.data;
-  }
+    public byte[] getData() {
+        return this.data;
+    }
 
-  public void setNamespace(String namespace) {
-    this.namespace=namespace;
-  }
+    public void setNamespace(String namespace) {
+        this.namespace = namespace;
+    }
 
-  public void setNamespaceId(byte namespaceId) {
-    this.namespaceId=namespaceId;
-  }
+    public void setNamespaceId(byte namespaceId) {
+        this.namespaceId = namespaceId;
+    }
 
-  public void setData(byte[] data) {
-    this.data=data;
-  }
+    public void setData(byte[] data) {
+        this.data = data;
+    }
 }

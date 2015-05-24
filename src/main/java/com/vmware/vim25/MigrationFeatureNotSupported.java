@@ -30,37 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class MigrationFeatureNotSupported extends MigrationFault {
-  public boolean atSourceHost;
-  public String failedHostName;
-  public ManagedObjectReference failedHost;
+    public boolean atSourceHost;
+    public String failedHostName;
+    public ManagedObjectReference failedHost;
 
-  public boolean isAtSourceHost() {
-    return this.atSourceHost;
-  }
+    public boolean isAtSourceHost() {
+        return this.atSourceHost;
+    }
 
-  public String getFailedHostName() {
-    return this.failedHostName;
-  }
+    public String getFailedHostName() {
+        return this.failedHostName;
+    }
 
-  public ManagedObjectReference getFailedHost() {
-    return this.failedHost;
-  }
+    public ManagedObjectReference getFailedHost() {
+        return this.failedHost;
+    }
 
-  public void setAtSourceHost(boolean atSourceHost) {
-    this.atSourceHost=atSourceHost;
-  }
+    public void setAtSourceHost(boolean atSourceHost) {
+        this.atSourceHost = atSourceHost;
+    }
 
-  public void setFailedHostName(String failedHostName) {
-    this.failedHostName=failedHostName;
-  }
+    public void setFailedHostName(String failedHostName) {
+        this.failedHostName = failedHostName;
+    }
 
-  public void setFailedHost(ManagedObjectReference failedHost) {
-    this.failedHost=failedHost;
-  }
+    public void setFailedHost(ManagedObjectReference failedHost) {
+        this.failedHost = failedHost;
+    }
 }

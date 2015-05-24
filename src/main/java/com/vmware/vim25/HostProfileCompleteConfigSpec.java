@@ -30,55 +30,55 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostProfileCompleteConfigSpec extends HostProfileConfigSpec {
-  public HostApplyProfile applyProfile;
-  public ComplianceProfile customComplyProfile;
-  public boolean disabledExpressionListChanged;
-  public String[] disabledExpressionList;
-  public ManagedObjectReference validatorHost;
+    public HostApplyProfile applyProfile;
+    public ComplianceProfile customComplyProfile;
+    public boolean disabledExpressionListChanged;
+    public String[] disabledExpressionList;
+    public ManagedObjectReference validatorHost;
 
-  public HostApplyProfile getApplyProfile() {
-    return this.applyProfile;
-  }
+    public HostApplyProfile getApplyProfile() {
+        return this.applyProfile;
+    }
 
-  public ComplianceProfile getCustomComplyProfile() {
-    return this.customComplyProfile;
-  }
+    public ComplianceProfile getCustomComplyProfile() {
+        return this.customComplyProfile;
+    }
 
-  public boolean isDisabledExpressionListChanged() {
-    return this.disabledExpressionListChanged;
-  }
+    public boolean isDisabledExpressionListChanged() {
+        return this.disabledExpressionListChanged;
+    }
 
-  public String[] getDisabledExpressionList() {
-    return this.disabledExpressionList;
-  }
+    public String[] getDisabledExpressionList() {
+        return this.disabledExpressionList;
+    }
 
-  public ManagedObjectReference getValidatorHost() {
-    return this.validatorHost;
-  }
+    public ManagedObjectReference getValidatorHost() {
+        return this.validatorHost;
+    }
 
-  public void setApplyProfile(HostApplyProfile applyProfile) {
-    this.applyProfile=applyProfile;
-  }
+    public void setApplyProfile(HostApplyProfile applyProfile) {
+        this.applyProfile = applyProfile;
+    }
 
-  public void setCustomComplyProfile(ComplianceProfile customComplyProfile) {
-    this.customComplyProfile=customComplyProfile;
-  }
+    public void setCustomComplyProfile(ComplianceProfile customComplyProfile) {
+        this.customComplyProfile = customComplyProfile;
+    }
 
-  public void setDisabledExpressionListChanged(boolean disabledExpressionListChanged) {
-    this.disabledExpressionListChanged=disabledExpressionListChanged;
-  }
+    public void setDisabledExpressionListChanged(boolean disabledExpressionListChanged) {
+        this.disabledExpressionListChanged = disabledExpressionListChanged;
+    }
 
-  public void setDisabledExpressionList(String[] disabledExpressionList) {
-    this.disabledExpressionList=disabledExpressionList;
-  }
+    public void setDisabledExpressionList(String[] disabledExpressionList) {
+        this.disabledExpressionList = disabledExpressionList;
+    }
 
-  public void setValidatorHost(ManagedObjectReference validatorHost) {
-    this.validatorHost=validatorHost;
-  }
+    public void setValidatorHost(ManagedObjectReference validatorHost) {
+        this.validatorHost = validatorHost;
+    }
 }

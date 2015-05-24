@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class AnswerFileUpdateFailed extends VimFault {
-  public AnswerFileUpdateFailure[] failure;
+    public AnswerFileUpdateFailure[] failure;
 
-  public AnswerFileUpdateFailure[] getFailure() {
-    return this.failure;
-  }
+    public AnswerFileUpdateFailure[] getFailure() {
+        return this.failure;
+    }
 
-  public void setFailure(AnswerFileUpdateFailure[] failure) {
-    this.failure=failure;
-  }
+    public void setFailure(AnswerFileUpdateFailure[] failure) {
+        this.failure = failure;
+    }
 }

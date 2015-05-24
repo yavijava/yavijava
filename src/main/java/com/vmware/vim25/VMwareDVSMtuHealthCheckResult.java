@@ -30,37 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VMwareDVSMtuHealthCheckResult extends HostMemberUplinkHealthCheckResult {
-  public boolean mtuMismatch;
-  public NumericRange[] vlanSupportSwitchMtu;
-  public NumericRange[] vlanNotSupportSwitchMtu;
+    public boolean mtuMismatch;
+    public NumericRange[] vlanSupportSwitchMtu;
+    public NumericRange[] vlanNotSupportSwitchMtu;
 
-  public boolean isMtuMismatch() {
-    return this.mtuMismatch;
-  }
+    public boolean isMtuMismatch() {
+        return this.mtuMismatch;
+    }
 
-  public NumericRange[] getVlanSupportSwitchMtu() {
-    return this.vlanSupportSwitchMtu;
-  }
+    public NumericRange[] getVlanSupportSwitchMtu() {
+        return this.vlanSupportSwitchMtu;
+    }
 
-  public NumericRange[] getVlanNotSupportSwitchMtu() {
-    return this.vlanNotSupportSwitchMtu;
-  }
+    public NumericRange[] getVlanNotSupportSwitchMtu() {
+        return this.vlanNotSupportSwitchMtu;
+    }
 
-  public void setMtuMismatch(boolean mtuMismatch) {
-    this.mtuMismatch=mtuMismatch;
-  }
+    public void setMtuMismatch(boolean mtuMismatch) {
+        this.mtuMismatch = mtuMismatch;
+    }
 
-  public void setVlanSupportSwitchMtu(NumericRange[] vlanSupportSwitchMtu) {
-    this.vlanSupportSwitchMtu=vlanSupportSwitchMtu;
-  }
+    public void setVlanSupportSwitchMtu(NumericRange[] vlanSupportSwitchMtu) {
+        this.vlanSupportSwitchMtu = vlanSupportSwitchMtu;
+    }
 
-  public void setVlanNotSupportSwitchMtu(NumericRange[] vlanNotSupportSwitchMtu) {
-    this.vlanNotSupportSwitchMtu=vlanNotSupportSwitchMtu;
-  }
+    public void setVlanNotSupportSwitchMtu(NumericRange[] vlanNotSupportSwitchMtu) {
+        this.vlanNotSupportSwitchMtu = vlanNotSupportSwitchMtu;
+    }
 }

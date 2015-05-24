@@ -30,25 +30,21 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
-*/
+ * @author Steve Jin (sjin@vmware.com)
+ */
 
-public class ArrayOfLicenseAssignmentManagerEntityFeaturePair
-{
-  public LicenseAssignmentManagerEntityFeaturePair[] LicenseAssignmentManagerEntityFeaturePair;
+public class ArrayOfLicenseAssignmentManagerEntityFeaturePair {
+    public LicenseAssignmentManagerEntityFeaturePair[] LicenseAssignmentManagerEntityFeaturePair;
 
-  public LicenseAssignmentManagerEntityFeaturePair[] getLicenseAssignmentManagerEntityFeaturePair()
-  {
-    return this.LicenseAssignmentManagerEntityFeaturePair;
-  }
+    public LicenseAssignmentManagerEntityFeaturePair[] getLicenseAssignmentManagerEntityFeaturePair() {
+        return this.LicenseAssignmentManagerEntityFeaturePair;
+    }
 
-  public LicenseAssignmentManagerEntityFeaturePair getLicenseAssignmentManagerEntityFeaturePair(int i)
-  {
-    return this.LicenseAssignmentManagerEntityFeaturePair[i];
-  }
+    public LicenseAssignmentManagerEntityFeaturePair getLicenseAssignmentManagerEntityFeaturePair(int i) {
+        return this.LicenseAssignmentManagerEntityFeaturePair[i];
+    }
 
-  public void setLicenseAssignmentManagerEntityFeaturePair(LicenseAssignmentManagerEntityFeaturePair[] LicenseAssignmentManagerEntityFeaturePair)
-  {
-    this.LicenseAssignmentManagerEntityFeaturePair=LicenseAssignmentManagerEntityFeaturePair;
-  }
+    public void setLicenseAssignmentManagerEntityFeaturePair(LicenseAssignmentManagerEntityFeaturePair[] LicenseAssignmentManagerEntityFeaturePair) {
+        this.LicenseAssignmentManagerEntityFeaturePair = LicenseAssignmentManagerEntityFeaturePair;
+    }
 }

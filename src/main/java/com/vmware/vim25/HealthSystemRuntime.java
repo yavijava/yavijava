@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HealthSystemRuntime extends DynamicData {
-  public HostSystemHealthInfo systemHealthInfo;
-  public HostHardwareStatusInfo hardwareStatusInfo;
+    public HostSystemHealthInfo systemHealthInfo;
+    public HostHardwareStatusInfo hardwareStatusInfo;
 
-  public HostSystemHealthInfo getSystemHealthInfo() {
-    return this.systemHealthInfo;
-  }
+    public HostSystemHealthInfo getSystemHealthInfo() {
+        return this.systemHealthInfo;
+    }
 
-  public HostHardwareStatusInfo getHardwareStatusInfo() {
-    return this.hardwareStatusInfo;
-  }
+    public HostHardwareStatusInfo getHardwareStatusInfo() {
+        return this.hardwareStatusInfo;
+    }
 
-  public void setSystemHealthInfo(HostSystemHealthInfo systemHealthInfo) {
-    this.systemHealthInfo=systemHealthInfo;
-  }
+    public void setSystemHealthInfo(HostSystemHealthInfo systemHealthInfo) {
+        this.systemHealthInfo = systemHealthInfo;
+    }
 
-  public void setHardwareStatusInfo(HostHardwareStatusInfo hardwareStatusInfo) {
-    this.hardwareStatusInfo=hardwareStatusInfo;
-  }
+    public void setHardwareStatusInfo(HostHardwareStatusInfo hardwareStatusInfo) {
+        this.hardwareStatusInfo = hardwareStatusInfo;
+    }
 }

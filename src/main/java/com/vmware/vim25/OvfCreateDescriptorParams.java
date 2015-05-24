@@ -30,64 +30,64 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class OvfCreateDescriptorParams extends DynamicData {
-  public OvfFile[] ovfFiles;
-  public String name;
-  public String description;
-  public Boolean includeImageFiles;
-  public String[] exportOption;
-  public ManagedObjectReference snapshot;
+    public OvfFile[] ovfFiles;
+    public String name;
+    public String description;
+    public Boolean includeImageFiles;
+    public String[] exportOption;
+    public ManagedObjectReference snapshot;
 
-  public OvfFile[] getOvfFiles() {
-    return this.ovfFiles;
-  }
+    public OvfFile[] getOvfFiles() {
+        return this.ovfFiles;
+    }
 
-  public String getName() {
-    return this.name;
-  }
+    public String getName() {
+        return this.name;
+    }
 
-  public String getDescription() {
-    return this.description;
-  }
+    public String getDescription() {
+        return this.description;
+    }
 
-  public Boolean getIncludeImageFiles() {
-    return this.includeImageFiles;
-  }
+    public Boolean getIncludeImageFiles() {
+        return this.includeImageFiles;
+    }
 
-  public String[] getExportOption() {
-    return this.exportOption;
-  }
+    public String[] getExportOption() {
+        return this.exportOption;
+    }
 
-  public ManagedObjectReference getSnapshot() {
-    return this.snapshot;
-  }
+    public ManagedObjectReference getSnapshot() {
+        return this.snapshot;
+    }
 
-  public void setOvfFiles(OvfFile[] ovfFiles) {
-    this.ovfFiles=ovfFiles;
-  }
+    public void setOvfFiles(OvfFile[] ovfFiles) {
+        this.ovfFiles = ovfFiles;
+    }
 
-  public void setName(String name) {
-    this.name=name;
-  }
+    public void setName(String name) {
+        this.name = name;
+    }
 
-  public void setDescription(String description) {
-    this.description=description;
-  }
+    public void setDescription(String description) {
+        this.description = description;
+    }
 
-  public void setIncludeImageFiles(Boolean includeImageFiles) {
-    this.includeImageFiles=includeImageFiles;
-  }
+    public void setIncludeImageFiles(Boolean includeImageFiles) {
+        this.includeImageFiles = includeImageFiles;
+    }
 
-  public void setExportOption(String[] exportOption) {
-    this.exportOption=exportOption;
-  }
+    public void setExportOption(String[] exportOption) {
+        this.exportOption = exportOption;
+    }
 
-  public void setSnapshot(ManagedObjectReference snapshot) {
-    this.snapshot=snapshot;
-  }
+    public void setSnapshot(ManagedObjectReference snapshot) {
+        this.snapshot = snapshot;
+    }
 }

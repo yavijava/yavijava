@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostTpmBootSecurityOptionEventDetails extends HostTpmEventDetails {
-  public String bootSecurityOption;
+    public String bootSecurityOption;
 
-  public String getBootSecurityOption() {
-    return this.bootSecurityOption;
-  }
+    public String getBootSecurityOption() {
+        return this.bootSecurityOption;
+    }
 
-  public void setBootSecurityOption(String bootSecurityOption) {
-    this.bootSecurityOption=bootSecurityOption;
-  }
+    public void setBootSecurityOption(String bootSecurityOption) {
+        this.bootSecurityOption = bootSecurityOption;
+    }
 }

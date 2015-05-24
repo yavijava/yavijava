@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfHostInternetScsiHbaStaticTarget {
-  public HostInternetScsiHbaStaticTarget[] HostInternetScsiHbaStaticTarget;
+    public HostInternetScsiHbaStaticTarget[] HostInternetScsiHbaStaticTarget;
 
-  public HostInternetScsiHbaStaticTarget[] getHostInternetScsiHbaStaticTarget() {
-    return this.HostInternetScsiHbaStaticTarget;
-  }
+    public HostInternetScsiHbaStaticTarget[] getHostInternetScsiHbaStaticTarget() {
+        return this.HostInternetScsiHbaStaticTarget;
+    }
 
-  public HostInternetScsiHbaStaticTarget getHostInternetScsiHbaStaticTarget(int i) {
-    return this.HostInternetScsiHbaStaticTarget[i];
-  }
+    public HostInternetScsiHbaStaticTarget getHostInternetScsiHbaStaticTarget(int i) {
+        return this.HostInternetScsiHbaStaticTarget[i];
+    }
 
-  public void setHostInternetScsiHbaStaticTarget(HostInternetScsiHbaStaticTarget[] HostInternetScsiHbaStaticTarget) {
-    this.HostInternetScsiHbaStaticTarget=HostInternetScsiHbaStaticTarget;
-  }
+    public void setHostInternetScsiHbaStaticTarget(HostInternetScsiHbaStaticTarget[] HostInternetScsiHbaStaticTarget) {
+        this.HostInternetScsiHbaStaticTarget = HostInternetScsiHbaStaticTarget;
+    }
 }

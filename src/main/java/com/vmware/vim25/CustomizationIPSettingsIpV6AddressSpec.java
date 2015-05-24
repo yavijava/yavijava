@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class CustomizationIPSettingsIpV6AddressSpec extends DynamicData {
-  public CustomizationIpV6Generator[] ip;
-  public String[] gateway;
+    public CustomizationIpV6Generator[] ip;
+    public String[] gateway;
 
-  public CustomizationIpV6Generator[] getIp() {
-    return this.ip;
-  }
+    public CustomizationIpV6Generator[] getIp() {
+        return this.ip;
+    }
 
-  public String[] getGateway() {
-    return this.gateway;
-  }
+    public String[] getGateway() {
+        return this.gateway;
+    }
 
-  public void setIp(CustomizationIpV6Generator[] ip) {
-    this.ip=ip;
-  }
+    public void setIp(CustomizationIpV6Generator[] ip) {
+        this.ip = ip;
+    }
 
-  public void setGateway(String[] gateway) {
-    this.gateway=gateway;
-  }
+    public void setGateway(String[] gateway) {
+        this.gateway = gateway;
+    }
 }

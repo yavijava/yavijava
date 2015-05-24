@@ -30,82 +30,82 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HttpNfcLeaseDeviceUrl extends DynamicData {
-  public String key;
-  public String importKey;
-  public String url;
-  public String sslThumbprint;
-  public Boolean disk;
-  public String targetId;
-  public String datastoreKey;
-  public Long fileSize;
+    public String key;
+    public String importKey;
+    public String url;
+    public String sslThumbprint;
+    public Boolean disk;
+    public String targetId;
+    public String datastoreKey;
+    public Long fileSize;
 
-  public String getKey() {
-    return this.key;
-  }
+    public String getKey() {
+        return this.key;
+    }
 
-  public String getImportKey() {
-    return this.importKey;
-  }
+    public String getImportKey() {
+        return this.importKey;
+    }
 
-  public String getUrl() {
-    return this.url;
-  }
+    public String getUrl() {
+        return this.url;
+    }
 
-  public String getSslThumbprint() {
-    return this.sslThumbprint;
-  }
+    public String getSslThumbprint() {
+        return this.sslThumbprint;
+    }
 
-  public Boolean getDisk() {
-    return this.disk;
-  }
+    public Boolean getDisk() {
+        return this.disk;
+    }
 
-  public String getTargetId() {
-    return this.targetId;
-  }
+    public String getTargetId() {
+        return this.targetId;
+    }
 
-  public String getDatastoreKey() {
-    return this.datastoreKey;
-  }
+    public String getDatastoreKey() {
+        return this.datastoreKey;
+    }
 
-  public Long getFileSize() {
-    return this.fileSize;
-  }
+    public Long getFileSize() {
+        return this.fileSize;
+    }
 
-  public void setKey(String key) {
-    this.key=key;
-  }
+    public void setKey(String key) {
+        this.key = key;
+    }
 
-  public void setImportKey(String importKey) {
-    this.importKey=importKey;
-  }
+    public void setImportKey(String importKey) {
+        this.importKey = importKey;
+    }
 
-  public void setUrl(String url) {
-    this.url=url;
-  }
+    public void setUrl(String url) {
+        this.url = url;
+    }
 
-  public void setSslThumbprint(String sslThumbprint) {
-    this.sslThumbprint=sslThumbprint;
-  }
+    public void setSslThumbprint(String sslThumbprint) {
+        this.sslThumbprint = sslThumbprint;
+    }
 
-  public void setDisk(Boolean disk) {
-    this.disk=disk;
-  }
+    public void setDisk(Boolean disk) {
+        this.disk = disk;
+    }
 
-  public void setTargetId(String targetId) {
-    this.targetId=targetId;
-  }
+    public void setTargetId(String targetId) {
+        this.targetId = targetId;
+    }
 
-  public void setDatastoreKey(String datastoreKey) {
-    this.datastoreKey=datastoreKey;
-  }
+    public void setDatastoreKey(String datastoreKey) {
+        this.datastoreKey = datastoreKey;
+    }
 
-  public void setFileSize(Long fileSize) {
-    this.fileSize=fileSize;
-  }
+    public void setFileSize(Long fileSize) {
+        this.fileSize = fileSize;
+    }
 }

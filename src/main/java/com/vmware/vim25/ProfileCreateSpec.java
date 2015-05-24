@@ -30,37 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class ProfileCreateSpec extends DynamicData {
-  public String name;
-  public String annotation;
-  public Boolean enabled;
+    public String name;
+    public String annotation;
+    public Boolean enabled;
 
-  public String getName() {
-    return this.name;
-  }
+    public String getName() {
+        return this.name;
+    }
 
-  public String getAnnotation() {
-    return this.annotation;
-  }
+    public String getAnnotation() {
+        return this.annotation;
+    }
 
-  public Boolean getEnabled() {
-    return this.enabled;
-  }
+    public Boolean getEnabled() {
+        return this.enabled;
+    }
 
-  public void setName(String name) {
-    this.name=name;
-  }
+    public void setName(String name) {
+        this.name = name;
+    }
 
-  public void setAnnotation(String annotation) {
-    this.annotation=annotation;
-  }
+    public void setAnnotation(String annotation) {
+        this.annotation = annotation;
+    }
 
-  public void setEnabled(Boolean enabled) {
-    this.enabled=enabled;
-  }
+    public void setEnabled(Boolean enabled) {
+        this.enabled = enabled;
+    }
 }

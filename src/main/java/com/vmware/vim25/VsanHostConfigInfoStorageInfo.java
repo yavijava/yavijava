@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VsanHostConfigInfoStorageInfo extends DynamicData {
-  public Boolean autoClaimStorage;
-  public VsanHostDiskMapping[] diskMapping;
+    public Boolean autoClaimStorage;
+    public VsanHostDiskMapping[] diskMapping;
 
-  public Boolean getAutoClaimStorage() {
-    return this.autoClaimStorage;
-  }
+    public Boolean getAutoClaimStorage() {
+        return this.autoClaimStorage;
+    }
 
-  public VsanHostDiskMapping[] getDiskMapping() {
-    return this.diskMapping;
-  }
+    public VsanHostDiskMapping[] getDiskMapping() {
+        return this.diskMapping;
+    }
 
-  public void setAutoClaimStorage(Boolean autoClaimStorage) {
-    this.autoClaimStorage=autoClaimStorage;
-  }
+    public void setAutoClaimStorage(Boolean autoClaimStorage) {
+        this.autoClaimStorage = autoClaimStorage;
+    }
 
-  public void setDiskMapping(VsanHostDiskMapping[] diskMapping) {
-    this.diskMapping=diskMapping;
-  }
+    public void setDiskMapping(VsanHostDiskMapping[] diskMapping) {
+        this.diskMapping = diskMapping;
+    }
 }

@@ -30,91 +30,91 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class StorageDrsPodConfigInfo extends DynamicData {
-  public boolean enabled;
-  public boolean ioLoadBalanceEnabled;
-  public String defaultVmBehavior;
-  public Integer loadBalanceInterval;
-  public Boolean defaultIntraVmAffinity;
-  public StorageDrsSpaceLoadBalanceConfig spaceLoadBalanceConfig;
-  public StorageDrsIoLoadBalanceConfig ioLoadBalanceConfig;
-  public ClusterRuleInfo[] rule;
-  public OptionValue[] option;
+    public boolean enabled;
+    public boolean ioLoadBalanceEnabled;
+    public String defaultVmBehavior;
+    public Integer loadBalanceInterval;
+    public Boolean defaultIntraVmAffinity;
+    public StorageDrsSpaceLoadBalanceConfig spaceLoadBalanceConfig;
+    public StorageDrsIoLoadBalanceConfig ioLoadBalanceConfig;
+    public ClusterRuleInfo[] rule;
+    public OptionValue[] option;
 
-  public boolean isEnabled() {
-    return this.enabled;
-  }
+    public boolean isEnabled() {
+        return this.enabled;
+    }
 
-  public boolean isIoLoadBalanceEnabled() {
-    return this.ioLoadBalanceEnabled;
-  }
+    public boolean isIoLoadBalanceEnabled() {
+        return this.ioLoadBalanceEnabled;
+    }
 
-  public String getDefaultVmBehavior() {
-    return this.defaultVmBehavior;
-  }
+    public String getDefaultVmBehavior() {
+        return this.defaultVmBehavior;
+    }
 
-  public Integer getLoadBalanceInterval() {
-    return this.loadBalanceInterval;
-  }
+    public Integer getLoadBalanceInterval() {
+        return this.loadBalanceInterval;
+    }
 
-  public Boolean getDefaultIntraVmAffinity() {
-    return this.defaultIntraVmAffinity;
-  }
+    public Boolean getDefaultIntraVmAffinity() {
+        return this.defaultIntraVmAffinity;
+    }
 
-  public StorageDrsSpaceLoadBalanceConfig getSpaceLoadBalanceConfig() {
-    return this.spaceLoadBalanceConfig;
-  }
+    public StorageDrsSpaceLoadBalanceConfig getSpaceLoadBalanceConfig() {
+        return this.spaceLoadBalanceConfig;
+    }
 
-  public StorageDrsIoLoadBalanceConfig getIoLoadBalanceConfig() {
-    return this.ioLoadBalanceConfig;
-  }
+    public StorageDrsIoLoadBalanceConfig getIoLoadBalanceConfig() {
+        return this.ioLoadBalanceConfig;
+    }
 
-  public ClusterRuleInfo[] getRule() {
-    return this.rule;
-  }
+    public ClusterRuleInfo[] getRule() {
+        return this.rule;
+    }
 
-  public OptionValue[] getOption() {
-    return this.option;
-  }
+    public OptionValue[] getOption() {
+        return this.option;
+    }
 
-  public void setEnabled(boolean enabled) {
-    this.enabled=enabled;
-  }
+    public void setEnabled(boolean enabled) {
+        this.enabled = enabled;
+    }
 
-  public void setIoLoadBalanceEnabled(boolean ioLoadBalanceEnabled) {
-    this.ioLoadBalanceEnabled=ioLoadBalanceEnabled;
-  }
+    public void setIoLoadBalanceEnabled(boolean ioLoadBalanceEnabled) {
+        this.ioLoadBalanceEnabled = ioLoadBalanceEnabled;
+    }
 
-  public void setDefaultVmBehavior(String defaultVmBehavior) {
-    this.defaultVmBehavior=defaultVmBehavior;
-  }
+    public void setDefaultVmBehavior(String defaultVmBehavior) {
+        this.defaultVmBehavior = defaultVmBehavior;
+    }
 
-  public void setLoadBalanceInterval(Integer loadBalanceInterval) {
-    this.loadBalanceInterval=loadBalanceInterval;
-  }
+    public void setLoadBalanceInterval(Integer loadBalanceInterval) {
+        this.loadBalanceInterval = loadBalanceInterval;
+    }
 
-  public void setDefaultIntraVmAffinity(Boolean defaultIntraVmAffinity) {
-    this.defaultIntraVmAffinity=defaultIntraVmAffinity;
-  }
+    public void setDefaultIntraVmAffinity(Boolean defaultIntraVmAffinity) {
+        this.defaultIntraVmAffinity = defaultIntraVmAffinity;
+    }
 
-  public void setSpaceLoadBalanceConfig(StorageDrsSpaceLoadBalanceConfig spaceLoadBalanceConfig) {
-    this.spaceLoadBalanceConfig=spaceLoadBalanceConfig;
-  }
+    public void setSpaceLoadBalanceConfig(StorageDrsSpaceLoadBalanceConfig spaceLoadBalanceConfig) {
+        this.spaceLoadBalanceConfig = spaceLoadBalanceConfig;
+    }
 
-  public void setIoLoadBalanceConfig(StorageDrsIoLoadBalanceConfig ioLoadBalanceConfig) {
-    this.ioLoadBalanceConfig=ioLoadBalanceConfig;
-  }
+    public void setIoLoadBalanceConfig(StorageDrsIoLoadBalanceConfig ioLoadBalanceConfig) {
+        this.ioLoadBalanceConfig = ioLoadBalanceConfig;
+    }
 
-  public void setRule(ClusterRuleInfo[] rule) {
-    this.rule=rule;
-  }
+    public void setRule(ClusterRuleInfo[] rule) {
+        this.rule = rule;
+    }
 
-  public void setOption(OptionValue[] option) {
-    this.option=option;
-  }
+    public void setOption(OptionValue[] option) {
+        this.option = option;
+    }
 }

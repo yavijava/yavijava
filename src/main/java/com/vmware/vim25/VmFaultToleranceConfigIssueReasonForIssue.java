@@ -30,38 +30,38 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public enum VmFaultToleranceConfigIssueReasonForIssue {
-  haNotEnabled ("haNotEnabled"),
-  moreThanOneSecondary ("moreThanOneSecondary"),
-  recordReplayNotSupported ("recordReplayNotSupported"),
-  replayNotSupported ("replayNotSupported"),
-  templateVm ("templateVm"),
-  multipleVCPU ("multipleVCPU"),
-  hostInactive ("hostInactive"),
-  ftUnsupportedHardware ("ftUnsupportedHardware"),
-  ftUnsupportedProduct ("ftUnsupportedProduct"),
-  missingVMotionNic ("missingVMotionNic"),
-  missingFTLoggingNic ("missingFTLoggingNic"),
-  thinDisk ("thinDisk"),
-  verifySSLCertificateFlagNotSet ("verifySSLCertificateFlagNotSet"),
-  hasSnapshots ("hasSnapshots"),
-  noConfig ("noConfig"),
-  ftSecondaryVm ("ftSecondaryVm"),
-  hasLocalDisk ("hasLocalDisk"),
-  esxAgentVm ("esxAgentVm"),
-  video3dEnabled ("video3dEnabled"),
-  hasUnsupportedDisk ("hasUnsupportedDisk"),
-  hasNestedHVConfiguration ("hasNestedHVConfiguration"),
-  hasVFlashConfiguration ("hasVFlashConfiguration");
+    haNotEnabled("haNotEnabled"),
+    moreThanOneSecondary("moreThanOneSecondary"),
+    recordReplayNotSupported("recordReplayNotSupported"),
+    replayNotSupported("replayNotSupported"),
+    templateVm("templateVm"),
+    multipleVCPU("multipleVCPU"),
+    hostInactive("hostInactive"),
+    ftUnsupportedHardware("ftUnsupportedHardware"),
+    ftUnsupportedProduct("ftUnsupportedProduct"),
+    missingVMotionNic("missingVMotionNic"),
+    missingFTLoggingNic("missingFTLoggingNic"),
+    thinDisk("thinDisk"),
+    verifySSLCertificateFlagNotSet("verifySSLCertificateFlagNotSet"),
+    hasSnapshots("hasSnapshots"),
+    noConfig("noConfig"),
+    ftSecondaryVm("ftSecondaryVm"),
+    hasLocalDisk("hasLocalDisk"),
+    esxAgentVm("esxAgentVm"),
+    video3dEnabled("video3dEnabled"),
+    hasUnsupportedDisk("hasUnsupportedDisk"),
+    hasNestedHVConfiguration("hasNestedHVConfiguration"),
+    hasVFlashConfiguration("hasVFlashConfiguration");
 
-  @SuppressWarnings("unused")
-  private final String val;
-  private VmFaultToleranceConfigIssueReasonForIssue(String val)
-  {
-    this.val = val;
-  }
+    @SuppressWarnings("unused")
+    private final String val;
+
+    private VmFaultToleranceConfigIssueReasonForIssue(String val) {
+        this.val = val;
+    }
 }

@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfHostPlugStoreTopologyPlugin {
-  public HostPlugStoreTopologyPlugin[] HostPlugStoreTopologyPlugin;
+    public HostPlugStoreTopologyPlugin[] HostPlugStoreTopologyPlugin;
 
-  public HostPlugStoreTopologyPlugin[] getHostPlugStoreTopologyPlugin() {
-    return this.HostPlugStoreTopologyPlugin;
-  }
+    public HostPlugStoreTopologyPlugin[] getHostPlugStoreTopologyPlugin() {
+        return this.HostPlugStoreTopologyPlugin;
+    }
 
-  public HostPlugStoreTopologyPlugin getHostPlugStoreTopologyPlugin(int i) {
-    return this.HostPlugStoreTopologyPlugin[i];
-  }
+    public HostPlugStoreTopologyPlugin getHostPlugStoreTopologyPlugin(int i) {
+        return this.HostPlugStoreTopologyPlugin[i];
+    }
 
-  public void setHostPlugStoreTopologyPlugin(HostPlugStoreTopologyPlugin[] HostPlugStoreTopologyPlugin) {
-    this.HostPlugStoreTopologyPlugin=HostPlugStoreTopologyPlugin;
-  }
+    public void setHostPlugStoreTopologyPlugin(HostPlugStoreTopologyPlugin[] HostPlugStoreTopologyPlugin) {
+        this.HostPlugStoreTopologyPlugin = HostPlugStoreTopologyPlugin;
+    }
 }

@@ -30,73 +30,73 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostNicFailureCriteria extends DynamicData {
-  public String checkSpeed;
-  public Integer speed;
-  public Boolean checkDuplex;
-  public Boolean fullDuplex;
-  public Boolean checkErrorPercent;
-  public Integer percentage;
-  public Boolean checkBeacon;
+    public String checkSpeed;
+    public Integer speed;
+    public Boolean checkDuplex;
+    public Boolean fullDuplex;
+    public Boolean checkErrorPercent;
+    public Integer percentage;
+    public Boolean checkBeacon;
 
-  public String getCheckSpeed() {
-    return this.checkSpeed;
-  }
+    public String getCheckSpeed() {
+        return this.checkSpeed;
+    }
 
-  public Integer getSpeed() {
-    return this.speed;
-  }
+    public Integer getSpeed() {
+        return this.speed;
+    }
 
-  public Boolean getCheckDuplex() {
-    return this.checkDuplex;
-  }
+    public Boolean getCheckDuplex() {
+        return this.checkDuplex;
+    }
 
-  public Boolean getFullDuplex() {
-    return this.fullDuplex;
-  }
+    public Boolean getFullDuplex() {
+        return this.fullDuplex;
+    }
 
-  public Boolean getCheckErrorPercent() {
-    return this.checkErrorPercent;
-  }
+    public Boolean getCheckErrorPercent() {
+        return this.checkErrorPercent;
+    }
 
-  public Integer getPercentage() {
-    return this.percentage;
-  }
+    public Integer getPercentage() {
+        return this.percentage;
+    }
 
-  public Boolean getCheckBeacon() {
-    return this.checkBeacon;
-  }
+    public Boolean getCheckBeacon() {
+        return this.checkBeacon;
+    }
 
-  public void setCheckSpeed(String checkSpeed) {
-    this.checkSpeed=checkSpeed;
-  }
+    public void setCheckSpeed(String checkSpeed) {
+        this.checkSpeed = checkSpeed;
+    }
 
-  public void setSpeed(Integer speed) {
-    this.speed=speed;
-  }
+    public void setSpeed(Integer speed) {
+        this.speed = speed;
+    }
 
-  public void setCheckDuplex(Boolean checkDuplex) {
-    this.checkDuplex=checkDuplex;
-  }
+    public void setCheckDuplex(Boolean checkDuplex) {
+        this.checkDuplex = checkDuplex;
+    }
 
-  public void setFullDuplex(Boolean fullDuplex) {
-    this.fullDuplex=fullDuplex;
-  }
+    public void setFullDuplex(Boolean fullDuplex) {
+        this.fullDuplex = fullDuplex;
+    }
 
-  public void setCheckErrorPercent(Boolean checkErrorPercent) {
-    this.checkErrorPercent=checkErrorPercent;
-  }
+    public void setCheckErrorPercent(Boolean checkErrorPercent) {
+        this.checkErrorPercent = checkErrorPercent;
+    }
 
-  public void setPercentage(Integer percentage) {
-    this.percentage=percentage;
-  }
+    public void setPercentage(Integer percentage) {
+        this.percentage = percentage;
+    }
 
-  public void setCheckBeacon(Boolean checkBeacon) {
-    this.checkBeacon=checkBeacon;
-  }
+    public void setCheckBeacon(Boolean checkBeacon) {
+        this.checkBeacon = checkBeacon;
+    }
 }

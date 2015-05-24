@@ -30,46 +30,46 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VmDiskFileQueryFilter extends DynamicData {
-  public String[] diskType;
-  public int[] matchHardwareVersion;
-  public String[] controllerType;
-  public Boolean thin;
+    public String[] diskType;
+    public int[] matchHardwareVersion;
+    public String[] controllerType;
+    public Boolean thin;
 
-  public String[] getDiskType() {
-    return this.diskType;
-  }
+    public String[] getDiskType() {
+        return this.diskType;
+    }
 
-  public int[] getMatchHardwareVersion() {
-    return this.matchHardwareVersion;
-  }
+    public int[] getMatchHardwareVersion() {
+        return this.matchHardwareVersion;
+    }
 
-  public String[] getControllerType() {
-    return this.controllerType;
-  }
+    public String[] getControllerType() {
+        return this.controllerType;
+    }
 
-  public Boolean getThin() {
-    return this.thin;
-  }
+    public Boolean getThin() {
+        return this.thin;
+    }
 
-  public void setDiskType(String[] diskType) {
-    this.diskType=diskType;
-  }
+    public void setDiskType(String[] diskType) {
+        this.diskType = diskType;
+    }
 
-  public void setMatchHardwareVersion(int[] matchHardwareVersion) {
-    this.matchHardwareVersion=matchHardwareVersion;
-  }
+    public void setMatchHardwareVersion(int[] matchHardwareVersion) {
+        this.matchHardwareVersion = matchHardwareVersion;
+    }
 
-  public void setControllerType(String[] controllerType) {
-    this.controllerType=controllerType;
-  }
+    public void setControllerType(String[] controllerType) {
+        this.controllerType = controllerType;
+    }
 
-  public void setThin(Boolean thin) {
-    this.thin=thin;
-  }
+    public void setThin(Boolean thin) {
+        this.thin = thin;
+    }
 }

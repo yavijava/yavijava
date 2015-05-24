@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public enum OvfConsumerOstNodeType {
-  envelope ("envelope"),
-  virtualSystem ("virtualSystem"),
-  virtualSystemCollection ("virtualSystemCollection");
+    envelope("envelope"),
+    virtualSystem("virtualSystem"),
+    virtualSystemCollection("virtualSystemCollection");
 
-  @SuppressWarnings("unused")
-  private final String val;
-  private OvfConsumerOstNodeType(String val)
-  {
-    this.val = val;
-  }
+    @SuppressWarnings("unused")
+    private final String val;
+
+    private OvfConsumerOstNodeType(String val) {
+        this.val = val;
+    }
 }

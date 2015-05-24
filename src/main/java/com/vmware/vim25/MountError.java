@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class MountError extends CustomizationFault {
-  public ManagedObjectReference vm;
-  public int diskIndex;
+    public ManagedObjectReference vm;
+    public int diskIndex;
 
-  public ManagedObjectReference getVm() {
-    return this.vm;
-  }
+    public ManagedObjectReference getVm() {
+        return this.vm;
+    }
 
-  public int getDiskIndex() {
-    return this.diskIndex;
-  }
+    public int getDiskIndex() {
+        return this.diskIndex;
+    }
 
-  public void setVm(ManagedObjectReference vm) {
-    this.vm=vm;
-  }
+    public void setVm(ManagedObjectReference vm) {
+        this.vm = vm;
+    }
 
-  public void setDiskIndex(int diskIndex) {
-    this.diskIndex=diskIndex;
-  }
+    public void setDiskIndex(int diskIndex) {
+        this.diskIndex = diskIndex;
+    }
 }

@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfNetIpStackInfoDefaultRouter {
-  public NetIpStackInfoDefaultRouter[] NetIpStackInfoDefaultRouter;
+    public NetIpStackInfoDefaultRouter[] NetIpStackInfoDefaultRouter;
 
-  public NetIpStackInfoDefaultRouter[] getNetIpStackInfoDefaultRouter() {
-    return this.NetIpStackInfoDefaultRouter;
-  }
+    public NetIpStackInfoDefaultRouter[] getNetIpStackInfoDefaultRouter() {
+        return this.NetIpStackInfoDefaultRouter;
+    }
 
-  public NetIpStackInfoDefaultRouter getNetIpStackInfoDefaultRouter(int i) {
-    return this.NetIpStackInfoDefaultRouter[i];
-  }
+    public NetIpStackInfoDefaultRouter getNetIpStackInfoDefaultRouter(int i) {
+        return this.NetIpStackInfoDefaultRouter[i];
+    }
 
-  public void setNetIpStackInfoDefaultRouter(NetIpStackInfoDefaultRouter[] NetIpStackInfoDefaultRouter) {
-    this.NetIpStackInfoDefaultRouter=NetIpStackInfoDefaultRouter;
-  }
+    public void setNetIpStackInfoDefaultRouter(NetIpStackInfoDefaultRouter[] NetIpStackInfoDefaultRouter) {
+        this.NetIpStackInfoDefaultRouter = NetIpStackInfoDefaultRouter;
+    }
 }

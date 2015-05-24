@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class UserInputRequiredParameterMetadata extends ProfilePolicyOptionMetadata {
-  public ProfileParameterMetadata[] userInputParameter;
+    public ProfileParameterMetadata[] userInputParameter;
 
-  public ProfileParameterMetadata[] getUserInputParameter() {
-    return this.userInputParameter;
-  }
+    public ProfileParameterMetadata[] getUserInputParameter() {
+        return this.userInputParameter;
+    }
 
-  public void setUserInputParameter(ProfileParameterMetadata[] userInputParameter) {
-    this.userInputParameter=userInputParameter;
-  }
+    public void setUserInputParameter(ProfileParameterMetadata[] userInputParameter) {
+        this.userInputParameter = userInputParameter;
+    }
 }

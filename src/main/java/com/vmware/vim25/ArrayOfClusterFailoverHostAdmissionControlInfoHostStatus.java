@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfClusterFailoverHostAdmissionControlInfoHostStatus {
-  public ClusterFailoverHostAdmissionControlInfoHostStatus[] ClusterFailoverHostAdmissionControlInfoHostStatus;
+    public ClusterFailoverHostAdmissionControlInfoHostStatus[] ClusterFailoverHostAdmissionControlInfoHostStatus;
 
-  public ClusterFailoverHostAdmissionControlInfoHostStatus[] getClusterFailoverHostAdmissionControlInfoHostStatus() {
-    return this.ClusterFailoverHostAdmissionControlInfoHostStatus;
-  }
+    public ClusterFailoverHostAdmissionControlInfoHostStatus[] getClusterFailoverHostAdmissionControlInfoHostStatus() {
+        return this.ClusterFailoverHostAdmissionControlInfoHostStatus;
+    }
 
-  public ClusterFailoverHostAdmissionControlInfoHostStatus getClusterFailoverHostAdmissionControlInfoHostStatus(int i) {
-    return this.ClusterFailoverHostAdmissionControlInfoHostStatus[i];
-  }
+    public ClusterFailoverHostAdmissionControlInfoHostStatus getClusterFailoverHostAdmissionControlInfoHostStatus(int i) {
+        return this.ClusterFailoverHostAdmissionControlInfoHostStatus[i];
+    }
 
-  public void setClusterFailoverHostAdmissionControlInfoHostStatus(ClusterFailoverHostAdmissionControlInfoHostStatus[] ClusterFailoverHostAdmissionControlInfoHostStatus) {
-    this.ClusterFailoverHostAdmissionControlInfoHostStatus=ClusterFailoverHostAdmissionControlInfoHostStatus;
-  }
+    public void setClusterFailoverHostAdmissionControlInfoHostStatus(ClusterFailoverHostAdmissionControlInfoHostStatus[] ClusterFailoverHostAdmissionControlInfoHostStatus) {
+        this.ClusterFailoverHostAdmissionControlInfoHostStatus = ClusterFailoverHostAdmissionControlInfoHostStatus;
+    }
 }

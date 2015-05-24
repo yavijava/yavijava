@@ -30,37 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostScsiTopologyLun extends DynamicData {
-  public String key;
-  public int lun;
-  public String scsiLun;
+    public String key;
+    public int lun;
+    public String scsiLun;
 
-  public String getKey() {
-    return this.key;
-  }
+    public String getKey() {
+        return this.key;
+    }
 
-  public int getLun() {
-    return this.lun;
-  }
+    public int getLun() {
+        return this.lun;
+    }
 
-  public String getScsiLun() {
-    return this.scsiLun;
-  }
+    public String getScsiLun() {
+        return this.scsiLun;
+    }
 
-  public void setKey(String key) {
-    this.key=key;
-  }
+    public void setKey(String key) {
+        this.key = key;
+    }
 
-  public void setLun(int lun) {
-    this.lun=lun;
-  }
+    public void setLun(int lun) {
+        this.lun = lun;
+    }
 
-  public void setScsiLun(String scsiLun) {
-    this.scsiLun=scsiLun;
-  }
+    public void setScsiLun(String scsiLun) {
+        this.scsiLun = scsiLun;
+    }
 }

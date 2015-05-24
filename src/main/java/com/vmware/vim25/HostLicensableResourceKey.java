@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public enum HostLicensableResourceKey {
-  numCpuPackages ("numCpuPackages"),
-  numCpuCores ("numCpuCores"),
-  memorySize ("memorySize"),
-  memoryForVms ("memoryForVms"),
-  numVmsStarted ("numVmsStarted"),
-  numVmsStarting ("numVmsStarting");
+    numCpuPackages("numCpuPackages"),
+    numCpuCores("numCpuCores"),
+    memorySize("memorySize"),
+    memoryForVms("memoryForVms"),
+    numVmsStarted("numVmsStarted"),
+    numVmsStarting("numVmsStarting");
 
-  @SuppressWarnings("unused")
-  private final String val;
-  private HostLicensableResourceKey(String val)
-  {
-    this.val = val;
-  }
+    @SuppressWarnings("unused")
+    private final String val;
+
+    private HostLicensableResourceKey(String val) {
+        this.val = val;
+    }
 }

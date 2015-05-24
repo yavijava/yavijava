@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VmRestartedOnAlternateHostEvent extends VmPoweredOnEvent {
-  public HostEventArgument sourceHost;
+    public HostEventArgument sourceHost;
 
-  public HostEventArgument getSourceHost() {
-    return this.sourceHost;
-  }
+    public HostEventArgument getSourceHost() {
+        return this.sourceHost;
+    }
 
-  public void setSourceHost(HostEventArgument sourceHost) {
-    this.sourceHost=sourceHost;
-  }
+    public void setSourceHost(HostEventArgument sourceHost) {
+        this.sourceHost = sourceHost;
+    }
 }

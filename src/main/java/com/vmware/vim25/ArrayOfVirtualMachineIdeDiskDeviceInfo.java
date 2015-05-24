@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfVirtualMachineIdeDiskDeviceInfo {
-  public VirtualMachineIdeDiskDeviceInfo[] VirtualMachineIdeDiskDeviceInfo;
+    public VirtualMachineIdeDiskDeviceInfo[] VirtualMachineIdeDiskDeviceInfo;
 
-  public VirtualMachineIdeDiskDeviceInfo[] getVirtualMachineIdeDiskDeviceInfo() {
-    return this.VirtualMachineIdeDiskDeviceInfo;
-  }
+    public VirtualMachineIdeDiskDeviceInfo[] getVirtualMachineIdeDiskDeviceInfo() {
+        return this.VirtualMachineIdeDiskDeviceInfo;
+    }
 
-  public VirtualMachineIdeDiskDeviceInfo getVirtualMachineIdeDiskDeviceInfo(int i) {
-    return this.VirtualMachineIdeDiskDeviceInfo[i];
-  }
+    public VirtualMachineIdeDiskDeviceInfo getVirtualMachineIdeDiskDeviceInfo(int i) {
+        return this.VirtualMachineIdeDiskDeviceInfo[i];
+    }
 
-  public void setVirtualMachineIdeDiskDeviceInfo(VirtualMachineIdeDiskDeviceInfo[] VirtualMachineIdeDiskDeviceInfo) {
-    this.VirtualMachineIdeDiskDeviceInfo=VirtualMachineIdeDiskDeviceInfo;
-  }
+    public void setVirtualMachineIdeDiskDeviceInfo(VirtualMachineIdeDiskDeviceInfo[] VirtualMachineIdeDiskDeviceInfo) {
+        this.VirtualMachineIdeDiskDeviceInfo = VirtualMachineIdeDiskDeviceInfo;
+    }
 }

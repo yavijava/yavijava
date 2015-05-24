@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class DvsVNicProfile extends ApplyProfile {
-  public String key;
-  public IpAddressProfile ipConfig;
+    public String key;
+    public IpAddressProfile ipConfig;
 
-  public String getKey() {
-    return this.key;
-  }
+    public String getKey() {
+        return this.key;
+    }
 
-  public IpAddressProfile getIpConfig() {
-    return this.ipConfig;
-  }
+    public IpAddressProfile getIpConfig() {
+        return this.ipConfig;
+    }
 
-  public void setKey(String key) {
-    this.key=key;
-  }
+    public void setKey(String key) {
+        this.key = key;
+    }
 
-  public void setIpConfig(IpAddressProfile ipConfig) {
-    this.ipConfig=ipConfig;
-  }
+    public void setIpConfig(IpAddressProfile ipConfig) {
+        this.ipConfig = ipConfig;
+    }
 }

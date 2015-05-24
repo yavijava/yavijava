@@ -30,24 +30,24 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public enum ClusterDasAamNodeStateDasState {
-  uninitialized ("uninitialized"),
-  initialized ("initialized"),
-  configuring ("configuring"),
-  unconfiguring ("unconfiguring"),
-  running ("running"),
-  error ("error"),
-  agentShutdown ("agentShutdown"),
-  nodeFailed ("nodeFailed");
+    uninitialized("uninitialized"),
+    initialized("initialized"),
+    configuring("configuring"),
+    unconfiguring("unconfiguring"),
+    running("running"),
+    error("error"),
+    agentShutdown("agentShutdown"),
+    nodeFailed("nodeFailed");
 
-  @SuppressWarnings("unused")
-  private final String val;
-  private ClusterDasAamNodeStateDasState(String val)
-  {
-    this.val = val;
-  }
+    @SuppressWarnings("unused")
+    private final String val;
+
+    private ClusterDasAamNodeStateDasState(String val) {
+        this.val = val;
+    }
 }

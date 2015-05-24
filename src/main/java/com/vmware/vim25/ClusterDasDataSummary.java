@@ -30,37 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class ClusterDasDataSummary extends ClusterDasData {
-  public long hostListVersion;
-  public long clusterConfigVersion;
-  public long compatListVersion;
+    public long hostListVersion;
+    public long clusterConfigVersion;
+    public long compatListVersion;
 
-  public long getHostListVersion() {
-    return this.hostListVersion;
-  }
+    public long getHostListVersion() {
+        return this.hostListVersion;
+    }
 
-  public long getClusterConfigVersion() {
-    return this.clusterConfigVersion;
-  }
+    public long getClusterConfigVersion() {
+        return this.clusterConfigVersion;
+    }
 
-  public long getCompatListVersion() {
-    return this.compatListVersion;
-  }
+    public long getCompatListVersion() {
+        return this.compatListVersion;
+    }
 
-  public void setHostListVersion(long hostListVersion) {
-    this.hostListVersion=hostListVersion;
-  }
+    public void setHostListVersion(long hostListVersion) {
+        this.hostListVersion = hostListVersion;
+    }
 
-  public void setClusterConfigVersion(long clusterConfigVersion) {
-    this.clusterConfigVersion=clusterConfigVersion;
-  }
+    public void setClusterConfigVersion(long clusterConfigVersion) {
+        this.clusterConfigVersion = clusterConfigVersion;
+    }
 
-  public void setCompatListVersion(long compatListVersion) {
-    this.compatListVersion=compatListVersion;
-  }
+    public void setCompatListVersion(long compatListVersion) {
+        this.compatListVersion = compatListVersion;
+    }
 }

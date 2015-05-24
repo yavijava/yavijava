@@ -28,58 +28,59 @@ POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
 
 package com.vmware.vim25;
+
 import java.util.Calendar;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class CustomizationSpecInfo extends DynamicData {
-  public String name;
-  public String description;
-  public String type;
-  public String changeVersion;
-  public Calendar lastUpdateTime;
+    public String name;
+    public String description;
+    public String type;
+    public String changeVersion;
+    public Calendar lastUpdateTime;
 
-  public String getName() {
-    return this.name;
-  }
+    public String getName() {
+        return this.name;
+    }
 
-  public String getDescription() {
-    return this.description;
-  }
+    public String getDescription() {
+        return this.description;
+    }
 
-  public String getType() {
-    return this.type;
-  }
+    public String getType() {
+        return this.type;
+    }
 
-  public String getChangeVersion() {
-    return this.changeVersion;
-  }
+    public String getChangeVersion() {
+        return this.changeVersion;
+    }
 
-  public Calendar getLastUpdateTime() {
-    return this.lastUpdateTime;
-  }
+    public Calendar getLastUpdateTime() {
+        return this.lastUpdateTime;
+    }
 
-  public void setName(String name) {
-    this.name=name;
-  }
+    public void setName(String name) {
+        this.name = name;
+    }
 
-  public void setDescription(String description) {
-    this.description=description;
-  }
+    public void setDescription(String description) {
+        this.description = description;
+    }
 
-  public void setType(String type) {
-    this.type=type;
-  }
+    public void setType(String type) {
+        this.type = type;
+    }
 
-  public void setChangeVersion(String changeVersion) {
-    this.changeVersion=changeVersion;
-  }
+    public void setChangeVersion(String changeVersion) {
+        this.changeVersion = changeVersion;
+    }
 
-  public void setLastUpdateTime(Calendar lastUpdateTime) {
-    this.lastUpdateTime=lastUpdateTime;
-  }
+    public void setLastUpdateTime(Calendar lastUpdateTime) {
+        this.lastUpdateTime = lastUpdateTime;
+    }
 }

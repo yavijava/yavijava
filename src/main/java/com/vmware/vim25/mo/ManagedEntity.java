@@ -108,7 +108,7 @@ public class ManagedEntity extends ExtensibleManagedObject {
     public AlarmState[] getTriggeredAlarmState() {
         return (AlarmState[]) getCurrentProperty("triggeredAlarmState");
     }
-	
+
 	/* =========================Methods=================================*/
 
     public Task destroy_Task() throws VimFault, RuntimeFault, RemoteException {

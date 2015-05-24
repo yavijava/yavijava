@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class OrAlarmExpression extends AlarmExpression {
-  public AlarmExpression[] expression;
+    public AlarmExpression[] expression;
 
-  public AlarmExpression[] getExpression() {
-    return this.expression;
-  }
+    public AlarmExpression[] getExpression() {
+        return this.expression;
+    }
 
-  public void setExpression(AlarmExpression[] expression) {
-    this.expression=expression;
-  }
+    public void setExpression(AlarmExpression[] expression) {
+        this.expression = expression;
+    }
 }

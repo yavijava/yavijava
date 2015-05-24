@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class InvalidDasRestartPriorityForFtVm extends InvalidArgument {
-  public ManagedObjectReference vm;
-  public String vmName;
+    public ManagedObjectReference vm;
+    public String vmName;
 
-  public ManagedObjectReference getVm() {
-    return this.vm;
-  }
+    public ManagedObjectReference getVm() {
+        return this.vm;
+    }
 
-  public String getVmName() {
-    return this.vmName;
-  }
+    public String getVmName() {
+        return this.vmName;
+    }
 
-  public void setVm(ManagedObjectReference vm) {
-    this.vm=vm;
-  }
+    public void setVm(ManagedObjectReference vm) {
+        this.vm = vm;
+    }
 
-  public void setVmName(String vmName) {
-    this.vmName=vmName;
-  }
+    public void setVmName(String vmName) {
+        this.vmName = vmName;
+    }
 }

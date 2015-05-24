@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class EVCAdmissionFailedCPUVendor extends EVCAdmissionFailed {
-  public String clusterCPUVendor;
-  public String hostCPUVendor;
+    public String clusterCPUVendor;
+    public String hostCPUVendor;
 
-  public String getClusterCPUVendor() {
-    return this.clusterCPUVendor;
-  }
+    public String getClusterCPUVendor() {
+        return this.clusterCPUVendor;
+    }
 
-  public String getHostCPUVendor() {
-    return this.hostCPUVendor;
-  }
+    public String getHostCPUVendor() {
+        return this.hostCPUVendor;
+    }
 
-  public void setClusterCPUVendor(String clusterCPUVendor) {
-    this.clusterCPUVendor=clusterCPUVendor;
-  }
+    public void setClusterCPUVendor(String clusterCPUVendor) {
+        this.clusterCPUVendor = clusterCPUVendor;
+    }
 
-  public void setHostCPUVendor(String hostCPUVendor) {
-    this.hostCPUVendor=hostCPUVendor;
-  }
+    public void setHostCPUVendor(String hostCPUVendor) {
+        this.hostCPUVendor = hostCPUVendor;
+    }
 }

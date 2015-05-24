@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class DvsHostBackInSyncEvent extends DvsEvent {
-  public HostEventArgument hostBackInSync;
+    public HostEventArgument hostBackInSync;
 
-  public HostEventArgument getHostBackInSync() {
-    return this.hostBackInSync;
-  }
+    public HostEventArgument getHostBackInSync() {
+        return this.hostBackInSync;
+    }
 
-  public void setHostBackInSync(HostEventArgument hostBackInSync) {
-    this.hostBackInSync=hostBackInSync;
-  }
+    public void setHostBackInSync(HostEventArgument hostBackInSync) {
+        this.hostBackInSync = hostBackInSync;
+    }
 }

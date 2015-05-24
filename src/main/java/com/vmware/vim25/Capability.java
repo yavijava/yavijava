@@ -30,55 +30,55 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class Capability extends DynamicData {
-  public boolean provisioningSupported;
-  public boolean multiHostSupported;
-  public boolean userShellAccessSupported;
-  public EVCMode[] supportedEVCMode;
-  public Boolean networkBackupAndRestoreSupported;
+    public boolean provisioningSupported;
+    public boolean multiHostSupported;
+    public boolean userShellAccessSupported;
+    public EVCMode[] supportedEVCMode;
+    public Boolean networkBackupAndRestoreSupported;
 
-  public boolean isProvisioningSupported() {
-    return this.provisioningSupported;
-  }
+    public boolean isProvisioningSupported() {
+        return this.provisioningSupported;
+    }
 
-  public boolean isMultiHostSupported() {
-    return this.multiHostSupported;
-  }
+    public boolean isMultiHostSupported() {
+        return this.multiHostSupported;
+    }
 
-  public boolean isUserShellAccessSupported() {
-    return this.userShellAccessSupported;
-  }
+    public boolean isUserShellAccessSupported() {
+        return this.userShellAccessSupported;
+    }
 
-  public EVCMode[] getSupportedEVCMode() {
-    return this.supportedEVCMode;
-  }
+    public EVCMode[] getSupportedEVCMode() {
+        return this.supportedEVCMode;
+    }
 
-  public Boolean getNetworkBackupAndRestoreSupported() {
-    return this.networkBackupAndRestoreSupported;
-  }
+    public Boolean getNetworkBackupAndRestoreSupported() {
+        return this.networkBackupAndRestoreSupported;
+    }
 
-  public void setProvisioningSupported(boolean provisioningSupported) {
-    this.provisioningSupported=provisioningSupported;
-  }
+    public void setProvisioningSupported(boolean provisioningSupported) {
+        this.provisioningSupported = provisioningSupported;
+    }
 
-  public void setMultiHostSupported(boolean multiHostSupported) {
-    this.multiHostSupported=multiHostSupported;
-  }
+    public void setMultiHostSupported(boolean multiHostSupported) {
+        this.multiHostSupported = multiHostSupported;
+    }
 
-  public void setUserShellAccessSupported(boolean userShellAccessSupported) {
-    this.userShellAccessSupported=userShellAccessSupported;
-  }
+    public void setUserShellAccessSupported(boolean userShellAccessSupported) {
+        this.userShellAccessSupported = userShellAccessSupported;
+    }
 
-  public void setSupportedEVCMode(EVCMode[] supportedEVCMode) {
-    this.supportedEVCMode=supportedEVCMode;
-  }
+    public void setSupportedEVCMode(EVCMode[] supportedEVCMode) {
+        this.supportedEVCMode = supportedEVCMode;
+    }
 
-  public void setNetworkBackupAndRestoreSupported(Boolean networkBackupAndRestoreSupported) {
-    this.networkBackupAndRestoreSupported=networkBackupAndRestoreSupported;
-  }
+    public void setNetworkBackupAndRestoreSupported(Boolean networkBackupAndRestoreSupported) {
+        this.networkBackupAndRestoreSupported = networkBackupAndRestoreSupported;
+    }
 }

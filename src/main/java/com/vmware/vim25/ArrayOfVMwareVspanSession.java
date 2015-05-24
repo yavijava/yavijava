@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfVMwareVspanSession {
-  public VMwareVspanSession[] VMwareVspanSession;
+    public VMwareVspanSession[] VMwareVspanSession;
 
-  public VMwareVspanSession[] getVMwareVspanSession() {
-    return this.VMwareVspanSession;
-  }
+    public VMwareVspanSession[] getVMwareVspanSession() {
+        return this.VMwareVspanSession;
+    }
 
-  public VMwareVspanSession getVMwareVspanSession(int i) {
-    return this.VMwareVspanSession[i];
-  }
+    public VMwareVspanSession getVMwareVspanSession(int i) {
+        return this.VMwareVspanSession[i];
+    }
 
-  public void setVMwareVspanSession(VMwareVspanSession[] VMwareVspanSession) {
-    this.VMwareVspanSession=VMwareVspanSession;
-  }
+    public void setVMwareVspanSession(VMwareVspanSession[] VMwareVspanSession) {
+        this.VMwareVspanSession = VMwareVspanSession;
+    }
 }

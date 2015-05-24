@@ -30,109 +30,109 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostApplyProfile extends ApplyProfile {
-  public HostMemoryProfile memory;
-  public StorageProfile storage;
-  public NetworkProfile network;
-  public DateTimeProfile datetime;
-  public FirewallProfile firewall;
-  public SecurityProfile security;
-  public ServiceProfile[] service;
-  public OptionProfile[] option;
-  public UserProfile[] userAccount;
-  public UserGroupProfile[] usergroupAccount;
-  public AuthenticationProfile authentication;
+    public HostMemoryProfile memory;
+    public StorageProfile storage;
+    public NetworkProfile network;
+    public DateTimeProfile datetime;
+    public FirewallProfile firewall;
+    public SecurityProfile security;
+    public ServiceProfile[] service;
+    public OptionProfile[] option;
+    public UserProfile[] userAccount;
+    public UserGroupProfile[] usergroupAccount;
+    public AuthenticationProfile authentication;
 
-  public HostMemoryProfile getMemory() {
-    return this.memory;
-  }
+    public HostMemoryProfile getMemory() {
+        return this.memory;
+    }
 
-  public StorageProfile getStorage() {
-    return this.storage;
-  }
+    public StorageProfile getStorage() {
+        return this.storage;
+    }
 
-  public NetworkProfile getNetwork() {
-    return this.network;
-  }
+    public NetworkProfile getNetwork() {
+        return this.network;
+    }
 
-  public DateTimeProfile getDatetime() {
-    return this.datetime;
-  }
+    public DateTimeProfile getDatetime() {
+        return this.datetime;
+    }
 
-  public FirewallProfile getFirewall() {
-    return this.firewall;
-  }
+    public FirewallProfile getFirewall() {
+        return this.firewall;
+    }
 
-  public SecurityProfile getSecurity() {
-    return this.security;
-  }
+    public SecurityProfile getSecurity() {
+        return this.security;
+    }
 
-  public ServiceProfile[] getService() {
-    return this.service;
-  }
+    public ServiceProfile[] getService() {
+        return this.service;
+    }
 
-  public OptionProfile[] getOption() {
-    return this.option;
-  }
+    public OptionProfile[] getOption() {
+        return this.option;
+    }
 
-  public UserProfile[] getUserAccount() {
-    return this.userAccount;
-  }
+    public UserProfile[] getUserAccount() {
+        return this.userAccount;
+    }
 
-  public UserGroupProfile[] getUsergroupAccount() {
-    return this.usergroupAccount;
-  }
+    public UserGroupProfile[] getUsergroupAccount() {
+        return this.usergroupAccount;
+    }
 
-  public AuthenticationProfile getAuthentication() {
-    return this.authentication;
-  }
+    public AuthenticationProfile getAuthentication() {
+        return this.authentication;
+    }
 
-  public void setMemory(HostMemoryProfile memory) {
-    this.memory=memory;
-  }
+    public void setMemory(HostMemoryProfile memory) {
+        this.memory = memory;
+    }
 
-  public void setStorage(StorageProfile storage) {
-    this.storage=storage;
-  }
+    public void setStorage(StorageProfile storage) {
+        this.storage = storage;
+    }
 
-  public void setNetwork(NetworkProfile network) {
-    this.network=network;
-  }
+    public void setNetwork(NetworkProfile network) {
+        this.network = network;
+    }
 
-  public void setDatetime(DateTimeProfile datetime) {
-    this.datetime=datetime;
-  }
+    public void setDatetime(DateTimeProfile datetime) {
+        this.datetime = datetime;
+    }
 
-  public void setFirewall(FirewallProfile firewall) {
-    this.firewall=firewall;
-  }
+    public void setFirewall(FirewallProfile firewall) {
+        this.firewall = firewall;
+    }
 
-  public void setSecurity(SecurityProfile security) {
-    this.security=security;
-  }
+    public void setSecurity(SecurityProfile security) {
+        this.security = security;
+    }
 
-  public void setService(ServiceProfile[] service) {
-    this.service=service;
-  }
+    public void setService(ServiceProfile[] service) {
+        this.service = service;
+    }
 
-  public void setOption(OptionProfile[] option) {
-    this.option=option;
-  }
+    public void setOption(OptionProfile[] option) {
+        this.option = option;
+    }
 
-  public void setUserAccount(UserProfile[] userAccount) {
-    this.userAccount=userAccount;
-  }
+    public void setUserAccount(UserProfile[] userAccount) {
+        this.userAccount = userAccount;
+    }
 
-  public void setUsergroupAccount(UserGroupProfile[] usergroupAccount) {
-    this.usergroupAccount=usergroupAccount;
-  }
+    public void setUsergroupAccount(UserGroupProfile[] usergroupAccount) {
+        this.usergroupAccount = usergroupAccount;
+    }
 
-  public void setAuthentication(AuthenticationProfile authentication) {
-    this.authentication=authentication;
-  }
+    public void setAuthentication(AuthenticationProfile authentication) {
+        this.authentication = authentication;
+    }
 }

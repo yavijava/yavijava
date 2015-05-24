@@ -30,73 +30,73 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostInternetScsiHbaSendTarget extends DynamicData {
-  public String address;
-  public Integer port;
-  public HostInternetScsiHbaAuthenticationProperties authenticationProperties;
-  public HostInternetScsiHbaDigestProperties digestProperties;
-  public OptionDef[] supportedAdvancedOptions;
-  public HostInternetScsiHbaParamValue[] advancedOptions;
-  public String parent;
+    public String address;
+    public Integer port;
+    public HostInternetScsiHbaAuthenticationProperties authenticationProperties;
+    public HostInternetScsiHbaDigestProperties digestProperties;
+    public OptionDef[] supportedAdvancedOptions;
+    public HostInternetScsiHbaParamValue[] advancedOptions;
+    public String parent;
 
-  public String getAddress() {
-    return this.address;
-  }
+    public String getAddress() {
+        return this.address;
+    }
 
-  public Integer getPort() {
-    return this.port;
-  }
+    public Integer getPort() {
+        return this.port;
+    }
 
-  public HostInternetScsiHbaAuthenticationProperties getAuthenticationProperties() {
-    return this.authenticationProperties;
-  }
+    public HostInternetScsiHbaAuthenticationProperties getAuthenticationProperties() {
+        return this.authenticationProperties;
+    }
 
-  public HostInternetScsiHbaDigestProperties getDigestProperties() {
-    return this.digestProperties;
-  }
+    public HostInternetScsiHbaDigestProperties getDigestProperties() {
+        return this.digestProperties;
+    }
 
-  public OptionDef[] getSupportedAdvancedOptions() {
-    return this.supportedAdvancedOptions;
-  }
+    public OptionDef[] getSupportedAdvancedOptions() {
+        return this.supportedAdvancedOptions;
+    }
 
-  public HostInternetScsiHbaParamValue[] getAdvancedOptions() {
-    return this.advancedOptions;
-  }
+    public HostInternetScsiHbaParamValue[] getAdvancedOptions() {
+        return this.advancedOptions;
+    }
 
-  public String getParent() {
-    return this.parent;
-  }
+    public String getParent() {
+        return this.parent;
+    }
 
-  public void setAddress(String address) {
-    this.address=address;
-  }
+    public void setAddress(String address) {
+        this.address = address;
+    }
 
-  public void setPort(Integer port) {
-    this.port=port;
-  }
+    public void setPort(Integer port) {
+        this.port = port;
+    }
 
-  public void setAuthenticationProperties(HostInternetScsiHbaAuthenticationProperties authenticationProperties) {
-    this.authenticationProperties=authenticationProperties;
-  }
+    public void setAuthenticationProperties(HostInternetScsiHbaAuthenticationProperties authenticationProperties) {
+        this.authenticationProperties = authenticationProperties;
+    }
 
-  public void setDigestProperties(HostInternetScsiHbaDigestProperties digestProperties) {
-    this.digestProperties=digestProperties;
-  }
+    public void setDigestProperties(HostInternetScsiHbaDigestProperties digestProperties) {
+        this.digestProperties = digestProperties;
+    }
 
-  public void setSupportedAdvancedOptions(OptionDef[] supportedAdvancedOptions) {
-    this.supportedAdvancedOptions=supportedAdvancedOptions;
-  }
+    public void setSupportedAdvancedOptions(OptionDef[] supportedAdvancedOptions) {
+        this.supportedAdvancedOptions = supportedAdvancedOptions;
+    }
 
-  public void setAdvancedOptions(HostInternetScsiHbaParamValue[] advancedOptions) {
-    this.advancedOptions=advancedOptions;
-  }
+    public void setAdvancedOptions(HostInternetScsiHbaParamValue[] advancedOptions) {
+        this.advancedOptions = advancedOptions;
+    }
 
-  public void setParent(String parent) {
-    this.parent=parent;
-  }
+    public void setParent(String parent) {
+        this.parent = parent;
+    }
 }

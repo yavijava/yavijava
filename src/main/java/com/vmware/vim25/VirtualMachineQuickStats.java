@@ -30,190 +30,190 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VirtualMachineQuickStats extends DynamicData {
-  public Integer overallCpuUsage;
-  public Integer overallCpuDemand;
-  public Integer guestMemoryUsage;
-  public Integer hostMemoryUsage;
-  public ManagedEntityStatus guestHeartbeatStatus;
-  public Integer distributedCpuEntitlement;
-  public Integer distributedMemoryEntitlement;
-  public Integer staticCpuEntitlement;
-  public Integer staticMemoryEntitlement;
-  public Integer privateMemory;
-  public Integer sharedMemory;
-  public Integer swappedMemory;
-  public Integer balloonedMemory;
-  public Integer consumedOverheadMemory;
-  public Integer ftLogBandwidth;
-  public Integer ftSecondaryLatency;
-  public ManagedEntityStatus ftLatencyStatus;
-  public Long compressedMemory;
-  public Integer uptimeSeconds;
-  public Long ssdSwappedMemory;
+    public Integer overallCpuUsage;
+    public Integer overallCpuDemand;
+    public Integer guestMemoryUsage;
+    public Integer hostMemoryUsage;
+    public ManagedEntityStatus guestHeartbeatStatus;
+    public Integer distributedCpuEntitlement;
+    public Integer distributedMemoryEntitlement;
+    public Integer staticCpuEntitlement;
+    public Integer staticMemoryEntitlement;
+    public Integer privateMemory;
+    public Integer sharedMemory;
+    public Integer swappedMemory;
+    public Integer balloonedMemory;
+    public Integer consumedOverheadMemory;
+    public Integer ftLogBandwidth;
+    public Integer ftSecondaryLatency;
+    public ManagedEntityStatus ftLatencyStatus;
+    public Long compressedMemory;
+    public Integer uptimeSeconds;
+    public Long ssdSwappedMemory;
 
-  public Integer getOverallCpuUsage() {
-    return this.overallCpuUsage;
-  }
+    public Integer getOverallCpuUsage() {
+        return this.overallCpuUsage;
+    }
 
-  public Integer getOverallCpuDemand() {
-    return this.overallCpuDemand;
-  }
+    public Integer getOverallCpuDemand() {
+        return this.overallCpuDemand;
+    }
 
-  public Integer getGuestMemoryUsage() {
-    return this.guestMemoryUsage;
-  }
+    public Integer getGuestMemoryUsage() {
+        return this.guestMemoryUsage;
+    }
 
-  public Integer getHostMemoryUsage() {
-    return this.hostMemoryUsage;
-  }
+    public Integer getHostMemoryUsage() {
+        return this.hostMemoryUsage;
+    }
 
-  public ManagedEntityStatus getGuestHeartbeatStatus() {
-    return this.guestHeartbeatStatus;
-  }
+    public ManagedEntityStatus getGuestHeartbeatStatus() {
+        return this.guestHeartbeatStatus;
+    }
 
-  public Integer getDistributedCpuEntitlement() {
-    return this.distributedCpuEntitlement;
-  }
+    public Integer getDistributedCpuEntitlement() {
+        return this.distributedCpuEntitlement;
+    }
 
-  public Integer getDistributedMemoryEntitlement() {
-    return this.distributedMemoryEntitlement;
-  }
+    public Integer getDistributedMemoryEntitlement() {
+        return this.distributedMemoryEntitlement;
+    }
 
-  public Integer getStaticCpuEntitlement() {
-    return this.staticCpuEntitlement;
-  }
+    public Integer getStaticCpuEntitlement() {
+        return this.staticCpuEntitlement;
+    }
 
-  public Integer getStaticMemoryEntitlement() {
-    return this.staticMemoryEntitlement;
-  }
+    public Integer getStaticMemoryEntitlement() {
+        return this.staticMemoryEntitlement;
+    }
 
-  public Integer getPrivateMemory() {
-    return this.privateMemory;
-  }
+    public Integer getPrivateMemory() {
+        return this.privateMemory;
+    }
 
-  public Integer getSharedMemory() {
-    return this.sharedMemory;
-  }
+    public Integer getSharedMemory() {
+        return this.sharedMemory;
+    }
 
-  public Integer getSwappedMemory() {
-    return this.swappedMemory;
-  }
+    public Integer getSwappedMemory() {
+        return this.swappedMemory;
+    }
 
-  public Integer getBalloonedMemory() {
-    return this.balloonedMemory;
-  }
+    public Integer getBalloonedMemory() {
+        return this.balloonedMemory;
+    }
 
-  public Integer getConsumedOverheadMemory() {
-    return this.consumedOverheadMemory;
-  }
+    public Integer getConsumedOverheadMemory() {
+        return this.consumedOverheadMemory;
+    }
 
-  public Integer getFtLogBandwidth() {
-    return this.ftLogBandwidth;
-  }
+    public Integer getFtLogBandwidth() {
+        return this.ftLogBandwidth;
+    }
 
-  public Integer getFtSecondaryLatency() {
-    return this.ftSecondaryLatency;
-  }
+    public Integer getFtSecondaryLatency() {
+        return this.ftSecondaryLatency;
+    }
 
-  public ManagedEntityStatus getFtLatencyStatus() {
-    return this.ftLatencyStatus;
-  }
+    public ManagedEntityStatus getFtLatencyStatus() {
+        return this.ftLatencyStatus;
+    }
 
-  public Long getCompressedMemory() {
-    return this.compressedMemory;
-  }
+    public Long getCompressedMemory() {
+        return this.compressedMemory;
+    }
 
-  public Integer getUptimeSeconds() {
-    return this.uptimeSeconds;
-  }
+    public Integer getUptimeSeconds() {
+        return this.uptimeSeconds;
+    }
 
-  public Long getSsdSwappedMemory() {
-    return this.ssdSwappedMemory;
-  }
+    public Long getSsdSwappedMemory() {
+        return this.ssdSwappedMemory;
+    }
 
-  public void setOverallCpuUsage(Integer overallCpuUsage) {
-    this.overallCpuUsage=overallCpuUsage;
-  }
+    public void setOverallCpuUsage(Integer overallCpuUsage) {
+        this.overallCpuUsage = overallCpuUsage;
+    }
 
-  public void setOverallCpuDemand(Integer overallCpuDemand) {
-    this.overallCpuDemand=overallCpuDemand;
-  }
+    public void setOverallCpuDemand(Integer overallCpuDemand) {
+        this.overallCpuDemand = overallCpuDemand;
+    }
 
-  public void setGuestMemoryUsage(Integer guestMemoryUsage) {
-    this.guestMemoryUsage=guestMemoryUsage;
-  }
+    public void setGuestMemoryUsage(Integer guestMemoryUsage) {
+        this.guestMemoryUsage = guestMemoryUsage;
+    }
 
-  public void setHostMemoryUsage(Integer hostMemoryUsage) {
-    this.hostMemoryUsage=hostMemoryUsage;
-  }
+    public void setHostMemoryUsage(Integer hostMemoryUsage) {
+        this.hostMemoryUsage = hostMemoryUsage;
+    }
 
-  public void setGuestHeartbeatStatus(ManagedEntityStatus guestHeartbeatStatus) {
-    this.guestHeartbeatStatus=guestHeartbeatStatus;
-  }
+    public void setGuestHeartbeatStatus(ManagedEntityStatus guestHeartbeatStatus) {
+        this.guestHeartbeatStatus = guestHeartbeatStatus;
+    }
 
-  public void setDistributedCpuEntitlement(Integer distributedCpuEntitlement) {
-    this.distributedCpuEntitlement=distributedCpuEntitlement;
-  }
+    public void setDistributedCpuEntitlement(Integer distributedCpuEntitlement) {
+        this.distributedCpuEntitlement = distributedCpuEntitlement;
+    }
 
-  public void setDistributedMemoryEntitlement(Integer distributedMemoryEntitlement) {
-    this.distributedMemoryEntitlement=distributedMemoryEntitlement;
-  }
+    public void setDistributedMemoryEntitlement(Integer distributedMemoryEntitlement) {
+        this.distributedMemoryEntitlement = distributedMemoryEntitlement;
+    }
 
-  public void setStaticCpuEntitlement(Integer staticCpuEntitlement) {
-    this.staticCpuEntitlement=staticCpuEntitlement;
-  }
+    public void setStaticCpuEntitlement(Integer staticCpuEntitlement) {
+        this.staticCpuEntitlement = staticCpuEntitlement;
+    }
 
-  public void setStaticMemoryEntitlement(Integer staticMemoryEntitlement) {
-    this.staticMemoryEntitlement=staticMemoryEntitlement;
-  }
+    public void setStaticMemoryEntitlement(Integer staticMemoryEntitlement) {
+        this.staticMemoryEntitlement = staticMemoryEntitlement;
+    }
 
-  public void setPrivateMemory(Integer privateMemory) {
-    this.privateMemory=privateMemory;
-  }
+    public void setPrivateMemory(Integer privateMemory) {
+        this.privateMemory = privateMemory;
+    }
 
-  public void setSharedMemory(Integer sharedMemory) {
-    this.sharedMemory=sharedMemory;
-  }
+    public void setSharedMemory(Integer sharedMemory) {
+        this.sharedMemory = sharedMemory;
+    }
 
-  public void setSwappedMemory(Integer swappedMemory) {
-    this.swappedMemory=swappedMemory;
-  }
+    public void setSwappedMemory(Integer swappedMemory) {
+        this.swappedMemory = swappedMemory;
+    }
 
-  public void setBalloonedMemory(Integer balloonedMemory) {
-    this.balloonedMemory=balloonedMemory;
-  }
+    public void setBalloonedMemory(Integer balloonedMemory) {
+        this.balloonedMemory = balloonedMemory;
+    }
 
-  public void setConsumedOverheadMemory(Integer consumedOverheadMemory) {
-    this.consumedOverheadMemory=consumedOverheadMemory;
-  }
+    public void setConsumedOverheadMemory(Integer consumedOverheadMemory) {
+        this.consumedOverheadMemory = consumedOverheadMemory;
+    }
 
-  public void setFtLogBandwidth(Integer ftLogBandwidth) {
-    this.ftLogBandwidth=ftLogBandwidth;
-  }
+    public void setFtLogBandwidth(Integer ftLogBandwidth) {
+        this.ftLogBandwidth = ftLogBandwidth;
+    }
 
-  public void setFtSecondaryLatency(Integer ftSecondaryLatency) {
-    this.ftSecondaryLatency=ftSecondaryLatency;
-  }
+    public void setFtSecondaryLatency(Integer ftSecondaryLatency) {
+        this.ftSecondaryLatency = ftSecondaryLatency;
+    }
 
-  public void setFtLatencyStatus(ManagedEntityStatus ftLatencyStatus) {
-    this.ftLatencyStatus=ftLatencyStatus;
-  }
+    public void setFtLatencyStatus(ManagedEntityStatus ftLatencyStatus) {
+        this.ftLatencyStatus = ftLatencyStatus;
+    }
 
-  public void setCompressedMemory(Long compressedMemory) {
-    this.compressedMemory=compressedMemory;
-  }
+    public void setCompressedMemory(Long compressedMemory) {
+        this.compressedMemory = compressedMemory;
+    }
 
-  public void setUptimeSeconds(Integer uptimeSeconds) {
-    this.uptimeSeconds=uptimeSeconds;
-  }
+    public void setUptimeSeconds(Integer uptimeSeconds) {
+        this.uptimeSeconds = uptimeSeconds;
+    }
 
-  public void setSsdSwappedMemory(Long ssdSwappedMemory) {
-    this.ssdSwappedMemory=ssdSwappedMemory;
-  }
+    public void setSsdSwappedMemory(Long ssdSwappedMemory) {
+        this.ssdSwappedMemory = ssdSwappedMemory;
+    }
 }

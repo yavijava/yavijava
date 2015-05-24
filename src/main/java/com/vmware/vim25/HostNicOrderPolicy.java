@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostNicOrderPolicy extends DynamicData {
-  public String[] activeNic;
-  public String[] standbyNic;
+    public String[] activeNic;
+    public String[] standbyNic;
 
-  public String[] getActiveNic() {
-    return this.activeNic;
-  }
+    public String[] getActiveNic() {
+        return this.activeNic;
+    }
 
-  public String[] getStandbyNic() {
-    return this.standbyNic;
-  }
+    public String[] getStandbyNic() {
+        return this.standbyNic;
+    }
 
-  public void setActiveNic(String[] activeNic) {
-    this.activeNic=activeNic;
-  }
+    public void setActiveNic(String[] activeNic) {
+        this.activeNic = activeNic;
+    }
 
-  public void setStandbyNic(String[] standbyNic) {
-    this.standbyNic=standbyNic;
-  }
+    public void setStandbyNic(String[] standbyNic) {
+        this.standbyNic = standbyNic;
+    }
 }

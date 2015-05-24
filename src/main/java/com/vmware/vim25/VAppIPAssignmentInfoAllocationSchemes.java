@@ -30,18 +30,18 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public enum VAppIPAssignmentInfoAllocationSchemes {
-  dhcp ("dhcp"),
-  ovfenv ("ovfenv");
+    dhcp("dhcp"),
+    ovfenv("ovfenv");
 
-  @SuppressWarnings("unused")
-  private final String val;
-  private VAppIPAssignmentInfoAllocationSchemes(String val)
-  {
-    this.val = val;
-  }
+    @SuppressWarnings("unused")
+    private final String val;
+
+    private VAppIPAssignmentInfoAllocationSchemes(String val) {
+        this.val = val;
+    }
 }

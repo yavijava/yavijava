@@ -30,37 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VmFaultToleranceConfigIssue extends VmFaultToleranceIssue {
-  public String reason;
-  public String entityName;
-  public ManagedObjectReference entity;
+    public String reason;
+    public String entityName;
+    public ManagedObjectReference entity;
 
-  public String getReason() {
-    return this.reason;
-  }
+    public String getReason() {
+        return this.reason;
+    }
 
-  public String getEntityName() {
-    return this.entityName;
-  }
+    public String getEntityName() {
+        return this.entityName;
+    }
 
-  public ManagedObjectReference getEntity() {
-    return this.entity;
-  }
+    public ManagedObjectReference getEntity() {
+        return this.entity;
+    }
 
-  public void setReason(String reason) {
-    this.reason=reason;
-  }
+    public void setReason(String reason) {
+        this.reason = reason;
+    }
 
-  public void setEntityName(String entityName) {
-    this.entityName=entityName;
-  }
+    public void setEntityName(String entityName) {
+        this.entityName = entityName;
+    }
 
-  public void setEntity(ManagedObjectReference entity) {
-    this.entity=entity;
-  }
+    public void setEntity(ManagedObjectReference entity) {
+        this.entity = entity;
+    }
 }

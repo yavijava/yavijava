@@ -30,55 +30,55 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VirtualMachineFileLayout extends DynamicData {
-  public String[] configFile;
-  public String[] logFile;
-  public VirtualMachineFileLayoutDiskLayout[] disk;
-  public VirtualMachineFileLayoutSnapshotLayout[] snapshot;
-  public String swapFile;
+    public String[] configFile;
+    public String[] logFile;
+    public VirtualMachineFileLayoutDiskLayout[] disk;
+    public VirtualMachineFileLayoutSnapshotLayout[] snapshot;
+    public String swapFile;
 
-  public String[] getConfigFile() {
-    return this.configFile;
-  }
+    public String[] getConfigFile() {
+        return this.configFile;
+    }
 
-  public String[] getLogFile() {
-    return this.logFile;
-  }
+    public String[] getLogFile() {
+        return this.logFile;
+    }
 
-  public VirtualMachineFileLayoutDiskLayout[] getDisk() {
-    return this.disk;
-  }
+    public VirtualMachineFileLayoutDiskLayout[] getDisk() {
+        return this.disk;
+    }
 
-  public VirtualMachineFileLayoutSnapshotLayout[] getSnapshot() {
-    return this.snapshot;
-  }
+    public VirtualMachineFileLayoutSnapshotLayout[] getSnapshot() {
+        return this.snapshot;
+    }
 
-  public String getSwapFile() {
-    return this.swapFile;
-  }
+    public String getSwapFile() {
+        return this.swapFile;
+    }
 
-  public void setConfigFile(String[] configFile) {
-    this.configFile=configFile;
-  }
+    public void setConfigFile(String[] configFile) {
+        this.configFile = configFile;
+    }
 
-  public void setLogFile(String[] logFile) {
-    this.logFile=logFile;
-  }
+    public void setLogFile(String[] logFile) {
+        this.logFile = logFile;
+    }
 
-  public void setDisk(VirtualMachineFileLayoutDiskLayout[] disk) {
-    this.disk=disk;
-  }
+    public void setDisk(VirtualMachineFileLayoutDiskLayout[] disk) {
+        this.disk = disk;
+    }
 
-  public void setSnapshot(VirtualMachineFileLayoutSnapshotLayout[] snapshot) {
-    this.snapshot=snapshot;
-  }
+    public void setSnapshot(VirtualMachineFileLayoutSnapshotLayout[] snapshot) {
+        this.snapshot = snapshot;
+    }
 
-  public void setSwapFile(String swapFile) {
-    this.swapFile=swapFile;
-  }
+    public void setSwapFile(String swapFile) {
+        this.swapFile = swapFile;
+    }
 }

@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostFlagInfo extends DynamicData {
-  public Boolean backgroundSnapshotsEnabled;
+    public Boolean backgroundSnapshotsEnabled;
 
-  public Boolean getBackgroundSnapshotsEnabled() {
-    return this.backgroundSnapshotsEnabled;
-  }
+    public Boolean getBackgroundSnapshotsEnabled() {
+        return this.backgroundSnapshotsEnabled;
+    }
 
-  public void setBackgroundSnapshotsEnabled(Boolean backgroundSnapshotsEnabled) {
-    this.backgroundSnapshotsEnabled=backgroundSnapshotsEnabled;
-  }
+    public void setBackgroundSnapshotsEnabled(Boolean backgroundSnapshotsEnabled) {
+        this.backgroundSnapshotsEnabled = backgroundSnapshotsEnabled;
+    }
 }

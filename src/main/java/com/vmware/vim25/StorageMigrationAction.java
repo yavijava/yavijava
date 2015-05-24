@@ -30,109 +30,109 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class StorageMigrationAction extends ClusterAction {
-  public ManagedObjectReference vm;
-  public VirtualMachineRelocateSpec relocateSpec;
-  public ManagedObjectReference source;
-  public ManagedObjectReference destination;
-  public long sizeTransferred;
-  public Float spaceUtilSrcBefore;
-  public Float spaceUtilDstBefore;
-  public Float spaceUtilSrcAfter;
-  public Float spaceUtilDstAfter;
-  public Float ioLatencySrcBefore;
-  public Float ioLatencyDstBefore;
+    public ManagedObjectReference vm;
+    public VirtualMachineRelocateSpec relocateSpec;
+    public ManagedObjectReference source;
+    public ManagedObjectReference destination;
+    public long sizeTransferred;
+    public Float spaceUtilSrcBefore;
+    public Float spaceUtilDstBefore;
+    public Float spaceUtilSrcAfter;
+    public Float spaceUtilDstAfter;
+    public Float ioLatencySrcBefore;
+    public Float ioLatencyDstBefore;
 
-  public ManagedObjectReference getVm() {
-    return this.vm;
-  }
+    public ManagedObjectReference getVm() {
+        return this.vm;
+    }
 
-  public VirtualMachineRelocateSpec getRelocateSpec() {
-    return this.relocateSpec;
-  }
+    public VirtualMachineRelocateSpec getRelocateSpec() {
+        return this.relocateSpec;
+    }
 
-  public ManagedObjectReference getSource() {
-    return this.source;
-  }
+    public ManagedObjectReference getSource() {
+        return this.source;
+    }
 
-  public ManagedObjectReference getDestination() {
-    return this.destination;
-  }
+    public ManagedObjectReference getDestination() {
+        return this.destination;
+    }
 
-  public long getSizeTransferred() {
-    return this.sizeTransferred;
-  }
+    public long getSizeTransferred() {
+        return this.sizeTransferred;
+    }
 
-  public Float getSpaceUtilSrcBefore() {
-    return this.spaceUtilSrcBefore;
-  }
+    public Float getSpaceUtilSrcBefore() {
+        return this.spaceUtilSrcBefore;
+    }
 
-  public Float getSpaceUtilDstBefore() {
-    return this.spaceUtilDstBefore;
-  }
+    public Float getSpaceUtilDstBefore() {
+        return this.spaceUtilDstBefore;
+    }
 
-  public Float getSpaceUtilSrcAfter() {
-    return this.spaceUtilSrcAfter;
-  }
+    public Float getSpaceUtilSrcAfter() {
+        return this.spaceUtilSrcAfter;
+    }
 
-  public Float getSpaceUtilDstAfter() {
-    return this.spaceUtilDstAfter;
-  }
+    public Float getSpaceUtilDstAfter() {
+        return this.spaceUtilDstAfter;
+    }
 
-  public Float getIoLatencySrcBefore() {
-    return this.ioLatencySrcBefore;
-  }
+    public Float getIoLatencySrcBefore() {
+        return this.ioLatencySrcBefore;
+    }
 
-  public Float getIoLatencyDstBefore() {
-    return this.ioLatencyDstBefore;
-  }
+    public Float getIoLatencyDstBefore() {
+        return this.ioLatencyDstBefore;
+    }
 
-  public void setVm(ManagedObjectReference vm) {
-    this.vm=vm;
-  }
+    public void setVm(ManagedObjectReference vm) {
+        this.vm = vm;
+    }
 
-  public void setRelocateSpec(VirtualMachineRelocateSpec relocateSpec) {
-    this.relocateSpec=relocateSpec;
-  }
+    public void setRelocateSpec(VirtualMachineRelocateSpec relocateSpec) {
+        this.relocateSpec = relocateSpec;
+    }
 
-  public void setSource(ManagedObjectReference source) {
-    this.source=source;
-  }
+    public void setSource(ManagedObjectReference source) {
+        this.source = source;
+    }
 
-  public void setDestination(ManagedObjectReference destination) {
-    this.destination=destination;
-  }
+    public void setDestination(ManagedObjectReference destination) {
+        this.destination = destination;
+    }
 
-  public void setSizeTransferred(long sizeTransferred) {
-    this.sizeTransferred=sizeTransferred;
-  }
+    public void setSizeTransferred(long sizeTransferred) {
+        this.sizeTransferred = sizeTransferred;
+    }
 
-  public void setSpaceUtilSrcBefore(Float spaceUtilSrcBefore) {
-    this.spaceUtilSrcBefore=spaceUtilSrcBefore;
-  }
+    public void setSpaceUtilSrcBefore(Float spaceUtilSrcBefore) {
+        this.spaceUtilSrcBefore = spaceUtilSrcBefore;
+    }
 
-  public void setSpaceUtilDstBefore(Float spaceUtilDstBefore) {
-    this.spaceUtilDstBefore=spaceUtilDstBefore;
-  }
+    public void setSpaceUtilDstBefore(Float spaceUtilDstBefore) {
+        this.spaceUtilDstBefore = spaceUtilDstBefore;
+    }
 
-  public void setSpaceUtilSrcAfter(Float spaceUtilSrcAfter) {
-    this.spaceUtilSrcAfter=spaceUtilSrcAfter;
-  }
+    public void setSpaceUtilSrcAfter(Float spaceUtilSrcAfter) {
+        this.spaceUtilSrcAfter = spaceUtilSrcAfter;
+    }
 
-  public void setSpaceUtilDstAfter(Float spaceUtilDstAfter) {
-    this.spaceUtilDstAfter=spaceUtilDstAfter;
-  }
+    public void setSpaceUtilDstAfter(Float spaceUtilDstAfter) {
+        this.spaceUtilDstAfter = spaceUtilDstAfter;
+    }
 
-  public void setIoLatencySrcBefore(Float ioLatencySrcBefore) {
-    this.ioLatencySrcBefore=ioLatencySrcBefore;
-  }
+    public void setIoLatencySrcBefore(Float ioLatencySrcBefore) {
+        this.ioLatencySrcBefore = ioLatencySrcBefore;
+    }
 
-  public void setIoLatencyDstBefore(Float ioLatencyDstBefore) {
-    this.ioLatencyDstBefore=ioLatencyDstBefore;
-  }
+    public void setIoLatencyDstBefore(Float ioLatencyDstBefore) {
+        this.ioLatencyDstBefore = ioLatencyDstBefore;
+    }
 }

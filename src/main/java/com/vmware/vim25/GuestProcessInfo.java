@@ -28,76 +28,77 @@ POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
 
 package com.vmware.vim25;
+
 import java.util.Calendar;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class GuestProcessInfo extends DynamicData {
-  public String name;
-  public long pid;
-  public String owner;
-  public String cmdLine;
-  public Calendar startTime;
-  public Calendar endTime;
-  public Integer exitCode;
+    public String name;
+    public long pid;
+    public String owner;
+    public String cmdLine;
+    public Calendar startTime;
+    public Calendar endTime;
+    public Integer exitCode;
 
-  public String getName() {
-    return this.name;
-  }
+    public String getName() {
+        return this.name;
+    }
 
-  public long getPid() {
-    return this.pid;
-  }
+    public long getPid() {
+        return this.pid;
+    }
 
-  public String getOwner() {
-    return this.owner;
-  }
+    public String getOwner() {
+        return this.owner;
+    }
 
-  public String getCmdLine() {
-    return this.cmdLine;
-  }
+    public String getCmdLine() {
+        return this.cmdLine;
+    }
 
-  public Calendar getStartTime() {
-    return this.startTime;
-  }
+    public Calendar getStartTime() {
+        return this.startTime;
+    }
 
-  public Calendar getEndTime() {
-    return this.endTime;
-  }
+    public Calendar getEndTime() {
+        return this.endTime;
+    }
 
-  public Integer getExitCode() {
-    return this.exitCode;
-  }
+    public Integer getExitCode() {
+        return this.exitCode;
+    }
 
-  public void setName(String name) {
-    this.name=name;
-  }
+    public void setName(String name) {
+        this.name = name;
+    }
 
-  public void setPid(long pid) {
-    this.pid=pid;
-  }
+    public void setPid(long pid) {
+        this.pid = pid;
+    }
 
-  public void setOwner(String owner) {
-    this.owner=owner;
-  }
+    public void setOwner(String owner) {
+        this.owner = owner;
+    }
 
-  public void setCmdLine(String cmdLine) {
-    this.cmdLine=cmdLine;
-  }
+    public void setCmdLine(String cmdLine) {
+        this.cmdLine = cmdLine;
+    }
 
-  public void setStartTime(Calendar startTime) {
-    this.startTime=startTime;
-  }
+    public void setStartTime(Calendar startTime) {
+        this.startTime = startTime;
+    }
 
-  public void setEndTime(Calendar endTime) {
-    this.endTime=endTime;
-  }
+    public void setEndTime(Calendar endTime) {
+        this.endTime = endTime;
+    }
 
-  public void setExitCode(Integer exitCode) {
-    this.exitCode=exitCode;
-  }
+    public void setExitCode(Integer exitCode) {
+        this.exitCode = exitCode;
+    }
 }

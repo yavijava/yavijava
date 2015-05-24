@@ -30,18 +30,18 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public enum DVPortStatusVmDirectPathGen2InactiveReasonOther {
-  portNptIncompatibleHost ("portNptIncompatibleHost"),
-  portNptIncompatibleConnectee ("portNptIncompatibleConnectee");
+    portNptIncompatibleHost("portNptIncompatibleHost"),
+    portNptIncompatibleConnectee("portNptIncompatibleConnectee");
 
-  @SuppressWarnings("unused")
-  private final String val;
-  private DVPortStatusVmDirectPathGen2InactiveReasonOther(String val)
-  {
-    this.val = val;
-  }
+    @SuppressWarnings("unused")
+    private final String val;
+
+    private DVPortStatusVmDirectPathGen2InactiveReasonOther(String val) {
+        this.val = val;
+    }
 }

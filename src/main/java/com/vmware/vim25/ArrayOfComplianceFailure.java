@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfComplianceFailure {
-  public ComplianceFailure[] ComplianceFailure;
+    public ComplianceFailure[] ComplianceFailure;
 
-  public ComplianceFailure[] getComplianceFailure() {
-    return this.ComplianceFailure;
-  }
+    public ComplianceFailure[] getComplianceFailure() {
+        return this.ComplianceFailure;
+    }
 
-  public ComplianceFailure getComplianceFailure(int i) {
-    return this.ComplianceFailure[i];
-  }
+    public ComplianceFailure getComplianceFailure(int i) {
+        return this.ComplianceFailure[i];
+    }
 
-  public void setComplianceFailure(ComplianceFailure[] ComplianceFailure) {
-    this.ComplianceFailure=ComplianceFailure;
-  }
+    public void setComplianceFailure(ComplianceFailure[] ComplianceFailure) {
+        this.ComplianceFailure = ComplianceFailure;
+    }
 }

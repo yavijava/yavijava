@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostUnresolvedVmfsResignatureSpec extends DynamicData {
-  public String[] extentDevicePath;
+    public String[] extentDevicePath;
 
-  public String[] getExtentDevicePath() {
-    return this.extentDevicePath;
-  }
+    public String[] getExtentDevicePath() {
+        return this.extentDevicePath;
+    }
 
-  public void setExtentDevicePath(String[] extentDevicePath) {
-    this.extentDevicePath=extentDevicePath;
-  }
+    public void setExtentDevicePath(String[] extentDevicePath) {
+        this.extentDevicePath = extentDevicePath;
+    }
 }

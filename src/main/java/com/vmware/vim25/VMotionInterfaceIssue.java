@@ -30,37 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VMotionInterfaceIssue extends MigrationFault {
-  public boolean atSourceHost;
-  public String failedHost;
-  public ManagedObjectReference failedHostEntity;
+    public boolean atSourceHost;
+    public String failedHost;
+    public ManagedObjectReference failedHostEntity;
 
-  public boolean isAtSourceHost() {
-    return this.atSourceHost;
-  }
+    public boolean isAtSourceHost() {
+        return this.atSourceHost;
+    }
 
-  public String getFailedHost() {
-    return this.failedHost;
-  }
+    public String getFailedHost() {
+        return this.failedHost;
+    }
 
-  public ManagedObjectReference getFailedHostEntity() {
-    return this.failedHostEntity;
-  }
+    public ManagedObjectReference getFailedHostEntity() {
+        return this.failedHostEntity;
+    }
 
-  public void setAtSourceHost(boolean atSourceHost) {
-    this.atSourceHost=atSourceHost;
-  }
+    public void setAtSourceHost(boolean atSourceHost) {
+        this.atSourceHost = atSourceHost;
+    }
 
-  public void setFailedHost(String failedHost) {
-    this.failedHost=failedHost;
-  }
+    public void setFailedHost(String failedHost) {
+        this.failedHost = failedHost;
+    }
 
-  public void setFailedHostEntity(ManagedObjectReference failedHostEntity) {
-    this.failedHostEntity=failedHostEntity;
-  }
+    public void setFailedHostEntity(ManagedObjectReference failedHostEntity) {
+        this.failedHostEntity = failedHostEntity;
+    }
 }

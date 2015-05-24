@@ -30,20 +30,20 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public enum VMwareDVSTeamingMatchStatus {
-  iphashMatch ("iphashMatch"),
-  nonIphashMatch ("nonIphashMatch"),
-  iphashMismatch ("iphashMismatch"),
-  nonIphashMismatch ("nonIphashMismatch");
+    iphashMatch("iphashMatch"),
+    nonIphashMatch("nonIphashMatch"),
+    iphashMismatch("iphashMismatch"),
+    nonIphashMismatch("nonIphashMismatch");
 
-  @SuppressWarnings("unused")
-  private final String val;
-  private VMwareDVSTeamingMatchStatus(String val)
-  {
-    this.val = val;
-  }
+    @SuppressWarnings("unused")
+    private final String val;
+
+    private VMwareDVSTeamingMatchStatus(String val) {
+        this.val = val;
+    }
 }

@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostNtpConfig extends DynamicData {
-  public String[] server;
+    public String[] server;
 
-  public String[] getServer() {
-    return this.server;
-  }
+    public String[] getServer() {
+        return this.server;
+    }
 
-  public void setServer(String[] server) {
-    this.server=server;
-  }
+    public void setServer(String[] server) {
+        this.server = server;
+    }
 }

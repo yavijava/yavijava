@@ -28,40 +28,41 @@ POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
 
 package com.vmware.vim25;
+
 import java.util.Calendar;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class TaskFilterSpecByTime extends DynamicData {
-  public TaskFilterSpecTimeOption timeType;
-  public Calendar beginTime;
-  public Calendar endTime;
+    public TaskFilterSpecTimeOption timeType;
+    public Calendar beginTime;
+    public Calendar endTime;
 
-  public TaskFilterSpecTimeOption getTimeType() {
-    return this.timeType;
-  }
+    public TaskFilterSpecTimeOption getTimeType() {
+        return this.timeType;
+    }
 
-  public Calendar getBeginTime() {
-    return this.beginTime;
-  }
+    public Calendar getBeginTime() {
+        return this.beginTime;
+    }
 
-  public Calendar getEndTime() {
-    return this.endTime;
-  }
+    public Calendar getEndTime() {
+        return this.endTime;
+    }
 
-  public void setTimeType(TaskFilterSpecTimeOption timeType) {
-    this.timeType=timeType;
-  }
+    public void setTimeType(TaskFilterSpecTimeOption timeType) {
+        this.timeType = timeType;
+    }
 
-  public void setBeginTime(Calendar beginTime) {
-    this.beginTime=beginTime;
-  }
+    public void setBeginTime(Calendar beginTime) {
+        this.beginTime = beginTime;
+    }
 
-  public void setEndTime(Calendar endTime) {
-    this.endTime=endTime;
-  }
+    public void setEndTime(Calendar endTime) {
+        this.endTime = endTime;
+    }
 }

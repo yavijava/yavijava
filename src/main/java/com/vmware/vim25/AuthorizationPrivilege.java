@@ -30,46 +30,46 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class AuthorizationPrivilege extends DynamicData {
-  public String privId;
-  public boolean onParent;
-  public String name;
-  public String privGroupName;
+    public String privId;
+    public boolean onParent;
+    public String name;
+    public String privGroupName;
 
-  public String getPrivId() {
-    return this.privId;
-  }
+    public String getPrivId() {
+        return this.privId;
+    }
 
-  public boolean isOnParent() {
-    return this.onParent;
-  }
+    public boolean isOnParent() {
+        return this.onParent;
+    }
 
-  public String getName() {
-    return this.name;
-  }
+    public String getName() {
+        return this.name;
+    }
 
-  public String getPrivGroupName() {
-    return this.privGroupName;
-  }
+    public String getPrivGroupName() {
+        return this.privGroupName;
+    }
 
-  public void setPrivId(String privId) {
-    this.privId=privId;
-  }
+    public void setPrivId(String privId) {
+        this.privId = privId;
+    }
 
-  public void setOnParent(boolean onParent) {
-    this.onParent=onParent;
-  }
+    public void setOnParent(boolean onParent) {
+        this.onParent = onParent;
+    }
 
-  public void setName(String name) {
-    this.name=name;
-  }
+    public void setName(String name) {
+        this.name = name;
+    }
 
-  public void setPrivGroupName(String privGroupName) {
-    this.privGroupName=privGroupName;
-  }
+    public void setPrivGroupName(String privGroupName) {
+        this.privGroupName = privGroupName;
+    }
 }

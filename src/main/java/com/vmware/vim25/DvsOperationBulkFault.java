@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class DvsOperationBulkFault extends DvsFault {
-  public DvsOperationBulkFaultFaultOnHost[] hostFault;
+    public DvsOperationBulkFaultFaultOnHost[] hostFault;
 
-  public DvsOperationBulkFaultFaultOnHost[] getHostFault() {
-    return this.hostFault;
-  }
+    public DvsOperationBulkFaultFaultOnHost[] getHostFault() {
+        return this.hostFault;
+    }
 
-  public void setHostFault(DvsOperationBulkFaultFaultOnHost[] hostFault) {
-    this.hostFault=hostFault;
-  }
+    public void setHostFault(DvsOperationBulkFaultFaultOnHost[] hostFault) {
+        this.hostFault = hostFault;
+    }
 }

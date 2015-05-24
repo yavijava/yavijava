@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class NoLicenseEvent extends LicenseEvent {
-  public LicenseFeatureInfo feature;
+    public LicenseFeatureInfo feature;
 
-  public LicenseFeatureInfo getFeature() {
-    return this.feature;
-  }
+    public LicenseFeatureInfo getFeature() {
+        return this.feature;
+    }
 
-  public void setFeature(LicenseFeatureInfo feature) {
-    this.feature=feature;
-  }
+    public void setFeature(LicenseFeatureInfo feature) {
+        this.feature = feature;
+    }
 }

@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfProfileApplyProfileProperty {
-  public ProfileApplyProfileProperty[] ProfileApplyProfileProperty;
+    public ProfileApplyProfileProperty[] ProfileApplyProfileProperty;
 
-  public ProfileApplyProfileProperty[] getProfileApplyProfileProperty() {
-    return this.ProfileApplyProfileProperty;
-  }
+    public ProfileApplyProfileProperty[] getProfileApplyProfileProperty() {
+        return this.ProfileApplyProfileProperty;
+    }
 
-  public ProfileApplyProfileProperty getProfileApplyProfileProperty(int i) {
-    return this.ProfileApplyProfileProperty[i];
-  }
+    public ProfileApplyProfileProperty getProfileApplyProfileProperty(int i) {
+        return this.ProfileApplyProfileProperty[i];
+    }
 
-  public void setProfileApplyProfileProperty(ProfileApplyProfileProperty[] ProfileApplyProfileProperty) {
-    this.ProfileApplyProfileProperty=ProfileApplyProfileProperty;
-  }
+    public void setProfileApplyProfileProperty(ProfileApplyProfileProperty[] ProfileApplyProfileProperty) {
+        this.ProfileApplyProfileProperty = ProfileApplyProfileProperty;
+    }
 }

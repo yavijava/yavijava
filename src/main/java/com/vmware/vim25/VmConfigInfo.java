@@ -30,82 +30,82 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VmConfigInfo extends DynamicData {
-  public VAppProductInfo[] product;
-  public VAppPropertyInfo[] property;
-  public VAppIPAssignmentInfo ipAssignment;
-  public String[] eula;
-  public VAppOvfSectionInfo[] ovfSection;
-  public String[] ovfEnvironmentTransport;
-  public boolean installBootRequired;
-  public int installBootStopDelay;
+    public VAppProductInfo[] product;
+    public VAppPropertyInfo[] property;
+    public VAppIPAssignmentInfo ipAssignment;
+    public String[] eula;
+    public VAppOvfSectionInfo[] ovfSection;
+    public String[] ovfEnvironmentTransport;
+    public boolean installBootRequired;
+    public int installBootStopDelay;
 
-  public VAppProductInfo[] getProduct() {
-    return this.product;
-  }
+    public VAppProductInfo[] getProduct() {
+        return this.product;
+    }
 
-  public VAppPropertyInfo[] getProperty() {
-    return this.property;
-  }
+    public VAppPropertyInfo[] getProperty() {
+        return this.property;
+    }
 
-  public VAppIPAssignmentInfo getIpAssignment() {
-    return this.ipAssignment;
-  }
+    public VAppIPAssignmentInfo getIpAssignment() {
+        return this.ipAssignment;
+    }
 
-  public String[] getEula() {
-    return this.eula;
-  }
+    public String[] getEula() {
+        return this.eula;
+    }
 
-  public VAppOvfSectionInfo[] getOvfSection() {
-    return this.ovfSection;
-  }
+    public VAppOvfSectionInfo[] getOvfSection() {
+        return this.ovfSection;
+    }
 
-  public String[] getOvfEnvironmentTransport() {
-    return this.ovfEnvironmentTransport;
-  }
+    public String[] getOvfEnvironmentTransport() {
+        return this.ovfEnvironmentTransport;
+    }
 
-  public boolean isInstallBootRequired() {
-    return this.installBootRequired;
-  }
+    public boolean isInstallBootRequired() {
+        return this.installBootRequired;
+    }
 
-  public int getInstallBootStopDelay() {
-    return this.installBootStopDelay;
-  }
+    public int getInstallBootStopDelay() {
+        return this.installBootStopDelay;
+    }
 
-  public void setProduct(VAppProductInfo[] product) {
-    this.product=product;
-  }
+    public void setProduct(VAppProductInfo[] product) {
+        this.product = product;
+    }
 
-  public void setProperty(VAppPropertyInfo[] property) {
-    this.property=property;
-  }
+    public void setProperty(VAppPropertyInfo[] property) {
+        this.property = property;
+    }
 
-  public void setIpAssignment(VAppIPAssignmentInfo ipAssignment) {
-    this.ipAssignment=ipAssignment;
-  }
+    public void setIpAssignment(VAppIPAssignmentInfo ipAssignment) {
+        this.ipAssignment = ipAssignment;
+    }
 
-  public void setEula(String[] eula) {
-    this.eula=eula;
-  }
+    public void setEula(String[] eula) {
+        this.eula = eula;
+    }
 
-  public void setOvfSection(VAppOvfSectionInfo[] ovfSection) {
-    this.ovfSection=ovfSection;
-  }
+    public void setOvfSection(VAppOvfSectionInfo[] ovfSection) {
+        this.ovfSection = ovfSection;
+    }
 
-  public void setOvfEnvironmentTransport(String[] ovfEnvironmentTransport) {
-    this.ovfEnvironmentTransport=ovfEnvironmentTransport;
-  }
+    public void setOvfEnvironmentTransport(String[] ovfEnvironmentTransport) {
+        this.ovfEnvironmentTransport = ovfEnvironmentTransport;
+    }
 
-  public void setInstallBootRequired(boolean installBootRequired) {
-    this.installBootRequired=installBootRequired;
-  }
+    public void setInstallBootRequired(boolean installBootRequired) {
+        this.installBootRequired = installBootRequired;
+    }
 
-  public void setInstallBootStopDelay(int installBootStopDelay) {
-    this.installBootStopDelay=installBootStopDelay;
-  }
+    public void setInstallBootStopDelay(int installBootStopDelay) {
+        this.installBootStopDelay = installBootStopDelay;
+    }
 }

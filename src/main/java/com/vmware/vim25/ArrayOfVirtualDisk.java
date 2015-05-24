@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfVirtualDisk {
-  public VirtualDisk[] VirtualDisk;
+    public VirtualDisk[] VirtualDisk;
 
-  public VirtualDisk[] getVirtualDisk() {
-    return this.VirtualDisk;
-  }
+    public VirtualDisk[] getVirtualDisk() {
+        return this.VirtualDisk;
+    }
 
-  public VirtualDisk getVirtualDisk(int i) {
-    return this.VirtualDisk[i];
-  }
+    public VirtualDisk getVirtualDisk(int i) {
+        return this.VirtualDisk[i];
+    }
 
-  public void setVirtualDisk(VirtualDisk[] VirtualDisk) {
-    this.VirtualDisk=VirtualDisk;
-  }
+    public void setVirtualDisk(VirtualDisk[] VirtualDisk) {
+        this.VirtualDisk = VirtualDisk;
+    }
 }

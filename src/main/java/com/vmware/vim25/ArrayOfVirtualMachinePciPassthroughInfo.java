@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfVirtualMachinePciPassthroughInfo {
-  public VirtualMachinePciPassthroughInfo[] VirtualMachinePciPassthroughInfo;
+    public VirtualMachinePciPassthroughInfo[] VirtualMachinePciPassthroughInfo;
 
-  public VirtualMachinePciPassthroughInfo[] getVirtualMachinePciPassthroughInfo() {
-    return this.VirtualMachinePciPassthroughInfo;
-  }
+    public VirtualMachinePciPassthroughInfo[] getVirtualMachinePciPassthroughInfo() {
+        return this.VirtualMachinePciPassthroughInfo;
+    }
 
-  public VirtualMachinePciPassthroughInfo getVirtualMachinePciPassthroughInfo(int i) {
-    return this.VirtualMachinePciPassthroughInfo[i];
-  }
+    public VirtualMachinePciPassthroughInfo getVirtualMachinePciPassthroughInfo(int i) {
+        return this.VirtualMachinePciPassthroughInfo[i];
+    }
 
-  public void setVirtualMachinePciPassthroughInfo(VirtualMachinePciPassthroughInfo[] VirtualMachinePciPassthroughInfo) {
-    this.VirtualMachinePciPassthroughInfo=VirtualMachinePciPassthroughInfo;
-  }
+    public void setVirtualMachinePciPassthroughInfo(VirtualMachinePciPassthroughInfo[] VirtualMachinePciPassthroughInfo) {
+        this.VirtualMachinePciPassthroughInfo = VirtualMachinePciPassthroughInfo;
+    }
 }

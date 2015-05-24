@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfSelectionSpec {
-  public SelectionSpec[] SelectionSpec;
+    public SelectionSpec[] SelectionSpec;
 
-  public SelectionSpec[] getSelectionSpec() {
-    return this.SelectionSpec;
-  }
+    public SelectionSpec[] getSelectionSpec() {
+        return this.SelectionSpec;
+    }
 
-  public SelectionSpec getSelectionSpec(int i) {
-    return this.SelectionSpec[i];
-  }
+    public SelectionSpec getSelectionSpec(int i) {
+        return this.SelectionSpec[i];
+    }
 
-  public void setSelectionSpec(SelectionSpec[] SelectionSpec) {
-    this.SelectionSpec=SelectionSpec;
-  }
+    public void setSelectionSpec(SelectionSpec[] SelectionSpec) {
+        this.SelectionSpec = SelectionSpec;
+    }
 }

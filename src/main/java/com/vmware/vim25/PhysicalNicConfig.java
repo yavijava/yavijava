@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class PhysicalNicConfig extends DynamicData {
-  public String device;
-  public PhysicalNicSpec spec;
+    public String device;
+    public PhysicalNicSpec spec;
 
-  public String getDevice() {
-    return this.device;
-  }
+    public String getDevice() {
+        return this.device;
+    }
 
-  public PhysicalNicSpec getSpec() {
-    return this.spec;
-  }
+    public PhysicalNicSpec getSpec() {
+        return this.spec;
+    }
 
-  public void setDevice(String device) {
-    this.device=device;
-  }
+    public void setDevice(String device) {
+        this.device = device;
+    }
 
-  public void setSpec(PhysicalNicSpec spec) {
-    this.spec=spec;
-  }
+    public void setSpec(PhysicalNicSpec spec) {
+        this.spec = spec;
+    }
 }

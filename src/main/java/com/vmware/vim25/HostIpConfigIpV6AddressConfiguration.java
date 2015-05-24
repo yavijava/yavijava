@@ -30,37 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostIpConfigIpV6AddressConfiguration extends DynamicData {
-  public HostIpConfigIpV6Address[] ipV6Address;
-  public Boolean autoConfigurationEnabled;
-  public Boolean dhcpV6Enabled;
+    public HostIpConfigIpV6Address[] ipV6Address;
+    public Boolean autoConfigurationEnabled;
+    public Boolean dhcpV6Enabled;
 
-  public HostIpConfigIpV6Address[] getIpV6Address() {
-    return this.ipV6Address;
-  }
+    public HostIpConfigIpV6Address[] getIpV6Address() {
+        return this.ipV6Address;
+    }
 
-  public Boolean getAutoConfigurationEnabled() {
-    return this.autoConfigurationEnabled;
-  }
+    public Boolean getAutoConfigurationEnabled() {
+        return this.autoConfigurationEnabled;
+    }
 
-  public Boolean getDhcpV6Enabled() {
-    return this.dhcpV6Enabled;
-  }
+    public Boolean getDhcpV6Enabled() {
+        return this.dhcpV6Enabled;
+    }
 
-  public void setIpV6Address(HostIpConfigIpV6Address[] ipV6Address) {
-    this.ipV6Address=ipV6Address;
-  }
+    public void setIpV6Address(HostIpConfigIpV6Address[] ipV6Address) {
+        this.ipV6Address = ipV6Address;
+    }
 
-  public void setAutoConfigurationEnabled(Boolean autoConfigurationEnabled) {
-    this.autoConfigurationEnabled=autoConfigurationEnabled;
-  }
+    public void setAutoConfigurationEnabled(Boolean autoConfigurationEnabled) {
+        this.autoConfigurationEnabled = autoConfigurationEnabled;
+    }
 
-  public void setDhcpV6Enabled(Boolean dhcpV6Enabled) {
-    this.dhcpV6Enabled=dhcpV6Enabled;
-  }
+    public void setDhcpV6Enabled(Boolean dhcpV6Enabled) {
+        this.dhcpV6Enabled = dhcpV6Enabled;
+    }
 }

@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VirtualDeviceDeviceBackingInfo extends VirtualDeviceBackingInfo {
-  public String deviceName;
-  public Boolean useAutoDetect;
+    public String deviceName;
+    public Boolean useAutoDetect;
 
-  public String getDeviceName() {
-    return this.deviceName;
-  }
+    public String getDeviceName() {
+        return this.deviceName;
+    }
 
-  public Boolean getUseAutoDetect() {
-    return this.useAutoDetect;
-  }
+    public Boolean getUseAutoDetect() {
+        return this.useAutoDetect;
+    }
 
-  public void setDeviceName(String deviceName) {
-    this.deviceName=deviceName;
-  }
+    public void setDeviceName(String deviceName) {
+        this.deviceName = deviceName;
+    }
 
-  public void setUseAutoDetect(Boolean useAutoDetect) {
-    this.useAutoDetect=useAutoDetect;
-  }
+    public void setUseAutoDetect(Boolean useAutoDetect) {
+        this.useAutoDetect = useAutoDetect;
+    }
 }

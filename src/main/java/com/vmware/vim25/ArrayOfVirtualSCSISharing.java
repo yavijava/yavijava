@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfVirtualSCSISharing {
-  public VirtualSCSISharing[] VirtualSCSISharing;
+    public VirtualSCSISharing[] VirtualSCSISharing;
 
-  public VirtualSCSISharing[] getVirtualSCSISharing() {
-    return this.VirtualSCSISharing;
-  }
+    public VirtualSCSISharing[] getVirtualSCSISharing() {
+        return this.VirtualSCSISharing;
+    }
 
-  public VirtualSCSISharing getVirtualSCSISharing(int i) {
-    return this.VirtualSCSISharing[i];
-  }
+    public VirtualSCSISharing getVirtualSCSISharing(int i) {
+        return this.VirtualSCSISharing[i];
+    }
 
-  public void setVirtualSCSISharing(VirtualSCSISharing[] VirtualSCSISharing) {
-    this.VirtualSCSISharing=VirtualSCSISharing;
-  }
+    public void setVirtualSCSISharing(VirtualSCSISharing[] VirtualSCSISharing) {
+        this.VirtualSCSISharing = VirtualSCSISharing;
+    }
 }

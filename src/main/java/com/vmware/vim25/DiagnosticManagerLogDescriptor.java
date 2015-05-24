@@ -30,64 +30,64 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class DiagnosticManagerLogDescriptor extends DynamicData {
-  public String key;
-  public String fileName;
-  public String creator;
-  public String format;
-  public String mimeType;
-  public Description info;
+    public String key;
+    public String fileName;
+    public String creator;
+    public String format;
+    public String mimeType;
+    public Description info;
 
-  public String getKey() {
-    return this.key;
-  }
+    public String getKey() {
+        return this.key;
+    }
 
-  public String getFileName() {
-    return this.fileName;
-  }
+    public String getFileName() {
+        return this.fileName;
+    }
 
-  public String getCreator() {
-    return this.creator;
-  }
+    public String getCreator() {
+        return this.creator;
+    }
 
-  public String getFormat() {
-    return this.format;
-  }
+    public String getFormat() {
+        return this.format;
+    }
 
-  public String getMimeType() {
-    return this.mimeType;
-  }
+    public String getMimeType() {
+        return this.mimeType;
+    }
 
-  public Description getInfo() {
-    return this.info;
-  }
+    public Description getInfo() {
+        return this.info;
+    }
 
-  public void setKey(String key) {
-    this.key=key;
-  }
+    public void setKey(String key) {
+        this.key = key;
+    }
 
-  public void setFileName(String fileName) {
-    this.fileName=fileName;
-  }
+    public void setFileName(String fileName) {
+        this.fileName = fileName;
+    }
 
-  public void setCreator(String creator) {
-    this.creator=creator;
-  }
+    public void setCreator(String creator) {
+        this.creator = creator;
+    }
 
-  public void setFormat(String format) {
-    this.format=format;
-  }
+    public void setFormat(String format) {
+        this.format = format;
+    }
 
-  public void setMimeType(String mimeType) {
-    this.mimeType=mimeType;
-  }
+    public void setMimeType(String mimeType) {
+        this.mimeType = mimeType;
+    }
 
-  public void setInfo(Description info) {
-    this.info=info;
-  }
+    public void setInfo(Description info) {
+        this.info = info;
+    }
 }

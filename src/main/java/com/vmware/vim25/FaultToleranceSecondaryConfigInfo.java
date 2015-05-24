@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class FaultToleranceSecondaryConfigInfo extends FaultToleranceConfigInfo {
-  public ManagedObjectReference primaryVM;
+    public ManagedObjectReference primaryVM;
 
-  public ManagedObjectReference getPrimaryVM() {
-    return this.primaryVM;
-  }
+    public ManagedObjectReference getPrimaryVM() {
+        return this.primaryVM;
+    }
 
-  public void setPrimaryVM(ManagedObjectReference primaryVM) {
-    this.primaryVM=primaryVM;
-  }
+    public void setPrimaryVM(ManagedObjectReference primaryVM) {
+        this.primaryVM = primaryVM;
+    }
 }

@@ -30,118 +30,118 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostProxySwitch extends DynamicData {
-  public String dvsUuid;
-  public String dvsName;
-  public String key;
-  public int numPorts;
-  public Integer configNumPorts;
-  public int numPortsAvailable;
-  public KeyValue[] uplinkPort;
-  public Integer mtu;
-  public String[] pnic;
-  public HostProxySwitchSpec spec;
-  public HostProxySwitchHostLagConfig[] hostLag;
-  public Boolean networkReservationSupported;
+    public String dvsUuid;
+    public String dvsName;
+    public String key;
+    public int numPorts;
+    public Integer configNumPorts;
+    public int numPortsAvailable;
+    public KeyValue[] uplinkPort;
+    public Integer mtu;
+    public String[] pnic;
+    public HostProxySwitchSpec spec;
+    public HostProxySwitchHostLagConfig[] hostLag;
+    public Boolean networkReservationSupported;
 
-  public String getDvsUuid() {
-    return this.dvsUuid;
-  }
+    public String getDvsUuid() {
+        return this.dvsUuid;
+    }
 
-  public String getDvsName() {
-    return this.dvsName;
-  }
+    public String getDvsName() {
+        return this.dvsName;
+    }
 
-  public String getKey() {
-    return this.key;
-  }
+    public String getKey() {
+        return this.key;
+    }
 
-  public int getNumPorts() {
-    return this.numPorts;
-  }
+    public int getNumPorts() {
+        return this.numPorts;
+    }
 
-  public Integer getConfigNumPorts() {
-    return this.configNumPorts;
-  }
+    public Integer getConfigNumPorts() {
+        return this.configNumPorts;
+    }
 
-  public int getNumPortsAvailable() {
-    return this.numPortsAvailable;
-  }
+    public int getNumPortsAvailable() {
+        return this.numPortsAvailable;
+    }
 
-  public KeyValue[] getUplinkPort() {
-    return this.uplinkPort;
-  }
+    public KeyValue[] getUplinkPort() {
+        return this.uplinkPort;
+    }
 
-  public Integer getMtu() {
-    return this.mtu;
-  }
+    public Integer getMtu() {
+        return this.mtu;
+    }
 
-  public String[] getPnic() {
-    return this.pnic;
-  }
+    public String[] getPnic() {
+        return this.pnic;
+    }
 
-  public HostProxySwitchSpec getSpec() {
-    return this.spec;
-  }
+    public HostProxySwitchSpec getSpec() {
+        return this.spec;
+    }
 
-  public HostProxySwitchHostLagConfig[] getHostLag() {
-    return this.hostLag;
-  }
+    public HostProxySwitchHostLagConfig[] getHostLag() {
+        return this.hostLag;
+    }
 
-  public Boolean getNetworkReservationSupported() {
-    return this.networkReservationSupported;
-  }
+    public Boolean getNetworkReservationSupported() {
+        return this.networkReservationSupported;
+    }
 
-  public void setDvsUuid(String dvsUuid) {
-    this.dvsUuid=dvsUuid;
-  }
+    public void setDvsUuid(String dvsUuid) {
+        this.dvsUuid = dvsUuid;
+    }
 
-  public void setDvsName(String dvsName) {
-    this.dvsName=dvsName;
-  }
+    public void setDvsName(String dvsName) {
+        this.dvsName = dvsName;
+    }
 
-  public void setKey(String key) {
-    this.key=key;
-  }
+    public void setKey(String key) {
+        this.key = key;
+    }
 
-  public void setNumPorts(int numPorts) {
-    this.numPorts=numPorts;
-  }
+    public void setNumPorts(int numPorts) {
+        this.numPorts = numPorts;
+    }
 
-  public void setConfigNumPorts(Integer configNumPorts) {
-    this.configNumPorts=configNumPorts;
-  }
+    public void setConfigNumPorts(Integer configNumPorts) {
+        this.configNumPorts = configNumPorts;
+    }
 
-  public void setNumPortsAvailable(int numPortsAvailable) {
-    this.numPortsAvailable=numPortsAvailable;
-  }
+    public void setNumPortsAvailable(int numPortsAvailable) {
+        this.numPortsAvailable = numPortsAvailable;
+    }
 
-  public void setUplinkPort(KeyValue[] uplinkPort) {
-    this.uplinkPort=uplinkPort;
-  }
+    public void setUplinkPort(KeyValue[] uplinkPort) {
+        this.uplinkPort = uplinkPort;
+    }
 
-  public void setMtu(Integer mtu) {
-    this.mtu=mtu;
-  }
+    public void setMtu(Integer mtu) {
+        this.mtu = mtu;
+    }
 
-  public void setPnic(String[] pnic) {
-    this.pnic=pnic;
-  }
+    public void setPnic(String[] pnic) {
+        this.pnic = pnic;
+    }
 
-  public void setSpec(HostProxySwitchSpec spec) {
-    this.spec=spec;
-  }
+    public void setSpec(HostProxySwitchSpec spec) {
+        this.spec = spec;
+    }
 
-  public void setHostLag(HostProxySwitchHostLagConfig[] hostLag) {
-    this.hostLag=hostLag;
-  }
+    public void setHostLag(HostProxySwitchHostLagConfig[] hostLag) {
+        this.hostLag = hostLag;
+    }
 
-  public void setNetworkReservationSupported(Boolean networkReservationSupported) {
-    this.networkReservationSupported=networkReservationSupported;
-  }
+    public void setNetworkReservationSupported(Boolean networkReservationSupported) {
+        this.networkReservationSupported = networkReservationSupported;
+    }
 }

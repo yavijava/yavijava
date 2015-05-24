@@ -30,18 +30,17 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
-*/
+ * @author Steve Jin (sjin@vmware.com)
+ */
 
-public enum VirtualizationManagerCollectionKey
-{
-  default_inventory ("default_inventory"),
-  default_analysis ("default_analysis"),
-  default_candidate ("default_candidate");
+public enum VirtualizationManagerCollectionKey {
+    default_inventory("default_inventory"),
+    default_analysis("default_analysis"),
+    default_candidate("default_candidate");
 
-  private final String val;
-  private VirtualizationManagerCollectionKey(String val)
-  {
-    this.val = val;
-  }
+    private final String val;
+
+    private VirtualizationManagerCollectionKey(String val) {
+        this.val = val;
+    }
 }

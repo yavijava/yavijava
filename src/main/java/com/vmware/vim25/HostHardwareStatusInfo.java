@@ -30,37 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostHardwareStatusInfo extends DynamicData {
-  public HostHardwareElementInfo[] memoryStatusInfo;
-  public HostHardwareElementInfo[] cpuStatusInfo;
-  public HostStorageElementInfo[] storageStatusInfo;
+    public HostHardwareElementInfo[] memoryStatusInfo;
+    public HostHardwareElementInfo[] cpuStatusInfo;
+    public HostStorageElementInfo[] storageStatusInfo;
 
-  public HostHardwareElementInfo[] getMemoryStatusInfo() {
-    return this.memoryStatusInfo;
-  }
+    public HostHardwareElementInfo[] getMemoryStatusInfo() {
+        return this.memoryStatusInfo;
+    }
 
-  public HostHardwareElementInfo[] getCpuStatusInfo() {
-    return this.cpuStatusInfo;
-  }
+    public HostHardwareElementInfo[] getCpuStatusInfo() {
+        return this.cpuStatusInfo;
+    }
 
-  public HostStorageElementInfo[] getStorageStatusInfo() {
-    return this.storageStatusInfo;
-  }
+    public HostStorageElementInfo[] getStorageStatusInfo() {
+        return this.storageStatusInfo;
+    }
 
-  public void setMemoryStatusInfo(HostHardwareElementInfo[] memoryStatusInfo) {
-    this.memoryStatusInfo=memoryStatusInfo;
-  }
+    public void setMemoryStatusInfo(HostHardwareElementInfo[] memoryStatusInfo) {
+        this.memoryStatusInfo = memoryStatusInfo;
+    }
 
-  public void setCpuStatusInfo(HostHardwareElementInfo[] cpuStatusInfo) {
-    this.cpuStatusInfo=cpuStatusInfo;
-  }
+    public void setCpuStatusInfo(HostHardwareElementInfo[] cpuStatusInfo) {
+        this.cpuStatusInfo = cpuStatusInfo;
+    }
 
-  public void setStorageStatusInfo(HostStorageElementInfo[] storageStatusInfo) {
-    this.storageStatusInfo=storageStatusInfo;
-  }
+    public void setStorageStatusInfo(HostStorageElementInfo[] storageStatusInfo) {
+        this.storageStatusInfo = storageStatusInfo;
+    }
 }

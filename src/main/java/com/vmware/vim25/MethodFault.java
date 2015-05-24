@@ -30,47 +30,47 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 
 public class MethodFault extends java.rmi.RemoteException {
-  public String dynamicType;
-  public DynamicProperty[] dynamicProperty;
-  public LocalizedMethodFault faultCause;
-  public LocalizableMessage[] faultMessage;
+    public String dynamicType;
+    public DynamicProperty[] dynamicProperty;
+    public LocalizedMethodFault faultCause;
+    public LocalizableMessage[] faultMessage;
 
-  public String getDynamicType() {
-    return this.dynamicType;
-  }
+    public String getDynamicType() {
+        return this.dynamicType;
+    }
 
-  public DynamicProperty[] getDynamicProperty() {
-    return this.dynamicProperty;
-  }
+    public DynamicProperty[] getDynamicProperty() {
+        return this.dynamicProperty;
+    }
 
-  public LocalizedMethodFault getFaultCause() {
-    return this.faultCause;
-  }
+    public LocalizedMethodFault getFaultCause() {
+        return this.faultCause;
+    }
 
-  public LocalizableMessage[] getFaultMessage() {
-    return this.faultMessage;
-  }
+    public LocalizableMessage[] getFaultMessage() {
+        return this.faultMessage;
+    }
 
-  public void setDynamicType(String dynamicType) {
-    this.dynamicType=dynamicType;
-  }
+    public void setDynamicType(String dynamicType) {
+        this.dynamicType = dynamicType;
+    }
 
-  public void setDynamicProperty(DynamicProperty[] dynamicProperty) {
-    this.dynamicProperty=dynamicProperty;
-  }
+    public void setDynamicProperty(DynamicProperty[] dynamicProperty) {
+        this.dynamicProperty = dynamicProperty;
+    }
 
-  public void setFaultCause(LocalizedMethodFault faultCause) {
-    this.faultCause=faultCause;
-  }
+    public void setFaultCause(LocalizedMethodFault faultCause) {
+        this.faultCause = faultCause;
+    }
 
-  public void setFaultMessage(LocalizableMessage[] faultMessage) {
-    this.faultMessage=faultMessage;
-  }
+    public void setFaultMessage(LocalizableMessage[] faultMessage) {
+        this.faultMessage = faultMessage;
+    }
 }

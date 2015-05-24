@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public enum HostSystemConnectionState {
-  connected ("connected"),
-  notResponding ("notResponding"),
-  disconnected ("disconnected");
+    connected("connected"),
+    notResponding("notResponding"),
+    disconnected("disconnected");
 
-  @SuppressWarnings("unused")
-  private final String val;
-  private HostSystemConnectionState(String val)
-  {
-    this.val = val;
-  }
+    @SuppressWarnings("unused")
+    private final String val;
+
+    private HostSystemConnectionState(String val) {
+        this.val = val;
+    }
 }

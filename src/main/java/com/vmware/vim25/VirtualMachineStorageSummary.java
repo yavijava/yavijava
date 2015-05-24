@@ -28,49 +28,50 @@ POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
 
 package com.vmware.vim25;
+
 import java.util.Calendar;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VirtualMachineStorageSummary extends DynamicData {
-  public long committed;
-  public long uncommitted;
-  public long unshared;
-  public Calendar timestamp;
+    public long committed;
+    public long uncommitted;
+    public long unshared;
+    public Calendar timestamp;
 
-  public long getCommitted() {
-    return this.committed;
-  }
+    public long getCommitted() {
+        return this.committed;
+    }
 
-  public long getUncommitted() {
-    return this.uncommitted;
-  }
+    public long getUncommitted() {
+        return this.uncommitted;
+    }
 
-  public long getUnshared() {
-    return this.unshared;
-  }
+    public long getUnshared() {
+        return this.unshared;
+    }
 
-  public Calendar getTimestamp() {
-    return this.timestamp;
-  }
+    public Calendar getTimestamp() {
+        return this.timestamp;
+    }
 
-  public void setCommitted(long committed) {
-    this.committed=committed;
-  }
+    public void setCommitted(long committed) {
+        this.committed = committed;
+    }
 
-  public void setUncommitted(long uncommitted) {
-    this.uncommitted=uncommitted;
-  }
+    public void setUncommitted(long uncommitted) {
+        this.uncommitted = uncommitted;
+    }
 
-  public void setUnshared(long unshared) {
-    this.unshared=unshared;
-  }
+    public void setUnshared(long unshared) {
+        this.unshared = unshared;
+    }
 
-  public void setTimestamp(Calendar timestamp) {
-    this.timestamp=timestamp;
-  }
+    public void setTimestamp(Calendar timestamp) {
+        this.timestamp = timestamp;
+    }
 }

@@ -30,46 +30,46 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HbrManagerReplicationVmInfo extends DynamicData {
-  public String state;
-  public ReplicationVmProgressInfo progressInfo;
-  public String imageId;
-  public LocalizedMethodFault lastError;
+    public String state;
+    public ReplicationVmProgressInfo progressInfo;
+    public String imageId;
+    public LocalizedMethodFault lastError;
 
-  public String getState() {
-    return this.state;
-  }
+    public String getState() {
+        return this.state;
+    }
 
-  public ReplicationVmProgressInfo getProgressInfo() {
-    return this.progressInfo;
-  }
+    public ReplicationVmProgressInfo getProgressInfo() {
+        return this.progressInfo;
+    }
 
-  public String getImageId() {
-    return this.imageId;
-  }
+    public String getImageId() {
+        return this.imageId;
+    }
 
-  public LocalizedMethodFault getLastError() {
-    return this.lastError;
-  }
+    public LocalizedMethodFault getLastError() {
+        return this.lastError;
+    }
 
-  public void setState(String state) {
-    this.state=state;
-  }
+    public void setState(String state) {
+        this.state = state;
+    }
 
-  public void setProgressInfo(ReplicationVmProgressInfo progressInfo) {
-    this.progressInfo=progressInfo;
-  }
+    public void setProgressInfo(ReplicationVmProgressInfo progressInfo) {
+        this.progressInfo = progressInfo;
+    }
 
-  public void setImageId(String imageId) {
-    this.imageId=imageId;
-  }
+    public void setImageId(String imageId) {
+        this.imageId = imageId;
+    }
 
-  public void setLastError(LocalizedMethodFault lastError) {
-    this.lastError=lastError;
-  }
+    public void setLastError(LocalizedMethodFault lastError) {
+        this.lastError = lastError;
+    }
 }

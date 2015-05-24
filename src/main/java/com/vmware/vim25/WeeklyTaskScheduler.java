@@ -30,73 +30,73 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class WeeklyTaskScheduler extends DailyTaskScheduler {
-  public boolean sunday;
-  public boolean monday;
-  public boolean tuesday;
-  public boolean wednesday;
-  public boolean thursday;
-  public boolean friday;
-  public boolean saturday;
+    public boolean sunday;
+    public boolean monday;
+    public boolean tuesday;
+    public boolean wednesday;
+    public boolean thursday;
+    public boolean friday;
+    public boolean saturday;
 
-  public boolean isSunday() {
-    return this.sunday;
-  }
+    public boolean isSunday() {
+        return this.sunday;
+    }
 
-  public boolean isMonday() {
-    return this.monday;
-  }
+    public boolean isMonday() {
+        return this.monday;
+    }
 
-  public boolean isTuesday() {
-    return this.tuesday;
-  }
+    public boolean isTuesday() {
+        return this.tuesday;
+    }
 
-  public boolean isWednesday() {
-    return this.wednesday;
-  }
+    public boolean isWednesday() {
+        return this.wednesday;
+    }
 
-  public boolean isThursday() {
-    return this.thursday;
-  }
+    public boolean isThursday() {
+        return this.thursday;
+    }
 
-  public boolean isFriday() {
-    return this.friday;
-  }
+    public boolean isFriday() {
+        return this.friday;
+    }
 
-  public boolean isSaturday() {
-    return this.saturday;
-  }
+    public boolean isSaturday() {
+        return this.saturday;
+    }
 
-  public void setSunday(boolean sunday) {
-    this.sunday=sunday;
-  }
+    public void setSunday(boolean sunday) {
+        this.sunday = sunday;
+    }
 
-  public void setMonday(boolean monday) {
-    this.monday=monday;
-  }
+    public void setMonday(boolean monday) {
+        this.monday = monday;
+    }
 
-  public void setTuesday(boolean tuesday) {
-    this.tuesday=tuesday;
-  }
+    public void setTuesday(boolean tuesday) {
+        this.tuesday = tuesday;
+    }
 
-  public void setWednesday(boolean wednesday) {
-    this.wednesday=wednesday;
-  }
+    public void setWednesday(boolean wednesday) {
+        this.wednesday = wednesday;
+    }
 
-  public void setThursday(boolean thursday) {
-    this.thursday=thursday;
-  }
+    public void setThursday(boolean thursday) {
+        this.thursday = thursday;
+    }
 
-  public void setFriday(boolean friday) {
-    this.friday=friday;
-  }
+    public void setFriday(boolean friday) {
+        this.friday = friday;
+    }
 
-  public void setSaturday(boolean saturday) {
-    this.saturday=saturday;
-  }
+    public void setSaturday(boolean saturday) {
+        this.saturday = saturday;
+    }
 }

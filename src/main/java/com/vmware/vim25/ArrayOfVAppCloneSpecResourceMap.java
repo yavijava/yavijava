@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfVAppCloneSpecResourceMap {
-  public VAppCloneSpecResourceMap[] VAppCloneSpecResourceMap;
+    public VAppCloneSpecResourceMap[] VAppCloneSpecResourceMap;
 
-  public VAppCloneSpecResourceMap[] getVAppCloneSpecResourceMap() {
-    return this.VAppCloneSpecResourceMap;
-  }
+    public VAppCloneSpecResourceMap[] getVAppCloneSpecResourceMap() {
+        return this.VAppCloneSpecResourceMap;
+    }
 
-  public VAppCloneSpecResourceMap getVAppCloneSpecResourceMap(int i) {
-    return this.VAppCloneSpecResourceMap[i];
-  }
+    public VAppCloneSpecResourceMap getVAppCloneSpecResourceMap(int i) {
+        return this.VAppCloneSpecResourceMap[i];
+    }
 
-  public void setVAppCloneSpecResourceMap(VAppCloneSpecResourceMap[] VAppCloneSpecResourceMap) {
-    this.VAppCloneSpecResourceMap=VAppCloneSpecResourceMap;
-  }
+    public void setVAppCloneSpecResourceMap(VAppCloneSpecResourceMap[] VAppCloneSpecResourceMap) {
+        this.VAppCloneSpecResourceMap = VAppCloneSpecResourceMap;
+    }
 }

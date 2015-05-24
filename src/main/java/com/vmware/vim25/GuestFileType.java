@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public enum GuestFileType {
-  file ("file"),
-  directory ("directory"),
-  symlink ("symlink");
+    file("file"),
+    directory("directory"),
+    symlink("symlink");
 
-  @SuppressWarnings("unused")
-  private final String val;
-  private GuestFileType(String val)
-  {
-    this.val = val;
-  }
+    @SuppressWarnings("unused")
+    private final String val;
+
+    private GuestFileType(String val) {
+        this.val = val;
+    }
 }

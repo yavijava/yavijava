@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VirtualMachineVMCIDevice extends VirtualDevice {
-  public Long id;
-  public Boolean allowUnrestrictedCommunication;
+    public Long id;
+    public Boolean allowUnrestrictedCommunication;
 
-  public Long getId() {
-    return this.id;
-  }
+    public Long getId() {
+        return this.id;
+    }
 
-  public Boolean getAllowUnrestrictedCommunication() {
-    return this.allowUnrestrictedCommunication;
-  }
+    public Boolean getAllowUnrestrictedCommunication() {
+        return this.allowUnrestrictedCommunication;
+    }
 
-  public void setId(Long id) {
-    this.id=id;
-  }
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-  public void setAllowUnrestrictedCommunication(Boolean allowUnrestrictedCommunication) {
-    this.allowUnrestrictedCommunication=allowUnrestrictedCommunication;
-  }
+    public void setAllowUnrestrictedCommunication(Boolean allowUnrestrictedCommunication) {
+        this.allowUnrestrictedCommunication = allowUnrestrictedCommunication;
+    }
 }

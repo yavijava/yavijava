@@ -30,20 +30,20 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public enum DVPortStatusVmDirectPathGen2InactiveReasonNetwork {
-  portNptIncompatibleDvs ("portNptIncompatibleDvs"),
-  portNptNoCompatibleNics ("portNptNoCompatibleNics"),
-  portNptNoVirtualFunctionsAvailable ("portNptNoVirtualFunctionsAvailable"),
-  portNptDisabledForPort ("portNptDisabledForPort");
+    portNptIncompatibleDvs("portNptIncompatibleDvs"),
+    portNptNoCompatibleNics("portNptNoCompatibleNics"),
+    portNptNoVirtualFunctionsAvailable("portNptNoVirtualFunctionsAvailable"),
+    portNptDisabledForPort("portNptDisabledForPort");
 
-  @SuppressWarnings("unused")
-  private final String val;
-  private DVPortStatusVmDirectPathGen2InactiveReasonNetwork(String val)
-  {
-    this.val = val;
-  }
+    @SuppressWarnings("unused")
+    private final String val;
+
+    private DVPortStatusVmDirectPathGen2InactiveReasonNetwork(String val) {
+        this.val = val;
+    }
 }

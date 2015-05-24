@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class PerfEntityMetric extends PerfEntityMetricBase {
-  public PerfSampleInfo[] sampleInfo;
-  public PerfMetricSeries[] value;
+    public PerfSampleInfo[] sampleInfo;
+    public PerfMetricSeries[] value;
 
-  public PerfSampleInfo[] getSampleInfo() {
-    return this.sampleInfo;
-  }
+    public PerfSampleInfo[] getSampleInfo() {
+        return this.sampleInfo;
+    }
 
-  public PerfMetricSeries[] getValue() {
-    return this.value;
-  }
+    public PerfMetricSeries[] getValue() {
+        return this.value;
+    }
 
-  public void setSampleInfo(PerfSampleInfo[] sampleInfo) {
-    this.sampleInfo=sampleInfo;
-  }
+    public void setSampleInfo(PerfSampleInfo[] sampleInfo) {
+        this.sampleInfo = sampleInfo;
+    }
 
-  public void setValue(PerfMetricSeries[] value) {
-    this.value=value;
-  }
+    public void setValue(PerfMetricSeries[] value) {
+        this.value = value;
+    }
 }

@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class PerfMetricId extends DynamicData {
-  public int counterId;
-  public String instance;
+    public int counterId;
+    public String instance;
 
-  public int getCounterId() {
-    return this.counterId;
-  }
+    public int getCounterId() {
+        return this.counterId;
+    }
 
-  public String getInstance() {
-    return this.instance;
-  }
+    public String getInstance() {
+        return this.instance;
+    }
 
-  public void setCounterId(int counterId) {
-    this.counterId=counterId;
-  }
+    public void setCounterId(int counterId) {
+        this.counterId = counterId;
+    }
 
-  public void setInstance(String instance) {
-    this.instance=instance;
-  }
+    public void setInstance(String instance) {
+        this.instance = instance;
+    }
 }

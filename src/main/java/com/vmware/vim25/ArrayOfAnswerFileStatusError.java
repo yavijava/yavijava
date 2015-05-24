@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfAnswerFileStatusError {
-  public AnswerFileStatusError[] AnswerFileStatusError;
+    public AnswerFileStatusError[] AnswerFileStatusError;
 
-  public AnswerFileStatusError[] getAnswerFileStatusError() {
-    return this.AnswerFileStatusError;
-  }
+    public AnswerFileStatusError[] getAnswerFileStatusError() {
+        return this.AnswerFileStatusError;
+    }
 
-  public AnswerFileStatusError getAnswerFileStatusError(int i) {
-    return this.AnswerFileStatusError[i];
-  }
+    public AnswerFileStatusError getAnswerFileStatusError(int i) {
+        return this.AnswerFileStatusError[i];
+    }
 
-  public void setAnswerFileStatusError(AnswerFileStatusError[] AnswerFileStatusError) {
-    this.AnswerFileStatusError=AnswerFileStatusError;
-  }
+    public void setAnswerFileStatusError(AnswerFileStatusError[] AnswerFileStatusError) {
+        this.AnswerFileStatusError = AnswerFileStatusError;
+    }
 }

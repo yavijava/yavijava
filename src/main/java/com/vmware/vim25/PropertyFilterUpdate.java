@@ -30,37 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class PropertyFilterUpdate extends DynamicData {
-  public ManagedObjectReference filter;
-  public ObjectUpdate[] objectSet;
-  public MissingObject[] missingSet;
+    public ManagedObjectReference filter;
+    public ObjectUpdate[] objectSet;
+    public MissingObject[] missingSet;
 
-  public ManagedObjectReference getFilter() {
-    return this.filter;
-  }
+    public ManagedObjectReference getFilter() {
+        return this.filter;
+    }
 
-  public ObjectUpdate[] getObjectSet() {
-    return this.objectSet;
-  }
+    public ObjectUpdate[] getObjectSet() {
+        return this.objectSet;
+    }
 
-  public MissingObject[] getMissingSet() {
-    return this.missingSet;
-  }
+    public MissingObject[] getMissingSet() {
+        return this.missingSet;
+    }
 
-  public void setFilter(ManagedObjectReference filter) {
-    this.filter=filter;
-  }
+    public void setFilter(ManagedObjectReference filter) {
+        this.filter = filter;
+    }
 
-  public void setObjectSet(ObjectUpdate[] objectSet) {
-    this.objectSet=objectSet;
-  }
+    public void setObjectSet(ObjectUpdate[] objectSet) {
+        this.objectSet = objectSet;
+    }
 
-  public void setMissingSet(MissingObject[] missingSet) {
-    this.missingSet=missingSet;
-  }
+    public void setMissingSet(MissingObject[] missingSet) {
+        this.missingSet = missingSet;
+    }
 }

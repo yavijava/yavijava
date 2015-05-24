@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public enum HostPatchManagerReason {
-  obsoleted ("obsoleted"),
-  missingPatch ("missingPatch"),
-  missingLib ("missingLib"),
-  hasDependentPatch ("hasDependentPatch"),
-  conflictPatch ("conflictPatch"),
-  conflictLib ("conflictLib");
+    obsoleted("obsoleted"),
+    missingPatch("missingPatch"),
+    missingLib("missingLib"),
+    hasDependentPatch("hasDependentPatch"),
+    conflictPatch("conflictPatch"),
+    conflictLib("conflictLib");
 
-  @SuppressWarnings("unused")
-  private final String val;
-  private HostPatchManagerReason(String val)
-  {
-    this.val = val;
-  }
+    @SuppressWarnings("unused")
+    private final String val;
+
+    private HostPatchManagerReason(String val) {
+        this.val = val;
+    }
 }

@@ -30,37 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class ClusterDasVmSettings extends DynamicData {
-  public String restartPriority;
-  public String isolationResponse;
-  public ClusterVmToolsMonitoringSettings vmToolsMonitoringSettings;
+    public String restartPriority;
+    public String isolationResponse;
+    public ClusterVmToolsMonitoringSettings vmToolsMonitoringSettings;
 
-  public String getRestartPriority() {
-    return this.restartPriority;
-  }
+    public String getRestartPriority() {
+        return this.restartPriority;
+    }
 
-  public String getIsolationResponse() {
-    return this.isolationResponse;
-  }
+    public String getIsolationResponse() {
+        return this.isolationResponse;
+    }
 
-  public ClusterVmToolsMonitoringSettings getVmToolsMonitoringSettings() {
-    return this.vmToolsMonitoringSettings;
-  }
+    public ClusterVmToolsMonitoringSettings getVmToolsMonitoringSettings() {
+        return this.vmToolsMonitoringSettings;
+    }
 
-  public void setRestartPriority(String restartPriority) {
-    this.restartPriority=restartPriority;
-  }
+    public void setRestartPriority(String restartPriority) {
+        this.restartPriority = restartPriority;
+    }
 
-  public void setIsolationResponse(String isolationResponse) {
-    this.isolationResponse=isolationResponse;
-  }
+    public void setIsolationResponse(String isolationResponse) {
+        this.isolationResponse = isolationResponse;
+    }
 
-  public void setVmToolsMonitoringSettings(ClusterVmToolsMonitoringSettings vmToolsMonitoringSettings) {
-    this.vmToolsMonitoringSettings=vmToolsMonitoringSettings;
-  }
+    public void setVmToolsMonitoringSettings(ClusterVmToolsMonitoringSettings vmToolsMonitoringSettings) {
+        this.vmToolsMonitoringSettings = vmToolsMonitoringSettings;
+    }
 }

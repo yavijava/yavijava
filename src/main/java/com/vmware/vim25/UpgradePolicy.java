@@ -30,18 +30,18 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public enum UpgradePolicy {
-  manual ("manual"),
-  upgradeAtPowerCycle ("upgradeAtPowerCycle");
+    manual("manual"),
+    upgradeAtPowerCycle("upgradeAtPowerCycle");
 
-  @SuppressWarnings("unused")
-  private final String val;
-  private UpgradePolicy(String val)
-  {
-    this.val = val;
-  }
+    @SuppressWarnings("unused")
+    private final String val;
+
+    private UpgradePolicy(String val) {
+        this.val = val;
+    }
 }

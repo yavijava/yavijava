@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class GroupAlarmAction extends AlarmAction {
-  public AlarmAction[] action;
+    public AlarmAction[] action;
 
-  public AlarmAction[] getAction() {
-    return this.action;
-  }
+    public AlarmAction[] getAction() {
+        return this.action;
+    }
 
-  public void setAction(AlarmAction[] action) {
-    this.action=action;
-  }
+    public void setAction(AlarmAction[] action) {
+        this.action = action;
+    }
 }

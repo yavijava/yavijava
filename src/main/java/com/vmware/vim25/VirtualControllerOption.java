@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VirtualControllerOption extends VirtualDeviceOption {
-  public IntOption devices;
-  public String[] supportedDevice;
+    public IntOption devices;
+    public String[] supportedDevice;
 
-  public IntOption getDevices() {
-    return this.devices;
-  }
+    public IntOption getDevices() {
+        return this.devices;
+    }
 
-  public String[] getSupportedDevice() {
-    return this.supportedDevice;
-  }
+    public String[] getSupportedDevice() {
+        return this.supportedDevice;
+    }
 
-  public void setDevices(IntOption devices) {
-    this.devices=devices;
-  }
+    public void setDevices(IntOption devices) {
+        this.devices = devices;
+    }
 
-  public void setSupportedDevice(String[] supportedDevice) {
-    this.supportedDevice=supportedDevice;
-  }
+    public void setSupportedDevice(String[] supportedDevice) {
+        this.supportedDevice = supportedDevice;
+    }
 }

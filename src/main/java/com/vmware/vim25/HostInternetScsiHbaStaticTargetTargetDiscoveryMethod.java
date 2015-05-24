@@ -30,21 +30,21 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public enum HostInternetScsiHbaStaticTargetTargetDiscoveryMethod {
-  staticMethod ("staticMethod"),
-  sendTargetMethod ("sendTargetMethod"),
-  slpMethod ("slpMethod"),
-  isnsMethod ("isnsMethod"),
-  unknownMethod ("unknownMethod");
+    staticMethod("staticMethod"),
+    sendTargetMethod("sendTargetMethod"),
+    slpMethod("slpMethod"),
+    isnsMethod("isnsMethod"),
+    unknownMethod("unknownMethod");
 
-  @SuppressWarnings("unused")
-  private final String val;
-  private HostInternetScsiHbaStaticTargetTargetDiscoveryMethod(String val)
-  {
-    this.val = val;
-  }
+    @SuppressWarnings("unused")
+    private final String val;
+
+    private HostInternetScsiHbaStaticTargetTargetDiscoveryMethod(String val) {
+        this.val = val;
+    }
 }

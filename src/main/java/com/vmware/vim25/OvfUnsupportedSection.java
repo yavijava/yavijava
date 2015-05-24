@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class OvfUnsupportedSection extends OvfUnsupportedElement {
-  public String info;
+    public String info;
 
-  public String getInfo() {
-    return this.info;
-  }
+    public String getInfo() {
+        return this.info;
+    }
 
-  public void setInfo(String info) {
-    this.info=info;
-  }
+    public void setInfo(String info) {
+        this.info = info;
+    }
 }

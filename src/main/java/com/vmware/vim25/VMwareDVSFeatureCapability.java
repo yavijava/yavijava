@@ -30,55 +30,55 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VMwareDVSFeatureCapability extends DVSFeatureCapability {
-  public Boolean vspanSupported;
-  public Boolean lldpSupported;
-  public Boolean ipfixSupported;
-  public VMwareDVSVspanCapability vspanCapability;
-  public VMwareDvsLacpCapability lacpCapability;
+    public Boolean vspanSupported;
+    public Boolean lldpSupported;
+    public Boolean ipfixSupported;
+    public VMwareDVSVspanCapability vspanCapability;
+    public VMwareDvsLacpCapability lacpCapability;
 
-  public Boolean getVspanSupported() {
-    return this.vspanSupported;
-  }
+    public Boolean getVspanSupported() {
+        return this.vspanSupported;
+    }
 
-  public Boolean getLldpSupported() {
-    return this.lldpSupported;
-  }
+    public Boolean getLldpSupported() {
+        return this.lldpSupported;
+    }
 
-  public Boolean getIpfixSupported() {
-    return this.ipfixSupported;
-  }
+    public Boolean getIpfixSupported() {
+        return this.ipfixSupported;
+    }
 
-  public VMwareDVSVspanCapability getVspanCapability() {
-    return this.vspanCapability;
-  }
+    public VMwareDVSVspanCapability getVspanCapability() {
+        return this.vspanCapability;
+    }
 
-  public VMwareDvsLacpCapability getLacpCapability() {
-    return this.lacpCapability;
-  }
+    public VMwareDvsLacpCapability getLacpCapability() {
+        return this.lacpCapability;
+    }
 
-  public void setVspanSupported(Boolean vspanSupported) {
-    this.vspanSupported=vspanSupported;
-  }
+    public void setVspanSupported(Boolean vspanSupported) {
+        this.vspanSupported = vspanSupported;
+    }
 
-  public void setLldpSupported(Boolean lldpSupported) {
-    this.lldpSupported=lldpSupported;
-  }
+    public void setLldpSupported(Boolean lldpSupported) {
+        this.lldpSupported = lldpSupported;
+    }
 
-  public void setIpfixSupported(Boolean ipfixSupported) {
-    this.ipfixSupported=ipfixSupported;
-  }
+    public void setIpfixSupported(Boolean ipfixSupported) {
+        this.ipfixSupported = ipfixSupported;
+    }
 
-  public void setVspanCapability(VMwareDVSVspanCapability vspanCapability) {
-    this.vspanCapability=vspanCapability;
-  }
+    public void setVspanCapability(VMwareDVSVspanCapability vspanCapability) {
+        this.vspanCapability = vspanCapability;
+    }
 
-  public void setLacpCapability(VMwareDvsLacpCapability lacpCapability) {
-    this.lacpCapability=lacpCapability;
-  }
+    public void setLacpCapability(VMwareDvsLacpCapability lacpCapability) {
+        this.lacpCapability = lacpCapability;
+    }
 }

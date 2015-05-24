@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfHostDiskPartitionInfo {
-  public HostDiskPartitionInfo[] HostDiskPartitionInfo;
+    public HostDiskPartitionInfo[] HostDiskPartitionInfo;
 
-  public HostDiskPartitionInfo[] getHostDiskPartitionInfo() {
-    return this.HostDiskPartitionInfo;
-  }
+    public HostDiskPartitionInfo[] getHostDiskPartitionInfo() {
+        return this.HostDiskPartitionInfo;
+    }
 
-  public HostDiskPartitionInfo getHostDiskPartitionInfo(int i) {
-    return this.HostDiskPartitionInfo[i];
-  }
+    public HostDiskPartitionInfo getHostDiskPartitionInfo(int i) {
+        return this.HostDiskPartitionInfo[i];
+    }
 
-  public void setHostDiskPartitionInfo(HostDiskPartitionInfo[] HostDiskPartitionInfo) {
-    this.HostDiskPartitionInfo=HostDiskPartitionInfo;
-  }
+    public void setHostDiskPartitionInfo(HostDiskPartitionInfo[] HostDiskPartitionInfo) {
+        this.HostDiskPartitionInfo = HostDiskPartitionInfo;
+    }
 }

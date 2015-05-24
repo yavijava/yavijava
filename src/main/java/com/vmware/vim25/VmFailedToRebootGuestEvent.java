@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VmFailedToRebootGuestEvent extends VmEvent {
-  public LocalizedMethodFault reason;
+    public LocalizedMethodFault reason;
 
-  public LocalizedMethodFault getReason() {
-    return this.reason;
-  }
+    public LocalizedMethodFault getReason() {
+        return this.reason;
+    }
 
-  public void setReason(LocalizedMethodFault reason) {
-    this.reason=reason;
-  }
+    public void setReason(LocalizedMethodFault reason) {
+        this.reason = reason;
+    }
 }

@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VirtualMachinePciPassthroughInfo extends VirtualMachineTargetInfo {
-  public HostPciDevice pciDevice;
-  public String systemId;
+    public HostPciDevice pciDevice;
+    public String systemId;
 
-  public HostPciDevice getPciDevice() {
-    return this.pciDevice;
-  }
+    public HostPciDevice getPciDevice() {
+        return this.pciDevice;
+    }
 
-  public String getSystemId() {
-    return this.systemId;
-  }
+    public String getSystemId() {
+        return this.systemId;
+    }
 
-  public void setPciDevice(HostPciDevice pciDevice) {
-    this.pciDevice=pciDevice;
-  }
+    public void setPciDevice(HostPciDevice pciDevice) {
+        this.pciDevice = pciDevice;
+    }
 
-  public void setSystemId(String systemId) {
-    this.systemId=systemId;
-  }
+    public void setSystemId(String systemId) {
+        this.systemId = systemId;
+    }
 }

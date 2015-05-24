@@ -30,37 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostNumaInfo extends DynamicData {
-  public String type;
-  public int numNodes;
-  public HostNumaNode[] numaNode;
+    public String type;
+    public int numNodes;
+    public HostNumaNode[] numaNode;
 
-  public String getType() {
-    return this.type;
-  }
+    public String getType() {
+        return this.type;
+    }
 
-  public int getNumNodes() {
-    return this.numNodes;
-  }
+    public int getNumNodes() {
+        return this.numNodes;
+    }
 
-  public HostNumaNode[] getNumaNode() {
-    return this.numaNode;
-  }
+    public HostNumaNode[] getNumaNode() {
+        return this.numaNode;
+    }
 
-  public void setType(String type) {
-    this.type=type;
-  }
+    public void setType(String type) {
+        this.type = type;
+    }
 
-  public void setNumNodes(int numNodes) {
-    this.numNodes=numNodes;
-  }
+    public void setNumNodes(int numNodes) {
+        this.numNodes = numNodes;
+    }
 
-  public void setNumaNode(HostNumaNode[] numaNode) {
-    this.numaNode=numaNode;
-  }
+    public void setNumaNode(HostNumaNode[] numaNode) {
+        this.numaNode = numaNode;
+    }
 }

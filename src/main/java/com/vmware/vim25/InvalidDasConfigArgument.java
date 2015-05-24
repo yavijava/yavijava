@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class InvalidDasConfigArgument extends InvalidArgument {
-  public String entry;
-  public String clusterName;
+    public String entry;
+    public String clusterName;
 
-  public String getEntry() {
-    return this.entry;
-  }
+    public String getEntry() {
+        return this.entry;
+    }
 
-  public String getClusterName() {
-    return this.clusterName;
-  }
+    public String getClusterName() {
+        return this.clusterName;
+    }
 
-  public void setEntry(String entry) {
-    this.entry=entry;
-  }
+    public void setEntry(String entry) {
+        this.entry = entry;
+    }
 
-  public void setClusterName(String clusterName) {
-    this.clusterName=clusterName;
-  }
+    public void setClusterName(String clusterName) {
+        this.clusterName = clusterName;
+    }
 }

@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class EnumDescription extends DynamicData {
-  public String key;
-  public ElementDescription[] tags;
+    public String key;
+    public ElementDescription[] tags;
 
-  public String getKey() {
-    return this.key;
-  }
+    public String getKey() {
+        return this.key;
+    }
 
-  public ElementDescription[] getTags() {
-    return this.tags;
-  }
+    public ElementDescription[] getTags() {
+        return this.tags;
+    }
 
-  public void setKey(String key) {
-    this.key=key;
-  }
+    public void setKey(String key) {
+        this.key = key;
+    }
 
-  public void setTags(ElementDescription[] tags) {
-    this.tags=tags;
-  }
+    public void setTags(ElementDescription[] tags) {
+        this.tags = tags;
+    }
 }

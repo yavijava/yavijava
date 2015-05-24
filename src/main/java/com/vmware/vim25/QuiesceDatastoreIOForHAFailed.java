@@ -30,46 +30,46 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class QuiesceDatastoreIOForHAFailed extends ResourceInUse {
-  public ManagedObjectReference host;
-  public String hostName;
-  public ManagedObjectReference ds;
-  public String dsName;
+    public ManagedObjectReference host;
+    public String hostName;
+    public ManagedObjectReference ds;
+    public String dsName;
 
-  public ManagedObjectReference getHost() {
-    return this.host;
-  }
+    public ManagedObjectReference getHost() {
+        return this.host;
+    }
 
-  public String getHostName() {
-    return this.hostName;
-  }
+    public String getHostName() {
+        return this.hostName;
+    }
 
-  public ManagedObjectReference getDs() {
-    return this.ds;
-  }
+    public ManagedObjectReference getDs() {
+        return this.ds;
+    }
 
-  public String getDsName() {
-    return this.dsName;
-  }
+    public String getDsName() {
+        return this.dsName;
+    }
 
-  public void setHost(ManagedObjectReference host) {
-    this.host=host;
-  }
+    public void setHost(ManagedObjectReference host) {
+        this.host = host;
+    }
 
-  public void setHostName(String hostName) {
-    this.hostName=hostName;
-  }
+    public void setHostName(String hostName) {
+        this.hostName = hostName;
+    }
 
-  public void setDs(ManagedObjectReference ds) {
-    this.ds=ds;
-  }
+    public void setDs(ManagedObjectReference ds) {
+        this.ds = ds;
+    }
 
-  public void setDsName(String dsName) {
-    this.dsName=dsName;
-  }
+    public void setDsName(String dsName) {
+        this.dsName = dsName;
+    }
 }

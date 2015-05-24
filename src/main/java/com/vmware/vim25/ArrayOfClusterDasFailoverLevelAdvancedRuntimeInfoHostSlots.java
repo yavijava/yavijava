@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfClusterDasFailoverLevelAdvancedRuntimeInfoHostSlots {
-  public ClusterDasFailoverLevelAdvancedRuntimeInfoHostSlots[] ClusterDasFailoverLevelAdvancedRuntimeInfoHostSlots;
+    public ClusterDasFailoverLevelAdvancedRuntimeInfoHostSlots[] ClusterDasFailoverLevelAdvancedRuntimeInfoHostSlots;
 
-  public ClusterDasFailoverLevelAdvancedRuntimeInfoHostSlots[] getClusterDasFailoverLevelAdvancedRuntimeInfoHostSlots() {
-    return this.ClusterDasFailoverLevelAdvancedRuntimeInfoHostSlots;
-  }
+    public ClusterDasFailoverLevelAdvancedRuntimeInfoHostSlots[] getClusterDasFailoverLevelAdvancedRuntimeInfoHostSlots() {
+        return this.ClusterDasFailoverLevelAdvancedRuntimeInfoHostSlots;
+    }
 
-  public ClusterDasFailoverLevelAdvancedRuntimeInfoHostSlots getClusterDasFailoverLevelAdvancedRuntimeInfoHostSlots(int i) {
-    return this.ClusterDasFailoverLevelAdvancedRuntimeInfoHostSlots[i];
-  }
+    public ClusterDasFailoverLevelAdvancedRuntimeInfoHostSlots getClusterDasFailoverLevelAdvancedRuntimeInfoHostSlots(int i) {
+        return this.ClusterDasFailoverLevelAdvancedRuntimeInfoHostSlots[i];
+    }
 
-  public void setClusterDasFailoverLevelAdvancedRuntimeInfoHostSlots(ClusterDasFailoverLevelAdvancedRuntimeInfoHostSlots[] ClusterDasFailoverLevelAdvancedRuntimeInfoHostSlots) {
-    this.ClusterDasFailoverLevelAdvancedRuntimeInfoHostSlots=ClusterDasFailoverLevelAdvancedRuntimeInfoHostSlots;
-  }
+    public void setClusterDasFailoverLevelAdvancedRuntimeInfoHostSlots(ClusterDasFailoverLevelAdvancedRuntimeInfoHostSlots[] ClusterDasFailoverLevelAdvancedRuntimeInfoHostSlots) {
+        this.ClusterDasFailoverLevelAdvancedRuntimeInfoHostSlots = ClusterDasFailoverLevelAdvancedRuntimeInfoHostSlots;
+    }
 }

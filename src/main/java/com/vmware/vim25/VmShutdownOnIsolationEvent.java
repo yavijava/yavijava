@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VmShutdownOnIsolationEvent extends VmPoweredOffEvent {
-  public HostEventArgument isolatedHost;
-  public String shutdownResult;
+    public HostEventArgument isolatedHost;
+    public String shutdownResult;
 
-  public HostEventArgument getIsolatedHost() {
-    return this.isolatedHost;
-  }
+    public HostEventArgument getIsolatedHost() {
+        return this.isolatedHost;
+    }
 
-  public String getShutdownResult() {
-    return this.shutdownResult;
-  }
+    public String getShutdownResult() {
+        return this.shutdownResult;
+    }
 
-  public void setIsolatedHost(HostEventArgument isolatedHost) {
-    this.isolatedHost=isolatedHost;
-  }
+    public void setIsolatedHost(HostEventArgument isolatedHost) {
+        this.isolatedHost = isolatedHost;
+    }
 
-  public void setShutdownResult(String shutdownResult) {
-    this.shutdownResult=shutdownResult;
-  }
+    public void setShutdownResult(String shutdownResult) {
+        this.shutdownResult = shutdownResult;
+    }
 }

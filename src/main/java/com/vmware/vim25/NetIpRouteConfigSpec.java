@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class NetIpRouteConfigSpec extends DynamicData {
-  public NetIpRouteConfigSpecIpRouteSpec[] ipRoute;
+    public NetIpRouteConfigSpecIpRouteSpec[] ipRoute;
 
-  public NetIpRouteConfigSpecIpRouteSpec[] getIpRoute() {
-    return this.ipRoute;
-  }
+    public NetIpRouteConfigSpecIpRouteSpec[] getIpRoute() {
+        return this.ipRoute;
+    }
 
-  public void setIpRoute(NetIpRouteConfigSpecIpRouteSpec[] ipRoute) {
-    this.ipRoute=ipRoute;
-  }
+    public void setIpRoute(NetIpRouteConfigSpecIpRouteSpec[] ipRoute) {
+        this.ipRoute = ipRoute;
+    }
 }

@@ -30,35 +30,35 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public enum VirtualMachineFileLayoutExFileType {
-  config ("config"),
-  extendedConfig ("extendedConfig"),
-  diskDescriptor ("diskDescriptor"),
-  diskExtent ("diskExtent"),
-  digestDescriptor ("digestDescriptor"),
-  digestExtent ("digestExtent"),
-  diskReplicationState ("diskReplicationState"),
-  log ("log"),
-  stat ("stat"),
-  namespaceData ("namespaceData"),
-  nvram ("nvram"),
-  snapshotData ("snapshotData"),
-  snapshotList ("snapshotList"),
-  snapshotManifestList ("snapshotManifestList"),
-  suspend ("suspend"),
-  swap ("swap"),
-  uwswap ("uwswap"),
-  core ("core"),
-  screenshot ("screenshot");
+    config("config"),
+    extendedConfig("extendedConfig"),
+    diskDescriptor("diskDescriptor"),
+    diskExtent("diskExtent"),
+    digestDescriptor("digestDescriptor"),
+    digestExtent("digestExtent"),
+    diskReplicationState("diskReplicationState"),
+    log("log"),
+    stat("stat"),
+    namespaceData("namespaceData"),
+    nvram("nvram"),
+    snapshotData("snapshotData"),
+    snapshotList("snapshotList"),
+    snapshotManifestList("snapshotManifestList"),
+    suspend("suspend"),
+    swap("swap"),
+    uwswap("uwswap"),
+    core("core"),
+    screenshot("screenshot");
 
-  @SuppressWarnings("unused")
-  private final String val;
-  private VirtualMachineFileLayoutExFileType(String val)
-  {
-    this.val = val;
-  }
+    @SuppressWarnings("unused")
+    private final String val;
+
+    private VirtualMachineFileLayoutExFileType(String val) {
+        this.val = val;
+    }
 }

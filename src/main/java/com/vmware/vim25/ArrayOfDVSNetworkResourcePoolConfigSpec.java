@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfDVSNetworkResourcePoolConfigSpec {
-  public DVSNetworkResourcePoolConfigSpec[] DVSNetworkResourcePoolConfigSpec;
+    public DVSNetworkResourcePoolConfigSpec[] DVSNetworkResourcePoolConfigSpec;
 
-  public DVSNetworkResourcePoolConfigSpec[] getDVSNetworkResourcePoolConfigSpec() {
-    return this.DVSNetworkResourcePoolConfigSpec;
-  }
+    public DVSNetworkResourcePoolConfigSpec[] getDVSNetworkResourcePoolConfigSpec() {
+        return this.DVSNetworkResourcePoolConfigSpec;
+    }
 
-  public DVSNetworkResourcePoolConfigSpec getDVSNetworkResourcePoolConfigSpec(int i) {
-    return this.DVSNetworkResourcePoolConfigSpec[i];
-  }
+    public DVSNetworkResourcePoolConfigSpec getDVSNetworkResourcePoolConfigSpec(int i) {
+        return this.DVSNetworkResourcePoolConfigSpec[i];
+    }
 
-  public void setDVSNetworkResourcePoolConfigSpec(DVSNetworkResourcePoolConfigSpec[] DVSNetworkResourcePoolConfigSpec) {
-    this.DVSNetworkResourcePoolConfigSpec=DVSNetworkResourcePoolConfigSpec;
-  }
+    public void setDVSNetworkResourcePoolConfigSpec(DVSNetworkResourcePoolConfigSpec[] DVSNetworkResourcePoolConfigSpec) {
+        this.DVSNetworkResourcePoolConfigSpec = DVSNetworkResourcePoolConfigSpec;
+    }
 }

@@ -30,73 +30,73 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VirtualSCSIControllerOption extends VirtualControllerOption {
-  public IntOption numSCSIDisks;
-  public IntOption numSCSICdroms;
-  public IntOption numSCSIPassthrough;
-  public VirtualSCSISharing[] sharing;
-  public int defaultSharedIndex;
-  public BoolOption hotAddRemove;
-  public int scsiCtlrUnitNumber;
+    public IntOption numSCSIDisks;
+    public IntOption numSCSICdroms;
+    public IntOption numSCSIPassthrough;
+    public VirtualSCSISharing[] sharing;
+    public int defaultSharedIndex;
+    public BoolOption hotAddRemove;
+    public int scsiCtlrUnitNumber;
 
-  public IntOption getNumSCSIDisks() {
-    return this.numSCSIDisks;
-  }
+    public IntOption getNumSCSIDisks() {
+        return this.numSCSIDisks;
+    }
 
-  public IntOption getNumSCSICdroms() {
-    return this.numSCSICdroms;
-  }
+    public IntOption getNumSCSICdroms() {
+        return this.numSCSICdroms;
+    }
 
-  public IntOption getNumSCSIPassthrough() {
-    return this.numSCSIPassthrough;
-  }
+    public IntOption getNumSCSIPassthrough() {
+        return this.numSCSIPassthrough;
+    }
 
-  public VirtualSCSISharing[] getSharing() {
-    return this.sharing;
-  }
+    public VirtualSCSISharing[] getSharing() {
+        return this.sharing;
+    }
 
-  public int getDefaultSharedIndex() {
-    return this.defaultSharedIndex;
-  }
+    public int getDefaultSharedIndex() {
+        return this.defaultSharedIndex;
+    }
 
-  public BoolOption getHotAddRemove() {
-    return this.hotAddRemove;
-  }
+    public BoolOption getHotAddRemove() {
+        return this.hotAddRemove;
+    }
 
-  public int getScsiCtlrUnitNumber() {
-    return this.scsiCtlrUnitNumber;
-  }
+    public int getScsiCtlrUnitNumber() {
+        return this.scsiCtlrUnitNumber;
+    }
 
-  public void setNumSCSIDisks(IntOption numSCSIDisks) {
-    this.numSCSIDisks=numSCSIDisks;
-  }
+    public void setNumSCSIDisks(IntOption numSCSIDisks) {
+        this.numSCSIDisks = numSCSIDisks;
+    }
 
-  public void setNumSCSICdroms(IntOption numSCSICdroms) {
-    this.numSCSICdroms=numSCSICdroms;
-  }
+    public void setNumSCSICdroms(IntOption numSCSICdroms) {
+        this.numSCSICdroms = numSCSICdroms;
+    }
 
-  public void setNumSCSIPassthrough(IntOption numSCSIPassthrough) {
-    this.numSCSIPassthrough=numSCSIPassthrough;
-  }
+    public void setNumSCSIPassthrough(IntOption numSCSIPassthrough) {
+        this.numSCSIPassthrough = numSCSIPassthrough;
+    }
 
-  public void setSharing(VirtualSCSISharing[] sharing) {
-    this.sharing=sharing;
-  }
+    public void setSharing(VirtualSCSISharing[] sharing) {
+        this.sharing = sharing;
+    }
 
-  public void setDefaultSharedIndex(int defaultSharedIndex) {
-    this.defaultSharedIndex=defaultSharedIndex;
-  }
+    public void setDefaultSharedIndex(int defaultSharedIndex) {
+        this.defaultSharedIndex = defaultSharedIndex;
+    }
 
-  public void setHotAddRemove(BoolOption hotAddRemove) {
-    this.hotAddRemove=hotAddRemove;
-  }
+    public void setHotAddRemove(BoolOption hotAddRemove) {
+        this.hotAddRemove = hotAddRemove;
+    }
 
-  public void setScsiCtlrUnitNumber(int scsiCtlrUnitNumber) {
-    this.scsiCtlrUnitNumber=scsiCtlrUnitNumber;
-  }
+    public void setScsiCtlrUnitNumber(int scsiCtlrUnitNumber) {
+        this.scsiCtlrUnitNumber = scsiCtlrUnitNumber;
+    }
 }

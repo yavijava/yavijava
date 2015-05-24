@@ -30,73 +30,73 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VirtualMachineCloneSpec extends DynamicData {
-  public VirtualMachineRelocateSpec location;
-  public boolean template;
-  public VirtualMachineConfigSpec config;
-  public CustomizationSpec customization;
-  public boolean powerOn;
-  public ManagedObjectReference snapshot;
-  public Boolean memory;
+    public VirtualMachineRelocateSpec location;
+    public boolean template;
+    public VirtualMachineConfigSpec config;
+    public CustomizationSpec customization;
+    public boolean powerOn;
+    public ManagedObjectReference snapshot;
+    public Boolean memory;
 
-  public VirtualMachineRelocateSpec getLocation() {
-    return this.location;
-  }
+    public VirtualMachineRelocateSpec getLocation() {
+        return this.location;
+    }
 
-  public boolean isTemplate() {
-    return this.template;
-  }
+    public boolean isTemplate() {
+        return this.template;
+    }
 
-  public VirtualMachineConfigSpec getConfig() {
-    return this.config;
-  }
+    public VirtualMachineConfigSpec getConfig() {
+        return this.config;
+    }
 
-  public CustomizationSpec getCustomization() {
-    return this.customization;
-  }
+    public CustomizationSpec getCustomization() {
+        return this.customization;
+    }
 
-  public boolean isPowerOn() {
-    return this.powerOn;
-  }
+    public boolean isPowerOn() {
+        return this.powerOn;
+    }
 
-  public ManagedObjectReference getSnapshot() {
-    return this.snapshot;
-  }
+    public ManagedObjectReference getSnapshot() {
+        return this.snapshot;
+    }
 
-  public Boolean getMemory() {
-    return this.memory;
-  }
+    public Boolean getMemory() {
+        return this.memory;
+    }
 
-  public void setLocation(VirtualMachineRelocateSpec location) {
-    this.location=location;
-  }
+    public void setLocation(VirtualMachineRelocateSpec location) {
+        this.location = location;
+    }
 
-  public void setTemplate(boolean template) {
-    this.template=template;
-  }
+    public void setTemplate(boolean template) {
+        this.template = template;
+    }
 
-  public void setConfig(VirtualMachineConfigSpec config) {
-    this.config=config;
-  }
+    public void setConfig(VirtualMachineConfigSpec config) {
+        this.config = config;
+    }
 
-  public void setCustomization(CustomizationSpec customization) {
-    this.customization=customization;
-  }
+    public void setCustomization(CustomizationSpec customization) {
+        this.customization = customization;
+    }
 
-  public void setPowerOn(boolean powerOn) {
-    this.powerOn=powerOn;
-  }
+    public void setPowerOn(boolean powerOn) {
+        this.powerOn = powerOn;
+    }
 
-  public void setSnapshot(ManagedObjectReference snapshot) {
-    this.snapshot=snapshot;
-  }
+    public void setSnapshot(ManagedObjectReference snapshot) {
+        this.snapshot = snapshot;
+    }
 
-  public void setMemory(Boolean memory) {
-    this.memory=memory;
-  }
+    public void setMemory(Boolean memory) {
+        this.memory = memory;
+    }
 }

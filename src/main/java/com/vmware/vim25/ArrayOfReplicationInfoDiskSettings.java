@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfReplicationInfoDiskSettings {
-  public ReplicationInfoDiskSettings[] ReplicationInfoDiskSettings;
+    public ReplicationInfoDiskSettings[] ReplicationInfoDiskSettings;
 
-  public ReplicationInfoDiskSettings[] getReplicationInfoDiskSettings() {
-    return this.ReplicationInfoDiskSettings;
-  }
+    public ReplicationInfoDiskSettings[] getReplicationInfoDiskSettings() {
+        return this.ReplicationInfoDiskSettings;
+    }
 
-  public ReplicationInfoDiskSettings getReplicationInfoDiskSettings(int i) {
-    return this.ReplicationInfoDiskSettings[i];
-  }
+    public ReplicationInfoDiskSettings getReplicationInfoDiskSettings(int i) {
+        return this.ReplicationInfoDiskSettings[i];
+    }
 
-  public void setReplicationInfoDiskSettings(ReplicationInfoDiskSettings[] ReplicationInfoDiskSettings) {
-    this.ReplicationInfoDiskSettings=ReplicationInfoDiskSettings;
-  }
+    public void setReplicationInfoDiskSettings(ReplicationInfoDiskSettings[] ReplicationInfoDiskSettings) {
+        this.ReplicationInfoDiskSettings = ReplicationInfoDiskSettings;
+    }
 }

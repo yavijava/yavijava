@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfHostIpRouteEntry {
-  public HostIpRouteEntry[] HostIpRouteEntry;
+    public HostIpRouteEntry[] HostIpRouteEntry;
 
-  public HostIpRouteEntry[] getHostIpRouteEntry() {
-    return this.HostIpRouteEntry;
-  }
+    public HostIpRouteEntry[] getHostIpRouteEntry() {
+        return this.HostIpRouteEntry;
+    }
 
-  public HostIpRouteEntry getHostIpRouteEntry(int i) {
-    return this.HostIpRouteEntry[i];
-  }
+    public HostIpRouteEntry getHostIpRouteEntry(int i) {
+        return this.HostIpRouteEntry[i];
+    }
 
-  public void setHostIpRouteEntry(HostIpRouteEntry[] HostIpRouteEntry) {
-    this.HostIpRouteEntry=HostIpRouteEntry;
-  }
+    public void setHostIpRouteEntry(HostIpRouteEntry[] HostIpRouteEntry) {
+        this.HostIpRouteEntry = HostIpRouteEntry;
+    }
 }

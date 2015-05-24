@@ -30,37 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class DVPortState extends DynamicData {
-  public DVPortStatus runtimeInfo;
-  public DistributedVirtualSwitchPortStatistics stats;
-  public DistributedVirtualSwitchKeyedOpaqueBlob[] vendorSpecificState;
+    public DVPortStatus runtimeInfo;
+    public DistributedVirtualSwitchPortStatistics stats;
+    public DistributedVirtualSwitchKeyedOpaqueBlob[] vendorSpecificState;
 
-  public DVPortStatus getRuntimeInfo() {
-    return this.runtimeInfo;
-  }
+    public DVPortStatus getRuntimeInfo() {
+        return this.runtimeInfo;
+    }
 
-  public DistributedVirtualSwitchPortStatistics getStats() {
-    return this.stats;
-  }
+    public DistributedVirtualSwitchPortStatistics getStats() {
+        return this.stats;
+    }
 
-  public DistributedVirtualSwitchKeyedOpaqueBlob[] getVendorSpecificState() {
-    return this.vendorSpecificState;
-  }
+    public DistributedVirtualSwitchKeyedOpaqueBlob[] getVendorSpecificState() {
+        return this.vendorSpecificState;
+    }
 
-  public void setRuntimeInfo(DVPortStatus runtimeInfo) {
-    this.runtimeInfo=runtimeInfo;
-  }
+    public void setRuntimeInfo(DVPortStatus runtimeInfo) {
+        this.runtimeInfo = runtimeInfo;
+    }
 
-  public void setStats(DistributedVirtualSwitchPortStatistics stats) {
-    this.stats=stats;
-  }
+    public void setStats(DistributedVirtualSwitchPortStatistics stats) {
+        this.stats = stats;
+    }
 
-  public void setVendorSpecificState(DistributedVirtualSwitchKeyedOpaqueBlob[] vendorSpecificState) {
-    this.vendorSpecificState=vendorSpecificState;
-  }
+    public void setVendorSpecificState(DistributedVirtualSwitchKeyedOpaqueBlob[] vendorSpecificState) {
+        this.vendorSpecificState = vendorSpecificState;
+    }
 }

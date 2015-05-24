@@ -30,181 +30,181 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class PhysicalNicCdpInfo extends DynamicData {
-  public Integer cdpVersion;
-  public Integer timeout;
-  public Integer ttl;
-  public Integer samples;
-  public String devId;
-  public String address;
-  public String portId;
-  public PhysicalNicCdpDeviceCapability deviceCapability;
-  public String softwareVersion;
-  public String hardwarePlatform;
-  public String ipPrefix;
-  public Integer ipPrefixLen;
-  public Integer vlan;
-  public Boolean fullDuplex;
-  public Integer mtu;
-  public String systemName;
-  public String systemOID;
-  public String mgmtAddr;
-  public String location;
+    public Integer cdpVersion;
+    public Integer timeout;
+    public Integer ttl;
+    public Integer samples;
+    public String devId;
+    public String address;
+    public String portId;
+    public PhysicalNicCdpDeviceCapability deviceCapability;
+    public String softwareVersion;
+    public String hardwarePlatform;
+    public String ipPrefix;
+    public Integer ipPrefixLen;
+    public Integer vlan;
+    public Boolean fullDuplex;
+    public Integer mtu;
+    public String systemName;
+    public String systemOID;
+    public String mgmtAddr;
+    public String location;
 
-  public Integer getCdpVersion() {
-    return this.cdpVersion;
-  }
+    public Integer getCdpVersion() {
+        return this.cdpVersion;
+    }
 
-  public Integer getTimeout() {
-    return this.timeout;
-  }
+    public Integer getTimeout() {
+        return this.timeout;
+    }
 
-  public Integer getTtl() {
-    return this.ttl;
-  }
+    public Integer getTtl() {
+        return this.ttl;
+    }
 
-  public Integer getSamples() {
-    return this.samples;
-  }
+    public Integer getSamples() {
+        return this.samples;
+    }
 
-  public String getDevId() {
-    return this.devId;
-  }
+    public String getDevId() {
+        return this.devId;
+    }
 
-  public String getAddress() {
-    return this.address;
-  }
+    public String getAddress() {
+        return this.address;
+    }
 
-  public String getPortId() {
-    return this.portId;
-  }
+    public String getPortId() {
+        return this.portId;
+    }
 
-  public PhysicalNicCdpDeviceCapability getDeviceCapability() {
-    return this.deviceCapability;
-  }
+    public PhysicalNicCdpDeviceCapability getDeviceCapability() {
+        return this.deviceCapability;
+    }
 
-  public String getSoftwareVersion() {
-    return this.softwareVersion;
-  }
+    public String getSoftwareVersion() {
+        return this.softwareVersion;
+    }
 
-  public String getHardwarePlatform() {
-    return this.hardwarePlatform;
-  }
+    public String getHardwarePlatform() {
+        return this.hardwarePlatform;
+    }
 
-  public String getIpPrefix() {
-    return this.ipPrefix;
-  }
+    public String getIpPrefix() {
+        return this.ipPrefix;
+    }
 
-  public Integer getIpPrefixLen() {
-    return this.ipPrefixLen;
-  }
+    public Integer getIpPrefixLen() {
+        return this.ipPrefixLen;
+    }
 
-  public Integer getVlan() {
-    return this.vlan;
-  }
+    public Integer getVlan() {
+        return this.vlan;
+    }
 
-  public Boolean getFullDuplex() {
-    return this.fullDuplex;
-  }
+    public Boolean getFullDuplex() {
+        return this.fullDuplex;
+    }
 
-  public Integer getMtu() {
-    return this.mtu;
-  }
+    public Integer getMtu() {
+        return this.mtu;
+    }
 
-  public String getSystemName() {
-    return this.systemName;
-  }
+    public String getSystemName() {
+        return this.systemName;
+    }
 
-  public String getSystemOID() {
-    return this.systemOID;
-  }
+    public String getSystemOID() {
+        return this.systemOID;
+    }
 
-  public String getMgmtAddr() {
-    return this.mgmtAddr;
-  }
+    public String getMgmtAddr() {
+        return this.mgmtAddr;
+    }
 
-  public String getLocation() {
-    return this.location;
-  }
+    public String getLocation() {
+        return this.location;
+    }
 
-  public void setCdpVersion(Integer cdpVersion) {
-    this.cdpVersion=cdpVersion;
-  }
+    public void setCdpVersion(Integer cdpVersion) {
+        this.cdpVersion = cdpVersion;
+    }
 
-  public void setTimeout(Integer timeout) {
-    this.timeout=timeout;
-  }
+    public void setTimeout(Integer timeout) {
+        this.timeout = timeout;
+    }
 
-  public void setTtl(Integer ttl) {
-    this.ttl=ttl;
-  }
+    public void setTtl(Integer ttl) {
+        this.ttl = ttl;
+    }
 
-  public void setSamples(Integer samples) {
-    this.samples=samples;
-  }
+    public void setSamples(Integer samples) {
+        this.samples = samples;
+    }
 
-  public void setDevId(String devId) {
-    this.devId=devId;
-  }
+    public void setDevId(String devId) {
+        this.devId = devId;
+    }
 
-  public void setAddress(String address) {
-    this.address=address;
-  }
+    public void setAddress(String address) {
+        this.address = address;
+    }
 
-  public void setPortId(String portId) {
-    this.portId=portId;
-  }
+    public void setPortId(String portId) {
+        this.portId = portId;
+    }
 
-  public void setDeviceCapability(PhysicalNicCdpDeviceCapability deviceCapability) {
-    this.deviceCapability=deviceCapability;
-  }
+    public void setDeviceCapability(PhysicalNicCdpDeviceCapability deviceCapability) {
+        this.deviceCapability = deviceCapability;
+    }
 
-  public void setSoftwareVersion(String softwareVersion) {
-    this.softwareVersion=softwareVersion;
-  }
+    public void setSoftwareVersion(String softwareVersion) {
+        this.softwareVersion = softwareVersion;
+    }
 
-  public void setHardwarePlatform(String hardwarePlatform) {
-    this.hardwarePlatform=hardwarePlatform;
-  }
+    public void setHardwarePlatform(String hardwarePlatform) {
+        this.hardwarePlatform = hardwarePlatform;
+    }
 
-  public void setIpPrefix(String ipPrefix) {
-    this.ipPrefix=ipPrefix;
-  }
+    public void setIpPrefix(String ipPrefix) {
+        this.ipPrefix = ipPrefix;
+    }
 
-  public void setIpPrefixLen(Integer ipPrefixLen) {
-    this.ipPrefixLen=ipPrefixLen;
-  }
+    public void setIpPrefixLen(Integer ipPrefixLen) {
+        this.ipPrefixLen = ipPrefixLen;
+    }
 
-  public void setVlan(Integer vlan) {
-    this.vlan=vlan;
-  }
+    public void setVlan(Integer vlan) {
+        this.vlan = vlan;
+    }
 
-  public void setFullDuplex(Boolean fullDuplex) {
-    this.fullDuplex=fullDuplex;
-  }
+    public void setFullDuplex(Boolean fullDuplex) {
+        this.fullDuplex = fullDuplex;
+    }
 
-  public void setMtu(Integer mtu) {
-    this.mtu=mtu;
-  }
+    public void setMtu(Integer mtu) {
+        this.mtu = mtu;
+    }
 
-  public void setSystemName(String systemName) {
-    this.systemName=systemName;
-  }
+    public void setSystemName(String systemName) {
+        this.systemName = systemName;
+    }
 
-  public void setSystemOID(String systemOID) {
-    this.systemOID=systemOID;
-  }
+    public void setSystemOID(String systemOID) {
+        this.systemOID = systemOID;
+    }
 
-  public void setMgmtAddr(String mgmtAddr) {
-    this.mgmtAddr=mgmtAddr;
-  }
+    public void setMgmtAddr(String mgmtAddr) {
+        this.mgmtAddr = mgmtAddr;
+    }
 
-  public void setLocation(String location) {
-    this.location=location;
-  }
+    public void setLocation(String location) {
+        this.location = location;
+    }
 }

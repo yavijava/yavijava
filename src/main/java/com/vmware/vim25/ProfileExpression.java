@@ -30,37 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class ProfileExpression extends DynamicData {
-  public String id;
-  public String displayName;
-  public boolean negated;
+    public String id;
+    public String displayName;
+    public boolean negated;
 
-  public String getId() {
-    return this.id;
-  }
+    public String getId() {
+        return this.id;
+    }
 
-  public String getDisplayName() {
-    return this.displayName;
-  }
+    public String getDisplayName() {
+        return this.displayName;
+    }
 
-  public boolean isNegated() {
-    return this.negated;
-  }
+    public boolean isNegated() {
+        return this.negated;
+    }
 
-  public void setId(String id) {
-    this.id=id;
-  }
+    public void setId(String id) {
+        this.id = id;
+    }
 
-  public void setDisplayName(String displayName) {
-    this.displayName=displayName;
-  }
+    public void setDisplayName(String displayName) {
+        this.displayName = displayName;
+    }
 
-  public void setNegated(boolean negated) {
-    this.negated=negated;
-  }
+    public void setNegated(boolean negated) {
+        this.negated = negated;
+    }
 }

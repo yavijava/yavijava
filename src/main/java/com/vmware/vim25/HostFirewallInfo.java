@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostFirewallInfo extends DynamicData {
-  public HostFirewallDefaultPolicy defaultPolicy;
-  public HostFirewallRuleset[] ruleset;
+    public HostFirewallDefaultPolicy defaultPolicy;
+    public HostFirewallRuleset[] ruleset;
 
-  public HostFirewallDefaultPolicy getDefaultPolicy() {
-    return this.defaultPolicy;
-  }
+    public HostFirewallDefaultPolicy getDefaultPolicy() {
+        return this.defaultPolicy;
+    }
 
-  public HostFirewallRuleset[] getRuleset() {
-    return this.ruleset;
-  }
+    public HostFirewallRuleset[] getRuleset() {
+        return this.ruleset;
+    }
 
-  public void setDefaultPolicy(HostFirewallDefaultPolicy defaultPolicy) {
-    this.defaultPolicy=defaultPolicy;
-  }
+    public void setDefaultPolicy(HostFirewallDefaultPolicy defaultPolicy) {
+        this.defaultPolicy = defaultPolicy;
+    }
 
-  public void setRuleset(HostFirewallRuleset[] ruleset) {
-    this.ruleset=ruleset;
-  }
+    public void setRuleset(HostFirewallRuleset[] ruleset) {
+        this.ruleset = ruleset;
+    }
 }

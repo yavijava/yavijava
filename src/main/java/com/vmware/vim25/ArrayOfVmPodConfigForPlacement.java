@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfVmPodConfigForPlacement {
-  public VmPodConfigForPlacement[] VmPodConfigForPlacement;
+    public VmPodConfigForPlacement[] VmPodConfigForPlacement;
 
-  public VmPodConfigForPlacement[] getVmPodConfigForPlacement() {
-    return this.VmPodConfigForPlacement;
-  }
+    public VmPodConfigForPlacement[] getVmPodConfigForPlacement() {
+        return this.VmPodConfigForPlacement;
+    }
 
-  public VmPodConfigForPlacement getVmPodConfigForPlacement(int i) {
-    return this.VmPodConfigForPlacement[i];
-  }
+    public VmPodConfigForPlacement getVmPodConfigForPlacement(int i) {
+        return this.VmPodConfigForPlacement[i];
+    }
 
-  public void setVmPodConfigForPlacement(VmPodConfigForPlacement[] VmPodConfigForPlacement) {
-    this.VmPodConfigForPlacement=VmPodConfigForPlacement;
-  }
+    public void setVmPodConfigForPlacement(VmPodConfigForPlacement[] VmPodConfigForPlacement) {
+        this.VmPodConfigForPlacement = VmPodConfigForPlacement;
+    }
 }

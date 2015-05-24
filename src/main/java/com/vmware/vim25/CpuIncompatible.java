@@ -30,55 +30,55 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class CpuIncompatible extends VirtualHardwareCompatibilityIssue {
-  public int level;
-  public String registerName;
-  public String registerBits;
-  public String desiredBits;
-  public ManagedObjectReference host;
+    public int level;
+    public String registerName;
+    public String registerBits;
+    public String desiredBits;
+    public ManagedObjectReference host;
 
-  public int getLevel() {
-    return this.level;
-  }
+    public int getLevel() {
+        return this.level;
+    }
 
-  public String getRegisterName() {
-    return this.registerName;
-  }
+    public String getRegisterName() {
+        return this.registerName;
+    }
 
-  public String getRegisterBits() {
-    return this.registerBits;
-  }
+    public String getRegisterBits() {
+        return this.registerBits;
+    }
 
-  public String getDesiredBits() {
-    return this.desiredBits;
-  }
+    public String getDesiredBits() {
+        return this.desiredBits;
+    }
 
-  public ManagedObjectReference getHost() {
-    return this.host;
-  }
+    public ManagedObjectReference getHost() {
+        return this.host;
+    }
 
-  public void setLevel(int level) {
-    this.level=level;
-  }
+    public void setLevel(int level) {
+        this.level = level;
+    }
 
-  public void setRegisterName(String registerName) {
-    this.registerName=registerName;
-  }
+    public void setRegisterName(String registerName) {
+        this.registerName = registerName;
+    }
 
-  public void setRegisterBits(String registerBits) {
-    this.registerBits=registerBits;
-  }
+    public void setRegisterBits(String registerBits) {
+        this.registerBits = registerBits;
+    }
 
-  public void setDesiredBits(String desiredBits) {
-    this.desiredBits=desiredBits;
-  }
+    public void setDesiredBits(String desiredBits) {
+        this.desiredBits = desiredBits;
+    }
 
-  public void setHost(ManagedObjectReference host) {
-    this.host=host;
-  }
+    public void setHost(ManagedObjectReference host) {
+        this.host = host;
+    }
 }

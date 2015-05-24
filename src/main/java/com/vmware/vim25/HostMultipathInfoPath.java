@@ -30,82 +30,82 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostMultipathInfoPath extends DynamicData {
-  public String key;
-  public String name;
-  public String pathState;
-  public String state;
-  public Boolean isWorkingPath;
-  public String adapter;
-  public String lun;
-  public HostTargetTransport transport;
+    public String key;
+    public String name;
+    public String pathState;
+    public String state;
+    public Boolean isWorkingPath;
+    public String adapter;
+    public String lun;
+    public HostTargetTransport transport;
 
-  public String getKey() {
-    return this.key;
-  }
+    public String getKey() {
+        return this.key;
+    }
 
-  public String getName() {
-    return this.name;
-  }
+    public String getName() {
+        return this.name;
+    }
 
-  public String getPathState() {
-    return this.pathState;
-  }
+    public String getPathState() {
+        return this.pathState;
+    }
 
-  public String getState() {
-    return this.state;
-  }
+    public String getState() {
+        return this.state;
+    }
 
-  public Boolean getIsWorkingPath() {
-    return this.isWorkingPath;
-  }
+    public Boolean getIsWorkingPath() {
+        return this.isWorkingPath;
+    }
 
-  public String getAdapter() {
-    return this.adapter;
-  }
+    public String getAdapter() {
+        return this.adapter;
+    }
 
-  public String getLun() {
-    return this.lun;
-  }
+    public String getLun() {
+        return this.lun;
+    }
 
-  public HostTargetTransport getTransport() {
-    return this.transport;
-  }
+    public HostTargetTransport getTransport() {
+        return this.transport;
+    }
 
-  public void setKey(String key) {
-    this.key=key;
-  }
+    public void setKey(String key) {
+        this.key = key;
+    }
 
-  public void setName(String name) {
-    this.name=name;
-  }
+    public void setName(String name) {
+        this.name = name;
+    }
 
-  public void setPathState(String pathState) {
-    this.pathState=pathState;
-  }
+    public void setPathState(String pathState) {
+        this.pathState = pathState;
+    }
 
-  public void setState(String state) {
-    this.state=state;
-  }
+    public void setState(String state) {
+        this.state = state;
+    }
 
-  public void setIsWorkingPath(Boolean isWorkingPath) {
-    this.isWorkingPath=isWorkingPath;
-  }
+    public void setIsWorkingPath(Boolean isWorkingPath) {
+        this.isWorkingPath = isWorkingPath;
+    }
 
-  public void setAdapter(String adapter) {
-    this.adapter=adapter;
-  }
+    public void setAdapter(String adapter) {
+        this.adapter = adapter;
+    }
 
-  public void setLun(String lun) {
-    this.lun=lun;
-  }
+    public void setLun(String lun) {
+        this.lun = lun;
+    }
 
-  public void setTransport(HostTargetTransport transport) {
-    this.transport=transport;
-  }
+    public void setTransport(HostTargetTransport transport) {
+        this.transport = transport;
+    }
 }

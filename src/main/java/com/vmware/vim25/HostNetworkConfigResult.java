@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostNetworkConfigResult extends DynamicData {
-  public String[] vnicDevice;
-  public String[] consoleVnicDevice;
+    public String[] vnicDevice;
+    public String[] consoleVnicDevice;
 
-  public String[] getVnicDevice() {
-    return this.vnicDevice;
-  }
+    public String[] getVnicDevice() {
+        return this.vnicDevice;
+    }
 
-  public String[] getConsoleVnicDevice() {
-    return this.consoleVnicDevice;
-  }
+    public String[] getConsoleVnicDevice() {
+        return this.consoleVnicDevice;
+    }
 
-  public void setVnicDevice(String[] vnicDevice) {
-    this.vnicDevice=vnicDevice;
-  }
+    public void setVnicDevice(String[] vnicDevice) {
+        this.vnicDevice = vnicDevice;
+    }
 
-  public void setConsoleVnicDevice(String[] consoleVnicDevice) {
-    this.consoleVnicDevice=consoleVnicDevice;
-  }
+    public void setConsoleVnicDevice(String[] consoleVnicDevice) {
+        this.consoleVnicDevice = consoleVnicDevice;
+    }
 }

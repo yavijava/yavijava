@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class InvalidDatastorePath extends InvalidDatastore {
-  public String datastorePath;
+    public String datastorePath;
 
-  public String getDatastorePath() {
-    return this.datastorePath;
-  }
+    public String getDatastorePath() {
+        return this.datastorePath;
+    }
 
-  public void setDatastorePath(String datastorePath) {
-    this.datastorePath=datastorePath;
-  }
+    public void setDatastorePath(String datastorePath) {
+        this.datastorePath = datastorePath;
+    }
 }

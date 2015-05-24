@@ -30,26 +30,26 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public enum VsanHostNodeState {
-  error ("error"),
-  disabled ("disabled"),
-  agent ("agent"),
-  master ("master"),
-  backup ("backup"),
-  starting ("starting"),
-  stopping ("stopping"),
-  enteringMaintenanceMode ("enteringMaintenanceMode"),
-  exitingMaintenanceMode ("exitingMaintenanceMode"),
-  decommissioning ("decommissioning");
+    error("error"),
+    disabled("disabled"),
+    agent("agent"),
+    master("master"),
+    backup("backup"),
+    starting("starting"),
+    stopping("stopping"),
+    enteringMaintenanceMode("enteringMaintenanceMode"),
+    exitingMaintenanceMode("exitingMaintenanceMode"),
+    decommissioning("decommissioning");
 
-  @SuppressWarnings("unused")
-  private final String val;
-  private VsanHostNodeState(String val)
-  {
-    this.val = val;
-  }
+    @SuppressWarnings("unused")
+    private final String val;
+
+    private VsanHostNodeState(String val) {
+        this.val = val;
+    }
 }

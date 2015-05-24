@@ -30,17 +30,17 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public enum RecommendationType {
-  V1 ("V1");
+    V1("V1");
 
-  @SuppressWarnings("unused")
-  private final String val;
-  private RecommendationType(String val)
-  {
-    this.val = val;
-  }
+    @SuppressWarnings("unused")
+    private final String val;
+
+    private RecommendationType(String val) {
+        this.val = val;
+    }
 }

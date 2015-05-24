@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class DvsTrafficFilterConfig extends DvsFilterConfig {
-  public DvsTrafficRuleset trafficRuleset;
+    public DvsTrafficRuleset trafficRuleset;
 
-  public DvsTrafficRuleset getTrafficRuleset() {
-    return this.trafficRuleset;
-  }
+    public DvsTrafficRuleset getTrafficRuleset() {
+        return this.trafficRuleset;
+    }
 
-  public void setTrafficRuleset(DvsTrafficRuleset trafficRuleset) {
-    this.trafficRuleset=trafficRuleset;
-  }
+    public void setTrafficRuleset(DvsTrafficRuleset trafficRuleset) {
+        this.trafficRuleset = trafficRuleset;
+    }
 }

@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VirtualDiskPartitionedRawDiskVer2BackingInfo extends VirtualDiskRawDiskVer2BackingInfo {
-  public int[] partition;
+    public int[] partition;
 
-  public int[] getPartition() {
-    return this.partition;
-  }
+    public int[] getPartition() {
+        return this.partition;
+    }
 
-  public void setPartition(int[] partition) {
-    this.partition=partition;
-  }
+    public void setPartition(int[] partition) {
+        this.partition = partition;
+    }
 }

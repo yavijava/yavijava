@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfExtensionFaultTypeInfo {
-  public ExtensionFaultTypeInfo[] ExtensionFaultTypeInfo;
+    public ExtensionFaultTypeInfo[] ExtensionFaultTypeInfo;
 
-  public ExtensionFaultTypeInfo[] getExtensionFaultTypeInfo() {
-    return this.ExtensionFaultTypeInfo;
-  }
+    public ExtensionFaultTypeInfo[] getExtensionFaultTypeInfo() {
+        return this.ExtensionFaultTypeInfo;
+    }
 
-  public ExtensionFaultTypeInfo getExtensionFaultTypeInfo(int i) {
-    return this.ExtensionFaultTypeInfo[i];
-  }
+    public ExtensionFaultTypeInfo getExtensionFaultTypeInfo(int i) {
+        return this.ExtensionFaultTypeInfo[i];
+    }
 
-  public void setExtensionFaultTypeInfo(ExtensionFaultTypeInfo[] ExtensionFaultTypeInfo) {
-    this.ExtensionFaultTypeInfo=ExtensionFaultTypeInfo;
-  }
+    public void setExtensionFaultTypeInfo(ExtensionFaultTypeInfo[] ExtensionFaultTypeInfo) {
+        this.ExtensionFaultTypeInfo = ExtensionFaultTypeInfo;
+    }
 }

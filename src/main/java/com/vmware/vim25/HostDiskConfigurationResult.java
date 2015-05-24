@@ -30,37 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostDiskConfigurationResult extends DynamicData {
-  public String devicePath;
-  public Boolean success;
-  public LocalizedMethodFault fault;
+    public String devicePath;
+    public Boolean success;
+    public LocalizedMethodFault fault;
 
-  public String getDevicePath() {
-    return this.devicePath;
-  }
+    public String getDevicePath() {
+        return this.devicePath;
+    }
 
-  public Boolean getSuccess() {
-    return this.success;
-  }
+    public Boolean getSuccess() {
+        return this.success;
+    }
 
-  public LocalizedMethodFault getFault() {
-    return this.fault;
-  }
+    public LocalizedMethodFault getFault() {
+        return this.fault;
+    }
 
-  public void setDevicePath(String devicePath) {
-    this.devicePath=devicePath;
-  }
+    public void setDevicePath(String devicePath) {
+        this.devicePath = devicePath;
+    }
 
-  public void setSuccess(Boolean success) {
-    this.success=success;
-  }
+    public void setSuccess(Boolean success) {
+        this.success = success;
+    }
 
-  public void setFault(LocalizedMethodFault fault) {
-    this.fault=fault;
-  }
+    public void setFault(LocalizedMethodFault fault) {
+        this.fault = fault;
+    }
 }

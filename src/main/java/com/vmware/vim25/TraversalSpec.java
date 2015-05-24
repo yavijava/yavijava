@@ -30,46 +30,46 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class TraversalSpec extends SelectionSpec {
-  public String type;
-  public String path;
-  public Boolean skip;
-  public SelectionSpec[] selectSet;
+    public String type;
+    public String path;
+    public Boolean skip;
+    public SelectionSpec[] selectSet;
 
-  public String getType() {
-    return this.type;
-  }
+    public String getType() {
+        return this.type;
+    }
 
-  public String getPath() {
-    return this.path;
-  }
+    public String getPath() {
+        return this.path;
+    }
 
-  public Boolean getSkip() {
-    return this.skip;
-  }
+    public Boolean getSkip() {
+        return this.skip;
+    }
 
-  public SelectionSpec[] getSelectSet() {
-    return this.selectSet;
-  }
+    public SelectionSpec[] getSelectSet() {
+        return this.selectSet;
+    }
 
-  public void setType(String type) {
-    this.type=type;
-  }
+    public void setType(String type) {
+        this.type = type;
+    }
 
-  public void setPath(String path) {
-    this.path=path;
-  }
+    public void setPath(String path) {
+        this.path = path;
+    }
 
-  public void setSkip(Boolean skip) {
-    this.skip=skip;
-  }
+    public void setSkip(Boolean skip) {
+        this.skip = skip;
+    }
 
-  public void setSelectSet(SelectionSpec[] selectSet) {
-    this.selectSet=selectSet;
-  }
+    public void setSelectSet(SelectionSpec[] selectSet) {
+        this.selectSet = selectSet;
+    }
 }

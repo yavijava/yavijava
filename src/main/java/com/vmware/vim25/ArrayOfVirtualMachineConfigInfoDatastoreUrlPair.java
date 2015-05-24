@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfVirtualMachineConfigInfoDatastoreUrlPair {
-  public VirtualMachineConfigInfoDatastoreUrlPair[] VirtualMachineConfigInfoDatastoreUrlPair;
+    public VirtualMachineConfigInfoDatastoreUrlPair[] VirtualMachineConfigInfoDatastoreUrlPair;
 
-  public VirtualMachineConfigInfoDatastoreUrlPair[] getVirtualMachineConfigInfoDatastoreUrlPair() {
-    return this.VirtualMachineConfigInfoDatastoreUrlPair;
-  }
+    public VirtualMachineConfigInfoDatastoreUrlPair[] getVirtualMachineConfigInfoDatastoreUrlPair() {
+        return this.VirtualMachineConfigInfoDatastoreUrlPair;
+    }
 
-  public VirtualMachineConfigInfoDatastoreUrlPair getVirtualMachineConfigInfoDatastoreUrlPair(int i) {
-    return this.VirtualMachineConfigInfoDatastoreUrlPair[i];
-  }
+    public VirtualMachineConfigInfoDatastoreUrlPair getVirtualMachineConfigInfoDatastoreUrlPair(int i) {
+        return this.VirtualMachineConfigInfoDatastoreUrlPair[i];
+    }
 
-  public void setVirtualMachineConfigInfoDatastoreUrlPair(VirtualMachineConfigInfoDatastoreUrlPair[] VirtualMachineConfigInfoDatastoreUrlPair) {
-    this.VirtualMachineConfigInfoDatastoreUrlPair=VirtualMachineConfigInfoDatastoreUrlPair;
-  }
+    public void setVirtualMachineConfigInfoDatastoreUrlPair(VirtualMachineConfigInfoDatastoreUrlPair[] VirtualMachineConfigInfoDatastoreUrlPair) {
+        this.VirtualMachineConfigInfoDatastoreUrlPair = VirtualMachineConfigInfoDatastoreUrlPair;
+    }
 }

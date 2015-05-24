@@ -30,46 +30,46 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VirtualDiskRawDiskMappingVer1BackingOption extends VirtualDeviceDeviceBackingOption {
-  public ChoiceOption descriptorFileNameExtensions;
-  public ChoiceOption compatibilityMode;
-  public ChoiceOption diskMode;
-  public boolean uuid;
+    public ChoiceOption descriptorFileNameExtensions;
+    public ChoiceOption compatibilityMode;
+    public ChoiceOption diskMode;
+    public boolean uuid;
 
-  public ChoiceOption getDescriptorFileNameExtensions() {
-    return this.descriptorFileNameExtensions;
-  }
+    public ChoiceOption getDescriptorFileNameExtensions() {
+        return this.descriptorFileNameExtensions;
+    }
 
-  public ChoiceOption getCompatibilityMode() {
-    return this.compatibilityMode;
-  }
+    public ChoiceOption getCompatibilityMode() {
+        return this.compatibilityMode;
+    }
 
-  public ChoiceOption getDiskMode() {
-    return this.diskMode;
-  }
+    public ChoiceOption getDiskMode() {
+        return this.diskMode;
+    }
 
-  public boolean isUuid() {
-    return this.uuid;
-  }
+    public boolean isUuid() {
+        return this.uuid;
+    }
 
-  public void setDescriptorFileNameExtensions(ChoiceOption descriptorFileNameExtensions) {
-    this.descriptorFileNameExtensions=descriptorFileNameExtensions;
-  }
+    public void setDescriptorFileNameExtensions(ChoiceOption descriptorFileNameExtensions) {
+        this.descriptorFileNameExtensions = descriptorFileNameExtensions;
+    }
 
-  public void setCompatibilityMode(ChoiceOption compatibilityMode) {
-    this.compatibilityMode=compatibilityMode;
-  }
+    public void setCompatibilityMode(ChoiceOption compatibilityMode) {
+        this.compatibilityMode = compatibilityMode;
+    }
 
-  public void setDiskMode(ChoiceOption diskMode) {
-    this.diskMode=diskMode;
-  }
+    public void setDiskMode(ChoiceOption diskMode) {
+        this.diskMode = diskMode;
+    }
 
-  public void setUuid(boolean uuid) {
-    this.uuid=uuid;
-  }
+    public void setUuid(boolean uuid) {
+        this.uuid = uuid;
+    }
 }

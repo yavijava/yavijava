@@ -166,7 +166,7 @@ public abstract class XmlGen {
                 String fName = f.getName();
 
                 Object value = null;
-                if (! Modifier.isTransient(f.getModifiers())) {
+                if (!Modifier.isTransient(f.getModifiers())) {
                     try {
                         value = f.get(obj);
                     }

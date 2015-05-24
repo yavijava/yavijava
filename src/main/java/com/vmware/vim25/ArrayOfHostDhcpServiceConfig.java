@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfHostDhcpServiceConfig {
-  public HostDhcpServiceConfig[] HostDhcpServiceConfig;
+    public HostDhcpServiceConfig[] HostDhcpServiceConfig;
 
-  public HostDhcpServiceConfig[] getHostDhcpServiceConfig() {
-    return this.HostDhcpServiceConfig;
-  }
+    public HostDhcpServiceConfig[] getHostDhcpServiceConfig() {
+        return this.HostDhcpServiceConfig;
+    }
 
-  public HostDhcpServiceConfig getHostDhcpServiceConfig(int i) {
-    return this.HostDhcpServiceConfig[i];
-  }
+    public HostDhcpServiceConfig getHostDhcpServiceConfig(int i) {
+        return this.HostDhcpServiceConfig[i];
+    }
 
-  public void setHostDhcpServiceConfig(HostDhcpServiceConfig[] HostDhcpServiceConfig) {
-    this.HostDhcpServiceConfig=HostDhcpServiceConfig;
-  }
+    public void setHostDhcpServiceConfig(HostDhcpServiceConfig[] HostDhcpServiceConfig) {
+        this.HostDhcpServiceConfig = HostDhcpServiceConfig;
+    }
 }

@@ -30,37 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VmMigratedEvent extends VmEvent {
-  public HostEventArgument sourceHost;
-  public DatacenterEventArgument sourceDatacenter;
-  public DatastoreEventArgument sourceDatastore;
+    public HostEventArgument sourceHost;
+    public DatacenterEventArgument sourceDatacenter;
+    public DatastoreEventArgument sourceDatastore;
 
-  public HostEventArgument getSourceHost() {
-    return this.sourceHost;
-  }
+    public HostEventArgument getSourceHost() {
+        return this.sourceHost;
+    }
 
-  public DatacenterEventArgument getSourceDatacenter() {
-    return this.sourceDatacenter;
-  }
+    public DatacenterEventArgument getSourceDatacenter() {
+        return this.sourceDatacenter;
+    }
 
-  public DatastoreEventArgument getSourceDatastore() {
-    return this.sourceDatastore;
-  }
+    public DatastoreEventArgument getSourceDatastore() {
+        return this.sourceDatastore;
+    }
 
-  public void setSourceHost(HostEventArgument sourceHost) {
-    this.sourceHost=sourceHost;
-  }
+    public void setSourceHost(HostEventArgument sourceHost) {
+        this.sourceHost = sourceHost;
+    }
 
-  public void setSourceDatacenter(DatacenterEventArgument sourceDatacenter) {
-    this.sourceDatacenter=sourceDatacenter;
-  }
+    public void setSourceDatacenter(DatacenterEventArgument sourceDatacenter) {
+        this.sourceDatacenter = sourceDatacenter;
+    }
 
-  public void setSourceDatastore(DatastoreEventArgument sourceDatastore) {
-    this.sourceDatastore=sourceDatastore;
-  }
+    public void setSourceDatastore(DatastoreEventArgument sourceDatastore) {
+        this.sourceDatastore = sourceDatastore;
+    }
 }

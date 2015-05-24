@@ -28,40 +28,41 @@ POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
 
 package com.vmware.vim25;
+
 import java.util.Calendar;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class AnswerFile extends DynamicData {
-  public ProfileDeferredPolicyOptionParameter[] userInput;
-  public Calendar createdTime;
-  public Calendar modifiedTime;
+    public ProfileDeferredPolicyOptionParameter[] userInput;
+    public Calendar createdTime;
+    public Calendar modifiedTime;
 
-  public ProfileDeferredPolicyOptionParameter[] getUserInput() {
-    return this.userInput;
-  }
+    public ProfileDeferredPolicyOptionParameter[] getUserInput() {
+        return this.userInput;
+    }
 
-  public Calendar getCreatedTime() {
-    return this.createdTime;
-  }
+    public Calendar getCreatedTime() {
+        return this.createdTime;
+    }
 
-  public Calendar getModifiedTime() {
-    return this.modifiedTime;
-  }
+    public Calendar getModifiedTime() {
+        return this.modifiedTime;
+    }
 
-  public void setUserInput(ProfileDeferredPolicyOptionParameter[] userInput) {
-    this.userInput=userInput;
-  }
+    public void setUserInput(ProfileDeferredPolicyOptionParameter[] userInput) {
+        this.userInput = userInput;
+    }
 
-  public void setCreatedTime(Calendar createdTime) {
-    this.createdTime=createdTime;
-  }
+    public void setCreatedTime(Calendar createdTime) {
+        this.createdTime = createdTime;
+    }
 
-  public void setModifiedTime(Calendar modifiedTime) {
-    this.modifiedTime=modifiedTime;
-  }
+    public void setModifiedTime(Calendar modifiedTime) {
+        this.modifiedTime = modifiedTime;
+    }
 }

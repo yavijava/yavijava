@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfServiceManagerServiceInfo {
-  public ServiceManagerServiceInfo[] ServiceManagerServiceInfo;
+    public ServiceManagerServiceInfo[] ServiceManagerServiceInfo;
 
-  public ServiceManagerServiceInfo[] getServiceManagerServiceInfo() {
-    return this.ServiceManagerServiceInfo;
-  }
+    public ServiceManagerServiceInfo[] getServiceManagerServiceInfo() {
+        return this.ServiceManagerServiceInfo;
+    }
 
-  public ServiceManagerServiceInfo getServiceManagerServiceInfo(int i) {
-    return this.ServiceManagerServiceInfo[i];
-  }
+    public ServiceManagerServiceInfo getServiceManagerServiceInfo(int i) {
+        return this.ServiceManagerServiceInfo[i];
+    }
 
-  public void setServiceManagerServiceInfo(ServiceManagerServiceInfo[] ServiceManagerServiceInfo) {
-    this.ServiceManagerServiceInfo=ServiceManagerServiceInfo;
-  }
+    public void setServiceManagerServiceInfo(ServiceManagerServiceInfo[] ServiceManagerServiceInfo) {
+        this.ServiceManagerServiceInfo = ServiceManagerServiceInfo;
+    }
 }

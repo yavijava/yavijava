@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfMethodFault {
-  public MethodFault[] MethodFault;
+    public MethodFault[] MethodFault;
 
-  public MethodFault[] getMethodFault() {
-    return this.MethodFault;
-  }
+    public MethodFault[] getMethodFault() {
+        return this.MethodFault;
+    }
 
-  public MethodFault getMethodFault(int i) {
-    return this.MethodFault[i];
-  }
+    public MethodFault getMethodFault(int i) {
+        return this.MethodFault[i];
+    }
 
-  public void setMethodFault(MethodFault[] MethodFault) {
-    this.MethodFault=MethodFault;
-  }
+    public void setMethodFault(MethodFault[] MethodFault) {
+        this.MethodFault = MethodFault;
+    }
 }

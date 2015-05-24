@@ -30,73 +30,73 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class OvfFileItem extends DynamicData {
-  public String deviceId;
-  public String path;
-  public String compressionMethod;
-  public Long chunkSize;
-  public Long size;
-  public int cimType;
-  public boolean create;
+    public String deviceId;
+    public String path;
+    public String compressionMethod;
+    public Long chunkSize;
+    public Long size;
+    public int cimType;
+    public boolean create;
 
-  public String getDeviceId() {
-    return this.deviceId;
-  }
+    public String getDeviceId() {
+        return this.deviceId;
+    }
 
-  public String getPath() {
-    return this.path;
-  }
+    public String getPath() {
+        return this.path;
+    }
 
-  public String getCompressionMethod() {
-    return this.compressionMethod;
-  }
+    public String getCompressionMethod() {
+        return this.compressionMethod;
+    }
 
-  public Long getChunkSize() {
-    return this.chunkSize;
-  }
+    public Long getChunkSize() {
+        return this.chunkSize;
+    }
 
-  public Long getSize() {
-    return this.size;
-  }
+    public Long getSize() {
+        return this.size;
+    }
 
-  public int getCimType() {
-    return this.cimType;
-  }
+    public int getCimType() {
+        return this.cimType;
+    }
 
-  public boolean isCreate() {
-    return this.create;
-  }
+    public boolean isCreate() {
+        return this.create;
+    }
 
-  public void setDeviceId(String deviceId) {
-    this.deviceId=deviceId;
-  }
+    public void setDeviceId(String deviceId) {
+        this.deviceId = deviceId;
+    }
 
-  public void setPath(String path) {
-    this.path=path;
-  }
+    public void setPath(String path) {
+        this.path = path;
+    }
 
-  public void setCompressionMethod(String compressionMethod) {
-    this.compressionMethod=compressionMethod;
-  }
+    public void setCompressionMethod(String compressionMethod) {
+        this.compressionMethod = compressionMethod;
+    }
 
-  public void setChunkSize(Long chunkSize) {
-    this.chunkSize=chunkSize;
-  }
+    public void setChunkSize(Long chunkSize) {
+        this.chunkSize = chunkSize;
+    }
 
-  public void setSize(Long size) {
-    this.size=size;
-  }
+    public void setSize(Long size) {
+        this.size = size;
+    }
 
-  public void setCimType(int cimType) {
-    this.cimType=cimType;
-  }
+    public void setCimType(int cimType) {
+        this.cimType = cimType;
+    }
 
-  public void setCreate(boolean create) {
-    this.create=create;
-  }
+    public void setCreate(boolean create) {
+        this.create = create;
+    }
 }

@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfFirewallProfileRulesetProfile {
-  public FirewallProfileRulesetProfile[] FirewallProfileRulesetProfile;
+    public FirewallProfileRulesetProfile[] FirewallProfileRulesetProfile;
 
-  public FirewallProfileRulesetProfile[] getFirewallProfileRulesetProfile() {
-    return this.FirewallProfileRulesetProfile;
-  }
+    public FirewallProfileRulesetProfile[] getFirewallProfileRulesetProfile() {
+        return this.FirewallProfileRulesetProfile;
+    }
 
-  public FirewallProfileRulesetProfile getFirewallProfileRulesetProfile(int i) {
-    return this.FirewallProfileRulesetProfile[i];
-  }
+    public FirewallProfileRulesetProfile getFirewallProfileRulesetProfile(int i) {
+        return this.FirewallProfileRulesetProfile[i];
+    }
 
-  public void setFirewallProfileRulesetProfile(FirewallProfileRulesetProfile[] FirewallProfileRulesetProfile) {
-    this.FirewallProfileRulesetProfile=FirewallProfileRulesetProfile;
-  }
+    public void setFirewallProfileRulesetProfile(FirewallProfileRulesetProfile[] FirewallProfileRulesetProfile) {
+        this.FirewallProfileRulesetProfile = FirewallProfileRulesetProfile;
+    }
 }

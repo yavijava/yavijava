@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfKernelModuleInfo {
-  public KernelModuleInfo[] KernelModuleInfo;
+    public KernelModuleInfo[] KernelModuleInfo;
 
-  public KernelModuleInfo[] getKernelModuleInfo() {
-    return this.KernelModuleInfo;
-  }
+    public KernelModuleInfo[] getKernelModuleInfo() {
+        return this.KernelModuleInfo;
+    }
 
-  public KernelModuleInfo getKernelModuleInfo(int i) {
-    return this.KernelModuleInfo[i];
-  }
+    public KernelModuleInfo getKernelModuleInfo(int i) {
+        return this.KernelModuleInfo[i];
+    }
 
-  public void setKernelModuleInfo(KernelModuleInfo[] KernelModuleInfo) {
-    this.KernelModuleInfo=KernelModuleInfo;
-  }
+    public void setKernelModuleInfo(KernelModuleInfo[] KernelModuleInfo) {
+        this.KernelModuleInfo = KernelModuleInfo;
+    }
 }

@@ -30,37 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class EventDescription extends DynamicData {
-  public ElementDescription[] category;
-  public EventDescriptionEventDetail[] eventInfo;
-  public EnumDescription[] enumeratedTypes;
+    public ElementDescription[] category;
+    public EventDescriptionEventDetail[] eventInfo;
+    public EnumDescription[] enumeratedTypes;
 
-  public ElementDescription[] getCategory() {
-    return this.category;
-  }
+    public ElementDescription[] getCategory() {
+        return this.category;
+    }
 
-  public EventDescriptionEventDetail[] getEventInfo() {
-    return this.eventInfo;
-  }
+    public EventDescriptionEventDetail[] getEventInfo() {
+        return this.eventInfo;
+    }
 
-  public EnumDescription[] getEnumeratedTypes() {
-    return this.enumeratedTypes;
-  }
+    public EnumDescription[] getEnumeratedTypes() {
+        return this.enumeratedTypes;
+    }
 
-  public void setCategory(ElementDescription[] category) {
-    this.category=category;
-  }
+    public void setCategory(ElementDescription[] category) {
+        this.category = category;
+    }
 
-  public void setEventInfo(EventDescriptionEventDetail[] eventInfo) {
-    this.eventInfo=eventInfo;
-  }
+    public void setEventInfo(EventDescriptionEventDetail[] eventInfo) {
+        this.eventInfo = eventInfo;
+    }
 
-  public void setEnumeratedTypes(EnumDescription[] enumeratedTypes) {
-    this.enumeratedTypes=enumeratedTypes;
-  }
+    public void setEnumeratedTypes(EnumDescription[] enumeratedTypes) {
+        this.enumeratedTypes = enumeratedTypes;
+    }
 }

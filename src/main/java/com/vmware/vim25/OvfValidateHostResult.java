@@ -30,64 +30,64 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class OvfValidateHostResult extends DynamicData {
-  public Long downloadSize;
-  public Long flatDeploymentSize;
-  public Long sparseDeploymentSize;
-  public LocalizedMethodFault[] error;
-  public LocalizedMethodFault[] warning;
-  public String[] supportedDiskProvisioning;
+    public Long downloadSize;
+    public Long flatDeploymentSize;
+    public Long sparseDeploymentSize;
+    public LocalizedMethodFault[] error;
+    public LocalizedMethodFault[] warning;
+    public String[] supportedDiskProvisioning;
 
-  public Long getDownloadSize() {
-    return this.downloadSize;
-  }
+    public Long getDownloadSize() {
+        return this.downloadSize;
+    }
 
-  public Long getFlatDeploymentSize() {
-    return this.flatDeploymentSize;
-  }
+    public Long getFlatDeploymentSize() {
+        return this.flatDeploymentSize;
+    }
 
-  public Long getSparseDeploymentSize() {
-    return this.sparseDeploymentSize;
-  }
+    public Long getSparseDeploymentSize() {
+        return this.sparseDeploymentSize;
+    }
 
-  public LocalizedMethodFault[] getError() {
-    return this.error;
-  }
+    public LocalizedMethodFault[] getError() {
+        return this.error;
+    }
 
-  public LocalizedMethodFault[] getWarning() {
-    return this.warning;
-  }
+    public LocalizedMethodFault[] getWarning() {
+        return this.warning;
+    }
 
-  public String[] getSupportedDiskProvisioning() {
-    return this.supportedDiskProvisioning;
-  }
+    public String[] getSupportedDiskProvisioning() {
+        return this.supportedDiskProvisioning;
+    }
 
-  public void setDownloadSize(Long downloadSize) {
-    this.downloadSize=downloadSize;
-  }
+    public void setDownloadSize(Long downloadSize) {
+        this.downloadSize = downloadSize;
+    }
 
-  public void setFlatDeploymentSize(Long flatDeploymentSize) {
-    this.flatDeploymentSize=flatDeploymentSize;
-  }
+    public void setFlatDeploymentSize(Long flatDeploymentSize) {
+        this.flatDeploymentSize = flatDeploymentSize;
+    }
 
-  public void setSparseDeploymentSize(Long sparseDeploymentSize) {
-    this.sparseDeploymentSize=sparseDeploymentSize;
-  }
+    public void setSparseDeploymentSize(Long sparseDeploymentSize) {
+        this.sparseDeploymentSize = sparseDeploymentSize;
+    }
 
-  public void setError(LocalizedMethodFault[] error) {
-    this.error=error;
-  }
+    public void setError(LocalizedMethodFault[] error) {
+        this.error = error;
+    }
 
-  public void setWarning(LocalizedMethodFault[] warning) {
-    this.warning=warning;
-  }
+    public void setWarning(LocalizedMethodFault[] warning) {
+        this.warning = warning;
+    }
 
-  public void setSupportedDiskProvisioning(String[] supportedDiskProvisioning) {
-    this.supportedDiskProvisioning=supportedDiskProvisioning;
-  }
+    public void setSupportedDiskProvisioning(String[] supportedDiskProvisioning) {
+        this.supportedDiskProvisioning = supportedDiskProvisioning;
+    }
 }

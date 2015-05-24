@@ -28,130 +28,131 @@ POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
 
 package com.vmware.vim25;
+
 import java.util.Calendar;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class Event extends DynamicData {
-  public int key;
-  public int chainId;
-  public Calendar createdTime;
-  public String userName;
-  public DatacenterEventArgument datacenter;
-  public ComputeResourceEventArgument computeResource;
-  public HostEventArgument host;
-  public VmEventArgument vm;
-  public DatastoreEventArgument ds;
-  public NetworkEventArgument net;
-  public DvsEventArgument dvs;
-  public String fullFormattedMessage;
-  public String changeTag;
+    public int key;
+    public int chainId;
+    public Calendar createdTime;
+    public String userName;
+    public DatacenterEventArgument datacenter;
+    public ComputeResourceEventArgument computeResource;
+    public HostEventArgument host;
+    public VmEventArgument vm;
+    public DatastoreEventArgument ds;
+    public NetworkEventArgument net;
+    public DvsEventArgument dvs;
+    public String fullFormattedMessage;
+    public String changeTag;
 
-  public int getKey() {
-    return this.key;
-  }
+    public int getKey() {
+        return this.key;
+    }
 
-  public int getChainId() {
-    return this.chainId;
-  }
+    public int getChainId() {
+        return this.chainId;
+    }
 
-  public Calendar getCreatedTime() {
-    return this.createdTime;
-  }
+    public Calendar getCreatedTime() {
+        return this.createdTime;
+    }
 
-  public String getUserName() {
-    return this.userName;
-  }
+    public String getUserName() {
+        return this.userName;
+    }
 
-  public DatacenterEventArgument getDatacenter() {
-    return this.datacenter;
-  }
+    public DatacenterEventArgument getDatacenter() {
+        return this.datacenter;
+    }
 
-  public ComputeResourceEventArgument getComputeResource() {
-    return this.computeResource;
-  }
+    public ComputeResourceEventArgument getComputeResource() {
+        return this.computeResource;
+    }
 
-  public HostEventArgument getHost() {
-    return this.host;
-  }
+    public HostEventArgument getHost() {
+        return this.host;
+    }
 
-  public VmEventArgument getVm() {
-    return this.vm;
-  }
+    public VmEventArgument getVm() {
+        return this.vm;
+    }
 
-  public DatastoreEventArgument getDs() {
-    return this.ds;
-  }
+    public DatastoreEventArgument getDs() {
+        return this.ds;
+    }
 
-  public NetworkEventArgument getNet() {
-    return this.net;
-  }
+    public NetworkEventArgument getNet() {
+        return this.net;
+    }
 
-  public DvsEventArgument getDvs() {
-    return this.dvs;
-  }
+    public DvsEventArgument getDvs() {
+        return this.dvs;
+    }
 
-  public String getFullFormattedMessage() {
-    return this.fullFormattedMessage;
-  }
+    public String getFullFormattedMessage() {
+        return this.fullFormattedMessage;
+    }
 
-  public String getChangeTag() {
-    return this.changeTag;
-  }
+    public String getChangeTag() {
+        return this.changeTag;
+    }
 
-  public void setKey(int key) {
-    this.key=key;
-  }
+    public void setKey(int key) {
+        this.key = key;
+    }
 
-  public void setChainId(int chainId) {
-    this.chainId=chainId;
-  }
+    public void setChainId(int chainId) {
+        this.chainId = chainId;
+    }
 
-  public void setCreatedTime(Calendar createdTime) {
-    this.createdTime=createdTime;
-  }
+    public void setCreatedTime(Calendar createdTime) {
+        this.createdTime = createdTime;
+    }
 
-  public void setUserName(String userName) {
-    this.userName=userName;
-  }
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
 
-  public void setDatacenter(DatacenterEventArgument datacenter) {
-    this.datacenter=datacenter;
-  }
+    public void setDatacenter(DatacenterEventArgument datacenter) {
+        this.datacenter = datacenter;
+    }
 
-  public void setComputeResource(ComputeResourceEventArgument computeResource) {
-    this.computeResource=computeResource;
-  }
+    public void setComputeResource(ComputeResourceEventArgument computeResource) {
+        this.computeResource = computeResource;
+    }
 
-  public void setHost(HostEventArgument host) {
-    this.host=host;
-  }
+    public void setHost(HostEventArgument host) {
+        this.host = host;
+    }
 
-  public void setVm(VmEventArgument vm) {
-    this.vm=vm;
-  }
+    public void setVm(VmEventArgument vm) {
+        this.vm = vm;
+    }
 
-  public void setDs(DatastoreEventArgument ds) {
-    this.ds=ds;
-  }
+    public void setDs(DatastoreEventArgument ds) {
+        this.ds = ds;
+    }
 
-  public void setNet(NetworkEventArgument net) {
-    this.net=net;
-  }
+    public void setNet(NetworkEventArgument net) {
+        this.net = net;
+    }
 
-  public void setDvs(DvsEventArgument dvs) {
-    this.dvs=dvs;
-  }
+    public void setDvs(DvsEventArgument dvs) {
+        this.dvs = dvs;
+    }
 
-  public void setFullFormattedMessage(String fullFormattedMessage) {
-    this.fullFormattedMessage=fullFormattedMessage;
-  }
+    public void setFullFormattedMessage(String fullFormattedMessage) {
+        this.fullFormattedMessage = fullFormattedMessage;
+    }
 
-  public void setChangeTag(String changeTag) {
-    this.changeTag=changeTag;
-  }
+    public void setChangeTag(String changeTag) {
+        this.changeTag = changeTag;
+    }
 }

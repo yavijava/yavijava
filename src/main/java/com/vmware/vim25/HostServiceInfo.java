@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostServiceInfo extends DynamicData {
-  public HostService[] service;
+    public HostService[] service;
 
-  public HostService[] getService() {
-    return this.service;
-  }
+    public HostService[] getService() {
+        return this.service;
+    }
 
-  public void setService(HostService[] service) {
-    this.service=service;
-  }
+    public void setService(HostService[] service) {
+        this.service = service;
+    }
 }

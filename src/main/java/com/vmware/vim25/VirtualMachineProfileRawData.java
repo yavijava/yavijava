@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VirtualMachineProfileRawData extends DynamicData {
-  public String extensionKey;
-  public String objectData;
+    public String extensionKey;
+    public String objectData;
 
-  public String getExtensionKey() {
-    return this.extensionKey;
-  }
+    public String getExtensionKey() {
+        return this.extensionKey;
+    }
 
-  public String getObjectData() {
-    return this.objectData;
-  }
+    public String getObjectData() {
+        return this.objectData;
+    }
 
-  public void setExtensionKey(String extensionKey) {
-    this.extensionKey=extensionKey;
-  }
+    public void setExtensionKey(String extensionKey) {
+        this.extensionKey = extensionKey;
+    }
 
-  public void setObjectData(String objectData) {
-    this.objectData=objectData;
-  }
+    public void setObjectData(String objectData) {
+        this.objectData = objectData;
+    }
 }

@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class DistributedVirtualSwitchKeyedOpaqueBlob extends DynamicData {
-  public String key;
-  public String opaqueData;
+    public String key;
+    public String opaqueData;
 
-  public String getKey() {
-    return this.key;
-  }
+    public String getKey() {
+        return this.key;
+    }
 
-  public String getOpaqueData() {
-    return this.opaqueData;
-  }
+    public String getOpaqueData() {
+        return this.opaqueData;
+    }
 
-  public void setKey(String key) {
-    this.key=key;
-  }
+    public void setKey(String key) {
+        this.key = key;
+    }
 
-  public void setOpaqueData(String opaqueData) {
-    this.opaqueData=opaqueData;
-  }
+    public void setOpaqueData(String opaqueData) {
+        this.opaqueData = opaqueData;
+    }
 }

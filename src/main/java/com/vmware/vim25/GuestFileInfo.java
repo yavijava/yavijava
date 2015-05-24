@@ -30,46 +30,46 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class GuestFileInfo extends DynamicData {
-  public String path;
-  public String type;
-  public long size;
-  public GuestFileAttributes attributes;
+    public String path;
+    public String type;
+    public long size;
+    public GuestFileAttributes attributes;
 
-  public String getPath() {
-    return this.path;
-  }
+    public String getPath() {
+        return this.path;
+    }
 
-  public String getType() {
-    return this.type;
-  }
+    public String getType() {
+        return this.type;
+    }
 
-  public long getSize() {
-    return this.size;
-  }
+    public long getSize() {
+        return this.size;
+    }
 
-  public GuestFileAttributes getAttributes() {
-    return this.attributes;
-  }
+    public GuestFileAttributes getAttributes() {
+        return this.attributes;
+    }
 
-  public void setPath(String path) {
-    this.path=path;
-  }
+    public void setPath(String path) {
+        this.path = path;
+    }
 
-  public void setType(String type) {
-    this.type=type;
-  }
+    public void setType(String type) {
+        this.type = type;
+    }
 
-  public void setSize(long size) {
-    this.size=size;
-  }
+    public void setSize(long size) {
+        this.size = size;
+    }
 
-  public void setAttributes(GuestFileAttributes attributes) {
-    this.attributes=attributes;
-  }
+    public void setAttributes(GuestFileAttributes attributes) {
+        this.attributes = attributes;
+    }
 }

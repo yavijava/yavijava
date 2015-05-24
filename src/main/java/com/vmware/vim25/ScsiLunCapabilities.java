@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class ScsiLunCapabilities extends DynamicData {
-  public boolean updateDisplayNameSupported;
+    public boolean updateDisplayNameSupported;
 
-  public boolean isUpdateDisplayNameSupported() {
-    return this.updateDisplayNameSupported;
-  }
+    public boolean isUpdateDisplayNameSupported() {
+        return this.updateDisplayNameSupported;
+    }
 
-  public void setUpdateDisplayNameSupported(boolean updateDisplayNameSupported) {
-    this.updateDisplayNameSupported=updateDisplayNameSupported;
-  }
+    public void setUpdateDisplayNameSupported(boolean updateDisplayNameSupported) {
+        this.updateDisplayNameSupported = updateDisplayNameSupported;
+    }
 }

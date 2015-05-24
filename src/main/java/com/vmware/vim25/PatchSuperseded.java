@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class PatchSuperseded extends PatchNotApplicable {
-  public String[] supersede;
+    public String[] supersede;
 
-  public String[] getSupersede() {
-    return this.supersede;
-  }
+    public String[] getSupersede() {
+        return this.supersede;
+    }
 
-  public void setSupersede(String[] supersede) {
-    this.supersede=supersede;
-  }
+    public void setSupersede(String[] supersede) {
+        this.supersede = supersede;
+    }
 }

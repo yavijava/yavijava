@@ -30,73 +30,73 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostVirtualNicSpec extends DynamicData {
-  public HostIpConfig ip;
-  public String mac;
-  public DistributedVirtualSwitchPortConnection distributedVirtualPort;
-  public String portgroup;
-  public Integer mtu;
-  public Boolean tsoEnabled;
-  public String netStackInstanceKey;
+    public HostIpConfig ip;
+    public String mac;
+    public DistributedVirtualSwitchPortConnection distributedVirtualPort;
+    public String portgroup;
+    public Integer mtu;
+    public Boolean tsoEnabled;
+    public String netStackInstanceKey;
 
-  public HostIpConfig getIp() {
-    return this.ip;
-  }
+    public HostIpConfig getIp() {
+        return this.ip;
+    }
 
-  public String getMac() {
-    return this.mac;
-  }
+    public String getMac() {
+        return this.mac;
+    }
 
-  public DistributedVirtualSwitchPortConnection getDistributedVirtualPort() {
-    return this.distributedVirtualPort;
-  }
+    public DistributedVirtualSwitchPortConnection getDistributedVirtualPort() {
+        return this.distributedVirtualPort;
+    }
 
-  public String getPortgroup() {
-    return this.portgroup;
-  }
+    public String getPortgroup() {
+        return this.portgroup;
+    }
 
-  public Integer getMtu() {
-    return this.mtu;
-  }
+    public Integer getMtu() {
+        return this.mtu;
+    }
 
-  public Boolean getTsoEnabled() {
-    return this.tsoEnabled;
-  }
+    public Boolean getTsoEnabled() {
+        return this.tsoEnabled;
+    }
 
-  public String getNetStackInstanceKey() {
-    return this.netStackInstanceKey;
-  }
+    public String getNetStackInstanceKey() {
+        return this.netStackInstanceKey;
+    }
 
-  public void setIp(HostIpConfig ip) {
-    this.ip=ip;
-  }
+    public void setIp(HostIpConfig ip) {
+        this.ip = ip;
+    }
 
-  public void setMac(String mac) {
-    this.mac=mac;
-  }
+    public void setMac(String mac) {
+        this.mac = mac;
+    }
 
-  public void setDistributedVirtualPort(DistributedVirtualSwitchPortConnection distributedVirtualPort) {
-    this.distributedVirtualPort=distributedVirtualPort;
-  }
+    public void setDistributedVirtualPort(DistributedVirtualSwitchPortConnection distributedVirtualPort) {
+        this.distributedVirtualPort = distributedVirtualPort;
+    }
 
-  public void setPortgroup(String portgroup) {
-    this.portgroup=portgroup;
-  }
+    public void setPortgroup(String portgroup) {
+        this.portgroup = portgroup;
+    }
 
-  public void setMtu(Integer mtu) {
-    this.mtu=mtu;
-  }
+    public void setMtu(Integer mtu) {
+        this.mtu = mtu;
+    }
 
-  public void setTsoEnabled(Boolean tsoEnabled) {
-    this.tsoEnabled=tsoEnabled;
-  }
+    public void setTsoEnabled(Boolean tsoEnabled) {
+        this.tsoEnabled = tsoEnabled;
+    }
 
-  public void setNetStackInstanceKey(String netStackInstanceKey) {
-    this.netStackInstanceKey=netStackInstanceKey;
-  }
+    public void setNetStackInstanceKey(String netStackInstanceKey) {
+        this.netStackInstanceKey = netStackInstanceKey;
+    }
 }

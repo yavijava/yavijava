@@ -30,29 +30,29 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 
 public class DynamicArray {
-  public String dynamicType;
-  public Object[] val;
+    public String dynamicType;
+    public Object[] val;
 
-  public String getDynamicType() {
-    return this.dynamicType;
-  }
+    public String getDynamicType() {
+        return this.dynamicType;
+    }
 
-  public Object[] getVal() {
-    return this.val;
-  }
+    public Object[] getVal() {
+        return this.val;
+    }
 
-  public void setDynamicType(String dynamicType) {
-    this.dynamicType=dynamicType;
-  }
+    public void setDynamicType(String dynamicType) {
+        this.dynamicType = dynamicType;
+    }
 
-  public void setVal(Object[] val) {
-    this.val=val;
-  }
+    public void setVal(Object[] val) {
+        this.val = val;
+    }
 }

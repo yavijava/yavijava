@@ -30,37 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class DistributedVirtualSwitchManagerImportResult extends DynamicData {
-  public ManagedObjectReference[] distributedVirtualSwitch;
-  public ManagedObjectReference[] distributedVirtualPortgroup;
-  public ImportOperationBulkFaultFaultOnImport[] importFault;
+    public ManagedObjectReference[] distributedVirtualSwitch;
+    public ManagedObjectReference[] distributedVirtualPortgroup;
+    public ImportOperationBulkFaultFaultOnImport[] importFault;
 
-  public ManagedObjectReference[] getDistributedVirtualSwitch() {
-    return this.distributedVirtualSwitch;
-  }
+    public ManagedObjectReference[] getDistributedVirtualSwitch() {
+        return this.distributedVirtualSwitch;
+    }
 
-  public ManagedObjectReference[] getDistributedVirtualPortgroup() {
-    return this.distributedVirtualPortgroup;
-  }
+    public ManagedObjectReference[] getDistributedVirtualPortgroup() {
+        return this.distributedVirtualPortgroup;
+    }
 
-  public ImportOperationBulkFaultFaultOnImport[] getImportFault() {
-    return this.importFault;
-  }
+    public ImportOperationBulkFaultFaultOnImport[] getImportFault() {
+        return this.importFault;
+    }
 
-  public void setDistributedVirtualSwitch(ManagedObjectReference[] distributedVirtualSwitch) {
-    this.distributedVirtualSwitch=distributedVirtualSwitch;
-  }
+    public void setDistributedVirtualSwitch(ManagedObjectReference[] distributedVirtualSwitch) {
+        this.distributedVirtualSwitch = distributedVirtualSwitch;
+    }
 
-  public void setDistributedVirtualPortgroup(ManagedObjectReference[] distributedVirtualPortgroup) {
-    this.distributedVirtualPortgroup=distributedVirtualPortgroup;
-  }
+    public void setDistributedVirtualPortgroup(ManagedObjectReference[] distributedVirtualPortgroup) {
+        this.distributedVirtualPortgroup = distributedVirtualPortgroup;
+    }
 
-  public void setImportFault(ImportOperationBulkFaultFaultOnImport[] importFault) {
-    this.importFault=importFault;
-  }
+    public void setImportFault(ImportOperationBulkFaultFaultOnImport[] importFault) {
+        this.importFault = importFault;
+    }
 }

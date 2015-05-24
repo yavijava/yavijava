@@ -30,39 +30,39 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public enum RecommendationReasonCode {
-  fairnessCpuAvg ("fairnessCpuAvg"),
-  fairnessMemAvg ("fairnessMemAvg"),
-  jointAffin ("jointAffin"),
-  antiAffin ("antiAffin"),
-  hostMaint ("hostMaint"),
-  enterStandby ("enterStandby"),
-  reservationCpu ("reservationCpu"),
-  reservationMem ("reservationMem"),
-  powerOnVm ("powerOnVm"),
-  powerSaving ("powerSaving"),
-  increaseCapacity ("increaseCapacity"),
-  checkResource ("checkResource"),
-  unreservedCapacity ("unreservedCapacity"),
-  vmHostHardAffinity ("vmHostHardAffinity"),
-  vmHostSoftAffinity ("vmHostSoftAffinity"),
-  balanceDatastoreSpaceUsage ("balanceDatastoreSpaceUsage"),
-  balanceDatastoreIOLoad ("balanceDatastoreIOLoad"),
-  datastoreMaint ("datastoreMaint"),
-  virtualDiskJointAffin ("virtualDiskJointAffin"),
-  virtualDiskAntiAffin ("virtualDiskAntiAffin"),
-  datastoreSpaceOutage ("datastoreSpaceOutage"),
-  storagePlacement ("storagePlacement"),
-  iolbDisabledInternal ("iolbDisabledInternal");
+    fairnessCpuAvg("fairnessCpuAvg"),
+    fairnessMemAvg("fairnessMemAvg"),
+    jointAffin("jointAffin"),
+    antiAffin("antiAffin"),
+    hostMaint("hostMaint"),
+    enterStandby("enterStandby"),
+    reservationCpu("reservationCpu"),
+    reservationMem("reservationMem"),
+    powerOnVm("powerOnVm"),
+    powerSaving("powerSaving"),
+    increaseCapacity("increaseCapacity"),
+    checkResource("checkResource"),
+    unreservedCapacity("unreservedCapacity"),
+    vmHostHardAffinity("vmHostHardAffinity"),
+    vmHostSoftAffinity("vmHostSoftAffinity"),
+    balanceDatastoreSpaceUsage("balanceDatastoreSpaceUsage"),
+    balanceDatastoreIOLoad("balanceDatastoreIOLoad"),
+    datastoreMaint("datastoreMaint"),
+    virtualDiskJointAffin("virtualDiskJointAffin"),
+    virtualDiskAntiAffin("virtualDiskAntiAffin"),
+    datastoreSpaceOutage("datastoreSpaceOutage"),
+    storagePlacement("storagePlacement"),
+    iolbDisabledInternal("iolbDisabledInternal");
 
-  @SuppressWarnings("unused")
-  private final String val;
-  private RecommendationReasonCode(String val)
-  {
-    this.val = val;
-  }
+    @SuppressWarnings("unused")
+    private final String val;
+
+    private RecommendationReasonCode(String val) {
+        this.val = val;
+    }
 }

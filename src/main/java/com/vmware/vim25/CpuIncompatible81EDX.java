@@ -30,64 +30,64 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class CpuIncompatible81EDX extends CpuIncompatible {
-  public boolean nx;
-  public boolean ffxsr;
-  public boolean rdtscp;
-  public boolean lm;
-  public boolean other;
-  public boolean otherOnly;
+    public boolean nx;
+    public boolean ffxsr;
+    public boolean rdtscp;
+    public boolean lm;
+    public boolean other;
+    public boolean otherOnly;
 
-  public boolean isNx() {
-    return this.nx;
-  }
+    public boolean isNx() {
+        return this.nx;
+    }
 
-  public boolean isFfxsr() {
-    return this.ffxsr;
-  }
+    public boolean isFfxsr() {
+        return this.ffxsr;
+    }
 
-  public boolean isRdtscp() {
-    return this.rdtscp;
-  }
+    public boolean isRdtscp() {
+        return this.rdtscp;
+    }
 
-  public boolean isLm() {
-    return this.lm;
-  }
+    public boolean isLm() {
+        return this.lm;
+    }
 
-  public boolean isOther() {
-    return this.other;
-  }
+    public boolean isOther() {
+        return this.other;
+    }
 
-  public boolean isOtherOnly() {
-    return this.otherOnly;
-  }
+    public boolean isOtherOnly() {
+        return this.otherOnly;
+    }
 
-  public void setNx(boolean nx) {
-    this.nx=nx;
-  }
+    public void setNx(boolean nx) {
+        this.nx = nx;
+    }
 
-  public void setFfxsr(boolean ffxsr) {
-    this.ffxsr=ffxsr;
-  }
+    public void setFfxsr(boolean ffxsr) {
+        this.ffxsr = ffxsr;
+    }
 
-  public void setRdtscp(boolean rdtscp) {
-    this.rdtscp=rdtscp;
-  }
+    public void setRdtscp(boolean rdtscp) {
+        this.rdtscp = rdtscp;
+    }
 
-  public void setLm(boolean lm) {
-    this.lm=lm;
-  }
+    public void setLm(boolean lm) {
+        this.lm = lm;
+    }
 
-  public void setOther(boolean other) {
-    this.other=other;
-  }
+    public void setOther(boolean other) {
+        this.other = other;
+    }
 
-  public void setOtherOnly(boolean otherOnly) {
-    this.otherOnly=otherOnly;
-  }
+    public void setOtherOnly(boolean otherOnly) {
+        this.otherOnly = otherOnly;
+    }
 }

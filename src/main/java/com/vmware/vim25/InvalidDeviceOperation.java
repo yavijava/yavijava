@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class InvalidDeviceOperation extends InvalidDeviceSpec {
-  public VirtualDeviceConfigSpecOperation badOp;
-  public VirtualDeviceConfigSpecFileOperation badFileOp;
+    public VirtualDeviceConfigSpecOperation badOp;
+    public VirtualDeviceConfigSpecFileOperation badFileOp;
 
-  public VirtualDeviceConfigSpecOperation getBadOp() {
-    return this.badOp;
-  }
+    public VirtualDeviceConfigSpecOperation getBadOp() {
+        return this.badOp;
+    }
 
-  public VirtualDeviceConfigSpecFileOperation getBadFileOp() {
-    return this.badFileOp;
-  }
+    public VirtualDeviceConfigSpecFileOperation getBadFileOp() {
+        return this.badFileOp;
+    }
 
-  public void setBadOp(VirtualDeviceConfigSpecOperation badOp) {
-    this.badOp=badOp;
-  }
+    public void setBadOp(VirtualDeviceConfigSpecOperation badOp) {
+        this.badOp = badOp;
+    }
 
-  public void setBadFileOp(VirtualDeviceConfigSpecFileOperation badFileOp) {
-    this.badFileOp=badFileOp;
-  }
+    public void setBadFileOp(VirtualDeviceConfigSpecFileOperation badFileOp) {
+        this.badFileOp = badFileOp;
+    }
 }

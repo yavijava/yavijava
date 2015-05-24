@@ -30,46 +30,46 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class ClusterDasAamNodeState extends DynamicData {
-  public ManagedObjectReference host;
-  public String name;
-  public String configState;
-  public String runtimeState;
+    public ManagedObjectReference host;
+    public String name;
+    public String configState;
+    public String runtimeState;
 
-  public ManagedObjectReference getHost() {
-    return this.host;
-  }
+    public ManagedObjectReference getHost() {
+        return this.host;
+    }
 
-  public String getName() {
-    return this.name;
-  }
+    public String getName() {
+        return this.name;
+    }
 
-  public String getConfigState() {
-    return this.configState;
-  }
+    public String getConfigState() {
+        return this.configState;
+    }
 
-  public String getRuntimeState() {
-    return this.runtimeState;
-  }
+    public String getRuntimeState() {
+        return this.runtimeState;
+    }
 
-  public void setHost(ManagedObjectReference host) {
-    this.host=host;
-  }
+    public void setHost(ManagedObjectReference host) {
+        this.host = host;
+    }
 
-  public void setName(String name) {
-    this.name=name;
-  }
+    public void setName(String name) {
+        this.name = name;
+    }
 
-  public void setConfigState(String configState) {
-    this.configState=configState;
-  }
+    public void setConfigState(String configState) {
+        this.configState = configState;
+    }
 
-  public void setRuntimeState(String runtimeState) {
-    this.runtimeState=runtimeState;
-  }
+    public void setRuntimeState(String runtimeState) {
+        this.runtimeState = runtimeState;
+    }
 }

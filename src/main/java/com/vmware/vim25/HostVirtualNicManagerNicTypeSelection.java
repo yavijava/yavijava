@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostVirtualNicManagerNicTypeSelection extends DynamicData {
-  public HostVirtualNicConnection vnic;
-  public String[] nicType;
+    public HostVirtualNicConnection vnic;
+    public String[] nicType;
 
-  public HostVirtualNicConnection getVnic() {
-    return this.vnic;
-  }
+    public HostVirtualNicConnection getVnic() {
+        return this.vnic;
+    }
 
-  public String[] getNicType() {
-    return this.nicType;
-  }
+    public String[] getNicType() {
+        return this.nicType;
+    }
 
-  public void setVnic(HostVirtualNicConnection vnic) {
-    this.vnic=vnic;
-  }
+    public void setVnic(HostVirtualNicConnection vnic) {
+        this.vnic = vnic;
+    }
 
-  public void setNicType(String[] nicType) {
-    this.nicType=nicType;
-  }
+    public void setNicType(String[] nicType) {
+        this.nicType = nicType;
+    }
 }

@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class ProfileCompositeExpression extends ProfileExpression {
-  public String operator;
-  public String[] expressionName;
+    public String operator;
+    public String[] expressionName;
 
-  public String getOperator() {
-    return this.operator;
-  }
+    public String getOperator() {
+        return this.operator;
+    }
 
-  public String[] getExpressionName() {
-    return this.expressionName;
-  }
+    public String[] getExpressionName() {
+        return this.expressionName;
+    }
 
-  public void setOperator(String operator) {
-    this.operator=operator;
-  }
+    public void setOperator(String operator) {
+        this.operator = operator;
+    }
 
-  public void setExpressionName(String[] expressionName) {
-    this.expressionName=expressionName;
-  }
+    public void setExpressionName(String[] expressionName) {
+        this.expressionName = expressionName;
+    }
 }

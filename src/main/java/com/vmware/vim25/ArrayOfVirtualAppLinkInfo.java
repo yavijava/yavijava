@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfVirtualAppLinkInfo {
-  public VirtualAppLinkInfo[] VirtualAppLinkInfo;
+    public VirtualAppLinkInfo[] VirtualAppLinkInfo;
 
-  public VirtualAppLinkInfo[] getVirtualAppLinkInfo() {
-    return this.VirtualAppLinkInfo;
-  }
+    public VirtualAppLinkInfo[] getVirtualAppLinkInfo() {
+        return this.VirtualAppLinkInfo;
+    }
 
-  public VirtualAppLinkInfo getVirtualAppLinkInfo(int i) {
-    return this.VirtualAppLinkInfo[i];
-  }
+    public VirtualAppLinkInfo getVirtualAppLinkInfo(int i) {
+        return this.VirtualAppLinkInfo[i];
+    }
 
-  public void setVirtualAppLinkInfo(VirtualAppLinkInfo[] VirtualAppLinkInfo) {
-    this.VirtualAppLinkInfo=VirtualAppLinkInfo;
-  }
+    public void setVirtualAppLinkInfo(VirtualAppLinkInfo[] VirtualAppLinkInfo) {
+        this.VirtualAppLinkInfo = VirtualAppLinkInfo;
+    }
 }

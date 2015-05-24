@@ -30,55 +30,55 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class ResourceAllocationInfo extends DynamicData {
-  public Long reservation;
-  public Boolean expandableReservation;
-  public Long limit;
-  public SharesInfo shares;
-  public Long overheadLimit;
+    public Long reservation;
+    public Boolean expandableReservation;
+    public Long limit;
+    public SharesInfo shares;
+    public Long overheadLimit;
 
-  public Long getReservation() {
-    return this.reservation;
-  }
+    public Long getReservation() {
+        return this.reservation;
+    }
 
-  public Boolean getExpandableReservation() {
-    return this.expandableReservation;
-  }
+    public Boolean getExpandableReservation() {
+        return this.expandableReservation;
+    }
 
-  public Long getLimit() {
-    return this.limit;
-  }
+    public Long getLimit() {
+        return this.limit;
+    }
 
-  public SharesInfo getShares() {
-    return this.shares;
-  }
+    public SharesInfo getShares() {
+        return this.shares;
+    }
 
-  public Long getOverheadLimit() {
-    return this.overheadLimit;
-  }
+    public Long getOverheadLimit() {
+        return this.overheadLimit;
+    }
 
-  public void setReservation(Long reservation) {
-    this.reservation=reservation;
-  }
+    public void setReservation(Long reservation) {
+        this.reservation = reservation;
+    }
 
-  public void setExpandableReservation(Boolean expandableReservation) {
-    this.expandableReservation=expandableReservation;
-  }
+    public void setExpandableReservation(Boolean expandableReservation) {
+        this.expandableReservation = expandableReservation;
+    }
 
-  public void setLimit(Long limit) {
-    this.limit=limit;
-  }
+    public void setLimit(Long limit) {
+        this.limit = limit;
+    }
 
-  public void setShares(SharesInfo shares) {
-    this.shares=shares;
-  }
+    public void setShares(SharesInfo shares) {
+        this.shares = shares;
+    }
 
-  public void setOverheadLimit(Long overheadLimit) {
-    this.overheadLimit=overheadLimit;
-  }
+    public void setOverheadLimit(Long overheadLimit) {
+        this.overheadLimit = overheadLimit;
+    }
 }

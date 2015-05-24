@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class OutOfSyncDvsHost extends DvsEvent {
-  public DvsOutOfSyncHostArgument[] hostOutOfSync;
+    public DvsOutOfSyncHostArgument[] hostOutOfSync;
 
-  public DvsOutOfSyncHostArgument[] getHostOutOfSync() {
-    return this.hostOutOfSync;
-  }
+    public DvsOutOfSyncHostArgument[] getHostOutOfSync() {
+        return this.hostOutOfSync;
+    }
 
-  public void setHostOutOfSync(DvsOutOfSyncHostArgument[] hostOutOfSync) {
-    this.hostOutOfSync=hostOutOfSync;
-  }
+    public void setHostOutOfSync(DvsOutOfSyncHostArgument[] hostOutOfSync) {
+        this.hostOutOfSync = hostOutOfSync;
+    }
 }

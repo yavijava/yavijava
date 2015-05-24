@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfDistributedVirtualSwitchInfo {
-  public DistributedVirtualSwitchInfo[] DistributedVirtualSwitchInfo;
+    public DistributedVirtualSwitchInfo[] DistributedVirtualSwitchInfo;
 
-  public DistributedVirtualSwitchInfo[] getDistributedVirtualSwitchInfo() {
-    return this.DistributedVirtualSwitchInfo;
-  }
+    public DistributedVirtualSwitchInfo[] getDistributedVirtualSwitchInfo() {
+        return this.DistributedVirtualSwitchInfo;
+    }
 
-  public DistributedVirtualSwitchInfo getDistributedVirtualSwitchInfo(int i) {
-    return this.DistributedVirtualSwitchInfo[i];
-  }
+    public DistributedVirtualSwitchInfo getDistributedVirtualSwitchInfo(int i) {
+        return this.DistributedVirtualSwitchInfo[i];
+    }
 
-  public void setDistributedVirtualSwitchInfo(DistributedVirtualSwitchInfo[] DistributedVirtualSwitchInfo) {
-    this.DistributedVirtualSwitchInfo=DistributedVirtualSwitchInfo;
-  }
+    public void setDistributedVirtualSwitchInfo(DistributedVirtualSwitchInfo[] DistributedVirtualSwitchInfo) {
+        this.DistributedVirtualSwitchInfo = DistributedVirtualSwitchInfo;
+    }
 }

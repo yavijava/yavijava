@@ -30,37 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VirtualDeviceFileBackingInfo extends VirtualDeviceBackingInfo {
-  public String fileName;
-  public ManagedObjectReference datastore;
-  public String backingObjectId;
+    public String fileName;
+    public ManagedObjectReference datastore;
+    public String backingObjectId;
 
-  public String getFileName() {
-    return this.fileName;
-  }
+    public String getFileName() {
+        return this.fileName;
+    }
 
-  public ManagedObjectReference getDatastore() {
-    return this.datastore;
-  }
+    public ManagedObjectReference getDatastore() {
+        return this.datastore;
+    }
 
-  public String getBackingObjectId() {
-    return this.backingObjectId;
-  }
+    public String getBackingObjectId() {
+        return this.backingObjectId;
+    }
 
-  public void setFileName(String fileName) {
-    this.fileName=fileName;
-  }
+    public void setFileName(String fileName) {
+        this.fileName = fileName;
+    }
 
-  public void setDatastore(ManagedObjectReference datastore) {
-    this.datastore=datastore;
-  }
+    public void setDatastore(ManagedObjectReference datastore) {
+        this.datastore = datastore;
+    }
 
-  public void setBackingObjectId(String backingObjectId) {
-    this.backingObjectId=backingObjectId;
-  }
+    public void setBackingObjectId(String backingObjectId) {
+        this.backingObjectId = backingObjectId;
+    }
 }

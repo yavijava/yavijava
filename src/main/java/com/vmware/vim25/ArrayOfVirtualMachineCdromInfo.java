@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfVirtualMachineCdromInfo {
-  public VirtualMachineCdromInfo[] VirtualMachineCdromInfo;
+    public VirtualMachineCdromInfo[] VirtualMachineCdromInfo;
 
-  public VirtualMachineCdromInfo[] getVirtualMachineCdromInfo() {
-    return this.VirtualMachineCdromInfo;
-  }
+    public VirtualMachineCdromInfo[] getVirtualMachineCdromInfo() {
+        return this.VirtualMachineCdromInfo;
+    }
 
-  public VirtualMachineCdromInfo getVirtualMachineCdromInfo(int i) {
-    return this.VirtualMachineCdromInfo[i];
-  }
+    public VirtualMachineCdromInfo getVirtualMachineCdromInfo(int i) {
+        return this.VirtualMachineCdromInfo[i];
+    }
 
-  public void setVirtualMachineCdromInfo(VirtualMachineCdromInfo[] VirtualMachineCdromInfo) {
-    this.VirtualMachineCdromInfo=VirtualMachineCdromInfo;
-  }
+    public void setVirtualMachineCdromInfo(VirtualMachineCdromInfo[] VirtualMachineCdromInfo) {
+        this.VirtualMachineCdromInfo = VirtualMachineCdromInfo;
+    }
 }

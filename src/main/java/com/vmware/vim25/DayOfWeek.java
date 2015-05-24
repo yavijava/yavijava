@@ -30,23 +30,23 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public enum DayOfWeek {
-  sunday ("sunday"),
-  monday ("monday"),
-  tuesday ("tuesday"),
-  wednesday ("wednesday"),
-  thursday ("thursday"),
-  friday ("friday"),
-  saturday ("saturday");
+    sunday("sunday"),
+    monday("monday"),
+    tuesday("tuesday"),
+    wednesday("wednesday"),
+    thursday("thursday"),
+    friday("friday"),
+    saturday("saturday");
 
-  @SuppressWarnings("unused")
-  private final String val;
-  private DayOfWeek(String val)
-  {
-    this.val = val;
-  }
+    @SuppressWarnings("unused")
+    private final String val;
+
+    private DayOfWeek(String val) {
+        this.val = val;
+    }
 }

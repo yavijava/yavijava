@@ -30,55 +30,55 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class CustomizationSysprep extends CustomizationIdentitySettings {
-  public CustomizationGuiUnattended guiUnattended;
-  public CustomizationUserData userData;
-  public CustomizationGuiRunOnce guiRunOnce;
-  public CustomizationIdentification identification;
-  public CustomizationLicenseFilePrintData licenseFilePrintData;
+    public CustomizationGuiUnattended guiUnattended;
+    public CustomizationUserData userData;
+    public CustomizationGuiRunOnce guiRunOnce;
+    public CustomizationIdentification identification;
+    public CustomizationLicenseFilePrintData licenseFilePrintData;
 
-  public CustomizationGuiUnattended getGuiUnattended() {
-    return this.guiUnattended;
-  }
+    public CustomizationGuiUnattended getGuiUnattended() {
+        return this.guiUnattended;
+    }
 
-  public CustomizationUserData getUserData() {
-    return this.userData;
-  }
+    public CustomizationUserData getUserData() {
+        return this.userData;
+    }
 
-  public CustomizationGuiRunOnce getGuiRunOnce() {
-    return this.guiRunOnce;
-  }
+    public CustomizationGuiRunOnce getGuiRunOnce() {
+        return this.guiRunOnce;
+    }
 
-  public CustomizationIdentification getIdentification() {
-    return this.identification;
-  }
+    public CustomizationIdentification getIdentification() {
+        return this.identification;
+    }
 
-  public CustomizationLicenseFilePrintData getLicenseFilePrintData() {
-    return this.licenseFilePrintData;
-  }
+    public CustomizationLicenseFilePrintData getLicenseFilePrintData() {
+        return this.licenseFilePrintData;
+    }
 
-  public void setGuiUnattended(CustomizationGuiUnattended guiUnattended) {
-    this.guiUnattended=guiUnattended;
-  }
+    public void setGuiUnattended(CustomizationGuiUnattended guiUnattended) {
+        this.guiUnattended = guiUnattended;
+    }
 
-  public void setUserData(CustomizationUserData userData) {
-    this.userData=userData;
-  }
+    public void setUserData(CustomizationUserData userData) {
+        this.userData = userData;
+    }
 
-  public void setGuiRunOnce(CustomizationGuiRunOnce guiRunOnce) {
-    this.guiRunOnce=guiRunOnce;
-  }
+    public void setGuiRunOnce(CustomizationGuiRunOnce guiRunOnce) {
+        this.guiRunOnce = guiRunOnce;
+    }
 
-  public void setIdentification(CustomizationIdentification identification) {
-    this.identification=identification;
-  }
+    public void setIdentification(CustomizationIdentification identification) {
+        this.identification = identification;
+    }
 
-  public void setLicenseFilePrintData(CustomizationLicenseFilePrintData licenseFilePrintData) {
-    this.licenseFilePrintData=licenseFilePrintData;
-  }
+    public void setLicenseFilePrintData(CustomizationLicenseFilePrintData licenseFilePrintData) {
+        this.licenseFilePrintData = licenseFilePrintData;
+    }
 }

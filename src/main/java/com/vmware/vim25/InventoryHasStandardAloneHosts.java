@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class InventoryHasStandardAloneHosts extends NotEnoughLicenses {
-  public String[] hosts;
+    public String[] hosts;
 
-  public String[] getHosts() {
-    return this.hosts;
-  }
+    public String[] getHosts() {
+        return this.hosts;
+    }
 
-  public void setHosts(String[] hosts) {
-    this.hosts=hosts;
-  }
+    public void setHosts(String[] hosts) {
+        this.hosts = hosts;
+    }
 }

@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfHostNumericSensorInfo {
-  public HostNumericSensorInfo[] HostNumericSensorInfo;
+    public HostNumericSensorInfo[] HostNumericSensorInfo;
 
-  public HostNumericSensorInfo[] getHostNumericSensorInfo() {
-    return this.HostNumericSensorInfo;
-  }
+    public HostNumericSensorInfo[] getHostNumericSensorInfo() {
+        return this.HostNumericSensorInfo;
+    }
 
-  public HostNumericSensorInfo getHostNumericSensorInfo(int i) {
-    return this.HostNumericSensorInfo[i];
-  }
+    public HostNumericSensorInfo getHostNumericSensorInfo(int i) {
+        return this.HostNumericSensorInfo[i];
+    }
 
-  public void setHostNumericSensorInfo(HostNumericSensorInfo[] HostNumericSensorInfo) {
-    this.HostNumericSensorInfo=HostNumericSensorInfo;
-  }
+    public void setHostNumericSensorInfo(HostNumericSensorInfo[] HostNumericSensorInfo) {
+        this.HostNumericSensorInfo = HostNumericSensorInfo;
+    }
 }

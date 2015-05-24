@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class ScheduledTaskEventArgument extends EntityEventArgument {
-  public ManagedObjectReference scheduledTask;
+    public ManagedObjectReference scheduledTask;
 
-  public ManagedObjectReference getScheduledTask() {
-    return this.scheduledTask;
-  }
+    public ManagedObjectReference getScheduledTask() {
+        return this.scheduledTask;
+    }
 
-  public void setScheduledTask(ManagedObjectReference scheduledTask) {
-    this.scheduledTask=scheduledTask;
-  }
+    public void setScheduledTask(ManagedObjectReference scheduledTask) {
+        this.scheduledTask = scheduledTask;
+    }
 }

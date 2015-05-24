@@ -30,46 +30,46 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostLowLevelProvisioningManagerVmMigrationStatus extends DynamicData {
-  public long migrationId;
-  public String type;
-  public boolean source;
-  public boolean consideredSuccessful;
+    public long migrationId;
+    public String type;
+    public boolean source;
+    public boolean consideredSuccessful;
 
-  public long getMigrationId() {
-    return this.migrationId;
-  }
+    public long getMigrationId() {
+        return this.migrationId;
+    }
 
-  public String getType() {
-    return this.type;
-  }
+    public String getType() {
+        return this.type;
+    }
 
-  public boolean isSource() {
-    return this.source;
-  }
+    public boolean isSource() {
+        return this.source;
+    }
 
-  public boolean isConsideredSuccessful() {
-    return this.consideredSuccessful;
-  }
+    public boolean isConsideredSuccessful() {
+        return this.consideredSuccessful;
+    }
 
-  public void setMigrationId(long migrationId) {
-    this.migrationId=migrationId;
-  }
+    public void setMigrationId(long migrationId) {
+        this.migrationId = migrationId;
+    }
 
-  public void setType(String type) {
-    this.type=type;
-  }
+    public void setType(String type) {
+        this.type = type;
+    }
 
-  public void setSource(boolean source) {
-    this.source=source;
-  }
+    public void setSource(boolean source) {
+        this.source = source;
+    }
 
-  public void setConsideredSuccessful(boolean consideredSuccessful) {
-    this.consideredSuccessful=consideredSuccessful;
-  }
+    public void setConsideredSuccessful(boolean consideredSuccessful) {
+        this.consideredSuccessful = consideredSuccessful;
+    }
 }

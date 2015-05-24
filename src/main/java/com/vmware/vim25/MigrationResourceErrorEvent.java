@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class MigrationResourceErrorEvent extends MigrationEvent {
-  public ResourcePoolEventArgument dstPool;
-  public HostEventArgument dstHost;
+    public ResourcePoolEventArgument dstPool;
+    public HostEventArgument dstHost;
 
-  public ResourcePoolEventArgument getDstPool() {
-    return this.dstPool;
-  }
+    public ResourcePoolEventArgument getDstPool() {
+        return this.dstPool;
+    }
 
-  public HostEventArgument getDstHost() {
-    return this.dstHost;
-  }
+    public HostEventArgument getDstHost() {
+        return this.dstHost;
+    }
 
-  public void setDstPool(ResourcePoolEventArgument dstPool) {
-    this.dstPool=dstPool;
-  }
+    public void setDstPool(ResourcePoolEventArgument dstPool) {
+        this.dstPool = dstPool;
+    }
 
-  public void setDstHost(HostEventArgument dstHost) {
-    this.dstHost=dstHost;
-  }
+    public void setDstHost(HostEventArgument dstHost) {
+        this.dstHost = dstHost;
+    }
 }

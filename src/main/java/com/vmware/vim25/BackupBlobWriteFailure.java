@@ -30,37 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class BackupBlobWriteFailure extends DvsFault {
-  public String entityName;
-  public String entityType;
-  public LocalizedMethodFault fault;
+    public String entityName;
+    public String entityType;
+    public LocalizedMethodFault fault;
 
-  public String getEntityName() {
-    return this.entityName;
-  }
+    public String getEntityName() {
+        return this.entityName;
+    }
 
-  public String getEntityType() {
-    return this.entityType;
-  }
+    public String getEntityType() {
+        return this.entityType;
+    }
 
-  public LocalizedMethodFault getFault() {
-    return this.fault;
-  }
+    public LocalizedMethodFault getFault() {
+        return this.fault;
+    }
 
-  public void setEntityName(String entityName) {
-    this.entityName=entityName;
-  }
+    public void setEntityName(String entityName) {
+        this.entityName = entityName;
+    }
 
-  public void setEntityType(String entityType) {
-    this.entityType=entityType;
-  }
+    public void setEntityType(String entityType) {
+        this.entityType = entityType;
+    }
 
-  public void setFault(LocalizedMethodFault fault) {
-    this.fault=fault;
-  }
+    public void setFault(LocalizedMethodFault fault) {
+        this.fault = fault;
+    }
 }

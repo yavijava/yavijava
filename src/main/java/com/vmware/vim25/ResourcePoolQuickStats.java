@@ -30,145 +30,145 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class ResourcePoolQuickStats extends DynamicData {
-  public Long overallCpuUsage;
-  public Long overallCpuDemand;
-  public Long guestMemoryUsage;
-  public Long hostMemoryUsage;
-  public Long distributedCpuEntitlement;
-  public Long distributedMemoryEntitlement;
-  public Integer staticCpuEntitlement;
-  public Integer staticMemoryEntitlement;
-  public Long privateMemory;
-  public Long sharedMemory;
-  public Long swappedMemory;
-  public Long balloonedMemory;
-  public Long overheadMemory;
-  public Long consumedOverheadMemory;
-  public Long compressedMemory;
+    public Long overallCpuUsage;
+    public Long overallCpuDemand;
+    public Long guestMemoryUsage;
+    public Long hostMemoryUsage;
+    public Long distributedCpuEntitlement;
+    public Long distributedMemoryEntitlement;
+    public Integer staticCpuEntitlement;
+    public Integer staticMemoryEntitlement;
+    public Long privateMemory;
+    public Long sharedMemory;
+    public Long swappedMemory;
+    public Long balloonedMemory;
+    public Long overheadMemory;
+    public Long consumedOverheadMemory;
+    public Long compressedMemory;
 
-  public Long getOverallCpuUsage() {
-    return this.overallCpuUsage;
-  }
+    public Long getOverallCpuUsage() {
+        return this.overallCpuUsage;
+    }
 
-  public Long getOverallCpuDemand() {
-    return this.overallCpuDemand;
-  }
+    public Long getOverallCpuDemand() {
+        return this.overallCpuDemand;
+    }
 
-  public Long getGuestMemoryUsage() {
-    return this.guestMemoryUsage;
-  }
+    public Long getGuestMemoryUsage() {
+        return this.guestMemoryUsage;
+    }
 
-  public Long getHostMemoryUsage() {
-    return this.hostMemoryUsage;
-  }
+    public Long getHostMemoryUsage() {
+        return this.hostMemoryUsage;
+    }
 
-  public Long getDistributedCpuEntitlement() {
-    return this.distributedCpuEntitlement;
-  }
+    public Long getDistributedCpuEntitlement() {
+        return this.distributedCpuEntitlement;
+    }
 
-  public Long getDistributedMemoryEntitlement() {
-    return this.distributedMemoryEntitlement;
-  }
+    public Long getDistributedMemoryEntitlement() {
+        return this.distributedMemoryEntitlement;
+    }
 
-  public Integer getStaticCpuEntitlement() {
-    return this.staticCpuEntitlement;
-  }
+    public Integer getStaticCpuEntitlement() {
+        return this.staticCpuEntitlement;
+    }
 
-  public Integer getStaticMemoryEntitlement() {
-    return this.staticMemoryEntitlement;
-  }
+    public Integer getStaticMemoryEntitlement() {
+        return this.staticMemoryEntitlement;
+    }
 
-  public Long getPrivateMemory() {
-    return this.privateMemory;
-  }
+    public Long getPrivateMemory() {
+        return this.privateMemory;
+    }
 
-  public Long getSharedMemory() {
-    return this.sharedMemory;
-  }
+    public Long getSharedMemory() {
+        return this.sharedMemory;
+    }
 
-  public Long getSwappedMemory() {
-    return this.swappedMemory;
-  }
+    public Long getSwappedMemory() {
+        return this.swappedMemory;
+    }
 
-  public Long getBalloonedMemory() {
-    return this.balloonedMemory;
-  }
+    public Long getBalloonedMemory() {
+        return this.balloonedMemory;
+    }
 
-  public Long getOverheadMemory() {
-    return this.overheadMemory;
-  }
+    public Long getOverheadMemory() {
+        return this.overheadMemory;
+    }
 
-  public Long getConsumedOverheadMemory() {
-    return this.consumedOverheadMemory;
-  }
+    public Long getConsumedOverheadMemory() {
+        return this.consumedOverheadMemory;
+    }
 
-  public Long getCompressedMemory() {
-    return this.compressedMemory;
-  }
+    public Long getCompressedMemory() {
+        return this.compressedMemory;
+    }
 
-  public void setOverallCpuUsage(Long overallCpuUsage) {
-    this.overallCpuUsage=overallCpuUsage;
-  }
+    public void setOverallCpuUsage(Long overallCpuUsage) {
+        this.overallCpuUsage = overallCpuUsage;
+    }
 
-  public void setOverallCpuDemand(Long overallCpuDemand) {
-    this.overallCpuDemand=overallCpuDemand;
-  }
+    public void setOverallCpuDemand(Long overallCpuDemand) {
+        this.overallCpuDemand = overallCpuDemand;
+    }
 
-  public void setGuestMemoryUsage(Long guestMemoryUsage) {
-    this.guestMemoryUsage=guestMemoryUsage;
-  }
+    public void setGuestMemoryUsage(Long guestMemoryUsage) {
+        this.guestMemoryUsage = guestMemoryUsage;
+    }
 
-  public void setHostMemoryUsage(Long hostMemoryUsage) {
-    this.hostMemoryUsage=hostMemoryUsage;
-  }
+    public void setHostMemoryUsage(Long hostMemoryUsage) {
+        this.hostMemoryUsage = hostMemoryUsage;
+    }
 
-  public void setDistributedCpuEntitlement(Long distributedCpuEntitlement) {
-    this.distributedCpuEntitlement=distributedCpuEntitlement;
-  }
+    public void setDistributedCpuEntitlement(Long distributedCpuEntitlement) {
+        this.distributedCpuEntitlement = distributedCpuEntitlement;
+    }
 
-  public void setDistributedMemoryEntitlement(Long distributedMemoryEntitlement) {
-    this.distributedMemoryEntitlement=distributedMemoryEntitlement;
-  }
+    public void setDistributedMemoryEntitlement(Long distributedMemoryEntitlement) {
+        this.distributedMemoryEntitlement = distributedMemoryEntitlement;
+    }
 
-  public void setStaticCpuEntitlement(Integer staticCpuEntitlement) {
-    this.staticCpuEntitlement=staticCpuEntitlement;
-  }
+    public void setStaticCpuEntitlement(Integer staticCpuEntitlement) {
+        this.staticCpuEntitlement = staticCpuEntitlement;
+    }
 
-  public void setStaticMemoryEntitlement(Integer staticMemoryEntitlement) {
-    this.staticMemoryEntitlement=staticMemoryEntitlement;
-  }
+    public void setStaticMemoryEntitlement(Integer staticMemoryEntitlement) {
+        this.staticMemoryEntitlement = staticMemoryEntitlement;
+    }
 
-  public void setPrivateMemory(Long privateMemory) {
-    this.privateMemory=privateMemory;
-  }
+    public void setPrivateMemory(Long privateMemory) {
+        this.privateMemory = privateMemory;
+    }
 
-  public void setSharedMemory(Long sharedMemory) {
-    this.sharedMemory=sharedMemory;
-  }
+    public void setSharedMemory(Long sharedMemory) {
+        this.sharedMemory = sharedMemory;
+    }
 
-  public void setSwappedMemory(Long swappedMemory) {
-    this.swappedMemory=swappedMemory;
-  }
+    public void setSwappedMemory(Long swappedMemory) {
+        this.swappedMemory = swappedMemory;
+    }
 
-  public void setBalloonedMemory(Long balloonedMemory) {
-    this.balloonedMemory=balloonedMemory;
-  }
+    public void setBalloonedMemory(Long balloonedMemory) {
+        this.balloonedMemory = balloonedMemory;
+    }
 
-  public void setOverheadMemory(Long overheadMemory) {
-    this.overheadMemory=overheadMemory;
-  }
+    public void setOverheadMemory(Long overheadMemory) {
+        this.overheadMemory = overheadMemory;
+    }
 
-  public void setConsumedOverheadMemory(Long consumedOverheadMemory) {
-    this.consumedOverheadMemory=consumedOverheadMemory;
-  }
+    public void setConsumedOverheadMemory(Long consumedOverheadMemory) {
+        this.consumedOverheadMemory = consumedOverheadMemory;
+    }
 
-  public void setCompressedMemory(Long compressedMemory) {
-    this.compressedMemory=compressedMemory;
-  }
+    public void setCompressedMemory(Long compressedMemory) {
+        this.compressedMemory = compressedMemory;
+    }
 }

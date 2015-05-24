@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfOptionDef {
-  public OptionDef[] OptionDef;
+    public OptionDef[] OptionDef;
 
-  public OptionDef[] getOptionDef() {
-    return this.OptionDef;
-  }
+    public OptionDef[] getOptionDef() {
+        return this.OptionDef;
+    }
 
-  public OptionDef getOptionDef(int i) {
-    return this.OptionDef[i];
-  }
+    public OptionDef getOptionDef(int i) {
+        return this.OptionDef[i];
+    }
 
-  public void setOptionDef(OptionDef[] OptionDef) {
-    this.OptionDef=OptionDef;
-  }
+    public void setOptionDef(OptionDef[] OptionDef) {
+        this.OptionDef = OptionDef;
+    }
 }

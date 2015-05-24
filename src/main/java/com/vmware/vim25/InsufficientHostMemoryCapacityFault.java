@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class InsufficientHostMemoryCapacityFault extends InsufficientHostCapacityFault {
-  public long unreserved;
-  public long requested;
+    public long unreserved;
+    public long requested;
 
-  public long getUnreserved() {
-    return this.unreserved;
-  }
+    public long getUnreserved() {
+        return this.unreserved;
+    }
 
-  public long getRequested() {
-    return this.requested;
-  }
+    public long getRequested() {
+        return this.requested;
+    }
 
-  public void setUnreserved(long unreserved) {
-    this.unreserved=unreserved;
-  }
+    public void setUnreserved(long unreserved) {
+        this.unreserved = unreserved;
+    }
 
-  public void setRequested(long requested) {
-    this.requested=requested;
-  }
+    public void setRequested(long requested) {
+        this.requested = requested;
+    }
 }

@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VmDiskFileQuery extends FileQuery {
-  public VmDiskFileQueryFilter filter;
-  public VmDiskFileQueryFlags details;
+    public VmDiskFileQueryFilter filter;
+    public VmDiskFileQueryFlags details;
 
-  public VmDiskFileQueryFilter getFilter() {
-    return this.filter;
-  }
+    public VmDiskFileQueryFilter getFilter() {
+        return this.filter;
+    }
 
-  public VmDiskFileQueryFlags getDetails() {
-    return this.details;
-  }
+    public VmDiskFileQueryFlags getDetails() {
+        return this.details;
+    }
 
-  public void setFilter(VmDiskFileQueryFilter filter) {
-    this.filter=filter;
-  }
+    public void setFilter(VmDiskFileQueryFilter filter) {
+        this.filter = filter;
+    }
 
-  public void setDetails(VmDiskFileQueryFlags details) {
-    this.details=details;
-  }
+    public void setDetails(VmDiskFileQueryFlags details) {
+        this.details = details;
+    }
 }

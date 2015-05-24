@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfClusterGroupInfo {
-  public ClusterGroupInfo[] ClusterGroupInfo;
+    public ClusterGroupInfo[] ClusterGroupInfo;
 
-  public ClusterGroupInfo[] getClusterGroupInfo() {
-    return this.ClusterGroupInfo;
-  }
+    public ClusterGroupInfo[] getClusterGroupInfo() {
+        return this.ClusterGroupInfo;
+    }
 
-  public ClusterGroupInfo getClusterGroupInfo(int i) {
-    return this.ClusterGroupInfo[i];
-  }
+    public ClusterGroupInfo getClusterGroupInfo(int i) {
+        return this.ClusterGroupInfo[i];
+    }
 
-  public void setClusterGroupInfo(ClusterGroupInfo[] ClusterGroupInfo) {
-    this.ClusterGroupInfo=ClusterGroupInfo;
-  }
+    public void setClusterGroupInfo(ClusterGroupInfo[] ClusterGroupInfo) {
+        this.ClusterGroupInfo = ClusterGroupInfo;
+    }
 }

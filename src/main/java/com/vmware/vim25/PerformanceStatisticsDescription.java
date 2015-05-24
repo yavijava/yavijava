@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class PerformanceStatisticsDescription extends DynamicData {
-  public PerfInterval[] intervals;
+    public PerfInterval[] intervals;
 
-  public PerfInterval[] getIntervals() {
-    return this.intervals;
-  }
+    public PerfInterval[] getIntervals() {
+        return this.intervals;
+    }
 
-  public void setIntervals(PerfInterval[] intervals) {
-    this.intervals=intervals;
-  }
+    public void setIntervals(PerfInterval[] intervals) {
+        this.intervals = intervals;
+    }
 }

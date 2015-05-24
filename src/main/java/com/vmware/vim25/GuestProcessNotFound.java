@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class GuestProcessNotFound extends GuestOperationsFault {
-  public long pid;
+    public long pid;
 
-  public long getPid() {
-    return this.pid;
-  }
+    public long getPid() {
+        return this.pid;
+    }
 
-  public void setPid(long pid) {
-    this.pid=pid;
-  }
+    public void setPid(long pid) {
+        this.pid = pid;
+    }
 }

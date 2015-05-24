@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VramLimitLicense extends NotEnoughLicenses {
-  public int limit;
+    public int limit;
 
-  public int getLimit() {
-    return this.limit;
-  }
+    public int getLimit() {
+        return this.limit;
+    }
 
-  public void setLimit(int limit) {
-    this.limit=limit;
-  }
+    public void setLimit(int limit) {
+        this.limit = limit;
+    }
 }

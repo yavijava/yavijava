@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public enum PerformanceManagerUnit {
-  percent ("percent"),
-  kiloBytes ("kiloBytes"),
-  megaBytes ("megaBytes"),
-  megaHertz ("megaHertz"),
-  number ("number"),
-  microsecond ("microsecond"),
-  millisecond ("millisecond"),
-  second ("second"),
-  kiloBytesPerSecond ("kiloBytesPerSecond"),
-  megaBytesPerSecond ("megaBytesPerSecond"),
-  watt ("watt"),
-  joule ("joule");
+    percent("percent"),
+    kiloBytes("kiloBytes"),
+    megaBytes("megaBytes"),
+    megaHertz("megaHertz"),
+    number("number"),
+    microsecond("microsecond"),
+    millisecond("millisecond"),
+    second("second"),
+    kiloBytesPerSecond("kiloBytesPerSecond"),
+    megaBytesPerSecond("megaBytesPerSecond"),
+    watt("watt"),
+    joule("joule");
 
-  @SuppressWarnings("unused")
-  private final String val;
-  private PerformanceManagerUnit(String val)
-  {
-    this.val = val;
-  }
+    @SuppressWarnings("unused")
+    private final String val;
+
+    private PerformanceManagerUnit(String val) {
+        this.val = val;
+    }
 }

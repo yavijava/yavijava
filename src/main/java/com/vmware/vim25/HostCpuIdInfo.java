@@ -30,64 +30,64 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostCpuIdInfo extends DynamicData {
-  public int level;
-  public String vendor;
-  public String eax;
-  public String ebx;
-  public String ecx;
-  public String edx;
+    public int level;
+    public String vendor;
+    public String eax;
+    public String ebx;
+    public String ecx;
+    public String edx;
 
-  public int getLevel() {
-    return this.level;
-  }
+    public int getLevel() {
+        return this.level;
+    }
 
-  public String getVendor() {
-    return this.vendor;
-  }
+    public String getVendor() {
+        return this.vendor;
+    }
 
-  public String getEax() {
-    return this.eax;
-  }
+    public String getEax() {
+        return this.eax;
+    }
 
-  public String getEbx() {
-    return this.ebx;
-  }
+    public String getEbx() {
+        return this.ebx;
+    }
 
-  public String getEcx() {
-    return this.ecx;
-  }
+    public String getEcx() {
+        return this.ecx;
+    }
 
-  public String getEdx() {
-    return this.edx;
-  }
+    public String getEdx() {
+        return this.edx;
+    }
 
-  public void setLevel(int level) {
-    this.level=level;
-  }
+    public void setLevel(int level) {
+        this.level = level;
+    }
 
-  public void setVendor(String vendor) {
-    this.vendor=vendor;
-  }
+    public void setVendor(String vendor) {
+        this.vendor = vendor;
+    }
 
-  public void setEax(String eax) {
-    this.eax=eax;
-  }
+    public void setEax(String eax) {
+        this.eax = eax;
+    }
 
-  public void setEbx(String ebx) {
-    this.ebx=ebx;
-  }
+    public void setEbx(String ebx) {
+        this.ebx = ebx;
+    }
 
-  public void setEcx(String ecx) {
-    this.ecx=ecx;
-  }
+    public void setEcx(String ecx) {
+        this.ecx = ecx;
+    }
 
-  public void setEdx(String edx) {
-    this.edx=edx;
-  }
+    public void setEdx(String edx) {
+        this.edx = edx;
+    }
 }

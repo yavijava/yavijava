@@ -30,55 +30,55 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostDatastoreBrowserSearchSpec extends DynamicData {
-  public FileQuery[] query;
-  public FileQueryFlags details;
-  public Boolean searchCaseInsensitive;
-  public String[] matchPattern;
-  public Boolean sortFoldersFirst;
+    public FileQuery[] query;
+    public FileQueryFlags details;
+    public Boolean searchCaseInsensitive;
+    public String[] matchPattern;
+    public Boolean sortFoldersFirst;
 
-  public FileQuery[] getQuery() {
-    return this.query;
-  }
+    public FileQuery[] getQuery() {
+        return this.query;
+    }
 
-  public FileQueryFlags getDetails() {
-    return this.details;
-  }
+    public FileQueryFlags getDetails() {
+        return this.details;
+    }
 
-  public Boolean getSearchCaseInsensitive() {
-    return this.searchCaseInsensitive;
-  }
+    public Boolean getSearchCaseInsensitive() {
+        return this.searchCaseInsensitive;
+    }
 
-  public String[] getMatchPattern() {
-    return this.matchPattern;
-  }
+    public String[] getMatchPattern() {
+        return this.matchPattern;
+    }
 
-  public Boolean getSortFoldersFirst() {
-    return this.sortFoldersFirst;
-  }
+    public Boolean getSortFoldersFirst() {
+        return this.sortFoldersFirst;
+    }
 
-  public void setQuery(FileQuery[] query) {
-    this.query=query;
-  }
+    public void setQuery(FileQuery[] query) {
+        this.query = query;
+    }
 
-  public void setDetails(FileQueryFlags details) {
-    this.details=details;
-  }
+    public void setDetails(FileQueryFlags details) {
+        this.details = details;
+    }
 
-  public void setSearchCaseInsensitive(Boolean searchCaseInsensitive) {
-    this.searchCaseInsensitive=searchCaseInsensitive;
-  }
+    public void setSearchCaseInsensitive(Boolean searchCaseInsensitive) {
+        this.searchCaseInsensitive = searchCaseInsensitive;
+    }
 
-  public void setMatchPattern(String[] matchPattern) {
-    this.matchPattern=matchPattern;
-  }
+    public void setMatchPattern(String[] matchPattern) {
+        this.matchPattern = matchPattern;
+    }
 
-  public void setSortFoldersFirst(Boolean sortFoldersFirst) {
-    this.sortFoldersFirst=sortFoldersFirst;
-  }
+    public void setSortFoldersFirst(Boolean sortFoldersFirst) {
+        this.sortFoldersFirst = sortFoldersFirst;
+    }
 }

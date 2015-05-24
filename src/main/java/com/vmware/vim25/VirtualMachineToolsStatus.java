@@ -30,20 +30,20 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public enum VirtualMachineToolsStatus {
-  toolsNotInstalled ("toolsNotInstalled"),
-  toolsNotRunning ("toolsNotRunning"),
-  toolsOld ("toolsOld"),
-  toolsOk ("toolsOk");
+    toolsNotInstalled("toolsNotInstalled"),
+    toolsNotRunning("toolsNotRunning"),
+    toolsOld("toolsOld"),
+    toolsOk("toolsOk");
 
-  @SuppressWarnings("unused")
-  private final String val;
-  private VirtualMachineToolsStatus(String val)
-  {
-    this.val = val;
-  }
+    @SuppressWarnings("unused")
+    private final String val;
+
+    private VirtualMachineToolsStatus(String val) {
+        this.val = val;
+    }
 }

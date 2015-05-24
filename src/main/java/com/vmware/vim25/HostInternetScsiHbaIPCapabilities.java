@@ -30,109 +30,109 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostInternetScsiHbaIPCapabilities extends DynamicData {
-  public boolean addressSettable;
-  public boolean ipConfigurationMethodSettable;
-  public boolean subnetMaskSettable;
-  public boolean defaultGatewaySettable;
-  public boolean primaryDnsServerAddressSettable;
-  public boolean alternateDnsServerAddressSettable;
-  public Boolean ipv6Supported;
-  public Boolean arpRedirectSettable;
-  public Boolean mtuSettable;
-  public Boolean hostNameAsTargetAddress;
-  public Boolean nameAliasSettable;
+    public boolean addressSettable;
+    public boolean ipConfigurationMethodSettable;
+    public boolean subnetMaskSettable;
+    public boolean defaultGatewaySettable;
+    public boolean primaryDnsServerAddressSettable;
+    public boolean alternateDnsServerAddressSettable;
+    public Boolean ipv6Supported;
+    public Boolean arpRedirectSettable;
+    public Boolean mtuSettable;
+    public Boolean hostNameAsTargetAddress;
+    public Boolean nameAliasSettable;
 
-  public boolean isAddressSettable() {
-    return this.addressSettable;
-  }
+    public boolean isAddressSettable() {
+        return this.addressSettable;
+    }
 
-  public boolean isIpConfigurationMethodSettable() {
-    return this.ipConfigurationMethodSettable;
-  }
+    public boolean isIpConfigurationMethodSettable() {
+        return this.ipConfigurationMethodSettable;
+    }
 
-  public boolean isSubnetMaskSettable() {
-    return this.subnetMaskSettable;
-  }
+    public boolean isSubnetMaskSettable() {
+        return this.subnetMaskSettable;
+    }
 
-  public boolean isDefaultGatewaySettable() {
-    return this.defaultGatewaySettable;
-  }
+    public boolean isDefaultGatewaySettable() {
+        return this.defaultGatewaySettable;
+    }
 
-  public boolean isPrimaryDnsServerAddressSettable() {
-    return this.primaryDnsServerAddressSettable;
-  }
+    public boolean isPrimaryDnsServerAddressSettable() {
+        return this.primaryDnsServerAddressSettable;
+    }
 
-  public boolean isAlternateDnsServerAddressSettable() {
-    return this.alternateDnsServerAddressSettable;
-  }
+    public boolean isAlternateDnsServerAddressSettable() {
+        return this.alternateDnsServerAddressSettable;
+    }
 
-  public Boolean getIpv6Supported() {
-    return this.ipv6Supported;
-  }
+    public Boolean getIpv6Supported() {
+        return this.ipv6Supported;
+    }
 
-  public Boolean getArpRedirectSettable() {
-    return this.arpRedirectSettable;
-  }
+    public Boolean getArpRedirectSettable() {
+        return this.arpRedirectSettable;
+    }
 
-  public Boolean getMtuSettable() {
-    return this.mtuSettable;
-  }
+    public Boolean getMtuSettable() {
+        return this.mtuSettable;
+    }
 
-  public Boolean getHostNameAsTargetAddress() {
-    return this.hostNameAsTargetAddress;
-  }
+    public Boolean getHostNameAsTargetAddress() {
+        return this.hostNameAsTargetAddress;
+    }
 
-  public Boolean getNameAliasSettable() {
-    return this.nameAliasSettable;
-  }
+    public Boolean getNameAliasSettable() {
+        return this.nameAliasSettable;
+    }
 
-  public void setAddressSettable(boolean addressSettable) {
-    this.addressSettable=addressSettable;
-  }
+    public void setAddressSettable(boolean addressSettable) {
+        this.addressSettable = addressSettable;
+    }
 
-  public void setIpConfigurationMethodSettable(boolean ipConfigurationMethodSettable) {
-    this.ipConfigurationMethodSettable=ipConfigurationMethodSettable;
-  }
+    public void setIpConfigurationMethodSettable(boolean ipConfigurationMethodSettable) {
+        this.ipConfigurationMethodSettable = ipConfigurationMethodSettable;
+    }
 
-  public void setSubnetMaskSettable(boolean subnetMaskSettable) {
-    this.subnetMaskSettable=subnetMaskSettable;
-  }
+    public void setSubnetMaskSettable(boolean subnetMaskSettable) {
+        this.subnetMaskSettable = subnetMaskSettable;
+    }
 
-  public void setDefaultGatewaySettable(boolean defaultGatewaySettable) {
-    this.defaultGatewaySettable=defaultGatewaySettable;
-  }
+    public void setDefaultGatewaySettable(boolean defaultGatewaySettable) {
+        this.defaultGatewaySettable = defaultGatewaySettable;
+    }
 
-  public void setPrimaryDnsServerAddressSettable(boolean primaryDnsServerAddressSettable) {
-    this.primaryDnsServerAddressSettable=primaryDnsServerAddressSettable;
-  }
+    public void setPrimaryDnsServerAddressSettable(boolean primaryDnsServerAddressSettable) {
+        this.primaryDnsServerAddressSettable = primaryDnsServerAddressSettable;
+    }
 
-  public void setAlternateDnsServerAddressSettable(boolean alternateDnsServerAddressSettable) {
-    this.alternateDnsServerAddressSettable=alternateDnsServerAddressSettable;
-  }
+    public void setAlternateDnsServerAddressSettable(boolean alternateDnsServerAddressSettable) {
+        this.alternateDnsServerAddressSettable = alternateDnsServerAddressSettable;
+    }
 
-  public void setIpv6Supported(Boolean ipv6Supported) {
-    this.ipv6Supported=ipv6Supported;
-  }
+    public void setIpv6Supported(Boolean ipv6Supported) {
+        this.ipv6Supported = ipv6Supported;
+    }
 
-  public void setArpRedirectSettable(Boolean arpRedirectSettable) {
-    this.arpRedirectSettable=arpRedirectSettable;
-  }
+    public void setArpRedirectSettable(Boolean arpRedirectSettable) {
+        this.arpRedirectSettable = arpRedirectSettable;
+    }
 
-  public void setMtuSettable(Boolean mtuSettable) {
-    this.mtuSettable=mtuSettable;
-  }
+    public void setMtuSettable(Boolean mtuSettable) {
+        this.mtuSettable = mtuSettable;
+    }
 
-  public void setHostNameAsTargetAddress(Boolean hostNameAsTargetAddress) {
-    this.hostNameAsTargetAddress=hostNameAsTargetAddress;
-  }
+    public void setHostNameAsTargetAddress(Boolean hostNameAsTargetAddress) {
+        this.hostNameAsTargetAddress = hostNameAsTargetAddress;
+    }
 
-  public void setNameAliasSettable(Boolean nameAliasSettable) {
-    this.nameAliasSettable=nameAliasSettable;
-  }
+    public void setNameAliasSettable(Boolean nameAliasSettable) {
+        this.nameAliasSettable = nameAliasSettable;
+    }
 }

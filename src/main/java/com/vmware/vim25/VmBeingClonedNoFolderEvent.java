@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VmBeingClonedNoFolderEvent extends VmCloneEvent {
-  public String destName;
-  public HostEventArgument destHost;
+    public String destName;
+    public HostEventArgument destHost;
 
-  public String getDestName() {
-    return this.destName;
-  }
+    public String getDestName() {
+        return this.destName;
+    }
 
-  public HostEventArgument getDestHost() {
-    return this.destHost;
-  }
+    public HostEventArgument getDestHost() {
+        return this.destHost;
+    }
 
-  public void setDestName(String destName) {
-    this.destName=destName;
-  }
+    public void setDestName(String destName) {
+        this.destName = destName;
+    }
 
-  public void setDestHost(HostEventArgument destHost) {
-    this.destHost=destHost;
-  }
+    public void setDestHost(HostEventArgument destHost) {
+        this.destHost = destHost;
+    }
 }

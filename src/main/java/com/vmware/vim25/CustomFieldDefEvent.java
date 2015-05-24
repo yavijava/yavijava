@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class CustomFieldDefEvent extends CustomFieldEvent {
-  public int fieldKey;
-  public String name;
+    public int fieldKey;
+    public String name;
 
-  public int getFieldKey() {
-    return this.fieldKey;
-  }
+    public int getFieldKey() {
+        return this.fieldKey;
+    }
 
-  public String getName() {
-    return this.name;
-  }
+    public String getName() {
+        return this.name;
+    }
 
-  public void setFieldKey(int fieldKey) {
-    this.fieldKey=fieldKey;
-  }
+    public void setFieldKey(int fieldKey) {
+        this.fieldKey = fieldKey;
+    }
 
-  public void setName(String name) {
-    this.name=name;
-  }
+    public void setName(String name) {
+        this.name = name;
+    }
 }

@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfProfileMetadataProfileSortSpec {
-  public ProfileMetadataProfileSortSpec[] ProfileMetadataProfileSortSpec;
+    public ProfileMetadataProfileSortSpec[] ProfileMetadataProfileSortSpec;
 
-  public ProfileMetadataProfileSortSpec[] getProfileMetadataProfileSortSpec() {
-    return this.ProfileMetadataProfileSortSpec;
-  }
+    public ProfileMetadataProfileSortSpec[] getProfileMetadataProfileSortSpec() {
+        return this.ProfileMetadataProfileSortSpec;
+    }
 
-  public ProfileMetadataProfileSortSpec getProfileMetadataProfileSortSpec(int i) {
-    return this.ProfileMetadataProfileSortSpec[i];
-  }
+    public ProfileMetadataProfileSortSpec getProfileMetadataProfileSortSpec(int i) {
+        return this.ProfileMetadataProfileSortSpec[i];
+    }
 
-  public void setProfileMetadataProfileSortSpec(ProfileMetadataProfileSortSpec[] ProfileMetadataProfileSortSpec) {
-    this.ProfileMetadataProfileSortSpec=ProfileMetadataProfileSortSpec;
-  }
+    public void setProfileMetadataProfileSortSpec(ProfileMetadataProfileSortSpec[] ProfileMetadataProfileSortSpec) {
+        this.ProfileMetadataProfileSortSpec = ProfileMetadataProfileSortSpec;
+    }
 }

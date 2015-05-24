@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class CustomizationSpecItem extends DynamicData {
-  public CustomizationSpecInfo info;
-  public CustomizationSpec spec;
+    public CustomizationSpecInfo info;
+    public CustomizationSpec spec;
 
-  public CustomizationSpecInfo getInfo() {
-    return this.info;
-  }
+    public CustomizationSpecInfo getInfo() {
+        return this.info;
+    }
 
-  public CustomizationSpec getSpec() {
-    return this.spec;
-  }
+    public CustomizationSpec getSpec() {
+        return this.spec;
+    }
 
-  public void setInfo(CustomizationSpecInfo info) {
-    this.info=info;
-  }
+    public void setInfo(CustomizationSpecInfo info) {
+        this.info = info;
+    }
 
-  public void setSpec(CustomizationSpec spec) {
-    this.spec=spec;
-  }
+    public void setSpec(CustomizationSpec spec) {
+        this.spec = spec;
+    }
 }

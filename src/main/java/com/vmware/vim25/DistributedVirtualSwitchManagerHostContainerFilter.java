@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class DistributedVirtualSwitchManagerHostContainerFilter extends DistributedVirtualSwitchManagerHostDvsFilterSpec {
-  public DistributedVirtualSwitchManagerHostContainer hostContainer;
+    public DistributedVirtualSwitchManagerHostContainer hostContainer;
 
-  public DistributedVirtualSwitchManagerHostContainer getHostContainer() {
-    return this.hostContainer;
-  }
+    public DistributedVirtualSwitchManagerHostContainer getHostContainer() {
+        return this.hostContainer;
+    }
 
-  public void setHostContainer(DistributedVirtualSwitchManagerHostContainer hostContainer) {
-    this.hostContainer=hostContainer;
-  }
+    public void setHostContainer(DistributedVirtualSwitchManagerHostContainer hostContainer) {
+        this.hostContainer = hostContainer;
+    }
 }

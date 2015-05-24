@@ -30,73 +30,73 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class DVSFailureCriteria extends InheritablePolicy {
-  public StringPolicy checkSpeed;
-  public IntPolicy speed;
-  public BoolPolicy checkDuplex;
-  public BoolPolicy fullDuplex;
-  public BoolPolicy checkErrorPercent;
-  public IntPolicy percentage;
-  public BoolPolicy checkBeacon;
+    public StringPolicy checkSpeed;
+    public IntPolicy speed;
+    public BoolPolicy checkDuplex;
+    public BoolPolicy fullDuplex;
+    public BoolPolicy checkErrorPercent;
+    public IntPolicy percentage;
+    public BoolPolicy checkBeacon;
 
-  public StringPolicy getCheckSpeed() {
-    return this.checkSpeed;
-  }
+    public StringPolicy getCheckSpeed() {
+        return this.checkSpeed;
+    }
 
-  public IntPolicy getSpeed() {
-    return this.speed;
-  }
+    public IntPolicy getSpeed() {
+        return this.speed;
+    }
 
-  public BoolPolicy getCheckDuplex() {
-    return this.checkDuplex;
-  }
+    public BoolPolicy getCheckDuplex() {
+        return this.checkDuplex;
+    }
 
-  public BoolPolicy getFullDuplex() {
-    return this.fullDuplex;
-  }
+    public BoolPolicy getFullDuplex() {
+        return this.fullDuplex;
+    }
 
-  public BoolPolicy getCheckErrorPercent() {
-    return this.checkErrorPercent;
-  }
+    public BoolPolicy getCheckErrorPercent() {
+        return this.checkErrorPercent;
+    }
 
-  public IntPolicy getPercentage() {
-    return this.percentage;
-  }
+    public IntPolicy getPercentage() {
+        return this.percentage;
+    }
 
-  public BoolPolicy getCheckBeacon() {
-    return this.checkBeacon;
-  }
+    public BoolPolicy getCheckBeacon() {
+        return this.checkBeacon;
+    }
 
-  public void setCheckSpeed(StringPolicy checkSpeed) {
-    this.checkSpeed=checkSpeed;
-  }
+    public void setCheckSpeed(StringPolicy checkSpeed) {
+        this.checkSpeed = checkSpeed;
+    }
 
-  public void setSpeed(IntPolicy speed) {
-    this.speed=speed;
-  }
+    public void setSpeed(IntPolicy speed) {
+        this.speed = speed;
+    }
 
-  public void setCheckDuplex(BoolPolicy checkDuplex) {
-    this.checkDuplex=checkDuplex;
-  }
+    public void setCheckDuplex(BoolPolicy checkDuplex) {
+        this.checkDuplex = checkDuplex;
+    }
 
-  public void setFullDuplex(BoolPolicy fullDuplex) {
-    this.fullDuplex=fullDuplex;
-  }
+    public void setFullDuplex(BoolPolicy fullDuplex) {
+        this.fullDuplex = fullDuplex;
+    }
 
-  public void setCheckErrorPercent(BoolPolicy checkErrorPercent) {
-    this.checkErrorPercent=checkErrorPercent;
-  }
+    public void setCheckErrorPercent(BoolPolicy checkErrorPercent) {
+        this.checkErrorPercent = checkErrorPercent;
+    }
 
-  public void setPercentage(IntPolicy percentage) {
-    this.percentage=percentage;
-  }
+    public void setPercentage(IntPolicy percentage) {
+        this.percentage = percentage;
+    }
 
-  public void setCheckBeacon(BoolPolicy checkBeacon) {
-    this.checkBeacon=checkBeacon;
-  }
+    public void setCheckBeacon(BoolPolicy checkBeacon) {
+        this.checkBeacon = checkBeacon;
+    }
 }

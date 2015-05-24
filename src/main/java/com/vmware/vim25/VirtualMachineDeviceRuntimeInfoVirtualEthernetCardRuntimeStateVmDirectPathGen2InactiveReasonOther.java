@@ -30,18 +30,18 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public enum VirtualMachineDeviceRuntimeInfoVirtualEthernetCardRuntimeStateVmDirectPathGen2InactiveReasonOther {
-  vmNptIncompatibleHost ("vmNptIncompatibleHost"),
-  vmNptIncompatibleNetwork ("vmNptIncompatibleNetwork");
+    vmNptIncompatibleHost("vmNptIncompatibleHost"),
+    vmNptIncompatibleNetwork("vmNptIncompatibleNetwork");
 
-  @SuppressWarnings("unused")
-  private final String val;
-  private VirtualMachineDeviceRuntimeInfoVirtualEthernetCardRuntimeStateVmDirectPathGen2InactiveReasonOther(String val)
-  {
-    this.val = val;
-  }
+    @SuppressWarnings("unused")
+    private final String val;
+
+    private VirtualMachineDeviceRuntimeInfoVirtualEthernetCardRuntimeStateVmDirectPathGen2InactiveReasonOther(String val) {
+        this.val = val;
+    }
 }

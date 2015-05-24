@@ -28,31 +28,32 @@ POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
 
 package com.vmware.vim25;
+
 import java.util.Calendar;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VsanHostClusterStatusStateCompletionEstimate extends DynamicData {
-  public Calendar completeTime;
-  public Integer percentComplete;
+    public Calendar completeTime;
+    public Integer percentComplete;
 
-  public Calendar getCompleteTime() {
-    return this.completeTime;
-  }
+    public Calendar getCompleteTime() {
+        return this.completeTime;
+    }
 
-  public Integer getPercentComplete() {
-    return this.percentComplete;
-  }
+    public Integer getPercentComplete() {
+        return this.percentComplete;
+    }
 
-  public void setCompleteTime(Calendar completeTime) {
-    this.completeTime=completeTime;
-  }
+    public void setCompleteTime(Calendar completeTime) {
+        this.completeTime = completeTime;
+    }
 
-  public void setPercentComplete(Integer percentComplete) {
-    this.percentComplete=percentComplete;
-  }
+    public void setPercentComplete(Integer percentComplete) {
+        this.percentComplete = percentComplete;
+    }
 }

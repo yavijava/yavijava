@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VirtualDeviceConnectOption extends DynamicData {
-  public BoolOption startConnected;
-  public BoolOption allowGuestControl;
+    public BoolOption startConnected;
+    public BoolOption allowGuestControl;
 
-  public BoolOption getStartConnected() {
-    return this.startConnected;
-  }
+    public BoolOption getStartConnected() {
+        return this.startConnected;
+    }
 
-  public BoolOption getAllowGuestControl() {
-    return this.allowGuestControl;
-  }
+    public BoolOption getAllowGuestControl() {
+        return this.allowGuestControl;
+    }
 
-  public void setStartConnected(BoolOption startConnected) {
-    this.startConnected=startConnected;
-  }
+    public void setStartConnected(BoolOption startConnected) {
+        this.startConnected = startConnected;
+    }
 
-  public void setAllowGuestControl(BoolOption allowGuestControl) {
-    this.allowGuestControl=allowGuestControl;
-  }
+    public void setAllowGuestControl(BoolOption allowGuestControl) {
+        this.allowGuestControl = allowGuestControl;
+    }
 }

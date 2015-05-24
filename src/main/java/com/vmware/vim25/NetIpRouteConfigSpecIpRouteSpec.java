@@ -30,46 +30,46 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class NetIpRouteConfigSpecIpRouteSpec extends DynamicData {
-  public String network;
-  public int prefixLength;
-  public NetIpRouteConfigSpecGatewaySpec gateway;
-  public String operation;
+    public String network;
+    public int prefixLength;
+    public NetIpRouteConfigSpecGatewaySpec gateway;
+    public String operation;
 
-  public String getNetwork() {
-    return this.network;
-  }
+    public String getNetwork() {
+        return this.network;
+    }
 
-  public int getPrefixLength() {
-    return this.prefixLength;
-  }
+    public int getPrefixLength() {
+        return this.prefixLength;
+    }
 
-  public NetIpRouteConfigSpecGatewaySpec getGateway() {
-    return this.gateway;
-  }
+    public NetIpRouteConfigSpecGatewaySpec getGateway() {
+        return this.gateway;
+    }
 
-  public String getOperation() {
-    return this.operation;
-  }
+    public String getOperation() {
+        return this.operation;
+    }
 
-  public void setNetwork(String network) {
-    this.network=network;
-  }
+    public void setNetwork(String network) {
+        this.network = network;
+    }
 
-  public void setPrefixLength(int prefixLength) {
-    this.prefixLength=prefixLength;
-  }
+    public void setPrefixLength(int prefixLength) {
+        this.prefixLength = prefixLength;
+    }
 
-  public void setGateway(NetIpRouteConfigSpecGatewaySpec gateway) {
-    this.gateway=gateway;
-  }
+    public void setGateway(NetIpRouteConfigSpecGatewaySpec gateway) {
+        this.gateway = gateway;
+    }
 
-  public void setOperation(String operation) {
-    this.operation=operation;
-  }
+    public void setOperation(String operation) {
+        this.operation = operation;
+    }
 }

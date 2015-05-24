@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostCacheConfigurationInfo extends DynamicData {
-  public ManagedObjectReference key;
-  public long swapSize;
+    public ManagedObjectReference key;
+    public long swapSize;
 
-  public ManagedObjectReference getKey() {
-    return this.key;
-  }
+    public ManagedObjectReference getKey() {
+        return this.key;
+    }
 
-  public long getSwapSize() {
-    return this.swapSize;
-  }
+    public long getSwapSize() {
+        return this.swapSize;
+    }
 
-  public void setKey(ManagedObjectReference key) {
-    this.key=key;
-  }
+    public void setKey(ManagedObjectReference key) {
+        this.key = key;
+    }
 
-  public void setSwapSize(long swapSize) {
-    this.swapSize=swapSize;
-  }
+    public void setSwapSize(long swapSize) {
+        this.swapSize = swapSize;
+    }
 }

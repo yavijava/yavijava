@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class DVSSelection extends SelectionSet {
-  public String dvsUuid;
+    public String dvsUuid;
 
-  public String getDvsUuid() {
-    return this.dvsUuid;
-  }
+    public String getDvsUuid() {
+        return this.dvsUuid;
+    }
 
-  public void setDvsUuid(String dvsUuid) {
-    this.dvsUuid=dvsUuid;
-  }
+    public void setDvsUuid(String dvsUuid) {
+        this.dvsUuid = dvsUuid;
+    }
 }

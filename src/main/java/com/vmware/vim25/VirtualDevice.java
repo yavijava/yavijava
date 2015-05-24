@@ -30,73 +30,73 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VirtualDevice extends DynamicData {
-  public int key;
-  public Description deviceInfo;
-  public VirtualDeviceBackingInfo backing;
-  public VirtualDeviceConnectInfo connectable;
-  public VirtualDeviceBusSlotInfo slotInfo;
-  public Integer controllerKey;
-  public Integer unitNumber;
+    public int key;
+    public Description deviceInfo;
+    public VirtualDeviceBackingInfo backing;
+    public VirtualDeviceConnectInfo connectable;
+    public VirtualDeviceBusSlotInfo slotInfo;
+    public Integer controllerKey;
+    public Integer unitNumber;
 
-  public int getKey() {
-    return this.key;
-  }
+    public int getKey() {
+        return this.key;
+    }
 
-  public Description getDeviceInfo() {
-    return this.deviceInfo;
-  }
+    public Description getDeviceInfo() {
+        return this.deviceInfo;
+    }
 
-  public VirtualDeviceBackingInfo getBacking() {
-    return this.backing;
-  }
+    public VirtualDeviceBackingInfo getBacking() {
+        return this.backing;
+    }
 
-  public VirtualDeviceConnectInfo getConnectable() {
-    return this.connectable;
-  }
+    public VirtualDeviceConnectInfo getConnectable() {
+        return this.connectable;
+    }
 
-  public VirtualDeviceBusSlotInfo getSlotInfo() {
-    return this.slotInfo;
-  }
+    public VirtualDeviceBusSlotInfo getSlotInfo() {
+        return this.slotInfo;
+    }
 
-  public Integer getControllerKey() {
-    return this.controllerKey;
-  }
+    public Integer getControllerKey() {
+        return this.controllerKey;
+    }
 
-  public Integer getUnitNumber() {
-    return this.unitNumber;
-  }
+    public Integer getUnitNumber() {
+        return this.unitNumber;
+    }
 
-  public void setKey(int key) {
-    this.key=key;
-  }
+    public void setKey(int key) {
+        this.key = key;
+    }
 
-  public void setDeviceInfo(Description deviceInfo) {
-    this.deviceInfo=deviceInfo;
-  }
+    public void setDeviceInfo(Description deviceInfo) {
+        this.deviceInfo = deviceInfo;
+    }
 
-  public void setBacking(VirtualDeviceBackingInfo backing) {
-    this.backing=backing;
-  }
+    public void setBacking(VirtualDeviceBackingInfo backing) {
+        this.backing = backing;
+    }
 
-  public void setConnectable(VirtualDeviceConnectInfo connectable) {
-    this.connectable=connectable;
-  }
+    public void setConnectable(VirtualDeviceConnectInfo connectable) {
+        this.connectable = connectable;
+    }
 
-  public void setSlotInfo(VirtualDeviceBusSlotInfo slotInfo) {
-    this.slotInfo=slotInfo;
-  }
+    public void setSlotInfo(VirtualDeviceBusSlotInfo slotInfo) {
+        this.slotInfo = slotInfo;
+    }
 
-  public void setControllerKey(Integer controllerKey) {
-    this.controllerKey=controllerKey;
-  }
+    public void setControllerKey(Integer controllerKey) {
+        this.controllerKey = controllerKey;
+    }
 
-  public void setUnitNumber(Integer unitNumber) {
-    this.unitNumber=unitNumber;
-  }
+    public void setUnitNumber(Integer unitNumber) {
+        this.unitNumber = unitNumber;
+    }
 }

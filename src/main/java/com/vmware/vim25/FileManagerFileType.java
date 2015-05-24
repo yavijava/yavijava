@@ -30,17 +30,16 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
-*/
+ * @author Steve Jin (sjin@vmware.com)
+ */
 
-public enum FileManagerFileType
-{
-  File ("File"),
-  VirtualDisk ("VirtualDisk");
+public enum FileManagerFileType {
+    File("File"),
+    VirtualDisk("VirtualDisk");
 
-  private final String val;
-  private FileManagerFileType(String val)
-  {
-    this.val = val;
-  }
+    private final String val;
+
+    private FileManagerFileType(String val) {
+        this.val = val;
+    }
 }

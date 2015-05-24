@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class InvalidController extends InvalidDeviceSpec {
-  public int controllerKey;
+    public int controllerKey;
 
-  public int getControllerKey() {
-    return this.controllerKey;
-  }
+    public int getControllerKey() {
+        return this.controllerKey;
+    }
 
-  public void setControllerKey(int controllerKey) {
-    this.controllerKey=controllerKey;
-  }
+    public void setControllerKey(int controllerKey) {
+        this.controllerKey = controllerKey;
+    }
 }

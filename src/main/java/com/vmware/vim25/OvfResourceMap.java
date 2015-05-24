@@ -30,46 +30,46 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class OvfResourceMap extends DynamicData {
-  public String source;
-  public ManagedObjectReference parent;
-  public ResourceConfigSpec resourceSpec;
-  public ManagedObjectReference datastore;
+    public String source;
+    public ManagedObjectReference parent;
+    public ResourceConfigSpec resourceSpec;
+    public ManagedObjectReference datastore;
 
-  public String getSource() {
-    return this.source;
-  }
+    public String getSource() {
+        return this.source;
+    }
 
-  public ManagedObjectReference getParent() {
-    return this.parent;
-  }
+    public ManagedObjectReference getParent() {
+        return this.parent;
+    }
 
-  public ResourceConfigSpec getResourceSpec() {
-    return this.resourceSpec;
-  }
+    public ResourceConfigSpec getResourceSpec() {
+        return this.resourceSpec;
+    }
 
-  public ManagedObjectReference getDatastore() {
-    return this.datastore;
-  }
+    public ManagedObjectReference getDatastore() {
+        return this.datastore;
+    }
 
-  public void setSource(String source) {
-    this.source=source;
-  }
+    public void setSource(String source) {
+        this.source = source;
+    }
 
-  public void setParent(ManagedObjectReference parent) {
-    this.parent=parent;
-  }
+    public void setParent(ManagedObjectReference parent) {
+        this.parent = parent;
+    }
 
-  public void setResourceSpec(ResourceConfigSpec resourceSpec) {
-    this.resourceSpec=resourceSpec;
-  }
+    public void setResourceSpec(ResourceConfigSpec resourceSpec) {
+        this.resourceSpec = resourceSpec;
+    }
 
-  public void setDatastore(ManagedObjectReference datastore) {
-    this.datastore=datastore;
-  }
+    public void setDatastore(ManagedObjectReference datastore) {
+        this.datastore = datastore;
+    }
 }

@@ -30,46 +30,46 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostVirtualSwitchSpec extends DynamicData {
-  public int numPorts;
-  public HostVirtualSwitchBridge bridge;
-  public HostNetworkPolicy policy;
-  public Integer mtu;
+    public int numPorts;
+    public HostVirtualSwitchBridge bridge;
+    public HostNetworkPolicy policy;
+    public Integer mtu;
 
-  public int getNumPorts() {
-    return this.numPorts;
-  }
+    public int getNumPorts() {
+        return this.numPorts;
+    }
 
-  public HostVirtualSwitchBridge getBridge() {
-    return this.bridge;
-  }
+    public HostVirtualSwitchBridge getBridge() {
+        return this.bridge;
+    }
 
-  public HostNetworkPolicy getPolicy() {
-    return this.policy;
-  }
+    public HostNetworkPolicy getPolicy() {
+        return this.policy;
+    }
 
-  public Integer getMtu() {
-    return this.mtu;
-  }
+    public Integer getMtu() {
+        return this.mtu;
+    }
 
-  public void setNumPorts(int numPorts) {
-    this.numPorts=numPorts;
-  }
+    public void setNumPorts(int numPorts) {
+        this.numPorts = numPorts;
+    }
 
-  public void setBridge(HostVirtualSwitchBridge bridge) {
-    this.bridge=bridge;
-  }
+    public void setBridge(HostVirtualSwitchBridge bridge) {
+        this.bridge = bridge;
+    }
 
-  public void setPolicy(HostNetworkPolicy policy) {
-    this.policy=policy;
-  }
+    public void setPolicy(HostNetworkPolicy policy) {
+        this.policy = policy;
+    }
 
-  public void setMtu(Integer mtu) {
-    this.mtu=mtu;
-  }
+    public void setMtu(Integer mtu) {
+        this.mtu = mtu;
+    }
 }

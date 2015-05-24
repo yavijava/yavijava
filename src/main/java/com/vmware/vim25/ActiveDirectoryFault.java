@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class ActiveDirectoryFault extends VimFault {
-  public Integer errorCode;
+    public Integer errorCode;
 
-  public Integer getErrorCode() {
-    return this.errorCode;
-  }
+    public Integer getErrorCode() {
+        return this.errorCode;
+    }
 
-  public void setErrorCode(Integer errorCode) {
-    this.errorCode=errorCode;
-  }
+    public void setErrorCode(Integer errorCode) {
+        this.errorCode = errorCode;
+    }
 }

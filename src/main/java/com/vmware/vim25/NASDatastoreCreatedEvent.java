@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class NASDatastoreCreatedEvent extends HostEvent {
-  public DatastoreEventArgument datastore;
+    public DatastoreEventArgument datastore;
 
-  public DatastoreEventArgument getDatastore() {
-    return this.datastore;
-  }
+    public DatastoreEventArgument getDatastore() {
+        return this.datastore;
+    }
 
-  public void setDatastore(DatastoreEventArgument datastore) {
-    this.datastore=datastore;
-  }
+    public void setDatastore(DatastoreEventArgument datastore) {
+        this.datastore = datastore;
+    }
 }

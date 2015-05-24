@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class SessionManagerLocalTicket extends DynamicData {
-  public String userName;
-  public String passwordFilePath;
+    public String userName;
+    public String passwordFilePath;
 
-  public String getUserName() {
-    return this.userName;
-  }
+    public String getUserName() {
+        return this.userName;
+    }
 
-  public String getPasswordFilePath() {
-    return this.passwordFilePath;
-  }
+    public String getPasswordFilePath() {
+        return this.passwordFilePath;
+    }
 
-  public void setUserName(String userName) {
-    this.userName=userName;
-  }
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
 
-  public void setPasswordFilePath(String passwordFilePath) {
-    this.passwordFilePath=passwordFilePath;
-  }
+    public void setPasswordFilePath(String passwordFilePath) {
+        this.passwordFilePath = passwordFilePath;
+    }
 }
