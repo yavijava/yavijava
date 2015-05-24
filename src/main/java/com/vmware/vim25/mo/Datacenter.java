@@ -30,10 +30,10 @@ POSSIBILITY OF SUCH DAMAGE.
 
 package com.vmware.vim25.mo;
 
-import java.rmi.RemoteException;
-
 import com.vmware.vim25.*;
-import com.vmware.vim25.mo.util.*;
+import com.vmware.vim25.mo.util.MorUtil;
+
+import java.rmi.RemoteException;
 
 /**
  * The managed object class corresponding to the one defined in VI SDK API reference.
@@ -128,7 +128,6 @@ public class Datacenter extends ManagedEntity {
      * method is similar to QueryConnectionInfo, but it takes a HostConnectSpec as argument, instead of list of
      * parameters.
      *
-     * @since 6.0
      * @param spec The connection spec for the host to be queried. It must contain values for all parameters required by QueryConnectionInfo See QueryConnectionInfo or a list of thrown expections.
      * @return HostConnectInfo
      * @throws GatewayConnectFault
@@ -143,6 +142,7 @@ public class Datacenter extends ManagedEntity {
      * @throws InvalidLogin
      * @throws RuntimeFault
      * @throws RemoteException
+     * @since 6.0
      */
     public HostConnectInfo queryConnectionInfoViaSpec(HostConnectSpec spec) throws GatewayConnectFault, GatewayHostNotReachable, GatewayNotFound, GatewayNotReachable, GatewayOperationRefused, GatewayToHostAuthFault, GatewayToHostTrustVerifyFault, HostConnectFault, InvalidArgument, InvalidLogin, RuntimeFault, RemoteException {
         return getVimService().queryConnectionInfoViaSpec(getMOR(), spec);

@@ -38,11 +38,11 @@ public class CertificateManager extends ManagedObject {
      * source and pushes them to the hosts
      *
      * @param hostSystems an Array of HostSystem objects
-     * @return   Task from vSphere
-     * @see com.vmware.vim25.mo.Task
-     * @throws RuntimeFault  Thrown if any type of runtime fault is thrown that is not covered by the other faults; for example, a communication error.
-     * @throws SystemError   Thrown if any of the needed actions fails.
+     * @return Task from vSphere
+     * @throws RuntimeFault    Thrown if any type of runtime fault is thrown that is not covered by the other faults; for example, a communication error.
+     * @throws SystemError     Thrown if any of the needed actions fails.
      * @throws RemoteException
+     * @see com.vmware.vim25.mo.Task
      */
     public Task certMgrRefreshCACertificatesAndCRLs_Task(HostSystem[] hostSystems) throws RuntimeFault, SystemError, RemoteException {
         ManagedObjectReference taskMor = getVimService().certMgrRefreshCACertificatesAndCRLs_Task(getMOR(), MorUtil.createMORs(hostSystems));
@@ -56,10 +56,10 @@ public class CertificateManager extends ManagedObject {
      *
      * @param hostSystems an Array of HostSystem objects
      * @return Task from vSphere
-     * @see com.vmware.vim25.mo.Task
-     * @throws RuntimeFault Thrown if any type of runtime fault is thrown that is not covered by the other faults; for example, a communication error.
-     * @throws SystemError Thrown if any of the needed actions fails.
+     * @throws RuntimeFault    Thrown if any type of runtime fault is thrown that is not covered by the other faults; for example, a communication error.
+     * @throws SystemError     Thrown if any of the needed actions fails.
      * @throws RemoteException
+     * @see com.vmware.vim25.mo.Task
      */
     public Task certMgrRefreshCertificates_Task(HostSystem[] hostSystems) throws RuntimeFault, SystemError, RemoteException {
         ManagedObjectReference taskMor = getVimService().certMgrRefreshCertificates_Task(getMOR(), MorUtil.createMORs(hostSystems));
@@ -72,10 +72,10 @@ public class CertificateManager extends ManagedObject {
      *
      * @param hostSystems an Array of HostSystem objects
      * @return Task from vSphere
-     * @see com.vmware.vim25.mo.Task
-     * @throws RuntimeFault Thrown if any type of runtime fault is thrown that is not covered by the other faults; for example, a communication error.
-     * @throws SystemError Thrown if any of the needed actions fails.
+     * @throws RuntimeFault    Thrown if any type of runtime fault is thrown that is not covered by the other faults; for example, a communication error.
+     * @throws SystemError     Thrown if any of the needed actions fails.
      * @throws RemoteException
+     * @see com.vmware.vim25.mo.Task
      */
     public Task certMgrRevokeCertificates_Task(HostSystem[] hostSystems) throws RuntimeFault, SystemError, RemoteException {
         ManagedObjectReference taskMor = getVimService().certMgrRevokeCertificates_Task(getMOR(), MorUtil.createMORs(hostSystems));

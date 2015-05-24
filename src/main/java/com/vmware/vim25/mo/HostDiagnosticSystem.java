@@ -29,59 +29,44 @@ POSSIBILITY OF SUCH DAMAGE.
 
 package com.vmware.vim25.mo;
 
-import java.rmi.RemoteException;
+import com.vmware.vim25.*;
 
-import com.vmware.vim25.HostConfigFault;
-import com.vmware.vim25.HostDiagnosticPartition;
-import com.vmware.vim25.HostDiagnosticPartitionCreateDescription;
-import com.vmware.vim25.HostDiagnosticPartitionCreateOption;
-import com.vmware.vim25.HostDiagnosticPartitionCreateSpec;
-import com.vmware.vim25.HostScsiDiskPartition;
-import com.vmware.vim25.ManagedObjectReference;
-import com.vmware.vim25.NotFound;
-import com.vmware.vim25.RuntimeFault;
+import java.rmi.RemoteException;
 
 /**
  * The managed object class corresponding to the one defined in VI SDK API reference.
+ *
  * @author Steve JIN (http://www.doublecloud.org)
  */
 
-public class HostDiagnosticSystem extends ManagedObject 
-{
+public class HostDiagnosticSystem extends ManagedObject {
 
-	public HostDiagnosticSystem(ServerConnection serverConnection, ManagedObjectReference mor) 
-	{
-		super(serverConnection, mor);
-	}
+    public HostDiagnosticSystem(ServerConnection serverConnection, ManagedObjectReference mor) {
+        super(serverConnection, mor);
+    }
 
-	public HostDiagnosticPartition getActivePartition()
-	{
-		return (HostDiagnosticPartition) getCurrentProperty("activePartition");
-	}
-	
-	public void createDiagnosticPartition(HostDiagnosticPartitionCreateSpec spec) throws HostConfigFault, NotFound, RuntimeFault, RemoteException 
-	{
-		getVimService().createDiagnosticPartition(getMOR(), spec);
-	}
-	
-	public HostDiagnosticPartition[] queryAvailablePartition() throws HostConfigFault, RuntimeFault, RemoteException 
-	{
-		return getVimService().queryAvailablePartition(getMOR());
-	}
-	
-	public HostDiagnosticPartitionCreateDescription queryPartitionCreateDesc(String diskUuid, String diagnosticType) throws HostConfigFault, NotFound, RuntimeFault, RemoteException 
-	{
-		return getVimService().queryPartitionCreateDesc(getMOR(), diskUuid, diagnosticType);
-	}
+    public HostDiagnosticPartition getActivePartition() {
+        return (HostDiagnosticPartition) getCurrentProperty("activePartition");
+    }
 
-	public HostDiagnosticPartitionCreateOption[] queryPartitionCreateOptions(String storageType, String diagnosticType) throws HostConfigFault, RuntimeFault, RemoteException 
-	{
-		return getVimService().queryPartitionCreateOptions(getMOR(), storageType, diagnosticType);
-	}
-	
-	public void selectActivePartition(HostScsiDiskPartition partition) throws HostConfigFault, NotFound, RuntimeFault, RemoteException 
-	{
-		getVimService().selectActivePartition(getMOR(), partition);
-	}
-	
+    public void createDiagnosticPartition(HostDiagnosticPartitionCreateSpec spec) throws HostConfigFault, NotFound, RuntimeFault, RemoteException {
+        getVimService().createDiagnosticPartition(getMOR(), spec);
+    }
+
+    public HostDiagnosticPartition[] queryAvailablePartition() throws HostConfigFault, RuntimeFault, RemoteException {
+        return getVimService().queryAvailablePartition(getMOR());
+    }
+
+    public HostDiagnosticPartitionCreateDescription queryPartitionCreateDesc(String diskUuid, String diagnosticType) throws HostConfigFault, NotFound, RuntimeFault, RemoteException {
+        return getVimService().queryPartitionCreateDesc(getMOR(), diskUuid, diagnosticType);
+    }
+
+    public HostDiagnosticPartitionCreateOption[] queryPartitionCreateOptions(String storageType, String diagnosticType) throws HostConfigFault, RuntimeFault, RemoteException {
+        return getVimService().queryPartitionCreateOptions(getMOR(), storageType, diagnosticType);
+    }
+
+    public void selectActivePartition(HostScsiDiskPartition partition) throws HostConfigFault, NotFound, RuntimeFault, RemoteException {
+        getVimService().selectActivePartition(getMOR(), partition);
+    }
+
 }

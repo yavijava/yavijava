@@ -29,26 +29,17 @@ POSSIBILITY OF SUCH DAMAGE.
 
 package com.vmware.vim25.mo;
 
-import java.rmi.RemoteException;
-
-import com.vmware.vim25.HostScsiDisk;
 import com.vmware.vim25.ManagedObjectReference;
-import com.vmware.vim25.RuntimeFault;
-import com.vmware.vim25.VsanHostClusterStatus;
-import com.vmware.vim25.VsanHostConfigInfo;
-import com.vmware.vim25.VsanHostDiskMapping;
-import com.vmware.vim25.VsanHostDiskResult;
 
 /**
  * The managed object class corresponding to the one defined in VI SDK API reference.
+ *
  * @author Steve JIN (http://www.doublecloud.org)
  * @since SDK5.5
  */
 
-public class OpaqueNetwork extends Network 
-{
-	public OpaqueNetwork(ServerConnection serverConnection, ManagedObjectReference mor) 
-	{
-		super(serverConnection, mor);
-	}
+public class OpaqueNetwork extends Network {
+    public OpaqueNetwork(ServerConnection serverConnection, ManagedObjectReference mor) {
+        super(serverConnection, mor);
+    }
 }

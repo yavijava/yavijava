@@ -29,9 +29,9 @@ POSSIBILITY OF SUCH DAMAGE.
 
 package com.vmware.vim25.mo;
 
-import java.rmi.RemoteException;
-
 import com.vmware.vim25.*;
+
+import java.rmi.RemoteException;
 
 /**
  * The managed object class corresponding to the one defined in VI SDK API reference.
@@ -86,17 +86,17 @@ public class HostVsanSystem extends ManagedObject {
      * remove a DiskMapping#nonSsd from a DiskMapping. This operation is only permitted if the VSAN service on this host
      * is not configured to automatically claim storage.
      *
-     * @param disk list of disks to be removed from use by the VSAN service.
+     * @param disk            list of disks to be removed from use by the VSAN service.
      * @param maintenanceSpec -
      *                        Any additional actions to move data out of the disk before removing it.
-     *                        @see com.vmware.vim25.HostMaintenanceSpec
-     *                        If unspecified, there is no action taken to move data from the
-     *                        disk.
-     * @param timeout Time to wait for the task to complete in seconds. If the value is less than or equal to zero,
-     *                there is no timeout. The operation fails with a Timedout exception if it timed out.
+     * @param timeout         Time to wait for the task to complete in seconds. If the value is less than or equal to zero,
+     *                        there is no timeout. The operation fails with a Timedout exception if it timed out.
      * @return This method returns a Task object with which to monitor the operation.
      * @throws RuntimeFault
      * @throws RemoteException
+     * @see com.vmware.vim25.HostMaintenanceSpec
+     * If unspecified, there is no action taken to move data from the
+     * disk.
      */
     public Task removeDisk_Task(HostScsiDisk[] disk, HostMaintenanceSpec maintenanceSpec, int timeout) throws RuntimeFault, RemoteException {
         ManagedObjectReference mor = getVimService().removeDisk_Task(this.getMOR(), disk, maintenanceSpec, timeout);
@@ -124,9 +124,9 @@ public class HostVsanSystem extends ManagedObject {
      * @param maintenanceSpec -
      *                        Specifies the data evacuation mode. See {@link com.vmware.vim25.HostMaintenanceSpec HostMaintenanceSpec}.
      *                        If unspecified, the default mode chosen will be ensureObjectAccessibility.
-     * @param timeout -
-     *                Time to wait for the task to complete in seconds. If the value is less than or equal to zero,
-     *                there is no timeout. The operation fails with a Timedout exception if it timed out.
+     * @param timeout         -
+     *                        Time to wait for the task to complete in seconds. If the value is less than or equal to zero,
+     *                        there is no timeout. The operation fails with a Timedout exception if it timed out.
      * @return This method returns a Task object with which to monitor the operation.
      * @throws InvalidState
      * @throws RequestCanceled
@@ -143,13 +143,14 @@ public class HostVsanSystem extends ManagedObject {
     /**
      * Recommission this host to VSAN cluster.
      * Users may use this API to recommission a node that has been evacuated in VsanHostDecommissionMode.
-     * @see com.vmware.vim25.mo.HostVsanSystem#evacuateVsanNode_Task
-     * @see VsanHostDecommissionMode
+     *
      * @return This method returns a Task object with which to monitor the operation.
      * @throws InvalidState
      * @throws RuntimeFault
      * @throws VsanFault
      * @throws RemoteException
+     * @see com.vmware.vim25.mo.HostVsanSystem#evacuateVsanNode_Task
+     * @see VsanHostDecommissionMode
      * @since 6.0
      */
     public Task recommissionVsanNode_Task() throws InvalidState, RuntimeFault, VsanFault, RemoteException {

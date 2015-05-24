@@ -29,44 +29,35 @@ POSSIBILITY OF SUCH DAMAGE.
 
 package com.vmware.vim25.mo;
 
-import java.rmi.RemoteException;
-
-import com.vmware.vim25.CannotAccessFile;
-import com.vmware.vim25.DiagnosticManagerLogDescriptor;
-import com.vmware.vim25.DiagnosticManagerLogHeader;
-import com.vmware.vim25.LogBundlingFailed;
-import com.vmware.vim25.ManagedObjectReference;
-import com.vmware.vim25.RuntimeFault;
+import com.vmware.vim25.*;
 import com.vmware.vim25.mo.util.MorUtil;
+
+import java.rmi.RemoteException;
 
 /**
  * The managed object class corresponding to the one defined in VI SDK API reference.
+ *
  * @author Steve JIN (http://www.doublecloud.org)
  */
 
-public class DiagnosticManager extends ManagedObject 
-{
+public class DiagnosticManager extends ManagedObject {
 
-	public DiagnosticManager(ServerConnection serverConnection, ManagedObjectReference mor) 
-	{
-		super(serverConnection, mor);
-	}
-	
-	public DiagnosticManagerLogHeader browseDiagnosticLog(HostSystem host, String key, int start, int lines) throws CannotAccessFile, RuntimeFault, RemoteException 
-	{
-		return getVimService().browseDiagnosticLog(getMOR(), host==null? null : host.getMOR(), key, start, lines);
-	}
-	
-	public Task generateLogBundles_Task(boolean includeDefault, HostSystem[] hosts) throws LogBundlingFailed, RuntimeFault, RemoteException 
-	{
-		ManagedObjectReference mor = getVimService().generateLogBundles_Task(getMOR(), 
-				includeDefault, hosts==null? null : MorUtil.createMORs(hosts));
-		return new Task(getServerConnection(), mor);
-	}
+    public DiagnosticManager(ServerConnection serverConnection, ManagedObjectReference mor) {
+        super(serverConnection, mor);
+    }
 
-	public DiagnosticManagerLogDescriptor[] queryDescriptions(HostSystem host) throws RuntimeFault, RemoteException 
-	{
-		return getVimService().queryDescriptions(getMOR(), host==null? null : host.getMOR());
-	}
-	
+    public DiagnosticManagerLogHeader browseDiagnosticLog(HostSystem host, String key, int start, int lines) throws CannotAccessFile, RuntimeFault, RemoteException {
+        return getVimService().browseDiagnosticLog(getMOR(), host == null ? null : host.getMOR(), key, start, lines);
+    }
+
+    public Task generateLogBundles_Task(boolean includeDefault, HostSystem[] hosts) throws LogBundlingFailed, RuntimeFault, RemoteException {
+        ManagedObjectReference mor = getVimService().generateLogBundles_Task(getMOR(),
+            includeDefault, hosts == null ? null : MorUtil.createMORs(hosts));
+        return new Task(getServerConnection(), mor);
+    }
+
+    public DiagnosticManagerLogDescriptor[] queryDescriptions(HostSystem host) throws RuntimeFault, RemoteException {
+        return getVimService().queryDescriptions(getMOR(), host == null ? null : host.getMOR());
+    }
+
 }

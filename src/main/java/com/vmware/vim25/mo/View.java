@@ -29,26 +29,25 @@ POSSIBILITY OF SUCH DAMAGE.
 
 package com.vmware.vim25.mo;
 
-import java.rmi.RemoteException;
-
 import com.vmware.vim25.ManagedObjectReference;
 import com.vmware.vim25.RuntimeFault;
 
+import java.rmi.RemoteException;
+
 /**
  * The managed object class corresponding to the one defined in VI SDK API reference.
+ *
  * @author Steve JIN (http://www.doublecloud.org)
  */
 
-abstract public class View extends ManagedObject 
-{
+abstract public class View extends ManagedObject {
 
-	public View(ServerConnection serverConnection, ManagedObjectReference mor) {
-		super(serverConnection, mor);
-	}
+    public View(ServerConnection serverConnection, ManagedObjectReference mor) {
+        super(serverConnection, mor);
+    }
 
-	public void destroyView() throws RuntimeFault, RemoteException 
-	{
-		getVimService().destroyView(getMOR());
-	}
+    public void destroyView() throws RuntimeFault, RemoteException {
+        getVimService().destroyView(getMOR());
+    }
 
 }

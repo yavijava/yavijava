@@ -29,41 +29,39 @@ POSSIBILITY OF SUCH DAMAGE.
 
 package com.vmware.vim25.mo;
 
-import java.rmi.RemoteException;
+import com.vmware.vim25.Event;
+import com.vmware.vim25.EventFilterSpec;
+import com.vmware.vim25.ManagedObjectReference;
+import com.vmware.vim25.RuntimeFault;
 
-import com.vmware.vim25.*;
+import java.rmi.RemoteException;
 
 /**
  * The managed object class corresponding to the one defined in VI SDK API reference.
+ *
  * @author Steve JIN (http://www.doublecloud.org)
  */
 
-public class EventHistoryCollector extends HistoryCollector 
-{
-	
-	public EventHistoryCollector(ServerConnection serverConnection, ManagedObjectReference mor) 
-	{
-		super(serverConnection, mor);
-	}
-	
-	public EventFilterSpec getFilter()
-	{
-		return (EventFilterSpec) getCurrentProperty("filter");
-	}
-	
-	public Event[] getLatestPage()
-	{
-		return (Event[]) this.getCurrentProperty("latestPage");
-	}
-	
-	public Event[] readNextEvents(int maxCount) throws RuntimeFault, RemoteException 
-	{
-		return getVimService().readNextEvents(getMOR(), maxCount);
-	}
-	
-	public Event[] readPreviousEvents(int maxCount) throws RuntimeFault, RemoteException 
-	{
-		return getVimService().readPreviousEvents(getMOR(), maxCount);
-	}
+public class EventHistoryCollector extends HistoryCollector {
+
+    public EventHistoryCollector(ServerConnection serverConnection, ManagedObjectReference mor) {
+        super(serverConnection, mor);
+    }
+
+    public EventFilterSpec getFilter() {
+        return (EventFilterSpec) getCurrentProperty("filter");
+    }
+
+    public Event[] getLatestPage() {
+        return (Event[]) this.getCurrentProperty("latestPage");
+    }
+
+    public Event[] readNextEvents(int maxCount) throws RuntimeFault, RemoteException {
+        return getVimService().readNextEvents(getMOR(), maxCount);
+    }
+
+    public Event[] readPreviousEvents(int maxCount) throws RuntimeFault, RemoteException {
+        return getVimService().readPreviousEvents(getMOR(), maxCount);
+    }
 
 }

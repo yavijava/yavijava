@@ -30,37 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25.mo.util;
 
 public class OptionSpec {
-   private String optionName;
-   private int optionRequired;
-   private String optionDesc;
-   private String optionType;
-   private String optionDefault;
+    private String optionName;
+    private int optionRequired;
+    private String optionDesc;
+    private String optionType;
+    private String optionDefault;
 
-   public OptionSpec(String optionName,String optionType,int optionRequired,String optionDesc, String optionDefault) {
-      this.optionName = optionName;
-      this.optionType = optionType;
-      this.optionRequired = optionRequired;
-      this.optionDesc = optionDesc;
-      this.optionDefault = optionDefault;
-   }
-    
-   public String getOptionName() {
-      return optionName;
-   }
-    
-   public int getOptionRequired() {
-      return optionRequired;
-   }
-    
-   public String getOptionDesc() {
-      return optionDesc;
-   }
-    
-   public String getOptionType() {
-      return optionType;
-   }
-    
-   public String getOptionDefault() {
-      return optionDefault;
-   }
+    public OptionSpec(String optionName, String optionType, int optionRequired, String optionDesc, String optionDefault) {
+        this.optionName = optionName;
+        this.optionType = optionType;
+        this.optionRequired = optionRequired;
+        this.optionDesc = optionDesc;
+        this.optionDefault = optionDefault;
+    }
+
+    public String getOptionName() {
+        return optionName;
+    }
+
+    public int getOptionRequired() {
+        return optionRequired;
+    }
+
+    public String getOptionDesc() {
+        return optionDesc;
+    }
+
+    public String getOptionType() {
+        return optionType;
+    }
+
+    public String getOptionDefault() {
+        return optionDefault;
+    }
 }

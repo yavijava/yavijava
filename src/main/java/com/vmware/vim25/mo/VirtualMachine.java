@@ -29,9 +29,9 @@ POSSIBILITY OF SUCH DAMAGE.
 
 package com.vmware.vim25.mo;
 
-import java.rmi.RemoteException;
-
 import com.vmware.vim25.*;
+
+import java.rmi.RemoteException;
 
 /**
  * The managed object class corresponding to the one defined in VI SDK API reference.
@@ -190,8 +190,7 @@ public class VirtualMachine extends ManagedEntity {
 
     /**
      * @since SDK4.0
-     * @deprecated
-     * As of vSphere API 6.0, use {@link #createSecondaryVMEx_Task createSecondaryVMEx_Task} instead.
+     * @deprecated As of vSphere API 6.0, use {@link #createSecondaryVMEx_Task createSecondaryVMEx_Task} instead.
      */
     public Task createSecondaryVM_Task(HostSystem host) throws TaskInProgress, InvalidState, InsufficientResourcesFault, VmFaultToleranceIssue, FileFault, VmConfigFault, RuntimeFault, RemoteException {
         ManagedObjectReference mor = getVimService().createSecondaryVM_Task(getMOR(), host == null ? null : host.getMOR());
@@ -200,13 +199,13 @@ public class VirtualMachine extends ManagedEntity {
 
     /**
      * Creates a secondary virtual machine to be part of this fault tolerant group.
-     *
+     * <p/>
      * If a host is specified, the secondary virtual machine will be created on it. Otherwise, a host will be selected
      * by the system.
-     *
+     * <p/>
      * If a FaultToleranceConfigSpec is specified, the virtual machine's configuration files and disks will be created
      * in the specified datastores.
-     *
+     * <p/>
      * If the primary virtual machine (i.e., this virtual machine) is powered on when the secondary is created, an
      * attempt will be made to power on the secondary on a system selected host. If the cluster is a DRS cluster, DRS
      * will be invoked to obtain a placement for the new secondary virtual machine. If the DRS recommendation
@@ -361,8 +360,7 @@ public class VirtualMachine extends ManagedEntity {
 
     /**
      * @since SDK4.1
-     * @deprecated
-     * As of 6.0 use {@link #queryFaultToleranceCompatibilityEx}
+     * @deprecated As of 6.0 use {@link #queryFaultToleranceCompatibilityEx}
      */
     public LocalizedMethodFault[] queryFaultToleranceCompatibility() throws InvalidState, VmConfigFault, RuntimeFault, RemoteException {
         return getVimService().queryFaultToleranceCompatibility(getMOR());

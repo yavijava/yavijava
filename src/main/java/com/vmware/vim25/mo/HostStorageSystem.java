@@ -29,9 +29,9 @@ POSSIBILITY OF SUCH DAMAGE.
 
 package com.vmware.vim25.mo;
 
-import java.rmi.RemoteException;
-
 import com.vmware.vim25.*;
+
+import java.rmi.RemoteException;
 
 /**
  * The managed object class corresponding to the one defined in VI SDK API reference.
@@ -363,13 +363,13 @@ public class HostStorageSystem extends ExtensibleManagedObject {
 
     /**
      * Attach one or more SCSI LUNs. This is an asynchronous, batch operation of attachScisLun.
-     * @see #attachScsiLun(String) for operational details.
      *
      * @param lunUuid each element specifies UUID of LUN to be attached.
      * @return Task
      * @throws HostConfigFault
      * @throws RuntimeFault
      * @throws RemoteException
+     * @see #attachScsiLun(String) for operational details.
      * @since 6.0
      */
     public Task attachScsiLunEx_Task(String[] lunUuid) throws HostConfigFault, RuntimeFault, RemoteException {
@@ -405,12 +405,13 @@ public class HostStorageSystem extends ExtensibleManagedObject {
 
     /**
      * Detach one or more SCSI LUNs. This is an asynchronous, batch operation of detachScisLun.
-     * @see #detachScsiLun(String) ScsiLun for operational details.
+     *
      * @param lunUuid each element specifies UUID of LUN to be detached.
      * @return Task
      * @throws HostConfigFault
      * @throws RuntimeFault
      * @throws RemoteException
+     * @see #detachScsiLun(String) ScsiLun for operational details.
      * @since 6.0
      */
     public Task detachScsiLunEx_Task(String[] lunUuid) throws HostConfigFault, RuntimeFault, RemoteException {
@@ -488,13 +489,13 @@ public class HostStorageSystem extends ExtensibleManagedObject {
 
     /**
      * Mount one or more VMFS volumes. This is an asynchronous, batch operation of mountVmfsVolume.
-     * @see #mountVmfsVolume for operational details.
      *
      * @param vmfsUuid each element specifies the UUID of a VMFS volume to be unmounted.
      * @return Task
      * @throws HostConfigFault
      * @throws RuntimeFault
      * @throws RemoteException
+     * @see #mountVmfsVolume for operational details.
      * @since 6.0
      */
     public Task mountVmfsVolumeEx_Task(String[] vmfsUuid) throws HostConfigFault, RuntimeFault, RemoteException {
@@ -521,10 +522,10 @@ public class HostStorageSystem extends ExtensibleManagedObject {
      * security types that require user credentials for accessing data. The password is used to acquire credentials that
      * the NFS client needs to use in order to secure NFS traffic using RPCSECGSS. The client will access files on all
      * volumes mounted on this host (that are mounted with the relevant security type) on behalf of specified user.
-     *
+     * <p/>
      * At present, this API supports only file system NFSv4.1.
      *
-     * @param user Username
+     * @param user     Username
      * @param password Passowrd
      * @throws HostConfigFault
      * @throws RuntimeFault
@@ -587,13 +588,12 @@ public class HostStorageSystem extends ExtensibleManagedObject {
     /**
      * Unmount one or more VMFS volumes. This is an asynchronous, batch operation of unmountVmfsVolume.
      *
-     * @see #unmountVmfsVolume for operational details.
-     *
      * @param vmfsUuid each element specifies the UUID of a VMFS volume to be unmounted.
      * @return Task
      * @throws HostConfigFault
      * @throws RuntimeFault
      * @throws RemoteException
+     * @see #unmountVmfsVolume for operational details.
      * @since 6.0
      */
     public Task unmountVmfsVolumeEx_Task(String[] vmfsUuid) throws HostConfigFault, RuntimeFault, RemoteException {

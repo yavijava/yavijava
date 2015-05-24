@@ -29,127 +29,101 @@ POSSIBILITY OF SUCH DAMAGE.
 
 package com.vmware.vim25.mo;
 
-import java.rmi.RemoteException;
+import com.vmware.vim25.*;
 
-import com.vmware.vim25.AlarmState;
-import com.vmware.vim25.CustomFieldValue;
-import com.vmware.vim25.DuplicateName;
-import com.vmware.vim25.Event;
-import com.vmware.vim25.InvalidName;
-import com.vmware.vim25.ManagedEntityStatus;
-import com.vmware.vim25.ManagedObjectReference;
-import com.vmware.vim25.Permission;
-import com.vmware.vim25.RuntimeFault;
-import com.vmware.vim25.Tag;
-import com.vmware.vim25.VimFault;
+import java.rmi.RemoteException;
 
 /**
  * ManagedEntity represents the managed objects that can be listed in the inventory tree.
+ *
  * @author Steve JIN (http://www.doublecloud.org)
  */
 
-public class ManagedEntity extends ExtensibleManagedObject 
-{
-	public ManagedEntity(ServerConnection sc, ManagedObjectReference mor) 
-	{
-		super(sc, mor);
-	}
-	
+public class ManagedEntity extends ExtensibleManagedObject {
+    public ManagedEntity(ServerConnection sc, ManagedObjectReference mor) {
+        super(sc, mor);
+    }
+
 	/* =========================Accessors=================================*/
-	
-	/** @since SDK4.0 */
-	public boolean getAlarmActionEabled()
-	{
-	  Boolean aae = (Boolean)getCurrentProperty("alarmActionsEnabled");
-    return aae == null? false : aae.booleanValue();
-	}
-	
-	public Event[] getConfigIssue()
-	{
-		return (Event[]) getCurrentProperty("configIssue");
-	}
-	
-	public ManagedEntityStatus getConfigStatus()
-	{
-		return (ManagedEntityStatus) getCurrentProperty("configStatus");
-	}
 
-	public CustomFieldValue[] getCustomValue()
-	{
-		return (CustomFieldValue[]) getCurrentProperty("customValue");
-	}
+    /**
+     * @since SDK4.0
+     */
+    public boolean getAlarmActionEabled() {
+        Boolean aae = (Boolean) getCurrentProperty("alarmActionsEnabled");
+        return aae == null ? false : aae.booleanValue();
+    }
 
-	public AlarmState[] getDeclaredAlarmState()
-	{
-		return (AlarmState[]) getCurrentProperty("declaredAlarmState");
-	}
-	
-	public String[] getDisabledMethod()
-	{
-		return (String[]) getCurrentProperty("disabledMethod");
-	}
-	
-	public int[] getEffectiveRole()
-	{
-		return (int[]) getCurrentProperty("effectiveRole");
-	}
-	
-	public String getName()
-	{
-		return (String) getCurrentProperty("name");
-	}
-	
-	public ManagedEntityStatus getOverallStatus()
-	{
-		return (ManagedEntityStatus) getCurrentProperty("overallStatus");
-	}
+    public Event[] getConfigIssue() {
+        return (Event[]) getCurrentProperty("configIssue");
+    }
 
-	public ManagedEntity getParent()
-	{
-		return (ManagedEntity) this.getManagedObject("parent");
-	}
-	
-	public Permission[] getPermission()
-	{
-		return (Permission[]) getCurrentProperty("permission");
-	}
+    public ManagedEntityStatus getConfigStatus() {
+        return (ManagedEntityStatus) getCurrentProperty("configStatus");
+    }
 
-	public Task[] getRecentTasks()
-	{
-		return getTasks("recentTask");
-	}
+    public CustomFieldValue[] getCustomValue() {
+        return (CustomFieldValue[]) getCurrentProperty("customValue");
+    }
 
-	/** @since SDK4.0 */
-	public Tag[] getTag()
-	{
-		return (Tag[]) getCurrentProperty("tag");
-	}
-	
-	public AlarmState[] getTriggeredAlarmState()
-	{
-		return (AlarmState[]) getCurrentProperty("triggeredAlarmState");
-	}
+    public AlarmState[] getDeclaredAlarmState() {
+        return (AlarmState[]) getCurrentProperty("declaredAlarmState");
+    }
+
+    public String[] getDisabledMethod() {
+        return (String[]) getCurrentProperty("disabledMethod");
+    }
+
+    public int[] getEffectiveRole() {
+        return (int[]) getCurrentProperty("effectiveRole");
+    }
+
+    public String getName() {
+        return (String) getCurrentProperty("name");
+    }
+
+    public ManagedEntityStatus getOverallStatus() {
+        return (ManagedEntityStatus) getCurrentProperty("overallStatus");
+    }
+
+    public ManagedEntity getParent() {
+        return (ManagedEntity) this.getManagedObject("parent");
+    }
+
+    public Permission[] getPermission() {
+        return (Permission[]) getCurrentProperty("permission");
+    }
+
+    public Task[] getRecentTasks() {
+        return getTasks("recentTask");
+    }
+
+    /**
+     * @since SDK4.0
+     */
+    public Tag[] getTag() {
+        return (Tag[]) getCurrentProperty("tag");
+    }
+
+    public AlarmState[] getTriggeredAlarmState() {
+        return (AlarmState[]) getCurrentProperty("triggeredAlarmState");
+    }
 	
 	/* =========================Methods=================================*/
-	
-	public Task destroy_Task() throws VimFault, RuntimeFault, RemoteException 
-	{
-		ManagedObjectReference taskMor = getVimService().destroy_Task(getMOR());
-		return new Task(getServerConnection(), taskMor);
-	}
-	
-	public void reload() throws RuntimeFault, RemoteException 
-	{
-		getVimService().reload(getMOR());
-	}
-	
-	public Task rename_Task(String name) throws InvalidName, DuplicateName, RuntimeFault, RemoteException 
-	{
-		ManagedObjectReference taskMor = getVimService().rename_Task(getMOR(), name);
-		return new Task(getServerConnection(), taskMor);
-	}
 
+    public Task destroy_Task() throws VimFault, RuntimeFault, RemoteException {
+        ManagedObjectReference taskMor = getVimService().destroy_Task(getMOR());
+        return new Task(getServerConnection(), taskMor);
+    }
 
+    public void reload() throws RuntimeFault, RemoteException {
+        getVimService().reload(getMOR());
+    }
+
+    public Task rename_Task(String name) throws InvalidName, DuplicateName, RuntimeFault, RemoteException {
+        ManagedObjectReference taskMor = getVimService().rename_Task(getMOR(), name);
+        return new Task(getServerConnection(), taskMor);
+    }
 
 
 }

@@ -29,9 +29,9 @@ POSSIBILITY OF SUCH DAMAGE.
 
 package com.vmware.vim25.mo;
 
-import java.rmi.RemoteException;
-
 import com.vmware.vim25.*;
+
+import java.rmi.RemoteException;
 
 /**
  * The managed object class corresponding to the one defined in VI SDK API reference.
@@ -139,23 +139,23 @@ public class VirtualDiskManager extends ManagedObject {
 
     /**
      * Import an unmanaged-snapshot from Virtual-Volume(VVol) enabled Storage Array.
-     *
+     * <p/>
      * Storage Array may support users to take snapshots indepedent of VMware stack. Such copies or snapshots are known
      * as 'Unmanaged-Snapshots'. We are providing an ability to end-users to import such unmanaged-snapshots as Virtual
      * Disks.
-     *
+     * <p/>
      * End-user needs to know the VVol-Identifier to import unmanaged snapshot as VirtualDisk.
-     *
+     * <p/>
      * Once VirtualDisk is created, user can use 'Datastore Browser' to use with rest of Virtual Machine provisioning
      * APIs.
      *
-     * @param vdisk -
-     *              The name of the disk to import, either a datastore path or a URL referring to the virtual disk from
-     *              which to get geometry information.
+     * @param vdisk      -
+     *                   The name of the disk to import, either a datastore path or a URL referring to the virtual disk from
+     *                   which to get geometry information.
      * @param datacenter -
      *                   If vdisk is a datastore path, the datacenter for that datastore path. Not needed when invoked
      *                   directly on ESX. If not specified on a call to VirtualCenter, vdisk must be a URL.
-     * @param vvolId Unmanaged snapshot identifier
+     * @param vvolId     Unmanaged snapshot identifier
      * @throws InvalidDatastore
      * @throws NotFound
      * @throws RuntimeFault

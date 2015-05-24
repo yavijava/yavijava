@@ -29,98 +29,86 @@ POSSIBILITY OF SUCH DAMAGE.
 
 package com.vmware.vim25.mo;
 
-import java.net.URL;
-
-import com.vmware.vim25.*;
+import com.vmware.vim25.UserSession;
+import com.vmware.vim25.VimPortType;
 import com.vmware.vim25.ws.SoapClient;
+
+import java.net.URL;
 
 /**
  * The class representing the connection to a server either VC server or ESX.
+ *
  * @author Steve JIN (http://www.doublecloud.org)
  */
-public class ServerConnection
-{
-	private URL url = null;
-	private UserSession userSession = null;
-	private ServiceInstance serviceInstance = null;
-	private VimPortType vimService = null;
-	
-	public ServerConnection(URL url, VimPortType vimService, ServiceInstance serviceInstance)
-	{
-		this.url = url;
-		this.vimService = vimService;
-		this.serviceInstance = serviceInstance;
-	}
+public class ServerConnection {
+    private URL url = null;
+    private UserSession userSession = null;
+    private ServiceInstance serviceInstance = null;
+    private VimPortType vimService = null;
 
-	/**
-	 * @return the current session string in format like:
-	 * vmware_soap_session="B3240D15-34DF-4BB8-B902-A844FDF42E85"
-	 */
-	public String getSessionStr()
-	{
-		SoapClient wsc = (SoapClient) vimService.getWsc();
-		return wsc.getCookie();
-	}
-	
-	/**
-	 * Disconnect from the server and clean up
-	 */
-	public void logout()
-	{
-		if(vimService!=null)
-		{
-			try
-			{
-				serviceInstance.getSessionManager().logout();
-			} catch (Exception e)
-			{
-				System.err.println("Failed to disconnect...");
-			}
-			vimService =null;
-			serviceInstance = null;
-		}
-	}
+    public ServerConnection(URL url, VimPortType vimService, ServiceInstance serviceInstance) {
+        this.url = url;
+        this.vimService = vimService;
+        this.serviceInstance = serviceInstance;
+    }
 
-	public ServiceInstance getServiceInstance()
-	{
-		return serviceInstance;
-	}
-	
-	public VimPortType getVimService() 
-	{
-		return vimService;
-	}
-	
-	public URL getUrl() 
-	{
-		return url;
-	}
-	
-	public String getUsername() 
-	{
-		return userSession.getUserName();
-	}
-	
-	/** 
-	 * @deprecated
-	 * This method returns a cached UserSession which holds dynamic properties,
-	 * for example, lastActiveTime, but are not updated. To avoid this confusion,
-	 * deprecate it. Also see bug: 3403474
-	 * To get updated UserSession, always use SessionManager. 
-	 */
-	public UserSession getUserSession() 
-	{
-		return userSession;
-	}
-	
-	void setUserSession(UserSession userSession) 
-	{
-		this.userSession = userSession;
-	}
-	
-	void setServiceInstance(ServiceInstance si)
-	{
-	  this.serviceInstance = si;
-	}
+    /**
+     * @return the current session string in format like:
+     * vmware_soap_session="B3240D15-34DF-4BB8-B902-A844FDF42E85"
+     */
+    public String getSessionStr() {
+        SoapClient wsc = (SoapClient) vimService.getWsc();
+        return wsc.getCookie();
+    }
+
+    /**
+     * Disconnect from the server and clean up
+     */
+    public void logout() {
+        if (vimService != null) {
+            try {
+                serviceInstance.getSessionManager().logout();
+            }
+            catch (Exception e) {
+                System.err.println("Failed to disconnect...");
+            }
+            vimService = null;
+            serviceInstance = null;
+        }
+    }
+
+    public ServiceInstance getServiceInstance() {
+        return serviceInstance;
+    }
+
+    public VimPortType getVimService() {
+        return vimService;
+    }
+
+    public URL getUrl() {
+        return url;
+    }
+
+    public String getUsername() {
+        return userSession.getUserName();
+    }
+
+    /**
+     * @deprecated This method returns a cached UserSession which holds dynamic properties,
+     * for example, lastActiveTime, but are not updated. To avoid this confusion,
+     * deprecate it. Also see bug: 3403474
+     * To get updated UserSession, always use SessionManager.
+     */
+    public UserSession getUserSession() {
+        return userSession;
+    }
+
+    void setUserSession(UserSession userSession) {
+        this.userSession = userSession;
+    }
+
+    void setServiceInstance(ServiceInstance si) {
+        this.serviceInstance = si;
+    }
 
 }

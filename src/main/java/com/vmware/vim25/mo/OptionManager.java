@@ -29,40 +29,35 @@ POSSIBILITY OF SUCH DAMAGE.
 
 package com.vmware.vim25.mo;
 
-import java.rmi.RemoteException;
-
 import com.vmware.vim25.*;
+
+import java.rmi.RemoteException;
 
 /**
  * The managed object class corresponding to the one defined in VI SDK API reference.
+ *
  * @author Steve JIN (http://www.doublecloud.org)
  */
 
-public class OptionManager extends ManagedObject 
-{
+public class OptionManager extends ManagedObject {
 
-	public OptionManager(ServerConnection serverConnection,	ManagedObjectReference mor) 
-	{
-		super(serverConnection, mor);
-	}
-	
-	public 	OptionValue[] getSetting()
-	{
-		return (OptionValue[]) getCurrentProperty("setting");
-	}
+    public OptionManager(ServerConnection serverConnection, ManagedObjectReference mor) {
+        super(serverConnection, mor);
+    }
 
-	public 	OptionDef[] getSupportedOption()
-	{
-		return (OptionDef[]) getCurrentProperty("supportedOption");
-	}
-	
-	public OptionValue[] queryOptions(String name) throws InvalidName, RuntimeFault, RemoteException 
-	{
-		return getVimService().queryOptions(getMOR(), name);
-	}
-	
-	public void updateOptions(OptionValue[] changedValue) throws InvalidName, RuntimeFault, RemoteException 
-	{
-		getVimService().updateOptions(getMOR(), changedValue);
-	}
+    public OptionValue[] getSetting() {
+        return (OptionValue[]) getCurrentProperty("setting");
+    }
+
+    public OptionDef[] getSupportedOption() {
+        return (OptionDef[]) getCurrentProperty("supportedOption");
+    }
+
+    public OptionValue[] queryOptions(String name) throws InvalidName, RuntimeFault, RemoteException {
+        return getVimService().queryOptions(getMOR(), name);
+    }
+
+    public void updateOptions(OptionValue[] changedValue) throws InvalidName, RuntimeFault, RemoteException {
+        getVimService().updateOptions(getMOR(), changedValue);
+    }
 }
