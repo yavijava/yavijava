@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class EvaluationLicenseSource extends LicenseSource {
-  public Long remainingHours;
+    public Long remainingHours;
 
-  public Long getRemainingHours() {
-    return this.remainingHours;
-  }
+    public Long getRemainingHours() {
+        return this.remainingHours;
+    }
 
-  public void setRemainingHours(Long remainingHours) {
-    this.remainingHours=remainingHours;
-  }
+    public void setRemainingHours(Long remainingHours) {
+        this.remainingHours = remainingHours;
+    }
 }

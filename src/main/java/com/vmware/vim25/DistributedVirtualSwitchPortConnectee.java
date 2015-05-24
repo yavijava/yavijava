@@ -30,46 +30,46 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class DistributedVirtualSwitchPortConnectee extends DynamicData {
-  public ManagedObjectReference connectedEntity;
-  public String nicKey;
-  public String type;
-  public String addressHint;
+    public ManagedObjectReference connectedEntity;
+    public String nicKey;
+    public String type;
+    public String addressHint;
 
-  public ManagedObjectReference getConnectedEntity() {
-    return this.connectedEntity;
-  }
+    public ManagedObjectReference getConnectedEntity() {
+        return this.connectedEntity;
+    }
 
-  public String getNicKey() {
-    return this.nicKey;
-  }
+    public String getNicKey() {
+        return this.nicKey;
+    }
 
-  public String getType() {
-    return this.type;
-  }
+    public String getType() {
+        return this.type;
+    }
 
-  public String getAddressHint() {
-    return this.addressHint;
-  }
+    public String getAddressHint() {
+        return this.addressHint;
+    }
 
-  public void setConnectedEntity(ManagedObjectReference connectedEntity) {
-    this.connectedEntity=connectedEntity;
-  }
+    public void setConnectedEntity(ManagedObjectReference connectedEntity) {
+        this.connectedEntity = connectedEntity;
+    }
 
-  public void setNicKey(String nicKey) {
-    this.nicKey=nicKey;
-  }
+    public void setNicKey(String nicKey) {
+        this.nicKey = nicKey;
+    }
 
-  public void setType(String type) {
-    this.type=type;
-  }
+    public void setType(String type) {
+        this.type = type;
+    }
 
-  public void setAddressHint(String addressHint) {
-    this.addressHint=addressHint;
-  }
+    public void setAddressHint(String addressHint) {
+        this.addressHint = addressHint;
+    }
 }

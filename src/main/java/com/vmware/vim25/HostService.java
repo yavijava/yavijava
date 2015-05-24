@@ -30,82 +30,82 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostService extends DynamicData {
-  public String key;
-  public String label;
-  public boolean required;
-  public boolean uninstallable;
-  public boolean running;
-  public String[] ruleset;
-  public String policy;
-  public HostServiceSourcePackage sourcePackage;
+    public String key;
+    public String label;
+    public boolean required;
+    public boolean uninstallable;
+    public boolean running;
+    public String[] ruleset;
+    public String policy;
+    public HostServiceSourcePackage sourcePackage;
 
-  public String getKey() {
-    return this.key;
-  }
+    public String getKey() {
+        return this.key;
+    }
 
-  public String getLabel() {
-    return this.label;
-  }
+    public String getLabel() {
+        return this.label;
+    }
 
-  public boolean isRequired() {
-    return this.required;
-  }
+    public boolean isRequired() {
+        return this.required;
+    }
 
-  public boolean isUninstallable() {
-    return this.uninstallable;
-  }
+    public boolean isUninstallable() {
+        return this.uninstallable;
+    }
 
-  public boolean isRunning() {
-    return this.running;
-  }
+    public boolean isRunning() {
+        return this.running;
+    }
 
-  public String[] getRuleset() {
-    return this.ruleset;
-  }
+    public String[] getRuleset() {
+        return this.ruleset;
+    }
 
-  public String getPolicy() {
-    return this.policy;
-  }
+    public String getPolicy() {
+        return this.policy;
+    }
 
-  public HostServiceSourcePackage getSourcePackage() {
-    return this.sourcePackage;
-  }
+    public HostServiceSourcePackage getSourcePackage() {
+        return this.sourcePackage;
+    }
 
-  public void setKey(String key) {
-    this.key=key;
-  }
+    public void setKey(String key) {
+        this.key = key;
+    }
 
-  public void setLabel(String label) {
-    this.label=label;
-  }
+    public void setLabel(String label) {
+        this.label = label;
+    }
 
-  public void setRequired(boolean required) {
-    this.required=required;
-  }
+    public void setRequired(boolean required) {
+        this.required = required;
+    }
 
-  public void setUninstallable(boolean uninstallable) {
-    this.uninstallable=uninstallable;
-  }
+    public void setUninstallable(boolean uninstallable) {
+        this.uninstallable = uninstallable;
+    }
 
-  public void setRunning(boolean running) {
-    this.running=running;
-  }
+    public void setRunning(boolean running) {
+        this.running = running;
+    }
 
-  public void setRuleset(String[] ruleset) {
-    this.ruleset=ruleset;
-  }
+    public void setRuleset(String[] ruleset) {
+        this.ruleset = ruleset;
+    }
 
-  public void setPolicy(String policy) {
-    this.policy=policy;
-  }
+    public void setPolicy(String policy) {
+        this.policy = policy;
+    }
 
-  public void setSourcePackage(HostServiceSourcePackage sourcePackage) {
-    this.sourcePackage=sourcePackage;
-  }
+    public void setSourcePackage(HostServiceSourcePackage sourcePackage) {
+        this.sourcePackage = sourcePackage;
+    }
 }

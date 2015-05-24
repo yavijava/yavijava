@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfPerfCounterInfo {
-  public PerfCounterInfo[] PerfCounterInfo;
+    public PerfCounterInfo[] PerfCounterInfo;
 
-  public PerfCounterInfo[] getPerfCounterInfo() {
-    return this.PerfCounterInfo;
-  }
+    public PerfCounterInfo[] getPerfCounterInfo() {
+        return this.PerfCounterInfo;
+    }
 
-  public PerfCounterInfo getPerfCounterInfo(int i) {
-    return this.PerfCounterInfo[i];
-  }
+    public PerfCounterInfo getPerfCounterInfo(int i) {
+        return this.PerfCounterInfo[i];
+    }
 
-  public void setPerfCounterInfo(PerfCounterInfo[] PerfCounterInfo) {
-    this.PerfCounterInfo=PerfCounterInfo;
-  }
+    public void setPerfCounterInfo(PerfCounterInfo[] PerfCounterInfo) {
+        this.PerfCounterInfo = PerfCounterInfo;
+    }
 }

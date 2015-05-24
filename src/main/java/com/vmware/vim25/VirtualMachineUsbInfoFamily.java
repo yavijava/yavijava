@@ -30,35 +30,35 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public enum VirtualMachineUsbInfoFamily {
-  audio ("audio"),
-  hid ("hid"),
-  hid_bootable ("hid_bootable"),
-  physical ("physical"),
-  communication ("communication"),
-  imaging ("imaging"),
-  printer ("printer"),
-  storage ("storage"),
-  hub ("hub"),
-  smart_card ("smart_card"),
-  security ("security"),
-  video ("video"),
-  wireless ("wireless"),
-  bluetooth ("bluetooth"),
-  wusb ("wusb"),
-  pda ("pda"),
-  vendor_specific ("vendor_specific"),
-  other ("other"),
-  unknownFamily ("unknownFamily");
+    audio("audio"),
+    hid("hid"),
+    hid_bootable("hid_bootable"),
+    physical("physical"),
+    communication("communication"),
+    imaging("imaging"),
+    printer("printer"),
+    storage("storage"),
+    hub("hub"),
+    smart_card("smart_card"),
+    security("security"),
+    video("video"),
+    wireless("wireless"),
+    bluetooth("bluetooth"),
+    wusb("wusb"),
+    pda("pda"),
+    vendor_specific("vendor_specific"),
+    other("other"),
+    unknownFamily("unknownFamily");
 
-  @SuppressWarnings("unused")
-  private final String val;
-  private VirtualMachineUsbInfoFamily(String val)
-  {
-    this.val = val;
-  }
+    @SuppressWarnings("unused")
+    private final String val;
+
+    private VirtualMachineUsbInfoFamily(String val) {
+        this.val = val;
+    }
 }

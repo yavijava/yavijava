@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfHostNetStackInstance {
-  public HostNetStackInstance[] HostNetStackInstance;
+    public HostNetStackInstance[] HostNetStackInstance;
 
-  public HostNetStackInstance[] getHostNetStackInstance() {
-    return this.HostNetStackInstance;
-  }
+    public HostNetStackInstance[] getHostNetStackInstance() {
+        return this.HostNetStackInstance;
+    }
 
-  public HostNetStackInstance getHostNetStackInstance(int i) {
-    return this.HostNetStackInstance[i];
-  }
+    public HostNetStackInstance getHostNetStackInstance(int i) {
+        return this.HostNetStackInstance[i];
+    }
 
-  public void setHostNetStackInstance(HostNetStackInstance[] HostNetStackInstance) {
-    this.HostNetStackInstance=HostNetStackInstance;
-  }
+    public void setHostNetStackInstance(HostNetStackInstance[] HostNetStackInstance) {
+        this.HostNetStackInstance = HostNetStackInstance;
+    }
 }

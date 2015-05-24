@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VirtualMachineIdeDiskDevicePartitionInfo extends DynamicData {
-  public int id;
-  public int capacity;
+    public int id;
+    public int capacity;
 
-  public int getId() {
-    return this.id;
-  }
+    public int getId() {
+        return this.id;
+    }
 
-  public int getCapacity() {
-    return this.capacity;
-  }
+    public int getCapacity() {
+        return this.capacity;
+    }
 
-  public void setId(int id) {
-    this.id=id;
-  }
+    public void setId(int id) {
+        this.id = id;
+    }
 
-  public void setCapacity(int capacity) {
-    this.capacity=capacity;
-  }
+    public void setCapacity(int capacity) {
+        this.capacity = capacity;
+    }
 }

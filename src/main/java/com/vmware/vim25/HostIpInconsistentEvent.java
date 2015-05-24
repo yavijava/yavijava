@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostIpInconsistentEvent extends HostEvent {
-  public String ipAddress;
-  public String ipAddress2;
+    public String ipAddress;
+    public String ipAddress2;
 
-  public String getIpAddress() {
-    return this.ipAddress;
-  }
+    public String getIpAddress() {
+        return this.ipAddress;
+    }
 
-  public String getIpAddress2() {
-    return this.ipAddress2;
-  }
+    public String getIpAddress2() {
+        return this.ipAddress2;
+    }
 
-  public void setIpAddress(String ipAddress) {
-    this.ipAddress=ipAddress;
-  }
+    public void setIpAddress(String ipAddress) {
+        this.ipAddress = ipAddress;
+    }
 
-  public void setIpAddress2(String ipAddress2) {
-    this.ipAddress2=ipAddress2;
-  }
+    public void setIpAddress2(String ipAddress2) {
+        this.ipAddress2 = ipAddress2;
+    }
 }

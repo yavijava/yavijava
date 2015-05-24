@@ -44,16 +44,16 @@ public class VsanUpgradeSystem extends ManagedObject {
      * "sub-task" tracking. Before starting, the upgrade process will perform a pre-flight check, and abort if any of
      * the pre-conditions are not met.
      *
-     * @see {@link #performVsanUpgradePreflightCheck performVsanUpgradePreflightCheck}
-     * @param cluster The cluster to be upgraded
-     * @param performObjectUpgrade After all disk groups have been updated, also upgrade all objects. Once started, rollback of the on disk format is no longer possible. Object upgrade unlocks new VSAN features.
-     * @param downgradeFormat Perform a on-disk format downgrade instead of upgrade. Only possible if no upgraded objects exist.
+     * @param cluster                The cluster to be upgraded
+     * @param performObjectUpgrade   After all disk groups have been updated, also upgrade all objects. Once started, rollback of the on disk format is no longer possible. Object upgrade unlocks new VSAN features.
+     * @param downgradeFormat        Perform a on-disk format downgrade instead of upgrade. Only possible if no upgraded objects exist.
      * @param allowReducedRedundancy Removes the need for one disk group worth of free space, by allowing reduced redundancy during disk upgrade.
-     * @param excludeHosts Internal debug option meant for functional testing of VSAN upgrades. Skips upgrade on certain hosts and implies performObjectUpgrade being false. Should not be used by customers.
+     * @param excludeHosts           Internal debug option meant for functional testing of VSAN upgrades. Skips upgrade on certain hosts and implies performObjectUpgrade being false. Should not be used by customers.
      * @return Task to monitor for status.
      * @throws RuntimeFault
      * @throws VsanFault
      * @throws RemoteException
+     * @see {@link #performVsanUpgradePreflightCheck performVsanUpgradePreflightCheck}
      */
     public Task performVsanUpgrade_Task(ClusterComputeResource cluster, Boolean performObjectUpgrade,
                                         Boolean downgradeFormat, Boolean allowReducedRedundancy, HostSystem[] excludeHosts)
@@ -80,15 +80,15 @@ public class VsanUpgradeSystem extends ManagedObject {
      * "sub-task" tracking. Before starting, the upgrade process will perform a pre-flight check, and abort if any of
      * the pre-conditions are not met.
      *
-     * @see {@link #performVsanUpgradePreflightCheck performVsanUpgradePreflightCheck}
-     * @param cluster The cluster to be upgraded
-     * @param performObjectUpgrade After all disk groups have been updated, also upgrade all objects. Once started, rollback of the on disk format is no longer possible. Object upgrade unlocks new VSAN features.
-     * @param downgradeFormat Perform a on-disk format downgrade instead of upgrade. Only possible if no upgraded objects exist.
+     * @param cluster                The cluster to be upgraded
+     * @param performObjectUpgrade   After all disk groups have been updated, also upgrade all objects. Once started, rollback of the on disk format is no longer possible. Object upgrade unlocks new VSAN features.
+     * @param downgradeFormat        Perform a on-disk format downgrade instead of upgrade. Only possible if no upgraded objects exist.
      * @param allowReducedRedundancy Removes the need for one disk group worth of free space, by allowing reduced redundancy during disk upgrade.
      * @return Task to monitor
      * @throws RuntimeFault
      * @throws VsanFault
      * @throws RemoteException
+     * @see {@link #performVsanUpgradePreflightCheck performVsanUpgradePreflightCheck}
      */
     public Task performVsanUpgrade_Task(ClusterComputeResource cluster, Boolean performObjectUpgrade,
                                         Boolean downgradeFormat, Boolean allowReducedRedundancy)
@@ -112,14 +112,14 @@ public class VsanUpgradeSystem extends ManagedObject {
      * "sub-task" tracking. Before starting, the upgrade process will perform a pre-flight check, and abort if any of
      * the pre-conditions are not met.
      *
-     * @see {@link #performVsanUpgradePreflightCheck performVsanUpgradePreflightCheck}
-     * @param cluster The cluster to be upgraded
+     * @param cluster              The cluster to be upgraded
      * @param performObjectUpgrade After all disk groups have been updated, also upgrade all objects. Once started, rollback of the on disk format is no longer possible. Object upgrade unlocks new VSAN features.
-     * @param downgradeFormat Perform a on-disk format downgrade instead of upgrade. Only possible if no upgraded objects exist.
+     * @param downgradeFormat      Perform a on-disk format downgrade instead of upgrade. Only possible if no upgraded objects exist.
      * @return Task to monitor
      * @throws RuntimeFault
      * @throws VsanFault
      * @throws RemoteException
+     * @see {@link #performVsanUpgradePreflightCheck performVsanUpgradePreflightCheck}
      */
     public Task performVsanUpgrade_Task(ClusterComputeResource cluster, Boolean performObjectUpgrade, Boolean downgradeFormat)
         throws RuntimeFault, VsanFault, RemoteException {
@@ -142,13 +142,13 @@ public class VsanUpgradeSystem extends ManagedObject {
      * "sub-task" tracking. Before starting, the upgrade process will perform a pre-flight check, and abort if any of
      * the pre-conditions are not met.
      *
-     * @see {@link #performVsanUpgradePreflightCheck performVsanUpgradePreflightCheck}
-     * @param cluster The cluster to be upgraded
+     * @param cluster              The cluster to be upgraded
      * @param performObjectUpgrade After all disk groups have been updated, also upgrade all objects. Once started, rollback of the on disk format is no longer possible. Object upgrade unlocks new VSAN features.
      * @return Task to monitor
      * @throws RuntimeFault
      * @throws VsanFault
      * @throws RemoteException
+     * @see {@link #performVsanUpgradePreflightCheck performVsanUpgradePreflightCheck}
      */
     public Task performVsanUpgrade_Task(ClusterComputeResource cluster, Boolean performObjectUpgrade) throws RuntimeFault, VsanFault, RemoteException {
         return performVsanUpgrade_Task(cluster, performObjectUpgrade, null, null, null);
@@ -170,12 +170,12 @@ public class VsanUpgradeSystem extends ManagedObject {
      * "sub-task" tracking. Before starting, the upgrade process will perform a pre-flight check, and abort if any of
      * the pre-conditions are not met.
      *
-     * @see {@link #performVsanUpgradePreflightCheck performVsanUpgradePreflightCheck}
      * @param cluster The cluster to be upgraded
      * @return Task to monitor
      * @throws RuntimeFault
      * @throws VsanFault
      * @throws RemoteException
+     * @see {@link #performVsanUpgradePreflightCheck performVsanUpgradePreflightCheck}
      */
     public Task performVsanUpgrade_Task(ClusterComputeResource cluster) throws RuntimeFault, VsanFault, RemoteException {
         return performVsanUpgrade_Task(cluster, null, null, null, null);
@@ -184,7 +184,7 @@ public class VsanUpgradeSystem extends ManagedObject {
     /**
      * Perform an upgrade pre-flight check on a cluster.
      *
-     * @param cluster The cluster for which to perform the check.
+     * @param cluster         The cluster for which to perform the check.
      * @param downgradeFormat Intend to perform a on-disk format downgrade instead of upgrade. Adds additional checks.
      * @return Pre-flight check result.
      * @throws RuntimeFault

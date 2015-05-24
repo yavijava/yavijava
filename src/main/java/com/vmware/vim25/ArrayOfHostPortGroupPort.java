@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfHostPortGroupPort {
-  public HostPortGroupPort[] HostPortGroupPort;
+    public HostPortGroupPort[] HostPortGroupPort;
 
-  public HostPortGroupPort[] getHostPortGroupPort() {
-    return this.HostPortGroupPort;
-  }
+    public HostPortGroupPort[] getHostPortGroupPort() {
+        return this.HostPortGroupPort;
+    }
 
-  public HostPortGroupPort getHostPortGroupPort(int i) {
-    return this.HostPortGroupPort[i];
-  }
+    public HostPortGroupPort getHostPortGroupPort(int i) {
+        return this.HostPortGroupPort[i];
+    }
 
-  public void setHostPortGroupPort(HostPortGroupPort[] HostPortGroupPort) {
-    this.HostPortGroupPort=HostPortGroupPort;
-  }
+    public void setHostPortGroupPort(HostPortGroupPort[] HostPortGroupPort) {
+        this.HostPortGroupPort = HostPortGroupPort;
+    }
 }

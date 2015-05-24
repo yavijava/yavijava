@@ -28,94 +28,95 @@ POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
 
 package com.vmware.vim25;
+
 import java.util.Calendar;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class ClusterRecommendation extends DynamicData {
-  public String key;
-  public String type;
-  public Calendar time;
-  public int rating;
-  public String reason;
-  public String reasonText;
-  public String[] prerequisite;
-  public ClusterAction[] action;
-  public ManagedObjectReference target;
+    public String key;
+    public String type;
+    public Calendar time;
+    public int rating;
+    public String reason;
+    public String reasonText;
+    public String[] prerequisite;
+    public ClusterAction[] action;
+    public ManagedObjectReference target;
 
-  public String getKey() {
-    return this.key;
-  }
+    public String getKey() {
+        return this.key;
+    }
 
-  public String getType() {
-    return this.type;
-  }
+    public String getType() {
+        return this.type;
+    }
 
-  public Calendar getTime() {
-    return this.time;
-  }
+    public Calendar getTime() {
+        return this.time;
+    }
 
-  public int getRating() {
-    return this.rating;
-  }
+    public int getRating() {
+        return this.rating;
+    }
 
-  public String getReason() {
-    return this.reason;
-  }
+    public String getReason() {
+        return this.reason;
+    }
 
-  public String getReasonText() {
-    return this.reasonText;
-  }
+    public String getReasonText() {
+        return this.reasonText;
+    }
 
-  public String[] getPrerequisite() {
-    return this.prerequisite;
-  }
+    public String[] getPrerequisite() {
+        return this.prerequisite;
+    }
 
-  public ClusterAction[] getAction() {
-    return this.action;
-  }
+    public ClusterAction[] getAction() {
+        return this.action;
+    }
 
-  public ManagedObjectReference getTarget() {
-    return this.target;
-  }
+    public ManagedObjectReference getTarget() {
+        return this.target;
+    }
 
-  public void setKey(String key) {
-    this.key=key;
-  }
+    public void setKey(String key) {
+        this.key = key;
+    }
 
-  public void setType(String type) {
-    this.type=type;
-  }
+    public void setType(String type) {
+        this.type = type;
+    }
 
-  public void setTime(Calendar time) {
-    this.time=time;
-  }
+    public void setTime(Calendar time) {
+        this.time = time;
+    }
 
-  public void setRating(int rating) {
-    this.rating=rating;
-  }
+    public void setRating(int rating) {
+        this.rating = rating;
+    }
 
-  public void setReason(String reason) {
-    this.reason=reason;
-  }
+    public void setReason(String reason) {
+        this.reason = reason;
+    }
 
-  public void setReasonText(String reasonText) {
-    this.reasonText=reasonText;
-  }
+    public void setReasonText(String reasonText) {
+        this.reasonText = reasonText;
+    }
 
-  public void setPrerequisite(String[] prerequisite) {
-    this.prerequisite=prerequisite;
-  }
+    public void setPrerequisite(String[] prerequisite) {
+        this.prerequisite = prerequisite;
+    }
 
-  public void setAction(ClusterAction[] action) {
-    this.action=action;
-  }
+    public void setAction(ClusterAction[] action) {
+        this.action = action;
+    }
 
-  public void setTarget(ManagedObjectReference target) {
-    this.target=target;
-  }
+    public void setTarget(ManagedObjectReference target) {
+        this.target = target;
+    }
 }

@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class AlarmSnmpFailedEvent extends AlarmEvent {
-  public ManagedEntityEventArgument entity;
-  public LocalizedMethodFault reason;
+    public ManagedEntityEventArgument entity;
+    public LocalizedMethodFault reason;
 
-  public ManagedEntityEventArgument getEntity() {
-    return this.entity;
-  }
+    public ManagedEntityEventArgument getEntity() {
+        return this.entity;
+    }
 
-  public LocalizedMethodFault getReason() {
-    return this.reason;
-  }
+    public LocalizedMethodFault getReason() {
+        return this.reason;
+    }
 
-  public void setEntity(ManagedEntityEventArgument entity) {
-    this.entity=entity;
-  }
+    public void setEntity(ManagedEntityEventArgument entity) {
+        this.entity = entity;
+    }
 
-  public void setReason(LocalizedMethodFault reason) {
-    this.reason=reason;
-  }
+    public void setReason(LocalizedMethodFault reason) {
+        this.reason = reason;
+    }
 }

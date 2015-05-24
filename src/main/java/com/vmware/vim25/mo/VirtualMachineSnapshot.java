@@ -30,9 +30,9 @@ POSSIBILITY OF SUCH DAMAGE.
 
 package com.vmware.vim25.mo;
 
-import java.rmi.RemoteException;
-
 import com.vmware.vim25.*;
+
+import java.rmi.RemoteException;
 
 /**
  * The managed object class corresponding to the one defined in VI SDK API reference.
@@ -99,8 +99,8 @@ public class VirtualMachineSnapshot extends ManagedObject {
     /**
      * Get the virtual machine for which the snapshot was taken.
      *
-     * @since 6.0
      * @return {@link com.vmware.vim25.mo.VirtualMachine VirtualMachine}
+     * @since 6.0
      */
     public VirtualMachine getVm() {
         ManagedObjectReference mor = (ManagedObjectReference) getCurrentProperty("vm");

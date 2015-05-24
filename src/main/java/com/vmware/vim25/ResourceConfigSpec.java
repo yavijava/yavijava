@@ -28,58 +28,59 @@ POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
 
 package com.vmware.vim25;
+
 import java.util.Calendar;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class ResourceConfigSpec extends DynamicData {
-  public ManagedObjectReference entity;
-  public String changeVersion;
-  public Calendar lastModified;
-  public ResourceAllocationInfo cpuAllocation;
-  public ResourceAllocationInfo memoryAllocation;
+    public ManagedObjectReference entity;
+    public String changeVersion;
+    public Calendar lastModified;
+    public ResourceAllocationInfo cpuAllocation;
+    public ResourceAllocationInfo memoryAllocation;
 
-  public ManagedObjectReference getEntity() {
-    return this.entity;
-  }
+    public ManagedObjectReference getEntity() {
+        return this.entity;
+    }
 
-  public String getChangeVersion() {
-    return this.changeVersion;
-  }
+    public String getChangeVersion() {
+        return this.changeVersion;
+    }
 
-  public Calendar getLastModified() {
-    return this.lastModified;
-  }
+    public Calendar getLastModified() {
+        return this.lastModified;
+    }
 
-  public ResourceAllocationInfo getCpuAllocation() {
-    return this.cpuAllocation;
-  }
+    public ResourceAllocationInfo getCpuAllocation() {
+        return this.cpuAllocation;
+    }
 
-  public ResourceAllocationInfo getMemoryAllocation() {
-    return this.memoryAllocation;
-  }
+    public ResourceAllocationInfo getMemoryAllocation() {
+        return this.memoryAllocation;
+    }
 
-  public void setEntity(ManagedObjectReference entity) {
-    this.entity=entity;
-  }
+    public void setEntity(ManagedObjectReference entity) {
+        this.entity = entity;
+    }
 
-  public void setChangeVersion(String changeVersion) {
-    this.changeVersion=changeVersion;
-  }
+    public void setChangeVersion(String changeVersion) {
+        this.changeVersion = changeVersion;
+    }
 
-  public void setLastModified(Calendar lastModified) {
-    this.lastModified=lastModified;
-  }
+    public void setLastModified(Calendar lastModified) {
+        this.lastModified = lastModified;
+    }
 
-  public void setCpuAllocation(ResourceAllocationInfo cpuAllocation) {
-    this.cpuAllocation=cpuAllocation;
-  }
+    public void setCpuAllocation(ResourceAllocationInfo cpuAllocation) {
+        this.cpuAllocation = cpuAllocation;
+    }
 
-  public void setMemoryAllocation(ResourceAllocationInfo memoryAllocation) {
-    this.memoryAllocation=memoryAllocation;
-  }
+    public void setMemoryAllocation(ResourceAllocationInfo memoryAllocation) {
+        this.memoryAllocation = memoryAllocation;
+    }
 }

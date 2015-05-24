@@ -28,49 +28,50 @@ POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
 
 package com.vmware.vim25;
+
 import java.util.Calendar;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class NetIpStackInfoDefaultRouter extends DynamicData {
-  public String ipAddress;
-  public String device;
-  public Calendar lifetime;
-  public String preference;
+    public String ipAddress;
+    public String device;
+    public Calendar lifetime;
+    public String preference;
 
-  public String getIpAddress() {
-    return this.ipAddress;
-  }
+    public String getIpAddress() {
+        return this.ipAddress;
+    }
 
-  public String getDevice() {
-    return this.device;
-  }
+    public String getDevice() {
+        return this.device;
+    }
 
-  public Calendar getLifetime() {
-    return this.lifetime;
-  }
+    public Calendar getLifetime() {
+        return this.lifetime;
+    }
 
-  public String getPreference() {
-    return this.preference;
-  }
+    public String getPreference() {
+        return this.preference;
+    }
 
-  public void setIpAddress(String ipAddress) {
-    this.ipAddress=ipAddress;
-  }
+    public void setIpAddress(String ipAddress) {
+        this.ipAddress = ipAddress;
+    }
 
-  public void setDevice(String device) {
-    this.device=device;
-  }
+    public void setDevice(String device) {
+        this.device = device;
+    }
 
-  public void setLifetime(Calendar lifetime) {
-    this.lifetime=lifetime;
-  }
+    public void setLifetime(Calendar lifetime) {
+        this.lifetime = lifetime;
+    }
 
-  public void setPreference(String preference) {
-    this.preference=preference;
-  }
+    public void setPreference(String preference) {
+        this.preference = preference;
+    }
 }

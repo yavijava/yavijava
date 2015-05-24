@@ -30,37 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VirtualDeviceURIBackingInfo extends VirtualDeviceBackingInfo {
-  public String serviceURI;
-  public String direction;
-  public String proxyURI;
+    public String serviceURI;
+    public String direction;
+    public String proxyURI;
 
-  public String getServiceURI() {
-    return this.serviceURI;
-  }
+    public String getServiceURI() {
+        return this.serviceURI;
+    }
 
-  public String getDirection() {
-    return this.direction;
-  }
+    public String getDirection() {
+        return this.direction;
+    }
 
-  public String getProxyURI() {
-    return this.proxyURI;
-  }
+    public String getProxyURI() {
+        return this.proxyURI;
+    }
 
-  public void setServiceURI(String serviceURI) {
-    this.serviceURI=serviceURI;
-  }
+    public void setServiceURI(String serviceURI) {
+        this.serviceURI = serviceURI;
+    }
 
-  public void setDirection(String direction) {
-    this.direction=direction;
-  }
+    public void setDirection(String direction) {
+        this.direction = direction;
+    }
 
-  public void setProxyURI(String proxyURI) {
-    this.proxyURI=proxyURI;
-  }
+    public void setProxyURI(String proxyURI) {
+        this.proxyURI = proxyURI;
+    }
 }

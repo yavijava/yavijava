@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class CustomizationGlobalIPSettings extends DynamicData {
-  public String[] dnsSuffixList;
-  public String[] dnsServerList;
+    public String[] dnsSuffixList;
+    public String[] dnsServerList;
 
-  public String[] getDnsSuffixList() {
-    return this.dnsSuffixList;
-  }
+    public String[] getDnsSuffixList() {
+        return this.dnsSuffixList;
+    }
 
-  public String[] getDnsServerList() {
-    return this.dnsServerList;
-  }
+    public String[] getDnsServerList() {
+        return this.dnsServerList;
+    }
 
-  public void setDnsSuffixList(String[] dnsSuffixList) {
-    this.dnsSuffixList=dnsSuffixList;
-  }
+    public void setDnsSuffixList(String[] dnsSuffixList) {
+        this.dnsSuffixList = dnsSuffixList;
+    }
 
-  public void setDnsServerList(String[] dnsServerList) {
-    this.dnsServerList=dnsServerList;
-  }
+    public void setDnsServerList(String[] dnsServerList) {
+        this.dnsServerList = dnsServerList;
+    }
 }

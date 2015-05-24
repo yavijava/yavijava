@@ -30,163 +30,163 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VirtualHardwareOption extends DynamicData {
-  public int hwVersion;
-  public VirtualDeviceOption[] virtualDeviceOption;
-  public boolean deviceListReadonly;
-  public int[] numCPU;
-  public IntOption numCoresPerSocket;
-  public boolean numCpuReadonly;
-  public LongOption memoryMB;
-  public IntOption numPCIControllers;
-  public IntOption numIDEControllers;
-  public IntOption numUSBControllers;
-  public IntOption numUSBXHCIControllers;
-  public IntOption numSIOControllers;
-  public IntOption numPS2Controllers;
-  public String[] licensingLimit;
-  public IntOption numSupportedWwnPorts;
-  public IntOption numSupportedWwnNodes;
-  public ResourceConfigOption resourceConfigOption;
+    public int hwVersion;
+    public VirtualDeviceOption[] virtualDeviceOption;
+    public boolean deviceListReadonly;
+    public int[] numCPU;
+    public IntOption numCoresPerSocket;
+    public boolean numCpuReadonly;
+    public LongOption memoryMB;
+    public IntOption numPCIControllers;
+    public IntOption numIDEControllers;
+    public IntOption numUSBControllers;
+    public IntOption numUSBXHCIControllers;
+    public IntOption numSIOControllers;
+    public IntOption numPS2Controllers;
+    public String[] licensingLimit;
+    public IntOption numSupportedWwnPorts;
+    public IntOption numSupportedWwnNodes;
+    public ResourceConfigOption resourceConfigOption;
 
-  public int getHwVersion() {
-    return this.hwVersion;
-  }
+    public int getHwVersion() {
+        return this.hwVersion;
+    }
 
-  public VirtualDeviceOption[] getVirtualDeviceOption() {
-    return this.virtualDeviceOption;
-  }
+    public VirtualDeviceOption[] getVirtualDeviceOption() {
+        return this.virtualDeviceOption;
+    }
 
-  public boolean isDeviceListReadonly() {
-    return this.deviceListReadonly;
-  }
+    public boolean isDeviceListReadonly() {
+        return this.deviceListReadonly;
+    }
 
-  public int[] getNumCPU() {
-    return this.numCPU;
-  }
+    public int[] getNumCPU() {
+        return this.numCPU;
+    }
 
-  public IntOption getNumCoresPerSocket() {
-    return this.numCoresPerSocket;
-  }
+    public IntOption getNumCoresPerSocket() {
+        return this.numCoresPerSocket;
+    }
 
-  public boolean isNumCpuReadonly() {
-    return this.numCpuReadonly;
-  }
+    public boolean isNumCpuReadonly() {
+        return this.numCpuReadonly;
+    }
 
-  public LongOption getMemoryMB() {
-    return this.memoryMB;
-  }
+    public LongOption getMemoryMB() {
+        return this.memoryMB;
+    }
 
-  public IntOption getNumPCIControllers() {
-    return this.numPCIControllers;
-  }
+    public IntOption getNumPCIControllers() {
+        return this.numPCIControllers;
+    }
 
-  public IntOption getNumIDEControllers() {
-    return this.numIDEControllers;
-  }
+    public IntOption getNumIDEControllers() {
+        return this.numIDEControllers;
+    }
 
-  public IntOption getNumUSBControllers() {
-    return this.numUSBControllers;
-  }
+    public IntOption getNumUSBControllers() {
+        return this.numUSBControllers;
+    }
 
-  public IntOption getNumUSBXHCIControllers() {
-    return this.numUSBXHCIControllers;
-  }
+    public IntOption getNumUSBXHCIControllers() {
+        return this.numUSBXHCIControllers;
+    }
 
-  public IntOption getNumSIOControllers() {
-    return this.numSIOControllers;
-  }
+    public IntOption getNumSIOControllers() {
+        return this.numSIOControllers;
+    }
 
-  public IntOption getNumPS2Controllers() {
-    return this.numPS2Controllers;
-  }
+    public IntOption getNumPS2Controllers() {
+        return this.numPS2Controllers;
+    }
 
-  public String[] getLicensingLimit() {
-    return this.licensingLimit;
-  }
+    public String[] getLicensingLimit() {
+        return this.licensingLimit;
+    }
 
-  public IntOption getNumSupportedWwnPorts() {
-    return this.numSupportedWwnPorts;
-  }
+    public IntOption getNumSupportedWwnPorts() {
+        return this.numSupportedWwnPorts;
+    }
 
-  public IntOption getNumSupportedWwnNodes() {
-    return this.numSupportedWwnNodes;
-  }
+    public IntOption getNumSupportedWwnNodes() {
+        return this.numSupportedWwnNodes;
+    }
 
-  public ResourceConfigOption getResourceConfigOption() {
-    return this.resourceConfigOption;
-  }
+    public ResourceConfigOption getResourceConfigOption() {
+        return this.resourceConfigOption;
+    }
 
-  public void setHwVersion(int hwVersion) {
-    this.hwVersion=hwVersion;
-  }
+    public void setHwVersion(int hwVersion) {
+        this.hwVersion = hwVersion;
+    }
 
-  public void setVirtualDeviceOption(VirtualDeviceOption[] virtualDeviceOption) {
-    this.virtualDeviceOption=virtualDeviceOption;
-  }
+    public void setVirtualDeviceOption(VirtualDeviceOption[] virtualDeviceOption) {
+        this.virtualDeviceOption = virtualDeviceOption;
+    }
 
-  public void setDeviceListReadonly(boolean deviceListReadonly) {
-    this.deviceListReadonly=deviceListReadonly;
-  }
+    public void setDeviceListReadonly(boolean deviceListReadonly) {
+        this.deviceListReadonly = deviceListReadonly;
+    }
 
-  public void setNumCPU(int[] numCPU) {
-    this.numCPU=numCPU;
-  }
+    public void setNumCPU(int[] numCPU) {
+        this.numCPU = numCPU;
+    }
 
-  public void setNumCoresPerSocket(IntOption numCoresPerSocket) {
-    this.numCoresPerSocket=numCoresPerSocket;
-  }
+    public void setNumCoresPerSocket(IntOption numCoresPerSocket) {
+        this.numCoresPerSocket = numCoresPerSocket;
+    }
 
-  public void setNumCpuReadonly(boolean numCpuReadonly) {
-    this.numCpuReadonly=numCpuReadonly;
-  }
+    public void setNumCpuReadonly(boolean numCpuReadonly) {
+        this.numCpuReadonly = numCpuReadonly;
+    }
 
-  public void setMemoryMB(LongOption memoryMB) {
-    this.memoryMB=memoryMB;
-  }
+    public void setMemoryMB(LongOption memoryMB) {
+        this.memoryMB = memoryMB;
+    }
 
-  public void setNumPCIControllers(IntOption numPCIControllers) {
-    this.numPCIControllers=numPCIControllers;
-  }
+    public void setNumPCIControllers(IntOption numPCIControllers) {
+        this.numPCIControllers = numPCIControllers;
+    }
 
-  public void setNumIDEControllers(IntOption numIDEControllers) {
-    this.numIDEControllers=numIDEControllers;
-  }
+    public void setNumIDEControllers(IntOption numIDEControllers) {
+        this.numIDEControllers = numIDEControllers;
+    }
 
-  public void setNumUSBControllers(IntOption numUSBControllers) {
-    this.numUSBControllers=numUSBControllers;
-  }
+    public void setNumUSBControllers(IntOption numUSBControllers) {
+        this.numUSBControllers = numUSBControllers;
+    }
 
-  public void setNumUSBXHCIControllers(IntOption numUSBXHCIControllers) {
-    this.numUSBXHCIControllers=numUSBXHCIControllers;
-  }
+    public void setNumUSBXHCIControllers(IntOption numUSBXHCIControllers) {
+        this.numUSBXHCIControllers = numUSBXHCIControllers;
+    }
 
-  public void setNumSIOControllers(IntOption numSIOControllers) {
-    this.numSIOControllers=numSIOControllers;
-  }
+    public void setNumSIOControllers(IntOption numSIOControllers) {
+        this.numSIOControllers = numSIOControllers;
+    }
 
-  public void setNumPS2Controllers(IntOption numPS2Controllers) {
-    this.numPS2Controllers=numPS2Controllers;
-  }
+    public void setNumPS2Controllers(IntOption numPS2Controllers) {
+        this.numPS2Controllers = numPS2Controllers;
+    }
 
-  public void setLicensingLimit(String[] licensingLimit) {
-    this.licensingLimit=licensingLimit;
-  }
+    public void setLicensingLimit(String[] licensingLimit) {
+        this.licensingLimit = licensingLimit;
+    }
 
-  public void setNumSupportedWwnPorts(IntOption numSupportedWwnPorts) {
-    this.numSupportedWwnPorts=numSupportedWwnPorts;
-  }
+    public void setNumSupportedWwnPorts(IntOption numSupportedWwnPorts) {
+        this.numSupportedWwnPorts = numSupportedWwnPorts;
+    }
 
-  public void setNumSupportedWwnNodes(IntOption numSupportedWwnNodes) {
-    this.numSupportedWwnNodes=numSupportedWwnNodes;
-  }
+    public void setNumSupportedWwnNodes(IntOption numSupportedWwnNodes) {
+        this.numSupportedWwnNodes = numSupportedWwnNodes;
+    }
 
-  public void setResourceConfigOption(ResourceConfigOption resourceConfigOption) {
-    this.resourceConfigOption=resourceConfigOption;
-  }
+    public void setResourceConfigOption(ResourceConfigOption resourceConfigOption) {
+        this.resourceConfigOption = resourceConfigOption;
+    }
 }

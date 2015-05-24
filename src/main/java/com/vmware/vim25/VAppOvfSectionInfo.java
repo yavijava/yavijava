@@ -30,55 +30,55 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VAppOvfSectionInfo extends DynamicData {
-  public Integer key;
-  public String namespace;
-  public String type;
-  public Boolean atEnvelopeLevel;
-  public String contents;
+    public Integer key;
+    public String namespace;
+    public String type;
+    public Boolean atEnvelopeLevel;
+    public String contents;
 
-  public Integer getKey() {
-    return this.key;
-  }
+    public Integer getKey() {
+        return this.key;
+    }
 
-  public String getNamespace() {
-    return this.namespace;
-  }
+    public String getNamespace() {
+        return this.namespace;
+    }
 
-  public String getType() {
-    return this.type;
-  }
+    public String getType() {
+        return this.type;
+    }
 
-  public Boolean getAtEnvelopeLevel() {
-    return this.atEnvelopeLevel;
-  }
+    public Boolean getAtEnvelopeLevel() {
+        return this.atEnvelopeLevel;
+    }
 
-  public String getContents() {
-    return this.contents;
-  }
+    public String getContents() {
+        return this.contents;
+    }
 
-  public void setKey(Integer key) {
-    this.key=key;
-  }
+    public void setKey(Integer key) {
+        this.key = key;
+    }
 
-  public void setNamespace(String namespace) {
-    this.namespace=namespace;
-  }
+    public void setNamespace(String namespace) {
+        this.namespace = namespace;
+    }
 
-  public void setType(String type) {
-    this.type=type;
-  }
+    public void setType(String type) {
+        this.type = type;
+    }
 
-  public void setAtEnvelopeLevel(Boolean atEnvelopeLevel) {
-    this.atEnvelopeLevel=atEnvelopeLevel;
-  }
+    public void setAtEnvelopeLevel(Boolean atEnvelopeLevel) {
+        this.atEnvelopeLevel = atEnvelopeLevel;
+    }
 
-  public void setContents(String contents) {
-    this.contents=contents;
-  }
+    public void setContents(String contents) {
+        this.contents = contents;
+    }
 }

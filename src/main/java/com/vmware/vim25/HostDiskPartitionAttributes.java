@@ -30,82 +30,82 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostDiskPartitionAttributes extends DynamicData {
-  public int partition;
-  public long startSector;
-  public long endSector;
-  public String type;
-  public String guid;
-  public boolean logical;
-  public byte attributes;
-  public Long partitionAlignment;
+    public int partition;
+    public long startSector;
+    public long endSector;
+    public String type;
+    public String guid;
+    public boolean logical;
+    public byte attributes;
+    public Long partitionAlignment;
 
-  public int getPartition() {
-    return this.partition;
-  }
+    public int getPartition() {
+        return this.partition;
+    }
 
-  public long getStartSector() {
-    return this.startSector;
-  }
+    public long getStartSector() {
+        return this.startSector;
+    }
 
-  public long getEndSector() {
-    return this.endSector;
-  }
+    public long getEndSector() {
+        return this.endSector;
+    }
 
-  public String getType() {
-    return this.type;
-  }
+    public String getType() {
+        return this.type;
+    }
 
-  public String getGuid() {
-    return this.guid;
-  }
+    public String getGuid() {
+        return this.guid;
+    }
 
-  public boolean isLogical() {
-    return this.logical;
-  }
+    public boolean isLogical() {
+        return this.logical;
+    }
 
-  public byte getAttributes() {
-    return this.attributes;
-  }
+    public byte getAttributes() {
+        return this.attributes;
+    }
 
-  public Long getPartitionAlignment() {
-    return this.partitionAlignment;
-  }
+    public Long getPartitionAlignment() {
+        return this.partitionAlignment;
+    }
 
-  public void setPartition(int partition) {
-    this.partition=partition;
-  }
+    public void setPartition(int partition) {
+        this.partition = partition;
+    }
 
-  public void setStartSector(long startSector) {
-    this.startSector=startSector;
-  }
+    public void setStartSector(long startSector) {
+        this.startSector = startSector;
+    }
 
-  public void setEndSector(long endSector) {
-    this.endSector=endSector;
-  }
+    public void setEndSector(long endSector) {
+        this.endSector = endSector;
+    }
 
-  public void setType(String type) {
-    this.type=type;
-  }
+    public void setType(String type) {
+        this.type = type;
+    }
 
-  public void setGuid(String guid) {
-    this.guid=guid;
-  }
+    public void setGuid(String guid) {
+        this.guid = guid;
+    }
 
-  public void setLogical(boolean logical) {
-    this.logical=logical;
-  }
+    public void setLogical(boolean logical) {
+        this.logical = logical;
+    }
 
-  public void setAttributes(byte attributes) {
-    this.attributes=attributes;
-  }
+    public void setAttributes(byte attributes) {
+        this.attributes = attributes;
+    }
 
-  public void setPartitionAlignment(Long partitionAlignment) {
-    this.partitionAlignment=partitionAlignment;
-  }
+    public void setPartitionAlignment(Long partitionAlignment) {
+        this.partitionAlignment = partitionAlignment;
+    }
 }

@@ -30,64 +30,64 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostNicTeamingPolicy extends DynamicData {
-  public String policy;
-  public Boolean reversePolicy;
-  public Boolean notifySwitches;
-  public Boolean rollingOrder;
-  public HostNicFailureCriteria failureCriteria;
-  public HostNicOrderPolicy nicOrder;
+    public String policy;
+    public Boolean reversePolicy;
+    public Boolean notifySwitches;
+    public Boolean rollingOrder;
+    public HostNicFailureCriteria failureCriteria;
+    public HostNicOrderPolicy nicOrder;
 
-  public String getPolicy() {
-    return this.policy;
-  }
+    public String getPolicy() {
+        return this.policy;
+    }
 
-  public Boolean getReversePolicy() {
-    return this.reversePolicy;
-  }
+    public Boolean getReversePolicy() {
+        return this.reversePolicy;
+    }
 
-  public Boolean getNotifySwitches() {
-    return this.notifySwitches;
-  }
+    public Boolean getNotifySwitches() {
+        return this.notifySwitches;
+    }
 
-  public Boolean getRollingOrder() {
-    return this.rollingOrder;
-  }
+    public Boolean getRollingOrder() {
+        return this.rollingOrder;
+    }
 
-  public HostNicFailureCriteria getFailureCriteria() {
-    return this.failureCriteria;
-  }
+    public HostNicFailureCriteria getFailureCriteria() {
+        return this.failureCriteria;
+    }
 
-  public HostNicOrderPolicy getNicOrder() {
-    return this.nicOrder;
-  }
+    public HostNicOrderPolicy getNicOrder() {
+        return this.nicOrder;
+    }
 
-  public void setPolicy(String policy) {
-    this.policy=policy;
-  }
+    public void setPolicy(String policy) {
+        this.policy = policy;
+    }
 
-  public void setReversePolicy(Boolean reversePolicy) {
-    this.reversePolicy=reversePolicy;
-  }
+    public void setReversePolicy(Boolean reversePolicy) {
+        this.reversePolicy = reversePolicy;
+    }
 
-  public void setNotifySwitches(Boolean notifySwitches) {
-    this.notifySwitches=notifySwitches;
-  }
+    public void setNotifySwitches(Boolean notifySwitches) {
+        this.notifySwitches = notifySwitches;
+    }
 
-  public void setRollingOrder(Boolean rollingOrder) {
-    this.rollingOrder=rollingOrder;
-  }
+    public void setRollingOrder(Boolean rollingOrder) {
+        this.rollingOrder = rollingOrder;
+    }
 
-  public void setFailureCriteria(HostNicFailureCriteria failureCriteria) {
-    this.failureCriteria=failureCriteria;
-  }
+    public void setFailureCriteria(HostNicFailureCriteria failureCriteria) {
+        this.failureCriteria = failureCriteria;
+    }
 
-  public void setNicOrder(HostNicOrderPolicy nicOrder) {
-    this.nicOrder=nicOrder;
-  }
+    public void setNicOrder(HostNicOrderPolicy nicOrder) {
+        this.nicOrder = nicOrder;
+    }
 }

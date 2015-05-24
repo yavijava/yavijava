@@ -30,20 +30,20 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public enum EventCategory {
-  info ("info"),
-  warning ("warning"),
-  error ("error"),
-  user ("user");
+    info("info"),
+    warning("warning"),
+    error("error"),
+    user("user");
 
-  @SuppressWarnings("unused")
-  private final String val;
-  private EventCategory(String val)
-  {
-    this.val = val;
-  }
+    @SuppressWarnings("unused")
+    private final String val;
+
+    private EventCategory(String val) {
+        this.val = val;
+    }
 }

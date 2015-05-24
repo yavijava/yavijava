@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class DeltaDiskFormatNotSupported extends VmConfigFault {
-  public ManagedObjectReference[] datastore;
-  public String deltaDiskFormat;
+    public ManagedObjectReference[] datastore;
+    public String deltaDiskFormat;
 
-  public ManagedObjectReference[] getDatastore() {
-    return this.datastore;
-  }
+    public ManagedObjectReference[] getDatastore() {
+        return this.datastore;
+    }
 
-  public String getDeltaDiskFormat() {
-    return this.deltaDiskFormat;
-  }
+    public String getDeltaDiskFormat() {
+        return this.deltaDiskFormat;
+    }
 
-  public void setDatastore(ManagedObjectReference[] datastore) {
-    this.datastore=datastore;
-  }
+    public void setDatastore(ManagedObjectReference[] datastore) {
+        this.datastore = datastore;
+    }
 
-  public void setDeltaDiskFormat(String deltaDiskFormat) {
-    this.deltaDiskFormat=deltaDiskFormat;
-  }
+    public void setDeltaDiskFormat(String deltaDiskFormat) {
+        this.deltaDiskFormat = deltaDiskFormat;
+    }
 }

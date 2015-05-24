@@ -30,7 +30,7 @@ public enum HostAccessMode {
      * Describes a propagating NoAccess role on the root inventory object (root folder) on the host,
      * and no other roles. Even if the user has another (redundant) NoAccess role on some other
      * inventory object, then the access mode for this user will be classified as accessOther.
-     *
+     * <p/>
      * This mode may be used to restrict a specific user account without restricting the access mode
      * for the group to which the user belongs.
      */
@@ -39,7 +39,7 @@ public enum HostAccessMode {
     /**
      * Indicates that the user has no explicitly defined permissions or roles. This is used when we
      * want to remove all permissions for some user.
-     *
+     * <p/>
      * Note that this is not the same as accessNoAccess.
      */
     accessNone("accessNone"),

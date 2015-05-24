@@ -30,64 +30,64 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VirtualDiskSeSparseBackingOption extends VirtualDeviceFileBackingOption {
-  public ChoiceOption diskMode;
-  public BoolOption writeThrough;
-  public boolean growable;
-  public boolean hotGrowable;
-  public boolean uuid;
-  public VirtualDiskDeltaDiskFormatsSupported[] deltaDiskFormatsSupported;
+    public ChoiceOption diskMode;
+    public BoolOption writeThrough;
+    public boolean growable;
+    public boolean hotGrowable;
+    public boolean uuid;
+    public VirtualDiskDeltaDiskFormatsSupported[] deltaDiskFormatsSupported;
 
-  public ChoiceOption getDiskMode() {
-    return this.diskMode;
-  }
+    public ChoiceOption getDiskMode() {
+        return this.diskMode;
+    }
 
-  public BoolOption getWriteThrough() {
-    return this.writeThrough;
-  }
+    public BoolOption getWriteThrough() {
+        return this.writeThrough;
+    }
 
-  public boolean isGrowable() {
-    return this.growable;
-  }
+    public boolean isGrowable() {
+        return this.growable;
+    }
 
-  public boolean isHotGrowable() {
-    return this.hotGrowable;
-  }
+    public boolean isHotGrowable() {
+        return this.hotGrowable;
+    }
 
-  public boolean isUuid() {
-    return this.uuid;
-  }
+    public boolean isUuid() {
+        return this.uuid;
+    }
 
-  public VirtualDiskDeltaDiskFormatsSupported[] getDeltaDiskFormatsSupported() {
-    return this.deltaDiskFormatsSupported;
-  }
+    public VirtualDiskDeltaDiskFormatsSupported[] getDeltaDiskFormatsSupported() {
+        return this.deltaDiskFormatsSupported;
+    }
 
-  public void setDiskMode(ChoiceOption diskMode) {
-    this.diskMode=diskMode;
-  }
+    public void setDiskMode(ChoiceOption diskMode) {
+        this.diskMode = diskMode;
+    }
 
-  public void setWriteThrough(BoolOption writeThrough) {
-    this.writeThrough=writeThrough;
-  }
+    public void setWriteThrough(BoolOption writeThrough) {
+        this.writeThrough = writeThrough;
+    }
 
-  public void setGrowable(boolean growable) {
-    this.growable=growable;
-  }
+    public void setGrowable(boolean growable) {
+        this.growable = growable;
+    }
 
-  public void setHotGrowable(boolean hotGrowable) {
-    this.hotGrowable=hotGrowable;
-  }
+    public void setHotGrowable(boolean hotGrowable) {
+        this.hotGrowable = hotGrowable;
+    }
 
-  public void setUuid(boolean uuid) {
-    this.uuid=uuid;
-  }
+    public void setUuid(boolean uuid) {
+        this.uuid = uuid;
+    }
 
-  public void setDeltaDiskFormatsSupported(VirtualDiskDeltaDiskFormatsSupported[] deltaDiskFormatsSupported) {
-    this.deltaDiskFormatsSupported=deltaDiskFormatsSupported;
-  }
+    public void setDeltaDiskFormatsSupported(VirtualDiskDeltaDiskFormatsSupported[] deltaDiskFormatsSupported) {
+        this.deltaDiskFormatsSupported = deltaDiskFormatsSupported;
+    }
 }

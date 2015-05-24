@@ -30,64 +30,64 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VMwareIpfixConfig extends DynamicData {
-  public String collectorIpAddress;
-  public Integer collectorPort;
-  public int activeFlowTimeout;
-  public int idleFlowTimeout;
-  public int samplingRate;
-  public boolean internalFlowsOnly;
+    public String collectorIpAddress;
+    public Integer collectorPort;
+    public int activeFlowTimeout;
+    public int idleFlowTimeout;
+    public int samplingRate;
+    public boolean internalFlowsOnly;
 
-  public String getCollectorIpAddress() {
-    return this.collectorIpAddress;
-  }
+    public String getCollectorIpAddress() {
+        return this.collectorIpAddress;
+    }
 
-  public Integer getCollectorPort() {
-    return this.collectorPort;
-  }
+    public Integer getCollectorPort() {
+        return this.collectorPort;
+    }
 
-  public int getActiveFlowTimeout() {
-    return this.activeFlowTimeout;
-  }
+    public int getActiveFlowTimeout() {
+        return this.activeFlowTimeout;
+    }
 
-  public int getIdleFlowTimeout() {
-    return this.idleFlowTimeout;
-  }
+    public int getIdleFlowTimeout() {
+        return this.idleFlowTimeout;
+    }
 
-  public int getSamplingRate() {
-    return this.samplingRate;
-  }
+    public int getSamplingRate() {
+        return this.samplingRate;
+    }
 
-  public boolean isInternalFlowsOnly() {
-    return this.internalFlowsOnly;
-  }
+    public boolean isInternalFlowsOnly() {
+        return this.internalFlowsOnly;
+    }
 
-  public void setCollectorIpAddress(String collectorIpAddress) {
-    this.collectorIpAddress=collectorIpAddress;
-  }
+    public void setCollectorIpAddress(String collectorIpAddress) {
+        this.collectorIpAddress = collectorIpAddress;
+    }
 
-  public void setCollectorPort(Integer collectorPort) {
-    this.collectorPort=collectorPort;
-  }
+    public void setCollectorPort(Integer collectorPort) {
+        this.collectorPort = collectorPort;
+    }
 
-  public void setActiveFlowTimeout(int activeFlowTimeout) {
-    this.activeFlowTimeout=activeFlowTimeout;
-  }
+    public void setActiveFlowTimeout(int activeFlowTimeout) {
+        this.activeFlowTimeout = activeFlowTimeout;
+    }
 
-  public void setIdleFlowTimeout(int idleFlowTimeout) {
-    this.idleFlowTimeout=idleFlowTimeout;
-  }
+    public void setIdleFlowTimeout(int idleFlowTimeout) {
+        this.idleFlowTimeout = idleFlowTimeout;
+    }
 
-  public void setSamplingRate(int samplingRate) {
-    this.samplingRate=samplingRate;
-  }
+    public void setSamplingRate(int samplingRate) {
+        this.samplingRate = samplingRate;
+    }
 
-  public void setInternalFlowsOnly(boolean internalFlowsOnly) {
-    this.internalFlowsOnly=internalFlowsOnly;
-  }
+    public void setInternalFlowsOnly(boolean internalFlowsOnly) {
+        this.internalFlowsOnly = internalFlowsOnly;
+    }
 }

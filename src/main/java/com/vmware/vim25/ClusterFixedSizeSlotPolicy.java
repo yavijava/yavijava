@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class ClusterFixedSizeSlotPolicy extends ClusterSlotPolicy {
-  public int cpu;
-  public int memory;
+    public int cpu;
+    public int memory;
 
-  public int getCpu() {
-    return this.cpu;
-  }
+    public int getCpu() {
+        return this.cpu;
+    }
 
-  public int getMemory() {
-    return this.memory;
-  }
+    public int getMemory() {
+        return this.memory;
+    }
 
-  public void setCpu(int cpu) {
-    this.cpu=cpu;
-  }
+    public void setCpu(int cpu) {
+        this.cpu = cpu;
+    }
 
-  public void setMemory(int memory) {
-    this.memory=memory;
-  }
+    public void setMemory(int memory) {
+        this.memory = memory;
+    }
 }

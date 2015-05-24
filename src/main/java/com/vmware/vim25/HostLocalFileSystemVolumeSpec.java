@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostLocalFileSystemVolumeSpec extends DynamicData {
-  public String device;
-  public String localPath;
+    public String device;
+    public String localPath;
 
-  public String getDevice() {
-    return this.device;
-  }
+    public String getDevice() {
+        return this.device;
+    }
 
-  public String getLocalPath() {
-    return this.localPath;
-  }
+    public String getLocalPath() {
+        return this.localPath;
+    }
 
-  public void setDevice(String device) {
-    this.device=device;
-  }
+    public void setDevice(String device) {
+        this.device = device;
+    }
 
-  public void setLocalPath(String localPath) {
-    this.localPath=localPath;
-  }
+    public void setLocalPath(String localPath) {
+        this.localPath = localPath;
+    }
 }

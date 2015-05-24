@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class TaskFilterSpecByEntity extends DynamicData {
-  public ManagedObjectReference entity;
-  public TaskFilterSpecRecursionOption recursion;
+    public ManagedObjectReference entity;
+    public TaskFilterSpecRecursionOption recursion;
 
-  public ManagedObjectReference getEntity() {
-    return this.entity;
-  }
+    public ManagedObjectReference getEntity() {
+        return this.entity;
+    }
 
-  public TaskFilterSpecRecursionOption getRecursion() {
-    return this.recursion;
-  }
+    public TaskFilterSpecRecursionOption getRecursion() {
+        return this.recursion;
+    }
 
-  public void setEntity(ManagedObjectReference entity) {
-    this.entity=entity;
-  }
+    public void setEntity(ManagedObjectReference entity) {
+        this.entity = entity;
+    }
 
-  public void setRecursion(TaskFilterSpecRecursionOption recursion) {
-    this.recursion=recursion;
-  }
+    public void setRecursion(TaskFilterSpecRecursionOption recursion) {
+        this.recursion = recursion;
+    }
 }

@@ -30,20 +30,20 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public enum HttpNfcLeaseState {
-  initializing ("initializing"),
-  ready ("ready"),
-  done ("done"),
-  error ("error");
+    initializing("initializing"),
+    ready("ready"),
+    done("done"),
+    error("error");
 
-  @SuppressWarnings("unused")
-  private final String val;
-  private HttpNfcLeaseState(String val)
-  {
-    this.val = val;
-  }
+    @SuppressWarnings("unused")
+    private final String val;
+
+    private HttpNfcLeaseState(String val) {
+        this.val = val;
+    }
 }

@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class TicketedSessionAuthentication extends GuestAuthentication {
-  public String ticket;
+    public String ticket;
 
-  public String getTicket() {
-    return this.ticket;
-  }
+    public String getTicket() {
+        return this.ticket;
+    }
 
-  public void setTicket(String ticket) {
-    this.ticket=ticket;
-  }
+    public void setTicket(String ticket) {
+        this.ticket = ticket;
+    }
 }

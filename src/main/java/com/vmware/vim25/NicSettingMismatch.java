@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class NicSettingMismatch extends CustomizationFault {
-  public int numberOfNicsInSpec;
-  public int numberOfNicsInVM;
+    public int numberOfNicsInSpec;
+    public int numberOfNicsInVM;
 
-  public int getNumberOfNicsInSpec() {
-    return this.numberOfNicsInSpec;
-  }
+    public int getNumberOfNicsInSpec() {
+        return this.numberOfNicsInSpec;
+    }
 
-  public int getNumberOfNicsInVM() {
-    return this.numberOfNicsInVM;
-  }
+    public int getNumberOfNicsInVM() {
+        return this.numberOfNicsInVM;
+    }
 
-  public void setNumberOfNicsInSpec(int numberOfNicsInSpec) {
-    this.numberOfNicsInSpec=numberOfNicsInSpec;
-  }
+    public void setNumberOfNicsInSpec(int numberOfNicsInSpec) {
+        this.numberOfNicsInSpec = numberOfNicsInSpec;
+    }
 
-  public void setNumberOfNicsInVM(int numberOfNicsInVM) {
-    this.numberOfNicsInVM=numberOfNicsInVM;
-  }
+    public void setNumberOfNicsInVM(int numberOfNicsInVM) {
+        this.numberOfNicsInVM = numberOfNicsInVM;
+    }
 }

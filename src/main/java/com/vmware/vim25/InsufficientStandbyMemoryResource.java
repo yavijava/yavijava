@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class InsufficientStandbyMemoryResource extends InsufficientStandbyResource {
-  public long available;
-  public long requested;
+    public long available;
+    public long requested;
 
-  public long getAvailable() {
-    return this.available;
-  }
+    public long getAvailable() {
+        return this.available;
+    }
 
-  public long getRequested() {
-    return this.requested;
-  }
+    public long getRequested() {
+        return this.requested;
+    }
 
-  public void setAvailable(long available) {
-    this.available=available;
-  }
+    public void setAvailable(long available) {
+        this.available = available;
+    }
 
-  public void setRequested(long requested) {
-    this.requested=requested;
-  }
+    public void setRequested(long requested) {
+        this.requested = requested;
+    }
 }

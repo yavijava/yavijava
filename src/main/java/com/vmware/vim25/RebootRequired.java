@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class RebootRequired extends VimFault {
-  public String patch;
+    public String patch;
 
-  public String getPatch() {
-    return this.patch;
-  }
+    public String getPatch() {
+        return this.patch;
+    }
 
-  public void setPatch(String patch) {
-    this.patch=patch;
-  }
+    public void setPatch(String patch) {
+        this.patch = patch;
+    }
 }

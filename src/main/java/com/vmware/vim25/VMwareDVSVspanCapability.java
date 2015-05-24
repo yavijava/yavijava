@@ -30,55 +30,55 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VMwareDVSVspanCapability extends DynamicData {
-  public boolean mixedDestSupported;
-  public boolean dvportSupported;
-  public boolean remoteSourceSupported;
-  public boolean remoteDestSupported;
-  public boolean encapRemoteSourceSupported;
+    public boolean mixedDestSupported;
+    public boolean dvportSupported;
+    public boolean remoteSourceSupported;
+    public boolean remoteDestSupported;
+    public boolean encapRemoteSourceSupported;
 
-  public boolean isMixedDestSupported() {
-    return this.mixedDestSupported;
-  }
+    public boolean isMixedDestSupported() {
+        return this.mixedDestSupported;
+    }
 
-  public boolean isDvportSupported() {
-    return this.dvportSupported;
-  }
+    public boolean isDvportSupported() {
+        return this.dvportSupported;
+    }
 
-  public boolean isRemoteSourceSupported() {
-    return this.remoteSourceSupported;
-  }
+    public boolean isRemoteSourceSupported() {
+        return this.remoteSourceSupported;
+    }
 
-  public boolean isRemoteDestSupported() {
-    return this.remoteDestSupported;
-  }
+    public boolean isRemoteDestSupported() {
+        return this.remoteDestSupported;
+    }
 
-  public boolean isEncapRemoteSourceSupported() {
-    return this.encapRemoteSourceSupported;
-  }
+    public boolean isEncapRemoteSourceSupported() {
+        return this.encapRemoteSourceSupported;
+    }
 
-  public void setMixedDestSupported(boolean mixedDestSupported) {
-    this.mixedDestSupported=mixedDestSupported;
-  }
+    public void setMixedDestSupported(boolean mixedDestSupported) {
+        this.mixedDestSupported = mixedDestSupported;
+    }
 
-  public void setDvportSupported(boolean dvportSupported) {
-    this.dvportSupported=dvportSupported;
-  }
+    public void setDvportSupported(boolean dvportSupported) {
+        this.dvportSupported = dvportSupported;
+    }
 
-  public void setRemoteSourceSupported(boolean remoteSourceSupported) {
-    this.remoteSourceSupported=remoteSourceSupported;
-  }
+    public void setRemoteSourceSupported(boolean remoteSourceSupported) {
+        this.remoteSourceSupported = remoteSourceSupported;
+    }
 
-  public void setRemoteDestSupported(boolean remoteDestSupported) {
-    this.remoteDestSupported=remoteDestSupported;
-  }
+    public void setRemoteDestSupported(boolean remoteDestSupported) {
+        this.remoteDestSupported = remoteDestSupported;
+    }
 
-  public void setEncapRemoteSourceSupported(boolean encapRemoteSourceSupported) {
-    this.encapRemoteSourceSupported=encapRemoteSourceSupported;
-  }
+    public void setEncapRemoteSourceSupported(boolean encapRemoteSourceSupported) {
+        this.encapRemoteSourceSupported = encapRemoteSourceSupported;
+    }
 }

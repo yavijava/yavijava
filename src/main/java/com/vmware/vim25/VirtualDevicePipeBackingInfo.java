@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VirtualDevicePipeBackingInfo extends VirtualDeviceBackingInfo {
-  public String pipeName;
+    public String pipeName;
 
-  public String getPipeName() {
-    return this.pipeName;
-  }
+    public String getPipeName() {
+        return this.pipeName;
+    }
 
-  public void setPipeName(String pipeName) {
-    this.pipeName=pipeName;
-  }
+    public void setPipeName(String pipeName) {
+        this.pipeName = pipeName;
+    }
 }

@@ -30,21 +30,21 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public enum VirtualDeviceFileExtension {
-  iso ("iso"),
-  flp ("flp"),
-  vmdk ("vmdk"),
-  dsk ("dsk"),
-  rdm ("rdm");
+    iso("iso"),
+    flp("flp"),
+    vmdk("vmdk"),
+    dsk("dsk"),
+    rdm("rdm");
 
-  @SuppressWarnings("unused")
-  private final String val;
-  private VirtualDeviceFileExtension(String val)
-  {
-    this.val = val;
-  }
+    @SuppressWarnings("unused")
+    private final String val;
+
+    private VirtualDeviceFileExtension(String val) {
+        this.val = val;
+    }
 }

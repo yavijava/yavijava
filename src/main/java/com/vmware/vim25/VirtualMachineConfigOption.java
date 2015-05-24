@@ -30,109 +30,109 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VirtualMachineConfigOption extends DynamicData {
-  public String version;
-  public String description;
-  public GuestOsDescriptor[] guestOSDescriptor;
-  public int guestOSDefaultIndex;
-  public VirtualHardwareOption hardwareOptions;
-  public VirtualMachineCapability capabilities;
-  public DatastoreOption datastore;
-  public VirtualDevice[] defaultDevice;
-  public String[] supportedMonitorType;
-  public String[] supportedOvfEnvironmentTransport;
-  public String[] supportedOvfInstallTransport;
+    public String version;
+    public String description;
+    public GuestOsDescriptor[] guestOSDescriptor;
+    public int guestOSDefaultIndex;
+    public VirtualHardwareOption hardwareOptions;
+    public VirtualMachineCapability capabilities;
+    public DatastoreOption datastore;
+    public VirtualDevice[] defaultDevice;
+    public String[] supportedMonitorType;
+    public String[] supportedOvfEnvironmentTransport;
+    public String[] supportedOvfInstallTransport;
 
-  public String getVersion() {
-    return this.version;
-  }
+    public String getVersion() {
+        return this.version;
+    }
 
-  public String getDescription() {
-    return this.description;
-  }
+    public String getDescription() {
+        return this.description;
+    }
 
-  public GuestOsDescriptor[] getGuestOSDescriptor() {
-    return this.guestOSDescriptor;
-  }
+    public GuestOsDescriptor[] getGuestOSDescriptor() {
+        return this.guestOSDescriptor;
+    }
 
-  public int getGuestOSDefaultIndex() {
-    return this.guestOSDefaultIndex;
-  }
+    public int getGuestOSDefaultIndex() {
+        return this.guestOSDefaultIndex;
+    }
 
-  public VirtualHardwareOption getHardwareOptions() {
-    return this.hardwareOptions;
-  }
+    public VirtualHardwareOption getHardwareOptions() {
+        return this.hardwareOptions;
+    }
 
-  public VirtualMachineCapability getCapabilities() {
-    return this.capabilities;
-  }
+    public VirtualMachineCapability getCapabilities() {
+        return this.capabilities;
+    }
 
-  public DatastoreOption getDatastore() {
-    return this.datastore;
-  }
+    public DatastoreOption getDatastore() {
+        return this.datastore;
+    }
 
-  public VirtualDevice[] getDefaultDevice() {
-    return this.defaultDevice;
-  }
+    public VirtualDevice[] getDefaultDevice() {
+        return this.defaultDevice;
+    }
 
-  public String[] getSupportedMonitorType() {
-    return this.supportedMonitorType;
-  }
+    public String[] getSupportedMonitorType() {
+        return this.supportedMonitorType;
+    }
 
-  public String[] getSupportedOvfEnvironmentTransport() {
-    return this.supportedOvfEnvironmentTransport;
-  }
+    public String[] getSupportedOvfEnvironmentTransport() {
+        return this.supportedOvfEnvironmentTransport;
+    }
 
-  public String[] getSupportedOvfInstallTransport() {
-    return this.supportedOvfInstallTransport;
-  }
+    public String[] getSupportedOvfInstallTransport() {
+        return this.supportedOvfInstallTransport;
+    }
 
-  public void setVersion(String version) {
-    this.version=version;
-  }
+    public void setVersion(String version) {
+        this.version = version;
+    }
 
-  public void setDescription(String description) {
-    this.description=description;
-  }
+    public void setDescription(String description) {
+        this.description = description;
+    }
 
-  public void setGuestOSDescriptor(GuestOsDescriptor[] guestOSDescriptor) {
-    this.guestOSDescriptor=guestOSDescriptor;
-  }
+    public void setGuestOSDescriptor(GuestOsDescriptor[] guestOSDescriptor) {
+        this.guestOSDescriptor = guestOSDescriptor;
+    }
 
-  public void setGuestOSDefaultIndex(int guestOSDefaultIndex) {
-    this.guestOSDefaultIndex=guestOSDefaultIndex;
-  }
+    public void setGuestOSDefaultIndex(int guestOSDefaultIndex) {
+        this.guestOSDefaultIndex = guestOSDefaultIndex;
+    }
 
-  public void setHardwareOptions(VirtualHardwareOption hardwareOptions) {
-    this.hardwareOptions=hardwareOptions;
-  }
+    public void setHardwareOptions(VirtualHardwareOption hardwareOptions) {
+        this.hardwareOptions = hardwareOptions;
+    }
 
-  public void setCapabilities(VirtualMachineCapability capabilities) {
-    this.capabilities=capabilities;
-  }
+    public void setCapabilities(VirtualMachineCapability capabilities) {
+        this.capabilities = capabilities;
+    }
 
-  public void setDatastore(DatastoreOption datastore) {
-    this.datastore=datastore;
-  }
+    public void setDatastore(DatastoreOption datastore) {
+        this.datastore = datastore;
+    }
 
-  public void setDefaultDevice(VirtualDevice[] defaultDevice) {
-    this.defaultDevice=defaultDevice;
-  }
+    public void setDefaultDevice(VirtualDevice[] defaultDevice) {
+        this.defaultDevice = defaultDevice;
+    }
 
-  public void setSupportedMonitorType(String[] supportedMonitorType) {
-    this.supportedMonitorType=supportedMonitorType;
-  }
+    public void setSupportedMonitorType(String[] supportedMonitorType) {
+        this.supportedMonitorType = supportedMonitorType;
+    }
 
-  public void setSupportedOvfEnvironmentTransport(String[] supportedOvfEnvironmentTransport) {
-    this.supportedOvfEnvironmentTransport=supportedOvfEnvironmentTransport;
-  }
+    public void setSupportedOvfEnvironmentTransport(String[] supportedOvfEnvironmentTransport) {
+        this.supportedOvfEnvironmentTransport = supportedOvfEnvironmentTransport;
+    }
 
-  public void setSupportedOvfInstallTransport(String[] supportedOvfInstallTransport) {
-    this.supportedOvfInstallTransport=supportedOvfInstallTransport;
-  }
+    public void setSupportedOvfInstallTransport(String[] supportedOvfInstallTransport) {
+        this.supportedOvfInstallTransport = supportedOvfInstallTransport;
+    }
 }

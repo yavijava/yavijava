@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostSystemReconnectSpec extends DynamicData {
-  public Boolean syncState;
+    public Boolean syncState;
 
-  public Boolean getSyncState() {
-    return this.syncState;
-  }
+    public Boolean getSyncState() {
+        return this.syncState;
+    }
 
-  public void setSyncState(Boolean syncState) {
-    this.syncState=syncState;
-  }
+    public void setSyncState(Boolean syncState) {
+        this.syncState = syncState;
+    }
 }

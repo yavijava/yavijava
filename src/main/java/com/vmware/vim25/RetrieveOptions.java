@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class RetrieveOptions extends DynamicData {
-  public Integer maxObjects;
+    public Integer maxObjects;
 
-  public Integer getMaxObjects() {
-    return this.maxObjects;
-  }
+    public Integer getMaxObjects() {
+        return this.maxObjects;
+    }
 
-  public void setMaxObjects(Integer maxObjects) {
-    this.maxObjects=maxObjects;
-  }
+    public void setMaxObjects(Integer maxObjects) {
+        this.maxObjects = maxObjects;
+    }
 }

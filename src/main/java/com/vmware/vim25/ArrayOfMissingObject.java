@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfMissingObject {
-  public MissingObject[] MissingObject;
+    public MissingObject[] MissingObject;
 
-  public MissingObject[] getMissingObject() {
-    return this.MissingObject;
-  }
+    public MissingObject[] getMissingObject() {
+        return this.MissingObject;
+    }
 
-  public MissingObject getMissingObject(int i) {
-    return this.MissingObject[i];
-  }
+    public MissingObject getMissingObject(int i) {
+        return this.MissingObject[i];
+    }
 
-  public void setMissingObject(MissingObject[] MissingObject) {
-    this.MissingObject=MissingObject;
-  }
+    public void setMissingObject(MissingObject[] MissingObject) {
+        this.MissingObject = MissingObject;
+    }
 }

@@ -30,37 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostSnmpDestination extends DynamicData {
-  public String hostName;
-  public int port;
-  public String community;
+    public String hostName;
+    public int port;
+    public String community;
 
-  public String getHostName() {
-    return this.hostName;
-  }
+    public String getHostName() {
+        return this.hostName;
+    }
 
-  public int getPort() {
-    return this.port;
-  }
+    public int getPort() {
+        return this.port;
+    }
 
-  public String getCommunity() {
-    return this.community;
-  }
+    public String getCommunity() {
+        return this.community;
+    }
 
-  public void setHostName(String hostName) {
-    this.hostName=hostName;
-  }
+    public void setHostName(String hostName) {
+        this.hostName = hostName;
+    }
 
-  public void setPort(int port) {
-    this.port=port;
-  }
+    public void setPort(int port) {
+        this.port = port;
+    }
 
-  public void setCommunity(String community) {
-    this.community=community;
-  }
+    public void setCommunity(String community) {
+        this.community = community;
+    }
 }

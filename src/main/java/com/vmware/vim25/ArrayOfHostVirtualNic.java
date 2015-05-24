@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfHostVirtualNic {
-  public HostVirtualNic[] HostVirtualNic;
+    public HostVirtualNic[] HostVirtualNic;
 
-  public HostVirtualNic[] getHostVirtualNic() {
-    return this.HostVirtualNic;
-  }
+    public HostVirtualNic[] getHostVirtualNic() {
+        return this.HostVirtualNic;
+    }
 
-  public HostVirtualNic getHostVirtualNic(int i) {
-    return this.HostVirtualNic[i];
-  }
+    public HostVirtualNic getHostVirtualNic(int i) {
+        return this.HostVirtualNic[i];
+    }
 
-  public void setHostVirtualNic(HostVirtualNic[] HostVirtualNic) {
-    this.HostVirtualNic=HostVirtualNic;
-  }
+    public void setHostVirtualNic(HostVirtualNic[] HostVirtualNic) {
+        this.HostVirtualNic = HostVirtualNic;
+    }
 }

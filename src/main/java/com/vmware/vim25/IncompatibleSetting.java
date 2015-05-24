@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class IncompatibleSetting extends InvalidArgument {
-  public String conflictingProperty;
+    public String conflictingProperty;
 
-  public String getConflictingProperty() {
-    return this.conflictingProperty;
-  }
+    public String getConflictingProperty() {
+        return this.conflictingProperty;
+    }
 
-  public void setConflictingProperty(String conflictingProperty) {
-    this.conflictingProperty=conflictingProperty;
-  }
+    public void setConflictingProperty(String conflictingProperty) {
+        this.conflictingProperty = conflictingProperty;
+    }
 }

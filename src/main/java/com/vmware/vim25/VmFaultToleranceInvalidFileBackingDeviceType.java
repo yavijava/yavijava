@@ -30,21 +30,21 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public enum VmFaultToleranceInvalidFileBackingDeviceType {
-  virtualFloppy ("virtualFloppy"),
-  virtualCdrom ("virtualCdrom"),
-  virtualSerialPort ("virtualSerialPort"),
-  virtualParallelPort ("virtualParallelPort"),
-  virtualDisk ("virtualDisk");
+    virtualFloppy("virtualFloppy"),
+    virtualCdrom("virtualCdrom"),
+    virtualSerialPort("virtualSerialPort"),
+    virtualParallelPort("virtualParallelPort"),
+    virtualDisk("virtualDisk");
 
-  @SuppressWarnings("unused")
-  private final String val;
-  private VmFaultToleranceInvalidFileBackingDeviceType(String val)
-  {
-    this.val = val;
-  }
+    @SuppressWarnings("unused")
+    private final String val;
+
+    private VmFaultToleranceInvalidFileBackingDeviceType(String val) {
+        this.val = val;
+    }
 }

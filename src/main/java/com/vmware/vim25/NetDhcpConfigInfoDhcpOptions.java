@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class NetDhcpConfigInfoDhcpOptions extends DynamicData {
-  public boolean enable;
-  public KeyValue[] config;
+    public boolean enable;
+    public KeyValue[] config;
 
-  public boolean isEnable() {
-    return this.enable;
-  }
+    public boolean isEnable() {
+        return this.enable;
+    }
 
-  public KeyValue[] getConfig() {
-    return this.config;
-  }
+    public KeyValue[] getConfig() {
+        return this.config;
+    }
 
-  public void setEnable(boolean enable) {
-    this.enable=enable;
-  }
+    public void setEnable(boolean enable) {
+        this.enable = enable;
+    }
 
-  public void setConfig(KeyValue[] config) {
-    this.config=config;
-  }
+    public void setConfig(KeyValue[] config) {
+        this.config = config;
+    }
 }

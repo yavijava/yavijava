@@ -30,109 +30,109 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostHardwareInfo extends DynamicData {
-  public HostSystemInfo systemInfo;
-  public HostCpuPowerManagementInfo cpuPowerManagementInfo;
-  public HostCpuInfo cpuInfo;
-  public HostCpuPackage[] cpuPkg;
-  public long memorySize;
-  public HostNumaInfo numaInfo;
-  public Boolean smcPresent;
-  public HostPciDevice[] pciDevice;
-  public HostCpuIdInfo[] cpuFeature;
-  public HostBIOSInfo biosInfo;
-  public HostReliableMemoryInfo reliableMemoryInfo;
+    public HostSystemInfo systemInfo;
+    public HostCpuPowerManagementInfo cpuPowerManagementInfo;
+    public HostCpuInfo cpuInfo;
+    public HostCpuPackage[] cpuPkg;
+    public long memorySize;
+    public HostNumaInfo numaInfo;
+    public Boolean smcPresent;
+    public HostPciDevice[] pciDevice;
+    public HostCpuIdInfo[] cpuFeature;
+    public HostBIOSInfo biosInfo;
+    public HostReliableMemoryInfo reliableMemoryInfo;
 
-  public HostSystemInfo getSystemInfo() {
-    return this.systemInfo;
-  }
+    public HostSystemInfo getSystemInfo() {
+        return this.systemInfo;
+    }
 
-  public HostCpuPowerManagementInfo getCpuPowerManagementInfo() {
-    return this.cpuPowerManagementInfo;
-  }
+    public HostCpuPowerManagementInfo getCpuPowerManagementInfo() {
+        return this.cpuPowerManagementInfo;
+    }
 
-  public HostCpuInfo getCpuInfo() {
-    return this.cpuInfo;
-  }
+    public HostCpuInfo getCpuInfo() {
+        return this.cpuInfo;
+    }
 
-  public HostCpuPackage[] getCpuPkg() {
-    return this.cpuPkg;
-  }
+    public HostCpuPackage[] getCpuPkg() {
+        return this.cpuPkg;
+    }
 
-  public long getMemorySize() {
-    return this.memorySize;
-  }
+    public long getMemorySize() {
+        return this.memorySize;
+    }
 
-  public HostNumaInfo getNumaInfo() {
-    return this.numaInfo;
-  }
+    public HostNumaInfo getNumaInfo() {
+        return this.numaInfo;
+    }
 
-  public Boolean getSmcPresent() {
-    return this.smcPresent;
-  }
+    public Boolean getSmcPresent() {
+        return this.smcPresent;
+    }
 
-  public HostPciDevice[] getPciDevice() {
-    return this.pciDevice;
-  }
+    public HostPciDevice[] getPciDevice() {
+        return this.pciDevice;
+    }
 
-  public HostCpuIdInfo[] getCpuFeature() {
-    return this.cpuFeature;
-  }
+    public HostCpuIdInfo[] getCpuFeature() {
+        return this.cpuFeature;
+    }
 
-  public HostBIOSInfo getBiosInfo() {
-    return this.biosInfo;
-  }
+    public HostBIOSInfo getBiosInfo() {
+        return this.biosInfo;
+    }
 
-  public HostReliableMemoryInfo getReliableMemoryInfo() {
-    return this.reliableMemoryInfo;
-  }
+    public HostReliableMemoryInfo getReliableMemoryInfo() {
+        return this.reliableMemoryInfo;
+    }
 
-  public void setSystemInfo(HostSystemInfo systemInfo) {
-    this.systemInfo=systemInfo;
-  }
+    public void setSystemInfo(HostSystemInfo systemInfo) {
+        this.systemInfo = systemInfo;
+    }
 
-  public void setCpuPowerManagementInfo(HostCpuPowerManagementInfo cpuPowerManagementInfo) {
-    this.cpuPowerManagementInfo=cpuPowerManagementInfo;
-  }
+    public void setCpuPowerManagementInfo(HostCpuPowerManagementInfo cpuPowerManagementInfo) {
+        this.cpuPowerManagementInfo = cpuPowerManagementInfo;
+    }
 
-  public void setCpuInfo(HostCpuInfo cpuInfo) {
-    this.cpuInfo=cpuInfo;
-  }
+    public void setCpuInfo(HostCpuInfo cpuInfo) {
+        this.cpuInfo = cpuInfo;
+    }
 
-  public void setCpuPkg(HostCpuPackage[] cpuPkg) {
-    this.cpuPkg=cpuPkg;
-  }
+    public void setCpuPkg(HostCpuPackage[] cpuPkg) {
+        this.cpuPkg = cpuPkg;
+    }
 
-  public void setMemorySize(long memorySize) {
-    this.memorySize=memorySize;
-  }
+    public void setMemorySize(long memorySize) {
+        this.memorySize = memorySize;
+    }
 
-  public void setNumaInfo(HostNumaInfo numaInfo) {
-    this.numaInfo=numaInfo;
-  }
+    public void setNumaInfo(HostNumaInfo numaInfo) {
+        this.numaInfo = numaInfo;
+    }
 
-  public void setSmcPresent(Boolean smcPresent) {
-    this.smcPresent=smcPresent;
-  }
+    public void setSmcPresent(Boolean smcPresent) {
+        this.smcPresent = smcPresent;
+    }
 
-  public void setPciDevice(HostPciDevice[] pciDevice) {
-    this.pciDevice=pciDevice;
-  }
+    public void setPciDevice(HostPciDevice[] pciDevice) {
+        this.pciDevice = pciDevice;
+    }
 
-  public void setCpuFeature(HostCpuIdInfo[] cpuFeature) {
-    this.cpuFeature=cpuFeature;
-  }
+    public void setCpuFeature(HostCpuIdInfo[] cpuFeature) {
+        this.cpuFeature = cpuFeature;
+    }
 
-  public void setBiosInfo(HostBIOSInfo biosInfo) {
-    this.biosInfo=biosInfo;
-  }
+    public void setBiosInfo(HostBIOSInfo biosInfo) {
+        this.biosInfo = biosInfo;
+    }
 
-  public void setReliableMemoryInfo(HostReliableMemoryInfo reliableMemoryInfo) {
-    this.reliableMemoryInfo=reliableMemoryInfo;
-  }
+    public void setReliableMemoryInfo(HostReliableMemoryInfo reliableMemoryInfo) {
+        this.reliableMemoryInfo = reliableMemoryInfo;
+    }
 }

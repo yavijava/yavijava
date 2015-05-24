@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostVFlashManagerVFlashResourceConfigSpec extends DynamicData {
-  public String vffsUuid;
+    public String vffsUuid;
 
-  public String getVffsUuid() {
-    return this.vffsUuid;
-  }
+    public String getVffsUuid() {
+        return this.vffsUuid;
+    }
 
-  public void setVffsUuid(String vffsUuid) {
-    this.vffsUuid=vffsUuid;
-  }
+    public void setVffsUuid(String vffsUuid) {
+        this.vffsUuid = vffsUuid;
+    }
 }

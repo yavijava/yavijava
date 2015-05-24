@@ -30,37 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class LicenseDowngradeDisallowed extends NotEnoughLicenses {
-  public String edition;
-  public String entityId;
-  public KeyAnyValue[] features;
+    public String edition;
+    public String entityId;
+    public KeyAnyValue[] features;
 
-  public String getEdition() {
-    return this.edition;
-  }
+    public String getEdition() {
+        return this.edition;
+    }
 
-  public String getEntityId() {
-    return this.entityId;
-  }
+    public String getEntityId() {
+        return this.entityId;
+    }
 
-  public KeyAnyValue[] getFeatures() {
-    return this.features;
-  }
+    public KeyAnyValue[] getFeatures() {
+        return this.features;
+    }
 
-  public void setEdition(String edition) {
-    this.edition=edition;
-  }
+    public void setEdition(String edition) {
+        this.edition = edition;
+    }
 
-  public void setEntityId(String entityId) {
-    this.entityId=entityId;
-  }
+    public void setEntityId(String entityId) {
+        this.entityId = entityId;
+    }
 
-  public void setFeatures(KeyAnyValue[] features) {
-    this.features=features;
-  }
+    public void setFeatures(KeyAnyValue[] features) {
+        this.features = features;
+    }
 }

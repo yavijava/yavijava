@@ -30,46 +30,46 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class FcoeConfigFcoeSpecification extends DynamicData {
-  public String underlyingPnic;
-  public Integer priorityClass;
-  public String sourceMac;
-  public FcoeConfigVlanRange[] vlanRange;
+    public String underlyingPnic;
+    public Integer priorityClass;
+    public String sourceMac;
+    public FcoeConfigVlanRange[] vlanRange;
 
-  public String getUnderlyingPnic() {
-    return this.underlyingPnic;
-  }
+    public String getUnderlyingPnic() {
+        return this.underlyingPnic;
+    }
 
-  public Integer getPriorityClass() {
-    return this.priorityClass;
-  }
+    public Integer getPriorityClass() {
+        return this.priorityClass;
+    }
 
-  public String getSourceMac() {
-    return this.sourceMac;
-  }
+    public String getSourceMac() {
+        return this.sourceMac;
+    }
 
-  public FcoeConfigVlanRange[] getVlanRange() {
-    return this.vlanRange;
-  }
+    public FcoeConfigVlanRange[] getVlanRange() {
+        return this.vlanRange;
+    }
 
-  public void setUnderlyingPnic(String underlyingPnic) {
-    this.underlyingPnic=underlyingPnic;
-  }
+    public void setUnderlyingPnic(String underlyingPnic) {
+        this.underlyingPnic = underlyingPnic;
+    }
 
-  public void setPriorityClass(Integer priorityClass) {
-    this.priorityClass=priorityClass;
-  }
+    public void setPriorityClass(Integer priorityClass) {
+        this.priorityClass = priorityClass;
+    }
 
-  public void setSourceMac(String sourceMac) {
-    this.sourceMac=sourceMac;
-  }
+    public void setSourceMac(String sourceMac) {
+        this.sourceMac = sourceMac;
+    }
 
-  public void setVlanRange(FcoeConfigVlanRange[] vlanRange) {
-    this.vlanRange=vlanRange;
-  }
+    public void setVlanRange(FcoeConfigVlanRange[] vlanRange) {
+        this.vlanRange = vlanRange;
+    }
 }

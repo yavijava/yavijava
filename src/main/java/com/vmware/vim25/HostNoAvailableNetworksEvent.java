@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostNoAvailableNetworksEvent extends HostDasEvent {
-  public String ips;
+    public String ips;
 
-  public String getIps() {
-    return this.ips;
-  }
+    public String getIps() {
+        return this.ips;
+    }
 
-  public void setIps(String ips) {
-    this.ips=ips;
-  }
+    public void setIps(String ips) {
+        this.ips = ips;
+    }
 }

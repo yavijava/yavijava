@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfVirtualMachineNetworkInfo {
-  public VirtualMachineNetworkInfo[] VirtualMachineNetworkInfo;
+    public VirtualMachineNetworkInfo[] VirtualMachineNetworkInfo;
 
-  public VirtualMachineNetworkInfo[] getVirtualMachineNetworkInfo() {
-    return this.VirtualMachineNetworkInfo;
-  }
+    public VirtualMachineNetworkInfo[] getVirtualMachineNetworkInfo() {
+        return this.VirtualMachineNetworkInfo;
+    }
 
-  public VirtualMachineNetworkInfo getVirtualMachineNetworkInfo(int i) {
-    return this.VirtualMachineNetworkInfo[i];
-  }
+    public VirtualMachineNetworkInfo getVirtualMachineNetworkInfo(int i) {
+        return this.VirtualMachineNetworkInfo[i];
+    }
 
-  public void setVirtualMachineNetworkInfo(VirtualMachineNetworkInfo[] VirtualMachineNetworkInfo) {
-    this.VirtualMachineNetworkInfo=VirtualMachineNetworkInfo;
-  }
+    public void setVirtualMachineNetworkInfo(VirtualMachineNetworkInfo[] VirtualMachineNetworkInfo) {
+        this.VirtualMachineNetworkInfo = VirtualMachineNetworkInfo;
+    }
 }

@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class ExtensionOvfConsumerInfo extends DynamicData {
-  public String callbackUrl;
-  public String[] sectionType;
+    public String callbackUrl;
+    public String[] sectionType;
 
-  public String getCallbackUrl() {
-    return this.callbackUrl;
-  }
+    public String getCallbackUrl() {
+        return this.callbackUrl;
+    }
 
-  public String[] getSectionType() {
-    return this.sectionType;
-  }
+    public String[] getSectionType() {
+        return this.sectionType;
+    }
 
-  public void setCallbackUrl(String callbackUrl) {
-    this.callbackUrl=callbackUrl;
-  }
+    public void setCallbackUrl(String callbackUrl) {
+        this.callbackUrl = callbackUrl;
+    }
 
-  public void setSectionType(String[] sectionType) {
-    this.sectionType=sectionType;
-  }
+    public void setSectionType(String[] sectionType) {
+        this.sectionType = sectionType;
+    }
 }

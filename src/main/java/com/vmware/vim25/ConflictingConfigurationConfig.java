@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class ConflictingConfigurationConfig extends DynamicData {
-  public ManagedObjectReference entity;
-  public String propertyPath;
+    public ManagedObjectReference entity;
+    public String propertyPath;
 
-  public ManagedObjectReference getEntity() {
-    return this.entity;
-  }
+    public ManagedObjectReference getEntity() {
+        return this.entity;
+    }
 
-  public String getPropertyPath() {
-    return this.propertyPath;
-  }
+    public String getPropertyPath() {
+        return this.propertyPath;
+    }
 
-  public void setEntity(ManagedObjectReference entity) {
-    this.entity=entity;
-  }
+    public void setEntity(ManagedObjectReference entity) {
+        this.entity = entity;
+    }
 
-  public void setPropertyPath(String propertyPath) {
-    this.propertyPath=propertyPath;
-  }
+    public void setPropertyPath(String propertyPath) {
+        this.propertyPath = propertyPath;
+    }
 }

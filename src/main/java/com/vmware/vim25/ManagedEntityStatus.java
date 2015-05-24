@@ -30,20 +30,20 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public enum ManagedEntityStatus {
-  gray ("gray"),
-  green ("green"),
-  yellow ("yellow"),
-  red ("red");
+    gray("gray"),
+    green("green"),
+    yellow("yellow"),
+    red("red");
 
-  @SuppressWarnings("unused")
-  private final String val;
-  private ManagedEntityStatus(String val)
-  {
-    this.val = val;
-  }
+    @SuppressWarnings("unused")
+    private final String val;
+
+    private ManagedEntityStatus(String val) {
+        this.val = val;
+    }
 }

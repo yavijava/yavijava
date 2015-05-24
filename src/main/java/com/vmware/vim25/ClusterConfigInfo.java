@@ -30,55 +30,55 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class ClusterConfigInfo extends DynamicData {
-  public ClusterDasConfigInfo dasConfig;
-  public ClusterDasVmConfigInfo[] dasVmConfig;
-  public ClusterDrsConfigInfo drsConfig;
-  public ClusterDrsVmConfigInfo[] drsVmConfig;
-  public ClusterRuleInfo[] rule;
+    public ClusterDasConfigInfo dasConfig;
+    public ClusterDasVmConfigInfo[] dasVmConfig;
+    public ClusterDrsConfigInfo drsConfig;
+    public ClusterDrsVmConfigInfo[] drsVmConfig;
+    public ClusterRuleInfo[] rule;
 
-  public ClusterDasConfigInfo getDasConfig() {
-    return this.dasConfig;
-  }
+    public ClusterDasConfigInfo getDasConfig() {
+        return this.dasConfig;
+    }
 
-  public ClusterDasVmConfigInfo[] getDasVmConfig() {
-    return this.dasVmConfig;
-  }
+    public ClusterDasVmConfigInfo[] getDasVmConfig() {
+        return this.dasVmConfig;
+    }
 
-  public ClusterDrsConfigInfo getDrsConfig() {
-    return this.drsConfig;
-  }
+    public ClusterDrsConfigInfo getDrsConfig() {
+        return this.drsConfig;
+    }
 
-  public ClusterDrsVmConfigInfo[] getDrsVmConfig() {
-    return this.drsVmConfig;
-  }
+    public ClusterDrsVmConfigInfo[] getDrsVmConfig() {
+        return this.drsVmConfig;
+    }
 
-  public ClusterRuleInfo[] getRule() {
-    return this.rule;
-  }
+    public ClusterRuleInfo[] getRule() {
+        return this.rule;
+    }
 
-  public void setDasConfig(ClusterDasConfigInfo dasConfig) {
-    this.dasConfig=dasConfig;
-  }
+    public void setDasConfig(ClusterDasConfigInfo dasConfig) {
+        this.dasConfig = dasConfig;
+    }
 
-  public void setDasVmConfig(ClusterDasVmConfigInfo[] dasVmConfig) {
-    this.dasVmConfig=dasVmConfig;
-  }
+    public void setDasVmConfig(ClusterDasVmConfigInfo[] dasVmConfig) {
+        this.dasVmConfig = dasVmConfig;
+    }
 
-  public void setDrsConfig(ClusterDrsConfigInfo drsConfig) {
-    this.drsConfig=drsConfig;
-  }
+    public void setDrsConfig(ClusterDrsConfigInfo drsConfig) {
+        this.drsConfig = drsConfig;
+    }
 
-  public void setDrsVmConfig(ClusterDrsVmConfigInfo[] drsVmConfig) {
-    this.drsVmConfig=drsVmConfig;
-  }
+    public void setDrsVmConfig(ClusterDrsVmConfigInfo[] drsVmConfig) {
+        this.drsVmConfig = drsVmConfig;
+    }
 
-  public void setRule(ClusterRuleInfo[] rule) {
-    this.rule=rule;
-  }
+    public void setRule(ClusterRuleInfo[] rule) {
+        this.rule = rule;
+    }
 }

@@ -30,37 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class OvfUnsupportedType extends OvfUnsupportedPackage {
-  public String name;
-  public String instanceId;
-  public int deviceType;
+    public String name;
+    public String instanceId;
+    public int deviceType;
 
-  public String getName() {
-    return this.name;
-  }
+    public String getName() {
+        return this.name;
+    }
 
-  public String getInstanceId() {
-    return this.instanceId;
-  }
+    public String getInstanceId() {
+        return this.instanceId;
+    }
 
-  public int getDeviceType() {
-    return this.deviceType;
-  }
+    public int getDeviceType() {
+        return this.deviceType;
+    }
 
-  public void setName(String name) {
-    this.name=name;
-  }
+    public void setName(String name) {
+        this.name = name;
+    }
 
-  public void setInstanceId(String instanceId) {
-    this.instanceId=instanceId;
-  }
+    public void setInstanceId(String instanceId) {
+        this.instanceId = instanceId;
+    }
 
-  public void setDeviceType(int deviceType) {
-    this.deviceType=deviceType;
-  }
+    public void setDeviceType(int deviceType) {
+        this.deviceType = deviceType;
+    }
 }

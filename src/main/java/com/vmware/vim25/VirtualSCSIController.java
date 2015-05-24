@@ -30,37 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VirtualSCSIController extends VirtualController {
-  public Boolean hotAddRemove;
-  public VirtualSCSISharing sharedBus;
-  public Integer scsiCtlrUnitNumber;
+    public Boolean hotAddRemove;
+    public VirtualSCSISharing sharedBus;
+    public Integer scsiCtlrUnitNumber;
 
-  public Boolean getHotAddRemove() {
-    return this.hotAddRemove;
-  }
+    public Boolean getHotAddRemove() {
+        return this.hotAddRemove;
+    }
 
-  public VirtualSCSISharing getSharedBus() {
-    return this.sharedBus;
-  }
+    public VirtualSCSISharing getSharedBus() {
+        return this.sharedBus;
+    }
 
-  public Integer getScsiCtlrUnitNumber() {
-    return this.scsiCtlrUnitNumber;
-  }
+    public Integer getScsiCtlrUnitNumber() {
+        return this.scsiCtlrUnitNumber;
+    }
 
-  public void setHotAddRemove(Boolean hotAddRemove) {
-    this.hotAddRemove=hotAddRemove;
-  }
+    public void setHotAddRemove(Boolean hotAddRemove) {
+        this.hotAddRemove = hotAddRemove;
+    }
 
-  public void setSharedBus(VirtualSCSISharing sharedBus) {
-    this.sharedBus=sharedBus;
-  }
+    public void setSharedBus(VirtualSCSISharing sharedBus) {
+        this.sharedBus = sharedBus;
+    }
 
-  public void setScsiCtlrUnitNumber(Integer scsiCtlrUnitNumber) {
-    this.scsiCtlrUnitNumber=scsiCtlrUnitNumber;
-  }
+    public void setScsiCtlrUnitNumber(Integer scsiCtlrUnitNumber) {
+        this.scsiCtlrUnitNumber = scsiCtlrUnitNumber;
+    }
 }

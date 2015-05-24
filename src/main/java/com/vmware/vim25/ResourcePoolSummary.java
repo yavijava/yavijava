@@ -30,55 +30,55 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class ResourcePoolSummary extends DynamicData {
-  public String name;
-  public ResourceConfigSpec config;
-  public ResourcePoolRuntimeInfo runtime;
-  public ResourcePoolQuickStats quickStats;
-  public Integer configuredMemoryMB;
+    public String name;
+    public ResourceConfigSpec config;
+    public ResourcePoolRuntimeInfo runtime;
+    public ResourcePoolQuickStats quickStats;
+    public Integer configuredMemoryMB;
 
-  public String getName() {
-    return this.name;
-  }
+    public String getName() {
+        return this.name;
+    }
 
-  public ResourceConfigSpec getConfig() {
-    return this.config;
-  }
+    public ResourceConfigSpec getConfig() {
+        return this.config;
+    }
 
-  public ResourcePoolRuntimeInfo getRuntime() {
-    return this.runtime;
-  }
+    public ResourcePoolRuntimeInfo getRuntime() {
+        return this.runtime;
+    }
 
-  public ResourcePoolQuickStats getQuickStats() {
-    return this.quickStats;
-  }
+    public ResourcePoolQuickStats getQuickStats() {
+        return this.quickStats;
+    }
 
-  public Integer getConfiguredMemoryMB() {
-    return this.configuredMemoryMB;
-  }
+    public Integer getConfiguredMemoryMB() {
+        return this.configuredMemoryMB;
+    }
 
-  public void setName(String name) {
-    this.name=name;
-  }
+    public void setName(String name) {
+        this.name = name;
+    }
 
-  public void setConfig(ResourceConfigSpec config) {
-    this.config=config;
-  }
+    public void setConfig(ResourceConfigSpec config) {
+        this.config = config;
+    }
 
-  public void setRuntime(ResourcePoolRuntimeInfo runtime) {
-    this.runtime=runtime;
-  }
+    public void setRuntime(ResourcePoolRuntimeInfo runtime) {
+        this.runtime = runtime;
+    }
 
-  public void setQuickStats(ResourcePoolQuickStats quickStats) {
-    this.quickStats=quickStats;
-  }
+    public void setQuickStats(ResourcePoolQuickStats quickStats) {
+        this.quickStats = quickStats;
+    }
 
-  public void setConfiguredMemoryMB(Integer configuredMemoryMB) {
-    this.configuredMemoryMB=configuredMemoryMB;
-  }
+    public void setConfiguredMemoryMB(Integer configuredMemoryMB) {
+        this.configuredMemoryMB = configuredMemoryMB;
+    }
 }

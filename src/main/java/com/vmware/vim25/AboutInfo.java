@@ -30,136 +30,136 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class AboutInfo extends DynamicData {
-  public String name;
-  public String fullName;
-  public String vendor;
-  public String version;
-  public String build;
-  public String localeVersion;
-  public String localeBuild;
-  public String osType;
-  public String productLineId;
-  public String apiType;
-  public String apiVersion;
-  public String instanceUuid;
-  public String licenseProductName;
-  public String licenseProductVersion;
+    public String name;
+    public String fullName;
+    public String vendor;
+    public String version;
+    public String build;
+    public String localeVersion;
+    public String localeBuild;
+    public String osType;
+    public String productLineId;
+    public String apiType;
+    public String apiVersion;
+    public String instanceUuid;
+    public String licenseProductName;
+    public String licenseProductVersion;
 
-  public String getName() {
-    return this.name;
-  }
+    public String getName() {
+        return this.name;
+    }
 
-  public String getFullName() {
-    return this.fullName;
-  }
+    public String getFullName() {
+        return this.fullName;
+    }
 
-  public String getVendor() {
-    return this.vendor;
-  }
+    public String getVendor() {
+        return this.vendor;
+    }
 
-  public String getVersion() {
-    return this.version;
-  }
+    public String getVersion() {
+        return this.version;
+    }
 
-  public String getBuild() {
-    return this.build;
-  }
+    public String getBuild() {
+        return this.build;
+    }
 
-  public String getLocaleVersion() {
-    return this.localeVersion;
-  }
+    public String getLocaleVersion() {
+        return this.localeVersion;
+    }
 
-  public String getLocaleBuild() {
-    return this.localeBuild;
-  }
+    public String getLocaleBuild() {
+        return this.localeBuild;
+    }
 
-  public String getOsType() {
-    return this.osType;
-  }
+    public String getOsType() {
+        return this.osType;
+    }
 
-  public String getProductLineId() {
-    return this.productLineId;
-  }
+    public String getProductLineId() {
+        return this.productLineId;
+    }
 
-  public String getApiType() {
-    return this.apiType;
-  }
+    public String getApiType() {
+        return this.apiType;
+    }
 
-  public String getApiVersion() {
-    return this.apiVersion;
-  }
+    public String getApiVersion() {
+        return this.apiVersion;
+    }
 
-  public String getInstanceUuid() {
-    return this.instanceUuid;
-  }
+    public String getInstanceUuid() {
+        return this.instanceUuid;
+    }
 
-  public String getLicenseProductName() {
-    return this.licenseProductName;
-  }
+    public String getLicenseProductName() {
+        return this.licenseProductName;
+    }
 
-  public String getLicenseProductVersion() {
-    return this.licenseProductVersion;
-  }
+    public String getLicenseProductVersion() {
+        return this.licenseProductVersion;
+    }
 
-  public void setName(String name) {
-    this.name=name;
-  }
+    public void setName(String name) {
+        this.name = name;
+    }
 
-  public void setFullName(String fullName) {
-    this.fullName=fullName;
-  }
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
+    }
 
-  public void setVendor(String vendor) {
-    this.vendor=vendor;
-  }
+    public void setVendor(String vendor) {
+        this.vendor = vendor;
+    }
 
-  public void setVersion(String version) {
-    this.version=version;
-  }
+    public void setVersion(String version) {
+        this.version = version;
+    }
 
-  public void setBuild(String build) {
-    this.build=build;
-  }
+    public void setBuild(String build) {
+        this.build = build;
+    }
 
-  public void setLocaleVersion(String localeVersion) {
-    this.localeVersion=localeVersion;
-  }
+    public void setLocaleVersion(String localeVersion) {
+        this.localeVersion = localeVersion;
+    }
 
-  public void setLocaleBuild(String localeBuild) {
-    this.localeBuild=localeBuild;
-  }
+    public void setLocaleBuild(String localeBuild) {
+        this.localeBuild = localeBuild;
+    }
 
-  public void setOsType(String osType) {
-    this.osType=osType;
-  }
+    public void setOsType(String osType) {
+        this.osType = osType;
+    }
 
-  public void setProductLineId(String productLineId) {
-    this.productLineId=productLineId;
-  }
+    public void setProductLineId(String productLineId) {
+        this.productLineId = productLineId;
+    }
 
-  public void setApiType(String apiType) {
-    this.apiType=apiType;
-  }
+    public void setApiType(String apiType) {
+        this.apiType = apiType;
+    }
 
-  public void setApiVersion(String apiVersion) {
-    this.apiVersion=apiVersion;
-  }
+    public void setApiVersion(String apiVersion) {
+        this.apiVersion = apiVersion;
+    }
 
-  public void setInstanceUuid(String instanceUuid) {
-    this.instanceUuid=instanceUuid;
-  }
+    public void setInstanceUuid(String instanceUuid) {
+        this.instanceUuid = instanceUuid;
+    }
 
-  public void setLicenseProductName(String licenseProductName) {
-    this.licenseProductName=licenseProductName;
-  }
+    public void setLicenseProductName(String licenseProductName) {
+        this.licenseProductName = licenseProductName;
+    }
 
-  public void setLicenseProductVersion(String licenseProductVersion) {
-    this.licenseProductVersion=licenseProductVersion;
-  }
+    public void setLicenseProductVersion(String licenseProductVersion) {
+        this.licenseProductVersion = licenseProductVersion;
+    }
 }

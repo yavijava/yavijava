@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfOvfDeploymentOption {
-  public OvfDeploymentOption[] OvfDeploymentOption;
+    public OvfDeploymentOption[] OvfDeploymentOption;
 
-  public OvfDeploymentOption[] getOvfDeploymentOption() {
-    return this.OvfDeploymentOption;
-  }
+    public OvfDeploymentOption[] getOvfDeploymentOption() {
+        return this.OvfDeploymentOption;
+    }
 
-  public OvfDeploymentOption getOvfDeploymentOption(int i) {
-    return this.OvfDeploymentOption[i];
-  }
+    public OvfDeploymentOption getOvfDeploymentOption(int i) {
+        return this.OvfDeploymentOption[i];
+    }
 
-  public void setOvfDeploymentOption(OvfDeploymentOption[] OvfDeploymentOption) {
-    this.OvfDeploymentOption=OvfDeploymentOption;
-  }
+    public void setOvfDeploymentOption(OvfDeploymentOption[] OvfDeploymentOption) {
+        this.OvfDeploymentOption = OvfDeploymentOption;
+    }
 }

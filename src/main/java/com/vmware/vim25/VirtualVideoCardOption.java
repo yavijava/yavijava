@@ -30,55 +30,55 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VirtualVideoCardOption extends VirtualDeviceOption {
-  public LongOption videoRamSizeInKB;
-  public IntOption numDisplays;
-  public BoolOption useAutoDetect;
-  public BoolOption support3D;
-  public BoolOption use3dRendererSupported;
+    public LongOption videoRamSizeInKB;
+    public IntOption numDisplays;
+    public BoolOption useAutoDetect;
+    public BoolOption support3D;
+    public BoolOption use3dRendererSupported;
 
-  public LongOption getVideoRamSizeInKB() {
-    return this.videoRamSizeInKB;
-  }
+    public LongOption getVideoRamSizeInKB() {
+        return this.videoRamSizeInKB;
+    }
 
-  public IntOption getNumDisplays() {
-    return this.numDisplays;
-  }
+    public IntOption getNumDisplays() {
+        return this.numDisplays;
+    }
 
-  public BoolOption getUseAutoDetect() {
-    return this.useAutoDetect;
-  }
+    public BoolOption getUseAutoDetect() {
+        return this.useAutoDetect;
+    }
 
-  public BoolOption getSupport3D() {
-    return this.support3D;
-  }
+    public BoolOption getSupport3D() {
+        return this.support3D;
+    }
 
-  public BoolOption getUse3dRendererSupported() {
-    return this.use3dRendererSupported;
-  }
+    public BoolOption getUse3dRendererSupported() {
+        return this.use3dRendererSupported;
+    }
 
-  public void setVideoRamSizeInKB(LongOption videoRamSizeInKB) {
-    this.videoRamSizeInKB=videoRamSizeInKB;
-  }
+    public void setVideoRamSizeInKB(LongOption videoRamSizeInKB) {
+        this.videoRamSizeInKB = videoRamSizeInKB;
+    }
 
-  public void setNumDisplays(IntOption numDisplays) {
-    this.numDisplays=numDisplays;
-  }
+    public void setNumDisplays(IntOption numDisplays) {
+        this.numDisplays = numDisplays;
+    }
 
-  public void setUseAutoDetect(BoolOption useAutoDetect) {
-    this.useAutoDetect=useAutoDetect;
-  }
+    public void setUseAutoDetect(BoolOption useAutoDetect) {
+        this.useAutoDetect = useAutoDetect;
+    }
 
-  public void setSupport3D(BoolOption support3D) {
-    this.support3D=support3D;
-  }
+    public void setSupport3D(BoolOption support3D) {
+        this.support3D = support3D;
+    }
 
-  public void setUse3dRendererSupported(BoolOption use3dRendererSupported) {
-    this.use3dRendererSupported=use3dRendererSupported;
-  }
+    public void setUse3dRendererSupported(BoolOption use3dRendererSupported) {
+        this.use3dRendererSupported = use3dRendererSupported;
+    }
 }

@@ -30,82 +30,82 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostNatServiceSpec extends DynamicData {
-  public String virtualSwitch;
-  public boolean activeFtp;
-  public boolean allowAnyOui;
-  public boolean configPort;
-  public String ipGatewayAddress;
-  public int udpTimeout;
-  public HostNatServicePortForwardSpec[] portForward;
-  public HostNatServiceNameServiceSpec nameService;
+    public String virtualSwitch;
+    public boolean activeFtp;
+    public boolean allowAnyOui;
+    public boolean configPort;
+    public String ipGatewayAddress;
+    public int udpTimeout;
+    public HostNatServicePortForwardSpec[] portForward;
+    public HostNatServiceNameServiceSpec nameService;
 
-  public String getVirtualSwitch() {
-    return this.virtualSwitch;
-  }
+    public String getVirtualSwitch() {
+        return this.virtualSwitch;
+    }
 
-  public boolean isActiveFtp() {
-    return this.activeFtp;
-  }
+    public boolean isActiveFtp() {
+        return this.activeFtp;
+    }
 
-  public boolean isAllowAnyOui() {
-    return this.allowAnyOui;
-  }
+    public boolean isAllowAnyOui() {
+        return this.allowAnyOui;
+    }
 
-  public boolean isConfigPort() {
-    return this.configPort;
-  }
+    public boolean isConfigPort() {
+        return this.configPort;
+    }
 
-  public String getIpGatewayAddress() {
-    return this.ipGatewayAddress;
-  }
+    public String getIpGatewayAddress() {
+        return this.ipGatewayAddress;
+    }
 
-  public int getUdpTimeout() {
-    return this.udpTimeout;
-  }
+    public int getUdpTimeout() {
+        return this.udpTimeout;
+    }
 
-  public HostNatServicePortForwardSpec[] getPortForward() {
-    return this.portForward;
-  }
+    public HostNatServicePortForwardSpec[] getPortForward() {
+        return this.portForward;
+    }
 
-  public HostNatServiceNameServiceSpec getNameService() {
-    return this.nameService;
-  }
+    public HostNatServiceNameServiceSpec getNameService() {
+        return this.nameService;
+    }
 
-  public void setVirtualSwitch(String virtualSwitch) {
-    this.virtualSwitch=virtualSwitch;
-  }
+    public void setVirtualSwitch(String virtualSwitch) {
+        this.virtualSwitch = virtualSwitch;
+    }
 
-  public void setActiveFtp(boolean activeFtp) {
-    this.activeFtp=activeFtp;
-  }
+    public void setActiveFtp(boolean activeFtp) {
+        this.activeFtp = activeFtp;
+    }
 
-  public void setAllowAnyOui(boolean allowAnyOui) {
-    this.allowAnyOui=allowAnyOui;
-  }
+    public void setAllowAnyOui(boolean allowAnyOui) {
+        this.allowAnyOui = allowAnyOui;
+    }
 
-  public void setConfigPort(boolean configPort) {
-    this.configPort=configPort;
-  }
+    public void setConfigPort(boolean configPort) {
+        this.configPort = configPort;
+    }
 
-  public void setIpGatewayAddress(String ipGatewayAddress) {
-    this.ipGatewayAddress=ipGatewayAddress;
-  }
+    public void setIpGatewayAddress(String ipGatewayAddress) {
+        this.ipGatewayAddress = ipGatewayAddress;
+    }
 
-  public void setUdpTimeout(int udpTimeout) {
-    this.udpTimeout=udpTimeout;
-  }
+    public void setUdpTimeout(int udpTimeout) {
+        this.udpTimeout = udpTimeout;
+    }
 
-  public void setPortForward(HostNatServicePortForwardSpec[] portForward) {
-    this.portForward=portForward;
-  }
+    public void setPortForward(HostNatServicePortForwardSpec[] portForward) {
+        this.portForward = portForward;
+    }
 
-  public void setNameService(HostNatServiceNameServiceSpec nameService) {
-    this.nameService=nameService;
-  }
+    public void setNameService(HostNatServiceNameServiceSpec nameService) {
+        this.nameService = nameService;
+    }
 }

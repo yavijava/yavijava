@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VirtualMachineBootOptionsBootableDiskDevice extends VirtualMachineBootOptionsBootableDevice {
-  public int deviceKey;
+    public int deviceKey;
 
-  public int getDeviceKey() {
-    return this.deviceKey;
-  }
+    public int getDeviceKey() {
+        return this.deviceKey;
+    }
 
-  public void setDeviceKey(int deviceKey) {
-    this.deviceKey=deviceKey;
-  }
+    public void setDeviceKey(int deviceKey) {
+        this.deviceKey = deviceKey;
+    }
 }

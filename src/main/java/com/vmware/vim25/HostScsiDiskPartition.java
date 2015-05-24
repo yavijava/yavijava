@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostScsiDiskPartition extends DynamicData {
-  public String diskName;
-  public int partition;
+    public String diskName;
+    public int partition;
 
-  public String getDiskName() {
-    return this.diskName;
-  }
+    public String getDiskName() {
+        return this.diskName;
+    }
 
-  public int getPartition() {
-    return this.partition;
-  }
+    public int getPartition() {
+        return this.partition;
+    }
 
-  public void setDiskName(String diskName) {
-    this.diskName=diskName;
-  }
+    public void setDiskName(String diskName) {
+        this.diskName = diskName;
+    }
 
-  public void setPartition(int partition) {
-    this.partition=partition;
-  }
+    public void setPartition(int partition) {
+        this.partition = partition;
+    }
 }

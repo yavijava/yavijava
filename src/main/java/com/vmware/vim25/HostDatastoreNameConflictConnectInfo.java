@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostDatastoreNameConflictConnectInfo extends HostDatastoreConnectInfo {
-  public String newDatastoreName;
+    public String newDatastoreName;
 
-  public String getNewDatastoreName() {
-    return this.newDatastoreName;
-  }
+    public String getNewDatastoreName() {
+        return this.newDatastoreName;
+    }
 
-  public void setNewDatastoreName(String newDatastoreName) {
-    this.newDatastoreName=newDatastoreName;
-  }
+    public void setNewDatastoreName(String newDatastoreName) {
+        this.newDatastoreName = newDatastoreName;
+    }
 }

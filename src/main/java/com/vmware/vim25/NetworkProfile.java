@@ -30,118 +30,118 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class NetworkProfile extends ApplyProfile {
-  public VirtualSwitchProfile[] vswitch;
-  public VmPortGroupProfile[] vmPortGroup;
-  public HostPortGroupProfile[] hostPortGroup;
-  public ServiceConsolePortGroupProfile[] serviceConsolePortGroup;
-  public NetworkProfileDnsConfigProfile dnsConfig;
-  public IpRouteProfile ipRouteConfig;
-  public IpRouteProfile consoleIpRouteConfig;
-  public PhysicalNicProfile[] pnic;
-  public DvsProfile[] dvswitch;
-  public DvsServiceConsoleVNicProfile[] dvsServiceConsoleNic;
-  public DvsHostVNicProfile[] dvsHostNic;
-  public NetStackInstanceProfile[] netStackInstance;
+    public VirtualSwitchProfile[] vswitch;
+    public VmPortGroupProfile[] vmPortGroup;
+    public HostPortGroupProfile[] hostPortGroup;
+    public ServiceConsolePortGroupProfile[] serviceConsolePortGroup;
+    public NetworkProfileDnsConfigProfile dnsConfig;
+    public IpRouteProfile ipRouteConfig;
+    public IpRouteProfile consoleIpRouteConfig;
+    public PhysicalNicProfile[] pnic;
+    public DvsProfile[] dvswitch;
+    public DvsServiceConsoleVNicProfile[] dvsServiceConsoleNic;
+    public DvsHostVNicProfile[] dvsHostNic;
+    public NetStackInstanceProfile[] netStackInstance;
 
-  public VirtualSwitchProfile[] getVswitch() {
-    return this.vswitch;
-  }
+    public VirtualSwitchProfile[] getVswitch() {
+        return this.vswitch;
+    }
 
-  public VmPortGroupProfile[] getVmPortGroup() {
-    return this.vmPortGroup;
-  }
+    public VmPortGroupProfile[] getVmPortGroup() {
+        return this.vmPortGroup;
+    }
 
-  public HostPortGroupProfile[] getHostPortGroup() {
-    return this.hostPortGroup;
-  }
+    public HostPortGroupProfile[] getHostPortGroup() {
+        return this.hostPortGroup;
+    }
 
-  public ServiceConsolePortGroupProfile[] getServiceConsolePortGroup() {
-    return this.serviceConsolePortGroup;
-  }
+    public ServiceConsolePortGroupProfile[] getServiceConsolePortGroup() {
+        return this.serviceConsolePortGroup;
+    }
 
-  public NetworkProfileDnsConfigProfile getDnsConfig() {
-    return this.dnsConfig;
-  }
+    public NetworkProfileDnsConfigProfile getDnsConfig() {
+        return this.dnsConfig;
+    }
 
-  public IpRouteProfile getIpRouteConfig() {
-    return this.ipRouteConfig;
-  }
+    public IpRouteProfile getIpRouteConfig() {
+        return this.ipRouteConfig;
+    }
 
-  public IpRouteProfile getConsoleIpRouteConfig() {
-    return this.consoleIpRouteConfig;
-  }
+    public IpRouteProfile getConsoleIpRouteConfig() {
+        return this.consoleIpRouteConfig;
+    }
 
-  public PhysicalNicProfile[] getPnic() {
-    return this.pnic;
-  }
+    public PhysicalNicProfile[] getPnic() {
+        return this.pnic;
+    }
 
-  public DvsProfile[] getDvswitch() {
-    return this.dvswitch;
-  }
+    public DvsProfile[] getDvswitch() {
+        return this.dvswitch;
+    }
 
-  public DvsServiceConsoleVNicProfile[] getDvsServiceConsoleNic() {
-    return this.dvsServiceConsoleNic;
-  }
+    public DvsServiceConsoleVNicProfile[] getDvsServiceConsoleNic() {
+        return this.dvsServiceConsoleNic;
+    }
 
-  public DvsHostVNicProfile[] getDvsHostNic() {
-    return this.dvsHostNic;
-  }
+    public DvsHostVNicProfile[] getDvsHostNic() {
+        return this.dvsHostNic;
+    }
 
-  public NetStackInstanceProfile[] getNetStackInstance() {
-    return this.netStackInstance;
-  }
+    public NetStackInstanceProfile[] getNetStackInstance() {
+        return this.netStackInstance;
+    }
 
-  public void setVswitch(VirtualSwitchProfile[] vswitch) {
-    this.vswitch=vswitch;
-  }
+    public void setVswitch(VirtualSwitchProfile[] vswitch) {
+        this.vswitch = vswitch;
+    }
 
-  public void setVmPortGroup(VmPortGroupProfile[] vmPortGroup) {
-    this.vmPortGroup=vmPortGroup;
-  }
+    public void setVmPortGroup(VmPortGroupProfile[] vmPortGroup) {
+        this.vmPortGroup = vmPortGroup;
+    }
 
-  public void setHostPortGroup(HostPortGroupProfile[] hostPortGroup) {
-    this.hostPortGroup=hostPortGroup;
-  }
+    public void setHostPortGroup(HostPortGroupProfile[] hostPortGroup) {
+        this.hostPortGroup = hostPortGroup;
+    }
 
-  public void setServiceConsolePortGroup(ServiceConsolePortGroupProfile[] serviceConsolePortGroup) {
-    this.serviceConsolePortGroup=serviceConsolePortGroup;
-  }
+    public void setServiceConsolePortGroup(ServiceConsolePortGroupProfile[] serviceConsolePortGroup) {
+        this.serviceConsolePortGroup = serviceConsolePortGroup;
+    }
 
-  public void setDnsConfig(NetworkProfileDnsConfigProfile dnsConfig) {
-    this.dnsConfig=dnsConfig;
-  }
+    public void setDnsConfig(NetworkProfileDnsConfigProfile dnsConfig) {
+        this.dnsConfig = dnsConfig;
+    }
 
-  public void setIpRouteConfig(IpRouteProfile ipRouteConfig) {
-    this.ipRouteConfig=ipRouteConfig;
-  }
+    public void setIpRouteConfig(IpRouteProfile ipRouteConfig) {
+        this.ipRouteConfig = ipRouteConfig;
+    }
 
-  public void setConsoleIpRouteConfig(IpRouteProfile consoleIpRouteConfig) {
-    this.consoleIpRouteConfig=consoleIpRouteConfig;
-  }
+    public void setConsoleIpRouteConfig(IpRouteProfile consoleIpRouteConfig) {
+        this.consoleIpRouteConfig = consoleIpRouteConfig;
+    }
 
-  public void setPnic(PhysicalNicProfile[] pnic) {
-    this.pnic=pnic;
-  }
+    public void setPnic(PhysicalNicProfile[] pnic) {
+        this.pnic = pnic;
+    }
 
-  public void setDvswitch(DvsProfile[] dvswitch) {
-    this.dvswitch=dvswitch;
-  }
+    public void setDvswitch(DvsProfile[] dvswitch) {
+        this.dvswitch = dvswitch;
+    }
 
-  public void setDvsServiceConsoleNic(DvsServiceConsoleVNicProfile[] dvsServiceConsoleNic) {
-    this.dvsServiceConsoleNic=dvsServiceConsoleNic;
-  }
+    public void setDvsServiceConsoleNic(DvsServiceConsoleVNicProfile[] dvsServiceConsoleNic) {
+        this.dvsServiceConsoleNic = dvsServiceConsoleNic;
+    }
 
-  public void setDvsHostNic(DvsHostVNicProfile[] dvsHostNic) {
-    this.dvsHostNic=dvsHostNic;
-  }
+    public void setDvsHostNic(DvsHostVNicProfile[] dvsHostNic) {
+        this.dvsHostNic = dvsHostNic;
+    }
 
-  public void setNetStackInstance(NetStackInstanceProfile[] netStackInstance) {
-    this.netStackInstance=netStackInstance;
-  }
+    public void setNetStackInstance(NetStackInstanceProfile[] netStackInstance) {
+        this.netStackInstance = netStackInstance;
+    }
 }

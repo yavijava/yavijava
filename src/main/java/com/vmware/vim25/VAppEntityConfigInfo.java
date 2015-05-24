@@ -30,91 +30,91 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VAppEntityConfigInfo extends DynamicData {
-  public ManagedObjectReference key;
-  public String tag;
-  public Integer startOrder;
-  public Integer startDelay;
-  public Boolean waitingForGuest;
-  public String startAction;
-  public Integer stopDelay;
-  public String stopAction;
-  public Boolean destroyWithParent;
+    public ManagedObjectReference key;
+    public String tag;
+    public Integer startOrder;
+    public Integer startDelay;
+    public Boolean waitingForGuest;
+    public String startAction;
+    public Integer stopDelay;
+    public String stopAction;
+    public Boolean destroyWithParent;
 
-  public ManagedObjectReference getKey() {
-    return this.key;
-  }
+    public ManagedObjectReference getKey() {
+        return this.key;
+    }
 
-  public String getTag() {
-    return this.tag;
-  }
+    public String getTag() {
+        return this.tag;
+    }
 
-  public Integer getStartOrder() {
-    return this.startOrder;
-  }
+    public Integer getStartOrder() {
+        return this.startOrder;
+    }
 
-  public Integer getStartDelay() {
-    return this.startDelay;
-  }
+    public Integer getStartDelay() {
+        return this.startDelay;
+    }
 
-  public Boolean getWaitingForGuest() {
-    return this.waitingForGuest;
-  }
+    public Boolean getWaitingForGuest() {
+        return this.waitingForGuest;
+    }
 
-  public String getStartAction() {
-    return this.startAction;
-  }
+    public String getStartAction() {
+        return this.startAction;
+    }
 
-  public Integer getStopDelay() {
-    return this.stopDelay;
-  }
+    public Integer getStopDelay() {
+        return this.stopDelay;
+    }
 
-  public String getStopAction() {
-    return this.stopAction;
-  }
+    public String getStopAction() {
+        return this.stopAction;
+    }
 
-  public Boolean getDestroyWithParent() {
-    return this.destroyWithParent;
-  }
+    public Boolean getDestroyWithParent() {
+        return this.destroyWithParent;
+    }
 
-  public void setKey(ManagedObjectReference key) {
-    this.key=key;
-  }
+    public void setKey(ManagedObjectReference key) {
+        this.key = key;
+    }
 
-  public void setTag(String tag) {
-    this.tag=tag;
-  }
+    public void setTag(String tag) {
+        this.tag = tag;
+    }
 
-  public void setStartOrder(Integer startOrder) {
-    this.startOrder=startOrder;
-  }
+    public void setStartOrder(Integer startOrder) {
+        this.startOrder = startOrder;
+    }
 
-  public void setStartDelay(Integer startDelay) {
-    this.startDelay=startDelay;
-  }
+    public void setStartDelay(Integer startDelay) {
+        this.startDelay = startDelay;
+    }
 
-  public void setWaitingForGuest(Boolean waitingForGuest) {
-    this.waitingForGuest=waitingForGuest;
-  }
+    public void setWaitingForGuest(Boolean waitingForGuest) {
+        this.waitingForGuest = waitingForGuest;
+    }
 
-  public void setStartAction(String startAction) {
-    this.startAction=startAction;
-  }
+    public void setStartAction(String startAction) {
+        this.startAction = startAction;
+    }
 
-  public void setStopDelay(Integer stopDelay) {
-    this.stopDelay=stopDelay;
-  }
+    public void setStopDelay(Integer stopDelay) {
+        this.stopDelay = stopDelay;
+    }
 
-  public void setStopAction(String stopAction) {
-    this.stopAction=stopAction;
-  }
+    public void setStopAction(String stopAction) {
+        this.stopAction = stopAction;
+    }
 
-  public void setDestroyWithParent(Boolean destroyWithParent) {
-    this.destroyWithParent=destroyWithParent;
-  }
+    public void setDestroyWithParent(Boolean destroyWithParent) {
+        this.destroyWithParent = destroyWithParent;
+    }
 }

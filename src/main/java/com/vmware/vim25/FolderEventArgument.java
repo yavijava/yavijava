@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class FolderEventArgument extends EntityEventArgument {
-  public ManagedObjectReference folder;
+    public ManagedObjectReference folder;
 
-  public ManagedObjectReference getFolder() {
-    return this.folder;
-  }
+    public ManagedObjectReference getFolder() {
+        return this.folder;
+    }
 
-  public void setFolder(ManagedObjectReference folder) {
-    this.folder=folder;
-  }
+    public void setFolder(ManagedObjectReference folder) {
+        this.folder = folder;
+    }
 }

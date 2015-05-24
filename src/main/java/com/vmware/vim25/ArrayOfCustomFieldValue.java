@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfCustomFieldValue {
-  public CustomFieldValue[] CustomFieldValue;
+    public CustomFieldValue[] CustomFieldValue;
 
-  public CustomFieldValue[] getCustomFieldValue() {
-    return this.CustomFieldValue;
-  }
+    public CustomFieldValue[] getCustomFieldValue() {
+        return this.CustomFieldValue;
+    }
 
-  public CustomFieldValue getCustomFieldValue(int i) {
-    return this.CustomFieldValue[i];
-  }
+    public CustomFieldValue getCustomFieldValue(int i) {
+        return this.CustomFieldValue[i];
+    }
 
-  public void setCustomFieldValue(CustomFieldValue[] CustomFieldValue) {
-    this.CustomFieldValue=CustomFieldValue;
-  }
+    public void setCustomFieldValue(CustomFieldValue[] CustomFieldValue) {
+        this.CustomFieldValue = CustomFieldValue;
+    }
 }

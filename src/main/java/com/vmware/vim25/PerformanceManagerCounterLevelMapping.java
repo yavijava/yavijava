@@ -30,37 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class PerformanceManagerCounterLevelMapping extends DynamicData {
-  public int counterId;
-  public Integer aggregateLevel;
-  public Integer perDeviceLevel;
+    public int counterId;
+    public Integer aggregateLevel;
+    public Integer perDeviceLevel;
 
-  public int getCounterId() {
-    return this.counterId;
-  }
+    public int getCounterId() {
+        return this.counterId;
+    }
 
-  public Integer getAggregateLevel() {
-    return this.aggregateLevel;
-  }
+    public Integer getAggregateLevel() {
+        return this.aggregateLevel;
+    }
 
-  public Integer getPerDeviceLevel() {
-    return this.perDeviceLevel;
-  }
+    public Integer getPerDeviceLevel() {
+        return this.perDeviceLevel;
+    }
 
-  public void setCounterId(int counterId) {
-    this.counterId=counterId;
-  }
+    public void setCounterId(int counterId) {
+        this.counterId = counterId;
+    }
 
-  public void setAggregateLevel(Integer aggregateLevel) {
-    this.aggregateLevel=aggregateLevel;
-  }
+    public void setAggregateLevel(Integer aggregateLevel) {
+        this.aggregateLevel = aggregateLevel;
+    }
 
-  public void setPerDeviceLevel(Integer perDeviceLevel) {
-    this.perDeviceLevel=perDeviceLevel;
-  }
+    public void setPerDeviceLevel(Integer perDeviceLevel) {
+        this.perDeviceLevel = perDeviceLevel;
+    }
 }

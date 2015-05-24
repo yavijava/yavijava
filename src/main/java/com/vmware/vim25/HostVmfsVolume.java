@@ -30,100 +30,100 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostVmfsVolume extends HostFileSystemVolume {
-  public int blockSizeMb;
-  public int maxBlocks;
-  public int majorVersion;
-  public String version;
-  public String uuid;
-  public HostScsiDiskPartition[] extent;
-  public boolean vmfsUpgradable;
-  public HostForceMountedInfo forceMountedInfo;
-  public Boolean ssd;
-  public Boolean local;
+    public int blockSizeMb;
+    public int maxBlocks;
+    public int majorVersion;
+    public String version;
+    public String uuid;
+    public HostScsiDiskPartition[] extent;
+    public boolean vmfsUpgradable;
+    public HostForceMountedInfo forceMountedInfo;
+    public Boolean ssd;
+    public Boolean local;
 
-  public int getBlockSizeMb() {
-    return this.blockSizeMb;
-  }
+    public int getBlockSizeMb() {
+        return this.blockSizeMb;
+    }
 
-  public int getMaxBlocks() {
-    return this.maxBlocks;
-  }
+    public int getMaxBlocks() {
+        return this.maxBlocks;
+    }
 
-  public int getMajorVersion() {
-    return this.majorVersion;
-  }
+    public int getMajorVersion() {
+        return this.majorVersion;
+    }
 
-  public String getVersion() {
-    return this.version;
-  }
+    public String getVersion() {
+        return this.version;
+    }
 
-  public String getUuid() {
-    return this.uuid;
-  }
+    public String getUuid() {
+        return this.uuid;
+    }
 
-  public HostScsiDiskPartition[] getExtent() {
-    return this.extent;
-  }
+    public HostScsiDiskPartition[] getExtent() {
+        return this.extent;
+    }
 
-  public boolean isVmfsUpgradable() {
-    return this.vmfsUpgradable;
-  }
+    public boolean isVmfsUpgradable() {
+        return this.vmfsUpgradable;
+    }
 
-  public HostForceMountedInfo getForceMountedInfo() {
-    return this.forceMountedInfo;
-  }
+    public HostForceMountedInfo getForceMountedInfo() {
+        return this.forceMountedInfo;
+    }
 
-  public Boolean getSsd() {
-    return this.ssd;
-  }
+    public Boolean getSsd() {
+        return this.ssd;
+    }
 
-  public Boolean getLocal() {
-    return this.local;
-  }
+    public Boolean getLocal() {
+        return this.local;
+    }
 
-  public void setBlockSizeMb(int blockSizeMb) {
-    this.blockSizeMb=blockSizeMb;
-  }
+    public void setBlockSizeMb(int blockSizeMb) {
+        this.blockSizeMb = blockSizeMb;
+    }
 
-  public void setMaxBlocks(int maxBlocks) {
-    this.maxBlocks=maxBlocks;
-  }
+    public void setMaxBlocks(int maxBlocks) {
+        this.maxBlocks = maxBlocks;
+    }
 
-  public void setMajorVersion(int majorVersion) {
-    this.majorVersion=majorVersion;
-  }
+    public void setMajorVersion(int majorVersion) {
+        this.majorVersion = majorVersion;
+    }
 
-  public void setVersion(String version) {
-    this.version=version;
-  }
+    public void setVersion(String version) {
+        this.version = version;
+    }
 
-  public void setUuid(String uuid) {
-    this.uuid=uuid;
-  }
+    public void setUuid(String uuid) {
+        this.uuid = uuid;
+    }
 
-  public void setExtent(HostScsiDiskPartition[] extent) {
-    this.extent=extent;
-  }
+    public void setExtent(HostScsiDiskPartition[] extent) {
+        this.extent = extent;
+    }
 
-  public void setVmfsUpgradable(boolean vmfsUpgradable) {
-    this.vmfsUpgradable=vmfsUpgradable;
-  }
+    public void setVmfsUpgradable(boolean vmfsUpgradable) {
+        this.vmfsUpgradable = vmfsUpgradable;
+    }
 
-  public void setForceMountedInfo(HostForceMountedInfo forceMountedInfo) {
-    this.forceMountedInfo=forceMountedInfo;
-  }
+    public void setForceMountedInfo(HostForceMountedInfo forceMountedInfo) {
+        this.forceMountedInfo = forceMountedInfo;
+    }
 
-  public void setSsd(Boolean ssd) {
-    this.ssd=ssd;
-  }
+    public void setSsd(Boolean ssd) {
+        this.ssd = ssd;
+    }
 
-  public void setLocal(Boolean local) {
-    this.local=local;
-  }
+    public void setLocal(Boolean local) {
+        this.local = local;
+    }
 }

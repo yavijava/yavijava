@@ -30,118 +30,118 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VirtualDiskFlatVer2BackingInfo extends VirtualDeviceFileBackingInfo {
-  public String diskMode;
-  public Boolean split;
-  public Boolean writeThrough;
-  public Boolean thinProvisioned;
-  public Boolean eagerlyScrub;
-  public String uuid;
-  public String contentId;
-  public String changeId;
-  public VirtualDiskFlatVer2BackingInfo parent;
-  public String deltaDiskFormat;
-  public Boolean digestEnabled;
-  public Integer deltaGrainSize;
+    public String diskMode;
+    public Boolean split;
+    public Boolean writeThrough;
+    public Boolean thinProvisioned;
+    public Boolean eagerlyScrub;
+    public String uuid;
+    public String contentId;
+    public String changeId;
+    public VirtualDiskFlatVer2BackingInfo parent;
+    public String deltaDiskFormat;
+    public Boolean digestEnabled;
+    public Integer deltaGrainSize;
 
-  public String getDiskMode() {
-    return this.diskMode;
-  }
+    public String getDiskMode() {
+        return this.diskMode;
+    }
 
-  public Boolean getSplit() {
-    return this.split;
-  }
+    public Boolean getSplit() {
+        return this.split;
+    }
 
-  public Boolean getWriteThrough() {
-    return this.writeThrough;
-  }
+    public Boolean getWriteThrough() {
+        return this.writeThrough;
+    }
 
-  public Boolean getThinProvisioned() {
-    return this.thinProvisioned;
-  }
+    public Boolean getThinProvisioned() {
+        return this.thinProvisioned;
+    }
 
-  public Boolean getEagerlyScrub() {
-    return this.eagerlyScrub;
-  }
+    public Boolean getEagerlyScrub() {
+        return this.eagerlyScrub;
+    }
 
-  public String getUuid() {
-    return this.uuid;
-  }
+    public String getUuid() {
+        return this.uuid;
+    }
 
-  public String getContentId() {
-    return this.contentId;
-  }
+    public String getContentId() {
+        return this.contentId;
+    }
 
-  public String getChangeId() {
-    return this.changeId;
-  }
+    public String getChangeId() {
+        return this.changeId;
+    }
 
-  public VirtualDiskFlatVer2BackingInfo getParent() {
-    return this.parent;
-  }
+    public VirtualDiskFlatVer2BackingInfo getParent() {
+        return this.parent;
+    }
 
-  public String getDeltaDiskFormat() {
-    return this.deltaDiskFormat;
-  }
+    public String getDeltaDiskFormat() {
+        return this.deltaDiskFormat;
+    }
 
-  public Boolean getDigestEnabled() {
-    return this.digestEnabled;
-  }
+    public Boolean getDigestEnabled() {
+        return this.digestEnabled;
+    }
 
-  public Integer getDeltaGrainSize() {
-    return this.deltaGrainSize;
-  }
+    public Integer getDeltaGrainSize() {
+        return this.deltaGrainSize;
+    }
 
-  public void setDiskMode(String diskMode) {
-    this.diskMode=diskMode;
-  }
+    public void setDiskMode(String diskMode) {
+        this.diskMode = diskMode;
+    }
 
-  public void setSplit(Boolean split) {
-    this.split=split;
-  }
+    public void setSplit(Boolean split) {
+        this.split = split;
+    }
 
-  public void setWriteThrough(Boolean writeThrough) {
-    this.writeThrough=writeThrough;
-  }
+    public void setWriteThrough(Boolean writeThrough) {
+        this.writeThrough = writeThrough;
+    }
 
-  public void setThinProvisioned(Boolean thinProvisioned) {
-    this.thinProvisioned=thinProvisioned;
-  }
+    public void setThinProvisioned(Boolean thinProvisioned) {
+        this.thinProvisioned = thinProvisioned;
+    }
 
-  public void setEagerlyScrub(Boolean eagerlyScrub) {
-    this.eagerlyScrub=eagerlyScrub;
-  }
+    public void setEagerlyScrub(Boolean eagerlyScrub) {
+        this.eagerlyScrub = eagerlyScrub;
+    }
 
-  public void setUuid(String uuid) {
-    this.uuid=uuid;
-  }
+    public void setUuid(String uuid) {
+        this.uuid = uuid;
+    }
 
-  public void setContentId(String contentId) {
-    this.contentId=contentId;
-  }
+    public void setContentId(String contentId) {
+        this.contentId = contentId;
+    }
 
-  public void setChangeId(String changeId) {
-    this.changeId=changeId;
-  }
+    public void setChangeId(String changeId) {
+        this.changeId = changeId;
+    }
 
-  public void setParent(VirtualDiskFlatVer2BackingInfo parent) {
-    this.parent=parent;
-  }
+    public void setParent(VirtualDiskFlatVer2BackingInfo parent) {
+        this.parent = parent;
+    }
 
-  public void setDeltaDiskFormat(String deltaDiskFormat) {
-    this.deltaDiskFormat=deltaDiskFormat;
-  }
+    public void setDeltaDiskFormat(String deltaDiskFormat) {
+        this.deltaDiskFormat = deltaDiskFormat;
+    }
 
-  public void setDigestEnabled(Boolean digestEnabled) {
-    this.digestEnabled=digestEnabled;
-  }
+    public void setDigestEnabled(Boolean digestEnabled) {
+        this.digestEnabled = digestEnabled;
+    }
 
-  public void setDeltaGrainSize(Integer deltaGrainSize) {
-    this.deltaGrainSize=deltaGrainSize;
-  }
+    public void setDeltaGrainSize(Integer deltaGrainSize) {
+        this.deltaGrainSize = deltaGrainSize;
+    }
 }

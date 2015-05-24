@@ -4771,11 +4771,11 @@ public class VimStub {
         Argument[] params = new Argument[7];
         params[0] = new Argument("_this", "ManagedObjectReference", _this);
         params[1] = new Argument("vm", "ManagedObjectReference", vm);
-        params[2] = new Argument("auth","GuestAuthentication", guestAuthentication);
-        params[3] = new Argument("username","String",userName);
-        params[4] = new Argument("mapCert","boolean",mapCert);
-        params[5] = new Argument("base64Cert","String",base64Cert);
-        params[6] = new Argument("aliasInfo","GuestAuthAliasInfo",guestAuthAliasInfo);
+        params[2] = new Argument("auth", "GuestAuthentication", guestAuthentication);
+        params[3] = new Argument("username", "String", userName);
+        params[4] = new Argument("mapCert", "boolean", mapCert);
+        params[5] = new Argument("base64Cert", "String", base64Cert);
+        params[6] = new Argument("aliasInfo", "GuestAuthAliasInfo", guestAuthAliasInfo);
         getWsc().invoke("AddGuestAlias", params, null);
     }
 
@@ -5070,7 +5070,7 @@ public class VimStub {
     }
 
     public ManagedObjectReference performVsanUpgrade_Task(ManagedObjectReference _this, ManagedObjectReference cluster, Boolean performObjectUpgrade,
-                                        Boolean downgradeFormat, Boolean allowReducedRedundancy, ManagedObjectReference[] excludeHosts)
+                                                          Boolean downgradeFormat, Boolean allowReducedRedundancy, ManagedObjectReference[] excludeHosts)
         throws RuntimeFault, VsanFault, RemoteException {
         Argument[] params = new Argument[6];
         params[0] = new Argument("_this", "ManagedObjectReference", _this);

@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class StorageRequirement extends DynamicData {
-  public ManagedObjectReference datastore;
-  public long freeSpaceRequiredInKb;
+    public ManagedObjectReference datastore;
+    public long freeSpaceRequiredInKb;
 
-  public ManagedObjectReference getDatastore() {
-    return this.datastore;
-  }
+    public ManagedObjectReference getDatastore() {
+        return this.datastore;
+    }
 
-  public long getFreeSpaceRequiredInKb() {
-    return this.freeSpaceRequiredInKb;
-  }
+    public long getFreeSpaceRequiredInKb() {
+        return this.freeSpaceRequiredInKb;
+    }
 
-  public void setDatastore(ManagedObjectReference datastore) {
-    this.datastore=datastore;
-  }
+    public void setDatastore(ManagedObjectReference datastore) {
+        this.datastore = datastore;
+    }
 
-  public void setFreeSpaceRequiredInKb(long freeSpaceRequiredInKb) {
-    this.freeSpaceRequiredInKb=freeSpaceRequiredInKb;
-  }
+    public void setFreeSpaceRequiredInKb(long freeSpaceRequiredInKb) {
+        this.freeSpaceRequiredInKb = freeSpaceRequiredInKb;
+    }
 }

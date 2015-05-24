@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class SSLVerifyFault extends HostConnectFault {
-  public boolean selfSigned;
-  public String thumbprint;
+    public boolean selfSigned;
+    public String thumbprint;
 
-  public boolean isSelfSigned() {
-    return this.selfSigned;
-  }
+    public boolean isSelfSigned() {
+        return this.selfSigned;
+    }
 
-  public String getThumbprint() {
-    return this.thumbprint;
-  }
+    public String getThumbprint() {
+        return this.thumbprint;
+    }
 
-  public void setSelfSigned(boolean selfSigned) {
-    this.selfSigned=selfSigned;
-  }
+    public void setSelfSigned(boolean selfSigned) {
+        this.selfSigned = selfSigned;
+    }
 
-  public void setThumbprint(String thumbprint) {
-    this.thumbprint=thumbprint;
-  }
+    public void setThumbprint(String thumbprint) {
+        this.thumbprint = thumbprint;
+    }
 }

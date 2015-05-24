@@ -30,20 +30,20 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public enum ClusterProfileServiceType {
-  DRS ("DRS"),
-  HA ("HA"),
-  DPM ("DPM"),
-  FT ("FT");
+    DRS("DRS"),
+    HA("HA"),
+    DPM("DPM"),
+    FT("FT");
 
-  @SuppressWarnings("unused")
-  private final String val;
-  private ClusterProfileServiceType(String val)
-  {
-    this.val = val;
-  }
+    @SuppressWarnings("unused")
+    private final String val;
+
+    private ClusterProfileServiceType(String val) {
+        this.val = val;
+    }
 }

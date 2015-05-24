@@ -104,7 +104,7 @@ public class HostCertificateManager extends ManagedObject {
      * server with the provided values. These determine whether the server can verify the identity of an external entity.
      *
      * @param caCert List of SSL certificates, in PEM format, of all CAs that should be trusted
-     * @param caCrl List of SSL CRLs, in PEM format, issued by trusted CAs from the above list
+     * @param caCrl  List of SSL CRLs, in PEM format, issued by trusted CAs from the above list
      * @throws HostConfigFault
      * @throws RuntimeFault
      * @throws RemoteException

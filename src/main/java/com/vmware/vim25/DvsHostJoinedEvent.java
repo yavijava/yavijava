@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class DvsHostJoinedEvent extends DvsEvent {
-  public HostEventArgument hostJoined;
+    public HostEventArgument hostJoined;
 
-  public HostEventArgument getHostJoined() {
-    return this.hostJoined;
-  }
+    public HostEventArgument getHostJoined() {
+        return this.hostJoined;
+    }
 
-  public void setHostJoined(HostEventArgument hostJoined) {
-    this.hostJoined=hostJoined;
-  }
+    public void setHostJoined(HostEventArgument hostJoined) {
+        this.hostJoined = hostJoined;
+    }
 }

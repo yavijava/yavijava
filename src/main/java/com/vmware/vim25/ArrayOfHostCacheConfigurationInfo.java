@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfHostCacheConfigurationInfo {
-  public HostCacheConfigurationInfo[] HostCacheConfigurationInfo;
+    public HostCacheConfigurationInfo[] HostCacheConfigurationInfo;
 
-  public HostCacheConfigurationInfo[] getHostCacheConfigurationInfo() {
-    return this.HostCacheConfigurationInfo;
-  }
+    public HostCacheConfigurationInfo[] getHostCacheConfigurationInfo() {
+        return this.HostCacheConfigurationInfo;
+    }
 
-  public HostCacheConfigurationInfo getHostCacheConfigurationInfo(int i) {
-    return this.HostCacheConfigurationInfo[i];
-  }
+    public HostCacheConfigurationInfo getHostCacheConfigurationInfo(int i) {
+        return this.HostCacheConfigurationInfo[i];
+    }
 
-  public void setHostCacheConfigurationInfo(HostCacheConfigurationInfo[] HostCacheConfigurationInfo) {
-    this.HostCacheConfigurationInfo=HostCacheConfigurationInfo;
-  }
+    public void setHostCacheConfigurationInfo(HostCacheConfigurationInfo[] HostCacheConfigurationInfo) {
+        this.HostCacheConfigurationInfo = HostCacheConfigurationInfo;
+    }
 }

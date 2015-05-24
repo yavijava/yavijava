@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class ClusterDasFailoverLevelAdvancedRuntimeInfoVmSlots extends DynamicData {
-  public ManagedObjectReference vm;
-  public int slots;
+    public ManagedObjectReference vm;
+    public int slots;
 
-  public ManagedObjectReference getVm() {
-    return this.vm;
-  }
+    public ManagedObjectReference getVm() {
+        return this.vm;
+    }
 
-  public int getSlots() {
-    return this.slots;
-  }
+    public int getSlots() {
+        return this.slots;
+    }
 
-  public void setVm(ManagedObjectReference vm) {
-    this.vm=vm;
-  }
+    public void setVm(ManagedObjectReference vm) {
+        this.vm = vm;
+    }
 
-  public void setSlots(int slots) {
-    this.slots=slots;
-  }
+    public void setSlots(int slots) {
+        this.slots = slots;
+    }
 }

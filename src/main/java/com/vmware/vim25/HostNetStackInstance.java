@@ -30,82 +30,82 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostNetStackInstance extends DynamicData {
-  public String key;
-  public String name;
-  public HostDnsConfig dnsConfig;
-  public HostIpRouteConfig ipRouteConfig;
-  public Integer requestedMaxNumberOfConnections;
-  public String congestionControlAlgorithm;
-  public Boolean ipV6Enabled;
-  public HostIpRouteTableConfig routeTableConfig;
+    public String key;
+    public String name;
+    public HostDnsConfig dnsConfig;
+    public HostIpRouteConfig ipRouteConfig;
+    public Integer requestedMaxNumberOfConnections;
+    public String congestionControlAlgorithm;
+    public Boolean ipV6Enabled;
+    public HostIpRouteTableConfig routeTableConfig;
 
-  public String getKey() {
-    return this.key;
-  }
+    public String getKey() {
+        return this.key;
+    }
 
-  public String getName() {
-    return this.name;
-  }
+    public String getName() {
+        return this.name;
+    }
 
-  public HostDnsConfig getDnsConfig() {
-    return this.dnsConfig;
-  }
+    public HostDnsConfig getDnsConfig() {
+        return this.dnsConfig;
+    }
 
-  public HostIpRouteConfig getIpRouteConfig() {
-    return this.ipRouteConfig;
-  }
+    public HostIpRouteConfig getIpRouteConfig() {
+        return this.ipRouteConfig;
+    }
 
-  public Integer getRequestedMaxNumberOfConnections() {
-    return this.requestedMaxNumberOfConnections;
-  }
+    public Integer getRequestedMaxNumberOfConnections() {
+        return this.requestedMaxNumberOfConnections;
+    }
 
-  public String getCongestionControlAlgorithm() {
-    return this.congestionControlAlgorithm;
-  }
+    public String getCongestionControlAlgorithm() {
+        return this.congestionControlAlgorithm;
+    }
 
-  public Boolean getIpV6Enabled() {
-    return this.ipV6Enabled;
-  }
+    public Boolean getIpV6Enabled() {
+        return this.ipV6Enabled;
+    }
 
-  public HostIpRouteTableConfig getRouteTableConfig() {
-    return this.routeTableConfig;
-  }
+    public HostIpRouteTableConfig getRouteTableConfig() {
+        return this.routeTableConfig;
+    }
 
-  public void setKey(String key) {
-    this.key=key;
-  }
+    public void setKey(String key) {
+        this.key = key;
+    }
 
-  public void setName(String name) {
-    this.name=name;
-  }
+    public void setName(String name) {
+        this.name = name;
+    }
 
-  public void setDnsConfig(HostDnsConfig dnsConfig) {
-    this.dnsConfig=dnsConfig;
-  }
+    public void setDnsConfig(HostDnsConfig dnsConfig) {
+        this.dnsConfig = dnsConfig;
+    }
 
-  public void setIpRouteConfig(HostIpRouteConfig ipRouteConfig) {
-    this.ipRouteConfig=ipRouteConfig;
-  }
+    public void setIpRouteConfig(HostIpRouteConfig ipRouteConfig) {
+        this.ipRouteConfig = ipRouteConfig;
+    }
 
-  public void setRequestedMaxNumberOfConnections(Integer requestedMaxNumberOfConnections) {
-    this.requestedMaxNumberOfConnections=requestedMaxNumberOfConnections;
-  }
+    public void setRequestedMaxNumberOfConnections(Integer requestedMaxNumberOfConnections) {
+        this.requestedMaxNumberOfConnections = requestedMaxNumberOfConnections;
+    }
 
-  public void setCongestionControlAlgorithm(String congestionControlAlgorithm) {
-    this.congestionControlAlgorithm=congestionControlAlgorithm;
-  }
+    public void setCongestionControlAlgorithm(String congestionControlAlgorithm) {
+        this.congestionControlAlgorithm = congestionControlAlgorithm;
+    }
 
-  public void setIpV6Enabled(Boolean ipV6Enabled) {
-    this.ipV6Enabled=ipV6Enabled;
-  }
+    public void setIpV6Enabled(Boolean ipV6Enabled) {
+        this.ipV6Enabled = ipV6Enabled;
+    }
 
-  public void setRouteTableConfig(HostIpRouteTableConfig routeTableConfig) {
-    this.routeTableConfig=routeTableConfig;
-  }
+    public void setRouteTableConfig(HostIpRouteTableConfig routeTableConfig) {
+        this.routeTableConfig = routeTableConfig;
+    }
 }

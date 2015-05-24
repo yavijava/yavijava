@@ -30,46 +30,46 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HealthStatusChangedEvent extends Event {
-  public String componentId;
-  public String oldStatus;
-  public String newStatus;
-  public String componentName;
+    public String componentId;
+    public String oldStatus;
+    public String newStatus;
+    public String componentName;
 
-  public String getComponentId() {
-    return this.componentId;
-  }
+    public String getComponentId() {
+        return this.componentId;
+    }
 
-  public String getOldStatus() {
-    return this.oldStatus;
-  }
+    public String getOldStatus() {
+        return this.oldStatus;
+    }
 
-  public String getNewStatus() {
-    return this.newStatus;
-  }
+    public String getNewStatus() {
+        return this.newStatus;
+    }
 
-  public String getComponentName() {
-    return this.componentName;
-  }
+    public String getComponentName() {
+        return this.componentName;
+    }
 
-  public void setComponentId(String componentId) {
-    this.componentId=componentId;
-  }
+    public void setComponentId(String componentId) {
+        this.componentId = componentId;
+    }
 
-  public void setOldStatus(String oldStatus) {
-    this.oldStatus=oldStatus;
-  }
+    public void setOldStatus(String oldStatus) {
+        this.oldStatus = oldStatus;
+    }
 
-  public void setNewStatus(String newStatus) {
-    this.newStatus=newStatus;
-  }
+    public void setNewStatus(String newStatus) {
+        this.newStatus = newStatus;
+    }
 
-  public void setComponentName(String componentName) {
-    this.componentName=componentName;
-  }
+    public void setComponentName(String componentName) {
+        this.componentName = componentName;
+    }
 }

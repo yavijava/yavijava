@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class DvsMergedEvent extends DvsEvent {
-  public DvsEventArgument sourceDvs;
-  public DvsEventArgument destinationDvs;
+    public DvsEventArgument sourceDvs;
+    public DvsEventArgument destinationDvs;
 
-  public DvsEventArgument getSourceDvs() {
-    return this.sourceDvs;
-  }
+    public DvsEventArgument getSourceDvs() {
+        return this.sourceDvs;
+    }
 
-  public DvsEventArgument getDestinationDvs() {
-    return this.destinationDvs;
-  }
+    public DvsEventArgument getDestinationDvs() {
+        return this.destinationDvs;
+    }
 
-  public void setSourceDvs(DvsEventArgument sourceDvs) {
-    this.sourceDvs=sourceDvs;
-  }
+    public void setSourceDvs(DvsEventArgument sourceDvs) {
+        this.sourceDvs = sourceDvs;
+    }
 
-  public void setDestinationDvs(DvsEventArgument destinationDvs) {
-    this.destinationDvs=destinationDvs;
-  }
+    public void setDestinationDvs(DvsEventArgument destinationDvs) {
+        this.destinationDvs = destinationDvs;
+    }
 }

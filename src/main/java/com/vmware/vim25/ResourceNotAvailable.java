@@ -30,37 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class ResourceNotAvailable extends VimFault {
-  public String containerType;
-  public String containerName;
-  public String type;
+    public String containerType;
+    public String containerName;
+    public String type;
 
-  public String getContainerType() {
-    return this.containerType;
-  }
+    public String getContainerType() {
+        return this.containerType;
+    }
 
-  public String getContainerName() {
-    return this.containerName;
-  }
+    public String getContainerName() {
+        return this.containerName;
+    }
 
-  public String getType() {
-    return this.type;
-  }
+    public String getType() {
+        return this.type;
+    }
 
-  public void setContainerType(String containerType) {
-    this.containerType=containerType;
-  }
+    public void setContainerType(String containerType) {
+        this.containerType = containerType;
+    }
 
-  public void setContainerName(String containerName) {
-    this.containerName=containerName;
-  }
+    public void setContainerName(String containerName) {
+        this.containerName = containerName;
+    }
 
-  public void setType(String type) {
-    this.type=type;
-  }
+    public void setType(String type) {
+        this.type = type;
+    }
 }

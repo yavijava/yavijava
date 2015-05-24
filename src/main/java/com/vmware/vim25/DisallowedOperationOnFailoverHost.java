@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class DisallowedOperationOnFailoverHost extends RuntimeFault {
-  public ManagedObjectReference host;
-  public String hostname;
+    public ManagedObjectReference host;
+    public String hostname;
 
-  public ManagedObjectReference getHost() {
-    return this.host;
-  }
+    public ManagedObjectReference getHost() {
+        return this.host;
+    }
 
-  public String getHostname() {
-    return this.hostname;
-  }
+    public String getHostname() {
+        return this.hostname;
+    }
 
-  public void setHost(ManagedObjectReference host) {
-    this.host=host;
-  }
+    public void setHost(ManagedObjectReference host) {
+        this.host = host;
+    }
 
-  public void setHostname(String hostname) {
-    this.hostname=hostname;
-  }
+    public void setHostname(String hostname) {
+        this.hostname = hostname;
+    }
 }

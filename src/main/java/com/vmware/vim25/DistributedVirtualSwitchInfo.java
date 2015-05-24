@@ -30,37 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class DistributedVirtualSwitchInfo extends DynamicData {
-  public String switchName;
-  public String switchUuid;
-  public ManagedObjectReference distributedVirtualSwitch;
+    public String switchName;
+    public String switchUuid;
+    public ManagedObjectReference distributedVirtualSwitch;
 
-  public String getSwitchName() {
-    return this.switchName;
-  }
+    public String getSwitchName() {
+        return this.switchName;
+    }
 
-  public String getSwitchUuid() {
-    return this.switchUuid;
-  }
+    public String getSwitchUuid() {
+        return this.switchUuid;
+    }
 
-  public ManagedObjectReference getDistributedVirtualSwitch() {
-    return this.distributedVirtualSwitch;
-  }
+    public ManagedObjectReference getDistributedVirtualSwitch() {
+        return this.distributedVirtualSwitch;
+    }
 
-  public void setSwitchName(String switchName) {
-    this.switchName=switchName;
-  }
+    public void setSwitchName(String switchName) {
+        this.switchName = switchName;
+    }
 
-  public void setSwitchUuid(String switchUuid) {
-    this.switchUuid=switchUuid;
-  }
+    public void setSwitchUuid(String switchUuid) {
+        this.switchUuid = switchUuid;
+    }
 
-  public void setDistributedVirtualSwitch(ManagedObjectReference distributedVirtualSwitch) {
-    this.distributedVirtualSwitch=distributedVirtualSwitch;
-  }
+    public void setDistributedVirtualSwitch(ManagedObjectReference distributedVirtualSwitch) {
+        this.distributedVirtualSwitch = distributedVirtualSwitch;
+    }
 }

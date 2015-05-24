@@ -30,46 +30,46 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class DVSTrafficShapingPolicy extends InheritablePolicy {
-  public BoolPolicy enabled;
-  public LongPolicy averageBandwidth;
-  public LongPolicy peakBandwidth;
-  public LongPolicy burstSize;
+    public BoolPolicy enabled;
+    public LongPolicy averageBandwidth;
+    public LongPolicy peakBandwidth;
+    public LongPolicy burstSize;
 
-  public BoolPolicy getEnabled() {
-    return this.enabled;
-  }
+    public BoolPolicy getEnabled() {
+        return this.enabled;
+    }
 
-  public LongPolicy getAverageBandwidth() {
-    return this.averageBandwidth;
-  }
+    public LongPolicy getAverageBandwidth() {
+        return this.averageBandwidth;
+    }
 
-  public LongPolicy getPeakBandwidth() {
-    return this.peakBandwidth;
-  }
+    public LongPolicy getPeakBandwidth() {
+        return this.peakBandwidth;
+    }
 
-  public LongPolicy getBurstSize() {
-    return this.burstSize;
-  }
+    public LongPolicy getBurstSize() {
+        return this.burstSize;
+    }
 
-  public void setEnabled(BoolPolicy enabled) {
-    this.enabled=enabled;
-  }
+    public void setEnabled(BoolPolicy enabled) {
+        this.enabled = enabled;
+    }
 
-  public void setAverageBandwidth(LongPolicy averageBandwidth) {
-    this.averageBandwidth=averageBandwidth;
-  }
+    public void setAverageBandwidth(LongPolicy averageBandwidth) {
+        this.averageBandwidth = averageBandwidth;
+    }
 
-  public void setPeakBandwidth(LongPolicy peakBandwidth) {
-    this.peakBandwidth=peakBandwidth;
-  }
+    public void setPeakBandwidth(LongPolicy peakBandwidth) {
+        this.peakBandwidth = peakBandwidth;
+    }
 
-  public void setBurstSize(LongPolicy burstSize) {
-    this.burstSize=burstSize;
-  }
+    public void setBurstSize(LongPolicy burstSize) {
+        this.burstSize = burstSize;
+    }
 }

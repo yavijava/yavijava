@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class RollbackEvent extends DvsEvent {
-  public String hostName;
-  public String methodName;
+    public String hostName;
+    public String methodName;
 
-  public String getHostName() {
-    return this.hostName;
-  }
+    public String getHostName() {
+        return this.hostName;
+    }
 
-  public String getMethodName() {
-    return this.methodName;
-  }
+    public String getMethodName() {
+        return this.methodName;
+    }
 
-  public void setHostName(String hostName) {
-    this.hostName=hostName;
-  }
+    public void setHostName(String hostName) {
+        this.hostName = hostName;
+    }
 
-  public void setMethodName(String methodName) {
-    this.methodName=methodName;
-  }
+    public void setMethodName(String methodName) {
+        this.methodName = methodName;
+    }
 }

@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VirtualAppLinkInfo extends DynamicData {
-  public ManagedObjectReference key;
-  public Boolean destroyWithParent;
+    public ManagedObjectReference key;
+    public Boolean destroyWithParent;
 
-  public ManagedObjectReference getKey() {
-    return this.key;
-  }
+    public ManagedObjectReference getKey() {
+        return this.key;
+    }
 
-  public Boolean getDestroyWithParent() {
-    return this.destroyWithParent;
-  }
+    public Boolean getDestroyWithParent() {
+        return this.destroyWithParent;
+    }
 
-  public void setKey(ManagedObjectReference key) {
-    this.key=key;
-  }
+    public void setKey(ManagedObjectReference key) {
+        this.key = key;
+    }
 
-  public void setDestroyWithParent(Boolean destroyWithParent) {
-    this.destroyWithParent=destroyWithParent;
-  }
+    public void setDestroyWithParent(Boolean destroyWithParent) {
+        this.destroyWithParent = destroyWithParent;
+    }
 }

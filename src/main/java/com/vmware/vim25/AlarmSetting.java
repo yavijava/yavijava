@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class AlarmSetting extends DynamicData {
-  public int toleranceRange;
-  public int reportingFrequency;
+    public int toleranceRange;
+    public int reportingFrequency;
 
-  public int getToleranceRange() {
-    return this.toleranceRange;
-  }
+    public int getToleranceRange() {
+        return this.toleranceRange;
+    }
 
-  public int getReportingFrequency() {
-    return this.reportingFrequency;
-  }
+    public int getReportingFrequency() {
+        return this.reportingFrequency;
+    }
 
-  public void setToleranceRange(int toleranceRange) {
-    this.toleranceRange=toleranceRange;
-  }
+    public void setToleranceRange(int toleranceRange) {
+        this.toleranceRange = toleranceRange;
+    }
 
-  public void setReportingFrequency(int reportingFrequency) {
-    this.reportingFrequency=reportingFrequency;
-  }
+    public void setReportingFrequency(int reportingFrequency) {
+        this.reportingFrequency = reportingFrequency;
+    }
 }

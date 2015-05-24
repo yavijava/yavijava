@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfObjectUpdate {
-  public ObjectUpdate[] ObjectUpdate;
+    public ObjectUpdate[] ObjectUpdate;
 
-  public ObjectUpdate[] getObjectUpdate() {
-    return this.ObjectUpdate;
-  }
+    public ObjectUpdate[] getObjectUpdate() {
+        return this.ObjectUpdate;
+    }
 
-  public ObjectUpdate getObjectUpdate(int i) {
-    return this.ObjectUpdate[i];
-  }
+    public ObjectUpdate getObjectUpdate(int i) {
+        return this.ObjectUpdate[i];
+    }
 
-  public void setObjectUpdate(ObjectUpdate[] ObjectUpdate) {
-    this.ObjectUpdate=ObjectUpdate;
-  }
+    public void setObjectUpdate(ObjectUpdate[] ObjectUpdate) {
+        this.ObjectUpdate = ObjectUpdate;
+    }
 }

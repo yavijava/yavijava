@@ -30,46 +30,46 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VirtualMachineFileInfo extends DynamicData {
-  public String vmPathName;
-  public String snapshotDirectory;
-  public String suspendDirectory;
-  public String logDirectory;
+    public String vmPathName;
+    public String snapshotDirectory;
+    public String suspendDirectory;
+    public String logDirectory;
 
-  public String getVmPathName() {
-    return this.vmPathName;
-  }
+    public String getVmPathName() {
+        return this.vmPathName;
+    }
 
-  public String getSnapshotDirectory() {
-    return this.snapshotDirectory;
-  }
+    public String getSnapshotDirectory() {
+        return this.snapshotDirectory;
+    }
 
-  public String getSuspendDirectory() {
-    return this.suspendDirectory;
-  }
+    public String getSuspendDirectory() {
+        return this.suspendDirectory;
+    }
 
-  public String getLogDirectory() {
-    return this.logDirectory;
-  }
+    public String getLogDirectory() {
+        return this.logDirectory;
+    }
 
-  public void setVmPathName(String vmPathName) {
-    this.vmPathName=vmPathName;
-  }
+    public void setVmPathName(String vmPathName) {
+        this.vmPathName = vmPathName;
+    }
 
-  public void setSnapshotDirectory(String snapshotDirectory) {
-    this.snapshotDirectory=snapshotDirectory;
-  }
+    public void setSnapshotDirectory(String snapshotDirectory) {
+        this.snapshotDirectory = snapshotDirectory;
+    }
 
-  public void setSuspendDirectory(String suspendDirectory) {
-    this.suspendDirectory=suspendDirectory;
-  }
+    public void setSuspendDirectory(String suspendDirectory) {
+        this.suspendDirectory = suspendDirectory;
+    }
 
-  public void setLogDirectory(String logDirectory) {
-    this.logDirectory=logDirectory;
-  }
+    public void setLogDirectory(String logDirectory) {
+        this.logDirectory = logDirectory;
+    }
 }

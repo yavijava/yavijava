@@ -30,37 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostOpaqueNetworkInfo extends DynamicData {
-  public String opaqueNetworkId;
-  public String opaqueNetworkName;
-  public String opaqueNetworkType;
+    public String opaqueNetworkId;
+    public String opaqueNetworkName;
+    public String opaqueNetworkType;
 
-  public String getOpaqueNetworkId() {
-    return this.opaqueNetworkId;
-  }
+    public String getOpaqueNetworkId() {
+        return this.opaqueNetworkId;
+    }
 
-  public String getOpaqueNetworkName() {
-    return this.opaqueNetworkName;
-  }
+    public String getOpaqueNetworkName() {
+        return this.opaqueNetworkName;
+    }
 
-  public String getOpaqueNetworkType() {
-    return this.opaqueNetworkType;
-  }
+    public String getOpaqueNetworkType() {
+        return this.opaqueNetworkType;
+    }
 
-  public void setOpaqueNetworkId(String opaqueNetworkId) {
-    this.opaqueNetworkId=opaqueNetworkId;
-  }
+    public void setOpaqueNetworkId(String opaqueNetworkId) {
+        this.opaqueNetworkId = opaqueNetworkId;
+    }
 
-  public void setOpaqueNetworkName(String opaqueNetworkName) {
-    this.opaqueNetworkName=opaqueNetworkName;
-  }
+    public void setOpaqueNetworkName(String opaqueNetworkName) {
+        this.opaqueNetworkName = opaqueNetworkName;
+    }
 
-  public void setOpaqueNetworkType(String opaqueNetworkType) {
-    this.opaqueNetworkType=opaqueNetworkType;
-  }
+    public void setOpaqueNetworkType(String opaqueNetworkType) {
+        this.opaqueNetworkType = opaqueNetworkType;
+    }
 }

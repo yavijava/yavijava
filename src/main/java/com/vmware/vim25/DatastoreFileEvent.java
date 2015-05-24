@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class DatastoreFileEvent extends DatastoreEvent {
-  public String targetFile;
+    public String targetFile;
 
-  public String getTargetFile() {
-    return this.targetFile;
-  }
+    public String getTargetFile() {
+        return this.targetFile;
+    }
 
-  public void setTargetFile(String targetFile) {
-    this.targetFile=targetFile;
-  }
+    public void setTargetFile(String targetFile) {
+        this.targetFile = targetFile;
+    }
 }

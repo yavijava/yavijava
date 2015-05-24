@@ -30,55 +30,55 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class AuthorizationRole extends DynamicData {
-  public int roleId;
-  public boolean system;
-  public String name;
-  public Description info;
-  public String[] privilege;
+    public int roleId;
+    public boolean system;
+    public String name;
+    public Description info;
+    public String[] privilege;
 
-  public int getRoleId() {
-    return this.roleId;
-  }
+    public int getRoleId() {
+        return this.roleId;
+    }
 
-  public boolean isSystem() {
-    return this.system;
-  }
+    public boolean isSystem() {
+        return this.system;
+    }
 
-  public String getName() {
-    return this.name;
-  }
+    public String getName() {
+        return this.name;
+    }
 
-  public Description getInfo() {
-    return this.info;
-  }
+    public Description getInfo() {
+        return this.info;
+    }
 
-  public String[] getPrivilege() {
-    return this.privilege;
-  }
+    public String[] getPrivilege() {
+        return this.privilege;
+    }
 
-  public void setRoleId(int roleId) {
-    this.roleId=roleId;
-  }
+    public void setRoleId(int roleId) {
+        this.roleId = roleId;
+    }
 
-  public void setSystem(boolean system) {
-    this.system=system;
-  }
+    public void setSystem(boolean system) {
+        this.system = system;
+    }
 
-  public void setName(String name) {
-    this.name=name;
-  }
+    public void setName(String name) {
+        this.name = name;
+    }
 
-  public void setInfo(Description info) {
-    this.info=info;
-  }
+    public void setInfo(Description info) {
+        this.info = info;
+    }
 
-  public void setPrivilege(String[] privilege) {
-    this.privilege=privilege;
-  }
+    public void setPrivilege(String[] privilege) {
+        this.privilege = privilege;
+    }
 }

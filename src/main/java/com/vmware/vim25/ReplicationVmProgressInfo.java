@@ -30,55 +30,55 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class ReplicationVmProgressInfo extends DynamicData {
-  public int progress;
-  public long bytesTransferred;
-  public long bytesToTransfer;
-  public Long checksumTotalBytes;
-  public Long checksumComparedBytes;
+    public int progress;
+    public long bytesTransferred;
+    public long bytesToTransfer;
+    public Long checksumTotalBytes;
+    public Long checksumComparedBytes;
 
-  public int getProgress() {
-    return this.progress;
-  }
+    public int getProgress() {
+        return this.progress;
+    }
 
-  public long getBytesTransferred() {
-    return this.bytesTransferred;
-  }
+    public long getBytesTransferred() {
+        return this.bytesTransferred;
+    }
 
-  public long getBytesToTransfer() {
-    return this.bytesToTransfer;
-  }
+    public long getBytesToTransfer() {
+        return this.bytesToTransfer;
+    }
 
-  public Long getChecksumTotalBytes() {
-    return this.checksumTotalBytes;
-  }
+    public Long getChecksumTotalBytes() {
+        return this.checksumTotalBytes;
+    }
 
-  public Long getChecksumComparedBytes() {
-    return this.checksumComparedBytes;
-  }
+    public Long getChecksumComparedBytes() {
+        return this.checksumComparedBytes;
+    }
 
-  public void setProgress(int progress) {
-    this.progress=progress;
-  }
+    public void setProgress(int progress) {
+        this.progress = progress;
+    }
 
-  public void setBytesTransferred(long bytesTransferred) {
-    this.bytesTransferred=bytesTransferred;
-  }
+    public void setBytesTransferred(long bytesTransferred) {
+        this.bytesTransferred = bytesTransferred;
+    }
 
-  public void setBytesToTransfer(long bytesToTransfer) {
-    this.bytesToTransfer=bytesToTransfer;
-  }
+    public void setBytesToTransfer(long bytesToTransfer) {
+        this.bytesToTransfer = bytesToTransfer;
+    }
 
-  public void setChecksumTotalBytes(Long checksumTotalBytes) {
-    this.checksumTotalBytes=checksumTotalBytes;
-  }
+    public void setChecksumTotalBytes(Long checksumTotalBytes) {
+        this.checksumTotalBytes = checksumTotalBytes;
+    }
 
-  public void setChecksumComparedBytes(Long checksumComparedBytes) {
-    this.checksumComparedBytes=checksumComparedBytes;
-  }
+    public void setChecksumComparedBytes(Long checksumComparedBytes) {
+        this.checksumComparedBytes = checksumComparedBytes;
+    }
 }

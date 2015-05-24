@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfNasStorageProfile {
-  public NasStorageProfile[] NasStorageProfile;
+    public NasStorageProfile[] NasStorageProfile;
 
-  public NasStorageProfile[] getNasStorageProfile() {
-    return this.NasStorageProfile;
-  }
+    public NasStorageProfile[] getNasStorageProfile() {
+        return this.NasStorageProfile;
+    }
 
-  public NasStorageProfile getNasStorageProfile(int i) {
-    return this.NasStorageProfile[i];
-  }
+    public NasStorageProfile getNasStorageProfile(int i) {
+        return this.NasStorageProfile[i];
+    }
 
-  public void setNasStorageProfile(NasStorageProfile[] NasStorageProfile) {
-    this.NasStorageProfile=NasStorageProfile;
-  }
+    public void setNasStorageProfile(NasStorageProfile[] NasStorageProfile) {
+        this.NasStorageProfile = NasStorageProfile;
+    }
 }

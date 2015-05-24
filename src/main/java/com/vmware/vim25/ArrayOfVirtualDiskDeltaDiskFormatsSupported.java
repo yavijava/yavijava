@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfVirtualDiskDeltaDiskFormatsSupported {
-  public VirtualDiskDeltaDiskFormatsSupported[] VirtualDiskDeltaDiskFormatsSupported;
+    public VirtualDiskDeltaDiskFormatsSupported[] VirtualDiskDeltaDiskFormatsSupported;
 
-  public VirtualDiskDeltaDiskFormatsSupported[] getVirtualDiskDeltaDiskFormatsSupported() {
-    return this.VirtualDiskDeltaDiskFormatsSupported;
-  }
+    public VirtualDiskDeltaDiskFormatsSupported[] getVirtualDiskDeltaDiskFormatsSupported() {
+        return this.VirtualDiskDeltaDiskFormatsSupported;
+    }
 
-  public VirtualDiskDeltaDiskFormatsSupported getVirtualDiskDeltaDiskFormatsSupported(int i) {
-    return this.VirtualDiskDeltaDiskFormatsSupported[i];
-  }
+    public VirtualDiskDeltaDiskFormatsSupported getVirtualDiskDeltaDiskFormatsSupported(int i) {
+        return this.VirtualDiskDeltaDiskFormatsSupported[i];
+    }
 
-  public void setVirtualDiskDeltaDiskFormatsSupported(VirtualDiskDeltaDiskFormatsSupported[] VirtualDiskDeltaDiskFormatsSupported) {
-    this.VirtualDiskDeltaDiskFormatsSupported=VirtualDiskDeltaDiskFormatsSupported;
-  }
+    public void setVirtualDiskDeltaDiskFormatsSupported(VirtualDiskDeltaDiskFormatsSupported[] VirtualDiskDeltaDiskFormatsSupported) {
+        this.VirtualDiskDeltaDiskFormatsSupported = VirtualDiskDeltaDiskFormatsSupported;
+    }
 }

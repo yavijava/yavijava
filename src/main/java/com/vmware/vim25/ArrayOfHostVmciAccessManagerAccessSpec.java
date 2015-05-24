@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfHostVmciAccessManagerAccessSpec {
-  public HostVmciAccessManagerAccessSpec[] HostVmciAccessManagerAccessSpec;
+    public HostVmciAccessManagerAccessSpec[] HostVmciAccessManagerAccessSpec;
 
-  public HostVmciAccessManagerAccessSpec[] getHostVmciAccessManagerAccessSpec() {
-    return this.HostVmciAccessManagerAccessSpec;
-  }
+    public HostVmciAccessManagerAccessSpec[] getHostVmciAccessManagerAccessSpec() {
+        return this.HostVmciAccessManagerAccessSpec;
+    }
 
-  public HostVmciAccessManagerAccessSpec getHostVmciAccessManagerAccessSpec(int i) {
-    return this.HostVmciAccessManagerAccessSpec[i];
-  }
+    public HostVmciAccessManagerAccessSpec getHostVmciAccessManagerAccessSpec(int i) {
+        return this.HostVmciAccessManagerAccessSpec[i];
+    }
 
-  public void setHostVmciAccessManagerAccessSpec(HostVmciAccessManagerAccessSpec[] HostVmciAccessManagerAccessSpec) {
-    this.HostVmciAccessManagerAccessSpec=HostVmciAccessManagerAccessSpec;
-  }
+    public void setHostVmciAccessManagerAccessSpec(HostVmciAccessManagerAccessSpec[] HostVmciAccessManagerAccessSpec) {
+        this.HostVmciAccessManagerAccessSpec = HostVmciAccessManagerAccessSpec;
+    }
 }

@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfVirtualMachineProfileSpec {
-  public VirtualMachineProfileSpec[] VirtualMachineProfileSpec;
+    public VirtualMachineProfileSpec[] VirtualMachineProfileSpec;
 
-  public VirtualMachineProfileSpec[] getVirtualMachineProfileSpec() {
-    return this.VirtualMachineProfileSpec;
-  }
+    public VirtualMachineProfileSpec[] getVirtualMachineProfileSpec() {
+        return this.VirtualMachineProfileSpec;
+    }
 
-  public VirtualMachineProfileSpec getVirtualMachineProfileSpec(int i) {
-    return this.VirtualMachineProfileSpec[i];
-  }
+    public VirtualMachineProfileSpec getVirtualMachineProfileSpec(int i) {
+        return this.VirtualMachineProfileSpec[i];
+    }
 
-  public void setVirtualMachineProfileSpec(VirtualMachineProfileSpec[] VirtualMachineProfileSpec) {
-    this.VirtualMachineProfileSpec=VirtualMachineProfileSpec;
-  }
+    public void setVirtualMachineProfileSpec(VirtualMachineProfileSpec[] VirtualMachineProfileSpec) {
+        this.VirtualMachineProfileSpec = VirtualMachineProfileSpec;
+    }
 }

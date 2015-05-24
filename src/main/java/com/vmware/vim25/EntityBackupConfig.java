@@ -30,64 +30,64 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class EntityBackupConfig extends DynamicData {
-  public String entityType;
-  public byte[] configBlob;
-  public String key;
-  public String name;
-  public ManagedObjectReference container;
-  public String configVersion;
+    public String entityType;
+    public byte[] configBlob;
+    public String key;
+    public String name;
+    public ManagedObjectReference container;
+    public String configVersion;
 
-  public String getEntityType() {
-    return this.entityType;
-  }
+    public String getEntityType() {
+        return this.entityType;
+    }
 
-  public byte[] getConfigBlob() {
-    return this.configBlob;
-  }
+    public byte[] getConfigBlob() {
+        return this.configBlob;
+    }
 
-  public String getKey() {
-    return this.key;
-  }
+    public String getKey() {
+        return this.key;
+    }
 
-  public String getName() {
-    return this.name;
-  }
+    public String getName() {
+        return this.name;
+    }
 
-  public ManagedObjectReference getContainer() {
-    return this.container;
-  }
+    public ManagedObjectReference getContainer() {
+        return this.container;
+    }
 
-  public String getConfigVersion() {
-    return this.configVersion;
-  }
+    public String getConfigVersion() {
+        return this.configVersion;
+    }
 
-  public void setEntityType(String entityType) {
-    this.entityType=entityType;
-  }
+    public void setEntityType(String entityType) {
+        this.entityType = entityType;
+    }
 
-  public void setConfigBlob(byte[] configBlob) {
-    this.configBlob=configBlob;
-  }
+    public void setConfigBlob(byte[] configBlob) {
+        this.configBlob = configBlob;
+    }
 
-  public void setKey(String key) {
-    this.key=key;
-  }
+    public void setKey(String key) {
+        this.key = key;
+    }
 
-  public void setName(String name) {
-    this.name=name;
-  }
+    public void setName(String name) {
+        this.name = name;
+    }
 
-  public void setContainer(ManagedObjectReference container) {
-    this.container=container;
-  }
+    public void setContainer(ManagedObjectReference container) {
+        this.container = container;
+    }
 
-  public void setConfigVersion(String configVersion) {
-    this.configVersion=configVersion;
-  }
+    public void setConfigVersion(String configVersion) {
+        this.configVersion = configVersion;
+    }
 }

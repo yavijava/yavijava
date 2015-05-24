@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class ReadOnlyDisksWithLegacyDestination extends MigrationFault {
-  public int roDiskCount;
-  public boolean timeoutDanger;
+    public int roDiskCount;
+    public boolean timeoutDanger;
 
-  public int getRoDiskCount() {
-    return this.roDiskCount;
-  }
+    public int getRoDiskCount() {
+        return this.roDiskCount;
+    }
 
-  public boolean isTimeoutDanger() {
-    return this.timeoutDanger;
-  }
+    public boolean isTimeoutDanger() {
+        return this.timeoutDanger;
+    }
 
-  public void setRoDiskCount(int roDiskCount) {
-    this.roDiskCount=roDiskCount;
-  }
+    public void setRoDiskCount(int roDiskCount) {
+        this.roDiskCount = roDiskCount;
+    }
 
-  public void setTimeoutDanger(boolean timeoutDanger) {
-    this.timeoutDanger=timeoutDanger;
-  }
+    public void setTimeoutDanger(boolean timeoutDanger) {
+        this.timeoutDanger = timeoutDanger;
+    }
 }

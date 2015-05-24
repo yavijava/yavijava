@@ -30,91 +30,91 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostInternetScsiHbaAuthenticationProperties extends DynamicData {
-  public boolean chapAuthEnabled;
-  public String chapName;
-  public String chapSecret;
-  public String chapAuthenticationType;
-  public Boolean chapInherited;
-  public String mutualChapName;
-  public String mutualChapSecret;
-  public String mutualChapAuthenticationType;
-  public Boolean mutualChapInherited;
+    public boolean chapAuthEnabled;
+    public String chapName;
+    public String chapSecret;
+    public String chapAuthenticationType;
+    public Boolean chapInherited;
+    public String mutualChapName;
+    public String mutualChapSecret;
+    public String mutualChapAuthenticationType;
+    public Boolean mutualChapInherited;
 
-  public boolean isChapAuthEnabled() {
-    return this.chapAuthEnabled;
-  }
+    public boolean isChapAuthEnabled() {
+        return this.chapAuthEnabled;
+    }
 
-  public String getChapName() {
-    return this.chapName;
-  }
+    public String getChapName() {
+        return this.chapName;
+    }
 
-  public String getChapSecret() {
-    return this.chapSecret;
-  }
+    public String getChapSecret() {
+        return this.chapSecret;
+    }
 
-  public String getChapAuthenticationType() {
-    return this.chapAuthenticationType;
-  }
+    public String getChapAuthenticationType() {
+        return this.chapAuthenticationType;
+    }
 
-  public Boolean getChapInherited() {
-    return this.chapInherited;
-  }
+    public Boolean getChapInherited() {
+        return this.chapInherited;
+    }
 
-  public String getMutualChapName() {
-    return this.mutualChapName;
-  }
+    public String getMutualChapName() {
+        return this.mutualChapName;
+    }
 
-  public String getMutualChapSecret() {
-    return this.mutualChapSecret;
-  }
+    public String getMutualChapSecret() {
+        return this.mutualChapSecret;
+    }
 
-  public String getMutualChapAuthenticationType() {
-    return this.mutualChapAuthenticationType;
-  }
+    public String getMutualChapAuthenticationType() {
+        return this.mutualChapAuthenticationType;
+    }
 
-  public Boolean getMutualChapInherited() {
-    return this.mutualChapInherited;
-  }
+    public Boolean getMutualChapInherited() {
+        return this.mutualChapInherited;
+    }
 
-  public void setChapAuthEnabled(boolean chapAuthEnabled) {
-    this.chapAuthEnabled=chapAuthEnabled;
-  }
+    public void setChapAuthEnabled(boolean chapAuthEnabled) {
+        this.chapAuthEnabled = chapAuthEnabled;
+    }
 
-  public void setChapName(String chapName) {
-    this.chapName=chapName;
-  }
+    public void setChapName(String chapName) {
+        this.chapName = chapName;
+    }
 
-  public void setChapSecret(String chapSecret) {
-    this.chapSecret=chapSecret;
-  }
+    public void setChapSecret(String chapSecret) {
+        this.chapSecret = chapSecret;
+    }
 
-  public void setChapAuthenticationType(String chapAuthenticationType) {
-    this.chapAuthenticationType=chapAuthenticationType;
-  }
+    public void setChapAuthenticationType(String chapAuthenticationType) {
+        this.chapAuthenticationType = chapAuthenticationType;
+    }
 
-  public void setChapInherited(Boolean chapInherited) {
-    this.chapInherited=chapInherited;
-  }
+    public void setChapInherited(Boolean chapInherited) {
+        this.chapInherited = chapInherited;
+    }
 
-  public void setMutualChapName(String mutualChapName) {
-    this.mutualChapName=mutualChapName;
-  }
+    public void setMutualChapName(String mutualChapName) {
+        this.mutualChapName = mutualChapName;
+    }
 
-  public void setMutualChapSecret(String mutualChapSecret) {
-    this.mutualChapSecret=mutualChapSecret;
-  }
+    public void setMutualChapSecret(String mutualChapSecret) {
+        this.mutualChapSecret = mutualChapSecret;
+    }
 
-  public void setMutualChapAuthenticationType(String mutualChapAuthenticationType) {
-    this.mutualChapAuthenticationType=mutualChapAuthenticationType;
-  }
+    public void setMutualChapAuthenticationType(String mutualChapAuthenticationType) {
+        this.mutualChapAuthenticationType = mutualChapAuthenticationType;
+    }
 
-  public void setMutualChapInherited(Boolean mutualChapInherited) {
-    this.mutualChapInherited=mutualChapInherited;
-  }
+    public void setMutualChapInherited(Boolean mutualChapInherited) {
+        this.mutualChapInherited = mutualChapInherited;
+    }
 }

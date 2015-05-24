@@ -30,37 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class StorageIORMConfigOption extends DynamicData {
-  public BoolOption enabledOption;
-  public IntOption congestionThresholdOption;
-  public BoolOption statsCollectionEnabledOption;
+    public BoolOption enabledOption;
+    public IntOption congestionThresholdOption;
+    public BoolOption statsCollectionEnabledOption;
 
-  public BoolOption getEnabledOption() {
-    return this.enabledOption;
-  }
+    public BoolOption getEnabledOption() {
+        return this.enabledOption;
+    }
 
-  public IntOption getCongestionThresholdOption() {
-    return this.congestionThresholdOption;
-  }
+    public IntOption getCongestionThresholdOption() {
+        return this.congestionThresholdOption;
+    }
 
-  public BoolOption getStatsCollectionEnabledOption() {
-    return this.statsCollectionEnabledOption;
-  }
+    public BoolOption getStatsCollectionEnabledOption() {
+        return this.statsCollectionEnabledOption;
+    }
 
-  public void setEnabledOption(BoolOption enabledOption) {
-    this.enabledOption=enabledOption;
-  }
+    public void setEnabledOption(BoolOption enabledOption) {
+        this.enabledOption = enabledOption;
+    }
 
-  public void setCongestionThresholdOption(IntOption congestionThresholdOption) {
-    this.congestionThresholdOption=congestionThresholdOption;
-  }
+    public void setCongestionThresholdOption(IntOption congestionThresholdOption) {
+        this.congestionThresholdOption = congestionThresholdOption;
+    }
 
-  public void setStatsCollectionEnabledOption(BoolOption statsCollectionEnabledOption) {
-    this.statsCollectionEnabledOption=statsCollectionEnabledOption;
-  }
+    public void setStatsCollectionEnabledOption(BoolOption statsCollectionEnabledOption) {
+        this.statsCollectionEnabledOption = statsCollectionEnabledOption;
+    }
 }

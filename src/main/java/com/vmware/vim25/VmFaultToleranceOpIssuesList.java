@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VmFaultToleranceOpIssuesList extends VmFaultToleranceIssue {
-  public LocalizedMethodFault[] errors;
-  public LocalizedMethodFault[] warnings;
+    public LocalizedMethodFault[] errors;
+    public LocalizedMethodFault[] warnings;
 
-  public LocalizedMethodFault[] getErrors() {
-    return this.errors;
-  }
+    public LocalizedMethodFault[] getErrors() {
+        return this.errors;
+    }
 
-  public LocalizedMethodFault[] getWarnings() {
-    return this.warnings;
-  }
+    public LocalizedMethodFault[] getWarnings() {
+        return this.warnings;
+    }
 
-  public void setErrors(LocalizedMethodFault[] errors) {
-    this.errors=errors;
-  }
+    public void setErrors(LocalizedMethodFault[] errors) {
+        this.errors = errors;
+    }
 
-  public void setWarnings(LocalizedMethodFault[] warnings) {
-    this.warnings=warnings;
-  }
+    public void setWarnings(LocalizedMethodFault[] warnings) {
+        this.warnings = warnings;
+    }
 }

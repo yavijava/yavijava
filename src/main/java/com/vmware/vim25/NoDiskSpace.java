@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class NoDiskSpace extends FileFault {
-  public String datastore;
+    public String datastore;
 
-  public String getDatastore() {
-    return this.datastore;
-  }
+    public String getDatastore() {
+        return this.datastore;
+    }
 
-  public void setDatastore(String datastore) {
-    this.datastore=datastore;
-  }
+    public void setDatastore(String datastore) {
+        this.datastore = datastore;
+    }
 }

@@ -30,55 +30,55 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostListSummaryQuickStats extends DynamicData {
-  public Integer overallCpuUsage;
-  public Integer overallMemoryUsage;
-  public Integer distributedCpuFairness;
-  public Integer distributedMemoryFairness;
-  public Integer uptime;
+    public Integer overallCpuUsage;
+    public Integer overallMemoryUsage;
+    public Integer distributedCpuFairness;
+    public Integer distributedMemoryFairness;
+    public Integer uptime;
 
-  public Integer getOverallCpuUsage() {
-    return this.overallCpuUsage;
-  }
+    public Integer getOverallCpuUsage() {
+        return this.overallCpuUsage;
+    }
 
-  public Integer getOverallMemoryUsage() {
-    return this.overallMemoryUsage;
-  }
+    public Integer getOverallMemoryUsage() {
+        return this.overallMemoryUsage;
+    }
 
-  public Integer getDistributedCpuFairness() {
-    return this.distributedCpuFairness;
-  }
+    public Integer getDistributedCpuFairness() {
+        return this.distributedCpuFairness;
+    }
 
-  public Integer getDistributedMemoryFairness() {
-    return this.distributedMemoryFairness;
-  }
+    public Integer getDistributedMemoryFairness() {
+        return this.distributedMemoryFairness;
+    }
 
-  public Integer getUptime() {
-    return this.uptime;
-  }
+    public Integer getUptime() {
+        return this.uptime;
+    }
 
-  public void setOverallCpuUsage(Integer overallCpuUsage) {
-    this.overallCpuUsage=overallCpuUsage;
-  }
+    public void setOverallCpuUsage(Integer overallCpuUsage) {
+        this.overallCpuUsage = overallCpuUsage;
+    }
 
-  public void setOverallMemoryUsage(Integer overallMemoryUsage) {
-    this.overallMemoryUsage=overallMemoryUsage;
-  }
+    public void setOverallMemoryUsage(Integer overallMemoryUsage) {
+        this.overallMemoryUsage = overallMemoryUsage;
+    }
 
-  public void setDistributedCpuFairness(Integer distributedCpuFairness) {
-    this.distributedCpuFairness=distributedCpuFairness;
-  }
+    public void setDistributedCpuFairness(Integer distributedCpuFairness) {
+        this.distributedCpuFairness = distributedCpuFairness;
+    }
 
-  public void setDistributedMemoryFairness(Integer distributedMemoryFairness) {
-    this.distributedMemoryFairness=distributedMemoryFairness;
-  }
+    public void setDistributedMemoryFairness(Integer distributedMemoryFairness) {
+        this.distributedMemoryFairness = distributedMemoryFairness;
+    }
 
-  public void setUptime(Integer uptime) {
-    this.uptime=uptime;
-  }
+    public void setUptime(Integer uptime) {
+        this.uptime = uptime;
+    }
 }

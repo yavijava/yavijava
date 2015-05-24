@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class MethodActionArgument extends DynamicData {
-  public Object value;
+    public Object value;
 
-  public Object getValue() {
-    return this.value;
-  }
+    public Object getValue() {
+        return this.value;
+    }
 
-  public void setValue(Object value) {
-    this.value=value;
-  }
+    public void setValue(Object value) {
+        this.value = value;
+    }
 }

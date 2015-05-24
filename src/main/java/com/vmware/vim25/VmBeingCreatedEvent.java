@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VmBeingCreatedEvent extends VmEvent {
-  public VirtualMachineConfigSpec configSpec;
+    public VirtualMachineConfigSpec configSpec;
 
-  public VirtualMachineConfigSpec getConfigSpec() {
-    return this.configSpec;
-  }
+    public VirtualMachineConfigSpec getConfigSpec() {
+        return this.configSpec;
+    }
 
-  public void setConfigSpec(VirtualMachineConfigSpec configSpec) {
-    this.configSpec=configSpec;
-  }
+    public void setConfigSpec(VirtualMachineConfigSpec configSpec) {
+        this.configSpec = configSpec;
+    }
 }

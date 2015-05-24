@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfLong {
-  public long[] _long;
+    public long[] _long;
 
-  public long[] get_long() {
-    return this._long;
-  }
+    public long[] get_long() {
+        return this._long;
+    }
 
-  public long get_long(int i) {
-    return this._long[i];
-  }
+    public long get_long(int i) {
+        return this._long[i];
+    }
 
-  public void set_long(long[] _long) {
-    this._long=_long;
-  }
+    public void set_long(long[] _long) {
+        this._long = _long;
+    }
 }

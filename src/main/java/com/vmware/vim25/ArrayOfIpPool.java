@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfIpPool {
-  public IpPool[] IpPool;
+    public IpPool[] IpPool;
 
-  public IpPool[] getIpPool() {
-    return this.IpPool;
-  }
+    public IpPool[] getIpPool() {
+        return this.IpPool;
+    }
 
-  public IpPool getIpPool(int i) {
-    return this.IpPool[i];
-  }
+    public IpPool getIpPool(int i) {
+        return this.IpPool[i];
+    }
 
-  public void setIpPool(IpPool[] IpPool) {
-    this.IpPool=IpPool;
-  }
+    public void setIpPool(IpPool[] IpPool) {
+        this.IpPool = IpPool;
+    }
 }

@@ -30,109 +30,109 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VirtualDeviceOption extends DynamicData {
-  public String type;
-  public VirtualDeviceConnectOption connectOption;
-  public VirtualDeviceBusSlotOption busSlotOption;
-  public String controllerType;
-  public BoolOption autoAssignController;
-  public VirtualDeviceBackingOption[] backingOption;
-  public Integer defaultBackingOptionIndex;
-  public String[] licensingLimit;
-  public boolean deprecated;
-  public boolean plugAndPlay;
-  public Boolean hotRemoveSupported;
+    public String type;
+    public VirtualDeviceConnectOption connectOption;
+    public VirtualDeviceBusSlotOption busSlotOption;
+    public String controllerType;
+    public BoolOption autoAssignController;
+    public VirtualDeviceBackingOption[] backingOption;
+    public Integer defaultBackingOptionIndex;
+    public String[] licensingLimit;
+    public boolean deprecated;
+    public boolean plugAndPlay;
+    public Boolean hotRemoveSupported;
 
-  public String getType() {
-    return this.type;
-  }
+    public String getType() {
+        return this.type;
+    }
 
-  public VirtualDeviceConnectOption getConnectOption() {
-    return this.connectOption;
-  }
+    public VirtualDeviceConnectOption getConnectOption() {
+        return this.connectOption;
+    }
 
-  public VirtualDeviceBusSlotOption getBusSlotOption() {
-    return this.busSlotOption;
-  }
+    public VirtualDeviceBusSlotOption getBusSlotOption() {
+        return this.busSlotOption;
+    }
 
-  public String getControllerType() {
-    return this.controllerType;
-  }
+    public String getControllerType() {
+        return this.controllerType;
+    }
 
-  public BoolOption getAutoAssignController() {
-    return this.autoAssignController;
-  }
+    public BoolOption getAutoAssignController() {
+        return this.autoAssignController;
+    }
 
-  public VirtualDeviceBackingOption[] getBackingOption() {
-    return this.backingOption;
-  }
+    public VirtualDeviceBackingOption[] getBackingOption() {
+        return this.backingOption;
+    }
 
-  public Integer getDefaultBackingOptionIndex() {
-    return this.defaultBackingOptionIndex;
-  }
+    public Integer getDefaultBackingOptionIndex() {
+        return this.defaultBackingOptionIndex;
+    }
 
-  public String[] getLicensingLimit() {
-    return this.licensingLimit;
-  }
+    public String[] getLicensingLimit() {
+        return this.licensingLimit;
+    }
 
-  public boolean isDeprecated() {
-    return this.deprecated;
-  }
+    public boolean isDeprecated() {
+        return this.deprecated;
+    }
 
-  public boolean isPlugAndPlay() {
-    return this.plugAndPlay;
-  }
+    public boolean isPlugAndPlay() {
+        return this.plugAndPlay;
+    }
 
-  public Boolean getHotRemoveSupported() {
-    return this.hotRemoveSupported;
-  }
+    public Boolean getHotRemoveSupported() {
+        return this.hotRemoveSupported;
+    }
 
-  public void setType(String type) {
-    this.type=type;
-  }
+    public void setType(String type) {
+        this.type = type;
+    }
 
-  public void setConnectOption(VirtualDeviceConnectOption connectOption) {
-    this.connectOption=connectOption;
-  }
+    public void setConnectOption(VirtualDeviceConnectOption connectOption) {
+        this.connectOption = connectOption;
+    }
 
-  public void setBusSlotOption(VirtualDeviceBusSlotOption busSlotOption) {
-    this.busSlotOption=busSlotOption;
-  }
+    public void setBusSlotOption(VirtualDeviceBusSlotOption busSlotOption) {
+        this.busSlotOption = busSlotOption;
+    }
 
-  public void setControllerType(String controllerType) {
-    this.controllerType=controllerType;
-  }
+    public void setControllerType(String controllerType) {
+        this.controllerType = controllerType;
+    }
 
-  public void setAutoAssignController(BoolOption autoAssignController) {
-    this.autoAssignController=autoAssignController;
-  }
+    public void setAutoAssignController(BoolOption autoAssignController) {
+        this.autoAssignController = autoAssignController;
+    }
 
-  public void setBackingOption(VirtualDeviceBackingOption[] backingOption) {
-    this.backingOption=backingOption;
-  }
+    public void setBackingOption(VirtualDeviceBackingOption[] backingOption) {
+        this.backingOption = backingOption;
+    }
 
-  public void setDefaultBackingOptionIndex(Integer defaultBackingOptionIndex) {
-    this.defaultBackingOptionIndex=defaultBackingOptionIndex;
-  }
+    public void setDefaultBackingOptionIndex(Integer defaultBackingOptionIndex) {
+        this.defaultBackingOptionIndex = defaultBackingOptionIndex;
+    }
 
-  public void setLicensingLimit(String[] licensingLimit) {
-    this.licensingLimit=licensingLimit;
-  }
+    public void setLicensingLimit(String[] licensingLimit) {
+        this.licensingLimit = licensingLimit;
+    }
 
-  public void setDeprecated(boolean deprecated) {
-    this.deprecated=deprecated;
-  }
+    public void setDeprecated(boolean deprecated) {
+        this.deprecated = deprecated;
+    }
 
-  public void setPlugAndPlay(boolean plugAndPlay) {
-    this.plugAndPlay=plugAndPlay;
-  }
+    public void setPlugAndPlay(boolean plugAndPlay) {
+        this.plugAndPlay = plugAndPlay;
+    }
 
-  public void setHotRemoveSupported(Boolean hotRemoveSupported) {
-    this.hotRemoveSupported=hotRemoveSupported;
-  }
+    public void setHotRemoveSupported(Boolean hotRemoveSupported) {
+        this.hotRemoveSupported = hotRemoveSupported;
+    }
 }

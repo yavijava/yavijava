@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class AlarmEmailCompletedEvent extends AlarmEvent {
-  public ManagedEntityEventArgument entity;
-  public String to;
+    public ManagedEntityEventArgument entity;
+    public String to;
 
-  public ManagedEntityEventArgument getEntity() {
-    return this.entity;
-  }
+    public ManagedEntityEventArgument getEntity() {
+        return this.entity;
+    }
 
-  public String getTo() {
-    return this.to;
-  }
+    public String getTo() {
+        return this.to;
+    }
 
-  public void setEntity(ManagedEntityEventArgument entity) {
-    this.entity=entity;
-  }
+    public void setEntity(ManagedEntityEventArgument entity) {
+        this.entity = entity;
+    }
 
-  public void setTo(String to) {
-    this.to=to;
-  }
+    public void setTo(String to) {
+        this.to = to;
+    }
 }

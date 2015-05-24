@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfExtendedEventPair {
-  public ExtendedEventPair[] ExtendedEventPair;
+    public ExtendedEventPair[] ExtendedEventPair;
 
-  public ExtendedEventPair[] getExtendedEventPair() {
-    return this.ExtendedEventPair;
-  }
+    public ExtendedEventPair[] getExtendedEventPair() {
+        return this.ExtendedEventPair;
+    }
 
-  public ExtendedEventPair getExtendedEventPair(int i) {
-    return this.ExtendedEventPair[i];
-  }
+    public ExtendedEventPair getExtendedEventPair(int i) {
+        return this.ExtendedEventPair[i];
+    }
 
-  public void setExtendedEventPair(ExtendedEventPair[] ExtendedEventPair) {
-    this.ExtendedEventPair=ExtendedEventPair;
-  }
+    public void setExtendedEventPair(ExtendedEventPair[] ExtendedEventPair) {
+        this.ExtendedEventPair = ExtendedEventPair;
+    }
 }

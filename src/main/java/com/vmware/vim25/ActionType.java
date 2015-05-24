@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public enum ActionType {
-  MigrationV1 ("MigrationV1"),
-  VmPowerV1 ("VmPowerV1"),
-  HostPowerV1 ("HostPowerV1"),
-  HostMaintenanceV1 ("HostMaintenanceV1"),
-  StorageMigrationV1 ("StorageMigrationV1"),
-  StoragePlacementV1 ("StoragePlacementV1");
+    MigrationV1("MigrationV1"),
+    VmPowerV1("VmPowerV1"),
+    HostPowerV1("HostPowerV1"),
+    HostMaintenanceV1("HostMaintenanceV1"),
+    StorageMigrationV1("StorageMigrationV1"),
+    StoragePlacementV1("StoragePlacementV1");
 
-  @SuppressWarnings("unused")
-  private final String val;
-  private ActionType(String val)
-  {
-    this.val = val;
-  }
+    @SuppressWarnings("unused")
+    private final String val;
+
+    private ActionType(String val) {
+        this.val = val;
+    }
 }

@@ -30,46 +30,46 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostTpmSoftwareComponentEventDetails extends HostTpmEventDetails {
-  public String componentName;
-  public String vibName;
-  public String vibVersion;
-  public String vibVendor;
+    public String componentName;
+    public String vibName;
+    public String vibVersion;
+    public String vibVendor;
 
-  public String getComponentName() {
-    return this.componentName;
-  }
+    public String getComponentName() {
+        return this.componentName;
+    }
 
-  public String getVibName() {
-    return this.vibName;
-  }
+    public String getVibName() {
+        return this.vibName;
+    }
 
-  public String getVibVersion() {
-    return this.vibVersion;
-  }
+    public String getVibVersion() {
+        return this.vibVersion;
+    }
 
-  public String getVibVendor() {
-    return this.vibVendor;
-  }
+    public String getVibVendor() {
+        return this.vibVendor;
+    }
 
-  public void setComponentName(String componentName) {
-    this.componentName=componentName;
-  }
+    public void setComponentName(String componentName) {
+        this.componentName = componentName;
+    }
 
-  public void setVibName(String vibName) {
-    this.vibName=vibName;
-  }
+    public void setVibName(String vibName) {
+        this.vibName = vibName;
+    }
 
-  public void setVibVersion(String vibVersion) {
-    this.vibVersion=vibVersion;
-  }
+    public void setVibVersion(String vibVersion) {
+        this.vibVersion = vibVersion;
+    }
 
-  public void setVibVendor(String vibVendor) {
-    this.vibVendor=vibVendor;
-  }
+    public void setVibVendor(String vibVendor) {
+        this.vibVendor = vibVendor;
+    }
 }

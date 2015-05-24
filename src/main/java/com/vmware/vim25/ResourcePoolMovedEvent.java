@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class ResourcePoolMovedEvent extends ResourcePoolEvent {
-  public ResourcePoolEventArgument oldParent;
-  public ResourcePoolEventArgument newParent;
+    public ResourcePoolEventArgument oldParent;
+    public ResourcePoolEventArgument newParent;
 
-  public ResourcePoolEventArgument getOldParent() {
-    return this.oldParent;
-  }
+    public ResourcePoolEventArgument getOldParent() {
+        return this.oldParent;
+    }
 
-  public ResourcePoolEventArgument getNewParent() {
-    return this.newParent;
-  }
+    public ResourcePoolEventArgument getNewParent() {
+        return this.newParent;
+    }
 
-  public void setOldParent(ResourcePoolEventArgument oldParent) {
-    this.oldParent=oldParent;
-  }
+    public void setOldParent(ResourcePoolEventArgument oldParent) {
+        this.oldParent = oldParent;
+    }
 
-  public void setNewParent(ResourcePoolEventArgument newParent) {
-    this.newParent=newParent;
-  }
+    public void setNewParent(ResourcePoolEventArgument newParent) {
+        this.newParent = newParent;
+    }
 }

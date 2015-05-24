@@ -30,55 +30,55 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class ProfileExecuteResult extends DynamicData {
-  public String status;
-  public HostConfigSpec configSpec;
-  public String[] inapplicablePath;
-  public ProfileDeferredPolicyOptionParameter[] requireInput;
-  public ProfileExecuteError[] error;
+    public String status;
+    public HostConfigSpec configSpec;
+    public String[] inapplicablePath;
+    public ProfileDeferredPolicyOptionParameter[] requireInput;
+    public ProfileExecuteError[] error;
 
-  public String getStatus() {
-    return this.status;
-  }
+    public String getStatus() {
+        return this.status;
+    }
 
-  public HostConfigSpec getConfigSpec() {
-    return this.configSpec;
-  }
+    public HostConfigSpec getConfigSpec() {
+        return this.configSpec;
+    }
 
-  public String[] getInapplicablePath() {
-    return this.inapplicablePath;
-  }
+    public String[] getInapplicablePath() {
+        return this.inapplicablePath;
+    }
 
-  public ProfileDeferredPolicyOptionParameter[] getRequireInput() {
-    return this.requireInput;
-  }
+    public ProfileDeferredPolicyOptionParameter[] getRequireInput() {
+        return this.requireInput;
+    }
 
-  public ProfileExecuteError[] getError() {
-    return this.error;
-  }
+    public ProfileExecuteError[] getError() {
+        return this.error;
+    }
 
-  public void setStatus(String status) {
-    this.status=status;
-  }
+    public void setStatus(String status) {
+        this.status = status;
+    }
 
-  public void setConfigSpec(HostConfigSpec configSpec) {
-    this.configSpec=configSpec;
-  }
+    public void setConfigSpec(HostConfigSpec configSpec) {
+        this.configSpec = configSpec;
+    }
 
-  public void setInapplicablePath(String[] inapplicablePath) {
-    this.inapplicablePath=inapplicablePath;
-  }
+    public void setInapplicablePath(String[] inapplicablePath) {
+        this.inapplicablePath = inapplicablePath;
+    }
 
-  public void setRequireInput(ProfileDeferredPolicyOptionParameter[] requireInput) {
-    this.requireInput=requireInput;
-  }
+    public void setRequireInput(ProfileDeferredPolicyOptionParameter[] requireInput) {
+        this.requireInput = requireInput;
+    }
 
-  public void setError(ProfileExecuteError[] error) {
-    this.error=error;
-  }
+    public void setError(ProfileExecuteError[] error) {
+        this.error = error;
+    }
 }

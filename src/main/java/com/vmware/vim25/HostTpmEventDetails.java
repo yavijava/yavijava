@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostTpmEventDetails extends DynamicData {
-  public byte[] dataHash;
+    public byte[] dataHash;
 
-  public byte[] getDataHash() {
-    return this.dataHash;
-  }
+    public byte[] getDataHash() {
+        return this.dataHash;
+    }
 
-  public void setDataHash(byte[] dataHash) {
-    this.dataHash=dataHash;
-  }
+    public void setDataHash(byte[] dataHash) {
+        this.dataHash = dataHash;
+    }
 }

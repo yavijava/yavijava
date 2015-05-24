@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfOvfNetworkMapping {
-  public OvfNetworkMapping[] OvfNetworkMapping;
+    public OvfNetworkMapping[] OvfNetworkMapping;
 
-  public OvfNetworkMapping[] getOvfNetworkMapping() {
-    return this.OvfNetworkMapping;
-  }
+    public OvfNetworkMapping[] getOvfNetworkMapping() {
+        return this.OvfNetworkMapping;
+    }
 
-  public OvfNetworkMapping getOvfNetworkMapping(int i) {
-    return this.OvfNetworkMapping[i];
-  }
+    public OvfNetworkMapping getOvfNetworkMapping(int i) {
+        return this.OvfNetworkMapping[i];
+    }
 
-  public void setOvfNetworkMapping(OvfNetworkMapping[] OvfNetworkMapping) {
-    this.OvfNetworkMapping=OvfNetworkMapping;
-  }
+    public void setOvfNetworkMapping(OvfNetworkMapping[] OvfNetworkMapping) {
+        this.OvfNetworkMapping = OvfNetworkMapping;
+    }
 }

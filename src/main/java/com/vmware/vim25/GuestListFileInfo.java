@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class GuestListFileInfo extends DynamicData {
-  public GuestFileInfo[] files;
-  public int remaining;
+    public GuestFileInfo[] files;
+    public int remaining;
 
-  public GuestFileInfo[] getFiles() {
-    return this.files;
-  }
+    public GuestFileInfo[] getFiles() {
+        return this.files;
+    }
 
-  public int getRemaining() {
-    return this.remaining;
-  }
+    public int getRemaining() {
+        return this.remaining;
+    }
 
-  public void setFiles(GuestFileInfo[] files) {
-    this.files=files;
-  }
+    public void setFiles(GuestFileInfo[] files) {
+        this.files = files;
+    }
 
-  public void setRemaining(int remaining) {
-    this.remaining=remaining;
-  }
+    public void setRemaining(int remaining) {
+        this.remaining = remaining;
+    }
 }

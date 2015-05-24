@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VirtualUSBRemoteClientBackingInfo extends VirtualDeviceRemoteDeviceBackingInfo {
-  public String hostname;
+    public String hostname;
 
-  public String getHostname() {
-    return this.hostname;
-  }
+    public String getHostname() {
+        return this.hostname;
+    }
 
-  public void setHostname(String hostname) {
-    this.hostname=hostname;
-  }
+    public void setHostname(String hostname) {
+        this.hostname = hostname;
+    }
 }

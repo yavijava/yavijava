@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostReliableMemoryInfo extends DynamicData {
-  public long memorySize;
+    public long memorySize;
 
-  public long getMemorySize() {
-    return this.memorySize;
-  }
+    public long getMemorySize() {
+        return this.memorySize;
+    }
 
-  public void setMemorySize(long memorySize) {
-    this.memorySize=memorySize;
-  }
+    public void setMemorySize(long memorySize) {
+        this.memorySize = memorySize;
+    }
 }

@@ -30,55 +30,55 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostPatchManagerPatchManagerOperationSpec extends DynamicData {
-  public String proxy;
-  public Integer port;
-  public String userName;
-  public String password;
-  public String cmdOption;
+    public String proxy;
+    public Integer port;
+    public String userName;
+    public String password;
+    public String cmdOption;
 
-  public String getProxy() {
-    return this.proxy;
-  }
+    public String getProxy() {
+        return this.proxy;
+    }
 
-  public Integer getPort() {
-    return this.port;
-  }
+    public Integer getPort() {
+        return this.port;
+    }
 
-  public String getUserName() {
-    return this.userName;
-  }
+    public String getUserName() {
+        return this.userName;
+    }
 
-  public String getPassword() {
-    return this.password;
-  }
+    public String getPassword() {
+        return this.password;
+    }
 
-  public String getCmdOption() {
-    return this.cmdOption;
-  }
+    public String getCmdOption() {
+        return this.cmdOption;
+    }
 
-  public void setProxy(String proxy) {
-    this.proxy=proxy;
-  }
+    public void setProxy(String proxy) {
+        this.proxy = proxy;
+    }
 
-  public void setPort(Integer port) {
-    this.port=port;
-  }
+    public void setPort(Integer port) {
+        this.port = port;
+    }
 
-  public void setUserName(String userName) {
-    this.userName=userName;
-  }
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
 
-  public void setPassword(String password) {
-    this.password=password;
-  }
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
-  public void setCmdOption(String cmdOption) {
-    this.cmdOption=cmdOption;
-  }
+    public void setCmdOption(String cmdOption) {
+        this.cmdOption = cmdOption;
+    }
 }

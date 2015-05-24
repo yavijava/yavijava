@@ -30,46 +30,46 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostNetworkPolicy extends DynamicData {
-  public HostNetworkSecurityPolicy security;
-  public HostNicTeamingPolicy nicTeaming;
-  public HostNetOffloadCapabilities offloadPolicy;
-  public HostNetworkTrafficShapingPolicy shapingPolicy;
+    public HostNetworkSecurityPolicy security;
+    public HostNicTeamingPolicy nicTeaming;
+    public HostNetOffloadCapabilities offloadPolicy;
+    public HostNetworkTrafficShapingPolicy shapingPolicy;
 
-  public HostNetworkSecurityPolicy getSecurity() {
-    return this.security;
-  }
+    public HostNetworkSecurityPolicy getSecurity() {
+        return this.security;
+    }
 
-  public HostNicTeamingPolicy getNicTeaming() {
-    return this.nicTeaming;
-  }
+    public HostNicTeamingPolicy getNicTeaming() {
+        return this.nicTeaming;
+    }
 
-  public HostNetOffloadCapabilities getOffloadPolicy() {
-    return this.offloadPolicy;
-  }
+    public HostNetOffloadCapabilities getOffloadPolicy() {
+        return this.offloadPolicy;
+    }
 
-  public HostNetworkTrafficShapingPolicy getShapingPolicy() {
-    return this.shapingPolicy;
-  }
+    public HostNetworkTrafficShapingPolicy getShapingPolicy() {
+        return this.shapingPolicy;
+    }
 
-  public void setSecurity(HostNetworkSecurityPolicy security) {
-    this.security=security;
-  }
+    public void setSecurity(HostNetworkSecurityPolicy security) {
+        this.security = security;
+    }
 
-  public void setNicTeaming(HostNicTeamingPolicy nicTeaming) {
-    this.nicTeaming=nicTeaming;
-  }
+    public void setNicTeaming(HostNicTeamingPolicy nicTeaming) {
+        this.nicTeaming = nicTeaming;
+    }
 
-  public void setOffloadPolicy(HostNetOffloadCapabilities offloadPolicy) {
-    this.offloadPolicy=offloadPolicy;
-  }
+    public void setOffloadPolicy(HostNetOffloadCapabilities offloadPolicy) {
+        this.offloadPolicy = offloadPolicy;
+    }
 
-  public void setShapingPolicy(HostNetworkTrafficShapingPolicy shapingPolicy) {
-    this.shapingPolicy=shapingPolicy;
-  }
+    public void setShapingPolicy(HostNetworkTrafficShapingPolicy shapingPolicy) {
+        this.shapingPolicy = shapingPolicy;
+    }
 }

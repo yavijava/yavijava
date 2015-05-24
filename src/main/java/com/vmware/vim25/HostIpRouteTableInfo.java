@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostIpRouteTableInfo extends DynamicData {
-  public HostIpRouteEntry[] ipRoute;
-  public HostIpRouteEntry[] ipv6Route;
+    public HostIpRouteEntry[] ipRoute;
+    public HostIpRouteEntry[] ipv6Route;
 
-  public HostIpRouteEntry[] getIpRoute() {
-    return this.ipRoute;
-  }
+    public HostIpRouteEntry[] getIpRoute() {
+        return this.ipRoute;
+    }
 
-  public HostIpRouteEntry[] getIpv6Route() {
-    return this.ipv6Route;
-  }
+    public HostIpRouteEntry[] getIpv6Route() {
+        return this.ipv6Route;
+    }
 
-  public void setIpRoute(HostIpRouteEntry[] ipRoute) {
-    this.ipRoute=ipRoute;
-  }
+    public void setIpRoute(HostIpRouteEntry[] ipRoute) {
+        this.ipRoute = ipRoute;
+    }
 
-  public void setIpv6Route(HostIpRouteEntry[] ipv6Route) {
-    this.ipv6Route=ipv6Route;
-  }
+    public void setIpv6Route(HostIpRouteEntry[] ipv6Route) {
+        this.ipv6Route = ipv6Route;
+    }
 }

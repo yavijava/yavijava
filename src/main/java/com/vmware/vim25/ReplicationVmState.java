@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public enum ReplicationVmState {
-  none ("none"),
-  paused ("paused"),
-  syncing ("syncing"),
-  idle ("idle"),
-  active ("active"),
-  error ("error");
+    none("none"),
+    paused("paused"),
+    syncing("syncing"),
+    idle("idle"),
+    active("active"),
+    error("error");
 
-  @SuppressWarnings("unused")
-  private final String val;
-  private ReplicationVmState(String val)
-  {
-    this.val = val;
-  }
+    @SuppressWarnings("unused")
+    private final String val;
+
+    private ReplicationVmState(String val) {
+        this.val = val;
+    }
 }

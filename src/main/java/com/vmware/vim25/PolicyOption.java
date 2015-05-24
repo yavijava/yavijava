@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class PolicyOption extends DynamicData {
-  public String id;
-  public KeyAnyValue[] parameter;
+    public String id;
+    public KeyAnyValue[] parameter;
 
-  public String getId() {
-    return this.id;
-  }
+    public String getId() {
+        return this.id;
+    }
 
-  public KeyAnyValue[] getParameter() {
-    return this.parameter;
-  }
+    public KeyAnyValue[] getParameter() {
+        return this.parameter;
+    }
 
-  public void setId(String id) {
-    this.id=id;
-  }
+    public void setId(String id) {
+        this.id = id;
+    }
 
-  public void setParameter(KeyAnyValue[] parameter) {
-    this.parameter=parameter;
-  }
+    public void setParameter(KeyAnyValue[] parameter) {
+        this.parameter = parameter;
+    }
 }

@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfVirtualDeviceBackingOption {
-  public VirtualDeviceBackingOption[] VirtualDeviceBackingOption;
+    public VirtualDeviceBackingOption[] VirtualDeviceBackingOption;
 
-  public VirtualDeviceBackingOption[] getVirtualDeviceBackingOption() {
-    return this.VirtualDeviceBackingOption;
-  }
+    public VirtualDeviceBackingOption[] getVirtualDeviceBackingOption() {
+        return this.VirtualDeviceBackingOption;
+    }
 
-  public VirtualDeviceBackingOption getVirtualDeviceBackingOption(int i) {
-    return this.VirtualDeviceBackingOption[i];
-  }
+    public VirtualDeviceBackingOption getVirtualDeviceBackingOption(int i) {
+        return this.VirtualDeviceBackingOption[i];
+    }
 
-  public void setVirtualDeviceBackingOption(VirtualDeviceBackingOption[] VirtualDeviceBackingOption) {
-    this.VirtualDeviceBackingOption=VirtualDeviceBackingOption;
-  }
+    public void setVirtualDeviceBackingOption(VirtualDeviceBackingOption[] VirtualDeviceBackingOption) {
+        this.VirtualDeviceBackingOption = VirtualDeviceBackingOption;
+    }
 }

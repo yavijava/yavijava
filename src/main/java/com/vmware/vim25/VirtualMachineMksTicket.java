@@ -30,55 +30,55 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VirtualMachineMksTicket extends DynamicData {
-  public String ticket;
-  public String cfgFile;
-  public String host;
-  public Integer port;
-  public String sslThumbprint;
+    public String ticket;
+    public String cfgFile;
+    public String host;
+    public Integer port;
+    public String sslThumbprint;
 
-  public String getTicket() {
-    return this.ticket;
-  }
+    public String getTicket() {
+        return this.ticket;
+    }
 
-  public String getCfgFile() {
-    return this.cfgFile;
-  }
+    public String getCfgFile() {
+        return this.cfgFile;
+    }
 
-  public String getHost() {
-    return this.host;
-  }
+    public String getHost() {
+        return this.host;
+    }
 
-  public Integer getPort() {
-    return this.port;
-  }
+    public Integer getPort() {
+        return this.port;
+    }
 
-  public String getSslThumbprint() {
-    return this.sslThumbprint;
-  }
+    public String getSslThumbprint() {
+        return this.sslThumbprint;
+    }
 
-  public void setTicket(String ticket) {
-    this.ticket=ticket;
-  }
+    public void setTicket(String ticket) {
+        this.ticket = ticket;
+    }
 
-  public void setCfgFile(String cfgFile) {
-    this.cfgFile=cfgFile;
-  }
+    public void setCfgFile(String cfgFile) {
+        this.cfgFile = cfgFile;
+    }
 
-  public void setHost(String host) {
-    this.host=host;
-  }
+    public void setHost(String host) {
+        this.host = host;
+    }
 
-  public void setPort(Integer port) {
-    this.port=port;
-  }
+    public void setPort(Integer port) {
+        this.port = port;
+    }
 
-  public void setSslThumbprint(String sslThumbprint) {
-    this.sslThumbprint=sslThumbprint;
-  }
+    public void setSslThumbprint(String sslThumbprint) {
+        this.sslThumbprint = sslThumbprint;
+    }
 }

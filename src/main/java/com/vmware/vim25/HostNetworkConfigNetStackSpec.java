@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostNetworkConfigNetStackSpec extends DynamicData {
-  public HostNetStackInstance netStackInstance;
-  public String operation;
+    public HostNetStackInstance netStackInstance;
+    public String operation;
 
-  public HostNetStackInstance getNetStackInstance() {
-    return this.netStackInstance;
-  }
+    public HostNetStackInstance getNetStackInstance() {
+        return this.netStackInstance;
+    }
 
-  public String getOperation() {
-    return this.operation;
-  }
+    public String getOperation() {
+        return this.operation;
+    }
 
-  public void setNetStackInstance(HostNetStackInstance netStackInstance) {
-    this.netStackInstance=netStackInstance;
-  }
+    public void setNetStackInstance(HostNetStackInstance netStackInstance) {
+        this.netStackInstance = netStackInstance;
+    }
 
-  public void setOperation(String operation) {
-    this.operation=operation;
-  }
+    public void setOperation(String operation) {
+        this.operation = operation;
+    }
 }

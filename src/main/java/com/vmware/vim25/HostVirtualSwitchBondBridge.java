@@ -30,37 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostVirtualSwitchBondBridge extends HostVirtualSwitchBridge {
-  public String[] nicDevice;
-  public HostVirtualSwitchBeaconConfig beacon;
-  public LinkDiscoveryProtocolConfig linkDiscoveryProtocolConfig;
+    public String[] nicDevice;
+    public HostVirtualSwitchBeaconConfig beacon;
+    public LinkDiscoveryProtocolConfig linkDiscoveryProtocolConfig;
 
-  public String[] getNicDevice() {
-    return this.nicDevice;
-  }
+    public String[] getNicDevice() {
+        return this.nicDevice;
+    }
 
-  public HostVirtualSwitchBeaconConfig getBeacon() {
-    return this.beacon;
-  }
+    public HostVirtualSwitchBeaconConfig getBeacon() {
+        return this.beacon;
+    }
 
-  public LinkDiscoveryProtocolConfig getLinkDiscoveryProtocolConfig() {
-    return this.linkDiscoveryProtocolConfig;
-  }
+    public LinkDiscoveryProtocolConfig getLinkDiscoveryProtocolConfig() {
+        return this.linkDiscoveryProtocolConfig;
+    }
 
-  public void setNicDevice(String[] nicDevice) {
-    this.nicDevice=nicDevice;
-  }
+    public void setNicDevice(String[] nicDevice) {
+        this.nicDevice = nicDevice;
+    }
 
-  public void setBeacon(HostVirtualSwitchBeaconConfig beacon) {
-    this.beacon=beacon;
-  }
+    public void setBeacon(HostVirtualSwitchBeaconConfig beacon) {
+        this.beacon = beacon;
+    }
 
-  public void setLinkDiscoveryProtocolConfig(LinkDiscoveryProtocolConfig linkDiscoveryProtocolConfig) {
-    this.linkDiscoveryProtocolConfig=linkDiscoveryProtocolConfig;
-  }
+    public void setLinkDiscoveryProtocolConfig(LinkDiscoveryProtocolConfig linkDiscoveryProtocolConfig) {
+        this.linkDiscoveryProtocolConfig = linkDiscoveryProtocolConfig;
+    }
 }

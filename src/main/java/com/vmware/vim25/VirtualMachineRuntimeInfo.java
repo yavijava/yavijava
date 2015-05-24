@@ -28,238 +28,239 @@ POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
 
 package com.vmware.vim25;
+
 import java.util.Calendar;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VirtualMachineRuntimeInfo extends DynamicData {
-  public VirtualMachineDeviceRuntimeInfo[] device;
-  public ManagedObjectReference host;
-  public VirtualMachineConnectionState connectionState;
-  public VirtualMachinePowerState powerState;
-  public VirtualMachineFaultToleranceState faultToleranceState;
-  public VirtualMachineRuntimeInfoDasProtectionState dasVmProtection;
-  public boolean toolsInstallerMounted;
-  public Calendar suspendTime;
-  public Calendar bootTime;
-  public Long suspendInterval;
-  public VirtualMachineQuestionInfo question;
-  public Long memoryOverhead;
-  public Integer maxCpuUsage;
-  public Integer maxMemoryUsage;
-  public int numMksConnections;
-  public VirtualMachineRecordReplayState recordReplayState;
-  public Boolean cleanPowerOff;
-  public String needSecondaryReason;
-  public Boolean onlineStandby;
-  public String minRequiredEVCModeKey;
-  public Boolean consolidationNeeded;
-  public VirtualMachineFeatureRequirement[] offlineFeatureRequirement;
-  public VirtualMachineFeatureRequirement[] featureRequirement;
-  public HostFeatureMask[] featureMask;
-  public Long vFlashCacheAllocation;
+    public VirtualMachineDeviceRuntimeInfo[] device;
+    public ManagedObjectReference host;
+    public VirtualMachineConnectionState connectionState;
+    public VirtualMachinePowerState powerState;
+    public VirtualMachineFaultToleranceState faultToleranceState;
+    public VirtualMachineRuntimeInfoDasProtectionState dasVmProtection;
+    public boolean toolsInstallerMounted;
+    public Calendar suspendTime;
+    public Calendar bootTime;
+    public Long suspendInterval;
+    public VirtualMachineQuestionInfo question;
+    public Long memoryOverhead;
+    public Integer maxCpuUsage;
+    public Integer maxMemoryUsage;
+    public int numMksConnections;
+    public VirtualMachineRecordReplayState recordReplayState;
+    public Boolean cleanPowerOff;
+    public String needSecondaryReason;
+    public Boolean onlineStandby;
+    public String minRequiredEVCModeKey;
+    public Boolean consolidationNeeded;
+    public VirtualMachineFeatureRequirement[] offlineFeatureRequirement;
+    public VirtualMachineFeatureRequirement[] featureRequirement;
+    public HostFeatureMask[] featureMask;
+    public Long vFlashCacheAllocation;
 
-  public VirtualMachineDeviceRuntimeInfo[] getDevice() {
-    return this.device;
-  }
+    public VirtualMachineDeviceRuntimeInfo[] getDevice() {
+        return this.device;
+    }
 
-  public ManagedObjectReference getHost() {
-    return this.host;
-  }
+    public ManagedObjectReference getHost() {
+        return this.host;
+    }
 
-  public VirtualMachineConnectionState getConnectionState() {
-    return this.connectionState;
-  }
+    public VirtualMachineConnectionState getConnectionState() {
+        return this.connectionState;
+    }
 
-  public VirtualMachinePowerState getPowerState() {
-    return this.powerState;
-  }
+    public VirtualMachinePowerState getPowerState() {
+        return this.powerState;
+    }
 
-  public VirtualMachineFaultToleranceState getFaultToleranceState() {
-    return this.faultToleranceState;
-  }
+    public VirtualMachineFaultToleranceState getFaultToleranceState() {
+        return this.faultToleranceState;
+    }
 
-  public VirtualMachineRuntimeInfoDasProtectionState getDasVmProtection() {
-    return this.dasVmProtection;
-  }
+    public VirtualMachineRuntimeInfoDasProtectionState getDasVmProtection() {
+        return this.dasVmProtection;
+    }
 
-  public boolean isToolsInstallerMounted() {
-    return this.toolsInstallerMounted;
-  }
+    public boolean isToolsInstallerMounted() {
+        return this.toolsInstallerMounted;
+    }
 
-  public Calendar getSuspendTime() {
-    return this.suspendTime;
-  }
+    public Calendar getSuspendTime() {
+        return this.suspendTime;
+    }
 
-  public Calendar getBootTime() {
-    return this.bootTime;
-  }
+    public Calendar getBootTime() {
+        return this.bootTime;
+    }
 
-  public Long getSuspendInterval() {
-    return this.suspendInterval;
-  }
+    public Long getSuspendInterval() {
+        return this.suspendInterval;
+    }
 
-  public VirtualMachineQuestionInfo getQuestion() {
-    return this.question;
-  }
+    public VirtualMachineQuestionInfo getQuestion() {
+        return this.question;
+    }
 
-  public Long getMemoryOverhead() {
-    return this.memoryOverhead;
-  }
+    public Long getMemoryOverhead() {
+        return this.memoryOverhead;
+    }
 
-  public Integer getMaxCpuUsage() {
-    return this.maxCpuUsage;
-  }
+    public Integer getMaxCpuUsage() {
+        return this.maxCpuUsage;
+    }
 
-  public Integer getMaxMemoryUsage() {
-    return this.maxMemoryUsage;
-  }
+    public Integer getMaxMemoryUsage() {
+        return this.maxMemoryUsage;
+    }
 
-  public int getNumMksConnections() {
-    return this.numMksConnections;
-  }
+    public int getNumMksConnections() {
+        return this.numMksConnections;
+    }
 
-  public VirtualMachineRecordReplayState getRecordReplayState() {
-    return this.recordReplayState;
-  }
+    public VirtualMachineRecordReplayState getRecordReplayState() {
+        return this.recordReplayState;
+    }
 
-  public Boolean getCleanPowerOff() {
-    return this.cleanPowerOff;
-  }
+    public Boolean getCleanPowerOff() {
+        return this.cleanPowerOff;
+    }
 
-  public String getNeedSecondaryReason() {
-    return this.needSecondaryReason;
-  }
+    public String getNeedSecondaryReason() {
+        return this.needSecondaryReason;
+    }
 
-  public Boolean getOnlineStandby() {
-    return this.onlineStandby;
-  }
+    public Boolean getOnlineStandby() {
+        return this.onlineStandby;
+    }
 
-  public String getMinRequiredEVCModeKey() {
-    return this.minRequiredEVCModeKey;
-  }
+    public String getMinRequiredEVCModeKey() {
+        return this.minRequiredEVCModeKey;
+    }
 
-  public Boolean getConsolidationNeeded() {
-    return this.consolidationNeeded;
-  }
+    public Boolean getConsolidationNeeded() {
+        return this.consolidationNeeded;
+    }
 
-  public VirtualMachineFeatureRequirement[] getOfflineFeatureRequirement() {
-    return this.offlineFeatureRequirement;
-  }
+    public VirtualMachineFeatureRequirement[] getOfflineFeatureRequirement() {
+        return this.offlineFeatureRequirement;
+    }
 
-  public VirtualMachineFeatureRequirement[] getFeatureRequirement() {
-    return this.featureRequirement;
-  }
+    public VirtualMachineFeatureRequirement[] getFeatureRequirement() {
+        return this.featureRequirement;
+    }
 
-  public HostFeatureMask[] getFeatureMask() {
-    return this.featureMask;
-  }
+    public HostFeatureMask[] getFeatureMask() {
+        return this.featureMask;
+    }
 
-  public Long getVFlashCacheAllocation() {
-    return this.vFlashCacheAllocation;
-  }
+    public Long getVFlashCacheAllocation() {
+        return this.vFlashCacheAllocation;
+    }
 
-  public void setDevice(VirtualMachineDeviceRuntimeInfo[] device) {
-    this.device=device;
-  }
+    public void setDevice(VirtualMachineDeviceRuntimeInfo[] device) {
+        this.device = device;
+    }
 
-  public void setHost(ManagedObjectReference host) {
-    this.host=host;
-  }
+    public void setHost(ManagedObjectReference host) {
+        this.host = host;
+    }
 
-  public void setConnectionState(VirtualMachineConnectionState connectionState) {
-    this.connectionState=connectionState;
-  }
+    public void setConnectionState(VirtualMachineConnectionState connectionState) {
+        this.connectionState = connectionState;
+    }
 
-  public void setPowerState(VirtualMachinePowerState powerState) {
-    this.powerState=powerState;
-  }
+    public void setPowerState(VirtualMachinePowerState powerState) {
+        this.powerState = powerState;
+    }
 
-  public void setFaultToleranceState(VirtualMachineFaultToleranceState faultToleranceState) {
-    this.faultToleranceState=faultToleranceState;
-  }
+    public void setFaultToleranceState(VirtualMachineFaultToleranceState faultToleranceState) {
+        this.faultToleranceState = faultToleranceState;
+    }
 
-  public void setDasVmProtection(VirtualMachineRuntimeInfoDasProtectionState dasVmProtection) {
-    this.dasVmProtection=dasVmProtection;
-  }
+    public void setDasVmProtection(VirtualMachineRuntimeInfoDasProtectionState dasVmProtection) {
+        this.dasVmProtection = dasVmProtection;
+    }
 
-  public void setToolsInstallerMounted(boolean toolsInstallerMounted) {
-    this.toolsInstallerMounted=toolsInstallerMounted;
-  }
+    public void setToolsInstallerMounted(boolean toolsInstallerMounted) {
+        this.toolsInstallerMounted = toolsInstallerMounted;
+    }
 
-  public void setSuspendTime(Calendar suspendTime) {
-    this.suspendTime=suspendTime;
-  }
+    public void setSuspendTime(Calendar suspendTime) {
+        this.suspendTime = suspendTime;
+    }
 
-  public void setBootTime(Calendar bootTime) {
-    this.bootTime=bootTime;
-  }
+    public void setBootTime(Calendar bootTime) {
+        this.bootTime = bootTime;
+    }
 
-  public void setSuspendInterval(Long suspendInterval) {
-    this.suspendInterval=suspendInterval;
-  }
+    public void setSuspendInterval(Long suspendInterval) {
+        this.suspendInterval = suspendInterval;
+    }
 
-  public void setQuestion(VirtualMachineQuestionInfo question) {
-    this.question=question;
-  }
+    public void setQuestion(VirtualMachineQuestionInfo question) {
+        this.question = question;
+    }
 
-  public void setMemoryOverhead(Long memoryOverhead) {
-    this.memoryOverhead=memoryOverhead;
-  }
+    public void setMemoryOverhead(Long memoryOverhead) {
+        this.memoryOverhead = memoryOverhead;
+    }
 
-  public void setMaxCpuUsage(Integer maxCpuUsage) {
-    this.maxCpuUsage=maxCpuUsage;
-  }
+    public void setMaxCpuUsage(Integer maxCpuUsage) {
+        this.maxCpuUsage = maxCpuUsage;
+    }
 
-  public void setMaxMemoryUsage(Integer maxMemoryUsage) {
-    this.maxMemoryUsage=maxMemoryUsage;
-  }
+    public void setMaxMemoryUsage(Integer maxMemoryUsage) {
+        this.maxMemoryUsage = maxMemoryUsage;
+    }
 
-  public void setNumMksConnections(int numMksConnections) {
-    this.numMksConnections=numMksConnections;
-  }
+    public void setNumMksConnections(int numMksConnections) {
+        this.numMksConnections = numMksConnections;
+    }
 
-  public void setRecordReplayState(VirtualMachineRecordReplayState recordReplayState) {
-    this.recordReplayState=recordReplayState;
-  }
+    public void setRecordReplayState(VirtualMachineRecordReplayState recordReplayState) {
+        this.recordReplayState = recordReplayState;
+    }
 
-  public void setCleanPowerOff(Boolean cleanPowerOff) {
-    this.cleanPowerOff=cleanPowerOff;
-  }
+    public void setCleanPowerOff(Boolean cleanPowerOff) {
+        this.cleanPowerOff = cleanPowerOff;
+    }
 
-  public void setNeedSecondaryReason(String needSecondaryReason) {
-    this.needSecondaryReason=needSecondaryReason;
-  }
+    public void setNeedSecondaryReason(String needSecondaryReason) {
+        this.needSecondaryReason = needSecondaryReason;
+    }
 
-  public void setOnlineStandby(Boolean onlineStandby) {
-    this.onlineStandby=onlineStandby;
-  }
+    public void setOnlineStandby(Boolean onlineStandby) {
+        this.onlineStandby = onlineStandby;
+    }
 
-  public void setMinRequiredEVCModeKey(String minRequiredEVCModeKey) {
-    this.minRequiredEVCModeKey=minRequiredEVCModeKey;
-  }
+    public void setMinRequiredEVCModeKey(String minRequiredEVCModeKey) {
+        this.minRequiredEVCModeKey = minRequiredEVCModeKey;
+    }
 
-  public void setConsolidationNeeded(Boolean consolidationNeeded) {
-    this.consolidationNeeded=consolidationNeeded;
-  }
+    public void setConsolidationNeeded(Boolean consolidationNeeded) {
+        this.consolidationNeeded = consolidationNeeded;
+    }
 
-  public void setOfflineFeatureRequirement(VirtualMachineFeatureRequirement[] offlineFeatureRequirement) {
-    this.offlineFeatureRequirement=offlineFeatureRequirement;
-  }
+    public void setOfflineFeatureRequirement(VirtualMachineFeatureRequirement[] offlineFeatureRequirement) {
+        this.offlineFeatureRequirement = offlineFeatureRequirement;
+    }
 
-  public void setFeatureRequirement(VirtualMachineFeatureRequirement[] featureRequirement) {
-    this.featureRequirement=featureRequirement;
-  }
+    public void setFeatureRequirement(VirtualMachineFeatureRequirement[] featureRequirement) {
+        this.featureRequirement = featureRequirement;
+    }
 
-  public void setFeatureMask(HostFeatureMask[] featureMask) {
-    this.featureMask=featureMask;
-  }
+    public void setFeatureMask(HostFeatureMask[] featureMask) {
+        this.featureMask = featureMask;
+    }
 
-  public void setVFlashCacheAllocation(Long vFlashCacheAllocation) {
-    this.vFlashCacheAllocation=vFlashCacheAllocation;
-  }
+    public void setVFlashCacheAllocation(Long vFlashCacheAllocation) {
+        this.vFlashCacheAllocation = vFlashCacheAllocation;
+    }
 }

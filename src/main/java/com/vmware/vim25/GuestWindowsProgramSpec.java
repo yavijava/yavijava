@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class GuestWindowsProgramSpec extends GuestProgramSpec {
-  public boolean startMinimized;
+    public boolean startMinimized;
 
-  public boolean isStartMinimized() {
-    return this.startMinimized;
-  }
+    public boolean isStartMinimized() {
+        return this.startMinimized;
+    }
 
-  public void setStartMinimized(boolean startMinimized) {
-    this.startMinimized=startMinimized;
-  }
+    public void setStartMinimized(boolean startMinimized) {
+        this.startMinimized = startMinimized;
+    }
 }

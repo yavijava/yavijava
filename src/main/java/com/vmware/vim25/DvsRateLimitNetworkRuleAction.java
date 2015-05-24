@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class DvsRateLimitNetworkRuleAction extends DvsNetworkRuleAction {
-  public int packetsPerSecond;
+    public int packetsPerSecond;
 
-  public int getPacketsPerSecond() {
-    return this.packetsPerSecond;
-  }
+    public int getPacketsPerSecond() {
+        return this.packetsPerSecond;
+    }
 
-  public void setPacketsPerSecond(int packetsPerSecond) {
-    this.packetsPerSecond=packetsPerSecond;
-  }
+    public void setPacketsPerSecond(int packetsPerSecond) {
+        this.packetsPerSecond = packetsPerSecond;
+    }
 }

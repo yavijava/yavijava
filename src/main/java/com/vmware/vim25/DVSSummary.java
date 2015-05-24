@@ -30,109 +30,109 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class DVSSummary extends DynamicData {
-  public String name;
-  public String uuid;
-  public int numPorts;
-  public DistributedVirtualSwitchProductSpec productInfo;
-  public ManagedObjectReference[] hostMember;
-  public ManagedObjectReference[] vm;
-  public ManagedObjectReference[] host;
-  public String[] portgroupName;
-  public String description;
-  public DVSContactInfo contact;
-  public Integer numHosts;
+    public String name;
+    public String uuid;
+    public int numPorts;
+    public DistributedVirtualSwitchProductSpec productInfo;
+    public ManagedObjectReference[] hostMember;
+    public ManagedObjectReference[] vm;
+    public ManagedObjectReference[] host;
+    public String[] portgroupName;
+    public String description;
+    public DVSContactInfo contact;
+    public Integer numHosts;
 
-  public String getName() {
-    return this.name;
-  }
+    public String getName() {
+        return this.name;
+    }
 
-  public String getUuid() {
-    return this.uuid;
-  }
+    public String getUuid() {
+        return this.uuid;
+    }
 
-  public int getNumPorts() {
-    return this.numPorts;
-  }
+    public int getNumPorts() {
+        return this.numPorts;
+    }
 
-  public DistributedVirtualSwitchProductSpec getProductInfo() {
-    return this.productInfo;
-  }
+    public DistributedVirtualSwitchProductSpec getProductInfo() {
+        return this.productInfo;
+    }
 
-  public ManagedObjectReference[] getHostMember() {
-    return this.hostMember;
-  }
+    public ManagedObjectReference[] getHostMember() {
+        return this.hostMember;
+    }
 
-  public ManagedObjectReference[] getVm() {
-    return this.vm;
-  }
+    public ManagedObjectReference[] getVm() {
+        return this.vm;
+    }
 
-  public ManagedObjectReference[] getHost() {
-    return this.host;
-  }
+    public ManagedObjectReference[] getHost() {
+        return this.host;
+    }
 
-  public String[] getPortgroupName() {
-    return this.portgroupName;
-  }
+    public String[] getPortgroupName() {
+        return this.portgroupName;
+    }
 
-  public String getDescription() {
-    return this.description;
-  }
+    public String getDescription() {
+        return this.description;
+    }
 
-  public DVSContactInfo getContact() {
-    return this.contact;
-  }
+    public DVSContactInfo getContact() {
+        return this.contact;
+    }
 
-  public Integer getNumHosts() {
-    return this.numHosts;
-  }
+    public Integer getNumHosts() {
+        return this.numHosts;
+    }
 
-  public void setName(String name) {
-    this.name=name;
-  }
+    public void setName(String name) {
+        this.name = name;
+    }
 
-  public void setUuid(String uuid) {
-    this.uuid=uuid;
-  }
+    public void setUuid(String uuid) {
+        this.uuid = uuid;
+    }
 
-  public void setNumPorts(int numPorts) {
-    this.numPorts=numPorts;
-  }
+    public void setNumPorts(int numPorts) {
+        this.numPorts = numPorts;
+    }
 
-  public void setProductInfo(DistributedVirtualSwitchProductSpec productInfo) {
-    this.productInfo=productInfo;
-  }
+    public void setProductInfo(DistributedVirtualSwitchProductSpec productInfo) {
+        this.productInfo = productInfo;
+    }
 
-  public void setHostMember(ManagedObjectReference[] hostMember) {
-    this.hostMember=hostMember;
-  }
+    public void setHostMember(ManagedObjectReference[] hostMember) {
+        this.hostMember = hostMember;
+    }
 
-  public void setVm(ManagedObjectReference[] vm) {
-    this.vm=vm;
-  }
+    public void setVm(ManagedObjectReference[] vm) {
+        this.vm = vm;
+    }
 
-  public void setHost(ManagedObjectReference[] host) {
-    this.host=host;
-  }
+    public void setHost(ManagedObjectReference[] host) {
+        this.host = host;
+    }
 
-  public void setPortgroupName(String[] portgroupName) {
-    this.portgroupName=portgroupName;
-  }
+    public void setPortgroupName(String[] portgroupName) {
+        this.portgroupName = portgroupName;
+    }
 
-  public void setDescription(String description) {
-    this.description=description;
-  }
+    public void setDescription(String description) {
+        this.description = description;
+    }
 
-  public void setContact(DVSContactInfo contact) {
-    this.contact=contact;
-  }
+    public void setContact(DVSContactInfo contact) {
+        this.contact = contact;
+    }
 
-  public void setNumHosts(Integer numHosts) {
-    this.numHosts=numHosts;
-  }
+    public void setNumHosts(Integer numHosts) {
+        this.numHosts = numHosts;
+    }
 }

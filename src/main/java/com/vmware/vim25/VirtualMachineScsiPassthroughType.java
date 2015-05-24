@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public enum VirtualMachineScsiPassthroughType {
-  disk ("disk"),
-  tape ("tape"),
-  printer ("printer"),
-  processor ("processor"),
-  worm ("worm"),
-  cdrom ("cdrom"),
-  scanner ("scanner"),
-  optical ("optical"),
-  media ("media"),
-  com ("com"),
-  raid ("raid"),
-  unknown ("unknown");
+    disk("disk"),
+    tape("tape"),
+    printer("printer"),
+    processor("processor"),
+    worm("worm"),
+    cdrom("cdrom"),
+    scanner("scanner"),
+    optical("optical"),
+    media("media"),
+    com("com"),
+    raid("raid"),
+    unknown("unknown");
 
-  @SuppressWarnings("unused")
-  private final String val;
-  private VirtualMachineScsiPassthroughType(String val)
-  {
-    this.val = val;
-  }
+    @SuppressWarnings("unused")
+    private final String val;
+
+    private VirtualMachineScsiPassthroughType(String val) {
+        this.val = val;
+    }
 }

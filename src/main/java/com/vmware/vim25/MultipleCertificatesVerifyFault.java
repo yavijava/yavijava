@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class MultipleCertificatesVerifyFault extends HostConnectFault {
-  public MultipleCertificatesVerifyFaultThumbprintData[] thumbprintData;
+    public MultipleCertificatesVerifyFaultThumbprintData[] thumbprintData;
 
-  public MultipleCertificatesVerifyFaultThumbprintData[] getThumbprintData() {
-    return this.thumbprintData;
-  }
+    public MultipleCertificatesVerifyFaultThumbprintData[] getThumbprintData() {
+        return this.thumbprintData;
+    }
 
-  public void setThumbprintData(MultipleCertificatesVerifyFaultThumbprintData[] thumbprintData) {
-    this.thumbprintData=thumbprintData;
-  }
+    public void setThumbprintData(MultipleCertificatesVerifyFaultThumbprintData[] thumbprintData) {
+        this.thumbprintData = thumbprintData;
+    }
 }

@@ -30,55 +30,55 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VirtualMachineBootOptions extends DynamicData {
-  public Long bootDelay;
-  public Boolean enterBIOSSetup;
-  public Boolean bootRetryEnabled;
-  public Long bootRetryDelay;
-  public VirtualMachineBootOptionsBootableDevice[] bootOrder;
+    public Long bootDelay;
+    public Boolean enterBIOSSetup;
+    public Boolean bootRetryEnabled;
+    public Long bootRetryDelay;
+    public VirtualMachineBootOptionsBootableDevice[] bootOrder;
 
-  public Long getBootDelay() {
-    return this.bootDelay;
-  }
+    public Long getBootDelay() {
+        return this.bootDelay;
+    }
 
-  public Boolean getEnterBIOSSetup() {
-    return this.enterBIOSSetup;
-  }
+    public Boolean getEnterBIOSSetup() {
+        return this.enterBIOSSetup;
+    }
 
-  public Boolean getBootRetryEnabled() {
-    return this.bootRetryEnabled;
-  }
+    public Boolean getBootRetryEnabled() {
+        return this.bootRetryEnabled;
+    }
 
-  public Long getBootRetryDelay() {
-    return this.bootRetryDelay;
-  }
+    public Long getBootRetryDelay() {
+        return this.bootRetryDelay;
+    }
 
-  public VirtualMachineBootOptionsBootableDevice[] getBootOrder() {
-    return this.bootOrder;
-  }
+    public VirtualMachineBootOptionsBootableDevice[] getBootOrder() {
+        return this.bootOrder;
+    }
 
-  public void setBootDelay(Long bootDelay) {
-    this.bootDelay=bootDelay;
-  }
+    public void setBootDelay(Long bootDelay) {
+        this.bootDelay = bootDelay;
+    }
 
-  public void setEnterBIOSSetup(Boolean enterBIOSSetup) {
-    this.enterBIOSSetup=enterBIOSSetup;
-  }
+    public void setEnterBIOSSetup(Boolean enterBIOSSetup) {
+        this.enterBIOSSetup = enterBIOSSetup;
+    }
 
-  public void setBootRetryEnabled(Boolean bootRetryEnabled) {
-    this.bootRetryEnabled=bootRetryEnabled;
-  }
+    public void setBootRetryEnabled(Boolean bootRetryEnabled) {
+        this.bootRetryEnabled = bootRetryEnabled;
+    }
 
-  public void setBootRetryDelay(Long bootRetryDelay) {
-    this.bootRetryDelay=bootRetryDelay;
-  }
+    public void setBootRetryDelay(Long bootRetryDelay) {
+        this.bootRetryDelay = bootRetryDelay;
+    }
 
-  public void setBootOrder(VirtualMachineBootOptionsBootableDevice[] bootOrder) {
-    this.bootOrder=bootOrder;
-  }
+    public void setBootOrder(VirtualMachineBootOptionsBootableDevice[] bootOrder) {
+        this.bootOrder = bootOrder;
+    }
 }

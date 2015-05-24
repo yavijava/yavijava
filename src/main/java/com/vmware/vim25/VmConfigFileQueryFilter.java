@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VmConfigFileQueryFilter extends DynamicData {
-  public int[] matchConfigVersion;
+    public int[] matchConfigVersion;
 
-  public int[] getMatchConfigVersion() {
-    return this.matchConfigVersion;
-  }
+    public int[] getMatchConfigVersion() {
+        return this.matchConfigVersion;
+    }
 
-  public void setMatchConfigVersion(int[] matchConfigVersion) {
-    this.matchConfigVersion=matchConfigVersion;
-  }
+    public void setMatchConfigVersion(int[] matchConfigVersion) {
+        this.matchConfigVersion = matchConfigVersion;
+    }
 }

@@ -30,37 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VMwareDVSPvlanMapEntry extends DynamicData {
-  public int primaryVlanId;
-  public int secondaryVlanId;
-  public String pvlanType;
+    public int primaryVlanId;
+    public int secondaryVlanId;
+    public String pvlanType;
 
-  public int getPrimaryVlanId() {
-    return this.primaryVlanId;
-  }
+    public int getPrimaryVlanId() {
+        return this.primaryVlanId;
+    }
 
-  public int getSecondaryVlanId() {
-    return this.secondaryVlanId;
-  }
+    public int getSecondaryVlanId() {
+        return this.secondaryVlanId;
+    }
 
-  public String getPvlanType() {
-    return this.pvlanType;
-  }
+    public String getPvlanType() {
+        return this.pvlanType;
+    }
 
-  public void setPrimaryVlanId(int primaryVlanId) {
-    this.primaryVlanId=primaryVlanId;
-  }
+    public void setPrimaryVlanId(int primaryVlanId) {
+        this.primaryVlanId = primaryVlanId;
+    }
 
-  public void setSecondaryVlanId(int secondaryVlanId) {
-    this.secondaryVlanId=secondaryVlanId;
-  }
+    public void setSecondaryVlanId(int secondaryVlanId) {
+        this.secondaryVlanId = secondaryVlanId;
+    }
 
-  public void setPvlanType(String pvlanType) {
-    this.pvlanType=pvlanType;
-  }
+    public void setPvlanType(String pvlanType) {
+        this.pvlanType = pvlanType;
+    }
 }

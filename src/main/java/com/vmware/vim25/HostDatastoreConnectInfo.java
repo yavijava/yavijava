@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostDatastoreConnectInfo extends DynamicData {
-  public DatastoreSummary summary;
+    public DatastoreSummary summary;
 
-  public DatastoreSummary getSummary() {
-    return this.summary;
-  }
+    public DatastoreSummary getSummary() {
+        return this.summary;
+    }
 
-  public void setSummary(DatastoreSummary summary) {
-    this.summary=summary;
-  }
+    public void setSummary(DatastoreSummary summary) {
+        this.summary = summary;
+    }
 }

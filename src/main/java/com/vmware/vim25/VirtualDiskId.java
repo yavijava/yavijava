@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VirtualDiskId extends DynamicData {
-  public ManagedObjectReference vm;
-  public int diskId;
+    public ManagedObjectReference vm;
+    public int diskId;
 
-  public ManagedObjectReference getVm() {
-    return this.vm;
-  }
+    public ManagedObjectReference getVm() {
+        return this.vm;
+    }
 
-  public int getDiskId() {
-    return this.diskId;
-  }
+    public int getDiskId() {
+        return this.diskId;
+    }
 
-  public void setVm(ManagedObjectReference vm) {
-    this.vm=vm;
-  }
+    public void setVm(ManagedObjectReference vm) {
+        this.vm = vm;
+    }
 
-  public void setDiskId(int diskId) {
-    this.diskId=diskId;
-  }
+    public void setDiskId(int diskId) {
+        this.diskId = diskId;
+    }
 }

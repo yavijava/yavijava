@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfHostIpConfigIpV6Address {
-  public HostIpConfigIpV6Address[] HostIpConfigIpV6Address;
+    public HostIpConfigIpV6Address[] HostIpConfigIpV6Address;
 
-  public HostIpConfigIpV6Address[] getHostIpConfigIpV6Address() {
-    return this.HostIpConfigIpV6Address;
-  }
+    public HostIpConfigIpV6Address[] getHostIpConfigIpV6Address() {
+        return this.HostIpConfigIpV6Address;
+    }
 
-  public HostIpConfigIpV6Address getHostIpConfigIpV6Address(int i) {
-    return this.HostIpConfigIpV6Address[i];
-  }
+    public HostIpConfigIpV6Address getHostIpConfigIpV6Address(int i) {
+        return this.HostIpConfigIpV6Address[i];
+    }
 
-  public void setHostIpConfigIpV6Address(HostIpConfigIpV6Address[] HostIpConfigIpV6Address) {
-    this.HostIpConfigIpV6Address=HostIpConfigIpV6Address;
-  }
+    public void setHostIpConfigIpV6Address(HostIpConfigIpV6Address[] HostIpConfigIpV6Address) {
+        this.HostIpConfigIpV6Address = HostIpConfigIpV6Address;
+    }
 }

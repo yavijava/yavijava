@@ -30,24 +30,10 @@ POSSIBILITY OF SUCH DAMAGE.
 
 package com.vmware.vim25.mo;
 
-import java.rmi.RemoteException;
-
-import com.vmware.vim25.BackupBlobWriteFailure;
-import com.vmware.vim25.DVSFeatureCapability;
-import com.vmware.vim25.DVSManagerDvsConfigTarget;
-import com.vmware.vim25.DistributedVirtualSwitchHostProductSpec;
-import com.vmware.vim25.DistributedVirtualSwitchManagerCompatibilityResult;
-import com.vmware.vim25.DistributedVirtualSwitchManagerDvsProductSpec;
-import com.vmware.vim25.DistributedVirtualSwitchManagerHostContainer;
-import com.vmware.vim25.DistributedVirtualSwitchManagerHostDvsFilterSpec;
-import com.vmware.vim25.DistributedVirtualSwitchProductSpec;
-import com.vmware.vim25.DvsFault;
-import com.vmware.vim25.EntityBackupConfig;
-import com.vmware.vim25.ManagedObjectReference;
-import com.vmware.vim25.NotFound;
-import com.vmware.vim25.RuntimeFault;
-import com.vmware.vim25.SelectionSet;
+import com.vmware.vim25.*;
 import com.vmware.vim25.mo.util.MorUtil;
+
+import java.rmi.RemoteException;
 
 /**
  * The managed object class corresponding to the one defined in VI SDK API reference.
@@ -70,7 +56,6 @@ public class DistributedVirtualSwitchManager extends ManagedObject {
      *
      * @param recommended If set to true, return only the recommened versions. If set to false, return only the not recommended versions. If unset, return all supported versions.
      * @return DistributedVirtualSwitchProductSpec[]
-     * 
      * @throws RuntimeFault
      * @throws RemoteException
      * @since 6.0

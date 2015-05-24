@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfDynamicProperty {
-  public DynamicProperty[] DynamicProperty;
+    public DynamicProperty[] DynamicProperty;
 
-  public DynamicProperty[] getDynamicProperty() {
-    return this.DynamicProperty;
-  }
+    public DynamicProperty[] getDynamicProperty() {
+        return this.DynamicProperty;
+    }
 
-  public DynamicProperty getDynamicProperty(int i) {
-    return this.DynamicProperty[i];
-  }
+    public DynamicProperty getDynamicProperty(int i) {
+        return this.DynamicProperty[i];
+    }
 
-  public void setDynamicProperty(DynamicProperty[] DynamicProperty) {
-    this.DynamicProperty=DynamicProperty;
-  }
+    public void setDynamicProperty(DynamicProperty[] DynamicProperty) {
+        this.DynamicProperty = DynamicProperty;
+    }
 }

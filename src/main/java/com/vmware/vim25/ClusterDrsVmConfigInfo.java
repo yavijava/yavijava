@@ -30,37 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class ClusterDrsVmConfigInfo extends DynamicData {
-  public ManagedObjectReference key;
-  public Boolean enabled;
-  public DrsBehavior behavior;
+    public ManagedObjectReference key;
+    public Boolean enabled;
+    public DrsBehavior behavior;
 
-  public ManagedObjectReference getKey() {
-    return this.key;
-  }
+    public ManagedObjectReference getKey() {
+        return this.key;
+    }
 
-  public Boolean getEnabled() {
-    return this.enabled;
-  }
+    public Boolean getEnabled() {
+        return this.enabled;
+    }
 
-  public DrsBehavior getBehavior() {
-    return this.behavior;
-  }
+    public DrsBehavior getBehavior() {
+        return this.behavior;
+    }
 
-  public void setKey(ManagedObjectReference key) {
-    this.key=key;
-  }
+    public void setKey(ManagedObjectReference key) {
+        this.key = key;
+    }
 
-  public void setEnabled(Boolean enabled) {
-    this.enabled=enabled;
-  }
+    public void setEnabled(Boolean enabled) {
+        this.enabled = enabled;
+    }
 
-  public void setBehavior(DrsBehavior behavior) {
-    this.behavior=behavior;
-  }
+    public void setBehavior(DrsBehavior behavior) {
+        this.behavior = behavior;
+    }
 }

@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class RoleEventArgument extends EventArgument {
-  public int roleId;
-  public String name;
+    public int roleId;
+    public String name;
 
-  public int getRoleId() {
-    return this.roleId;
-  }
+    public int getRoleId() {
+        return this.roleId;
+    }
 
-  public String getName() {
-    return this.name;
-  }
+    public String getName() {
+        return this.name;
+    }
 
-  public void setRoleId(int roleId) {
-    this.roleId=roleId;
-  }
+    public void setRoleId(int roleId) {
+        this.roleId = roleId;
+    }
 
-  public void setName(String name) {
-    this.name=name;
-  }
+    public void setName(String name) {
+        this.name = name;
+    }
 }

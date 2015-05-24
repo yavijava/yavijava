@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class OvfConnectedDeviceIso extends OvfConnectedDevice {
-  public String filename;
+    public String filename;
 
-  public String getFilename() {
-    return this.filename;
-  }
+    public String getFilename() {
+        return this.filename;
+    }
 
-  public void setFilename(String filename) {
-    this.filename=filename;
-  }
+    public void setFilename(String filename) {
+        this.filename = filename;
+    }
 }

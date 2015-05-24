@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostPortGroupProfile extends PortGroupProfile {
-  public IpAddressProfile ipConfig;
+    public IpAddressProfile ipConfig;
 
-  public IpAddressProfile getIpConfig() {
-    return this.ipConfig;
-  }
+    public IpAddressProfile getIpConfig() {
+        return this.ipConfig;
+    }
 
-  public void setIpConfig(IpAddressProfile ipConfig) {
-    this.ipConfig=ipConfig;
-  }
+    public void setIpConfig(IpAddressProfile ipConfig) {
+        this.ipConfig = ipConfig;
+    }
 }

@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VmWwnAssignedEvent extends VmEvent {
-  public long[] nodeWwns;
-  public long[] portWwns;
+    public long[] nodeWwns;
+    public long[] portWwns;
 
-  public long[] getNodeWwns() {
-    return this.nodeWwns;
-  }
+    public long[] getNodeWwns() {
+        return this.nodeWwns;
+    }
 
-  public long[] getPortWwns() {
-    return this.portWwns;
-  }
+    public long[] getPortWwns() {
+        return this.portWwns;
+    }
 
-  public void setNodeWwns(long[] nodeWwns) {
-    this.nodeWwns=nodeWwns;
-  }
+    public void setNodeWwns(long[] nodeWwns) {
+        this.nodeWwns = nodeWwns;
+    }
 
-  public void setPortWwns(long[] portWwns) {
-    this.portWwns=portWwns;
-  }
+    public void setPortWwns(long[] portWwns) {
+        this.portWwns = portWwns;
+    }
 }

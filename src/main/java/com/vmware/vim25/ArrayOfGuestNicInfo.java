@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfGuestNicInfo {
-  public GuestNicInfo[] GuestNicInfo;
+    public GuestNicInfo[] GuestNicInfo;
 
-  public GuestNicInfo[] getGuestNicInfo() {
-    return this.GuestNicInfo;
-  }
+    public GuestNicInfo[] getGuestNicInfo() {
+        return this.GuestNicInfo;
+    }
 
-  public GuestNicInfo getGuestNicInfo(int i) {
-    return this.GuestNicInfo[i];
-  }
+    public GuestNicInfo getGuestNicInfo(int i) {
+        return this.GuestNicInfo[i];
+    }
 
-  public void setGuestNicInfo(GuestNicInfo[] GuestNicInfo) {
-    this.GuestNicInfo=GuestNicInfo;
-  }
+    public void setGuestNicInfo(GuestNicInfo[] GuestNicInfo) {
+        this.GuestNicInfo = GuestNicInfo;
+    }
 }

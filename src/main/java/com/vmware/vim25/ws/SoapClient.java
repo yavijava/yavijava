@@ -183,7 +183,7 @@ public abstract class SoapClient implements Client {
 
     /**
      * This method will marshall the java payload object in to xml payload.
-     * 
+     *
      * @param methodName
      * @param paras
      * @return String - XML SoapMessage
@@ -197,7 +197,7 @@ public abstract class SoapClient implements Client {
     /**
      * This method will unmarshall the response inputstream to Java Object of
      * returnType type.
-     * 
+     *
      * @param returnType
      * @param is
      * @return Object - Converted Response inputstream

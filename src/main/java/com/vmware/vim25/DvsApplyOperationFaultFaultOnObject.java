@@ -30,37 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class DvsApplyOperationFaultFaultOnObject extends DynamicData {
-  public String objectId;
-  public String type;
-  public LocalizedMethodFault fault;
+    public String objectId;
+    public String type;
+    public LocalizedMethodFault fault;
 
-  public String getObjectId() {
-    return this.objectId;
-  }
+    public String getObjectId() {
+        return this.objectId;
+    }
 
-  public String getType() {
-    return this.type;
-  }
+    public String getType() {
+        return this.type;
+    }
 
-  public LocalizedMethodFault getFault() {
-    return this.fault;
-  }
+    public LocalizedMethodFault getFault() {
+        return this.fault;
+    }
 
-  public void setObjectId(String objectId) {
-    this.objectId=objectId;
-  }
+    public void setObjectId(String objectId) {
+        this.objectId = objectId;
+    }
 
-  public void setType(String type) {
-    this.type=type;
-  }
+    public void setType(String type) {
+        this.type = type;
+    }
 
-  public void setFault(LocalizedMethodFault fault) {
-    this.fault=fault;
-  }
+    public void setFault(LocalizedMethodFault fault) {
+        this.fault = fault;
+    }
 }

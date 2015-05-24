@@ -30,73 +30,73 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostFirewallRuleset extends DynamicData {
-  public String key;
-  public String label;
-  public boolean required;
-  public HostFirewallRule[] rule;
-  public String service;
-  public boolean enabled;
-  public HostFirewallRulesetIpList allowedHosts;
+    public String key;
+    public String label;
+    public boolean required;
+    public HostFirewallRule[] rule;
+    public String service;
+    public boolean enabled;
+    public HostFirewallRulesetIpList allowedHosts;
 
-  public String getKey() {
-    return this.key;
-  }
+    public String getKey() {
+        return this.key;
+    }
 
-  public String getLabel() {
-    return this.label;
-  }
+    public String getLabel() {
+        return this.label;
+    }
 
-  public boolean isRequired() {
-    return this.required;
-  }
+    public boolean isRequired() {
+        return this.required;
+    }
 
-  public HostFirewallRule[] getRule() {
-    return this.rule;
-  }
+    public HostFirewallRule[] getRule() {
+        return this.rule;
+    }
 
-  public String getService() {
-    return this.service;
-  }
+    public String getService() {
+        return this.service;
+    }
 
-  public boolean isEnabled() {
-    return this.enabled;
-  }
+    public boolean isEnabled() {
+        return this.enabled;
+    }
 
-  public HostFirewallRulesetIpList getAllowedHosts() {
-    return this.allowedHosts;
-  }
+    public HostFirewallRulesetIpList getAllowedHosts() {
+        return this.allowedHosts;
+    }
 
-  public void setKey(String key) {
-    this.key=key;
-  }
+    public void setKey(String key) {
+        this.key = key;
+    }
 
-  public void setLabel(String label) {
-    this.label=label;
-  }
+    public void setLabel(String label) {
+        this.label = label;
+    }
 
-  public void setRequired(boolean required) {
-    this.required=required;
-  }
+    public void setRequired(boolean required) {
+        this.required = required;
+    }
 
-  public void setRule(HostFirewallRule[] rule) {
-    this.rule=rule;
-  }
+    public void setRule(HostFirewallRule[] rule) {
+        this.rule = rule;
+    }
 
-  public void setService(String service) {
-    this.service=service;
-  }
+    public void setService(String service) {
+        this.service = service;
+    }
 
-  public void setEnabled(boolean enabled) {
-    this.enabled=enabled;
-  }
+    public void setEnabled(boolean enabled) {
+        this.enabled = enabled;
+    }
 
-  public void setAllowedHosts(HostFirewallRulesetIpList allowedHosts) {
-    this.allowedHosts=allowedHosts;
-  }
+    public void setAllowedHosts(HostFirewallRulesetIpList allowedHosts) {
+        this.allowedHosts = allowedHosts;
+    }
 }

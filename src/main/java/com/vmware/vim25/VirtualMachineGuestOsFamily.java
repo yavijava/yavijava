@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public enum VirtualMachineGuestOsFamily {
-  windowsGuest ("windowsGuest"),
-  linuxGuest ("linuxGuest"),
-  netwareGuest ("netwareGuest"),
-  solarisGuest ("solarisGuest"),
-  darwinGuestFamily ("darwinGuestFamily"),
-  otherGuestFamily ("otherGuestFamily");
+    windowsGuest("windowsGuest"),
+    linuxGuest("linuxGuest"),
+    netwareGuest("netwareGuest"),
+    solarisGuest("solarisGuest"),
+    darwinGuestFamily("darwinGuestFamily"),
+    otherGuestFamily("otherGuestFamily");
 
-  @SuppressWarnings("unused")
-  private final String val;
-  private VirtualMachineGuestOsFamily(String val)
-  {
-    this.val = val;
-  }
+    @SuppressWarnings("unused")
+    private final String val;
+
+    private VirtualMachineGuestOsFamily(String val) {
+        this.val = val;
+    }
 }

@@ -30,55 +30,55 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class DvsFilterConfig extends InheritablePolicy {
-  public String key;
-  public String agentName;
-  public String slotNumber;
-  public DvsFilterParameter parameters;
-  public String onFailure;
+    public String key;
+    public String agentName;
+    public String slotNumber;
+    public DvsFilterParameter parameters;
+    public String onFailure;
 
-  public String getKey() {
-    return this.key;
-  }
+    public String getKey() {
+        return this.key;
+    }
 
-  public String getAgentName() {
-    return this.agentName;
-  }
+    public String getAgentName() {
+        return this.agentName;
+    }
 
-  public String getSlotNumber() {
-    return this.slotNumber;
-  }
+    public String getSlotNumber() {
+        return this.slotNumber;
+    }
 
-  public DvsFilterParameter getParameters() {
-    return this.parameters;
-  }
+    public DvsFilterParameter getParameters() {
+        return this.parameters;
+    }
 
-  public String getOnFailure() {
-    return this.onFailure;
-  }
+    public String getOnFailure() {
+        return this.onFailure;
+    }
 
-  public void setKey(String key) {
-    this.key=key;
-  }
+    public void setKey(String key) {
+        this.key = key;
+    }
 
-  public void setAgentName(String agentName) {
-    this.agentName=agentName;
-  }
+    public void setAgentName(String agentName) {
+        this.agentName = agentName;
+    }
 
-  public void setSlotNumber(String slotNumber) {
-    this.slotNumber=slotNumber;
-  }
+    public void setSlotNumber(String slotNumber) {
+        this.slotNumber = slotNumber;
+    }
 
-  public void setParameters(DvsFilterParameter parameters) {
-    this.parameters=parameters;
-  }
+    public void setParameters(DvsFilterParameter parameters) {
+        this.parameters = parameters;
+    }
 
-  public void setOnFailure(String onFailure) {
-    this.onFailure=onFailure;
-  }
+    public void setOnFailure(String onFailure) {
+        this.onFailure = onFailure;
+    }
 }

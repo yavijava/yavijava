@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostSystemIdentificationInfo extends DynamicData {
-  public String identifierValue;
-  public ElementDescription identifierType;
+    public String identifierValue;
+    public ElementDescription identifierType;
 
-  public String getIdentifierValue() {
-    return this.identifierValue;
-  }
+    public String getIdentifierValue() {
+        return this.identifierValue;
+    }
 
-  public ElementDescription getIdentifierType() {
-    return this.identifierType;
-  }
+    public ElementDescription getIdentifierType() {
+        return this.identifierType;
+    }
 
-  public void setIdentifierValue(String identifierValue) {
-    this.identifierValue=identifierValue;
-  }
+    public void setIdentifierValue(String identifierValue) {
+        this.identifierValue = identifierValue;
+    }
 
-  public void setIdentifierType(ElementDescription identifierType) {
-    this.identifierType=identifierType;
-  }
+    public void setIdentifierType(ElementDescription identifierType) {
+        this.identifierType = identifierType;
+    }
 }

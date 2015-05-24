@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VirtualMachineFileLayoutSnapshotLayout extends DynamicData {
-  public ManagedObjectReference key;
-  public String[] snapshotFile;
+    public ManagedObjectReference key;
+    public String[] snapshotFile;
 
-  public ManagedObjectReference getKey() {
-    return this.key;
-  }
+    public ManagedObjectReference getKey() {
+        return this.key;
+    }
 
-  public String[] getSnapshotFile() {
-    return this.snapshotFile;
-  }
+    public String[] getSnapshotFile() {
+        return this.snapshotFile;
+    }
 
-  public void setKey(ManagedObjectReference key) {
-    this.key=key;
-  }
+    public void setKey(ManagedObjectReference key) {
+        this.key = key;
+    }
 
-  public void setSnapshotFile(String[] snapshotFile) {
-    this.snapshotFile=snapshotFile;
-  }
+    public void setSnapshotFile(String[] snapshotFile) {
+        this.snapshotFile = snapshotFile;
+    }
 }

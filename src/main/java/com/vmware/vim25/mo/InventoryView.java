@@ -29,44 +29,39 @@ POSSIBILITY OF SUCH DAMAGE.
 
 package com.vmware.vim25.mo;
 
-import java.rmi.RemoteException;
-
 import com.vmware.vim25.ManagedObjectReference;
 import com.vmware.vim25.RuntimeFault;
 import com.vmware.vim25.mo.util.MorUtil;
 
+import java.rmi.RemoteException;
+
 /**
  * The managed object class corresponding to the one defined in VI SDK API reference.
+ *
  * @author Steve JIN (http://www.doublecloud.org)
  */
 
-public class InventoryView extends ManagedObjectView 
-{
+public class InventoryView extends ManagedObjectView {
 
-	public InventoryView(ServerConnection serverConnection, ManagedObjectReference mor) 
-	{
-		super(serverConnection, mor);
-	}
+    public InventoryView(ServerConnection serverConnection, ManagedObjectReference mor) {
+        super(serverConnection, mor);
+    }
 
-	public ManagedEntity[] closeInventoryViewFolder(ManagedEntity[] entities) throws RuntimeFault, RemoteException 
-	{
-		if(entities==null)
-		{
-			throw new IllegalArgumentException("entities must not be null.");
-		}
-		ManagedObjectReference[] mors = getVimService().closeInventoryViewFolder(getMOR(),	MorUtil.createMORs(entities));
-		return MorUtil.createManagedEntities(getServerConnection(), mors);
-	}
-	
-	public ManagedEntity[] openInventoryViewFolder(ManagedEntity[] entities) throws RuntimeFault, RemoteException 
-	{
-		if(entities==null)
-		{
-			throw new IllegalArgumentException("entities must not be null.");
-		}
-		ManagedObjectReference[] mors = getVimService().openInventoryViewFolder(getMOR(), MorUtil.createMORs(entities));
-		return MorUtil.createManagedEntities(getServerConnection(), mors);
-	}
-	
-	
+    public ManagedEntity[] closeInventoryViewFolder(ManagedEntity[] entities) throws RuntimeFault, RemoteException {
+        if (entities == null) {
+            throw new IllegalArgumentException("entities must not be null.");
+        }
+        ManagedObjectReference[] mors = getVimService().closeInventoryViewFolder(getMOR(), MorUtil.createMORs(entities));
+        return MorUtil.createManagedEntities(getServerConnection(), mors);
+    }
+
+    public ManagedEntity[] openInventoryViewFolder(ManagedEntity[] entities) throws RuntimeFault, RemoteException {
+        if (entities == null) {
+            throw new IllegalArgumentException("entities must not be null.");
+        }
+        ManagedObjectReference[] mors = getVimService().openInventoryViewFolder(getMOR(), MorUtil.createMORs(entities));
+        return MorUtil.createManagedEntities(getServerConnection(), mors);
+    }
+
+
 }

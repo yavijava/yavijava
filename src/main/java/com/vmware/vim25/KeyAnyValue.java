@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class KeyAnyValue extends DynamicData {
-  public String key;
-  public Object value;
+    public String key;
+    public Object value;
 
-  public String getKey() {
-    return this.key;
-  }
+    public String getKey() {
+        return this.key;
+    }
 
-  public Object getValue() {
-    return this.value;
-  }
+    public Object getValue() {
+        return this.value;
+    }
 
-  public void setKey(String key) {
-    this.key=key;
-  }
+    public void setKey(String key) {
+        this.key = key;
+    }
 
-  public void setValue(Object value) {
-    this.value=value;
-  }
+    public void setValue(Object value) {
+        this.value = value;
+    }
 }

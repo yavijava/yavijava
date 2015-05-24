@@ -30,109 +30,109 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class DVPortgroupConfigSpec extends DynamicData {
-  public String configVersion;
-  public String name;
-  public Integer numPorts;
-  public String portNameFormat;
-  public DVPortSetting defaultPortConfig;
-  public String description;
-  public String type;
-  public ManagedObjectReference[] scope;
-  public DVPortgroupPolicy policy;
-  public DistributedVirtualSwitchKeyedOpaqueBlob[] vendorSpecificConfig;
-  public Boolean autoExpand;
+    public String configVersion;
+    public String name;
+    public Integer numPorts;
+    public String portNameFormat;
+    public DVPortSetting defaultPortConfig;
+    public String description;
+    public String type;
+    public ManagedObjectReference[] scope;
+    public DVPortgroupPolicy policy;
+    public DistributedVirtualSwitchKeyedOpaqueBlob[] vendorSpecificConfig;
+    public Boolean autoExpand;
 
-  public String getConfigVersion() {
-    return this.configVersion;
-  }
+    public String getConfigVersion() {
+        return this.configVersion;
+    }
 
-  public String getName() {
-    return this.name;
-  }
+    public String getName() {
+        return this.name;
+    }
 
-  public Integer getNumPorts() {
-    return this.numPorts;
-  }
+    public Integer getNumPorts() {
+        return this.numPorts;
+    }
 
-  public String getPortNameFormat() {
-    return this.portNameFormat;
-  }
+    public String getPortNameFormat() {
+        return this.portNameFormat;
+    }
 
-  public DVPortSetting getDefaultPortConfig() {
-    return this.defaultPortConfig;
-  }
+    public DVPortSetting getDefaultPortConfig() {
+        return this.defaultPortConfig;
+    }
 
-  public String getDescription() {
-    return this.description;
-  }
+    public String getDescription() {
+        return this.description;
+    }
 
-  public String getType() {
-    return this.type;
-  }
+    public String getType() {
+        return this.type;
+    }
 
-  public ManagedObjectReference[] getScope() {
-    return this.scope;
-  }
+    public ManagedObjectReference[] getScope() {
+        return this.scope;
+    }
 
-  public DVPortgroupPolicy getPolicy() {
-    return this.policy;
-  }
+    public DVPortgroupPolicy getPolicy() {
+        return this.policy;
+    }
 
-  public DistributedVirtualSwitchKeyedOpaqueBlob[] getVendorSpecificConfig() {
-    return this.vendorSpecificConfig;
-  }
+    public DistributedVirtualSwitchKeyedOpaqueBlob[] getVendorSpecificConfig() {
+        return this.vendorSpecificConfig;
+    }
 
-  public Boolean getAutoExpand() {
-    return this.autoExpand;
-  }
+    public Boolean getAutoExpand() {
+        return this.autoExpand;
+    }
 
-  public void setConfigVersion(String configVersion) {
-    this.configVersion=configVersion;
-  }
+    public void setConfigVersion(String configVersion) {
+        this.configVersion = configVersion;
+    }
 
-  public void setName(String name) {
-    this.name=name;
-  }
+    public void setName(String name) {
+        this.name = name;
+    }
 
-  public void setNumPorts(Integer numPorts) {
-    this.numPorts=numPorts;
-  }
+    public void setNumPorts(Integer numPorts) {
+        this.numPorts = numPorts;
+    }
 
-  public void setPortNameFormat(String portNameFormat) {
-    this.portNameFormat=portNameFormat;
-  }
+    public void setPortNameFormat(String portNameFormat) {
+        this.portNameFormat = portNameFormat;
+    }
 
-  public void setDefaultPortConfig(DVPortSetting defaultPortConfig) {
-    this.defaultPortConfig=defaultPortConfig;
-  }
+    public void setDefaultPortConfig(DVPortSetting defaultPortConfig) {
+        this.defaultPortConfig = defaultPortConfig;
+    }
 
-  public void setDescription(String description) {
-    this.description=description;
-  }
+    public void setDescription(String description) {
+        this.description = description;
+    }
 
-  public void setType(String type) {
-    this.type=type;
-  }
+    public void setType(String type) {
+        this.type = type;
+    }
 
-  public void setScope(ManagedObjectReference[] scope) {
-    this.scope=scope;
-  }
+    public void setScope(ManagedObjectReference[] scope) {
+        this.scope = scope;
+    }
 
-  public void setPolicy(DVPortgroupPolicy policy) {
-    this.policy=policy;
-  }
+    public void setPolicy(DVPortgroupPolicy policy) {
+        this.policy = policy;
+    }
 
-  public void setVendorSpecificConfig(DistributedVirtualSwitchKeyedOpaqueBlob[] vendorSpecificConfig) {
-    this.vendorSpecificConfig=vendorSpecificConfig;
-  }
+    public void setVendorSpecificConfig(DistributedVirtualSwitchKeyedOpaqueBlob[] vendorSpecificConfig) {
+        this.vendorSpecificConfig = vendorSpecificConfig;
+    }
 
-  public void setAutoExpand(Boolean autoExpand) {
-    this.autoExpand=autoExpand;
-  }
+    public void setAutoExpand(Boolean autoExpand) {
+        this.autoExpand = autoExpand;
+    }
 }

@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfIscsiDependencyEntity {
-  public IscsiDependencyEntity[] IscsiDependencyEntity;
+    public IscsiDependencyEntity[] IscsiDependencyEntity;
 
-  public IscsiDependencyEntity[] getIscsiDependencyEntity() {
-    return this.IscsiDependencyEntity;
-  }
+    public IscsiDependencyEntity[] getIscsiDependencyEntity() {
+        return this.IscsiDependencyEntity;
+    }
 
-  public IscsiDependencyEntity getIscsiDependencyEntity(int i) {
-    return this.IscsiDependencyEntity[i];
-  }
+    public IscsiDependencyEntity getIscsiDependencyEntity(int i) {
+        return this.IscsiDependencyEntity[i];
+    }
 
-  public void setIscsiDependencyEntity(IscsiDependencyEntity[] IscsiDependencyEntity) {
-    this.IscsiDependencyEntity=IscsiDependencyEntity;
-  }
+    public void setIscsiDependencyEntity(IscsiDependencyEntity[] IscsiDependencyEntity) {
+        this.IscsiDependencyEntity = IscsiDependencyEntity;
+    }
 }

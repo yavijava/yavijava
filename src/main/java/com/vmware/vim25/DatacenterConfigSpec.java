@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class DatacenterConfigSpec extends DynamicData {
-  public String defaultHardwareVersionKey;
+    public String defaultHardwareVersionKey;
 
-  public String getDefaultHardwareVersionKey() {
-    return this.defaultHardwareVersionKey;
-  }
+    public String getDefaultHardwareVersionKey() {
+        return this.defaultHardwareVersionKey;
+    }
 
-  public void setDefaultHardwareVersionKey(String defaultHardwareVersionKey) {
-    this.defaultHardwareVersionKey=defaultHardwareVersionKey;
-  }
+    public void setDefaultHardwareVersionKey(String defaultHardwareVersionKey) {
+        this.defaultHardwareVersionKey = defaultHardwareVersionKey;
+    }
 }

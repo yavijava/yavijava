@@ -30,75 +30,62 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
-*/
+ * @author Steve Jin (sjin@vmware.com)
+ */
 
-public class ISCSIInitiatorProfile extends ApplyProfile
-{
-  public String key;
-  public String name;
-  public ISCSIInitiatorCHAPProfile chapProfile;
-  public SendTargetProfile[] sendTargetProfile;
-  public StaticTargetProfile[] staticTargetProfile;
-  public ISCSIInitiatorAdvancedConfigurationProfile initiatorAdvancedCfg;
+public class ISCSIInitiatorProfile extends ApplyProfile {
+    public String key;
+    public String name;
+    public ISCSIInitiatorCHAPProfile chapProfile;
+    public SendTargetProfile[] sendTargetProfile;
+    public StaticTargetProfile[] staticTargetProfile;
+    public ISCSIInitiatorAdvancedConfigurationProfile initiatorAdvancedCfg;
 
-  public String getKey()
-  {
-    return this.key;
-  }
+    public String getKey() {
+        return this.key;
+    }
 
-  public String getName()
-  {
-    return this.name;
-  }
+    public String getName() {
+        return this.name;
+    }
 
-  public ISCSIInitiatorCHAPProfile getChapProfile()
-  {
-    return this.chapProfile;
-  }
+    public ISCSIInitiatorCHAPProfile getChapProfile() {
+        return this.chapProfile;
+    }
 
-  public SendTargetProfile[] getSendTargetProfile()
-  {
-    return this.sendTargetProfile;
-  }
+    public SendTargetProfile[] getSendTargetProfile() {
+        return this.sendTargetProfile;
+    }
 
-  public StaticTargetProfile[] getStaticTargetProfile()
-  {
-    return this.staticTargetProfile;
-  }
+    public StaticTargetProfile[] getStaticTargetProfile() {
+        return this.staticTargetProfile;
+    }
 
-  public ISCSIInitiatorAdvancedConfigurationProfile getInitiatorAdvancedCfg()
-  {
-    return this.initiatorAdvancedCfg;
-  }
+    public ISCSIInitiatorAdvancedConfigurationProfile getInitiatorAdvancedCfg() {
+        return this.initiatorAdvancedCfg;
+    }
 
-  public void setKey(String key)
-  {
-    this.key=key;
-  }
+    public void setKey(String key) {
+        this.key = key;
+    }
 
-  public void setName(String name)
-  {
-    this.name=name;
-  }
+    public void setName(String name) {
+        this.name = name;
+    }
 
-  public void setChapProfile(ISCSIInitiatorCHAPProfile chapProfile)
-  {
-    this.chapProfile=chapProfile;
-  }
+    public void setChapProfile(ISCSIInitiatorCHAPProfile chapProfile) {
+        this.chapProfile = chapProfile;
+    }
 
-  public void setSendTargetProfile(SendTargetProfile[] sendTargetProfile)
-  {
-    this.sendTargetProfile=sendTargetProfile;
-  }
+    public void setSendTargetProfile(SendTargetProfile[] sendTargetProfile) {
+        this.sendTargetProfile = sendTargetProfile;
+    }
 
-  public void setStaticTargetProfile(StaticTargetProfile[] staticTargetProfile)
-  {
-    this.staticTargetProfile=staticTargetProfile;
-  }
+    public void setStaticTargetProfile(StaticTargetProfile[] staticTargetProfile) {
+        this.staticTargetProfile = staticTargetProfile;
+    }
 
-  public void setInitiatorAdvancedCfg(ISCSIInitiatorAdvancedConfigurationProfile initiatorAdvancedCfg)
-  {
-    this.initiatorAdvancedCfg=initiatorAdvancedCfg;
-  }
+    public void setInitiatorAdvancedCfg(ISCSIInitiatorAdvancedConfigurationProfile initiatorAdvancedCfg) {
+        this.initiatorAdvancedCfg = initiatorAdvancedCfg;
+    }
 }

@@ -30,37 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VirtualMachineFileLayoutExSnapshotLayout extends DynamicData {
-  public ManagedObjectReference key;
-  public int dataKey;
-  public VirtualMachineFileLayoutExDiskLayout[] disk;
+    public ManagedObjectReference key;
+    public int dataKey;
+    public VirtualMachineFileLayoutExDiskLayout[] disk;
 
-  public ManagedObjectReference getKey() {
-    return this.key;
-  }
+    public ManagedObjectReference getKey() {
+        return this.key;
+    }
 
-  public int getDataKey() {
-    return this.dataKey;
-  }
+    public int getDataKey() {
+        return this.dataKey;
+    }
 
-  public VirtualMachineFileLayoutExDiskLayout[] getDisk() {
-    return this.disk;
-  }
+    public VirtualMachineFileLayoutExDiskLayout[] getDisk() {
+        return this.disk;
+    }
 
-  public void setKey(ManagedObjectReference key) {
-    this.key=key;
-  }
+    public void setKey(ManagedObjectReference key) {
+        this.key = key;
+    }
 
-  public void setDataKey(int dataKey) {
-    this.dataKey=dataKey;
-  }
+    public void setDataKey(int dataKey) {
+        this.dataKey = dataKey;
+    }
 
-  public void setDisk(VirtualMachineFileLayoutExDiskLayout[] disk) {
-    this.disk=disk;
-  }
+    public void setDisk(VirtualMachineFileLayoutExDiskLayout[] disk) {
+        this.disk = disk;
+    }
 }

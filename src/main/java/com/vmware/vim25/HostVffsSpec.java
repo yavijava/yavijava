@@ -30,46 +30,46 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostVffsSpec extends DynamicData {
-  public String devicePath;
-  public HostDiskPartitionSpec partition;
-  public int majorVersion;
-  public String volumeName;
+    public String devicePath;
+    public HostDiskPartitionSpec partition;
+    public int majorVersion;
+    public String volumeName;
 
-  public String getDevicePath() {
-    return this.devicePath;
-  }
+    public String getDevicePath() {
+        return this.devicePath;
+    }
 
-  public HostDiskPartitionSpec getPartition() {
-    return this.partition;
-  }
+    public HostDiskPartitionSpec getPartition() {
+        return this.partition;
+    }
 
-  public int getMajorVersion() {
-    return this.majorVersion;
-  }
+    public int getMajorVersion() {
+        return this.majorVersion;
+    }
 
-  public String getVolumeName() {
-    return this.volumeName;
-  }
+    public String getVolumeName() {
+        return this.volumeName;
+    }
 
-  public void setDevicePath(String devicePath) {
-    this.devicePath=devicePath;
-  }
+    public void setDevicePath(String devicePath) {
+        this.devicePath = devicePath;
+    }
 
-  public void setPartition(HostDiskPartitionSpec partition) {
-    this.partition=partition;
-  }
+    public void setPartition(HostDiskPartitionSpec partition) {
+        this.partition = partition;
+    }
 
-  public void setMajorVersion(int majorVersion) {
-    this.majorVersion=majorVersion;
-  }
+    public void setMajorVersion(int majorVersion) {
+        this.majorVersion = majorVersion;
+    }
 
-  public void setVolumeName(String volumeName) {
-    this.volumeName=volumeName;
-  }
+    public void setVolumeName(String volumeName) {
+        this.volumeName = volumeName;
+    }
 }

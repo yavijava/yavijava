@@ -30,55 +30,55 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class AutoStartDefaults extends DynamicData {
-  public Boolean enabled;
-  public Integer startDelay;
-  public Integer stopDelay;
-  public Boolean waitForHeartbeat;
-  public String stopAction;
+    public Boolean enabled;
+    public Integer startDelay;
+    public Integer stopDelay;
+    public Boolean waitForHeartbeat;
+    public String stopAction;
 
-  public Boolean getEnabled() {
-    return this.enabled;
-  }
+    public Boolean getEnabled() {
+        return this.enabled;
+    }
 
-  public Integer getStartDelay() {
-    return this.startDelay;
-  }
+    public Integer getStartDelay() {
+        return this.startDelay;
+    }
 
-  public Integer getStopDelay() {
-    return this.stopDelay;
-  }
+    public Integer getStopDelay() {
+        return this.stopDelay;
+    }
 
-  public Boolean getWaitForHeartbeat() {
-    return this.waitForHeartbeat;
-  }
+    public Boolean getWaitForHeartbeat() {
+        return this.waitForHeartbeat;
+    }
 
-  public String getStopAction() {
-    return this.stopAction;
-  }
+    public String getStopAction() {
+        return this.stopAction;
+    }
 
-  public void setEnabled(Boolean enabled) {
-    this.enabled=enabled;
-  }
+    public void setEnabled(Boolean enabled) {
+        this.enabled = enabled;
+    }
 
-  public void setStartDelay(Integer startDelay) {
-    this.startDelay=startDelay;
-  }
+    public void setStartDelay(Integer startDelay) {
+        this.startDelay = startDelay;
+    }
 
-  public void setStopDelay(Integer stopDelay) {
-    this.stopDelay=stopDelay;
-  }
+    public void setStopDelay(Integer stopDelay) {
+        this.stopDelay = stopDelay;
+    }
 
-  public void setWaitForHeartbeat(Boolean waitForHeartbeat) {
-    this.waitForHeartbeat=waitForHeartbeat;
-  }
+    public void setWaitForHeartbeat(Boolean waitForHeartbeat) {
+        this.waitForHeartbeat = waitForHeartbeat;
+    }
 
-  public void setStopAction(String stopAction) {
-    this.stopAction=stopAction;
-  }
+    public void setStopAction(String stopAction) {
+        this.stopAction = stopAction;
+    }
 }

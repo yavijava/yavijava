@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class TaskInProgress extends VimFault {
-  public ManagedObjectReference task;
+    public ManagedObjectReference task;
 
-  public ManagedObjectReference getTask() {
-    return this.task;
-  }
+    public ManagedObjectReference getTask() {
+        return this.task;
+    }
 
-  public void setTask(ManagedObjectReference task) {
-    this.task=task;
-  }
+    public void setTask(ManagedObjectReference task) {
+        this.task = task;
+    }
 }

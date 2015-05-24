@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostShortNameToIpFailedEvent extends HostEvent {
-  public String shortName;
+    public String shortName;
 
-  public String getShortName() {
-    return this.shortName;
-  }
+    public String getShortName() {
+        return this.shortName;
+    }
 
-  public void setShortName(String shortName) {
-    this.shortName=shortName;
-  }
+    public void setShortName(String shortName) {
+        this.shortName = shortName;
+    }
 }

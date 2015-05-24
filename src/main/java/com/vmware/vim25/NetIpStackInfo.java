@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class NetIpStackInfo extends DynamicData {
-  public NetIpStackInfoNetToMedia[] neighbor;
-  public NetIpStackInfoDefaultRouter[] defaultRouter;
+    public NetIpStackInfoNetToMedia[] neighbor;
+    public NetIpStackInfoDefaultRouter[] defaultRouter;
 
-  public NetIpStackInfoNetToMedia[] getNeighbor() {
-    return this.neighbor;
-  }
+    public NetIpStackInfoNetToMedia[] getNeighbor() {
+        return this.neighbor;
+    }
 
-  public NetIpStackInfoDefaultRouter[] getDefaultRouter() {
-    return this.defaultRouter;
-  }
+    public NetIpStackInfoDefaultRouter[] getDefaultRouter() {
+        return this.defaultRouter;
+    }
 
-  public void setNeighbor(NetIpStackInfoNetToMedia[] neighbor) {
-    this.neighbor=neighbor;
-  }
+    public void setNeighbor(NetIpStackInfoNetToMedia[] neighbor) {
+        this.neighbor = neighbor;
+    }
 
-  public void setDefaultRouter(NetIpStackInfoDefaultRouter[] defaultRouter) {
-    this.defaultRouter=defaultRouter;
-  }
+    public void setDefaultRouter(NetIpStackInfoDefaultRouter[] defaultRouter) {
+        this.defaultRouter = defaultRouter;
+    }
 }

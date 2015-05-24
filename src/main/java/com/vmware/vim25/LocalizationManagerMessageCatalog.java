@@ -28,76 +28,77 @@ POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
 
 package com.vmware.vim25;
+
 import java.util.Calendar;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class LocalizationManagerMessageCatalog extends DynamicData {
-  public String moduleName;
-  public String catalogName;
-  public String locale;
-  public String catalogUri;
-  public Calendar lastModified;
-  public String md5sum;
-  public String version;
+    public String moduleName;
+    public String catalogName;
+    public String locale;
+    public String catalogUri;
+    public Calendar lastModified;
+    public String md5sum;
+    public String version;
 
-  public String getModuleName() {
-    return this.moduleName;
-  }
+    public String getModuleName() {
+        return this.moduleName;
+    }
 
-  public String getCatalogName() {
-    return this.catalogName;
-  }
+    public String getCatalogName() {
+        return this.catalogName;
+    }
 
-  public String getLocale() {
-    return this.locale;
-  }
+    public String getLocale() {
+        return this.locale;
+    }
 
-  public String getCatalogUri() {
-    return this.catalogUri;
-  }
+    public String getCatalogUri() {
+        return this.catalogUri;
+    }
 
-  public Calendar getLastModified() {
-    return this.lastModified;
-  }
+    public Calendar getLastModified() {
+        return this.lastModified;
+    }
 
-  public String getMd5sum() {
-    return this.md5sum;
-  }
+    public String getMd5sum() {
+        return this.md5sum;
+    }
 
-  public String getVersion() {
-    return this.version;
-  }
+    public String getVersion() {
+        return this.version;
+    }
 
-  public void setModuleName(String moduleName) {
-    this.moduleName=moduleName;
-  }
+    public void setModuleName(String moduleName) {
+        this.moduleName = moduleName;
+    }
 
-  public void setCatalogName(String catalogName) {
-    this.catalogName=catalogName;
-  }
+    public void setCatalogName(String catalogName) {
+        this.catalogName = catalogName;
+    }
 
-  public void setLocale(String locale) {
-    this.locale=locale;
-  }
+    public void setLocale(String locale) {
+        this.locale = locale;
+    }
 
-  public void setCatalogUri(String catalogUri) {
-    this.catalogUri=catalogUri;
-  }
+    public void setCatalogUri(String catalogUri) {
+        this.catalogUri = catalogUri;
+    }
 
-  public void setLastModified(Calendar lastModified) {
-    this.lastModified=lastModified;
-  }
+    public void setLastModified(Calendar lastModified) {
+        this.lastModified = lastModified;
+    }
 
-  public void setMd5sum(String md5sum) {
-    this.md5sum=md5sum;
-  }
+    public void setMd5sum(String md5sum) {
+        this.md5sum = md5sum;
+    }
 
-  public void setVersion(String version) {
-    this.version=version;
-  }
+    public void setVersion(String version) {
+        this.version = version;
+    }
 }

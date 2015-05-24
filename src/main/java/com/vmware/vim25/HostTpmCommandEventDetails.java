@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostTpmCommandEventDetails extends HostTpmEventDetails {
-  public String commandLine;
+    public String commandLine;
 
-  public String getCommandLine() {
-    return this.commandLine;
-  }
+    public String getCommandLine() {
+        return this.commandLine;
+    }
 
-  public void setCommandLine(String commandLine) {
-    this.commandLine=commandLine;
-  }
+    public void setCommandLine(String commandLine) {
+        this.commandLine = commandLine;
+    }
 }

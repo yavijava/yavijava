@@ -30,37 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostDiskMappingInfo extends DynamicData {
-  public HostDiskMappingPartitionInfo physicalPartition;
-  public String name;
-  public Boolean exclusive;
+    public HostDiskMappingPartitionInfo physicalPartition;
+    public String name;
+    public Boolean exclusive;
 
-  public HostDiskMappingPartitionInfo getPhysicalPartition() {
-    return this.physicalPartition;
-  }
+    public HostDiskMappingPartitionInfo getPhysicalPartition() {
+        return this.physicalPartition;
+    }
 
-  public String getName() {
-    return this.name;
-  }
+    public String getName() {
+        return this.name;
+    }
 
-  public Boolean getExclusive() {
-    return this.exclusive;
-  }
+    public Boolean getExclusive() {
+        return this.exclusive;
+    }
 
-  public void setPhysicalPartition(HostDiskMappingPartitionInfo physicalPartition) {
-    this.physicalPartition=physicalPartition;
-  }
+    public void setPhysicalPartition(HostDiskMappingPartitionInfo physicalPartition) {
+        this.physicalPartition = physicalPartition;
+    }
 
-  public void setName(String name) {
-    this.name=name;
-  }
+    public void setName(String name) {
+        this.name = name;
+    }
 
-  public void setExclusive(Boolean exclusive) {
-    this.exclusive=exclusive;
-  }
+    public void setExclusive(Boolean exclusive) {
+        this.exclusive = exclusive;
+    }
 }

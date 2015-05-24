@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class DatacenterMismatch extends MigrationFault {
-  public DatacenterMismatchArgument[] invalidArgument;
-  public ManagedObjectReference expectedDatacenter;
+    public DatacenterMismatchArgument[] invalidArgument;
+    public ManagedObjectReference expectedDatacenter;
 
-  public DatacenterMismatchArgument[] getInvalidArgument() {
-    return this.invalidArgument;
-  }
+    public DatacenterMismatchArgument[] getInvalidArgument() {
+        return this.invalidArgument;
+    }
 
-  public ManagedObjectReference getExpectedDatacenter() {
-    return this.expectedDatacenter;
-  }
+    public ManagedObjectReference getExpectedDatacenter() {
+        return this.expectedDatacenter;
+    }
 
-  public void setInvalidArgument(DatacenterMismatchArgument[] invalidArgument) {
-    this.invalidArgument=invalidArgument;
-  }
+    public void setInvalidArgument(DatacenterMismatchArgument[] invalidArgument) {
+        this.invalidArgument = invalidArgument;
+    }
 
-  public void setExpectedDatacenter(ManagedObjectReference expectedDatacenter) {
-    this.expectedDatacenter=expectedDatacenter;
-  }
+    public void setExpectedDatacenter(ManagedObjectReference expectedDatacenter) {
+        this.expectedDatacenter = expectedDatacenter;
+    }
 }

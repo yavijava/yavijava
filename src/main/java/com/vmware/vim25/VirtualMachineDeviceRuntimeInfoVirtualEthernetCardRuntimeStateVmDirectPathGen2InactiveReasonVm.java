@@ -30,30 +30,30 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public enum VirtualMachineDeviceRuntimeInfoVirtualEthernetCardRuntimeStateVmDirectPathGen2InactiveReasonVm {
-  vmNptIncompatibleGuest ("vmNptIncompatibleGuest"),
-  vmNptIncompatibleGuestDriver ("vmNptIncompatibleGuestDriver"),
-  vmNptIncompatibleAdapterType ("vmNptIncompatibleAdapterType"),
-  vmNptDisabledOrDisconnectedAdapter ("vmNptDisabledOrDisconnectedAdapter"),
-  vmNptIncompatibleAdapterFeatures ("vmNptIncompatibleAdapterFeatures"),
-  vmNptIncompatibleBackingType ("vmNptIncompatibleBackingType"),
-  vmNptInsufficientMemoryReservation ("vmNptInsufficientMemoryReservation"),
-  vmNptFaultToleranceOrRecordReplayConfigured ("vmNptFaultToleranceOrRecordReplayConfigured"),
-  vmNptConflictingIOChainConfigured ("vmNptConflictingIOChainConfigured"),
-  vmNptMonitorBlocks ("vmNptMonitorBlocks"),
-  vmNptConflictingOperationInProgress ("vmNptConflictingOperationInProgress"),
-  vmNptRuntimeError ("vmNptRuntimeError"),
-  vmNptOutOfIntrVector ("vmNptOutOfIntrVector"),
-  vmNptVMCIActive ("vmNptVMCIActive");
+    vmNptIncompatibleGuest("vmNptIncompatibleGuest"),
+    vmNptIncompatibleGuestDriver("vmNptIncompatibleGuestDriver"),
+    vmNptIncompatibleAdapterType("vmNptIncompatibleAdapterType"),
+    vmNptDisabledOrDisconnectedAdapter("vmNptDisabledOrDisconnectedAdapter"),
+    vmNptIncompatibleAdapterFeatures("vmNptIncompatibleAdapterFeatures"),
+    vmNptIncompatibleBackingType("vmNptIncompatibleBackingType"),
+    vmNptInsufficientMemoryReservation("vmNptInsufficientMemoryReservation"),
+    vmNptFaultToleranceOrRecordReplayConfigured("vmNptFaultToleranceOrRecordReplayConfigured"),
+    vmNptConflictingIOChainConfigured("vmNptConflictingIOChainConfigured"),
+    vmNptMonitorBlocks("vmNptMonitorBlocks"),
+    vmNptConflictingOperationInProgress("vmNptConflictingOperationInProgress"),
+    vmNptRuntimeError("vmNptRuntimeError"),
+    vmNptOutOfIntrVector("vmNptOutOfIntrVector"),
+    vmNptVMCIActive("vmNptVMCIActive");
 
-  @SuppressWarnings("unused")
-  private final String val;
-  private VirtualMachineDeviceRuntimeInfoVirtualEthernetCardRuntimeStateVmDirectPathGen2InactiveReasonVm(String val)
-  {
-    this.val = val;
-  }
+    @SuppressWarnings("unused")
+    private final String val;
+
+    private VirtualMachineDeviceRuntimeInfoVirtualEthernetCardRuntimeStateVmDirectPathGen2InactiveReasonVm(String val) {
+        this.val = val;
+    }
 }

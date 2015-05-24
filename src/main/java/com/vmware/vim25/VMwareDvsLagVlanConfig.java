@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VMwareDvsLagVlanConfig extends DynamicData {
-  public NumericRange[] vlanId;
+    public NumericRange[] vlanId;
 
-  public NumericRange[] getVlanId() {
-    return this.vlanId;
-  }
+    public NumericRange[] getVlanId() {
+        return this.vlanId;
+    }
 
-  public void setVlanId(NumericRange[] vlanId) {
-    this.vlanId=vlanId;
-  }
+    public void setVlanId(NumericRange[] vlanId) {
+        this.vlanId = vlanId;
+    }
 }

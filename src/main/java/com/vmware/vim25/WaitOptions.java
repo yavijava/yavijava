@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class WaitOptions extends DynamicData {
-  public Integer maxWaitSeconds;
-  public Integer maxObjectUpdates;
+    public Integer maxWaitSeconds;
+    public Integer maxObjectUpdates;
 
-  public Integer getMaxWaitSeconds() {
-    return this.maxWaitSeconds;
-  }
+    public Integer getMaxWaitSeconds() {
+        return this.maxWaitSeconds;
+    }
 
-  public Integer getMaxObjectUpdates() {
-    return this.maxObjectUpdates;
-  }
+    public Integer getMaxObjectUpdates() {
+        return this.maxObjectUpdates;
+    }
 
-  public void setMaxWaitSeconds(Integer maxWaitSeconds) {
-    this.maxWaitSeconds=maxWaitSeconds;
-  }
+    public void setMaxWaitSeconds(Integer maxWaitSeconds) {
+        this.maxWaitSeconds = maxWaitSeconds;
+    }
 
-  public void setMaxObjectUpdates(Integer maxObjectUpdates) {
-    this.maxObjectUpdates=maxObjectUpdates;
-  }
+    public void setMaxObjectUpdates(Integer maxObjectUpdates) {
+        this.maxObjectUpdates = maxObjectUpdates;
+    }
 }

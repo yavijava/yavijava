@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VAppPropertySpec extends ArrayUpdateSpec {
-  public VAppPropertyInfo info;
+    public VAppPropertyInfo info;
 
-  public VAppPropertyInfo getInfo() {
-    return this.info;
-  }
+    public VAppPropertyInfo getInfo() {
+        return this.info;
+    }
 
-  public void setInfo(VAppPropertyInfo info) {
-    this.info=info;
-  }
+    public void setInfo(VAppPropertyInfo info) {
+        this.info = info;
+    }
 }

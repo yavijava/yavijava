@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class DisallowedChangeByService extends RuntimeFault {
-  public String serviceName;
-  public String disallowedChange;
+    public String serviceName;
+    public String disallowedChange;
 
-  public String getServiceName() {
-    return this.serviceName;
-  }
+    public String getServiceName() {
+        return this.serviceName;
+    }
 
-  public String getDisallowedChange() {
-    return this.disallowedChange;
-  }
+    public String getDisallowedChange() {
+        return this.disallowedChange;
+    }
 
-  public void setServiceName(String serviceName) {
-    this.serviceName=serviceName;
-  }
+    public void setServiceName(String serviceName) {
+        this.serviceName = serviceName;
+    }
 
-  public void setDisallowedChange(String disallowedChange) {
-    this.disallowedChange=disallowedChange;
-  }
+    public void setDisallowedChange(String disallowedChange) {
+        this.disallowedChange = disallowedChange;
+    }
 }

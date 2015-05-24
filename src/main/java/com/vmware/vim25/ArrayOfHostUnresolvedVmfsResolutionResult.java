@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfHostUnresolvedVmfsResolutionResult {
-  public HostUnresolvedVmfsResolutionResult[] HostUnresolvedVmfsResolutionResult;
+    public HostUnresolvedVmfsResolutionResult[] HostUnresolvedVmfsResolutionResult;
 
-  public HostUnresolvedVmfsResolutionResult[] getHostUnresolvedVmfsResolutionResult() {
-    return this.HostUnresolvedVmfsResolutionResult;
-  }
+    public HostUnresolvedVmfsResolutionResult[] getHostUnresolvedVmfsResolutionResult() {
+        return this.HostUnresolvedVmfsResolutionResult;
+    }
 
-  public HostUnresolvedVmfsResolutionResult getHostUnresolvedVmfsResolutionResult(int i) {
-    return this.HostUnresolvedVmfsResolutionResult[i];
-  }
+    public HostUnresolvedVmfsResolutionResult getHostUnresolvedVmfsResolutionResult(int i) {
+        return this.HostUnresolvedVmfsResolutionResult[i];
+    }
 
-  public void setHostUnresolvedVmfsResolutionResult(HostUnresolvedVmfsResolutionResult[] HostUnresolvedVmfsResolutionResult) {
-    this.HostUnresolvedVmfsResolutionResult=HostUnresolvedVmfsResolutionResult;
-  }
+    public void setHostUnresolvedVmfsResolutionResult(HostUnresolvedVmfsResolutionResult[] HostUnresolvedVmfsResolutionResult) {
+        this.HostUnresolvedVmfsResolutionResult = HostUnresolvedVmfsResolutionResult;
+    }
 }

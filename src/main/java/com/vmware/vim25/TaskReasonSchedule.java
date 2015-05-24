@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class TaskReasonSchedule extends TaskReason {
-  public String name;
-  public ManagedObjectReference scheduledTask;
+    public String name;
+    public ManagedObjectReference scheduledTask;
 
-  public String getName() {
-    return this.name;
-  }
+    public String getName() {
+        return this.name;
+    }
 
-  public ManagedObjectReference getScheduledTask() {
-    return this.scheduledTask;
-  }
+    public ManagedObjectReference getScheduledTask() {
+        return this.scheduledTask;
+    }
 
-  public void setName(String name) {
-    this.name=name;
-  }
+    public void setName(String name) {
+        this.name = name;
+    }
 
-  public void setScheduledTask(ManagedObjectReference scheduledTask) {
-    this.scheduledTask=scheduledTask;
-  }
+    public void setScheduledTask(ManagedObjectReference scheduledTask) {
+        this.scheduledTask = scheduledTask;
+    }
 }

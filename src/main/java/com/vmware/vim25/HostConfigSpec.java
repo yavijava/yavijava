@@ -30,163 +30,163 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostConfigSpec extends DynamicData {
-  public HostNasVolumeConfig[] nasDatastore;
-  public HostNetworkConfig network;
-  public HostVirtualNicManagerNicTypeSelection[] nicTypeSelection;
-  public HostServiceConfig[] service;
-  public HostFirewallConfig firewall;
-  public OptionValue[] option;
-  public String datastorePrincipal;
-  public String datastorePrincipalPasswd;
-  public HostDateTimeConfig datetime;
-  public HostStorageDeviceInfo storageDevice;
-  public HostLicenseSpec license;
-  public HostSecuritySpec security;
-  public HostAccountSpec[] userAccount;
-  public HostAccountSpec[] usergroupAccount;
-  public HostMemorySpec memory;
-  public HostActiveDirectory[] activeDirectory;
-  public KeyAnyValue[] genericConfig;
+    public HostNasVolumeConfig[] nasDatastore;
+    public HostNetworkConfig network;
+    public HostVirtualNicManagerNicTypeSelection[] nicTypeSelection;
+    public HostServiceConfig[] service;
+    public HostFirewallConfig firewall;
+    public OptionValue[] option;
+    public String datastorePrincipal;
+    public String datastorePrincipalPasswd;
+    public HostDateTimeConfig datetime;
+    public HostStorageDeviceInfo storageDevice;
+    public HostLicenseSpec license;
+    public HostSecuritySpec security;
+    public HostAccountSpec[] userAccount;
+    public HostAccountSpec[] usergroupAccount;
+    public HostMemorySpec memory;
+    public HostActiveDirectory[] activeDirectory;
+    public KeyAnyValue[] genericConfig;
 
-  public HostNasVolumeConfig[] getNasDatastore() {
-    return this.nasDatastore;
-  }
+    public HostNasVolumeConfig[] getNasDatastore() {
+        return this.nasDatastore;
+    }
 
-  public HostNetworkConfig getNetwork() {
-    return this.network;
-  }
+    public HostNetworkConfig getNetwork() {
+        return this.network;
+    }
 
-  public HostVirtualNicManagerNicTypeSelection[] getNicTypeSelection() {
-    return this.nicTypeSelection;
-  }
+    public HostVirtualNicManagerNicTypeSelection[] getNicTypeSelection() {
+        return this.nicTypeSelection;
+    }
 
-  public HostServiceConfig[] getService() {
-    return this.service;
-  }
+    public HostServiceConfig[] getService() {
+        return this.service;
+    }
 
-  public HostFirewallConfig getFirewall() {
-    return this.firewall;
-  }
+    public HostFirewallConfig getFirewall() {
+        return this.firewall;
+    }
 
-  public OptionValue[] getOption() {
-    return this.option;
-  }
+    public OptionValue[] getOption() {
+        return this.option;
+    }
 
-  public String getDatastorePrincipal() {
-    return this.datastorePrincipal;
-  }
+    public String getDatastorePrincipal() {
+        return this.datastorePrincipal;
+    }
 
-  public String getDatastorePrincipalPasswd() {
-    return this.datastorePrincipalPasswd;
-  }
+    public String getDatastorePrincipalPasswd() {
+        return this.datastorePrincipalPasswd;
+    }
 
-  public HostDateTimeConfig getDatetime() {
-    return this.datetime;
-  }
+    public HostDateTimeConfig getDatetime() {
+        return this.datetime;
+    }
 
-  public HostStorageDeviceInfo getStorageDevice() {
-    return this.storageDevice;
-  }
+    public HostStorageDeviceInfo getStorageDevice() {
+        return this.storageDevice;
+    }
 
-  public HostLicenseSpec getLicense() {
-    return this.license;
-  }
+    public HostLicenseSpec getLicense() {
+        return this.license;
+    }
 
-  public HostSecuritySpec getSecurity() {
-    return this.security;
-  }
+    public HostSecuritySpec getSecurity() {
+        return this.security;
+    }
 
-  public HostAccountSpec[] getUserAccount() {
-    return this.userAccount;
-  }
+    public HostAccountSpec[] getUserAccount() {
+        return this.userAccount;
+    }
 
-  public HostAccountSpec[] getUsergroupAccount() {
-    return this.usergroupAccount;
-  }
+    public HostAccountSpec[] getUsergroupAccount() {
+        return this.usergroupAccount;
+    }
 
-  public HostMemorySpec getMemory() {
-    return this.memory;
-  }
+    public HostMemorySpec getMemory() {
+        return this.memory;
+    }
 
-  public HostActiveDirectory[] getActiveDirectory() {
-    return this.activeDirectory;
-  }
+    public HostActiveDirectory[] getActiveDirectory() {
+        return this.activeDirectory;
+    }
 
-  public KeyAnyValue[] getGenericConfig() {
-    return this.genericConfig;
-  }
+    public KeyAnyValue[] getGenericConfig() {
+        return this.genericConfig;
+    }
 
-  public void setNasDatastore(HostNasVolumeConfig[] nasDatastore) {
-    this.nasDatastore=nasDatastore;
-  }
+    public void setNasDatastore(HostNasVolumeConfig[] nasDatastore) {
+        this.nasDatastore = nasDatastore;
+    }
 
-  public void setNetwork(HostNetworkConfig network) {
-    this.network=network;
-  }
+    public void setNetwork(HostNetworkConfig network) {
+        this.network = network;
+    }
 
-  public void setNicTypeSelection(HostVirtualNicManagerNicTypeSelection[] nicTypeSelection) {
-    this.nicTypeSelection=nicTypeSelection;
-  }
+    public void setNicTypeSelection(HostVirtualNicManagerNicTypeSelection[] nicTypeSelection) {
+        this.nicTypeSelection = nicTypeSelection;
+    }
 
-  public void setService(HostServiceConfig[] service) {
-    this.service=service;
-  }
+    public void setService(HostServiceConfig[] service) {
+        this.service = service;
+    }
 
-  public void setFirewall(HostFirewallConfig firewall) {
-    this.firewall=firewall;
-  }
+    public void setFirewall(HostFirewallConfig firewall) {
+        this.firewall = firewall;
+    }
 
-  public void setOption(OptionValue[] option) {
-    this.option=option;
-  }
+    public void setOption(OptionValue[] option) {
+        this.option = option;
+    }
 
-  public void setDatastorePrincipal(String datastorePrincipal) {
-    this.datastorePrincipal=datastorePrincipal;
-  }
+    public void setDatastorePrincipal(String datastorePrincipal) {
+        this.datastorePrincipal = datastorePrincipal;
+    }
 
-  public void setDatastorePrincipalPasswd(String datastorePrincipalPasswd) {
-    this.datastorePrincipalPasswd=datastorePrincipalPasswd;
-  }
+    public void setDatastorePrincipalPasswd(String datastorePrincipalPasswd) {
+        this.datastorePrincipalPasswd = datastorePrincipalPasswd;
+    }
 
-  public void setDatetime(HostDateTimeConfig datetime) {
-    this.datetime=datetime;
-  }
+    public void setDatetime(HostDateTimeConfig datetime) {
+        this.datetime = datetime;
+    }
 
-  public void setStorageDevice(HostStorageDeviceInfo storageDevice) {
-    this.storageDevice=storageDevice;
-  }
+    public void setStorageDevice(HostStorageDeviceInfo storageDevice) {
+        this.storageDevice = storageDevice;
+    }
 
-  public void setLicense(HostLicenseSpec license) {
-    this.license=license;
-  }
+    public void setLicense(HostLicenseSpec license) {
+        this.license = license;
+    }
 
-  public void setSecurity(HostSecuritySpec security) {
-    this.security=security;
-  }
+    public void setSecurity(HostSecuritySpec security) {
+        this.security = security;
+    }
 
-  public void setUserAccount(HostAccountSpec[] userAccount) {
-    this.userAccount=userAccount;
-  }
+    public void setUserAccount(HostAccountSpec[] userAccount) {
+        this.userAccount = userAccount;
+    }
 
-  public void setUsergroupAccount(HostAccountSpec[] usergroupAccount) {
-    this.usergroupAccount=usergroupAccount;
-  }
+    public void setUsergroupAccount(HostAccountSpec[] usergroupAccount) {
+        this.usergroupAccount = usergroupAccount;
+    }
 
-  public void setMemory(HostMemorySpec memory) {
-    this.memory=memory;
-  }
+    public void setMemory(HostMemorySpec memory) {
+        this.memory = memory;
+    }
 
-  public void setActiveDirectory(HostActiveDirectory[] activeDirectory) {
-    this.activeDirectory=activeDirectory;
-  }
+    public void setActiveDirectory(HostActiveDirectory[] activeDirectory) {
+        this.activeDirectory = activeDirectory;
+    }
 
-  public void setGenericConfig(KeyAnyValue[] genericConfig) {
-    this.genericConfig=genericConfig;
-  }
+    public void setGenericConfig(KeyAnyValue[] genericConfig) {
+        this.genericConfig = genericConfig;
+    }
 }

@@ -30,55 +30,55 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class DVSNetworkResourcePool extends DynamicData {
-  public String key;
-  public String name;
-  public String description;
-  public String configVersion;
-  public DVSNetworkResourcePoolAllocationInfo allocationInfo;
+    public String key;
+    public String name;
+    public String description;
+    public String configVersion;
+    public DVSNetworkResourcePoolAllocationInfo allocationInfo;
 
-  public String getKey() {
-    return this.key;
-  }
+    public String getKey() {
+        return this.key;
+    }
 
-  public String getName() {
-    return this.name;
-  }
+    public String getName() {
+        return this.name;
+    }
 
-  public String getDescription() {
-    return this.description;
-  }
+    public String getDescription() {
+        return this.description;
+    }
 
-  public String getConfigVersion() {
-    return this.configVersion;
-  }
+    public String getConfigVersion() {
+        return this.configVersion;
+    }
 
-  public DVSNetworkResourcePoolAllocationInfo getAllocationInfo() {
-    return this.allocationInfo;
-  }
+    public DVSNetworkResourcePoolAllocationInfo getAllocationInfo() {
+        return this.allocationInfo;
+    }
 
-  public void setKey(String key) {
-    this.key=key;
-  }
+    public void setKey(String key) {
+        this.key = key;
+    }
 
-  public void setName(String name) {
-    this.name=name;
-  }
+    public void setName(String name) {
+        this.name = name;
+    }
 
-  public void setDescription(String description) {
-    this.description=description;
-  }
+    public void setDescription(String description) {
+        this.description = description;
+    }
 
-  public void setConfigVersion(String configVersion) {
-    this.configVersion=configVersion;
-  }
+    public void setConfigVersion(String configVersion) {
+        this.configVersion = configVersion;
+    }
 
-  public void setAllocationInfo(DVSNetworkResourcePoolAllocationInfo allocationInfo) {
-    this.allocationInfo=allocationInfo;
-  }
+    public void setAllocationInfo(DVSNetworkResourcePoolAllocationInfo allocationInfo) {
+        this.allocationInfo = allocationInfo;
+    }
 }

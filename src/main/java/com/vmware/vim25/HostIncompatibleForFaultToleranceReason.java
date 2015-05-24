@@ -30,18 +30,18 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public enum HostIncompatibleForFaultToleranceReason {
-  product ("product"),
-  processor ("processor");
+    product("product"),
+    processor("processor");
 
-  @SuppressWarnings("unused")
-  private final String val;
-  private HostIncompatibleForFaultToleranceReason(String val)
-  {
-    this.val = val;
-  }
+    @SuppressWarnings("unused")
+    private final String val;
+
+    private HostIncompatibleForFaultToleranceReason(String val) {
+        this.val = val;
+    }
 }

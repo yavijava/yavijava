@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class StorageDrsSpaceLoadBalanceConfig extends DynamicData {
-  public Integer spaceUtilizationThreshold;
-  public Integer minSpaceUtilizationDifference;
+    public Integer spaceUtilizationThreshold;
+    public Integer minSpaceUtilizationDifference;
 
-  public Integer getSpaceUtilizationThreshold() {
-    return this.spaceUtilizationThreshold;
-  }
+    public Integer getSpaceUtilizationThreshold() {
+        return this.spaceUtilizationThreshold;
+    }
 
-  public Integer getMinSpaceUtilizationDifference() {
-    return this.minSpaceUtilizationDifference;
-  }
+    public Integer getMinSpaceUtilizationDifference() {
+        return this.minSpaceUtilizationDifference;
+    }
 
-  public void setSpaceUtilizationThreshold(Integer spaceUtilizationThreshold) {
-    this.spaceUtilizationThreshold=spaceUtilizationThreshold;
-  }
+    public void setSpaceUtilizationThreshold(Integer spaceUtilizationThreshold) {
+        this.spaceUtilizationThreshold = spaceUtilizationThreshold;
+    }
 
-  public void setMinSpaceUtilizationDifference(Integer minSpaceUtilizationDifference) {
-    this.minSpaceUtilizationDifference=minSpaceUtilizationDifference;
-  }
+    public void setMinSpaceUtilizationDifference(Integer minSpaceUtilizationDifference) {
+        this.minSpaceUtilizationDifference = minSpaceUtilizationDifference;
+    }
 }

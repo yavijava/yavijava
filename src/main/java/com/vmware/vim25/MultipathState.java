@@ -30,21 +30,21 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public enum MultipathState {
-  standby ("standby"),
-  active ("active"),
-  disabled ("disabled"),
-  dead ("dead"),
-  unknown ("unknown");
+    standby("standby"),
+    active("active"),
+    disabled("disabled"),
+    dead("dead"),
+    unknown("unknown");
 
-  @SuppressWarnings("unused")
-  private final String val;
-  private MultipathState(String val)
-  {
-    this.val = val;
-  }
+    @SuppressWarnings("unused")
+    private final String val;
+
+    private MultipathState(String val) {
+        this.val = val;
+    }
 }

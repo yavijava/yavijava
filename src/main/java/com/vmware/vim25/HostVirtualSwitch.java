@@ -30,82 +30,82 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostVirtualSwitch extends DynamicData {
-  public String name;
-  public String key;
-  public int numPorts;
-  public int numPortsAvailable;
-  public Integer mtu;
-  public String[] portgroup;
-  public String[] pnic;
-  public HostVirtualSwitchSpec spec;
+    public String name;
+    public String key;
+    public int numPorts;
+    public int numPortsAvailable;
+    public Integer mtu;
+    public String[] portgroup;
+    public String[] pnic;
+    public HostVirtualSwitchSpec spec;
 
-  public String getName() {
-    return this.name;
-  }
+    public String getName() {
+        return this.name;
+    }
 
-  public String getKey() {
-    return this.key;
-  }
+    public String getKey() {
+        return this.key;
+    }
 
-  public int getNumPorts() {
-    return this.numPorts;
-  }
+    public int getNumPorts() {
+        return this.numPorts;
+    }
 
-  public int getNumPortsAvailable() {
-    return this.numPortsAvailable;
-  }
+    public int getNumPortsAvailable() {
+        return this.numPortsAvailable;
+    }
 
-  public Integer getMtu() {
-    return this.mtu;
-  }
+    public Integer getMtu() {
+        return this.mtu;
+    }
 
-  public String[] getPortgroup() {
-    return this.portgroup;
-  }
+    public String[] getPortgroup() {
+        return this.portgroup;
+    }
 
-  public String[] getPnic() {
-    return this.pnic;
-  }
+    public String[] getPnic() {
+        return this.pnic;
+    }
 
-  public HostVirtualSwitchSpec getSpec() {
-    return this.spec;
-  }
+    public HostVirtualSwitchSpec getSpec() {
+        return this.spec;
+    }
 
-  public void setName(String name) {
-    this.name=name;
-  }
+    public void setName(String name) {
+        this.name = name;
+    }
 
-  public void setKey(String key) {
-    this.key=key;
-  }
+    public void setKey(String key) {
+        this.key = key;
+    }
 
-  public void setNumPorts(int numPorts) {
-    this.numPorts=numPorts;
-  }
+    public void setNumPorts(int numPorts) {
+        this.numPorts = numPorts;
+    }
 
-  public void setNumPortsAvailable(int numPortsAvailable) {
-    this.numPortsAvailable=numPortsAvailable;
-  }
+    public void setNumPortsAvailable(int numPortsAvailable) {
+        this.numPortsAvailable = numPortsAvailable;
+    }
 
-  public void setMtu(Integer mtu) {
-    this.mtu=mtu;
-  }
+    public void setMtu(Integer mtu) {
+        this.mtu = mtu;
+    }
 
-  public void setPortgroup(String[] portgroup) {
-    this.portgroup=portgroup;
-  }
+    public void setPortgroup(String[] portgroup) {
+        this.portgroup = portgroup;
+    }
 
-  public void setPnic(String[] pnic) {
-    this.pnic=pnic;
-  }
+    public void setPnic(String[] pnic) {
+        this.pnic = pnic;
+    }
 
-  public void setSpec(HostVirtualSwitchSpec spec) {
-    this.spec=spec;
-  }
+    public void setSpec(HostVirtualSwitchSpec spec) {
+        this.spec = spec;
+    }
 }

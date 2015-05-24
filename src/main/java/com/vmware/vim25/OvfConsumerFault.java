@@ -30,37 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class OvfConsumerFault extends OvfConsumerCallbackFault {
-  public String errorKey;
-  public String message;
-  public KeyValue[] params;
+    public String errorKey;
+    public String message;
+    public KeyValue[] params;
 
-  public String getErrorKey() {
-    return this.errorKey;
-  }
+    public String getErrorKey() {
+        return this.errorKey;
+    }
 
-  public String getMessage() {
-    return this.message;
-  }
+    public String getMessage() {
+        return this.message;
+    }
 
-  public KeyValue[] getParams() {
-    return this.params;
-  }
+    public KeyValue[] getParams() {
+        return this.params;
+    }
 
-  public void setErrorKey(String errorKey) {
-    this.errorKey=errorKey;
-  }
+    public void setErrorKey(String errorKey) {
+        this.errorKey = errorKey;
+    }
 
-  public void setMessage(String message) {
-    this.message=message;
-  }
+    public void setMessage(String message) {
+        this.message = message;
+    }
 
-  public void setParams(KeyValue[] params) {
-    this.params=params;
-  }
+    public void setParams(KeyValue[] params) {
+        this.params = params;
+    }
 }

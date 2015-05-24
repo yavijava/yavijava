@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VMwareDVSPvlanConfigSpec extends DynamicData {
-  public VMwareDVSPvlanMapEntry pvlanEntry;
-  public String operation;
+    public VMwareDVSPvlanMapEntry pvlanEntry;
+    public String operation;
 
-  public VMwareDVSPvlanMapEntry getPvlanEntry() {
-    return this.pvlanEntry;
-  }
+    public VMwareDVSPvlanMapEntry getPvlanEntry() {
+        return this.pvlanEntry;
+    }
 
-  public String getOperation() {
-    return this.operation;
-  }
+    public String getOperation() {
+        return this.operation;
+    }
 
-  public void setPvlanEntry(VMwareDVSPvlanMapEntry pvlanEntry) {
-    this.pvlanEntry=pvlanEntry;
-  }
+    public void setPvlanEntry(VMwareDVSPvlanMapEntry pvlanEntry) {
+        this.pvlanEntry = pvlanEntry;
+    }
 
-  public void setOperation(String operation) {
-    this.operation=operation;
-  }
+    public void setOperation(String operation) {
+        this.operation = operation;
+    }
 }

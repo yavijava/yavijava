@@ -43,8 +43,8 @@ public class ClusterEVCManager extends ExtensibleManagedObject {
      * Class Constructor
      *
      * @param serverConnection ServerConnection
+     * @param mor              ManagedObjectReference
      * @see com.vmware.vim25.mo.ServerConnection
-     * @param mor ManagedObjectReference
      * @see com.vmware.vim25.ManagedObjectReference
      */
     public ClusterEVCManager(ServerConnection serverConnection, ManagedObjectReference mor) {
@@ -56,13 +56,13 @@ public class ClusterEVCManager extends ExtensibleManagedObject {
      * Note that this method only tests EVC admission control; host-add may fail for other reasons.
      *
      * @param hostConnectSpec The spec that will be used to add the host.
-     * @see com.vmware.vim25.HostConnectSpec
      * @return Task with which to monitor the operation.
      * @throws GatewayConnectFault Thrown if the host is managed via gateway and attempts to connect to the host have failed. A more specific subclass may be thrown.
-     * @throws HostConnectFault Thrown if an error occurred when attempting to connect to the host. Typically, a more specific subclass is thrown.
-     * @throws InvalidLogin Thrown if authentication with the host fails.
-     * @throws RuntimeFault Thrown if any type of runtime fault is thrown that is not covered by the other faults; for example, a communication error.
+     * @throws HostConnectFault    Thrown if an error occurred when attempting to connect to the host. Typically, a more specific subclass is thrown.
+     * @throws InvalidLogin        Thrown if authentication with the host fails.
+     * @throws RuntimeFault        Thrown if any type of runtime fault is thrown that is not covered by the other faults; for example, a communication error.
      * @throws RemoteException
+     * @see com.vmware.vim25.HostConnectSpec
      */
     public Task checkAddHostEvc_Task(HostConnectSpec hostConnectSpec) throws GatewayConnectFault, HostConnectFault, InvalidLogin, RuntimeFault, RemoteException {
         ManagedObjectReference task = getVimService().checkAddHostEvc_Task(getMOR(), hostConnectSpec);
@@ -74,7 +74,7 @@ public class ClusterEVCManager extends ExtensibleManagedObject {
      *
      * @param evcModeKey A key referencing the desired EVC mode.
      * @return Task with which to monitor the operation.
-     * @throws RuntimeFault Thrown if any type of runtime fault is thrown that is not covered by the other faults; for example, a communication error.
+     * @throws RuntimeFault    Thrown if any type of runtime fault is thrown that is not covered by the other faults; for example, a communication error.
      * @throws RemoteException
      */
     public Task checkConfigureEvcMode_Task(String evcModeKey) throws RuntimeFault, RemoteException {
@@ -102,8 +102,7 @@ public class ClusterEVCManager extends ExtensibleManagedObject {
      * Disable EVC. EVC may be disabled at any time.
      *
      * @return Task with which to monitor the operation.
-     *
-     * @throws RuntimeFault Thrown if any type of runtime fault is thrown that is not covered by the other faults; for example, a communication error.
+     * @throws RuntimeFault    Thrown if any type of runtime fault is thrown that is not covered by the other faults; for example, a communication error.
      * @throws RemoteException
      */
     public Task disableEvcMode_Task() throws RuntimeFault, RemoteException {

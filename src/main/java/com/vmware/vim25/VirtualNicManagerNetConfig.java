@@ -30,46 +30,46 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VirtualNicManagerNetConfig extends DynamicData {
-  public String nicType;
-  public boolean multiSelectAllowed;
-  public HostVirtualNic[] candidateVnic;
-  public String[] selectedVnic;
+    public String nicType;
+    public boolean multiSelectAllowed;
+    public HostVirtualNic[] candidateVnic;
+    public String[] selectedVnic;
 
-  public String getNicType() {
-    return this.nicType;
-  }
+    public String getNicType() {
+        return this.nicType;
+    }
 
-  public boolean isMultiSelectAllowed() {
-    return this.multiSelectAllowed;
-  }
+    public boolean isMultiSelectAllowed() {
+        return this.multiSelectAllowed;
+    }
 
-  public HostVirtualNic[] getCandidateVnic() {
-    return this.candidateVnic;
-  }
+    public HostVirtualNic[] getCandidateVnic() {
+        return this.candidateVnic;
+    }
 
-  public String[] getSelectedVnic() {
-    return this.selectedVnic;
-  }
+    public String[] getSelectedVnic() {
+        return this.selectedVnic;
+    }
 
-  public void setNicType(String nicType) {
-    this.nicType=nicType;
-  }
+    public void setNicType(String nicType) {
+        this.nicType = nicType;
+    }
 
-  public void setMultiSelectAllowed(boolean multiSelectAllowed) {
-    this.multiSelectAllowed=multiSelectAllowed;
-  }
+    public void setMultiSelectAllowed(boolean multiSelectAllowed) {
+        this.multiSelectAllowed = multiSelectAllowed;
+    }
 
-  public void setCandidateVnic(HostVirtualNic[] candidateVnic) {
-    this.candidateVnic=candidateVnic;
-  }
+    public void setCandidateVnic(HostVirtualNic[] candidateVnic) {
+        this.candidateVnic = candidateVnic;
+    }
 
-  public void setSelectedVnic(String[] selectedVnic) {
-    this.selectedVnic=selectedVnic;
-  }
+    public void setSelectedVnic(String[] selectedVnic) {
+        this.selectedVnic = selectedVnic;
+    }
 }

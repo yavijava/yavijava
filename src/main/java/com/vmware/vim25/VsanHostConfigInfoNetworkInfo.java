@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VsanHostConfigInfoNetworkInfo extends DynamicData {
-  public VsanHostConfigInfoNetworkInfoPortConfig[] port;
+    public VsanHostConfigInfoNetworkInfoPortConfig[] port;
 
-  public VsanHostConfigInfoNetworkInfoPortConfig[] getPort() {
-    return this.port;
-  }
+    public VsanHostConfigInfoNetworkInfoPortConfig[] getPort() {
+        return this.port;
+    }
 
-  public void setPort(VsanHostConfigInfoNetworkInfoPortConfig[] port) {
-    this.port=port;
-  }
+    public void setPort(VsanHostConfigInfoNetworkInfoPortConfig[] port) {
+        this.port = port;
+    }
 }

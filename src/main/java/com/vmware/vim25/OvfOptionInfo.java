@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class OvfOptionInfo extends DynamicData {
-  public String option;
-  public LocalizableMessage description;
+    public String option;
+    public LocalizableMessage description;
 
-  public String getOption() {
-    return this.option;
-  }
+    public String getOption() {
+        return this.option;
+    }
 
-  public LocalizableMessage getDescription() {
-    return this.description;
-  }
+    public LocalizableMessage getDescription() {
+        return this.description;
+    }
 
-  public void setOption(String option) {
-    this.option=option;
-  }
+    public void setOption(String option) {
+        this.option = option;
+    }
 
-  public void setDescription(LocalizableMessage description) {
-    this.description=description;
-  }
+    public void setDescription(LocalizableMessage description) {
+        this.description = description;
+    }
 }

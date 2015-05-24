@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfHostVsanInternalSystemCmmdsQuery {
-  public HostVsanInternalSystemCmmdsQuery[] HostVsanInternalSystemCmmdsQuery;
+    public HostVsanInternalSystemCmmdsQuery[] HostVsanInternalSystemCmmdsQuery;
 
-  public HostVsanInternalSystemCmmdsQuery[] getHostVsanInternalSystemCmmdsQuery() {
-    return this.HostVsanInternalSystemCmmdsQuery;
-  }
+    public HostVsanInternalSystemCmmdsQuery[] getHostVsanInternalSystemCmmdsQuery() {
+        return this.HostVsanInternalSystemCmmdsQuery;
+    }
 
-  public HostVsanInternalSystemCmmdsQuery getHostVsanInternalSystemCmmdsQuery(int i) {
-    return this.HostVsanInternalSystemCmmdsQuery[i];
-  }
+    public HostVsanInternalSystemCmmdsQuery getHostVsanInternalSystemCmmdsQuery(int i) {
+        return this.HostVsanInternalSystemCmmdsQuery[i];
+    }
 
-  public void setHostVsanInternalSystemCmmdsQuery(HostVsanInternalSystemCmmdsQuery[] HostVsanInternalSystemCmmdsQuery) {
-    this.HostVsanInternalSystemCmmdsQuery=HostVsanInternalSystemCmmdsQuery;
-  }
+    public void setHostVsanInternalSystemCmmdsQuery(HostVsanInternalSystemCmmdsQuery[] HostVsanInternalSystemCmmdsQuery) {
+        this.HostVsanInternalSystemCmmdsQuery = HostVsanInternalSystemCmmdsQuery;
+    }
 }

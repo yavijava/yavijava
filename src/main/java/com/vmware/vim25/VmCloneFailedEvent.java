@@ -30,46 +30,46 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VmCloneFailedEvent extends VmCloneEvent {
-  public FolderEventArgument destFolder;
-  public String destName;
-  public HostEventArgument destHost;
-  public LocalizedMethodFault reason;
+    public FolderEventArgument destFolder;
+    public String destName;
+    public HostEventArgument destHost;
+    public LocalizedMethodFault reason;
 
-  public FolderEventArgument getDestFolder() {
-    return this.destFolder;
-  }
+    public FolderEventArgument getDestFolder() {
+        return this.destFolder;
+    }
 
-  public String getDestName() {
-    return this.destName;
-  }
+    public String getDestName() {
+        return this.destName;
+    }
 
-  public HostEventArgument getDestHost() {
-    return this.destHost;
-  }
+    public HostEventArgument getDestHost() {
+        return this.destHost;
+    }
 
-  public LocalizedMethodFault getReason() {
-    return this.reason;
-  }
+    public LocalizedMethodFault getReason() {
+        return this.reason;
+    }
 
-  public void setDestFolder(FolderEventArgument destFolder) {
-    this.destFolder=destFolder;
-  }
+    public void setDestFolder(FolderEventArgument destFolder) {
+        this.destFolder = destFolder;
+    }
 
-  public void setDestName(String destName) {
-    this.destName=destName;
-  }
+    public void setDestName(String destName) {
+        this.destName = destName;
+    }
 
-  public void setDestHost(HostEventArgument destHost) {
-    this.destHost=destHost;
-  }
+    public void setDestHost(HostEventArgument destHost) {
+        this.destHost = destHost;
+    }
 
-  public void setReason(LocalizedMethodFault reason) {
-    this.reason=reason;
-  }
+    public void setReason(LocalizedMethodFault reason) {
+        this.reason = reason;
+    }
 }

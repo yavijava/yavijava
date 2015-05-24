@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VirtualController extends VirtualDevice {
-  public int busNumber;
-  public int[] device;
+    public int busNumber;
+    public int[] device;
 
-  public int getBusNumber() {
-    return this.busNumber;
-  }
+    public int getBusNumber() {
+        return this.busNumber;
+    }
 
-  public int[] getDevice() {
-    return this.device;
-  }
+    public int[] getDevice() {
+        return this.device;
+    }
 
-  public void setBusNumber(int busNumber) {
-    this.busNumber=busNumber;
-  }
+    public void setBusNumber(int busNumber) {
+        this.busNumber = busNumber;
+    }
 
-  public void setDevice(int[] device) {
-    this.device=device;
-  }
+    public void setDevice(int[] device) {
+        this.device = device;
+    }
 }

@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class DeviceUnsupportedForVmVersion extends InvalidDeviceSpec {
-  public String currentVersion;
-  public String expectedVersion;
+    public String currentVersion;
+    public String expectedVersion;
 
-  public String getCurrentVersion() {
-    return this.currentVersion;
-  }
+    public String getCurrentVersion() {
+        return this.currentVersion;
+    }
 
-  public String getExpectedVersion() {
-    return this.expectedVersion;
-  }
+    public String getExpectedVersion() {
+        return this.expectedVersion;
+    }
 
-  public void setCurrentVersion(String currentVersion) {
-    this.currentVersion=currentVersion;
-  }
+    public void setCurrentVersion(String currentVersion) {
+        this.currentVersion = currentVersion;
+    }
 
-  public void setExpectedVersion(String expectedVersion) {
-    this.expectedVersion=expectedVersion;
-  }
+    public void setExpectedVersion(String expectedVersion) {
+        this.expectedVersion = expectedVersion;
+    }
 }

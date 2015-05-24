@@ -30,37 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostFirewallRulesetIpList extends DynamicData {
-  public String[] ipAddress;
-  public HostFirewallRulesetIpNetwork[] ipNetwork;
-  public boolean allIp;
+    public String[] ipAddress;
+    public HostFirewallRulesetIpNetwork[] ipNetwork;
+    public boolean allIp;
 
-  public String[] getIpAddress() {
-    return this.ipAddress;
-  }
+    public String[] getIpAddress() {
+        return this.ipAddress;
+    }
 
-  public HostFirewallRulesetIpNetwork[] getIpNetwork() {
-    return this.ipNetwork;
-  }
+    public HostFirewallRulesetIpNetwork[] getIpNetwork() {
+        return this.ipNetwork;
+    }
 
-  public boolean isAllIp() {
-    return this.allIp;
-  }
+    public boolean isAllIp() {
+        return this.allIp;
+    }
 
-  public void setIpAddress(String[] ipAddress) {
-    this.ipAddress=ipAddress;
-  }
+    public void setIpAddress(String[] ipAddress) {
+        this.ipAddress = ipAddress;
+    }
 
-  public void setIpNetwork(HostFirewallRulesetIpNetwork[] ipNetwork) {
-    this.ipNetwork=ipNetwork;
-  }
+    public void setIpNetwork(HostFirewallRulesetIpNetwork[] ipNetwork) {
+        this.ipNetwork = ipNetwork;
+    }
 
-  public void setAllIp(boolean allIp) {
-    this.allIp=allIp;
-  }
+    public void setAllIp(boolean allIp) {
+        this.allIp = allIp;
+    }
 }

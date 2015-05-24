@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostInventoryFullEvent extends LicenseEvent {
-  public int capacity;
+    public int capacity;
 
-  public int getCapacity() {
-    return this.capacity;
-  }
+    public int getCapacity() {
+        return this.capacity;
+    }
 
-  public void setCapacity(int capacity) {
-    this.capacity=capacity;
-  }
+    public void setCapacity(int capacity) {
+        this.capacity = capacity;
+    }
 }

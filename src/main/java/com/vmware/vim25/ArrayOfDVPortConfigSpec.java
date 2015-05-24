@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfDVPortConfigSpec {
-  public DVPortConfigSpec[] DVPortConfigSpec;
+    public DVPortConfigSpec[] DVPortConfigSpec;
 
-  public DVPortConfigSpec[] getDVPortConfigSpec() {
-    return this.DVPortConfigSpec;
-  }
+    public DVPortConfigSpec[] getDVPortConfigSpec() {
+        return this.DVPortConfigSpec;
+    }
 
-  public DVPortConfigSpec getDVPortConfigSpec(int i) {
-    return this.DVPortConfigSpec[i];
-  }
+    public DVPortConfigSpec getDVPortConfigSpec(int i) {
+        return this.DVPortConfigSpec[i];
+    }
 
-  public void setDVPortConfigSpec(DVPortConfigSpec[] DVPortConfigSpec) {
-    this.DVPortConfigSpec=DVPortConfigSpec;
-  }
+    public void setDVPortConfigSpec(DVPortConfigSpec[] DVPortConfigSpec) {
+        this.DVPortConfigSpec = DVPortConfigSpec;
+    }
 }

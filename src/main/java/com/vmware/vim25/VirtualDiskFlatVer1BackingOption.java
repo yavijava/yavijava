@@ -30,46 +30,46 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VirtualDiskFlatVer1BackingOption extends VirtualDeviceFileBackingOption {
-  public ChoiceOption diskMode;
-  public BoolOption split;
-  public BoolOption writeThrough;
-  public boolean growable;
+    public ChoiceOption diskMode;
+    public BoolOption split;
+    public BoolOption writeThrough;
+    public boolean growable;
 
-  public ChoiceOption getDiskMode() {
-    return this.diskMode;
-  }
+    public ChoiceOption getDiskMode() {
+        return this.diskMode;
+    }
 
-  public BoolOption getSplit() {
-    return this.split;
-  }
+    public BoolOption getSplit() {
+        return this.split;
+    }
 
-  public BoolOption getWriteThrough() {
-    return this.writeThrough;
-  }
+    public BoolOption getWriteThrough() {
+        return this.writeThrough;
+    }
 
-  public boolean isGrowable() {
-    return this.growable;
-  }
+    public boolean isGrowable() {
+        return this.growable;
+    }
 
-  public void setDiskMode(ChoiceOption diskMode) {
-    this.diskMode=diskMode;
-  }
+    public void setDiskMode(ChoiceOption diskMode) {
+        this.diskMode = diskMode;
+    }
 
-  public void setSplit(BoolOption split) {
-    this.split=split;
-  }
+    public void setSplit(BoolOption split) {
+        this.split = split;
+    }
 
-  public void setWriteThrough(BoolOption writeThrough) {
-    this.writeThrough=writeThrough;
-  }
+    public void setWriteThrough(BoolOption writeThrough) {
+        this.writeThrough = writeThrough;
+    }
 
-  public void setGrowable(boolean growable) {
-    this.growable=growable;
-  }
+    public void setGrowable(boolean growable) {
+        this.growable = growable;
+    }
 }

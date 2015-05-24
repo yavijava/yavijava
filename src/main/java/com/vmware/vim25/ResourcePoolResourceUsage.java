@@ -30,64 +30,64 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class ResourcePoolResourceUsage extends DynamicData {
-  public long reservationUsed;
-  public long reservationUsedForVm;
-  public long unreservedForPool;
-  public long unreservedForVm;
-  public long overallUsage;
-  public long maxUsage;
+    public long reservationUsed;
+    public long reservationUsedForVm;
+    public long unreservedForPool;
+    public long unreservedForVm;
+    public long overallUsage;
+    public long maxUsage;
 
-  public long getReservationUsed() {
-    return this.reservationUsed;
-  }
+    public long getReservationUsed() {
+        return this.reservationUsed;
+    }
 
-  public long getReservationUsedForVm() {
-    return this.reservationUsedForVm;
-  }
+    public long getReservationUsedForVm() {
+        return this.reservationUsedForVm;
+    }
 
-  public long getUnreservedForPool() {
-    return this.unreservedForPool;
-  }
+    public long getUnreservedForPool() {
+        return this.unreservedForPool;
+    }
 
-  public long getUnreservedForVm() {
-    return this.unreservedForVm;
-  }
+    public long getUnreservedForVm() {
+        return this.unreservedForVm;
+    }
 
-  public long getOverallUsage() {
-    return this.overallUsage;
-  }
+    public long getOverallUsage() {
+        return this.overallUsage;
+    }
 
-  public long getMaxUsage() {
-    return this.maxUsage;
-  }
+    public long getMaxUsage() {
+        return this.maxUsage;
+    }
 
-  public void setReservationUsed(long reservationUsed) {
-    this.reservationUsed=reservationUsed;
-  }
+    public void setReservationUsed(long reservationUsed) {
+        this.reservationUsed = reservationUsed;
+    }
 
-  public void setReservationUsedForVm(long reservationUsedForVm) {
-    this.reservationUsedForVm=reservationUsedForVm;
-  }
+    public void setReservationUsedForVm(long reservationUsedForVm) {
+        this.reservationUsedForVm = reservationUsedForVm;
+    }
 
-  public void setUnreservedForPool(long unreservedForPool) {
-    this.unreservedForPool=unreservedForPool;
-  }
+    public void setUnreservedForPool(long unreservedForPool) {
+        this.unreservedForPool = unreservedForPool;
+    }
 
-  public void setUnreservedForVm(long unreservedForVm) {
-    this.unreservedForVm=unreservedForVm;
-  }
+    public void setUnreservedForVm(long unreservedForVm) {
+        this.unreservedForVm = unreservedForVm;
+    }
 
-  public void setOverallUsage(long overallUsage) {
-    this.overallUsage=overallUsage;
-  }
+    public void setOverallUsage(long overallUsage) {
+        this.overallUsage = overallUsage;
+    }
 
-  public void setMaxUsage(long maxUsage) {
-    this.maxUsage=maxUsage;
-  }
+    public void setMaxUsage(long maxUsage) {
+        this.maxUsage = maxUsage;
+    }
 }

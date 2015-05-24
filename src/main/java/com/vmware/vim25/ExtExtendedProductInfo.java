@@ -30,46 +30,46 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class ExtExtendedProductInfo extends DynamicData {
-  public String companyUrl;
-  public String productUrl;
-  public String managementUrl;
-  public ManagedObjectReference self;
+    public String companyUrl;
+    public String productUrl;
+    public String managementUrl;
+    public ManagedObjectReference self;
 
-  public String getCompanyUrl() {
-    return this.companyUrl;
-  }
+    public String getCompanyUrl() {
+        return this.companyUrl;
+    }
 
-  public String getProductUrl() {
-    return this.productUrl;
-  }
+    public String getProductUrl() {
+        return this.productUrl;
+    }
 
-  public String getManagementUrl() {
-    return this.managementUrl;
-  }
+    public String getManagementUrl() {
+        return this.managementUrl;
+    }
 
-  public ManagedObjectReference getSelf() {
-    return this.self;
-  }
+    public ManagedObjectReference getSelf() {
+        return this.self;
+    }
 
-  public void setCompanyUrl(String companyUrl) {
-    this.companyUrl=companyUrl;
-  }
+    public void setCompanyUrl(String companyUrl) {
+        this.companyUrl = companyUrl;
+    }
 
-  public void setProductUrl(String productUrl) {
-    this.productUrl=productUrl;
-  }
+    public void setProductUrl(String productUrl) {
+        this.productUrl = productUrl;
+    }
 
-  public void setManagementUrl(String managementUrl) {
-    this.managementUrl=managementUrl;
-  }
+    public void setManagementUrl(String managementUrl) {
+        this.managementUrl = managementUrl;
+    }
 
-  public void setSelf(ManagedObjectReference self) {
-    this.self=self;
-  }
+    public void setSelf(ManagedObjectReference self) {
+        this.self = self;
+    }
 }

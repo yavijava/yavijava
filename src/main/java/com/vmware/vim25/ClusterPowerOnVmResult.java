@@ -30,37 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class ClusterPowerOnVmResult extends DynamicData {
-  public ClusterAttemptedVmInfo[] attempted;
-  public ClusterNotAttemptedVmInfo[] notAttempted;
-  public ClusterRecommendation[] recommendations;
+    public ClusterAttemptedVmInfo[] attempted;
+    public ClusterNotAttemptedVmInfo[] notAttempted;
+    public ClusterRecommendation[] recommendations;
 
-  public ClusterAttemptedVmInfo[] getAttempted() {
-    return this.attempted;
-  }
+    public ClusterAttemptedVmInfo[] getAttempted() {
+        return this.attempted;
+    }
 
-  public ClusterNotAttemptedVmInfo[] getNotAttempted() {
-    return this.notAttempted;
-  }
+    public ClusterNotAttemptedVmInfo[] getNotAttempted() {
+        return this.notAttempted;
+    }
 
-  public ClusterRecommendation[] getRecommendations() {
-    return this.recommendations;
-  }
+    public ClusterRecommendation[] getRecommendations() {
+        return this.recommendations;
+    }
 
-  public void setAttempted(ClusterAttemptedVmInfo[] attempted) {
-    this.attempted=attempted;
-  }
+    public void setAttempted(ClusterAttemptedVmInfo[] attempted) {
+        this.attempted = attempted;
+    }
 
-  public void setNotAttempted(ClusterNotAttemptedVmInfo[] notAttempted) {
-    this.notAttempted=notAttempted;
-  }
+    public void setNotAttempted(ClusterNotAttemptedVmInfo[] notAttempted) {
+        this.notAttempted = notAttempted;
+    }
 
-  public void setRecommendations(ClusterRecommendation[] recommendations) {
-    this.recommendations=recommendations;
-  }
+    public void setRecommendations(ClusterRecommendation[] recommendations) {
+        this.recommendations = recommendations;
+    }
 }

@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class FcoeConfigVlanRange extends DynamicData {
-  public int vlanLow;
-  public int vlanHigh;
+    public int vlanLow;
+    public int vlanHigh;
 
-  public int getVlanLow() {
-    return this.vlanLow;
-  }
+    public int getVlanLow() {
+        return this.vlanLow;
+    }
 
-  public int getVlanHigh() {
-    return this.vlanHigh;
-  }
+    public int getVlanHigh() {
+        return this.vlanHigh;
+    }
 
-  public void setVlanLow(int vlanLow) {
-    this.vlanLow=vlanLow;
-  }
+    public void setVlanLow(int vlanLow) {
+        this.vlanLow = vlanLow;
+    }
 
-  public void setVlanHigh(int vlanHigh) {
-    this.vlanHigh=vlanHigh;
-  }
+    public void setVlanHigh(int vlanHigh) {
+        this.vlanHigh = vlanHigh;
+    }
 }

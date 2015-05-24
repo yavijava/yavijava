@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfVsanHostDiskMapping {
-  public VsanHostDiskMapping[] VsanHostDiskMapping;
+    public VsanHostDiskMapping[] VsanHostDiskMapping;
 
-  public VsanHostDiskMapping[] getVsanHostDiskMapping() {
-    return this.VsanHostDiskMapping;
-  }
+    public VsanHostDiskMapping[] getVsanHostDiskMapping() {
+        return this.VsanHostDiskMapping;
+    }
 
-  public VsanHostDiskMapping getVsanHostDiskMapping(int i) {
-    return this.VsanHostDiskMapping[i];
-  }
+    public VsanHostDiskMapping getVsanHostDiskMapping(int i) {
+        return this.VsanHostDiskMapping[i];
+    }
 
-  public void setVsanHostDiskMapping(VsanHostDiskMapping[] VsanHostDiskMapping) {
-    this.VsanHostDiskMapping=VsanHostDiskMapping;
-  }
+    public void setVsanHostDiskMapping(VsanHostDiskMapping[] VsanHostDiskMapping) {
+        this.VsanHostDiskMapping = VsanHostDiskMapping;
+    }
 }

@@ -30,37 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class DasConfigFault extends VimFault {
-  public String reason;
-  public String output;
-  public Event[] event;
+    public String reason;
+    public String output;
+    public Event[] event;
 
-  public String getReason() {
-    return this.reason;
-  }
+    public String getReason() {
+        return this.reason;
+    }
 
-  public String getOutput() {
-    return this.output;
-  }
+    public String getOutput() {
+        return this.output;
+    }
 
-  public Event[] getEvent() {
-    return this.event;
-  }
+    public Event[] getEvent() {
+        return this.event;
+    }
 
-  public void setReason(String reason) {
-    this.reason=reason;
-  }
+    public void setReason(String reason) {
+        this.reason = reason;
+    }
 
-  public void setOutput(String output) {
-    this.output=output;
-  }
+    public void setOutput(String output) {
+        this.output = output;
+    }
 
-  public void setEvent(Event[] event) {
-    this.event=event;
-  }
+    public void setEvent(Event[] event) {
+        this.event = event;
+    }
 }

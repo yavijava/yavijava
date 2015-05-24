@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class FaultToleranceNotSameBuild extends MigrationFault {
-  public String build;
+    public String build;
 
-  public String getBuild() {
-    return this.build;
-  }
+    public String getBuild() {
+        return this.build;
+    }
 
-  public void setBuild(String build) {
-    this.build=build;
-  }
+    public void setBuild(String build) {
+        this.build = build;
+    }
 }

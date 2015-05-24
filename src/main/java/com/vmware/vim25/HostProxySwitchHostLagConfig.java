@@ -30,37 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostProxySwitchHostLagConfig extends DynamicData {
-  public String lagKey;
-  public String lagName;
-  public KeyValue[] uplinkPort;
+    public String lagKey;
+    public String lagName;
+    public KeyValue[] uplinkPort;
 
-  public String getLagKey() {
-    return this.lagKey;
-  }
+    public String getLagKey() {
+        return this.lagKey;
+    }
 
-  public String getLagName() {
-    return this.lagName;
-  }
+    public String getLagName() {
+        return this.lagName;
+    }
 
-  public KeyValue[] getUplinkPort() {
-    return this.uplinkPort;
-  }
+    public KeyValue[] getUplinkPort() {
+        return this.uplinkPort;
+    }
 
-  public void setLagKey(String lagKey) {
-    this.lagKey=lagKey;
-  }
+    public void setLagKey(String lagKey) {
+        this.lagKey = lagKey;
+    }
 
-  public void setLagName(String lagName) {
-    this.lagName=lagName;
-  }
+    public void setLagName(String lagName) {
+        this.lagName = lagName;
+    }
 
-  public void setUplinkPort(KeyValue[] uplinkPort) {
-    this.uplinkPort=uplinkPort;
-  }
+    public void setUplinkPort(KeyValue[] uplinkPort) {
+        this.uplinkPort = uplinkPort;
+    }
 }

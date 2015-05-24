@@ -29,81 +29,68 @@ POSSIBILITY OF SUCH DAMAGE.
 
 package com.vmware.vim25.mo;
 
-import java.rmi.RemoteException;
-
 import com.vmware.vim25.*;
+
+import java.rmi.RemoteException;
 
 /**
  * The managed object class corresponding to the one defined in VI SDK API reference.
+ *
  * @author Steve JIN (http://www.doublecloud.org)
  */
 
-public class CustomizationSpecManager extends ManagedObject 
-{
+public class CustomizationSpecManager extends ManagedObject {
 
-	public CustomizationSpecManager(ServerConnection sc, ManagedObjectReference mor) 
-	{
-		super(sc, mor);
-	}
-	
-	public byte[] getEncryptionKey()
-	{
-		return (byte[]) getCurrentProperty("encryptionKey");
-	}
-	
-	public CustomizationSpecInfo[] getInfo()
-	{
-		return (CustomizationSpecInfo[]) getCurrentProperty("info");
-	}
-	
-	public void checkCustomizationResources(String guestOs) throws CustomizationFault, RuntimeFault, RemoteException  
-	{
-		getVimService().checkCustomizationResources(getMOR(), guestOs);
-	}
-	
-	public void createCustomizationSpec(CustomizationSpecItem item) throws CustomizationFault, AlreadyExists, RuntimeFault, RemoteException  
-	{
-		getVimService().createCustomizationSpec(getMOR(), item);
-	}
-	
-	public String customizationSpecItemToXml(CustomizationSpecItem item) throws RuntimeFault, RemoteException  
-	{
-		return getVimService().customizationSpecItemToXml(getMOR(), item);
-	}
-	
-	public void deleteCustomizationSpec(String name) throws NotFound, RuntimeFault, RemoteException  
-	{
-		getVimService().deleteCustomizationSpec(getMOR(), name);
-	}
-	
-	public boolean doesCustomizationSpecExist(String name) throws RuntimeFault, RemoteException  
-	{
-		return getVimService().doesCustomizationSpecExist(getMOR(), name);
-	}
-	
-	public void duplicateCustomizationSpec(String name, String newName) throws AlreadyExists, NotFound, RuntimeFault, RemoteException  
-	{
-		getVimService().duplicateCustomizationSpec(getMOR(), name, newName);
-	}
-	
-	public CustomizationSpecItem getCustomizationSpec(String name) throws NotFound, RuntimeFault, RemoteException  
-	{
-		return getVimService().getCustomizationSpec(getMOR(), name);
-	}
-	
-	public void overwriteCustomizationSpec(CustomizationSpecItem item) throws NotFound, RuntimeFault, RemoteException  
-	{
-		getVimService().overwriteCustomizationSpec(getMOR(), item);
-	}
-	
-	public void renameCustomizationSpec(String name, String newName) throws AlreadyExists, NotFound, RuntimeFault, RemoteException  
-	{
-		getVimService().renameCustomizationSpec(getMOR(), name, newName);
-	}
-	
-	public CustomizationSpecItem xmlToCustomizationSpecItem(String specItemXml) throws CustomizationFault, RuntimeFault, RemoteException  
-	{
-		return getVimService().xmlToCustomizationSpecItem(getMOR(), specItemXml);
-	}
-	
+    public CustomizationSpecManager(ServerConnection sc, ManagedObjectReference mor) {
+        super(sc, mor);
+    }
+
+    public byte[] getEncryptionKey() {
+        return (byte[]) getCurrentProperty("encryptionKey");
+    }
+
+    public CustomizationSpecInfo[] getInfo() {
+        return (CustomizationSpecInfo[]) getCurrentProperty("info");
+    }
+
+    public void checkCustomizationResources(String guestOs) throws CustomizationFault, RuntimeFault, RemoteException {
+        getVimService().checkCustomizationResources(getMOR(), guestOs);
+    }
+
+    public void createCustomizationSpec(CustomizationSpecItem item) throws CustomizationFault, AlreadyExists, RuntimeFault, RemoteException {
+        getVimService().createCustomizationSpec(getMOR(), item);
+    }
+
+    public String customizationSpecItemToXml(CustomizationSpecItem item) throws RuntimeFault, RemoteException {
+        return getVimService().customizationSpecItemToXml(getMOR(), item);
+    }
+
+    public void deleteCustomizationSpec(String name) throws NotFound, RuntimeFault, RemoteException {
+        getVimService().deleteCustomizationSpec(getMOR(), name);
+    }
+
+    public boolean doesCustomizationSpecExist(String name) throws RuntimeFault, RemoteException {
+        return getVimService().doesCustomizationSpecExist(getMOR(), name);
+    }
+
+    public void duplicateCustomizationSpec(String name, String newName) throws AlreadyExists, NotFound, RuntimeFault, RemoteException {
+        getVimService().duplicateCustomizationSpec(getMOR(), name, newName);
+    }
+
+    public CustomizationSpecItem getCustomizationSpec(String name) throws NotFound, RuntimeFault, RemoteException {
+        return getVimService().getCustomizationSpec(getMOR(), name);
+    }
+
+    public void overwriteCustomizationSpec(CustomizationSpecItem item) throws NotFound, RuntimeFault, RemoteException {
+        getVimService().overwriteCustomizationSpec(getMOR(), item);
+    }
+
+    public void renameCustomizationSpec(String name, String newName) throws AlreadyExists, NotFound, RuntimeFault, RemoteException {
+        getVimService().renameCustomizationSpec(getMOR(), name, newName);
+    }
+
+    public CustomizationSpecItem xmlToCustomizationSpecItem(String specItemXml) throws CustomizationFault, RuntimeFault, RemoteException {
+        return getVimService().xmlToCustomizationSpecItem(getMOR(), specItemXml);
+    }
+
 }

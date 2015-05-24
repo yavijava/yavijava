@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class ProfilePolicyOptionMetadata extends DynamicData {
-  public ExtendedElementDescription id;
-  public ProfileParameterMetadata[] parameter;
+    public ExtendedElementDescription id;
+    public ProfileParameterMetadata[] parameter;
 
-  public ExtendedElementDescription getId() {
-    return this.id;
-  }
+    public ExtendedElementDescription getId() {
+        return this.id;
+    }
 
-  public ProfileParameterMetadata[] getParameter() {
-    return this.parameter;
-  }
+    public ProfileParameterMetadata[] getParameter() {
+        return this.parameter;
+    }
 
-  public void setId(ExtendedElementDescription id) {
-    this.id=id;
-  }
+    public void setId(ExtendedElementDescription id) {
+        this.id = id;
+    }
 
-  public void setParameter(ProfileParameterMetadata[] parameter) {
-    this.parameter=parameter;
-  }
+    public void setParameter(ProfileParameterMetadata[] parameter) {
+        this.parameter = parameter;
+    }
 }

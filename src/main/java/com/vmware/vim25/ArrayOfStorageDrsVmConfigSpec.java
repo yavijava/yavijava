@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfStorageDrsVmConfigSpec {
-  public StorageDrsVmConfigSpec[] StorageDrsVmConfigSpec;
+    public StorageDrsVmConfigSpec[] StorageDrsVmConfigSpec;
 
-  public StorageDrsVmConfigSpec[] getStorageDrsVmConfigSpec() {
-    return this.StorageDrsVmConfigSpec;
-  }
+    public StorageDrsVmConfigSpec[] getStorageDrsVmConfigSpec() {
+        return this.StorageDrsVmConfigSpec;
+    }
 
-  public StorageDrsVmConfigSpec getStorageDrsVmConfigSpec(int i) {
-    return this.StorageDrsVmConfigSpec[i];
-  }
+    public StorageDrsVmConfigSpec getStorageDrsVmConfigSpec(int i) {
+        return this.StorageDrsVmConfigSpec[i];
+    }
 
-  public void setStorageDrsVmConfigSpec(StorageDrsVmConfigSpec[] StorageDrsVmConfigSpec) {
-    this.StorageDrsVmConfigSpec=StorageDrsVmConfigSpec;
-  }
+    public void setStorageDrsVmConfigSpec(StorageDrsVmConfigSpec[] StorageDrsVmConfigSpec) {
+        this.StorageDrsVmConfigSpec = StorageDrsVmConfigSpec;
+    }
 }

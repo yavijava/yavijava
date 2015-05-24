@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class AccountRemovedEvent extends HostEvent {
-  public String account;
-  public boolean group;
+    public String account;
+    public boolean group;
 
-  public String getAccount() {
-    return this.account;
-  }
+    public String getAccount() {
+        return this.account;
+    }
 
-  public boolean isGroup() {
-    return this.group;
-  }
+    public boolean isGroup() {
+        return this.group;
+    }
 
-  public void setAccount(String account) {
-    this.account=account;
-  }
+    public void setAccount(String account) {
+        this.account = account;
+    }
 
-  public void setGroup(boolean group) {
-    this.group=group;
-  }
+    public void setGroup(boolean group) {
+        this.group = group;
+    }
 }

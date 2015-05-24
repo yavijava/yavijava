@@ -30,55 +30,55 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostSnmpSystemAgentLimits extends DynamicData {
-  public int maxReadOnlyCommunities;
-  public int maxTrapDestinations;
-  public int maxCommunityLength;
-  public int maxBufferSize;
-  public HostSnmpAgentCapability capability;
+    public int maxReadOnlyCommunities;
+    public int maxTrapDestinations;
+    public int maxCommunityLength;
+    public int maxBufferSize;
+    public HostSnmpAgentCapability capability;
 
-  public int getMaxReadOnlyCommunities() {
-    return this.maxReadOnlyCommunities;
-  }
+    public int getMaxReadOnlyCommunities() {
+        return this.maxReadOnlyCommunities;
+    }
 
-  public int getMaxTrapDestinations() {
-    return this.maxTrapDestinations;
-  }
+    public int getMaxTrapDestinations() {
+        return this.maxTrapDestinations;
+    }
 
-  public int getMaxCommunityLength() {
-    return this.maxCommunityLength;
-  }
+    public int getMaxCommunityLength() {
+        return this.maxCommunityLength;
+    }
 
-  public int getMaxBufferSize() {
-    return this.maxBufferSize;
-  }
+    public int getMaxBufferSize() {
+        return this.maxBufferSize;
+    }
 
-  public HostSnmpAgentCapability getCapability() {
-    return this.capability;
-  }
+    public HostSnmpAgentCapability getCapability() {
+        return this.capability;
+    }
 
-  public void setMaxReadOnlyCommunities(int maxReadOnlyCommunities) {
-    this.maxReadOnlyCommunities=maxReadOnlyCommunities;
-  }
+    public void setMaxReadOnlyCommunities(int maxReadOnlyCommunities) {
+        this.maxReadOnlyCommunities = maxReadOnlyCommunities;
+    }
 
-  public void setMaxTrapDestinations(int maxTrapDestinations) {
-    this.maxTrapDestinations=maxTrapDestinations;
-  }
+    public void setMaxTrapDestinations(int maxTrapDestinations) {
+        this.maxTrapDestinations = maxTrapDestinations;
+    }
 
-  public void setMaxCommunityLength(int maxCommunityLength) {
-    this.maxCommunityLength=maxCommunityLength;
-  }
+    public void setMaxCommunityLength(int maxCommunityLength) {
+        this.maxCommunityLength = maxCommunityLength;
+    }
 
-  public void setMaxBufferSize(int maxBufferSize) {
-    this.maxBufferSize=maxBufferSize;
-  }
+    public void setMaxBufferSize(int maxBufferSize) {
+        this.maxBufferSize = maxBufferSize;
+    }
 
-  public void setCapability(HostSnmpAgentCapability capability) {
-    this.capability=capability;
-  }
+    public void setCapability(HostSnmpAgentCapability capability) {
+        this.capability = capability;
+    }
 }

@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfHostAuthenticationStoreInfo {
-  public HostAuthenticationStoreInfo[] HostAuthenticationStoreInfo;
+    public HostAuthenticationStoreInfo[] HostAuthenticationStoreInfo;
 
-  public HostAuthenticationStoreInfo[] getHostAuthenticationStoreInfo() {
-    return this.HostAuthenticationStoreInfo;
-  }
+    public HostAuthenticationStoreInfo[] getHostAuthenticationStoreInfo() {
+        return this.HostAuthenticationStoreInfo;
+    }
 
-  public HostAuthenticationStoreInfo getHostAuthenticationStoreInfo(int i) {
-    return this.HostAuthenticationStoreInfo[i];
-  }
+    public HostAuthenticationStoreInfo getHostAuthenticationStoreInfo(int i) {
+        return this.HostAuthenticationStoreInfo[i];
+    }
 
-  public void setHostAuthenticationStoreInfo(HostAuthenticationStoreInfo[] HostAuthenticationStoreInfo) {
-    this.HostAuthenticationStoreInfo=HostAuthenticationStoreInfo;
-  }
+    public void setHostAuthenticationStoreInfo(HostAuthenticationStoreInfo[] HostAuthenticationStoreInfo) {
+        this.HostAuthenticationStoreInfo = HostAuthenticationStoreInfo;
+    }
 }

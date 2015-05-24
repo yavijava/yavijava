@@ -30,73 +30,73 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VirtualMachineConfigOptionDescriptor extends DynamicData {
-  public String key;
-  public String description;
-  public ManagedObjectReference[] host;
-  public Boolean createSupported;
-  public Boolean defaultConfigOption;
-  public Boolean runSupported;
-  public Boolean upgradeSupported;
+    public String key;
+    public String description;
+    public ManagedObjectReference[] host;
+    public Boolean createSupported;
+    public Boolean defaultConfigOption;
+    public Boolean runSupported;
+    public Boolean upgradeSupported;
 
-  public String getKey() {
-    return this.key;
-  }
+    public String getKey() {
+        return this.key;
+    }
 
-  public String getDescription() {
-    return this.description;
-  }
+    public String getDescription() {
+        return this.description;
+    }
 
-  public ManagedObjectReference[] getHost() {
-    return this.host;
-  }
+    public ManagedObjectReference[] getHost() {
+        return this.host;
+    }
 
-  public Boolean getCreateSupported() {
-    return this.createSupported;
-  }
+    public Boolean getCreateSupported() {
+        return this.createSupported;
+    }
 
-  public Boolean getDefaultConfigOption() {
-    return this.defaultConfigOption;
-  }
+    public Boolean getDefaultConfigOption() {
+        return this.defaultConfigOption;
+    }
 
-  public Boolean getRunSupported() {
-    return this.runSupported;
-  }
+    public Boolean getRunSupported() {
+        return this.runSupported;
+    }
 
-  public Boolean getUpgradeSupported() {
-    return this.upgradeSupported;
-  }
+    public Boolean getUpgradeSupported() {
+        return this.upgradeSupported;
+    }
 
-  public void setKey(String key) {
-    this.key=key;
-  }
+    public void setKey(String key) {
+        this.key = key;
+    }
 
-  public void setDescription(String description) {
-    this.description=description;
-  }
+    public void setDescription(String description) {
+        this.description = description;
+    }
 
-  public void setHost(ManagedObjectReference[] host) {
-    this.host=host;
-  }
+    public void setHost(ManagedObjectReference[] host) {
+        this.host = host;
+    }
 
-  public void setCreateSupported(Boolean createSupported) {
-    this.createSupported=createSupported;
-  }
+    public void setCreateSupported(Boolean createSupported) {
+        this.createSupported = createSupported;
+    }
 
-  public void setDefaultConfigOption(Boolean defaultConfigOption) {
-    this.defaultConfigOption=defaultConfigOption;
-  }
+    public void setDefaultConfigOption(Boolean defaultConfigOption) {
+        this.defaultConfigOption = defaultConfigOption;
+    }
 
-  public void setRunSupported(Boolean runSupported) {
-    this.runSupported=runSupported;
-  }
+    public void setRunSupported(Boolean runSupported) {
+        this.runSupported = runSupported;
+    }
 
-  public void setUpgradeSupported(Boolean upgradeSupported) {
-    this.upgradeSupported=upgradeSupported;
-  }
+    public void setUpgradeSupported(Boolean upgradeSupported) {
+        this.upgradeSupported = upgradeSupported;
+    }
 }

@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfExtensionClientInfo {
-  public ExtensionClientInfo[] ExtensionClientInfo;
+    public ExtensionClientInfo[] ExtensionClientInfo;
 
-  public ExtensionClientInfo[] getExtensionClientInfo() {
-    return this.ExtensionClientInfo;
-  }
+    public ExtensionClientInfo[] getExtensionClientInfo() {
+        return this.ExtensionClientInfo;
+    }
 
-  public ExtensionClientInfo getExtensionClientInfo(int i) {
-    return this.ExtensionClientInfo[i];
-  }
+    public ExtensionClientInfo getExtensionClientInfo(int i) {
+        return this.ExtensionClientInfo[i];
+    }
 
-  public void setExtensionClientInfo(ExtensionClientInfo[] ExtensionClientInfo) {
-    this.ExtensionClientInfo=ExtensionClientInfo;
-  }
+    public void setExtensionClientInfo(ExtensionClientInfo[] ExtensionClientInfo) {
+        this.ExtensionClientInfo = ExtensionClientInfo;
+    }
 }

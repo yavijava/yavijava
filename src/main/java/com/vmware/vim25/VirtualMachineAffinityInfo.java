@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VirtualMachineAffinityInfo extends DynamicData {
-  public int[] affinitySet;
+    public int[] affinitySet;
 
-  public int[] getAffinitySet() {
-    return this.affinitySet;
-  }
+    public int[] getAffinitySet() {
+        return this.affinitySet;
+    }
 
-  public void setAffinitySet(int[] affinitySet) {
-    this.affinitySet=affinitySet;
-  }
+    public void setAffinitySet(int[] affinitySet) {
+        this.affinitySet = affinitySet;
+    }
 }

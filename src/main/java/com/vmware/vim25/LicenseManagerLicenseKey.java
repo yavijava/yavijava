@@ -30,33 +30,33 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public enum LicenseManagerLicenseKey {
-  esxFull ("esxFull"),
-  esxVmtn ("esxVmtn"),
-  esxExpress ("esxExpress"),
-  san ("san"),
-  iscsi ("iscsi"),
-  nas ("nas"),
-  vsmp ("vsmp"),
-  backup ("backup"),
-  vc ("vc"),
-  vcExpress ("vcExpress"),
-  esxHost ("esxHost"),
-  gsxHost ("gsxHost"),
-  serverHost ("serverHost"),
-  drsPower ("drsPower"),
-  vmotion ("vmotion"),
-  drs ("drs"),
-  das ("das");
+    esxFull("esxFull"),
+    esxVmtn("esxVmtn"),
+    esxExpress("esxExpress"),
+    san("san"),
+    iscsi("iscsi"),
+    nas("nas"),
+    vsmp("vsmp"),
+    backup("backup"),
+    vc("vc"),
+    vcExpress("vcExpress"),
+    esxHost("esxHost"),
+    gsxHost("gsxHost"),
+    serverHost("serverHost"),
+    drsPower("drsPower"),
+    vmotion("vmotion"),
+    drs("drs"),
+    das("das");
 
-  @SuppressWarnings("unused")
-  private final String val;
-  private LicenseManagerLicenseKey(String val)
-  {
-    this.val = val;
-  }
+    @SuppressWarnings("unused")
+    private final String val;
+
+    private LicenseManagerLicenseKey(String val) {
+        this.val = val;
+    }
 }

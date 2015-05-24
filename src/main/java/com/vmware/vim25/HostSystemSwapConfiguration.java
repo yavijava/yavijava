@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostSystemSwapConfiguration extends DynamicData {
-  public HostSystemSwapConfigurationSystemSwapOption[] option;
+    public HostSystemSwapConfigurationSystemSwapOption[] option;
 
-  public HostSystemSwapConfigurationSystemSwapOption[] getOption() {
-    return this.option;
-  }
+    public HostSystemSwapConfigurationSystemSwapOption[] getOption() {
+        return this.option;
+    }
 
-  public void setOption(HostSystemSwapConfigurationSystemSwapOption[] option) {
-    this.option=option;
-  }
+    public void setOption(HostSystemSwapConfigurationSystemSwapOption[] option) {
+        this.option = option;
+    }
 }

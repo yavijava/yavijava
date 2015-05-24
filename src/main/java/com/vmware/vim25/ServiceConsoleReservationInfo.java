@@ -30,37 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class ServiceConsoleReservationInfo extends DynamicData {
-  public long serviceConsoleReservedCfg;
-  public long serviceConsoleReserved;
-  public long unreserved;
+    public long serviceConsoleReservedCfg;
+    public long serviceConsoleReserved;
+    public long unreserved;
 
-  public long getServiceConsoleReservedCfg() {
-    return this.serviceConsoleReservedCfg;
-  }
+    public long getServiceConsoleReservedCfg() {
+        return this.serviceConsoleReservedCfg;
+    }
 
-  public long getServiceConsoleReserved() {
-    return this.serviceConsoleReserved;
-  }
+    public long getServiceConsoleReserved() {
+        return this.serviceConsoleReserved;
+    }
 
-  public long getUnreserved() {
-    return this.unreserved;
-  }
+    public long getUnreserved() {
+        return this.unreserved;
+    }
 
-  public void setServiceConsoleReservedCfg(long serviceConsoleReservedCfg) {
-    this.serviceConsoleReservedCfg=serviceConsoleReservedCfg;
-  }
+    public void setServiceConsoleReservedCfg(long serviceConsoleReservedCfg) {
+        this.serviceConsoleReservedCfg = serviceConsoleReservedCfg;
+    }
 
-  public void setServiceConsoleReserved(long serviceConsoleReserved) {
-    this.serviceConsoleReserved=serviceConsoleReserved;
-  }
+    public void setServiceConsoleReserved(long serviceConsoleReserved) {
+        this.serviceConsoleReserved = serviceConsoleReserved;
+    }
 
-  public void setUnreserved(long unreserved) {
-    this.unreserved=unreserved;
-  }
+    public void setUnreserved(long unreserved) {
+        this.unreserved = unreserved;
+    }
 }

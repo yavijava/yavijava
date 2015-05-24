@@ -30,46 +30,46 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostLicenseSpec extends DynamicData {
-  public LicenseSource source;
-  public String editionKey;
-  public String[] disabledFeatureKey;
-  public String[] enabledFeatureKey;
+    public LicenseSource source;
+    public String editionKey;
+    public String[] disabledFeatureKey;
+    public String[] enabledFeatureKey;
 
-  public LicenseSource getSource() {
-    return this.source;
-  }
+    public LicenseSource getSource() {
+        return this.source;
+    }
 
-  public String getEditionKey() {
-    return this.editionKey;
-  }
+    public String getEditionKey() {
+        return this.editionKey;
+    }
 
-  public String[] getDisabledFeatureKey() {
-    return this.disabledFeatureKey;
-  }
+    public String[] getDisabledFeatureKey() {
+        return this.disabledFeatureKey;
+    }
 
-  public String[] getEnabledFeatureKey() {
-    return this.enabledFeatureKey;
-  }
+    public String[] getEnabledFeatureKey() {
+        return this.enabledFeatureKey;
+    }
 
-  public void setSource(LicenseSource source) {
-    this.source=source;
-  }
+    public void setSource(LicenseSource source) {
+        this.source = source;
+    }
 
-  public void setEditionKey(String editionKey) {
-    this.editionKey=editionKey;
-  }
+    public void setEditionKey(String editionKey) {
+        this.editionKey = editionKey;
+    }
 
-  public void setDisabledFeatureKey(String[] disabledFeatureKey) {
-    this.disabledFeatureKey=disabledFeatureKey;
-  }
+    public void setDisabledFeatureKey(String[] disabledFeatureKey) {
+        this.disabledFeatureKey = disabledFeatureKey;
+    }
 
-  public void setEnabledFeatureKey(String[] enabledFeatureKey) {
-    this.enabledFeatureKey=enabledFeatureKey;
-  }
+    public void setEnabledFeatureKey(String[] enabledFeatureKey) {
+        this.enabledFeatureKey = enabledFeatureKey;
+    }
 }

@@ -30,64 +30,64 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class StorageIORMInfo extends DynamicData {
-  public boolean enabled;
-  public String congestionThresholdMode;
-  public int congestionThreshold;
-  public Integer percentOfPeakThroughput;
-  public Boolean statsCollectionEnabled;
-  public Boolean statsAggregationDisabled;
+    public boolean enabled;
+    public String congestionThresholdMode;
+    public int congestionThreshold;
+    public Integer percentOfPeakThroughput;
+    public Boolean statsCollectionEnabled;
+    public Boolean statsAggregationDisabled;
 
-  public boolean isEnabled() {
-    return this.enabled;
-  }
+    public boolean isEnabled() {
+        return this.enabled;
+    }
 
-  public String getCongestionThresholdMode() {
-    return this.congestionThresholdMode;
-  }
+    public String getCongestionThresholdMode() {
+        return this.congestionThresholdMode;
+    }
 
-  public int getCongestionThreshold() {
-    return this.congestionThreshold;
-  }
+    public int getCongestionThreshold() {
+        return this.congestionThreshold;
+    }
 
-  public Integer getPercentOfPeakThroughput() {
-    return this.percentOfPeakThroughput;
-  }
+    public Integer getPercentOfPeakThroughput() {
+        return this.percentOfPeakThroughput;
+    }
 
-  public Boolean getStatsCollectionEnabled() {
-    return this.statsCollectionEnabled;
-  }
+    public Boolean getStatsCollectionEnabled() {
+        return this.statsCollectionEnabled;
+    }
 
-  public Boolean getStatsAggregationDisabled() {
-    return this.statsAggregationDisabled;
-  }
+    public Boolean getStatsAggregationDisabled() {
+        return this.statsAggregationDisabled;
+    }
 
-  public void setEnabled(boolean enabled) {
-    this.enabled=enabled;
-  }
+    public void setEnabled(boolean enabled) {
+        this.enabled = enabled;
+    }
 
-  public void setCongestionThresholdMode(String congestionThresholdMode) {
-    this.congestionThresholdMode=congestionThresholdMode;
-  }
+    public void setCongestionThresholdMode(String congestionThresholdMode) {
+        this.congestionThresholdMode = congestionThresholdMode;
+    }
 
-  public void setCongestionThreshold(int congestionThreshold) {
-    this.congestionThreshold=congestionThreshold;
-  }
+    public void setCongestionThreshold(int congestionThreshold) {
+        this.congestionThreshold = congestionThreshold;
+    }
 
-  public void setPercentOfPeakThroughput(Integer percentOfPeakThroughput) {
-    this.percentOfPeakThroughput=percentOfPeakThroughput;
-  }
+    public void setPercentOfPeakThroughput(Integer percentOfPeakThroughput) {
+        this.percentOfPeakThroughput = percentOfPeakThroughput;
+    }
 
-  public void setStatsCollectionEnabled(Boolean statsCollectionEnabled) {
-    this.statsCollectionEnabled=statsCollectionEnabled;
-  }
+    public void setStatsCollectionEnabled(Boolean statsCollectionEnabled) {
+        this.statsCollectionEnabled = statsCollectionEnabled;
+    }
 
-  public void setStatsAggregationDisabled(Boolean statsAggregationDisabled) {
-    this.statsAggregationDisabled=statsAggregationDisabled;
-  }
+    public void setStatsAggregationDisabled(Boolean statsAggregationDisabled) {
+        this.statsAggregationDisabled = statsAggregationDisabled;
+    }
 }

@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class LicenseEntityNotFound extends VimFault {
-  public String entityId;
+    public String entityId;
 
-  public String getEntityId() {
-    return this.entityId;
-  }
+    public String getEntityId() {
+        return this.entityId;
+    }
 
-  public void setEntityId(String entityId) {
-    this.entityId=entityId;
-  }
+    public void setEntityId(String entityId) {
+        this.entityId = entityId;
+    }
 }

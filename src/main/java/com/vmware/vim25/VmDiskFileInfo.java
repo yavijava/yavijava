@@ -30,64 +30,64 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VmDiskFileInfo extends FileInfo {
-  public String diskType;
-  public Long capacityKb;
-  public Integer hardwareVersion;
-  public String controllerType;
-  public String[] diskExtents;
-  public Boolean thin;
+    public String diskType;
+    public Long capacityKb;
+    public Integer hardwareVersion;
+    public String controllerType;
+    public String[] diskExtents;
+    public Boolean thin;
 
-  public String getDiskType() {
-    return this.diskType;
-  }
+    public String getDiskType() {
+        return this.diskType;
+    }
 
-  public Long getCapacityKb() {
-    return this.capacityKb;
-  }
+    public Long getCapacityKb() {
+        return this.capacityKb;
+    }
 
-  public Integer getHardwareVersion() {
-    return this.hardwareVersion;
-  }
+    public Integer getHardwareVersion() {
+        return this.hardwareVersion;
+    }
 
-  public String getControllerType() {
-    return this.controllerType;
-  }
+    public String getControllerType() {
+        return this.controllerType;
+    }
 
-  public String[] getDiskExtents() {
-    return this.diskExtents;
-  }
+    public String[] getDiskExtents() {
+        return this.diskExtents;
+    }
 
-  public Boolean getThin() {
-    return this.thin;
-  }
+    public Boolean getThin() {
+        return this.thin;
+    }
 
-  public void setDiskType(String diskType) {
-    this.diskType=diskType;
-  }
+    public void setDiskType(String diskType) {
+        this.diskType = diskType;
+    }
 
-  public void setCapacityKb(Long capacityKb) {
-    this.capacityKb=capacityKb;
-  }
+    public void setCapacityKb(Long capacityKb) {
+        this.capacityKb = capacityKb;
+    }
 
-  public void setHardwareVersion(Integer hardwareVersion) {
-    this.hardwareVersion=hardwareVersion;
-  }
+    public void setHardwareVersion(Integer hardwareVersion) {
+        this.hardwareVersion = hardwareVersion;
+    }
 
-  public void setControllerType(String controllerType) {
-    this.controllerType=controllerType;
-  }
+    public void setControllerType(String controllerType) {
+        this.controllerType = controllerType;
+    }
 
-  public void setDiskExtents(String[] diskExtents) {
-    this.diskExtents=diskExtents;
-  }
+    public void setDiskExtents(String[] diskExtents) {
+        this.diskExtents = diskExtents;
+    }
 
-  public void setThin(Boolean thin) {
-    this.thin=thin;
-  }
+    public void setThin(Boolean thin) {
+        this.thin = thin;
+    }
 }

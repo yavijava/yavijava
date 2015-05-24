@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class LicenseExpired extends NotEnoughLicenses {
-  public String licenseKey;
+    public String licenseKey;
 
-  public String getLicenseKey() {
-    return this.licenseKey;
-  }
+    public String getLicenseKey() {
+        return this.licenseKey;
+    }
 
-  public void setLicenseKey(String licenseKey) {
-    this.licenseKey=licenseKey;
-  }
+    public void setLicenseKey(String licenseKey) {
+        this.licenseKey = licenseKey;
+    }
 }

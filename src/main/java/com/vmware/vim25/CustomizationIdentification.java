@@ -30,46 +30,46 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class CustomizationIdentification extends DynamicData {
-  public String joinWorkgroup;
-  public String joinDomain;
-  public String domainAdmin;
-  public CustomizationPassword domainAdminPassword;
+    public String joinWorkgroup;
+    public String joinDomain;
+    public String domainAdmin;
+    public CustomizationPassword domainAdminPassword;
 
-  public String getJoinWorkgroup() {
-    return this.joinWorkgroup;
-  }
+    public String getJoinWorkgroup() {
+        return this.joinWorkgroup;
+    }
 
-  public String getJoinDomain() {
-    return this.joinDomain;
-  }
+    public String getJoinDomain() {
+        return this.joinDomain;
+    }
 
-  public String getDomainAdmin() {
-    return this.domainAdmin;
-  }
+    public String getDomainAdmin() {
+        return this.domainAdmin;
+    }
 
-  public CustomizationPassword getDomainAdminPassword() {
-    return this.domainAdminPassword;
-  }
+    public CustomizationPassword getDomainAdminPassword() {
+        return this.domainAdminPassword;
+    }
 
-  public void setJoinWorkgroup(String joinWorkgroup) {
-    this.joinWorkgroup=joinWorkgroup;
-  }
+    public void setJoinWorkgroup(String joinWorkgroup) {
+        this.joinWorkgroup = joinWorkgroup;
+    }
 
-  public void setJoinDomain(String joinDomain) {
-    this.joinDomain=joinDomain;
-  }
+    public void setJoinDomain(String joinDomain) {
+        this.joinDomain = joinDomain;
+    }
 
-  public void setDomainAdmin(String domainAdmin) {
-    this.domainAdmin=domainAdmin;
-  }
+    public void setDomainAdmin(String domainAdmin) {
+        this.domainAdmin = domainAdmin;
+    }
 
-  public void setDomainAdminPassword(CustomizationPassword domainAdminPassword) {
-    this.domainAdminPassword=domainAdminPassword;
-  }
+    public void setDomainAdminPassword(CustomizationPassword domainAdminPassword) {
+        this.domainAdminPassword = domainAdminPassword;
+    }
 }

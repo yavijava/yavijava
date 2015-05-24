@@ -30,46 +30,46 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostIpRouteConfig extends DynamicData {
-  public String defaultGateway;
-  public String gatewayDevice;
-  public String ipV6DefaultGateway;
-  public String ipV6GatewayDevice;
+    public String defaultGateway;
+    public String gatewayDevice;
+    public String ipV6DefaultGateway;
+    public String ipV6GatewayDevice;
 
-  public String getDefaultGateway() {
-    return this.defaultGateway;
-  }
+    public String getDefaultGateway() {
+        return this.defaultGateway;
+    }
 
-  public String getGatewayDevice() {
-    return this.gatewayDevice;
-  }
+    public String getGatewayDevice() {
+        return this.gatewayDevice;
+    }
 
-  public String getIpV6DefaultGateway() {
-    return this.ipV6DefaultGateway;
-  }
+    public String getIpV6DefaultGateway() {
+        return this.ipV6DefaultGateway;
+    }
 
-  public String getIpV6GatewayDevice() {
-    return this.ipV6GatewayDevice;
-  }
+    public String getIpV6GatewayDevice() {
+        return this.ipV6GatewayDevice;
+    }
 
-  public void setDefaultGateway(String defaultGateway) {
-    this.defaultGateway=defaultGateway;
-  }
+    public void setDefaultGateway(String defaultGateway) {
+        this.defaultGateway = defaultGateway;
+    }
 
-  public void setGatewayDevice(String gatewayDevice) {
-    this.gatewayDevice=gatewayDevice;
-  }
+    public void setGatewayDevice(String gatewayDevice) {
+        this.gatewayDevice = gatewayDevice;
+    }
 
-  public void setIpV6DefaultGateway(String ipV6DefaultGateway) {
-    this.ipV6DefaultGateway=ipV6DefaultGateway;
-  }
+    public void setIpV6DefaultGateway(String ipV6DefaultGateway) {
+        this.ipV6DefaultGateway = ipV6DefaultGateway;
+    }
 
-  public void setIpV6GatewayDevice(String ipV6GatewayDevice) {
-    this.ipV6GatewayDevice=ipV6GatewayDevice;
-  }
+    public void setIpV6GatewayDevice(String ipV6GatewayDevice) {
+        this.ipV6GatewayDevice = ipV6GatewayDevice;
+    }
 }

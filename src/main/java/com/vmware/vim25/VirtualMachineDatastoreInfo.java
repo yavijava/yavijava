@@ -30,64 +30,64 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VirtualMachineDatastoreInfo extends VirtualMachineTargetInfo {
-  public DatastoreSummary datastore;
-  public DatastoreCapability capability;
-  public long maxFileSize;
-  public Long maxVirtualDiskCapacity;
-  public String mode;
-  public String vStorageSupport;
+    public DatastoreSummary datastore;
+    public DatastoreCapability capability;
+    public long maxFileSize;
+    public Long maxVirtualDiskCapacity;
+    public String mode;
+    public String vStorageSupport;
 
-  public DatastoreSummary getDatastore() {
-    return this.datastore;
-  }
+    public DatastoreSummary getDatastore() {
+        return this.datastore;
+    }
 
-  public DatastoreCapability getCapability() {
-    return this.capability;
-  }
+    public DatastoreCapability getCapability() {
+        return this.capability;
+    }
 
-  public long getMaxFileSize() {
-    return this.maxFileSize;
-  }
+    public long getMaxFileSize() {
+        return this.maxFileSize;
+    }
 
-  public Long getMaxVirtualDiskCapacity() {
-    return this.maxVirtualDiskCapacity;
-  }
+    public Long getMaxVirtualDiskCapacity() {
+        return this.maxVirtualDiskCapacity;
+    }
 
-  public String getMode() {
-    return this.mode;
-  }
+    public String getMode() {
+        return this.mode;
+    }
 
-  public String getVStorageSupport() {
-    return this.vStorageSupport;
-  }
+    public String getVStorageSupport() {
+        return this.vStorageSupport;
+    }
 
-  public void setDatastore(DatastoreSummary datastore) {
-    this.datastore=datastore;
-  }
+    public void setDatastore(DatastoreSummary datastore) {
+        this.datastore = datastore;
+    }
 
-  public void setCapability(DatastoreCapability capability) {
-    this.capability=capability;
-  }
+    public void setCapability(DatastoreCapability capability) {
+        this.capability = capability;
+    }
 
-  public void setMaxFileSize(long maxFileSize) {
-    this.maxFileSize=maxFileSize;
-  }
+    public void setMaxFileSize(long maxFileSize) {
+        this.maxFileSize = maxFileSize;
+    }
 
-  public void setMaxVirtualDiskCapacity(Long maxVirtualDiskCapacity) {
-    this.maxVirtualDiskCapacity=maxVirtualDiskCapacity;
-  }
+    public void setMaxVirtualDiskCapacity(Long maxVirtualDiskCapacity) {
+        this.maxVirtualDiskCapacity = maxVirtualDiskCapacity;
+    }
 
-  public void setMode(String mode) {
-    this.mode=mode;
-  }
+    public void setMode(String mode) {
+        this.mode = mode;
+    }
 
-  public void setVStorageSupport(String vStorageSupport) {
-    this.vStorageSupport=vStorageSupport;
-  }
+    public void setVStorageSupport(String vStorageSupport) {
+        this.vStorageSupport = vStorageSupport;
+    }
 }

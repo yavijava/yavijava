@@ -30,55 +30,55 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VirtualMachineFileLayoutExFileInfo extends DynamicData {
-  public int key;
-  public String name;
-  public String type;
-  public long size;
-  public Long uniqueSize;
+    public int key;
+    public String name;
+    public String type;
+    public long size;
+    public Long uniqueSize;
 
-  public int getKey() {
-    return this.key;
-  }
+    public int getKey() {
+        return this.key;
+    }
 
-  public String getName() {
-    return this.name;
-  }
+    public String getName() {
+        return this.name;
+    }
 
-  public String getType() {
-    return this.type;
-  }
+    public String getType() {
+        return this.type;
+    }
 
-  public long getSize() {
-    return this.size;
-  }
+    public long getSize() {
+        return this.size;
+    }
 
-  public Long getUniqueSize() {
-    return this.uniqueSize;
-  }
+    public Long getUniqueSize() {
+        return this.uniqueSize;
+    }
 
-  public void setKey(int key) {
-    this.key=key;
-  }
+    public void setKey(int key) {
+        this.key = key;
+    }
 
-  public void setName(String name) {
-    this.name=name;
-  }
+    public void setName(String name) {
+        this.name = name;
+    }
 
-  public void setType(String type) {
-    this.type=type;
-  }
+    public void setType(String type) {
+        this.type = type;
+    }
 
-  public void setSize(long size) {
-    this.size=size;
-  }
+    public void setSize(long size) {
+        this.size = size;
+    }
 
-  public void setUniqueSize(Long uniqueSize) {
-    this.uniqueSize=uniqueSize;
-  }
+    public void setUniqueSize(Long uniqueSize) {
+        this.uniqueSize = uniqueSize;
+    }
 }

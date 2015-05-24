@@ -30,46 +30,46 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostWwnChangedEvent extends HostEvent {
-  public long[] oldNodeWwns;
-  public long[] oldPortWwns;
-  public long[] newNodeWwns;
-  public long[] newPortWwns;
+    public long[] oldNodeWwns;
+    public long[] oldPortWwns;
+    public long[] newNodeWwns;
+    public long[] newPortWwns;
 
-  public long[] getOldNodeWwns() {
-    return this.oldNodeWwns;
-  }
+    public long[] getOldNodeWwns() {
+        return this.oldNodeWwns;
+    }
 
-  public long[] getOldPortWwns() {
-    return this.oldPortWwns;
-  }
+    public long[] getOldPortWwns() {
+        return this.oldPortWwns;
+    }
 
-  public long[] getNewNodeWwns() {
-    return this.newNodeWwns;
-  }
+    public long[] getNewNodeWwns() {
+        return this.newNodeWwns;
+    }
 
-  public long[] getNewPortWwns() {
-    return this.newPortWwns;
-  }
+    public long[] getNewPortWwns() {
+        return this.newPortWwns;
+    }
 
-  public void setOldNodeWwns(long[] oldNodeWwns) {
-    this.oldNodeWwns=oldNodeWwns;
-  }
+    public void setOldNodeWwns(long[] oldNodeWwns) {
+        this.oldNodeWwns = oldNodeWwns;
+    }
 
-  public void setOldPortWwns(long[] oldPortWwns) {
-    this.oldPortWwns=oldPortWwns;
-  }
+    public void setOldPortWwns(long[] oldPortWwns) {
+        this.oldPortWwns = oldPortWwns;
+    }
 
-  public void setNewNodeWwns(long[] newNodeWwns) {
-    this.newNodeWwns=newNodeWwns;
-  }
+    public void setNewNodeWwns(long[] newNodeWwns) {
+        this.newNodeWwns = newNodeWwns;
+    }
 
-  public void setNewPortWwns(long[] newPortWwns) {
-    this.newPortWwns=newPortWwns;
-  }
+    public void setNewPortWwns(long[] newPortWwns) {
+        this.newPortWwns = newPortWwns;
+    }
 }

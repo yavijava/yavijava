@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VirtualSerialPortPipeBackingOption extends VirtualDevicePipeBackingOption {
-  public ChoiceOption endpoint;
-  public BoolOption noRxLoss;
+    public ChoiceOption endpoint;
+    public BoolOption noRxLoss;
 
-  public ChoiceOption getEndpoint() {
-    return this.endpoint;
-  }
+    public ChoiceOption getEndpoint() {
+        return this.endpoint;
+    }
 
-  public BoolOption getNoRxLoss() {
-    return this.noRxLoss;
-  }
+    public BoolOption getNoRxLoss() {
+        return this.noRxLoss;
+    }
 
-  public void setEndpoint(ChoiceOption endpoint) {
-    this.endpoint=endpoint;
-  }
+    public void setEndpoint(ChoiceOption endpoint) {
+        this.endpoint = endpoint;
+    }
 
-  public void setNoRxLoss(BoolOption noRxLoss) {
-    this.noRxLoss=noRxLoss;
-  }
+    public void setNoRxLoss(BoolOption noRxLoss) {
+        this.noRxLoss = noRxLoss;
+    }
 }

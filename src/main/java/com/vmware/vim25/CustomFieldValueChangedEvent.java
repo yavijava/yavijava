@@ -30,46 +30,46 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class CustomFieldValueChangedEvent extends CustomFieldEvent {
-  public ManagedEntityEventArgument entity;
-  public int fieldKey;
-  public String name;
-  public String value;
+    public ManagedEntityEventArgument entity;
+    public int fieldKey;
+    public String name;
+    public String value;
 
-  public ManagedEntityEventArgument getEntity() {
-    return this.entity;
-  }
+    public ManagedEntityEventArgument getEntity() {
+        return this.entity;
+    }
 
-  public int getFieldKey() {
-    return this.fieldKey;
-  }
+    public int getFieldKey() {
+        return this.fieldKey;
+    }
 
-  public String getName() {
-    return this.name;
-  }
+    public String getName() {
+        return this.name;
+    }
 
-  public String getValue() {
-    return this.value;
-  }
+    public String getValue() {
+        return this.value;
+    }
 
-  public void setEntity(ManagedEntityEventArgument entity) {
-    this.entity=entity;
-  }
+    public void setEntity(ManagedEntityEventArgument entity) {
+        this.entity = entity;
+    }
 
-  public void setFieldKey(int fieldKey) {
-    this.fieldKey=fieldKey;
-  }
+    public void setFieldKey(int fieldKey) {
+        this.fieldKey = fieldKey;
+    }
 
-  public void setName(String name) {
-    this.name=name;
-  }
+    public void setName(String name) {
+        this.name = name;
+    }
 
-  public void setValue(String value) {
-    this.value=value;
-  }
+    public void setValue(String value) {
+        this.value = value;
+    }
 }

@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VMwareDVSHealthCheckCapability extends DVSHealthCheckCapability {
-  public boolean vlanMtuSupported;
-  public boolean teamingSupported;
+    public boolean vlanMtuSupported;
+    public boolean teamingSupported;
 
-  public boolean isVlanMtuSupported() {
-    return this.vlanMtuSupported;
-  }
+    public boolean isVlanMtuSupported() {
+        return this.vlanMtuSupported;
+    }
 
-  public boolean isTeamingSupported() {
-    return this.teamingSupported;
-  }
+    public boolean isTeamingSupported() {
+        return this.teamingSupported;
+    }
 
-  public void setVlanMtuSupported(boolean vlanMtuSupported) {
-    this.vlanMtuSupported=vlanMtuSupported;
-  }
+    public void setVlanMtuSupported(boolean vlanMtuSupported) {
+        this.vlanMtuSupported = vlanMtuSupported;
+    }
 
-  public void setTeamingSupported(boolean teamingSupported) {
-    this.teamingSupported=teamingSupported;
-  }
+    public void setTeamingSupported(boolean teamingSupported) {
+        this.teamingSupported = teamingSupported;
+    }
 }

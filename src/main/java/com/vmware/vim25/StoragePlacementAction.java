@@ -30,64 +30,64 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class StoragePlacementAction extends ClusterAction {
-  public ManagedObjectReference vm;
-  public VirtualMachineRelocateSpec relocateSpec;
-  public ManagedObjectReference destination;
-  public Float spaceUtilBefore;
-  public Float spaceUtilAfter;
-  public Float ioLatencyBefore;
+    public ManagedObjectReference vm;
+    public VirtualMachineRelocateSpec relocateSpec;
+    public ManagedObjectReference destination;
+    public Float spaceUtilBefore;
+    public Float spaceUtilAfter;
+    public Float ioLatencyBefore;
 
-  public ManagedObjectReference getVm() {
-    return this.vm;
-  }
+    public ManagedObjectReference getVm() {
+        return this.vm;
+    }
 
-  public VirtualMachineRelocateSpec getRelocateSpec() {
-    return this.relocateSpec;
-  }
+    public VirtualMachineRelocateSpec getRelocateSpec() {
+        return this.relocateSpec;
+    }
 
-  public ManagedObjectReference getDestination() {
-    return this.destination;
-  }
+    public ManagedObjectReference getDestination() {
+        return this.destination;
+    }
 
-  public Float getSpaceUtilBefore() {
-    return this.spaceUtilBefore;
-  }
+    public Float getSpaceUtilBefore() {
+        return this.spaceUtilBefore;
+    }
 
-  public Float getSpaceUtilAfter() {
-    return this.spaceUtilAfter;
-  }
+    public Float getSpaceUtilAfter() {
+        return this.spaceUtilAfter;
+    }
 
-  public Float getIoLatencyBefore() {
-    return this.ioLatencyBefore;
-  }
+    public Float getIoLatencyBefore() {
+        return this.ioLatencyBefore;
+    }
 
-  public void setVm(ManagedObjectReference vm) {
-    this.vm=vm;
-  }
+    public void setVm(ManagedObjectReference vm) {
+        this.vm = vm;
+    }
 
-  public void setRelocateSpec(VirtualMachineRelocateSpec relocateSpec) {
-    this.relocateSpec=relocateSpec;
-  }
+    public void setRelocateSpec(VirtualMachineRelocateSpec relocateSpec) {
+        this.relocateSpec = relocateSpec;
+    }
 
-  public void setDestination(ManagedObjectReference destination) {
-    this.destination=destination;
-  }
+    public void setDestination(ManagedObjectReference destination) {
+        this.destination = destination;
+    }
 
-  public void setSpaceUtilBefore(Float spaceUtilBefore) {
-    this.spaceUtilBefore=spaceUtilBefore;
-  }
+    public void setSpaceUtilBefore(Float spaceUtilBefore) {
+        this.spaceUtilBefore = spaceUtilBefore;
+    }
 
-  public void setSpaceUtilAfter(Float spaceUtilAfter) {
-    this.spaceUtilAfter=spaceUtilAfter;
-  }
+    public void setSpaceUtilAfter(Float spaceUtilAfter) {
+        this.spaceUtilAfter = spaceUtilAfter;
+    }
 
-  public void setIoLatencyBefore(Float ioLatencyBefore) {
-    this.ioLatencyBefore=ioLatencyBefore;
-  }
+    public void setIoLatencyBefore(Float ioLatencyBefore) {
+        this.ioLatencyBefore = ioLatencyBefore;
+    }
 }

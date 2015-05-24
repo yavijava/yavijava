@@ -30,46 +30,46 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class LinkLayerDiscoveryProtocolInfo extends DynamicData {
-  public String chassisId;
-  public String portId;
-  public int timeToLive;
-  public KeyAnyValue[] parameter;
+    public String chassisId;
+    public String portId;
+    public int timeToLive;
+    public KeyAnyValue[] parameter;
 
-  public String getChassisId() {
-    return this.chassisId;
-  }
+    public String getChassisId() {
+        return this.chassisId;
+    }
 
-  public String getPortId() {
-    return this.portId;
-  }
+    public String getPortId() {
+        return this.portId;
+    }
 
-  public int getTimeToLive() {
-    return this.timeToLive;
-  }
+    public int getTimeToLive() {
+        return this.timeToLive;
+    }
 
-  public KeyAnyValue[] getParameter() {
-    return this.parameter;
-  }
+    public KeyAnyValue[] getParameter() {
+        return this.parameter;
+    }
 
-  public void setChassisId(String chassisId) {
-    this.chassisId=chassisId;
-  }
+    public void setChassisId(String chassisId) {
+        this.chassisId = chassisId;
+    }
 
-  public void setPortId(String portId) {
-    this.portId=portId;
-  }
+    public void setPortId(String portId) {
+        this.portId = portId;
+    }
 
-  public void setTimeToLive(int timeToLive) {
-    this.timeToLive=timeToLive;
-  }
+    public void setTimeToLive(int timeToLive) {
+        this.timeToLive = timeToLive;
+    }
 
-  public void setParameter(KeyAnyValue[] parameter) {
-    this.parameter=parameter;
-  }
+    public void setParameter(KeyAnyValue[] parameter) {
+        this.parameter = parameter;
+    }
 }

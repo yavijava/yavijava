@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class ClusterDrsFaultsFaultsByVirtualDisk extends ClusterDrsFaultsFaultsByVm {
-  public VirtualDiskId disk;
+    public VirtualDiskId disk;
 
-  public VirtualDiskId getDisk() {
-    return this.disk;
-  }
+    public VirtualDiskId getDisk() {
+        return this.disk;
+    }
 
-  public void setDisk(VirtualDiskId disk) {
-    this.disk=disk;
-  }
+    public void setDisk(VirtualDiskId disk) {
+        this.disk = disk;
+    }
 }

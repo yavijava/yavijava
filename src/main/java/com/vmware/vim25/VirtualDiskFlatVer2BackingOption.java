@@ -30,100 +30,100 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VirtualDiskFlatVer2BackingOption extends VirtualDeviceFileBackingOption {
-  public ChoiceOption diskMode;
-  public BoolOption split;
-  public BoolOption writeThrough;
-  public boolean growable;
-  public boolean hotGrowable;
-  public boolean uuid;
-  public BoolOption thinProvisioned;
-  public BoolOption eagerlyScrub;
-  public ChoiceOption deltaDiskFormat;
-  public VirtualDiskDeltaDiskFormatsSupported[] deltaDiskFormatsSupported;
+    public ChoiceOption diskMode;
+    public BoolOption split;
+    public BoolOption writeThrough;
+    public boolean growable;
+    public boolean hotGrowable;
+    public boolean uuid;
+    public BoolOption thinProvisioned;
+    public BoolOption eagerlyScrub;
+    public ChoiceOption deltaDiskFormat;
+    public VirtualDiskDeltaDiskFormatsSupported[] deltaDiskFormatsSupported;
 
-  public ChoiceOption getDiskMode() {
-    return this.diskMode;
-  }
+    public ChoiceOption getDiskMode() {
+        return this.diskMode;
+    }
 
-  public BoolOption getSplit() {
-    return this.split;
-  }
+    public BoolOption getSplit() {
+        return this.split;
+    }
 
-  public BoolOption getWriteThrough() {
-    return this.writeThrough;
-  }
+    public BoolOption getWriteThrough() {
+        return this.writeThrough;
+    }
 
-  public boolean isGrowable() {
-    return this.growable;
-  }
+    public boolean isGrowable() {
+        return this.growable;
+    }
 
-  public boolean isHotGrowable() {
-    return this.hotGrowable;
-  }
+    public boolean isHotGrowable() {
+        return this.hotGrowable;
+    }
 
-  public boolean isUuid() {
-    return this.uuid;
-  }
+    public boolean isUuid() {
+        return this.uuid;
+    }
 
-  public BoolOption getThinProvisioned() {
-    return this.thinProvisioned;
-  }
+    public BoolOption getThinProvisioned() {
+        return this.thinProvisioned;
+    }
 
-  public BoolOption getEagerlyScrub() {
-    return this.eagerlyScrub;
-  }
+    public BoolOption getEagerlyScrub() {
+        return this.eagerlyScrub;
+    }
 
-  public ChoiceOption getDeltaDiskFormat() {
-    return this.deltaDiskFormat;
-  }
+    public ChoiceOption getDeltaDiskFormat() {
+        return this.deltaDiskFormat;
+    }
 
-  public VirtualDiskDeltaDiskFormatsSupported[] getDeltaDiskFormatsSupported() {
-    return this.deltaDiskFormatsSupported;
-  }
+    public VirtualDiskDeltaDiskFormatsSupported[] getDeltaDiskFormatsSupported() {
+        return this.deltaDiskFormatsSupported;
+    }
 
-  public void setDiskMode(ChoiceOption diskMode) {
-    this.diskMode=diskMode;
-  }
+    public void setDiskMode(ChoiceOption diskMode) {
+        this.diskMode = diskMode;
+    }
 
-  public void setSplit(BoolOption split) {
-    this.split=split;
-  }
+    public void setSplit(BoolOption split) {
+        this.split = split;
+    }
 
-  public void setWriteThrough(BoolOption writeThrough) {
-    this.writeThrough=writeThrough;
-  }
+    public void setWriteThrough(BoolOption writeThrough) {
+        this.writeThrough = writeThrough;
+    }
 
-  public void setGrowable(boolean growable) {
-    this.growable=growable;
-  }
+    public void setGrowable(boolean growable) {
+        this.growable = growable;
+    }
 
-  public void setHotGrowable(boolean hotGrowable) {
-    this.hotGrowable=hotGrowable;
-  }
+    public void setHotGrowable(boolean hotGrowable) {
+        this.hotGrowable = hotGrowable;
+    }
 
-  public void setUuid(boolean uuid) {
-    this.uuid=uuid;
-  }
+    public void setUuid(boolean uuid) {
+        this.uuid = uuid;
+    }
 
-  public void setThinProvisioned(BoolOption thinProvisioned) {
-    this.thinProvisioned=thinProvisioned;
-  }
+    public void setThinProvisioned(BoolOption thinProvisioned) {
+        this.thinProvisioned = thinProvisioned;
+    }
 
-  public void setEagerlyScrub(BoolOption eagerlyScrub) {
-    this.eagerlyScrub=eagerlyScrub;
-  }
+    public void setEagerlyScrub(BoolOption eagerlyScrub) {
+        this.eagerlyScrub = eagerlyScrub;
+    }
 
-  public void setDeltaDiskFormat(ChoiceOption deltaDiskFormat) {
-    this.deltaDiskFormat=deltaDiskFormat;
-  }
+    public void setDeltaDiskFormat(ChoiceOption deltaDiskFormat) {
+        this.deltaDiskFormat = deltaDiskFormat;
+    }
 
-  public void setDeltaDiskFormatsSupported(VirtualDiskDeltaDiskFormatsSupported[] deltaDiskFormatsSupported) {
-    this.deltaDiskFormatsSupported=deltaDiskFormatsSupported;
-  }
+    public void setDeltaDiskFormatsSupported(VirtualDiskDeltaDiskFormatsSupported[] deltaDiskFormatsSupported) {
+        this.deltaDiskFormatsSupported = deltaDiskFormatsSupported;
+    }
 }

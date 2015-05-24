@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfHostFirewallRule {
-  public HostFirewallRule[] HostFirewallRule;
+    public HostFirewallRule[] HostFirewallRule;
 
-  public HostFirewallRule[] getHostFirewallRule() {
-    return this.HostFirewallRule;
-  }
+    public HostFirewallRule[] getHostFirewallRule() {
+        return this.HostFirewallRule;
+    }
 
-  public HostFirewallRule getHostFirewallRule(int i) {
-    return this.HostFirewallRule[i];
-  }
+    public HostFirewallRule getHostFirewallRule(int i) {
+        return this.HostFirewallRule[i];
+    }
 
-  public void setHostFirewallRule(HostFirewallRule[] HostFirewallRule) {
-    this.HostFirewallRule=HostFirewallRule;
-  }
+    public void setHostFirewallRule(HostFirewallRule[] HostFirewallRule) {
+        this.HostFirewallRule = HostFirewallRule;
+    }
 }

@@ -30,55 +30,55 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostFirewallRule extends DynamicData {
-  public int port;
-  public Integer endPort;
-  public HostFirewallRuleDirection direction;
-  public HostFirewallRulePortType portType;
-  public String protocol;
+    public int port;
+    public Integer endPort;
+    public HostFirewallRuleDirection direction;
+    public HostFirewallRulePortType portType;
+    public String protocol;
 
-  public int getPort() {
-    return this.port;
-  }
+    public int getPort() {
+        return this.port;
+    }
 
-  public Integer getEndPort() {
-    return this.endPort;
-  }
+    public Integer getEndPort() {
+        return this.endPort;
+    }
 
-  public HostFirewallRuleDirection getDirection() {
-    return this.direction;
-  }
+    public HostFirewallRuleDirection getDirection() {
+        return this.direction;
+    }
 
-  public HostFirewallRulePortType getPortType() {
-    return this.portType;
-  }
+    public HostFirewallRulePortType getPortType() {
+        return this.portType;
+    }
 
-  public String getProtocol() {
-    return this.protocol;
-  }
+    public String getProtocol() {
+        return this.protocol;
+    }
 
-  public void setPort(int port) {
-    this.port=port;
-  }
+    public void setPort(int port) {
+        this.port = port;
+    }
 
-  public void setEndPort(Integer endPort) {
-    this.endPort=endPort;
-  }
+    public void setEndPort(Integer endPort) {
+        this.endPort = endPort;
+    }
 
-  public void setDirection(HostFirewallRuleDirection direction) {
-    this.direction=direction;
-  }
+    public void setDirection(HostFirewallRuleDirection direction) {
+        this.direction = direction;
+    }
 
-  public void setPortType(HostFirewallRulePortType portType) {
-    this.portType=portType;
-  }
+    public void setPortType(HostFirewallRulePortType portType) {
+        this.portType = portType;
+    }
 
-  public void setProtocol(String protocol) {
-    this.protocol=protocol;
-  }
+    public void setProtocol(String protocol) {
+        this.protocol = protocol;
+    }
 }

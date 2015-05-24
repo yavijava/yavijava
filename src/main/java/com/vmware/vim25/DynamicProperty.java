@@ -30,29 +30,29 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 
 public class DynamicProperty {
-  public String name;
-  public Object val;
+    public String name;
+    public Object val;
 
-  public String getName() {
-    return this.name;
-  }
+    public String getName() {
+        return this.name;
+    }
 
-  public Object getVal() {
-    return this.val;
-  }
+    public Object getVal() {
+        return this.val;
+    }
 
-  public void setName(String name) {
-    this.name=name;
-  }
+    public void setName(String name) {
+        this.name = name;
+    }
 
-  public void setVal(Object val) {
-    this.val=val;
-  }
+    public void setVal(Object val) {
+        this.val = val;
+    }
 }

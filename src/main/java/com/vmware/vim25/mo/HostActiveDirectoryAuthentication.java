@@ -1,16 +1,8 @@
 package com.vmware.vim25.mo;
 
-import java.rmi.RemoteException;
+import com.vmware.vim25.*;
 
-import com.vmware.vim25.ActiveDirectoryFault;
-import com.vmware.vim25.AuthMinimumAdminPermission;
-import com.vmware.vim25.FileNotFound;
-import com.vmware.vim25.HostConfigFault;
-import com.vmware.vim25.InvalidLogin;
-import com.vmware.vim25.InvalidState;
-import com.vmware.vim25.ManagedObjectReference;
-import com.vmware.vim25.RuntimeFault;
-import com.vmware.vim25.TaskInProgress;
+import java.rmi.RemoteException;
 
 /**
  * @since SDK4.1
@@ -62,6 +54,7 @@ public class HostActiveDirectoryAuthentication extends HostDirectoryStore {
     /**
      * Enables console authentication using a local smart card and reader. To take effect this feature requires an
      * active domain membership to a domain with users configured to authenticate using smart cards.
+     *
      * @throws ActiveDirectoryFault
      * @throws HostConfigFault
      * @throws RuntimeFault
@@ -107,8 +100,7 @@ public class HostActiveDirectoryAuthentication extends HostDirectoryStore {
      * @throws RuntimeFault
      * @throws RemoteException
      * @since 6.0
-     * @deprecated
-     * Please remove by fingerprint/digest instead.
+     * @deprecated Please remove by fingerprint/digest instead.
      */
     public void removeSmartCardTrustAnchor(String issuer, String serial) throws HostConfigFault, RuntimeFault, RemoteException {
         getVimService().removeSmartCardTrustAnchor(getMOR(), issuer, serial);
@@ -118,7 +110,7 @@ public class HostActiveDirectoryAuthentication extends HostDirectoryStore {
      * Remove a smart card trust anchor certificate from the system by fingerprint.
      *
      * @param fingerprint Certificate fingerprint
-     * @param digest Digest function used to compute fingerprint. One of {@link com.vmware.vim25.HostActiveDirectoryAuthenticationCertificateDigest}.
+     * @param digest      Digest function used to compute fingerprint. One of {@link com.vmware.vim25.HostActiveDirectoryAuthenticationCertificateDigest}.
      * @throws HostConfigFault
      * @throws RuntimeFault
      * @throws RemoteException
@@ -140,7 +132,7 @@ public class HostActiveDirectoryAuthentication extends HostDirectoryStore {
 
     /**
      * Replace the trust anchor certificates for smart card authentication, all existing trust anchors are removed.
-     * 
+     *
      * @throws RuntimeFault
      * @throws RemoteException
      */

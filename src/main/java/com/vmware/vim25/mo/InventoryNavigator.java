@@ -1,11 +1,11 @@
 package com.vmware.vim25.mo;
 
-import java.rmi.RemoteException;
-
 import com.vmware.vim25.*;
-import com.vmware.vim25.mo.util.*;
+import com.vmware.vim25.mo.util.MorUtil;
 import com.vmware.vim25.mo.util.PropertyCollectorUtil;
 import org.apache.log4j.Logger;
+
+import java.rmi.RemoteException;
 
 public class InventoryNavigator {
     private ManagedEntity rootEntity = null;

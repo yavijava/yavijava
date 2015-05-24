@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfHostHardwareElementInfo {
-  public HostHardwareElementInfo[] HostHardwareElementInfo;
+    public HostHardwareElementInfo[] HostHardwareElementInfo;
 
-  public HostHardwareElementInfo[] getHostHardwareElementInfo() {
-    return this.HostHardwareElementInfo;
-  }
+    public HostHardwareElementInfo[] getHostHardwareElementInfo() {
+        return this.HostHardwareElementInfo;
+    }
 
-  public HostHardwareElementInfo getHostHardwareElementInfo(int i) {
-    return this.HostHardwareElementInfo[i];
-  }
+    public HostHardwareElementInfo getHostHardwareElementInfo(int i) {
+        return this.HostHardwareElementInfo[i];
+    }
 
-  public void setHostHardwareElementInfo(HostHardwareElementInfo[] HostHardwareElementInfo) {
-    this.HostHardwareElementInfo=HostHardwareElementInfo;
-  }
+    public void setHostHardwareElementInfo(HostHardwareElementInfo[] HostHardwareElementInfo) {
+        this.HostHardwareElementInfo = HostHardwareElementInfo;
+    }
 }

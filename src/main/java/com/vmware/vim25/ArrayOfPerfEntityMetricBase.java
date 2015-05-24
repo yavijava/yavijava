@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfPerfEntityMetricBase {
-  public PerfEntityMetricBase[] PerfEntityMetricBase;
+    public PerfEntityMetricBase[] PerfEntityMetricBase;
 
-  public PerfEntityMetricBase[] getPerfEntityMetricBase() {
-    return this.PerfEntityMetricBase;
-  }
+    public PerfEntityMetricBase[] getPerfEntityMetricBase() {
+        return this.PerfEntityMetricBase;
+    }
 
-  public PerfEntityMetricBase getPerfEntityMetricBase(int i) {
-    return this.PerfEntityMetricBase[i];
-  }
+    public PerfEntityMetricBase getPerfEntityMetricBase(int i) {
+        return this.PerfEntityMetricBase[i];
+    }
 
-  public void setPerfEntityMetricBase(PerfEntityMetricBase[] PerfEntityMetricBase) {
-    this.PerfEntityMetricBase=PerfEntityMetricBase;
-  }
+    public void setPerfEntityMetricBase(PerfEntityMetricBase[] PerfEntityMetricBase) {
+        this.PerfEntityMetricBase = PerfEntityMetricBase;
+    }
 }

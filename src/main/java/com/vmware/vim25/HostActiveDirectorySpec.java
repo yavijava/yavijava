@@ -30,55 +30,55 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostActiveDirectorySpec extends DynamicData {
-  public String domainName;
-  public String userName;
-  public String password;
-  public String camServer;
-  public String thumbprint;
+    public String domainName;
+    public String userName;
+    public String password;
+    public String camServer;
+    public String thumbprint;
 
-  public String getDomainName() {
-    return this.domainName;
-  }
+    public String getDomainName() {
+        return this.domainName;
+    }
 
-  public String getUserName() {
-    return this.userName;
-  }
+    public String getUserName() {
+        return this.userName;
+    }
 
-  public String getPassword() {
-    return this.password;
-  }
+    public String getPassword() {
+        return this.password;
+    }
 
-  public String getCamServer() {
-    return this.camServer;
-  }
+    public String getCamServer() {
+        return this.camServer;
+    }
 
-  public String getThumbprint() {
-    return this.thumbprint;
-  }
+    public String getThumbprint() {
+        return this.thumbprint;
+    }
 
-  public void setDomainName(String domainName) {
-    this.domainName=domainName;
-  }
+    public void setDomainName(String domainName) {
+        this.domainName = domainName;
+    }
 
-  public void setUserName(String userName) {
-    this.userName=userName;
-  }
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
 
-  public void setPassword(String password) {
-    this.password=password;
-  }
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
-  public void setCamServer(String camServer) {
-    this.camServer=camServer;
-  }
+    public void setCamServer(String camServer) {
+        this.camServer = camServer;
+    }
 
-  public void setThumbprint(String thumbprint) {
-    this.thumbprint=thumbprint;
-  }
+    public void setThumbprint(String thumbprint) {
+        this.thumbprint = thumbprint;
+    }
 }

@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class StorageDrsIoLoadBalanceConfig extends DynamicData {
-  public Integer ioLatencyThreshold;
-  public Integer ioLoadImbalanceThreshold;
+    public Integer ioLatencyThreshold;
+    public Integer ioLoadImbalanceThreshold;
 
-  public Integer getIoLatencyThreshold() {
-    return this.ioLatencyThreshold;
-  }
+    public Integer getIoLatencyThreshold() {
+        return this.ioLatencyThreshold;
+    }
 
-  public Integer getIoLoadImbalanceThreshold() {
-    return this.ioLoadImbalanceThreshold;
-  }
+    public Integer getIoLoadImbalanceThreshold() {
+        return this.ioLoadImbalanceThreshold;
+    }
 
-  public void setIoLatencyThreshold(Integer ioLatencyThreshold) {
-    this.ioLatencyThreshold=ioLatencyThreshold;
-  }
+    public void setIoLatencyThreshold(Integer ioLatencyThreshold) {
+        this.ioLatencyThreshold = ioLatencyThreshold;
+    }
 
-  public void setIoLoadImbalanceThreshold(Integer ioLoadImbalanceThreshold) {
-    this.ioLoadImbalanceThreshold=ioLoadImbalanceThreshold;
-  }
+    public void setIoLoadImbalanceThreshold(Integer ioLoadImbalanceThreshold) {
+        this.ioLoadImbalanceThreshold = ioLoadImbalanceThreshold;
+    }
 }

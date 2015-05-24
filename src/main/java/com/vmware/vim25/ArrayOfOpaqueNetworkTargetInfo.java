@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfOpaqueNetworkTargetInfo {
-  public OpaqueNetworkTargetInfo[] OpaqueNetworkTargetInfo;
+    public OpaqueNetworkTargetInfo[] OpaqueNetworkTargetInfo;
 
-  public OpaqueNetworkTargetInfo[] getOpaqueNetworkTargetInfo() {
-    return this.OpaqueNetworkTargetInfo;
-  }
+    public OpaqueNetworkTargetInfo[] getOpaqueNetworkTargetInfo() {
+        return this.OpaqueNetworkTargetInfo;
+    }
 
-  public OpaqueNetworkTargetInfo getOpaqueNetworkTargetInfo(int i) {
-    return this.OpaqueNetworkTargetInfo[i];
-  }
+    public OpaqueNetworkTargetInfo getOpaqueNetworkTargetInfo(int i) {
+        return this.OpaqueNetworkTargetInfo[i];
+    }
 
-  public void setOpaqueNetworkTargetInfo(OpaqueNetworkTargetInfo[] OpaqueNetworkTargetInfo) {
-    this.OpaqueNetworkTargetInfo=OpaqueNetworkTargetInfo;
-  }
+    public void setOpaqueNetworkTargetInfo(OpaqueNetworkTargetInfo[] OpaqueNetworkTargetInfo) {
+        this.OpaqueNetworkTargetInfo = OpaqueNetworkTargetInfo;
+    }
 }

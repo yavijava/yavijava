@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class ProfileSimpleExpression extends ProfileExpression {
-  public String expressionType;
-  public KeyAnyValue[] parameter;
+    public String expressionType;
+    public KeyAnyValue[] parameter;
 
-  public String getExpressionType() {
-    return this.expressionType;
-  }
+    public String getExpressionType() {
+        return this.expressionType;
+    }
 
-  public KeyAnyValue[] getParameter() {
-    return this.parameter;
-  }
+    public KeyAnyValue[] getParameter() {
+        return this.parameter;
+    }
 
-  public void setExpressionType(String expressionType) {
-    this.expressionType=expressionType;
-  }
+    public void setExpressionType(String expressionType) {
+        this.expressionType = expressionType;
+    }
 
-  public void setParameter(KeyAnyValue[] parameter) {
-    this.parameter=parameter;
-  }
+    public void setParameter(KeyAnyValue[] parameter) {
+        this.parameter = parameter;
+    }
 }

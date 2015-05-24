@@ -30,37 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class FileTransferInformation extends DynamicData {
-  public GuestFileAttributes attributes;
-  public long size;
-  public String url;
+    public GuestFileAttributes attributes;
+    public long size;
+    public String url;
 
-  public GuestFileAttributes getAttributes() {
-    return this.attributes;
-  }
+    public GuestFileAttributes getAttributes() {
+        return this.attributes;
+    }
 
-  public long getSize() {
-    return this.size;
-  }
+    public long getSize() {
+        return this.size;
+    }
 
-  public String getUrl() {
-    return this.url;
-  }
+    public String getUrl() {
+        return this.url;
+    }
 
-  public void setAttributes(GuestFileAttributes attributes) {
-    this.attributes=attributes;
-  }
+    public void setAttributes(GuestFileAttributes attributes) {
+        this.attributes = attributes;
+    }
 
-  public void setSize(long size) {
-    this.size=size;
-  }
+    public void setSize(long size) {
+        this.size = size;
+    }
 
-  public void setUrl(String url) {
-    this.url=url;
-  }
+    public void setUrl(String url) {
+        this.url = url;
+    }
 }

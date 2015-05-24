@@ -30,82 +30,82 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VmConfigSpec extends DynamicData {
-  public VAppProductSpec[] product;
-  public VAppPropertySpec[] property;
-  public VAppIPAssignmentInfo ipAssignment;
-  public String[] eula;
-  public VAppOvfSectionSpec[] ovfSection;
-  public String[] ovfEnvironmentTransport;
-  public Boolean installBootRequired;
-  public Integer installBootStopDelay;
+    public VAppProductSpec[] product;
+    public VAppPropertySpec[] property;
+    public VAppIPAssignmentInfo ipAssignment;
+    public String[] eula;
+    public VAppOvfSectionSpec[] ovfSection;
+    public String[] ovfEnvironmentTransport;
+    public Boolean installBootRequired;
+    public Integer installBootStopDelay;
 
-  public VAppProductSpec[] getProduct() {
-    return this.product;
-  }
+    public VAppProductSpec[] getProduct() {
+        return this.product;
+    }
 
-  public VAppPropertySpec[] getProperty() {
-    return this.property;
-  }
+    public VAppPropertySpec[] getProperty() {
+        return this.property;
+    }
 
-  public VAppIPAssignmentInfo getIpAssignment() {
-    return this.ipAssignment;
-  }
+    public VAppIPAssignmentInfo getIpAssignment() {
+        return this.ipAssignment;
+    }
 
-  public String[] getEula() {
-    return this.eula;
-  }
+    public String[] getEula() {
+        return this.eula;
+    }
 
-  public VAppOvfSectionSpec[] getOvfSection() {
-    return this.ovfSection;
-  }
+    public VAppOvfSectionSpec[] getOvfSection() {
+        return this.ovfSection;
+    }
 
-  public String[] getOvfEnvironmentTransport() {
-    return this.ovfEnvironmentTransport;
-  }
+    public String[] getOvfEnvironmentTransport() {
+        return this.ovfEnvironmentTransport;
+    }
 
-  public Boolean getInstallBootRequired() {
-    return this.installBootRequired;
-  }
+    public Boolean getInstallBootRequired() {
+        return this.installBootRequired;
+    }
 
-  public Integer getInstallBootStopDelay() {
-    return this.installBootStopDelay;
-  }
+    public Integer getInstallBootStopDelay() {
+        return this.installBootStopDelay;
+    }
 
-  public void setProduct(VAppProductSpec[] product) {
-    this.product=product;
-  }
+    public void setProduct(VAppProductSpec[] product) {
+        this.product = product;
+    }
 
-  public void setProperty(VAppPropertySpec[] property) {
-    this.property=property;
-  }
+    public void setProperty(VAppPropertySpec[] property) {
+        this.property = property;
+    }
 
-  public void setIpAssignment(VAppIPAssignmentInfo ipAssignment) {
-    this.ipAssignment=ipAssignment;
-  }
+    public void setIpAssignment(VAppIPAssignmentInfo ipAssignment) {
+        this.ipAssignment = ipAssignment;
+    }
 
-  public void setEula(String[] eula) {
-    this.eula=eula;
-  }
+    public void setEula(String[] eula) {
+        this.eula = eula;
+    }
 
-  public void setOvfSection(VAppOvfSectionSpec[] ovfSection) {
-    this.ovfSection=ovfSection;
-  }
+    public void setOvfSection(VAppOvfSectionSpec[] ovfSection) {
+        this.ovfSection = ovfSection;
+    }
 
-  public void setOvfEnvironmentTransport(String[] ovfEnvironmentTransport) {
-    this.ovfEnvironmentTransport=ovfEnvironmentTransport;
-  }
+    public void setOvfEnvironmentTransport(String[] ovfEnvironmentTransport) {
+        this.ovfEnvironmentTransport = ovfEnvironmentTransport;
+    }
 
-  public void setInstallBootRequired(Boolean installBootRequired) {
-    this.installBootRequired=installBootRequired;
-  }
+    public void setInstallBootRequired(Boolean installBootRequired) {
+        this.installBootRequired = installBootRequired;
+    }
 
-  public void setInstallBootStopDelay(Integer installBootStopDelay) {
-    this.installBootStopDelay=installBootStopDelay;
-  }
+    public void setInstallBootStopDelay(Integer installBootStopDelay) {
+        this.installBootStopDelay = installBootStopDelay;
+    }
 }

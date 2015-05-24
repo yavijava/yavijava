@@ -30,46 +30,46 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostInternetScsiHbaDigestProperties extends DynamicData {
-  public String headerDigestType;
-  public Boolean headerDigestInherited;
-  public String dataDigestType;
-  public Boolean dataDigestInherited;
+    public String headerDigestType;
+    public Boolean headerDigestInherited;
+    public String dataDigestType;
+    public Boolean dataDigestInherited;
 
-  public String getHeaderDigestType() {
-    return this.headerDigestType;
-  }
+    public String getHeaderDigestType() {
+        return this.headerDigestType;
+    }
 
-  public Boolean getHeaderDigestInherited() {
-    return this.headerDigestInherited;
-  }
+    public Boolean getHeaderDigestInherited() {
+        return this.headerDigestInherited;
+    }
 
-  public String getDataDigestType() {
-    return this.dataDigestType;
-  }
+    public String getDataDigestType() {
+        return this.dataDigestType;
+    }
 
-  public Boolean getDataDigestInherited() {
-    return this.dataDigestInherited;
-  }
+    public Boolean getDataDigestInherited() {
+        return this.dataDigestInherited;
+    }
 
-  public void setHeaderDigestType(String headerDigestType) {
-    this.headerDigestType=headerDigestType;
-  }
+    public void setHeaderDigestType(String headerDigestType) {
+        this.headerDigestType = headerDigestType;
+    }
 
-  public void setHeaderDigestInherited(Boolean headerDigestInherited) {
-    this.headerDigestInherited=headerDigestInherited;
-  }
+    public void setHeaderDigestInherited(Boolean headerDigestInherited) {
+        this.headerDigestInherited = headerDigestInherited;
+    }
 
-  public void setDataDigestType(String dataDigestType) {
-    this.dataDigestType=dataDigestType;
-  }
+    public void setDataDigestType(String dataDigestType) {
+        this.dataDigestType = dataDigestType;
+    }
 
-  public void setDataDigestInherited(Boolean dataDigestInherited) {
-    this.dataDigestInherited=dataDigestInherited;
-  }
+    public void setDataDigestInherited(Boolean dataDigestInherited) {
+        this.dataDigestInherited = dataDigestInherited;
+    }
 }

@@ -30,37 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostFileSystemMountInfo extends DynamicData {
-  public HostMountInfo mountInfo;
-  public HostFileSystemVolume volume;
-  public String vStorageSupport;
+    public HostMountInfo mountInfo;
+    public HostFileSystemVolume volume;
+    public String vStorageSupport;
 
-  public HostMountInfo getMountInfo() {
-    return this.mountInfo;
-  }
+    public HostMountInfo getMountInfo() {
+        return this.mountInfo;
+    }
 
-  public HostFileSystemVolume getVolume() {
-    return this.volume;
-  }
+    public HostFileSystemVolume getVolume() {
+        return this.volume;
+    }
 
-  public String getVStorageSupport() {
-    return this.vStorageSupport;
-  }
+    public String getVStorageSupport() {
+        return this.vStorageSupport;
+    }
 
-  public void setMountInfo(HostMountInfo mountInfo) {
-    this.mountInfo=mountInfo;
-  }
+    public void setMountInfo(HostMountInfo mountInfo) {
+        this.mountInfo = mountInfo;
+    }
 
-  public void setVolume(HostFileSystemVolume volume) {
-    this.volume=volume;
-  }
+    public void setVolume(HostFileSystemVolume volume) {
+        this.volume = volume;
+    }
 
-  public void setVStorageSupport(String vStorageSupport) {
-    this.vStorageSupport=vStorageSupport;
-  }
+    public void setVStorageSupport(String vStorageSupport) {
+        this.vStorageSupport = vStorageSupport;
+    }
 }

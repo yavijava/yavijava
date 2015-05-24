@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfHostPatchManagerStatusPrerequisitePatch {
-  public HostPatchManagerStatusPrerequisitePatch[] HostPatchManagerStatusPrerequisitePatch;
+    public HostPatchManagerStatusPrerequisitePatch[] HostPatchManagerStatusPrerequisitePatch;
 
-  public HostPatchManagerStatusPrerequisitePatch[] getHostPatchManagerStatusPrerequisitePatch() {
-    return this.HostPatchManagerStatusPrerequisitePatch;
-  }
+    public HostPatchManagerStatusPrerequisitePatch[] getHostPatchManagerStatusPrerequisitePatch() {
+        return this.HostPatchManagerStatusPrerequisitePatch;
+    }
 
-  public HostPatchManagerStatusPrerequisitePatch getHostPatchManagerStatusPrerequisitePatch(int i) {
-    return this.HostPatchManagerStatusPrerequisitePatch[i];
-  }
+    public HostPatchManagerStatusPrerequisitePatch getHostPatchManagerStatusPrerequisitePatch(int i) {
+        return this.HostPatchManagerStatusPrerequisitePatch[i];
+    }
 
-  public void setHostPatchManagerStatusPrerequisitePatch(HostPatchManagerStatusPrerequisitePatch[] HostPatchManagerStatusPrerequisitePatch) {
-    this.HostPatchManagerStatusPrerequisitePatch=HostPatchManagerStatusPrerequisitePatch;
-  }
+    public void setHostPatchManagerStatusPrerequisitePatch(HostPatchManagerStatusPrerequisitePatch[] HostPatchManagerStatusPrerequisitePatch) {
+        this.HostPatchManagerStatusPrerequisitePatch = HostPatchManagerStatusPrerequisitePatch;
+    }
 }

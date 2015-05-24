@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfHostDiagnosticPartitionCreateOption {
-  public HostDiagnosticPartitionCreateOption[] HostDiagnosticPartitionCreateOption;
+    public HostDiagnosticPartitionCreateOption[] HostDiagnosticPartitionCreateOption;
 
-  public HostDiagnosticPartitionCreateOption[] getHostDiagnosticPartitionCreateOption() {
-    return this.HostDiagnosticPartitionCreateOption;
-  }
+    public HostDiagnosticPartitionCreateOption[] getHostDiagnosticPartitionCreateOption() {
+        return this.HostDiagnosticPartitionCreateOption;
+    }
 
-  public HostDiagnosticPartitionCreateOption getHostDiagnosticPartitionCreateOption(int i) {
-    return this.HostDiagnosticPartitionCreateOption[i];
-  }
+    public HostDiagnosticPartitionCreateOption getHostDiagnosticPartitionCreateOption(int i) {
+        return this.HostDiagnosticPartitionCreateOption[i];
+    }
 
-  public void setHostDiagnosticPartitionCreateOption(HostDiagnosticPartitionCreateOption[] HostDiagnosticPartitionCreateOption) {
-    this.HostDiagnosticPartitionCreateOption=HostDiagnosticPartitionCreateOption;
-  }
+    public void setHostDiagnosticPartitionCreateOption(HostDiagnosticPartitionCreateOption[] HostDiagnosticPartitionCreateOption) {
+        this.HostDiagnosticPartitionCreateOption = HostDiagnosticPartitionCreateOption;
+    }
 }

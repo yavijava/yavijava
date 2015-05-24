@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostPathSelectionPolicyOption extends DynamicData {
-  public ElementDescription policy;
+    public ElementDescription policy;
 
-  public ElementDescription getPolicy() {
-    return this.policy;
-  }
+    public ElementDescription getPolicy() {
+        return this.policy;
+    }
 
-  public void setPolicy(ElementDescription policy) {
-    this.policy=policy;
-  }
+    public void setPolicy(ElementDescription policy) {
+        this.policy = policy;
+    }
 }

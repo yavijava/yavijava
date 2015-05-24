@@ -26,7 +26,7 @@ public class VRPResourceManager extends ManagedObject {
     /**
      * Constructor
      *
-     * @param sc ServerConnection
+     * @param sc  ServerConnection
      * @param mor ManagedObjectReference
      */
     public VRPResourceManager(ServerConnection sc, ManagedObjectReference mor) {
@@ -67,8 +67,8 @@ public class VRPResourceManager extends ManagedObject {
      * accomodate the VM's reservations. If the VM is already deployed in the same hub, the VM will remain deployed. The
      * API will just rerun the admission control checks.
      *
-     * @param vrpId The unique Id of the VRP.
-     * @param vm VirtualMachine to deploy
+     * @param vrpId   The unique Id of the VRP.
+     * @param vm      VirtualMachine to deploy
      * @param cluster Cluster to use.
      * @throws InsufficientResourcesFault
      * @throws NotFound
@@ -96,7 +96,7 @@ public class VRPResourceManager extends ManagedObject {
      * Given the VRP Id and a hub, gets the associated child resource pool.
      *
      * @param vrpId ID of the VRP.
-     * @param hub ManagedEntity representing the hub.
+     * @param hub   ManagedEntity representing the hub.
      * @return A ResourcePool
      * @throws InvalidState
      * @throws NotFound
@@ -171,7 +171,7 @@ public class VRPResourceManager extends ManagedObject {
      * DRS for the cluster.
      *
      * @param cluster Cluster object
-     * @param status True if the cluster is managed by a Virtual Datacenter
+     * @param status  True if the cluster is managed by a Virtual Datacenter
      * @throws InvalidState
      * @throws NotFound
      * @throws RuntimeFault
@@ -184,8 +184,8 @@ public class VRPResourceManager extends ManagedObject {
     /**
      * Undeploy a VM in given VRP, hub pair.
      *
-     * @param vrpId The unique Id of the VRP.
-     * @param vm VirtualMachine
+     * @param vrpId   The unique Id of the VRP.
+     * @param vm      VirtualMachine
      * @param cluster Cluster Object
      * @throws InvalidState
      * @throws NotFound

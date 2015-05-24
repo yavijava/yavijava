@@ -97,13 +97,12 @@ public class ApacheHttpClient extends SoapClient {
      * @param paras      Array of Arguments aka params for the method
      * @param returnType String name of the return type
      * @return Object
-     *
      * @throws java.rmi.RemoteException
      */
     @Override
     public Object invoke(String methodName, Argument[] paras, String returnType) throws RemoteException {
         log.trace("Invoking method: " + methodName);
-        String soapMsg =  marshall(methodName, paras); 
+        String soapMsg = marshall(methodName, paras);
         InputStream is = null;
         try {
             is = post(soapMsg);
@@ -133,7 +132,6 @@ public class ApacheHttpClient extends SoapClient {
      * @param methodName Name of the method to execute
      * @param paras      Array of Arguments aka params for the method
      * @return StringBuffer with the
-     *
      * @throws java.rmi.RemoteException
      */
     @Override

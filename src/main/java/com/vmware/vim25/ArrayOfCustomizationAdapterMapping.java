@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfCustomizationAdapterMapping {
-  public CustomizationAdapterMapping[] CustomizationAdapterMapping;
+    public CustomizationAdapterMapping[] CustomizationAdapterMapping;
 
-  public CustomizationAdapterMapping[] getCustomizationAdapterMapping() {
-    return this.CustomizationAdapterMapping;
-  }
+    public CustomizationAdapterMapping[] getCustomizationAdapterMapping() {
+        return this.CustomizationAdapterMapping;
+    }
 
-  public CustomizationAdapterMapping getCustomizationAdapterMapping(int i) {
-    return this.CustomizationAdapterMapping[i];
-  }
+    public CustomizationAdapterMapping getCustomizationAdapterMapping(int i) {
+        return this.CustomizationAdapterMapping[i];
+    }
 
-  public void setCustomizationAdapterMapping(CustomizationAdapterMapping[] CustomizationAdapterMapping) {
-    this.CustomizationAdapterMapping=CustomizationAdapterMapping;
-  }
+    public void setCustomizationAdapterMapping(CustomizationAdapterMapping[] CustomizationAdapterMapping) {
+        this.CustomizationAdapterMapping = CustomizationAdapterMapping;
+    }
 }

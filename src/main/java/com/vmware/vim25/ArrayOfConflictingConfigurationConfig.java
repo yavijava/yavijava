@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfConflictingConfigurationConfig {
-  public ConflictingConfigurationConfig[] ConflictingConfigurationConfig;
+    public ConflictingConfigurationConfig[] ConflictingConfigurationConfig;
 
-  public ConflictingConfigurationConfig[] getConflictingConfigurationConfig() {
-    return this.ConflictingConfigurationConfig;
-  }
+    public ConflictingConfigurationConfig[] getConflictingConfigurationConfig() {
+        return this.ConflictingConfigurationConfig;
+    }
 
-  public ConflictingConfigurationConfig getConflictingConfigurationConfig(int i) {
-    return this.ConflictingConfigurationConfig[i];
-  }
+    public ConflictingConfigurationConfig getConflictingConfigurationConfig(int i) {
+        return this.ConflictingConfigurationConfig[i];
+    }
 
-  public void setConflictingConfigurationConfig(ConflictingConfigurationConfig[] ConflictingConfigurationConfig) {
-    this.ConflictingConfigurationConfig=ConflictingConfigurationConfig;
-  }
+    public void setConflictingConfigurationConfig(ConflictingConfigurationConfig[] ConflictingConfigurationConfig) {
+        this.ConflictingConfigurationConfig = ConflictingConfigurationConfig;
+    }
 }

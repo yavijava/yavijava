@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class OvfUnknownEntity extends OvfSystemFault {
-  public int lineNumber;
+    public int lineNumber;
 
-  public int getLineNumber() {
-    return this.lineNumber;
-  }
+    public int getLineNumber() {
+        return this.lineNumber;
+    }
 
-  public void setLineNumber(int lineNumber) {
-    this.lineNumber=lineNumber;
-  }
+    public void setLineNumber(int lineNumber) {
+        this.lineNumber = lineNumber;
+    }
 }

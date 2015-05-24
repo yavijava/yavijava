@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfDatastoreHostMount {
-  public DatastoreHostMount[] DatastoreHostMount;
+    public DatastoreHostMount[] DatastoreHostMount;
 
-  public DatastoreHostMount[] getDatastoreHostMount() {
-    return this.DatastoreHostMount;
-  }
+    public DatastoreHostMount[] getDatastoreHostMount() {
+        return this.DatastoreHostMount;
+    }
 
-  public DatastoreHostMount getDatastoreHostMount(int i) {
-    return this.DatastoreHostMount[i];
-  }
+    public DatastoreHostMount getDatastoreHostMount(int i) {
+        return this.DatastoreHostMount[i];
+    }
 
-  public void setDatastoreHostMount(DatastoreHostMount[] DatastoreHostMount) {
-    this.DatastoreHostMount=DatastoreHostMount;
-  }
+    public void setDatastoreHostMount(DatastoreHostMount[] DatastoreHostMount) {
+        this.DatastoreHostMount = DatastoreHostMount;
+    }
 }

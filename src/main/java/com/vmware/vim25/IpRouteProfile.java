@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class IpRouteProfile extends ApplyProfile {
-  public StaticRouteProfile[] staticRoute;
+    public StaticRouteProfile[] staticRoute;
 
-  public StaticRouteProfile[] getStaticRoute() {
-    return this.staticRoute;
-  }
+    public StaticRouteProfile[] getStaticRoute() {
+        return this.staticRoute;
+    }
 
-  public void setStaticRoute(StaticRouteProfile[] staticRoute) {
-    this.staticRoute=staticRoute;
-  }
+    public void setStaticRoute(StaticRouteProfile[] staticRoute) {
+        this.staticRoute = staticRoute;
+    }
 }

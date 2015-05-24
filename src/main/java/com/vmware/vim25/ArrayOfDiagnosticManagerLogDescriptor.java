@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfDiagnosticManagerLogDescriptor {
-  public DiagnosticManagerLogDescriptor[] DiagnosticManagerLogDescriptor;
+    public DiagnosticManagerLogDescriptor[] DiagnosticManagerLogDescriptor;
 
-  public DiagnosticManagerLogDescriptor[] getDiagnosticManagerLogDescriptor() {
-    return this.DiagnosticManagerLogDescriptor;
-  }
+    public DiagnosticManagerLogDescriptor[] getDiagnosticManagerLogDescriptor() {
+        return this.DiagnosticManagerLogDescriptor;
+    }
 
-  public DiagnosticManagerLogDescriptor getDiagnosticManagerLogDescriptor(int i) {
-    return this.DiagnosticManagerLogDescriptor[i];
-  }
+    public DiagnosticManagerLogDescriptor getDiagnosticManagerLogDescriptor(int i) {
+        return this.DiagnosticManagerLogDescriptor[i];
+    }
 
-  public void setDiagnosticManagerLogDescriptor(DiagnosticManagerLogDescriptor[] DiagnosticManagerLogDescriptor) {
-    this.DiagnosticManagerLogDescriptor=DiagnosticManagerLogDescriptor;
-  }
+    public void setDiagnosticManagerLogDescriptor(DiagnosticManagerLogDescriptor[] DiagnosticManagerLogDescriptor) {
+        this.DiagnosticManagerLogDescriptor = DiagnosticManagerLogDescriptor;
+    }
 }

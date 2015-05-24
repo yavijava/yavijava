@@ -30,37 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostScsiDisk extends ScsiLun {
-  public HostDiskDimensionsLba capacity;
-  public String devicePath;
-  public Boolean ssd;
+    public HostDiskDimensionsLba capacity;
+    public String devicePath;
+    public Boolean ssd;
 
-  public HostDiskDimensionsLba getCapacity() {
-    return this.capacity;
-  }
+    public HostDiskDimensionsLba getCapacity() {
+        return this.capacity;
+    }
 
-  public String getDevicePath() {
-    return this.devicePath;
-  }
+    public String getDevicePath() {
+        return this.devicePath;
+    }
 
-  public Boolean getSsd() {
-    return this.ssd;
-  }
+    public Boolean getSsd() {
+        return this.ssd;
+    }
 
-  public void setCapacity(HostDiskDimensionsLba capacity) {
-    this.capacity=capacity;
-  }
+    public void setCapacity(HostDiskDimensionsLba capacity) {
+        this.capacity = capacity;
+    }
 
-  public void setDevicePath(String devicePath) {
-    this.devicePath=devicePath;
-  }
+    public void setDevicePath(String devicePath) {
+        this.devicePath = devicePath;
+    }
 
-  public void setSsd(Boolean ssd) {
-    this.ssd=ssd;
-  }
+    public void setSsd(Boolean ssd) {
+        this.ssd = ssd;
+    }
 }

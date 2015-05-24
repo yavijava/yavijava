@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class NetBIOSConfigInfo extends DynamicData {
-  public String mode;
+    public String mode;
 
-  public String getMode() {
-    return this.mode;
-  }
+    public String getMode() {
+        return this.mode;
+    }
 
-  public void setMode(String mode) {
-    this.mode=mode;
-  }
+    public void setMode(String mode) {
+        this.mode = mode;
+    }
 }

@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class PowerSystemCapability extends DynamicData {
-  public HostPowerPolicy[] availablePolicy;
+    public HostPowerPolicy[] availablePolicy;
 
-  public HostPowerPolicy[] getAvailablePolicy() {
-    return this.availablePolicy;
-  }
+    public HostPowerPolicy[] getAvailablePolicy() {
+        return this.availablePolicy;
+    }
 
-  public void setAvailablePolicy(HostPowerPolicy[] availablePolicy) {
-    this.availablePolicy=availablePolicy;
-  }
+    public void setAvailablePolicy(HostPowerPolicy[] availablePolicy) {
+        this.availablePolicy = availablePolicy;
+    }
 }

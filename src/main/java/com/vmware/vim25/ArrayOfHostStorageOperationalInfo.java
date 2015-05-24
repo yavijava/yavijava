@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfHostStorageOperationalInfo {
-  public HostStorageOperationalInfo[] HostStorageOperationalInfo;
+    public HostStorageOperationalInfo[] HostStorageOperationalInfo;
 
-  public HostStorageOperationalInfo[] getHostStorageOperationalInfo() {
-    return this.HostStorageOperationalInfo;
-  }
+    public HostStorageOperationalInfo[] getHostStorageOperationalInfo() {
+        return this.HostStorageOperationalInfo;
+    }
 
-  public HostStorageOperationalInfo getHostStorageOperationalInfo(int i) {
-    return this.HostStorageOperationalInfo[i];
-  }
+    public HostStorageOperationalInfo getHostStorageOperationalInfo(int i) {
+        return this.HostStorageOperationalInfo[i];
+    }
 
-  public void setHostStorageOperationalInfo(HostStorageOperationalInfo[] HostStorageOperationalInfo) {
-    this.HostStorageOperationalInfo=HostStorageOperationalInfo;
-  }
+    public void setHostStorageOperationalInfo(HostStorageOperationalInfo[] HostStorageOperationalInfo) {
+        this.HostStorageOperationalInfo = HostStorageOperationalInfo;
+    }
 }

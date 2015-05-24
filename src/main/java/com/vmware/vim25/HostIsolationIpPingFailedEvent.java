@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostIsolationIpPingFailedEvent extends HostDasEvent {
-  public String isolationIp;
+    public String isolationIp;
 
-  public String getIsolationIp() {
-    return this.isolationIp;
-  }
+    public String getIsolationIp() {
+        return this.isolationIp;
+    }
 
-  public void setIsolationIp(String isolationIp) {
-    this.isolationIp=isolationIp;
-  }
+    public void setIsolationIp(String isolationIp) {
+        this.isolationIp = isolationIp;
+    }
 }

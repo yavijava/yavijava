@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfVnicPortArgument {
-  public VnicPortArgument[] VnicPortArgument;
+    public VnicPortArgument[] VnicPortArgument;
 
-  public VnicPortArgument[] getVnicPortArgument() {
-    return this.VnicPortArgument;
-  }
+    public VnicPortArgument[] getVnicPortArgument() {
+        return this.VnicPortArgument;
+    }
 
-  public VnicPortArgument getVnicPortArgument(int i) {
-    return this.VnicPortArgument[i];
-  }
+    public VnicPortArgument getVnicPortArgument(int i) {
+        return this.VnicPortArgument[i];
+    }
 
-  public void setVnicPortArgument(VnicPortArgument[] VnicPortArgument) {
-    this.VnicPortArgument=VnicPortArgument;
-  }
+    public void setVnicPortArgument(VnicPortArgument[] VnicPortArgument) {
+        this.VnicPortArgument = VnicPortArgument;
+    }
 }

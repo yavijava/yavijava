@@ -30,37 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class FaultToleranceConfigInfo extends DynamicData {
-  public int role;
-  public String[] instanceUuids;
-  public String[] configPaths;
+    public int role;
+    public String[] instanceUuids;
+    public String[] configPaths;
 
-  public int getRole() {
-    return this.role;
-  }
+    public int getRole() {
+        return this.role;
+    }
 
-  public String[] getInstanceUuids() {
-    return this.instanceUuids;
-  }
+    public String[] getInstanceUuids() {
+        return this.instanceUuids;
+    }
 
-  public String[] getConfigPaths() {
-    return this.configPaths;
-  }
+    public String[] getConfigPaths() {
+        return this.configPaths;
+    }
 
-  public void setRole(int role) {
-    this.role=role;
-  }
+    public void setRole(int role) {
+        this.role = role;
+    }
 
-  public void setInstanceUuids(String[] instanceUuids) {
-    this.instanceUuids=instanceUuids;
-  }
+    public void setInstanceUuids(String[] instanceUuids) {
+        this.instanceUuids = instanceUuids;
+    }
 
-  public void setConfigPaths(String[] configPaths) {
-    this.configPaths=configPaths;
-  }
+    public void setConfigPaths(String[] configPaths) {
+        this.configPaths = configPaths;
+    }
 }

@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class DeviceBackingNotSupported extends DeviceNotSupported {
-  public String backing;
+    public String backing;
 
-  public String getBacking() {
-    return this.backing;
-  }
+    public String getBacking() {
+        return this.backing;
+    }
 
-  public void setBacking(String backing) {
-    this.backing=backing;
-  }
+    public void setBacking(String backing) {
+        this.backing = backing;
+    }
 }

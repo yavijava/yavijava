@@ -30,37 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VmFaultToleranceConfigIssueWrapper extends VmFaultToleranceIssue {
-  public String entityName;
-  public ManagedObjectReference entity;
-  public LocalizedMethodFault error;
+    public String entityName;
+    public ManagedObjectReference entity;
+    public LocalizedMethodFault error;
 
-  public String getEntityName() {
-    return this.entityName;
-  }
+    public String getEntityName() {
+        return this.entityName;
+    }
 
-  public ManagedObjectReference getEntity() {
-    return this.entity;
-  }
+    public ManagedObjectReference getEntity() {
+        return this.entity;
+    }
 
-  public LocalizedMethodFault getError() {
-    return this.error;
-  }
+    public LocalizedMethodFault getError() {
+        return this.error;
+    }
 
-  public void setEntityName(String entityName) {
-    this.entityName=entityName;
-  }
+    public void setEntityName(String entityName) {
+        this.entityName = entityName;
+    }
 
-  public void setEntity(ManagedObjectReference entity) {
-    this.entity=entity;
-  }
+    public void setEntity(ManagedObjectReference entity) {
+        this.entity = entity;
+    }
 
-  public void setError(LocalizedMethodFault error) {
-    this.error=error;
-  }
+    public void setError(LocalizedMethodFault error) {
+        this.error = error;
+    }
 }

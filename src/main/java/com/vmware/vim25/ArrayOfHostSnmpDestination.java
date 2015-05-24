@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfHostSnmpDestination {
-  public HostSnmpDestination[] HostSnmpDestination;
+    public HostSnmpDestination[] HostSnmpDestination;
 
-  public HostSnmpDestination[] getHostSnmpDestination() {
-    return this.HostSnmpDestination;
-  }
+    public HostSnmpDestination[] getHostSnmpDestination() {
+        return this.HostSnmpDestination;
+    }
 
-  public HostSnmpDestination getHostSnmpDestination(int i) {
-    return this.HostSnmpDestination[i];
-  }
+    public HostSnmpDestination getHostSnmpDestination(int i) {
+        return this.HostSnmpDestination[i];
+    }
 
-  public void setHostSnmpDestination(HostSnmpDestination[] HostSnmpDestination) {
-    this.HostSnmpDestination=HostSnmpDestination;
-  }
+    public void setHostSnmpDestination(HostSnmpDestination[] HostSnmpDestination) {
+        this.HostSnmpDestination = HostSnmpDestination;
+    }
 }

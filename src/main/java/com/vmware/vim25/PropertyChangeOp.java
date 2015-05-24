@@ -30,20 +30,20 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public enum PropertyChangeOp {
-  add ("add"),
-  remove ("remove"),
-  assign ("assign"),
-  indirectRemove ("indirectRemove");
+    add("add"),
+    remove("remove"),
+    assign("assign"),
+    indirectRemove("indirectRemove");
 
-  @SuppressWarnings("unused")
-  private final String val;
-  private PropertyChangeOp(String val)
-  {
-    this.val = val;
-  }
+    @SuppressWarnings("unused")
+    private final String val;
+
+    private PropertyChangeOp(String val) {
+        this.val = val;
+    }
 }

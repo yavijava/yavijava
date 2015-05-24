@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfVirtualDeviceConfigSpec {
-  public VirtualDeviceConfigSpec[] VirtualDeviceConfigSpec;
+    public VirtualDeviceConfigSpec[] VirtualDeviceConfigSpec;
 
-  public VirtualDeviceConfigSpec[] getVirtualDeviceConfigSpec() {
-    return this.VirtualDeviceConfigSpec;
-  }
+    public VirtualDeviceConfigSpec[] getVirtualDeviceConfigSpec() {
+        return this.VirtualDeviceConfigSpec;
+    }
 
-  public VirtualDeviceConfigSpec getVirtualDeviceConfigSpec(int i) {
-    return this.VirtualDeviceConfigSpec[i];
-  }
+    public VirtualDeviceConfigSpec getVirtualDeviceConfigSpec(int i) {
+        return this.VirtualDeviceConfigSpec[i];
+    }
 
-  public void setVirtualDeviceConfigSpec(VirtualDeviceConfigSpec[] VirtualDeviceConfigSpec) {
-    this.VirtualDeviceConfigSpec=VirtualDeviceConfigSpec;
-  }
+    public void setVirtualDeviceConfigSpec(VirtualDeviceConfigSpec[] VirtualDeviceConfigSpec) {
+        this.VirtualDeviceConfigSpec = VirtualDeviceConfigSpec;
+    }
 }

@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfClusterDrsVmConfigSpec {
-  public ClusterDrsVmConfigSpec[] ClusterDrsVmConfigSpec;
+    public ClusterDrsVmConfigSpec[] ClusterDrsVmConfigSpec;
 
-  public ClusterDrsVmConfigSpec[] getClusterDrsVmConfigSpec() {
-    return this.ClusterDrsVmConfigSpec;
-  }
+    public ClusterDrsVmConfigSpec[] getClusterDrsVmConfigSpec() {
+        return this.ClusterDrsVmConfigSpec;
+    }
 
-  public ClusterDrsVmConfigSpec getClusterDrsVmConfigSpec(int i) {
-    return this.ClusterDrsVmConfigSpec[i];
-  }
+    public ClusterDrsVmConfigSpec getClusterDrsVmConfigSpec(int i) {
+        return this.ClusterDrsVmConfigSpec[i];
+    }
 
-  public void setClusterDrsVmConfigSpec(ClusterDrsVmConfigSpec[] ClusterDrsVmConfigSpec) {
-    this.ClusterDrsVmConfigSpec=ClusterDrsVmConfigSpec;
-  }
+    public void setClusterDrsVmConfigSpec(ClusterDrsVmConfigSpec[] ClusterDrsVmConfigSpec) {
+        this.ClusterDrsVmConfigSpec = ClusterDrsVmConfigSpec;
+    }
 }

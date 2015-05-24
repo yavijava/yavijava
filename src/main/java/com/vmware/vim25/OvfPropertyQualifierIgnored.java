@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class OvfPropertyQualifierIgnored extends OvfProperty {
-  public String qualifier;
+    public String qualifier;
 
-  public String getQualifier() {
-    return this.qualifier;
-  }
+    public String getQualifier() {
+        return this.qualifier;
+    }
 
-  public void setQualifier(String qualifier) {
-    this.qualifier=qualifier;
-  }
+    public void setQualifier(String qualifier) {
+        this.qualifier = qualifier;
+    }
 }

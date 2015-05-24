@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public enum HostSystemIdentificationInfoIdentifier {
-  AssetTag ("AssetTag"),
-  ServiceTag ("ServiceTag"),
-  OemSpecificString ("OemSpecificString");
+    AssetTag("AssetTag"),
+    ServiceTag("ServiceTag"),
+    OemSpecificString("OemSpecificString");
 
-  @SuppressWarnings("unused")
-  private final String val;
-  private HostSystemIdentificationInfoIdentifier(String val)
-  {
-    this.val = val;
-  }
+    @SuppressWarnings("unused")
+    private final String val;
+
+    private HostSystemIdentificationInfoIdentifier(String val) {
+        this.val = val;
+    }
 }

@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class EVCAdmissionFailedCPUModelForMode extends EVCAdmissionFailed {
-  public String currentEVCModeKey;
+    public String currentEVCModeKey;
 
-  public String getCurrentEVCModeKey() {
-    return this.currentEVCModeKey;
-  }
+    public String getCurrentEVCModeKey() {
+        return this.currentEVCModeKey;
+    }
 
-  public void setCurrentEVCModeKey(String currentEVCModeKey) {
-    this.currentEVCModeKey=currentEVCModeKey;
-  }
+    public void setCurrentEVCModeKey(String currentEVCModeKey) {
+        this.currentEVCModeKey = currentEVCModeKey;
+    }
 }

@@ -30,55 +30,55 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class ClusterDrsConfigInfo extends DynamicData {
-  public Boolean enabled;
-  public Boolean enableVmBehaviorOverrides;
-  public DrsBehavior defaultVmBehavior;
-  public Integer vmotionRate;
-  public OptionValue[] option;
+    public Boolean enabled;
+    public Boolean enableVmBehaviorOverrides;
+    public DrsBehavior defaultVmBehavior;
+    public Integer vmotionRate;
+    public OptionValue[] option;
 
-  public Boolean getEnabled() {
-    return this.enabled;
-  }
+    public Boolean getEnabled() {
+        return this.enabled;
+    }
 
-  public Boolean getEnableVmBehaviorOverrides() {
-    return this.enableVmBehaviorOverrides;
-  }
+    public Boolean getEnableVmBehaviorOverrides() {
+        return this.enableVmBehaviorOverrides;
+    }
 
-  public DrsBehavior getDefaultVmBehavior() {
-    return this.defaultVmBehavior;
-  }
+    public DrsBehavior getDefaultVmBehavior() {
+        return this.defaultVmBehavior;
+    }
 
-  public Integer getVmotionRate() {
-    return this.vmotionRate;
-  }
+    public Integer getVmotionRate() {
+        return this.vmotionRate;
+    }
 
-  public OptionValue[] getOption() {
-    return this.option;
-  }
+    public OptionValue[] getOption() {
+        return this.option;
+    }
 
-  public void setEnabled(Boolean enabled) {
-    this.enabled=enabled;
-  }
+    public void setEnabled(Boolean enabled) {
+        this.enabled = enabled;
+    }
 
-  public void setEnableVmBehaviorOverrides(Boolean enableVmBehaviorOverrides) {
-    this.enableVmBehaviorOverrides=enableVmBehaviorOverrides;
-  }
+    public void setEnableVmBehaviorOverrides(Boolean enableVmBehaviorOverrides) {
+        this.enableVmBehaviorOverrides = enableVmBehaviorOverrides;
+    }
 
-  public void setDefaultVmBehavior(DrsBehavior defaultVmBehavior) {
-    this.defaultVmBehavior=defaultVmBehavior;
-  }
+    public void setDefaultVmBehavior(DrsBehavior defaultVmBehavior) {
+        this.defaultVmBehavior = defaultVmBehavior;
+    }
 
-  public void setVmotionRate(Integer vmotionRate) {
-    this.vmotionRate=vmotionRate;
-  }
+    public void setVmotionRate(Integer vmotionRate) {
+        this.vmotionRate = vmotionRate;
+    }
 
-  public void setOption(OptionValue[] option) {
-    this.option=option;
-  }
+    public void setOption(OptionValue[] option) {
+        this.option = option;
+    }
 }

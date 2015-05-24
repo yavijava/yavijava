@@ -30,23 +30,23 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public enum DasConfigFaultDasConfigFaultReason {
-  HostNetworkMisconfiguration ("HostNetworkMisconfiguration"),
-  HostMisconfiguration ("HostMisconfiguration"),
-  InsufficientPrivileges ("InsufficientPrivileges"),
-  NoPrimaryAgentAvailable ("NoPrimaryAgentAvailable"),
-  Other ("Other"),
-  NoDatastoresConfigured ("NoDatastoresConfigured"),
-  VSanNotSupportedOnHost ("VSanNotSupportedOnHost");
+    HostNetworkMisconfiguration("HostNetworkMisconfiguration"),
+    HostMisconfiguration("HostMisconfiguration"),
+    InsufficientPrivileges("InsufficientPrivileges"),
+    NoPrimaryAgentAvailable("NoPrimaryAgentAvailable"),
+    Other("Other"),
+    NoDatastoresConfigured("NoDatastoresConfigured"),
+    VSanNotSupportedOnHost("VSanNotSupportedOnHost");
 
-  @SuppressWarnings("unused")
-  private final String val;
-  private DasConfigFaultDasConfigFaultReason(String val)
-  {
-    this.val = val;
-  }
+    @SuppressWarnings("unused")
+    private final String val;
+
+    private DasConfigFaultDasConfigFaultReason(String val) {
+        this.val = val;
+    }
 }

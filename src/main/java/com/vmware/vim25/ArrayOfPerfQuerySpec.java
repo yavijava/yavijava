@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfPerfQuerySpec {
-  public PerfQuerySpec[] PerfQuerySpec;
+    public PerfQuerySpec[] PerfQuerySpec;
 
-  public PerfQuerySpec[] getPerfQuerySpec() {
-    return this.PerfQuerySpec;
-  }
+    public PerfQuerySpec[] getPerfQuerySpec() {
+        return this.PerfQuerySpec;
+    }
 
-  public PerfQuerySpec getPerfQuerySpec(int i) {
-    return this.PerfQuerySpec[i];
-  }
+    public PerfQuerySpec getPerfQuerySpec(int i) {
+        return this.PerfQuerySpec[i];
+    }
 
-  public void setPerfQuerySpec(PerfQuerySpec[] PerfQuerySpec) {
-    this.PerfQuerySpec=PerfQuerySpec;
-  }
+    public void setPerfQuerySpec(PerfQuerySpec[] PerfQuerySpec) {
+        this.PerfQuerySpec = PerfQuerySpec;
+    }
 }

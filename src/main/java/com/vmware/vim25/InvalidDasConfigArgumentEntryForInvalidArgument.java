@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public enum InvalidDasConfigArgumentEntryForInvalidArgument {
-  admissionControl ("admissionControl"),
-  userHeartbeatDs ("userHeartbeatDs"),
-  vmConfig ("vmConfig");
+    admissionControl("admissionControl"),
+    userHeartbeatDs("userHeartbeatDs"),
+    vmConfig("vmConfig");
 
-  @SuppressWarnings("unused")
-  private final String val;
-  private InvalidDasConfigArgumentEntryForInvalidArgument(String val)
-  {
-    this.val = val;
-  }
+    @SuppressWarnings("unused")
+    private final String val;
+
+    private InvalidDasConfigArgumentEntryForInvalidArgument(String val) {
+        this.val = val;
+    }
 }

@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class ProfileEventArgument extends EventArgument {
-  public ManagedObjectReference profile;
-  public String name;
+    public ManagedObjectReference profile;
+    public String name;
 
-  public ManagedObjectReference getProfile() {
-    return this.profile;
-  }
+    public ManagedObjectReference getProfile() {
+        return this.profile;
+    }
 
-  public String getName() {
-    return this.name;
-  }
+    public String getName() {
+        return this.name;
+    }
 
-  public void setProfile(ManagedObjectReference profile) {
-    this.profile=profile;
-  }
+    public void setProfile(ManagedObjectReference profile) {
+        this.profile = profile;
+    }
 
-  public void setName(String name) {
-    this.name=name;
-  }
+    public void setName(String name) {
+        this.name = name;
+    }
 }

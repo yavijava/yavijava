@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class UserNotFound extends VimFault {
-  public String principal;
-  public boolean unresolved;
+    public String principal;
+    public boolean unresolved;
 
-  public String getPrincipal() {
-    return this.principal;
-  }
+    public String getPrincipal() {
+        return this.principal;
+    }
 
-  public boolean isUnresolved() {
-    return this.unresolved;
-  }
+    public boolean isUnresolved() {
+        return this.unresolved;
+    }
 
-  public void setPrincipal(String principal) {
-    this.principal=principal;
-  }
+    public void setPrincipal(String principal) {
+        this.principal = principal;
+    }
 
-  public void setUnresolved(boolean unresolved) {
-    this.unresolved=unresolved;
-  }
+    public void setUnresolved(boolean unresolved) {
+        this.unresolved = unresolved;
+    }
 }

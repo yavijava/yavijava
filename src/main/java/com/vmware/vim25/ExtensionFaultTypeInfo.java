@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class ExtensionFaultTypeInfo extends DynamicData {
-  public String faultID;
+    public String faultID;
 
-  public String getFaultID() {
-    return this.faultID;
-  }
+    public String getFaultID() {
+        return this.faultID;
+    }
 
-  public void setFaultID(String faultID) {
-    this.faultID=faultID;
-  }
+    public void setFaultID(String faultID) {
+        this.faultID = faultID;
+    }
 }

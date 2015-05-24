@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VirtualMachineConfigInfoOverheadInfo extends DynamicData {
-  public Long initialMemoryReservation;
-  public Long initialSwapReservation;
+    public Long initialMemoryReservation;
+    public Long initialSwapReservation;
 
-  public Long getInitialMemoryReservation() {
-    return this.initialMemoryReservation;
-  }
+    public Long getInitialMemoryReservation() {
+        return this.initialMemoryReservation;
+    }
 
-  public Long getInitialSwapReservation() {
-    return this.initialSwapReservation;
-  }
+    public Long getInitialSwapReservation() {
+        return this.initialSwapReservation;
+    }
 
-  public void setInitialMemoryReservation(Long initialMemoryReservation) {
-    this.initialMemoryReservation=initialMemoryReservation;
-  }
+    public void setInitialMemoryReservation(Long initialMemoryReservation) {
+        this.initialMemoryReservation = initialMemoryReservation;
+    }
 
-  public void setInitialSwapReservation(Long initialSwapReservation) {
-    this.initialSwapReservation=initialSwapReservation;
-  }
+    public void setInitialSwapReservation(Long initialSwapReservation) {
+        this.initialSwapReservation = initialSwapReservation;
+    }
 }

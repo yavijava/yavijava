@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfMissingProperty {
-  public MissingProperty[] MissingProperty;
+    public MissingProperty[] MissingProperty;
 
-  public MissingProperty[] getMissingProperty() {
-    return this.MissingProperty;
-  }
+    public MissingProperty[] getMissingProperty() {
+        return this.MissingProperty;
+    }
 
-  public MissingProperty getMissingProperty(int i) {
-    return this.MissingProperty[i];
-  }
+    public MissingProperty getMissingProperty(int i) {
+        return this.MissingProperty[i];
+    }
 
-  public void setMissingProperty(MissingProperty[] MissingProperty) {
-    this.MissingProperty=MissingProperty;
-  }
+    public void setMissingProperty(MissingProperty[] MissingProperty) {
+        this.MissingProperty = MissingProperty;
+    }
 }

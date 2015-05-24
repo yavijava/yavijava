@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class LicenseSourceUnavailable extends NotEnoughLicenses {
-  public LicenseSource licenseSource;
+    public LicenseSource licenseSource;
 
-  public LicenseSource getLicenseSource() {
-    return this.licenseSource;
-  }
+    public LicenseSource getLicenseSource() {
+        return this.licenseSource;
+    }
 
-  public void setLicenseSource(LicenseSource licenseSource) {
-    this.licenseSource=licenseSource;
-  }
+    public void setLicenseSource(LicenseSource licenseSource) {
+        this.licenseSource = licenseSource;
+    }
 }

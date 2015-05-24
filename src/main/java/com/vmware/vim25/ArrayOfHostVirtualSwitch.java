@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfHostVirtualSwitch {
-  public HostVirtualSwitch[] HostVirtualSwitch;
+    public HostVirtualSwitch[] HostVirtualSwitch;
 
-  public HostVirtualSwitch[] getHostVirtualSwitch() {
-    return this.HostVirtualSwitch;
-  }
+    public HostVirtualSwitch[] getHostVirtualSwitch() {
+        return this.HostVirtualSwitch;
+    }
 
-  public HostVirtualSwitch getHostVirtualSwitch(int i) {
-    return this.HostVirtualSwitch[i];
-  }
+    public HostVirtualSwitch getHostVirtualSwitch(int i) {
+        return this.HostVirtualSwitch[i];
+    }
 
-  public void setHostVirtualSwitch(HostVirtualSwitch[] HostVirtualSwitch) {
-    this.HostVirtualSwitch=HostVirtualSwitch;
-  }
+    public void setHostVirtualSwitch(HostVirtualSwitch[] HostVirtualSwitch) {
+        this.HostVirtualSwitch = HostVirtualSwitch;
+    }
 }

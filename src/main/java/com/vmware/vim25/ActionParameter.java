@@ -30,25 +30,25 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public enum ActionParameter {
-  targetName ("targetName"),
-  alarmName ("alarmName"),
-  oldStatus ("oldStatus"),
-  newStatus ("newStatus"),
-  triggeringSummary ("triggeringSummary"),
-  declaringSummary ("declaringSummary"),
-  eventDescription ("eventDescription"),
-  target ("target"),
-  alarm ("alarm");
+    targetName("targetName"),
+    alarmName("alarmName"),
+    oldStatus("oldStatus"),
+    newStatus("newStatus"),
+    triggeringSummary("triggeringSummary"),
+    declaringSummary("declaringSummary"),
+    eventDescription("eventDescription"),
+    target("target"),
+    alarm("alarm");
 
-  @SuppressWarnings("unused")
-  private final String val;
-  private ActionParameter(String val)
-  {
-    this.val = val;
-  }
+    @SuppressWarnings("unused")
+    private final String val;
+
+    private ActionParameter(String val) {
+        this.val = val;
+    }
 }

@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfVirtualMachineMessage {
-  public VirtualMachineMessage[] VirtualMachineMessage;
+    public VirtualMachineMessage[] VirtualMachineMessage;
 
-  public VirtualMachineMessage[] getVirtualMachineMessage() {
-    return this.VirtualMachineMessage;
-  }
+    public VirtualMachineMessage[] getVirtualMachineMessage() {
+        return this.VirtualMachineMessage;
+    }
 
-  public VirtualMachineMessage getVirtualMachineMessage(int i) {
-    return this.VirtualMachineMessage[i];
-  }
+    public VirtualMachineMessage getVirtualMachineMessage(int i) {
+        return this.VirtualMachineMessage[i];
+    }
 
-  public void setVirtualMachineMessage(VirtualMachineMessage[] VirtualMachineMessage) {
-    this.VirtualMachineMessage=VirtualMachineMessage;
-  }
+    public void setVirtualMachineMessage(VirtualMachineMessage[] VirtualMachineMessage) {
+        this.VirtualMachineMessage = VirtualMachineMessage;
+    }
 }

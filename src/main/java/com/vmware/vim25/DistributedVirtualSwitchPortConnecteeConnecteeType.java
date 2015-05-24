@@ -30,20 +30,20 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public enum DistributedVirtualSwitchPortConnecteeConnecteeType {
-  pnic ("pnic"),
-  vmVnic ("vmVnic"),
-  hostConsoleVnic ("hostConsoleVnic"),
-  hostVmkVnic ("hostVmkVnic");
+    pnic("pnic"),
+    vmVnic("vmVnic"),
+    hostConsoleVnic("hostConsoleVnic"),
+    hostVmkVnic("hostVmkVnic");
 
-  @SuppressWarnings("unused")
-  private final String val;
-  private DistributedVirtualSwitchPortConnecteeConnecteeType(String val)
-  {
-    this.val = val;
-  }
+    @SuppressWarnings("unused")
+    private final String val;
+
+    private DistributedVirtualSwitchPortConnecteeConnecteeType(String val) {
+        this.val = val;
+    }
 }

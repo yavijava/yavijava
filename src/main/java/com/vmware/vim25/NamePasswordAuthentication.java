@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class NamePasswordAuthentication extends GuestAuthentication {
-  public String username;
-  public String password;
+    public String username;
+    public String password;
 
-  public String getUsername() {
-    return this.username;
-  }
+    public String getUsername() {
+        return this.username;
+    }
 
-  public String getPassword() {
-    return this.password;
-  }
+    public String getPassword() {
+        return this.password;
+    }
 
-  public void setUsername(String username) {
-    this.username=username;
-  }
+    public void setUsername(String username) {
+        this.username = username;
+    }
 
-  public void setPassword(String password) {
-    this.password=password;
-  }
+    public void setPassword(String password) {
+        this.password = password;
+    }
 }

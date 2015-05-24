@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public enum DvsNetworkRuleDirectionType {
-  incomingPackets ("incomingPackets"),
-  outgoingPackets ("outgoingPackets"),
-  both ("both");
+    incomingPackets("incomingPackets"),
+    outgoingPackets("outgoingPackets"),
+    both("both");
 
-  @SuppressWarnings("unused")
-  private final String val;
-  private DvsNetworkRuleDirectionType(String val)
-  {
-    this.val = val;
-  }
+    @SuppressWarnings("unused")
+    private final String val;
+
+    private DvsNetworkRuleDirectionType(String val) {
+        this.val = val;
+    }
 }

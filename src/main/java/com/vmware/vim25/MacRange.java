@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class MacRange extends MacAddress {
-  public String address;
-  public String mask;
+    public String address;
+    public String mask;
 
-  public String getAddress() {
-    return this.address;
-  }
+    public String getAddress() {
+        return this.address;
+    }
 
-  public String getMask() {
-    return this.mask;
-  }
+    public String getMask() {
+        return this.mask;
+    }
 
-  public void setAddress(String address) {
-    this.address=address;
-  }
+    public void setAddress(String address) {
+        this.address = address;
+    }
 
-  public void setMask(String mask) {
-    this.mask=mask;
-  }
+    public void setMask(String mask) {
+        this.mask = mask;
+    }
 }

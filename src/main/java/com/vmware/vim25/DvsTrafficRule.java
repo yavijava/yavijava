@@ -30,64 +30,64 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class DvsTrafficRule extends DynamicData {
-  public String key;
-  public String description;
-  public Integer sequence;
-  public DvsNetworkRuleQualifier[] qualifier;
-  public DvsNetworkRuleAction action;
-  public String direction;
+    public String key;
+    public String description;
+    public Integer sequence;
+    public DvsNetworkRuleQualifier[] qualifier;
+    public DvsNetworkRuleAction action;
+    public String direction;
 
-  public String getKey() {
-    return this.key;
-  }
+    public String getKey() {
+        return this.key;
+    }
 
-  public String getDescription() {
-    return this.description;
-  }
+    public String getDescription() {
+        return this.description;
+    }
 
-  public Integer getSequence() {
-    return this.sequence;
-  }
+    public Integer getSequence() {
+        return this.sequence;
+    }
 
-  public DvsNetworkRuleQualifier[] getQualifier() {
-    return this.qualifier;
-  }
+    public DvsNetworkRuleQualifier[] getQualifier() {
+        return this.qualifier;
+    }
 
-  public DvsNetworkRuleAction getAction() {
-    return this.action;
-  }
+    public DvsNetworkRuleAction getAction() {
+        return this.action;
+    }
 
-  public String getDirection() {
-    return this.direction;
-  }
+    public String getDirection() {
+        return this.direction;
+    }
 
-  public void setKey(String key) {
-    this.key=key;
-  }
+    public void setKey(String key) {
+        this.key = key;
+    }
 
-  public void setDescription(String description) {
-    this.description=description;
-  }
+    public void setDescription(String description) {
+        this.description = description;
+    }
 
-  public void setSequence(Integer sequence) {
-    this.sequence=sequence;
-  }
+    public void setSequence(Integer sequence) {
+        this.sequence = sequence;
+    }
 
-  public void setQualifier(DvsNetworkRuleQualifier[] qualifier) {
-    this.qualifier=qualifier;
-  }
+    public void setQualifier(DvsNetworkRuleQualifier[] qualifier) {
+        this.qualifier = qualifier;
+    }
 
-  public void setAction(DvsNetworkRuleAction action) {
-    this.action=action;
-  }
+    public void setAction(DvsNetworkRuleAction action) {
+        this.action = action;
+    }
 
-  public void setDirection(String direction) {
-    this.direction=direction;
-  }
+    public void setDirection(String direction) {
+        this.direction = direction;
+    }
 }

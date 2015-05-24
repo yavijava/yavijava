@@ -30,55 +30,55 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class ExtensionClientInfo extends DynamicData {
-  public String version;
-  public Description description;
-  public String company;
-  public String type;
-  public String url;
+    public String version;
+    public Description description;
+    public String company;
+    public String type;
+    public String url;
 
-  public String getVersion() {
-    return this.version;
-  }
+    public String getVersion() {
+        return this.version;
+    }
 
-  public Description getDescription() {
-    return this.description;
-  }
+    public Description getDescription() {
+        return this.description;
+    }
 
-  public String getCompany() {
-    return this.company;
-  }
+    public String getCompany() {
+        return this.company;
+    }
 
-  public String getType() {
-    return this.type;
-  }
+    public String getType() {
+        return this.type;
+    }
 
-  public String getUrl() {
-    return this.url;
-  }
+    public String getUrl() {
+        return this.url;
+    }
 
-  public void setVersion(String version) {
-    this.version=version;
-  }
+    public void setVersion(String version) {
+        this.version = version;
+    }
 
-  public void setDescription(Description description) {
-    this.description=description;
-  }
+    public void setDescription(Description description) {
+        this.description = description;
+    }
 
-  public void setCompany(String company) {
-    this.company=company;
-  }
+    public void setCompany(String company) {
+        this.company = company;
+    }
 
-  public void setType(String type) {
-    this.type=type;
-  }
+    public void setType(String type) {
+        this.type = type;
+    }
 
-  public void setUrl(String url) {
-    this.url=url;
-  }
+    public void setUrl(String url) {
+        this.url = url;
+    }
 }

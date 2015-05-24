@@ -30,19 +30,18 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
-*/
+ * @author Steve Jin (sjin@vmware.com)
+ */
 
-public enum ProxyServiceAccessMode
-{
-  httpOnly ("httpOnly"),
-  httpsOnly ("httpsOnly"),
-  httpsWithRedirect ("httpsWithRedirect"),
-  httpAndHttps ("httpAndHttps");
+public enum ProxyServiceAccessMode {
+    httpOnly("httpOnly"),
+    httpsOnly("httpsOnly"),
+    httpsWithRedirect("httpsWithRedirect"),
+    httpAndHttps("httpAndHttps");
 
-  private final String val;
-  private ProxyServiceAccessMode(String val)
-  {
-    this.val = val;
-  }
+    private final String val;
+
+    private ProxyServiceAccessMode(String val) {
+        this.val = val;
+    }
 }

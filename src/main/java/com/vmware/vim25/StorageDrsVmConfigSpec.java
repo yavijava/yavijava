@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class StorageDrsVmConfigSpec extends ArrayUpdateSpec {
-  public StorageDrsVmConfigInfo info;
+    public StorageDrsVmConfigInfo info;
 
-  public StorageDrsVmConfigInfo getInfo() {
-    return this.info;
-  }
+    public StorageDrsVmConfigInfo getInfo() {
+        return this.info;
+    }
 
-  public void setInfo(StorageDrsVmConfigInfo info) {
-    this.info=info;
-  }
+    public void setInfo(StorageDrsVmConfigInfo info) {
+        this.info = info;
+    }
 }

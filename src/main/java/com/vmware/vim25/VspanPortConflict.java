@@ -30,37 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VspanPortConflict extends DvsFault {
-  public String vspanSessionKey1;
-  public String vspanSessionKey2;
-  public String portKey;
+    public String vspanSessionKey1;
+    public String vspanSessionKey2;
+    public String portKey;
 
-  public String getVspanSessionKey1() {
-    return this.vspanSessionKey1;
-  }
+    public String getVspanSessionKey1() {
+        return this.vspanSessionKey1;
+    }
 
-  public String getVspanSessionKey2() {
-    return this.vspanSessionKey2;
-  }
+    public String getVspanSessionKey2() {
+        return this.vspanSessionKey2;
+    }
 
-  public String getPortKey() {
-    return this.portKey;
-  }
+    public String getPortKey() {
+        return this.portKey;
+    }
 
-  public void setVspanSessionKey1(String vspanSessionKey1) {
-    this.vspanSessionKey1=vspanSessionKey1;
-  }
+    public void setVspanSessionKey1(String vspanSessionKey1) {
+        this.vspanSessionKey1 = vspanSessionKey1;
+    }
 
-  public void setVspanSessionKey2(String vspanSessionKey2) {
-    this.vspanSessionKey2=vspanSessionKey2;
-  }
+    public void setVspanSessionKey2(String vspanSessionKey2) {
+        this.vspanSessionKey2 = vspanSessionKey2;
+    }
 
-  public void setPortKey(String portKey) {
-    this.portKey=portKey;
-  }
+    public void setPortKey(String portKey) {
+        this.portKey = portKey;
+    }
 }

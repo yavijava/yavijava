@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class DestinationVsanDisabled extends CannotMoveVsanEnabledHost {
-  public String destinationCluster;
+    public String destinationCluster;
 
-  public String getDestinationCluster() {
-    return this.destinationCluster;
-  }
+    public String getDestinationCluster() {
+        return this.destinationCluster;
+    }
 
-  public void setDestinationCluster(String destinationCluster) {
-    this.destinationCluster=destinationCluster;
-  }
+    public void setDestinationCluster(String destinationCluster) {
+        this.destinationCluster = destinationCluster;
+    }
 }
