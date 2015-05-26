@@ -1,4 +1,5 @@
 package com.vmware.vim25;
+
 import lombok.Getter;
 import lombok.Setter;
 

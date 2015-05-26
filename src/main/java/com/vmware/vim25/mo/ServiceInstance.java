@@ -302,7 +302,12 @@ public class ServiceInstance extends ManagedObject {
     private ManagedObject createMO(ManagedObjectReference mor) {
         return MorUtil.createExactManagedObject(getServerConnection(), mor);
     }
+    public IoFilterManager getIoFilterManager()
+    {
+        return (IoFilterManager) createMO(getServiceContent().getIoFilterManager());
+    }
 
     // TODO vim.VirtualizationManager is defined in servicecontent but no documentation there. Filed a bug already
+
 
 }
