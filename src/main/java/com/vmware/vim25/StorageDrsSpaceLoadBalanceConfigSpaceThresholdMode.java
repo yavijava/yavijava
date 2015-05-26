@@ -21,16 +21,14 @@ package com.vmware.vim25;
  * @since 6.0
  */
 
-public enum PlacementSpecPlacementType {
+public enum StorageDrsSpaceLoadBalanceConfigSpaceThresholdMode {
 
-    create("create"),
-    reconfigure("reconfigure"),
-    relocate("relocate"),
-    clone("clone");
+    utilization("utilization"),
+    freeSpace("freeSpace");
 
     private String val;
 
-    PlacementSpecPlacementType(String val) {
+    StorageDrsSpaceLoadBalanceConfigSpaceThresholdMode(String val) {
         this.val = val;
     }
 

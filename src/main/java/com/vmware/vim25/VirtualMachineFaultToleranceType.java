@@ -21,16 +21,15 @@ package com.vmware.vim25;
  * @since 6.0
  */
 
-public enum PlacementSpecPlacementType {
+public enum VirtualMachineFaultToleranceType {
 
-    create("create"),
-    reconfigure("reconfigure"),
-    relocate("relocate"),
-    clone("clone");
+    unset("unset"),
+    recordReplay("recordReplay"),
+    checkpointing("checkpointing");
 
     private String val;
 
-    PlacementSpecPlacementType(String val) {
+    VirtualMachineFaultToleranceType(String val) {
         this.val = val;
     }
 

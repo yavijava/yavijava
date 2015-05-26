@@ -21,16 +21,15 @@ package com.vmware.vim25;
  * @since 6.0
  */
 
-public enum PlacementSpecPlacementType {
+public enum QuiesceMode {
 
-    create("create"),
-    reconfigure("reconfigure"),
-    relocate("relocate"),
-    clone("clone");
+    application("application"),
+    filesystem("filesystem"),
+    none("none");
 
     private String val;
 
-    PlacementSpecPlacementType(String val) {
+    QuiesceMode(String val) {
         this.val = val;
     }
 

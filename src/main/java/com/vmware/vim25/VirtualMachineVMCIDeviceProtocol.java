@@ -21,16 +21,18 @@ package com.vmware.vim25;
  * @since 6.0
  */
 
-public enum PlacementSpecPlacementType {
+public enum VirtualMachineVMCIDeviceProtocol {
 
-    create("create"),
-    reconfigure("reconfigure"),
-    relocate("relocate"),
-    clone("clone");
+    hypervisor("hypervisor"),
+    doorbell("doorbell"),
+    queuepair("queuepair"),
+    datagram("datagram"),
+    stream("stream"),
+    anyProtocol("anyProtocol");
 
     private String val;
 
-    PlacementSpecPlacementType(String val) {
+    VirtualMachineVMCIDeviceProtocol(String val) {
         this.val = val;
     }
 

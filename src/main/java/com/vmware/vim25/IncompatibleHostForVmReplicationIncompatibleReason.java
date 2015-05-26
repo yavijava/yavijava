@@ -21,16 +21,14 @@ package com.vmware.vim25;
  * @since 6.0
  */
 
-public enum PlacementSpecPlacementType {
+public enum IncompatibleHostForVmReplicationIncompatibleReason {
 
-    create("create"),
-    reconfigure("reconfigure"),
-    relocate("relocate"),
-    clone("clone");
+    rpo("rpo"),
+    netCompression("netCompression");
 
     private String val;
 
-    PlacementSpecPlacementType(String val) {
+    IncompatibleHostForVmReplicationIncompatibleReason(String val) {
         this.val = val;
     }
 

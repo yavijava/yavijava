@@ -21,16 +21,13 @@ package com.vmware.vim25;
  * @since 6.0
  */
 
-public enum PlacementSpecPlacementType {
+public enum HostHasComponentFailureHostComponentType {
 
-    create("create"),
-    reconfigure("reconfigure"),
-    relocate("relocate"),
-    clone("clone");
+    Datastore("Datastore");
 
     private String val;
 
-    PlacementSpecPlacementType(String val) {
+    HostHasComponentFailureHostComponentType(String val) {
         this.val = val;
     }
 
