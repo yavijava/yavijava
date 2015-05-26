@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class SessionTerminatedEvent extends SessionEvent {
-  public String sessionId;
-  public String terminatedUsername;
+    public String sessionId;
+    public String terminatedUsername;
 
-  public String getSessionId() {
-    return this.sessionId;
-  }
+    public String getSessionId() {
+        return this.sessionId;
+    }
 
-  public String getTerminatedUsername() {
-    return this.terminatedUsername;
-  }
+    public String getTerminatedUsername() {
+        return this.terminatedUsername;
+    }
 
-  public void setSessionId(String sessionId) {
-    this.sessionId=sessionId;
-  }
+    public void setSessionId(String sessionId) {
+        this.sessionId = sessionId;
+    }
 
-  public void setTerminatedUsername(String terminatedUsername) {
-    this.terminatedUsername=terminatedUsername;
-  }
+    public void setTerminatedUsername(String terminatedUsername) {
+        this.terminatedUsername = terminatedUsername;
+    }
 }

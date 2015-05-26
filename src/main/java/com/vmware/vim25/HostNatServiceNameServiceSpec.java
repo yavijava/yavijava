@@ -30,82 +30,82 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostNatServiceNameServiceSpec extends DynamicData {
-  public boolean dnsAutoDetect;
-  public String dnsPolicy;
-  public int dnsRetries;
-  public int dnsTimeout;
-  public String[] dnsNameServer;
-  public int nbdsTimeout;
-  public int nbnsRetries;
-  public int nbnsTimeout;
+    public boolean dnsAutoDetect;
+    public String dnsPolicy;
+    public int dnsRetries;
+    public int dnsTimeout;
+    public String[] dnsNameServer;
+    public int nbdsTimeout;
+    public int nbnsRetries;
+    public int nbnsTimeout;
 
-  public boolean isDnsAutoDetect() {
-    return this.dnsAutoDetect;
-  }
+    public boolean isDnsAutoDetect() {
+        return this.dnsAutoDetect;
+    }
 
-  public String getDnsPolicy() {
-    return this.dnsPolicy;
-  }
+    public String getDnsPolicy() {
+        return this.dnsPolicy;
+    }
 
-  public int getDnsRetries() {
-    return this.dnsRetries;
-  }
+    public int getDnsRetries() {
+        return this.dnsRetries;
+    }
 
-  public int getDnsTimeout() {
-    return this.dnsTimeout;
-  }
+    public int getDnsTimeout() {
+        return this.dnsTimeout;
+    }
 
-  public String[] getDnsNameServer() {
-    return this.dnsNameServer;
-  }
+    public String[] getDnsNameServer() {
+        return this.dnsNameServer;
+    }
 
-  public int getNbdsTimeout() {
-    return this.nbdsTimeout;
-  }
+    public int getNbdsTimeout() {
+        return this.nbdsTimeout;
+    }
 
-  public int getNbnsRetries() {
-    return this.nbnsRetries;
-  }
+    public int getNbnsRetries() {
+        return this.nbnsRetries;
+    }
 
-  public int getNbnsTimeout() {
-    return this.nbnsTimeout;
-  }
+    public int getNbnsTimeout() {
+        return this.nbnsTimeout;
+    }
 
-  public void setDnsAutoDetect(boolean dnsAutoDetect) {
-    this.dnsAutoDetect=dnsAutoDetect;
-  }
+    public void setDnsAutoDetect(boolean dnsAutoDetect) {
+        this.dnsAutoDetect = dnsAutoDetect;
+    }
 
-  public void setDnsPolicy(String dnsPolicy) {
-    this.dnsPolicy=dnsPolicy;
-  }
+    public void setDnsPolicy(String dnsPolicy) {
+        this.dnsPolicy = dnsPolicy;
+    }
 
-  public void setDnsRetries(int dnsRetries) {
-    this.dnsRetries=dnsRetries;
-  }
+    public void setDnsRetries(int dnsRetries) {
+        this.dnsRetries = dnsRetries;
+    }
 
-  public void setDnsTimeout(int dnsTimeout) {
-    this.dnsTimeout=dnsTimeout;
-  }
+    public void setDnsTimeout(int dnsTimeout) {
+        this.dnsTimeout = dnsTimeout;
+    }
 
-  public void setDnsNameServer(String[] dnsNameServer) {
-    this.dnsNameServer=dnsNameServer;
-  }
+    public void setDnsNameServer(String[] dnsNameServer) {
+        this.dnsNameServer = dnsNameServer;
+    }
 
-  public void setNbdsTimeout(int nbdsTimeout) {
-    this.nbdsTimeout=nbdsTimeout;
-  }
+    public void setNbdsTimeout(int nbdsTimeout) {
+        this.nbdsTimeout = nbdsTimeout;
+    }
 
-  public void setNbnsRetries(int nbnsRetries) {
-    this.nbnsRetries=nbnsRetries;
-  }
+    public void setNbnsRetries(int nbnsRetries) {
+        this.nbnsRetries = nbnsRetries;
+    }
 
-  public void setNbnsTimeout(int nbnsTimeout) {
-    this.nbnsTimeout=nbnsTimeout;
-  }
+    public void setNbnsTimeout(int nbnsTimeout) {
+        this.nbnsTimeout = nbnsTimeout;
+    }
 }

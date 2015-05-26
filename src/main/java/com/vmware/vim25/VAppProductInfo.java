@@ -30,100 +30,100 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VAppProductInfo extends DynamicData {
-  public int key;
-  public String classId;
-  public String instanceId;
-  public String name;
-  public String vendor;
-  public String version;
-  public String fullVersion;
-  public String vendorUrl;
-  public String productUrl;
-  public String appUrl;
+    public int key;
+    public String classId;
+    public String instanceId;
+    public String name;
+    public String vendor;
+    public String version;
+    public String fullVersion;
+    public String vendorUrl;
+    public String productUrl;
+    public String appUrl;
 
-  public int getKey() {
-    return this.key;
-  }
+    public int getKey() {
+        return this.key;
+    }
 
-  public String getClassId() {
-    return this.classId;
-  }
+    public String getClassId() {
+        return this.classId;
+    }
 
-  public String getInstanceId() {
-    return this.instanceId;
-  }
+    public String getInstanceId() {
+        return this.instanceId;
+    }
 
-  public String getName() {
-    return this.name;
-  }
+    public String getName() {
+        return this.name;
+    }
 
-  public String getVendor() {
-    return this.vendor;
-  }
+    public String getVendor() {
+        return this.vendor;
+    }
 
-  public String getVersion() {
-    return this.version;
-  }
+    public String getVersion() {
+        return this.version;
+    }
 
-  public String getFullVersion() {
-    return this.fullVersion;
-  }
+    public String getFullVersion() {
+        return this.fullVersion;
+    }
 
-  public String getVendorUrl() {
-    return this.vendorUrl;
-  }
+    public String getVendorUrl() {
+        return this.vendorUrl;
+    }
 
-  public String getProductUrl() {
-    return this.productUrl;
-  }
+    public String getProductUrl() {
+        return this.productUrl;
+    }
 
-  public String getAppUrl() {
-    return this.appUrl;
-  }
+    public String getAppUrl() {
+        return this.appUrl;
+    }
 
-  public void setKey(int key) {
-    this.key=key;
-  }
+    public void setKey(int key) {
+        this.key = key;
+    }
 
-  public void setClassId(String classId) {
-    this.classId=classId;
-  }
+    public void setClassId(String classId) {
+        this.classId = classId;
+    }
 
-  public void setInstanceId(String instanceId) {
-    this.instanceId=instanceId;
-  }
+    public void setInstanceId(String instanceId) {
+        this.instanceId = instanceId;
+    }
 
-  public void setName(String name) {
-    this.name=name;
-  }
+    public void setName(String name) {
+        this.name = name;
+    }
 
-  public void setVendor(String vendor) {
-    this.vendor=vendor;
-  }
+    public void setVendor(String vendor) {
+        this.vendor = vendor;
+    }
 
-  public void setVersion(String version) {
-    this.version=version;
-  }
+    public void setVersion(String version) {
+        this.version = version;
+    }
 
-  public void setFullVersion(String fullVersion) {
-    this.fullVersion=fullVersion;
-  }
+    public void setFullVersion(String fullVersion) {
+        this.fullVersion = fullVersion;
+    }
 
-  public void setVendorUrl(String vendorUrl) {
-    this.vendorUrl=vendorUrl;
-  }
+    public void setVendorUrl(String vendorUrl) {
+        this.vendorUrl = vendorUrl;
+    }
 
-  public void setProductUrl(String productUrl) {
-    this.productUrl=productUrl;
-  }
+    public void setProductUrl(String productUrl) {
+        this.productUrl = productUrl;
+    }
 
-  public void setAppUrl(String appUrl) {
-    this.appUrl=appUrl;
-  }
+    public void setAppUrl(String appUrl) {
+        this.appUrl = appUrl;
+    }
 }

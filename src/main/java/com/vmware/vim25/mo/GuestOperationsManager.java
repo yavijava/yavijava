@@ -64,8 +64,8 @@ public class GuestOperationsManager extends ManagedObject {
     /**
      * A managed object that provides methods to support single sign-on in the guest operating system.
      *
-     * @since 6.0
      * @return {@link com.vmware.vim25.mo.GuestAliasManager GuestAliasManager}
+     * @since 6.0
      */
     public GuestAliasManager getAliasManager() {
         ManagedObjectReference mor = (ManagedObjectReference) getCurrentProperty("aliasManager");

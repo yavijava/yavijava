@@ -30,64 +30,64 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class ExtensionServerInfo extends DynamicData {
-  public String url;
-  public Description description;
-  public String company;
-  public String type;
-  public String[] adminEmail;
-  public String serverThumbprint;
+    public String url;
+    public Description description;
+    public String company;
+    public String type;
+    public String[] adminEmail;
+    public String serverThumbprint;
 
-  public String getUrl() {
-    return this.url;
-  }
+    public String getUrl() {
+        return this.url;
+    }
 
-  public Description getDescription() {
-    return this.description;
-  }
+    public Description getDescription() {
+        return this.description;
+    }
 
-  public String getCompany() {
-    return this.company;
-  }
+    public String getCompany() {
+        return this.company;
+    }
 
-  public String getType() {
-    return this.type;
-  }
+    public String getType() {
+        return this.type;
+    }
 
-  public String[] getAdminEmail() {
-    return this.adminEmail;
-  }
+    public String[] getAdminEmail() {
+        return this.adminEmail;
+    }
 
-  public String getServerThumbprint() {
-    return this.serverThumbprint;
-  }
+    public String getServerThumbprint() {
+        return this.serverThumbprint;
+    }
 
-  public void setUrl(String url) {
-    this.url=url;
-  }
+    public void setUrl(String url) {
+        this.url = url;
+    }
 
-  public void setDescription(Description description) {
-    this.description=description;
-  }
+    public void setDescription(Description description) {
+        this.description = description;
+    }
 
-  public void setCompany(String company) {
-    this.company=company;
-  }
+    public void setCompany(String company) {
+        this.company = company;
+    }
 
-  public void setType(String type) {
-    this.type=type;
-  }
+    public void setType(String type) {
+        this.type = type;
+    }
 
-  public void setAdminEmail(String[] adminEmail) {
-    this.adminEmail=adminEmail;
-  }
+    public void setAdminEmail(String[] adminEmail) {
+        this.adminEmail = adminEmail;
+    }
 
-  public void setServerThumbprint(String serverThumbprint) {
-    this.serverThumbprint=serverThumbprint;
-  }
+    public void setServerThumbprint(String serverThumbprint) {
+        this.serverThumbprint = serverThumbprint;
+    }
 }

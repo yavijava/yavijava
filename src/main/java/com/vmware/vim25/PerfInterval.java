@@ -30,64 +30,64 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class PerfInterval extends DynamicData {
-  public int key;
-  public int samplingPeriod;
-  public String name;
-  public int length;
-  public Integer level;
-  public boolean enabled;
+    public int key;
+    public int samplingPeriod;
+    public String name;
+    public int length;
+    public Integer level;
+    public boolean enabled;
 
-  public int getKey() {
-    return this.key;
-  }
+    public int getKey() {
+        return this.key;
+    }
 
-  public int getSamplingPeriod() {
-    return this.samplingPeriod;
-  }
+    public int getSamplingPeriod() {
+        return this.samplingPeriod;
+    }
 
-  public String getName() {
-    return this.name;
-  }
+    public String getName() {
+        return this.name;
+    }
 
-  public int getLength() {
-    return this.length;
-  }
+    public int getLength() {
+        return this.length;
+    }
 
-  public Integer getLevel() {
-    return this.level;
-  }
+    public Integer getLevel() {
+        return this.level;
+    }
 
-  public boolean isEnabled() {
-    return this.enabled;
-  }
+    public boolean isEnabled() {
+        return this.enabled;
+    }
 
-  public void setKey(int key) {
-    this.key=key;
-  }
+    public void setKey(int key) {
+        this.key = key;
+    }
 
-  public void setSamplingPeriod(int samplingPeriod) {
-    this.samplingPeriod=samplingPeriod;
-  }
+    public void setSamplingPeriod(int samplingPeriod) {
+        this.samplingPeriod = samplingPeriod;
+    }
 
-  public void setName(String name) {
-    this.name=name;
-  }
+    public void setName(String name) {
+        this.name = name;
+    }
 
-  public void setLength(int length) {
-    this.length=length;
-  }
+    public void setLength(int length) {
+        this.length = length;
+    }
 
-  public void setLevel(Integer level) {
-    this.level=level;
-  }
+    public void setLevel(Integer level) {
+        this.level = level;
+    }
 
-  public void setEnabled(boolean enabled) {
-    this.enabled=enabled;
-  }
+    public void setEnabled(boolean enabled) {
+        this.enabled = enabled;
+    }
 }

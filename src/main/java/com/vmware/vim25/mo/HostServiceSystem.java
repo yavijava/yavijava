@@ -29,56 +29,48 @@ POSSIBILITY OF SUCH DAMAGE.
 
 package com.vmware.vim25.mo;
 
-import java.rmi.RemoteException;
-
 import com.vmware.vim25.*;
+
+import java.rmi.RemoteException;
 
 /**
  * The managed object class corresponding to the one defined in VI SDK API reference.
+ *
  * @author Steve JIN (http://www.doublecloud.org)
  */
 
-public class HostServiceSystem extends ExtensibleManagedObject 
-{
+public class HostServiceSystem extends ExtensibleManagedObject {
 
-	public HostServiceSystem(ServerConnection serverConnection, ManagedObjectReference mor) 
-	{
-		super(serverConnection, mor);
-	}
+    public HostServiceSystem(ServerConnection serverConnection, ManagedObjectReference mor) {
+        super(serverConnection, mor);
+    }
 
-	public HostServiceInfo getServiceInfo()
-	{
-		return (HostServiceInfo) getCurrentProperty("serviceInfo");
-	}
-	
-	public void refreshServices() throws RuntimeFault, RemoteException 
-	{
-		getVimService().refreshServices(getMOR());
-	}
-	
-	public void restartService(String id) throws HostConfigFault, InvalidState, NotFound, RuntimeFault, RemoteException 
-	{
-		getVimService().restartService(getMOR(), id);
-	}
-	
-	public void startService(String id) throws HostConfigFault, InvalidState, NotFound, RuntimeFault, RemoteException 
-	{
-		getVimService().startService(getMOR(), id);
-	}
-	
-	public void stopService(String id) throws HostConfigFault, InvalidState, NotFound, RuntimeFault, RemoteException 
-	{
-		getVimService().stopService(getMOR(), id);
-	}
-	
-	public void uninstallService(String id) throws HostConfigFault, NotFound, RuntimeFault, RemoteException 
-	{
-		getVimService().uninstallService(getMOR(), id);
-	}
-	
-	public void updateServicePolicy(String id, String policy) throws HostConfigFault, NotFound, RuntimeFault, RemoteException 
-	{
-		getVimService().updateServicePolicy(getMOR(), id, policy);
-	}
+    public HostServiceInfo getServiceInfo() {
+        return (HostServiceInfo) getCurrentProperty("serviceInfo");
+    }
+
+    public void refreshServices() throws RuntimeFault, RemoteException {
+        getVimService().refreshServices(getMOR());
+    }
+
+    public void restartService(String id) throws HostConfigFault, InvalidState, NotFound, RuntimeFault, RemoteException {
+        getVimService().restartService(getMOR(), id);
+    }
+
+    public void startService(String id) throws HostConfigFault, InvalidState, NotFound, RuntimeFault, RemoteException {
+        getVimService().startService(getMOR(), id);
+    }
+
+    public void stopService(String id) throws HostConfigFault, InvalidState, NotFound, RuntimeFault, RemoteException {
+        getVimService().stopService(getMOR(), id);
+    }
+
+    public void uninstallService(String id) throws HostConfigFault, NotFound, RuntimeFault, RemoteException {
+        getVimService().uninstallService(getMOR(), id);
+    }
+
+    public void updateServicePolicy(String id, String policy) throws HostConfigFault, NotFound, RuntimeFault, RemoteException {
+        getVimService().updateServicePolicy(getMOR(), id, policy);
+    }
 
 }

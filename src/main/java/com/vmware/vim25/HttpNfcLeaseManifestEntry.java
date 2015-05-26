@@ -30,64 +30,64 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HttpNfcLeaseManifestEntry extends DynamicData {
-  public String key;
-  public String sha1;
-  public long size;
-  public boolean disk;
-  public Long capacity;
-  public Long populatedSize;
+    public String key;
+    public String sha1;
+    public long size;
+    public boolean disk;
+    public Long capacity;
+    public Long populatedSize;
 
-  public String getKey() {
-    return this.key;
-  }
+    public String getKey() {
+        return this.key;
+    }
 
-  public String getSha1() {
-    return this.sha1;
-  }
+    public String getSha1() {
+        return this.sha1;
+    }
 
-  public long getSize() {
-    return this.size;
-  }
+    public long getSize() {
+        return this.size;
+    }
 
-  public boolean isDisk() {
-    return this.disk;
-  }
+    public boolean isDisk() {
+        return this.disk;
+    }
 
-  public Long getCapacity() {
-    return this.capacity;
-  }
+    public Long getCapacity() {
+        return this.capacity;
+    }
 
-  public Long getPopulatedSize() {
-    return this.populatedSize;
-  }
+    public Long getPopulatedSize() {
+        return this.populatedSize;
+    }
 
-  public void setKey(String key) {
-    this.key=key;
-  }
+    public void setKey(String key) {
+        this.key = key;
+    }
 
-  public void setSha1(String sha1) {
-    this.sha1=sha1;
-  }
+    public void setSha1(String sha1) {
+        this.sha1 = sha1;
+    }
 
-  public void setSize(long size) {
-    this.size=size;
-  }
+    public void setSize(long size) {
+        this.size = size;
+    }
 
-  public void setDisk(boolean disk) {
-    this.disk=disk;
-  }
+    public void setDisk(boolean disk) {
+        this.disk = disk;
+    }
 
-  public void setCapacity(Long capacity) {
-    this.capacity=capacity;
-  }
+    public void setCapacity(Long capacity) {
+        this.capacity = capacity;
+    }
 
-  public void setPopulatedSize(Long populatedSize) {
-    this.populatedSize=populatedSize;
-  }
+    public void setPopulatedSize(Long populatedSize) {
+        this.populatedSize = populatedSize;
+    }
 }

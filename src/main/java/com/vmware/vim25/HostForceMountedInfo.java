@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostForceMountedInfo extends DynamicData {
-  public boolean persist;
-  public boolean mounted;
+    public boolean persist;
+    public boolean mounted;
 
-  public boolean isPersist() {
-    return this.persist;
-  }
+    public boolean isPersist() {
+        return this.persist;
+    }
 
-  public boolean isMounted() {
-    return this.mounted;
-  }
+    public boolean isMounted() {
+        return this.mounted;
+    }
 
-  public void setPersist(boolean persist) {
-    this.persist=persist;
-  }
+    public void setPersist(boolean persist) {
+        this.persist = persist;
+    }
 
-  public void setMounted(boolean mounted) {
-    this.mounted=mounted;
-  }
+    public void setMounted(boolean mounted) {
+        this.mounted = mounted;
+    }
 }

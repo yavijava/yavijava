@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class OvfHardwareExport extends OvfExport {
-  public VirtualDevice device;
-  public String vmPath;
+    public VirtualDevice device;
+    public String vmPath;
 
-  public VirtualDevice getDevice() {
-    return this.device;
-  }
+    public VirtualDevice getDevice() {
+        return this.device;
+    }
 
-  public String getVmPath() {
-    return this.vmPath;
-  }
+    public String getVmPath() {
+        return this.vmPath;
+    }
 
-  public void setDevice(VirtualDevice device) {
-    this.device=device;
-  }
+    public void setDevice(VirtualDevice device) {
+        this.device = device;
+    }
 
-  public void setVmPath(String vmPath) {
-    this.vmPath=vmPath;
-  }
+    public void setVmPath(String vmPath) {
+        this.vmPath = vmPath;
+    }
 }

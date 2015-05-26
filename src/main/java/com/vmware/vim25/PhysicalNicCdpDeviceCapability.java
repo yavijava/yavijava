@@ -30,73 +30,73 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class PhysicalNicCdpDeviceCapability extends DynamicData {
-  public boolean router;
-  public boolean transparentBridge;
-  public boolean sourceRouteBridge;
-  public boolean networkSwitch;
-  public boolean host;
-  public boolean igmpEnabled;
-  public boolean repeater;
+    public boolean router;
+    public boolean transparentBridge;
+    public boolean sourceRouteBridge;
+    public boolean networkSwitch;
+    public boolean host;
+    public boolean igmpEnabled;
+    public boolean repeater;
 
-  public boolean isRouter() {
-    return this.router;
-  }
+    public boolean isRouter() {
+        return this.router;
+    }
 
-  public boolean isTransparentBridge() {
-    return this.transparentBridge;
-  }
+    public boolean isTransparentBridge() {
+        return this.transparentBridge;
+    }
 
-  public boolean isSourceRouteBridge() {
-    return this.sourceRouteBridge;
-  }
+    public boolean isSourceRouteBridge() {
+        return this.sourceRouteBridge;
+    }
 
-  public boolean isNetworkSwitch() {
-    return this.networkSwitch;
-  }
+    public boolean isNetworkSwitch() {
+        return this.networkSwitch;
+    }
 
-  public boolean isHost() {
-    return this.host;
-  }
+    public boolean isHost() {
+        return this.host;
+    }
 
-  public boolean isIgmpEnabled() {
-    return this.igmpEnabled;
-  }
+    public boolean isIgmpEnabled() {
+        return this.igmpEnabled;
+    }
 
-  public boolean isRepeater() {
-    return this.repeater;
-  }
+    public boolean isRepeater() {
+        return this.repeater;
+    }
 
-  public void setRouter(boolean router) {
-    this.router=router;
-  }
+    public void setRouter(boolean router) {
+        this.router = router;
+    }
 
-  public void setTransparentBridge(boolean transparentBridge) {
-    this.transparentBridge=transparentBridge;
-  }
+    public void setTransparentBridge(boolean transparentBridge) {
+        this.transparentBridge = transparentBridge;
+    }
 
-  public void setSourceRouteBridge(boolean sourceRouteBridge) {
-    this.sourceRouteBridge=sourceRouteBridge;
-  }
+    public void setSourceRouteBridge(boolean sourceRouteBridge) {
+        this.sourceRouteBridge = sourceRouteBridge;
+    }
 
-  public void setNetworkSwitch(boolean networkSwitch) {
-    this.networkSwitch=networkSwitch;
-  }
+    public void setNetworkSwitch(boolean networkSwitch) {
+        this.networkSwitch = networkSwitch;
+    }
 
-  public void setHost(boolean host) {
-    this.host=host;
-  }
+    public void setHost(boolean host) {
+        this.host = host;
+    }
 
-  public void setIgmpEnabled(boolean igmpEnabled) {
-    this.igmpEnabled=igmpEnabled;
-  }
+    public void setIgmpEnabled(boolean igmpEnabled) {
+        this.igmpEnabled = igmpEnabled;
+    }
 
-  public void setRepeater(boolean repeater) {
-    this.repeater=repeater;
-  }
+    public void setRepeater(boolean repeater) {
+        this.repeater = repeater;
+    }
 }

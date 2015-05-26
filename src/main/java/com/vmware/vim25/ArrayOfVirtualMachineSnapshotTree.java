@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfVirtualMachineSnapshotTree {
-  public VirtualMachineSnapshotTree[] VirtualMachineSnapshotTree;
+    public VirtualMachineSnapshotTree[] VirtualMachineSnapshotTree;
 
-  public VirtualMachineSnapshotTree[] getVirtualMachineSnapshotTree() {
-    return this.VirtualMachineSnapshotTree;
-  }
+    public VirtualMachineSnapshotTree[] getVirtualMachineSnapshotTree() {
+        return this.VirtualMachineSnapshotTree;
+    }
 
-  public VirtualMachineSnapshotTree getVirtualMachineSnapshotTree(int i) {
-    return this.VirtualMachineSnapshotTree[i];
-  }
+    public VirtualMachineSnapshotTree getVirtualMachineSnapshotTree(int i) {
+        return this.VirtualMachineSnapshotTree[i];
+    }
 
-  public void setVirtualMachineSnapshotTree(VirtualMachineSnapshotTree[] VirtualMachineSnapshotTree) {
-    this.VirtualMachineSnapshotTree=VirtualMachineSnapshotTree;
-  }
+    public void setVirtualMachineSnapshotTree(VirtualMachineSnapshotTree[] VirtualMachineSnapshotTree) {
+        this.VirtualMachineSnapshotTree = VirtualMachineSnapshotTree;
+    }
 }

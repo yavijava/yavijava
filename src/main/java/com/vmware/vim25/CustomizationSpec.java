@@ -30,55 +30,55 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class CustomizationSpec extends DynamicData {
-  public CustomizationOptions options;
-  public CustomizationIdentitySettings identity;
-  public CustomizationGlobalIPSettings globalIPSettings;
-  public CustomizationAdapterMapping[] nicSettingMap;
-  public byte[] encryptionKey;
+    public CustomizationOptions options;
+    public CustomizationIdentitySettings identity;
+    public CustomizationGlobalIPSettings globalIPSettings;
+    public CustomizationAdapterMapping[] nicSettingMap;
+    public byte[] encryptionKey;
 
-  public CustomizationOptions getOptions() {
-    return this.options;
-  }
+    public CustomizationOptions getOptions() {
+        return this.options;
+    }
 
-  public CustomizationIdentitySettings getIdentity() {
-    return this.identity;
-  }
+    public CustomizationIdentitySettings getIdentity() {
+        return this.identity;
+    }
 
-  public CustomizationGlobalIPSettings getGlobalIPSettings() {
-    return this.globalIPSettings;
-  }
+    public CustomizationGlobalIPSettings getGlobalIPSettings() {
+        return this.globalIPSettings;
+    }
 
-  public CustomizationAdapterMapping[] getNicSettingMap() {
-    return this.nicSettingMap;
-  }
+    public CustomizationAdapterMapping[] getNicSettingMap() {
+        return this.nicSettingMap;
+    }
 
-  public byte[] getEncryptionKey() {
-    return this.encryptionKey;
-  }
+    public byte[] getEncryptionKey() {
+        return this.encryptionKey;
+    }
 
-  public void setOptions(CustomizationOptions options) {
-    this.options=options;
-  }
+    public void setOptions(CustomizationOptions options) {
+        this.options = options;
+    }
 
-  public void setIdentity(CustomizationIdentitySettings identity) {
-    this.identity=identity;
-  }
+    public void setIdentity(CustomizationIdentitySettings identity) {
+        this.identity = identity;
+    }
 
-  public void setGlobalIPSettings(CustomizationGlobalIPSettings globalIPSettings) {
-    this.globalIPSettings=globalIPSettings;
-  }
+    public void setGlobalIPSettings(CustomizationGlobalIPSettings globalIPSettings) {
+        this.globalIPSettings = globalIPSettings;
+    }
 
-  public void setNicSettingMap(CustomizationAdapterMapping[] nicSettingMap) {
-    this.nicSettingMap=nicSettingMap;
-  }
+    public void setNicSettingMap(CustomizationAdapterMapping[] nicSettingMap) {
+        this.nicSettingMap = nicSettingMap;
+    }
 
-  public void setEncryptionKey(byte[] encryptionKey) {
-    this.encryptionKey=encryptionKey;
-  }
+    public void setEncryptionKey(byte[] encryptionKey) {
+        this.encryptionKey = encryptionKey;
+    }
 }

@@ -28,31 +28,32 @@ POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
 
 package com.vmware.vim25;
+
 import java.util.Calendar;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostBIOSInfo extends DynamicData {
-  public String biosVersion;
-  public Calendar releaseDate;
+    public String biosVersion;
+    public Calendar releaseDate;
 
-  public String getBiosVersion() {
-    return this.biosVersion;
-  }
+    public String getBiosVersion() {
+        return this.biosVersion;
+    }
 
-  public Calendar getReleaseDate() {
-    return this.releaseDate;
-  }
+    public Calendar getReleaseDate() {
+        return this.releaseDate;
+    }
 
-  public void setBiosVersion(String biosVersion) {
-    this.biosVersion=biosVersion;
-  }
+    public void setBiosVersion(String biosVersion) {
+        this.biosVersion = biosVersion;
+    }
 
-  public void setReleaseDate(Calendar releaseDate) {
-    this.releaseDate=releaseDate;
-  }
+    public void setReleaseDate(Calendar releaseDate) {
+        this.releaseDate = releaseDate;
+    }
 }

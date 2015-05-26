@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class PerfMetricSeries extends DynamicData {
-  public PerfMetricId id;
+    public PerfMetricId id;
 
-  public PerfMetricId getId() {
-    return this.id;
-  }
+    public PerfMetricId getId() {
+        return this.id;
+    }
 
-  public void setId(PerfMetricId id) {
-    this.id=id;
-  }
+    public void setId(PerfMetricId id) {
+        this.id = id;
+    }
 }

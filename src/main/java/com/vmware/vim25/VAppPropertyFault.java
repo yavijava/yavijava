@@ -30,55 +30,55 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VAppPropertyFault extends VmConfigFault {
-  public String id;
-  public String category;
-  public String label;
-  public String type;
-  public String value;
+    public String id;
+    public String category;
+    public String label;
+    public String type;
+    public String value;
 
-  public String getId() {
-    return this.id;
-  }
+    public String getId() {
+        return this.id;
+    }
 
-  public String getCategory() {
-    return this.category;
-  }
+    public String getCategory() {
+        return this.category;
+    }
 
-  public String getLabel() {
-    return this.label;
-  }
+    public String getLabel() {
+        return this.label;
+    }
 
-  public String getType() {
-    return this.type;
-  }
+    public String getType() {
+        return this.type;
+    }
 
-  public String getValue() {
-    return this.value;
-  }
+    public String getValue() {
+        return this.value;
+    }
 
-  public void setId(String id) {
-    this.id=id;
-  }
+    public void setId(String id) {
+        this.id = id;
+    }
 
-  public void setCategory(String category) {
-    this.category=category;
-  }
+    public void setCategory(String category) {
+        this.category = category;
+    }
 
-  public void setLabel(String label) {
-    this.label=label;
-  }
+    public void setLabel(String label) {
+        this.label = label;
+    }
 
-  public void setType(String type) {
-    this.type=type;
-  }
+    public void setType(String type) {
+        this.type = type;
+    }
 
-  public void setValue(String value) {
-    this.value=value;
-  }
+    public void setValue(String value) {
+        this.value = value;
+    }
 }

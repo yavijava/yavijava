@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VirtualPS2ControllerOption extends VirtualControllerOption {
-  public IntOption numKeyboards;
-  public IntOption numPointingDevices;
+    public IntOption numKeyboards;
+    public IntOption numPointingDevices;
 
-  public IntOption getNumKeyboards() {
-    return this.numKeyboards;
-  }
+    public IntOption getNumKeyboards() {
+        return this.numKeyboards;
+    }
 
-  public IntOption getNumPointingDevices() {
-    return this.numPointingDevices;
-  }
+    public IntOption getNumPointingDevices() {
+        return this.numPointingDevices;
+    }
 
-  public void setNumKeyboards(IntOption numKeyboards) {
-    this.numKeyboards=numKeyboards;
-  }
+    public void setNumKeyboards(IntOption numKeyboards) {
+        this.numKeyboards = numKeyboards;
+    }
 
-  public void setNumPointingDevices(IntOption numPointingDevices) {
-    this.numPointingDevices=numPointingDevices;
-  }
+    public void setNumPointingDevices(IntOption numPointingDevices) {
+        this.numPointingDevices = numPointingDevices;
+    }
 }

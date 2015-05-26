@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class GuestAuthentication extends DynamicData {
-  public boolean interactiveSession;
+    public boolean interactiveSession;
 
-  public boolean isInteractiveSession() {
-    return this.interactiveSession;
-  }
+    public boolean isInteractiveSession() {
+        return this.interactiveSession;
+    }
 
-  public void setInteractiveSession(boolean interactiveSession) {
-    this.interactiveSession=interactiveSession;
-  }
+    public void setInteractiveSession(boolean interactiveSession) {
+        this.interactiveSession = interactiveSession;
+    }
 }

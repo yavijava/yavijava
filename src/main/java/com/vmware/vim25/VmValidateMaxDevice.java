@@ -30,37 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VmValidateMaxDevice extends VimFault {
-  public String device;
-  public int max;
-  public int count;
+    public String device;
+    public int max;
+    public int count;
 
-  public String getDevice() {
-    return this.device;
-  }
+    public String getDevice() {
+        return this.device;
+    }
 
-  public int getMax() {
-    return this.max;
-  }
+    public int getMax() {
+        return this.max;
+    }
 
-  public int getCount() {
-    return this.count;
-  }
+    public int getCount() {
+        return this.count;
+    }
 
-  public void setDevice(String device) {
-    this.device=device;
-  }
+    public void setDevice(String device) {
+        this.device = device;
+    }
 
-  public void setMax(int max) {
-    this.max=max;
-  }
+    public void setMax(int max) {
+        this.max = max;
+    }
 
-  public void setCount(int count) {
-    this.count=count;
-  }
+    public void setCount(int count) {
+        this.count = count;
+    }
 }

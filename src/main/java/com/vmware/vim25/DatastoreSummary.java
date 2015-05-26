@@ -30,100 +30,100 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class DatastoreSummary extends DynamicData {
-  public ManagedObjectReference datastore;
-  public String name;
-  public String url;
-  public long capacity;
-  public long freeSpace;
-  public Long uncommitted;
-  public boolean accessible;
-  public Boolean multipleHostAccess;
-  public String type;
-  public String maintenanceMode;
+    public ManagedObjectReference datastore;
+    public String name;
+    public String url;
+    public long capacity;
+    public long freeSpace;
+    public Long uncommitted;
+    public boolean accessible;
+    public Boolean multipleHostAccess;
+    public String type;
+    public String maintenanceMode;
 
-  public ManagedObjectReference getDatastore() {
-    return this.datastore;
-  }
+    public ManagedObjectReference getDatastore() {
+        return this.datastore;
+    }
 
-  public String getName() {
-    return this.name;
-  }
+    public String getName() {
+        return this.name;
+    }
 
-  public String getUrl() {
-    return this.url;
-  }
+    public String getUrl() {
+        return this.url;
+    }
 
-  public long getCapacity() {
-    return this.capacity;
-  }
+    public long getCapacity() {
+        return this.capacity;
+    }
 
-  public long getFreeSpace() {
-    return this.freeSpace;
-  }
+    public long getFreeSpace() {
+        return this.freeSpace;
+    }
 
-  public Long getUncommitted() {
-    return this.uncommitted;
-  }
+    public Long getUncommitted() {
+        return this.uncommitted;
+    }
 
-  public boolean isAccessible() {
-    return this.accessible;
-  }
+    public boolean isAccessible() {
+        return this.accessible;
+    }
 
-  public Boolean getMultipleHostAccess() {
-    return this.multipleHostAccess;
-  }
+    public Boolean getMultipleHostAccess() {
+        return this.multipleHostAccess;
+    }
 
-  public String getType() {
-    return this.type;
-  }
+    public String getType() {
+        return this.type;
+    }
 
-  public String getMaintenanceMode() {
-    return this.maintenanceMode;
-  }
+    public String getMaintenanceMode() {
+        return this.maintenanceMode;
+    }
 
-  public void setDatastore(ManagedObjectReference datastore) {
-    this.datastore=datastore;
-  }
+    public void setDatastore(ManagedObjectReference datastore) {
+        this.datastore = datastore;
+    }
 
-  public void setName(String name) {
-    this.name=name;
-  }
+    public void setName(String name) {
+        this.name = name;
+    }
 
-  public void setUrl(String url) {
-    this.url=url;
-  }
+    public void setUrl(String url) {
+        this.url = url;
+    }
 
-  public void setCapacity(long capacity) {
-    this.capacity=capacity;
-  }
+    public void setCapacity(long capacity) {
+        this.capacity = capacity;
+    }
 
-  public void setFreeSpace(long freeSpace) {
-    this.freeSpace=freeSpace;
-  }
+    public void setFreeSpace(long freeSpace) {
+        this.freeSpace = freeSpace;
+    }
 
-  public void setUncommitted(Long uncommitted) {
-    this.uncommitted=uncommitted;
-  }
+    public void setUncommitted(Long uncommitted) {
+        this.uncommitted = uncommitted;
+    }
 
-  public void setAccessible(boolean accessible) {
-    this.accessible=accessible;
-  }
+    public void setAccessible(boolean accessible) {
+        this.accessible = accessible;
+    }
 
-  public void setMultipleHostAccess(Boolean multipleHostAccess) {
-    this.multipleHostAccess=multipleHostAccess;
-  }
+    public void setMultipleHostAccess(Boolean multipleHostAccess) {
+        this.multipleHostAccess = multipleHostAccess;
+    }
 
-  public void setType(String type) {
-    this.type=type;
-  }
+    public void setType(String type) {
+        this.type = type;
+    }
 
-  public void setMaintenanceMode(String maintenanceMode) {
-    this.maintenanceMode=maintenanceMode;
-  }
+    public void setMaintenanceMode(String maintenanceMode) {
+        this.maintenanceMode = maintenanceMode;
+    }
 }

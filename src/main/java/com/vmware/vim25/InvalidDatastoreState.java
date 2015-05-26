@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class InvalidDatastoreState extends InvalidState {
-  public String datastoreName;
+    public String datastoreName;
 
-  public String getDatastoreName() {
-    return this.datastoreName;
-  }
+    public String getDatastoreName() {
+        return this.datastoreName;
+    }
 
-  public void setDatastoreName(String datastoreName) {
-    this.datastoreName=datastoreName;
-  }
+    public void setDatastoreName(String datastoreName) {
+        this.datastoreName = datastoreName;
+    }
 }

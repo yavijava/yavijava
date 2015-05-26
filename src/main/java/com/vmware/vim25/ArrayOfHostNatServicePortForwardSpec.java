@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfHostNatServicePortForwardSpec {
-  public HostNatServicePortForwardSpec[] HostNatServicePortForwardSpec;
+    public HostNatServicePortForwardSpec[] HostNatServicePortForwardSpec;
 
-  public HostNatServicePortForwardSpec[] getHostNatServicePortForwardSpec() {
-    return this.HostNatServicePortForwardSpec;
-  }
+    public HostNatServicePortForwardSpec[] getHostNatServicePortForwardSpec() {
+        return this.HostNatServicePortForwardSpec;
+    }
 
-  public HostNatServicePortForwardSpec getHostNatServicePortForwardSpec(int i) {
-    return this.HostNatServicePortForwardSpec[i];
-  }
+    public HostNatServicePortForwardSpec getHostNatServicePortForwardSpec(int i) {
+        return this.HostNatServicePortForwardSpec[i];
+    }
 
-  public void setHostNatServicePortForwardSpec(HostNatServicePortForwardSpec[] HostNatServicePortForwardSpec) {
-    this.HostNatServicePortForwardSpec=HostNatServicePortForwardSpec;
-  }
+    public void setHostNatServicePortForwardSpec(HostNatServicePortForwardSpec[] HostNatServicePortForwardSpec) {
+        this.HostNatServicePortForwardSpec = HostNatServicePortForwardSpec;
+    }
 }

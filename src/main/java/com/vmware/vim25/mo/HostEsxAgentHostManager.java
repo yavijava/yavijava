@@ -29,32 +29,31 @@ POSSIBILITY OF SUCH DAMAGE.
 
 package com.vmware.vim25.mo;
 
+import com.vmware.vim25.HostEsxAgentHostManagerConfigInfo;
+import com.vmware.vim25.ManagedObjectReference;
+import com.vmware.vim25.RuntimeFault;
+
 import java.rmi.RemoteException;
 
-import com.vmware.vim25.*;
-
 /**
- * configure agent virtual machine resource configuration, such as what network 
- * and datastore to use for agent virtual machines. 
+ * configure agent virtual machine resource configuration, such as what network
+ * and datastore to use for agent virtual machines.
+ *
  * @author Steve Jin (http://www.doublecloud.org)
  * @since SDK5.0
  */
 
-public class HostEsxAgentHostManager extends ManagedObject 
-{
+public class HostEsxAgentHostManager extends ManagedObject {
 
-	public HostEsxAgentHostManager(ServerConnection serverConnection, ManagedObjectReference mor) 
-	{
-		super(serverConnection, mor);
-	}
+    public HostEsxAgentHostManager(ServerConnection serverConnection, ManagedObjectReference mor) {
+        super(serverConnection, mor);
+    }
 
-	public HostEsxAgentHostManagerConfigInfo getCacheConfigurationInfo()
-	{
-		return (HostEsxAgentHostManagerConfigInfo) getCurrentProperty("configInfo");
-	}
-	
-	public void esxAgentHostManagerUpdateConfig(HostEsxAgentHostManagerConfigInfo configInfo) throws RuntimeFault, RemoteException 
-	{
-		getVimService().esxAgentHostManagerUpdateConfig(getMOR(), configInfo);
-	}
+    public HostEsxAgentHostManagerConfigInfo getCacheConfigurationInfo() {
+        return (HostEsxAgentHostManagerConfigInfo) getCurrentProperty("configInfo");
+    }
+
+    public void esxAgentHostManagerUpdateConfig(HostEsxAgentHostManagerConfigInfo configInfo) throws RuntimeFault, RemoteException {
+        getVimService().esxAgentHostManagerUpdateConfig(getMOR(), configInfo);
+    }
 }

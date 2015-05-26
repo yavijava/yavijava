@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class RoleEvent extends AuthorizationEvent {
-  public RoleEventArgument role;
+    public RoleEventArgument role;
 
-  public RoleEventArgument getRole() {
-    return this.role;
-  }
+    public RoleEventArgument getRole() {
+        return this.role;
+    }
 
-  public void setRole(RoleEventArgument role) {
-    this.role=role;
-  }
+    public void setRole(RoleEventArgument role) {
+        this.role = role;
+    }
 }

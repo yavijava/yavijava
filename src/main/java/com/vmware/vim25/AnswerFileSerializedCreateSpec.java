@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class AnswerFileSerializedCreateSpec extends AnswerFileCreateSpec {
-  public String answerFileConfigString;
+    public String answerFileConfigString;
 
-  public String getAnswerFileConfigString() {
-    return this.answerFileConfigString;
-  }
+    public String getAnswerFileConfigString() {
+        return this.answerFileConfigString;
+    }
 
-  public void setAnswerFileConfigString(String answerFileConfigString) {
-    this.answerFileConfigString=answerFileConfigString;
-  }
+    public void setAnswerFileConfigString(String answerFileConfigString) {
+        this.answerFileConfigString = answerFileConfigString;
+    }
 }

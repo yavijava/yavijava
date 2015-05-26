@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public enum FtIssuesOnHostHostSelectionType {
-  user ("user"),
-  vc ("vc"),
-  drs ("drs");
+    user("user"),
+    vc("vc"),
+    drs("drs");
 
-  @SuppressWarnings("unused")
-  private final String val;
-  private FtIssuesOnHostHostSelectionType(String val)
-  {
-    this.val = val;
-  }
+    @SuppressWarnings("unused")
+    private final String val;
+
+    private FtIssuesOnHostHostSelectionType(String val) {
+        this.val = val;
+    }
 }

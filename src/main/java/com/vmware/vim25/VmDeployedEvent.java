@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VmDeployedEvent extends VmEvent {
-  public VmEventArgument srcTemplate;
+    public VmEventArgument srcTemplate;
 
-  public VmEventArgument getSrcTemplate() {
-    return this.srcTemplate;
-  }
+    public VmEventArgument getSrcTemplate() {
+        return this.srcTemplate;
+    }
 
-  public void setSrcTemplate(VmEventArgument srcTemplate) {
-    this.srcTemplate=srcTemplate;
-  }
+    public void setSrcTemplate(VmEventArgument srcTemplate) {
+        this.srcTemplate = srcTemplate;
+    }
 }

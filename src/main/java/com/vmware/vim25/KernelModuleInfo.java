@@ -30,127 +30,127 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class KernelModuleInfo extends DynamicData {
-  public int id;
-  public String name;
-  public String version;
-  public String filename;
-  public String optionString;
-  public boolean loaded;
-  public boolean enabled;
-  public int useCount;
-  public KernelModuleSectionInfo readOnlySection;
-  public KernelModuleSectionInfo writableSection;
-  public KernelModuleSectionInfo textSection;
-  public KernelModuleSectionInfo dataSection;
-  public KernelModuleSectionInfo bssSection;
+    public int id;
+    public String name;
+    public String version;
+    public String filename;
+    public String optionString;
+    public boolean loaded;
+    public boolean enabled;
+    public int useCount;
+    public KernelModuleSectionInfo readOnlySection;
+    public KernelModuleSectionInfo writableSection;
+    public KernelModuleSectionInfo textSection;
+    public KernelModuleSectionInfo dataSection;
+    public KernelModuleSectionInfo bssSection;
 
-  public int getId() {
-    return this.id;
-  }
+    public int getId() {
+        return this.id;
+    }
 
-  public String getName() {
-    return this.name;
-  }
+    public String getName() {
+        return this.name;
+    }
 
-  public String getVersion() {
-    return this.version;
-  }
+    public String getVersion() {
+        return this.version;
+    }
 
-  public String getFilename() {
-    return this.filename;
-  }
+    public String getFilename() {
+        return this.filename;
+    }
 
-  public String getOptionString() {
-    return this.optionString;
-  }
+    public String getOptionString() {
+        return this.optionString;
+    }
 
-  public boolean isLoaded() {
-    return this.loaded;
-  }
+    public boolean isLoaded() {
+        return this.loaded;
+    }
 
-  public boolean isEnabled() {
-    return this.enabled;
-  }
+    public boolean isEnabled() {
+        return this.enabled;
+    }
 
-  public int getUseCount() {
-    return this.useCount;
-  }
+    public int getUseCount() {
+        return this.useCount;
+    }
 
-  public KernelModuleSectionInfo getReadOnlySection() {
-    return this.readOnlySection;
-  }
+    public KernelModuleSectionInfo getReadOnlySection() {
+        return this.readOnlySection;
+    }
 
-  public KernelModuleSectionInfo getWritableSection() {
-    return this.writableSection;
-  }
+    public KernelModuleSectionInfo getWritableSection() {
+        return this.writableSection;
+    }
 
-  public KernelModuleSectionInfo getTextSection() {
-    return this.textSection;
-  }
+    public KernelModuleSectionInfo getTextSection() {
+        return this.textSection;
+    }
 
-  public KernelModuleSectionInfo getDataSection() {
-    return this.dataSection;
-  }
+    public KernelModuleSectionInfo getDataSection() {
+        return this.dataSection;
+    }
 
-  public KernelModuleSectionInfo getBssSection() {
-    return this.bssSection;
-  }
+    public KernelModuleSectionInfo getBssSection() {
+        return this.bssSection;
+    }
 
-  public void setId(int id) {
-    this.id=id;
-  }
+    public void setId(int id) {
+        this.id = id;
+    }
 
-  public void setName(String name) {
-    this.name=name;
-  }
+    public void setName(String name) {
+        this.name = name;
+    }
 
-  public void setVersion(String version) {
-    this.version=version;
-  }
+    public void setVersion(String version) {
+        this.version = version;
+    }
 
-  public void setFilename(String filename) {
-    this.filename=filename;
-  }
+    public void setFilename(String filename) {
+        this.filename = filename;
+    }
 
-  public void setOptionString(String optionString) {
-    this.optionString=optionString;
-  }
+    public void setOptionString(String optionString) {
+        this.optionString = optionString;
+    }
 
-  public void setLoaded(boolean loaded) {
-    this.loaded=loaded;
-  }
+    public void setLoaded(boolean loaded) {
+        this.loaded = loaded;
+    }
 
-  public void setEnabled(boolean enabled) {
-    this.enabled=enabled;
-  }
+    public void setEnabled(boolean enabled) {
+        this.enabled = enabled;
+    }
 
-  public void setUseCount(int useCount) {
-    this.useCount=useCount;
-  }
+    public void setUseCount(int useCount) {
+        this.useCount = useCount;
+    }
 
-  public void setReadOnlySection(KernelModuleSectionInfo readOnlySection) {
-    this.readOnlySection=readOnlySection;
-  }
+    public void setReadOnlySection(KernelModuleSectionInfo readOnlySection) {
+        this.readOnlySection = readOnlySection;
+    }
 
-  public void setWritableSection(KernelModuleSectionInfo writableSection) {
-    this.writableSection=writableSection;
-  }
+    public void setWritableSection(KernelModuleSectionInfo writableSection) {
+        this.writableSection = writableSection;
+    }
 
-  public void setTextSection(KernelModuleSectionInfo textSection) {
-    this.textSection=textSection;
-  }
+    public void setTextSection(KernelModuleSectionInfo textSection) {
+        this.textSection = textSection;
+    }
 
-  public void setDataSection(KernelModuleSectionInfo dataSection) {
-    this.dataSection=dataSection;
-  }
+    public void setDataSection(KernelModuleSectionInfo dataSection) {
+        this.dataSection = dataSection;
+    }
 
-  public void setBssSection(KernelModuleSectionInfo bssSection) {
-    this.bssSection=bssSection;
-  }
+    public void setBssSection(KernelModuleSectionInfo bssSection) {
+        this.bssSection = bssSection;
+    }
 }

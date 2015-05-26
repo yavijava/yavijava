@@ -29,28 +29,15 @@ POSSIBILITY OF SUCH DAMAGE.
 
 package com.vmware.vim25.mo;
 
+import com.vmware.vim25.*;
+import com.vmware.vim25.mo.util.MorUtil;
+import com.vmware.vim25.mo.util.PropertyCollectorUtil;
+import org.apache.log4j.Logger;
+
 import java.lang.reflect.Array;
 import java.lang.reflect.Constructor;
 import java.rmi.RemoteException;
 import java.util.Hashtable;
-
-import com.vmware.vim25.DynamicProperty;
-import com.vmware.vim25.InvalidProperty;
-import com.vmware.vim25.ManagedObjectReference;
-import com.vmware.vim25.ObjectContent;
-import com.vmware.vim25.ObjectSpec;
-import com.vmware.vim25.ObjectUpdate;
-import com.vmware.vim25.PropertyChange;
-import com.vmware.vim25.PropertyChangeOp;
-import com.vmware.vim25.PropertyFilterSpec;
-import com.vmware.vim25.PropertyFilterUpdate;
-import com.vmware.vim25.PropertySpec;
-import com.vmware.vim25.RuntimeFault;
-import com.vmware.vim25.UpdateSet;
-import com.vmware.vim25.VimPortType;
-import com.vmware.vim25.mo.util.MorUtil;
-import com.vmware.vim25.mo.util.PropertyCollectorUtil;
-import org.apache.log4j.Logger;
 
 /**
  * This class is intended to provide a wrapper around a managed object class.

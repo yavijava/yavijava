@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VAppCloneSpecNetworkMappingPair extends DynamicData {
-  public ManagedObjectReference source;
-  public ManagedObjectReference destination;
+    public ManagedObjectReference source;
+    public ManagedObjectReference destination;
 
-  public ManagedObjectReference getSource() {
-    return this.source;
-  }
+    public ManagedObjectReference getSource() {
+        return this.source;
+    }
 
-  public ManagedObjectReference getDestination() {
-    return this.destination;
-  }
+    public ManagedObjectReference getDestination() {
+        return this.destination;
+    }
 
-  public void setSource(ManagedObjectReference source) {
-    this.source=source;
-  }
+    public void setSource(ManagedObjectReference source) {
+        this.source = source;
+    }
 
-  public void setDestination(ManagedObjectReference destination) {
-    this.destination=destination;
-  }
+    public void setDestination(ManagedObjectReference destination) {
+        this.destination = destination;
+    }
 }

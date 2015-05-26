@@ -30,100 +30,100 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class InventoryDescription extends DynamicData {
-  public int numHosts;
-  public int numVirtualMachines;
-  public Integer numResourcePools;
-  public Integer numClusters;
-  public Integer numCpuDev;
-  public Integer numNetDev;
-  public Integer numDiskDev;
-  public Integer numvCpuDev;
-  public Integer numvNetDev;
-  public Integer numvDiskDev;
+    public int numHosts;
+    public int numVirtualMachines;
+    public Integer numResourcePools;
+    public Integer numClusters;
+    public Integer numCpuDev;
+    public Integer numNetDev;
+    public Integer numDiskDev;
+    public Integer numvCpuDev;
+    public Integer numvNetDev;
+    public Integer numvDiskDev;
 
-  public int getNumHosts() {
-    return this.numHosts;
-  }
+    public int getNumHosts() {
+        return this.numHosts;
+    }
 
-  public int getNumVirtualMachines() {
-    return this.numVirtualMachines;
-  }
+    public int getNumVirtualMachines() {
+        return this.numVirtualMachines;
+    }
 
-  public Integer getNumResourcePools() {
-    return this.numResourcePools;
-  }
+    public Integer getNumResourcePools() {
+        return this.numResourcePools;
+    }
 
-  public Integer getNumClusters() {
-    return this.numClusters;
-  }
+    public Integer getNumClusters() {
+        return this.numClusters;
+    }
 
-  public Integer getNumCpuDev() {
-    return this.numCpuDev;
-  }
+    public Integer getNumCpuDev() {
+        return this.numCpuDev;
+    }
 
-  public Integer getNumNetDev() {
-    return this.numNetDev;
-  }
+    public Integer getNumNetDev() {
+        return this.numNetDev;
+    }
 
-  public Integer getNumDiskDev() {
-    return this.numDiskDev;
-  }
+    public Integer getNumDiskDev() {
+        return this.numDiskDev;
+    }
 
-  public Integer getNumvCpuDev() {
-    return this.numvCpuDev;
-  }
+    public Integer getNumvCpuDev() {
+        return this.numvCpuDev;
+    }
 
-  public Integer getNumvNetDev() {
-    return this.numvNetDev;
-  }
+    public Integer getNumvNetDev() {
+        return this.numvNetDev;
+    }
 
-  public Integer getNumvDiskDev() {
-    return this.numvDiskDev;
-  }
+    public Integer getNumvDiskDev() {
+        return this.numvDiskDev;
+    }
 
-  public void setNumHosts(int numHosts) {
-    this.numHosts=numHosts;
-  }
+    public void setNumHosts(int numHosts) {
+        this.numHosts = numHosts;
+    }
 
-  public void setNumVirtualMachines(int numVirtualMachines) {
-    this.numVirtualMachines=numVirtualMachines;
-  }
+    public void setNumVirtualMachines(int numVirtualMachines) {
+        this.numVirtualMachines = numVirtualMachines;
+    }
 
-  public void setNumResourcePools(Integer numResourcePools) {
-    this.numResourcePools=numResourcePools;
-  }
+    public void setNumResourcePools(Integer numResourcePools) {
+        this.numResourcePools = numResourcePools;
+    }
 
-  public void setNumClusters(Integer numClusters) {
-    this.numClusters=numClusters;
-  }
+    public void setNumClusters(Integer numClusters) {
+        this.numClusters = numClusters;
+    }
 
-  public void setNumCpuDev(Integer numCpuDev) {
-    this.numCpuDev=numCpuDev;
-  }
+    public void setNumCpuDev(Integer numCpuDev) {
+        this.numCpuDev = numCpuDev;
+    }
 
-  public void setNumNetDev(Integer numNetDev) {
-    this.numNetDev=numNetDev;
-  }
+    public void setNumNetDev(Integer numNetDev) {
+        this.numNetDev = numNetDev;
+    }
 
-  public void setNumDiskDev(Integer numDiskDev) {
-    this.numDiskDev=numDiskDev;
-  }
+    public void setNumDiskDev(Integer numDiskDev) {
+        this.numDiskDev = numDiskDev;
+    }
 
-  public void setNumvCpuDev(Integer numvCpuDev) {
-    this.numvCpuDev=numvCpuDev;
-  }
+    public void setNumvCpuDev(Integer numvCpuDev) {
+        this.numvCpuDev = numvCpuDev;
+    }
 
-  public void setNumvNetDev(Integer numvNetDev) {
-    this.numvNetDev=numvNetDev;
-  }
+    public void setNumvNetDev(Integer numvNetDev) {
+        this.numvNetDev = numvNetDev;
+    }
 
-  public void setNumvDiskDev(Integer numvDiskDev) {
-    this.numvDiskDev=numvDiskDev;
-  }
+    public void setNumvDiskDev(Integer numvDiskDev) {
+        this.numvDiskDev = numvDiskDev;
+    }
 }

@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfMultipleCertificatesVerifyFaultThumbprintData {
-  public MultipleCertificatesVerifyFaultThumbprintData[] MultipleCertificatesVerifyFaultThumbprintData;
+    public MultipleCertificatesVerifyFaultThumbprintData[] MultipleCertificatesVerifyFaultThumbprintData;
 
-  public MultipleCertificatesVerifyFaultThumbprintData[] getMultipleCertificatesVerifyFaultThumbprintData() {
-    return this.MultipleCertificatesVerifyFaultThumbprintData;
-  }
+    public MultipleCertificatesVerifyFaultThumbprintData[] getMultipleCertificatesVerifyFaultThumbprintData() {
+        return this.MultipleCertificatesVerifyFaultThumbprintData;
+    }
 
-  public MultipleCertificatesVerifyFaultThumbprintData getMultipleCertificatesVerifyFaultThumbprintData(int i) {
-    return this.MultipleCertificatesVerifyFaultThumbprintData[i];
-  }
+    public MultipleCertificatesVerifyFaultThumbprintData getMultipleCertificatesVerifyFaultThumbprintData(int i) {
+        return this.MultipleCertificatesVerifyFaultThumbprintData[i];
+    }
 
-  public void setMultipleCertificatesVerifyFaultThumbprintData(MultipleCertificatesVerifyFaultThumbprintData[] MultipleCertificatesVerifyFaultThumbprintData) {
-    this.MultipleCertificatesVerifyFaultThumbprintData=MultipleCertificatesVerifyFaultThumbprintData;
-  }
+    public void setMultipleCertificatesVerifyFaultThumbprintData(MultipleCertificatesVerifyFaultThumbprintData[] MultipleCertificatesVerifyFaultThumbprintData) {
+        this.MultipleCertificatesVerifyFaultThumbprintData = MultipleCertificatesVerifyFaultThumbprintData;
+    }
 }

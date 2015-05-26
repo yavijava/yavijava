@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class PatchMissingDependencies extends PatchNotApplicable {
-  public String[] prerequisitePatch;
-  public String[] prerequisiteLib;
+    public String[] prerequisitePatch;
+    public String[] prerequisiteLib;
 
-  public String[] getPrerequisitePatch() {
-    return this.prerequisitePatch;
-  }
+    public String[] getPrerequisitePatch() {
+        return this.prerequisitePatch;
+    }
 
-  public String[] getPrerequisiteLib() {
-    return this.prerequisiteLib;
-  }
+    public String[] getPrerequisiteLib() {
+        return this.prerequisiteLib;
+    }
 
-  public void setPrerequisitePatch(String[] prerequisitePatch) {
-    this.prerequisitePatch=prerequisitePatch;
-  }
+    public void setPrerequisitePatch(String[] prerequisitePatch) {
+        this.prerequisitePatch = prerequisitePatch;
+    }
 
-  public void setPrerequisiteLib(String[] prerequisiteLib) {
-    this.prerequisiteLib=prerequisiteLib;
-  }
+    public void setPrerequisiteLib(String[] prerequisiteLib) {
+        this.prerequisiteLib = prerequisiteLib;
+    }
 }

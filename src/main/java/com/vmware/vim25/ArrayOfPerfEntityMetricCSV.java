@@ -30,25 +30,21 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
-*/
+ * @author Steve Jin (sjin@vmware.com)
+ */
 
-public class ArrayOfPerfEntityMetricCSV
-{
-  public PerfEntityMetricCSV[] PerfEntityMetricCSV;
+public class ArrayOfPerfEntityMetricCSV {
+    public PerfEntityMetricCSV[] PerfEntityMetricCSV;
 
-  public PerfEntityMetricCSV[] getPerfEntityMetricCSV()
-  {
-    return this.PerfEntityMetricCSV;
-  }
+    public PerfEntityMetricCSV[] getPerfEntityMetricCSV() {
+        return this.PerfEntityMetricCSV;
+    }
 
-  public PerfEntityMetricCSV getPerfEntityMetricCSV(int i)
-  {
-    return this.PerfEntityMetricCSV[i];
-  }
+    public PerfEntityMetricCSV getPerfEntityMetricCSV(int i) {
+        return this.PerfEntityMetricCSV[i];
+    }
 
-  public void setPerfEntityMetricCSV(PerfEntityMetricCSV[] PerfEntityMetricCSV)
-  {
-    this.PerfEntityMetricCSV=PerfEntityMetricCSV;
-  }
+    public void setPerfEntityMetricCSV(PerfEntityMetricCSV[] PerfEntityMetricCSV) {
+        this.PerfEntityMetricCSV = PerfEntityMetricCSV;
+    }
 }

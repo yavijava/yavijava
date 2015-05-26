@@ -30,20 +30,20 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public enum NetIpStackInfoEntryType {
-  other ("other"),
-  invalid ("invalid"),
-  dynamic ("dynamic"),
-  manual ("manual");
+    other("other"),
+    invalid("invalid"),
+    dynamic("dynamic"),
+    manual("manual");
 
-  @SuppressWarnings("unused")
-  private final String val;
-  private NetIpStackInfoEntryType(String val)
-  {
-    this.val = val;
-  }
+    @SuppressWarnings("unused")
+    private final String val;
+
+    private NetIpStackInfoEntryType(String val) {
+        this.val = val;
+    }
 }

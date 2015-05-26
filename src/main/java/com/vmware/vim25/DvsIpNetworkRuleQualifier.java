@@ -30,64 +30,64 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class DvsIpNetworkRuleQualifier extends DvsNetworkRuleQualifier {
-  public IpAddress sourceAddress;
-  public IpAddress destinationAddress;
-  public IntExpression protocol;
-  public DvsIpPort sourceIpPort;
-  public DvsIpPort destinationIpPort;
-  public IntExpression tcpFlags;
+    public IpAddress sourceAddress;
+    public IpAddress destinationAddress;
+    public IntExpression protocol;
+    public DvsIpPort sourceIpPort;
+    public DvsIpPort destinationIpPort;
+    public IntExpression tcpFlags;
 
-  public IpAddress getSourceAddress() {
-    return this.sourceAddress;
-  }
+    public IpAddress getSourceAddress() {
+        return this.sourceAddress;
+    }
 
-  public IpAddress getDestinationAddress() {
-    return this.destinationAddress;
-  }
+    public IpAddress getDestinationAddress() {
+        return this.destinationAddress;
+    }
 
-  public IntExpression getProtocol() {
-    return this.protocol;
-  }
+    public IntExpression getProtocol() {
+        return this.protocol;
+    }
 
-  public DvsIpPort getSourceIpPort() {
-    return this.sourceIpPort;
-  }
+    public DvsIpPort getSourceIpPort() {
+        return this.sourceIpPort;
+    }
 
-  public DvsIpPort getDestinationIpPort() {
-    return this.destinationIpPort;
-  }
+    public DvsIpPort getDestinationIpPort() {
+        return this.destinationIpPort;
+    }
 
-  public IntExpression getTcpFlags() {
-    return this.tcpFlags;
-  }
+    public IntExpression getTcpFlags() {
+        return this.tcpFlags;
+    }
 
-  public void setSourceAddress(IpAddress sourceAddress) {
-    this.sourceAddress=sourceAddress;
-  }
+    public void setSourceAddress(IpAddress sourceAddress) {
+        this.sourceAddress = sourceAddress;
+    }
 
-  public void setDestinationAddress(IpAddress destinationAddress) {
-    this.destinationAddress=destinationAddress;
-  }
+    public void setDestinationAddress(IpAddress destinationAddress) {
+        this.destinationAddress = destinationAddress;
+    }
 
-  public void setProtocol(IntExpression protocol) {
-    this.protocol=protocol;
-  }
+    public void setProtocol(IntExpression protocol) {
+        this.protocol = protocol;
+    }
 
-  public void setSourceIpPort(DvsIpPort sourceIpPort) {
-    this.sourceIpPort=sourceIpPort;
-  }
+    public void setSourceIpPort(DvsIpPort sourceIpPort) {
+        this.sourceIpPort = sourceIpPort;
+    }
 
-  public void setDestinationIpPort(DvsIpPort destinationIpPort) {
-    this.destinationIpPort=destinationIpPort;
-  }
+    public void setDestinationIpPort(DvsIpPort destinationIpPort) {
+        this.destinationIpPort = destinationIpPort;
+    }
 
-  public void setTcpFlags(IntExpression tcpFlags) {
-    this.tcpFlags=tcpFlags;
-  }
+    public void setTcpFlags(IntExpression tcpFlags) {
+        this.tcpFlags = tcpFlags;
+    }
 }

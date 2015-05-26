@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VsanHostDecommissionMode extends DynamicData {
-  public String objectAction;
+    public String objectAction;
 
-  public String getObjectAction() {
-    return this.objectAction;
-  }
+    public String getObjectAction() {
+        return this.objectAction;
+    }
 
-  public void setObjectAction(String objectAction) {
-    this.objectAction=objectAction;
-  }
+    public void setObjectAction(String objectAction) {
+        this.objectAction = objectAction;
+    }
 }

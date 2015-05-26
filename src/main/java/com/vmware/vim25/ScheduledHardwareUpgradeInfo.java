@@ -30,46 +30,46 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class ScheduledHardwareUpgradeInfo extends DynamicData {
-  public String upgradePolicy;
-  public String versionKey;
-  public String scheduledHardwareUpgradeStatus;
-  public LocalizedMethodFault fault;
+    public String upgradePolicy;
+    public String versionKey;
+    public String scheduledHardwareUpgradeStatus;
+    public LocalizedMethodFault fault;
 
-  public String getUpgradePolicy() {
-    return this.upgradePolicy;
-  }
+    public String getUpgradePolicy() {
+        return this.upgradePolicy;
+    }
 
-  public String getVersionKey() {
-    return this.versionKey;
-  }
+    public String getVersionKey() {
+        return this.versionKey;
+    }
 
-  public String getScheduledHardwareUpgradeStatus() {
-    return this.scheduledHardwareUpgradeStatus;
-  }
+    public String getScheduledHardwareUpgradeStatus() {
+        return this.scheduledHardwareUpgradeStatus;
+    }
 
-  public LocalizedMethodFault getFault() {
-    return this.fault;
-  }
+    public LocalizedMethodFault getFault() {
+        return this.fault;
+    }
 
-  public void setUpgradePolicy(String upgradePolicy) {
-    this.upgradePolicy=upgradePolicy;
-  }
+    public void setUpgradePolicy(String upgradePolicy) {
+        this.upgradePolicy = upgradePolicy;
+    }
 
-  public void setVersionKey(String versionKey) {
-    this.versionKey=versionKey;
-  }
+    public void setVersionKey(String versionKey) {
+        this.versionKey = versionKey;
+    }
 
-  public void setScheduledHardwareUpgradeStatus(String scheduledHardwareUpgradeStatus) {
-    this.scheduledHardwareUpgradeStatus=scheduledHardwareUpgradeStatus;
-  }
+    public void setScheduledHardwareUpgradeStatus(String scheduledHardwareUpgradeStatus) {
+        this.scheduledHardwareUpgradeStatus = scheduledHardwareUpgradeStatus;
+    }
 
-  public void setFault(LocalizedMethodFault fault) {
-    this.fault=fault;
-  }
+    public void setFault(LocalizedMethodFault fault) {
+        this.fault = fault;
+    }
 }

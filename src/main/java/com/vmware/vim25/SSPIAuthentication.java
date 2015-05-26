@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class SSPIAuthentication extends GuestAuthentication {
-  public String sspiToken;
+    public String sspiToken;
 
-  public String getSspiToken() {
-    return this.sspiToken;
-  }
+    public String getSspiToken() {
+        return this.sspiToken;
+    }
 
-  public void setSspiToken(String sspiToken) {
-    this.sspiToken=sspiToken;
-  }
+    public void setSspiToken(String sspiToken) {
+        this.sspiToken = sspiToken;
+    }
 }

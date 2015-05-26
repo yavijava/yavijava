@@ -30,109 +30,109 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class IscsiPortInfo extends DynamicData {
-  public String vnicDevice;
-  public HostVirtualNic vnic;
-  public String pnicDevice;
-  public PhysicalNic pnic;
-  public String switchName;
-  public String switchUuid;
-  public String portgroupName;
-  public String portgroupKey;
-  public String portKey;
-  public IscsiStatus complianceStatus;
-  public String pathStatus;
+    public String vnicDevice;
+    public HostVirtualNic vnic;
+    public String pnicDevice;
+    public PhysicalNic pnic;
+    public String switchName;
+    public String switchUuid;
+    public String portgroupName;
+    public String portgroupKey;
+    public String portKey;
+    public IscsiStatus complianceStatus;
+    public String pathStatus;
 
-  public String getVnicDevice() {
-    return this.vnicDevice;
-  }
+    public String getVnicDevice() {
+        return this.vnicDevice;
+    }
 
-  public HostVirtualNic getVnic() {
-    return this.vnic;
-  }
+    public HostVirtualNic getVnic() {
+        return this.vnic;
+    }
 
-  public String getPnicDevice() {
-    return this.pnicDevice;
-  }
+    public String getPnicDevice() {
+        return this.pnicDevice;
+    }
 
-  public PhysicalNic getPnic() {
-    return this.pnic;
-  }
+    public PhysicalNic getPnic() {
+        return this.pnic;
+    }
 
-  public String getSwitchName() {
-    return this.switchName;
-  }
+    public String getSwitchName() {
+        return this.switchName;
+    }
 
-  public String getSwitchUuid() {
-    return this.switchUuid;
-  }
+    public String getSwitchUuid() {
+        return this.switchUuid;
+    }
 
-  public String getPortgroupName() {
-    return this.portgroupName;
-  }
+    public String getPortgroupName() {
+        return this.portgroupName;
+    }
 
-  public String getPortgroupKey() {
-    return this.portgroupKey;
-  }
+    public String getPortgroupKey() {
+        return this.portgroupKey;
+    }
 
-  public String getPortKey() {
-    return this.portKey;
-  }
+    public String getPortKey() {
+        return this.portKey;
+    }
 
-  public IscsiStatus getComplianceStatus() {
-    return this.complianceStatus;
-  }
+    public IscsiStatus getComplianceStatus() {
+        return this.complianceStatus;
+    }
 
-  public String getPathStatus() {
-    return this.pathStatus;
-  }
+    public String getPathStatus() {
+        return this.pathStatus;
+    }
 
-  public void setVnicDevice(String vnicDevice) {
-    this.vnicDevice=vnicDevice;
-  }
+    public void setVnicDevice(String vnicDevice) {
+        this.vnicDevice = vnicDevice;
+    }
 
-  public void setVnic(HostVirtualNic vnic) {
-    this.vnic=vnic;
-  }
+    public void setVnic(HostVirtualNic vnic) {
+        this.vnic = vnic;
+    }
 
-  public void setPnicDevice(String pnicDevice) {
-    this.pnicDevice=pnicDevice;
-  }
+    public void setPnicDevice(String pnicDevice) {
+        this.pnicDevice = pnicDevice;
+    }
 
-  public void setPnic(PhysicalNic pnic) {
-    this.pnic=pnic;
-  }
+    public void setPnic(PhysicalNic pnic) {
+        this.pnic = pnic;
+    }
 
-  public void setSwitchName(String switchName) {
-    this.switchName=switchName;
-  }
+    public void setSwitchName(String switchName) {
+        this.switchName = switchName;
+    }
 
-  public void setSwitchUuid(String switchUuid) {
-    this.switchUuid=switchUuid;
-  }
+    public void setSwitchUuid(String switchUuid) {
+        this.switchUuid = switchUuid;
+    }
 
-  public void setPortgroupName(String portgroupName) {
-    this.portgroupName=portgroupName;
-  }
+    public void setPortgroupName(String portgroupName) {
+        this.portgroupName = portgroupName;
+    }
 
-  public void setPortgroupKey(String portgroupKey) {
-    this.portgroupKey=portgroupKey;
-  }
+    public void setPortgroupKey(String portgroupKey) {
+        this.portgroupKey = portgroupKey;
+    }
 
-  public void setPortKey(String portKey) {
-    this.portKey=portKey;
-  }
+    public void setPortKey(String portKey) {
+        this.portKey = portKey;
+    }
 
-  public void setComplianceStatus(IscsiStatus complianceStatus) {
-    this.complianceStatus=complianceStatus;
-  }
+    public void setComplianceStatus(IscsiStatus complianceStatus) {
+        this.complianceStatus = complianceStatus;
+    }
 
-  public void setPathStatus(String pathStatus) {
-    this.pathStatus=pathStatus;
-  }
+    public void setPathStatus(String pathStatus) {
+        this.pathStatus = pathStatus;
+    }
 }

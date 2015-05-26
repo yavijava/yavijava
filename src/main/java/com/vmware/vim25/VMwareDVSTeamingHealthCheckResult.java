@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VMwareDVSTeamingHealthCheckResult extends HostMemberHealthCheckResult {
-  public String teamingStatus;
+    public String teamingStatus;
 
-  public String getTeamingStatus() {
-    return this.teamingStatus;
-  }
+    public String getTeamingStatus() {
+        return this.teamingStatus;
+    }
 
-  public void setTeamingStatus(String teamingStatus) {
-    this.teamingStatus=teamingStatus;
-  }
+    public void setTeamingStatus(String teamingStatus) {
+        this.teamingStatus = teamingStatus;
+    }
 }

@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class MismatchedVMotionNetworkNames extends MigrationFault {
-  public String sourceNetwork;
-  public String destNetwork;
+    public String sourceNetwork;
+    public String destNetwork;
 
-  public String getSourceNetwork() {
-    return this.sourceNetwork;
-  }
+    public String getSourceNetwork() {
+        return this.sourceNetwork;
+    }
 
-  public String getDestNetwork() {
-    return this.destNetwork;
-  }
+    public String getDestNetwork() {
+        return this.destNetwork;
+    }
 
-  public void setSourceNetwork(String sourceNetwork) {
-    this.sourceNetwork=sourceNetwork;
-  }
+    public void setSourceNetwork(String sourceNetwork) {
+        this.sourceNetwork = sourceNetwork;
+    }
 
-  public void setDestNetwork(String destNetwork) {
-    this.destNetwork=destNetwork;
-  }
+    public void setDestNetwork(String destNetwork) {
+        this.destNetwork = destNetwork;
+    }
 }

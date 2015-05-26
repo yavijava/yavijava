@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class AnswerFileUpdateFailure extends DynamicData {
-  public ProfilePropertyPath userInputPath;
-  public LocalizableMessage errMsg;
+    public ProfilePropertyPath userInputPath;
+    public LocalizableMessage errMsg;
 
-  public ProfilePropertyPath getUserInputPath() {
-    return this.userInputPath;
-  }
+    public ProfilePropertyPath getUserInputPath() {
+        return this.userInputPath;
+    }
 
-  public LocalizableMessage getErrMsg() {
-    return this.errMsg;
-  }
+    public LocalizableMessage getErrMsg() {
+        return this.errMsg;
+    }
 
-  public void setUserInputPath(ProfilePropertyPath userInputPath) {
-    this.userInputPath=userInputPath;
-  }
+    public void setUserInputPath(ProfilePropertyPath userInputPath) {
+        this.userInputPath = userInputPath;
+    }
 
-  public void setErrMsg(LocalizableMessage errMsg) {
-    this.errMsg=errMsg;
-  }
+    public void setErrMsg(LocalizableMessage errMsg) {
+        this.errMsg = errMsg;
+    }
 }

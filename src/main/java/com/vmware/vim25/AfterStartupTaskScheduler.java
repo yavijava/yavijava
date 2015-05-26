@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class AfterStartupTaskScheduler extends TaskScheduler {
-  public int minute;
+    public int minute;
 
-  public int getMinute() {
-    return this.minute;
-  }
+    public int getMinute() {
+        return this.minute;
+    }
 
-  public void setMinute(int minute) {
-    this.minute=minute;
-  }
+    public void setMinute(int minute) {
+        this.minute = minute;
+    }
 }

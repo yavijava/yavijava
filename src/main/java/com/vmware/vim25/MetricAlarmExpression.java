@@ -30,73 +30,73 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class MetricAlarmExpression extends AlarmExpression {
-  public MetricAlarmOperator operator;
-  public String type;
-  public PerfMetricId metric;
-  public Integer yellow;
-  public Integer yellowInterval;
-  public Integer red;
-  public Integer redInterval;
+    public MetricAlarmOperator operator;
+    public String type;
+    public PerfMetricId metric;
+    public Integer yellow;
+    public Integer yellowInterval;
+    public Integer red;
+    public Integer redInterval;
 
-  public MetricAlarmOperator getOperator() {
-    return this.operator;
-  }
+    public MetricAlarmOperator getOperator() {
+        return this.operator;
+    }
 
-  public String getType() {
-    return this.type;
-  }
+    public String getType() {
+        return this.type;
+    }
 
-  public PerfMetricId getMetric() {
-    return this.metric;
-  }
+    public PerfMetricId getMetric() {
+        return this.metric;
+    }
 
-  public Integer getYellow() {
-    return this.yellow;
-  }
+    public Integer getYellow() {
+        return this.yellow;
+    }
 
-  public Integer getYellowInterval() {
-    return this.yellowInterval;
-  }
+    public Integer getYellowInterval() {
+        return this.yellowInterval;
+    }
 
-  public Integer getRed() {
-    return this.red;
-  }
+    public Integer getRed() {
+        return this.red;
+    }
 
-  public Integer getRedInterval() {
-    return this.redInterval;
-  }
+    public Integer getRedInterval() {
+        return this.redInterval;
+    }
 
-  public void setOperator(MetricAlarmOperator operator) {
-    this.operator=operator;
-  }
+    public void setOperator(MetricAlarmOperator operator) {
+        this.operator = operator;
+    }
 
-  public void setType(String type) {
-    this.type=type;
-  }
+    public void setType(String type) {
+        this.type = type;
+    }
 
-  public void setMetric(PerfMetricId metric) {
-    this.metric=metric;
-  }
+    public void setMetric(PerfMetricId metric) {
+        this.metric = metric;
+    }
 
-  public void setYellow(Integer yellow) {
-    this.yellow=yellow;
-  }
+    public void setYellow(Integer yellow) {
+        this.yellow = yellow;
+    }
 
-  public void setYellowInterval(Integer yellowInterval) {
-    this.yellowInterval=yellowInterval;
-  }
+    public void setYellowInterval(Integer yellowInterval) {
+        this.yellowInterval = yellowInterval;
+    }
 
-  public void setRed(Integer red) {
-    this.red=red;
-  }
+    public void setRed(Integer red) {
+        this.red = red;
+    }
 
-  public void setRedInterval(Integer redInterval) {
-    this.redInterval=redInterval;
-  }
+    public void setRedInterval(Integer redInterval) {
+        this.redInterval = redInterval;
+    }
 }

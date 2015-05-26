@@ -30,37 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class NetStackInstanceProfile extends ApplyProfile {
-  public String key;
-  public NetworkProfileDnsConfigProfile dnsConfig;
-  public IpRouteProfile ipRouteConfig;
+    public String key;
+    public NetworkProfileDnsConfigProfile dnsConfig;
+    public IpRouteProfile ipRouteConfig;
 
-  public String getKey() {
-    return this.key;
-  }
+    public String getKey() {
+        return this.key;
+    }
 
-  public NetworkProfileDnsConfigProfile getDnsConfig() {
-    return this.dnsConfig;
-  }
+    public NetworkProfileDnsConfigProfile getDnsConfig() {
+        return this.dnsConfig;
+    }
 
-  public IpRouteProfile getIpRouteConfig() {
-    return this.ipRouteConfig;
-  }
+    public IpRouteProfile getIpRouteConfig() {
+        return this.ipRouteConfig;
+    }
 
-  public void setKey(String key) {
-    this.key=key;
-  }
+    public void setKey(String key) {
+        this.key = key;
+    }
 
-  public void setDnsConfig(NetworkProfileDnsConfigProfile dnsConfig) {
-    this.dnsConfig=dnsConfig;
-  }
+    public void setDnsConfig(NetworkProfileDnsConfigProfile dnsConfig) {
+        this.dnsConfig = dnsConfig;
+    }
 
-  public void setIpRouteConfig(IpRouteProfile ipRouteConfig) {
-    this.ipRouteConfig=ipRouteConfig;
-  }
+    public void setIpRouteConfig(IpRouteProfile ipRouteConfig) {
+        this.ipRouteConfig = ipRouteConfig;
+    }
 }

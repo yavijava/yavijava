@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostHardwareElementInfo extends DynamicData {
-  public String name;
-  public ElementDescription status;
+    public String name;
+    public ElementDescription status;
 
-  public String getName() {
-    return this.name;
-  }
+    public String getName() {
+        return this.name;
+    }
 
-  public ElementDescription getStatus() {
-    return this.status;
-  }
+    public ElementDescription getStatus() {
+        return this.status;
+    }
 
-  public void setName(String name) {
-    this.name=name;
-  }
+    public void setName(String name) {
+        this.name = name;
+    }
 
-  public void setStatus(ElementDescription status) {
-    this.status=status;
-  }
+    public void setStatus(ElementDescription status) {
+        this.status = status;
+    }
 }

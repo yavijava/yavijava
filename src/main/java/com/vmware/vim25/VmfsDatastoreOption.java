@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VmfsDatastoreOption extends DynamicData {
-  public VmfsDatastoreBaseOption info;
-  public VmfsDatastoreSpec spec;
+    public VmfsDatastoreBaseOption info;
+    public VmfsDatastoreSpec spec;
 
-  public VmfsDatastoreBaseOption getInfo() {
-    return this.info;
-  }
+    public VmfsDatastoreBaseOption getInfo() {
+        return this.info;
+    }
 
-  public VmfsDatastoreSpec getSpec() {
-    return this.spec;
-  }
+    public VmfsDatastoreSpec getSpec() {
+        return this.spec;
+    }
 
-  public void setInfo(VmfsDatastoreBaseOption info) {
-    this.info=info;
-  }
+    public void setInfo(VmfsDatastoreBaseOption info) {
+        this.info = info;
+    }
 
-  public void setSpec(VmfsDatastoreSpec spec) {
-    this.spec=spec;
-  }
+    public void setSpec(VmfsDatastoreSpec spec) {
+        this.spec = spec;
+    }
 }

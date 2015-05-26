@@ -30,91 +30,91 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VMwareDvsLacpGroupConfig extends DynamicData {
-  public String key;
-  public String name;
-  public String mode;
-  public Integer uplinkNum;
-  public String loadbalanceAlgorithm;
-  public VMwareDvsLagVlanConfig vlan;
-  public VMwareDvsLagIpfixConfig ipfix;
-  public String[] uplinkName;
-  public String[] uplinkPortKey;
+    public String key;
+    public String name;
+    public String mode;
+    public Integer uplinkNum;
+    public String loadbalanceAlgorithm;
+    public VMwareDvsLagVlanConfig vlan;
+    public VMwareDvsLagIpfixConfig ipfix;
+    public String[] uplinkName;
+    public String[] uplinkPortKey;
 
-  public String getKey() {
-    return this.key;
-  }
+    public String getKey() {
+        return this.key;
+    }
 
-  public String getName() {
-    return this.name;
-  }
+    public String getName() {
+        return this.name;
+    }
 
-  public String getMode() {
-    return this.mode;
-  }
+    public String getMode() {
+        return this.mode;
+    }
 
-  public Integer getUplinkNum() {
-    return this.uplinkNum;
-  }
+    public Integer getUplinkNum() {
+        return this.uplinkNum;
+    }
 
-  public String getLoadbalanceAlgorithm() {
-    return this.loadbalanceAlgorithm;
-  }
+    public String getLoadbalanceAlgorithm() {
+        return this.loadbalanceAlgorithm;
+    }
 
-  public VMwareDvsLagVlanConfig getVlan() {
-    return this.vlan;
-  }
+    public VMwareDvsLagVlanConfig getVlan() {
+        return this.vlan;
+    }
 
-  public VMwareDvsLagIpfixConfig getIpfix() {
-    return this.ipfix;
-  }
+    public VMwareDvsLagIpfixConfig getIpfix() {
+        return this.ipfix;
+    }
 
-  public String[] getUplinkName() {
-    return this.uplinkName;
-  }
+    public String[] getUplinkName() {
+        return this.uplinkName;
+    }
 
-  public String[] getUplinkPortKey() {
-    return this.uplinkPortKey;
-  }
+    public String[] getUplinkPortKey() {
+        return this.uplinkPortKey;
+    }
 
-  public void setKey(String key) {
-    this.key=key;
-  }
+    public void setKey(String key) {
+        this.key = key;
+    }
 
-  public void setName(String name) {
-    this.name=name;
-  }
+    public void setName(String name) {
+        this.name = name;
+    }
 
-  public void setMode(String mode) {
-    this.mode=mode;
-  }
+    public void setMode(String mode) {
+        this.mode = mode;
+    }
 
-  public void setUplinkNum(Integer uplinkNum) {
-    this.uplinkNum=uplinkNum;
-  }
+    public void setUplinkNum(Integer uplinkNum) {
+        this.uplinkNum = uplinkNum;
+    }
 
-  public void setLoadbalanceAlgorithm(String loadbalanceAlgorithm) {
-    this.loadbalanceAlgorithm=loadbalanceAlgorithm;
-  }
+    public void setLoadbalanceAlgorithm(String loadbalanceAlgorithm) {
+        this.loadbalanceAlgorithm = loadbalanceAlgorithm;
+    }
 
-  public void setVlan(VMwareDvsLagVlanConfig vlan) {
-    this.vlan=vlan;
-  }
+    public void setVlan(VMwareDvsLagVlanConfig vlan) {
+        this.vlan = vlan;
+    }
 
-  public void setIpfix(VMwareDvsLagIpfixConfig ipfix) {
-    this.ipfix=ipfix;
-  }
+    public void setIpfix(VMwareDvsLagIpfixConfig ipfix) {
+        this.ipfix = ipfix;
+    }
 
-  public void setUplinkName(String[] uplinkName) {
-    this.uplinkName=uplinkName;
-  }
+    public void setUplinkName(String[] uplinkName) {
+        this.uplinkName = uplinkName;
+    }
 
-  public void setUplinkPortKey(String[] uplinkPortKey) {
-    this.uplinkPortKey=uplinkPortKey;
-  }
+    public void setUplinkPortKey(String[] uplinkPortKey) {
+        this.uplinkPortKey = uplinkPortKey;
+    }
 }

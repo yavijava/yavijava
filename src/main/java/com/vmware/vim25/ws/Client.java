@@ -36,7 +36,6 @@ public interface Client {
      * @param paras      Array of Arguments aka params for the method
      * @param returnType String name of the return type
      * @return Object
-     *
      * @throws RemoteException
      */
     public Object invoke(String methodName, Argument[] paras, String returnType) throws RemoteException;
@@ -49,7 +48,6 @@ public interface Client {
      * @param methodName Name of the method to execute
      * @param paras      Array of Arguments aka params for the method
      * @return StringBuffer with the
-     *
      * @throws RemoteException
      */
     public StringBuffer invokeAsString(String methodName, Argument[] paras) throws RemoteException;
@@ -162,7 +160,7 @@ public interface Client {
      * server
      *
      * @param methodName String Name of the method to execute
-     * @param paras Array of Arguments aka params for the method
+     * @param paras      Array of Arguments aka params for the method
      * @return
      */
     public String marshall(String methodName, Argument[] paras);

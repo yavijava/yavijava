@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfInt {
-  public int[] _int;
+    public int[] _int;
 
-  public int[] get_int() {
-    return this._int;
-  }
+    public int[] get_int() {
+        return this._int;
+    }
 
-  public int get_int(int i) {
-    return this._int[i];
-  }
+    public int get_int(int i) {
+        return this._int[i];
+    }
 
-  public void set_int(int[] _int) {
-    this._int=_int;
-  }
+    public void set_int(int[] _int) {
+        this._int = _int;
+    }
 }

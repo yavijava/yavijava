@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class ClusterStatusChangedEvent extends ClusterEvent {
-  public String oldStatus;
-  public String newStatus;
+    public String oldStatus;
+    public String newStatus;
 
-  public String getOldStatus() {
-    return this.oldStatus;
-  }
+    public String getOldStatus() {
+        return this.oldStatus;
+    }
 
-  public String getNewStatus() {
-    return this.newStatus;
-  }
+    public String getNewStatus() {
+        return this.newStatus;
+    }
 
-  public void setOldStatus(String oldStatus) {
-    this.oldStatus=oldStatus;
-  }
+    public void setOldStatus(String oldStatus) {
+        this.oldStatus = oldStatus;
+    }
 
-  public void setNewStatus(String newStatus) {
-    this.newStatus=newStatus;
-  }
+    public void setNewStatus(String newStatus) {
+        this.newStatus = newStatus;
+    }
 }

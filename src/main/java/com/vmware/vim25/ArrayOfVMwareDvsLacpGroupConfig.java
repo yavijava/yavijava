@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfVMwareDvsLacpGroupConfig {
-  public VMwareDvsLacpGroupConfig[] VMwareDvsLacpGroupConfig;
+    public VMwareDvsLacpGroupConfig[] VMwareDvsLacpGroupConfig;
 
-  public VMwareDvsLacpGroupConfig[] getVMwareDvsLacpGroupConfig() {
-    return this.VMwareDvsLacpGroupConfig;
-  }
+    public VMwareDvsLacpGroupConfig[] getVMwareDvsLacpGroupConfig() {
+        return this.VMwareDvsLacpGroupConfig;
+    }
 
-  public VMwareDvsLacpGroupConfig getVMwareDvsLacpGroupConfig(int i) {
-    return this.VMwareDvsLacpGroupConfig[i];
-  }
+    public VMwareDvsLacpGroupConfig getVMwareDvsLacpGroupConfig(int i) {
+        return this.VMwareDvsLacpGroupConfig[i];
+    }
 
-  public void setVMwareDvsLacpGroupConfig(VMwareDvsLacpGroupConfig[] VMwareDvsLacpGroupConfig) {
-    this.VMwareDvsLacpGroupConfig=VMwareDvsLacpGroupConfig;
-  }
+    public void setVMwareDvsLacpGroupConfig(VMwareDvsLacpGroupConfig[] VMwareDvsLacpGroupConfig) {
+        this.VMwareDvsLacpGroupConfig = VMwareDvsLacpGroupConfig;
+    }
 }

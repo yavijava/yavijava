@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class UnexpectedFault extends RuntimeFault {
-  public String faultName;
-  public LocalizedMethodFault fault;
+    public String faultName;
+    public LocalizedMethodFault fault;
 
-  public String getFaultName() {
-    return this.faultName;
-  }
+    public String getFaultName() {
+        return this.faultName;
+    }
 
-  public LocalizedMethodFault getFault() {
-    return this.fault;
-  }
+    public LocalizedMethodFault getFault() {
+        return this.fault;
+    }
 
-  public void setFaultName(String faultName) {
-    this.faultName=faultName;
-  }
+    public void setFaultName(String faultName) {
+        this.faultName = faultName;
+    }
 
-  public void setFault(LocalizedMethodFault fault) {
-    this.fault=fault;
-  }
+    public void setFault(LocalizedMethodFault fault) {
+        this.fault = fault;
+    }
 }

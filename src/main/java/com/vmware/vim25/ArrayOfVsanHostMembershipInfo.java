@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfVsanHostMembershipInfo {
-  public VsanHostMembershipInfo[] VsanHostMembershipInfo;
+    public VsanHostMembershipInfo[] VsanHostMembershipInfo;
 
-  public VsanHostMembershipInfo[] getVsanHostMembershipInfo() {
-    return this.VsanHostMembershipInfo;
-  }
+    public VsanHostMembershipInfo[] getVsanHostMembershipInfo() {
+        return this.VsanHostMembershipInfo;
+    }
 
-  public VsanHostMembershipInfo getVsanHostMembershipInfo(int i) {
-    return this.VsanHostMembershipInfo[i];
-  }
+    public VsanHostMembershipInfo getVsanHostMembershipInfo(int i) {
+        return this.VsanHostMembershipInfo[i];
+    }
 
-  public void setVsanHostMembershipInfo(VsanHostMembershipInfo[] VsanHostMembershipInfo) {
-    this.VsanHostMembershipInfo=VsanHostMembershipInfo;
-  }
+    public void setVsanHostMembershipInfo(VsanHostMembershipInfo[] VsanHostMembershipInfo) {
+        this.VsanHostMembershipInfo = VsanHostMembershipInfo;
+    }
 }

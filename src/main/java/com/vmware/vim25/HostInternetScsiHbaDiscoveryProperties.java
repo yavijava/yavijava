@@ -30,82 +30,82 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostInternetScsiHbaDiscoveryProperties extends DynamicData {
-  public boolean iSnsDiscoveryEnabled;
-  public String iSnsDiscoveryMethod;
-  public String iSnsHost;
-  public boolean slpDiscoveryEnabled;
-  public String slpDiscoveryMethod;
-  public String slpHost;
-  public boolean staticTargetDiscoveryEnabled;
-  public boolean sendTargetsDiscoveryEnabled;
+    public boolean iSnsDiscoveryEnabled;
+    public String iSnsDiscoveryMethod;
+    public String iSnsHost;
+    public boolean slpDiscoveryEnabled;
+    public String slpDiscoveryMethod;
+    public String slpHost;
+    public boolean staticTargetDiscoveryEnabled;
+    public boolean sendTargetsDiscoveryEnabled;
 
-  public boolean isISnsDiscoveryEnabled() {
-    return this.iSnsDiscoveryEnabled;
-  }
+    public boolean isISnsDiscoveryEnabled() {
+        return this.iSnsDiscoveryEnabled;
+    }
 
-  public String getISnsDiscoveryMethod() {
-    return this.iSnsDiscoveryMethod;
-  }
+    public String getISnsDiscoveryMethod() {
+        return this.iSnsDiscoveryMethod;
+    }
 
-  public String getISnsHost() {
-    return this.iSnsHost;
-  }
+    public String getISnsHost() {
+        return this.iSnsHost;
+    }
 
-  public boolean isSlpDiscoveryEnabled() {
-    return this.slpDiscoveryEnabled;
-  }
+    public boolean isSlpDiscoveryEnabled() {
+        return this.slpDiscoveryEnabled;
+    }
 
-  public String getSlpDiscoveryMethod() {
-    return this.slpDiscoveryMethod;
-  }
+    public String getSlpDiscoveryMethod() {
+        return this.slpDiscoveryMethod;
+    }
 
-  public String getSlpHost() {
-    return this.slpHost;
-  }
+    public String getSlpHost() {
+        return this.slpHost;
+    }
 
-  public boolean isStaticTargetDiscoveryEnabled() {
-    return this.staticTargetDiscoveryEnabled;
-  }
+    public boolean isStaticTargetDiscoveryEnabled() {
+        return this.staticTargetDiscoveryEnabled;
+    }
 
-  public boolean isSendTargetsDiscoveryEnabled() {
-    return this.sendTargetsDiscoveryEnabled;
-  }
+    public boolean isSendTargetsDiscoveryEnabled() {
+        return this.sendTargetsDiscoveryEnabled;
+    }
 
-  public void setISnsDiscoveryEnabled(boolean iSnsDiscoveryEnabled) {
-    this.iSnsDiscoveryEnabled=iSnsDiscoveryEnabled;
-  }
+    public void setISnsDiscoveryEnabled(boolean iSnsDiscoveryEnabled) {
+        this.iSnsDiscoveryEnabled = iSnsDiscoveryEnabled;
+    }
 
-  public void setISnsDiscoveryMethod(String iSnsDiscoveryMethod) {
-    this.iSnsDiscoveryMethod=iSnsDiscoveryMethod;
-  }
+    public void setISnsDiscoveryMethod(String iSnsDiscoveryMethod) {
+        this.iSnsDiscoveryMethod = iSnsDiscoveryMethod;
+    }
 
-  public void setISnsHost(String iSnsHost) {
-    this.iSnsHost=iSnsHost;
-  }
+    public void setISnsHost(String iSnsHost) {
+        this.iSnsHost = iSnsHost;
+    }
 
-  public void setSlpDiscoveryEnabled(boolean slpDiscoveryEnabled) {
-    this.slpDiscoveryEnabled=slpDiscoveryEnabled;
-  }
+    public void setSlpDiscoveryEnabled(boolean slpDiscoveryEnabled) {
+        this.slpDiscoveryEnabled = slpDiscoveryEnabled;
+    }
 
-  public void setSlpDiscoveryMethod(String slpDiscoveryMethod) {
-    this.slpDiscoveryMethod=slpDiscoveryMethod;
-  }
+    public void setSlpDiscoveryMethod(String slpDiscoveryMethod) {
+        this.slpDiscoveryMethod = slpDiscoveryMethod;
+    }
 
-  public void setSlpHost(String slpHost) {
-    this.slpHost=slpHost;
-  }
+    public void setSlpHost(String slpHost) {
+        this.slpHost = slpHost;
+    }
 
-  public void setStaticTargetDiscoveryEnabled(boolean staticTargetDiscoveryEnabled) {
-    this.staticTargetDiscoveryEnabled=staticTargetDiscoveryEnabled;
-  }
+    public void setStaticTargetDiscoveryEnabled(boolean staticTargetDiscoveryEnabled) {
+        this.staticTargetDiscoveryEnabled = staticTargetDiscoveryEnabled;
+    }
 
-  public void setSendTargetsDiscoveryEnabled(boolean sendTargetsDiscoveryEnabled) {
-    this.sendTargetsDiscoveryEnabled=sendTargetsDiscoveryEnabled;
-  }
+    public void setSendTargetsDiscoveryEnabled(boolean sendTargetsDiscoveryEnabled) {
+        this.sendTargetsDiscoveryEnabled = sendTargetsDiscoveryEnabled;
+    }
 }

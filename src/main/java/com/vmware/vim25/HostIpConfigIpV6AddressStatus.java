@@ -30,23 +30,23 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public enum HostIpConfigIpV6AddressStatus {
-  preferred ("preferred"),
-  deprecated ("deprecated"),
-  invalid ("invalid"),
-  inaccessible ("inaccessible"),
-  unknown ("unknown"),
-  tentative ("tentative"),
-  duplicate ("duplicate");
+    preferred("preferred"),
+    deprecated("deprecated"),
+    invalid("invalid"),
+    inaccessible("inaccessible"),
+    unknown("unknown"),
+    tentative("tentative"),
+    duplicate("duplicate");
 
-  @SuppressWarnings("unused")
-  private final String val;
-  private HostIpConfigIpV6AddressStatus(String val)
-  {
-    this.val = val;
-  }
+    @SuppressWarnings("unused")
+    private final String val;
+
+    private HostIpConfigIpV6AddressStatus(String val) {
+        this.val = val;
+    }
 }

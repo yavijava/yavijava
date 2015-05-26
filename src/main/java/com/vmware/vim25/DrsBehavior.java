@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public enum DrsBehavior {
-  manual ("manual"),
-  partiallyAutomated ("partiallyAutomated"),
-  fullyAutomated ("fullyAutomated");
+    manual("manual"),
+    partiallyAutomated("partiallyAutomated"),
+    fullyAutomated("fullyAutomated");
 
-  @SuppressWarnings("unused")
-  private final String val;
-  private DrsBehavior(String val)
-  {
-    this.val = val;
-  }
+    @SuppressWarnings("unused")
+    private final String val;
+
+    private DrsBehavior(String val) {
+        this.val = val;
+    }
 }

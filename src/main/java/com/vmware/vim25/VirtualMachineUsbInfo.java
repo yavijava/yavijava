@@ -30,73 +30,73 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VirtualMachineUsbInfo extends VirtualMachineTargetInfo {
-  public String description;
-  public int vendor;
-  public int product;
-  public String physicalPath;
-  public String[] family;
-  public String[] speed;
-  public VirtualMachineSummary summary;
+    public String description;
+    public int vendor;
+    public int product;
+    public String physicalPath;
+    public String[] family;
+    public String[] speed;
+    public VirtualMachineSummary summary;
 
-  public String getDescription() {
-    return this.description;
-  }
+    public String getDescription() {
+        return this.description;
+    }
 
-  public int getVendor() {
-    return this.vendor;
-  }
+    public int getVendor() {
+        return this.vendor;
+    }
 
-  public int getProduct() {
-    return this.product;
-  }
+    public int getProduct() {
+        return this.product;
+    }
 
-  public String getPhysicalPath() {
-    return this.physicalPath;
-  }
+    public String getPhysicalPath() {
+        return this.physicalPath;
+    }
 
-  public String[] getFamily() {
-    return this.family;
-  }
+    public String[] getFamily() {
+        return this.family;
+    }
 
-  public String[] getSpeed() {
-    return this.speed;
-  }
+    public String[] getSpeed() {
+        return this.speed;
+    }
 
-  public VirtualMachineSummary getSummary() {
-    return this.summary;
-  }
+    public VirtualMachineSummary getSummary() {
+        return this.summary;
+    }
 
-  public void setDescription(String description) {
-    this.description=description;
-  }
+    public void setDescription(String description) {
+        this.description = description;
+    }
 
-  public void setVendor(int vendor) {
-    this.vendor=vendor;
-  }
+    public void setVendor(int vendor) {
+        this.vendor = vendor;
+    }
 
-  public void setProduct(int product) {
-    this.product=product;
-  }
+    public void setProduct(int product) {
+        this.product = product;
+    }
 
-  public void setPhysicalPath(String physicalPath) {
-    this.physicalPath=physicalPath;
-  }
+    public void setPhysicalPath(String physicalPath) {
+        this.physicalPath = physicalPath;
+    }
 
-  public void setFamily(String[] family) {
-    this.family=family;
-  }
+    public void setFamily(String[] family) {
+        this.family = family;
+    }
 
-  public void setSpeed(String[] speed) {
-    this.speed=speed;
-  }
+    public void setSpeed(String[] speed) {
+        this.speed = speed;
+    }
 
-  public void setSummary(VirtualMachineSummary summary) {
-    this.summary=summary;
-  }
+    public void setSummary(VirtualMachineSummary summary) {
+        this.summary = summary;
+    }
 }

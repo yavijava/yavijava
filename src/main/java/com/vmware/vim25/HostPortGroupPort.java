@@ -30,37 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostPortGroupPort extends DynamicData {
-  public String key;
-  public String[] mac;
-  public String type;
+    public String key;
+    public String[] mac;
+    public String type;
 
-  public String getKey() {
-    return this.key;
-  }
+    public String getKey() {
+        return this.key;
+    }
 
-  public String[] getMac() {
-    return this.mac;
-  }
+    public String[] getMac() {
+        return this.mac;
+    }
 
-  public String getType() {
-    return this.type;
-  }
+    public String getType() {
+        return this.type;
+    }
 
-  public void setKey(String key) {
-    this.key=key;
-  }
+    public void setKey(String key) {
+        this.key = key;
+    }
 
-  public void setMac(String[] mac) {
-    this.mac=mac;
-  }
+    public void setMac(String[] mac) {
+        this.mac = mac;
+    }
 
-  public void setType(String type) {
-    this.type=type;
-  }
+    public void setType(String type) {
+        this.type = type;
+    }
 }

@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostBootDevice extends DynamicData {
-  public String key;
-  public String description;
+    public String key;
+    public String description;
 
-  public String getKey() {
-    return this.key;
-  }
+    public String getKey() {
+        return this.key;
+    }
 
-  public String getDescription() {
-    return this.description;
-  }
+    public String getDescription() {
+        return this.description;
+    }
 
-  public void setKey(String key) {
-    this.key=key;
-  }
+    public void setKey(String key) {
+        this.key = key;
+    }
 
-  public void setDescription(String description) {
-    this.description=description;
-  }
+    public void setDescription(String description) {
+        this.description = description;
+    }
 }

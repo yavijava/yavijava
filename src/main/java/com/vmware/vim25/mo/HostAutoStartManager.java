@@ -29,43 +29,38 @@ POSSIBILITY OF SUCH DAMAGE.
 
 package com.vmware.vim25.mo;
 
-import java.rmi.RemoteException;
-
 import com.vmware.vim25.HostAutoStartManagerConfig;
 import com.vmware.vim25.ManagedObjectReference;
 import com.vmware.vim25.RuntimeFault;
 
+import java.rmi.RemoteException;
+
 /**
  * The managed object class corresponding to the one defined in VI SDK API reference.
+ *
  * @author Steve JIN (http://www.doublecloud.org)
  */
 
-public class HostAutoStartManager extends ManagedObject 
-{
+public class HostAutoStartManager extends ManagedObject {
 
-	public HostAutoStartManager(ServerConnection serverConnection, ManagedObjectReference mor) 
-	{
-		super(serverConnection, mor);
-	}
-	
-	public HostAutoStartManagerConfig getConfig()
-	{
-		return (HostAutoStartManagerConfig) getCurrentProperty("config");
-	}
-	
-	public void autoStartPowerOff() throws RuntimeFault, RemoteException 
-	{
-		getVimService().autoStartPowerOff(getMOR());
-	}
-	
-	public void autoStartPowerOn() throws RuntimeFault, RemoteException 
-	{
-		getVimService().autoStartPowerOn(getMOR());
-	}
-	
-	public void reconfigureAutostart(HostAutoStartManagerConfig spec) throws RuntimeFault, RemoteException 
-	{
-		getVimService().reconfigureAutostart(getMOR(), spec);
-	}
+    public HostAutoStartManager(ServerConnection serverConnection, ManagedObjectReference mor) {
+        super(serverConnection, mor);
+    }
+
+    public HostAutoStartManagerConfig getConfig() {
+        return (HostAutoStartManagerConfig) getCurrentProperty("config");
+    }
+
+    public void autoStartPowerOff() throws RuntimeFault, RemoteException {
+        getVimService().autoStartPowerOff(getMOR());
+    }
+
+    public void autoStartPowerOn() throws RuntimeFault, RemoteException {
+        getVimService().autoStartPowerOn(getMOR());
+    }
+
+    public void reconfigureAutostart(HostAutoStartManagerConfig spec) throws RuntimeFault, RemoteException {
+        getVimService().reconfigureAutostart(getMOR(), spec);
+    }
 
 }

@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfHostProxySwitchHostLagConfig {
-  public HostProxySwitchHostLagConfig[] HostProxySwitchHostLagConfig;
+    public HostProxySwitchHostLagConfig[] HostProxySwitchHostLagConfig;
 
-  public HostProxySwitchHostLagConfig[] getHostProxySwitchHostLagConfig() {
-    return this.HostProxySwitchHostLagConfig;
-  }
+    public HostProxySwitchHostLagConfig[] getHostProxySwitchHostLagConfig() {
+        return this.HostProxySwitchHostLagConfig;
+    }
 
-  public HostProxySwitchHostLagConfig getHostProxySwitchHostLagConfig(int i) {
-    return this.HostProxySwitchHostLagConfig[i];
-  }
+    public HostProxySwitchHostLagConfig getHostProxySwitchHostLagConfig(int i) {
+        return this.HostProxySwitchHostLagConfig[i];
+    }
 
-  public void setHostProxySwitchHostLagConfig(HostProxySwitchHostLagConfig[] HostProxySwitchHostLagConfig) {
-    this.HostProxySwitchHostLagConfig=HostProxySwitchHostLagConfig;
-  }
+    public void setHostProxySwitchHostLagConfig(HostProxySwitchHostLagConfig[] HostProxySwitchHostLagConfig) {
+        this.HostProxySwitchHostLagConfig = HostProxySwitchHostLagConfig;
+    }
 }

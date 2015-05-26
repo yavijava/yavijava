@@ -30,64 +30,64 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class NotSupportedDeviceForFT extends VmFaultToleranceIssue {
-  public ManagedObjectReference host;
-  public String hostName;
-  public ManagedObjectReference vm;
-  public String vmName;
-  public String deviceType;
-  public String deviceLabel;
+    public ManagedObjectReference host;
+    public String hostName;
+    public ManagedObjectReference vm;
+    public String vmName;
+    public String deviceType;
+    public String deviceLabel;
 
-  public ManagedObjectReference getHost() {
-    return this.host;
-  }
+    public ManagedObjectReference getHost() {
+        return this.host;
+    }
 
-  public String getHostName() {
-    return this.hostName;
-  }
+    public String getHostName() {
+        return this.hostName;
+    }
 
-  public ManagedObjectReference getVm() {
-    return this.vm;
-  }
+    public ManagedObjectReference getVm() {
+        return this.vm;
+    }
 
-  public String getVmName() {
-    return this.vmName;
-  }
+    public String getVmName() {
+        return this.vmName;
+    }
 
-  public String getDeviceType() {
-    return this.deviceType;
-  }
+    public String getDeviceType() {
+        return this.deviceType;
+    }
 
-  public String getDeviceLabel() {
-    return this.deviceLabel;
-  }
+    public String getDeviceLabel() {
+        return this.deviceLabel;
+    }
 
-  public void setHost(ManagedObjectReference host) {
-    this.host=host;
-  }
+    public void setHost(ManagedObjectReference host) {
+        this.host = host;
+    }
 
-  public void setHostName(String hostName) {
-    this.hostName=hostName;
-  }
+    public void setHostName(String hostName) {
+        this.hostName = hostName;
+    }
 
-  public void setVm(ManagedObjectReference vm) {
-    this.vm=vm;
-  }
+    public void setVm(ManagedObjectReference vm) {
+        this.vm = vm;
+    }
 
-  public void setVmName(String vmName) {
-    this.vmName=vmName;
-  }
+    public void setVmName(String vmName) {
+        this.vmName = vmName;
+    }
 
-  public void setDeviceType(String deviceType) {
-    this.deviceType=deviceType;
-  }
+    public void setDeviceType(String deviceType) {
+        this.deviceType = deviceType;
+    }
 
-  public void setDeviceLabel(String deviceLabel) {
-    this.deviceLabel=deviceLabel;
-  }
+    public void setDeviceLabel(String deviceLabel) {
+        this.deviceLabel = deviceLabel;
+    }
 }

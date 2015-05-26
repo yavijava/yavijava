@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class ClusterDasVmConfigSpec extends ArrayUpdateSpec {
-  public ClusterDasVmConfigInfo info;
+    public ClusterDasVmConfigInfo info;
 
-  public ClusterDasVmConfigInfo getInfo() {
-    return this.info;
-  }
+    public ClusterDasVmConfigInfo getInfo() {
+        return this.info;
+    }
 
-  public void setInfo(ClusterDasVmConfigInfo info) {
-    this.info=info;
-  }
+    public void setInfo(ClusterDasVmConfigInfo info) {
+        this.info = info;
+    }
 }

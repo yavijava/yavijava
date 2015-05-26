@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfHostOpaqueSwitch {
-  public HostOpaqueSwitch[] HostOpaqueSwitch;
+    public HostOpaqueSwitch[] HostOpaqueSwitch;
 
-  public HostOpaqueSwitch[] getHostOpaqueSwitch() {
-    return this.HostOpaqueSwitch;
-  }
+    public HostOpaqueSwitch[] getHostOpaqueSwitch() {
+        return this.HostOpaqueSwitch;
+    }
 
-  public HostOpaqueSwitch getHostOpaqueSwitch(int i) {
-    return this.HostOpaqueSwitch[i];
-  }
+    public HostOpaqueSwitch getHostOpaqueSwitch(int i) {
+        return this.HostOpaqueSwitch[i];
+    }
 
-  public void setHostOpaqueSwitch(HostOpaqueSwitch[] HostOpaqueSwitch) {
-    this.HostOpaqueSwitch=HostOpaqueSwitch;
-  }
+    public void setHostOpaqueSwitch(HostOpaqueSwitch[] HostOpaqueSwitch) {
+        this.HostOpaqueSwitch = HostOpaqueSwitch;
+    }
 }

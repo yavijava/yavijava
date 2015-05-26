@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfVMwareDVSPvlanConfigSpec {
-  public VMwareDVSPvlanConfigSpec[] VMwareDVSPvlanConfigSpec;
+    public VMwareDVSPvlanConfigSpec[] VMwareDVSPvlanConfigSpec;
 
-  public VMwareDVSPvlanConfigSpec[] getVMwareDVSPvlanConfigSpec() {
-    return this.VMwareDVSPvlanConfigSpec;
-  }
+    public VMwareDVSPvlanConfigSpec[] getVMwareDVSPvlanConfigSpec() {
+        return this.VMwareDVSPvlanConfigSpec;
+    }
 
-  public VMwareDVSPvlanConfigSpec getVMwareDVSPvlanConfigSpec(int i) {
-    return this.VMwareDVSPvlanConfigSpec[i];
-  }
+    public VMwareDVSPvlanConfigSpec getVMwareDVSPvlanConfigSpec(int i) {
+        return this.VMwareDVSPvlanConfigSpec[i];
+    }
 
-  public void setVMwareDVSPvlanConfigSpec(VMwareDVSPvlanConfigSpec[] VMwareDVSPvlanConfigSpec) {
-    this.VMwareDVSPvlanConfigSpec=VMwareDVSPvlanConfigSpec;
-  }
+    public void setVMwareDVSPvlanConfigSpec(VMwareDVSPvlanConfigSpec[] VMwareDVSPvlanConfigSpec) {
+        this.VMwareDVSPvlanConfigSpec = VMwareDVSPvlanConfigSpec;
+    }
 }

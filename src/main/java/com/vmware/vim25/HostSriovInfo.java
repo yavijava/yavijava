@@ -30,64 +30,64 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostSriovInfo extends HostPciPassthruInfo {
-  public boolean sriovEnabled;
-  public boolean sriovCapable;
-  public boolean sriovActive;
-  public int numVirtualFunctionRequested;
-  public int numVirtualFunction;
-  public int maxVirtualFunctionSupported;
+    public boolean sriovEnabled;
+    public boolean sriovCapable;
+    public boolean sriovActive;
+    public int numVirtualFunctionRequested;
+    public int numVirtualFunction;
+    public int maxVirtualFunctionSupported;
 
-  public boolean isSriovEnabled() {
-    return this.sriovEnabled;
-  }
+    public boolean isSriovEnabled() {
+        return this.sriovEnabled;
+    }
 
-  public boolean isSriovCapable() {
-    return this.sriovCapable;
-  }
+    public boolean isSriovCapable() {
+        return this.sriovCapable;
+    }
 
-  public boolean isSriovActive() {
-    return this.sriovActive;
-  }
+    public boolean isSriovActive() {
+        return this.sriovActive;
+    }
 
-  public int getNumVirtualFunctionRequested() {
-    return this.numVirtualFunctionRequested;
-  }
+    public int getNumVirtualFunctionRequested() {
+        return this.numVirtualFunctionRequested;
+    }
 
-  public int getNumVirtualFunction() {
-    return this.numVirtualFunction;
-  }
+    public int getNumVirtualFunction() {
+        return this.numVirtualFunction;
+    }
 
-  public int getMaxVirtualFunctionSupported() {
-    return this.maxVirtualFunctionSupported;
-  }
+    public int getMaxVirtualFunctionSupported() {
+        return this.maxVirtualFunctionSupported;
+    }
 
-  public void setSriovEnabled(boolean sriovEnabled) {
-    this.sriovEnabled=sriovEnabled;
-  }
+    public void setSriovEnabled(boolean sriovEnabled) {
+        this.sriovEnabled = sriovEnabled;
+    }
 
-  public void setSriovCapable(boolean sriovCapable) {
-    this.sriovCapable=sriovCapable;
-  }
+    public void setSriovCapable(boolean sriovCapable) {
+        this.sriovCapable = sriovCapable;
+    }
 
-  public void setSriovActive(boolean sriovActive) {
-    this.sriovActive=sriovActive;
-  }
+    public void setSriovActive(boolean sriovActive) {
+        this.sriovActive = sriovActive;
+    }
 
-  public void setNumVirtualFunctionRequested(int numVirtualFunctionRequested) {
-    this.numVirtualFunctionRequested=numVirtualFunctionRequested;
-  }
+    public void setNumVirtualFunctionRequested(int numVirtualFunctionRequested) {
+        this.numVirtualFunctionRequested = numVirtualFunctionRequested;
+    }
 
-  public void setNumVirtualFunction(int numVirtualFunction) {
-    this.numVirtualFunction=numVirtualFunction;
-  }
+    public void setNumVirtualFunction(int numVirtualFunction) {
+        this.numVirtualFunction = numVirtualFunction;
+    }
 
-  public void setMaxVirtualFunctionSupported(int maxVirtualFunctionSupported) {
-    this.maxVirtualFunctionSupported=maxVirtualFunctionSupported;
-  }
+    public void setMaxVirtualFunctionSupported(int maxVirtualFunctionSupported) {
+        this.maxVirtualFunctionSupported = maxVirtualFunctionSupported;
+    }
 }

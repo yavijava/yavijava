@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class ExtensionTaskTypeInfo extends DynamicData {
-  public String taskID;
+    public String taskID;
 
-  public String getTaskID() {
-    return this.taskID;
-  }
+    public String getTaskID() {
+        return this.taskID;
+    }
 
-  public void setTaskID(String taskID) {
-    this.taskID=taskID;
-  }
+    public void setTaskID(String taskID) {
+        this.taskID = taskID;
+    }
 }

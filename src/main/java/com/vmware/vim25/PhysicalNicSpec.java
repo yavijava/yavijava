@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class PhysicalNicSpec extends DynamicData {
-  public HostIpConfig ip;
-  public PhysicalNicLinkInfo linkSpeed;
+    public HostIpConfig ip;
+    public PhysicalNicLinkInfo linkSpeed;
 
-  public HostIpConfig getIp() {
-    return this.ip;
-  }
+    public HostIpConfig getIp() {
+        return this.ip;
+    }
 
-  public PhysicalNicLinkInfo getLinkSpeed() {
-    return this.linkSpeed;
-  }
+    public PhysicalNicLinkInfo getLinkSpeed() {
+        return this.linkSpeed;
+    }
 
-  public void setIp(HostIpConfig ip) {
-    this.ip=ip;
-  }
+    public void setIp(HostIpConfig ip) {
+        this.ip = ip;
+    }
 
-  public void setLinkSpeed(PhysicalNicLinkInfo linkSpeed) {
-    this.linkSpeed=linkSpeed;
-  }
+    public void setLinkSpeed(PhysicalNicLinkInfo linkSpeed) {
+        this.linkSpeed = linkSpeed;
+    }
 }

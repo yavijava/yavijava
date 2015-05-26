@@ -30,37 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class SessionManagerGenericServiceTicket extends DynamicData {
-  public String id;
-  public String hostName;
-  public String sslThumbprint;
+    public String id;
+    public String hostName;
+    public String sslThumbprint;
 
-  public String getId() {
-    return this.id;
-  }
+    public String getId() {
+        return this.id;
+    }
 
-  public String getHostName() {
-    return this.hostName;
-  }
+    public String getHostName() {
+        return this.hostName;
+    }
 
-  public String getSslThumbprint() {
-    return this.sslThumbprint;
-  }
+    public String getSslThumbprint() {
+        return this.sslThumbprint;
+    }
 
-  public void setId(String id) {
-    this.id=id;
-  }
+    public void setId(String id) {
+        this.id = id;
+    }
 
-  public void setHostName(String hostName) {
-    this.hostName=hostName;
-  }
+    public void setHostName(String hostName) {
+        this.hostName = hostName;
+    }
 
-  public void setSslThumbprint(String sslThumbprint) {
-    this.sslThumbprint=sslThumbprint;
-  }
+    public void setSslThumbprint(String sslThumbprint) {
+        this.sslThumbprint = sslThumbprint;
+    }
 }

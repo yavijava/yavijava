@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class InvalidDeviceSpec extends InvalidVmConfig {
-  public int deviceIndex;
+    public int deviceIndex;
 
-  public int getDeviceIndex() {
-    return this.deviceIndex;
-  }
+    public int getDeviceIndex() {
+        return this.deviceIndex;
+    }
 
-  public void setDeviceIndex(int deviceIndex) {
-    this.deviceIndex=deviceIndex;
-  }
+    public void setDeviceIndex(int deviceIndex) {
+        this.deviceIndex = deviceIndex;
+    }
 }

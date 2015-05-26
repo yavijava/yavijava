@@ -28,30 +28,28 @@ POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
 package com.vmware.vim25.mo;
 
-import java.rmi.RemoteException;
-
 import com.vmware.vim25.InvalidState;
 import com.vmware.vim25.ManagedObjectReference;
 import com.vmware.vim25.NoActiveHostInCluster;
 import com.vmware.vim25.RuntimeFault;
 
+import java.rmi.RemoteException;
+
 /**
  * The managed object class corresponding to the one defined in VI SDK API reference.
+ *
  * @author Steve JIN (http://www.doublecloud.org)
  * @since 4.0
  */
-public class VirtualMachineCompatibilityChecker extends ManagedObject 
-{
-	public VirtualMachineCompatibilityChecker(ServerConnection sc, ManagedObjectReference mor) 
-	{
-		super(sc, mor);
-	}
-	
-	public Task checkCompatibility_Task(VirtualMachine vm, HostSystem host, ResourcePool pool, String[] testType) throws NoActiveHostInCluster, InvalidState, RuntimeFault, RemoteException
-	{
-		ManagedObjectReference taskMor = getVimService().checkCompatibility_Task(getMOR(), 
-			vm==null?null:vm.getMOR(), host==null?null:host.getMOR(), 
-			pool==null?null:pool.getMOR(), testType);
-		return new Task(getServerConnection(), taskMor);
-	}
+public class VirtualMachineCompatibilityChecker extends ManagedObject {
+    public VirtualMachineCompatibilityChecker(ServerConnection sc, ManagedObjectReference mor) {
+        super(sc, mor);
+    }
+
+    public Task checkCompatibility_Task(VirtualMachine vm, HostSystem host, ResourcePool pool, String[] testType) throws NoActiveHostInCluster, InvalidState, RuntimeFault, RemoteException {
+        ManagedObjectReference taskMor = getVimService().checkCompatibility_Task(getMOR(),
+            vm == null ? null : vm.getMOR(), host == null ? null : host.getMOR(),
+            pool == null ? null : pool.getMOR(), testType);
+        return new Task(getServerConnection(), taskMor);
+    }
 }

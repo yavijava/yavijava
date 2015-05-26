@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfEVCMode {
-  public EVCMode[] EVCMode;
+    public EVCMode[] EVCMode;
 
-  public EVCMode[] getEVCMode() {
-    return this.EVCMode;
-  }
+    public EVCMode[] getEVCMode() {
+        return this.EVCMode;
+    }
 
-  public EVCMode getEVCMode(int i) {
-    return this.EVCMode[i];
-  }
+    public EVCMode getEVCMode(int i) {
+        return this.EVCMode[i];
+    }
 
-  public void setEVCMode(EVCMode[] EVCMode) {
-    this.EVCMode=EVCMode;
-  }
+    public void setEVCMode(EVCMode[] EVCMode) {
+        this.EVCMode = EVCMode;
+    }
 }

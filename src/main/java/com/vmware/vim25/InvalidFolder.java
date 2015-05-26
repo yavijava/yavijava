@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class InvalidFolder extends VimFault {
-  public ManagedObjectReference target;
+    public ManagedObjectReference target;
 
-  public ManagedObjectReference getTarget() {
-    return this.target;
-  }
+    public ManagedObjectReference getTarget() {
+        return this.target;
+    }
 
-  public void setTarget(ManagedObjectReference target) {
-    this.target=target;
-  }
+    public void setTarget(ManagedObjectReference target) {
+        this.target = target;
+    }
 }

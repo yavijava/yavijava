@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostScsiTopology extends DynamicData {
-  public HostScsiTopologyInterface[] adapter;
+    public HostScsiTopologyInterface[] adapter;
 
-  public HostScsiTopologyInterface[] getAdapter() {
-    return this.adapter;
-  }
+    public HostScsiTopologyInterface[] getAdapter() {
+        return this.adapter;
+    }
 
-  public void setAdapter(HostScsiTopologyInterface[] adapter) {
-    this.adapter=adapter;
-  }
+    public void setAdapter(HostScsiTopologyInterface[] adapter) {
+        this.adapter = adapter;
+    }
 }

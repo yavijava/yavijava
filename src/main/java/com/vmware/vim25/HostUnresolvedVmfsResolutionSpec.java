@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostUnresolvedVmfsResolutionSpec extends DynamicData {
-  public String[] extentDevicePath;
-  public String uuidResolution;
+    public String[] extentDevicePath;
+    public String uuidResolution;
 
-  public String[] getExtentDevicePath() {
-    return this.extentDevicePath;
-  }
+    public String[] getExtentDevicePath() {
+        return this.extentDevicePath;
+    }
 
-  public String getUuidResolution() {
-    return this.uuidResolution;
-  }
+    public String getUuidResolution() {
+        return this.uuidResolution;
+    }
 
-  public void setExtentDevicePath(String[] extentDevicePath) {
-    this.extentDevicePath=extentDevicePath;
-  }
+    public void setExtentDevicePath(String[] extentDevicePath) {
+        this.extentDevicePath = extentDevicePath;
+    }
 
-  public void setUuidResolution(String uuidResolution) {
-    this.uuidResolution=uuidResolution;
-  }
+    public void setUuidResolution(String uuidResolution) {
+        this.uuidResolution = uuidResolution;
+    }
 }

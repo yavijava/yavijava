@@ -30,37 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostPlugStoreTopologyAdapter extends DynamicData {
-  public String key;
-  public String adapter;
-  public String[] path;
+    public String key;
+    public String adapter;
+    public String[] path;
 
-  public String getKey() {
-    return this.key;
-  }
+    public String getKey() {
+        return this.key;
+    }
 
-  public String getAdapter() {
-    return this.adapter;
-  }
+    public String getAdapter() {
+        return this.adapter;
+    }
 
-  public String[] getPath() {
-    return this.path;
-  }
+    public String[] getPath() {
+        return this.path;
+    }
 
-  public void setKey(String key) {
-    this.key=key;
-  }
+    public void setKey(String key) {
+        this.key = key;
+    }
 
-  public void setAdapter(String adapter) {
-    this.adapter=adapter;
-  }
+    public void setAdapter(String adapter) {
+        this.adapter = adapter;
+    }
 
-  public void setPath(String[] path) {
-    this.path=path;
-  }
+    public void setPath(String[] path) {
+        this.path = path;
+    }
 }

@@ -29,102 +29,91 @@ POSSIBILITY OF SUCH DAMAGE.
 
 package com.vmware.vim25.mo;
 
-import java.rmi.RemoteException;
-
 import com.vmware.vim25.*;
+
+import java.rmi.RemoteException;
 
 /**
  * The managed object class corresponding to the one defined in VI SDK API reference.
+ *
  * @author Steve JIN (http://www.doublecloud.org)
  */
 
-public class Datastore extends ManagedEntity 
-{
-	public Datastore(ServerConnection serverConnection, ManagedObjectReference mor) 
-	{
-		super(serverConnection, mor);
-	}
-	
-	public HostDatastoreBrowser getBrowser()
-	{
-		return (HostDatastoreBrowser) getManagedObject("browser");
-	}
-	
-	public DatastoreCapability getCapability()
-	{
-		return (DatastoreCapability) getCurrentProperty("capability");
-	}
-	
-	public DatastoreHostMount[] getHost()
-	{
-		return (DatastoreHostMount[]) getCurrentProperty("host");
-	}
-	
-	public DatastoreInfo getInfo()
-	{
-		return (DatastoreInfo) getCurrentProperty("info");
-	}
+public class Datastore extends ManagedEntity {
+    public Datastore(ServerConnection serverConnection, ManagedObjectReference mor) {
+        super(serverConnection, mor);
+    }
 
-	/** @since SDK4.1 */
-	public StorageIORMInfo getIormConfiguration()
-	{
-    return (StorageIORMInfo) getCurrentProperty("iormConfiguration");
-	}
-	
-	public DatastoreSummary getSummary()
-	{
-		return (DatastoreSummary) getCurrentProperty("summary");
-	}
-	
-	public VirtualMachine[] getVms()
-	{
-		return getVms("vm");
-	}
-	
-	/**
-	 * @since SDK5.0
-	 */
-	public StoragePlacementResult datastoreEnterMaintenanceMode() throws InvalidState, RuntimeFault, RemoteException
-	{
-	  return getVimService().datastoreEnterMaintenanceMode(getMOR());
-	}
+    public HostDatastoreBrowser getBrowser() {
+        return (HostDatastoreBrowser) getManagedObject("browser");
+    }
 
-	/**
-	 * @since SDK5.0 
-	 */
-	public Task datastoreExitMaintenanceMode_Task() throws InvalidState, RuntimeFault, RemoteException
-	{
-	  ManagedObjectReference taskMor = getVimService().datastoreExitMaintenanceMode_Task(getMOR());
-	  return new Task(getServerConnection(), taskMor);
-	}
-	
-	public void destroyDatastore() throws ResourceInUse, RuntimeFault, RemoteException  
-	{
-		getVimService().destroyDatastore(getMOR());
-	}
+    public DatastoreCapability getCapability() {
+        return (DatastoreCapability) getCurrentProperty("capability");
+    }
 
-	public void refreshDatastore() throws RuntimeFault, RemoteException 
-	{
-		getVimService().refreshDatastore(getMOR());
-	}
-	
-	/**
-	 * @since SDK4.0
-	 */
-	public void refreshDatastoreStorageInfo() throws RuntimeFault, RemoteException
-	{
-		getVimService().refreshDatastoreStorageInfo(getMOR());
-	}
-	
-	public void renameDatastore(String newName) throws InvalidName, DuplicateName, RuntimeFault, RemoteException 
-	{
-		getVimService().renameDatastore(getMOR(), newName);
-	}
-	
-	/** @since SDK4.1 */
-	public Task updateVirtualMachineFiles_Task(DatastoreMountPathDatastorePair[] mountPathDatastoreMapping) throws PlatformConfigFault, ResourceInUse, TaskInProgress, InvalidDatastore, RuntimeFault, RemoteException
-	{
-	  ManagedObjectReference mor = getVimService().updateVirtualMachineFiles_Task(getMOR(), mountPathDatastoreMapping);
-	  return new Task(getServerConnection(), mor);
-	}
+    public DatastoreHostMount[] getHost() {
+        return (DatastoreHostMount[]) getCurrentProperty("host");
+    }
+
+    public DatastoreInfo getInfo() {
+        return (DatastoreInfo) getCurrentProperty("info");
+    }
+
+    /**
+     * @since SDK4.1
+     */
+    public StorageIORMInfo getIormConfiguration() {
+        return (StorageIORMInfo) getCurrentProperty("iormConfiguration");
+    }
+
+    public DatastoreSummary getSummary() {
+        return (DatastoreSummary) getCurrentProperty("summary");
+    }
+
+    public VirtualMachine[] getVms() {
+        return getVms("vm");
+    }
+
+    /**
+     * @since SDK5.0
+     */
+    public StoragePlacementResult datastoreEnterMaintenanceMode() throws InvalidState, RuntimeFault, RemoteException {
+        return getVimService().datastoreEnterMaintenanceMode(getMOR());
+    }
+
+    /**
+     * @since SDK5.0
+     */
+    public Task datastoreExitMaintenanceMode_Task() throws InvalidState, RuntimeFault, RemoteException {
+        ManagedObjectReference taskMor = getVimService().datastoreExitMaintenanceMode_Task(getMOR());
+        return new Task(getServerConnection(), taskMor);
+    }
+
+    public void destroyDatastore() throws ResourceInUse, RuntimeFault, RemoteException {
+        getVimService().destroyDatastore(getMOR());
+    }
+
+    public void refreshDatastore() throws RuntimeFault, RemoteException {
+        getVimService().refreshDatastore(getMOR());
+    }
+
+    /**
+     * @since SDK4.0
+     */
+    public void refreshDatastoreStorageInfo() throws RuntimeFault, RemoteException {
+        getVimService().refreshDatastoreStorageInfo(getMOR());
+    }
+
+    public void renameDatastore(String newName) throws InvalidName, DuplicateName, RuntimeFault, RemoteException {
+        getVimService().renameDatastore(getMOR(), newName);
+    }
+
+    /**
+     * @since SDK4.1
+     */
+    public Task updateVirtualMachineFiles_Task(DatastoreMountPathDatastorePair[] mountPathDatastoreMapping) throws PlatformConfigFault, ResourceInUse, TaskInProgress, InvalidDatastore, RuntimeFault, RemoteException {
+        ManagedObjectReference mor = getVimService().updateVirtualMachineFiles_Task(getMOR(), mountPathDatastoreMapping);
+        return new Task(getServerConnection(), mor);
+    }
 }

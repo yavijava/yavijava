@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class ClusterGroupSpec extends ArrayUpdateSpec {
-  public ClusterGroupInfo info;
+    public ClusterGroupInfo info;
 
-  public ClusterGroupInfo getInfo() {
-    return this.info;
-  }
+    public ClusterGroupInfo getInfo() {
+        return this.info;
+    }
 
-  public void setInfo(ClusterGroupInfo info) {
-    this.info=info;
-  }
+    public void setInfo(ClusterGroupInfo info) {
+        this.info = info;
+    }
 }

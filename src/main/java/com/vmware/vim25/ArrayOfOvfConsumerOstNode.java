@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfOvfConsumerOstNode {
-  public OvfConsumerOstNode[] OvfConsumerOstNode;
+    public OvfConsumerOstNode[] OvfConsumerOstNode;
 
-  public OvfConsumerOstNode[] getOvfConsumerOstNode() {
-    return this.OvfConsumerOstNode;
-  }
+    public OvfConsumerOstNode[] getOvfConsumerOstNode() {
+        return this.OvfConsumerOstNode;
+    }
 
-  public OvfConsumerOstNode getOvfConsumerOstNode(int i) {
-    return this.OvfConsumerOstNode[i];
-  }
+    public OvfConsumerOstNode getOvfConsumerOstNode(int i) {
+        return this.OvfConsumerOstNode[i];
+    }
 
-  public void setOvfConsumerOstNode(OvfConsumerOstNode[] OvfConsumerOstNode) {
-    this.OvfConsumerOstNode=OvfConsumerOstNode;
-  }
+    public void setOvfConsumerOstNode(OvfConsumerOstNode[] OvfConsumerOstNode) {
+        this.OvfConsumerOstNode = OvfConsumerOstNode;
+    }
 }

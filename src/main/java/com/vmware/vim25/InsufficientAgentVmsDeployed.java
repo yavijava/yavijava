@@ -30,37 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class InsufficientAgentVmsDeployed extends InsufficientResourcesFault {
-  public String hostName;
-  public int requiredNumAgentVms;
-  public int currentNumAgentVms;
+    public String hostName;
+    public int requiredNumAgentVms;
+    public int currentNumAgentVms;
 
-  public String getHostName() {
-    return this.hostName;
-  }
+    public String getHostName() {
+        return this.hostName;
+    }
 
-  public int getRequiredNumAgentVms() {
-    return this.requiredNumAgentVms;
-  }
+    public int getRequiredNumAgentVms() {
+        return this.requiredNumAgentVms;
+    }
 
-  public int getCurrentNumAgentVms() {
-    return this.currentNumAgentVms;
-  }
+    public int getCurrentNumAgentVms() {
+        return this.currentNumAgentVms;
+    }
 
-  public void setHostName(String hostName) {
-    this.hostName=hostName;
-  }
+    public void setHostName(String hostName) {
+        this.hostName = hostName;
+    }
 
-  public void setRequiredNumAgentVms(int requiredNumAgentVms) {
-    this.requiredNumAgentVms=requiredNumAgentVms;
-  }
+    public void setRequiredNumAgentVms(int requiredNumAgentVms) {
+        this.requiredNumAgentVms = requiredNumAgentVms;
+    }
 
-  public void setCurrentNumAgentVms(int currentNumAgentVms) {
-    this.currentNumAgentVms=currentNumAgentVms;
-  }
+    public void setCurrentNumAgentVms(int currentNumAgentVms) {
+        this.currentNumAgentVms = currentNumAgentVms;
+    }
 }

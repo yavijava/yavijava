@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class DasHostFailedEvent extends ClusterEvent {
-  public HostEventArgument failedHost;
+    public HostEventArgument failedHost;
 
-  public HostEventArgument getFailedHost() {
-    return this.failedHost;
-  }
+    public HostEventArgument getFailedHost() {
+        return this.failedHost;
+    }
 
-  public void setFailedHost(HostEventArgument failedHost) {
-    this.failedHost=failedHost;
-  }
+    public void setFailedHost(HostEventArgument failedHost) {
+        this.failedHost = failedHost;
+    }
 }

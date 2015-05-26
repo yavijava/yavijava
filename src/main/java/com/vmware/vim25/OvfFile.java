@@ -30,73 +30,73 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class OvfFile extends DynamicData {
-  public String deviceId;
-  public String path;
-  public String compressionMethod;
-  public Long chunkSize;
-  public long size;
-  public Long capacity;
-  public Long populatedSize;
+    public String deviceId;
+    public String path;
+    public String compressionMethod;
+    public Long chunkSize;
+    public long size;
+    public Long capacity;
+    public Long populatedSize;
 
-  public String getDeviceId() {
-    return this.deviceId;
-  }
+    public String getDeviceId() {
+        return this.deviceId;
+    }
 
-  public String getPath() {
-    return this.path;
-  }
+    public String getPath() {
+        return this.path;
+    }
 
-  public String getCompressionMethod() {
-    return this.compressionMethod;
-  }
+    public String getCompressionMethod() {
+        return this.compressionMethod;
+    }
 
-  public Long getChunkSize() {
-    return this.chunkSize;
-  }
+    public Long getChunkSize() {
+        return this.chunkSize;
+    }
 
-  public long getSize() {
-    return this.size;
-  }
+    public long getSize() {
+        return this.size;
+    }
 
-  public Long getCapacity() {
-    return this.capacity;
-  }
+    public Long getCapacity() {
+        return this.capacity;
+    }
 
-  public Long getPopulatedSize() {
-    return this.populatedSize;
-  }
+    public Long getPopulatedSize() {
+        return this.populatedSize;
+    }
 
-  public void setDeviceId(String deviceId) {
-    this.deviceId=deviceId;
-  }
+    public void setDeviceId(String deviceId) {
+        this.deviceId = deviceId;
+    }
 
-  public void setPath(String path) {
-    this.path=path;
-  }
+    public void setPath(String path) {
+        this.path = path;
+    }
 
-  public void setCompressionMethod(String compressionMethod) {
-    this.compressionMethod=compressionMethod;
-  }
+    public void setCompressionMethod(String compressionMethod) {
+        this.compressionMethod = compressionMethod;
+    }
 
-  public void setChunkSize(Long chunkSize) {
-    this.chunkSize=chunkSize;
-  }
+    public void setChunkSize(Long chunkSize) {
+        this.chunkSize = chunkSize;
+    }
 
-  public void setSize(long size) {
-    this.size=size;
-  }
+    public void setSize(long size) {
+        this.size = size;
+    }
 
-  public void setCapacity(Long capacity) {
-    this.capacity=capacity;
-  }
+    public void setCapacity(Long capacity) {
+        this.capacity = capacity;
+    }
 
-  public void setPopulatedSize(Long populatedSize) {
-    this.populatedSize=populatedSize;
-  }
+    public void setPopulatedSize(Long populatedSize) {
+        this.populatedSize = populatedSize;
+    }
 }

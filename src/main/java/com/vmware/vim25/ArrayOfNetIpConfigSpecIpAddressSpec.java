@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfNetIpConfigSpecIpAddressSpec {
-  public NetIpConfigSpecIpAddressSpec[] NetIpConfigSpecIpAddressSpec;
+    public NetIpConfigSpecIpAddressSpec[] NetIpConfigSpecIpAddressSpec;
 
-  public NetIpConfigSpecIpAddressSpec[] getNetIpConfigSpecIpAddressSpec() {
-    return this.NetIpConfigSpecIpAddressSpec;
-  }
+    public NetIpConfigSpecIpAddressSpec[] getNetIpConfigSpecIpAddressSpec() {
+        return this.NetIpConfigSpecIpAddressSpec;
+    }
 
-  public NetIpConfigSpecIpAddressSpec getNetIpConfigSpecIpAddressSpec(int i) {
-    return this.NetIpConfigSpecIpAddressSpec[i];
-  }
+    public NetIpConfigSpecIpAddressSpec getNetIpConfigSpecIpAddressSpec(int i) {
+        return this.NetIpConfigSpecIpAddressSpec[i];
+    }
 
-  public void setNetIpConfigSpecIpAddressSpec(NetIpConfigSpecIpAddressSpec[] NetIpConfigSpecIpAddressSpec) {
-    this.NetIpConfigSpecIpAddressSpec=NetIpConfigSpecIpAddressSpec;
-  }
+    public void setNetIpConfigSpecIpAddressSpec(NetIpConfigSpecIpAddressSpec[] NetIpConfigSpecIpAddressSpec) {
+        this.NetIpConfigSpecIpAddressSpec = NetIpConfigSpecIpAddressSpec;
+    }
 }

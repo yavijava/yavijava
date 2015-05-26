@@ -30,37 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class ComplianceFailure extends DynamicData {
-  public String failureType;
-  public LocalizableMessage message;
-  public String expressionName;
+    public String failureType;
+    public LocalizableMessage message;
+    public String expressionName;
 
-  public String getFailureType() {
-    return this.failureType;
-  }
+    public String getFailureType() {
+        return this.failureType;
+    }
 
-  public LocalizableMessage getMessage() {
-    return this.message;
-  }
+    public LocalizableMessage getMessage() {
+        return this.message;
+    }
 
-  public String getExpressionName() {
-    return this.expressionName;
-  }
+    public String getExpressionName() {
+        return this.expressionName;
+    }
 
-  public void setFailureType(String failureType) {
-    this.failureType=failureType;
-  }
+    public void setFailureType(String failureType) {
+        this.failureType = failureType;
+    }
 
-  public void setMessage(LocalizableMessage message) {
-    this.message=message;
-  }
+    public void setMessage(LocalizableMessage message) {
+        this.message = message;
+    }
 
-  public void setExpressionName(String expressionName) {
-    this.expressionName=expressionName;
-  }
+    public void setExpressionName(String expressionName) {
+        this.expressionName = expressionName;
+    }
 }

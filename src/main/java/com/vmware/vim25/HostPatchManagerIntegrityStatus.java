@@ -30,23 +30,23 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public enum HostPatchManagerIntegrityStatus {
-  validated ("validated"),
-  keyNotFound ("keyNotFound"),
-  keyRevoked ("keyRevoked"),
-  keyExpired ("keyExpired"),
-  digestMismatch ("digestMismatch"),
-  notEnoughSignatures ("notEnoughSignatures"),
-  validationError ("validationError");
+    validated("validated"),
+    keyNotFound("keyNotFound"),
+    keyRevoked("keyRevoked"),
+    keyExpired("keyExpired"),
+    digestMismatch("digestMismatch"),
+    notEnoughSignatures("notEnoughSignatures"),
+    validationError("validationError");
 
-  @SuppressWarnings("unused")
-  private final String val;
-  private HostPatchManagerIntegrityStatus(String val)
-  {
-    this.val = val;
-  }
+    @SuppressWarnings("unused")
+    private final String val;
+
+    private HostPatchManagerIntegrityStatus(String val) {
+        this.val = val;
+    }
 }

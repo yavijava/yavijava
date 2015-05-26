@@ -30,20 +30,20 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public enum VirtualMachineConfigSpecNpivWwnOp {
-  generate ("generate"),
-  set ("set"),
-  remove ("remove"),
-  extend ("extend");
+    generate("generate"),
+    set("set"),
+    remove("remove"),
+    extend("extend");
 
-  @SuppressWarnings("unused")
-  private final String val;
-  private VirtualMachineConfigSpecNpivWwnOp(String val)
-  {
-    this.val = val;
-  }
+    @SuppressWarnings("unused")
+    private final String val;
+
+    private VirtualMachineConfigSpecNpivWwnOp(String val) {
+        this.val = val;
+    }
 }

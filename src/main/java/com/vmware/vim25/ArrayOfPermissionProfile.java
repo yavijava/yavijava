@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfPermissionProfile {
-  public PermissionProfile[] PermissionProfile;
+    public PermissionProfile[] PermissionProfile;
 
-  public PermissionProfile[] getPermissionProfile() {
-    return this.PermissionProfile;
-  }
+    public PermissionProfile[] getPermissionProfile() {
+        return this.PermissionProfile;
+    }
 
-  public PermissionProfile getPermissionProfile(int i) {
-    return this.PermissionProfile[i];
-  }
+    public PermissionProfile getPermissionProfile(int i) {
+        return this.PermissionProfile[i];
+    }
 
-  public void setPermissionProfile(PermissionProfile[] PermissionProfile) {
-    this.PermissionProfile=PermissionProfile;
-  }
+    public void setPermissionProfile(PermissionProfile[] PermissionProfile) {
+        this.PermissionProfile = PermissionProfile;
+    }
 }

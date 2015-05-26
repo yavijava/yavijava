@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class AlreadyBeingManaged extends HostConnectFault {
-  public String ipAddress;
+    public String ipAddress;
 
-  public String getIpAddress() {
-    return this.ipAddress;
-  }
+    public String getIpAddress() {
+        return this.ipAddress;
+    }
 
-  public void setIpAddress(String ipAddress) {
-    this.ipAddress=ipAddress;
-  }
+    public void setIpAddress(String ipAddress) {
+        this.ipAddress = ipAddress;
+    }
 }

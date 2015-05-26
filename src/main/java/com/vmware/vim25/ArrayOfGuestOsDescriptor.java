@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfGuestOsDescriptor {
-  public GuestOsDescriptor[] GuestOsDescriptor;
+    public GuestOsDescriptor[] GuestOsDescriptor;
 
-  public GuestOsDescriptor[] getGuestOsDescriptor() {
-    return this.GuestOsDescriptor;
-  }
+    public GuestOsDescriptor[] getGuestOsDescriptor() {
+        return this.GuestOsDescriptor;
+    }
 
-  public GuestOsDescriptor getGuestOsDescriptor(int i) {
-    return this.GuestOsDescriptor[i];
-  }
+    public GuestOsDescriptor getGuestOsDescriptor(int i) {
+        return this.GuestOsDescriptor[i];
+    }
 
-  public void setGuestOsDescriptor(GuestOsDescriptor[] GuestOsDescriptor) {
-    this.GuestOsDescriptor=GuestOsDescriptor;
-  }
+    public void setGuestOsDescriptor(GuestOsDescriptor[] GuestOsDescriptor) {
+        this.GuestOsDescriptor = GuestOsDescriptor;
+    }
 }

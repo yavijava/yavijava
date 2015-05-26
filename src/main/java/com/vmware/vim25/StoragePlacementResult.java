@@ -30,37 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class StoragePlacementResult extends DynamicData {
-  public ClusterRecommendation[] recommendations;
-  public ClusterDrsFaults drsFault;
-  public ManagedObjectReference task;
+    public ClusterRecommendation[] recommendations;
+    public ClusterDrsFaults drsFault;
+    public ManagedObjectReference task;
 
-  public ClusterRecommendation[] getRecommendations() {
-    return this.recommendations;
-  }
+    public ClusterRecommendation[] getRecommendations() {
+        return this.recommendations;
+    }
 
-  public ClusterDrsFaults getDrsFault() {
-    return this.drsFault;
-  }
+    public ClusterDrsFaults getDrsFault() {
+        return this.drsFault;
+    }
 
-  public ManagedObjectReference getTask() {
-    return this.task;
-  }
+    public ManagedObjectReference getTask() {
+        return this.task;
+    }
 
-  public void setRecommendations(ClusterRecommendation[] recommendations) {
-    this.recommendations=recommendations;
-  }
+    public void setRecommendations(ClusterRecommendation[] recommendations) {
+        this.recommendations = recommendations;
+    }
 
-  public void setDrsFault(ClusterDrsFaults drsFault) {
-    this.drsFault=drsFault;
-  }
+    public void setDrsFault(ClusterDrsFaults drsFault) {
+        this.drsFault = drsFault;
+    }
 
-  public void setTask(ManagedObjectReference task) {
-    this.task=task;
-  }
+    public void setTask(ManagedObjectReference task) {
+        this.task = task;
+    }
 }

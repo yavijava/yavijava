@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfDistributedVirtualSwitchHostMemberPnicSpec {
-  public DistributedVirtualSwitchHostMemberPnicSpec[] DistributedVirtualSwitchHostMemberPnicSpec;
+    public DistributedVirtualSwitchHostMemberPnicSpec[] DistributedVirtualSwitchHostMemberPnicSpec;
 
-  public DistributedVirtualSwitchHostMemberPnicSpec[] getDistributedVirtualSwitchHostMemberPnicSpec() {
-    return this.DistributedVirtualSwitchHostMemberPnicSpec;
-  }
+    public DistributedVirtualSwitchHostMemberPnicSpec[] getDistributedVirtualSwitchHostMemberPnicSpec() {
+        return this.DistributedVirtualSwitchHostMemberPnicSpec;
+    }
 
-  public DistributedVirtualSwitchHostMemberPnicSpec getDistributedVirtualSwitchHostMemberPnicSpec(int i) {
-    return this.DistributedVirtualSwitchHostMemberPnicSpec[i];
-  }
+    public DistributedVirtualSwitchHostMemberPnicSpec getDistributedVirtualSwitchHostMemberPnicSpec(int i) {
+        return this.DistributedVirtualSwitchHostMemberPnicSpec[i];
+    }
 
-  public void setDistributedVirtualSwitchHostMemberPnicSpec(DistributedVirtualSwitchHostMemberPnicSpec[] DistributedVirtualSwitchHostMemberPnicSpec) {
-    this.DistributedVirtualSwitchHostMemberPnicSpec=DistributedVirtualSwitchHostMemberPnicSpec;
-  }
+    public void setDistributedVirtualSwitchHostMemberPnicSpec(DistributedVirtualSwitchHostMemberPnicSpec[] DistributedVirtualSwitchHostMemberPnicSpec) {
+        this.DistributedVirtualSwitchHostMemberPnicSpec = DistributedVirtualSwitchHostMemberPnicSpec;
+    }
 }

@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VirtualMachineTargetInfo extends DynamicData {
-  public String name;
-  public String[] configurationTag;
+    public String name;
+    public String[] configurationTag;
 
-  public String getName() {
-    return this.name;
-  }
+    public String getName() {
+        return this.name;
+    }
 
-  public String[] getConfigurationTag() {
-    return this.configurationTag;
-  }
+    public String[] getConfigurationTag() {
+        return this.configurationTag;
+    }
 
-  public void setName(String name) {
-    this.name=name;
-  }
+    public void setName(String name) {
+        this.name = name;
+    }
 
-  public void setConfigurationTag(String[] configurationTag) {
-    this.configurationTag=configurationTag;
-  }
+    public void setConfigurationTag(String[] configurationTag) {
+        this.configurationTag = configurationTag;
+    }
 }

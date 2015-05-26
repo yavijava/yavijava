@@ -30,37 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VirtualSIOControllerOption extends VirtualControllerOption {
-  public IntOption numFloppyDrives;
-  public IntOption numSerialPorts;
-  public IntOption numParallelPorts;
+    public IntOption numFloppyDrives;
+    public IntOption numSerialPorts;
+    public IntOption numParallelPorts;
 
-  public IntOption getNumFloppyDrives() {
-    return this.numFloppyDrives;
-  }
+    public IntOption getNumFloppyDrives() {
+        return this.numFloppyDrives;
+    }
 
-  public IntOption getNumSerialPorts() {
-    return this.numSerialPorts;
-  }
+    public IntOption getNumSerialPorts() {
+        return this.numSerialPorts;
+    }
 
-  public IntOption getNumParallelPorts() {
-    return this.numParallelPorts;
-  }
+    public IntOption getNumParallelPorts() {
+        return this.numParallelPorts;
+    }
 
-  public void setNumFloppyDrives(IntOption numFloppyDrives) {
-    this.numFloppyDrives=numFloppyDrives;
-  }
+    public void setNumFloppyDrives(IntOption numFloppyDrives) {
+        this.numFloppyDrives = numFloppyDrives;
+    }
 
-  public void setNumSerialPorts(IntOption numSerialPorts) {
-    this.numSerialPorts=numSerialPorts;
-  }
+    public void setNumSerialPorts(IntOption numSerialPorts) {
+        this.numSerialPorts = numSerialPorts;
+    }
 
-  public void setNumParallelPorts(IntOption numParallelPorts) {
-    this.numParallelPorts=numParallelPorts;
-  }
+    public void setNumParallelPorts(IntOption numParallelPorts) {
+        this.numParallelPorts = numParallelPorts;
+    }
 }

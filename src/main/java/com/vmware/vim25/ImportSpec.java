@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class ImportSpec extends DynamicData {
-  public VAppEntityConfigInfo entityConfig;
-  public OvfConsumerOstNode instantiationOst;
+    public VAppEntityConfigInfo entityConfig;
+    public OvfConsumerOstNode instantiationOst;
 
-  public VAppEntityConfigInfo getEntityConfig() {
-    return this.entityConfig;
-  }
+    public VAppEntityConfigInfo getEntityConfig() {
+        return this.entityConfig;
+    }
 
-  public OvfConsumerOstNode getInstantiationOst() {
-    return this.instantiationOst;
-  }
+    public OvfConsumerOstNode getInstantiationOst() {
+        return this.instantiationOst;
+    }
 
-  public void setEntityConfig(VAppEntityConfigInfo entityConfig) {
-    this.entityConfig=entityConfig;
-  }
+    public void setEntityConfig(VAppEntityConfigInfo entityConfig) {
+        this.entityConfig = entityConfig;
+    }
 
-  public void setInstantiationOst(OvfConsumerOstNode instantiationOst) {
-    this.instantiationOst=instantiationOst;
-  }
+    public void setInstantiationOst(OvfConsumerOstNode instantiationOst) {
+        this.instantiationOst = instantiationOst;
+    }
 }

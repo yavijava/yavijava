@@ -30,37 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class FileTooLarge extends FileFault {
-  public String datastore;
-  public long fileSize;
-  public Long maxFileSize;
+    public String datastore;
+    public long fileSize;
+    public Long maxFileSize;
 
-  public String getDatastore() {
-    return this.datastore;
-  }
+    public String getDatastore() {
+        return this.datastore;
+    }
 
-  public long getFileSize() {
-    return this.fileSize;
-  }
+    public long getFileSize() {
+        return this.fileSize;
+    }
 
-  public Long getMaxFileSize() {
-    return this.maxFileSize;
-  }
+    public Long getMaxFileSize() {
+        return this.maxFileSize;
+    }
 
-  public void setDatastore(String datastore) {
-    this.datastore=datastore;
-  }
+    public void setDatastore(String datastore) {
+        this.datastore = datastore;
+    }
 
-  public void setFileSize(long fileSize) {
-    this.fileSize=fileSize;
-  }
+    public void setFileSize(long fileSize) {
+        this.fileSize = fileSize;
+    }
 
-  public void setMaxFileSize(Long maxFileSize) {
-    this.maxFileSize=maxFileSize;
-  }
+    public void setMaxFileSize(Long maxFileSize) {
+        this.maxFileSize = maxFileSize;
+    }
 }

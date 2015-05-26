@@ -30,46 +30,46 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VMwareDVSPortgroupPolicy extends DVPortgroupPolicy {
-  public boolean vlanOverrideAllowed;
-  public boolean uplinkTeamingOverrideAllowed;
-  public boolean securityPolicyOverrideAllowed;
-  public Boolean ipfixOverrideAllowed;
+    public boolean vlanOverrideAllowed;
+    public boolean uplinkTeamingOverrideAllowed;
+    public boolean securityPolicyOverrideAllowed;
+    public Boolean ipfixOverrideAllowed;
 
-  public boolean isVlanOverrideAllowed() {
-    return this.vlanOverrideAllowed;
-  }
+    public boolean isVlanOverrideAllowed() {
+        return this.vlanOverrideAllowed;
+    }
 
-  public boolean isUplinkTeamingOverrideAllowed() {
-    return this.uplinkTeamingOverrideAllowed;
-  }
+    public boolean isUplinkTeamingOverrideAllowed() {
+        return this.uplinkTeamingOverrideAllowed;
+    }
 
-  public boolean isSecurityPolicyOverrideAllowed() {
-    return this.securityPolicyOverrideAllowed;
-  }
+    public boolean isSecurityPolicyOverrideAllowed() {
+        return this.securityPolicyOverrideAllowed;
+    }
 
-  public Boolean getIpfixOverrideAllowed() {
-    return this.ipfixOverrideAllowed;
-  }
+    public Boolean getIpfixOverrideAllowed() {
+        return this.ipfixOverrideAllowed;
+    }
 
-  public void setVlanOverrideAllowed(boolean vlanOverrideAllowed) {
-    this.vlanOverrideAllowed=vlanOverrideAllowed;
-  }
+    public void setVlanOverrideAllowed(boolean vlanOverrideAllowed) {
+        this.vlanOverrideAllowed = vlanOverrideAllowed;
+    }
 
-  public void setUplinkTeamingOverrideAllowed(boolean uplinkTeamingOverrideAllowed) {
-    this.uplinkTeamingOverrideAllowed=uplinkTeamingOverrideAllowed;
-  }
+    public void setUplinkTeamingOverrideAllowed(boolean uplinkTeamingOverrideAllowed) {
+        this.uplinkTeamingOverrideAllowed = uplinkTeamingOverrideAllowed;
+    }
 
-  public void setSecurityPolicyOverrideAllowed(boolean securityPolicyOverrideAllowed) {
-    this.securityPolicyOverrideAllowed=securityPolicyOverrideAllowed;
-  }
+    public void setSecurityPolicyOverrideAllowed(boolean securityPolicyOverrideAllowed) {
+        this.securityPolicyOverrideAllowed = securityPolicyOverrideAllowed;
+    }
 
-  public void setIpfixOverrideAllowed(Boolean ipfixOverrideAllowed) {
-    this.ipfixOverrideAllowed=ipfixOverrideAllowed;
-  }
+    public void setIpfixOverrideAllowed(Boolean ipfixOverrideAllowed) {
+        this.ipfixOverrideAllowed = ipfixOverrideAllowed;
+    }
 }

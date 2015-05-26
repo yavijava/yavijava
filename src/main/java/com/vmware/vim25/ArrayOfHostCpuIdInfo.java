@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfHostCpuIdInfo {
-  public HostCpuIdInfo[] HostCpuIdInfo;
+    public HostCpuIdInfo[] HostCpuIdInfo;
 
-  public HostCpuIdInfo[] getHostCpuIdInfo() {
-    return this.HostCpuIdInfo;
-  }
+    public HostCpuIdInfo[] getHostCpuIdInfo() {
+        return this.HostCpuIdInfo;
+    }
 
-  public HostCpuIdInfo getHostCpuIdInfo(int i) {
-    return this.HostCpuIdInfo[i];
-  }
+    public HostCpuIdInfo getHostCpuIdInfo(int i) {
+        return this.HostCpuIdInfo[i];
+    }
 
-  public void setHostCpuIdInfo(HostCpuIdInfo[] HostCpuIdInfo) {
-    this.HostCpuIdInfo=HostCpuIdInfo;
-  }
+    public void setHostCpuIdInfo(HostCpuIdInfo[] HostCpuIdInfo) {
+        this.HostCpuIdInfo = HostCpuIdInfo;
+    }
 }

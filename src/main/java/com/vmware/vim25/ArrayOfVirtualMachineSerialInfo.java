@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfVirtualMachineSerialInfo {
-  public VirtualMachineSerialInfo[] VirtualMachineSerialInfo;
+    public VirtualMachineSerialInfo[] VirtualMachineSerialInfo;
 
-  public VirtualMachineSerialInfo[] getVirtualMachineSerialInfo() {
-    return this.VirtualMachineSerialInfo;
-  }
+    public VirtualMachineSerialInfo[] getVirtualMachineSerialInfo() {
+        return this.VirtualMachineSerialInfo;
+    }
 
-  public VirtualMachineSerialInfo getVirtualMachineSerialInfo(int i) {
-    return this.VirtualMachineSerialInfo[i];
-  }
+    public VirtualMachineSerialInfo getVirtualMachineSerialInfo(int i) {
+        return this.VirtualMachineSerialInfo[i];
+    }
 
-  public void setVirtualMachineSerialInfo(VirtualMachineSerialInfo[] VirtualMachineSerialInfo) {
-    this.VirtualMachineSerialInfo=VirtualMachineSerialInfo;
-  }
+    public void setVirtualMachineSerialInfo(VirtualMachineSerialInfo[] VirtualMachineSerialInfo) {
+        this.VirtualMachineSerialInfo = VirtualMachineSerialInfo;
+    }
 }

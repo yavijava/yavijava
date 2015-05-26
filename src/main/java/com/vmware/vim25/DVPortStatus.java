@@ -30,118 +30,118 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class DVPortStatus extends DynamicData {
-  public boolean linkUp;
-  public boolean blocked;
-  public NumericRange[] vlanIds;
-  public Boolean trunkingMode;
-  public Integer mtu;
-  public String linkPeer;
-  public String macAddress;
-  public String statusDetail;
-  public Boolean vmDirectPathGen2Active;
-  public String[] vmDirectPathGen2InactiveReasonNetwork;
-  public String[] vmDirectPathGen2InactiveReasonOther;
-  public String vmDirectPathGen2InactiveReasonExtended;
+    public boolean linkUp;
+    public boolean blocked;
+    public NumericRange[] vlanIds;
+    public Boolean trunkingMode;
+    public Integer mtu;
+    public String linkPeer;
+    public String macAddress;
+    public String statusDetail;
+    public Boolean vmDirectPathGen2Active;
+    public String[] vmDirectPathGen2InactiveReasonNetwork;
+    public String[] vmDirectPathGen2InactiveReasonOther;
+    public String vmDirectPathGen2InactiveReasonExtended;
 
-  public boolean isLinkUp() {
-    return this.linkUp;
-  }
+    public boolean isLinkUp() {
+        return this.linkUp;
+    }
 
-  public boolean isBlocked() {
-    return this.blocked;
-  }
+    public boolean isBlocked() {
+        return this.blocked;
+    }
 
-  public NumericRange[] getVlanIds() {
-    return this.vlanIds;
-  }
+    public NumericRange[] getVlanIds() {
+        return this.vlanIds;
+    }
 
-  public Boolean getTrunkingMode() {
-    return this.trunkingMode;
-  }
+    public Boolean getTrunkingMode() {
+        return this.trunkingMode;
+    }
 
-  public Integer getMtu() {
-    return this.mtu;
-  }
+    public Integer getMtu() {
+        return this.mtu;
+    }
 
-  public String getLinkPeer() {
-    return this.linkPeer;
-  }
+    public String getLinkPeer() {
+        return this.linkPeer;
+    }
 
-  public String getMacAddress() {
-    return this.macAddress;
-  }
+    public String getMacAddress() {
+        return this.macAddress;
+    }
 
-  public String getStatusDetail() {
-    return this.statusDetail;
-  }
+    public String getStatusDetail() {
+        return this.statusDetail;
+    }
 
-  public Boolean getVmDirectPathGen2Active() {
-    return this.vmDirectPathGen2Active;
-  }
+    public Boolean getVmDirectPathGen2Active() {
+        return this.vmDirectPathGen2Active;
+    }
 
-  public String[] getVmDirectPathGen2InactiveReasonNetwork() {
-    return this.vmDirectPathGen2InactiveReasonNetwork;
-  }
+    public String[] getVmDirectPathGen2InactiveReasonNetwork() {
+        return this.vmDirectPathGen2InactiveReasonNetwork;
+    }
 
-  public String[] getVmDirectPathGen2InactiveReasonOther() {
-    return this.vmDirectPathGen2InactiveReasonOther;
-  }
+    public String[] getVmDirectPathGen2InactiveReasonOther() {
+        return this.vmDirectPathGen2InactiveReasonOther;
+    }
 
-  public String getVmDirectPathGen2InactiveReasonExtended() {
-    return this.vmDirectPathGen2InactiveReasonExtended;
-  }
+    public String getVmDirectPathGen2InactiveReasonExtended() {
+        return this.vmDirectPathGen2InactiveReasonExtended;
+    }
 
-  public void setLinkUp(boolean linkUp) {
-    this.linkUp=linkUp;
-  }
+    public void setLinkUp(boolean linkUp) {
+        this.linkUp = linkUp;
+    }
 
-  public void setBlocked(boolean blocked) {
-    this.blocked=blocked;
-  }
+    public void setBlocked(boolean blocked) {
+        this.blocked = blocked;
+    }
 
-  public void setVlanIds(NumericRange[] vlanIds) {
-    this.vlanIds=vlanIds;
-  }
+    public void setVlanIds(NumericRange[] vlanIds) {
+        this.vlanIds = vlanIds;
+    }
 
-  public void setTrunkingMode(Boolean trunkingMode) {
-    this.trunkingMode=trunkingMode;
-  }
+    public void setTrunkingMode(Boolean trunkingMode) {
+        this.trunkingMode = trunkingMode;
+    }
 
-  public void setMtu(Integer mtu) {
-    this.mtu=mtu;
-  }
+    public void setMtu(Integer mtu) {
+        this.mtu = mtu;
+    }
 
-  public void setLinkPeer(String linkPeer) {
-    this.linkPeer=linkPeer;
-  }
+    public void setLinkPeer(String linkPeer) {
+        this.linkPeer = linkPeer;
+    }
 
-  public void setMacAddress(String macAddress) {
-    this.macAddress=macAddress;
-  }
+    public void setMacAddress(String macAddress) {
+        this.macAddress = macAddress;
+    }
 
-  public void setStatusDetail(String statusDetail) {
-    this.statusDetail=statusDetail;
-  }
+    public void setStatusDetail(String statusDetail) {
+        this.statusDetail = statusDetail;
+    }
 
-  public void setVmDirectPathGen2Active(Boolean vmDirectPathGen2Active) {
-    this.vmDirectPathGen2Active=vmDirectPathGen2Active;
-  }
+    public void setVmDirectPathGen2Active(Boolean vmDirectPathGen2Active) {
+        this.vmDirectPathGen2Active = vmDirectPathGen2Active;
+    }
 
-  public void setVmDirectPathGen2InactiveReasonNetwork(String[] vmDirectPathGen2InactiveReasonNetwork) {
-    this.vmDirectPathGen2InactiveReasonNetwork=vmDirectPathGen2InactiveReasonNetwork;
-  }
+    public void setVmDirectPathGen2InactiveReasonNetwork(String[] vmDirectPathGen2InactiveReasonNetwork) {
+        this.vmDirectPathGen2InactiveReasonNetwork = vmDirectPathGen2InactiveReasonNetwork;
+    }
 
-  public void setVmDirectPathGen2InactiveReasonOther(String[] vmDirectPathGen2InactiveReasonOther) {
-    this.vmDirectPathGen2InactiveReasonOther=vmDirectPathGen2InactiveReasonOther;
-  }
+    public void setVmDirectPathGen2InactiveReasonOther(String[] vmDirectPathGen2InactiveReasonOther) {
+        this.vmDirectPathGen2InactiveReasonOther = vmDirectPathGen2InactiveReasonOther;
+    }
 
-  public void setVmDirectPathGen2InactiveReasonExtended(String vmDirectPathGen2InactiveReasonExtended) {
-    this.vmDirectPathGen2InactiveReasonExtended=vmDirectPathGen2InactiveReasonExtended;
-  }
+    public void setVmDirectPathGen2InactiveReasonExtended(String vmDirectPathGen2InactiveReasonExtended) {
+        this.vmDirectPathGen2InactiveReasonExtended = vmDirectPathGen2InactiveReasonExtended;
+    }
 }

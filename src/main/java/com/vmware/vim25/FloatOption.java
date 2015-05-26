@@ -30,37 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class FloatOption extends OptionType {
-  public float min;
-  public float max;
-  public float defaultValue;
+    public float min;
+    public float max;
+    public float defaultValue;
 
-  public float getMin() {
-    return this.min;
-  }
+    public float getMin() {
+        return this.min;
+    }
 
-  public float getMax() {
-    return this.max;
-  }
+    public float getMax() {
+        return this.max;
+    }
 
-  public float getDefaultValue() {
-    return this.defaultValue;
-  }
+    public float getDefaultValue() {
+        return this.defaultValue;
+    }
 
-  public void setMin(float min) {
-    this.min=min;
-  }
+    public void setMin(float min) {
+        this.min = min;
+    }
 
-  public void setMax(float max) {
-    this.max=max;
-  }
+    public void setMax(float max) {
+        this.max = max;
+    }
 
-  public void setDefaultValue(float defaultValue) {
-    this.defaultValue=defaultValue;
-  }
+    public void setDefaultValue(float defaultValue) {
+        this.defaultValue = defaultValue;
+    }
 }

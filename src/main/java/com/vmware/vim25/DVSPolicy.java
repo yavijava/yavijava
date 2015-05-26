@@ -30,37 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class DVSPolicy extends DynamicData {
-  public Boolean autoPreInstallAllowed;
-  public Boolean autoUpgradeAllowed;
-  public Boolean partialUpgradeAllowed;
+    public Boolean autoPreInstallAllowed;
+    public Boolean autoUpgradeAllowed;
+    public Boolean partialUpgradeAllowed;
 
-  public Boolean getAutoPreInstallAllowed() {
-    return this.autoPreInstallAllowed;
-  }
+    public Boolean getAutoPreInstallAllowed() {
+        return this.autoPreInstallAllowed;
+    }
 
-  public Boolean getAutoUpgradeAllowed() {
-    return this.autoUpgradeAllowed;
-  }
+    public Boolean getAutoUpgradeAllowed() {
+        return this.autoUpgradeAllowed;
+    }
 
-  public Boolean getPartialUpgradeAllowed() {
-    return this.partialUpgradeAllowed;
-  }
+    public Boolean getPartialUpgradeAllowed() {
+        return this.partialUpgradeAllowed;
+    }
 
-  public void setAutoPreInstallAllowed(Boolean autoPreInstallAllowed) {
-    this.autoPreInstallAllowed=autoPreInstallAllowed;
-  }
+    public void setAutoPreInstallAllowed(Boolean autoPreInstallAllowed) {
+        this.autoPreInstallAllowed = autoPreInstallAllowed;
+    }
 
-  public void setAutoUpgradeAllowed(Boolean autoUpgradeAllowed) {
-    this.autoUpgradeAllowed=autoUpgradeAllowed;
-  }
+    public void setAutoUpgradeAllowed(Boolean autoUpgradeAllowed) {
+        this.autoUpgradeAllowed = autoUpgradeAllowed;
+    }
 
-  public void setPartialUpgradeAllowed(Boolean partialUpgradeAllowed) {
-    this.partialUpgradeAllowed=partialUpgradeAllowed;
-  }
+    public void setPartialUpgradeAllowed(Boolean partialUpgradeAllowed) {
+        this.partialUpgradeAllowed = partialUpgradeAllowed;
+    }
 }

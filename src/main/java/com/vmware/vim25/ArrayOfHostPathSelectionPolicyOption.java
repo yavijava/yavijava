@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfHostPathSelectionPolicyOption {
-  public HostPathSelectionPolicyOption[] HostPathSelectionPolicyOption;
+    public HostPathSelectionPolicyOption[] HostPathSelectionPolicyOption;
 
-  public HostPathSelectionPolicyOption[] getHostPathSelectionPolicyOption() {
-    return this.HostPathSelectionPolicyOption;
-  }
+    public HostPathSelectionPolicyOption[] getHostPathSelectionPolicyOption() {
+        return this.HostPathSelectionPolicyOption;
+    }
 
-  public HostPathSelectionPolicyOption getHostPathSelectionPolicyOption(int i) {
-    return this.HostPathSelectionPolicyOption[i];
-  }
+    public HostPathSelectionPolicyOption getHostPathSelectionPolicyOption(int i) {
+        return this.HostPathSelectionPolicyOption[i];
+    }
 
-  public void setHostPathSelectionPolicyOption(HostPathSelectionPolicyOption[] HostPathSelectionPolicyOption) {
-    this.HostPathSelectionPolicyOption=HostPathSelectionPolicyOption;
-  }
+    public void setHostPathSelectionPolicyOption(HostPathSelectionPolicyOption[] HostPathSelectionPolicyOption) {
+        this.HostPathSelectionPolicyOption = HostPathSelectionPolicyOption;
+    }
 }

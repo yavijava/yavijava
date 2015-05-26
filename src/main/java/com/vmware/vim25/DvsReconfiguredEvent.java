@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class DvsReconfiguredEvent extends DvsEvent {
-  public DVSConfigSpec configSpec;
+    public DVSConfigSpec configSpec;
 
-  public DVSConfigSpec getConfigSpec() {
-    return this.configSpec;
-  }
+    public DVSConfigSpec getConfigSpec() {
+        return this.configSpec;
+    }
 
-  public void setConfigSpec(DVSConfigSpec configSpec) {
-    this.configSpec=configSpec;
-  }
+    public void setConfigSpec(DVSConfigSpec configSpec) {
+        this.configSpec = configSpec;
+    }
 }

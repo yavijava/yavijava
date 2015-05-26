@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VmfsDatastoreBaseOption extends DynamicData {
-  public HostDiskPartitionLayout layout;
-  public Boolean partitionFormatChange;
+    public HostDiskPartitionLayout layout;
+    public Boolean partitionFormatChange;
 
-  public HostDiskPartitionLayout getLayout() {
-    return this.layout;
-  }
+    public HostDiskPartitionLayout getLayout() {
+        return this.layout;
+    }
 
-  public Boolean getPartitionFormatChange() {
-    return this.partitionFormatChange;
-  }
+    public Boolean getPartitionFormatChange() {
+        return this.partitionFormatChange;
+    }
 
-  public void setLayout(HostDiskPartitionLayout layout) {
-    this.layout=layout;
-  }
+    public void setLayout(HostDiskPartitionLayout layout) {
+        this.layout = layout;
+    }
 
-  public void setPartitionFormatChange(Boolean partitionFormatChange) {
-    this.partitionFormatChange=partitionFormatChange;
-  }
+    public void setPartitionFormatChange(Boolean partitionFormatChange) {
+        this.partitionFormatChange = partitionFormatChange;
+    }
 }

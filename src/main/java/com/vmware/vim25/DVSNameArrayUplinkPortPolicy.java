@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class DVSNameArrayUplinkPortPolicy extends DVSUplinkPortPolicy {
-  public String[] uplinkPortName;
+    public String[] uplinkPortName;
 
-  public String[] getUplinkPortName() {
-    return this.uplinkPortName;
-  }
+    public String[] getUplinkPortName() {
+        return this.uplinkPortName;
+    }
 
-  public void setUplinkPortName(String[] uplinkPortName) {
-    this.uplinkPortName=uplinkPortName;
-  }
+    public void setUplinkPortName(String[] uplinkPortName) {
+        this.uplinkPortName = uplinkPortName;
+    }
 }

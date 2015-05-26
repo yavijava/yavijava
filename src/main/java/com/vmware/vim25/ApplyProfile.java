@@ -30,55 +30,55 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class ApplyProfile extends DynamicData {
-  public boolean enabled;
-  public ProfilePolicy[] policy;
-  public String profileTypeName;
-  public String profileVersion;
-  public ProfileApplyProfileProperty[] property;
+    public boolean enabled;
+    public ProfilePolicy[] policy;
+    public String profileTypeName;
+    public String profileVersion;
+    public ProfileApplyProfileProperty[] property;
 
-  public boolean isEnabled() {
-    return this.enabled;
-  }
+    public boolean isEnabled() {
+        return this.enabled;
+    }
 
-  public ProfilePolicy[] getPolicy() {
-    return this.policy;
-  }
+    public ProfilePolicy[] getPolicy() {
+        return this.policy;
+    }
 
-  public String getProfileTypeName() {
-    return this.profileTypeName;
-  }
+    public String getProfileTypeName() {
+        return this.profileTypeName;
+    }
 
-  public String getProfileVersion() {
-    return this.profileVersion;
-  }
+    public String getProfileVersion() {
+        return this.profileVersion;
+    }
 
-  public ProfileApplyProfileProperty[] getProperty() {
-    return this.property;
-  }
+    public ProfileApplyProfileProperty[] getProperty() {
+        return this.property;
+    }
 
-  public void setEnabled(boolean enabled) {
-    this.enabled=enabled;
-  }
+    public void setEnabled(boolean enabled) {
+        this.enabled = enabled;
+    }
 
-  public void setPolicy(ProfilePolicy[] policy) {
-    this.policy=policy;
-  }
+    public void setPolicy(ProfilePolicy[] policy) {
+        this.policy = policy;
+    }
 
-  public void setProfileTypeName(String profileTypeName) {
-    this.profileTypeName=profileTypeName;
-  }
+    public void setProfileTypeName(String profileTypeName) {
+        this.profileTypeName = profileTypeName;
+    }
 
-  public void setProfileVersion(String profileVersion) {
-    this.profileVersion=profileVersion;
-  }
+    public void setProfileVersion(String profileVersion) {
+        this.profileVersion = profileVersion;
+    }
 
-  public void setProperty(ProfileApplyProfileProperty[] property) {
-    this.property=property;
-  }
+    public void setProperty(ProfileApplyProfileProperty[] property) {
+        this.property = property;
+    }
 }

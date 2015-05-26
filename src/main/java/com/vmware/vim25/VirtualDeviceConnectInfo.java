@@ -30,46 +30,46 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VirtualDeviceConnectInfo extends DynamicData {
-  public boolean startConnected;
-  public boolean allowGuestControl;
-  public boolean connected;
-  public String status;
+    public boolean startConnected;
+    public boolean allowGuestControl;
+    public boolean connected;
+    public String status;
 
-  public boolean isStartConnected() {
-    return this.startConnected;
-  }
+    public boolean isStartConnected() {
+        return this.startConnected;
+    }
 
-  public boolean isAllowGuestControl() {
-    return this.allowGuestControl;
-  }
+    public boolean isAllowGuestControl() {
+        return this.allowGuestControl;
+    }
 
-  public boolean isConnected() {
-    return this.connected;
-  }
+    public boolean isConnected() {
+        return this.connected;
+    }
 
-  public String getStatus() {
-    return this.status;
-  }
+    public String getStatus() {
+        return this.status;
+    }
 
-  public void setStartConnected(boolean startConnected) {
-    this.startConnected=startConnected;
-  }
+    public void setStartConnected(boolean startConnected) {
+        this.startConnected = startConnected;
+    }
 
-  public void setAllowGuestControl(boolean allowGuestControl) {
-    this.allowGuestControl=allowGuestControl;
-  }
+    public void setAllowGuestControl(boolean allowGuestControl) {
+        this.allowGuestControl = allowGuestControl;
+    }
 
-  public void setConnected(boolean connected) {
-    this.connected=connected;
-  }
+    public void setConnected(boolean connected) {
+        this.connected = connected;
+    }
 
-  public void setStatus(String status) {
-    this.status=status;
-  }
+    public void setStatus(String status) {
+        this.status = status;
+    }
 }

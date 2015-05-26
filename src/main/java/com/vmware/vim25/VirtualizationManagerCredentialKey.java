@@ -30,17 +30,16 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
-*/
+ * @author Steve Jin (sjin@vmware.com)
+ */
 
-public enum VirtualizationManagerCredentialKey
-{
-  physicalEntityDefault ("physicalEntityDefault"),
-  vmwareDataCollector ("vmwareDataCollector");
+public enum VirtualizationManagerCredentialKey {
+    physicalEntityDefault("physicalEntityDefault"),
+    vmwareDataCollector("vmwareDataCollector");
 
-  private final String val;
-  private VirtualizationManagerCredentialKey(String val)
-  {
-    this.val = val;
-  }
+    private final String val;
+
+    private VirtualizationManagerCredentialKey(String val) {
+        this.val = val;
+    }
 }

@@ -34,29 +34,26 @@ import com.vmware.vim25.PodStorageDrsEntry;
 import com.vmware.vim25.StoragePodSummary;
 
 /**
- * aggregates the storage resources of associated Datastore objects into a single 
- * storage resource for use by virtual machines. The storage services such as 
- * Storage DRS (Distributed Resource Scheduling), enhance the utility of the 
+ * aggregates the storage resources of associated Datastore objects into a single
+ * storage resource for use by virtual machines. The storage services such as
+ * Storage DRS (Distributed Resource Scheduling), enhance the utility of the
  * storage pod.
- * Use the Folder.createStoragePod method to create an instance of this object 
+ * Use the Folder.createStoragePod method to create an instance of this object
+ *
  * @author Steve Jin (http://www.doublecloud.org)
  * @since SDK5.0
  */
 
-public class StoragePod extends Folder 
-{
-	public StoragePod(ServerConnection serverConnection, ManagedObjectReference mor) 
-	{
-		super(serverConnection, mor);
-	}
+public class StoragePod extends Folder {
+    public StoragePod(ServerConnection serverConnection, ManagedObjectReference mor) {
+        super(serverConnection, mor);
+    }
 
-	public PodStorageDrsEntry getPodStorageDrsEntry()
-	{
-		return (PodStorageDrsEntry) getCurrentProperty("podStorageDrsEntry");
-	}
+    public PodStorageDrsEntry getPodStorageDrsEntry() {
+        return (PodStorageDrsEntry) getCurrentProperty("podStorageDrsEntry");
+    }
 
-  public StoragePodSummary getSummary()
-  {
-    return (StoragePodSummary) getCurrentProperty("summary");
-  }
+    public StoragePodSummary getSummary() {
+        return (StoragePodSummary) getCurrentProperty("summary");
+    }
 }

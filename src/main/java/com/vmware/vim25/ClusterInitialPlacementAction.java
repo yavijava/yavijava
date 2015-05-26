@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class ClusterInitialPlacementAction extends ClusterAction {
-  public ManagedObjectReference targetHost;
-  public ManagedObjectReference pool;
+    public ManagedObjectReference targetHost;
+    public ManagedObjectReference pool;
 
-  public ManagedObjectReference getTargetHost() {
-    return this.targetHost;
-  }
+    public ManagedObjectReference getTargetHost() {
+        return this.targetHost;
+    }
 
-  public ManagedObjectReference getPool() {
-    return this.pool;
-  }
+    public ManagedObjectReference getPool() {
+        return this.pool;
+    }
 
-  public void setTargetHost(ManagedObjectReference targetHost) {
-    this.targetHost=targetHost;
-  }
+    public void setTargetHost(ManagedObjectReference targetHost) {
+        this.targetHost = targetHost;
+    }
 
-  public void setPool(ManagedObjectReference pool) {
-    this.pool=pool;
-  }
+    public void setPool(ManagedObjectReference pool) {
+        this.pool = pool;
+    }
 }

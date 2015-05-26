@@ -30,25 +30,21 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
-*/
+ * @author Steve Jin (sjin@vmware.com)
+ */
 
-public class ArrayOfHardwareISCSIInitiatorProfile
-{
-  public HardwareISCSIInitiatorProfile[] HardwareISCSIInitiatorProfile;
+public class ArrayOfHardwareISCSIInitiatorProfile {
+    public HardwareISCSIInitiatorProfile[] HardwareISCSIInitiatorProfile;
 
-  public HardwareISCSIInitiatorProfile[] getHardwareISCSIInitiatorProfile()
-  {
-    return this.HardwareISCSIInitiatorProfile;
-  }
+    public HardwareISCSIInitiatorProfile[] getHardwareISCSIInitiatorProfile() {
+        return this.HardwareISCSIInitiatorProfile;
+    }
 
-  public HardwareISCSIInitiatorProfile getHardwareISCSIInitiatorProfile(int i)
-  {
-    return this.HardwareISCSIInitiatorProfile[i];
-  }
+    public HardwareISCSIInitiatorProfile getHardwareISCSIInitiatorProfile(int i) {
+        return this.HardwareISCSIInitiatorProfile[i];
+    }
 
-  public void setHardwareISCSIInitiatorProfile(HardwareISCSIInitiatorProfile[] HardwareISCSIInitiatorProfile)
-  {
-    this.HardwareISCSIInitiatorProfile=HardwareISCSIInitiatorProfile;
-  }
+    public void setHardwareISCSIInitiatorProfile(HardwareISCSIInitiatorProfile[] HardwareISCSIInitiatorProfile) {
+        this.HardwareISCSIInitiatorProfile = HardwareISCSIInitiatorProfile;
+    }
 }

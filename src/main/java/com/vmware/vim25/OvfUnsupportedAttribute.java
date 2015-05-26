@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class OvfUnsupportedAttribute extends OvfUnsupportedPackage {
-  public String elementName;
-  public String attributeName;
+    public String elementName;
+    public String attributeName;
 
-  public String getElementName() {
-    return this.elementName;
-  }
+    public String getElementName() {
+        return this.elementName;
+    }
 
-  public String getAttributeName() {
-    return this.attributeName;
-  }
+    public String getAttributeName() {
+        return this.attributeName;
+    }
 
-  public void setElementName(String elementName) {
-    this.elementName=elementName;
-  }
+    public void setElementName(String elementName) {
+        this.elementName = elementName;
+    }
 
-  public void setAttributeName(String attributeName) {
-    this.attributeName=attributeName;
-  }
+    public void setAttributeName(String attributeName) {
+        this.attributeName = attributeName;
+    }
 }

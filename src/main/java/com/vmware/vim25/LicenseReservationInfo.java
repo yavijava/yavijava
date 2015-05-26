@@ -30,37 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class LicenseReservationInfo extends DynamicData {
-  public String key;
-  public LicenseReservationInfoState state;
-  public int required;
+    public String key;
+    public LicenseReservationInfoState state;
+    public int required;
 
-  public String getKey() {
-    return this.key;
-  }
+    public String getKey() {
+        return this.key;
+    }
 
-  public LicenseReservationInfoState getState() {
-    return this.state;
-  }
+    public LicenseReservationInfoState getState() {
+        return this.state;
+    }
 
-  public int getRequired() {
-    return this.required;
-  }
+    public int getRequired() {
+        return this.required;
+    }
 
-  public void setKey(String key) {
-    this.key=key;
-  }
+    public void setKey(String key) {
+        this.key = key;
+    }
 
-  public void setState(LicenseReservationInfoState state) {
-    this.state=state;
-  }
+    public void setState(LicenseReservationInfoState state) {
+        this.state = state;
+    }
 
-  public void setRequired(int required) {
-    this.required=required;
-  }
+    public void setRequired(int required) {
+        this.required = required;
+    }
 }

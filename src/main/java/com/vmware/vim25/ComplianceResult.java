@@ -28,58 +28,59 @@ POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
 
 package com.vmware.vim25;
+
 import java.util.Calendar;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class ComplianceResult extends DynamicData {
-  public ManagedObjectReference profile;
-  public String complianceStatus;
-  public ManagedObjectReference entity;
-  public Calendar checkTime;
-  public ComplianceFailure[] failure;
+    public ManagedObjectReference profile;
+    public String complianceStatus;
+    public ManagedObjectReference entity;
+    public Calendar checkTime;
+    public ComplianceFailure[] failure;
 
-  public ManagedObjectReference getProfile() {
-    return this.profile;
-  }
+    public ManagedObjectReference getProfile() {
+        return this.profile;
+    }
 
-  public String getComplianceStatus() {
-    return this.complianceStatus;
-  }
+    public String getComplianceStatus() {
+        return this.complianceStatus;
+    }
 
-  public ManagedObjectReference getEntity() {
-    return this.entity;
-  }
+    public ManagedObjectReference getEntity() {
+        return this.entity;
+    }
 
-  public Calendar getCheckTime() {
-    return this.checkTime;
-  }
+    public Calendar getCheckTime() {
+        return this.checkTime;
+    }
 
-  public ComplianceFailure[] getFailure() {
-    return this.failure;
-  }
+    public ComplianceFailure[] getFailure() {
+        return this.failure;
+    }
 
-  public void setProfile(ManagedObjectReference profile) {
-    this.profile=profile;
-  }
+    public void setProfile(ManagedObjectReference profile) {
+        this.profile = profile;
+    }
 
-  public void setComplianceStatus(String complianceStatus) {
-    this.complianceStatus=complianceStatus;
-  }
+    public void setComplianceStatus(String complianceStatus) {
+        this.complianceStatus = complianceStatus;
+    }
 
-  public void setEntity(ManagedObjectReference entity) {
-    this.entity=entity;
-  }
+    public void setEntity(ManagedObjectReference entity) {
+        this.entity = entity;
+    }
 
-  public void setCheckTime(Calendar checkTime) {
-    this.checkTime=checkTime;
-  }
+    public void setCheckTime(Calendar checkTime) {
+        this.checkTime = checkTime;
+    }
 
-  public void setFailure(ComplianceFailure[] failure) {
-    this.failure=failure;
-  }
+    public void setFailure(ComplianceFailure[] failure) {
+        this.failure = failure;
+    }
 }

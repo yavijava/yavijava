@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class ClusterCreatedEvent extends ClusterEvent {
-  public FolderEventArgument parent;
+    public FolderEventArgument parent;
 
-  public FolderEventArgument getParent() {
-    return this.parent;
-  }
+    public FolderEventArgument getParent() {
+        return this.parent;
+    }
 
-  public void setParent(FolderEventArgument parent) {
-    this.parent=parent;
-  }
+    public void setParent(FolderEventArgument parent) {
+        this.parent = parent;
+    }
 }

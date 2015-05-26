@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class OvfConsumerUndeclaredSection extends OvfConsumerCallbackFault {
-  public String qualifiedSectionType;
+    public String qualifiedSectionType;
 
-  public String getQualifiedSectionType() {
-    return this.qualifiedSectionType;
-  }
+    public String getQualifiedSectionType() {
+        return this.qualifiedSectionType;
+    }
 
-  public void setQualifiedSectionType(String qualifiedSectionType) {
-    this.qualifiedSectionType=qualifiedSectionType;
-  }
+    public void setQualifiedSectionType(String qualifiedSectionType) {
+        this.qualifiedSectionType = qualifiedSectionType;
+    }
 }

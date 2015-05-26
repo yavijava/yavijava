@@ -30,37 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class CustomizationWinOptions extends CustomizationOptions {
-  public boolean changeSID;
-  public boolean deleteAccounts;
-  public CustomizationSysprepRebootOption reboot;
+    public boolean changeSID;
+    public boolean deleteAccounts;
+    public CustomizationSysprepRebootOption reboot;
 
-  public boolean isChangeSID() {
-    return this.changeSID;
-  }
+    public boolean isChangeSID() {
+        return this.changeSID;
+    }
 
-  public boolean isDeleteAccounts() {
-    return this.deleteAccounts;
-  }
+    public boolean isDeleteAccounts() {
+        return this.deleteAccounts;
+    }
 
-  public CustomizationSysprepRebootOption getReboot() {
-    return this.reboot;
-  }
+    public CustomizationSysprepRebootOption getReboot() {
+        return this.reboot;
+    }
 
-  public void setChangeSID(boolean changeSID) {
-    this.changeSID=changeSID;
-  }
+    public void setChangeSID(boolean changeSID) {
+        this.changeSID = changeSID;
+    }
 
-  public void setDeleteAccounts(boolean deleteAccounts) {
-    this.deleteAccounts=deleteAccounts;
-  }
+    public void setDeleteAccounts(boolean deleteAccounts) {
+        this.deleteAccounts = deleteAccounts;
+    }
 
-  public void setReboot(CustomizationSysprepRebootOption reboot) {
-    this.reboot=reboot;
-  }
+    public void setReboot(CustomizationSysprepRebootOption reboot) {
+        this.reboot = reboot;
+    }
 }

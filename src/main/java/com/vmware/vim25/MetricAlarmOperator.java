@@ -30,18 +30,18 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public enum MetricAlarmOperator {
-  isAbove ("isAbove"),
-  isBelow ("isBelow");
+    isAbove("isAbove"),
+    isBelow("isBelow");
 
-  @SuppressWarnings("unused")
-  private final String val;
-  private MetricAlarmOperator(String val)
-  {
-    this.val = val;
-  }
+    @SuppressWarnings("unused")
+    private final String val;
+
+    private MetricAlarmOperator(String val) {
+        this.val = val;
+    }
 }

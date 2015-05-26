@@ -30,55 +30,55 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostLowLevelProvisioningManagerDiskLayoutSpec extends DynamicData {
-  public String controllerType;
-  public int busNumber;
-  public int unitNumber;
-  public String srcFilename;
-  public String dstFilename;
+    public String controllerType;
+    public int busNumber;
+    public int unitNumber;
+    public String srcFilename;
+    public String dstFilename;
 
-  public String getControllerType() {
-    return this.controllerType;
-  }
+    public String getControllerType() {
+        return this.controllerType;
+    }
 
-  public int getBusNumber() {
-    return this.busNumber;
-  }
+    public int getBusNumber() {
+        return this.busNumber;
+    }
 
-  public int getUnitNumber() {
-    return this.unitNumber;
-  }
+    public int getUnitNumber() {
+        return this.unitNumber;
+    }
 
-  public String getSrcFilename() {
-    return this.srcFilename;
-  }
+    public String getSrcFilename() {
+        return this.srcFilename;
+    }
 
-  public String getDstFilename() {
-    return this.dstFilename;
-  }
+    public String getDstFilename() {
+        return this.dstFilename;
+    }
 
-  public void setControllerType(String controllerType) {
-    this.controllerType=controllerType;
-  }
+    public void setControllerType(String controllerType) {
+        this.controllerType = controllerType;
+    }
 
-  public void setBusNumber(int busNumber) {
-    this.busNumber=busNumber;
-  }
+    public void setBusNumber(int busNumber) {
+        this.busNumber = busNumber;
+    }
 
-  public void setUnitNumber(int unitNumber) {
-    this.unitNumber=unitNumber;
-  }
+    public void setUnitNumber(int unitNumber) {
+        this.unitNumber = unitNumber;
+    }
 
-  public void setSrcFilename(String srcFilename) {
-    this.srcFilename=srcFilename;
-  }
+    public void setSrcFilename(String srcFilename) {
+        this.srcFilename = srcFilename;
+    }
 
-  public void setDstFilename(String dstFilename) {
-    this.dstFilename=dstFilename;
-  }
+    public void setDstFilename(String dstFilename) {
+        this.dstFilename = dstFilename;
+    }
 }

@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class DvsSystemTrafficNetworkRuleQualifier extends DvsNetworkRuleQualifier {
-  public StringExpression typeOfSystemTraffic;
+    public StringExpression typeOfSystemTraffic;
 
-  public StringExpression getTypeOfSystemTraffic() {
-    return this.typeOfSystemTraffic;
-  }
+    public StringExpression getTypeOfSystemTraffic() {
+        return this.typeOfSystemTraffic;
+    }
 
-  public void setTypeOfSystemTraffic(StringExpression typeOfSystemTraffic) {
-    this.typeOfSystemTraffic=typeOfSystemTraffic;
-  }
+    public void setTypeOfSystemTraffic(StringExpression typeOfSystemTraffic) {
+        this.typeOfSystemTraffic = typeOfSystemTraffic;
+    }
 }

@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfPerfMetricSeries {
-  public PerfMetricSeries[] PerfMetricSeries;
+    public PerfMetricSeries[] PerfMetricSeries;
 
-  public PerfMetricSeries[] getPerfMetricSeries() {
-    return this.PerfMetricSeries;
-  }
+    public PerfMetricSeries[] getPerfMetricSeries() {
+        return this.PerfMetricSeries;
+    }
 
-  public PerfMetricSeries getPerfMetricSeries(int i) {
-    return this.PerfMetricSeries[i];
-  }
+    public PerfMetricSeries getPerfMetricSeries(int i) {
+        return this.PerfMetricSeries[i];
+    }
 
-  public void setPerfMetricSeries(PerfMetricSeries[] PerfMetricSeries) {
-    this.PerfMetricSeries=PerfMetricSeries;
-  }
+    public void setPerfMetricSeries(PerfMetricSeries[] PerfMetricSeries) {
+        this.PerfMetricSeries = PerfMetricSeries;
+    }
 }

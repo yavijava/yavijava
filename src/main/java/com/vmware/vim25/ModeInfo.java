@@ -30,64 +30,64 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class ModeInfo extends DynamicData {
-  public String browse;
-  public String read;
-  public String modify;
-  public String use;
-  public String admin;
-  public String full;
+    public String browse;
+    public String read;
+    public String modify;
+    public String use;
+    public String admin;
+    public String full;
 
-  public String getBrowse() {
-    return this.browse;
-  }
+    public String getBrowse() {
+        return this.browse;
+    }
 
-  public String getRead() {
-    return this.read;
-  }
+    public String getRead() {
+        return this.read;
+    }
 
-  public String getModify() {
-    return this.modify;
-  }
+    public String getModify() {
+        return this.modify;
+    }
 
-  public String getUse() {
-    return this.use;
-  }
+    public String getUse() {
+        return this.use;
+    }
 
-  public String getAdmin() {
-    return this.admin;
-  }
+    public String getAdmin() {
+        return this.admin;
+    }
 
-  public String getFull() {
-    return this.full;
-  }
+    public String getFull() {
+        return this.full;
+    }
 
-  public void setBrowse(String browse) {
-    this.browse=browse;
-  }
+    public void setBrowse(String browse) {
+        this.browse = browse;
+    }
 
-  public void setRead(String read) {
-    this.read=read;
-  }
+    public void setRead(String read) {
+        this.read = read;
+    }
 
-  public void setModify(String modify) {
-    this.modify=modify;
-  }
+    public void setModify(String modify) {
+        this.modify = modify;
+    }
 
-  public void setUse(String use) {
-    this.use=use;
-  }
+    public void setUse(String use) {
+        this.use = use;
+    }
 
-  public void setAdmin(String admin) {
-    this.admin=admin;
-  }
+    public void setAdmin(String admin) {
+        this.admin = admin;
+    }
 
-  public void setFull(String full) {
-    this.full=full;
-  }
+    public void setFull(String full) {
+        this.full = full;
+    }
 }

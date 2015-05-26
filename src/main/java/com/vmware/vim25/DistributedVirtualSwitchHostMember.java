@@ -30,64 +30,64 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class DistributedVirtualSwitchHostMember extends DynamicData {
-  public DistributedVirtualSwitchHostMemberRuntimeState runtimeState;
-  public DistributedVirtualSwitchHostMemberConfigInfo config;
-  public DistributedVirtualSwitchProductSpec productInfo;
-  public String[] uplinkPortKey;
-  public String status;
-  public String statusDetail;
+    public DistributedVirtualSwitchHostMemberRuntimeState runtimeState;
+    public DistributedVirtualSwitchHostMemberConfigInfo config;
+    public DistributedVirtualSwitchProductSpec productInfo;
+    public String[] uplinkPortKey;
+    public String status;
+    public String statusDetail;
 
-  public DistributedVirtualSwitchHostMemberRuntimeState getRuntimeState() {
-    return this.runtimeState;
-  }
+    public DistributedVirtualSwitchHostMemberRuntimeState getRuntimeState() {
+        return this.runtimeState;
+    }
 
-  public DistributedVirtualSwitchHostMemberConfigInfo getConfig() {
-    return this.config;
-  }
+    public DistributedVirtualSwitchHostMemberConfigInfo getConfig() {
+        return this.config;
+    }
 
-  public DistributedVirtualSwitchProductSpec getProductInfo() {
-    return this.productInfo;
-  }
+    public DistributedVirtualSwitchProductSpec getProductInfo() {
+        return this.productInfo;
+    }
 
-  public String[] getUplinkPortKey() {
-    return this.uplinkPortKey;
-  }
+    public String[] getUplinkPortKey() {
+        return this.uplinkPortKey;
+    }
 
-  public String getStatus() {
-    return this.status;
-  }
+    public String getStatus() {
+        return this.status;
+    }
 
-  public String getStatusDetail() {
-    return this.statusDetail;
-  }
+    public String getStatusDetail() {
+        return this.statusDetail;
+    }
 
-  public void setRuntimeState(DistributedVirtualSwitchHostMemberRuntimeState runtimeState) {
-    this.runtimeState=runtimeState;
-  }
+    public void setRuntimeState(DistributedVirtualSwitchHostMemberRuntimeState runtimeState) {
+        this.runtimeState = runtimeState;
+    }
 
-  public void setConfig(DistributedVirtualSwitchHostMemberConfigInfo config) {
-    this.config=config;
-  }
+    public void setConfig(DistributedVirtualSwitchHostMemberConfigInfo config) {
+        this.config = config;
+    }
 
-  public void setProductInfo(DistributedVirtualSwitchProductSpec productInfo) {
-    this.productInfo=productInfo;
-  }
+    public void setProductInfo(DistributedVirtualSwitchProductSpec productInfo) {
+        this.productInfo = productInfo;
+    }
 
-  public void setUplinkPortKey(String[] uplinkPortKey) {
-    this.uplinkPortKey=uplinkPortKey;
-  }
+    public void setUplinkPortKey(String[] uplinkPortKey) {
+        this.uplinkPortKey = uplinkPortKey;
+    }
 
-  public void setStatus(String status) {
-    this.status=status;
-  }
+    public void setStatus(String status) {
+        this.status = status;
+    }
 
-  public void setStatusDetail(String statusDetail) {
-    this.statusDetail=statusDetail;
-  }
+    public void setStatusDetail(String statusDetail) {
+        this.statusDetail = statusDetail;
+    }
 }

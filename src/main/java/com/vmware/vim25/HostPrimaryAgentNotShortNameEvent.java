@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostPrimaryAgentNotShortNameEvent extends HostDasEvent {
-  public String primaryAgent;
+    public String primaryAgent;
 
-  public String getPrimaryAgent() {
-    return this.primaryAgent;
-  }
+    public String getPrimaryAgent() {
+        return this.primaryAgent;
+    }
 
-  public void setPrimaryAgent(String primaryAgent) {
-    this.primaryAgent=primaryAgent;
-  }
+    public void setPrimaryAgent(String primaryAgent) {
+        this.primaryAgent = primaryAgent;
+    }
 }

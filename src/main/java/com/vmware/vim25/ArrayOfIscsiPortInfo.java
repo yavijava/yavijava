@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfIscsiPortInfo {
-  public IscsiPortInfo[] IscsiPortInfo;
+    public IscsiPortInfo[] IscsiPortInfo;
 
-  public IscsiPortInfo[] getIscsiPortInfo() {
-    return this.IscsiPortInfo;
-  }
+    public IscsiPortInfo[] getIscsiPortInfo() {
+        return this.IscsiPortInfo;
+    }
 
-  public IscsiPortInfo getIscsiPortInfo(int i) {
-    return this.IscsiPortInfo[i];
-  }
+    public IscsiPortInfo getIscsiPortInfo(int i) {
+        return this.IscsiPortInfo[i];
+    }
 
-  public void setIscsiPortInfo(IscsiPortInfo[] IscsiPortInfo) {
-    this.IscsiPortInfo=IscsiPortInfo;
-  }
+    public void setIscsiPortInfo(IscsiPortInfo[] IscsiPortInfo) {
+        this.IscsiPortInfo = IscsiPortInfo;
+    }
 }

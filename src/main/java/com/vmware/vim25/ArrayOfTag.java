@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfTag {
-  public Tag[] Tag;
+    public Tag[] Tag;
 
-  public Tag[] getTag() {
-    return this.Tag;
-  }
+    public Tag[] getTag() {
+        return this.Tag;
+    }
 
-  public Tag getTag(int i) {
-    return this.Tag[i];
-  }
+    public Tag getTag(int i) {
+        return this.Tag[i];
+    }
 
-  public void setTag(Tag[] Tag) {
-    this.Tag=Tag;
-  }
+    public void setTag(Tag[] Tag) {
+        this.Tag = Tag;
+    }
 }

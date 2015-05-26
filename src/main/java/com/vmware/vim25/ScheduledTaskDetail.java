@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class ScheduledTaskDetail extends TypeDescription {
-  public String frequency;
+    public String frequency;
 
-  public String getFrequency() {
-    return this.frequency;
-  }
+    public String getFrequency() {
+        return this.frequency;
+    }
 
-  public void setFrequency(String frequency) {
-    this.frequency=frequency;
-  }
+    public void setFrequency(String frequency) {
+        this.frequency = frequency;
+    }
 }

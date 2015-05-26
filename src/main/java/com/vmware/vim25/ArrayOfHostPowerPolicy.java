@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfHostPowerPolicy {
-  public HostPowerPolicy[] HostPowerPolicy;
+    public HostPowerPolicy[] HostPowerPolicy;
 
-  public HostPowerPolicy[] getHostPowerPolicy() {
-    return this.HostPowerPolicy;
-  }
+    public HostPowerPolicy[] getHostPowerPolicy() {
+        return this.HostPowerPolicy;
+    }
 
-  public HostPowerPolicy getHostPowerPolicy(int i) {
-    return this.HostPowerPolicy[i];
-  }
+    public HostPowerPolicy getHostPowerPolicy(int i) {
+        return this.HostPowerPolicy[i];
+    }
 
-  public void setHostPowerPolicy(HostPowerPolicy[] HostPowerPolicy) {
-    this.HostPowerPolicy=HostPowerPolicy;
-  }
+    public void setHostPowerPolicy(HostPowerPolicy[] HostPowerPolicy) {
+        this.HostPowerPolicy = HostPowerPolicy;
+    }
 }

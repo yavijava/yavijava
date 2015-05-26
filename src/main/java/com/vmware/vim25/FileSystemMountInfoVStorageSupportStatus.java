@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public enum FileSystemMountInfoVStorageSupportStatus {
-  vStorageSupported ("vStorageSupported"),
-  vStorageUnsupported ("vStorageUnsupported"),
-  vStorageUnknown ("vStorageUnknown");
+    vStorageSupported("vStorageSupported"),
+    vStorageUnsupported("vStorageUnsupported"),
+    vStorageUnknown("vStorageUnknown");
 
-  @SuppressWarnings("unused")
-  private final String val;
-  private FileSystemMountInfoVStorageSupportStatus(String val)
-  {
-    this.val = val;
-  }
+    @SuppressWarnings("unused")
+    private final String val;
+
+    private FileSystemMountInfoVStorageSupportStatus(String val) {
+        this.val = val;
+    }
 }

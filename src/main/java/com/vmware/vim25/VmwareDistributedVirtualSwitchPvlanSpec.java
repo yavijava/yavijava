@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VmwareDistributedVirtualSwitchPvlanSpec extends VmwareDistributedVirtualSwitchVlanSpec {
-  public int pvlanId;
+    public int pvlanId;
 
-  public int getPvlanId() {
-    return this.pvlanId;
-  }
+    public int getPvlanId() {
+        return this.pvlanId;
+    }
 
-  public void setPvlanId(int pvlanId) {
-    this.pvlanId=pvlanId;
-  }
+    public void setPvlanId(int pvlanId) {
+        this.pvlanId = pvlanId;
+    }
 }

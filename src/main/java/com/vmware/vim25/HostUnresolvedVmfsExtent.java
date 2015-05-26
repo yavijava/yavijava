@@ -30,82 +30,82 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostUnresolvedVmfsExtent extends DynamicData {
-  public HostScsiDiskPartition device;
-  public String devicePath;
-  public String vmfsUuid;
-  public boolean isHeadExtent;
-  public int ordinal;
-  public int startBlock;
-  public int endBlock;
-  public String reason;
+    public HostScsiDiskPartition device;
+    public String devicePath;
+    public String vmfsUuid;
+    public boolean isHeadExtent;
+    public int ordinal;
+    public int startBlock;
+    public int endBlock;
+    public String reason;
 
-  public HostScsiDiskPartition getDevice() {
-    return this.device;
-  }
+    public HostScsiDiskPartition getDevice() {
+        return this.device;
+    }
 
-  public String getDevicePath() {
-    return this.devicePath;
-  }
+    public String getDevicePath() {
+        return this.devicePath;
+    }
 
-  public String getVmfsUuid() {
-    return this.vmfsUuid;
-  }
+    public String getVmfsUuid() {
+        return this.vmfsUuid;
+    }
 
-  public boolean isIsHeadExtent() {
-    return this.isHeadExtent;
-  }
+    public boolean isIsHeadExtent() {
+        return this.isHeadExtent;
+    }
 
-  public int getOrdinal() {
-    return this.ordinal;
-  }
+    public int getOrdinal() {
+        return this.ordinal;
+    }
 
-  public int getStartBlock() {
-    return this.startBlock;
-  }
+    public int getStartBlock() {
+        return this.startBlock;
+    }
 
-  public int getEndBlock() {
-    return this.endBlock;
-  }
+    public int getEndBlock() {
+        return this.endBlock;
+    }
 
-  public String getReason() {
-    return this.reason;
-  }
+    public String getReason() {
+        return this.reason;
+    }
 
-  public void setDevice(HostScsiDiskPartition device) {
-    this.device=device;
-  }
+    public void setDevice(HostScsiDiskPartition device) {
+        this.device = device;
+    }
 
-  public void setDevicePath(String devicePath) {
-    this.devicePath=devicePath;
-  }
+    public void setDevicePath(String devicePath) {
+        this.devicePath = devicePath;
+    }
 
-  public void setVmfsUuid(String vmfsUuid) {
-    this.vmfsUuid=vmfsUuid;
-  }
+    public void setVmfsUuid(String vmfsUuid) {
+        this.vmfsUuid = vmfsUuid;
+    }
 
-  public void setIsHeadExtent(boolean isHeadExtent) {
-    this.isHeadExtent=isHeadExtent;
-  }
+    public void setIsHeadExtent(boolean isHeadExtent) {
+        this.isHeadExtent = isHeadExtent;
+    }
 
-  public void setOrdinal(int ordinal) {
-    this.ordinal=ordinal;
-  }
+    public void setOrdinal(int ordinal) {
+        this.ordinal = ordinal;
+    }
 
-  public void setStartBlock(int startBlock) {
-    this.startBlock=startBlock;
-  }
+    public void setStartBlock(int startBlock) {
+        this.startBlock = startBlock;
+    }
 
-  public void setEndBlock(int endBlock) {
-    this.endBlock=endBlock;
-  }
+    public void setEndBlock(int endBlock) {
+        this.endBlock = endBlock;
+    }
 
-  public void setReason(String reason) {
-    this.reason=reason;
-  }
+    public void setReason(String reason) {
+        this.reason = reason;
+    }
 }

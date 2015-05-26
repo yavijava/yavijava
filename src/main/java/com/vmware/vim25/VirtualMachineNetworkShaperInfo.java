@@ -30,46 +30,46 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VirtualMachineNetworkShaperInfo extends DynamicData {
-  public Boolean enabled;
-  public Long peakBps;
-  public Long averageBps;
-  public Long burstSize;
+    public Boolean enabled;
+    public Long peakBps;
+    public Long averageBps;
+    public Long burstSize;
 
-  public Boolean getEnabled() {
-    return this.enabled;
-  }
+    public Boolean getEnabled() {
+        return this.enabled;
+    }
 
-  public Long getPeakBps() {
-    return this.peakBps;
-  }
+    public Long getPeakBps() {
+        return this.peakBps;
+    }
 
-  public Long getAverageBps() {
-    return this.averageBps;
-  }
+    public Long getAverageBps() {
+        return this.averageBps;
+    }
 
-  public Long getBurstSize() {
-    return this.burstSize;
-  }
+    public Long getBurstSize() {
+        return this.burstSize;
+    }
 
-  public void setEnabled(Boolean enabled) {
-    this.enabled=enabled;
-  }
+    public void setEnabled(Boolean enabled) {
+        this.enabled = enabled;
+    }
 
-  public void setPeakBps(Long peakBps) {
-    this.peakBps=peakBps;
-  }
+    public void setPeakBps(Long peakBps) {
+        this.peakBps = peakBps;
+    }
 
-  public void setAverageBps(Long averageBps) {
-    this.averageBps=averageBps;
-  }
+    public void setAverageBps(Long averageBps) {
+        this.averageBps = averageBps;
+    }
 
-  public void setBurstSize(Long burstSize) {
-    this.burstSize=burstSize;
-  }
+    public void setBurstSize(Long burstSize) {
+        this.burstSize = burstSize;
+    }
 }

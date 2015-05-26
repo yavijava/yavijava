@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfHostHostBusAdapter {
-  public HostHostBusAdapter[] HostHostBusAdapter;
+    public HostHostBusAdapter[] HostHostBusAdapter;
 
-  public HostHostBusAdapter[] getHostHostBusAdapter() {
-    return this.HostHostBusAdapter;
-  }
+    public HostHostBusAdapter[] getHostHostBusAdapter() {
+        return this.HostHostBusAdapter;
+    }
 
-  public HostHostBusAdapter getHostHostBusAdapter(int i) {
-    return this.HostHostBusAdapter[i];
-  }
+    public HostHostBusAdapter getHostHostBusAdapter(int i) {
+        return this.HostHostBusAdapter[i];
+    }
 
-  public void setHostHostBusAdapter(HostHostBusAdapter[] HostHostBusAdapter) {
-    this.HostHostBusAdapter=HostHostBusAdapter;
-  }
+    public void setHostHostBusAdapter(HostHostBusAdapter[] HostHostBusAdapter) {
+        this.HostHostBusAdapter = HostHostBusAdapter;
+    }
 }

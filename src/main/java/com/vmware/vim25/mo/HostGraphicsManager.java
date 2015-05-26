@@ -29,11 +29,11 @@ POSSIBILITY OF SUCH DAMAGE.
 
 package com.vmware.vim25.mo;
 
-import java.rmi.RemoteException;
-
 import com.vmware.vim25.HostGraphicsInfo;
 import com.vmware.vim25.ManagedObjectReference;
 import com.vmware.vim25.RuntimeFault;
+
+import java.rmi.RemoteException;
 
 /**
  * The managed object class corresponding to the one defined in VI SDK API reference.
@@ -63,8 +63,8 @@ public class HostGraphicsManager extends ExtensibleManagedObject {
      * Array of shared passthru GPU types. These GPU types may be enabled when specific host hardware is present.
      * Example values are "grid_k120q" and "grid_k240q".
      *
-     * @since 6.0
      * @return String[]
+     * @since 6.0
      */
     public String[] getSharedPassthruGpuTypes() {
         return (String[]) getCurrentProperty("sharedPassthruGpuTypes");

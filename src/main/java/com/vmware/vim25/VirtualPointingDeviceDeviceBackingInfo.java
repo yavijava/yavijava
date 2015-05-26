@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VirtualPointingDeviceDeviceBackingInfo extends VirtualDeviceDeviceBackingInfo {
-  public String hostPointingDevice;
+    public String hostPointingDevice;
 
-  public String getHostPointingDevice() {
-    return this.hostPointingDevice;
-  }
+    public String getHostPointingDevice() {
+        return this.hostPointingDevice;
+    }
 
-  public void setHostPointingDevice(String hostPointingDevice) {
-    this.hostPointingDevice=hostPointingDevice;
-  }
+    public void setHostPointingDevice(String hostPointingDevice) {
+        this.hostPointingDevice = hostPointingDevice;
+    }
 }

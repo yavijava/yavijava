@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public enum VmwareDistributedVirtualSwitchPvlanPortType {
-  promiscuous ("promiscuous"),
-  isolated ("isolated"),
-  community ("community");
+    promiscuous("promiscuous"),
+    isolated("isolated"),
+    community("community");
 
-  @SuppressWarnings("unused")
-  private final String val;
-  private VmwareDistributedVirtualSwitchPvlanPortType(String val)
-  {
-    this.val = val;
-  }
+    @SuppressWarnings("unused")
+    private final String val;
+
+    private VmwareDistributedVirtualSwitchPvlanPortType(String val) {
+        this.val = val;
+    }
 }

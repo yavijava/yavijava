@@ -30,37 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class IORMNotSupportedHostOnDatastore extends VimFault {
-  public ManagedObjectReference datastore;
-  public String datastoreName;
-  public ManagedObjectReference[] host;
+    public ManagedObjectReference datastore;
+    public String datastoreName;
+    public ManagedObjectReference[] host;
 
-  public ManagedObjectReference getDatastore() {
-    return this.datastore;
-  }
+    public ManagedObjectReference getDatastore() {
+        return this.datastore;
+    }
 
-  public String getDatastoreName() {
-    return this.datastoreName;
-  }
+    public String getDatastoreName() {
+        return this.datastoreName;
+    }
 
-  public ManagedObjectReference[] getHost() {
-    return this.host;
-  }
+    public ManagedObjectReference[] getHost() {
+        return this.host;
+    }
 
-  public void setDatastore(ManagedObjectReference datastore) {
-    this.datastore=datastore;
-  }
+    public void setDatastore(ManagedObjectReference datastore) {
+        this.datastore = datastore;
+    }
 
-  public void setDatastoreName(String datastoreName) {
-    this.datastoreName=datastoreName;
-  }
+    public void setDatastoreName(String datastoreName) {
+        this.datastoreName = datastoreName;
+    }
 
-  public void setHost(ManagedObjectReference[] host) {
-    this.host=host;
-  }
+    public void setHost(ManagedObjectReference[] host) {
+        this.host = host;
+    }
 }

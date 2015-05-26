@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class PosixUserSearchResult extends UserSearchResult {
-  public int id;
-  public Boolean shellAccess;
+    public int id;
+    public Boolean shellAccess;
 
-  public int getId() {
-    return this.id;
-  }
+    public int getId() {
+        return this.id;
+    }
 
-  public Boolean getShellAccess() {
-    return this.shellAccess;
-  }
+    public Boolean getShellAccess() {
+        return this.shellAccess;
+    }
 
-  public void setId(int id) {
-    this.id=id;
-  }
+    public void setId(int id) {
+        this.id = id;
+    }
 
-  public void setShellAccess(Boolean shellAccess) {
-    this.shellAccess=shellAccess;
-  }
+    public void setShellAccess(Boolean shellAccess) {
+        this.shellAccess = shellAccess;
+    }
 }

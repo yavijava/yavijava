@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public enum ProfileNumericComparator {
-  lessThan ("lessThan"),
-  lessThanEqual ("lessThanEqual"),
-  equal ("equal"),
-  notEqual ("notEqual"),
-  greaterThanEqual ("greaterThanEqual"),
-  greaterThan ("greaterThan");
+    lessThan("lessThan"),
+    lessThanEqual("lessThanEqual"),
+    equal("equal"),
+    notEqual("notEqual"),
+    greaterThanEqual("greaterThanEqual"),
+    greaterThan("greaterThan");
 
-  @SuppressWarnings("unused")
-  private final String val;
-  private ProfileNumericComparator(String val)
-  {
-    this.val = val;
-  }
+    @SuppressWarnings("unused")
+    private final String val;
+
+    private ProfileNumericComparator(String val) {
+        this.val = val;
+    }
 }

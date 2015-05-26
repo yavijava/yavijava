@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class PhysicalNicHint extends DynamicData {
-  public Integer vlanId;
+    public Integer vlanId;
 
-  public Integer getVlanId() {
-    return this.vlanId;
-  }
+    public Integer getVlanId() {
+        return this.vlanId;
+    }
 
-  public void setVlanId(Integer vlanId) {
-    this.vlanId=vlanId;
-  }
+    public void setVlanId(Integer vlanId) {
+        this.vlanId = vlanId;
+    }
 }

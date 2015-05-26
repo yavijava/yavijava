@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public enum CustomizationSysprepRebootOption {
-  reboot ("reboot"),
-  noreboot ("noreboot"),
-  shutdown ("shutdown");
+    reboot("reboot"),
+    noreboot("noreboot"),
+    shutdown("shutdown");
 
-  @SuppressWarnings("unused")
-  private final String val;
-  private CustomizationSysprepRebootOption(String val)
-  {
-    this.val = val;
-  }
+    @SuppressWarnings("unused")
+    private final String val;
+
+    private CustomizationSysprepRebootOption(String val) {
+        this.val = val;
+    }
 }

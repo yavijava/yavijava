@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class IscsiFaultPnicInUse extends IscsiFault {
-  public String pnicDevice;
+    public String pnicDevice;
 
-  public String getPnicDevice() {
-    return this.pnicDevice;
-  }
+    public String getPnicDevice() {
+        return this.pnicDevice;
+    }
 
-  public void setPnicDevice(String pnicDevice) {
-    this.pnicDevice=pnicDevice;
-  }
+    public void setPnicDevice(String pnicDevice) {
+        this.pnicDevice = pnicDevice;
+    }
 }

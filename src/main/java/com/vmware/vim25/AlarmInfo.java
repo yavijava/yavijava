@@ -28,67 +28,68 @@ POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
 
 package com.vmware.vim25;
+
 import java.util.Calendar;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class AlarmInfo extends AlarmSpec {
-  public String key;
-  public ManagedObjectReference alarm;
-  public ManagedObjectReference entity;
-  public Calendar lastModifiedTime;
-  public String lastModifiedUser;
-  public int creationEventId;
+    public String key;
+    public ManagedObjectReference alarm;
+    public ManagedObjectReference entity;
+    public Calendar lastModifiedTime;
+    public String lastModifiedUser;
+    public int creationEventId;
 
-  public String getKey() {
-    return this.key;
-  }
+    public String getKey() {
+        return this.key;
+    }
 
-  public ManagedObjectReference getAlarm() {
-    return this.alarm;
-  }
+    public ManagedObjectReference getAlarm() {
+        return this.alarm;
+    }
 
-  public ManagedObjectReference getEntity() {
-    return this.entity;
-  }
+    public ManagedObjectReference getEntity() {
+        return this.entity;
+    }
 
-  public Calendar getLastModifiedTime() {
-    return this.lastModifiedTime;
-  }
+    public Calendar getLastModifiedTime() {
+        return this.lastModifiedTime;
+    }
 
-  public String getLastModifiedUser() {
-    return this.lastModifiedUser;
-  }
+    public String getLastModifiedUser() {
+        return this.lastModifiedUser;
+    }
 
-  public int getCreationEventId() {
-    return this.creationEventId;
-  }
+    public int getCreationEventId() {
+        return this.creationEventId;
+    }
 
-  public void setKey(String key) {
-    this.key=key;
-  }
+    public void setKey(String key) {
+        this.key = key;
+    }
 
-  public void setAlarm(ManagedObjectReference alarm) {
-    this.alarm=alarm;
-  }
+    public void setAlarm(ManagedObjectReference alarm) {
+        this.alarm = alarm;
+    }
 
-  public void setEntity(ManagedObjectReference entity) {
-    this.entity=entity;
-  }
+    public void setEntity(ManagedObjectReference entity) {
+        this.entity = entity;
+    }
 
-  public void setLastModifiedTime(Calendar lastModifiedTime) {
-    this.lastModifiedTime=lastModifiedTime;
-  }
+    public void setLastModifiedTime(Calendar lastModifiedTime) {
+        this.lastModifiedTime = lastModifiedTime;
+    }
 
-  public void setLastModifiedUser(String lastModifiedUser) {
-    this.lastModifiedUser=lastModifiedUser;
-  }
+    public void setLastModifiedUser(String lastModifiedUser) {
+        this.lastModifiedUser = lastModifiedUser;
+    }
 
-  public void setCreationEventId(int creationEventId) {
-    this.creationEventId=creationEventId;
-  }
+    public void setCreationEventId(int creationEventId) {
+        this.creationEventId = creationEventId;
+    }
 }

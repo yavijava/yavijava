@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class ExtensionManagerIpAllocationUsage extends DynamicData {
-  public String extensionKey;
-  public int numAddresses;
+    public String extensionKey;
+    public int numAddresses;
 
-  public String getExtensionKey() {
-    return this.extensionKey;
-  }
+    public String getExtensionKey() {
+        return this.extensionKey;
+    }
 
-  public int getNumAddresses() {
-    return this.numAddresses;
-  }
+    public int getNumAddresses() {
+        return this.numAddresses;
+    }
 
-  public void setExtensionKey(String extensionKey) {
-    this.extensionKey=extensionKey;
-  }
+    public void setExtensionKey(String extensionKey) {
+        this.extensionKey = extensionKey;
+    }
 
-  public void setNumAddresses(int numAddresses) {
-    this.numAddresses=numAddresses;
-  }
+    public void setNumAddresses(int numAddresses) {
+        this.numAddresses = numAddresses;
+    }
 }

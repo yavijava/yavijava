@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class LocalLicenseSource extends LicenseSource {
-  public String licenseKeys;
+    public String licenseKeys;
 
-  public String getLicenseKeys() {
-    return this.licenseKeys;
-  }
+    public String getLicenseKeys() {
+        return this.licenseKeys;
+    }
 
-  public void setLicenseKeys(String licenseKeys) {
-    this.licenseKeys=licenseKeys;
-  }
+    public void setLicenseKeys(String licenseKeys) {
+        this.licenseKeys = licenseKeys;
+    }
 }

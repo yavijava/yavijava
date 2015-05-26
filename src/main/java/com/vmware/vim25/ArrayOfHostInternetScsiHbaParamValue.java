@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfHostInternetScsiHbaParamValue {
-  public HostInternetScsiHbaParamValue[] HostInternetScsiHbaParamValue;
+    public HostInternetScsiHbaParamValue[] HostInternetScsiHbaParamValue;
 
-  public HostInternetScsiHbaParamValue[] getHostInternetScsiHbaParamValue() {
-    return this.HostInternetScsiHbaParamValue;
-  }
+    public HostInternetScsiHbaParamValue[] getHostInternetScsiHbaParamValue() {
+        return this.HostInternetScsiHbaParamValue;
+    }
 
-  public HostInternetScsiHbaParamValue getHostInternetScsiHbaParamValue(int i) {
-    return this.HostInternetScsiHbaParamValue[i];
-  }
+    public HostInternetScsiHbaParamValue getHostInternetScsiHbaParamValue(int i) {
+        return this.HostInternetScsiHbaParamValue[i];
+    }
 
-  public void setHostInternetScsiHbaParamValue(HostInternetScsiHbaParamValue[] HostInternetScsiHbaParamValue) {
-    this.HostInternetScsiHbaParamValue=HostInternetScsiHbaParamValue;
-  }
+    public void setHostInternetScsiHbaParamValue(HostInternetScsiHbaParamValue[] HostInternetScsiHbaParamValue) {
+        this.HostInternetScsiHbaParamValue = HostInternetScsiHbaParamValue;
+    }
 }

@@ -30,73 +30,73 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class EVCMode extends ElementDescription {
-  public HostCpuIdInfo[] guaranteedCPUFeatures;
-  public HostFeatureCapability[] featureCapability;
-  public HostFeatureMask[] featureMask;
-  public VirtualMachineFeatureRequirement[] featureRequirement;
-  public String vendor;
-  public String[] track;
-  public int vendorTier;
+    public HostCpuIdInfo[] guaranteedCPUFeatures;
+    public HostFeatureCapability[] featureCapability;
+    public HostFeatureMask[] featureMask;
+    public VirtualMachineFeatureRequirement[] featureRequirement;
+    public String vendor;
+    public String[] track;
+    public int vendorTier;
 
-  public HostCpuIdInfo[] getGuaranteedCPUFeatures() {
-    return this.guaranteedCPUFeatures;
-  }
+    public HostCpuIdInfo[] getGuaranteedCPUFeatures() {
+        return this.guaranteedCPUFeatures;
+    }
 
-  public HostFeatureCapability[] getFeatureCapability() {
-    return this.featureCapability;
-  }
+    public HostFeatureCapability[] getFeatureCapability() {
+        return this.featureCapability;
+    }
 
-  public HostFeatureMask[] getFeatureMask() {
-    return this.featureMask;
-  }
+    public HostFeatureMask[] getFeatureMask() {
+        return this.featureMask;
+    }
 
-  public VirtualMachineFeatureRequirement[] getFeatureRequirement() {
-    return this.featureRequirement;
-  }
+    public VirtualMachineFeatureRequirement[] getFeatureRequirement() {
+        return this.featureRequirement;
+    }
 
-  public String getVendor() {
-    return this.vendor;
-  }
+    public String getVendor() {
+        return this.vendor;
+    }
 
-  public String[] getTrack() {
-    return this.track;
-  }
+    public String[] getTrack() {
+        return this.track;
+    }
 
-  public int getVendorTier() {
-    return this.vendorTier;
-  }
+    public int getVendorTier() {
+        return this.vendorTier;
+    }
 
-  public void setGuaranteedCPUFeatures(HostCpuIdInfo[] guaranteedCPUFeatures) {
-    this.guaranteedCPUFeatures=guaranteedCPUFeatures;
-  }
+    public void setGuaranteedCPUFeatures(HostCpuIdInfo[] guaranteedCPUFeatures) {
+        this.guaranteedCPUFeatures = guaranteedCPUFeatures;
+    }
 
-  public void setFeatureCapability(HostFeatureCapability[] featureCapability) {
-    this.featureCapability=featureCapability;
-  }
+    public void setFeatureCapability(HostFeatureCapability[] featureCapability) {
+        this.featureCapability = featureCapability;
+    }
 
-  public void setFeatureMask(HostFeatureMask[] featureMask) {
-    this.featureMask=featureMask;
-  }
+    public void setFeatureMask(HostFeatureMask[] featureMask) {
+        this.featureMask = featureMask;
+    }
 
-  public void setFeatureRequirement(VirtualMachineFeatureRequirement[] featureRequirement) {
-    this.featureRequirement=featureRequirement;
-  }
+    public void setFeatureRequirement(VirtualMachineFeatureRequirement[] featureRequirement) {
+        this.featureRequirement = featureRequirement;
+    }
 
-  public void setVendor(String vendor) {
-    this.vendor=vendor;
-  }
+    public void setVendor(String vendor) {
+        this.vendor = vendor;
+    }
 
-  public void setTrack(String[] track) {
-    this.track=track;
-  }
+    public void setTrack(String[] track) {
+        this.track = track;
+    }
 
-  public void setVendorTier(int vendorTier) {
-    this.vendorTier=vendorTier;
-  }
+    public void setVendorTier(int vendorTier) {
+        this.vendorTier = vendorTier;
+    }
 }

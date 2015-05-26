@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class LatencySensitivity extends DynamicData {
-  public LatencySensitivitySensitivityLevel level;
-  public Integer sensitivity;
+    public LatencySensitivitySensitivityLevel level;
+    public Integer sensitivity;
 
-  public LatencySensitivitySensitivityLevel getLevel() {
-    return this.level;
-  }
+    public LatencySensitivitySensitivityLevel getLevel() {
+        return this.level;
+    }
 
-  public Integer getSensitivity() {
-    return this.sensitivity;
-  }
+    public Integer getSensitivity() {
+        return this.sensitivity;
+    }
 
-  public void setLevel(LatencySensitivitySensitivityLevel level) {
-    this.level=level;
-  }
+    public void setLevel(LatencySensitivitySensitivityLevel level) {
+        this.level = level;
+    }
 
-  public void setSensitivity(Integer sensitivity) {
-    this.sensitivity=sensitivity;
-  }
+    public void setSensitivity(Integer sensitivity) {
+        this.sensitivity = sensitivity;
+    }
 }

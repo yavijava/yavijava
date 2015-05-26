@@ -30,29 +30,29 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 
 public class DynamicData {
-  public String dynamicType;
-  public DynamicProperty[] dynamicProperty;
+    public String dynamicType;
+    public DynamicProperty[] dynamicProperty;
 
-  public String getDynamicType() {
-    return this.dynamicType;
-  }
+    public String getDynamicType() {
+        return this.dynamicType;
+    }
 
-  public DynamicProperty[] getDynamicProperty() {
-    return this.dynamicProperty;
-  }
+    public DynamicProperty[] getDynamicProperty() {
+        return this.dynamicProperty;
+    }
 
-  public void setDynamicType(String dynamicType) {
-    this.dynamicType=dynamicType;
-  }
+    public void setDynamicType(String dynamicType) {
+        this.dynamicType = dynamicType;
+    }
 
-  public void setDynamicProperty(DynamicProperty[] dynamicProperty) {
-    this.dynamicProperty=dynamicProperty;
-  }
+    public void setDynamicProperty(DynamicProperty[] dynamicProperty) {
+        this.dynamicProperty = dynamicProperty;
+    }
 }

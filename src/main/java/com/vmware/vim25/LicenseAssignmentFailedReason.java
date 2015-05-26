@@ -30,20 +30,20 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public enum LicenseAssignmentFailedReason {
-  keyEntityMismatch ("keyEntityMismatch"),
-  downgradeDisallowed ("downgradeDisallowed"),
-  inventoryNotManageableByVirtualCenter ("inventoryNotManageableByVirtualCenter"),
-  hostsUnmanageableByVirtualCenterWithoutLicenseServer ("hostsUnmanageableByVirtualCenterWithoutLicenseServer");
+    keyEntityMismatch("keyEntityMismatch"),
+    downgradeDisallowed("downgradeDisallowed"),
+    inventoryNotManageableByVirtualCenter("inventoryNotManageableByVirtualCenter"),
+    hostsUnmanageableByVirtualCenterWithoutLicenseServer("hostsUnmanageableByVirtualCenterWithoutLicenseServer");
 
-  @SuppressWarnings("unused")
-  private final String val;
-  private LicenseAssignmentFailedReason(String val)
-  {
-    this.val = val;
-  }
+    @SuppressWarnings("unused")
+    private final String val;
+
+    private LicenseAssignmentFailedReason(String val) {
+        this.val = val;
+    }
 }

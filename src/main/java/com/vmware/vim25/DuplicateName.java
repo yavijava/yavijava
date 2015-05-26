@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class DuplicateName extends VimFault {
-  public String name;
-  public ManagedObjectReference object;
+    public String name;
+    public ManagedObjectReference object;
 
-  public String getName() {
-    return this.name;
-  }
+    public String getName() {
+        return this.name;
+    }
 
-  public ManagedObjectReference getObject() {
-    return this.object;
-  }
+    public ManagedObjectReference getObject() {
+        return this.object;
+    }
 
-  public void setName(String name) {
-    this.name=name;
-  }
+    public void setName(String name) {
+        this.name = name;
+    }
 
-  public void setObject(ManagedObjectReference object) {
-    this.object=object;
-  }
+    public void setObject(ManagedObjectReference object) {
+        this.object = object;
+    }
 }

@@ -30,37 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class IntOption extends OptionType {
-  public int min;
-  public int max;
-  public int defaultValue;
+    public int min;
+    public int max;
+    public int defaultValue;
 
-  public int getMin() {
-    return this.min;
-  }
+    public int getMin() {
+        return this.min;
+    }
 
-  public int getMax() {
-    return this.max;
-  }
+    public int getMax() {
+        return this.max;
+    }
 
-  public int getDefaultValue() {
-    return this.defaultValue;
-  }
+    public int getDefaultValue() {
+        return this.defaultValue;
+    }
 
-  public void setMin(int min) {
-    this.min=min;
-  }
+    public void setMin(int min) {
+        this.min = min;
+    }
 
-  public void setMax(int max) {
-    this.max=max;
-  }
+    public void setMax(int max) {
+        this.max = max;
+    }
 
-  public void setDefaultValue(int defaultValue) {
-    this.defaultValue=defaultValue;
-  }
+    public void setDefaultValue(int defaultValue) {
+        this.defaultValue = defaultValue;
+    }
 }

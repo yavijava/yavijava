@@ -30,26 +30,26 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public enum OvfCreateImportSpecParamsDiskProvisioningType {
-  monolithicSparse ("monolithicSparse"),
-  monolithicFlat ("monolithicFlat"),
-  twoGbMaxExtentSparse ("twoGbMaxExtentSparse"),
-  twoGbMaxExtentFlat ("twoGbMaxExtentFlat"),
-  thin ("thin"),
-  thick ("thick"),
-  seSparse ("seSparse"),
-  eagerZeroedThick ("eagerZeroedThick"),
-  sparse ("sparse"),
-  flat ("flat");
+    monolithicSparse("monolithicSparse"),
+    monolithicFlat("monolithicFlat"),
+    twoGbMaxExtentSparse("twoGbMaxExtentSparse"),
+    twoGbMaxExtentFlat("twoGbMaxExtentFlat"),
+    thin("thin"),
+    thick("thick"),
+    seSparse("seSparse"),
+    eagerZeroedThick("eagerZeroedThick"),
+    sparse("sparse"),
+    flat("flat");
 
-  @SuppressWarnings("unused")
-  private final String val;
-  private OvfCreateImportSpecParamsDiskProvisioningType(String val)
-  {
-    this.val = val;
-  }
+    @SuppressWarnings("unused")
+    private final String val;
+
+    private OvfCreateImportSpecParamsDiskProvisioningType(String val) {
+        this.val = val;
+    }
 }

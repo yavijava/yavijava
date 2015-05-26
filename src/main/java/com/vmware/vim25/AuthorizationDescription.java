@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class AuthorizationDescription extends DynamicData {
-  public ElementDescription[] privilege;
-  public ElementDescription[] privilegeGroup;
+    public ElementDescription[] privilege;
+    public ElementDescription[] privilegeGroup;
 
-  public ElementDescription[] getPrivilege() {
-    return this.privilege;
-  }
+    public ElementDescription[] getPrivilege() {
+        return this.privilege;
+    }
 
-  public ElementDescription[] getPrivilegeGroup() {
-    return this.privilegeGroup;
-  }
+    public ElementDescription[] getPrivilegeGroup() {
+        return this.privilegeGroup;
+    }
 
-  public void setPrivilege(ElementDescription[] privilege) {
-    this.privilege=privilege;
-  }
+    public void setPrivilege(ElementDescription[] privilege) {
+        this.privilege = privilege;
+    }
 
-  public void setPrivilegeGroup(ElementDescription[] privilegeGroup) {
-    this.privilegeGroup=privilegeGroup;
-  }
+    public void setPrivilegeGroup(ElementDescription[] privilegeGroup) {
+        this.privilegeGroup = privilegeGroup;
+    }
 }

@@ -30,91 +30,91 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class ComputeResourceSummary extends DynamicData {
-  public int totalCpu;
-  public long totalMemory;
-  public short numCpuCores;
-  public short numCpuThreads;
-  public int effectiveCpu;
-  public long effectiveMemory;
-  public int numHosts;
-  public int numEffectiveHosts;
-  public ManagedEntityStatus overallStatus;
+    public int totalCpu;
+    public long totalMemory;
+    public short numCpuCores;
+    public short numCpuThreads;
+    public int effectiveCpu;
+    public long effectiveMemory;
+    public int numHosts;
+    public int numEffectiveHosts;
+    public ManagedEntityStatus overallStatus;
 
-  public int getTotalCpu() {
-    return this.totalCpu;
-  }
+    public int getTotalCpu() {
+        return this.totalCpu;
+    }
 
-  public long getTotalMemory() {
-    return this.totalMemory;
-  }
+    public long getTotalMemory() {
+        return this.totalMemory;
+    }
 
-  public short getNumCpuCores() {
-    return this.numCpuCores;
-  }
+    public short getNumCpuCores() {
+        return this.numCpuCores;
+    }
 
-  public short getNumCpuThreads() {
-    return this.numCpuThreads;
-  }
+    public short getNumCpuThreads() {
+        return this.numCpuThreads;
+    }
 
-  public int getEffectiveCpu() {
-    return this.effectiveCpu;
-  }
+    public int getEffectiveCpu() {
+        return this.effectiveCpu;
+    }
 
-  public long getEffectiveMemory() {
-    return this.effectiveMemory;
-  }
+    public long getEffectiveMemory() {
+        return this.effectiveMemory;
+    }
 
-  public int getNumHosts() {
-    return this.numHosts;
-  }
+    public int getNumHosts() {
+        return this.numHosts;
+    }
 
-  public int getNumEffectiveHosts() {
-    return this.numEffectiveHosts;
-  }
+    public int getNumEffectiveHosts() {
+        return this.numEffectiveHosts;
+    }
 
-  public ManagedEntityStatus getOverallStatus() {
-    return this.overallStatus;
-  }
+    public ManagedEntityStatus getOverallStatus() {
+        return this.overallStatus;
+    }
 
-  public void setTotalCpu(int totalCpu) {
-    this.totalCpu=totalCpu;
-  }
+    public void setTotalCpu(int totalCpu) {
+        this.totalCpu = totalCpu;
+    }
 
-  public void setTotalMemory(long totalMemory) {
-    this.totalMemory=totalMemory;
-  }
+    public void setTotalMemory(long totalMemory) {
+        this.totalMemory = totalMemory;
+    }
 
-  public void setNumCpuCores(short numCpuCores) {
-    this.numCpuCores=numCpuCores;
-  }
+    public void setNumCpuCores(short numCpuCores) {
+        this.numCpuCores = numCpuCores;
+    }
 
-  public void setNumCpuThreads(short numCpuThreads) {
-    this.numCpuThreads=numCpuThreads;
-  }
+    public void setNumCpuThreads(short numCpuThreads) {
+        this.numCpuThreads = numCpuThreads;
+    }
 
-  public void setEffectiveCpu(int effectiveCpu) {
-    this.effectiveCpu=effectiveCpu;
-  }
+    public void setEffectiveCpu(int effectiveCpu) {
+        this.effectiveCpu = effectiveCpu;
+    }
 
-  public void setEffectiveMemory(long effectiveMemory) {
-    this.effectiveMemory=effectiveMemory;
-  }
+    public void setEffectiveMemory(long effectiveMemory) {
+        this.effectiveMemory = effectiveMemory;
+    }
 
-  public void setNumHosts(int numHosts) {
-    this.numHosts=numHosts;
-  }
+    public void setNumHosts(int numHosts) {
+        this.numHosts = numHosts;
+    }
 
-  public void setNumEffectiveHosts(int numEffectiveHosts) {
-    this.numEffectiveHosts=numEffectiveHosts;
-  }
+    public void setNumEffectiveHosts(int numEffectiveHosts) {
+        this.numEffectiveHosts = numEffectiveHosts;
+    }
 
-  public void setOverallStatus(ManagedEntityStatus overallStatus) {
-    this.overallStatus=overallStatus;
-  }
+    public void setOverallStatus(ManagedEntityStatus overallStatus) {
+        this.overallStatus = overallStatus;
+    }
 }

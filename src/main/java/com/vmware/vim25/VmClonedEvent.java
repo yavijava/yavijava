@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VmClonedEvent extends VmCloneEvent {
-  public VmEventArgument sourceVm;
+    public VmEventArgument sourceVm;
 
-  public VmEventArgument getSourceVm() {
-    return this.sourceVm;
-  }
+    public VmEventArgument getSourceVm() {
+        return this.sourceVm;
+    }
 
-  public void setSourceVm(VmEventArgument sourceVm) {
-    this.sourceVm=sourceVm;
-  }
+    public void setSourceVm(VmEventArgument sourceVm) {
+        this.sourceVm = sourceVm;
+    }
 }

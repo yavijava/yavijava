@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfShort {
-  public short[] _short;
+    public short[] _short;
 
-  public short[] get_short() {
-    return this._short;
-  }
+    public short[] get_short() {
+        return this._short;
+    }
 
-  public short get_short(int i) {
-    return this._short[i];
-  }
+    public short get_short(int i) {
+        return this._short[i];
+    }
 
-  public void set_short(short[] _short) {
-    this._short=_short;
-  }
+    public void set_short(short[] _short) {
+        this._short = _short;
+    }
 }

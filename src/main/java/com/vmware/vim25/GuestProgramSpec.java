@@ -30,46 +30,46 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class GuestProgramSpec extends DynamicData {
-  public String programPath;
-  public String arguments;
-  public String workingDirectory;
-  public String[] envVariables;
+    public String programPath;
+    public String arguments;
+    public String workingDirectory;
+    public String[] envVariables;
 
-  public String getProgramPath() {
-    return this.programPath;
-  }
+    public String getProgramPath() {
+        return this.programPath;
+    }
 
-  public String getArguments() {
-    return this.arguments;
-  }
+    public String getArguments() {
+        return this.arguments;
+    }
 
-  public String getWorkingDirectory() {
-    return this.workingDirectory;
-  }
+    public String getWorkingDirectory() {
+        return this.workingDirectory;
+    }
 
-  public String[] getEnvVariables() {
-    return this.envVariables;
-  }
+    public String[] getEnvVariables() {
+        return this.envVariables;
+    }
 
-  public void setProgramPath(String programPath) {
-    this.programPath=programPath;
-  }
+    public void setProgramPath(String programPath) {
+        this.programPath = programPath;
+    }
 
-  public void setArguments(String arguments) {
-    this.arguments=arguments;
-  }
+    public void setArguments(String arguments) {
+        this.arguments = arguments;
+    }
 
-  public void setWorkingDirectory(String workingDirectory) {
-    this.workingDirectory=workingDirectory;
-  }
+    public void setWorkingDirectory(String workingDirectory) {
+        this.workingDirectory = workingDirectory;
+    }
 
-  public void setEnvVariables(String[] envVariables) {
-    this.envVariables=envVariables;
-  }
+    public void setEnvVariables(String[] envVariables) {
+        this.envVariables = envVariables;
+    }
 }

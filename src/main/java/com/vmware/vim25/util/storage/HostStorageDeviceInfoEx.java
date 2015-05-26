@@ -39,6 +39,7 @@ public class HostStorageDeviceInfoEx {
 
     /**
      * Returns the map of [(ScsiLun Keys) : RuntimeName]
+     *
      * @return
      */
     public Map getScsiRuntimeNames() {
@@ -142,7 +143,7 @@ public class HostStorageDeviceInfoEx {
 
                     // Get the key name and split it
                     String[] names = info.get("key").toString().split("-");
-                    String name = names[names.length-1];
+                    String name = names[names.length - 1];
 
                     // The name will look something like this: "vmhba0:2:0"
                     // This needs to be split with ':' such that we have ["vmhba0", "2", "0"]

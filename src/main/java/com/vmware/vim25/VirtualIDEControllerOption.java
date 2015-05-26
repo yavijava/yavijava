@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VirtualIDEControllerOption extends VirtualControllerOption {
-  public IntOption numIDEDisks;
-  public IntOption numIDECdroms;
+    public IntOption numIDEDisks;
+    public IntOption numIDECdroms;
 
-  public IntOption getNumIDEDisks() {
-    return this.numIDEDisks;
-  }
+    public IntOption getNumIDEDisks() {
+        return this.numIDEDisks;
+    }
 
-  public IntOption getNumIDECdroms() {
-    return this.numIDECdroms;
-  }
+    public IntOption getNumIDECdroms() {
+        return this.numIDECdroms;
+    }
 
-  public void setNumIDEDisks(IntOption numIDEDisks) {
-    this.numIDEDisks=numIDEDisks;
-  }
+    public void setNumIDEDisks(IntOption numIDEDisks) {
+        this.numIDEDisks = numIDEDisks;
+    }
 
-  public void setNumIDECdroms(IntOption numIDECdroms) {
-    this.numIDECdroms=numIDECdroms;
-  }
+    public void setNumIDECdroms(IntOption numIDECdroms) {
+        this.numIDECdroms = numIDECdroms;
+    }
 }

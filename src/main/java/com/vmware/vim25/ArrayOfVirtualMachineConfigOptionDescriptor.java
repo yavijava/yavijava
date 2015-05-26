@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfVirtualMachineConfigOptionDescriptor {
-  public VirtualMachineConfigOptionDescriptor[] VirtualMachineConfigOptionDescriptor;
+    public VirtualMachineConfigOptionDescriptor[] VirtualMachineConfigOptionDescriptor;
 
-  public VirtualMachineConfigOptionDescriptor[] getVirtualMachineConfigOptionDescriptor() {
-    return this.VirtualMachineConfigOptionDescriptor;
-  }
+    public VirtualMachineConfigOptionDescriptor[] getVirtualMachineConfigOptionDescriptor() {
+        return this.VirtualMachineConfigOptionDescriptor;
+    }
 
-  public VirtualMachineConfigOptionDescriptor getVirtualMachineConfigOptionDescriptor(int i) {
-    return this.VirtualMachineConfigOptionDescriptor[i];
-  }
+    public VirtualMachineConfigOptionDescriptor getVirtualMachineConfigOptionDescriptor(int i) {
+        return this.VirtualMachineConfigOptionDescriptor[i];
+    }
 
-  public void setVirtualMachineConfigOptionDescriptor(VirtualMachineConfigOptionDescriptor[] VirtualMachineConfigOptionDescriptor) {
-    this.VirtualMachineConfigOptionDescriptor=VirtualMachineConfigOptionDescriptor;
-  }
+    public void setVirtualMachineConfigOptionDescriptor(VirtualMachineConfigOptionDescriptor[] VirtualMachineConfigOptionDescriptor) {
+        this.VirtualMachineConfigOptionDescriptor = VirtualMachineConfigOptionDescriptor;
+    }
 }

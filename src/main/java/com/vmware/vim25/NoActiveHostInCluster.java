@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class NoActiveHostInCluster extends InvalidState {
-  public ManagedObjectReference computeResource;
+    public ManagedObjectReference computeResource;
 
-  public ManagedObjectReference getComputeResource() {
-    return this.computeResource;
-  }
+    public ManagedObjectReference getComputeResource() {
+        return this.computeResource;
+    }
 
-  public void setComputeResource(ManagedObjectReference computeResource) {
-    this.computeResource=computeResource;
-  }
+    public void setComputeResource(ManagedObjectReference computeResource) {
+        this.computeResource = computeResource;
+    }
 }

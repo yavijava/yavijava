@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VirtualDeviceFileBackingOption extends VirtualDeviceBackingOption {
-  public ChoiceOption fileNameExtensions;
+    public ChoiceOption fileNameExtensions;
 
-  public ChoiceOption getFileNameExtensions() {
-    return this.fileNameExtensions;
-  }
+    public ChoiceOption getFileNameExtensions() {
+        return this.fileNameExtensions;
+    }
 
-  public void setFileNameExtensions(ChoiceOption fileNameExtensions) {
-    this.fileNameExtensions=fileNameExtensions;
-  }
+    public void setFileNameExtensions(ChoiceOption fileNameExtensions) {
+        this.fileNameExtensions = fileNameExtensions;
+    }
 }

@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class CustomizationPassword extends DynamicData {
-  public String value;
-  public boolean plainText;
+    public String value;
+    public boolean plainText;
 
-  public String getValue() {
-    return this.value;
-  }
+    public String getValue() {
+        return this.value;
+    }
 
-  public boolean isPlainText() {
-    return this.plainText;
-  }
+    public boolean isPlainText() {
+        return this.plainText;
+    }
 
-  public void setValue(String value) {
-    this.value=value;
-  }
+    public void setValue(String value) {
+        this.value = value;
+    }
 
-  public void setPlainText(boolean plainText) {
-    this.plainText=plainText;
-  }
+    public void setPlainText(boolean plainText) {
+        this.plainText = plainText;
+    }
 }

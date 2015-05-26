@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfDiagnosticManagerBundleInfo {
-  public DiagnosticManagerBundleInfo[] DiagnosticManagerBundleInfo;
+    public DiagnosticManagerBundleInfo[] DiagnosticManagerBundleInfo;
 
-  public DiagnosticManagerBundleInfo[] getDiagnosticManagerBundleInfo() {
-    return this.DiagnosticManagerBundleInfo;
-  }
+    public DiagnosticManagerBundleInfo[] getDiagnosticManagerBundleInfo() {
+        return this.DiagnosticManagerBundleInfo;
+    }
 
-  public DiagnosticManagerBundleInfo getDiagnosticManagerBundleInfo(int i) {
-    return this.DiagnosticManagerBundleInfo[i];
-  }
+    public DiagnosticManagerBundleInfo getDiagnosticManagerBundleInfo(int i) {
+        return this.DiagnosticManagerBundleInfo[i];
+    }
 
-  public void setDiagnosticManagerBundleInfo(DiagnosticManagerBundleInfo[] DiagnosticManagerBundleInfo) {
-    this.DiagnosticManagerBundleInfo=DiagnosticManagerBundleInfo;
-  }
+    public void setDiagnosticManagerBundleInfo(DiagnosticManagerBundleInfo[] DiagnosticManagerBundleInfo) {
+        this.DiagnosticManagerBundleInfo = DiagnosticManagerBundleInfo;
+    }
 }

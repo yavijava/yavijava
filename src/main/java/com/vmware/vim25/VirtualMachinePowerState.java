@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public enum VirtualMachinePowerState {
-  poweredOff ("poweredOff"),
-  poweredOn ("poweredOn"),
-  suspended ("suspended");
+    poweredOff("poweredOff"),
+    poweredOn("poweredOn"),
+    suspended("suspended");
 
-  @SuppressWarnings("unused")
-  private final String val;
-  private VirtualMachinePowerState(String val)
-  {
-    this.val = val;
-  }
+    @SuppressWarnings("unused")
+    private final String val;
+
+    private VirtualMachinePowerState(String val) {
+        this.val = val;
+    }
 }

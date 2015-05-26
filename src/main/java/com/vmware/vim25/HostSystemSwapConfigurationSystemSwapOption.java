@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostSystemSwapConfigurationSystemSwapOption extends DynamicData {
-  public int key;
+    public int key;
 
-  public int getKey() {
-    return this.key;
-  }
+    public int getKey() {
+        return this.key;
+    }
 
-  public void setKey(int key) {
-    this.key=key;
-  }
+    public void setKey(int key) {
+        this.key = key;
+    }
 }

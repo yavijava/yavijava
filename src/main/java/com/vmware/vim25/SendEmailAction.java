@@ -30,46 +30,46 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class SendEmailAction extends Action {
-  public String toList;
-  public String ccList;
-  public String subject;
-  public String body;
+    public String toList;
+    public String ccList;
+    public String subject;
+    public String body;
 
-  public String getToList() {
-    return this.toList;
-  }
+    public String getToList() {
+        return this.toList;
+    }
 
-  public String getCcList() {
-    return this.ccList;
-  }
+    public String getCcList() {
+        return this.ccList;
+    }
 
-  public String getSubject() {
-    return this.subject;
-  }
+    public String getSubject() {
+        return this.subject;
+    }
 
-  public String getBody() {
-    return this.body;
-  }
+    public String getBody() {
+        return this.body;
+    }
 
-  public void setToList(String toList) {
-    this.toList=toList;
-  }
+    public void setToList(String toList) {
+        this.toList = toList;
+    }
 
-  public void setCcList(String ccList) {
-    this.ccList=ccList;
-  }
+    public void setCcList(String ccList) {
+        this.ccList = ccList;
+    }
 
-  public void setSubject(String subject) {
-    this.subject=subject;
-  }
+    public void setSubject(String subject) {
+        this.subject = subject;
+    }
 
-  public void setBody(String body) {
-    this.body=body;
-  }
+    public void setBody(String body) {
+        this.body = body;
+    }
 }

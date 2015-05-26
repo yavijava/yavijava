@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfClusterRuleInfo {
-  public ClusterRuleInfo[] ClusterRuleInfo;
+    public ClusterRuleInfo[] ClusterRuleInfo;
 
-  public ClusterRuleInfo[] getClusterRuleInfo() {
-    return this.ClusterRuleInfo;
-  }
+    public ClusterRuleInfo[] getClusterRuleInfo() {
+        return this.ClusterRuleInfo;
+    }
 
-  public ClusterRuleInfo getClusterRuleInfo(int i) {
-    return this.ClusterRuleInfo[i];
-  }
+    public ClusterRuleInfo getClusterRuleInfo(int i) {
+        return this.ClusterRuleInfo[i];
+    }
 
-  public void setClusterRuleInfo(ClusterRuleInfo[] ClusterRuleInfo) {
-    this.ClusterRuleInfo=ClusterRuleInfo;
-  }
+    public void setClusterRuleInfo(ClusterRuleInfo[] ClusterRuleInfo) {
+        this.ClusterRuleInfo = ClusterRuleInfo;
+    }
 }

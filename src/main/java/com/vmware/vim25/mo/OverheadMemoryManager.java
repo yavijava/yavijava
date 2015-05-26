@@ -31,7 +31,7 @@ public class OverheadMemoryManager extends ManagedObject {
      * Return static VM overhead memory value in bytes for a (vm, host) pair from the overhead memory module (OMM)
      * in Virtual Center.
      *
-     * @param vm The Virtual Machine
+     * @param vm   The Virtual Machine
      * @param host The Host
      * @return Overhead memory value, if found in the OMM.
      * @throws InvalidArgument

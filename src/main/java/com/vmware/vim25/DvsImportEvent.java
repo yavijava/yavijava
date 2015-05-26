@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class DvsImportEvent extends DvsEvent {
-  public String importType;
+    public String importType;
 
-  public String getImportType() {
-    return this.importType;
-  }
+    public String getImportType() {
+        return this.importType;
+    }
 
-  public void setImportType(String importType) {
-    this.importType=importType;
-  }
+    public void setImportType(String importType) {
+        this.importType = importType;
+    }
 }

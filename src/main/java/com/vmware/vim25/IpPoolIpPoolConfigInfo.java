@@ -30,73 +30,73 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class IpPoolIpPoolConfigInfo extends DynamicData {
-  public String subnetAddress;
-  public String netmask;
-  public String gateway;
-  public String range;
-  public String[] dns;
-  public Boolean dhcpServerAvailable;
-  public Boolean ipPoolEnabled;
+    public String subnetAddress;
+    public String netmask;
+    public String gateway;
+    public String range;
+    public String[] dns;
+    public Boolean dhcpServerAvailable;
+    public Boolean ipPoolEnabled;
 
-  public String getSubnetAddress() {
-    return this.subnetAddress;
-  }
+    public String getSubnetAddress() {
+        return this.subnetAddress;
+    }
 
-  public String getNetmask() {
-    return this.netmask;
-  }
+    public String getNetmask() {
+        return this.netmask;
+    }
 
-  public String getGateway() {
-    return this.gateway;
-  }
+    public String getGateway() {
+        return this.gateway;
+    }
 
-  public String getRange() {
-    return this.range;
-  }
+    public String getRange() {
+        return this.range;
+    }
 
-  public String[] getDns() {
-    return this.dns;
-  }
+    public String[] getDns() {
+        return this.dns;
+    }
 
-  public Boolean getDhcpServerAvailable() {
-    return this.dhcpServerAvailable;
-  }
+    public Boolean getDhcpServerAvailable() {
+        return this.dhcpServerAvailable;
+    }
 
-  public Boolean getIpPoolEnabled() {
-    return this.ipPoolEnabled;
-  }
+    public Boolean getIpPoolEnabled() {
+        return this.ipPoolEnabled;
+    }
 
-  public void setSubnetAddress(String subnetAddress) {
-    this.subnetAddress=subnetAddress;
-  }
+    public void setSubnetAddress(String subnetAddress) {
+        this.subnetAddress = subnetAddress;
+    }
 
-  public void setNetmask(String netmask) {
-    this.netmask=netmask;
-  }
+    public void setNetmask(String netmask) {
+        this.netmask = netmask;
+    }
 
-  public void setGateway(String gateway) {
-    this.gateway=gateway;
-  }
+    public void setGateway(String gateway) {
+        this.gateway = gateway;
+    }
 
-  public void setRange(String range) {
-    this.range=range;
-  }
+    public void setRange(String range) {
+        this.range = range;
+    }
 
-  public void setDns(String[] dns) {
-    this.dns=dns;
-  }
+    public void setDns(String[] dns) {
+        this.dns = dns;
+    }
 
-  public void setDhcpServerAvailable(Boolean dhcpServerAvailable) {
-    this.dhcpServerAvailable=dhcpServerAvailable;
-  }
+    public void setDhcpServerAvailable(Boolean dhcpServerAvailable) {
+        this.dhcpServerAvailable = dhcpServerAvailable;
+    }
 
-  public void setIpPoolEnabled(Boolean ipPoolEnabled) {
-    this.ipPoolEnabled=ipPoolEnabled;
-  }
+    public void setIpPoolEnabled(Boolean ipPoolEnabled) {
+        this.ipPoolEnabled = ipPoolEnabled;
+    }
 }

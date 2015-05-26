@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class DiskChangeExtent extends DynamicData {
-  public long start;
-  public long length;
+    public long start;
+    public long length;
 
-  public long getStart() {
-    return this.start;
-  }
+    public long getStart() {
+        return this.start;
+    }
 
-  public long getLength() {
-    return this.length;
-  }
+    public long getLength() {
+        return this.length;
+    }
 
-  public void setStart(long start) {
-    this.start=start;
-  }
+    public void setStart(long start) {
+        this.start = start;
+    }
 
-  public void setLength(long length) {
-    this.length=length;
-  }
+    public void setLength(long length) {
+        this.length = length;
+    }
 }

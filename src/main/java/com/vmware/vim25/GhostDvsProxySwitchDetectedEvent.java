@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class GhostDvsProxySwitchDetectedEvent extends HostEvent {
-  public String[] switchUuid;
+    public String[] switchUuid;
 
-  public String[] getSwitchUuid() {
-    return this.switchUuid;
-  }
+    public String[] getSwitchUuid() {
+        return this.switchUuid;
+    }
 
-  public void setSwitchUuid(String[] switchUuid) {
-    this.switchUuid=switchUuid;
-  }
+    public void setSwitchUuid(String[] switchUuid) {
+        this.switchUuid = switchUuid;
+    }
 }

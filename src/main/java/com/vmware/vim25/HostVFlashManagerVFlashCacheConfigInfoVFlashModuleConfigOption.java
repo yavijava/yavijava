@@ -30,82 +30,82 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostVFlashManagerVFlashCacheConfigInfoVFlashModuleConfigOption extends DynamicData {
-  public String vFlashModule;
-  public String vFlashModuleVersion;
-  public String minSupportedModuleVersion;
-  public ChoiceOption cacheConsistencyType;
-  public ChoiceOption cacheMode;
-  public LongOption blockSizeInKBOption;
-  public LongOption reservationInMBOption;
-  public long maxDiskSizeInKB;
+    public String vFlashModule;
+    public String vFlashModuleVersion;
+    public String minSupportedModuleVersion;
+    public ChoiceOption cacheConsistencyType;
+    public ChoiceOption cacheMode;
+    public LongOption blockSizeInKBOption;
+    public LongOption reservationInMBOption;
+    public long maxDiskSizeInKB;
 
-  public String getVFlashModule() {
-    return this.vFlashModule;
-  }
+    public String getVFlashModule() {
+        return this.vFlashModule;
+    }
 
-  public String getVFlashModuleVersion() {
-    return this.vFlashModuleVersion;
-  }
+    public String getVFlashModuleVersion() {
+        return this.vFlashModuleVersion;
+    }
 
-  public String getMinSupportedModuleVersion() {
-    return this.minSupportedModuleVersion;
-  }
+    public String getMinSupportedModuleVersion() {
+        return this.minSupportedModuleVersion;
+    }
 
-  public ChoiceOption getCacheConsistencyType() {
-    return this.cacheConsistencyType;
-  }
+    public ChoiceOption getCacheConsistencyType() {
+        return this.cacheConsistencyType;
+    }
 
-  public ChoiceOption getCacheMode() {
-    return this.cacheMode;
-  }
+    public ChoiceOption getCacheMode() {
+        return this.cacheMode;
+    }
 
-  public LongOption getBlockSizeInKBOption() {
-    return this.blockSizeInKBOption;
-  }
+    public LongOption getBlockSizeInKBOption() {
+        return this.blockSizeInKBOption;
+    }
 
-  public LongOption getReservationInMBOption() {
-    return this.reservationInMBOption;
-  }
+    public LongOption getReservationInMBOption() {
+        return this.reservationInMBOption;
+    }
 
-  public long getMaxDiskSizeInKB() {
-    return this.maxDiskSizeInKB;
-  }
+    public long getMaxDiskSizeInKB() {
+        return this.maxDiskSizeInKB;
+    }
 
-  public void setVFlashModule(String vFlashModule) {
-    this.vFlashModule=vFlashModule;
-  }
+    public void setVFlashModule(String vFlashModule) {
+        this.vFlashModule = vFlashModule;
+    }
 
-  public void setVFlashModuleVersion(String vFlashModuleVersion) {
-    this.vFlashModuleVersion=vFlashModuleVersion;
-  }
+    public void setVFlashModuleVersion(String vFlashModuleVersion) {
+        this.vFlashModuleVersion = vFlashModuleVersion;
+    }
 
-  public void setMinSupportedModuleVersion(String minSupportedModuleVersion) {
-    this.minSupportedModuleVersion=minSupportedModuleVersion;
-  }
+    public void setMinSupportedModuleVersion(String minSupportedModuleVersion) {
+        this.minSupportedModuleVersion = minSupportedModuleVersion;
+    }
 
-  public void setCacheConsistencyType(ChoiceOption cacheConsistencyType) {
-    this.cacheConsistencyType=cacheConsistencyType;
-  }
+    public void setCacheConsistencyType(ChoiceOption cacheConsistencyType) {
+        this.cacheConsistencyType = cacheConsistencyType;
+    }
 
-  public void setCacheMode(ChoiceOption cacheMode) {
-    this.cacheMode=cacheMode;
-  }
+    public void setCacheMode(ChoiceOption cacheMode) {
+        this.cacheMode = cacheMode;
+    }
 
-  public void setBlockSizeInKBOption(LongOption blockSizeInKBOption) {
-    this.blockSizeInKBOption=blockSizeInKBOption;
-  }
+    public void setBlockSizeInKBOption(LongOption blockSizeInKBOption) {
+        this.blockSizeInKBOption = blockSizeInKBOption;
+    }
 
-  public void setReservationInMBOption(LongOption reservationInMBOption) {
-    this.reservationInMBOption=reservationInMBOption;
-  }
+    public void setReservationInMBOption(LongOption reservationInMBOption) {
+        this.reservationInMBOption = reservationInMBOption;
+    }
 
-  public void setMaxDiskSizeInKB(long maxDiskSizeInKB) {
-    this.maxDiskSizeInKB=maxDiskSizeInKB;
-  }
+    public void setMaxDiskSizeInKB(long maxDiskSizeInKB) {
+        this.maxDiskSizeInKB = maxDiskSizeInKB;
+    }
 }

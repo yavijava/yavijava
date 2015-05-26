@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostDisconnectedEvent extends HostEvent {
-  public String reason;
+    public String reason;
 
-  public String getReason() {
-    return this.reason;
-  }
+    public String getReason() {
+        return this.reason;
+    }
 
-  public void setReason(String reason) {
-    this.reason=reason;
-  }
+    public void setReason(String reason) {
+        this.reason = reason;
+    }
 }

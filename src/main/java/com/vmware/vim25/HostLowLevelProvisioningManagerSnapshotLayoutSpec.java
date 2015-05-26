@@ -30,46 +30,46 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostLowLevelProvisioningManagerSnapshotLayoutSpec extends DynamicData {
-  public int id;
-  public String srcFilename;
-  public String dstFilename;
-  public HostLowLevelProvisioningManagerDiskLayoutSpec[] disk;
+    public int id;
+    public String srcFilename;
+    public String dstFilename;
+    public HostLowLevelProvisioningManagerDiskLayoutSpec[] disk;
 
-  public int getId() {
-    return this.id;
-  }
+    public int getId() {
+        return this.id;
+    }
 
-  public String getSrcFilename() {
-    return this.srcFilename;
-  }
+    public String getSrcFilename() {
+        return this.srcFilename;
+    }
 
-  public String getDstFilename() {
-    return this.dstFilename;
-  }
+    public String getDstFilename() {
+        return this.dstFilename;
+    }
 
-  public HostLowLevelProvisioningManagerDiskLayoutSpec[] getDisk() {
-    return this.disk;
-  }
+    public HostLowLevelProvisioningManagerDiskLayoutSpec[] getDisk() {
+        return this.disk;
+    }
 
-  public void setId(int id) {
-    this.id=id;
-  }
+    public void setId(int id) {
+        this.id = id;
+    }
 
-  public void setSrcFilename(String srcFilename) {
-    this.srcFilename=srcFilename;
-  }
+    public void setSrcFilename(String srcFilename) {
+        this.srcFilename = srcFilename;
+    }
 
-  public void setDstFilename(String dstFilename) {
-    this.dstFilename=dstFilename;
-  }
+    public void setDstFilename(String dstFilename) {
+        this.dstFilename = dstFilename;
+    }
 
-  public void setDisk(HostLowLevelProvisioningManagerDiskLayoutSpec[] disk) {
-    this.disk=disk;
-  }
+    public void setDisk(HostLowLevelProvisioningManagerDiskLayoutSpec[] disk) {
+        this.disk = disk;
+    }
 }

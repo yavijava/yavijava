@@ -29,15 +29,16 @@ POSSIBILITY OF SUCH DAMAGE.
 
 package com.vmware.vim25.mo.util;
 
+import com.vmware.vim25.*;
+import com.vmware.vim25.mo.ManagedObject;
+import com.vmware.vim25.mo.PropertyCollector;
+import org.apache.log4j.Logger;
+
 import java.lang.reflect.Method;
 import java.rmi.RemoteException;
 import java.util.Arrays;
 import java.util.Hashtable;
 import java.util.List;
-
-import com.vmware.vim25.*;
-import com.vmware.vim25.mo.*;
-import org.apache.log4j.Logger;
 
 
 /**

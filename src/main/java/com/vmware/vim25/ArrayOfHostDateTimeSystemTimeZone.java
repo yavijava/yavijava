@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfHostDateTimeSystemTimeZone {
-  public HostDateTimeSystemTimeZone[] HostDateTimeSystemTimeZone;
+    public HostDateTimeSystemTimeZone[] HostDateTimeSystemTimeZone;
 
-  public HostDateTimeSystemTimeZone[] getHostDateTimeSystemTimeZone() {
-    return this.HostDateTimeSystemTimeZone;
-  }
+    public HostDateTimeSystemTimeZone[] getHostDateTimeSystemTimeZone() {
+        return this.HostDateTimeSystemTimeZone;
+    }
 
-  public HostDateTimeSystemTimeZone getHostDateTimeSystemTimeZone(int i) {
-    return this.HostDateTimeSystemTimeZone[i];
-  }
+    public HostDateTimeSystemTimeZone getHostDateTimeSystemTimeZone(int i) {
+        return this.HostDateTimeSystemTimeZone[i];
+    }
 
-  public void setHostDateTimeSystemTimeZone(HostDateTimeSystemTimeZone[] HostDateTimeSystemTimeZone) {
-    this.HostDateTimeSystemTimeZone=HostDateTimeSystemTimeZone;
-  }
+    public void setHostDateTimeSystemTimeZone(HostDateTimeSystemTimeZone[] HostDateTimeSystemTimeZone) {
+        this.HostDateTimeSystemTimeZone = HostDateTimeSystemTimeZone;
+    }
 }

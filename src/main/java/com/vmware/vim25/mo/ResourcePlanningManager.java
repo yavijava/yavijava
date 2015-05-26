@@ -28,27 +28,25 @@ POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
 package com.vmware.vim25.mo;
 
-import java.rmi.RemoteException;
-
 import com.vmware.vim25.DatabaseSizeEstimate;
 import com.vmware.vim25.DatabaseSizeParam;
 import com.vmware.vim25.ManagedObjectReference;
 import com.vmware.vim25.RuntimeFault;
 
+import java.rmi.RemoteException;
+
 /**
  * The managed object class corresponding to the one defined in VI SDK API reference.
+ *
  * @author Steve JIN (http://www.doublecloud.org)
  * @since 4.0
  */
-public class ResourcePlanningManager extends Profile 
-{
-	public ResourcePlanningManager(ServerConnection sc, ManagedObjectReference mor) 
-	{
-		super(sc, mor);
-	}
-	
-	public DatabaseSizeEstimate estimateDatabaseSize(DatabaseSizeParam dbSizeParam) throws RuntimeFault, RemoteException
-	{
-		return getVimService().estimateDatabaseSize(getMOR(), dbSizeParam);
-	}
+public class ResourcePlanningManager extends Profile {
+    public ResourcePlanningManager(ServerConnection sc, ManagedObjectReference mor) {
+        super(sc, mor);
+    }
+
+    public DatabaseSizeEstimate estimateDatabaseSize(DatabaseSizeParam dbSizeParam) throws RuntimeFault, RemoteException {
+        return getVimService().estimateDatabaseSize(getMOR(), dbSizeParam);
+    }
 }

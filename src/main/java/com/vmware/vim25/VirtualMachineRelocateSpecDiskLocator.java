@@ -30,55 +30,55 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VirtualMachineRelocateSpecDiskLocator extends DynamicData {
-  public int diskId;
-  public ManagedObjectReference datastore;
-  public String diskMoveType;
-  public VirtualDeviceBackingInfo diskBackingInfo;
-  public VirtualMachineProfileSpec[] profile;
+    public int diskId;
+    public ManagedObjectReference datastore;
+    public String diskMoveType;
+    public VirtualDeviceBackingInfo diskBackingInfo;
+    public VirtualMachineProfileSpec[] profile;
 
-  public int getDiskId() {
-    return this.diskId;
-  }
+    public int getDiskId() {
+        return this.diskId;
+    }
 
-  public ManagedObjectReference getDatastore() {
-    return this.datastore;
-  }
+    public ManagedObjectReference getDatastore() {
+        return this.datastore;
+    }
 
-  public String getDiskMoveType() {
-    return this.diskMoveType;
-  }
+    public String getDiskMoveType() {
+        return this.diskMoveType;
+    }
 
-  public VirtualDeviceBackingInfo getDiskBackingInfo() {
-    return this.diskBackingInfo;
-  }
+    public VirtualDeviceBackingInfo getDiskBackingInfo() {
+        return this.diskBackingInfo;
+    }
 
-  public VirtualMachineProfileSpec[] getProfile() {
-    return this.profile;
-  }
+    public VirtualMachineProfileSpec[] getProfile() {
+        return this.profile;
+    }
 
-  public void setDiskId(int diskId) {
-    this.diskId=diskId;
-  }
+    public void setDiskId(int diskId) {
+        this.diskId = diskId;
+    }
 
-  public void setDatastore(ManagedObjectReference datastore) {
-    this.datastore=datastore;
-  }
+    public void setDatastore(ManagedObjectReference datastore) {
+        this.datastore = datastore;
+    }
 
-  public void setDiskMoveType(String diskMoveType) {
-    this.diskMoveType=diskMoveType;
-  }
+    public void setDiskMoveType(String diskMoveType) {
+        this.diskMoveType = diskMoveType;
+    }
 
-  public void setDiskBackingInfo(VirtualDeviceBackingInfo diskBackingInfo) {
-    this.diskBackingInfo=diskBackingInfo;
-  }
+    public void setDiskBackingInfo(VirtualDeviceBackingInfo diskBackingInfo) {
+        this.diskBackingInfo = diskBackingInfo;
+    }
 
-  public void setProfile(VirtualMachineProfileSpec[] profile) {
-    this.profile=profile;
-  }
+    public void setProfile(VirtualMachineProfileSpec[] profile) {
+        this.profile = profile;
+    }
 }

@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfPerformanceManagerCounterLevelMapping {
-  public PerformanceManagerCounterLevelMapping[] PerformanceManagerCounterLevelMapping;
+    public PerformanceManagerCounterLevelMapping[] PerformanceManagerCounterLevelMapping;
 
-  public PerformanceManagerCounterLevelMapping[] getPerformanceManagerCounterLevelMapping() {
-    return this.PerformanceManagerCounterLevelMapping;
-  }
+    public PerformanceManagerCounterLevelMapping[] getPerformanceManagerCounterLevelMapping() {
+        return this.PerformanceManagerCounterLevelMapping;
+    }
 
-  public PerformanceManagerCounterLevelMapping getPerformanceManagerCounterLevelMapping(int i) {
-    return this.PerformanceManagerCounterLevelMapping[i];
-  }
+    public PerformanceManagerCounterLevelMapping getPerformanceManagerCounterLevelMapping(int i) {
+        return this.PerformanceManagerCounterLevelMapping[i];
+    }
 
-  public void setPerformanceManagerCounterLevelMapping(PerformanceManagerCounterLevelMapping[] PerformanceManagerCounterLevelMapping) {
-    this.PerformanceManagerCounterLevelMapping=PerformanceManagerCounterLevelMapping;
-  }
+    public void setPerformanceManagerCounterLevelMapping(PerformanceManagerCounterLevelMapping[] PerformanceManagerCounterLevelMapping) {
+        this.PerformanceManagerCounterLevelMapping = PerformanceManagerCounterLevelMapping;
+    }
 }

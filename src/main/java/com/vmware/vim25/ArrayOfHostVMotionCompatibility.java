@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfHostVMotionCompatibility {
-  public HostVMotionCompatibility[] HostVMotionCompatibility;
+    public HostVMotionCompatibility[] HostVMotionCompatibility;
 
-  public HostVMotionCompatibility[] getHostVMotionCompatibility() {
-    return this.HostVMotionCompatibility;
-  }
+    public HostVMotionCompatibility[] getHostVMotionCompatibility() {
+        return this.HostVMotionCompatibility;
+    }
 
-  public HostVMotionCompatibility getHostVMotionCompatibility(int i) {
-    return this.HostVMotionCompatibility[i];
-  }
+    public HostVMotionCompatibility getHostVMotionCompatibility(int i) {
+        return this.HostVMotionCompatibility[i];
+    }
 
-  public void setHostVMotionCompatibility(HostVMotionCompatibility[] HostVMotionCompatibility) {
-    this.HostVMotionCompatibility=HostVMotionCompatibility;
-  }
+    public void setHostVMotionCompatibility(HostVMotionCompatibility[] HostVMotionCompatibility) {
+        this.HostVMotionCompatibility = HostVMotionCompatibility;
+    }
 }

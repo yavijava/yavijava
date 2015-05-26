@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfDvsOutOfSyncHostArgument {
-  public DvsOutOfSyncHostArgument[] DvsOutOfSyncHostArgument;
+    public DvsOutOfSyncHostArgument[] DvsOutOfSyncHostArgument;
 
-  public DvsOutOfSyncHostArgument[] getDvsOutOfSyncHostArgument() {
-    return this.DvsOutOfSyncHostArgument;
-  }
+    public DvsOutOfSyncHostArgument[] getDvsOutOfSyncHostArgument() {
+        return this.DvsOutOfSyncHostArgument;
+    }
 
-  public DvsOutOfSyncHostArgument getDvsOutOfSyncHostArgument(int i) {
-    return this.DvsOutOfSyncHostArgument[i];
-  }
+    public DvsOutOfSyncHostArgument getDvsOutOfSyncHostArgument(int i) {
+        return this.DvsOutOfSyncHostArgument[i];
+    }
 
-  public void setDvsOutOfSyncHostArgument(DvsOutOfSyncHostArgument[] DvsOutOfSyncHostArgument) {
-    this.DvsOutOfSyncHostArgument=DvsOutOfSyncHostArgument;
-  }
+    public void setDvsOutOfSyncHostArgument(DvsOutOfSyncHostArgument[] DvsOutOfSyncHostArgument) {
+        this.DvsOutOfSyncHostArgument = DvsOutOfSyncHostArgument;
+    }
 }

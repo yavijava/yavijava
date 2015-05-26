@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VirtualMachineVFlashModuleInfo extends VirtualMachineTargetInfo {
-  public HostVFlashManagerVFlashCacheConfigInfoVFlashModuleConfigOption vFlashModule;
+    public HostVFlashManagerVFlashCacheConfigInfoVFlashModuleConfigOption vFlashModule;
 
-  public HostVFlashManagerVFlashCacheConfigInfoVFlashModuleConfigOption getVFlashModule() {
-    return this.vFlashModule;
-  }
+    public HostVFlashManagerVFlashCacheConfigInfoVFlashModuleConfigOption getVFlashModule() {
+        return this.vFlashModule;
+    }
 
-  public void setVFlashModule(HostVFlashManagerVFlashCacheConfigInfoVFlashModuleConfigOption vFlashModule) {
-    this.vFlashModule=vFlashModule;
-  }
+    public void setVFlashModule(HostVFlashManagerVFlashCacheConfigInfoVFlashModuleConfigOption vFlashModule) {
+        this.vFlashModule = vFlashModule;
+    }
 }

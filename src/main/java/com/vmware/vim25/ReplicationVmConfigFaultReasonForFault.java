@@ -30,30 +30,30 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public enum ReplicationVmConfigFaultReasonForFault {
-  incompatibleHwVersion ("incompatibleHwVersion"),
-  invalidVmReplicationId ("invalidVmReplicationId"),
-  invalidGenerationNumber ("invalidGenerationNumber"),
-  outOfBoundsRpoValue ("outOfBoundsRpoValue"),
-  invalidDestinationIpAddress ("invalidDestinationIpAddress"),
-  invalidDestinationPort ("invalidDestinationPort"),
-  invalidExtraVmOptions ("invalidExtraVmOptions"),
-  staleGenerationNumber ("staleGenerationNumber"),
-  reconfigureVmReplicationIdNotAllowed ("reconfigureVmReplicationIdNotAllowed"),
-  cannotRetrieveVmReplicationConfiguration ("cannotRetrieveVmReplicationConfiguration"),
-  replicationAlreadyEnabled ("replicationAlreadyEnabled"),
-  invalidPriorConfiguration ("invalidPriorConfiguration"),
-  replicationNotEnabled ("replicationNotEnabled"),
-  replicationConfigurationFailed ("replicationConfigurationFailed");
+    incompatibleHwVersion("incompatibleHwVersion"),
+    invalidVmReplicationId("invalidVmReplicationId"),
+    invalidGenerationNumber("invalidGenerationNumber"),
+    outOfBoundsRpoValue("outOfBoundsRpoValue"),
+    invalidDestinationIpAddress("invalidDestinationIpAddress"),
+    invalidDestinationPort("invalidDestinationPort"),
+    invalidExtraVmOptions("invalidExtraVmOptions"),
+    staleGenerationNumber("staleGenerationNumber"),
+    reconfigureVmReplicationIdNotAllowed("reconfigureVmReplicationIdNotAllowed"),
+    cannotRetrieveVmReplicationConfiguration("cannotRetrieveVmReplicationConfiguration"),
+    replicationAlreadyEnabled("replicationAlreadyEnabled"),
+    invalidPriorConfiguration("invalidPriorConfiguration"),
+    replicationNotEnabled("replicationNotEnabled"),
+    replicationConfigurationFailed("replicationConfigurationFailed");
 
-  @SuppressWarnings("unused")
-  private final String val;
-  private ReplicationVmConfigFaultReasonForFault(String val)
-  {
-    this.val = val;
-  }
+    @SuppressWarnings("unused")
+    private final String val;
+
+    private ReplicationVmConfigFaultReasonForFault(String val) {
+        this.val = val;
+    }
 }

@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VmNoNetworkAccessEvent extends VmEvent {
-  public HostEventArgument destHost;
+    public HostEventArgument destHost;
 
-  public HostEventArgument getDestHost() {
-    return this.destHost;
-  }
+    public HostEventArgument getDestHost() {
+        return this.destHost;
+    }
 
-  public void setDestHost(HostEventArgument destHost) {
-    this.destHost=destHost;
-  }
+    public void setDestHost(HostEventArgument destHost) {
+        this.destHost = destHost;
+    }
 }

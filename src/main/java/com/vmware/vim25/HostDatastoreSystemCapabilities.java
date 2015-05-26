@@ -30,46 +30,46 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostDatastoreSystemCapabilities extends DynamicData {
-  public boolean nfsMountCreationRequired;
-  public boolean nfsMountCreationSupported;
-  public boolean localDatastoreSupported;
-  public Boolean vmfsExtentExpansionSupported;
+    public boolean nfsMountCreationRequired;
+    public boolean nfsMountCreationSupported;
+    public boolean localDatastoreSupported;
+    public Boolean vmfsExtentExpansionSupported;
 
-  public boolean isNfsMountCreationRequired() {
-    return this.nfsMountCreationRequired;
-  }
+    public boolean isNfsMountCreationRequired() {
+        return this.nfsMountCreationRequired;
+    }
 
-  public boolean isNfsMountCreationSupported() {
-    return this.nfsMountCreationSupported;
-  }
+    public boolean isNfsMountCreationSupported() {
+        return this.nfsMountCreationSupported;
+    }
 
-  public boolean isLocalDatastoreSupported() {
-    return this.localDatastoreSupported;
-  }
+    public boolean isLocalDatastoreSupported() {
+        return this.localDatastoreSupported;
+    }
 
-  public Boolean getVmfsExtentExpansionSupported() {
-    return this.vmfsExtentExpansionSupported;
-  }
+    public Boolean getVmfsExtentExpansionSupported() {
+        return this.vmfsExtentExpansionSupported;
+    }
 
-  public void setNfsMountCreationRequired(boolean nfsMountCreationRequired) {
-    this.nfsMountCreationRequired=nfsMountCreationRequired;
-  }
+    public void setNfsMountCreationRequired(boolean nfsMountCreationRequired) {
+        this.nfsMountCreationRequired = nfsMountCreationRequired;
+    }
 
-  public void setNfsMountCreationSupported(boolean nfsMountCreationSupported) {
-    this.nfsMountCreationSupported=nfsMountCreationSupported;
-  }
+    public void setNfsMountCreationSupported(boolean nfsMountCreationSupported) {
+        this.nfsMountCreationSupported = nfsMountCreationSupported;
+    }
 
-  public void setLocalDatastoreSupported(boolean localDatastoreSupported) {
-    this.localDatastoreSupported=localDatastoreSupported;
-  }
+    public void setLocalDatastoreSupported(boolean localDatastoreSupported) {
+        this.localDatastoreSupported = localDatastoreSupported;
+    }
 
-  public void setVmfsExtentExpansionSupported(Boolean vmfsExtentExpansionSupported) {
-    this.vmfsExtentExpansionSupported=vmfsExtentExpansionSupported;
-  }
+    public void setVmfsExtentExpansionSupported(Boolean vmfsExtentExpansionSupported) {
+        this.vmfsExtentExpansionSupported = vmfsExtentExpansionSupported;
+    }
 }

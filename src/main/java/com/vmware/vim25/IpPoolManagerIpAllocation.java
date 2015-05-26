@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class IpPoolManagerIpAllocation extends DynamicData {
-  public String ipAddress;
-  public String allocationId;
+    public String ipAddress;
+    public String allocationId;
 
-  public String getIpAddress() {
-    return this.ipAddress;
-  }
+    public String getIpAddress() {
+        return this.ipAddress;
+    }
 
-  public String getAllocationId() {
-    return this.allocationId;
-  }
+    public String getAllocationId() {
+        return this.allocationId;
+    }
 
-  public void setIpAddress(String ipAddress) {
-    this.ipAddress=ipAddress;
-  }
+    public void setIpAddress(String ipAddress) {
+        this.ipAddress = ipAddress;
+    }
 
-  public void setAllocationId(String allocationId) {
-    this.allocationId=allocationId;
-  }
+    public void setAllocationId(String allocationId) {
+        this.allocationId = allocationId;
+    }
 }

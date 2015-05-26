@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class InvalidIpmiMacAddress extends VimFault {
-  public String userProvidedMacAddress;
-  public String observedMacAddress;
+    public String userProvidedMacAddress;
+    public String observedMacAddress;
 
-  public String getUserProvidedMacAddress() {
-    return this.userProvidedMacAddress;
-  }
+    public String getUserProvidedMacAddress() {
+        return this.userProvidedMacAddress;
+    }
 
-  public String getObservedMacAddress() {
-    return this.observedMacAddress;
-  }
+    public String getObservedMacAddress() {
+        return this.observedMacAddress;
+    }
 
-  public void setUserProvidedMacAddress(String userProvidedMacAddress) {
-    this.userProvidedMacAddress=userProvidedMacAddress;
-  }
+    public void setUserProvidedMacAddress(String userProvidedMacAddress) {
+        this.userProvidedMacAddress = userProvidedMacAddress;
+    }
 
-  public void setObservedMacAddress(String observedMacAddress) {
-    this.observedMacAddress=observedMacAddress;
-  }
+    public void setObservedMacAddress(String observedMacAddress) {
+        this.observedMacAddress = observedMacAddress;
+    }
 }

@@ -30,118 +30,118 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VAppPropertyInfo extends DynamicData {
-  public int key;
-  public String classId;
-  public String instanceId;
-  public String id;
-  public String category;
-  public String label;
-  public String type;
-  public String typeReference;
-  public Boolean userConfigurable;
-  public String defaultValue;
-  public String value;
-  public String description;
+    public int key;
+    public String classId;
+    public String instanceId;
+    public String id;
+    public String category;
+    public String label;
+    public String type;
+    public String typeReference;
+    public Boolean userConfigurable;
+    public String defaultValue;
+    public String value;
+    public String description;
 
-  public int getKey() {
-    return this.key;
-  }
+    public int getKey() {
+        return this.key;
+    }
 
-  public String getClassId() {
-    return this.classId;
-  }
+    public String getClassId() {
+        return this.classId;
+    }
 
-  public String getInstanceId() {
-    return this.instanceId;
-  }
+    public String getInstanceId() {
+        return this.instanceId;
+    }
 
-  public String getId() {
-    return this.id;
-  }
+    public String getId() {
+        return this.id;
+    }
 
-  public String getCategory() {
-    return this.category;
-  }
+    public String getCategory() {
+        return this.category;
+    }
 
-  public String getLabel() {
-    return this.label;
-  }
+    public String getLabel() {
+        return this.label;
+    }
 
-  public String getType() {
-    return this.type;
-  }
+    public String getType() {
+        return this.type;
+    }
 
-  public String getTypeReference() {
-    return this.typeReference;
-  }
+    public String getTypeReference() {
+        return this.typeReference;
+    }
 
-  public Boolean getUserConfigurable() {
-    return this.userConfigurable;
-  }
+    public Boolean getUserConfigurable() {
+        return this.userConfigurable;
+    }
 
-  public String getDefaultValue() {
-    return this.defaultValue;
-  }
+    public String getDefaultValue() {
+        return this.defaultValue;
+    }
 
-  public String getValue() {
-    return this.value;
-  }
+    public String getValue() {
+        return this.value;
+    }
 
-  public String getDescription() {
-    return this.description;
-  }
+    public String getDescription() {
+        return this.description;
+    }
 
-  public void setKey(int key) {
-    this.key=key;
-  }
+    public void setKey(int key) {
+        this.key = key;
+    }
 
-  public void setClassId(String classId) {
-    this.classId=classId;
-  }
+    public void setClassId(String classId) {
+        this.classId = classId;
+    }
 
-  public void setInstanceId(String instanceId) {
-    this.instanceId=instanceId;
-  }
+    public void setInstanceId(String instanceId) {
+        this.instanceId = instanceId;
+    }
 
-  public void setId(String id) {
-    this.id=id;
-  }
+    public void setId(String id) {
+        this.id = id;
+    }
 
-  public void setCategory(String category) {
-    this.category=category;
-  }
+    public void setCategory(String category) {
+        this.category = category;
+    }
 
-  public void setLabel(String label) {
-    this.label=label;
-  }
+    public void setLabel(String label) {
+        this.label = label;
+    }
 
-  public void setType(String type) {
-    this.type=type;
-  }
+    public void setType(String type) {
+        this.type = type;
+    }
 
-  public void setTypeReference(String typeReference) {
-    this.typeReference=typeReference;
-  }
+    public void setTypeReference(String typeReference) {
+        this.typeReference = typeReference;
+    }
 
-  public void setUserConfigurable(Boolean userConfigurable) {
-    this.userConfigurable=userConfigurable;
-  }
+    public void setUserConfigurable(Boolean userConfigurable) {
+        this.userConfigurable = userConfigurable;
+    }
 
-  public void setDefaultValue(String defaultValue) {
-    this.defaultValue=defaultValue;
-  }
+    public void setDefaultValue(String defaultValue) {
+        this.defaultValue = defaultValue;
+    }
 
-  public void setValue(String value) {
-    this.value=value;
-  }
+    public void setValue(String value) {
+        this.value = value;
+    }
 
-  public void setDescription(String description) {
-    this.description=description;
-  }
+    public void setDescription(String description) {
+        this.description = description;
+    }
 }

@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class LocalDatastoreInfo extends DatastoreInfo {
-  public String path;
+    public String path;
 
-  public String getPath() {
-    return this.path;
-  }
+    public String getPath() {
+        return this.path;
+    }
 
-  public void setPath(String path) {
-    this.path=path;
-  }
+    public void setPath(String path) {
+        this.path = path;
+    }
 }

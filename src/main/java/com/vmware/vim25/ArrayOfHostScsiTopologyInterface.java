@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfHostScsiTopologyInterface {
-  public HostScsiTopologyInterface[] HostScsiTopologyInterface;
+    public HostScsiTopologyInterface[] HostScsiTopologyInterface;
 
-  public HostScsiTopologyInterface[] getHostScsiTopologyInterface() {
-    return this.HostScsiTopologyInterface;
-  }
+    public HostScsiTopologyInterface[] getHostScsiTopologyInterface() {
+        return this.HostScsiTopologyInterface;
+    }
 
-  public HostScsiTopologyInterface getHostScsiTopologyInterface(int i) {
-    return this.HostScsiTopologyInterface[i];
-  }
+    public HostScsiTopologyInterface getHostScsiTopologyInterface(int i) {
+        return this.HostScsiTopologyInterface[i];
+    }
 
-  public void setHostScsiTopologyInterface(HostScsiTopologyInterface[] HostScsiTopologyInterface) {
-    this.HostScsiTopologyInterface=HostScsiTopologyInterface;
-  }
+    public void setHostScsiTopologyInterface(HostScsiTopologyInterface[] HostScsiTopologyInterface) {
+        this.HostScsiTopologyInterface = HostScsiTopologyInterface;
+    }
 }

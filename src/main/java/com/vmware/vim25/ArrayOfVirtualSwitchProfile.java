@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfVirtualSwitchProfile {
-  public VirtualSwitchProfile[] VirtualSwitchProfile;
+    public VirtualSwitchProfile[] VirtualSwitchProfile;
 
-  public VirtualSwitchProfile[] getVirtualSwitchProfile() {
-    return this.VirtualSwitchProfile;
-  }
+    public VirtualSwitchProfile[] getVirtualSwitchProfile() {
+        return this.VirtualSwitchProfile;
+    }
 
-  public VirtualSwitchProfile getVirtualSwitchProfile(int i) {
-    return this.VirtualSwitchProfile[i];
-  }
+    public VirtualSwitchProfile getVirtualSwitchProfile(int i) {
+        return this.VirtualSwitchProfile[i];
+    }
 
-  public void setVirtualSwitchProfile(VirtualSwitchProfile[] VirtualSwitchProfile) {
-    this.VirtualSwitchProfile=VirtualSwitchProfile;
-  }
+    public void setVirtualSwitchProfile(VirtualSwitchProfile[] VirtualSwitchProfile) {
+        this.VirtualSwitchProfile = VirtualSwitchProfile;
+    }
 }

@@ -30,55 +30,55 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class DVPortConfigInfo extends DynamicData {
-  public String name;
-  public ManagedObjectReference[] scope;
-  public String description;
-  public DVPortSetting setting;
-  public String configVersion;
+    public String name;
+    public ManagedObjectReference[] scope;
+    public String description;
+    public DVPortSetting setting;
+    public String configVersion;
 
-  public String getName() {
-    return this.name;
-  }
+    public String getName() {
+        return this.name;
+    }
 
-  public ManagedObjectReference[] getScope() {
-    return this.scope;
-  }
+    public ManagedObjectReference[] getScope() {
+        return this.scope;
+    }
 
-  public String getDescription() {
-    return this.description;
-  }
+    public String getDescription() {
+        return this.description;
+    }
 
-  public DVPortSetting getSetting() {
-    return this.setting;
-  }
+    public DVPortSetting getSetting() {
+        return this.setting;
+    }
 
-  public String getConfigVersion() {
-    return this.configVersion;
-  }
+    public String getConfigVersion() {
+        return this.configVersion;
+    }
 
-  public void setName(String name) {
-    this.name=name;
-  }
+    public void setName(String name) {
+        this.name = name;
+    }
 
-  public void setScope(ManagedObjectReference[] scope) {
-    this.scope=scope;
-  }
+    public void setScope(ManagedObjectReference[] scope) {
+        this.scope = scope;
+    }
 
-  public void setDescription(String description) {
-    this.description=description;
-  }
+    public void setDescription(String description) {
+        this.description = description;
+    }
 
-  public void setSetting(DVPortSetting setting) {
-    this.setting=setting;
-  }
+    public void setSetting(DVPortSetting setting) {
+        this.setting = setting;
+    }
 
-  public void setConfigVersion(String configVersion) {
-    this.configVersion=configVersion;
-  }
+    public void setConfigVersion(String configVersion) {
+        this.configVersion = configVersion;
+    }
 }

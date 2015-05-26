@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfVirtualMachineDatastoreInfo {
-  public VirtualMachineDatastoreInfo[] VirtualMachineDatastoreInfo;
+    public VirtualMachineDatastoreInfo[] VirtualMachineDatastoreInfo;
 
-  public VirtualMachineDatastoreInfo[] getVirtualMachineDatastoreInfo() {
-    return this.VirtualMachineDatastoreInfo;
-  }
+    public VirtualMachineDatastoreInfo[] getVirtualMachineDatastoreInfo() {
+        return this.VirtualMachineDatastoreInfo;
+    }
 
-  public VirtualMachineDatastoreInfo getVirtualMachineDatastoreInfo(int i) {
-    return this.VirtualMachineDatastoreInfo[i];
-  }
+    public VirtualMachineDatastoreInfo getVirtualMachineDatastoreInfo(int i) {
+        return this.VirtualMachineDatastoreInfo[i];
+    }
 
-  public void setVirtualMachineDatastoreInfo(VirtualMachineDatastoreInfo[] VirtualMachineDatastoreInfo) {
-    this.VirtualMachineDatastoreInfo=VirtualMachineDatastoreInfo;
-  }
+    public void setVirtualMachineDatastoreInfo(VirtualMachineDatastoreInfo[] VirtualMachineDatastoreInfo) {
+        this.VirtualMachineDatastoreInfo = VirtualMachineDatastoreInfo;
+    }
 }

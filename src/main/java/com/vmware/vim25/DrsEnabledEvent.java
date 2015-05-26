@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class DrsEnabledEvent extends ClusterEvent {
-  public String behavior;
+    public String behavior;
 
-  public String getBehavior() {
-    return this.behavior;
-  }
+    public String getBehavior() {
+        return this.behavior;
+    }
 
-  public void setBehavior(String behavior) {
-    this.behavior=behavior;
-  }
+    public void setBehavior(String behavior) {
+        this.behavior = behavior;
+    }
 }

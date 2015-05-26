@@ -30,73 +30,73 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class ClusterVmToolsMonitoringSettings extends DynamicData {
-  public Boolean enabled;
-  public String vmMonitoring;
-  public Boolean clusterSettings;
-  public Integer failureInterval;
-  public Integer minUpTime;
-  public Integer maxFailures;
-  public Integer maxFailureWindow;
+    public Boolean enabled;
+    public String vmMonitoring;
+    public Boolean clusterSettings;
+    public Integer failureInterval;
+    public Integer minUpTime;
+    public Integer maxFailures;
+    public Integer maxFailureWindow;
 
-  public Boolean getEnabled() {
-    return this.enabled;
-  }
+    public Boolean getEnabled() {
+        return this.enabled;
+    }
 
-  public String getVmMonitoring() {
-    return this.vmMonitoring;
-  }
+    public String getVmMonitoring() {
+        return this.vmMonitoring;
+    }
 
-  public Boolean getClusterSettings() {
-    return this.clusterSettings;
-  }
+    public Boolean getClusterSettings() {
+        return this.clusterSettings;
+    }
 
-  public Integer getFailureInterval() {
-    return this.failureInterval;
-  }
+    public Integer getFailureInterval() {
+        return this.failureInterval;
+    }
 
-  public Integer getMinUpTime() {
-    return this.minUpTime;
-  }
+    public Integer getMinUpTime() {
+        return this.minUpTime;
+    }
 
-  public Integer getMaxFailures() {
-    return this.maxFailures;
-  }
+    public Integer getMaxFailures() {
+        return this.maxFailures;
+    }
 
-  public Integer getMaxFailureWindow() {
-    return this.maxFailureWindow;
-  }
+    public Integer getMaxFailureWindow() {
+        return this.maxFailureWindow;
+    }
 
-  public void setEnabled(Boolean enabled) {
-    this.enabled=enabled;
-  }
+    public void setEnabled(Boolean enabled) {
+        this.enabled = enabled;
+    }
 
-  public void setVmMonitoring(String vmMonitoring) {
-    this.vmMonitoring=vmMonitoring;
-  }
+    public void setVmMonitoring(String vmMonitoring) {
+        this.vmMonitoring = vmMonitoring;
+    }
 
-  public void setClusterSettings(Boolean clusterSettings) {
-    this.clusterSettings=clusterSettings;
-  }
+    public void setClusterSettings(Boolean clusterSettings) {
+        this.clusterSettings = clusterSettings;
+    }
 
-  public void setFailureInterval(Integer failureInterval) {
-    this.failureInterval=failureInterval;
-  }
+    public void setFailureInterval(Integer failureInterval) {
+        this.failureInterval = failureInterval;
+    }
 
-  public void setMinUpTime(Integer minUpTime) {
-    this.minUpTime=minUpTime;
-  }
+    public void setMinUpTime(Integer minUpTime) {
+        this.minUpTime = minUpTime;
+    }
 
-  public void setMaxFailures(Integer maxFailures) {
-    this.maxFailures=maxFailures;
-  }
+    public void setMaxFailures(Integer maxFailures) {
+        this.maxFailures = maxFailures;
+    }
 
-  public void setMaxFailureWindow(Integer maxFailureWindow) {
-    this.maxFailureWindow=maxFailureWindow;
-  }
+    public void setMaxFailureWindow(Integer maxFailureWindow) {
+        this.maxFailureWindow = maxFailureWindow;
+    }
 }

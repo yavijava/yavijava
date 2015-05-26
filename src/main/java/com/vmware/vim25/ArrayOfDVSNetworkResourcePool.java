@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfDVSNetworkResourcePool {
-  public DVSNetworkResourcePool[] DVSNetworkResourcePool;
+    public DVSNetworkResourcePool[] DVSNetworkResourcePool;
 
-  public DVSNetworkResourcePool[] getDVSNetworkResourcePool() {
-    return this.DVSNetworkResourcePool;
-  }
+    public DVSNetworkResourcePool[] getDVSNetworkResourcePool() {
+        return this.DVSNetworkResourcePool;
+    }
 
-  public DVSNetworkResourcePool getDVSNetworkResourcePool(int i) {
-    return this.DVSNetworkResourcePool[i];
-  }
+    public DVSNetworkResourcePool getDVSNetworkResourcePool(int i) {
+        return this.DVSNetworkResourcePool[i];
+    }
 
-  public void setDVSNetworkResourcePool(DVSNetworkResourcePool[] DVSNetworkResourcePool) {
-    this.DVSNetworkResourcePool=DVSNetworkResourcePool;
-  }
+    public void setDVSNetworkResourcePool(DVSNetworkResourcePool[] DVSNetworkResourcePool) {
+        this.DVSNetworkResourcePool = DVSNetworkResourcePool;
+    }
 }

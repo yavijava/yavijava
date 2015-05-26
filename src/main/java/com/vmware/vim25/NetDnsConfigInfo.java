@@ -30,55 +30,55 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class NetDnsConfigInfo extends DynamicData {
-  public boolean dhcp;
-  public String hostName;
-  public String domainName;
-  public String[] ipAddress;
-  public String[] searchDomain;
+    public boolean dhcp;
+    public String hostName;
+    public String domainName;
+    public String[] ipAddress;
+    public String[] searchDomain;
 
-  public boolean isDhcp() {
-    return this.dhcp;
-  }
+    public boolean isDhcp() {
+        return this.dhcp;
+    }
 
-  public String getHostName() {
-    return this.hostName;
-  }
+    public String getHostName() {
+        return this.hostName;
+    }
 
-  public String getDomainName() {
-    return this.domainName;
-  }
+    public String getDomainName() {
+        return this.domainName;
+    }
 
-  public String[] getIpAddress() {
-    return this.ipAddress;
-  }
+    public String[] getIpAddress() {
+        return this.ipAddress;
+    }
 
-  public String[] getSearchDomain() {
-    return this.searchDomain;
-  }
+    public String[] getSearchDomain() {
+        return this.searchDomain;
+    }
 
-  public void setDhcp(boolean dhcp) {
-    this.dhcp=dhcp;
-  }
+    public void setDhcp(boolean dhcp) {
+        this.dhcp = dhcp;
+    }
 
-  public void setHostName(String hostName) {
-    this.hostName=hostName;
-  }
+    public void setHostName(String hostName) {
+        this.hostName = hostName;
+    }
 
-  public void setDomainName(String domainName) {
-    this.domainName=domainName;
-  }
+    public void setDomainName(String domainName) {
+        this.domainName = domainName;
+    }
 
-  public void setIpAddress(String[] ipAddress) {
-    this.ipAddress=ipAddress;
-  }
+    public void setIpAddress(String[] ipAddress) {
+        this.ipAddress = ipAddress;
+    }
 
-  public void setSearchDomain(String[] searchDomain) {
-    this.searchDomain=searchDomain;
-  }
+    public void setSearchDomain(String[] searchDomain) {
+        this.searchDomain = searchDomain;
+    }
 }

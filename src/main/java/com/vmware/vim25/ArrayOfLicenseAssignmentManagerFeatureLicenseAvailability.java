@@ -30,25 +30,21 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
-*/
+ * @author Steve Jin (sjin@vmware.com)
+ */
 
-public class ArrayOfLicenseAssignmentManagerFeatureLicenseAvailability
-{
-  public LicenseAssignmentManagerFeatureLicenseAvailability[] LicenseAssignmentManagerFeatureLicenseAvailability;
+public class ArrayOfLicenseAssignmentManagerFeatureLicenseAvailability {
+    public LicenseAssignmentManagerFeatureLicenseAvailability[] LicenseAssignmentManagerFeatureLicenseAvailability;
 
-  public LicenseAssignmentManagerFeatureLicenseAvailability[] getLicenseAssignmentManagerFeatureLicenseAvailability()
-  {
-    return this.LicenseAssignmentManagerFeatureLicenseAvailability;
-  }
+    public LicenseAssignmentManagerFeatureLicenseAvailability[] getLicenseAssignmentManagerFeatureLicenseAvailability() {
+        return this.LicenseAssignmentManagerFeatureLicenseAvailability;
+    }
 
-  public LicenseAssignmentManagerFeatureLicenseAvailability getLicenseAssignmentManagerFeatureLicenseAvailability(int i)
-  {
-    return this.LicenseAssignmentManagerFeatureLicenseAvailability[i];
-  }
+    public LicenseAssignmentManagerFeatureLicenseAvailability getLicenseAssignmentManagerFeatureLicenseAvailability(int i) {
+        return this.LicenseAssignmentManagerFeatureLicenseAvailability[i];
+    }
 
-  public void setLicenseAssignmentManagerFeatureLicenseAvailability(LicenseAssignmentManagerFeatureLicenseAvailability[] LicenseAssignmentManagerFeatureLicenseAvailability)
-  {
-    this.LicenseAssignmentManagerFeatureLicenseAvailability=LicenseAssignmentManagerFeatureLicenseAvailability;
-  }
+    public void setLicenseAssignmentManagerFeatureLicenseAvailability(LicenseAssignmentManagerFeatureLicenseAvailability[] LicenseAssignmentManagerFeatureLicenseAvailability) {
+        this.LicenseAssignmentManagerFeatureLicenseAvailability = LicenseAssignmentManagerFeatureLicenseAvailability;
+    }
 }

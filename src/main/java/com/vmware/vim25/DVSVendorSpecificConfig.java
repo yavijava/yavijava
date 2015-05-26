@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class DVSVendorSpecificConfig extends InheritablePolicy {
-  public DistributedVirtualSwitchKeyedOpaqueBlob[] keyValue;
+    public DistributedVirtualSwitchKeyedOpaqueBlob[] keyValue;
 
-  public DistributedVirtualSwitchKeyedOpaqueBlob[] getKeyValue() {
-    return this.keyValue;
-  }
+    public DistributedVirtualSwitchKeyedOpaqueBlob[] getKeyValue() {
+        return this.keyValue;
+    }
 
-  public void setKeyValue(DistributedVirtualSwitchKeyedOpaqueBlob[] keyValue) {
-    this.keyValue=keyValue;
-  }
+    public void setKeyValue(DistributedVirtualSwitchKeyedOpaqueBlob[] keyValue) {
+        this.keyValue = keyValue;
+    }
 }

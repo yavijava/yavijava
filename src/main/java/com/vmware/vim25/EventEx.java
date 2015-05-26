@@ -30,82 +30,82 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class EventEx extends Event {
-  public String eventTypeId;
-  public String severity;
-  public String message;
-  public KeyAnyValue[] arguments;
-  public String objectId;
-  public String objectType;
-  public String objectName;
-  public LocalizedMethodFault fault;
+    public String eventTypeId;
+    public String severity;
+    public String message;
+    public KeyAnyValue[] arguments;
+    public String objectId;
+    public String objectType;
+    public String objectName;
+    public LocalizedMethodFault fault;
 
-  public String getEventTypeId() {
-    return this.eventTypeId;
-  }
+    public String getEventTypeId() {
+        return this.eventTypeId;
+    }
 
-  public String getSeverity() {
-    return this.severity;
-  }
+    public String getSeverity() {
+        return this.severity;
+    }
 
-  public String getMessage() {
-    return this.message;
-  }
+    public String getMessage() {
+        return this.message;
+    }
 
-  public KeyAnyValue[] getArguments() {
-    return this.arguments;
-  }
+    public KeyAnyValue[] getArguments() {
+        return this.arguments;
+    }
 
-  public String getObjectId() {
-    return this.objectId;
-  }
+    public String getObjectId() {
+        return this.objectId;
+    }
 
-  public String getObjectType() {
-    return this.objectType;
-  }
+    public String getObjectType() {
+        return this.objectType;
+    }
 
-  public String getObjectName() {
-    return this.objectName;
-  }
+    public String getObjectName() {
+        return this.objectName;
+    }
 
-  public LocalizedMethodFault getFault() {
-    return this.fault;
-  }
+    public LocalizedMethodFault getFault() {
+        return this.fault;
+    }
 
-  public void setEventTypeId(String eventTypeId) {
-    this.eventTypeId=eventTypeId;
-  }
+    public void setEventTypeId(String eventTypeId) {
+        this.eventTypeId = eventTypeId;
+    }
 
-  public void setSeverity(String severity) {
-    this.severity=severity;
-  }
+    public void setSeverity(String severity) {
+        this.severity = severity;
+    }
 
-  public void setMessage(String message) {
-    this.message=message;
-  }
+    public void setMessage(String message) {
+        this.message = message;
+    }
 
-  public void setArguments(KeyAnyValue[] arguments) {
-    this.arguments=arguments;
-  }
+    public void setArguments(KeyAnyValue[] arguments) {
+        this.arguments = arguments;
+    }
 
-  public void setObjectId(String objectId) {
-    this.objectId=objectId;
-  }
+    public void setObjectId(String objectId) {
+        this.objectId = objectId;
+    }
 
-  public void setObjectType(String objectType) {
-    this.objectType=objectType;
-  }
+    public void setObjectType(String objectType) {
+        this.objectType = objectType;
+    }
 
-  public void setObjectName(String objectName) {
-    this.objectName=objectName;
-  }
+    public void setObjectName(String objectName) {
+        this.objectName = objectName;
+    }
 
-  public void setFault(LocalizedMethodFault fault) {
-    this.fault=fault;
-  }
+    public void setFault(LocalizedMethodFault fault) {
+        this.fault = fault;
+    }
 }

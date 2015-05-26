@@ -30,37 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class GuestDiskInfo extends DynamicData {
-  public String diskPath;
-  public Long capacity;
-  public Long freeSpace;
+    public String diskPath;
+    public Long capacity;
+    public Long freeSpace;
 
-  public String getDiskPath() {
-    return this.diskPath;
-  }
+    public String getDiskPath() {
+        return this.diskPath;
+    }
 
-  public Long getCapacity() {
-    return this.capacity;
-  }
+    public Long getCapacity() {
+        return this.capacity;
+    }
 
-  public Long getFreeSpace() {
-    return this.freeSpace;
-  }
+    public Long getFreeSpace() {
+        return this.freeSpace;
+    }
 
-  public void setDiskPath(String diskPath) {
-    this.diskPath=diskPath;
-  }
+    public void setDiskPath(String diskPath) {
+        this.diskPath = diskPath;
+    }
 
-  public void setCapacity(Long capacity) {
-    this.capacity=capacity;
-  }
+    public void setCapacity(Long capacity) {
+        this.capacity = capacity;
+    }
 
-  public void setFreeSpace(Long freeSpace) {
-    this.freeSpace=freeSpace;
-  }
+    public void setFreeSpace(Long freeSpace) {
+        this.freeSpace = freeSpace;
+    }
 }

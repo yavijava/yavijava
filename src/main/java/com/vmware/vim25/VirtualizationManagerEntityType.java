@@ -30,20 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
-*/
+ * @author Steve Jin (sjin@vmware.com)
+ */
 
-public enum VirtualizationManagerEntityType
-{
-  host ("host"),
-  application ("application"),
-  service ("service"),
-  esxServer ("esxServer"),
-  vmwareServer ("vmwareServer");
+public enum VirtualizationManagerEntityType {
+    host("host"),
+    application("application"),
+    service("service"),
+    esxServer("esxServer"),
+    vmwareServer("vmwareServer");
 
-  private final String val;
-  private VirtualizationManagerEntityType(String val)
-  {
-    this.val = val;
-  }
+    private final String val;
+
+    private VirtualizationManagerEntityType(String val) {
+        this.val = val;
+    }
 }

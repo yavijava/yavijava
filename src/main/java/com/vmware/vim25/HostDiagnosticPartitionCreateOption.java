@@ -30,37 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostDiagnosticPartitionCreateOption extends DynamicData {
-  public String storageType;
-  public String diagnosticType;
-  public HostScsiDisk disk;
+    public String storageType;
+    public String diagnosticType;
+    public HostScsiDisk disk;
 
-  public String getStorageType() {
-    return this.storageType;
-  }
+    public String getStorageType() {
+        return this.storageType;
+    }
 
-  public String getDiagnosticType() {
-    return this.diagnosticType;
-  }
+    public String getDiagnosticType() {
+        return this.diagnosticType;
+    }
 
-  public HostScsiDisk getDisk() {
-    return this.disk;
-  }
+    public HostScsiDisk getDisk() {
+        return this.disk;
+    }
 
-  public void setStorageType(String storageType) {
-    this.storageType=storageType;
-  }
+    public void setStorageType(String storageType) {
+        this.storageType = storageType;
+    }
 
-  public void setDiagnosticType(String diagnosticType) {
-    this.diagnosticType=diagnosticType;
-  }
+    public void setDiagnosticType(String diagnosticType) {
+        this.diagnosticType = diagnosticType;
+    }
 
-  public void setDisk(HostScsiDisk disk) {
-    this.disk=disk;
-  }
+    public void setDisk(HostScsiDisk disk) {
+        this.disk = disk;
+    }
 }

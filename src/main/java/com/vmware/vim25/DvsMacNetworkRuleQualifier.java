@@ -30,46 +30,46 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class DvsMacNetworkRuleQualifier extends DvsNetworkRuleQualifier {
-  public MacAddress sourceAddress;
-  public MacAddress destinationAddress;
-  public IntExpression protocol;
-  public IntExpression vlanId;
+    public MacAddress sourceAddress;
+    public MacAddress destinationAddress;
+    public IntExpression protocol;
+    public IntExpression vlanId;
 
-  public MacAddress getSourceAddress() {
-    return this.sourceAddress;
-  }
+    public MacAddress getSourceAddress() {
+        return this.sourceAddress;
+    }
 
-  public MacAddress getDestinationAddress() {
-    return this.destinationAddress;
-  }
+    public MacAddress getDestinationAddress() {
+        return this.destinationAddress;
+    }
 
-  public IntExpression getProtocol() {
-    return this.protocol;
-  }
+    public IntExpression getProtocol() {
+        return this.protocol;
+    }
 
-  public IntExpression getVlanId() {
-    return this.vlanId;
-  }
+    public IntExpression getVlanId() {
+        return this.vlanId;
+    }
 
-  public void setSourceAddress(MacAddress sourceAddress) {
-    this.sourceAddress=sourceAddress;
-  }
+    public void setSourceAddress(MacAddress sourceAddress) {
+        this.sourceAddress = sourceAddress;
+    }
 
-  public void setDestinationAddress(MacAddress destinationAddress) {
-    this.destinationAddress=destinationAddress;
-  }
+    public void setDestinationAddress(MacAddress destinationAddress) {
+        this.destinationAddress = destinationAddress;
+    }
 
-  public void setProtocol(IntExpression protocol) {
-    this.protocol=protocol;
-  }
+    public void setProtocol(IntExpression protocol) {
+        this.protocol = protocol;
+    }
 
-  public void setVlanId(IntExpression vlanId) {
-    this.vlanId=vlanId;
-  }
+    public void setVlanId(IntExpression vlanId) {
+        this.vlanId = vlanId;
+    }
 }

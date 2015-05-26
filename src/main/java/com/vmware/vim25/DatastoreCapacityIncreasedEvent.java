@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class DatastoreCapacityIncreasedEvent extends DatastoreEvent {
-  public long oldCapacity;
-  public long newCapacity;
+    public long oldCapacity;
+    public long newCapacity;
 
-  public long getOldCapacity() {
-    return this.oldCapacity;
-  }
+    public long getOldCapacity() {
+        return this.oldCapacity;
+    }
 
-  public long getNewCapacity() {
-    return this.newCapacity;
-  }
+    public long getNewCapacity() {
+        return this.newCapacity;
+    }
 
-  public void setOldCapacity(long oldCapacity) {
-    this.oldCapacity=oldCapacity;
-  }
+    public void setOldCapacity(long oldCapacity) {
+        this.oldCapacity = oldCapacity;
+    }
 
-  public void setNewCapacity(long newCapacity) {
-    this.newCapacity=newCapacity;
-  }
+    public void setNewCapacity(long newCapacity) {
+        this.newCapacity = newCapacity;
+    }
 }

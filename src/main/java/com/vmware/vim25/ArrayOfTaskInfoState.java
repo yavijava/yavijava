@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfTaskInfoState {
-  public TaskInfoState[] TaskInfoState;
+    public TaskInfoState[] TaskInfoState;
 
-  public TaskInfoState[] getTaskInfoState() {
-    return this.TaskInfoState;
-  }
+    public TaskInfoState[] getTaskInfoState() {
+        return this.TaskInfoState;
+    }
 
-  public TaskInfoState getTaskInfoState(int i) {
-    return this.TaskInfoState[i];
-  }
+    public TaskInfoState getTaskInfoState(int i) {
+        return this.TaskInfoState[i];
+    }
 
-  public void setTaskInfoState(TaskInfoState[] TaskInfoState) {
-    this.TaskInfoState=TaskInfoState;
-  }
+    public void setTaskInfoState(TaskInfoState[] TaskInfoState) {
+        this.TaskInfoState = TaskInfoState;
+    }
 }

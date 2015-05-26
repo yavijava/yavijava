@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class NumVirtualCpusIncompatible extends VmConfigFault {
-  public String reason;
-  public int numCpu;
+    public String reason;
+    public int numCpu;
 
-  public String getReason() {
-    return this.reason;
-  }
+    public String getReason() {
+        return this.reason;
+    }
 
-  public int getNumCpu() {
-    return this.numCpu;
-  }
+    public int getNumCpu() {
+        return this.numCpu;
+    }
 
-  public void setReason(String reason) {
-    this.reason=reason;
-  }
+    public void setReason(String reason) {
+        this.reason = reason;
+    }
 
-  public void setNumCpu(int numCpu) {
-    this.numCpu=numCpu;
-  }
+    public void setNumCpu(int numCpu) {
+        this.numCpu = numCpu;
+    }
 }

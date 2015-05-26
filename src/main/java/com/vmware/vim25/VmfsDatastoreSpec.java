@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VmfsDatastoreSpec extends DynamicData {
-  public String diskUuid;
+    public String diskUuid;
 
-  public String getDiskUuid() {
-    return this.diskUuid;
-  }
+    public String getDiskUuid() {
+        return this.diskUuid;
+    }
 
-  public void setDiskUuid(String diskUuid) {
-    this.diskUuid=diskUuid;
-  }
+    public void setDiskUuid(String diskUuid) {
+        this.diskUuid = diskUuid;
+    }
 }

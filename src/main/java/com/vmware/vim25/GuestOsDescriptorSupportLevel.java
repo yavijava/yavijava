@@ -30,23 +30,23 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public enum GuestOsDescriptorSupportLevel {
-  experimental ("experimental"),
-  legacy ("legacy"),
-  terminated ("terminated"),
-  supported ("supported"),
-  unsupported ("unsupported"),
-  deprecated ("deprecated"),
-  techPreview ("techPreview");
+    experimental("experimental"),
+    legacy("legacy"),
+    terminated("terminated"),
+    supported("supported"),
+    unsupported("unsupported"),
+    deprecated("deprecated"),
+    techPreview("techPreview");
 
-  @SuppressWarnings("unused")
-  private final String val;
-  private GuestOsDescriptorSupportLevel(String val)
-  {
-    this.val = val;
-  }
+    @SuppressWarnings("unused")
+    private final String val;
+
+    private GuestOsDescriptorSupportLevel(String val) {
+        this.val = val;
+    }
 }

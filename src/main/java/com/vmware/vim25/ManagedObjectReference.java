@@ -30,36 +30,36 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class ManagedObjectReference {
-   public String val;
-   public String type;
-   
-   public String getVal() {
- 	return val;
-   }
+    public String val;
+    public String type;
 
-   public void setVal(String val) {
- 	this.val = val;
-   }
-   
-   public String getType() {
- 	return type;
-   }
-   
-   public void setType(String type) {
-     this.type = type;
-   }
+    public String getVal() {
+        return val;
+    }
 
-   public String get_value() {
-     return val;
-   }
+    public void setVal(String val) {
+        this.val = val;
+    }
 
-   public void set_value(String val) {
-     this.val = val;
-   }
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public String get_value() {
+        return val;
+    }
+
+    public void set_value(String val) {
+        this.val = val;
+    }
 }

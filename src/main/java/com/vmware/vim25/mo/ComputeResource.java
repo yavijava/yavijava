@@ -29,61 +29,52 @@ POSSIBILITY OF SUCH DAMAGE.
 
 package com.vmware.vim25.mo;
 
-import java.rmi.RemoteException;
-
 import com.vmware.vim25.*;
+
+import java.rmi.RemoteException;
 
 /**
  * The managed object class corresponding to the one defined in VI SDK API reference.
+ *
  * @author Steve JIN (http://www.doublecloud.org)
  */
 
-public class ComputeResource extends ManagedEntity
-{
-	public ComputeResource(ServerConnection sc, ManagedObjectReference mor) 
-	{
-		super(sc, mor);
-	}
-	
-	public ComputeResourceConfigInfo getConfigurationEx()
-	{
-		return (ComputeResourceConfigInfo) this.getCurrentProperty("configurationEx");	
-	}
-	
-	public Datastore[] getDatastores()
-	{
-		return getDatastores("datastore");
-	}
-	
-	public Network[] getNetworks()
-	{
-		return getNetworks("network");
-	}
-	
-	public HostSystem[] getHosts()
-	{
-		return getHosts("host");
-	}
-	
-	public ResourcePool getResourcePool()
-	{
-		return (ResourcePool) this.getManagedObject("resourcePool");
-	}
+public class ComputeResource extends ManagedEntity {
+    public ComputeResource(ServerConnection sc, ManagedObjectReference mor) {
+        super(sc, mor);
+    }
 
-	public EnvironmentBrowser getEnvironmentBrowser()
-	{
-		return (EnvironmentBrowser)this.getManagedObject("environmentBrowser");
-	}
+    public ComputeResourceConfigInfo getConfigurationEx() {
+        return (ComputeResourceConfigInfo) this.getCurrentProperty("configurationEx");
+    }
 
-	public ComputeResourceSummary getSummary()
-	{
-		return (ComputeResourceSummary) this.getCurrentProperty("summary");
-	}
+    public Datastore[] getDatastores() {
+        return getDatastores("datastore");
+    }
 
-	public Task reconfigureComputeResource_Task(ComputeResourceConfigSpec spec, boolean modify) throws RuntimeFault, RemoteException  
-	{
-		ManagedObjectReference taskMOR = getVimService().reconfigureComputeResource_Task(getMOR(), spec, modify);
-		return new Task(getServerConnection(), taskMOR);
-	}
-	
+    public Network[] getNetworks() {
+        return getNetworks("network");
+    }
+
+    public HostSystem[] getHosts() {
+        return getHosts("host");
+    }
+
+    public ResourcePool getResourcePool() {
+        return (ResourcePool) this.getManagedObject("resourcePool");
+    }
+
+    public EnvironmentBrowser getEnvironmentBrowser() {
+        return (EnvironmentBrowser) this.getManagedObject("environmentBrowser");
+    }
+
+    public ComputeResourceSummary getSummary() {
+        return (ComputeResourceSummary) this.getCurrentProperty("summary");
+    }
+
+    public Task reconfigureComputeResource_Task(ComputeResourceConfigSpec spec, boolean modify) throws RuntimeFault, RemoteException {
+        ManagedObjectReference taskMOR = getVimService().reconfigureComputeResource_Task(getMOR(), spec, modify);
+        return new Task(getServerConnection(), taskMOR);
+    }
+
 }

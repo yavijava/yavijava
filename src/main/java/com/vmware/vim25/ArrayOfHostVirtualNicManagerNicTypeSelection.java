@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfHostVirtualNicManagerNicTypeSelection {
-  public HostVirtualNicManagerNicTypeSelection[] HostVirtualNicManagerNicTypeSelection;
+    public HostVirtualNicManagerNicTypeSelection[] HostVirtualNicManagerNicTypeSelection;
 
-  public HostVirtualNicManagerNicTypeSelection[] getHostVirtualNicManagerNicTypeSelection() {
-    return this.HostVirtualNicManagerNicTypeSelection;
-  }
+    public HostVirtualNicManagerNicTypeSelection[] getHostVirtualNicManagerNicTypeSelection() {
+        return this.HostVirtualNicManagerNicTypeSelection;
+    }
 
-  public HostVirtualNicManagerNicTypeSelection getHostVirtualNicManagerNicTypeSelection(int i) {
-    return this.HostVirtualNicManagerNicTypeSelection[i];
-  }
+    public HostVirtualNicManagerNicTypeSelection getHostVirtualNicManagerNicTypeSelection(int i) {
+        return this.HostVirtualNicManagerNicTypeSelection[i];
+    }
 
-  public void setHostVirtualNicManagerNicTypeSelection(HostVirtualNicManagerNicTypeSelection[] HostVirtualNicManagerNicTypeSelection) {
-    this.HostVirtualNicManagerNicTypeSelection=HostVirtualNicManagerNicTypeSelection;
-  }
+    public void setHostVirtualNicManagerNicTypeSelection(HostVirtualNicManagerNicTypeSelection[] HostVirtualNicManagerNicTypeSelection) {
+        this.HostVirtualNicManagerNicTypeSelection = HostVirtualNicManagerNicTypeSelection;
+    }
 }

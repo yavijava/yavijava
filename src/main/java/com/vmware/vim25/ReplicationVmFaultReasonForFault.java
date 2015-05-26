@@ -30,23 +30,23 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public enum ReplicationVmFaultReasonForFault {
-  notConfigured ("notConfigured"),
-  poweredOff ("poweredOff"),
-  suspended ("suspended"),
-  poweredOn ("poweredOn"),
-  offlineReplicating ("offlineReplicating"),
-  invalidState ("invalidState"),
-  invalidInstanceId ("invalidInstanceId");
+    notConfigured("notConfigured"),
+    poweredOff("poweredOff"),
+    suspended("suspended"),
+    poweredOn("poweredOn"),
+    offlineReplicating("offlineReplicating"),
+    invalidState("invalidState"),
+    invalidInstanceId("invalidInstanceId");
 
-  @SuppressWarnings("unused")
-  private final String val;
-  private ReplicationVmFaultReasonForFault(String val)
-  {
-    this.val = val;
-  }
+    @SuppressWarnings("unused")
+    private final String val;
+
+    private ReplicationVmFaultReasonForFault(String val) {
+        this.val = val;
+    }
 }

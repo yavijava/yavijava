@@ -30,37 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class DiagnosticManagerLogHeader extends DynamicData {
-  public int lineStart;
-  public int lineEnd;
-  public String[] lineText;
+    public int lineStart;
+    public int lineEnd;
+    public String[] lineText;
 
-  public int getLineStart() {
-    return this.lineStart;
-  }
+    public int getLineStart() {
+        return this.lineStart;
+    }
 
-  public int getLineEnd() {
-    return this.lineEnd;
-  }
+    public int getLineEnd() {
+        return this.lineEnd;
+    }
 
-  public String[] getLineText() {
-    return this.lineText;
-  }
+    public String[] getLineText() {
+        return this.lineText;
+    }
 
-  public void setLineStart(int lineStart) {
-    this.lineStart=lineStart;
-  }
+    public void setLineStart(int lineStart) {
+        this.lineStart = lineStart;
+    }
 
-  public void setLineEnd(int lineEnd) {
-    this.lineEnd=lineEnd;
-  }
+    public void setLineEnd(int lineEnd) {
+        this.lineEnd = lineEnd;
+    }
 
-  public void setLineText(String[] lineText) {
-    this.lineText=lineText;
-  }
+    public void setLineText(String[] lineText) {
+        this.lineText = lineText;
+    }
 }

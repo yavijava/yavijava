@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VsanHostDiskMapping extends DynamicData {
-  public HostScsiDisk ssd;
-  public HostScsiDisk[] nonSsd;
+    public HostScsiDisk ssd;
+    public HostScsiDisk[] nonSsd;
 
-  public HostScsiDisk getSsd() {
-    return this.ssd;
-  }
+    public HostScsiDisk getSsd() {
+        return this.ssd;
+    }
 
-  public HostScsiDisk[] getNonSsd() {
-    return this.nonSsd;
-  }
+    public HostScsiDisk[] getNonSsd() {
+        return this.nonSsd;
+    }
 
-  public void setSsd(HostScsiDisk ssd) {
-    this.ssd=ssd;
-  }
+    public void setSsd(HostScsiDisk ssd) {
+        this.ssd = ssd;
+    }
 
-  public void setNonSsd(HostScsiDisk[] nonSsd) {
-    this.nonSsd=nonSsd;
-  }
+    public void setNonSsd(HostScsiDisk[] nonSsd) {
+        this.nonSsd = nonSsd;
+    }
 }

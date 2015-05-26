@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VirtualDeviceURIBackingOption extends VirtualDeviceBackingOption {
-  public ChoiceOption directions;
+    public ChoiceOption directions;
 
-  public ChoiceOption getDirections() {
-    return this.directions;
-  }
+    public ChoiceOption getDirections() {
+        return this.directions;
+    }
 
-  public void setDirections(ChoiceOption directions) {
-    this.directions=directions;
-  }
+    public void setDirections(ChoiceOption directions) {
+        this.directions = directions;
+    }
 }

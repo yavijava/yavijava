@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class PrivilegeAvailability extends DynamicData {
-  public String privId;
-  public boolean isGranted;
+    public String privId;
+    public boolean isGranted;
 
-  public String getPrivId() {
-    return this.privId;
-  }
+    public String getPrivId() {
+        return this.privId;
+    }
 
-  public boolean isIsGranted() {
-    return this.isGranted;
-  }
+    public boolean isIsGranted() {
+        return this.isGranted;
+    }
 
-  public void setPrivId(String privId) {
-    this.privId=privId;
-  }
+    public void setPrivId(String privId) {
+        this.privId = privId;
+    }
 
-  public void setIsGranted(boolean isGranted) {
-    this.isGranted=isGranted;
-  }
+    public void setIsGranted(boolean isGranted) {
+        this.isGranted = isGranted;
+    }
 }

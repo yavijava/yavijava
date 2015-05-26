@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostIpRouteOp extends DynamicData {
-  public String changeOperation;
-  public HostIpRouteEntry route;
+    public String changeOperation;
+    public HostIpRouteEntry route;
 
-  public String getChangeOperation() {
-    return this.changeOperation;
-  }
+    public String getChangeOperation() {
+        return this.changeOperation;
+    }
 
-  public HostIpRouteEntry getRoute() {
-    return this.route;
-  }
+    public HostIpRouteEntry getRoute() {
+        return this.route;
+    }
 
-  public void setChangeOperation(String changeOperation) {
-    this.changeOperation=changeOperation;
-  }
+    public void setChangeOperation(String changeOperation) {
+        this.changeOperation = changeOperation;
+    }
 
-  public void setRoute(HostIpRouteEntry route) {
-    this.route=route;
-  }
+    public void setRoute(HostIpRouteEntry route) {
+        this.route = route;
+    }
 }

@@ -30,53 +30,44 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
-*/
+ * @author Steve Jin (sjin@vmware.com)
+ */
 
-public class ISCSITargetProfile extends ApplyProfile
-{
-  public String key;
-  public String name;
-  public ISCSITargetCHAPProfile chapProfile;
-  public ISCSITargetCHAPProfile mutualCHAPProfile;
+public class ISCSITargetProfile extends ApplyProfile {
+    public String key;
+    public String name;
+    public ISCSITargetCHAPProfile chapProfile;
+    public ISCSITargetCHAPProfile mutualCHAPProfile;
 
-  public String getKey()
-  {
-    return this.key;
-  }
+    public String getKey() {
+        return this.key;
+    }
 
-  public String getName()
-  {
-    return this.name;
-  }
+    public String getName() {
+        return this.name;
+    }
 
-  public ISCSITargetCHAPProfile getChapProfile()
-  {
-    return this.chapProfile;
-  }
+    public ISCSITargetCHAPProfile getChapProfile() {
+        return this.chapProfile;
+    }
 
-  public ISCSITargetCHAPProfile getMutualCHAPProfile()
-  {
-    return this.mutualCHAPProfile;
-  }
+    public ISCSITargetCHAPProfile getMutualCHAPProfile() {
+        return this.mutualCHAPProfile;
+    }
 
-  public void setKey(String key)
-  {
-    this.key=key;
-  }
+    public void setKey(String key) {
+        this.key = key;
+    }
 
-  public void setName(String name)
-  {
-    this.name=name;
-  }
+    public void setName(String name) {
+        this.name = name;
+    }
 
-  public void setChapProfile(ISCSITargetCHAPProfile chapProfile)
-  {
-    this.chapProfile=chapProfile;
-  }
+    public void setChapProfile(ISCSITargetCHAPProfile chapProfile) {
+        this.chapProfile = chapProfile;
+    }
 
-  public void setMutualCHAPProfile(ISCSITargetCHAPProfile mutualCHAPProfile)
-  {
-    this.mutualCHAPProfile=mutualCHAPProfile;
-  }
+    public void setMutualCHAPProfile(ISCSITargetCHAPProfile mutualCHAPProfile) {
+        this.mutualCHAPProfile = mutualCHAPProfile;
+    }
 }

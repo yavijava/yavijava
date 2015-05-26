@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VsanClusterUuidMismatch extends CannotMoveVsanEnabledHost {
-  public String hostClusterUuid;
-  public String destinationClusterUuid;
+    public String hostClusterUuid;
+    public String destinationClusterUuid;
 
-  public String getHostClusterUuid() {
-    return this.hostClusterUuid;
-  }
+    public String getHostClusterUuid() {
+        return this.hostClusterUuid;
+    }
 
-  public String getDestinationClusterUuid() {
-    return this.destinationClusterUuid;
-  }
+    public String getDestinationClusterUuid() {
+        return this.destinationClusterUuid;
+    }
 
-  public void setHostClusterUuid(String hostClusterUuid) {
-    this.hostClusterUuid=hostClusterUuid;
-  }
+    public void setHostClusterUuid(String hostClusterUuid) {
+        this.hostClusterUuid = hostClusterUuid;
+    }
 
-  public void setDestinationClusterUuid(String destinationClusterUuid) {
-    this.destinationClusterUuid=destinationClusterUuid;
-  }
+    public void setDestinationClusterUuid(String destinationClusterUuid) {
+        this.destinationClusterUuid = destinationClusterUuid;
+    }
 }

@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class DatastorePrincipalConfigured extends HostEvent {
-  public String datastorePrincipal;
+    public String datastorePrincipal;
 
-  public String getDatastorePrincipal() {
-    return this.datastorePrincipal;
-  }
+    public String getDatastorePrincipal() {
+        return this.datastorePrincipal;
+    }
 
-  public void setDatastorePrincipal(String datastorePrincipal) {
-    this.datastorePrincipal=datastorePrincipal;
-  }
+    public void setDatastorePrincipal(String datastorePrincipal) {
+        this.datastorePrincipal = datastorePrincipal;
+    }
 }

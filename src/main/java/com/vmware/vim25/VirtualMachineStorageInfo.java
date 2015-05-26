@@ -28,31 +28,32 @@ POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
 
 package com.vmware.vim25;
+
 import java.util.Calendar;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VirtualMachineStorageInfo extends DynamicData {
-  public VirtualMachineUsageOnDatastore[] perDatastoreUsage;
-  public Calendar timestamp;
+    public VirtualMachineUsageOnDatastore[] perDatastoreUsage;
+    public Calendar timestamp;
 
-  public VirtualMachineUsageOnDatastore[] getPerDatastoreUsage() {
-    return this.perDatastoreUsage;
-  }
+    public VirtualMachineUsageOnDatastore[] getPerDatastoreUsage() {
+        return this.perDatastoreUsage;
+    }
 
-  public Calendar getTimestamp() {
-    return this.timestamp;
-  }
+    public Calendar getTimestamp() {
+        return this.timestamp;
+    }
 
-  public void setPerDatastoreUsage(VirtualMachineUsageOnDatastore[] perDatastoreUsage) {
-    this.perDatastoreUsage=perDatastoreUsage;
-  }
+    public void setPerDatastoreUsage(VirtualMachineUsageOnDatastore[] perDatastoreUsage) {
+        this.perDatastoreUsage = perDatastoreUsage;
+    }
 
-  public void setTimestamp(Calendar timestamp) {
-    this.timestamp=timestamp;
-  }
+    public void setTimestamp(Calendar timestamp) {
+        this.timestamp = timestamp;
+    }
 }

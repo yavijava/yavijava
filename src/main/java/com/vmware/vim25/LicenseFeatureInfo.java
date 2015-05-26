@@ -28,94 +28,95 @@ POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
 
 package com.vmware.vim25;
+
 import java.util.Calendar;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class LicenseFeatureInfo extends DynamicData {
-  public String key;
-  public String featureName;
-  public String featureDescription;
-  public LicenseFeatureInfoState state;
-  public String costUnit;
-  public String sourceRestriction;
-  public String[] dependentKey;
-  public Boolean edition;
-  public Calendar expiresOn;
+    public String key;
+    public String featureName;
+    public String featureDescription;
+    public LicenseFeatureInfoState state;
+    public String costUnit;
+    public String sourceRestriction;
+    public String[] dependentKey;
+    public Boolean edition;
+    public Calendar expiresOn;
 
-  public String getKey() {
-    return this.key;
-  }
+    public String getKey() {
+        return this.key;
+    }
 
-  public String getFeatureName() {
-    return this.featureName;
-  }
+    public String getFeatureName() {
+        return this.featureName;
+    }
 
-  public String getFeatureDescription() {
-    return this.featureDescription;
-  }
+    public String getFeatureDescription() {
+        return this.featureDescription;
+    }
 
-  public LicenseFeatureInfoState getState() {
-    return this.state;
-  }
+    public LicenseFeatureInfoState getState() {
+        return this.state;
+    }
 
-  public String getCostUnit() {
-    return this.costUnit;
-  }
+    public String getCostUnit() {
+        return this.costUnit;
+    }
 
-  public String getSourceRestriction() {
-    return this.sourceRestriction;
-  }
+    public String getSourceRestriction() {
+        return this.sourceRestriction;
+    }
 
-  public String[] getDependentKey() {
-    return this.dependentKey;
-  }
+    public String[] getDependentKey() {
+        return this.dependentKey;
+    }
 
-  public Boolean getEdition() {
-    return this.edition;
-  }
+    public Boolean getEdition() {
+        return this.edition;
+    }
 
-  public Calendar getExpiresOn() {
-    return this.expiresOn;
-  }
+    public Calendar getExpiresOn() {
+        return this.expiresOn;
+    }
 
-  public void setKey(String key) {
-    this.key=key;
-  }
+    public void setKey(String key) {
+        this.key = key;
+    }
 
-  public void setFeatureName(String featureName) {
-    this.featureName=featureName;
-  }
+    public void setFeatureName(String featureName) {
+        this.featureName = featureName;
+    }
 
-  public void setFeatureDescription(String featureDescription) {
-    this.featureDescription=featureDescription;
-  }
+    public void setFeatureDescription(String featureDescription) {
+        this.featureDescription = featureDescription;
+    }
 
-  public void setState(LicenseFeatureInfoState state) {
-    this.state=state;
-  }
+    public void setState(LicenseFeatureInfoState state) {
+        this.state = state;
+    }
 
-  public void setCostUnit(String costUnit) {
-    this.costUnit=costUnit;
-  }
+    public void setCostUnit(String costUnit) {
+        this.costUnit = costUnit;
+    }
 
-  public void setSourceRestriction(String sourceRestriction) {
-    this.sourceRestriction=sourceRestriction;
-  }
+    public void setSourceRestriction(String sourceRestriction) {
+        this.sourceRestriction = sourceRestriction;
+    }
 
-  public void setDependentKey(String[] dependentKey) {
-    this.dependentKey=dependentKey;
-  }
+    public void setDependentKey(String[] dependentKey) {
+        this.dependentKey = dependentKey;
+    }
 
-  public void setEdition(Boolean edition) {
-    this.edition=edition;
-  }
+    public void setEdition(Boolean edition) {
+        this.edition = edition;
+    }
 
-  public void setExpiresOn(Calendar expiresOn) {
-    this.expiresOn=expiresOn;
-  }
+    public void setExpiresOn(Calendar expiresOn) {
+        this.expiresOn = expiresOn;
+    }
 }

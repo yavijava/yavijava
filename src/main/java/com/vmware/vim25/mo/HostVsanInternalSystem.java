@@ -29,9 +29,9 @@ POSSIBILITY OF SUCH DAMAGE.
 
 package com.vmware.vim25.mo;
 
-import java.rmi.RemoteException;
-
 import com.vmware.vim25.*;
+
+import java.rmi.RemoteException;
 
 /**
  * The managed object class corresponding to the one defined in VI SDK API reference.
@@ -57,12 +57,11 @@ public class HostVsanInternalSystem extends ManagedObject {
      * object. This API is meant as a troubleshooting and debugging tool. It is internal
      * at this point and can be used to resolve issues where DOM owner gets "stuck".
      *
-     * @since 6.0
-     *
      * @param uuids List of VSAN/DOM object UUIDs.
      * @return String[]
      * @throws RemoteException
      * @throws RuntimeFault
+     * @since 6.0
      */
     public String[] abdicateDomOwnership(String[] uuids) throws RuntimeFault, RemoteException {
         return getVimService().abdicateDomOwnership(getMOR(), uuids);
@@ -78,7 +77,7 @@ public class HostVsanInternalSystem extends ManagedObject {
      * can be provisioned, the API returns the cost of provisioning objects with this policy.
      * Please note: This API ignores forceProvisioning.
      *
-     * @param npbs List of NewPolicyBatch structure with sizes and policies.
+     * @param npbs                 List of NewPolicyBatch structure with sizes and policies.
      * @param ignoreSatisfiability Optionally populate PolicyCost even though object cannot be provisioned in the current cluster topology.
      * @return List of PolicySatisfiability objects, one for each specified size.
      * @throws VimFault
@@ -125,7 +124,6 @@ public class HostVsanInternalSystem extends ManagedObject {
      *
      * @param uuids List of object UUIDs.
      * @return JSON string with the extended attributes.
-     *
      * @throws RuntimeFault
      * @throws RemoteException
      * @throws VimFault
@@ -136,12 +134,11 @@ public class HostVsanInternalSystem extends ManagedObject {
     }
 
     /**
-     *
-     * @deprecated use {@link HostVsanInternalSystem#queryCmmds(HostVsanInternalSystemCmmdsQuery[])}
      * @param queries
      * @return
      * @throws RuntimeFault
      * @throws RemoteException
+     * @deprecated use {@link HostVsanInternalSystem#queryCmmds(HostVsanInternalSystemCmmdsQuery[])}
      */
     public String QueryCmmds(HostVsanInternalSystemCmmdsQuery[] queries) throws RuntimeFault, RemoteException {
         return queryCmmds(queries);
@@ -182,8 +179,8 @@ public class HostVsanInternalSystem extends ManagedObject {
      * inputs objects UUID, then only these objects will be checked for the filtering conditions, and return ones which
      * satisfy the filtering condition. In this case, the 'limit' parameter will be ignored.
      *
-     * @param uuids Objects UUID will be checked against the filtering conditions.
-     * @param limit To limit the size of the result set.
+     * @param uuids   Objects UUID will be checked against the filtering conditions.
+     * @param limit   To limit the size of the result set.
      * @param version Filtering condition 1: object version.
      * @return String array of object uuids which satisfy the filtering conditions.
      * @throws VsanFault
@@ -222,7 +219,7 @@ public class HostVsanInternalSystem extends ManagedObject {
      * compute if a particular operation is expected to succeed or fail.
      * Please note: This API ignores forceProvisioning.
      *
-     * @param pcbs List of PolicyChangeBatch structure with uuids and policies.
+     * @param pcbs                 List of PolicyChangeBatch structure with uuids and policies.
      * @param ignoreSatisfiability Optionally populate PolicyCost even though object cannot be reconfigured in the current cluster topology.
      * @return List of PolicySatisfiability objects, one for each specified UUID.
      * @throws RemoteException
@@ -244,7 +241,7 @@ public class HostVsanInternalSystem extends ManagedObject {
      * to reconfigure any object known by UUID. This API is internal and intended for troubleshooting/debugging
      * situations in the field.
      *
-     * @param uuid DOM object UUID.
+     * @param uuid   DOM object UUID.
      * @param policy VSAN expression formatted policy string.
      * @throws RuntimeFault
      * @throws RemoteException
@@ -275,7 +272,7 @@ public class HostVsanInternalSystem extends ManagedObject {
      * limit the size of the inputs array, and suggested array size is 500 ~ 1000 initially. (The API will give more
      * realistic suggestion after more experiments, then will apply hard limits in future)
      *
-     * @param uuids The array of objects' UUID which will be upgraded.
+     * @param uuids      The array of objects' UUID which will be upgraded.
      * @param newVersion The new version will be applied to objects.
      * @return
      * @throws RuntimeFault

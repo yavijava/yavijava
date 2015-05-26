@@ -29,41 +29,36 @@ POSSIBILITY OF SUCH DAMAGE.
 
 package com.vmware.vim25.mo;
 
-import java.rmi.RemoteException;
-
 import com.vmware.vim25.*;
+
+import java.rmi.RemoteException;
 
 /**
  * The managed object class corresponding to the one defined in VI SDK API reference.
+ *
  * @author Steve JIN (http://www.doublecloud.org)
  */
 
-public class HostMemorySystem extends ExtensibleManagedObject 
-{
+public class HostMemorySystem extends ExtensibleManagedObject {
 
-	public HostMemorySystem(ServerConnection serverConnection, ManagedObjectReference mor) 
-	{
-		super(serverConnection, mor);
-	}
+    public HostMemorySystem(ServerConnection serverConnection, ManagedObjectReference mor) {
+        super(serverConnection, mor);
+    }
 
-	public ServiceConsoleReservationInfo getConsoleReservationInfo()
-	{
-		return (ServiceConsoleReservationInfo) getCurrentProperty("consoleReservationInfo");
-	}
-	
-	public VirtualMachineMemoryReservationInfo getVirtualMachineReservationInfo()
-	{
-		return (VirtualMachineMemoryReservationInfo) getCurrentProperty("virtualMachineReservationInfo");
-	}
-	
-	public void reconfigureServiceConsoleReservation(long cfgBytes) throws RuntimeFault, RemoteException 
-	{
-		getVimService().reconfigureServiceConsoleReservation(getMOR(), cfgBytes);
-	}
-	
-	public void reconfigureVirtualMachineReservation(VirtualMachineMemoryReservationSpec spec) throws RuntimeFault, RemoteException 
-	{
-		getVimService().reconfigureVirtualMachineReservation(getMOR(), spec);
-	}
+    public ServiceConsoleReservationInfo getConsoleReservationInfo() {
+        return (ServiceConsoleReservationInfo) getCurrentProperty("consoleReservationInfo");
+    }
+
+    public VirtualMachineMemoryReservationInfo getVirtualMachineReservationInfo() {
+        return (VirtualMachineMemoryReservationInfo) getCurrentProperty("virtualMachineReservationInfo");
+    }
+
+    public void reconfigureServiceConsoleReservation(long cfgBytes) throws RuntimeFault, RemoteException {
+        getVimService().reconfigureServiceConsoleReservation(getMOR(), cfgBytes);
+    }
+
+    public void reconfigureVirtualMachineReservation(VirtualMachineMemoryReservationSpec spec) throws RuntimeFault, RemoteException {
+        getVimService().reconfigureVirtualMachineReservation(getMOR(), spec);
+    }
 
 }

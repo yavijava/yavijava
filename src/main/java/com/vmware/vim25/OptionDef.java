@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class OptionDef extends ElementDescription {
-  public OptionType optionType;
+    public OptionType optionType;
 
-  public OptionType getOptionType() {
-    return this.optionType;
-  }
+    public OptionType getOptionType() {
+        return this.optionType;
+    }
 
-  public void setOptionType(OptionType optionType) {
-    this.optionType=optionType;
-  }
+    public void setOptionType(OptionType optionType) {
+        this.optionType = optionType;
+    }
 }

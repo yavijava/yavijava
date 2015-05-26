@@ -30,37 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VsanHostDiskMapResult extends DynamicData {
-  public VsanHostDiskMapping mapping;
-  public VsanHostDiskResult[] diskResult;
-  public LocalizedMethodFault error;
+    public VsanHostDiskMapping mapping;
+    public VsanHostDiskResult[] diskResult;
+    public LocalizedMethodFault error;
 
-  public VsanHostDiskMapping getMapping() {
-    return this.mapping;
-  }
+    public VsanHostDiskMapping getMapping() {
+        return this.mapping;
+    }
 
-  public VsanHostDiskResult[] getDiskResult() {
-    return this.diskResult;
-  }
+    public VsanHostDiskResult[] getDiskResult() {
+        return this.diskResult;
+    }
 
-  public LocalizedMethodFault getError() {
-    return this.error;
-  }
+    public LocalizedMethodFault getError() {
+        return this.error;
+    }
 
-  public void setMapping(VsanHostDiskMapping mapping) {
-    this.mapping=mapping;
-  }
+    public void setMapping(VsanHostDiskMapping mapping) {
+        this.mapping = mapping;
+    }
 
-  public void setDiskResult(VsanHostDiskResult[] diskResult) {
-    this.diskResult=diskResult;
-  }
+    public void setDiskResult(VsanHostDiskResult[] diskResult) {
+        this.diskResult = diskResult;
+    }
 
-  public void setError(LocalizedMethodFault error) {
-    this.error=error;
-  }
+    public void setError(LocalizedMethodFault error) {
+        this.error = error;
+    }
 }

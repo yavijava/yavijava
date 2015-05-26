@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public enum AutoStartAction {
-  none ("none"),
-  systemDefault ("systemDefault"),
-  powerOn ("powerOn"),
-  powerOff ("powerOff"),
-  guestShutdown ("guestShutdown"),
-  suspend ("suspend");
+    none("none"),
+    systemDefault("systemDefault"),
+    powerOn("powerOn"),
+    powerOff("powerOff"),
+    guestShutdown("guestShutdown"),
+    suspend("suspend");
 
-  @SuppressWarnings("unused")
-  private final String val;
-  private AutoStartAction(String val)
-  {
-    this.val = val;
-  }
+    @SuppressWarnings("unused")
+    private final String val;
+
+    private AutoStartAction(String val) {
+        this.val = val;
+    }
 }

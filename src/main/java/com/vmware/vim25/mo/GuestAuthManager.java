@@ -29,54 +29,44 @@ POSSIBILITY OF SUCH DAMAGE.
 
 package com.vmware.vim25.mo;
 
-import java.rmi.RemoteException;
+import com.vmware.vim25.*;
 
-import com.vmware.vim25.GuestAuthentication;
-import com.vmware.vim25.GuestOperationsFault;
-import com.vmware.vim25.InvalidState;
-import com.vmware.vim25.ManagedObjectReference;
-import com.vmware.vim25.RuntimeFault;
-import com.vmware.vim25.TaskInProgress;
+import java.rmi.RemoteException;
 
 
 /**
  * provides APIs to manipulate the guest operating authentication
+ *
  * @author Steve Jin (http://www.doublecloud.org)
  * @since SDK5.0
  */
 
-public class GuestAuthManager extends ManagedObject
-{
-  private VirtualMachine vm = null;
+public class GuestAuthManager extends ManagedObject {
+    private VirtualMachine vm = null;
 
-  public GuestAuthManager(ServerConnection sc, ManagedObjectReference mor, VirtualMachine vm) 
-  {
-    super(sc, mor);
-    this.vm = vm;
-  }
-  
-  public VirtualMachine getVM()
-  {
-    return vm;
-  }
-  
-  public GuestAuthentication acquireCredentialsInGuest(GuestAuthentication requestedAuth, long sessionID) throws GuestOperationsFault, TaskInProgress, InvalidState, RuntimeFault, RemoteException
-  {
-    return getVimService().acquireCredentialsInGuest(this.getMOR(), vm.getMOR(), requestedAuth, sessionID);
-  }
-  
-  public void releaseCredentialsInGuest(GuestAuthentication auth) throws GuestOperationsFault, TaskInProgress, InvalidState, RuntimeFault, RemoteException
-  {
-    getVimService().releaseCredentialsInGuest(getMOR(), vm.getMOR(), auth);
-  }
+    public GuestAuthManager(ServerConnection sc, ManagedObjectReference mor, VirtualMachine vm) {
+        super(sc, mor);
+        this.vm = vm;
+    }
 
-  /**
-   ** It should have returned a boolean, but... 
-   * Watch out GuestPermissionDenied (subtype of GuestOperationsFault) 
-   * for invalid authentication. 
-   */
-  public void ValidateCredentialsInGuest(GuestAuthentication auth) throws GuestOperationsFault, InvalidState, TaskInProgress, RuntimeFault, RemoteException
-  {
-    getVimService().validateCredentialsInGuest(getMOR(), vm.getMOR(), auth);
-  }
+    public VirtualMachine getVM() {
+        return vm;
+    }
+
+    public GuestAuthentication acquireCredentialsInGuest(GuestAuthentication requestedAuth, long sessionID) throws GuestOperationsFault, TaskInProgress, InvalidState, RuntimeFault, RemoteException {
+        return getVimService().acquireCredentialsInGuest(this.getMOR(), vm.getMOR(), requestedAuth, sessionID);
+    }
+
+    public void releaseCredentialsInGuest(GuestAuthentication auth) throws GuestOperationsFault, TaskInProgress, InvalidState, RuntimeFault, RemoteException {
+        getVimService().releaseCredentialsInGuest(getMOR(), vm.getMOR(), auth);
+    }
+
+    /**
+     * * It should have returned a boolean, but...
+     * Watch out GuestPermissionDenied (subtype of GuestOperationsFault)
+     * for invalid authentication.
+     */
+    public void ValidateCredentialsInGuest(GuestAuthentication auth) throws GuestOperationsFault, InvalidState, TaskInProgress, RuntimeFault, RemoteException {
+        getVimService().validateCredentialsInGuest(getMOR(), vm.getMOR(), auth);
+    }
 }

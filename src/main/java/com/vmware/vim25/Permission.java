@@ -30,55 +30,55 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class Permission extends DynamicData {
-  public ManagedObjectReference entity;
-  public String principal;
-  public boolean group;
-  public int roleId;
-  public boolean propagate;
+    public ManagedObjectReference entity;
+    public String principal;
+    public boolean group;
+    public int roleId;
+    public boolean propagate;
 
-  public ManagedObjectReference getEntity() {
-    return this.entity;
-  }
+    public ManagedObjectReference getEntity() {
+        return this.entity;
+    }
 
-  public String getPrincipal() {
-    return this.principal;
-  }
+    public String getPrincipal() {
+        return this.principal;
+    }
 
-  public boolean isGroup() {
-    return this.group;
-  }
+    public boolean isGroup() {
+        return this.group;
+    }
 
-  public int getRoleId() {
-    return this.roleId;
-  }
+    public int getRoleId() {
+        return this.roleId;
+    }
 
-  public boolean isPropagate() {
-    return this.propagate;
-  }
+    public boolean isPropagate() {
+        return this.propagate;
+    }
 
-  public void setEntity(ManagedObjectReference entity) {
-    this.entity=entity;
-  }
+    public void setEntity(ManagedObjectReference entity) {
+        this.entity = entity;
+    }
 
-  public void setPrincipal(String principal) {
-    this.principal=principal;
-  }
+    public void setPrincipal(String principal) {
+        this.principal = principal;
+    }
 
-  public void setGroup(boolean group) {
-    this.group=group;
-  }
+    public void setGroup(boolean group) {
+        this.group = group;
+    }
 
-  public void setRoleId(int roleId) {
-    this.roleId=roleId;
-  }
+    public void setRoleId(int roleId) {
+        this.roleId = roleId;
+    }
 
-  public void setPropagate(boolean propagate) {
-    this.propagate=propagate;
-  }
+    public void setPropagate(boolean propagate) {
+        this.propagate = propagate;
+    }
 }

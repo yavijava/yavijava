@@ -30,37 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class NamespaceFull extends VimFault {
-  public String name;
-  public long currentMaxSize;
-  public Long requiredSize;
+    public String name;
+    public long currentMaxSize;
+    public Long requiredSize;
 
-  public String getName() {
-    return this.name;
-  }
+    public String getName() {
+        return this.name;
+    }
 
-  public long getCurrentMaxSize() {
-    return this.currentMaxSize;
-  }
+    public long getCurrentMaxSize() {
+        return this.currentMaxSize;
+    }
 
-  public Long getRequiredSize() {
-    return this.requiredSize;
-  }
+    public Long getRequiredSize() {
+        return this.requiredSize;
+    }
 
-  public void setName(String name) {
-    this.name=name;
-  }
+    public void setName(String name) {
+        this.name = name;
+    }
 
-  public void setCurrentMaxSize(long currentMaxSize) {
-    this.currentMaxSize=currentMaxSize;
-  }
+    public void setCurrentMaxSize(long currentMaxSize) {
+        this.currentMaxSize = currentMaxSize;
+    }
 
-  public void setRequiredSize(Long requiredSize) {
-    this.requiredSize=requiredSize;
-  }
+    public void setRequiredSize(Long requiredSize) {
+        this.requiredSize = requiredSize;
+    }
 }

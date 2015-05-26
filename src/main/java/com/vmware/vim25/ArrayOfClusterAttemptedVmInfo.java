@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfClusterAttemptedVmInfo {
-  public ClusterAttemptedVmInfo[] ClusterAttemptedVmInfo;
+    public ClusterAttemptedVmInfo[] ClusterAttemptedVmInfo;
 
-  public ClusterAttemptedVmInfo[] getClusterAttemptedVmInfo() {
-    return this.ClusterAttemptedVmInfo;
-  }
+    public ClusterAttemptedVmInfo[] getClusterAttemptedVmInfo() {
+        return this.ClusterAttemptedVmInfo;
+    }
 
-  public ClusterAttemptedVmInfo getClusterAttemptedVmInfo(int i) {
-    return this.ClusterAttemptedVmInfo[i];
-  }
+    public ClusterAttemptedVmInfo getClusterAttemptedVmInfo(int i) {
+        return this.ClusterAttemptedVmInfo[i];
+    }
 
-  public void setClusterAttemptedVmInfo(ClusterAttemptedVmInfo[] ClusterAttemptedVmInfo) {
-    this.ClusterAttemptedVmInfo=ClusterAttemptedVmInfo;
-  }
+    public void setClusterAttemptedVmInfo(ClusterAttemptedVmInfo[] ClusterAttemptedVmInfo) {
+        this.ClusterAttemptedVmInfo = ClusterAttemptedVmInfo;
+    }
 }

@@ -30,46 +30,46 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostPlugStoreTopologyPlugin extends DynamicData {
-  public String key;
-  public String name;
-  public String[] device;
-  public String[] claimedPath;
+    public String key;
+    public String name;
+    public String[] device;
+    public String[] claimedPath;
 
-  public String getKey() {
-    return this.key;
-  }
+    public String getKey() {
+        return this.key;
+    }
 
-  public String getName() {
-    return this.name;
-  }
+    public String getName() {
+        return this.name;
+    }
 
-  public String[] getDevice() {
-    return this.device;
-  }
+    public String[] getDevice() {
+        return this.device;
+    }
 
-  public String[] getClaimedPath() {
-    return this.claimedPath;
-  }
+    public String[] getClaimedPath() {
+        return this.claimedPath;
+    }
 
-  public void setKey(String key) {
-    this.key=key;
-  }
+    public void setKey(String key) {
+        this.key = key;
+    }
 
-  public void setName(String name) {
-    this.name=name;
-  }
+    public void setName(String name) {
+        this.name = name;
+    }
 
-  public void setDevice(String[] device) {
-    this.device=device;
-  }
+    public void setDevice(String[] device) {
+        this.device = device;
+    }
 
-  public void setClaimedPath(String[] claimedPath) {
-    this.claimedPath=claimedPath;
-  }
+    public void setClaimedPath(String[] claimedPath) {
+        this.claimedPath = claimedPath;
+    }
 }

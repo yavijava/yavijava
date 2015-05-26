@@ -30,18 +30,18 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public enum VirtualDiskVFlashCacheConfigInfoCacheMode {
-  write_thru ("write_thru"),
-  write_back ("write_back");
+    write_thru("write_thru"),
+    write_back("write_back");
 
-  @SuppressWarnings("unused")
-  private final String val;
-  private VirtualDiskVFlashCacheConfigInfoCacheMode(String val)
-  {
-    this.val = val;
-  }
+    @SuppressWarnings("unused")
+    private final String val;
+
+    private VirtualDiskVFlashCacheConfigInfoCacheMode(String val) {
+        this.val = val;
+    }
 }
