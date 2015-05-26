@@ -21,16 +21,16 @@ package com.vmware.vim25;
  * @since 6.0
  */
 
-public enum PlacementSpecPlacementType {
+public enum PlacementAffinityRuleRuleScope {
 
-    create("create"),
-    reconfigure("reconfigure"),
-    relocate("relocate"),
-    clone("clone");
+    cluster("cluster"),
+    host("host"),
+    storagePod("storagePod"),
+    datastore("datastore");
 
     private String val;
 
-    PlacementSpecPlacementType(String val) {
+    PlacementAffinityRuleRuleScope(String val) {
         this.val = val;
     }
 

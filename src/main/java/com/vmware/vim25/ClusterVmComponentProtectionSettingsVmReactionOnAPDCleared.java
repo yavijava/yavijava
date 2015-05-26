@@ -1,7 +1,7 @@
 package com.vmware.vim25;
 
 /**
- * Created by Michael Rice on Mon May 25 21:12:07 CDT 2015
+ * Created by Michael Rice on Mon May 25 21:12:06 CDT 2015
  * This code is auto generated using yavijava_generator
  * https://github.com/yavijava/yavijava_generator
  *
@@ -21,16 +21,15 @@ package com.vmware.vim25;
  * @since 6.0
  */
 
-public enum PlacementSpecPlacementType {
+public enum ClusterVmComponentProtectionSettingsVmReactionOnAPDCleared {
 
-    create("create"),
-    reconfigure("reconfigure"),
-    relocate("relocate"),
-    clone("clone");
+    none("none"),
+    reset("reset"),
+    useClusterDefault("useClusterDefault");
 
     private String val;
 
-    PlacementSpecPlacementType(String val) {
+    ClusterVmComponentProtectionSettingsVmReactionOnAPDCleared(String val) {
         this.val = val;
     }
 

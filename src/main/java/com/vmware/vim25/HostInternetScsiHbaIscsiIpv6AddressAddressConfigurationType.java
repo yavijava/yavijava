@@ -21,16 +21,16 @@ package com.vmware.vim25;
  * @since 6.0
  */
 
-public enum PlacementSpecPlacementType {
+public enum HostInternetScsiHbaIscsiIpv6AddressAddressConfigurationType {
 
-    create("create"),
-    reconfigure("reconfigure"),
-    relocate("relocate"),
-    clone("clone");
+    DHCP("DHCP"),
+    AutoConfigured("AutoConfigured"),
+    Static("Static"),
+    Other("Other");
 
     private String val;
 
-    PlacementSpecPlacementType(String val) {
+    HostInternetScsiHbaIscsiIpv6AddressAddressConfigurationType(String val) {
         this.val = val;
     }
 

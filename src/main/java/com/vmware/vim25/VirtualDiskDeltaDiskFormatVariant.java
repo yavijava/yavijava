@@ -21,16 +21,14 @@ package com.vmware.vim25;
  * @since 6.0
  */
 
-public enum PlacementSpecPlacementType {
+public enum VirtualDiskDeltaDiskFormatVariant {
 
-    create("create"),
-    reconfigure("reconfigure"),
-    relocate("relocate"),
-    clone("clone");
+    vmfsSparseVariant("vmfsSparseVariant"),
+    vsanSparseVariant("vsanSparseVariant");
 
     private String val;
 
-    PlacementSpecPlacementType(String val) {
+    VirtualDiskDeltaDiskFormatVariant(String val) {
         this.val = val;
     }
 

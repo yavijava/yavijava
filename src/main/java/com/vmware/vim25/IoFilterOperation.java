@@ -21,16 +21,15 @@ package com.vmware.vim25;
  * @since 6.0
  */
 
-public enum PlacementSpecPlacementType {
+public enum IoFilterOperation {
 
-    create("create"),
-    reconfigure("reconfigure"),
-    relocate("relocate"),
-    clone("clone");
+    install("install"),
+    uninstall("uninstall"),
+    upgrade("upgrade");
 
     private String val;
 
-    PlacementSpecPlacementType(String val) {
+    IoFilterOperation(String val) {
         this.val = val;
     }
 

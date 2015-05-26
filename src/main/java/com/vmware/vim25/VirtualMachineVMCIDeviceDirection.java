@@ -21,16 +21,15 @@ package com.vmware.vim25;
  * @since 6.0
  */
 
-public enum PlacementSpecPlacementType {
+public enum VirtualMachineVMCIDeviceDirection {
 
-    create("create"),
-    reconfigure("reconfigure"),
-    relocate("relocate"),
-    clone("clone");
+    guest("guest"),
+    host("host"),
+    anyDirection("anyDirection");
 
     private String val;
 
-    PlacementSpecPlacementType(String val) {
+    VirtualMachineVMCIDeviceDirection(String val) {
         this.val = val;
     }
 

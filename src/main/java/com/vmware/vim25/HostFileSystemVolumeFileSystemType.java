@@ -21,16 +21,20 @@ package com.vmware.vim25;
  * @since 6.0
  */
 
-public enum PlacementSpecPlacementType {
+public enum HostFileSystemVolumeFileSystemType {
 
-    create("create"),
-    reconfigure("reconfigure"),
-    relocate("relocate"),
-    clone("clone");
+    VMFS("VMFS"),
+    NFS("NFS"),
+    NFS41("NFS41"),
+    CIFS("CIFS"),
+    vsan("vsan"),
+    VFFS("VFFS"),
+    VVOL("VVOL"),
+    OTHER("OTHER");
 
     private String val;
 
-    PlacementSpecPlacementType(String val) {
+    HostFileSystemVolumeFileSystemType(String val) {
         this.val = val;
     }
 

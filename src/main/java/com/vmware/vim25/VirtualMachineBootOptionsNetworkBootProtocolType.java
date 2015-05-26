@@ -21,16 +21,14 @@ package com.vmware.vim25;
  * @since 6.0
  */
 
-public enum PlacementSpecPlacementType {
+public enum VirtualMachineBootOptionsNetworkBootProtocolType {
 
-    create("create"),
-    reconfigure("reconfigure"),
-    relocate("relocate"),
-    clone("clone");
+    ipv4("ipv4"),
+    ipv6("ipv6");
 
     private String val;
 
-    PlacementSpecPlacementType(String val) {
+    VirtualMachineBootOptionsNetworkBootProtocolType(String val) {
         this.val = val;
     }
 

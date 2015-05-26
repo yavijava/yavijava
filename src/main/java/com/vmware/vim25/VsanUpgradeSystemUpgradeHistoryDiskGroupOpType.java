@@ -21,16 +21,14 @@ package com.vmware.vim25;
  * @since 6.0
  */
 
-public enum PlacementSpecPlacementType {
+public enum VsanUpgradeSystemUpgradeHistoryDiskGroupOpType {
 
-    create("create"),
-    reconfigure("reconfigure"),
-    relocate("relocate"),
-    clone("clone");
+    add("add"),
+    remove("remove");
 
     private String val;
 
-    PlacementSpecPlacementType(String val) {
+    VsanUpgradeSystemUpgradeHistoryDiskGroupOpType(String val) {
         this.val = val;
     }
 

@@ -21,16 +21,14 @@ package com.vmware.vim25;
  * @since 6.0
  */
 
-public enum PlacementSpecPlacementType {
+public enum HostNasVolumeSecurityType {
 
-    create("create"),
-    reconfigure("reconfigure"),
-    relocate("relocate"),
-    clone("clone");
+    AUTH_SYS("AUTH_SYS"),
+    SEC_KRB5("SEC_KRB5");
 
     private String val;
 
-    PlacementSpecPlacementType(String val) {
+    HostNasVolumeSecurityType(String val) {
         this.val = val;
     }
 

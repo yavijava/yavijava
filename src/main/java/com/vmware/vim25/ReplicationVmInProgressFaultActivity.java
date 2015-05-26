@@ -21,16 +21,14 @@ package com.vmware.vim25;
  * @since 6.0
  */
 
-public enum PlacementSpecPlacementType {
+public enum ReplicationVmInProgressFaultActivity {
 
-    create("create"),
-    reconfigure("reconfigure"),
-    relocate("relocate"),
-    clone("clone");
+    fullSync("fullSync"),
+    delta("delta");
 
     private String val;
 
-    PlacementSpecPlacementType(String val) {
+    ReplicationVmInProgressFaultActivity(String val) {
         this.val = val;
     }
 

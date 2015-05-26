@@ -1,60 +1,43 @@
 package com.vmware.vim25;
 
 /**
- * Copyright 2015 Michael Rice <michael@michaelrice.org>
- * <p/>
+ * Created by Michael Rice on Mon May 25 21:12:07 CDT 2015
+ * This code is auto generated using yavijava_generator
+ * https://github.com/yavijava/yavijava_generator
+ *
+ * Copyright 2015 Michael Rice
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * <p/>
- * http://www.apache.org/licenses/LICENSE-2.0
- * <p/>
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
+ * @since 6.0
  */
+
 public enum HostCertificateManagerCertificateInfoCertificateStatus {
 
-    /**
-     * The certificate expiration is imminent. (hard threshold)
-     */
-    expirationImminent("expirationImminent"),
-
-    /**
-     * The certificate has expired.
-     */
+    unknown("unknown"),
     expired("expired"),
-
-    /**
-     * The certificate is expiring shortly. (soft threshold - 1)
-     */
     expiring("expiring"),
-
-    /**
-     * The certificate is expiring shortly. (soft threshold - 2)
-     */
     expiringShortly("expiringShortly"),
+    expirationImminent("expirationImminent"),
+    good("good");
 
-    /**
-     * The certificate is good.
-     */
-    good("good"),
+    private String val;
 
-    /**
-     * The certificate status is unknown.
-     */
-    unknown("unknown");
-
-    private String value;
-
-    HostCertificateManagerCertificateInfoCertificateStatus(String value) {
-        this.value = value;
+    HostCertificateManagerCertificateInfoCertificateStatus(String val) {
+        this.val = val;
     }
 
     @Override
     public String toString() {
-        return this.value;
+        return this.val;
     }
 }

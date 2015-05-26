@@ -21,16 +21,15 @@ package com.vmware.vim25;
  * @since 6.0
  */
 
-public enum PlacementSpecPlacementType {
+public enum HostOpaqueSwitchOpaqueSwitchState {
 
-    create("create"),
-    reconfigure("reconfigure"),
-    relocate("relocate"),
-    clone("clone");
+    up("up"),
+    warning("warning"),
+    down("down");
 
     private String val;
 
-    PlacementSpecPlacementType(String val) {
+    HostOpaqueSwitchOpaqueSwitchState(String val) {
         this.val = val;
     }
 

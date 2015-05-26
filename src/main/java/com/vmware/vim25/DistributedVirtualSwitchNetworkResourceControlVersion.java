@@ -1,7 +1,7 @@
 package com.vmware.vim25;
 
 /**
- * Created by Michael Rice on Mon May 25 21:12:07 CDT 2015
+ * Created by Michael Rice on Mon May 25 21:12:06 CDT 2015
  * This code is auto generated using yavijava_generator
  * https://github.com/yavijava/yavijava_generator
  *
@@ -21,16 +21,14 @@ package com.vmware.vim25;
  * @since 6.0
  */
 
-public enum PlacementSpecPlacementType {
+public enum DistributedVirtualSwitchNetworkResourceControlVersion {
 
-    create("create"),
-    reconfigure("reconfigure"),
-    relocate("relocate"),
-    clone("clone");
+    version2("version2"),
+    version3("version3");
 
     private String val;
 
-    PlacementSpecPlacementType(String val) {
+    DistributedVirtualSwitchNetworkResourceControlVersion(String val) {
         this.val = val;
     }
 
