@@ -5440,4 +5440,65 @@ public class VimStub {
         params[1] = new Argument("vmfsUuid", "String[]", vmfsUuid);
         return (ManagedObjectReference) getWsc().invoke("UnmountVmfsVolumeEx_Task", params, "ManagedObjectReference");
     }
+	public ManagedObjectReference installIoFilter_Task(ManagedObjectReference _this, String vibUrl, ManagedObjectReference cluster) throws RemoteException, AlreadyExists, InvalidArgument, RuntimeFault {
+        Argument[] paras = new Argument[3];
+        paras[0] = new Argument("_this", "ManagedObjectReference", _this);
+        paras[1] = new Argument("vibUrl", "String", vibUrl);
+        paras[2] = new Argument("compRes", "ManagedObjectReference", cluster);
+        return (ManagedObjectReference) getWsc().invoke("InstallIoFilter_Task", paras, "ManagedObjectReference");
+    }
+
+    public ManagedObjectReference unInstallIoFilter_Task(ManagedObjectReference _this, String filterId, ManagedObjectReference cluster) throws RemoteException, FilterInUse, InvalidState, NotFound, InvalidArgument, RuntimeFault {
+        Argument[] paras = new Argument[3];
+        paras[0] = new Argument("_this", "ManagedObjectReference", _this);
+        paras[1] = new Argument("filterId", "String", filterId);
+        paras[2] = new Argument("compRes", "ManagedObjectReference", cluster);
+        return (ManagedObjectReference) getWsc().invoke("UninstallIoFilter_Task", paras, "ManagedObjectReference");
+    }
+
+    public ManagedObjectReference upgradeIoFilter_Task(ManagedObjectReference _this, String filterId, ManagedObjectReference cluster, String vibUrl) throws RemoteException, InvalidState, NotFound, InvalidArgument, RuntimeFault {
+        Argument[] paras = new Argument[4];
+        paras[0] = new Argument("_this", "ManagedObjectReference", _this);
+        paras[1] = new Argument("filterId", "String", filterId);
+        paras[2] = new Argument("compRes", "ManagedObjectReference", cluster);
+        paras[3] = new Argument("vibUrl", "String", vibUrl);
+        return (ManagedObjectReference) getWsc().invoke("UpgradeIoFilter_Task", paras, "ManagedObjectReference");
+    }
+
+    public ClusterIoFilterInfo[] queryIoFilterInfo(ManagedObjectReference _this, ManagedObjectReference cluster) throws RemoteException, RuntimeFault {
+        Argument[] paras = new Argument[2];
+        paras[0] = new Argument("_this", "ManagedObjectReference", _this);
+        paras[1] = new Argument("compRes", "ManagedObjectReference", cluster);
+        return (ClusterIoFilterInfo[]) getWsc().invoke("QueryIoFilterInfo", paras, "ClusterIoFilterInfo[]");
+    } 
+    
+    public VirtualDiskId[] queryDisksUsingFilter(ManagedObjectReference _this, String filterId, ManagedObjectReference cluster) throws RemoteException, NotFound, RuntimeFault {
+        Argument[] paras = new Argument[3];
+        paras[0] = new Argument("_this", "ManagedObjectReference", _this);
+        paras[1] = new Argument("filterId", "String", filterId);
+        paras[2] = new Argument("compRes", "ManagedObjectReference", cluster);
+        return (VirtualDiskId[]) getWsc().invoke("QueryDisksUsingFilter", paras, "VirtualDiskId[]");
+    } 
+    public IoFilterQueryIssueResult queryIoFilterIssues(ManagedObjectReference _this, String filterId, ManagedObjectReference cluster) throws RemoteException, NotFound, RuntimeFault {
+        Argument[] paras = new Argument[3];
+        paras[0] = new Argument("_this", "ManagedObjectReference", _this);
+        paras[1] = new Argument("filterId", "String", filterId);
+        paras[2] = new Argument("compRes", "ManagedObjectReference", cluster);
+        return (IoFilterQueryIssueResult) getWsc().invoke("QueryIoFilterIssues", paras, "IoFilterQueryIssueResult");
+    } 
+    
+    public ManagedObjectReference resolveInstallationErrorsOnCluster_Task(ManagedObjectReference _this, String filterId, ManagedObjectReference cluster) throws RemoteException, FilterInUse, InvalidState, NotFound, InvalidArgument, RuntimeFault {
+        Argument[] paras = new Argument[3];
+        paras[0] = new Argument("_this", "ManagedObjectReference", _this);
+        paras[1] = new Argument("filterId", "String", filterId);
+        paras[2] = new Argument("cluster", "ManagedObjectReference", cluster);
+        return (ManagedObjectReference) getWsc().invoke("ResolveInstallationErrorsOnCluster_Task", paras, "ManagedObjectReference");
+    }
+    public ManagedObjectReference resolveInstallationErrorsOnHost_Task(ManagedObjectReference _this, String filterId, ManagedObjectReference host) throws RemoteException, FilterInUse, InvalidState, NotFound, InvalidArgument, RuntimeFault {
+        Argument[] paras = new Argument[3];
+        paras[0] = new Argument("_this", "ManagedObjectReference", _this);
+        paras[1] = new Argument("filterId", "String", filterId);
+        paras[2] = new Argument("host", "ManagedObjectReference", host);
+        return (ManagedObjectReference) getWsc().invoke("ResolveInstallationErrorsOnHost_Task", paras, "ManagedObjectReference");
+}
 }
