@@ -23,8 +23,7 @@ import lombok.Setter;
  * @since 6.0
  */
 
-public class MethodFault {
-
-    @Getter @Setter public LocalizedMethodFault faultCause;
-    @Getter @Setter public LocalizableMessage[] faultMessage;
+public class MethodNotFound extends InvalidRequest {
+    @Getter @Setter public ManagedObjectReference receiver;
+    @Getter @Setter public String method;
 }
