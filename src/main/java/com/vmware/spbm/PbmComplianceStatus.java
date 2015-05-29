@@ -1,9 +1,7 @@
 package com.vmware.spbm;
-import lombok.Getter;
-import lombok.Setter;
 
 /**
- * Created by Michael Rice on Fri May 29 03:07:22 CDT 2015
+ * Created by Michael Rice on Fri May 29 03:07:51 CDT 2015
  * This code is auto generated using yavijava_generator
  * https://github.com/yavijava/yavijava_generator
  *
@@ -23,8 +21,21 @@ import lombok.Setter;
  * @since 6.0
  */
 
-public class MethodFault {
+public enum PbmComplianceStatus {
 
-    @Getter @Setter public LocalizedMethodFault faultCause;
-    @Getter @Setter public LocalizableMessage[] faultMessage;
+    compliant("compliant"),
+    nonCompliant("nonCompliant"),
+    unknown("unknown"),
+    notApplicable("notApplicable");
+
+    private String val;
+
+    PbmComplianceStatus(String val) {
+        this.val = val;
+    }
+
+    @Override
+    public String toString() {
+        return this.val;
+    }
 }
