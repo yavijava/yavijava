@@ -1,9 +1,7 @@
 package com.vmware.spbm;
-import lombok.Getter;
-import lombok.Setter;
 
 /**
- * Created by Michael Rice on Fri May 29 03:07:22 CDT 2015
+ * Created by Michael Rice on Fri May 29 03:07:52 CDT 2015
  * This code is auto generated using yavijava_generator
  * https://github.com/yavijava/yavijava_generator
  *
@@ -23,8 +21,19 @@ import lombok.Setter;
  * @since 6.0
  */
 
-public class MethodFault {
+public enum PbmSystemCreatedProfileType {
 
-    @Getter @Setter public LocalizedMethodFault faultCause;
-    @Getter @Setter public LocalizableMessage[] faultMessage;
+    VsanDefaultProfile("VsanDefaultProfile"),
+    VVolDefaultProfile("VVolDefaultProfile");
+
+    private String val;
+
+    PbmSystemCreatedProfileType(String val) {
+        this.val = val;
+    }
+
+    @Override
+    public String toString() {
+        return this.val;
+    }
 }
