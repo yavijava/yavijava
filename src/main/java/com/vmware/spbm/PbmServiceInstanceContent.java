@@ -2,6 +2,8 @@ package com.vmware.spbm;
 import lombok.Getter;
 import lombok.Setter;
 
+import com.vmware.vim25.ManagedObjectReference;;
+
 /**
  * Created by Michael Rice on Wed May 27 23:54:26 CDT 2015
  * This code is auto generated using yavijava_generator
