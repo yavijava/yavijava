@@ -27,6 +27,8 @@ import static org.junit.Assert.*;
 
 public class TypeUtilTest {
 
+	public final static String PACKAGE_NAME = "com.vmware.vim25";
+
     @Test
     public void testIsPrimitiveType_boolean_is_Primitave() throws Exception {
         assertTrue(TypeUtil.isPrimitiveType("boolean"));
@@ -174,19 +176,19 @@ public class TypeUtilTest {
 
     @Test
     public void testGetVimClass_VirtualMachine_is_VirtualMachine() throws Exception {
-        Class<?> vm = TypeUtil.getVimClass("mo.VirtualMachine");
+        Class<?> vm = TypeUtil.getVimClass(PACKAGE_NAME, "mo.VirtualMachine");
         assertEquals(VirtualMachine.class.getName(), vm.getName());
     }
 
     @Test
     public void testGetVimClass_VirtualMachine_wrong_package_is_null() throws Exception {
-        Class<?> vm = TypeUtil.getVimClass("VirtualMachine");
+        Class<?> vm = TypeUtil.getVimClass(PACKAGE_NAME, "VirtualMachine");
         assertEquals(null, vm);
     }
 
     @Test
     public void testGetVimClass_VirtualMachine_array_returns_Array() throws Exception {
-        Class<?> vm = TypeUtil.getVimClass("mo.VirtualMachine[]");
+        Class<?> vm = TypeUtil.getVimClass(PACKAGE_NAME, "mo.VirtualMachine[]");
         assertTrue(vm.isArray());
     }
 

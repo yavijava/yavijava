@@ -28,22 +28,6 @@ public class PbmServerConnection {
         return wsc.getCookie();
     }
 
-    /**
-     * Disconnect from the server and clean up
-     */
-    public void logout() {
-        if (pbmService != null) {
-            try {
-                // TODO
-                // pbmServiceInstance.getSessionManager().logout();
-            } catch (Exception e) {
-                System.err.println("Failed to disconnect...");
-            }
-            pbmService = null;
-            pbmServiceInstance = null;
-        }
-    }
-
     public PbmServiceInstance getPbmServiceInstance() {
         return pbmServiceInstance;
     }

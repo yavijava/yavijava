@@ -71,6 +71,11 @@ abstract public class PbmManagedObject {
         return pbmServerConnection.getPbmService();
     }
 
+    /**
+     * Get Server Connection Object
+     *
+     * @return
+     */
     public PbmServerConnection getPbmServerConnection() {
         return pbmServerConnection;
     }
@@ -78,7 +83,7 @@ abstract public class PbmManagedObject {
     /**
      * Set up the ServerConnection, only when it hasn't been set yet.
      *
-     * @param sc
+     * @param psc
      */
     protected void setPbmServerConnection(PbmServerConnection psc) {
         if (this.pbmServerConnection == null) {

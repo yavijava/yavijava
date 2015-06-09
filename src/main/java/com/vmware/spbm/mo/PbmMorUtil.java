@@ -6,6 +6,9 @@ import org.apache.log4j.Logger;
 
 import com.vmware.vim25.ManagedObjectReference;
 
+/**
+ * @author Atoka Sema
+ */
 public class PbmMorUtil {
 
     /**
@@ -35,24 +38,23 @@ public class PbmMorUtil {
     /**
      * Given the ServerConnection and a MOR return the MO
      *
-     * @param sc
+     * @param psc
      * @param mor
      * @return
      */
-    public static PbmManagedObject createExactManagedObject(PbmServerConnection sc, ManagedObjectReference mor) {
+    public static PbmManagedObject createExactManagedObject(PbmServerConnection psc, ManagedObjectReference mor) {
         if (mor == null) {
             return null;
         }
 
         String moType = mor.type;
-
         try {
             Class<?> moClass = Class.forName(moPackageName + "." + moType);
             Constructor constructor = moClass.getConstructor(new Class[] {
                 PbmServerConnection.class, ManagedObjectReference.class
             });
             return (PbmManagedObject) constructor.newInstance(new Object[] {
-                sc, mor
+                psc, mor
             });
         } catch (Exception e) {
             log.error("Failed to create PBM MO for " + mor.toString(), e);

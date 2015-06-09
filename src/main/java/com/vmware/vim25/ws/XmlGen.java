@@ -56,7 +56,7 @@ public abstract class XmlGen {
             String key = para.getName();
             String type = para.getType();
             Object obj = para.getValue();
-            sb.append(toXML(key, type, obj)); //, null));
+            sb.append(toXML(key, XmlGenDom.getPackageName(vimNameSpace), type, obj)); //, null));
         }
 
         sb.append("</").append(methodName).append(">");
@@ -64,7 +64,7 @@ public abstract class XmlGen {
         return sb.toString();
     }
 
-    private static String toXML(String tag, String type, Object obj) {
+    private static String toXML(String tag, String packge, String type, Object obj) {
         if (obj == null) {
             return "";
         }
@@ -73,7 +73,7 @@ public abstract class XmlGen {
             toXML(sb, tag, obj.getClass(), obj);
         }
         else {
-            Class<?> clazz = TypeUtil.getVimClass(type);
+            Class<?> clazz = TypeUtil.getVimClass(packge, type);
             toXML(sb, tag, clazz, obj);
         }
         return sb.toString();

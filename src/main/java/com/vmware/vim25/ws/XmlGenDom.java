@@ -2,29 +2,29 @@
 Copyright (c) 2013 Steve Jin. All Rights Reserved.
 Copyright (c) 2009 VMware, Inc. All Rights Reserved.
 
-Redistribution and use in source and binary forms, with or without modification,
+Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
 
-* Redistributions of source code must retain the above copyright notice,
+* Redistributions of source code must retain the above copyright notice, 
 this list of conditions and the following disclaimer.
 
-* Redistributions in binary form must reproduce the above copyright notice,
-this list of conditions and the following disclaimer in the documentation
+* Redistributions in binary form must reproduce the above copyright notice, 
+this list of conditions and the following disclaimer in the documentation 
 and/or other materials provided with the distribution.
 
 * Neither the name of VMware, Inc. nor the names of its contributors may be used
-to endorse or promote products derived from this software without specific prior
+to endorse or promote products derived from this software without specific prior 
 written permission.
 
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
-ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
-WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
-IN NO EVENT SHALL VMWARE, INC. OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
-INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
-LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
-PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
-WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
-ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
+ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED 
+WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. 
+IN NO EVENT SHALL VMWARE, INC. OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, 
+INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT 
+LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR 
+PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, 
+WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) 
+ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE 
 POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
 
@@ -137,7 +137,7 @@ class XmlGenDom extends XmlGen {
                 Element faultE = (Element) subElems.get(0);
                 String faultTypeName = faultE.attributeValue(SoapConsts.XSI_TYPE);
                 if (faultTypeName != null) {
-                    sfe.detail = (Throwable) fromXml(TypeUtil.getVimClass(faultTypeName), faultE);
+                    sfe.detail = (Throwable) fromXml(TypeUtil.getVimClass(getPackageName(root), faultTypeName), faultE);
                 }
             }
         }
@@ -160,7 +160,7 @@ class XmlGenDom extends XmlGen {
             else {
                 ManagedObjectReference[] mos = new ManagedObjectReference[subNodes.size()];
                 for (int i = 0; i < subNodes.size(); i++) {
-                    Element elem = subNodes.get(i);
+                    Element elem = (Element) subNodes.get(i);
                     mos[i] = createMOR(elem.attributeValue("type"), elem.getText());
                 }
                 return mos;
@@ -175,23 +175,19 @@ class XmlGenDom extends XmlGen {
         }
         else if (type.endsWith("[]")) { // array type
             String arrayItemTypeName = type.substring(0, type.length() - 2);
-            Class<?> clazz = TypeUtil.getVimClass(arrayItemTypeName);
+            Class<?> clazz = TypeUtil.getVimClass(getPackageName(root), arrayItemTypeName);
             Object ao = Array.newInstance(clazz, subNodes.size());
 
             for (int i = 0; i < subNodes.size(); i++) {
                 Element e = subNodes.get(i);
                 String xsiType = e.attributeValue(SoapConsts.XSI_TYPE);
-                Object o = fromXml(TypeUtil.getVimClass(xsiType == null ? arrayItemTypeName : xsiType), subNodes.get(i));
+                Object o = fromXml(TypeUtil.getVimClass(getPackageName(e), xsiType == null ? arrayItemTypeName : xsiType), subNodes.get(i));
                 Array.set(ao, i, o);
             }
             return ao;
         }
         else {
-        	Class<?> clazz = TypeUtil.getVimClass(type);
-        	if (clazz == null) {
-        		clazz = TypeUtil.getPbmClass(type);
-        	}
-            return fromXml(clazz, subNodes.get(0));
+            return fromXml(TypeUtil.getVimClass(getPackageName(root),type), subNodes.get(0));
         }
     }
 
@@ -227,7 +223,7 @@ class XmlGenDom extends XmlGen {
             Class fRealType = fType;
             String xsiType = e.attributeValue(SoapConsts.XSI_TYPE);
             if (xsiType != null && (!xsiType.startsWith("xsd:"))) {
-                fRealType = TypeUtil.getVimClass(xsiType);
+                fRealType = TypeUtil.getVimClass(getPackageName(e), xsiType);
             }
 
             if (fRealType == ManagedObjectReference.class) { // MOR
@@ -235,7 +231,7 @@ class XmlGenDom extends XmlGen {
                     int sizeOfFieldArray = getNumberOfSameTags(subNodes, sizeOfSubNodes, i, tagName);
                     ManagedObjectReference[] mos = new ManagedObjectReference[sizeOfFieldArray];
                     for (int j = 0; j < sizeOfFieldArray; j++) {
-                        Element elem = subNodes.get(j + i);
+                        Element elem = (Element) subNodes.get(j + i);
                         mos[j] = createMOR(elem.attributeValue("type"), elem.getText());
                     }
                     field.set(obj, mos);
@@ -254,7 +250,7 @@ class XmlGenDom extends XmlGen {
                     int sizeOfFieldArray = getNumberOfSameTags(subNodes, sizeOfSubNodes, i, tagName);
                     Object ao = Array.newInstance(fRealType, sizeOfFieldArray);
                     for (int j = 0; j < sizeOfFieldArray; j++) {
-                        String enumStr = subNodes.get(j + i).getText();
+                        String enumStr = ((Element) subNodes.get(j + i)).getText();
                         Array.set(ao, j, Enum.valueOf(fRealType, enumStr));
                     }
                     field.set(obj, ao);
@@ -267,7 +263,7 @@ class XmlGenDom extends XmlGen {
 
                     List<String> values = new ArrayList<String>();
                     for (int j = 0; j < sizeOfFieldArray; j++) {
-                        values.add(subNodes.get(j + i).getText());
+                        values.add(((Element) subNodes.get(j + i)).getText());
                     }
 
                     String fTrueType;
@@ -300,10 +296,10 @@ class XmlGenDom extends XmlGen {
                     Object ao = Array.newInstance(fType, sizeOfFieldArray);
                     String fGenericType = fType.getSimpleName();
                     for (int j = 0; j < sizeOfFieldArray; j++) {
-                        Element elem = subNodes.get(j + i);
+                        Element elem = (Element) subNodes.get(j + i);
                         String elemXsiType = elem.attributeValue(SoapConsts.XSI_TYPE);
                         String elemType = elemXsiType != null ? elemXsiType : fGenericType;
-                        Object o = fromXml(TypeUtil.getVimClass(elemType), elem);
+                        Object o = fromXml(TypeUtil.getVimClass(getPackageName(elem), elemType), elem);
                         Array.set(ao, j, o);
                     }
                     field.set(obj, ao);
@@ -316,5 +312,17 @@ class XmlGenDom extends XmlGen {
             }
         }
         return obj;
+    }
+
+    public static String getPackageName(Element node) {
+        return getPackageName(node.getNamespace().getURI());
+    }
+
+    public static String getPackageName(String namespace) {
+        if (namespace.contains("urn:pbm")) {
+            return TypeUtil.PBM_PACKAGE_NAME;
+        } else {
+            return TypeUtil.PACKAGE_NAME;
+        }
     }
 }

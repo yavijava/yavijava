@@ -4,9 +4,9 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.rmi.RemoteException;
 
-import com.vmware.vim25.ManagedObjectReference;
 import com.vmware.spbm.PbmPortType;
 import com.vmware.spbm.PbmServiceInstanceContent;
+import com.vmware.vim25.ManagedObjectReference;
 import com.vmware.vim25.RuntimeFault;
 import com.vmware.vim25.ws.SoapClient;
 
@@ -38,11 +38,11 @@ public class PbmServiceInstance extends PbmManagedObject {
 
         setMOR(SERVICE_INSTANCE_MOR);
 
-        PbmPortType pbmService = new PbmPortType(url.toString(), ignoreCert);
+        PbmPortType pbmService = new PbmPortType(url.toString(), sessionStr, ignoreCert);
         SoapClient wsc = (SoapClient) pbmService.getWsc();
-        wsc.setCookie(sessionStr);
         wsc.setVimNameSpace(namespace);
-        wsc.soapAction = "urn:pbm/2.0";
+        pbmServiceContent = pbmService.retrievePbmServiceInstanceContent(SERVICE_INSTANCE_MOR);
+        wsc.soapAction = "urn:pbm/" + pbmServiceContent.getAboutInfo().version;
         pbmServiceContent = pbmService.retrievePbmServiceInstanceContent(SERVICE_INSTANCE_MOR);
         setPbmServerConnection(new PbmServerConnection(url, pbmService, this));
     }
