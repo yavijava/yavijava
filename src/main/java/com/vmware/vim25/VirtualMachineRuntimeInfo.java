@@ -34,7 +34,9 @@ import lombok.Setter;
 import java.util.Calendar;
 
 /**
- * Created by Michael Rice on Sun May 24 16:15:35 CDT 2015
+ * Created by Michael Rice on Thu Jun 11 17:52:06 CDT 2015
+ * This code is auto generated using yavijava_generator
+ * https://github.com/yavijava/yavijava_generator
  *
  * Copyright 2015 Michael Rice
  *
@@ -62,9 +64,9 @@ public class VirtualMachineRuntimeInfo extends DynamicData {
     @Getter @Setter public boolean toolsInstallerMounted;
     @Getter @Setter public Calendar suspendTime;
     @Getter @Setter public Calendar bootTime;
-    @Getter @Setter public long suspendInterval;
+    @Getter @Setter public Long suspendInterval;
     @Getter @Setter public VirtualMachineQuestionInfo question;
-    @Getter @Setter public long memoryOverhead;
+    @Getter @Setter public Long memoryOverhead;
     @Getter @Setter public Integer maxCpuUsage;
     @Getter @Setter public Integer maxMemoryUsage;
     @Getter @Setter public int numMksConnections;
@@ -77,7 +79,7 @@ public class VirtualMachineRuntimeInfo extends DynamicData {
     @Getter @Setter public VirtualMachineFeatureRequirement[] offlineFeatureRequirement;
     @Getter @Setter public VirtualMachineFeatureRequirement[] featureRequirement;
     @Getter @Setter public HostFeatureMask[] featureMask;
-    @Getter @Setter public long vFlashCacheAllocation;
+    @Getter @Setter public Long vFlashCacheAllocation;
     @Getter @Setter public Boolean paused;
     @Getter @Setter public Boolean snapshotInBackground;
     @Getter @Setter public Boolean quiescedForkParent;

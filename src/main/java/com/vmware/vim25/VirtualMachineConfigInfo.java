@@ -34,7 +34,9 @@ import lombok.Setter;
 import java.util.Calendar;
 
 /**
- * Created by Michael Rice on Sun May 24 16:15:35 CDT 2015
+ * Created by Michael Rice on Thu Jun 11 17:52:06 CDT 2015
+ * This code is auto generated using yavijava_generator
+ * https://github.com/yavijava/yavijava_generator
  *
  * Copyright 2015 Michael Rice
  *
@@ -60,8 +62,8 @@ public class VirtualMachineConfigInfo extends DynamicData {
     @Getter @Setter public String version;
     @Getter @Setter public String uuid;
     @Getter @Setter public String instanceUuid;
-    @Getter @Setter public long[] npivNodeWorldWideName;
-    @Getter @Setter public long[] npivPortWorldWideName;
+    @Getter @Setter public Long[] npivNodeWorldWideName;
+    @Getter @Setter public Long[] npivPortWorldWideName;
     @Getter @Setter public String npivWorldWideNameType;
     @Getter @Setter public short npivDesiredNodeWwns;
     @Getter @Setter public short npivDesiredPortWwns;
@@ -84,8 +86,8 @@ public class VirtualMachineConfigInfo extends DynamicData {
     @Getter @Setter public Boolean memoryHotAddEnabled;
     @Getter @Setter public Boolean cpuHotAddEnabled;
     @Getter @Setter public Boolean cpuHotRemoveEnabled;
-    @Getter @Setter public long hotPlugMemoryLimit;
-    @Getter @Setter public long hotPlugMemoryIncrementSize;
+    @Getter @Setter public Long hotPlugMemoryLimit;
+    @Getter @Setter public Long hotPlugMemoryIncrementSize;
     @Getter @Setter public VirtualMachineAffinityInfo cpuAffinity;
     @Getter @Setter public VirtualMachineAffinityInfo memoryAffinity;
     @Getter @Setter public VirtualMachineNetworkShaperInfo networkShaper;
@@ -109,7 +111,7 @@ public class VirtualMachineConfigInfo extends DynamicData {
     @Getter @Setter public Boolean vPMCEnabled;
     @Getter @Setter public ScheduledHardwareUpgradeInfo scheduledHardwareUpgradeInfo;
     @Getter @Setter public VirtualMachineForkConfigInfo forkConfigInfo;
-    @Getter @Setter public long vFlashCacheReservation;
+    @Getter @Setter public Long vFlashCacheReservation;
     @Getter @Setter public byte[] vmxConfigChecksum;
     @Getter @Setter public Boolean messageBusTunnelEnabled;
     @Getter @Setter public String vmStorageObjectId;

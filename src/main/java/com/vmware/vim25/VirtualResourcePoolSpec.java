@@ -3,7 +3,9 @@ import lombok.Getter;
 import lombok.Setter;
 
 /**
- * Created by Michael Rice on Sun May 24 16:15:35 CDT 2015
+ * Created by Michael Rice on Thu Jun 11 17:52:06 CDT 2015
+ * This code is auto generated using yavijava_generator
+ * https://github.com/yavijava/yavijava_generator
  *
  * Copyright 2015 Michael Rice
  *
@@ -31,5 +33,5 @@ public class VirtualResourcePoolSpec extends DynamicData {
     @Getter @Setter public ManagedObjectReference[] hubList;
     @Getter @Setter public Boolean rootVRP;
     @Getter @Setter public Boolean staticVRP;
-    @Getter @Setter public long changeVersion;
+    @Getter @Setter public Long changeVersion;
 }
