@@ -32,7 +32,9 @@ import lombok.Getter;
 import lombok.Setter;
 
 /**
- * Created by Michael Rice on Sun May 24 16:15:36 CDT 2015
+ * Created by Michael Rice on Thu Jun 11 17:52:06 CDT 2015
+ * This code is auto generated using yavijava_generator
+ * https://github.com/yavijava/yavijava_generator
  *
  * Copyright 2015 Michael Rice
  *
@@ -51,10 +53,10 @@ import lombok.Setter;
  */
 
 public class VirtualMachineVideoCard extends VirtualDevice {
-    @Getter @Setter public long videoRamSizeInKB;
+    @Getter @Setter public Long videoRamSizeInKB;
     @Getter @Setter public Integer numDisplays;
     @Getter @Setter public Boolean useAutoDetect;
     @Getter @Setter public Boolean enable3DSupport;
     @Getter @Setter public String use3dRenderer;
-    @Getter @Setter public long graphicsMemorySizeInKB;
+    @Getter @Setter public Long graphicsMemorySizeInKB;
 }

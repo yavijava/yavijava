@@ -3,7 +3,9 @@ import lombok.Getter;
 import lombok.Setter;
 
 /**
- * Created by Michael Rice on Sun May 24 16:15:36 CDT 2015
+ * Created by Michael Rice on Thu Jun 11 17:52:06 CDT 2015
+ * This code is auto generated using yavijava_generator
+ * https://github.com/yavijava/yavijava_generator
  *
  * Copyright 2015 Michael Rice
  *
@@ -22,12 +24,12 @@ import lombok.Setter;
  */
 
 public class VsanPolicyCost extends DynamicData {
-    @Getter @Setter public long changeDataSize;
-    @Getter @Setter public long currentDataSize;
-    @Getter @Setter public long tempDataSize;
-    @Getter @Setter public long copyDataSize;
-    @Getter @Setter public long changeFlashReadCacheSize;
-    @Getter @Setter public long currentFlashReadCacheSize;
+    @Getter @Setter public Long changeDataSize;
+    @Getter @Setter public Long currentDataSize;
+    @Getter @Setter public Long tempDataSize;
+    @Getter @Setter public Long copyDataSize;
+    @Getter @Setter public Long changeFlashReadCacheSize;
+    @Getter @Setter public Long currentFlashReadCacheSize;
     @Getter @Setter public float currentDiskSpaceToAddressSpaceRatio;
     @Getter @Setter public float diskSpaceToAddressSpaceRatio;
 }
