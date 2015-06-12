@@ -32,7 +32,9 @@ import lombok.Getter;
 import lombok.Setter;
 
 /**
- * Created by Michael Rice on Sun May 24 16:15:35 CDT 2015
+ * Created by Michael Rice on Fri Jun 12 15:16:16 CDT 2015
+ * This code is auto generated using yavijava_generator
+ * https://github.com/yavijava/yavijava_generator
  *
  * Copyright 2015 Michael Rice
  *
@@ -104,7 +106,7 @@ public class HostCapability extends DynamicData {
     @Getter @Setter public Boolean vmDirectPathGen2Supported;
     @Getter @Setter public String[] vmDirectPathGen2UnsupportedReason;
     @Getter @Setter public String vmDirectPathGen2UnsupportedReasonExtended;
-    @Getter @Setter public Integer[] supportedVmfsMajorVersion;
+    @Getter @Setter public int[] supportedVmfsMajorVersion;
     @Getter @Setter public Boolean vStorageCapable;
     @Getter @Setter public Boolean snapshotRelayoutSupported;
     @Getter @Setter public Boolean firewallIpRulesSupported;
