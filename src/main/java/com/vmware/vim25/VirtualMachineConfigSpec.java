@@ -32,7 +32,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 /**
- * Created by Michael Rice on Thu Jun 11 17:52:06 CDT 2015
+ * Created by Michael Rice on Fri Jun 12 15:16:17 CDT 2015
  * This code is auto generated using yavijava_generator
  * https://github.com/yavijava/yavijava_generator
  *
@@ -52,14 +52,14 @@ import lombok.Setter;
  * @since 6.0
  */
 
-public class VirtualMachineConfigSpec extends DynamicData {
+public class    VirtualMachineConfigSpec extends DynamicData {
     @Getter @Setter public String changeVersion;
     @Getter @Setter public String name;
     @Getter @Setter public String version;
     @Getter @Setter public String uuid;
     @Getter @Setter public String instanceUuid;
-    @Getter @Setter public Long[] npivNodeWorldWideName;
-    @Getter @Setter public Long[] npivPortWorldWideName;
+    @Getter @Setter public long[] npivNodeWorldWideName;
+    @Getter @Setter public long[] npivPortWorldWideName;
     @Getter @Setter public String npivWorldWideNameType;
     @Getter @Setter public short npivDesiredNodeWwns;
     @Getter @Setter public short npivDesiredPortWwns;
