@@ -31,6 +31,7 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25.ws;
 
 import com.vmware.vim25.ManagedObjectReference;
+import org.apache.log4j.Logger;
 import org.dom4j.Document;
 import org.dom4j.Element;
 import org.dom4j.io.SAXReader;
@@ -52,7 +53,9 @@ import java.util.List;
  */
 
 class XmlGenDom extends XmlGen {
-    private final static int getNumberOfSameTags(List<Element> subNodes, int sizeOfSubNodes, int from, String tagName) {
+    private static Logger log = Logger.getLogger(XmlGenDom.class);
+
+    protected static int getNumberOfSameTags(List<Element> subNodes, int sizeOfSubNodes, int from, String tagName) {
         int numOfTags = 1;
         for (int j = from + 1; j < sizeOfSubNodes; j++) {
             if (subNodes.get(j).getName().equals(tagName)) {
@@ -66,10 +69,12 @@ class XmlGenDom extends XmlGen {
     }
 
     public Object fromXML(String returnType, InputStream is) throws RemoteException {
+        log.debug("Parsing XML payload from server. " + returnType);
         Element root = null;
         try {
             SAXReader reader = new SAXReader();
             Document doc = reader.read(is);
+            log.trace("XML Document: " + doc.asXML());
             root = doc.getRootElement();
         }
         catch (Exception e1) {
@@ -80,7 +85,7 @@ class XmlGenDom extends XmlGen {
                 try {
                     is.close();
                 }
-                catch (IOException ioe) {
+                catch (IOException ignore) {
                 }
             }
         }
@@ -89,7 +94,7 @@ class XmlGenDom extends XmlGen {
         Element resp = (Element) body.elements().get(0);
 
         if (resp.getName().contains("Fault")) {
-            SoapFaultException sfe = null;
+            SoapFaultException sfe;
             try {
                 sfe = parseSoapFault(resp);
             }
@@ -118,7 +123,7 @@ class XmlGenDom extends XmlGen {
         }
     }
 
-    private SoapFaultException parseSoapFault(Element root) throws Exception {
+    protected SoapFaultException parseSoapFault(Element root) throws Exception {
         SoapFaultException sfe = new SoapFaultException();
 
         sfe.setFaultCode(root.elementText("faultcode"));
@@ -155,7 +160,7 @@ class XmlGenDom extends XmlGen {
             else {
                 ManagedObjectReference[] mos = new ManagedObjectReference[subNodes.size()];
                 for (int i = 0; i < subNodes.size(); i++) {
-                    Element elem = (Element) subNodes.get(i);
+                    Element elem = subNodes.get(i);
                     mos[i] = createMOR(elem.attributeValue("type"), elem.getText());
                 }
                 return mos;
@@ -163,8 +168,8 @@ class XmlGenDom extends XmlGen {
         }
         else if (TypeUtil.isBasicType(type)) {
             List<String> vals = new ArrayList<String>();
-            for (int i = 0; i < subNodes.size(); i++) {
-                vals.add(subNodes.get(i).getText());
+            for (Element subNode : subNodes) {
+                vals.add(subNode.getText());
             }
             return ReflectUtil.parseToObject(type, vals);
         }
@@ -226,7 +231,7 @@ class XmlGenDom extends XmlGen {
                     int sizeOfFieldArray = getNumberOfSameTags(subNodes, sizeOfSubNodes, i, tagName);
                     ManagedObjectReference[] mos = new ManagedObjectReference[sizeOfFieldArray];
                     for (int j = 0; j < sizeOfFieldArray; j++) {
-                        Element elem = (Element) subNodes.get(j + i);
+                        Element elem = subNodes.get(j + i);
                         mos[j] = createMOR(elem.attributeValue("type"), elem.getText());
                     }
                     field.set(obj, mos);
@@ -258,10 +263,10 @@ class XmlGenDom extends XmlGen {
 
                     List<String> values = new ArrayList<String>();
                     for (int j = 0; j < sizeOfFieldArray; j++) {
-                        values.add(((Element) subNodes.get(j + i)).getText());
+                        values.add(subNodes.get(j + i).getText());
                     }
 
-                    String fTrueType = null;
+                    String fTrueType;
                     if (xsiType != null) {
                         fTrueType = xsiType.substring("xsd:".length()) + "[]";
                     }
@@ -291,7 +296,7 @@ class XmlGenDom extends XmlGen {
                     Object ao = Array.newInstance(fType, sizeOfFieldArray);
                     String fGenericType = fType.getSimpleName();
                     for (int j = 0; j < sizeOfFieldArray; j++) {
-                        Element elem = (Element) subNodes.get(j + i);
+                        Element elem = subNodes.get(j + i);
                         String elemXsiType = elem.attributeValue(SoapConsts.XSI_TYPE);
                         String elemType = elemXsiType != null ? elemXsiType : fGenericType;
                         Object o = fromXml(TypeUtil.getVimClass(elemType), elem);
