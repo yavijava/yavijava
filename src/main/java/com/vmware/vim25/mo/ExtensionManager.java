@@ -159,17 +159,17 @@ public class ExtensionManager extends ManagedObject {
         return getVimService().findExtension(getMOR(), keyStr);
     }
 
-    private void encodeUrl(Extension extension) {
+    protected void encodeUrl(Extension extension) {
         // replace all the & in the url with &amp;
         for (int i = 0; extension.client != null && i < extension.client.length; i++) {
             ExtensionClientInfo eci = extension.client[i];
-            if (eci.url.indexOf("&") != -1) {
+            if (eci.url.contains("&")) {
                 eci.url = eci.url.replaceAll("&", "&amp;");
             }
         }
         for (int i = 0; extension.server != null && i < extension.server.length; i++) {
             ExtensionServerInfo esi = extension.server[i];
-            if (esi.url.indexOf("&") != -1) {
+            if (esi.url.contains("&")) {
                 esi.url = esi.url.replaceAll("&", "&amp;");
             }
         }
@@ -188,7 +188,7 @@ public class ExtensionManager extends ManagedObject {
 
         System.out.println("There are totally " + exts.length + " plugin(s) registered.");
 
-        for (int i = 0; exts != null && i < exts.length; i++) {
+        for (int i = 0; i < exts.length; i++) {
             System.out.println("\n ---- Plugin # " + (i + 1) + " ---- ");
             System.out.println("Key: " + exts[i].getKey());
             System.out.println("Version: " + exts[i].getVersion());

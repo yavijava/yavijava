@@ -31,7 +31,9 @@ package com.vmware.vim25.mo;
 
 import com.vmware.vim25.*;
 import com.vmware.vim25.mo.util.MorUtil;
+import com.vmware.vim25.ws.Client;
 import com.vmware.vim25.ws.SoapClient;
+import org.apache.log4j.Logger;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -46,6 +48,7 @@ import java.util.Calendar;
 
 public class ServiceInstance extends ManagedObject {
     private ServiceContent serviceContent = null;
+    private static Logger log = Logger.getLogger(ServiceInstance.class);
     final static ManagedObjectReference SERVICE_INSTANCE_MOR;
     public final static String VIM25_NAMESPACE = " xmlns=\"urn:vim25\">";
     public final static String VIM20_NAMESPACE = " xmlns=\"urn:vim2\">";
@@ -101,7 +104,7 @@ public class ServiceInstance extends ManagedObject {
         setMOR(SERVICE_INSTANCE_MOR);
 
         VimPortType vimService = new VimPortType(url.toString(), ignoreCert);
-        SoapClient wsc = (SoapClient) vimService.getWsc();
+        Client wsc = vimService.getWsc();
         wsc.setCookie(sessionStr);
         wsc.setVimNameSpace(namespace);
 
@@ -149,7 +152,7 @@ public class ServiceInstance extends ManagedObject {
         return getVimService().retrieveProductComponents(getMOR());
     }
 
-    private ServiceContent retrieveServiceContent() throws RuntimeFault, RemoteException {
+    protected ServiceContent retrieveServiceContent() throws RuntimeFault, RemoteException {
         return getVimService().retrieveServiceContent(getMOR());
     }
 
@@ -169,7 +172,7 @@ public class ServiceInstance extends ManagedObject {
                 serviceContent = retrieveServiceContent();
             }
             catch (Exception e) {
-                System.out.println("Exceptoin: " + e);
+                log.debug("Exception caught trying to retrieveServiceContent.", e);
             }
         }
         return serviceContent;
