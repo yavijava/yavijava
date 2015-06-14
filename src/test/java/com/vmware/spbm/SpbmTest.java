@@ -1,4 +1,5 @@
-package test;
+package com.vmware.spbm;
+
 import java.net.URL;
 
 import com.vmware.spbm.PbmCapabilityMetadataPerCategory;
@@ -10,14 +11,15 @@ import com.vmware.spbm.PbmProfileId;
 import com.vmware.spbm.PbmProfileResourceType;
 import com.vmware.spbm.PbmProfileResourceTypeEnum;
 import com.vmware.spbm.mo.PbmServiceInstance;
+import com.vmware.vim25.mo.ServiceInstance;
 
 
 public class SpbmTest {
-	public static void main(String[] args) {
-		try {
+    public static void main(String[] args) {
+        try {
 
 			/*
-		    final URL url = new URL("https", "vcserver60atoka.int.fusionio.com", "/sdk");
+            final URL url = new URL("https", "vcserver60atoka.int.fusionio.com", "/sdk");
 			ServiceInstance si = new ServiceInstance(url, "vsphere.local\\administrator", "vmware", true);
 			si.currentTime();
 
@@ -30,18 +32,21 @@ public class SpbmTest {
 			//PbmServiceInstance pbmSi = new PbmServiceInstance(pbmUrl, extractedCookie, true);
 			 */
 
-			final URL pbmUrl = new URL("https", "vcserver60atoka.int.fusionio.com", "/pbm");
-			//final URL pbmUrl = new URL("https", "127.0.0.1", 1545, "/pbm");
-            PbmServiceInstance pbmSi = new PbmServiceInstance(pbmUrl, "536836432c4f93fb3c0ca272e415af85072f681e", true);
+            final URL pbmUrl = new URL("https", "172.16.214.143", "/pbm");
+            String vcurl = "https://172.16.214.143/sdk";
+            ServiceInstance si = new ServiceInstance(new URL(vcurl), "administrator@vsphere.local", "password", true);
+            String session = si.getServerConnection().getSessionStr();
+            //final URL pbmUrl = new URL("https", "127.0.0.1", 1545, "/pbm");
+            PbmServiceInstance pbmSi = new PbmServiceInstance(pbmUrl, session, true);
             PbmProfileResourceType resourceType = new PbmProfileResourceType();
             resourceType.setResourceType(PbmProfileResourceTypeEnum.STORAGE.toString());
 
             PbmCapabilityMetadataPerCategory[] PbmCapabilityMetadataPerCategory = pbmSi.getProfileManager().pbmFetchCapabilityMetadata(resourceType, "com.vmware.iofilters");
 
             PbmProfileResourceType[] PbmProfileResourceTypes = pbmSi.getProfileManager().pbmFetchResourceType();
-			for (PbmProfileResourceType pbmProfileResourceType : PbmProfileResourceTypes) {
-				System.out.println(pbmProfileResourceType.resourceType);
-			}
+            for (PbmProfileResourceType pbmProfileResourceType : PbmProfileResourceTypes) {
+                System.out.println(pbmProfileResourceType.resourceType);
+            }
 
 			/*
 			PbmCapabilityVendorResourceTypeInfo[] pbmCapabilityVendorResourceTypeInfos = pbmSi.getProfileManager().pbmFetchVendorInfo(PbmProfileResourceTypes[0]);
@@ -60,8 +65,8 @@ public class SpbmTest {
 			}
 */
 
-			//com.vmware.iofilters
-            PbmProfileId[]  profileIds = pbmSi.getProfileManager().pbmQueryProfile(PbmProfileResourceTypes[0], PbmProfileCategoryEnum.REQUIREMENT.toString());
+            //com.vmware.iofilters
+            PbmProfileId[] profileIds = pbmSi.getProfileManager().pbmQueryProfile(PbmProfileResourceTypes[0], PbmProfileCategoryEnum.REQUIREMENT.toString());
             for (PbmProfileId pbmProfileId : profileIds) {
                 System.out.println("pbmProfileId.uniqueId: " + pbmProfileId.uniqueId);
                 System.out.println();
@@ -78,10 +83,11 @@ public class SpbmTest {
                 System.out.println("pbmProfile.getCreationTime(): " + pbmProfile.creationTime);
                 System.out.println("pbmProfile.getProfileId(): " + pbmProfile.profileId);
             }
-			//System.out.println(PbmProfileResourceTypes.length);
-		} catch (Exception e) {
-			System.out.println(e.getMessage());
-			e.printStackTrace();
-		}
-	}
+            //System.out.println(PbmProfileResourceTypes.length);
+        }
+        catch (Exception e) {
+            System.out.println(e.getMessage());
+            e.printStackTrace();
+        }
+    }
 }
