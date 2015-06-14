@@ -1,5 +1,8 @@
 package com.vmware.spbm;
 
+import lombok.Getter;
+import lombok.Setter;
+
 /**
  * Created by Michael Rice on Wed May 27 23:54:25 CDT 2015
  * This code is auto generated using yavijava_generator
@@ -22,4 +25,7 @@ package com.vmware.spbm;
  */
 
 public class ManagedObjectReference {
+
+    @Getter @Setter public String val;
+    @Getter @Setter public String type;
 }
