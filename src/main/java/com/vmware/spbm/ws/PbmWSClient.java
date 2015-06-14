@@ -25,7 +25,7 @@ import com.vmware.vim25.ws.XmlGen;
 
 /**
  * The PBM Web Service Engine
- * 
+ *
  * @author Atoka Sema
  */
 
@@ -66,7 +66,8 @@ public class PbmWSClient extends SoapClient {
                         return true;
                     }
                 });
-            } catch (Exception ignored) {
+            }
+            catch (Exception ignored) {
             }
         }
     }
@@ -76,7 +77,7 @@ public class PbmWSClient extends SoapClient {
      * <S:Header> <vcSessionCookie
      * xmlns="#">"02b38ac24a3f07cbf3a8074407fc9ba7f4dfe953"</vcSessionCookie>
      * </S:Header>
-     * 
+     *
      * @param soapMsg
      * @param vCenterCookie
      * @return
@@ -105,21 +106,25 @@ public class PbmWSClient extends SoapClient {
             is = post(soapMsg);
             log.trace("Converting xml response from server to: " + returnType);
             return unMarshall(returnType, is);
-        } catch (Exception e1) {
+        }
+        catch (Exception e1) {
             log.error("Exception caught while invoking method: " + methodName, e1);
             // Fixes issue-28 still need to write a test which may require
             // further refacotring but this at least gets the InvalidLogin
             // working.
             try {
                 throw (RemoteException) e1;
-            } catch (ClassCastException ignore) {
+            }
+            catch (ClassCastException ignore) {
                 throw new RemoteException("Exception caught trying to invoke method " + methodName, e1);
             }
-        } finally {
+        }
+        finally {
             if (is != null) {
                 try {
                     is.close();
-                } catch (IOException ignored) {
+                }
+                catch (IOException ignored) {
                 }
             }
         }
@@ -132,7 +137,8 @@ public class PbmWSClient extends SoapClient {
         try {
             InputStream is = post(soapMsg);
             return readStream(is);
-        } catch (Exception e) {
+        }
+        catch (Exception e) {
             throw new RemoteException("PBM SDK invoke exception:" + e);
         }
     }
@@ -151,7 +157,8 @@ public class PbmWSClient extends SoapClient {
 
         try {
             postCon.setRequestMethod("POST");
-        } catch (ProtocolException e) {
+        }
+        catch (ProtocolException e) {
             log.debug("ProtocolException caught.", e);
         }
         postCon.setDoOutput(true);
@@ -173,7 +180,8 @@ public class PbmWSClient extends SoapClient {
         try {
             is = postCon.getInputStream();
             log.trace("Successfully fetched InputStream.");
-        } catch (IOException ioe) {
+        }
+        catch (IOException ioe) {
             log.debug("Caught an IOException. Reading ErrorStream for results.", ioe);
             is = postCon.getErrorStream();
         }
