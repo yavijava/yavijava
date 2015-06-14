@@ -118,14 +118,12 @@ public abstract class XmlGen {
         // from now on, no array type
         else if (clazz == ManagedObjectReference.class) { //MOR]
             ManagedObjectReference mor = (ManagedObjectReference) obj;
-            if (clazz == type) {
-                sb.append("<").append(tagName).append(" type=\"").append(mor.type).append("\">");
-            }
-            else {
-                sb.append("<").append(tagName).append(" xsi:type=\"ManagedObjectReference\" type=\"").append(mor.type).append("\">");
-            }
-            sb.append(mor.val);
-            sb.append("</").append(tagName).append(">");
+            addMorInfo(clazz, type, tagName, sb, mor.type, mor.val);
+        }
+        // handle SPBM MOR
+        else if (clazz == com.vmware.spbm.ManagedObjectReference.class) {
+            com.vmware.spbm.ManagedObjectReference mor = (com.vmware.spbm.ManagedObjectReference) obj;
+            addMorInfo(clazz, type, tagName, sb, mor.type, mor.val);
         }
         else if (clazz.getCanonicalName().startsWith("java.lang")) //basic data type
         {
@@ -183,6 +181,17 @@ public abstract class XmlGen {
             }
             sb.append("</").append(tagName).append(">");
         }
+    }
+
+    protected static void addMorInfo(Class<?> clazz, Class<?> type, String tagName, StringBuffer sb, String morType, String morVal) {
+        if (clazz == type) {
+            sb.append("<").append(tagName).append(" type=\"").append(morType).append("\">");
+        }
+        else {
+            sb.append("<").append(tagName).append(" xsi:type=\"ManagedObjectReference\" type=\"").append(morType).append("\">");
+        }
+        sb.append(morVal);
+        sb.append("</").append(tagName).append(">");
     }
 
     public static ManagedObjectReference createMOR(String type, String value) {
