@@ -2,27 +2,7 @@ package com.vmware.spbm.mo;
 
 import java.rmi.RemoteException;
 
-import com.vmware.spbm.InvalidArgument;
-import com.vmware.spbm.PbmCapabilityMetadataPerCategory;
-import com.vmware.spbm.PbmCapabilityProfileCreateSpec;
-import com.vmware.spbm.PbmCapabilityProfileUpdateSpec;
-import com.vmware.spbm.PbmCapabilityVendorResourceTypeInfo;
-import com.vmware.spbm.PbmDatastoreSpaceStatistics;
-import com.vmware.spbm.PbmDefaultProfileInfo;
-import com.vmware.spbm.PbmDuplicateName;
-import com.vmware.spbm.PbmFault;
-import com.vmware.spbm.PbmFaultProfileStorageFault;
-import com.vmware.spbm.PbmLegacyHubsNotSupported;
-import com.vmware.spbm.PbmNonExistentHubs;
-import com.vmware.spbm.PbmPlacementHub;
-import com.vmware.spbm.PbmProfile;
-import com.vmware.spbm.PbmProfileId;
-import com.vmware.spbm.PbmProfileOperationOutcome;
-import com.vmware.spbm.PbmProfileResourceType;
-import com.vmware.spbm.PbmQueryProfileResult;
-import com.vmware.spbm.PbmServerObjectRef;
-import com.vmware.spbm.RuntimeFault;
-import com.vmware.vim25.ManagedObjectReference;
+import com.vmware.spbm.*;
 
 /**
  * @author Atoka Sema

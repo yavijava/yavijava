@@ -1,8 +1,8 @@
 package com.vmware.spbm.mo;
 
+import com.vmware.spbm.ManagedObjectReference;
 import org.apache.log4j.Logger;
 
-import com.vmware.vim25.ManagedObjectReference;
 import com.vmware.spbm.PbmPortType;
 
 /**
@@ -38,7 +38,7 @@ abstract public class PbmManagedObject {
      * Constructor that reuse exiting web service connection Use this constructor when you can re-use existing web
      * service connection.
      *
-     * @param serverConnection
+     * @param pbmServerConnection
      * @param mor
      */
     public PbmManagedObject(PbmServerConnection pbmServerConnection, ManagedObjectReference mor) {

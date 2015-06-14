@@ -1,10 +1,8 @@
 package com.vmware.spbm.mo;
 
 import java.lang.reflect.Constructor;
-
 import org.apache.log4j.Logger;
-
-import com.vmware.vim25.ManagedObjectReference;
+import com.vmware.spbm.ManagedObjectReference;
 
 /**
  * @author Atoka Sema
@@ -56,7 +54,8 @@ public class PbmMorUtil {
             return (PbmManagedObject) constructor.newInstance(new Object[] {
                 psc, mor
             });
-        } catch (Exception e) {
+        }
+        catch (Exception e) {
             log.error("Failed to create PBM MO for " + mor.toString(), e);
             return null;
         }

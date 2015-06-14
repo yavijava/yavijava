@@ -6,7 +6,7 @@ import java.rmi.RemoteException;
 
 import com.vmware.spbm.PbmPortType;
 import com.vmware.spbm.PbmServiceInstanceContent;
-import com.vmware.vim25.ManagedObjectReference;
+import com.vmware.spbm.ManagedObjectReference;
 import com.vmware.vim25.RuntimeFault;
 import com.vmware.vim25.ws.SoapClient;
 
