@@ -31,8 +31,6 @@ package org.doublecloud.ws.util;
 
 import org.apache.log4j.Logger;
 
-import com.vmware.vim25.ws.XmlGenDom;
-
 import java.lang.reflect.Array;
 import java.util.Calendar;
 import java.util.HashSet;
@@ -92,7 +90,11 @@ public class TypeUtil {
     public final static String PBM_PACKAGE_NAME = "com.vmware.spbm";
     private final static Map<String, Class<?>> VIM_CLASSES = new ConcurrentHashMap<String, Class<?>>();
 
-    public static Class<?> getVimClass(String packge, String type) {
+    public static Class<?> getVimClass(String type) {
+        return getVimClass(PACKAGE_NAME, type);
+    }
+
+    public static Class<?> getVimClass(String packageName, String type) {
         if (VIM_CLASSES.containsKey(type)) {
             return VIM_CLASSES.get(type);
         }
@@ -102,18 +104,18 @@ public class TypeUtil {
                 if (!type.endsWith("[]")) {
                     if (type.startsWith("vim25:")) {
                         type = type.substring(("vim25:").length());
-                        packge = PACKAGE_NAME;
+                        packageName = PACKAGE_NAME;
                     }
                     if (type.startsWith("pbm:")) {
                         type = type.substring(("pbm:").length());
-                        packge = PBM_PACKAGE_NAME;
+                        packageName = PBM_PACKAGE_NAME;
                     }
-                    type = (packge == null || packge.isEmpty()) ? PACKAGE_NAME: packge + "." + type;
+                    type = (packageName == null || packageName.isEmpty()) ? PACKAGE_NAME: packageName + "." + type;
                     clazz = Class.forName(type);
                 }
                 else {
                     String arrayType = type.substring(0, type.length() - 2);
-                    clazz = Array.newInstance(getVimClass(packge, arrayType), 0).getClass();
+                    clazz = Array.newInstance(getVimClass(packageName, arrayType), 0).getClass();
                 }
 
                 VIM_CLASSES.put(type, clazz);

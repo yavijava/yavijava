@@ -27,8 +27,6 @@ import static org.junit.Assert.*;
 
 public class TypeUtilTest {
 
-	public final static String PACKAGE_NAME = "com.vmware.vim25";
-
     @Test
     public void testIsPrimitiveType_boolean_is_Primitave() throws Exception {
         assertTrue(TypeUtil.isPrimitiveType("boolean"));
@@ -176,19 +174,19 @@ public class TypeUtilTest {
 
     @Test
     public void testGetVimClass_VirtualMachine_is_VirtualMachine() throws Exception {
-        Class<?> vm = TypeUtil.getVimClass(PACKAGE_NAME, "mo.VirtualMachine");
+        Class<?> vm = TypeUtil.getVimClass("mo.VirtualMachine");
         assertEquals(VirtualMachine.class.getName(), vm.getName());
     }
 
     @Test
     public void testGetVimClass_VirtualMachine_wrong_package_is_null() throws Exception {
-        Class<?> vm = TypeUtil.getVimClass(PACKAGE_NAME, "VirtualMachine");
+        Class<?> vm = TypeUtil.getVimClass("VirtualMachine");
         assertEquals(null, vm);
     }
 
     @Test
     public void testGetVimClass_VirtualMachine_array_returns_Array() throws Exception {
-        Class<?> vm = TypeUtil.getVimClass(PACKAGE_NAME, "mo.VirtualMachine[]");
+        Class<?> vm = TypeUtil.getVimClass("mo.VirtualMachine[]");
         assertTrue(vm.isArray());
     }
 
@@ -245,11 +243,11 @@ public class TypeUtilTest {
     @Test(expected = RuntimeException.class)
     public void testGetXSIType_Custom_Object_gives_RuntimeException() throws Exception {
         class foo {}
-        String actual = TypeUtil.getXSIType(foo.class);
+        TypeUtil.getXSIType(foo.class);
     }
 
     @Test(expected = NullPointerException.class)
     public void testGetXSIType_null_gives_NPE() throws Exception {
-        String actual = TypeUtil.getXSIType(null);
+        TypeUtil.getXSIType(null);
     }
 }
