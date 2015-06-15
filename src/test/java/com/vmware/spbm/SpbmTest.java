@@ -2,20 +2,18 @@ package com.vmware.spbm;
 
 import java.net.URL;
 
-import com.vmware.spbm.PbmCapabilityMetadataPerCategory;
-import com.vmware.spbm.PbmCapabilityVendorNamespaceInfo;
-import com.vmware.spbm.PbmCapabilityVendorResourceTypeInfo;
-import com.vmware.spbm.PbmProfile;
-import com.vmware.spbm.PbmProfileCategoryEnum;
-import com.vmware.spbm.PbmProfileId;
-import com.vmware.spbm.PbmProfileResourceType;
-import com.vmware.spbm.PbmProfileResourceTypeEnum;
+import com.vmware.spbm.*;
 import com.vmware.spbm.mo.PbmServiceInstance;
 import com.vmware.vim25.mo.ServiceInstance;
+import org.junit.Before;
+import org.junit.Test;
 
 
 public class SpbmTest {
-    public static void main(String[] args) {
+
+
+    @Test
+    public void testFunky() throws Exception {
         try {
 
 			/*
@@ -32,12 +30,16 @@ public class SpbmTest {
 			//PbmServiceInstance pbmSi = new PbmServiceInstance(pbmUrl, extractedCookie, true);
 			 */
 
-            final URL pbmUrl = new URL("https", "172.16.214.143", "/pbm");
-            String vcurl = "https://172.16.214.143/sdk";
-            ServiceInstance si = new ServiceInstance(new URL(vcurl), "administrator@vsphere.local", "password", true);
+            final URL pbmUrl = new URL("https://vcsa/pbm");
+            String vcurl = "https://vcsa/sdk";
+            String user = "administrator@vsphere.local";
+            String password = "password";
+            ServiceInstance si = new ServiceInstance(new URL(vcurl), user, password, true);
             String session = si.getServerConnection().getSessionStr();
+            String key = session.substring(session.indexOf("\"")+1, session.lastIndexOf("\""));
+            System.out.println(key);
             //final URL pbmUrl = new URL("https", "127.0.0.1", 1545, "/pbm");
-            PbmServiceInstance pbmSi = new PbmServiceInstance(pbmUrl, session, true);
+            PbmServiceInstance pbmSi = new PbmServiceInstance(pbmUrl, key, true);
             PbmProfileResourceType resourceType = new PbmProfileResourceType();
             resourceType.setResourceType(PbmProfileResourceTypeEnum.STORAGE.toString());
 
