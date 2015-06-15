@@ -137,7 +137,7 @@ class XmlGenDom extends XmlGen {
                 Element faultE = (Element) subElems.get(0);
                 String faultTypeName = faultE.attributeValue(SoapConsts.XSI_TYPE);
                 if (faultTypeName != null) {
-                    sfe.detail = (Throwable) fromXml(TypeUtil.getVimClass(faultTypeName), faultE);
+                    sfe.detail = (Throwable) fromXml(TypeUtil.getVimClass(getPackageName(root), faultTypeName), faultE);
                 }
             }
         }
@@ -160,7 +160,7 @@ class XmlGenDom extends XmlGen {
             else {
                 ManagedObjectReference[] mos = new ManagedObjectReference[subNodes.size()];
                 for (int i = 0; i < subNodes.size(); i++) {
-                    Element elem = subNodes.get(i);
+                    Element elem = (Element) subNodes.get(i);
                     mos[i] = createMOR(elem.attributeValue("type"), elem.getText());
                 }
                 return mos;
@@ -175,19 +175,19 @@ class XmlGenDom extends XmlGen {
         }
         else if (type.endsWith("[]")) { // array type
             String arrayItemTypeName = type.substring(0, type.length() - 2);
-            Class<?> clazz = TypeUtil.getVimClass(arrayItemTypeName);
+            Class<?> clazz = TypeUtil.getVimClass(getPackageName(root), arrayItemTypeName);
             Object ao = Array.newInstance(clazz, subNodes.size());
 
             for (int i = 0; i < subNodes.size(); i++) {
                 Element e = subNodes.get(i);
                 String xsiType = e.attributeValue(SoapConsts.XSI_TYPE);
-                Object o = fromXml(TypeUtil.getVimClass(xsiType == null ? arrayItemTypeName : xsiType), subNodes.get(i));
+                Object o = fromXml(TypeUtil.getVimClass(getPackageName(e), xsiType == null ? arrayItemTypeName : xsiType), subNodes.get(i));
                 Array.set(ao, i, o);
             }
             return ao;
         }
         else {
-            return fromXml(TypeUtil.getVimClass(type), subNodes.get(0));
+            return fromXml(TypeUtil.getVimClass(getPackageName(root),type), subNodes.get(0));
         }
     }
 
@@ -223,7 +223,7 @@ class XmlGenDom extends XmlGen {
             Class fRealType = fType;
             String xsiType = e.attributeValue(SoapConsts.XSI_TYPE);
             if (xsiType != null && (!xsiType.startsWith("xsd:"))) {
-                fRealType = TypeUtil.getVimClass(xsiType);
+                fRealType = TypeUtil.getVimClass(getPackageName(e), xsiType);
             }
 
             if (fRealType == ManagedObjectReference.class) { // MOR
@@ -231,7 +231,7 @@ class XmlGenDom extends XmlGen {
                     int sizeOfFieldArray = getNumberOfSameTags(subNodes, sizeOfSubNodes, i, tagName);
                     ManagedObjectReference[] mos = new ManagedObjectReference[sizeOfFieldArray];
                     for (int j = 0; j < sizeOfFieldArray; j++) {
-                        Element elem = subNodes.get(j + i);
+                        Element elem = (Element) subNodes.get(j + i);
                         mos[j] = createMOR(elem.attributeValue("type"), elem.getText());
                     }
                     field.set(obj, mos);
@@ -263,7 +263,7 @@ class XmlGenDom extends XmlGen {
 
                     List<String> values = new ArrayList<String>();
                     for (int j = 0; j < sizeOfFieldArray; j++) {
-                        values.add(subNodes.get(j + i).getText());
+                        values.add(((Element) subNodes.get(j + i)).getText());
                     }
 
                     String fTrueType;
@@ -296,10 +296,10 @@ class XmlGenDom extends XmlGen {
                     Object ao = Array.newInstance(fType, sizeOfFieldArray);
                     String fGenericType = fType.getSimpleName();
                     for (int j = 0; j < sizeOfFieldArray; j++) {
-                        Element elem = subNodes.get(j + i);
+                        Element elem = (Element) subNodes.get(j + i);
                         String elemXsiType = elem.attributeValue(SoapConsts.XSI_TYPE);
                         String elemType = elemXsiType != null ? elemXsiType : fGenericType;
-                        Object o = fromXml(TypeUtil.getVimClass(elemType), elem);
+                        Object o = fromXml(TypeUtil.getVimClass(getPackageName(elem), elemType), elem);
                         Array.set(ao, j, o);
                     }
                     field.set(obj, ao);
@@ -312,5 +312,17 @@ class XmlGenDom extends XmlGen {
             }
         }
         return obj;
+    }
+
+    public static String getPackageName(Element node) {
+        return getPackageName(node.getNamespace().getURI());
+    }
+
+    public static String getPackageName(String namespace) {
+        if (namespace.contains("urn:pbm")) {
+            return TypeUtil.PBM_PACKAGE_NAME;
+        } else {
+            return TypeUtil.PACKAGE_NAME;
+        }
     }
 }

@@ -23,8 +23,10 @@ import lombok.Setter;
  * @since 6.0
  */
 
-public class MethodFault {
-
+@SuppressWarnings("serial")
+public class MethodFault extends java.rmi.RemoteException {
+    @Getter @Setter public String dynamicType;
+    @Getter @Setter public DynamicProperty[] dynamicProperty;
     @Getter @Setter public LocalizedMethodFault faultCause;
     @Getter @Setter public LocalizableMessage[] faultMessage;
 }

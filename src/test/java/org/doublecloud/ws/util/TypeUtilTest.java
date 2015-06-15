@@ -243,11 +243,11 @@ public class TypeUtilTest {
     @Test(expected = RuntimeException.class)
     public void testGetXSIType_Custom_Object_gives_RuntimeException() throws Exception {
         class foo {}
-        String actual = TypeUtil.getXSIType(foo.class);
+        TypeUtil.getXSIType(foo.class);
     }
 
     @Test(expected = NullPointerException.class)
     public void testGetXSIType_null_gives_NPE() throws Exception {
-        String actual = TypeUtil.getXSIType(null);
+        TypeUtil.getXSIType(null);
     }
 }

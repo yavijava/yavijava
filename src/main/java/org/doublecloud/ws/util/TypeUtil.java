@@ -86,10 +86,15 @@ public class TypeUtil {
         return pkg == null || pkg == LANG_PKG || pkg == UTIL_PKG;
     }
 
-    private static String PACKAGE_NAME = "com.vmware.vim25";
+    public final static String PACKAGE_NAME = "com.vmware.vim25";
+    public final static String PBM_PACKAGE_NAME = "com.vmware.spbm";
     private final static Map<String, Class<?>> VIM_CLASSES = new ConcurrentHashMap<String, Class<?>>();
 
     public static Class<?> getVimClass(String type) {
+        return getVimClass(PACKAGE_NAME, type);
+    }
+
+    public static Class<?> getVimClass(String packageName, String type) {
         if (VIM_CLASSES.containsKey(type)) {
             return VIM_CLASSES.get(type);
         }
@@ -97,11 +102,20 @@ public class TypeUtil {
             try {
                 Class<?> clazz;
                 if (!type.endsWith("[]")) {
-                    clazz = Class.forName(PACKAGE_NAME + "." + type);
+                    if (type.startsWith("vim25:")) {
+                        type = type.substring(("vim25:").length());
+                        packageName = PACKAGE_NAME;
+                    }
+                    if (type.startsWith("pbm:")) {
+                        type = type.substring(("pbm:").length());
+                        packageName = PBM_PACKAGE_NAME;
+                    }
+                    type = (packageName == null || packageName.isEmpty()) ? PACKAGE_NAME: packageName + "." + type;
+                    clazz = Class.forName(type);
                 }
                 else {
                     String arrayType = type.substring(0, type.length() - 2);
-                    clazz = Array.newInstance(getVimClass(arrayType), 0).getClass();
+                    clazz = Array.newInstance(getVimClass(packageName, arrayType), 0).getClass();
                 }
 
                 VIM_CLASSES.put(type, clazz);
