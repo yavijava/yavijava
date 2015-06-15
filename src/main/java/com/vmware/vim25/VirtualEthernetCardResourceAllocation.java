@@ -3,7 +3,9 @@ import lombok.Getter;
 import lombok.Setter;
 
 /**
- * Created by Michael Rice on Sun May 24 16:15:35 CDT 2015
+ * Created by Michael Rice on Thu Jun 11 17:52:06 CDT 2015
+ * This code is auto generated using yavijava_generator
+ * https://github.com/yavijava/yavijava_generator
  *
  * Copyright 2015 Michael Rice
  *
@@ -22,7 +24,7 @@ import lombok.Setter;
  */
 
 public class VirtualEthernetCardResourceAllocation extends DynamicData {
-    @Getter @Setter public long reservation;
+    @Getter @Setter public Long reservation;
     @Getter @Setter public SharesInfo share;
-    @Getter @Setter public long limit;
+    @Getter @Setter public Long limit;
 }

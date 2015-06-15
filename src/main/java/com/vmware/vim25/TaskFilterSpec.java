@@ -32,7 +32,9 @@ import lombok.Getter;
 import lombok.Setter;
 
 /**
- * Created by Michael Rice on Sun May 24 16:15:35 CDT 2015
+ * Created by Michael Rice on Fri Jun 12 15:16:16 CDT 2015
+ * This code is auto generated using yavijava_generator
+ * https://github.com/yavijava/yavijava_generator
  *
  * Copyright 2015 Michael Rice
  *
@@ -58,7 +60,7 @@ public class TaskFilterSpec extends DynamicData {
     @Getter @Setter public TaskInfoState[] state;
     @Getter @Setter public ManagedObjectReference alarm;
     @Getter @Setter public ManagedObjectReference scheduledTask;
-    @Getter @Setter public Integer[] eventChainId;
+    @Getter @Setter public int[] eventChainId;
     @Getter @Setter public String[] tag;
     @Getter @Setter public String[] parentTaskKey;
     @Getter @Setter public String[] rootTaskKey;

@@ -3,7 +3,9 @@ import lombok.Getter;
 import lombok.Setter;
 
 /**
- * Created by Michael Rice on Sun May 24 16:15:35 CDT 2015
+ * Created by Michael Rice on Thu Jun 11 17:52:06 CDT 2015
+ * This code is auto generated using yavijava_generator
+ * https://github.com/yavijava/yavijava_generator
  *
  * Copyright 2015 Michael Rice
  *
@@ -26,6 +28,6 @@ public class VirtualMachineVMCIDeviceFilterSpec extends DynamicData {
     @Getter @Setter public String action;
     @Getter @Setter public String protocol;
     @Getter @Setter public String direction;
-    @Getter @Setter public long lowerDstPortBoundary;
-    @Getter @Setter public long upperDstPortBoundary;
+    @Getter @Setter public Long lowerDstPortBoundary;
+    @Getter @Setter public Long upperDstPortBoundary;
 }

@@ -32,7 +32,9 @@ import lombok.Getter;
 import lombok.Setter;
 
 /**
- * Created by Michael Rice on Sun May 24 16:15:35 CDT 2015
+ * Created by Michael Rice on Fri Jun 12 15:16:17 CDT 2015
+ * This code is auto generated using yavijava_generator
+ * https://github.com/yavijava/yavijava_generator
  *
  * Copyright 2015 Michael Rice
  *
@@ -50,7 +52,7 @@ import lombok.Setter;
  * @since 6.0
  */
 
-public class VirtualMachineConfigSpec extends DynamicData {
+public class    VirtualMachineConfigSpec extends DynamicData {
     @Getter @Setter public String changeVersion;
     @Getter @Setter public String name;
     @Getter @Setter public String version;
@@ -75,7 +77,7 @@ public class VirtualMachineConfigSpec extends DynamicData {
     @Getter @Setter public VirtualMachineDefaultPowerOpInfo powerOpInfo;
     @Getter @Setter public Integer numCPUs;
     @Getter @Setter public Integer numCoresPerSocket;
-    @Getter @Setter public long memoryMB;
+    @Getter @Setter public Long memoryMB;
     @Getter @Setter public Boolean memoryHotAddEnabled;
     @Getter @Setter public Boolean cpuHotAddEnabled;
     @Getter @Setter public Boolean cpuHotRemoveEnabled;

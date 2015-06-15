@@ -34,7 +34,9 @@ import lombok.Setter;
 import java.util.Calendar;
 
 /**
- * Created by Michael Rice on Sun May 24 16:15:35 CDT 2015
+ * Created by Michael Rice on Thu Jun 11 17:52:06 CDT 2015
+ * This code is auto generated using yavijava_generator
+ * https://github.com/yavijava/yavijava_generator
  *
  * Copyright 2015 Michael Rice
  *
@@ -57,8 +59,8 @@ public class DatastoreInfo extends DynamicData {
     @Getter @Setter public String url;
     @Getter @Setter public long freeSpace;
     @Getter @Setter public long maxFileSize;
-    @Getter @Setter public long maxVirtualDiskCapacity;
-    @Getter @Setter public long maxMemoryFileSize;
+    @Getter @Setter public Long maxVirtualDiskCapacity;
+    @Getter @Setter public Long maxMemoryFileSize;
     @Getter @Setter public Calendar timestamp;
     @Getter @Setter public String containerId;
 }
