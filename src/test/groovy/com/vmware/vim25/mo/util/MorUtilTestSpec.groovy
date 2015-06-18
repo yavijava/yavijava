@@ -54,4 +54,17 @@ class MorUtilTestSpec extends Specification {
         vm1 instanceof VirtualMachine
     }
 
+    def "test createMOR produces a valid MOR so you can make a VirtualMachine when asked to"() {
+        setup:
+        String val = "vm-12345"
+        String type = "VirtualMachine"
+        ServerConnection sc = Mock(ServerConnection)
+
+        when:
+        ManagedObjectReference vmMOR = MorUtil.createMOR(type, val)
+        VirtualMachine vm = new VirtualMachine(sc, vmMOR)
+
+        then:
+        vm.getMOR().val == val
+    }
 }

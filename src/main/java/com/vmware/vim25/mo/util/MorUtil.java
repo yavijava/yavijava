@@ -129,4 +129,11 @@ public class MorUtil {
 
         return mes;
     }
+
+    public static ManagedObjectReference createMOR(String type, String value) {
+        ManagedObjectReference mor = new ManagedObjectReference();
+        mor.val = value;
+        mor.type = type;
+        return mor;
+    }
 }
