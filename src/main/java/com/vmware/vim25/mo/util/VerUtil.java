@@ -66,6 +66,7 @@ import java.security.cert.X509Certificate;
  *
  * @author Steve JIN (sjin@vmware.com)
  */
+@Deprecated
 public class VerUtil {
     /**
      * Retrieve the target server's name space

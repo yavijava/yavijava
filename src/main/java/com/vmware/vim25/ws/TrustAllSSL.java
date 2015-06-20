@@ -1,11 +1,9 @@
 package com.vmware.vim25.ws;
 
-import javax.net.ssl.HttpsURLConnection;
-import javax.net.ssl.SSLContext;
-import javax.net.ssl.TrustManager;
-import javax.net.ssl.X509TrustManager;
+import javax.net.ssl.*;
 import java.security.KeyManagementException;
 import java.security.NoSuchAlgorithmException;
+import java.security.SecureRandom;
 import java.security.cert.CertificateException;
 import java.security.cert.X509Certificate;
 
@@ -26,12 +24,37 @@ import java.security.cert.X509Certificate;
 public class TrustAllSSL {
 
     private static boolean alreadyCreated = false;
+    private static SSLContext sslContext;
 
-    public static void trustAllHttpsCertificates() throws NoSuchAlgorithmException, KeyManagementException {
+    public static SSLContext getTrustContext() throws NoSuchAlgorithmException, KeyManagementException {
         if (getAlreadyCreated()) {
-            return;
+            return sslContext;
         }
         setAlreadyCreated();
+        TrustManager[] trustAllCerts = new TrustManager[1];
+        trustAllCerts[0] = new TrustAllManager();
+        sslContext = SSLContext.getInstance("TLS");
+        sslContext.init(null, trustAllCerts, new SecureRandom());
+        HttpsURLConnection.setDefaultHostnameVerifier(
+            new HostnameVerifier() {
+                public boolean verify(String urlHostName, SSLSession session) {
+                    return true;
+                }
+            }
+        );
+        return sslContext;
+    }
+
+    /**
+     * This is an unsafe method and should not be used. It will be removed
+     * at the next MAJOR release of vSphere
+     *
+     * @throws NoSuchAlgorithmException
+     * @throws KeyManagementException
+     * @deprecated
+     */
+    @Deprecated
+    public static void trustAllHttpsCertificates() throws NoSuchAlgorithmException, KeyManagementException {
         TrustManager[] trustAllCerts = new TrustManager[1];
         trustAllCerts[0] = new TrustAllManager();
         SSLContext sc = SSLContext.getInstance("SSL");
