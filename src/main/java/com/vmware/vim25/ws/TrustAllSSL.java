@@ -1,16 +1,14 @@
 package com.vmware.vim25.ws;
 
-import javax.net.ssl.HttpsURLConnection;
-import javax.net.ssl.SSLContext;
-import javax.net.ssl.TrustManager;
-import javax.net.ssl.X509TrustManager;
+import javax.net.ssl.*;
 import java.security.KeyManagementException;
 import java.security.NoSuchAlgorithmException;
+import java.security.SecureRandom;
 import java.security.cert.CertificateException;
 import java.security.cert.X509Certificate;
 
 /**
- * Copyright 2014 Michael Rice
+ * Copyright 2014-2015 Michael Rice
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -25,6 +23,37 @@ import java.security.cert.X509Certificate;
  */
 public class TrustAllSSL {
 
+    private static boolean alreadyCreated = false;
+    private static SSLContext sslContext;
+
+    public static SSLContext getTrustContext() throws NoSuchAlgorithmException, KeyManagementException {
+        if (getAlreadyCreated()) {
+            return sslContext;
+        }
+        setAlreadyCreated();
+        TrustManager[] trustAllCerts = new TrustManager[1];
+        trustAllCerts[0] = new TrustAllManager();
+        sslContext = SSLContext.getInstance("TLS");
+        sslContext.init(null, trustAllCerts, new SecureRandom());
+        HttpsURLConnection.setDefaultHostnameVerifier(
+            new HostnameVerifier() {
+                public boolean verify(String urlHostName, SSLSession session) {
+                    return true;
+                }
+            }
+        );
+        return sslContext;
+    }
+
+    /**
+     * This is an unsafe method and should not be used. It will be removed
+     * at the next MAJOR release of vSphere
+     *
+     * @throws NoSuchAlgorithmException
+     * @throws KeyManagementException
+     * @deprecated
+     */
+    @Deprecated
     public static void trustAllHttpsCertificates() throws NoSuchAlgorithmException, KeyManagementException {
         TrustManager[] trustAllCerts = new TrustManager[1];
         trustAllCerts[0] = new TrustAllManager();
@@ -48,5 +77,13 @@ public class TrustAllSSL {
                                        String authType)
             throws CertificateException {
         }
+    }
+
+    private static boolean getAlreadyCreated() {
+        return alreadyCreated;
+    }
+
+    private static void setAlreadyCreated() {
+        alreadyCreated = true;
     }
 }

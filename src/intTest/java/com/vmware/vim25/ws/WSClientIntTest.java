@@ -3,6 +3,8 @@ package com.vmware.vim25.ws;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.rmi.RemoteException;
+import java.util.Calendar;
+import javax.net.ssl.SSLHandshakeException;
 
 import com.vmware.vim25.*;
 import org.junit.Assert;
@@ -12,6 +14,8 @@ import org.junit.Test;
 import com.utility.LoadVcenterProps;
 import com.vmware.vim25.mo.ServiceInstance;
 import com.vmware.vim25.mo.util.PropertyCollectorUtil;
+
+import javax.net.ssl.HttpsURLConnection;
 
 public class WSClientIntTest {
     SoapClient wsClient = null;
@@ -41,6 +45,39 @@ public class WSClientIntTest {
         wsClient.setSoapActionOnApiVersion("5.5");
         wsClient.setCookie(si.getSessionManager().getServerConnection()
                 .getVimService().getWsc().getCookie());
+    }
+
+    /**
+     * This method will test that you can ignore ssl to a vcenter but it doesnt trust
+     * every cert on the net and will fail trying to connect to my jenkins server
+     */
+    @Test(expected = SSLHandshakeException.class)
+    public void testIgnoreSslDoesNotTrustAllCertsOnline() throws Exception {
+        ServiceInstance si = new ServiceInstance(new URL(LoadVcenterProps.url), LoadVcenterProps.userName, LoadVcenterProps.password, true);
+        // if we get here we were successful ignoring the self signed cert from vcenter
+        assert si.getServerClock() instanceof Calendar;
+        URL jenkinsUrl = new URL("https://jenkins.toastcoders.com");
+        HttpsURLConnection myURLConnection = (HttpsURLConnection) jenkinsUrl.openConnection();
+        // this should throw a handshake exception
+        myURLConnection.connect();
+    }
+
+    /**
+     * This method should fail with ssl handshake exception
+     * the vcenter used in your properties file should be running on ssl
+     * and you should not have its cert imported in your keystore. For these
+     * tests I rely on a vCenter Server Appliance running simulator.
+     */
+    @Test
+    public void testDoNotIgnoreSslFailsOnSelfSignedCertNotInKeyStore() throws Exception {
+        Throwable t = null;
+        try {
+            ServiceInstance si = new ServiceInstance(new URL(LoadVcenterProps.url), LoadVcenterProps.userName, LoadVcenterProps.password, false);
+        }
+        catch (RemoteException re) {
+            t = re;
+        }
+        assert t.getCause() instanceof SSLHandshakeException;
     }
 
     /**
