@@ -25,7 +25,11 @@ public class WSClientIntTest {
     public void setUp() throws Exception {
         if (null == LoadVcenterProps.url || null == LoadVcenterProps.userName
                 || null == LoadVcenterProps.password
+                || null == LoadVcenterProps.secondUrl
+                || null == LoadVcenterProps.badUrl
                 || "".equals(LoadVcenterProps.url.trim())
+                || "".equals(LoadVcenterProps.secondUrl.trim())
+                || "".equals(LoadVcenterProps.badUrl.trim())
                 || "".equals(LoadVcenterProps.userName.trim())
                 || "".equals(LoadVcenterProps.password.trim())) {
             throw new Exception("Vcenter credentials not loaded");
@@ -56,10 +60,23 @@ public class WSClientIntTest {
         ServiceInstance si = new ServiceInstance(new URL(LoadVcenterProps.url), LoadVcenterProps.userName, LoadVcenterProps.password, true);
         // if we get here we were successful ignoring the self signed cert from vcenter
         assert si.getServerClock() instanceof Calendar;
-        URL jenkinsUrl = new URL("https://jenkins.toastcoders.com");
-        HttpsURLConnection myURLConnection = (HttpsURLConnection) jenkinsUrl.openConnection();
+        URL badUrl = new URL(LoadVcenterProps.badUrl);
+        HttpsURLConnection myURLConnection = (HttpsURLConnection) badUrl.openConnection();
         // this should throw a handshake exception
         myURLConnection.connect();
+    }
+
+    /**
+     * This method will test that you can ignore ssl to a vcenter but it doesnt trust
+     * every cert on the net and will fail trying to connect to my jenkins server
+     */
+    @Test
+    public void testIgnoreSslAllowsMultiplevCentersToBeIgnored() throws Exception {
+        ServiceInstance si = new ServiceInstance(new URL(LoadVcenterProps.url), LoadVcenterProps.userName, LoadVcenterProps.password, true);
+        // if we get here we were successful ignoring the self signed cert from vcenter
+        assert si.getServerClock() instanceof Calendar;
+        ServiceInstance serviceInstance = new ServiceInstance(new URL(LoadVcenterProps.secondUrl), LoadVcenterProps.userName, LoadVcenterProps.password, true);
+        assert serviceInstance.currentTime() instanceof Calendar;
     }
 
     /**
