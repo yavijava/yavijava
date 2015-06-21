@@ -9,6 +9,9 @@ public class LoadVcenterProps {
     public static String url;
     public static String userName;
     public static String password;
+    public static String secondUrl;
+    public static String badUrl;
+
     static {
         InputStream input = null;
         Properties prop = new Properties();
@@ -23,6 +26,8 @@ public class LoadVcenterProps {
             url = prop.getProperty("url");
             userName = prop.getProperty("username");
             password = prop.getProperty("password");
+            secondUrl = prop.getProperty("secondUrl");
+            badUrl = prop.getProperty("badUrl");
 
         } catch (IOException ex) {
             ex.printStackTrace();
