@@ -110,12 +110,12 @@ uploadArchives {
                 packaging 'jar'
                 // optionally artifactId can be defined here
                 description 'Java library for VMware vSphere'
-                url 'https://github.com/michaelrice/yavijava'
+                url 'https://github.com/yavijava/yavijava'
 
                 scm {
-                    connection 'scm:git:https://github.com/michaelrice/yavijava.git'
-                    developerConnection 'scm:git:https://github.com/michaelrice/yavijava.git'
-                    url 'https://github.com/michaelrice/yavijava'
+                    connection 'scm:git:https://github.com/yavijava/yavijava.git'
+                    developerConnection 'scm:git:https://github.com/yavijava/yavijava.git'
+                    url 'https://github.com/yavijava/yavijava'
                 }
 
                 licenses {
