@@ -50,7 +50,7 @@ dependencies (Always check the build.gradle for the latest requirements):
     }
 
 ## WHERE CAN I GET HELP?
-File a bug: https://github.com/michaelrice/yavijava/issues
+File a bug: https://github.com/yavijava/yavijava/issues
 
 IRC: Freenode IRC #vijava 
 
@@ -60,7 +60,7 @@ BSD. See the License.txt file for details
 
 ## What happened to the samples?!?!
 
-Never fear. I removed them from the core of the project and made them their own project. They can be found here: https://github.com/michaelrice/yavijava-samples
+Never fear. I removed them from the core of the project and made them their own project. They can be found here: https://github.com/yavijava/yavijava-samples
 
 
 ## Testing
