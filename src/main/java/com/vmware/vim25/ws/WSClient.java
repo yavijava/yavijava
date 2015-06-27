@@ -33,16 +33,15 @@ package com.vmware.vim25.ws;
 
 import org.apache.log4j.Logger;
 
-import javax.net.ssl.HostnameVerifier;
 import javax.net.ssl.HttpsURLConnection;
-import javax.net.ssl.SSLSession;
-
 import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.ProtocolException;
 import java.net.URL;
 import java.rmi.RemoteException;
+import java.security.KeyManagementException;
+import java.security.NoSuchAlgorithmException;
 
 /**
  * The Web Service Engine
@@ -54,6 +53,7 @@ import java.rmi.RemoteException;
 public class WSClient extends SoapClient {
 
     private static final Logger log = Logger.getLogger(WSClient.class);
+    private boolean ignoreCert = false;
 
     XmlGen xmlGen = new XmlGenDom();
 
@@ -68,20 +68,7 @@ public class WSClient extends SoapClient {
         log.trace("Creating WSClient to server URL: " + serverUrl);
         log.trace("Ignore ssl: " + ignoreCert);
         this.baseUrl = new URL(serverUrl);
-        if (ignoreCert) {
-            try {
-                TrustAllSSL.trustAllHttpsCertificates();
-                HttpsURLConnection.setDefaultHostnameVerifier(
-                    new HostnameVerifier() {
-                        public boolean verify(String urlHostName, SSLSession session) {
-                            return true;
-                        }
-                    }
-                );
-            }
-            catch (Exception ignored) {
-            }
-        }
+        this.ignoreCert = ignoreCert;
     }
 
     public Object invoke(String methodName, Argument[] paras, String returnType) throws RemoteException {
@@ -129,7 +116,24 @@ public class WSClient extends SoapClient {
     }
 
     protected InputStream post(String soapMsg) throws IOException {
-        HttpURLConnection postCon = (HttpURLConnection) baseUrl.openConnection();
+        HttpURLConnection postCon;
+        if (baseUrl.getProtocol().equalsIgnoreCase("https") && ignoreCert) {
+            postCon = (HttpsURLConnection) baseUrl.openConnection();
+            try {
+                ((HttpsURLConnection) postCon).setSSLSocketFactory(TrustAllSSL.getTrustContext().getSocketFactory());
+            }
+            catch (NoSuchAlgorithmException e) {
+                log.debug("Unable to find suitable algorithm while attempting to communicate with remote server.", e);
+                throw new RemoteException("Unable to find suitable algorithm while attempting to communicate with remote server.", e);
+            }
+            catch (KeyManagementException e) {
+                log.debug("Key Management exception while attempting to communicate with remote server.", e);
+                throw new RemoteException("Key Management exception while attempting to communicate with remote server.", e);
+            }
+        }
+        else {
+            postCon = (HttpURLConnection) baseUrl.openConnection();
+        }
 
         log.trace("POST: " + soapAction);
         log.trace("Payload: " + soapMsg);

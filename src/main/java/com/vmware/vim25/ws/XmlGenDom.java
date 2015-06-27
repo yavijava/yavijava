@@ -31,6 +31,7 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25.ws;
 
 import com.vmware.vim25.ManagedObjectReference;
+import com.vmware.vim25.mo.util.MorUtil;
 import org.apache.log4j.Logger;
 import org.dom4j.Document;
 import org.dom4j.Element;
@@ -155,13 +156,13 @@ class XmlGenDom extends XmlGen {
         if (type.startsWith("ManagedObjectReference")) {
             if (!type.endsWith("[]")) {
                 Element e = subNodes.get(0);
-                return createMOR(e.attributeValue("type"), e.getText());
+                return MorUtil.createMOR(e.attributeValue("type"), e.getText());
             }
             else {
                 ManagedObjectReference[] mos = new ManagedObjectReference[subNodes.size()];
                 for (int i = 0; i < subNodes.size(); i++) {
                     Element elem = subNodes.get(i);
-                    mos[i] = createMOR(elem.attributeValue("type"), elem.getText());
+                    mos[i] = MorUtil.createMOR(elem.attributeValue("type"), elem.getText());
                 }
                 return mos;
             }
@@ -232,13 +233,13 @@ class XmlGenDom extends XmlGen {
                     ManagedObjectReference[] mos = new ManagedObjectReference[sizeOfFieldArray];
                     for (int j = 0; j < sizeOfFieldArray; j++) {
                         Element elem = subNodes.get(j + i);
-                        mos[j] = createMOR(elem.attributeValue("type"), elem.getText());
+                        mos[j] = MorUtil.createMOR(elem.attributeValue("type"), elem.getText());
                     }
                     field.set(obj, mos);
                     i = i + sizeOfFieldArray - 1;
                 }
                 else {
-                    field.set(obj, createMOR(e.attributeValue("type"), e.getText()));
+                    field.set(obj, MorUtil.createMOR(e.attributeValue("type"), e.getText()));
                 }
             }
             else if (fRealType.isEnum()) { // Enum type

@@ -31,6 +31,7 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25.ws;
 
 import com.vmware.vim25.ManagedObjectReference;
+import com.vmware.vim25.mo.util.MorUtil;
 import org.apache.log4j.Logger;
 import org.doublecloud.ws.util.ReflectUtil;
 import org.doublecloud.ws.util.TypeUtil;
@@ -185,11 +186,17 @@ public abstract class XmlGen {
         }
     }
 
+    /**
+     * Switch usage of this to the MorUtil
+     *
+     * @param type Type of ManagedObject to create a reference for.
+     * @param value Value of said ManagedObjectReference
+     * @return ManagedObjectReverence
+     * @deprecated Switch usage to {@link com.vmware.vim25.mo.util.MorUtil#createMOR(String, String)}
+     */
+    @Deprecated
     public static ManagedObjectReference createMOR(String type, String value) {
-        ManagedObjectReference mor = new ManagedObjectReference();
-        mor.val = value;
-        mor.type = type;
-        return mor;
+        return MorUtil.createMOR(type, value);
     }
 
     public abstract Object fromXML(String returnType, InputStream in) throws Exception;

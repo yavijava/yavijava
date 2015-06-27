@@ -5,6 +5,11 @@ import org.doublecloud.ws.util.testUtils.*;
 import org.junit.Test;
 
 import java.lang.reflect.Field;
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 import static org.junit.Assert.*;
 
@@ -35,12 +40,14 @@ public class ReflectUtilTest {
     }
 
     @Test
-    public void testSetObjectArrayField() throws Exception {
-
-    }
-
-    @Test
-    public void testParseToObject() throws Exception {
-
+    public void testToByteArray() throws Exception {
+        List<String> values = new ArrayList<String>();
+        char[] chars = "ox991LwhCGLf2gntXqKkSPdqC+A=".toCharArray();
+        for (char c: chars) {
+            values.add(Character.toString(c));
+        }
+        byte[] actual = ReflectUtil.toByteArray(values);
+        byte[] expected = javax.xml.bind.DatatypeConverter.parseBase64Binary("ox991LwhCGLf2gntXqKkSPdqC+A=");
+        assertArrayEquals(expected, actual);
     }
 }
