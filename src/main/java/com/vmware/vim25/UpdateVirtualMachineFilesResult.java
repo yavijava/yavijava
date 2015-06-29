@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class UpdateVirtualMachineFilesResult extends DynamicData {
-  public UpdateVirtualMachineFilesResultFailedVmFileInfo[] failedVmFile;
+    public UpdateVirtualMachineFilesResultFailedVmFileInfo[] failedVmFile;
 
-  public UpdateVirtualMachineFilesResultFailedVmFileInfo[] getFailedVmFile() {
-    return this.failedVmFile;
-  }
+    public UpdateVirtualMachineFilesResultFailedVmFileInfo[] getFailedVmFile() {
+        return this.failedVmFile;
+    }
 
-  public void setFailedVmFile(UpdateVirtualMachineFilesResultFailedVmFileInfo[] failedVmFile) {
-    this.failedVmFile=failedVmFile;
-  }
+    public void setFailedVmFile(UpdateVirtualMachineFilesResultFailedVmFileInfo[] failedVmFile) {
+        this.failedVmFile = failedVmFile;
+    }
 }

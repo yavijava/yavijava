@@ -30,46 +30,46 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VAppConfigSpec extends VmConfigSpec {
-  public VAppEntityConfigInfo[] entityConfig;
-  public String annotation;
-  public String instanceUuid;
-  public ManagedByInfo managedBy;
+    public VAppEntityConfigInfo[] entityConfig;
+    public String annotation;
+    public String instanceUuid;
+    public ManagedByInfo managedBy;
 
-  public VAppEntityConfigInfo[] getEntityConfig() {
-    return this.entityConfig;
-  }
+    public VAppEntityConfigInfo[] getEntityConfig() {
+        return this.entityConfig;
+    }
 
-  public String getAnnotation() {
-    return this.annotation;
-  }
+    public String getAnnotation() {
+        return this.annotation;
+    }
 
-  public String getInstanceUuid() {
-    return this.instanceUuid;
-  }
+    public String getInstanceUuid() {
+        return this.instanceUuid;
+    }
 
-  public ManagedByInfo getManagedBy() {
-    return this.managedBy;
-  }
+    public ManagedByInfo getManagedBy() {
+        return this.managedBy;
+    }
 
-  public void setEntityConfig(VAppEntityConfigInfo[] entityConfig) {
-    this.entityConfig=entityConfig;
-  }
+    public void setEntityConfig(VAppEntityConfigInfo[] entityConfig) {
+        this.entityConfig = entityConfig;
+    }
 
-  public void setAnnotation(String annotation) {
-    this.annotation=annotation;
-  }
+    public void setAnnotation(String annotation) {
+        this.annotation = annotation;
+    }
 
-  public void setInstanceUuid(String instanceUuid) {
-    this.instanceUuid=instanceUuid;
-  }
+    public void setInstanceUuid(String instanceUuid) {
+        this.instanceUuid = instanceUuid;
+    }
 
-  public void setManagedBy(ManagedByInfo managedBy) {
-    this.managedBy=managedBy;
-  }
+    public void setManagedBy(ManagedByInfo managedBy) {
+        this.managedBy = managedBy;
+    }
 }

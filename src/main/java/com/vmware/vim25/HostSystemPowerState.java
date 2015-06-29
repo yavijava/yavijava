@@ -30,20 +30,20 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public enum HostSystemPowerState {
-  poweredOn ("poweredOn"),
-  poweredOff ("poweredOff"),
-  standBy ("standBy"),
-  unknown ("unknown");
+    poweredOn("poweredOn"),
+    poweredOff("poweredOff"),
+    standBy("standBy"),
+    unknown("unknown");
 
-  @SuppressWarnings("unused")
-  private final String val;
-  private HostSystemPowerState(String val)
-  {
-    this.val = val;
-  }
+    @SuppressWarnings("unused")
+    private final String val;
+
+    private HostSystemPowerState(String val) {
+        this.val = val;
+    }
 }

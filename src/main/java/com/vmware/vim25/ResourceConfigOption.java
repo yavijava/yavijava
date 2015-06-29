@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class ResourceConfigOption extends DynamicData {
-  public ResourceAllocationOption cpuAllocationOption;
-  public ResourceAllocationOption memoryAllocationOption;
+    public ResourceAllocationOption cpuAllocationOption;
+    public ResourceAllocationOption memoryAllocationOption;
 
-  public ResourceAllocationOption getCpuAllocationOption() {
-    return this.cpuAllocationOption;
-  }
+    public ResourceAllocationOption getCpuAllocationOption() {
+        return this.cpuAllocationOption;
+    }
 
-  public ResourceAllocationOption getMemoryAllocationOption() {
-    return this.memoryAllocationOption;
-  }
+    public ResourceAllocationOption getMemoryAllocationOption() {
+        return this.memoryAllocationOption;
+    }
 
-  public void setCpuAllocationOption(ResourceAllocationOption cpuAllocationOption) {
-    this.cpuAllocationOption=cpuAllocationOption;
-  }
+    public void setCpuAllocationOption(ResourceAllocationOption cpuAllocationOption) {
+        this.cpuAllocationOption = cpuAllocationOption;
+    }
 
-  public void setMemoryAllocationOption(ResourceAllocationOption memoryAllocationOption) {
-    this.memoryAllocationOption=memoryAllocationOption;
-  }
+    public void setMemoryAllocationOption(ResourceAllocationOption memoryAllocationOption) {
+        this.memoryAllocationOption = memoryAllocationOption;
+    }
 }

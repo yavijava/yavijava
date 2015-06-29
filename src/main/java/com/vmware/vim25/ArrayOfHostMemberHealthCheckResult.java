@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfHostMemberHealthCheckResult {
-  public HostMemberHealthCheckResult[] HostMemberHealthCheckResult;
+    public HostMemberHealthCheckResult[] HostMemberHealthCheckResult;
 
-  public HostMemberHealthCheckResult[] getHostMemberHealthCheckResult() {
-    return this.HostMemberHealthCheckResult;
-  }
+    public HostMemberHealthCheckResult[] getHostMemberHealthCheckResult() {
+        return this.HostMemberHealthCheckResult;
+    }
 
-  public HostMemberHealthCheckResult getHostMemberHealthCheckResult(int i) {
-    return this.HostMemberHealthCheckResult[i];
-  }
+    public HostMemberHealthCheckResult getHostMemberHealthCheckResult(int i) {
+        return this.HostMemberHealthCheckResult[i];
+    }
 
-  public void setHostMemberHealthCheckResult(HostMemberHealthCheckResult[] HostMemberHealthCheckResult) {
-    this.HostMemberHealthCheckResult=HostMemberHealthCheckResult;
-  }
+    public void setHostMemberHealthCheckResult(HostMemberHealthCheckResult[] HostMemberHealthCheckResult) {
+        this.HostMemberHealthCheckResult = HostMemberHealthCheckResult;
+    }
 }

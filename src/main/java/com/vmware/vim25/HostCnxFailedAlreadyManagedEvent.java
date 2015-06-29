@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostCnxFailedAlreadyManagedEvent extends HostEvent {
-  public String serverName;
+    public String serverName;
 
-  public String getServerName() {
-    return this.serverName;
-  }
+    public String getServerName() {
+        return this.serverName;
+    }
 
-  public void setServerName(String serverName) {
-    this.serverName=serverName;
-  }
+    public void setServerName(String serverName) {
+        this.serverName = serverName;
+    }
 }

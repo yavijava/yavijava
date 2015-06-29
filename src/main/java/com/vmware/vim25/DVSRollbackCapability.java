@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class DVSRollbackCapability extends DynamicData {
-  public boolean rollbackSupported;
+    public boolean rollbackSupported;
 
-  public boolean isRollbackSupported() {
-    return this.rollbackSupported;
-  }
+    public boolean isRollbackSupported() {
+        return this.rollbackSupported;
+    }
 
-  public void setRollbackSupported(boolean rollbackSupported) {
-    this.rollbackSupported=rollbackSupported;
-  }
+    public void setRollbackSupported(boolean rollbackSupported) {
+        this.rollbackSupported = rollbackSupported;
+    }
 }

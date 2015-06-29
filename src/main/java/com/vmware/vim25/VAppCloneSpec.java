@@ -30,82 +30,82 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VAppCloneSpec extends DynamicData {
-  public ManagedObjectReference location;
-  public ManagedObjectReference host;
-  public ResourceConfigSpec resourceSpec;
-  public ManagedObjectReference vmFolder;
-  public VAppCloneSpecNetworkMappingPair[] networkMapping;
-  public KeyValue[] property;
-  public VAppCloneSpecResourceMap[] resourceMapping;
-  public String provisioning;
+    public ManagedObjectReference location;
+    public ManagedObjectReference host;
+    public ResourceConfigSpec resourceSpec;
+    public ManagedObjectReference vmFolder;
+    public VAppCloneSpecNetworkMappingPair[] networkMapping;
+    public KeyValue[] property;
+    public VAppCloneSpecResourceMap[] resourceMapping;
+    public String provisioning;
 
-  public ManagedObjectReference getLocation() {
-    return this.location;
-  }
+    public ManagedObjectReference getLocation() {
+        return this.location;
+    }
 
-  public ManagedObjectReference getHost() {
-    return this.host;
-  }
+    public ManagedObjectReference getHost() {
+        return this.host;
+    }
 
-  public ResourceConfigSpec getResourceSpec() {
-    return this.resourceSpec;
-  }
+    public ResourceConfigSpec getResourceSpec() {
+        return this.resourceSpec;
+    }
 
-  public ManagedObjectReference getVmFolder() {
-    return this.vmFolder;
-  }
+    public ManagedObjectReference getVmFolder() {
+        return this.vmFolder;
+    }
 
-  public VAppCloneSpecNetworkMappingPair[] getNetworkMapping() {
-    return this.networkMapping;
-  }
+    public VAppCloneSpecNetworkMappingPair[] getNetworkMapping() {
+        return this.networkMapping;
+    }
 
-  public KeyValue[] getProperty() {
-    return this.property;
-  }
+    public KeyValue[] getProperty() {
+        return this.property;
+    }
 
-  public VAppCloneSpecResourceMap[] getResourceMapping() {
-    return this.resourceMapping;
-  }
+    public VAppCloneSpecResourceMap[] getResourceMapping() {
+        return this.resourceMapping;
+    }
 
-  public String getProvisioning() {
-    return this.provisioning;
-  }
+    public String getProvisioning() {
+        return this.provisioning;
+    }
 
-  public void setLocation(ManagedObjectReference location) {
-    this.location=location;
-  }
+    public void setLocation(ManagedObjectReference location) {
+        this.location = location;
+    }
 
-  public void setHost(ManagedObjectReference host) {
-    this.host=host;
-  }
+    public void setHost(ManagedObjectReference host) {
+        this.host = host;
+    }
 
-  public void setResourceSpec(ResourceConfigSpec resourceSpec) {
-    this.resourceSpec=resourceSpec;
-  }
+    public void setResourceSpec(ResourceConfigSpec resourceSpec) {
+        this.resourceSpec = resourceSpec;
+    }
 
-  public void setVmFolder(ManagedObjectReference vmFolder) {
-    this.vmFolder=vmFolder;
-  }
+    public void setVmFolder(ManagedObjectReference vmFolder) {
+        this.vmFolder = vmFolder;
+    }
 
-  public void setNetworkMapping(VAppCloneSpecNetworkMappingPair[] networkMapping) {
-    this.networkMapping=networkMapping;
-  }
+    public void setNetworkMapping(VAppCloneSpecNetworkMappingPair[] networkMapping) {
+        this.networkMapping = networkMapping;
+    }
 
-  public void setProperty(KeyValue[] property) {
-    this.property=property;
-  }
+    public void setProperty(KeyValue[] property) {
+        this.property = property;
+    }
 
-  public void setResourceMapping(VAppCloneSpecResourceMap[] resourceMapping) {
-    this.resourceMapping=resourceMapping;
-  }
+    public void setResourceMapping(VAppCloneSpecResourceMap[] resourceMapping) {
+        this.resourceMapping = resourceMapping;
+    }
 
-  public void setProvisioning(String provisioning) {
-    this.provisioning=provisioning;
-  }
+    public void setProvisioning(String provisioning) {
+        this.provisioning = provisioning;
+    }
 }

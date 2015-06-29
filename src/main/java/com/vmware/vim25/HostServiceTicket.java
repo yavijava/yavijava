@@ -30,64 +30,64 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostServiceTicket extends DynamicData {
-  public String host;
-  public Integer port;
-  public String sslThumbprint;
-  public String service;
-  public String serviceVersion;
-  public String sessionId;
+    public String host;
+    public Integer port;
+    public String sslThumbprint;
+    public String service;
+    public String serviceVersion;
+    public String sessionId;
 
-  public String getHost() {
-    return this.host;
-  }
+    public String getHost() {
+        return this.host;
+    }
 
-  public Integer getPort() {
-    return this.port;
-  }
+    public Integer getPort() {
+        return this.port;
+    }
 
-  public String getSslThumbprint() {
-    return this.sslThumbprint;
-  }
+    public String getSslThumbprint() {
+        return this.sslThumbprint;
+    }
 
-  public String getService() {
-    return this.service;
-  }
+    public String getService() {
+        return this.service;
+    }
 
-  public String getServiceVersion() {
-    return this.serviceVersion;
-  }
+    public String getServiceVersion() {
+        return this.serviceVersion;
+    }
 
-  public String getSessionId() {
-    return this.sessionId;
-  }
+    public String getSessionId() {
+        return this.sessionId;
+    }
 
-  public void setHost(String host) {
-    this.host=host;
-  }
+    public void setHost(String host) {
+        this.host = host;
+    }
 
-  public void setPort(Integer port) {
-    this.port=port;
-  }
+    public void setPort(Integer port) {
+        this.port = port;
+    }
 
-  public void setSslThumbprint(String sslThumbprint) {
-    this.sslThumbprint=sslThumbprint;
-  }
+    public void setSslThumbprint(String sslThumbprint) {
+        this.sslThumbprint = sslThumbprint;
+    }
 
-  public void setService(String service) {
-    this.service=service;
-  }
+    public void setService(String service) {
+        this.service = service;
+    }
 
-  public void setServiceVersion(String serviceVersion) {
-    this.serviceVersion=serviceVersion;
-  }
+    public void setServiceVersion(String serviceVersion) {
+        this.serviceVersion = serviceVersion;
+    }
 
-  public void setSessionId(String sessionId) {
-    this.sessionId=sessionId;
-  }
+    public void setSessionId(String sessionId) {
+        this.sessionId = sessionId;
+    }
 }

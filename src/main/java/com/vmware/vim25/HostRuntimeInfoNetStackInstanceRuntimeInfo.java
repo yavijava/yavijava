@@ -30,55 +30,55 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostRuntimeInfoNetStackInstanceRuntimeInfo extends DynamicData {
-  public String netStackInstanceKey;
-  public String state;
-  public String[] vmknicKeys;
-  public Integer maxNumberOfConnections;
-  public Boolean currentIpV6Enabled;
+    public String netStackInstanceKey;
+    public String state;
+    public String[] vmknicKeys;
+    public Integer maxNumberOfConnections;
+    public Boolean currentIpV6Enabled;
 
-  public String getNetStackInstanceKey() {
-    return this.netStackInstanceKey;
-  }
+    public String getNetStackInstanceKey() {
+        return this.netStackInstanceKey;
+    }
 
-  public String getState() {
-    return this.state;
-  }
+    public String getState() {
+        return this.state;
+    }
 
-  public String[] getVmknicKeys() {
-    return this.vmknicKeys;
-  }
+    public String[] getVmknicKeys() {
+        return this.vmknicKeys;
+    }
 
-  public Integer getMaxNumberOfConnections() {
-    return this.maxNumberOfConnections;
-  }
+    public Integer getMaxNumberOfConnections() {
+        return this.maxNumberOfConnections;
+    }
 
-  public Boolean getCurrentIpV6Enabled() {
-    return this.currentIpV6Enabled;
-  }
+    public Boolean getCurrentIpV6Enabled() {
+        return this.currentIpV6Enabled;
+    }
 
-  public void setNetStackInstanceKey(String netStackInstanceKey) {
-    this.netStackInstanceKey=netStackInstanceKey;
-  }
+    public void setNetStackInstanceKey(String netStackInstanceKey) {
+        this.netStackInstanceKey = netStackInstanceKey;
+    }
 
-  public void setState(String state) {
-    this.state=state;
-  }
+    public void setState(String state) {
+        this.state = state;
+    }
 
-  public void setVmknicKeys(String[] vmknicKeys) {
-    this.vmknicKeys=vmknicKeys;
-  }
+    public void setVmknicKeys(String[] vmknicKeys) {
+        this.vmknicKeys = vmknicKeys;
+    }
 
-  public void setMaxNumberOfConnections(Integer maxNumberOfConnections) {
-    this.maxNumberOfConnections=maxNumberOfConnections;
-  }
+    public void setMaxNumberOfConnections(Integer maxNumberOfConnections) {
+        this.maxNumberOfConnections = maxNumberOfConnections;
+    }
 
-  public void setCurrentIpV6Enabled(Boolean currentIpV6Enabled) {
-    this.currentIpV6Enabled=currentIpV6Enabled;
-  }
+    public void setCurrentIpV6Enabled(Boolean currentIpV6Enabled) {
+        this.currentIpV6Enabled = currentIpV6Enabled;
+    }
 }

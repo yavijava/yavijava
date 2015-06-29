@@ -30,24 +30,24 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public enum HostDiskPartitionInfoType {
-  none ("none"),
-  vmfs ("vmfs"),
-  linuxNative ("linuxNative"),
-  linuxSwap ("linuxSwap"),
-  extended ("extended"),
-  ntfs ("ntfs"),
-  vmkDiagnostic ("vmkDiagnostic"),
-  vffs ("vffs");
+    none("none"),
+    vmfs("vmfs"),
+    linuxNative("linuxNative"),
+    linuxSwap("linuxSwap"),
+    extended("extended"),
+    ntfs("ntfs"),
+    vmkDiagnostic("vmkDiagnostic"),
+    vffs("vffs");
 
-  @SuppressWarnings("unused")
-  private final String val;
-  private HostDiskPartitionInfoType(String val)
-  {
-    this.val = val;
-  }
+    @SuppressWarnings("unused")
+    private final String val;
+
+    private HostDiskPartitionInfoType(String val) {
+        this.val = val;
+    }
 }

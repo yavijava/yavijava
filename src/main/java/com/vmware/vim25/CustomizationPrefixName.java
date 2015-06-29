@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class CustomizationPrefixName extends CustomizationName {
-  public String base;
+    public String base;
 
-  public String getBase() {
-    return this.base;
-  }
+    public String getBase() {
+        return this.base;
+    }
 
-  public void setBase(String base) {
-    this.base=base;
-  }
+    public void setBase(String base) {
+        this.base = base;
+    }
 }

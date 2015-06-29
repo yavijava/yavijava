@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfHostPciPassthruInfo {
-  public HostPciPassthruInfo[] HostPciPassthruInfo;
+    public HostPciPassthruInfo[] HostPciPassthruInfo;
 
-  public HostPciPassthruInfo[] getHostPciPassthruInfo() {
-    return this.HostPciPassthruInfo;
-  }
+    public HostPciPassthruInfo[] getHostPciPassthruInfo() {
+        return this.HostPciPassthruInfo;
+    }
 
-  public HostPciPassthruInfo getHostPciPassthruInfo(int i) {
-    return this.HostPciPassthruInfo[i];
-  }
+    public HostPciPassthruInfo getHostPciPassthruInfo(int i) {
+        return this.HostPciPassthruInfo[i];
+    }
 
-  public void setHostPciPassthruInfo(HostPciPassthruInfo[] HostPciPassthruInfo) {
-    this.HostPciPassthruInfo=HostPciPassthruInfo;
-  }
+    public void setHostPciPassthruInfo(HostPciPassthruInfo[] HostPciPassthruInfo) {
+        this.HostPciPassthruInfo = HostPciPassthruInfo;
+    }
 }

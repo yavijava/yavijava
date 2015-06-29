@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostPciPassthruConfig extends DynamicData {
-  public String id;
-  public boolean passthruEnabled;
+    public String id;
+    public boolean passthruEnabled;
 
-  public String getId() {
-    return this.id;
-  }
+    public String getId() {
+        return this.id;
+    }
 
-  public boolean isPassthruEnabled() {
-    return this.passthruEnabled;
-  }
+    public boolean isPassthruEnabled() {
+        return this.passthruEnabled;
+    }
 
-  public void setId(String id) {
-    this.id=id;
-  }
+    public void setId(String id) {
+        this.id = id;
+    }
 
-  public void setPassthruEnabled(boolean passthruEnabled) {
-    this.passthruEnabled=passthruEnabled;
-  }
+    public void setPassthruEnabled(boolean passthruEnabled) {
+        this.passthruEnabled = passthruEnabled;
+    }
 }

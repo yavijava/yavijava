@@ -30,21 +30,21 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public enum VMwareDVSVspanSessionType {
-  mixedDestMirror ("mixedDestMirror"),
-  dvPortMirror ("dvPortMirror"),
-  remoteMirrorSource ("remoteMirrorSource"),
-  remoteMirrorDest ("remoteMirrorDest"),
-  encapsulatedRemoteMirrorSource ("encapsulatedRemoteMirrorSource");
+    mixedDestMirror("mixedDestMirror"),
+    dvPortMirror("dvPortMirror"),
+    remoteMirrorSource("remoteMirrorSource"),
+    remoteMirrorDest("remoteMirrorDest"),
+    encapsulatedRemoteMirrorSource("encapsulatedRemoteMirrorSource");
 
-  @SuppressWarnings("unused")
-  private final String val;
-  private VMwareDVSVspanSessionType(String val)
-  {
-    this.val = val;
-  }
+    @SuppressWarnings("unused")
+    private final String val;
+
+    private VMwareDVSVspanSessionType(String val) {
+        this.val = val;
+    }
 }

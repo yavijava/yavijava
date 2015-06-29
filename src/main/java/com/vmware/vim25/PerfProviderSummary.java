@@ -30,46 +30,46 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class PerfProviderSummary extends DynamicData {
-  public ManagedObjectReference entity;
-  public boolean currentSupported;
-  public boolean summarySupported;
-  public Integer refreshRate;
+    public ManagedObjectReference entity;
+    public boolean currentSupported;
+    public boolean summarySupported;
+    public Integer refreshRate;
 
-  public ManagedObjectReference getEntity() {
-    return this.entity;
-  }
+    public ManagedObjectReference getEntity() {
+        return this.entity;
+    }
 
-  public boolean isCurrentSupported() {
-    return this.currentSupported;
-  }
+    public boolean isCurrentSupported() {
+        return this.currentSupported;
+    }
 
-  public boolean isSummarySupported() {
-    return this.summarySupported;
-  }
+    public boolean isSummarySupported() {
+        return this.summarySupported;
+    }
 
-  public Integer getRefreshRate() {
-    return this.refreshRate;
-  }
+    public Integer getRefreshRate() {
+        return this.refreshRate;
+    }
 
-  public void setEntity(ManagedObjectReference entity) {
-    this.entity=entity;
-  }
+    public void setEntity(ManagedObjectReference entity) {
+        this.entity = entity;
+    }
 
-  public void setCurrentSupported(boolean currentSupported) {
-    this.currentSupported=currentSupported;
-  }
+    public void setCurrentSupported(boolean currentSupported) {
+        this.currentSupported = currentSupported;
+    }
 
-  public void setSummarySupported(boolean summarySupported) {
-    this.summarySupported=summarySupported;
-  }
+    public void setSummarySupported(boolean summarySupported) {
+        this.summarySupported = summarySupported;
+    }
 
-  public void setRefreshRate(Integer refreshRate) {
-    this.refreshRate=refreshRate;
-  }
+    public void setRefreshRate(Integer refreshRate) {
+        this.refreshRate = refreshRate;
+    }
 }

@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class PerfEntityMetricCSV extends PerfEntityMetricBase {
-  public String sampleInfoCSV;
-  public PerfMetricSeriesCSV[] value;
+    public String sampleInfoCSV;
+    public PerfMetricSeriesCSV[] value;
 
-  public String getSampleInfoCSV() {
-    return this.sampleInfoCSV;
-  }
+    public String getSampleInfoCSV() {
+        return this.sampleInfoCSV;
+    }
 
-  public PerfMetricSeriesCSV[] getValue() {
-    return this.value;
-  }
+    public PerfMetricSeriesCSV[] getValue() {
+        return this.value;
+    }
 
-  public void setSampleInfoCSV(String sampleInfoCSV) {
-    this.sampleInfoCSV=sampleInfoCSV;
-  }
+    public void setSampleInfoCSV(String sampleInfoCSV) {
+        this.sampleInfoCSV = sampleInfoCSV;
+    }
 
-  public void setValue(PerfMetricSeriesCSV[] value) {
-    this.value=value;
-  }
+    public void setValue(PerfMetricSeriesCSV[] value) {
+        this.value = value;
+    }
 }

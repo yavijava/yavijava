@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class OvfUnknownDeviceBacking extends OvfHardwareExport {
-  public VirtualDeviceBackingInfo backing;
+    public VirtualDeviceBackingInfo backing;
 
-  public VirtualDeviceBackingInfo getBacking() {
-    return this.backing;
-  }
+    public VirtualDeviceBackingInfo getBacking() {
+        return this.backing;
+    }
 
-  public void setBacking(VirtualDeviceBackingInfo backing) {
-    this.backing=backing;
-  }
+    public void setBacking(VirtualDeviceBackingInfo backing) {
+        this.backing = backing;
+    }
 }

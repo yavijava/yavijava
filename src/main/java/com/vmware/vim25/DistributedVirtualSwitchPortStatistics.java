@@ -30,154 +30,154 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class DistributedVirtualSwitchPortStatistics extends DynamicData {
-  public long packetsInMulticast;
-  public long packetsOutMulticast;
-  public long bytesInMulticast;
-  public long bytesOutMulticast;
-  public long packetsInUnicast;
-  public long packetsOutUnicast;
-  public long bytesInUnicast;
-  public long bytesOutUnicast;
-  public long packetsInBroadcast;
-  public long packetsOutBroadcast;
-  public long bytesInBroadcast;
-  public long bytesOutBroadcast;
-  public long packetsInDropped;
-  public long packetsOutDropped;
-  public long packetsInException;
-  public long packetsOutException;
+    public long packetsInMulticast;
+    public long packetsOutMulticast;
+    public long bytesInMulticast;
+    public long bytesOutMulticast;
+    public long packetsInUnicast;
+    public long packetsOutUnicast;
+    public long bytesInUnicast;
+    public long bytesOutUnicast;
+    public long packetsInBroadcast;
+    public long packetsOutBroadcast;
+    public long bytesInBroadcast;
+    public long bytesOutBroadcast;
+    public long packetsInDropped;
+    public long packetsOutDropped;
+    public long packetsInException;
+    public long packetsOutException;
 
-  public long getPacketsInMulticast() {
-    return this.packetsInMulticast;
-  }
+    public long getPacketsInMulticast() {
+        return this.packetsInMulticast;
+    }
 
-  public long getPacketsOutMulticast() {
-    return this.packetsOutMulticast;
-  }
+    public long getPacketsOutMulticast() {
+        return this.packetsOutMulticast;
+    }
 
-  public long getBytesInMulticast() {
-    return this.bytesInMulticast;
-  }
+    public long getBytesInMulticast() {
+        return this.bytesInMulticast;
+    }
 
-  public long getBytesOutMulticast() {
-    return this.bytesOutMulticast;
-  }
+    public long getBytesOutMulticast() {
+        return this.bytesOutMulticast;
+    }
 
-  public long getPacketsInUnicast() {
-    return this.packetsInUnicast;
-  }
+    public long getPacketsInUnicast() {
+        return this.packetsInUnicast;
+    }
 
-  public long getPacketsOutUnicast() {
-    return this.packetsOutUnicast;
-  }
+    public long getPacketsOutUnicast() {
+        return this.packetsOutUnicast;
+    }
 
-  public long getBytesInUnicast() {
-    return this.bytesInUnicast;
-  }
+    public long getBytesInUnicast() {
+        return this.bytesInUnicast;
+    }
 
-  public long getBytesOutUnicast() {
-    return this.bytesOutUnicast;
-  }
+    public long getBytesOutUnicast() {
+        return this.bytesOutUnicast;
+    }
 
-  public long getPacketsInBroadcast() {
-    return this.packetsInBroadcast;
-  }
+    public long getPacketsInBroadcast() {
+        return this.packetsInBroadcast;
+    }
 
-  public long getPacketsOutBroadcast() {
-    return this.packetsOutBroadcast;
-  }
+    public long getPacketsOutBroadcast() {
+        return this.packetsOutBroadcast;
+    }
 
-  public long getBytesInBroadcast() {
-    return this.bytesInBroadcast;
-  }
+    public long getBytesInBroadcast() {
+        return this.bytesInBroadcast;
+    }
 
-  public long getBytesOutBroadcast() {
-    return this.bytesOutBroadcast;
-  }
+    public long getBytesOutBroadcast() {
+        return this.bytesOutBroadcast;
+    }
 
-  public long getPacketsInDropped() {
-    return this.packetsInDropped;
-  }
+    public long getPacketsInDropped() {
+        return this.packetsInDropped;
+    }
 
-  public long getPacketsOutDropped() {
-    return this.packetsOutDropped;
-  }
+    public long getPacketsOutDropped() {
+        return this.packetsOutDropped;
+    }
 
-  public long getPacketsInException() {
-    return this.packetsInException;
-  }
+    public long getPacketsInException() {
+        return this.packetsInException;
+    }
 
-  public long getPacketsOutException() {
-    return this.packetsOutException;
-  }
+    public long getPacketsOutException() {
+        return this.packetsOutException;
+    }
 
-  public void setPacketsInMulticast(long packetsInMulticast) {
-    this.packetsInMulticast=packetsInMulticast;
-  }
+    public void setPacketsInMulticast(long packetsInMulticast) {
+        this.packetsInMulticast = packetsInMulticast;
+    }
 
-  public void setPacketsOutMulticast(long packetsOutMulticast) {
-    this.packetsOutMulticast=packetsOutMulticast;
-  }
+    public void setPacketsOutMulticast(long packetsOutMulticast) {
+        this.packetsOutMulticast = packetsOutMulticast;
+    }
 
-  public void setBytesInMulticast(long bytesInMulticast) {
-    this.bytesInMulticast=bytesInMulticast;
-  }
+    public void setBytesInMulticast(long bytesInMulticast) {
+        this.bytesInMulticast = bytesInMulticast;
+    }
 
-  public void setBytesOutMulticast(long bytesOutMulticast) {
-    this.bytesOutMulticast=bytesOutMulticast;
-  }
+    public void setBytesOutMulticast(long bytesOutMulticast) {
+        this.bytesOutMulticast = bytesOutMulticast;
+    }
 
-  public void setPacketsInUnicast(long packetsInUnicast) {
-    this.packetsInUnicast=packetsInUnicast;
-  }
+    public void setPacketsInUnicast(long packetsInUnicast) {
+        this.packetsInUnicast = packetsInUnicast;
+    }
 
-  public void setPacketsOutUnicast(long packetsOutUnicast) {
-    this.packetsOutUnicast=packetsOutUnicast;
-  }
+    public void setPacketsOutUnicast(long packetsOutUnicast) {
+        this.packetsOutUnicast = packetsOutUnicast;
+    }
 
-  public void setBytesInUnicast(long bytesInUnicast) {
-    this.bytesInUnicast=bytesInUnicast;
-  }
+    public void setBytesInUnicast(long bytesInUnicast) {
+        this.bytesInUnicast = bytesInUnicast;
+    }
 
-  public void setBytesOutUnicast(long bytesOutUnicast) {
-    this.bytesOutUnicast=bytesOutUnicast;
-  }
+    public void setBytesOutUnicast(long bytesOutUnicast) {
+        this.bytesOutUnicast = bytesOutUnicast;
+    }
 
-  public void setPacketsInBroadcast(long packetsInBroadcast) {
-    this.packetsInBroadcast=packetsInBroadcast;
-  }
+    public void setPacketsInBroadcast(long packetsInBroadcast) {
+        this.packetsInBroadcast = packetsInBroadcast;
+    }
 
-  public void setPacketsOutBroadcast(long packetsOutBroadcast) {
-    this.packetsOutBroadcast=packetsOutBroadcast;
-  }
+    public void setPacketsOutBroadcast(long packetsOutBroadcast) {
+        this.packetsOutBroadcast = packetsOutBroadcast;
+    }
 
-  public void setBytesInBroadcast(long bytesInBroadcast) {
-    this.bytesInBroadcast=bytesInBroadcast;
-  }
+    public void setBytesInBroadcast(long bytesInBroadcast) {
+        this.bytesInBroadcast = bytesInBroadcast;
+    }
 
-  public void setBytesOutBroadcast(long bytesOutBroadcast) {
-    this.bytesOutBroadcast=bytesOutBroadcast;
-  }
+    public void setBytesOutBroadcast(long bytesOutBroadcast) {
+        this.bytesOutBroadcast = bytesOutBroadcast;
+    }
 
-  public void setPacketsInDropped(long packetsInDropped) {
-    this.packetsInDropped=packetsInDropped;
-  }
+    public void setPacketsInDropped(long packetsInDropped) {
+        this.packetsInDropped = packetsInDropped;
+    }
 
-  public void setPacketsOutDropped(long packetsOutDropped) {
-    this.packetsOutDropped=packetsOutDropped;
-  }
+    public void setPacketsOutDropped(long packetsOutDropped) {
+        this.packetsOutDropped = packetsOutDropped;
+    }
 
-  public void setPacketsInException(long packetsInException) {
-    this.packetsInException=packetsInException;
-  }
+    public void setPacketsInException(long packetsInException) {
+        this.packetsInException = packetsInException;
+    }
 
-  public void setPacketsOutException(long packetsOutException) {
-    this.packetsOutException=packetsOutException;
-  }
+    public void setPacketsOutException(long packetsOutException) {
+        this.packetsOutException = packetsOutException;
+    }
 }

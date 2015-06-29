@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VirtualMachineRuntimeInfoDasProtectionState extends DynamicData {
-  public boolean dasProtected;
+    public boolean dasProtected;
 
-  public boolean isDasProtected() {
-    return this.dasProtected;
-  }
+    public boolean isDasProtected() {
+        return this.dasProtected;
+    }
 
-  public void setDasProtected(boolean dasProtected) {
-    this.dasProtected=dasProtected;
-  }
+    public void setDasProtected(boolean dasProtected) {
+        this.dasProtected = dasProtected;
+    }
 }

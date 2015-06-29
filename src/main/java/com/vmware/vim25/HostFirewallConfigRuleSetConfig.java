@@ -30,37 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostFirewallConfigRuleSetConfig extends DynamicData {
-  public String rulesetId;
-  public boolean enabled;
-  public HostFirewallRulesetIpList allowedHosts;
+    public String rulesetId;
+    public boolean enabled;
+    public HostFirewallRulesetIpList allowedHosts;
 
-  public String getRulesetId() {
-    return this.rulesetId;
-  }
+    public String getRulesetId() {
+        return this.rulesetId;
+    }
 
-  public boolean isEnabled() {
-    return this.enabled;
-  }
+    public boolean isEnabled() {
+        return this.enabled;
+    }
 
-  public HostFirewallRulesetIpList getAllowedHosts() {
-    return this.allowedHosts;
-  }
+    public HostFirewallRulesetIpList getAllowedHosts() {
+        return this.allowedHosts;
+    }
 
-  public void setRulesetId(String rulesetId) {
-    this.rulesetId=rulesetId;
-  }
+    public void setRulesetId(String rulesetId) {
+        this.rulesetId = rulesetId;
+    }
 
-  public void setEnabled(boolean enabled) {
-    this.enabled=enabled;
-  }
+    public void setEnabled(boolean enabled) {
+        this.enabled = enabled;
+    }
 
-  public void setAllowedHosts(HostFirewallRulesetIpList allowedHosts) {
-    this.allowedHosts=allowedHosts;
-  }
+    public void setAllowedHosts(HostFirewallRulesetIpList allowedHosts) {
+        this.allowedHosts = allowedHosts;
+    }
 }

@@ -30,109 +30,109 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostPatchManagerStatus extends DynamicData {
-  public String id;
-  public boolean applicable;
-  public String[] reason;
-  public String integrity;
-  public boolean installed;
-  public String[] installState;
-  public HostPatchManagerStatusPrerequisitePatch[] prerequisitePatch;
-  public boolean restartRequired;
-  public boolean reconnectRequired;
-  public boolean vmOffRequired;
-  public String[] supersededPatchIds;
+    public String id;
+    public boolean applicable;
+    public String[] reason;
+    public String integrity;
+    public boolean installed;
+    public String[] installState;
+    public HostPatchManagerStatusPrerequisitePatch[] prerequisitePatch;
+    public boolean restartRequired;
+    public boolean reconnectRequired;
+    public boolean vmOffRequired;
+    public String[] supersededPatchIds;
 
-  public String getId() {
-    return this.id;
-  }
+    public String getId() {
+        return this.id;
+    }
 
-  public boolean isApplicable() {
-    return this.applicable;
-  }
+    public boolean isApplicable() {
+        return this.applicable;
+    }
 
-  public String[] getReason() {
-    return this.reason;
-  }
+    public String[] getReason() {
+        return this.reason;
+    }
 
-  public String getIntegrity() {
-    return this.integrity;
-  }
+    public String getIntegrity() {
+        return this.integrity;
+    }
 
-  public boolean isInstalled() {
-    return this.installed;
-  }
+    public boolean isInstalled() {
+        return this.installed;
+    }
 
-  public String[] getInstallState() {
-    return this.installState;
-  }
+    public String[] getInstallState() {
+        return this.installState;
+    }
 
-  public HostPatchManagerStatusPrerequisitePatch[] getPrerequisitePatch() {
-    return this.prerequisitePatch;
-  }
+    public HostPatchManagerStatusPrerequisitePatch[] getPrerequisitePatch() {
+        return this.prerequisitePatch;
+    }
 
-  public boolean isRestartRequired() {
-    return this.restartRequired;
-  }
+    public boolean isRestartRequired() {
+        return this.restartRequired;
+    }
 
-  public boolean isReconnectRequired() {
-    return this.reconnectRequired;
-  }
+    public boolean isReconnectRequired() {
+        return this.reconnectRequired;
+    }
 
-  public boolean isVmOffRequired() {
-    return this.vmOffRequired;
-  }
+    public boolean isVmOffRequired() {
+        return this.vmOffRequired;
+    }
 
-  public String[] getSupersededPatchIds() {
-    return this.supersededPatchIds;
-  }
+    public String[] getSupersededPatchIds() {
+        return this.supersededPatchIds;
+    }
 
-  public void setId(String id) {
-    this.id=id;
-  }
+    public void setId(String id) {
+        this.id = id;
+    }
 
-  public void setApplicable(boolean applicable) {
-    this.applicable=applicable;
-  }
+    public void setApplicable(boolean applicable) {
+        this.applicable = applicable;
+    }
 
-  public void setReason(String[] reason) {
-    this.reason=reason;
-  }
+    public void setReason(String[] reason) {
+        this.reason = reason;
+    }
 
-  public void setIntegrity(String integrity) {
-    this.integrity=integrity;
-  }
+    public void setIntegrity(String integrity) {
+        this.integrity = integrity;
+    }
 
-  public void setInstalled(boolean installed) {
-    this.installed=installed;
-  }
+    public void setInstalled(boolean installed) {
+        this.installed = installed;
+    }
 
-  public void setInstallState(String[] installState) {
-    this.installState=installState;
-  }
+    public void setInstallState(String[] installState) {
+        this.installState = installState;
+    }
 
-  public void setPrerequisitePatch(HostPatchManagerStatusPrerequisitePatch[] prerequisitePatch) {
-    this.prerequisitePatch=prerequisitePatch;
-  }
+    public void setPrerequisitePatch(HostPatchManagerStatusPrerequisitePatch[] prerequisitePatch) {
+        this.prerequisitePatch = prerequisitePatch;
+    }
 
-  public void setRestartRequired(boolean restartRequired) {
-    this.restartRequired=restartRequired;
-  }
+    public void setRestartRequired(boolean restartRequired) {
+        this.restartRequired = restartRequired;
+    }
 
-  public void setReconnectRequired(boolean reconnectRequired) {
-    this.reconnectRequired=reconnectRequired;
-  }
+    public void setReconnectRequired(boolean reconnectRequired) {
+        this.reconnectRequired = reconnectRequired;
+    }
 
-  public void setVmOffRequired(boolean vmOffRequired) {
-    this.vmOffRequired=vmOffRequired;
-  }
+    public void setVmOffRequired(boolean vmOffRequired) {
+        this.vmOffRequired = vmOffRequired;
+    }
 
-  public void setSupersededPatchIds(String[] supersededPatchIds) {
-    this.supersededPatchIds=supersededPatchIds;
-  }
+    public void setSupersededPatchIds(String[] supersededPatchIds) {
+        this.supersededPatchIds = supersededPatchIds;
+    }
 }

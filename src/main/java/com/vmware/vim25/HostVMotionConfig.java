@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostVMotionConfig extends DynamicData {
-  public String vmotionNicKey;
-  public boolean enabled;
+    public String vmotionNicKey;
+    public boolean enabled;
 
-  public String getVmotionNicKey() {
-    return this.vmotionNicKey;
-  }
+    public String getVmotionNicKey() {
+        return this.vmotionNicKey;
+    }
 
-  public boolean isEnabled() {
-    return this.enabled;
-  }
+    public boolean isEnabled() {
+        return this.enabled;
+    }
 
-  public void setVmotionNicKey(String vmotionNicKey) {
-    this.vmotionNicKey=vmotionNicKey;
-  }
+    public void setVmotionNicKey(String vmotionNicKey) {
+        this.vmotionNicKey = vmotionNicKey;
+    }
 
-  public void setEnabled(boolean enabled) {
-    this.enabled=enabled;
-  }
+    public void setEnabled(boolean enabled) {
+        this.enabled = enabled;
+    }
 }

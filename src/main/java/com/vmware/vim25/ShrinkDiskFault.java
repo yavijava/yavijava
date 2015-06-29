@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class ShrinkDiskFault extends VimFault {
-  public Integer diskId;
+    public Integer diskId;
 
-  public Integer getDiskId() {
-    return this.diskId;
-  }
+    public Integer getDiskId() {
+        return this.diskId;
+    }
 
-  public void setDiskId(Integer diskId) {
-    this.diskId=diskId;
-  }
+    public void setDiskId(Integer diskId) {
+        this.diskId = diskId;
+    }
 }

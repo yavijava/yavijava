@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfVirtualMachineCpuIdInfoSpec {
-  public VirtualMachineCpuIdInfoSpec[] VirtualMachineCpuIdInfoSpec;
+    public VirtualMachineCpuIdInfoSpec[] VirtualMachineCpuIdInfoSpec;
 
-  public VirtualMachineCpuIdInfoSpec[] getVirtualMachineCpuIdInfoSpec() {
-    return this.VirtualMachineCpuIdInfoSpec;
-  }
+    public VirtualMachineCpuIdInfoSpec[] getVirtualMachineCpuIdInfoSpec() {
+        return this.VirtualMachineCpuIdInfoSpec;
+    }
 
-  public VirtualMachineCpuIdInfoSpec getVirtualMachineCpuIdInfoSpec(int i) {
-    return this.VirtualMachineCpuIdInfoSpec[i];
-  }
+    public VirtualMachineCpuIdInfoSpec getVirtualMachineCpuIdInfoSpec(int i) {
+        return this.VirtualMachineCpuIdInfoSpec[i];
+    }
 
-  public void setVirtualMachineCpuIdInfoSpec(VirtualMachineCpuIdInfoSpec[] VirtualMachineCpuIdInfoSpec) {
-    this.VirtualMachineCpuIdInfoSpec=VirtualMachineCpuIdInfoSpec;
-  }
+    public void setVirtualMachineCpuIdInfoSpec(VirtualMachineCpuIdInfoSpec[] VirtualMachineCpuIdInfoSpec) {
+        this.VirtualMachineCpuIdInfoSpec = VirtualMachineCpuIdInfoSpec;
+    }
 }

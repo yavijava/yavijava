@@ -30,55 +30,55 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class StateAlarmExpression extends AlarmExpression {
-  public StateAlarmOperator operator;
-  public String type;
-  public String statePath;
-  public String yellow;
-  public String red;
+    public StateAlarmOperator operator;
+    public String type;
+    public String statePath;
+    public String yellow;
+    public String red;
 
-  public StateAlarmOperator getOperator() {
-    return this.operator;
-  }
+    public StateAlarmOperator getOperator() {
+        return this.operator;
+    }
 
-  public String getType() {
-    return this.type;
-  }
+    public String getType() {
+        return this.type;
+    }
 
-  public String getStatePath() {
-    return this.statePath;
-  }
+    public String getStatePath() {
+        return this.statePath;
+    }
 
-  public String getYellow() {
-    return this.yellow;
-  }
+    public String getYellow() {
+        return this.yellow;
+    }
 
-  public String getRed() {
-    return this.red;
-  }
+    public String getRed() {
+        return this.red;
+    }
 
-  public void setOperator(StateAlarmOperator operator) {
-    this.operator=operator;
-  }
+    public void setOperator(StateAlarmOperator operator) {
+        this.operator = operator;
+    }
 
-  public void setType(String type) {
-    this.type=type;
-  }
+    public void setType(String type) {
+        this.type = type;
+    }
 
-  public void setStatePath(String statePath) {
-    this.statePath=statePath;
-  }
+    public void setStatePath(String statePath) {
+        this.statePath = statePath;
+    }
 
-  public void setYellow(String yellow) {
-    this.yellow=yellow;
-  }
+    public void setYellow(String yellow) {
+        this.yellow = yellow;
+    }
 
-  public void setRed(String red) {
-    this.red=red;
-  }
+    public void setRed(String red) {
+        this.red = red;
+    }
 }

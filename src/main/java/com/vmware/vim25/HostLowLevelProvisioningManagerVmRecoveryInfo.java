@@ -30,46 +30,46 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostLowLevelProvisioningManagerVmRecoveryInfo extends DynamicData {
-  public String version;
-  public String biosUUID;
-  public String instanceUUID;
-  public FaultToleranceConfigInfo ftInfo;
+    public String version;
+    public String biosUUID;
+    public String instanceUUID;
+    public FaultToleranceConfigInfo ftInfo;
 
-  public String getVersion() {
-    return this.version;
-  }
+    public String getVersion() {
+        return this.version;
+    }
 
-  public String getBiosUUID() {
-    return this.biosUUID;
-  }
+    public String getBiosUUID() {
+        return this.biosUUID;
+    }
 
-  public String getInstanceUUID() {
-    return this.instanceUUID;
-  }
+    public String getInstanceUUID() {
+        return this.instanceUUID;
+    }
 
-  public FaultToleranceConfigInfo getFtInfo() {
-    return this.ftInfo;
-  }
+    public FaultToleranceConfigInfo getFtInfo() {
+        return this.ftInfo;
+    }
 
-  public void setVersion(String version) {
-    this.version=version;
-  }
+    public void setVersion(String version) {
+        this.version = version;
+    }
 
-  public void setBiosUUID(String biosUUID) {
-    this.biosUUID=biosUUID;
-  }
+    public void setBiosUUID(String biosUUID) {
+        this.biosUUID = biosUUID;
+    }
 
-  public void setInstanceUUID(String instanceUUID) {
-    this.instanceUUID=instanceUUID;
-  }
+    public void setInstanceUUID(String instanceUUID) {
+        this.instanceUUID = instanceUUID;
+    }
 
-  public void setFtInfo(FaultToleranceConfigInfo ftInfo) {
-    this.ftInfo=ftInfo;
-  }
+    public void setFtInfo(FaultToleranceConfigInfo ftInfo) {
+        this.ftInfo = ftInfo;
+    }
 }

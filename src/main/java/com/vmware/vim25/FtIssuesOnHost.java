@@ -30,37 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class FtIssuesOnHost extends VmFaultToleranceIssue {
-  public ManagedObjectReference host;
-  public String hostName;
-  public LocalizedMethodFault[] errors;
+    public ManagedObjectReference host;
+    public String hostName;
+    public LocalizedMethodFault[] errors;
 
-  public ManagedObjectReference getHost() {
-    return this.host;
-  }
+    public ManagedObjectReference getHost() {
+        return this.host;
+    }
 
-  public String getHostName() {
-    return this.hostName;
-  }
+    public String getHostName() {
+        return this.hostName;
+    }
 
-  public LocalizedMethodFault[] getErrors() {
-    return this.errors;
-  }
+    public LocalizedMethodFault[] getErrors() {
+        return this.errors;
+    }
 
-  public void setHost(ManagedObjectReference host) {
-    this.host=host;
-  }
+    public void setHost(ManagedObjectReference host) {
+        this.host = host;
+    }
 
-  public void setHostName(String hostName) {
-    this.hostName=hostName;
-  }
+    public void setHostName(String hostName) {
+        this.hostName = hostName;
+    }
 
-  public void setErrors(LocalizedMethodFault[] errors) {
-    this.errors=errors;
-  }
+    public void setErrors(LocalizedMethodFault[] errors) {
+        this.errors = errors;
+    }
 }

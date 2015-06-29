@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfNetIpStackInfoNetToMedia {
-  public NetIpStackInfoNetToMedia[] NetIpStackInfoNetToMedia;
+    public NetIpStackInfoNetToMedia[] NetIpStackInfoNetToMedia;
 
-  public NetIpStackInfoNetToMedia[] getNetIpStackInfoNetToMedia() {
-    return this.NetIpStackInfoNetToMedia;
-  }
+    public NetIpStackInfoNetToMedia[] getNetIpStackInfoNetToMedia() {
+        return this.NetIpStackInfoNetToMedia;
+    }
 
-  public NetIpStackInfoNetToMedia getNetIpStackInfoNetToMedia(int i) {
-    return this.NetIpStackInfoNetToMedia[i];
-  }
+    public NetIpStackInfoNetToMedia getNetIpStackInfoNetToMedia(int i) {
+        return this.NetIpStackInfoNetToMedia[i];
+    }
 
-  public void setNetIpStackInfoNetToMedia(NetIpStackInfoNetToMedia[] NetIpStackInfoNetToMedia) {
-    this.NetIpStackInfoNetToMedia=NetIpStackInfoNetToMedia;
-  }
+    public void setNetIpStackInfoNetToMedia(NetIpStackInfoNetToMedia[] NetIpStackInfoNetToMedia) {
+        this.NetIpStackInfoNetToMedia = NetIpStackInfoNetToMedia;
+    }
 }

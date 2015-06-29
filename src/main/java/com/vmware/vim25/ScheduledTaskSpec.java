@@ -30,64 +30,64 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class ScheduledTaskSpec extends DynamicData {
-  public String name;
-  public String description;
-  public boolean enabled;
-  public TaskScheduler scheduler;
-  public Action action;
-  public String notification;
+    public String name;
+    public String description;
+    public boolean enabled;
+    public TaskScheduler scheduler;
+    public Action action;
+    public String notification;
 
-  public String getName() {
-    return this.name;
-  }
+    public String getName() {
+        return this.name;
+    }
 
-  public String getDescription() {
-    return this.description;
-  }
+    public String getDescription() {
+        return this.description;
+    }
 
-  public boolean isEnabled() {
-    return this.enabled;
-  }
+    public boolean isEnabled() {
+        return this.enabled;
+    }
 
-  public TaskScheduler getScheduler() {
-    return this.scheduler;
-  }
+    public TaskScheduler getScheduler() {
+        return this.scheduler;
+    }
 
-  public Action getAction() {
-    return this.action;
-  }
+    public Action getAction() {
+        return this.action;
+    }
 
-  public String getNotification() {
-    return this.notification;
-  }
+    public String getNotification() {
+        return this.notification;
+    }
 
-  public void setName(String name) {
-    this.name=name;
-  }
+    public void setName(String name) {
+        this.name = name;
+    }
 
-  public void setDescription(String description) {
-    this.description=description;
-  }
+    public void setDescription(String description) {
+        this.description = description;
+    }
 
-  public void setEnabled(boolean enabled) {
-    this.enabled=enabled;
-  }
+    public void setEnabled(boolean enabled) {
+        this.enabled = enabled;
+    }
 
-  public void setScheduler(TaskScheduler scheduler) {
-    this.scheduler=scheduler;
-  }
+    public void setScheduler(TaskScheduler scheduler) {
+        this.scheduler = scheduler;
+    }
 
-  public void setAction(Action action) {
-    this.action=action;
-  }
+    public void setAction(Action action) {
+        this.action = action;
+    }
 
-  public void setNotification(String notification) {
-    this.notification=notification;
-  }
+    public void setNotification(String notification) {
+        this.notification = notification;
+    }
 }

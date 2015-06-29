@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfLicenseManagerLicenseInfo {
-  public LicenseManagerLicenseInfo[] LicenseManagerLicenseInfo;
+    public LicenseManagerLicenseInfo[] LicenseManagerLicenseInfo;
 
-  public LicenseManagerLicenseInfo[] getLicenseManagerLicenseInfo() {
-    return this.LicenseManagerLicenseInfo;
-  }
+    public LicenseManagerLicenseInfo[] getLicenseManagerLicenseInfo() {
+        return this.LicenseManagerLicenseInfo;
+    }
 
-  public LicenseManagerLicenseInfo getLicenseManagerLicenseInfo(int i) {
-    return this.LicenseManagerLicenseInfo[i];
-  }
+    public LicenseManagerLicenseInfo getLicenseManagerLicenseInfo(int i) {
+        return this.LicenseManagerLicenseInfo[i];
+    }
 
-  public void setLicenseManagerLicenseInfo(LicenseManagerLicenseInfo[] LicenseManagerLicenseInfo) {
-    this.LicenseManagerLicenseInfo=LicenseManagerLicenseInfo;
-  }
+    public void setLicenseManagerLicenseInfo(LicenseManagerLicenseInfo[] LicenseManagerLicenseInfo) {
+        this.LicenseManagerLicenseInfo = LicenseManagerLicenseInfo;
+    }
 }

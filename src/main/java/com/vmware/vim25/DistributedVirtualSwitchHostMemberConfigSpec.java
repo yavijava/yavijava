@@ -30,55 +30,55 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class DistributedVirtualSwitchHostMemberConfigSpec extends DynamicData {
-  public String operation;
-  public ManagedObjectReference host;
-  public DistributedVirtualSwitchHostMemberBacking backing;
-  public Integer maxProxySwitchPorts;
-  public DistributedVirtualSwitchKeyedOpaqueBlob[] vendorSpecificConfig;
+    public String operation;
+    public ManagedObjectReference host;
+    public DistributedVirtualSwitchHostMemberBacking backing;
+    public Integer maxProxySwitchPorts;
+    public DistributedVirtualSwitchKeyedOpaqueBlob[] vendorSpecificConfig;
 
-  public String getOperation() {
-    return this.operation;
-  }
+    public String getOperation() {
+        return this.operation;
+    }
 
-  public ManagedObjectReference getHost() {
-    return this.host;
-  }
+    public ManagedObjectReference getHost() {
+        return this.host;
+    }
 
-  public DistributedVirtualSwitchHostMemberBacking getBacking() {
-    return this.backing;
-  }
+    public DistributedVirtualSwitchHostMemberBacking getBacking() {
+        return this.backing;
+    }
 
-  public Integer getMaxProxySwitchPorts() {
-    return this.maxProxySwitchPorts;
-  }
+    public Integer getMaxProxySwitchPorts() {
+        return this.maxProxySwitchPorts;
+    }
 
-  public DistributedVirtualSwitchKeyedOpaqueBlob[] getVendorSpecificConfig() {
-    return this.vendorSpecificConfig;
-  }
+    public DistributedVirtualSwitchKeyedOpaqueBlob[] getVendorSpecificConfig() {
+        return this.vendorSpecificConfig;
+    }
 
-  public void setOperation(String operation) {
-    this.operation=operation;
-  }
+    public void setOperation(String operation) {
+        this.operation = operation;
+    }
 
-  public void setHost(ManagedObjectReference host) {
-    this.host=host;
-  }
+    public void setHost(ManagedObjectReference host) {
+        this.host = host;
+    }
 
-  public void setBacking(DistributedVirtualSwitchHostMemberBacking backing) {
-    this.backing=backing;
-  }
+    public void setBacking(DistributedVirtualSwitchHostMemberBacking backing) {
+        this.backing = backing;
+    }
 
-  public void setMaxProxySwitchPorts(Integer maxProxySwitchPorts) {
-    this.maxProxySwitchPorts=maxProxySwitchPorts;
-  }
+    public void setMaxProxySwitchPorts(Integer maxProxySwitchPorts) {
+        this.maxProxySwitchPorts = maxProxySwitchPorts;
+    }
 
-  public void setVendorSpecificConfig(DistributedVirtualSwitchKeyedOpaqueBlob[] vendorSpecificConfig) {
-    this.vendorSpecificConfig=vendorSpecificConfig;
-  }
+    public void setVendorSpecificConfig(DistributedVirtualSwitchKeyedOpaqueBlob[] vendorSpecificConfig) {
+        this.vendorSpecificConfig = vendorSpecificConfig;
+    }
 }

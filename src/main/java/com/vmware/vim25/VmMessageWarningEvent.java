@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VmMessageWarningEvent extends VmEvent {
-  public String message;
-  public VirtualMachineMessage[] messageInfo;
+    public String message;
+    public VirtualMachineMessage[] messageInfo;
 
-  public String getMessage() {
-    return this.message;
-  }
+    public String getMessage() {
+        return this.message;
+    }
 
-  public VirtualMachineMessage[] getMessageInfo() {
-    return this.messageInfo;
-  }
+    public VirtualMachineMessage[] getMessageInfo() {
+        return this.messageInfo;
+    }
 
-  public void setMessage(String message) {
-    this.message=message;
-  }
+    public void setMessage(String message) {
+        this.message = message;
+    }
 
-  public void setMessageInfo(VirtualMachineMessage[] messageInfo) {
-    this.messageInfo=messageInfo;
-  }
+    public void setMessageInfo(VirtualMachineMessage[] messageInfo) {
+        this.messageInfo = messageInfo;
+    }
 }

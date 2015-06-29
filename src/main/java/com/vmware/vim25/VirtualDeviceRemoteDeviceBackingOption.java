@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VirtualDeviceRemoteDeviceBackingOption extends VirtualDeviceBackingOption {
-  public BoolOption autoDetectAvailable;
+    public BoolOption autoDetectAvailable;
 
-  public BoolOption getAutoDetectAvailable() {
-    return this.autoDetectAvailable;
-  }
+    public BoolOption getAutoDetectAvailable() {
+        return this.autoDetectAvailable;
+    }
 
-  public void setAutoDetectAvailable(BoolOption autoDetectAvailable) {
-    this.autoDetectAvailable=autoDetectAvailable;
-  }
+    public void setAutoDetectAvailable(BoolOption autoDetectAvailable) {
+        this.autoDetectAvailable = autoDetectAvailable;
+    }
 }

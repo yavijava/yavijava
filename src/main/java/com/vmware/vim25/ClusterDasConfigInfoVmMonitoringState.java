@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public enum ClusterDasConfigInfoVmMonitoringState {
-  vmMonitoringDisabled ("vmMonitoringDisabled"),
-  vmMonitoringOnly ("vmMonitoringOnly"),
-  vmAndAppMonitoring ("vmAndAppMonitoring");
+    vmMonitoringDisabled("vmMonitoringDisabled"),
+    vmMonitoringOnly("vmMonitoringOnly"),
+    vmAndAppMonitoring("vmAndAppMonitoring");
 
-  @SuppressWarnings("unused")
-  private final String val;
-  private ClusterDasConfigInfoVmMonitoringState(String val)
-  {
-    this.val = val;
-  }
+    @SuppressWarnings("unused")
+    private final String val;
+
+    private ClusterDasConfigInfoVmMonitoringState(String val) {
+        this.val = val;
+    }
 }

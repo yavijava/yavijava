@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostPatchManagerStatusPrerequisitePatch extends DynamicData {
-  public String id;
-  public String[] installState;
+    public String id;
+    public String[] installState;
 
-  public String getId() {
-    return this.id;
-  }
+    public String getId() {
+        return this.id;
+    }
 
-  public String[] getInstallState() {
-    return this.installState;
-  }
+    public String[] getInstallState() {
+        return this.installState;
+    }
 
-  public void setId(String id) {
-    this.id=id;
-  }
+    public void setId(String id) {
+        this.id = id;
+    }
 
-  public void setInstallState(String[] installState) {
-    this.installState=installState;
-  }
+    public void setInstallState(String[] installState) {
+        this.installState = installState;
+    }
 }

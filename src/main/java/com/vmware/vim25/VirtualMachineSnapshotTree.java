@@ -28,112 +28,113 @@ POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
 
 package com.vmware.vim25;
+
 import java.util.Calendar;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VirtualMachineSnapshotTree extends DynamicData {
-  public ManagedObjectReference snapshot;
-  public ManagedObjectReference vm;
-  public String name;
-  public String description;
-  public Integer id;
-  public Calendar createTime;
-  public VirtualMachinePowerState state;
-  public boolean quiesced;
-  public String backupManifest;
-  public VirtualMachineSnapshotTree[] childSnapshotList;
-  public Boolean replaySupported;
+    public ManagedObjectReference snapshot;
+    public ManagedObjectReference vm;
+    public String name;
+    public String description;
+    public Integer id;
+    public Calendar createTime;
+    public VirtualMachinePowerState state;
+    public boolean quiesced;
+    public String backupManifest;
+    public VirtualMachineSnapshotTree[] childSnapshotList;
+    public Boolean replaySupported;
 
-  public ManagedObjectReference getSnapshot() {
-    return this.snapshot;
-  }
+    public ManagedObjectReference getSnapshot() {
+        return this.snapshot;
+    }
 
-  public ManagedObjectReference getVm() {
-    return this.vm;
-  }
+    public ManagedObjectReference getVm() {
+        return this.vm;
+    }
 
-  public String getName() {
-    return this.name;
-  }
+    public String getName() {
+        return this.name;
+    }
 
-  public String getDescription() {
-    return this.description;
-  }
+    public String getDescription() {
+        return this.description;
+    }
 
-  public Integer getId() {
-    return this.id;
-  }
+    public Integer getId() {
+        return this.id;
+    }
 
-  public Calendar getCreateTime() {
-    return this.createTime;
-  }
+    public Calendar getCreateTime() {
+        return this.createTime;
+    }
 
-  public VirtualMachinePowerState getState() {
-    return this.state;
-  }
+    public VirtualMachinePowerState getState() {
+        return this.state;
+    }
 
-  public boolean isQuiesced() {
-    return this.quiesced;
-  }
+    public boolean isQuiesced() {
+        return this.quiesced;
+    }
 
-  public String getBackupManifest() {
-    return this.backupManifest;
-  }
+    public String getBackupManifest() {
+        return this.backupManifest;
+    }
 
-  public VirtualMachineSnapshotTree[] getChildSnapshotList() {
-    return this.childSnapshotList;
-  }
+    public VirtualMachineSnapshotTree[] getChildSnapshotList() {
+        return this.childSnapshotList;
+    }
 
-  public Boolean getReplaySupported() {
-    return this.replaySupported;
-  }
+    public Boolean getReplaySupported() {
+        return this.replaySupported;
+    }
 
-  public void setSnapshot(ManagedObjectReference snapshot) {
-    this.snapshot=snapshot;
-  }
+    public void setSnapshot(ManagedObjectReference snapshot) {
+        this.snapshot = snapshot;
+    }
 
-  public void setVm(ManagedObjectReference vm) {
-    this.vm=vm;
-  }
+    public void setVm(ManagedObjectReference vm) {
+        this.vm = vm;
+    }
 
-  public void setName(String name) {
-    this.name=name;
-  }
+    public void setName(String name) {
+        this.name = name;
+    }
 
-  public void setDescription(String description) {
-    this.description=description;
-  }
+    public void setDescription(String description) {
+        this.description = description;
+    }
 
-  public void setId(Integer id) {
-    this.id=id;
-  }
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
-  public void setCreateTime(Calendar createTime) {
-    this.createTime=createTime;
-  }
+    public void setCreateTime(Calendar createTime) {
+        this.createTime = createTime;
+    }
 
-  public void setState(VirtualMachinePowerState state) {
-    this.state=state;
-  }
+    public void setState(VirtualMachinePowerState state) {
+        this.state = state;
+    }
 
-  public void setQuiesced(boolean quiesced) {
-    this.quiesced=quiesced;
-  }
+    public void setQuiesced(boolean quiesced) {
+        this.quiesced = quiesced;
+    }
 
-  public void setBackupManifest(String backupManifest) {
-    this.backupManifest=backupManifest;
-  }
+    public void setBackupManifest(String backupManifest) {
+        this.backupManifest = backupManifest;
+    }
 
-  public void setChildSnapshotList(VirtualMachineSnapshotTree[] childSnapshotList) {
-    this.childSnapshotList=childSnapshotList;
-  }
+    public void setChildSnapshotList(VirtualMachineSnapshotTree[] childSnapshotList) {
+        this.childSnapshotList = childSnapshotList;
+    }
 
-  public void setReplaySupported(Boolean replaySupported) {
-    this.replaySupported=replaySupported;
-  }
+    public void setReplaySupported(Boolean replaySupported) {
+        this.replaySupported = replaySupported;
+    }
 }

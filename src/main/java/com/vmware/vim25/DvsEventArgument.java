@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class DvsEventArgument extends EntityEventArgument {
-  public ManagedObjectReference dvs;
+    public ManagedObjectReference dvs;
 
-  public ManagedObjectReference getDvs() {
-    return this.dvs;
-  }
+    public ManagedObjectReference getDvs() {
+        return this.dvs;
+    }
 
-  public void setDvs(ManagedObjectReference dvs) {
-    this.dvs=dvs;
-  }
+    public void setDvs(ManagedObjectReference dvs) {
+        this.dvs = dvs;
+    }
 }

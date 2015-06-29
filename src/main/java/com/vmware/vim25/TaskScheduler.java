@@ -28,31 +28,32 @@ POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
 
 package com.vmware.vim25;
+
 import java.util.Calendar;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class TaskScheduler extends DynamicData {
-  public Calendar activeTime;
-  public Calendar expireTime;
+    public Calendar activeTime;
+    public Calendar expireTime;
 
-  public Calendar getActiveTime() {
-    return this.activeTime;
-  }
+    public Calendar getActiveTime() {
+        return this.activeTime;
+    }
 
-  public Calendar getExpireTime() {
-    return this.expireTime;
-  }
+    public Calendar getExpireTime() {
+        return this.expireTime;
+    }
 
-  public void setActiveTime(Calendar activeTime) {
-    this.activeTime=activeTime;
-  }
+    public void setActiveTime(Calendar activeTime) {
+        this.activeTime = activeTime;
+    }
 
-  public void setExpireTime(Calendar expireTime) {
-    this.expireTime=expireTime;
-  }
+    public void setExpireTime(Calendar expireTime) {
+        this.expireTime = expireTime;
+    }
 }

@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostConfigFailed extends HostConfigFault {
-  public LocalizedMethodFault[] failure;
+    public LocalizedMethodFault[] failure;
 
-  public LocalizedMethodFault[] getFailure() {
-    return this.failure;
-  }
+    public LocalizedMethodFault[] getFailure() {
+        return this.failure;
+    }
 
-  public void setFailure(LocalizedMethodFault[] failure) {
-    this.failure=failure;
-  }
+    public void setFailure(LocalizedMethodFault[] failure) {
+        this.failure = failure;
+    }
 }

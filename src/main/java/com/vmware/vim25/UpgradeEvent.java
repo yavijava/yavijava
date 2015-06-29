@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class UpgradeEvent extends Event {
-  public String message;
+    public String message;
 
-  public String getMessage() {
-    return this.message;
-  }
+    public String getMessage() {
+        return this.message;
+    }
 
-  public void setMessage(String message) {
-    this.message=message;
-  }
+    public void setMessage(String message) {
+        this.message = message;
+    }
 }

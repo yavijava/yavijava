@@ -30,46 +30,46 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VirtualDiskOptionVFlashCacheConfigOption extends DynamicData {
-  public ChoiceOption cacheConsistencyType;
-  public ChoiceOption cacheMode;
-  public LongOption reservationInMB;
-  public LongOption blockSizeInKB;
+    public ChoiceOption cacheConsistencyType;
+    public ChoiceOption cacheMode;
+    public LongOption reservationInMB;
+    public LongOption blockSizeInKB;
 
-  public ChoiceOption getCacheConsistencyType() {
-    return this.cacheConsistencyType;
-  }
+    public ChoiceOption getCacheConsistencyType() {
+        return this.cacheConsistencyType;
+    }
 
-  public ChoiceOption getCacheMode() {
-    return this.cacheMode;
-  }
+    public ChoiceOption getCacheMode() {
+        return this.cacheMode;
+    }
 
-  public LongOption getReservationInMB() {
-    return this.reservationInMB;
-  }
+    public LongOption getReservationInMB() {
+        return this.reservationInMB;
+    }
 
-  public LongOption getBlockSizeInKB() {
-    return this.blockSizeInKB;
-  }
+    public LongOption getBlockSizeInKB() {
+        return this.blockSizeInKB;
+    }
 
-  public void setCacheConsistencyType(ChoiceOption cacheConsistencyType) {
-    this.cacheConsistencyType=cacheConsistencyType;
-  }
+    public void setCacheConsistencyType(ChoiceOption cacheConsistencyType) {
+        this.cacheConsistencyType = cacheConsistencyType;
+    }
 
-  public void setCacheMode(ChoiceOption cacheMode) {
-    this.cacheMode=cacheMode;
-  }
+    public void setCacheMode(ChoiceOption cacheMode) {
+        this.cacheMode = cacheMode;
+    }
 
-  public void setReservationInMB(LongOption reservationInMB) {
-    this.reservationInMB=reservationInMB;
-  }
+    public void setReservationInMB(LongOption reservationInMB) {
+        this.reservationInMB = reservationInMB;
+    }
 
-  public void setBlockSizeInKB(LongOption blockSizeInKB) {
-    this.blockSizeInKB=blockSizeInKB;
-  }
+    public void setBlockSizeInKB(LongOption blockSizeInKB) {
+        this.blockSizeInKB = blockSizeInKB;
+    }
 }

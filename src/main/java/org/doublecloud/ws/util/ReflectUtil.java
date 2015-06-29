@@ -39,6 +39,13 @@ import java.util.List;
 import javax.xml.bind.DatatypeConverter;
 
 public class ReflectUtil {
+
+    /**
+     * Given any class return an Array of Fields in the class
+     *
+     * @param c Class
+     * @return Field[]
+     */
     public static Field[] getAllFields(Class<?> c) {
         List<Field> listOfFields = new ArrayList<Field>();
         getAllFields(c, listOfFields);
@@ -152,12 +159,23 @@ public class ReflectUtil {
         }
     }
 
-    private static byte[] toByteArray(List<String> values) {
+    protected static byte[] toByteArray(List<String> values) {
         byte[] bs = new byte[values.size()];
-        for (int i = 0; i < bs.length; i++) {
-            bs[i] = Byte.parseByte(values.get(i));
+        try {
+            for (int i = 0; i < bs.length; i++) {
+                bs[i] = Byte.parseByte(values.get(i));
+            }
+            return bs;
         }
-        return bs;
+        // seems to happen when we need to base64 decode
+        // see issue 102
+        catch (NumberFormatException ignore) {
+            String tempStr = "";
+            for (String s: values) {
+                tempStr += s;
+            }
+            return DatatypeConverter.parseBase64Binary(tempStr);
+        }
     }
 
     private static long[] toLongArray(List<String> values) {

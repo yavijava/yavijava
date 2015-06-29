@@ -30,37 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class NetIpConfigSpecIpAddressSpec extends DynamicData {
-  public String ipAddress;
-  public int prefixLength;
-  public String operation;
+    public String ipAddress;
+    public int prefixLength;
+    public String operation;
 
-  public String getIpAddress() {
-    return this.ipAddress;
-  }
+    public String getIpAddress() {
+        return this.ipAddress;
+    }
 
-  public int getPrefixLength() {
-    return this.prefixLength;
-  }
+    public int getPrefixLength() {
+        return this.prefixLength;
+    }
 
-  public String getOperation() {
-    return this.operation;
-  }
+    public String getOperation() {
+        return this.operation;
+    }
 
-  public void setIpAddress(String ipAddress) {
-    this.ipAddress=ipAddress;
-  }
+    public void setIpAddress(String ipAddress) {
+        this.ipAddress = ipAddress;
+    }
 
-  public void setPrefixLength(int prefixLength) {
-    this.prefixLength=prefixLength;
-  }
+    public void setPrefixLength(int prefixLength) {
+        this.prefixLength = prefixLength;
+    }
 
-  public void setOperation(String operation) {
-    this.operation=operation;
-  }
+    public void setOperation(String operation) {
+        this.operation = operation;
+    }
 }

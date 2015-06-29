@@ -28,112 +28,113 @@ POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
 
 package com.vmware.vim25;
+
 import java.util.Calendar;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class ClusterDrsMigration extends DynamicData {
-  public String key;
-  public Calendar time;
-  public ManagedObjectReference vm;
-  public Integer cpuLoad;
-  public Long memoryLoad;
-  public ManagedObjectReference source;
-  public Integer sourceCpuLoad;
-  public Long sourceMemoryLoad;
-  public ManagedObjectReference destination;
-  public Integer destinationCpuLoad;
-  public Long destinationMemoryLoad;
+    public String key;
+    public Calendar time;
+    public ManagedObjectReference vm;
+    public Integer cpuLoad;
+    public Long memoryLoad;
+    public ManagedObjectReference source;
+    public Integer sourceCpuLoad;
+    public Long sourceMemoryLoad;
+    public ManagedObjectReference destination;
+    public Integer destinationCpuLoad;
+    public Long destinationMemoryLoad;
 
-  public String getKey() {
-    return this.key;
-  }
+    public String getKey() {
+        return this.key;
+    }
 
-  public Calendar getTime() {
-    return this.time;
-  }
+    public Calendar getTime() {
+        return this.time;
+    }
 
-  public ManagedObjectReference getVm() {
-    return this.vm;
-  }
+    public ManagedObjectReference getVm() {
+        return this.vm;
+    }
 
-  public Integer getCpuLoad() {
-    return this.cpuLoad;
-  }
+    public Integer getCpuLoad() {
+        return this.cpuLoad;
+    }
 
-  public Long getMemoryLoad() {
-    return this.memoryLoad;
-  }
+    public Long getMemoryLoad() {
+        return this.memoryLoad;
+    }
 
-  public ManagedObjectReference getSource() {
-    return this.source;
-  }
+    public ManagedObjectReference getSource() {
+        return this.source;
+    }
 
-  public Integer getSourceCpuLoad() {
-    return this.sourceCpuLoad;
-  }
+    public Integer getSourceCpuLoad() {
+        return this.sourceCpuLoad;
+    }
 
-  public Long getSourceMemoryLoad() {
-    return this.sourceMemoryLoad;
-  }
+    public Long getSourceMemoryLoad() {
+        return this.sourceMemoryLoad;
+    }
 
-  public ManagedObjectReference getDestination() {
-    return this.destination;
-  }
+    public ManagedObjectReference getDestination() {
+        return this.destination;
+    }
 
-  public Integer getDestinationCpuLoad() {
-    return this.destinationCpuLoad;
-  }
+    public Integer getDestinationCpuLoad() {
+        return this.destinationCpuLoad;
+    }
 
-  public Long getDestinationMemoryLoad() {
-    return this.destinationMemoryLoad;
-  }
+    public Long getDestinationMemoryLoad() {
+        return this.destinationMemoryLoad;
+    }
 
-  public void setKey(String key) {
-    this.key=key;
-  }
+    public void setKey(String key) {
+        this.key = key;
+    }
 
-  public void setTime(Calendar time) {
-    this.time=time;
-  }
+    public void setTime(Calendar time) {
+        this.time = time;
+    }
 
-  public void setVm(ManagedObjectReference vm) {
-    this.vm=vm;
-  }
+    public void setVm(ManagedObjectReference vm) {
+        this.vm = vm;
+    }
 
-  public void setCpuLoad(Integer cpuLoad) {
-    this.cpuLoad=cpuLoad;
-  }
+    public void setCpuLoad(Integer cpuLoad) {
+        this.cpuLoad = cpuLoad;
+    }
 
-  public void setMemoryLoad(Long memoryLoad) {
-    this.memoryLoad=memoryLoad;
-  }
+    public void setMemoryLoad(Long memoryLoad) {
+        this.memoryLoad = memoryLoad;
+    }
 
-  public void setSource(ManagedObjectReference source) {
-    this.source=source;
-  }
+    public void setSource(ManagedObjectReference source) {
+        this.source = source;
+    }
 
-  public void setSourceCpuLoad(Integer sourceCpuLoad) {
-    this.sourceCpuLoad=sourceCpuLoad;
-  }
+    public void setSourceCpuLoad(Integer sourceCpuLoad) {
+        this.sourceCpuLoad = sourceCpuLoad;
+    }
 
-  public void setSourceMemoryLoad(Long sourceMemoryLoad) {
-    this.sourceMemoryLoad=sourceMemoryLoad;
-  }
+    public void setSourceMemoryLoad(Long sourceMemoryLoad) {
+        this.sourceMemoryLoad = sourceMemoryLoad;
+    }
 
-  public void setDestination(ManagedObjectReference destination) {
-    this.destination=destination;
-  }
+    public void setDestination(ManagedObjectReference destination) {
+        this.destination = destination;
+    }
 
-  public void setDestinationCpuLoad(Integer destinationCpuLoad) {
-    this.destinationCpuLoad=destinationCpuLoad;
-  }
+    public void setDestinationCpuLoad(Integer destinationCpuLoad) {
+        this.destinationCpuLoad = destinationCpuLoad;
+    }
 
-  public void setDestinationMemoryLoad(Long destinationMemoryLoad) {
-    this.destinationMemoryLoad=destinationMemoryLoad;
-  }
+    public void setDestinationMemoryLoad(Long destinationMemoryLoad) {
+        this.destinationMemoryLoad = destinationMemoryLoad;
+    }
 }

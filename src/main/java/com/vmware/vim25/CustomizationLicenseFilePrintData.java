@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class CustomizationLicenseFilePrintData extends DynamicData {
-  public CustomizationLicenseDataMode autoMode;
-  public Integer autoUsers;
+    public CustomizationLicenseDataMode autoMode;
+    public Integer autoUsers;
 
-  public CustomizationLicenseDataMode getAutoMode() {
-    return this.autoMode;
-  }
+    public CustomizationLicenseDataMode getAutoMode() {
+        return this.autoMode;
+    }
 
-  public Integer getAutoUsers() {
-    return this.autoUsers;
-  }
+    public Integer getAutoUsers() {
+        return this.autoUsers;
+    }
 
-  public void setAutoMode(CustomizationLicenseDataMode autoMode) {
-    this.autoMode=autoMode;
-  }
+    public void setAutoMode(CustomizationLicenseDataMode autoMode) {
+        this.autoMode = autoMode;
+    }
 
-  public void setAutoUsers(Integer autoUsers) {
-    this.autoUsers=autoUsers;
-  }
+    public void setAutoUsers(Integer autoUsers) {
+        this.autoUsers = autoUsers;
+    }
 }

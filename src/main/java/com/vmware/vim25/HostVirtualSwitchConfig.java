@@ -30,37 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostVirtualSwitchConfig extends DynamicData {
-  public String changeOperation;
-  public String name;
-  public HostVirtualSwitchSpec spec;
+    public String changeOperation;
+    public String name;
+    public HostVirtualSwitchSpec spec;
 
-  public String getChangeOperation() {
-    return this.changeOperation;
-  }
+    public String getChangeOperation() {
+        return this.changeOperation;
+    }
 
-  public String getName() {
-    return this.name;
-  }
+    public String getName() {
+        return this.name;
+    }
 
-  public HostVirtualSwitchSpec getSpec() {
-    return this.spec;
-  }
+    public HostVirtualSwitchSpec getSpec() {
+        return this.spec;
+    }
 
-  public void setChangeOperation(String changeOperation) {
-    this.changeOperation=changeOperation;
-  }
+    public void setChangeOperation(String changeOperation) {
+        this.changeOperation = changeOperation;
+    }
 
-  public void setName(String name) {
-    this.name=name;
-  }
+    public void setName(String name) {
+        this.name = name;
+    }
 
-  public void setSpec(HostVirtualSwitchSpec spec) {
-    this.spec=spec;
-  }
+    public void setSpec(HostVirtualSwitchSpec spec) {
+        this.spec = spec;
+    }
 }

@@ -30,46 +30,46 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostVffsVolume extends HostFileSystemVolume {
-  public int majorVersion;
-  public String version;
-  public String uuid;
-  public HostScsiDiskPartition[] extent;
+    public int majorVersion;
+    public String version;
+    public String uuid;
+    public HostScsiDiskPartition[] extent;
 
-  public int getMajorVersion() {
-    return this.majorVersion;
-  }
+    public int getMajorVersion() {
+        return this.majorVersion;
+    }
 
-  public String getVersion() {
-    return this.version;
-  }
+    public String getVersion() {
+        return this.version;
+    }
 
-  public String getUuid() {
-    return this.uuid;
-  }
+    public String getUuid() {
+        return this.uuid;
+    }
 
-  public HostScsiDiskPartition[] getExtent() {
-    return this.extent;
-  }
+    public HostScsiDiskPartition[] getExtent() {
+        return this.extent;
+    }
 
-  public void setMajorVersion(int majorVersion) {
-    this.majorVersion=majorVersion;
-  }
+    public void setMajorVersion(int majorVersion) {
+        this.majorVersion = majorVersion;
+    }
 
-  public void setVersion(String version) {
-    this.version=version;
-  }
+    public void setVersion(String version) {
+        this.version = version;
+    }
 
-  public void setUuid(String uuid) {
-    this.uuid=uuid;
-  }
+    public void setUuid(String uuid) {
+        this.uuid = uuid;
+    }
 
-  public void setExtent(HostScsiDiskPartition[] extent) {
-    this.extent=extent;
-  }
+    public void setExtent(HostScsiDiskPartition[] extent) {
+        this.extent = extent;
+    }
 }

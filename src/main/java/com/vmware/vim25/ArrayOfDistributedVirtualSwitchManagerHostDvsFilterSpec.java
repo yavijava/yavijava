@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfDistributedVirtualSwitchManagerHostDvsFilterSpec {
-  public DistributedVirtualSwitchManagerHostDvsFilterSpec[] DistributedVirtualSwitchManagerHostDvsFilterSpec;
+    public DistributedVirtualSwitchManagerHostDvsFilterSpec[] DistributedVirtualSwitchManagerHostDvsFilterSpec;
 
-  public DistributedVirtualSwitchManagerHostDvsFilterSpec[] getDistributedVirtualSwitchManagerHostDvsFilterSpec() {
-    return this.DistributedVirtualSwitchManagerHostDvsFilterSpec;
-  }
+    public DistributedVirtualSwitchManagerHostDvsFilterSpec[] getDistributedVirtualSwitchManagerHostDvsFilterSpec() {
+        return this.DistributedVirtualSwitchManagerHostDvsFilterSpec;
+    }
 
-  public DistributedVirtualSwitchManagerHostDvsFilterSpec getDistributedVirtualSwitchManagerHostDvsFilterSpec(int i) {
-    return this.DistributedVirtualSwitchManagerHostDvsFilterSpec[i];
-  }
+    public DistributedVirtualSwitchManagerHostDvsFilterSpec getDistributedVirtualSwitchManagerHostDvsFilterSpec(int i) {
+        return this.DistributedVirtualSwitchManagerHostDvsFilterSpec[i];
+    }
 
-  public void setDistributedVirtualSwitchManagerHostDvsFilterSpec(DistributedVirtualSwitchManagerHostDvsFilterSpec[] DistributedVirtualSwitchManagerHostDvsFilterSpec) {
-    this.DistributedVirtualSwitchManagerHostDvsFilterSpec=DistributedVirtualSwitchManagerHostDvsFilterSpec;
-  }
+    public void setDistributedVirtualSwitchManagerHostDvsFilterSpec(DistributedVirtualSwitchManagerHostDvsFilterSpec[] DistributedVirtualSwitchManagerHostDvsFilterSpec) {
+        this.DistributedVirtualSwitchManagerHostDvsFilterSpec = DistributedVirtualSwitchManagerHostDvsFilterSpec;
+    }
 }

@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VirtualMachineSnapshotInfo extends DynamicData {
-  public ManagedObjectReference currentSnapshot;
-  public VirtualMachineSnapshotTree[] rootSnapshotList;
+    public ManagedObjectReference currentSnapshot;
+    public VirtualMachineSnapshotTree[] rootSnapshotList;
 
-  public ManagedObjectReference getCurrentSnapshot() {
-    return this.currentSnapshot;
-  }
+    public ManagedObjectReference getCurrentSnapshot() {
+        return this.currentSnapshot;
+    }
 
-  public VirtualMachineSnapshotTree[] getRootSnapshotList() {
-    return this.rootSnapshotList;
-  }
+    public VirtualMachineSnapshotTree[] getRootSnapshotList() {
+        return this.rootSnapshotList;
+    }
 
-  public void setCurrentSnapshot(ManagedObjectReference currentSnapshot) {
-    this.currentSnapshot=currentSnapshot;
-  }
+    public void setCurrentSnapshot(ManagedObjectReference currentSnapshot) {
+        this.currentSnapshot = currentSnapshot;
+    }
 
-  public void setRootSnapshotList(VirtualMachineSnapshotTree[] rootSnapshotList) {
-    this.rootSnapshotList=rootSnapshotList;
-  }
+    public void setRootSnapshotList(VirtualMachineSnapshotTree[] rootSnapshotList) {
+        this.rootSnapshotList = rootSnapshotList;
+    }
 }

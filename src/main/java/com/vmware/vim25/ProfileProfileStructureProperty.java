@@ -30,37 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class ProfileProfileStructureProperty extends DynamicData {
-  public String propertyName;
-  public boolean array;
-  public ProfileProfileStructure element;
+    public String propertyName;
+    public boolean array;
+    public ProfileProfileStructure element;
 
-  public String getPropertyName() {
-    return this.propertyName;
-  }
+    public String getPropertyName() {
+        return this.propertyName;
+    }
 
-  public boolean isArray() {
-    return this.array;
-  }
+    public boolean isArray() {
+        return this.array;
+    }
 
-  public ProfileProfileStructure getElement() {
-    return this.element;
-  }
+    public ProfileProfileStructure getElement() {
+        return this.element;
+    }
 
-  public void setPropertyName(String propertyName) {
-    this.propertyName=propertyName;
-  }
+    public void setPropertyName(String propertyName) {
+        this.propertyName = propertyName;
+    }
 
-  public void setArray(boolean array) {
-    this.array=array;
-  }
+    public void setArray(boolean array) {
+        this.array = array;
+    }
 
-  public void setElement(ProfileProfileStructure element) {
-    this.element=element;
-  }
+    public void setElement(ProfileProfileStructure element) {
+        this.element = element;
+    }
 }

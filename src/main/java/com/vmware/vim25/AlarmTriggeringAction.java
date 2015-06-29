@@ -30,64 +30,64 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class AlarmTriggeringAction extends AlarmAction {
-  public Action action;
-  public AlarmTriggeringActionTransitionSpec[] transitionSpecs;
-  public boolean green2yellow;
-  public boolean yellow2red;
-  public boolean red2yellow;
-  public boolean yellow2green;
+    public Action action;
+    public AlarmTriggeringActionTransitionSpec[] transitionSpecs;
+    public boolean green2yellow;
+    public boolean yellow2red;
+    public boolean red2yellow;
+    public boolean yellow2green;
 
-  public Action getAction() {
-    return this.action;
-  }
+    public Action getAction() {
+        return this.action;
+    }
 
-  public AlarmTriggeringActionTransitionSpec[] getTransitionSpecs() {
-    return this.transitionSpecs;
-  }
+    public AlarmTriggeringActionTransitionSpec[] getTransitionSpecs() {
+        return this.transitionSpecs;
+    }
 
-  public boolean isGreen2yellow() {
-    return this.green2yellow;
-  }
+    public boolean isGreen2yellow() {
+        return this.green2yellow;
+    }
 
-  public boolean isYellow2red() {
-    return this.yellow2red;
-  }
+    public boolean isYellow2red() {
+        return this.yellow2red;
+    }
 
-  public boolean isRed2yellow() {
-    return this.red2yellow;
-  }
+    public boolean isRed2yellow() {
+        return this.red2yellow;
+    }
 
-  public boolean isYellow2green() {
-    return this.yellow2green;
-  }
+    public boolean isYellow2green() {
+        return this.yellow2green;
+    }
 
-  public void setAction(Action action) {
-    this.action=action;
-  }
+    public void setAction(Action action) {
+        this.action = action;
+    }
 
-  public void setTransitionSpecs(AlarmTriggeringActionTransitionSpec[] transitionSpecs) {
-    this.transitionSpecs=transitionSpecs;
-  }
+    public void setTransitionSpecs(AlarmTriggeringActionTransitionSpec[] transitionSpecs) {
+        this.transitionSpecs = transitionSpecs;
+    }
 
-  public void setGreen2yellow(boolean green2yellow) {
-    this.green2yellow=green2yellow;
-  }
+    public void setGreen2yellow(boolean green2yellow) {
+        this.green2yellow = green2yellow;
+    }
 
-  public void setYellow2red(boolean yellow2red) {
-    this.yellow2red=yellow2red;
-  }
+    public void setYellow2red(boolean yellow2red) {
+        this.yellow2red = yellow2red;
+    }
 
-  public void setRed2yellow(boolean red2yellow) {
-    this.red2yellow=red2yellow;
-  }
+    public void setRed2yellow(boolean red2yellow) {
+        this.red2yellow = red2yellow;
+    }
 
-  public void setYellow2green(boolean yellow2green) {
-    this.yellow2green=yellow2green;
-  }
+    public void setYellow2green(boolean yellow2green) {
+        this.yellow2green = yellow2green;
+    }
 }

@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostConnectInfoNetworkInfo extends DynamicData {
-  public NetworkSummary summary;
+    public NetworkSummary summary;
 
-  public NetworkSummary getSummary() {
-    return this.summary;
-  }
+    public NetworkSummary getSummary() {
+        return this.summary;
+    }
 
-  public void setSummary(NetworkSummary summary) {
-    this.summary=summary;
-  }
+    public void setSummary(NetworkSummary summary) {
+        this.summary = summary;
+    }
 }

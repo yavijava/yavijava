@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostImageProfileSummary extends DynamicData {
-  public String name;
-  public String vendor;
+    public String name;
+    public String vendor;
 
-  public String getName() {
-    return this.name;
-  }
+    public String getName() {
+        return this.name;
+    }
 
-  public String getVendor() {
-    return this.vendor;
-  }
+    public String getVendor() {
+        return this.vendor;
+    }
 
-  public void setName(String name) {
-    this.name=name;
-  }
+    public void setName(String name) {
+        this.name = name;
+    }
 
-  public void setVendor(String vendor) {
-    this.vendor=vendor;
-  }
+    public void setVendor(String vendor) {
+        this.vendor = vendor;
+    }
 }

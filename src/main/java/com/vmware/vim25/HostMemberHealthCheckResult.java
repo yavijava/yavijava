@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostMemberHealthCheckResult extends DynamicData {
-  public String summary;
+    public String summary;
 
-  public String getSummary() {
-    return this.summary;
-  }
+    public String getSummary() {
+        return this.summary;
+    }
 
-  public void setSummary(String summary) {
-    this.summary=summary;
-  }
+    public void setSummary(String summary) {
+        this.summary = summary;
+    }
 }

@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class DailyTaskScheduler extends HourlyTaskScheduler {
-  public int hour;
+    public int hour;
 
-  public int getHour() {
-    return this.hour;
-  }
+    public int getHour() {
+        return this.hour;
+    }
 
-  public void setHour(int hour) {
-    this.hour=hour;
-  }
+    public void setHour(int hour) {
+        this.hour = hour;
+    }
 }

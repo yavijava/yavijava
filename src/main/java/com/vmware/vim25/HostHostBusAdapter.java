@@ -30,73 +30,73 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostHostBusAdapter extends DynamicData {
-  public String key;
-  public String device;
-  public int bus;
-  public String status;
-  public String model;
-  public String driver;
-  public String pci;
+    public String key;
+    public String device;
+    public int bus;
+    public String status;
+    public String model;
+    public String driver;
+    public String pci;
 
-  public String getKey() {
-    return this.key;
-  }
+    public String getKey() {
+        return this.key;
+    }
 
-  public String getDevice() {
-    return this.device;
-  }
+    public String getDevice() {
+        return this.device;
+    }
 
-  public int getBus() {
-    return this.bus;
-  }
+    public int getBus() {
+        return this.bus;
+    }
 
-  public String getStatus() {
-    return this.status;
-  }
+    public String getStatus() {
+        return this.status;
+    }
 
-  public String getModel() {
-    return this.model;
-  }
+    public String getModel() {
+        return this.model;
+    }
 
-  public String getDriver() {
-    return this.driver;
-  }
+    public String getDriver() {
+        return this.driver;
+    }
 
-  public String getPci() {
-    return this.pci;
-  }
+    public String getPci() {
+        return this.pci;
+    }
 
-  public void setKey(String key) {
-    this.key=key;
-  }
+    public void setKey(String key) {
+        this.key = key;
+    }
 
-  public void setDevice(String device) {
-    this.device=device;
-  }
+    public void setDevice(String device) {
+        this.device = device;
+    }
 
-  public void setBus(int bus) {
-    this.bus=bus;
-  }
+    public void setBus(int bus) {
+        this.bus = bus;
+    }
 
-  public void setStatus(String status) {
-    this.status=status;
-  }
+    public void setStatus(String status) {
+        this.status = status;
+    }
 
-  public void setModel(String model) {
-    this.model=model;
-  }
+    public void setModel(String model) {
+        this.model = model;
+    }
 
-  public void setDriver(String driver) {
-    this.driver=driver;
-  }
+    public void setDriver(String driver) {
+        this.driver = driver;
+    }
 
-  public void setPci(String pci) {
-    this.pci=pci;
-  }
+    public void setPci(String pci) {
+        this.pci = pci;
+    }
 }

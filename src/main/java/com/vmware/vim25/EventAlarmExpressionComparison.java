@@ -30,37 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class EventAlarmExpressionComparison extends DynamicData {
-  public String attributeName;
-  public String operator;
-  public String value;
+    public String attributeName;
+    public String operator;
+    public String value;
 
-  public String getAttributeName() {
-    return this.attributeName;
-  }
+    public String getAttributeName() {
+        return this.attributeName;
+    }
 
-  public String getOperator() {
-    return this.operator;
-  }
+    public String getOperator() {
+        return this.operator;
+    }
 
-  public String getValue() {
-    return this.value;
-  }
+    public String getValue() {
+        return this.value;
+    }
 
-  public void setAttributeName(String attributeName) {
-    this.attributeName=attributeName;
-  }
+    public void setAttributeName(String attributeName) {
+        this.attributeName = attributeName;
+    }
 
-  public void setOperator(String operator) {
-    this.operator=operator;
-  }
+    public void setOperator(String operator) {
+        this.operator = operator;
+    }
 
-  public void setValue(String value) {
-    this.value=value;
-  }
+    public void setValue(String value) {
+        this.value = value;
+    }
 }

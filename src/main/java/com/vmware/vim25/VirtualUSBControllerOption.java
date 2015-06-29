@@ -30,37 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VirtualUSBControllerOption extends VirtualControllerOption {
-  public BoolOption autoConnectDevices;
-  public BoolOption ehciSupported;
-  public String[] supportedSpeeds;
+    public BoolOption autoConnectDevices;
+    public BoolOption ehciSupported;
+    public String[] supportedSpeeds;
 
-  public BoolOption getAutoConnectDevices() {
-    return this.autoConnectDevices;
-  }
+    public BoolOption getAutoConnectDevices() {
+        return this.autoConnectDevices;
+    }
 
-  public BoolOption getEhciSupported() {
-    return this.ehciSupported;
-  }
+    public BoolOption getEhciSupported() {
+        return this.ehciSupported;
+    }
 
-  public String[] getSupportedSpeeds() {
-    return this.supportedSpeeds;
-  }
+    public String[] getSupportedSpeeds() {
+        return this.supportedSpeeds;
+    }
 
-  public void setAutoConnectDevices(BoolOption autoConnectDevices) {
-    this.autoConnectDevices=autoConnectDevices;
-  }
+    public void setAutoConnectDevices(BoolOption autoConnectDevices) {
+        this.autoConnectDevices = autoConnectDevices;
+    }
 
-  public void setEhciSupported(BoolOption ehciSupported) {
-    this.ehciSupported=ehciSupported;
-  }
+    public void setEhciSupported(BoolOption ehciSupported) {
+        this.ehciSupported = ehciSupported;
+    }
 
-  public void setSupportedSpeeds(String[] supportedSpeeds) {
-    this.supportedSpeeds=supportedSpeeds;
-  }
+    public void setSupportedSpeeds(String[] supportedSpeeds) {
+        this.supportedSpeeds = supportedSpeeds;
+    }
 }

@@ -30,73 +30,73 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class AutoStartPowerInfo extends DynamicData {
-  public ManagedObjectReference key;
-  public int startOrder;
-  public int startDelay;
-  public AutoStartWaitHeartbeatSetting waitForHeartbeat;
-  public String startAction;
-  public int stopDelay;
-  public String stopAction;
+    public ManagedObjectReference key;
+    public int startOrder;
+    public int startDelay;
+    public AutoStartWaitHeartbeatSetting waitForHeartbeat;
+    public String startAction;
+    public int stopDelay;
+    public String stopAction;
 
-  public ManagedObjectReference getKey() {
-    return this.key;
-  }
+    public ManagedObjectReference getKey() {
+        return this.key;
+    }
 
-  public int getStartOrder() {
-    return this.startOrder;
-  }
+    public int getStartOrder() {
+        return this.startOrder;
+    }
 
-  public int getStartDelay() {
-    return this.startDelay;
-  }
+    public int getStartDelay() {
+        return this.startDelay;
+    }
 
-  public AutoStartWaitHeartbeatSetting getWaitForHeartbeat() {
-    return this.waitForHeartbeat;
-  }
+    public AutoStartWaitHeartbeatSetting getWaitForHeartbeat() {
+        return this.waitForHeartbeat;
+    }
 
-  public String getStartAction() {
-    return this.startAction;
-  }
+    public String getStartAction() {
+        return this.startAction;
+    }
 
-  public int getStopDelay() {
-    return this.stopDelay;
-  }
+    public int getStopDelay() {
+        return this.stopDelay;
+    }
 
-  public String getStopAction() {
-    return this.stopAction;
-  }
+    public String getStopAction() {
+        return this.stopAction;
+    }
 
-  public void setKey(ManagedObjectReference key) {
-    this.key=key;
-  }
+    public void setKey(ManagedObjectReference key) {
+        this.key = key;
+    }
 
-  public void setStartOrder(int startOrder) {
-    this.startOrder=startOrder;
-  }
+    public void setStartOrder(int startOrder) {
+        this.startOrder = startOrder;
+    }
 
-  public void setStartDelay(int startDelay) {
-    this.startDelay=startDelay;
-  }
+    public void setStartDelay(int startDelay) {
+        this.startDelay = startDelay;
+    }
 
-  public void setWaitForHeartbeat(AutoStartWaitHeartbeatSetting waitForHeartbeat) {
-    this.waitForHeartbeat=waitForHeartbeat;
-  }
+    public void setWaitForHeartbeat(AutoStartWaitHeartbeatSetting waitForHeartbeat) {
+        this.waitForHeartbeat = waitForHeartbeat;
+    }
 
-  public void setStartAction(String startAction) {
-    this.startAction=startAction;
-  }
+    public void setStartAction(String startAction) {
+        this.startAction = startAction;
+    }
 
-  public void setStopDelay(int stopDelay) {
-    this.stopDelay=stopDelay;
-  }
+    public void setStopDelay(int stopDelay) {
+        this.stopDelay = stopDelay;
+    }
 
-  public void setStopAction(String stopAction) {
-    this.stopAction=stopAction;
-  }
+    public void setStopAction(String stopAction) {
+        this.stopAction = stopAction;
+    }
 }

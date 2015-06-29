@@ -30,64 +30,64 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class CustomFieldDef extends DynamicData {
-  public int key;
-  public String name;
-  public String type;
-  public String managedObjectType;
-  public PrivilegePolicyDef fieldDefPrivileges;
-  public PrivilegePolicyDef fieldInstancePrivileges;
+    public int key;
+    public String name;
+    public String type;
+    public String managedObjectType;
+    public PrivilegePolicyDef fieldDefPrivileges;
+    public PrivilegePolicyDef fieldInstancePrivileges;
 
-  public int getKey() {
-    return this.key;
-  }
+    public int getKey() {
+        return this.key;
+    }
 
-  public String getName() {
-    return this.name;
-  }
+    public String getName() {
+        return this.name;
+    }
 
-  public String getType() {
-    return this.type;
-  }
+    public String getType() {
+        return this.type;
+    }
 
-  public String getManagedObjectType() {
-    return this.managedObjectType;
-  }
+    public String getManagedObjectType() {
+        return this.managedObjectType;
+    }
 
-  public PrivilegePolicyDef getFieldDefPrivileges() {
-    return this.fieldDefPrivileges;
-  }
+    public PrivilegePolicyDef getFieldDefPrivileges() {
+        return this.fieldDefPrivileges;
+    }
 
-  public PrivilegePolicyDef getFieldInstancePrivileges() {
-    return this.fieldInstancePrivileges;
-  }
+    public PrivilegePolicyDef getFieldInstancePrivileges() {
+        return this.fieldInstancePrivileges;
+    }
 
-  public void setKey(int key) {
-    this.key=key;
-  }
+    public void setKey(int key) {
+        this.key = key;
+    }
 
-  public void setName(String name) {
-    this.name=name;
-  }
+    public void setName(String name) {
+        this.name = name;
+    }
 
-  public void setType(String type) {
-    this.type=type;
-  }
+    public void setType(String type) {
+        this.type = type;
+    }
 
-  public void setManagedObjectType(String managedObjectType) {
-    this.managedObjectType=managedObjectType;
-  }
+    public void setManagedObjectType(String managedObjectType) {
+        this.managedObjectType = managedObjectType;
+    }
 
-  public void setFieldDefPrivileges(PrivilegePolicyDef fieldDefPrivileges) {
-    this.fieldDefPrivileges=fieldDefPrivileges;
-  }
+    public void setFieldDefPrivileges(PrivilegePolicyDef fieldDefPrivileges) {
+        this.fieldDefPrivileges = fieldDefPrivileges;
+    }
 
-  public void setFieldInstancePrivileges(PrivilegePolicyDef fieldInstancePrivileges) {
-    this.fieldInstancePrivileges=fieldInstancePrivileges;
-  }
+    public void setFieldInstancePrivileges(PrivilegePolicyDef fieldInstancePrivileges) {
+        this.fieldInstancePrivileges = fieldInstancePrivileges;
+    }
 }

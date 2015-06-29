@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfDvsNetworkRuleQualifier {
-  public DvsNetworkRuleQualifier[] DvsNetworkRuleQualifier;
+    public DvsNetworkRuleQualifier[] DvsNetworkRuleQualifier;
 
-  public DvsNetworkRuleQualifier[] getDvsNetworkRuleQualifier() {
-    return this.DvsNetworkRuleQualifier;
-  }
+    public DvsNetworkRuleQualifier[] getDvsNetworkRuleQualifier() {
+        return this.DvsNetworkRuleQualifier;
+    }
 
-  public DvsNetworkRuleQualifier getDvsNetworkRuleQualifier(int i) {
-    return this.DvsNetworkRuleQualifier[i];
-  }
+    public DvsNetworkRuleQualifier getDvsNetworkRuleQualifier(int i) {
+        return this.DvsNetworkRuleQualifier[i];
+    }
 
-  public void setDvsNetworkRuleQualifier(DvsNetworkRuleQualifier[] DvsNetworkRuleQualifier) {
-    this.DvsNetworkRuleQualifier=DvsNetworkRuleQualifier;
-  }
+    public void setDvsNetworkRuleQualifier(DvsNetworkRuleQualifier[] DvsNetworkRuleQualifier) {
+        this.DvsNetworkRuleQualifier = DvsNetworkRuleQualifier;
+    }
 }

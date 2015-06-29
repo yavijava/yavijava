@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostVFlashManagerVFlashResourceConfigInfo extends DynamicData {
-  public HostVffsVolume vffs;
-  public long capacity;
+    public HostVffsVolume vffs;
+    public long capacity;
 
-  public HostVffsVolume getVffs() {
-    return this.vffs;
-  }
+    public HostVffsVolume getVffs() {
+        return this.vffs;
+    }
 
-  public long getCapacity() {
-    return this.capacity;
-  }
+    public long getCapacity() {
+        return this.capacity;
+    }
 
-  public void setVffs(HostVffsVolume vffs) {
-    this.vffs=vffs;
-  }
+    public void setVffs(HostVffsVolume vffs) {
+        this.vffs = vffs;
+    }
 
-  public void setCapacity(long capacity) {
-    this.capacity=capacity;
-  }
+    public void setCapacity(long capacity) {
+        this.capacity = capacity;
+    }
 }

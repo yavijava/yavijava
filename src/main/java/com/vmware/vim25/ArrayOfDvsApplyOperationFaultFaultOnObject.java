@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfDvsApplyOperationFaultFaultOnObject {
-  public DvsApplyOperationFaultFaultOnObject[] DvsApplyOperationFaultFaultOnObject;
+    public DvsApplyOperationFaultFaultOnObject[] DvsApplyOperationFaultFaultOnObject;
 
-  public DvsApplyOperationFaultFaultOnObject[] getDvsApplyOperationFaultFaultOnObject() {
-    return this.DvsApplyOperationFaultFaultOnObject;
-  }
+    public DvsApplyOperationFaultFaultOnObject[] getDvsApplyOperationFaultFaultOnObject() {
+        return this.DvsApplyOperationFaultFaultOnObject;
+    }
 
-  public DvsApplyOperationFaultFaultOnObject getDvsApplyOperationFaultFaultOnObject(int i) {
-    return this.DvsApplyOperationFaultFaultOnObject[i];
-  }
+    public DvsApplyOperationFaultFaultOnObject getDvsApplyOperationFaultFaultOnObject(int i) {
+        return this.DvsApplyOperationFaultFaultOnObject[i];
+    }
 
-  public void setDvsApplyOperationFaultFaultOnObject(DvsApplyOperationFaultFaultOnObject[] DvsApplyOperationFaultFaultOnObject) {
-    this.DvsApplyOperationFaultFaultOnObject=DvsApplyOperationFaultFaultOnObject;
-  }
+    public void setDvsApplyOperationFaultFaultOnObject(DvsApplyOperationFaultFaultOnObject[] DvsApplyOperationFaultFaultOnObject) {
+        this.DvsApplyOperationFaultFaultOnObject = DvsApplyOperationFaultFaultOnObject;
+    }
 }

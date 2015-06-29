@@ -30,37 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostVFlashResourceConfigurationResult extends DynamicData {
-  public String[] devicePath;
-  public HostVffsVolume vffs;
-  public HostDiskConfigurationResult[] diskConfigurationResult;
+    public String[] devicePath;
+    public HostVffsVolume vffs;
+    public HostDiskConfigurationResult[] diskConfigurationResult;
 
-  public String[] getDevicePath() {
-    return this.devicePath;
-  }
+    public String[] getDevicePath() {
+        return this.devicePath;
+    }
 
-  public HostVffsVolume getVffs() {
-    return this.vffs;
-  }
+    public HostVffsVolume getVffs() {
+        return this.vffs;
+    }
 
-  public HostDiskConfigurationResult[] getDiskConfigurationResult() {
-    return this.diskConfigurationResult;
-  }
+    public HostDiskConfigurationResult[] getDiskConfigurationResult() {
+        return this.diskConfigurationResult;
+    }
 
-  public void setDevicePath(String[] devicePath) {
-    this.devicePath=devicePath;
-  }
+    public void setDevicePath(String[] devicePath) {
+        this.devicePath = devicePath;
+    }
 
-  public void setVffs(HostVffsVolume vffs) {
-    this.vffs=vffs;
-  }
+    public void setVffs(HostVffsVolume vffs) {
+        this.vffs = vffs;
+    }
 
-  public void setDiskConfigurationResult(HostDiskConfigurationResult[] diskConfigurationResult) {
-    this.diskConfigurationResult=diskConfigurationResult;
-  }
+    public void setDiskConfigurationResult(HostDiskConfigurationResult[] diskConfigurationResult) {
+        this.diskConfigurationResult = diskConfigurationResult;
+    }
 }

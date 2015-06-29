@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfResourceConfigSpec {
-  public ResourceConfigSpec[] ResourceConfigSpec;
+    public ResourceConfigSpec[] ResourceConfigSpec;
 
-  public ResourceConfigSpec[] getResourceConfigSpec() {
-    return this.ResourceConfigSpec;
-  }
+    public ResourceConfigSpec[] getResourceConfigSpec() {
+        return this.ResourceConfigSpec;
+    }
 
-  public ResourceConfigSpec getResourceConfigSpec(int i) {
-    return this.ResourceConfigSpec[i];
-  }
+    public ResourceConfigSpec getResourceConfigSpec(int i) {
+        return this.ResourceConfigSpec[i];
+    }
 
-  public void setResourceConfigSpec(ResourceConfigSpec[] ResourceConfigSpec) {
-    this.ResourceConfigSpec=ResourceConfigSpec;
-  }
+    public void setResourceConfigSpec(ResourceConfigSpec[] ResourceConfigSpec) {
+        this.ResourceConfigSpec = ResourceConfigSpec;
+    }
 }

@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class RetrieveResult extends DynamicData {
-  public String token;
-  public ObjectContent[] objects;
+    public String token;
+    public ObjectContent[] objects;
 
-  public String getToken() {
-    return this.token;
-  }
+    public String getToken() {
+        return this.token;
+    }
 
-  public ObjectContent[] getObjects() {
-    return this.objects;
-  }
+    public ObjectContent[] getObjects() {
+        return this.objects;
+    }
 
-  public void setToken(String token) {
-    this.token=token;
-  }
+    public void setToken(String token) {
+        this.token = token;
+    }
 
-  public void setObjects(ObjectContent[] objects) {
-    this.objects=objects;
-  }
+    public void setObjects(ObjectContent[] objects) {
+        this.objects = objects;
+    }
 }

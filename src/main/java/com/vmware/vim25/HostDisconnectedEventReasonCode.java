@@ -30,25 +30,25 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public enum HostDisconnectedEventReasonCode {
-  sslThumbprintVerifyFailed ("sslThumbprintVerifyFailed"),
-  licenseExpired ("licenseExpired"),
-  agentUpgrade ("agentUpgrade"),
-  userRequest ("userRequest"),
-  insufficientLicenses ("insufficientLicenses"),
-  agentOutOfDate ("agentOutOfDate"),
-  passwordDecryptFailure ("passwordDecryptFailure"),
-  unknown ("unknown"),
-  vcVRAMCapacityExceeded ("vcVRAMCapacityExceeded");
+    sslThumbprintVerifyFailed("sslThumbprintVerifyFailed"),
+    licenseExpired("licenseExpired"),
+    agentUpgrade("agentUpgrade"),
+    userRequest("userRequest"),
+    insufficientLicenses("insufficientLicenses"),
+    agentOutOfDate("agentOutOfDate"),
+    passwordDecryptFailure("passwordDecryptFailure"),
+    unknown("unknown"),
+    vcVRAMCapacityExceeded("vcVRAMCapacityExceeded");
 
-  @SuppressWarnings("unused")
-  private final String val;
-  private HostDisconnectedEventReasonCode(String val)
-  {
-    this.val = val;
-  }
+    @SuppressWarnings("unused")
+    private final String val;
+
+    private HostDisconnectedEventReasonCode(String val) {
+        this.val = val;
+    }
 }

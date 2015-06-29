@@ -30,37 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class ExtensionResourceInfo extends DynamicData {
-  public String locale;
-  public String module;
-  public KeyValue[] data;
+    public String locale;
+    public String module;
+    public KeyValue[] data;
 
-  public String getLocale() {
-    return this.locale;
-  }
+    public String getLocale() {
+        return this.locale;
+    }
 
-  public String getModule() {
-    return this.module;
-  }
+    public String getModule() {
+        return this.module;
+    }
 
-  public KeyValue[] getData() {
-    return this.data;
-  }
+    public KeyValue[] getData() {
+        return this.data;
+    }
 
-  public void setLocale(String locale) {
-    this.locale=locale;
-  }
+    public void setLocale(String locale) {
+        this.locale = locale;
+    }
 
-  public void setModule(String module) {
-    this.module=module;
-  }
+    public void setModule(String module) {
+        this.module = module;
+    }
 
-  public void setData(KeyValue[] data) {
-    this.data=data;
-  }
+    public void setData(KeyValue[] data) {
+        this.data = data;
+    }
 }

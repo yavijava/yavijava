@@ -30,37 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class MemorySizeNotRecommended extends VirtualHardwareCompatibilityIssue {
-  public int memorySizeMB;
-  public int minMemorySizeMB;
-  public int maxMemorySizeMB;
+    public int memorySizeMB;
+    public int minMemorySizeMB;
+    public int maxMemorySizeMB;
 
-  public int getMemorySizeMB() {
-    return this.memorySizeMB;
-  }
+    public int getMemorySizeMB() {
+        return this.memorySizeMB;
+    }
 
-  public int getMinMemorySizeMB() {
-    return this.minMemorySizeMB;
-  }
+    public int getMinMemorySizeMB() {
+        return this.minMemorySizeMB;
+    }
 
-  public int getMaxMemorySizeMB() {
-    return this.maxMemorySizeMB;
-  }
+    public int getMaxMemorySizeMB() {
+        return this.maxMemorySizeMB;
+    }
 
-  public void setMemorySizeMB(int memorySizeMB) {
-    this.memorySizeMB=memorySizeMB;
-  }
+    public void setMemorySizeMB(int memorySizeMB) {
+        this.memorySizeMB = memorySizeMB;
+    }
 
-  public void setMinMemorySizeMB(int minMemorySizeMB) {
-    this.minMemorySizeMB=minMemorySizeMB;
-  }
+    public void setMinMemorySizeMB(int minMemorySizeMB) {
+        this.minMemorySizeMB = minMemorySizeMB;
+    }
 
-  public void setMaxMemorySizeMB(int maxMemorySizeMB) {
-    this.maxMemorySizeMB=maxMemorySizeMB;
-  }
+    public void setMaxMemorySizeMB(int maxMemorySizeMB) {
+        this.maxMemorySizeMB = maxMemorySizeMB;
+    }
 }

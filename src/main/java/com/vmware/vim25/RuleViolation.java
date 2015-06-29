@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class RuleViolation extends VmConfigFault {
-  public ManagedObjectReference host;
-  public ClusterRuleInfo rule;
+    public ManagedObjectReference host;
+    public ClusterRuleInfo rule;
 
-  public ManagedObjectReference getHost() {
-    return this.host;
-  }
+    public ManagedObjectReference getHost() {
+        return this.host;
+    }
 
-  public ClusterRuleInfo getRule() {
-    return this.rule;
-  }
+    public ClusterRuleInfo getRule() {
+        return this.rule;
+    }
 
-  public void setHost(ManagedObjectReference host) {
-    this.host=host;
-  }
+    public void setHost(ManagedObjectReference host) {
+        this.host = host;
+    }
 
-  public void setRule(ClusterRuleInfo rule) {
-    this.rule=rule;
-  }
+    public void setRule(ClusterRuleInfo rule) {
+        this.rule = rule;
+    }
 }

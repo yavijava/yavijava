@@ -28,31 +28,32 @@ POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
 
 package com.vmware.vim25;
+
 import java.util.Calendar;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class EventFilterSpecByTime extends DynamicData {
-  public Calendar beginTime;
-  public Calendar endTime;
+    public Calendar beginTime;
+    public Calendar endTime;
 
-  public Calendar getBeginTime() {
-    return this.beginTime;
-  }
+    public Calendar getBeginTime() {
+        return this.beginTime;
+    }
 
-  public Calendar getEndTime() {
-    return this.endTime;
-  }
+    public Calendar getEndTime() {
+        return this.endTime;
+    }
 
-  public void setBeginTime(Calendar beginTime) {
-    this.beginTime=beginTime;
-  }
+    public void setBeginTime(Calendar beginTime) {
+        this.beginTime = beginTime;
+    }
 
-  public void setEndTime(Calendar endTime) {
-    this.endTime=endTime;
-  }
+    public void setEndTime(Calendar endTime) {
+        this.endTime = endTime;
+    }
 }

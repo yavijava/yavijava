@@ -30,55 +30,55 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostSnmpConfigSpec extends DynamicData {
-  public Boolean enabled;
-  public Integer port;
-  public String[] readOnlyCommunities;
-  public HostSnmpDestination[] trapTargets;
-  public KeyValue[] option;
+    public Boolean enabled;
+    public Integer port;
+    public String[] readOnlyCommunities;
+    public HostSnmpDestination[] trapTargets;
+    public KeyValue[] option;
 
-  public Boolean getEnabled() {
-    return this.enabled;
-  }
+    public Boolean getEnabled() {
+        return this.enabled;
+    }
 
-  public Integer getPort() {
-    return this.port;
-  }
+    public Integer getPort() {
+        return this.port;
+    }
 
-  public String[] getReadOnlyCommunities() {
-    return this.readOnlyCommunities;
-  }
+    public String[] getReadOnlyCommunities() {
+        return this.readOnlyCommunities;
+    }
 
-  public HostSnmpDestination[] getTrapTargets() {
-    return this.trapTargets;
-  }
+    public HostSnmpDestination[] getTrapTargets() {
+        return this.trapTargets;
+    }
 
-  public KeyValue[] getOption() {
-    return this.option;
-  }
+    public KeyValue[] getOption() {
+        return this.option;
+    }
 
-  public void setEnabled(Boolean enabled) {
-    this.enabled=enabled;
-  }
+    public void setEnabled(Boolean enabled) {
+        this.enabled = enabled;
+    }
 
-  public void setPort(Integer port) {
-    this.port=port;
-  }
+    public void setPort(Integer port) {
+        this.port = port;
+    }
 
-  public void setReadOnlyCommunities(String[] readOnlyCommunities) {
-    this.readOnlyCommunities=readOnlyCommunities;
-  }
+    public void setReadOnlyCommunities(String[] readOnlyCommunities) {
+        this.readOnlyCommunities = readOnlyCommunities;
+    }
 
-  public void setTrapTargets(HostSnmpDestination[] trapTargets) {
-    this.trapTargets=trapTargets;
-  }
+    public void setTrapTargets(HostSnmpDestination[] trapTargets) {
+        this.trapTargets = trapTargets;
+    }
 
-  public void setOption(KeyValue[] option) {
-    this.option=option;
-  }
+    public void setOption(KeyValue[] option) {
+        this.option = option;
+    }
 }

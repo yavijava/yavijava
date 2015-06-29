@@ -29,36 +29,34 @@ POSSIBILITY OF SUCH DAMAGE.
 
 package com.vmware.vim25.mo;
 
-import java.rmi.RemoteException;
+import com.vmware.vim25.HostHyperThreadScheduleInfo;
+import com.vmware.vim25.ManagedObjectReference;
+import com.vmware.vim25.RuntimeFault;
 
-import com.vmware.vim25.*;
+import java.rmi.RemoteException;
 
 /**
  * The managed object class corresponding to the one defined in VI SDK API reference.
+ *
  * @author Steve JIN (http://www.doublecloud.org)
  */
 
-public class HostCpuSchedulerSystem extends ManagedObject 
-{
+public class HostCpuSchedulerSystem extends ManagedObject {
 
-	public HostCpuSchedulerSystem(ServerConnection serverConnection, ManagedObjectReference mor) 
-	{
-		super(serverConnection, mor);
-	}
+    public HostCpuSchedulerSystem(ServerConnection serverConnection, ManagedObjectReference mor) {
+        super(serverConnection, mor);
+    }
 
-	public HostHyperThreadScheduleInfo getHyperthreadInfo()
-	{
-		return (HostHyperThreadScheduleInfo) this.getCurrentProperty("hyperthreadInfo");
-	}
-	
-	public void disableHyperThreading() throws RuntimeFault, RemoteException 
-	{
-		getVimService().disableHyperThreading(getMOR());
-	}
-	
-	public void enableHyperThreading() throws RuntimeFault, RemoteException 
-	{
-		getVimService().enableHyperThreading(getMOR());
-	}
-	
+    public HostHyperThreadScheduleInfo getHyperthreadInfo() {
+        return (HostHyperThreadScheduleInfo) this.getCurrentProperty("hyperthreadInfo");
+    }
+
+    public void disableHyperThreading() throws RuntimeFault, RemoteException {
+        getVimService().disableHyperThreading(getMOR());
+    }
+
+    public void enableHyperThreading() throws RuntimeFault, RemoteException {
+        getVimService().enableHyperThreading(getMOR());
+    }
+
 }

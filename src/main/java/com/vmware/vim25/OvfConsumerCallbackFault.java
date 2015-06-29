@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class OvfConsumerCallbackFault extends OvfFault {
-  public String extensionKey;
-  public String extensionName;
+    public String extensionKey;
+    public String extensionName;
 
-  public String getExtensionKey() {
-    return this.extensionKey;
-  }
+    public String getExtensionKey() {
+        return this.extensionKey;
+    }
 
-  public String getExtensionName() {
-    return this.extensionName;
-  }
+    public String getExtensionName() {
+        return this.extensionName;
+    }
 
-  public void setExtensionKey(String extensionKey) {
-    this.extensionKey=extensionKey;
-  }
+    public void setExtensionKey(String extensionKey) {
+        this.extensionKey = extensionKey;
+    }
 
-  public void setExtensionName(String extensionName) {
-    this.extensionName=extensionName;
-  }
+    public void setExtensionName(String extensionName) {
+        this.extensionName = extensionName;
+    }
 }

@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VsanHostConfigInfoNetworkInfoPortConfig extends DynamicData {
-  public VsanHostIpConfig ipConfig;
-  public String device;
+    public VsanHostIpConfig ipConfig;
+    public String device;
 
-  public VsanHostIpConfig getIpConfig() {
-    return this.ipConfig;
-  }
+    public VsanHostIpConfig getIpConfig() {
+        return this.ipConfig;
+    }
 
-  public String getDevice() {
-    return this.device;
-  }
+    public String getDevice() {
+        return this.device;
+    }
 
-  public void setIpConfig(VsanHostIpConfig ipConfig) {
-    this.ipConfig=ipConfig;
-  }
+    public void setIpConfig(VsanHostIpConfig ipConfig) {
+        this.ipConfig = ipConfig;
+    }
 
-  public void setDevice(String device) {
-    this.device=device;
-  }
+    public void setDevice(String device) {
+        this.device = device;
+    }
 }

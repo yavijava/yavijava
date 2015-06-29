@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class DvsHostLeftEvent extends DvsEvent {
-  public HostEventArgument hostLeft;
+    public HostEventArgument hostLeft;
 
-  public HostEventArgument getHostLeft() {
-    return this.hostLeft;
-  }
+    public HostEventArgument getHostLeft() {
+        return this.hostLeft;
+    }
 
-  public void setHostLeft(HostEventArgument hostLeft) {
-    this.hostLeft=hostLeft;
-  }
+    public void setHostLeft(HostEventArgument hostLeft) {
+        this.hostLeft = hostLeft;
+    }
 }

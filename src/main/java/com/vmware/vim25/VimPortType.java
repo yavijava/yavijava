@@ -30,14 +30,14 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 
-import com.vmware.vim25.ws.SoapClient;
+import com.vmware.vim25.ws.Client;
 
 public class VimPortType extends com.vmware.vim25.ws.VimStub {
     public VimPortType(String url, boolean ignoreCert) throws java.net.MalformedURLException {
         super(url, ignoreCert);
     }
 
-    public VimPortType(SoapClient url) throws java.net.MalformedURLException {
+    public VimPortType(Client url) throws java.net.MalformedURLException {
         super(url);
     }
 }

@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class ToolsConfigInfoToolsLastInstallInfo extends DynamicData {
-  public int counter;
-  public LocalizedMethodFault fault;
+    public int counter;
+    public LocalizedMethodFault fault;
 
-  public int getCounter() {
-    return this.counter;
-  }
+    public int getCounter() {
+        return this.counter;
+    }
 
-  public LocalizedMethodFault getFault() {
-    return this.fault;
-  }
+    public LocalizedMethodFault getFault() {
+        return this.fault;
+    }
 
-  public void setCounter(int counter) {
-    this.counter=counter;
-  }
+    public void setCounter(int counter) {
+        this.counter = counter;
+    }
 
-  public void setFault(LocalizedMethodFault fault) {
-    this.fault=fault;
-  }
+    public void setFault(LocalizedMethodFault fault) {
+        this.fault = fault;
+    }
 }

@@ -1,4 +1,5 @@
 apply plugin: 'java'
+apply plugin: 'groovy'
 apply plugin: 'idea'
 apply plugin: 'eclipse'
 apply plugin: 'maven'
@@ -7,7 +8,7 @@ apply plugin: 'groovy'
 
 group = "com.toastcoders"
 archivesBaseName = "yavijava"
-version = '5.5.11'
+version = '6.0.01'
 targetCompatibility = 1.6
 sourceCompatibility = 1.6
 
@@ -19,6 +20,7 @@ dependencies {
     compile 'org.apache.directory.studio:org.dom4j.dom4j:1.6.1'
     compile 'log4j:log4j:1.2.17'
     compile 'org.apache.httpcomponents:httpclient:4.3.5'
+    compile 'org.projectlombok:lombok:1.16.4'
     testCompile 'javax.servlet:javax.servlet-api:3.1.0'
     testCompile 'junit:junit:4.12-beta-3'
     testCompile 'org.spockframework:spock-core:0.7-groovy-2.0'
@@ -108,12 +110,12 @@ uploadArchives {
                 packaging 'jar'
                 // optionally artifactId can be defined here
                 description 'Java library for VMware vSphere'
-                url 'https://github.com/michaelrice/yavijava'
+                url 'https://github.com/yavijava/yavijava'
 
                 scm {
-                    connection 'scm:git:https://github.com/michaelrice/yavijava.git'
-                    developerConnection 'scm:git:https://github.com/michaelrice/yavijava.git'
-                    url 'https://github.com/michaelrice/yavijava'
+                    connection 'scm:git:https://github.com/yavijava/yavijava.git'
+                    developerConnection 'scm:git:https://github.com/yavijava/yavijava.git'
+                    url 'https://github.com/yavijava/yavijava'
                 }
 
                 licenses {

@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfNumericRange {
-  public NumericRange[] NumericRange;
+    public NumericRange[] NumericRange;
 
-  public NumericRange[] getNumericRange() {
-    return this.NumericRange;
-  }
+    public NumericRange[] getNumericRange() {
+        return this.NumericRange;
+    }
 
-  public NumericRange getNumericRange(int i) {
-    return this.NumericRange[i];
-  }
+    public NumericRange getNumericRange(int i) {
+        return this.NumericRange[i];
+    }
 
-  public void setNumericRange(NumericRange[] NumericRange) {
-    this.NumericRange=NumericRange;
-  }
+    public void setNumericRange(NumericRange[] NumericRange) {
+        this.NumericRange = NumericRange;
+    }
 }

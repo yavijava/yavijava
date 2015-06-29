@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class LocalizedMethodFault extends DynamicData {
-  public MethodFault fault;
-  public String localizedMessage;
+    public MethodFault fault;
+    public String localizedMessage;
 
-  public MethodFault getFault() {
-    return this.fault;
-  }
+    public MethodFault getFault() {
+        return this.fault;
+    }
 
-  public String getLocalizedMessage() {
-    return this.localizedMessage;
-  }
+    public String getLocalizedMessage() {
+        return this.localizedMessage;
+    }
 
-  public void setFault(MethodFault fault) {
-    this.fault=fault;
-  }
+    public void setFault(MethodFault fault) {
+        this.fault = fault;
+    }
 
-  public void setLocalizedMessage(String localizedMessage) {
-    this.localizedMessage=localizedMessage;
-  }
+    public void setLocalizedMessage(String localizedMessage) {
+        this.localizedMessage = localizedMessage;
+    }
 }

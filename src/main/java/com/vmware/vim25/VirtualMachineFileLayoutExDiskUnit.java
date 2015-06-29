@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VirtualMachineFileLayoutExDiskUnit extends DynamicData {
-  public int[] fileKey;
+    public int[] fileKey;
 
-  public int[] getFileKey() {
-    return this.fileKey;
-  }
+    public int[] getFileKey() {
+        return this.fileKey;
+    }
 
-  public void setFileKey(int[] fileKey) {
-    this.fileKey=fileKey;
-  }
+    public void setFileKey(int[] fileKey) {
+        this.fileKey = fileKey;
+    }
 }

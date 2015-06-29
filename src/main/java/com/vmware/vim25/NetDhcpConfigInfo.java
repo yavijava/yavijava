@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class NetDhcpConfigInfo extends DynamicData {
-  public NetDhcpConfigInfoDhcpOptions ipv6;
-  public NetDhcpConfigInfoDhcpOptions ipv4;
+    public NetDhcpConfigInfoDhcpOptions ipv6;
+    public NetDhcpConfigInfoDhcpOptions ipv4;
 
-  public NetDhcpConfigInfoDhcpOptions getIpv6() {
-    return this.ipv6;
-  }
+    public NetDhcpConfigInfoDhcpOptions getIpv6() {
+        return this.ipv6;
+    }
 
-  public NetDhcpConfigInfoDhcpOptions getIpv4() {
-    return this.ipv4;
-  }
+    public NetDhcpConfigInfoDhcpOptions getIpv4() {
+        return this.ipv4;
+    }
 
-  public void setIpv6(NetDhcpConfigInfoDhcpOptions ipv6) {
-    this.ipv6=ipv6;
-  }
+    public void setIpv6(NetDhcpConfigInfoDhcpOptions ipv6) {
+        this.ipv6 = ipv6;
+    }
 
-  public void setIpv4(NetDhcpConfigInfoDhcpOptions ipv4) {
-    this.ipv4=ipv4;
-  }
+    public void setIpv4(NetDhcpConfigInfoDhcpOptions ipv4) {
+        this.ipv4 = ipv4;
+    }
 }

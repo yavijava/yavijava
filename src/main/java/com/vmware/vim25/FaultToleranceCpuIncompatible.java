@@ -30,37 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class FaultToleranceCpuIncompatible extends CpuIncompatible {
-  public boolean model;
-  public boolean family;
-  public boolean stepping;
+    public boolean model;
+    public boolean family;
+    public boolean stepping;
 
-  public boolean isModel() {
-    return this.model;
-  }
+    public boolean isModel() {
+        return this.model;
+    }
 
-  public boolean isFamily() {
-    return this.family;
-  }
+    public boolean isFamily() {
+        return this.family;
+    }
 
-  public boolean isStepping() {
-    return this.stepping;
-  }
+    public boolean isStepping() {
+        return this.stepping;
+    }
 
-  public void setModel(boolean model) {
-    this.model=model;
-  }
+    public void setModel(boolean model) {
+        this.model = model;
+    }
 
-  public void setFamily(boolean family) {
-    this.family=family;
-  }
+    public void setFamily(boolean family) {
+        this.family = family;
+    }
 
-  public void setStepping(boolean stepping) {
-    this.stepping=stepping;
-  }
+    public void setStepping(boolean stepping) {
+        this.stepping = stepping;
+    }
 }

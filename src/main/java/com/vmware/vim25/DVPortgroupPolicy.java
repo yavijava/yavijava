@@ -30,73 +30,73 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class DVPortgroupPolicy extends DynamicData {
-  public boolean blockOverrideAllowed;
-  public boolean shapingOverrideAllowed;
-  public boolean vendorConfigOverrideAllowed;
-  public boolean livePortMovingAllowed;
-  public boolean portConfigResetAtDisconnect;
-  public Boolean networkResourcePoolOverrideAllowed;
-  public Boolean trafficFilterOverrideAllowed;
+    public boolean blockOverrideAllowed;
+    public boolean shapingOverrideAllowed;
+    public boolean vendorConfigOverrideAllowed;
+    public boolean livePortMovingAllowed;
+    public boolean portConfigResetAtDisconnect;
+    public Boolean networkResourcePoolOverrideAllowed;
+    public Boolean trafficFilterOverrideAllowed;
 
-  public boolean isBlockOverrideAllowed() {
-    return this.blockOverrideAllowed;
-  }
+    public boolean isBlockOverrideAllowed() {
+        return this.blockOverrideAllowed;
+    }
 
-  public boolean isShapingOverrideAllowed() {
-    return this.shapingOverrideAllowed;
-  }
+    public boolean isShapingOverrideAllowed() {
+        return this.shapingOverrideAllowed;
+    }
 
-  public boolean isVendorConfigOverrideAllowed() {
-    return this.vendorConfigOverrideAllowed;
-  }
+    public boolean isVendorConfigOverrideAllowed() {
+        return this.vendorConfigOverrideAllowed;
+    }
 
-  public boolean isLivePortMovingAllowed() {
-    return this.livePortMovingAllowed;
-  }
+    public boolean isLivePortMovingAllowed() {
+        return this.livePortMovingAllowed;
+    }
 
-  public boolean isPortConfigResetAtDisconnect() {
-    return this.portConfigResetAtDisconnect;
-  }
+    public boolean isPortConfigResetAtDisconnect() {
+        return this.portConfigResetAtDisconnect;
+    }
 
-  public Boolean getNetworkResourcePoolOverrideAllowed() {
-    return this.networkResourcePoolOverrideAllowed;
-  }
+    public Boolean getNetworkResourcePoolOverrideAllowed() {
+        return this.networkResourcePoolOverrideAllowed;
+    }
 
-  public Boolean getTrafficFilterOverrideAllowed() {
-    return this.trafficFilterOverrideAllowed;
-  }
+    public Boolean getTrafficFilterOverrideAllowed() {
+        return this.trafficFilterOverrideAllowed;
+    }
 
-  public void setBlockOverrideAllowed(boolean blockOverrideAllowed) {
-    this.blockOverrideAllowed=blockOverrideAllowed;
-  }
+    public void setBlockOverrideAllowed(boolean blockOverrideAllowed) {
+        this.blockOverrideAllowed = blockOverrideAllowed;
+    }
 
-  public void setShapingOverrideAllowed(boolean shapingOverrideAllowed) {
-    this.shapingOverrideAllowed=shapingOverrideAllowed;
-  }
+    public void setShapingOverrideAllowed(boolean shapingOverrideAllowed) {
+        this.shapingOverrideAllowed = shapingOverrideAllowed;
+    }
 
-  public void setVendorConfigOverrideAllowed(boolean vendorConfigOverrideAllowed) {
-    this.vendorConfigOverrideAllowed=vendorConfigOverrideAllowed;
-  }
+    public void setVendorConfigOverrideAllowed(boolean vendorConfigOverrideAllowed) {
+        this.vendorConfigOverrideAllowed = vendorConfigOverrideAllowed;
+    }
 
-  public void setLivePortMovingAllowed(boolean livePortMovingAllowed) {
-    this.livePortMovingAllowed=livePortMovingAllowed;
-  }
+    public void setLivePortMovingAllowed(boolean livePortMovingAllowed) {
+        this.livePortMovingAllowed = livePortMovingAllowed;
+    }
 
-  public void setPortConfigResetAtDisconnect(boolean portConfigResetAtDisconnect) {
-    this.portConfigResetAtDisconnect=portConfigResetAtDisconnect;
-  }
+    public void setPortConfigResetAtDisconnect(boolean portConfigResetAtDisconnect) {
+        this.portConfigResetAtDisconnect = portConfigResetAtDisconnect;
+    }
 
-  public void setNetworkResourcePoolOverrideAllowed(Boolean networkResourcePoolOverrideAllowed) {
-    this.networkResourcePoolOverrideAllowed=networkResourcePoolOverrideAllowed;
-  }
+    public void setNetworkResourcePoolOverrideAllowed(Boolean networkResourcePoolOverrideAllowed) {
+        this.networkResourcePoolOverrideAllowed = networkResourcePoolOverrideAllowed;
+    }
 
-  public void setTrafficFilterOverrideAllowed(Boolean trafficFilterOverrideAllowed) {
-    this.trafficFilterOverrideAllowed=trafficFilterOverrideAllowed;
-  }
+    public void setTrafficFilterOverrideAllowed(Boolean trafficFilterOverrideAllowed) {
+        this.trafficFilterOverrideAllowed = trafficFilterOverrideAllowed;
+    }
 }

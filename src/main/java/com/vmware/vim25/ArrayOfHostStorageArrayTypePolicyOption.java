@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfHostStorageArrayTypePolicyOption {
-  public HostStorageArrayTypePolicyOption[] HostStorageArrayTypePolicyOption;
+    public HostStorageArrayTypePolicyOption[] HostStorageArrayTypePolicyOption;
 
-  public HostStorageArrayTypePolicyOption[] getHostStorageArrayTypePolicyOption() {
-    return this.HostStorageArrayTypePolicyOption;
-  }
+    public HostStorageArrayTypePolicyOption[] getHostStorageArrayTypePolicyOption() {
+        return this.HostStorageArrayTypePolicyOption;
+    }
 
-  public HostStorageArrayTypePolicyOption getHostStorageArrayTypePolicyOption(int i) {
-    return this.HostStorageArrayTypePolicyOption[i];
-  }
+    public HostStorageArrayTypePolicyOption getHostStorageArrayTypePolicyOption(int i) {
+        return this.HostStorageArrayTypePolicyOption[i];
+    }
 
-  public void setHostStorageArrayTypePolicyOption(HostStorageArrayTypePolicyOption[] HostStorageArrayTypePolicyOption) {
-    this.HostStorageArrayTypePolicyOption=HostStorageArrayTypePolicyOption;
-  }
+    public void setHostStorageArrayTypePolicyOption(HostStorageArrayTypePolicyOption[] HostStorageArrayTypePolicyOption) {
+        this.HostStorageArrayTypePolicyOption = HostStorageArrayTypePolicyOption;
+    }
 }

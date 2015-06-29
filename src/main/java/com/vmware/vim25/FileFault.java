@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class FileFault extends VimFault {
-  public String file;
+    public String file;
 
-  public String getFile() {
-    return this.file;
-  }
+    public String getFile() {
+        return this.file;
+    }
 
-  public void setFile(String file) {
-    this.file=file;
-  }
+    public void setFile(String file) {
+        this.file = file;
+    }
 }

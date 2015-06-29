@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfKeyAnyValue {
-  public KeyAnyValue[] KeyAnyValue;
+    public KeyAnyValue[] KeyAnyValue;
 
-  public KeyAnyValue[] getKeyAnyValue() {
-    return this.KeyAnyValue;
-  }
+    public KeyAnyValue[] getKeyAnyValue() {
+        return this.KeyAnyValue;
+    }
 
-  public KeyAnyValue getKeyAnyValue(int i) {
-    return this.KeyAnyValue[i];
-  }
+    public KeyAnyValue getKeyAnyValue(int i) {
+        return this.KeyAnyValue[i];
+    }
 
-  public void setKeyAnyValue(KeyAnyValue[] KeyAnyValue) {
-    this.KeyAnyValue=KeyAnyValue;
-  }
+    public void setKeyAnyValue(KeyAnyValue[] KeyAnyValue) {
+        this.KeyAnyValue = KeyAnyValue;
+    }
 }

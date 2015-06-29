@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfFcoeConfigVlanRange {
-  public FcoeConfigVlanRange[] FcoeConfigVlanRange;
+    public FcoeConfigVlanRange[] FcoeConfigVlanRange;
 
-  public FcoeConfigVlanRange[] getFcoeConfigVlanRange() {
-    return this.FcoeConfigVlanRange;
-  }
+    public FcoeConfigVlanRange[] getFcoeConfigVlanRange() {
+        return this.FcoeConfigVlanRange;
+    }
 
-  public FcoeConfigVlanRange getFcoeConfigVlanRange(int i) {
-    return this.FcoeConfigVlanRange[i];
-  }
+    public FcoeConfigVlanRange getFcoeConfigVlanRange(int i) {
+        return this.FcoeConfigVlanRange[i];
+    }
 
-  public void setFcoeConfigVlanRange(FcoeConfigVlanRange[] FcoeConfigVlanRange) {
-    this.FcoeConfigVlanRange=FcoeConfigVlanRange;
-  }
+    public void setFcoeConfigVlanRange(FcoeConfigVlanRange[] FcoeConfigVlanRange) {
+        this.FcoeConfigVlanRange = FcoeConfigVlanRange;
+    }
 }

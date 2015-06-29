@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostLicensableResourceInfo extends DynamicData {
-  public KeyAnyValue[] resource;
+    public KeyAnyValue[] resource;
 
-  public KeyAnyValue[] getResource() {
-    return this.resource;
-  }
+    public KeyAnyValue[] getResource() {
+        return this.resource;
+    }
 
-  public void setResource(KeyAnyValue[] resource) {
-    this.resource=resource;
-  }
+    public void setResource(KeyAnyValue[] resource) {
+        this.resource = resource;
+    }
 }

@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfDvsOperationBulkFaultFaultOnHost {
-  public DvsOperationBulkFaultFaultOnHost[] DvsOperationBulkFaultFaultOnHost;
+    public DvsOperationBulkFaultFaultOnHost[] DvsOperationBulkFaultFaultOnHost;
 
-  public DvsOperationBulkFaultFaultOnHost[] getDvsOperationBulkFaultFaultOnHost() {
-    return this.DvsOperationBulkFaultFaultOnHost;
-  }
+    public DvsOperationBulkFaultFaultOnHost[] getDvsOperationBulkFaultFaultOnHost() {
+        return this.DvsOperationBulkFaultFaultOnHost;
+    }
 
-  public DvsOperationBulkFaultFaultOnHost getDvsOperationBulkFaultFaultOnHost(int i) {
-    return this.DvsOperationBulkFaultFaultOnHost[i];
-  }
+    public DvsOperationBulkFaultFaultOnHost getDvsOperationBulkFaultFaultOnHost(int i) {
+        return this.DvsOperationBulkFaultFaultOnHost[i];
+    }
 
-  public void setDvsOperationBulkFaultFaultOnHost(DvsOperationBulkFaultFaultOnHost[] DvsOperationBulkFaultFaultOnHost) {
-    this.DvsOperationBulkFaultFaultOnHost=DvsOperationBulkFaultFaultOnHost;
-  }
+    public void setDvsOperationBulkFaultFaultOnHost(DvsOperationBulkFaultFaultOnHost[] DvsOperationBulkFaultFaultOnHost) {
+        this.DvsOperationBulkFaultFaultOnHost = DvsOperationBulkFaultFaultOnHost;
+    }
 }

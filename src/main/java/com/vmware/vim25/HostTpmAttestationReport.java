@@ -30,37 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostTpmAttestationReport extends DynamicData {
-  public HostTpmDigestInfo[] tpmPcrValues;
-  public HostTpmEventLogEntry[] tpmEvents;
-  public boolean tpmLogReliable;
+    public HostTpmDigestInfo[] tpmPcrValues;
+    public HostTpmEventLogEntry[] tpmEvents;
+    public boolean tpmLogReliable;
 
-  public HostTpmDigestInfo[] getTpmPcrValues() {
-    return this.tpmPcrValues;
-  }
+    public HostTpmDigestInfo[] getTpmPcrValues() {
+        return this.tpmPcrValues;
+    }
 
-  public HostTpmEventLogEntry[] getTpmEvents() {
-    return this.tpmEvents;
-  }
+    public HostTpmEventLogEntry[] getTpmEvents() {
+        return this.tpmEvents;
+    }
 
-  public boolean isTpmLogReliable() {
-    return this.tpmLogReliable;
-  }
+    public boolean isTpmLogReliable() {
+        return this.tpmLogReliable;
+    }
 
-  public void setTpmPcrValues(HostTpmDigestInfo[] tpmPcrValues) {
-    this.tpmPcrValues=tpmPcrValues;
-  }
+    public void setTpmPcrValues(HostTpmDigestInfo[] tpmPcrValues) {
+        this.tpmPcrValues = tpmPcrValues;
+    }
 
-  public void setTpmEvents(HostTpmEventLogEntry[] tpmEvents) {
-    this.tpmEvents=tpmEvents;
-  }
+    public void setTpmEvents(HostTpmEventLogEntry[] tpmEvents) {
+        this.tpmEvents = tpmEvents;
+    }
 
-  public void setTpmLogReliable(boolean tpmLogReliable) {
-    this.tpmLogReliable=tpmLogReliable;
-  }
+    public void setTpmLogReliable(boolean tpmLogReliable) {
+        this.tpmLogReliable = tpmLogReliable;
+    }
 }

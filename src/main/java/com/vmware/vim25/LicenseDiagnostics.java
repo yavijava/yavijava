@@ -28,94 +28,95 @@ POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
 
 package com.vmware.vim25;
+
 import java.util.Calendar;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class LicenseDiagnostics extends DynamicData {
-  public Calendar sourceLastChanged;
-  public String sourceLost;
-  public float sourceLatency;
-  public String licenseRequests;
-  public String licenseRequestFailures;
-  public String licenseFeatureUnknowns;
-  public LicenseManagerState opState;
-  public Calendar lastStatusUpdate;
-  public String opFailureMessage;
+    public Calendar sourceLastChanged;
+    public String sourceLost;
+    public float sourceLatency;
+    public String licenseRequests;
+    public String licenseRequestFailures;
+    public String licenseFeatureUnknowns;
+    public LicenseManagerState opState;
+    public Calendar lastStatusUpdate;
+    public String opFailureMessage;
 
-  public Calendar getSourceLastChanged() {
-    return this.sourceLastChanged;
-  }
+    public Calendar getSourceLastChanged() {
+        return this.sourceLastChanged;
+    }
 
-  public String getSourceLost() {
-    return this.sourceLost;
-  }
+    public String getSourceLost() {
+        return this.sourceLost;
+    }
 
-  public float getSourceLatency() {
-    return this.sourceLatency;
-  }
+    public float getSourceLatency() {
+        return this.sourceLatency;
+    }
 
-  public String getLicenseRequests() {
-    return this.licenseRequests;
-  }
+    public String getLicenseRequests() {
+        return this.licenseRequests;
+    }
 
-  public String getLicenseRequestFailures() {
-    return this.licenseRequestFailures;
-  }
+    public String getLicenseRequestFailures() {
+        return this.licenseRequestFailures;
+    }
 
-  public String getLicenseFeatureUnknowns() {
-    return this.licenseFeatureUnknowns;
-  }
+    public String getLicenseFeatureUnknowns() {
+        return this.licenseFeatureUnknowns;
+    }
 
-  public LicenseManagerState getOpState() {
-    return this.opState;
-  }
+    public LicenseManagerState getOpState() {
+        return this.opState;
+    }
 
-  public Calendar getLastStatusUpdate() {
-    return this.lastStatusUpdate;
-  }
+    public Calendar getLastStatusUpdate() {
+        return this.lastStatusUpdate;
+    }
 
-  public String getOpFailureMessage() {
-    return this.opFailureMessage;
-  }
+    public String getOpFailureMessage() {
+        return this.opFailureMessage;
+    }
 
-  public void setSourceLastChanged(Calendar sourceLastChanged) {
-    this.sourceLastChanged=sourceLastChanged;
-  }
+    public void setSourceLastChanged(Calendar sourceLastChanged) {
+        this.sourceLastChanged = sourceLastChanged;
+    }
 
-  public void setSourceLost(String sourceLost) {
-    this.sourceLost=sourceLost;
-  }
+    public void setSourceLost(String sourceLost) {
+        this.sourceLost = sourceLost;
+    }
 
-  public void setSourceLatency(float sourceLatency) {
-    this.sourceLatency=sourceLatency;
-  }
+    public void setSourceLatency(float sourceLatency) {
+        this.sourceLatency = sourceLatency;
+    }
 
-  public void setLicenseRequests(String licenseRequests) {
-    this.licenseRequests=licenseRequests;
-  }
+    public void setLicenseRequests(String licenseRequests) {
+        this.licenseRequests = licenseRequests;
+    }
 
-  public void setLicenseRequestFailures(String licenseRequestFailures) {
-    this.licenseRequestFailures=licenseRequestFailures;
-  }
+    public void setLicenseRequestFailures(String licenseRequestFailures) {
+        this.licenseRequestFailures = licenseRequestFailures;
+    }
 
-  public void setLicenseFeatureUnknowns(String licenseFeatureUnknowns) {
-    this.licenseFeatureUnknowns=licenseFeatureUnknowns;
-  }
+    public void setLicenseFeatureUnknowns(String licenseFeatureUnknowns) {
+        this.licenseFeatureUnknowns = licenseFeatureUnknowns;
+    }
 
-  public void setOpState(LicenseManagerState opState) {
-    this.opState=opState;
-  }
+    public void setOpState(LicenseManagerState opState) {
+        this.opState = opState;
+    }
 
-  public void setLastStatusUpdate(Calendar lastStatusUpdate) {
-    this.lastStatusUpdate=lastStatusUpdate;
-  }
+    public void setLastStatusUpdate(Calendar lastStatusUpdate) {
+        this.lastStatusUpdate = lastStatusUpdate;
+    }
 
-  public void setOpFailureMessage(String opFailureMessage) {
-    this.opFailureMessage=opFailureMessage;
-  }
+    public void setOpFailureMessage(String opFailureMessage) {
+        this.opFailureMessage = opFailureMessage;
+    }
 }

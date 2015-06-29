@@ -30,18 +30,18 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public enum CustomizationLicenseDataMode {
-  perServer ("perServer"),
-  perSeat ("perSeat");
+    perServer("perServer"),
+    perSeat("perSeat");
 
-  @SuppressWarnings("unused")
-  private final String val;
-  private CustomizationLicenseDataMode(String val)
-  {
-    this.val = val;
-  }
+    @SuppressWarnings("unused")
+    private final String val;
+
+    private CustomizationLicenseDataMode(String val) {
+        this.val = val;
+    }
 }

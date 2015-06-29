@@ -30,21 +30,21 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public enum VirtualMachineRelocateDiskMoveOptions {
-  moveAllDiskBackingsAndAllowSharing ("moveAllDiskBackingsAndAllowSharing"),
-  moveAllDiskBackingsAndDisallowSharing ("moveAllDiskBackingsAndDisallowSharing"),
-  moveChildMostDiskBacking ("moveChildMostDiskBacking"),
-  createNewChildDiskBacking ("createNewChildDiskBacking"),
-  moveAllDiskBackingsAndConsolidate ("moveAllDiskBackingsAndConsolidate");
+    moveAllDiskBackingsAndAllowSharing("moveAllDiskBackingsAndAllowSharing"),
+    moveAllDiskBackingsAndDisallowSharing("moveAllDiskBackingsAndDisallowSharing"),
+    moveChildMostDiskBacking("moveChildMostDiskBacking"),
+    createNewChildDiskBacking("createNewChildDiskBacking"),
+    moveAllDiskBackingsAndConsolidate("moveAllDiskBackingsAndConsolidate");
 
-  @SuppressWarnings("unused")
-  private final String val;
-  private VirtualMachineRelocateDiskMoveOptions(String val)
-  {
-    this.val = val;
-  }
+    @SuppressWarnings("unused")
+    private final String val;
+
+    private VirtualMachineRelocateDiskMoveOptions(String val) {
+        this.val = val;
+    }
 }

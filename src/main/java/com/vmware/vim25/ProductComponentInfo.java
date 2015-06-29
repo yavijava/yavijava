@@ -30,46 +30,46 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class ProductComponentInfo extends DynamicData {
-  public String id;
-  public String name;
-  public String version;
-  public int release;
+    public String id;
+    public String name;
+    public String version;
+    public int release;
 
-  public String getId() {
-    return this.id;
-  }
+    public String getId() {
+        return this.id;
+    }
 
-  public String getName() {
-    return this.name;
-  }
+    public String getName() {
+        return this.name;
+    }
 
-  public String getVersion() {
-    return this.version;
-  }
+    public String getVersion() {
+        return this.version;
+    }
 
-  public int getRelease() {
-    return this.release;
-  }
+    public int getRelease() {
+        return this.release;
+    }
 
-  public void setId(String id) {
-    this.id=id;
-  }
+    public void setId(String id) {
+        this.id = id;
+    }
 
-  public void setName(String name) {
-    this.name=name;
-  }
+    public void setName(String name) {
+        this.name = name;
+    }
 
-  public void setVersion(String version) {
-    this.version=version;
-  }
+    public void setVersion(String version) {
+        this.version = version;
+    }
 
-  public void setRelease(int release) {
-    this.release=release;
-  }
+    public void setRelease(int release) {
+        this.release = release;
+    }
 }

@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostServiceSourcePackage extends DynamicData {
-  public String sourcePackageName;
-  public String description;
+    public String sourcePackageName;
+    public String description;
 
-  public String getSourcePackageName() {
-    return this.sourcePackageName;
-  }
+    public String getSourcePackageName() {
+        return this.sourcePackageName;
+    }
 
-  public String getDescription() {
-    return this.description;
-  }
+    public String getDescription() {
+        return this.description;
+    }
 
-  public void setSourcePackageName(String sourcePackageName) {
-    this.sourcePackageName=sourcePackageName;
-  }
+    public void setSourcePackageName(String sourcePackageName) {
+        this.sourcePackageName = sourcePackageName;
+    }
 
-  public void setDescription(String description) {
-    this.description=description;
-  }
+    public void setDescription(String description) {
+        this.description = description;
+    }
 }

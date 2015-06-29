@@ -29,34 +29,30 @@ POSSIBILITY OF SUCH DAMAGE.
 
 package com.vmware.vim25.mo;
 
-import com.vmware.vim25.*;
+import com.vmware.vim25.ManagedObjectReference;
 
 /**
  * The managed object class corresponding to the one defined in VI SDK API reference.
+ *
  * @author Steve JIN (http://www.doublecloud.org)
  */
 
-public class ContainerView extends ManagedObjectView 
-{
+public class ContainerView extends ManagedObjectView {
 
-	public ContainerView(ServerConnection serverConnection,	ManagedObjectReference mor) 
-	{
-		super(serverConnection, mor);
-	}
-	
-	public ManagedEntity getContainer()
-	{
-		return (ManagedEntity) getManagedObject("container");
-	}
+    public ContainerView(ServerConnection serverConnection, ManagedObjectReference mor) {
+        super(serverConnection, mor);
+    }
 
-	public boolean getRecursive()
-	{
-		return ((Boolean) getCurrentProperty("recursive")).booleanValue();
-	}
+    public ManagedEntity getContainer() {
+        return (ManagedEntity) getManagedObject("container");
+    }
 
-	public String[] getType()
-	{
-		return (String[]) getCurrentProperty("type");
-	}
-	
+    public boolean getRecursive() {
+        return ((Boolean) getCurrentProperty("recursive")).booleanValue();
+    }
+
+    public String[] getType() {
+        return (String[]) getCurrentProperty("type");
+    }
+
 }

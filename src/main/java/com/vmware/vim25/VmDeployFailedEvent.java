@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VmDeployFailedEvent extends VmEvent {
-  public EntityEventArgument destDatastore;
-  public LocalizedMethodFault reason;
+    public EntityEventArgument destDatastore;
+    public LocalizedMethodFault reason;
 
-  public EntityEventArgument getDestDatastore() {
-    return this.destDatastore;
-  }
+    public EntityEventArgument getDestDatastore() {
+        return this.destDatastore;
+    }
 
-  public LocalizedMethodFault getReason() {
-    return this.reason;
-  }
+    public LocalizedMethodFault getReason() {
+        return this.reason;
+    }
 
-  public void setDestDatastore(EntityEventArgument destDatastore) {
-    this.destDatastore=destDatastore;
-  }
+    public void setDestDatastore(EntityEventArgument destDatastore) {
+        this.destDatastore = destDatastore;
+    }
 
-  public void setReason(LocalizedMethodFault reason) {
-    this.reason=reason;
-  }
+    public void setReason(LocalizedMethodFault reason) {
+        this.reason = reason;
+    }
 }

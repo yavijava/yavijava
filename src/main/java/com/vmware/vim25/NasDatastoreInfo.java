@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class NasDatastoreInfo extends DatastoreInfo {
-  public HostNasVolume nas;
+    public HostNasVolume nas;
 
-  public HostNasVolume getNas() {
-    return this.nas;
-  }
+    public HostNasVolume getNas() {
+        return this.nas;
+    }
 
-  public void setNas(HostNasVolume nas) {
-    this.nas=nas;
-  }
+    public void setNas(HostNasVolume nas) {
+        this.nas = nas;
+    }
 }

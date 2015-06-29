@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfClusterAction {
-  public ClusterAction[] ClusterAction;
+    public ClusterAction[] ClusterAction;
 
-  public ClusterAction[] getClusterAction() {
-    return this.ClusterAction;
-  }
+    public ClusterAction[] getClusterAction() {
+        return this.ClusterAction;
+    }
 
-  public ClusterAction getClusterAction(int i) {
-    return this.ClusterAction[i];
-  }
+    public ClusterAction getClusterAction(int i) {
+        return this.ClusterAction[i];
+    }
 
-  public void setClusterAction(ClusterAction[] ClusterAction) {
-    this.ClusterAction=ClusterAction;
-  }
+    public void setClusterAction(ClusterAction[] ClusterAction) {
+        this.ClusterAction = ClusterAction;
+    }
 }

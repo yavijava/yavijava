@@ -30,37 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostDiskPartitionInfo extends DynamicData {
-  public String deviceName;
-  public HostDiskPartitionSpec spec;
-  public HostDiskPartitionLayout layout;
+    public String deviceName;
+    public HostDiskPartitionSpec spec;
+    public HostDiskPartitionLayout layout;
 
-  public String getDeviceName() {
-    return this.deviceName;
-  }
+    public String getDeviceName() {
+        return this.deviceName;
+    }
 
-  public HostDiskPartitionSpec getSpec() {
-    return this.spec;
-  }
+    public HostDiskPartitionSpec getSpec() {
+        return this.spec;
+    }
 
-  public HostDiskPartitionLayout getLayout() {
-    return this.layout;
-  }
+    public HostDiskPartitionLayout getLayout() {
+        return this.layout;
+    }
 
-  public void setDeviceName(String deviceName) {
-    this.deviceName=deviceName;
-  }
+    public void setDeviceName(String deviceName) {
+        this.deviceName = deviceName;
+    }
 
-  public void setSpec(HostDiskPartitionSpec spec) {
-    this.spec=spec;
-  }
+    public void setSpec(HostDiskPartitionSpec spec) {
+        this.spec = spec;
+    }
 
-  public void setLayout(HostDiskPartitionLayout layout) {
-    this.layout=layout;
-  }
+    public void setLayout(HostDiskPartitionLayout layout) {
+        this.layout = layout;
+    }
 }

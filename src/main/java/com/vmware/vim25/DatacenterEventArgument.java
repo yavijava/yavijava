@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class DatacenterEventArgument extends EntityEventArgument {
-  public ManagedObjectReference datacenter;
+    public ManagedObjectReference datacenter;
 
-  public ManagedObjectReference getDatacenter() {
-    return this.datacenter;
-  }
+    public ManagedObjectReference getDatacenter() {
+        return this.datacenter;
+    }
 
-  public void setDatacenter(ManagedObjectReference datacenter) {
-    this.datacenter=datacenter;
-  }
+    public void setDatacenter(ManagedObjectReference datacenter) {
+        this.datacenter = datacenter;
+    }
 }

@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfImportOperationBulkFaultFaultOnImport {
-  public ImportOperationBulkFaultFaultOnImport[] ImportOperationBulkFaultFaultOnImport;
+    public ImportOperationBulkFaultFaultOnImport[] ImportOperationBulkFaultFaultOnImport;
 
-  public ImportOperationBulkFaultFaultOnImport[] getImportOperationBulkFaultFaultOnImport() {
-    return this.ImportOperationBulkFaultFaultOnImport;
-  }
+    public ImportOperationBulkFaultFaultOnImport[] getImportOperationBulkFaultFaultOnImport() {
+        return this.ImportOperationBulkFaultFaultOnImport;
+    }
 
-  public ImportOperationBulkFaultFaultOnImport getImportOperationBulkFaultFaultOnImport(int i) {
-    return this.ImportOperationBulkFaultFaultOnImport[i];
-  }
+    public ImportOperationBulkFaultFaultOnImport getImportOperationBulkFaultFaultOnImport(int i) {
+        return this.ImportOperationBulkFaultFaultOnImport[i];
+    }
 
-  public void setImportOperationBulkFaultFaultOnImport(ImportOperationBulkFaultFaultOnImport[] ImportOperationBulkFaultFaultOnImport) {
-    this.ImportOperationBulkFaultFaultOnImport=ImportOperationBulkFaultFaultOnImport;
-  }
+    public void setImportOperationBulkFaultFaultOnImport(ImportOperationBulkFaultFaultOnImport[] ImportOperationBulkFaultFaultOnImport) {
+        this.ImportOperationBulkFaultFaultOnImport = ImportOperationBulkFaultFaultOnImport;
+    }
 }

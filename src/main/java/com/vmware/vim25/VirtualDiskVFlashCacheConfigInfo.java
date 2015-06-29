@@ -30,55 +30,55 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VirtualDiskVFlashCacheConfigInfo extends DynamicData {
-  public String vFlashModule;
-  public Long reservationInMB;
-  public String cacheConsistencyType;
-  public String cacheMode;
-  public Long blockSizeInKB;
+    public String vFlashModule;
+    public Long reservationInMB;
+    public String cacheConsistencyType;
+    public String cacheMode;
+    public Long blockSizeInKB;
 
-  public String getVFlashModule() {
-    return this.vFlashModule;
-  }
+    public String getVFlashModule() {
+        return this.vFlashModule;
+    }
 
-  public Long getReservationInMB() {
-    return this.reservationInMB;
-  }
+    public Long getReservationInMB() {
+        return this.reservationInMB;
+    }
 
-  public String getCacheConsistencyType() {
-    return this.cacheConsistencyType;
-  }
+    public String getCacheConsistencyType() {
+        return this.cacheConsistencyType;
+    }
 
-  public String getCacheMode() {
-    return this.cacheMode;
-  }
+    public String getCacheMode() {
+        return this.cacheMode;
+    }
 
-  public Long getBlockSizeInKB() {
-    return this.blockSizeInKB;
-  }
+    public Long getBlockSizeInKB() {
+        return this.blockSizeInKB;
+    }
 
-  public void setVFlashModule(String vFlashModule) {
-    this.vFlashModule=vFlashModule;
-  }
+    public void setVFlashModule(String vFlashModule) {
+        this.vFlashModule = vFlashModule;
+    }
 
-  public void setReservationInMB(Long reservationInMB) {
-    this.reservationInMB=reservationInMB;
-  }
+    public void setReservationInMB(Long reservationInMB) {
+        this.reservationInMB = reservationInMB;
+    }
 
-  public void setCacheConsistencyType(String cacheConsistencyType) {
-    this.cacheConsistencyType=cacheConsistencyType;
-  }
+    public void setCacheConsistencyType(String cacheConsistencyType) {
+        this.cacheConsistencyType = cacheConsistencyType;
+    }
 
-  public void setCacheMode(String cacheMode) {
-    this.cacheMode=cacheMode;
-  }
+    public void setCacheMode(String cacheMode) {
+        this.cacheMode = cacheMode;
+    }
 
-  public void setBlockSizeInKB(Long blockSizeInKB) {
-    this.blockSizeInKB=blockSizeInKB;
-  }
+    public void setBlockSizeInKB(Long blockSizeInKB) {
+        this.blockSizeInKB = blockSizeInKB;
+    }
 }

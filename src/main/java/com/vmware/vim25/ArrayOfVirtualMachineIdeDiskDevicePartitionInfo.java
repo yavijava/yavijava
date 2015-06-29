@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfVirtualMachineIdeDiskDevicePartitionInfo {
-  public VirtualMachineIdeDiskDevicePartitionInfo[] VirtualMachineIdeDiskDevicePartitionInfo;
+    public VirtualMachineIdeDiskDevicePartitionInfo[] VirtualMachineIdeDiskDevicePartitionInfo;
 
-  public VirtualMachineIdeDiskDevicePartitionInfo[] getVirtualMachineIdeDiskDevicePartitionInfo() {
-    return this.VirtualMachineIdeDiskDevicePartitionInfo;
-  }
+    public VirtualMachineIdeDiskDevicePartitionInfo[] getVirtualMachineIdeDiskDevicePartitionInfo() {
+        return this.VirtualMachineIdeDiskDevicePartitionInfo;
+    }
 
-  public VirtualMachineIdeDiskDevicePartitionInfo getVirtualMachineIdeDiskDevicePartitionInfo(int i) {
-    return this.VirtualMachineIdeDiskDevicePartitionInfo[i];
-  }
+    public VirtualMachineIdeDiskDevicePartitionInfo getVirtualMachineIdeDiskDevicePartitionInfo(int i) {
+        return this.VirtualMachineIdeDiskDevicePartitionInfo[i];
+    }
 
-  public void setVirtualMachineIdeDiskDevicePartitionInfo(VirtualMachineIdeDiskDevicePartitionInfo[] VirtualMachineIdeDiskDevicePartitionInfo) {
-    this.VirtualMachineIdeDiskDevicePartitionInfo=VirtualMachineIdeDiskDevicePartitionInfo;
-  }
+    public void setVirtualMachineIdeDiskDevicePartitionInfo(VirtualMachineIdeDiskDevicePartitionInfo[] VirtualMachineIdeDiskDevicePartitionInfo) {
+        this.VirtualMachineIdeDiskDevicePartitionInfo = VirtualMachineIdeDiskDevicePartitionInfo;
+    }
 }

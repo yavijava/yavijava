@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class NoPermission extends SecurityError {
-  public ManagedObjectReference object;
-  public String privilegeId;
+    public ManagedObjectReference object;
+    public String privilegeId;
 
-  public ManagedObjectReference getObject() {
-    return this.object;
-  }
+    public ManagedObjectReference getObject() {
+        return this.object;
+    }
 
-  public String getPrivilegeId() {
-    return this.privilegeId;
-  }
+    public String getPrivilegeId() {
+        return this.privilegeId;
+    }
 
-  public void setObject(ManagedObjectReference object) {
-    this.object=object;
-  }
+    public void setObject(ManagedObjectReference object) {
+        this.object = object;
+    }
 
-  public void setPrivilegeId(String privilegeId) {
-    this.privilegeId=privilegeId;
-  }
+    public void setPrivilegeId(String privilegeId) {
+        this.privilegeId = privilegeId;
+    }
 }

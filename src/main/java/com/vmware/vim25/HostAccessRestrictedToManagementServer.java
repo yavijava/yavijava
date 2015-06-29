@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostAccessRestrictedToManagementServer extends NotSupported {
-  public String managementServer;
+    public String managementServer;
 
-  public String getManagementServer() {
-    return this.managementServer;
-  }
+    public String getManagementServer() {
+        return this.managementServer;
+    }
 
-  public void setManagementServer(String managementServer) {
-    this.managementServer=managementServer;
-  }
+    public void setManagementServer(String managementServer) {
+        this.managementServer = managementServer;
+    }
 }

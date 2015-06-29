@@ -30,37 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostDiskMappingPartitionInfo extends DynamicData {
-  public String name;
-  public String fileSystem;
-  public long capacityInKb;
+    public String name;
+    public String fileSystem;
+    public long capacityInKb;
 
-  public String getName() {
-    return this.name;
-  }
+    public String getName() {
+        return this.name;
+    }
 
-  public String getFileSystem() {
-    return this.fileSystem;
-  }
+    public String getFileSystem() {
+        return this.fileSystem;
+    }
 
-  public long getCapacityInKb() {
-    return this.capacityInKb;
-  }
+    public long getCapacityInKb() {
+        return this.capacityInKb;
+    }
 
-  public void setName(String name) {
-    this.name=name;
-  }
+    public void setName(String name) {
+        this.name = name;
+    }
 
-  public void setFileSystem(String fileSystem) {
-    this.fileSystem=fileSystem;
-  }
+    public void setFileSystem(String fileSystem) {
+        this.fileSystem = fileSystem;
+    }
 
-  public void setCapacityInKb(long capacityInKb) {
-    this.capacityInKb=capacityInKb;
-  }
+    public void setCapacityInKb(long capacityInKb) {
+        this.capacityInKb = capacityInKb;
+    }
 }

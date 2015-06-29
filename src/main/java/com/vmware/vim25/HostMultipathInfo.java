@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostMultipathInfo extends DynamicData {
-  public HostMultipathInfoLogicalUnit[] lun;
+    public HostMultipathInfoLogicalUnit[] lun;
 
-  public HostMultipathInfoLogicalUnit[] getLun() {
-    return this.lun;
-  }
+    public HostMultipathInfoLogicalUnit[] getLun() {
+        return this.lun;
+    }
 
-  public void setLun(HostMultipathInfoLogicalUnit[] lun) {
-    this.lun=lun;
-  }
+    public void setLun(HostMultipathInfoLogicalUnit[] lun) {
+        this.lun = lun;
+    }
 }

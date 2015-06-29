@@ -30,55 +30,55 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class PowerOnFtSecondaryFailed extends VmFaultToleranceIssue {
-  public ManagedObjectReference vm;
-  public String vmName;
-  public FtIssuesOnHostHostSelectionType hostSelectionBy;
-  public LocalizedMethodFault[] hostErrors;
-  public LocalizedMethodFault rootCause;
+    public ManagedObjectReference vm;
+    public String vmName;
+    public FtIssuesOnHostHostSelectionType hostSelectionBy;
+    public LocalizedMethodFault[] hostErrors;
+    public LocalizedMethodFault rootCause;
 
-  public ManagedObjectReference getVm() {
-    return this.vm;
-  }
+    public ManagedObjectReference getVm() {
+        return this.vm;
+    }
 
-  public String getVmName() {
-    return this.vmName;
-  }
+    public String getVmName() {
+        return this.vmName;
+    }
 
-  public FtIssuesOnHostHostSelectionType getHostSelectionBy() {
-    return this.hostSelectionBy;
-  }
+    public FtIssuesOnHostHostSelectionType getHostSelectionBy() {
+        return this.hostSelectionBy;
+    }
 
-  public LocalizedMethodFault[] getHostErrors() {
-    return this.hostErrors;
-  }
+    public LocalizedMethodFault[] getHostErrors() {
+        return this.hostErrors;
+    }
 
-  public LocalizedMethodFault getRootCause() {
-    return this.rootCause;
-  }
+    public LocalizedMethodFault getRootCause() {
+        return this.rootCause;
+    }
 
-  public void setVm(ManagedObjectReference vm) {
-    this.vm=vm;
-  }
+    public void setVm(ManagedObjectReference vm) {
+        this.vm = vm;
+    }
 
-  public void setVmName(String vmName) {
-    this.vmName=vmName;
-  }
+    public void setVmName(String vmName) {
+        this.vmName = vmName;
+    }
 
-  public void setHostSelectionBy(FtIssuesOnHostHostSelectionType hostSelectionBy) {
-    this.hostSelectionBy=hostSelectionBy;
-  }
+    public void setHostSelectionBy(FtIssuesOnHostHostSelectionType hostSelectionBy) {
+        this.hostSelectionBy = hostSelectionBy;
+    }
 
-  public void setHostErrors(LocalizedMethodFault[] hostErrors) {
-    this.hostErrors=hostErrors;
-  }
+    public void setHostErrors(LocalizedMethodFault[] hostErrors) {
+        this.hostErrors = hostErrors;
+    }
 
-  public void setRootCause(LocalizedMethodFault rootCause) {
-    this.rootCause=rootCause;
-  }
+    public void setRootCause(LocalizedMethodFault rootCause) {
+        this.rootCause = rootCause;
+    }
 }

@@ -30,31 +30,26 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
-*/
+ * @author Steve Jin (sjin@vmware.com)
+ */
 
-public class LicenseAssignmentManagerEntityFeaturePair extends DynamicData
-{
-  public String entityId;
-  public String feature;
+public class LicenseAssignmentManagerEntityFeaturePair extends DynamicData {
+    public String entityId;
+    public String feature;
 
-  public String getEntityId()
-  {
-    return this.entityId;
-  }
+    public String getEntityId() {
+        return this.entityId;
+    }
 
-  public String getFeature()
-  {
-    return this.feature;
-  }
+    public String getFeature() {
+        return this.feature;
+    }
 
-  public void setEntityId(String entityId)
-  {
-    this.entityId=entityId;
-  }
+    public void setEntityId(String entityId) {
+        this.entityId = entityId;
+    }
 
-  public void setFeature(String feature)
-  {
-    this.feature=feature;
-  }
+    public void setFeature(String feature) {
+        this.feature = feature;
+    }
 }

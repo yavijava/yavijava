@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostDiskDimensionsLba extends DynamicData {
-  public int blockSize;
-  public long block;
+    public int blockSize;
+    public long block;
 
-  public int getBlockSize() {
-    return this.blockSize;
-  }
+    public int getBlockSize() {
+        return this.blockSize;
+    }
 
-  public long getBlock() {
-    return this.block;
-  }
+    public long getBlock() {
+        return this.block;
+    }
 
-  public void setBlockSize(int blockSize) {
-    this.blockSize=blockSize;
-  }
+    public void setBlockSize(int blockSize) {
+        this.blockSize = blockSize;
+    }
 
-  public void setBlock(long block) {
-    this.block=block;
-  }
+    public void setBlock(long block) {
+        this.block = block;
+    }
 }

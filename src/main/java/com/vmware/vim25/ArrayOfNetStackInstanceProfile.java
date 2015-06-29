@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfNetStackInstanceProfile {
-  public NetStackInstanceProfile[] NetStackInstanceProfile;
+    public NetStackInstanceProfile[] NetStackInstanceProfile;
 
-  public NetStackInstanceProfile[] getNetStackInstanceProfile() {
-    return this.NetStackInstanceProfile;
-  }
+    public NetStackInstanceProfile[] getNetStackInstanceProfile() {
+        return this.NetStackInstanceProfile;
+    }
 
-  public NetStackInstanceProfile getNetStackInstanceProfile(int i) {
-    return this.NetStackInstanceProfile[i];
-  }
+    public NetStackInstanceProfile getNetStackInstanceProfile(int i) {
+        return this.NetStackInstanceProfile[i];
+    }
 
-  public void setNetStackInstanceProfile(NetStackInstanceProfile[] NetStackInstanceProfile) {
-    this.NetStackInstanceProfile=NetStackInstanceProfile;
-  }
+    public void setNetStackInstanceProfile(NetStackInstanceProfile[] NetStackInstanceProfile) {
+        this.NetStackInstanceProfile = NetStackInstanceProfile;
+    }
 }

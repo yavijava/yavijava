@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class DvsOutOfSyncHostArgument extends DynamicData {
-  public HostEventArgument outOfSyncHost;
-  public String[] configParamters;
+    public HostEventArgument outOfSyncHost;
+    public String[] configParamters;
 
-  public HostEventArgument getOutOfSyncHost() {
-    return this.outOfSyncHost;
-  }
+    public HostEventArgument getOutOfSyncHost() {
+        return this.outOfSyncHost;
+    }
 
-  public String[] getConfigParamters() {
-    return this.configParamters;
-  }
+    public String[] getConfigParamters() {
+        return this.configParamters;
+    }
 
-  public void setOutOfSyncHost(HostEventArgument outOfSyncHost) {
-    this.outOfSyncHost=outOfSyncHost;
-  }
+    public void setOutOfSyncHost(HostEventArgument outOfSyncHost) {
+        this.outOfSyncHost = outOfSyncHost;
+    }
 
-  public void setConfigParamters(String[] configParamters) {
-    this.configParamters=configParamters;
-  }
+    public void setConfigParamters(String[] configParamters) {
+        this.configParamters = configParamters;
+    }
 }

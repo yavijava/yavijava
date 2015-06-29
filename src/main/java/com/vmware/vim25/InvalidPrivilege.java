@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class InvalidPrivilege extends VimFault {
-  public String privilege;
+    public String privilege;
 
-  public String getPrivilege() {
-    return this.privilege;
-  }
+    public String getPrivilege() {
+        return this.privilege;
+    }
 
-  public void setPrivilege(String privilege) {
-    this.privilege=privilege;
-  }
+    public void setPrivilege(String privilege) {
+        this.privilege = privilege;
+    }
 }

@@ -30,46 +30,46 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class CannotUseNetwork extends VmConfigFault {
-  public String device;
-  public String backing;
-  public boolean connected;
-  public String reason;
+    public String device;
+    public String backing;
+    public boolean connected;
+    public String reason;
 
-  public String getDevice() {
-    return this.device;
-  }
+    public String getDevice() {
+        return this.device;
+    }
 
-  public String getBacking() {
-    return this.backing;
-  }
+    public String getBacking() {
+        return this.backing;
+    }
 
-  public boolean isConnected() {
-    return this.connected;
-  }
+    public boolean isConnected() {
+        return this.connected;
+    }
 
-  public String getReason() {
-    return this.reason;
-  }
+    public String getReason() {
+        return this.reason;
+    }
 
-  public void setDevice(String device) {
-    this.device=device;
-  }
+    public void setDevice(String device) {
+        this.device = device;
+    }
 
-  public void setBacking(String backing) {
-    this.backing=backing;
-  }
+    public void setBacking(String backing) {
+        this.backing = backing;
+    }
 
-  public void setConnected(boolean connected) {
-    this.connected=connected;
-  }
+    public void setConnected(boolean connected) {
+        this.connected = connected;
+    }
 
-  public void setReason(String reason) {
-    this.reason=reason;
-  }
+    public void setReason(String reason) {
+        this.reason = reason;
+    }
 }

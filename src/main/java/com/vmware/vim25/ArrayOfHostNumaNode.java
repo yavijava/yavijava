@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfHostNumaNode {
-  public HostNumaNode[] HostNumaNode;
+    public HostNumaNode[] HostNumaNode;
 
-  public HostNumaNode[] getHostNumaNode() {
-    return this.HostNumaNode;
-  }
+    public HostNumaNode[] getHostNumaNode() {
+        return this.HostNumaNode;
+    }
 
-  public HostNumaNode getHostNumaNode(int i) {
-    return this.HostNumaNode[i];
-  }
+    public HostNumaNode getHostNumaNode(int i) {
+        return this.HostNumaNode[i];
+    }
 
-  public void setHostNumaNode(HostNumaNode[] HostNumaNode) {
-    this.HostNumaNode=HostNumaNode;
-  }
+    public void setHostNumaNode(HostNumaNode[] HostNumaNode) {
+        this.HostNumaNode = HostNumaNode;
+    }
 }

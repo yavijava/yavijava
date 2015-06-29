@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class ClusterFailoverHostAdmissionControlInfoHostStatus extends DynamicData {
-  public ManagedObjectReference host;
-  public ManagedEntityStatus status;
+    public ManagedObjectReference host;
+    public ManagedEntityStatus status;
 
-  public ManagedObjectReference getHost() {
-    return this.host;
-  }
+    public ManagedObjectReference getHost() {
+        return this.host;
+    }
 
-  public ManagedEntityStatus getStatus() {
-    return this.status;
-  }
+    public ManagedEntityStatus getStatus() {
+        return this.status;
+    }
 
-  public void setHost(ManagedObjectReference host) {
-    this.host=host;
-  }
+    public void setHost(ManagedObjectReference host) {
+        this.host = host;
+    }
 
-  public void setStatus(ManagedEntityStatus status) {
-    this.status=status;
-  }
+    public void setStatus(ManagedEntityStatus status) {
+        this.status = status;
+    }
 }

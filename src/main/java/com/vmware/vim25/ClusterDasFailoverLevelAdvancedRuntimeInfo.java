@@ -30,91 +30,91 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class ClusterDasFailoverLevelAdvancedRuntimeInfo extends ClusterDasAdvancedRuntimeInfo {
-  public ClusterDasFailoverLevelAdvancedRuntimeInfoSlotInfo slotInfo;
-  public int totalSlots;
-  public int usedSlots;
-  public int unreservedSlots;
-  public int totalVms;
-  public int totalHosts;
-  public int totalGoodHosts;
-  public ClusterDasFailoverLevelAdvancedRuntimeInfoHostSlots[] hostSlots;
-  public ClusterDasFailoverLevelAdvancedRuntimeInfoVmSlots[] vmsRequiringMultipleSlots;
+    public ClusterDasFailoverLevelAdvancedRuntimeInfoSlotInfo slotInfo;
+    public int totalSlots;
+    public int usedSlots;
+    public int unreservedSlots;
+    public int totalVms;
+    public int totalHosts;
+    public int totalGoodHosts;
+    public ClusterDasFailoverLevelAdvancedRuntimeInfoHostSlots[] hostSlots;
+    public ClusterDasFailoverLevelAdvancedRuntimeInfoVmSlots[] vmsRequiringMultipleSlots;
 
-  public ClusterDasFailoverLevelAdvancedRuntimeInfoSlotInfo getSlotInfo() {
-    return this.slotInfo;
-  }
+    public ClusterDasFailoverLevelAdvancedRuntimeInfoSlotInfo getSlotInfo() {
+        return this.slotInfo;
+    }
 
-  public int getTotalSlots() {
-    return this.totalSlots;
-  }
+    public int getTotalSlots() {
+        return this.totalSlots;
+    }
 
-  public int getUsedSlots() {
-    return this.usedSlots;
-  }
+    public int getUsedSlots() {
+        return this.usedSlots;
+    }
 
-  public int getUnreservedSlots() {
-    return this.unreservedSlots;
-  }
+    public int getUnreservedSlots() {
+        return this.unreservedSlots;
+    }
 
-  public int getTotalVms() {
-    return this.totalVms;
-  }
+    public int getTotalVms() {
+        return this.totalVms;
+    }
 
-  public int getTotalHosts() {
-    return this.totalHosts;
-  }
+    public int getTotalHosts() {
+        return this.totalHosts;
+    }
 
-  public int getTotalGoodHosts() {
-    return this.totalGoodHosts;
-  }
+    public int getTotalGoodHosts() {
+        return this.totalGoodHosts;
+    }
 
-  public ClusterDasFailoverLevelAdvancedRuntimeInfoHostSlots[] getHostSlots() {
-    return this.hostSlots;
-  }
+    public ClusterDasFailoverLevelAdvancedRuntimeInfoHostSlots[] getHostSlots() {
+        return this.hostSlots;
+    }
 
-  public ClusterDasFailoverLevelAdvancedRuntimeInfoVmSlots[] getVmsRequiringMultipleSlots() {
-    return this.vmsRequiringMultipleSlots;
-  }
+    public ClusterDasFailoverLevelAdvancedRuntimeInfoVmSlots[] getVmsRequiringMultipleSlots() {
+        return this.vmsRequiringMultipleSlots;
+    }
 
-  public void setSlotInfo(ClusterDasFailoverLevelAdvancedRuntimeInfoSlotInfo slotInfo) {
-    this.slotInfo=slotInfo;
-  }
+    public void setSlotInfo(ClusterDasFailoverLevelAdvancedRuntimeInfoSlotInfo slotInfo) {
+        this.slotInfo = slotInfo;
+    }
 
-  public void setTotalSlots(int totalSlots) {
-    this.totalSlots=totalSlots;
-  }
+    public void setTotalSlots(int totalSlots) {
+        this.totalSlots = totalSlots;
+    }
 
-  public void setUsedSlots(int usedSlots) {
-    this.usedSlots=usedSlots;
-  }
+    public void setUsedSlots(int usedSlots) {
+        this.usedSlots = usedSlots;
+    }
 
-  public void setUnreservedSlots(int unreservedSlots) {
-    this.unreservedSlots=unreservedSlots;
-  }
+    public void setUnreservedSlots(int unreservedSlots) {
+        this.unreservedSlots = unreservedSlots;
+    }
 
-  public void setTotalVms(int totalVms) {
-    this.totalVms=totalVms;
-  }
+    public void setTotalVms(int totalVms) {
+        this.totalVms = totalVms;
+    }
 
-  public void setTotalHosts(int totalHosts) {
-    this.totalHosts=totalHosts;
-  }
+    public void setTotalHosts(int totalHosts) {
+        this.totalHosts = totalHosts;
+    }
 
-  public void setTotalGoodHosts(int totalGoodHosts) {
-    this.totalGoodHosts=totalGoodHosts;
-  }
+    public void setTotalGoodHosts(int totalGoodHosts) {
+        this.totalGoodHosts = totalGoodHosts;
+    }
 
-  public void setHostSlots(ClusterDasFailoverLevelAdvancedRuntimeInfoHostSlots[] hostSlots) {
-    this.hostSlots=hostSlots;
-  }
+    public void setHostSlots(ClusterDasFailoverLevelAdvancedRuntimeInfoHostSlots[] hostSlots) {
+        this.hostSlots = hostSlots;
+    }
 
-  public void setVmsRequiringMultipleSlots(ClusterDasFailoverLevelAdvancedRuntimeInfoVmSlots[] vmsRequiringMultipleSlots) {
-    this.vmsRequiringMultipleSlots=vmsRequiringMultipleSlots;
-  }
+    public void setVmsRequiringMultipleSlots(ClusterDasFailoverLevelAdvancedRuntimeInfoVmSlots[] vmsRequiringMultipleSlots) {
+        this.vmsRequiringMultipleSlots = vmsRequiringMultipleSlots;
+    }
 }

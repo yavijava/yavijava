@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class PerfMetricIntSeries extends PerfMetricSeries {
-  public long[] value;
+    public long[] value;
 
-  public long[] getValue() {
-    return this.value;
-  }
+    public long[] getValue() {
+        return this.value;
+    }
 
-  public void setValue(long[] value) {
-    this.value=value;
-  }
+    public void setValue(long[] value) {
+        this.value = value;
+    }
 }

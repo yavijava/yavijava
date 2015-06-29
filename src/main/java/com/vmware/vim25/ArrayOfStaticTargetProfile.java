@@ -30,25 +30,21 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-@author Steve Jin (sjin@vmware.com)
-*/
+ * @author Steve Jin (sjin@vmware.com)
+ */
 
-public class ArrayOfStaticTargetProfile
-{
-  public StaticTargetProfile[] StaticTargetProfile;
+public class ArrayOfStaticTargetProfile {
+    public StaticTargetProfile[] StaticTargetProfile;
 
-  public StaticTargetProfile[] getStaticTargetProfile()
-  {
-    return this.StaticTargetProfile;
-  }
+    public StaticTargetProfile[] getStaticTargetProfile() {
+        return this.StaticTargetProfile;
+    }
 
-  public StaticTargetProfile getStaticTargetProfile(int i)
-  {
-    return this.StaticTargetProfile[i];
-  }
+    public StaticTargetProfile getStaticTargetProfile(int i) {
+        return this.StaticTargetProfile[i];
+    }
 
-  public void setStaticTargetProfile(StaticTargetProfile[] StaticTargetProfile)
-  {
-    this.StaticTargetProfile=StaticTargetProfile;
-  }
+    public void setStaticTargetProfile(StaticTargetProfile[] StaticTargetProfile) {
+        this.StaticTargetProfile = StaticTargetProfile;
+    }
 }

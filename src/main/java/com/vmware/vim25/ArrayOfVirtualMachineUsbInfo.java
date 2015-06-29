@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfVirtualMachineUsbInfo {
-  public VirtualMachineUsbInfo[] VirtualMachineUsbInfo;
+    public VirtualMachineUsbInfo[] VirtualMachineUsbInfo;
 
-  public VirtualMachineUsbInfo[] getVirtualMachineUsbInfo() {
-    return this.VirtualMachineUsbInfo;
-  }
+    public VirtualMachineUsbInfo[] getVirtualMachineUsbInfo() {
+        return this.VirtualMachineUsbInfo;
+    }
 
-  public VirtualMachineUsbInfo getVirtualMachineUsbInfo(int i) {
-    return this.VirtualMachineUsbInfo[i];
-  }
+    public VirtualMachineUsbInfo getVirtualMachineUsbInfo(int i) {
+        return this.VirtualMachineUsbInfo[i];
+    }
 
-  public void setVirtualMachineUsbInfo(VirtualMachineUsbInfo[] VirtualMachineUsbInfo) {
-    this.VirtualMachineUsbInfo=VirtualMachineUsbInfo;
-  }
+    public void setVirtualMachineUsbInfo(VirtualMachineUsbInfo[] VirtualMachineUsbInfo) {
+        this.VirtualMachineUsbInfo = VirtualMachineUsbInfo;
+    }
 }

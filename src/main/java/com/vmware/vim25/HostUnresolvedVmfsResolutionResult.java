@@ -30,37 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostUnresolvedVmfsResolutionResult extends DynamicData {
-  public HostUnresolvedVmfsResolutionSpec spec;
-  public HostVmfsVolume vmfs;
-  public LocalizedMethodFault fault;
+    public HostUnresolvedVmfsResolutionSpec spec;
+    public HostVmfsVolume vmfs;
+    public LocalizedMethodFault fault;
 
-  public HostUnresolvedVmfsResolutionSpec getSpec() {
-    return this.spec;
-  }
+    public HostUnresolvedVmfsResolutionSpec getSpec() {
+        return this.spec;
+    }
 
-  public HostVmfsVolume getVmfs() {
-    return this.vmfs;
-  }
+    public HostVmfsVolume getVmfs() {
+        return this.vmfs;
+    }
 
-  public LocalizedMethodFault getFault() {
-    return this.fault;
-  }
+    public LocalizedMethodFault getFault() {
+        return this.fault;
+    }
 
-  public void setSpec(HostUnresolvedVmfsResolutionSpec spec) {
-    this.spec=spec;
-  }
+    public void setSpec(HostUnresolvedVmfsResolutionSpec spec) {
+        this.spec = spec;
+    }
 
-  public void setVmfs(HostVmfsVolume vmfs) {
-    this.vmfs=vmfs;
-  }
+    public void setVmfs(HostVmfsVolume vmfs) {
+        this.vmfs = vmfs;
+    }
 
-  public void setFault(LocalizedMethodFault fault) {
-    this.fault=fault;
-  }
+    public void setFault(LocalizedMethodFault fault) {
+        this.fault = fault;
+    }
 }

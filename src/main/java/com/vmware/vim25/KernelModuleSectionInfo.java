@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class KernelModuleSectionInfo extends DynamicData {
-  public long address;
-  public Integer length;
+    public long address;
+    public Integer length;
 
-  public long getAddress() {
-    return this.address;
-  }
+    public long getAddress() {
+        return this.address;
+    }
 
-  public Integer getLength() {
-    return this.length;
-  }
+    public Integer getLength() {
+        return this.length;
+    }
 
-  public void setAddress(long address) {
-    this.address=address;
-  }
+    public void setAddress(long address) {
+        this.address = address;
+    }
 
-  public void setLength(Integer length) {
-    this.length=length;
-  }
+    public void setLength(Integer length) {
+        this.length = length;
+    }
 }

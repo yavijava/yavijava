@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfPropertyChange {
-  public PropertyChange[] PropertyChange;
+    public PropertyChange[] PropertyChange;
 
-  public PropertyChange[] getPropertyChange() {
-    return this.PropertyChange;
-  }
+    public PropertyChange[] getPropertyChange() {
+        return this.PropertyChange;
+    }
 
-  public PropertyChange getPropertyChange(int i) {
-    return this.PropertyChange[i];
-  }
+    public PropertyChange getPropertyChange(int i) {
+        return this.PropertyChange[i];
+    }
 
-  public void setPropertyChange(PropertyChange[] PropertyChange) {
-    this.PropertyChange=PropertyChange;
-  }
+    public void setPropertyChange(PropertyChange[] PropertyChange) {
+        this.PropertyChange = PropertyChange;
+    }
 }

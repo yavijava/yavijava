@@ -30,46 +30,46 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class PodStorageDrsEntry extends DynamicData {
-  public StorageDrsConfigInfo storageDrsConfig;
-  public ClusterRecommendation[] recommendation;
-  public ClusterDrsFaults[] drsFault;
-  public ClusterActionHistory[] actionHistory;
+    public StorageDrsConfigInfo storageDrsConfig;
+    public ClusterRecommendation[] recommendation;
+    public ClusterDrsFaults[] drsFault;
+    public ClusterActionHistory[] actionHistory;
 
-  public StorageDrsConfigInfo getStorageDrsConfig() {
-    return this.storageDrsConfig;
-  }
+    public StorageDrsConfigInfo getStorageDrsConfig() {
+        return this.storageDrsConfig;
+    }
 
-  public ClusterRecommendation[] getRecommendation() {
-    return this.recommendation;
-  }
+    public ClusterRecommendation[] getRecommendation() {
+        return this.recommendation;
+    }
 
-  public ClusterDrsFaults[] getDrsFault() {
-    return this.drsFault;
-  }
+    public ClusterDrsFaults[] getDrsFault() {
+        return this.drsFault;
+    }
 
-  public ClusterActionHistory[] getActionHistory() {
-    return this.actionHistory;
-  }
+    public ClusterActionHistory[] getActionHistory() {
+        return this.actionHistory;
+    }
 
-  public void setStorageDrsConfig(StorageDrsConfigInfo storageDrsConfig) {
-    this.storageDrsConfig=storageDrsConfig;
-  }
+    public void setStorageDrsConfig(StorageDrsConfigInfo storageDrsConfig) {
+        this.storageDrsConfig = storageDrsConfig;
+    }
 
-  public void setRecommendation(ClusterRecommendation[] recommendation) {
-    this.recommendation=recommendation;
-  }
+    public void setRecommendation(ClusterRecommendation[] recommendation) {
+        this.recommendation = recommendation;
+    }
 
-  public void setDrsFault(ClusterDrsFaults[] drsFault) {
-    this.drsFault=drsFault;
-  }
+    public void setDrsFault(ClusterDrsFaults[] drsFault) {
+        this.drsFault = drsFault;
+    }
 
-  public void setActionHistory(ClusterActionHistory[] actionHistory) {
-    this.actionHistory=actionHistory;
-  }
+    public void setActionHistory(ClusterActionHistory[] actionHistory) {
+        this.actionHistory = actionHistory;
+    }
 }

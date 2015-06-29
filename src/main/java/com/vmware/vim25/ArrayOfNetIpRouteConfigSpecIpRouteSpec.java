@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfNetIpRouteConfigSpecIpRouteSpec {
-  public NetIpRouteConfigSpecIpRouteSpec[] NetIpRouteConfigSpecIpRouteSpec;
+    public NetIpRouteConfigSpecIpRouteSpec[] NetIpRouteConfigSpecIpRouteSpec;
 
-  public NetIpRouteConfigSpecIpRouteSpec[] getNetIpRouteConfigSpecIpRouteSpec() {
-    return this.NetIpRouteConfigSpecIpRouteSpec;
-  }
+    public NetIpRouteConfigSpecIpRouteSpec[] getNetIpRouteConfigSpecIpRouteSpec() {
+        return this.NetIpRouteConfigSpecIpRouteSpec;
+    }
 
-  public NetIpRouteConfigSpecIpRouteSpec getNetIpRouteConfigSpecIpRouteSpec(int i) {
-    return this.NetIpRouteConfigSpecIpRouteSpec[i];
-  }
+    public NetIpRouteConfigSpecIpRouteSpec getNetIpRouteConfigSpecIpRouteSpec(int i) {
+        return this.NetIpRouteConfigSpecIpRouteSpec[i];
+    }
 
-  public void setNetIpRouteConfigSpecIpRouteSpec(NetIpRouteConfigSpecIpRouteSpec[] NetIpRouteConfigSpecIpRouteSpec) {
-    this.NetIpRouteConfigSpecIpRouteSpec=NetIpRouteConfigSpecIpRouteSpec;
-  }
+    public void setNetIpRouteConfigSpecIpRouteSpec(NetIpRouteConfigSpecIpRouteSpec[] NetIpRouteConfigSpecIpRouteSpec) {
+        this.NetIpRouteConfigSpecIpRouteSpec = NetIpRouteConfigSpecIpRouteSpec;
+    }
 }

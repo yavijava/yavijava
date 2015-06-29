@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class ManagedByInfo extends DynamicData {
-  public String extensionKey;
-  public String type;
+    public String extensionKey;
+    public String type;
 
-  public String getExtensionKey() {
-    return this.extensionKey;
-  }
+    public String getExtensionKey() {
+        return this.extensionKey;
+    }
 
-  public String getType() {
-    return this.type;
-  }
+    public String getType() {
+        return this.type;
+    }
 
-  public void setExtensionKey(String extensionKey) {
-    this.extensionKey=extensionKey;
-  }
+    public void setExtensionKey(String extensionKey) {
+        this.extensionKey = extensionKey;
+    }
 
-  public void setType(String type) {
-    this.type=type;
-  }
+    public void setType(String type) {
+        this.type = type;
+    }
 }

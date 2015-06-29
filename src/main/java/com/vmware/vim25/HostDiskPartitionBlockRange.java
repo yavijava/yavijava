@@ -30,46 +30,46 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostDiskPartitionBlockRange extends DynamicData {
-  public Integer partition;
-  public String type;
-  public HostDiskDimensionsLba start;
-  public HostDiskDimensionsLba end;
+    public Integer partition;
+    public String type;
+    public HostDiskDimensionsLba start;
+    public HostDiskDimensionsLba end;
 
-  public Integer getPartition() {
-    return this.partition;
-  }
+    public Integer getPartition() {
+        return this.partition;
+    }
 
-  public String getType() {
-    return this.type;
-  }
+    public String getType() {
+        return this.type;
+    }
 
-  public HostDiskDimensionsLba getStart() {
-    return this.start;
-  }
+    public HostDiskDimensionsLba getStart() {
+        return this.start;
+    }
 
-  public HostDiskDimensionsLba getEnd() {
-    return this.end;
-  }
+    public HostDiskDimensionsLba getEnd() {
+        return this.end;
+    }
 
-  public void setPartition(Integer partition) {
-    this.partition=partition;
-  }
+    public void setPartition(Integer partition) {
+        this.partition = partition;
+    }
 
-  public void setType(String type) {
-    this.type=type;
-  }
+    public void setType(String type) {
+        this.type = type;
+    }
 
-  public void setStart(HostDiskDimensionsLba start) {
-    this.start=start;
-  }
+    public void setStart(HostDiskDimensionsLba start) {
+        this.start = start;
+    }
 
-  public void setEnd(HostDiskDimensionsLba end) {
-    this.end=end;
-  }
+    public void setEnd(HostDiskDimensionsLba end) {
+        this.end = end;
+    }
 }

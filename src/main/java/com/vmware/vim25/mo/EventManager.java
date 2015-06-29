@@ -29,65 +29,55 @@ POSSIBILITY OF SUCH DAMAGE.
 
 package com.vmware.vim25.mo;
 
-import java.rmi.RemoteException;
-
 import com.vmware.vim25.*;
+
+import java.rmi.RemoteException;
 
 /**
  * The managed object class corresponding to the one defined in VI SDK API reference.
+ *
  * @author Steve JIN (http://www.doublecloud.org)
  */
 
-public class EventManager extends ManagedObject 
-{
+public class EventManager extends ManagedObject {
 
-	public EventManager(ServerConnection serverConnection, ManagedObjectReference mor) 
-	{
-		super(serverConnection, mor);
-	}
+    public EventManager(ServerConnection serverConnection, ManagedObjectReference mor) {
+        super(serverConnection, mor);
+    }
 
-	public EventDescription getDescription()
-	{
-		return (EventDescription) getCurrentProperty("description");
-	}
-	
-	public Event getLatestEvent()
-	{
-		return (Event) getCurrentProperty("latestEvent");
-	}
-	
-	public int getMaxCollector()
-	{
-		return  ((Integer) getCurrentProperty("maxCollector")).intValue();
-	}
-	
-	public EventHistoryCollector createCollectorForEvents(EventFilterSpec filter) throws InvalidState, RuntimeFault, RemoteException 
-	{
-		return new EventHistoryCollector(getServerConnection(), 
-				getVimService().createCollectorForEvents(getMOR(), filter));
-	}
-	
-	public void logUserEvent(ManagedEntity entity, String msg) throws RuntimeFault, RemoteException 
-	{
-		if(entity==null)
-		{
-			throw new IllegalArgumentException("entity must not be null.");
-		}
-		getVimService().logUserEvent(getMOR(), entity.getMOR(), msg);
-	}
-	
-	public void postEvent(Event eventToPost, TaskInfo taskInfo) throws InvalidEvent, RuntimeFault, RemoteException 
-	{
-		getVimService().postEvent(getMOR(), eventToPost, taskInfo);
-	}
-	
-	public Event[] queryEvents(EventFilterSpec filter) throws RuntimeFault, RemoteException 
-	{
-		return getVimService().queryEvents(getMOR(), filter);
-	}
-	
-	public EventArgDesc[] retrieveArgumentDescription(String eventTypeId) throws RuntimeFault, RemoteException
-	{
-		return getVimService().retrieveArgumentDescription(getMOR(), eventTypeId);
-	}
+    public EventDescription getDescription() {
+        return (EventDescription) getCurrentProperty("description");
+    }
+
+    public Event getLatestEvent() {
+        return (Event) getCurrentProperty("latestEvent");
+    }
+
+    public int getMaxCollector() {
+        return ((Integer) getCurrentProperty("maxCollector")).intValue();
+    }
+
+    public EventHistoryCollector createCollectorForEvents(EventFilterSpec filter) throws InvalidState, RuntimeFault, RemoteException {
+        return new EventHistoryCollector(getServerConnection(),
+            getVimService().createCollectorForEvents(getMOR(), filter));
+    }
+
+    public void logUserEvent(ManagedEntity entity, String msg) throws RuntimeFault, RemoteException {
+        if (entity == null) {
+            throw new IllegalArgumentException("entity must not be null.");
+        }
+        getVimService().logUserEvent(getMOR(), entity.getMOR(), msg);
+    }
+
+    public void postEvent(Event eventToPost, TaskInfo taskInfo) throws InvalidEvent, RuntimeFault, RemoteException {
+        getVimService().postEvent(getMOR(), eventToPost, taskInfo);
+    }
+
+    public Event[] queryEvents(EventFilterSpec filter) throws RuntimeFault, RemoteException {
+        return getVimService().queryEvents(getMOR(), filter);
+    }
+
+    public EventArgDesc[] retrieveArgumentDescription(String eventTypeId) throws RuntimeFault, RemoteException {
+        return getVimService().retrieveArgumentDescription(getMOR(), eventTypeId);
+    }
 }

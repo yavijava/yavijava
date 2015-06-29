@@ -30,91 +30,91 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class PerfCounterInfo extends DynamicData {
-  public int key;
-  public ElementDescription nameInfo;
-  public ElementDescription groupInfo;
-  public ElementDescription unitInfo;
-  public PerfSummaryType rollupType;
-  public PerfStatsType statsType;
-  public Integer level;
-  public Integer perDeviceLevel;
-  public int[] associatedCounterId;
+    public int key;
+    public ElementDescription nameInfo;
+    public ElementDescription groupInfo;
+    public ElementDescription unitInfo;
+    public PerfSummaryType rollupType;
+    public PerfStatsType statsType;
+    public Integer level;
+    public Integer perDeviceLevel;
+    public int[] associatedCounterId;
 
-  public int getKey() {
-    return this.key;
-  }
+    public int getKey() {
+        return this.key;
+    }
 
-  public ElementDescription getNameInfo() {
-    return this.nameInfo;
-  }
+    public ElementDescription getNameInfo() {
+        return this.nameInfo;
+    }
 
-  public ElementDescription getGroupInfo() {
-    return this.groupInfo;
-  }
+    public ElementDescription getGroupInfo() {
+        return this.groupInfo;
+    }
 
-  public ElementDescription getUnitInfo() {
-    return this.unitInfo;
-  }
+    public ElementDescription getUnitInfo() {
+        return this.unitInfo;
+    }
 
-  public PerfSummaryType getRollupType() {
-    return this.rollupType;
-  }
+    public PerfSummaryType getRollupType() {
+        return this.rollupType;
+    }
 
-  public PerfStatsType getStatsType() {
-    return this.statsType;
-  }
+    public PerfStatsType getStatsType() {
+        return this.statsType;
+    }
 
-  public Integer getLevel() {
-    return this.level;
-  }
+    public Integer getLevel() {
+        return this.level;
+    }
 
-  public Integer getPerDeviceLevel() {
-    return this.perDeviceLevel;
-  }
+    public Integer getPerDeviceLevel() {
+        return this.perDeviceLevel;
+    }
 
-  public int[] getAssociatedCounterId() {
-    return this.associatedCounterId;
-  }
+    public int[] getAssociatedCounterId() {
+        return this.associatedCounterId;
+    }
 
-  public void setKey(int key) {
-    this.key=key;
-  }
+    public void setKey(int key) {
+        this.key = key;
+    }
 
-  public void setNameInfo(ElementDescription nameInfo) {
-    this.nameInfo=nameInfo;
-  }
+    public void setNameInfo(ElementDescription nameInfo) {
+        this.nameInfo = nameInfo;
+    }
 
-  public void setGroupInfo(ElementDescription groupInfo) {
-    this.groupInfo=groupInfo;
-  }
+    public void setGroupInfo(ElementDescription groupInfo) {
+        this.groupInfo = groupInfo;
+    }
 
-  public void setUnitInfo(ElementDescription unitInfo) {
-    this.unitInfo=unitInfo;
-  }
+    public void setUnitInfo(ElementDescription unitInfo) {
+        this.unitInfo = unitInfo;
+    }
 
-  public void setRollupType(PerfSummaryType rollupType) {
-    this.rollupType=rollupType;
-  }
+    public void setRollupType(PerfSummaryType rollupType) {
+        this.rollupType = rollupType;
+    }
 
-  public void setStatsType(PerfStatsType statsType) {
-    this.statsType=statsType;
-  }
+    public void setStatsType(PerfStatsType statsType) {
+        this.statsType = statsType;
+    }
 
-  public void setLevel(Integer level) {
-    this.level=level;
-  }
+    public void setLevel(Integer level) {
+        this.level = level;
+    }
 
-  public void setPerDeviceLevel(Integer perDeviceLevel) {
-    this.perDeviceLevel=perDeviceLevel;
-  }
+    public void setPerDeviceLevel(Integer perDeviceLevel) {
+        this.perDeviceLevel = perDeviceLevel;
+    }
 
-  public void setAssociatedCounterId(int[] associatedCounterId) {
-    this.associatedCounterId=associatedCounterId;
-  }
+    public void setAssociatedCounterId(int[] associatedCounterId) {
+        this.associatedCounterId = associatedCounterId;
+    }
 }

@@ -30,37 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostDhcpServiceConfig extends DynamicData {
-  public String changeOperation;
-  public String key;
-  public HostDhcpServiceSpec spec;
+    public String changeOperation;
+    public String key;
+    public HostDhcpServiceSpec spec;
 
-  public String getChangeOperation() {
-    return this.changeOperation;
-  }
+    public String getChangeOperation() {
+        return this.changeOperation;
+    }
 
-  public String getKey() {
-    return this.key;
-  }
+    public String getKey() {
+        return this.key;
+    }
 
-  public HostDhcpServiceSpec getSpec() {
-    return this.spec;
-  }
+    public HostDhcpServiceSpec getSpec() {
+        return this.spec;
+    }
 
-  public void setChangeOperation(String changeOperation) {
-    this.changeOperation=changeOperation;
-  }
+    public void setChangeOperation(String changeOperation) {
+        this.changeOperation = changeOperation;
+    }
 
-  public void setKey(String key) {
-    this.key=key;
-  }
+    public void setKey(String key) {
+        this.key = key;
+    }
 
-  public void setSpec(HostDhcpServiceSpec spec) {
-    this.spec=spec;
-  }
+    public void setSpec(HostDhcpServiceSpec spec) {
+        this.spec = spec;
+    }
 }

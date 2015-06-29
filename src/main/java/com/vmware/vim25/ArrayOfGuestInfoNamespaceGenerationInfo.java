@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfGuestInfoNamespaceGenerationInfo {
-  public GuestInfoNamespaceGenerationInfo[] GuestInfoNamespaceGenerationInfo;
+    public GuestInfoNamespaceGenerationInfo[] GuestInfoNamespaceGenerationInfo;
 
-  public GuestInfoNamespaceGenerationInfo[] getGuestInfoNamespaceGenerationInfo() {
-    return this.GuestInfoNamespaceGenerationInfo;
-  }
+    public GuestInfoNamespaceGenerationInfo[] getGuestInfoNamespaceGenerationInfo() {
+        return this.GuestInfoNamespaceGenerationInfo;
+    }
 
-  public GuestInfoNamespaceGenerationInfo getGuestInfoNamespaceGenerationInfo(int i) {
-    return this.GuestInfoNamespaceGenerationInfo[i];
-  }
+    public GuestInfoNamespaceGenerationInfo getGuestInfoNamespaceGenerationInfo(int i) {
+        return this.GuestInfoNamespaceGenerationInfo[i];
+    }
 
-  public void setGuestInfoNamespaceGenerationInfo(GuestInfoNamespaceGenerationInfo[] GuestInfoNamespaceGenerationInfo) {
-    this.GuestInfoNamespaceGenerationInfo=GuestInfoNamespaceGenerationInfo;
-  }
+    public void setGuestInfoNamespaceGenerationInfo(GuestInfoNamespaceGenerationInfo[] GuestInfoNamespaceGenerationInfo) {
+        this.GuestInfoNamespaceGenerationInfo = GuestInfoNamespaceGenerationInfo;
+    }
 }

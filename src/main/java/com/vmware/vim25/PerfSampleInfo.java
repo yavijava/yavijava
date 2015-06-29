@@ -28,31 +28,32 @@ POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
 
 package com.vmware.vim25;
+
 import java.util.Calendar;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class PerfSampleInfo extends DynamicData {
-  public Calendar timestamp;
-  public int interval;
+    public Calendar timestamp;
+    public int interval;
 
-  public Calendar getTimestamp() {
-    return this.timestamp;
-  }
+    public Calendar getTimestamp() {
+        return this.timestamp;
+    }
 
-  public int getInterval() {
-    return this.interval;
-  }
+    public int getInterval() {
+        return this.interval;
+    }
 
-  public void setTimestamp(Calendar timestamp) {
-    this.timestamp=timestamp;
-  }
+    public void setTimestamp(Calendar timestamp) {
+        this.timestamp = timestamp;
+    }
 
-  public void setInterval(int interval) {
-    this.interval=interval;
-  }
+    public void setInterval(int interval) {
+        this.interval = interval;
+    }
 }

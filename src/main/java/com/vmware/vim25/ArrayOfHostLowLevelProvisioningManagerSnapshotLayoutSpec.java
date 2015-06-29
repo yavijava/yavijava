@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfHostLowLevelProvisioningManagerSnapshotLayoutSpec {
-  public HostLowLevelProvisioningManagerSnapshotLayoutSpec[] HostLowLevelProvisioningManagerSnapshotLayoutSpec;
+    public HostLowLevelProvisioningManagerSnapshotLayoutSpec[] HostLowLevelProvisioningManagerSnapshotLayoutSpec;
 
-  public HostLowLevelProvisioningManagerSnapshotLayoutSpec[] getHostLowLevelProvisioningManagerSnapshotLayoutSpec() {
-    return this.HostLowLevelProvisioningManagerSnapshotLayoutSpec;
-  }
+    public HostLowLevelProvisioningManagerSnapshotLayoutSpec[] getHostLowLevelProvisioningManagerSnapshotLayoutSpec() {
+        return this.HostLowLevelProvisioningManagerSnapshotLayoutSpec;
+    }
 
-  public HostLowLevelProvisioningManagerSnapshotLayoutSpec getHostLowLevelProvisioningManagerSnapshotLayoutSpec(int i) {
-    return this.HostLowLevelProvisioningManagerSnapshotLayoutSpec[i];
-  }
+    public HostLowLevelProvisioningManagerSnapshotLayoutSpec getHostLowLevelProvisioningManagerSnapshotLayoutSpec(int i) {
+        return this.HostLowLevelProvisioningManagerSnapshotLayoutSpec[i];
+    }
 
-  public void setHostLowLevelProvisioningManagerSnapshotLayoutSpec(HostLowLevelProvisioningManagerSnapshotLayoutSpec[] HostLowLevelProvisioningManagerSnapshotLayoutSpec) {
-    this.HostLowLevelProvisioningManagerSnapshotLayoutSpec=HostLowLevelProvisioningManagerSnapshotLayoutSpec;
-  }
+    public void setHostLowLevelProvisioningManagerSnapshotLayoutSpec(HostLowLevelProvisioningManagerSnapshotLayoutSpec[] HostLowLevelProvisioningManagerSnapshotLayoutSpec) {
+        this.HostLowLevelProvisioningManagerSnapshotLayoutSpec = HostLowLevelProvisioningManagerSnapshotLayoutSpec;
+    }
 }

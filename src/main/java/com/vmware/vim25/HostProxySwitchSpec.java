@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostProxySwitchSpec extends DynamicData {
-  public DistributedVirtualSwitchHostMemberBacking backing;
+    public DistributedVirtualSwitchHostMemberBacking backing;
 
-  public DistributedVirtualSwitchHostMemberBacking getBacking() {
-    return this.backing;
-  }
+    public DistributedVirtualSwitchHostMemberBacking getBacking() {
+        return this.backing;
+    }
 
-  public void setBacking(DistributedVirtualSwitchHostMemberBacking backing) {
-    this.backing=backing;
-  }
+    public void setBacking(DistributedVirtualSwitchHostMemberBacking backing) {
+        this.backing = backing;
+    }
 }

@@ -30,37 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostUnresolvedVmfsVolumeResolveStatus extends DynamicData {
-  public boolean resolvable;
-  public Boolean incompleteExtents;
-  public Boolean multipleCopies;
+    public boolean resolvable;
+    public Boolean incompleteExtents;
+    public Boolean multipleCopies;
 
-  public boolean isResolvable() {
-    return this.resolvable;
-  }
+    public boolean isResolvable() {
+        return this.resolvable;
+    }
 
-  public Boolean getIncompleteExtents() {
-    return this.incompleteExtents;
-  }
+    public Boolean getIncompleteExtents() {
+        return this.incompleteExtents;
+    }
 
-  public Boolean getMultipleCopies() {
-    return this.multipleCopies;
-  }
+    public Boolean getMultipleCopies() {
+        return this.multipleCopies;
+    }
 
-  public void setResolvable(boolean resolvable) {
-    this.resolvable=resolvable;
-  }
+    public void setResolvable(boolean resolvable) {
+        this.resolvable = resolvable;
+    }
 
-  public void setIncompleteExtents(Boolean incompleteExtents) {
-    this.incompleteExtents=incompleteExtents;
-  }
+    public void setIncompleteExtents(Boolean incompleteExtents) {
+        this.incompleteExtents = incompleteExtents;
+    }
 
-  public void setMultipleCopies(Boolean multipleCopies) {
-    this.multipleCopies=multipleCopies;
-  }
+    public void setMultipleCopies(Boolean multipleCopies) {
+        this.multipleCopies = multipleCopies;
+    }
 }

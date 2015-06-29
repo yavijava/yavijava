@@ -30,64 +30,64 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostDnsConfig extends DynamicData {
-  public boolean dhcp;
-  public String virtualNicDevice;
-  public String hostName;
-  public String domainName;
-  public String[] address;
-  public String[] searchDomain;
+    public boolean dhcp;
+    public String virtualNicDevice;
+    public String hostName;
+    public String domainName;
+    public String[] address;
+    public String[] searchDomain;
 
-  public boolean isDhcp() {
-    return this.dhcp;
-  }
+    public boolean isDhcp() {
+        return this.dhcp;
+    }
 
-  public String getVirtualNicDevice() {
-    return this.virtualNicDevice;
-  }
+    public String getVirtualNicDevice() {
+        return this.virtualNicDevice;
+    }
 
-  public String getHostName() {
-    return this.hostName;
-  }
+    public String getHostName() {
+        return this.hostName;
+    }
 
-  public String getDomainName() {
-    return this.domainName;
-  }
+    public String getDomainName() {
+        return this.domainName;
+    }
 
-  public String[] getAddress() {
-    return this.address;
-  }
+    public String[] getAddress() {
+        return this.address;
+    }
 
-  public String[] getSearchDomain() {
-    return this.searchDomain;
-  }
+    public String[] getSearchDomain() {
+        return this.searchDomain;
+    }
 
-  public void setDhcp(boolean dhcp) {
-    this.dhcp=dhcp;
-  }
+    public void setDhcp(boolean dhcp) {
+        this.dhcp = dhcp;
+    }
 
-  public void setVirtualNicDevice(String virtualNicDevice) {
-    this.virtualNicDevice=virtualNicDevice;
-  }
+    public void setVirtualNicDevice(String virtualNicDevice) {
+        this.virtualNicDevice = virtualNicDevice;
+    }
 
-  public void setHostName(String hostName) {
-    this.hostName=hostName;
-  }
+    public void setHostName(String hostName) {
+        this.hostName = hostName;
+    }
 
-  public void setDomainName(String domainName) {
-    this.domainName=domainName;
-  }
+    public void setDomainName(String domainName) {
+        this.domainName = domainName;
+    }
 
-  public void setAddress(String[] address) {
-    this.address=address;
-  }
+    public void setAddress(String[] address) {
+        this.address = address;
+    }
 
-  public void setSearchDomain(String[] searchDomain) {
-    this.searchDomain=searchDomain;
-  }
+    public void setSearchDomain(String[] searchDomain) {
+        this.searchDomain = searchDomain;
+    }
 }

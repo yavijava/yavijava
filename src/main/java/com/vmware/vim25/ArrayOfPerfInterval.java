@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfPerfInterval {
-  public PerfInterval[] PerfInterval;
+    public PerfInterval[] PerfInterval;
 
-  public PerfInterval[] getPerfInterval() {
-    return this.PerfInterval;
-  }
+    public PerfInterval[] getPerfInterval() {
+        return this.PerfInterval;
+    }
 
-  public PerfInterval getPerfInterval(int i) {
-    return this.PerfInterval[i];
-  }
+    public PerfInterval getPerfInterval(int i) {
+        return this.PerfInterval[i];
+    }
 
-  public void setPerfInterval(PerfInterval[] PerfInterval) {
-    this.PerfInterval=PerfInterval;
-  }
+    public void setPerfInterval(PerfInterval[] PerfInterval) {
+        this.PerfInterval = PerfInterval;
+    }
 }

@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostDevice extends DynamicData {
-  public String deviceName;
-  public String deviceType;
+    public String deviceName;
+    public String deviceType;
 
-  public String getDeviceName() {
-    return this.deviceName;
-  }
+    public String getDeviceName() {
+        return this.deviceName;
+    }
 
-  public String getDeviceType() {
-    return this.deviceType;
-  }
+    public String getDeviceType() {
+        return this.deviceType;
+    }
 
-  public void setDeviceName(String deviceName) {
-    this.deviceName=deviceName;
-  }
+    public void setDeviceName(String deviceName) {
+        this.deviceName = deviceName;
+    }
 
-  public void setDeviceType(String deviceType) {
-    this.deviceType=deviceType;
-  }
+    public void setDeviceType(String deviceType) {
+        this.deviceType = deviceType;
+    }
 }

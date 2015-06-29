@@ -30,23 +30,23 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public enum ReplicationDiskConfigFaultReasonForFault {
-  diskNotFound ("diskNotFound"),
-  diskTypeNotSupported ("diskTypeNotSupported"),
-  invalidDiskKey ("invalidDiskKey"),
-  invalidDiskReplicationId ("invalidDiskReplicationId"),
-  duplicateDiskReplicationId ("duplicateDiskReplicationId"),
-  invalidPersistentFilePath ("invalidPersistentFilePath"),
-  reconfigureDiskReplicationIdNotAllowed ("reconfigureDiskReplicationIdNotAllowed");
+    diskNotFound("diskNotFound"),
+    diskTypeNotSupported("diskTypeNotSupported"),
+    invalidDiskKey("invalidDiskKey"),
+    invalidDiskReplicationId("invalidDiskReplicationId"),
+    duplicateDiskReplicationId("duplicateDiskReplicationId"),
+    invalidPersistentFilePath("invalidPersistentFilePath"),
+    reconfigureDiskReplicationIdNotAllowed("reconfigureDiskReplicationIdNotAllowed");
 
-  @SuppressWarnings("unused")
-  private final String val;
-  private ReplicationDiskConfigFaultReasonForFault(String val)
-  {
-    this.val = val;
-  }
+    @SuppressWarnings("unused")
+    private final String val;
+
+    private ReplicationDiskConfigFaultReasonForFault(String val) {
+        this.val = val;
+    }
 }

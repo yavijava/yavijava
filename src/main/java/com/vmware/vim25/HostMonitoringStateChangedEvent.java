@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostMonitoringStateChangedEvent extends ClusterEvent {
-  public String state;
+    public String state;
 
-  public String getState() {
-    return this.state;
-  }
+    public String getState() {
+        return this.state;
+    }
 
-  public void setState(String state) {
-    this.state=state;
-  }
+    public void setState(String state) {
+        this.state = state;
+    }
 }

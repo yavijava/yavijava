@@ -29,30 +29,27 @@ POSSIBILITY OF SUCH DAMAGE.
 
 package com.vmware.vim25.mo;
 
-import java.rmi.RemoteException;
-
 import com.vmware.vim25.*;
+
+import java.rmi.RemoteException;
 
 /**
  * The managed object class corresponding to the one defined in VI SDK API reference.
+ *
  * @author Steve JIN (http://www.doublecloud.org)
  * @since SDK5.5
  */
 
-public class DatastoreNamespaceManager extends ManagedObject
-{
-	public DatastoreNamespaceManager(ServerConnection serverConnection, ManagedObjectReference mor) 
-	{
-		super(serverConnection, mor);
-	}
-	
-	public String createDirectory(Datastore datastore, String displayName, String policy) throws CannotCreateFile, FileAlreadyExists, InvalidDatastore, RuntimeFault, RemoteException
-	{
-	  return getVimService().createDirectory(this.getMOR(), datastore.getMOR(), displayName, policy);
-	}
-	
-	public void deleteDirectory(Datacenter datacenter, String datastorePath) throws FileNotFound, InvalidDatastorePath, FileFault, InvalidDatastore, RuntimeFault, RemoteException
-	{
-	  getVimService().deleteDirectory(this.getMOR(), datacenter==null? null: datacenter.getMOR(), datastorePath);
-	}
+public class DatastoreNamespaceManager extends ManagedObject {
+    public DatastoreNamespaceManager(ServerConnection serverConnection, ManagedObjectReference mor) {
+        super(serverConnection, mor);
+    }
+
+    public String createDirectory(Datastore datastore, String displayName, String policy) throws CannotCreateFile, FileAlreadyExists, InvalidDatastore, RuntimeFault, RemoteException {
+        return getVimService().createDirectory(this.getMOR(), datastore.getMOR(), displayName, policy);
+    }
+
+    public void deleteDirectory(Datacenter datacenter, String datastorePath) throws FileNotFound, InvalidDatastorePath, FileFault, InvalidDatastore, RuntimeFault, RemoteException {
+        getVimService().deleteDirectory(this.getMOR(), datacenter == null ? null : datacenter.getMOR(), datastorePath);
+    }
 }

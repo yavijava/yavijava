@@ -30,55 +30,55 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class FcoeConfig extends DynamicData {
-  public int priorityClass;
-  public String sourceMac;
-  public FcoeConfigVlanRange[] vlanRange;
-  public FcoeConfigFcoeCapabilities capabilities;
-  public boolean fcoeActive;
+    public int priorityClass;
+    public String sourceMac;
+    public FcoeConfigVlanRange[] vlanRange;
+    public FcoeConfigFcoeCapabilities capabilities;
+    public boolean fcoeActive;
 
-  public int getPriorityClass() {
-    return this.priorityClass;
-  }
+    public int getPriorityClass() {
+        return this.priorityClass;
+    }
 
-  public String getSourceMac() {
-    return this.sourceMac;
-  }
+    public String getSourceMac() {
+        return this.sourceMac;
+    }
 
-  public FcoeConfigVlanRange[] getVlanRange() {
-    return this.vlanRange;
-  }
+    public FcoeConfigVlanRange[] getVlanRange() {
+        return this.vlanRange;
+    }
 
-  public FcoeConfigFcoeCapabilities getCapabilities() {
-    return this.capabilities;
-  }
+    public FcoeConfigFcoeCapabilities getCapabilities() {
+        return this.capabilities;
+    }
 
-  public boolean isFcoeActive() {
-    return this.fcoeActive;
-  }
+    public boolean isFcoeActive() {
+        return this.fcoeActive;
+    }
 
-  public void setPriorityClass(int priorityClass) {
-    this.priorityClass=priorityClass;
-  }
+    public void setPriorityClass(int priorityClass) {
+        this.priorityClass = priorityClass;
+    }
 
-  public void setSourceMac(String sourceMac) {
-    this.sourceMac=sourceMac;
-  }
+    public void setSourceMac(String sourceMac) {
+        this.sourceMac = sourceMac;
+    }
 
-  public void setVlanRange(FcoeConfigVlanRange[] vlanRange) {
-    this.vlanRange=vlanRange;
-  }
+    public void setVlanRange(FcoeConfigVlanRange[] vlanRange) {
+        this.vlanRange = vlanRange;
+    }
 
-  public void setCapabilities(FcoeConfigFcoeCapabilities capabilities) {
-    this.capabilities=capabilities;
-  }
+    public void setCapabilities(FcoeConfigFcoeCapabilities capabilities) {
+        this.capabilities = capabilities;
+    }
 
-  public void setFcoeActive(boolean fcoeActive) {
-    this.fcoeActive=fcoeActive;
-  }
+    public void setFcoeActive(boolean fcoeActive) {
+        this.fcoeActive = fcoeActive;
+    }
 }

@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostDateTimeInfo extends DynamicData {
-  public HostDateTimeSystemTimeZone timeZone;
-  public HostNtpConfig ntpConfig;
+    public HostDateTimeSystemTimeZone timeZone;
+    public HostNtpConfig ntpConfig;
 
-  public HostDateTimeSystemTimeZone getTimeZone() {
-    return this.timeZone;
-  }
+    public HostDateTimeSystemTimeZone getTimeZone() {
+        return this.timeZone;
+    }
 
-  public HostNtpConfig getNtpConfig() {
-    return this.ntpConfig;
-  }
+    public HostNtpConfig getNtpConfig() {
+        return this.ntpConfig;
+    }
 
-  public void setTimeZone(HostDateTimeSystemTimeZone timeZone) {
-    this.timeZone=timeZone;
-  }
+    public void setTimeZone(HostDateTimeSystemTimeZone timeZone) {
+        this.timeZone = timeZone;
+    }
 
-  public void setNtpConfig(HostNtpConfig ntpConfig) {
-    this.ntpConfig=ntpConfig;
-  }
+    public void setNtpConfig(HostNtpConfig ntpConfig) {
+        this.ntpConfig = ntpConfig;
+    }
 }

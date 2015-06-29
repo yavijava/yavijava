@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfStoragePerformanceSummary {
-  public StoragePerformanceSummary[] StoragePerformanceSummary;
+    public StoragePerformanceSummary[] StoragePerformanceSummary;
 
-  public StoragePerformanceSummary[] getStoragePerformanceSummary() {
-    return this.StoragePerformanceSummary;
-  }
+    public StoragePerformanceSummary[] getStoragePerformanceSummary() {
+        return this.StoragePerformanceSummary;
+    }
 
-  public StoragePerformanceSummary getStoragePerformanceSummary(int i) {
-    return this.StoragePerformanceSummary[i];
-  }
+    public StoragePerformanceSummary getStoragePerformanceSummary(int i) {
+        return this.StoragePerformanceSummary[i];
+    }
 
-  public void setStoragePerformanceSummary(StoragePerformanceSummary[] StoragePerformanceSummary) {
-    this.StoragePerformanceSummary=StoragePerformanceSummary;
-  }
+    public void setStoragePerformanceSummary(StoragePerformanceSummary[] StoragePerformanceSummary) {
+        this.StoragePerformanceSummary = StoragePerformanceSummary;
+    }
 }

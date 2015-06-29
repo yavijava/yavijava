@@ -30,82 +30,82 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class LicenseManagerLicenseInfo extends DynamicData {
-  public String licenseKey;
-  public String editionKey;
-  public String name;
-  public int total;
-  public Integer used;
-  public String costUnit;
-  public KeyAnyValue[] properties;
-  public KeyValue[] labels;
+    public String licenseKey;
+    public String editionKey;
+    public String name;
+    public int total;
+    public Integer used;
+    public String costUnit;
+    public KeyAnyValue[] properties;
+    public KeyValue[] labels;
 
-  public String getLicenseKey() {
-    return this.licenseKey;
-  }
+    public String getLicenseKey() {
+        return this.licenseKey;
+    }
 
-  public String getEditionKey() {
-    return this.editionKey;
-  }
+    public String getEditionKey() {
+        return this.editionKey;
+    }
 
-  public String getName() {
-    return this.name;
-  }
+    public String getName() {
+        return this.name;
+    }
 
-  public int getTotal() {
-    return this.total;
-  }
+    public int getTotal() {
+        return this.total;
+    }
 
-  public Integer getUsed() {
-    return this.used;
-  }
+    public Integer getUsed() {
+        return this.used;
+    }
 
-  public String getCostUnit() {
-    return this.costUnit;
-  }
+    public String getCostUnit() {
+        return this.costUnit;
+    }
 
-  public KeyAnyValue[] getProperties() {
-    return this.properties;
-  }
+    public KeyAnyValue[] getProperties() {
+        return this.properties;
+    }
 
-  public KeyValue[] getLabels() {
-    return this.labels;
-  }
+    public KeyValue[] getLabels() {
+        return this.labels;
+    }
 
-  public void setLicenseKey(String licenseKey) {
-    this.licenseKey=licenseKey;
-  }
+    public void setLicenseKey(String licenseKey) {
+        this.licenseKey = licenseKey;
+    }
 
-  public void setEditionKey(String editionKey) {
-    this.editionKey=editionKey;
-  }
+    public void setEditionKey(String editionKey) {
+        this.editionKey = editionKey;
+    }
 
-  public void setName(String name) {
-    this.name=name;
-  }
+    public void setName(String name) {
+        this.name = name;
+    }
 
-  public void setTotal(int total) {
-    this.total=total;
-  }
+    public void setTotal(int total) {
+        this.total = total;
+    }
 
-  public void setUsed(Integer used) {
-    this.used=used;
-  }
+    public void setUsed(Integer used) {
+        this.used = used;
+    }
 
-  public void setCostUnit(String costUnit) {
-    this.costUnit=costUnit;
-  }
+    public void setCostUnit(String costUnit) {
+        this.costUnit = costUnit;
+    }
 
-  public void setProperties(KeyAnyValue[] properties) {
-    this.properties=properties;
-  }
+    public void setProperties(KeyAnyValue[] properties) {
+        this.properties = properties;
+    }
 
-  public void setLabels(KeyValue[] labels) {
-    this.labels=labels;
-  }
+    public void setLabels(KeyValue[] labels) {
+        this.labels = labels;
+    }
 }

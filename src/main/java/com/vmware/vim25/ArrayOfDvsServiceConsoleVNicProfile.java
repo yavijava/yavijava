@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfDvsServiceConsoleVNicProfile {
-  public DvsServiceConsoleVNicProfile[] DvsServiceConsoleVNicProfile;
+    public DvsServiceConsoleVNicProfile[] DvsServiceConsoleVNicProfile;
 
-  public DvsServiceConsoleVNicProfile[] getDvsServiceConsoleVNicProfile() {
-    return this.DvsServiceConsoleVNicProfile;
-  }
+    public DvsServiceConsoleVNicProfile[] getDvsServiceConsoleVNicProfile() {
+        return this.DvsServiceConsoleVNicProfile;
+    }
 
-  public DvsServiceConsoleVNicProfile getDvsServiceConsoleVNicProfile(int i) {
-    return this.DvsServiceConsoleVNicProfile[i];
-  }
+    public DvsServiceConsoleVNicProfile getDvsServiceConsoleVNicProfile(int i) {
+        return this.DvsServiceConsoleVNicProfile[i];
+    }
 
-  public void setDvsServiceConsoleVNicProfile(DvsServiceConsoleVNicProfile[] DvsServiceConsoleVNicProfile) {
-    this.DvsServiceConsoleVNicProfile=DvsServiceConsoleVNicProfile;
-  }
+    public void setDvsServiceConsoleVNicProfile(DvsServiceConsoleVNicProfile[] DvsServiceConsoleVNicProfile) {
+        this.DvsServiceConsoleVNicProfile = DvsServiceConsoleVNicProfile;
+    }
 }

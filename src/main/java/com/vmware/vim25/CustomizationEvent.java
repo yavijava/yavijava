@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class CustomizationEvent extends VmEvent {
-  public String logLocation;
+    public String logLocation;
 
-  public String getLogLocation() {
-    return this.logLocation;
-  }
+    public String getLogLocation() {
+        return this.logLocation;
+    }
 
-  public void setLogLocation(String logLocation) {
-    this.logLocation=logLocation;
-  }
+    public void setLogLocation(String logLocation) {
+        this.logLocation = logLocation;
+    }
 }

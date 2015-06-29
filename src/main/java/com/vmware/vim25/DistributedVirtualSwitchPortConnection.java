@@ -30,46 +30,46 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class DistributedVirtualSwitchPortConnection extends DynamicData {
-  public String switchUuid;
-  public String portgroupKey;
-  public String portKey;
-  public Integer connectionCookie;
+    public String switchUuid;
+    public String portgroupKey;
+    public String portKey;
+    public Integer connectionCookie;
 
-  public String getSwitchUuid() {
-    return this.switchUuid;
-  }
+    public String getSwitchUuid() {
+        return this.switchUuid;
+    }
 
-  public String getPortgroupKey() {
-    return this.portgroupKey;
-  }
+    public String getPortgroupKey() {
+        return this.portgroupKey;
+    }
 
-  public String getPortKey() {
-    return this.portKey;
-  }
+    public String getPortKey() {
+        return this.portKey;
+    }
 
-  public Integer getConnectionCookie() {
-    return this.connectionCookie;
-  }
+    public Integer getConnectionCookie() {
+        return this.connectionCookie;
+    }
 
-  public void setSwitchUuid(String switchUuid) {
-    this.switchUuid=switchUuid;
-  }
+    public void setSwitchUuid(String switchUuid) {
+        this.switchUuid = switchUuid;
+    }
 
-  public void setPortgroupKey(String portgroupKey) {
-    this.portgroupKey=portgroupKey;
-  }
+    public void setPortgroupKey(String portgroupKey) {
+        this.portgroupKey = portgroupKey;
+    }
 
-  public void setPortKey(String portKey) {
-    this.portKey=portKey;
-  }
+    public void setPortKey(String portKey) {
+        this.portKey = portKey;
+    }
 
-  public void setConnectionCookie(Integer connectionCookie) {
-    this.connectionCookie=connectionCookie;
-  }
+    public void setConnectionCookie(Integer connectionCookie) {
+        this.connectionCookie = connectionCookie;
+    }
 }

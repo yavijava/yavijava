@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfClusterDrsFaults {
-  public ClusterDrsFaults[] ClusterDrsFaults;
+    public ClusterDrsFaults[] ClusterDrsFaults;
 
-  public ClusterDrsFaults[] getClusterDrsFaults() {
-    return this.ClusterDrsFaults;
-  }
+    public ClusterDrsFaults[] getClusterDrsFaults() {
+        return this.ClusterDrsFaults;
+    }
 
-  public ClusterDrsFaults getClusterDrsFaults(int i) {
-    return this.ClusterDrsFaults[i];
-  }
+    public ClusterDrsFaults getClusterDrsFaults(int i) {
+        return this.ClusterDrsFaults[i];
+    }
 
-  public void setClusterDrsFaults(ClusterDrsFaults[] ClusterDrsFaults) {
-    this.ClusterDrsFaults=ClusterDrsFaults;
-  }
+    public void setClusterDrsFaults(ClusterDrsFaults[] ClusterDrsFaults) {
+        this.ClusterDrsFaults = ClusterDrsFaults;
+    }
 }

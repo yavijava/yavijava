@@ -30,37 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostSslThumbprintInfo extends DynamicData {
-  public String principal;
-  public String ownerTag;
-  public String[] sslThumbprints;
+    public String principal;
+    public String ownerTag;
+    public String[] sslThumbprints;
 
-  public String getPrincipal() {
-    return this.principal;
-  }
+    public String getPrincipal() {
+        return this.principal;
+    }
 
-  public String getOwnerTag() {
-    return this.ownerTag;
-  }
+    public String getOwnerTag() {
+        return this.ownerTag;
+    }
 
-  public String[] getSslThumbprints() {
-    return this.sslThumbprints;
-  }
+    public String[] getSslThumbprints() {
+        return this.sslThumbprints;
+    }
 
-  public void setPrincipal(String principal) {
-    this.principal=principal;
-  }
+    public void setPrincipal(String principal) {
+        this.principal = principal;
+    }
 
-  public void setOwnerTag(String ownerTag) {
-    this.ownerTag=ownerTag;
-  }
+    public void setOwnerTag(String ownerTag) {
+        this.ownerTag = ownerTag;
+    }
 
-  public void setSslThumbprints(String[] sslThumbprints) {
-    this.sslThumbprints=sslThumbprints;
-  }
+    public void setSslThumbprints(String[] sslThumbprints) {
+        this.sslThumbprints = sslThumbprints;
+    }
 }

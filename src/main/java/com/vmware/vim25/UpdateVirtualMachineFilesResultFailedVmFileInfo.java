@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class UpdateVirtualMachineFilesResultFailedVmFileInfo extends DynamicData {
-  public String vmFile;
-  public LocalizedMethodFault fault;
+    public String vmFile;
+    public LocalizedMethodFault fault;
 
-  public String getVmFile() {
-    return this.vmFile;
-  }
+    public String getVmFile() {
+        return this.vmFile;
+    }
 
-  public LocalizedMethodFault getFault() {
-    return this.fault;
-  }
+    public LocalizedMethodFault getFault() {
+        return this.fault;
+    }
 
-  public void setVmFile(String vmFile) {
-    this.vmFile=vmFile;
-  }
+    public void setVmFile(String vmFile) {
+        this.vmFile = vmFile;
+    }
 
-  public void setFault(LocalizedMethodFault fault) {
-    this.fault=fault;
-  }
+    public void setFault(LocalizedMethodFault fault) {
+        this.fault = fault;
+    }
 }

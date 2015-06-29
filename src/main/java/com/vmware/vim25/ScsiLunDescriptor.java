@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class ScsiLunDescriptor extends DynamicData {
-  public String quality;
-  public String id;
+    public String quality;
+    public String id;
 
-  public String getQuality() {
-    return this.quality;
-  }
+    public String getQuality() {
+        return this.quality;
+    }
 
-  public String getId() {
-    return this.id;
-  }
+    public String getId() {
+        return this.id;
+    }
 
-  public void setQuality(String quality) {
-    this.quality=quality;
-  }
+    public void setQuality(String quality) {
+        this.quality = quality;
+    }
 
-  public void setId(String id) {
-    this.id=id;
-  }
+    public void setId(String id) {
+        this.id = id;
+    }
 }

@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VmMacConflictEvent extends VmEvent {
-  public VmEventArgument conflictedVm;
-  public String mac;
+    public VmEventArgument conflictedVm;
+    public String mac;
 
-  public VmEventArgument getConflictedVm() {
-    return this.conflictedVm;
-  }
+    public VmEventArgument getConflictedVm() {
+        return this.conflictedVm;
+    }
 
-  public String getMac() {
-    return this.mac;
-  }
+    public String getMac() {
+        return this.mac;
+    }
 
-  public void setConflictedVm(VmEventArgument conflictedVm) {
-    this.conflictedVm=conflictedVm;
-  }
+    public void setConflictedVm(VmEventArgument conflictedVm) {
+        this.conflictedVm = conflictedVm;
+    }
 
-  public void setMac(String mac) {
-    this.mac=mac;
-  }
+    public void setMac(String mac) {
+        this.mac = mac;
+    }
 }

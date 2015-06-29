@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfClusterDasAamNodeState {
-  public ClusterDasAamNodeState[] ClusterDasAamNodeState;
+    public ClusterDasAamNodeState[] ClusterDasAamNodeState;
 
-  public ClusterDasAamNodeState[] getClusterDasAamNodeState() {
-    return this.ClusterDasAamNodeState;
-  }
+    public ClusterDasAamNodeState[] getClusterDasAamNodeState() {
+        return this.ClusterDasAamNodeState;
+    }
 
-  public ClusterDasAamNodeState getClusterDasAamNodeState(int i) {
-    return this.ClusterDasAamNodeState[i];
-  }
+    public ClusterDasAamNodeState getClusterDasAamNodeState(int i) {
+        return this.ClusterDasAamNodeState[i];
+    }
 
-  public void setClusterDasAamNodeState(ClusterDasAamNodeState[] ClusterDasAamNodeState) {
-    this.ClusterDasAamNodeState=ClusterDasAamNodeState;
-  }
+    public void setClusterDasAamNodeState(ClusterDasAamNodeState[] ClusterDasAamNodeState) {
+        this.ClusterDasAamNodeState = ClusterDasAamNodeState;
+    }
 }

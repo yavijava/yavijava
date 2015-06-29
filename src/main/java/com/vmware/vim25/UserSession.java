@@ -28,112 +28,113 @@ POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
 
 package com.vmware.vim25;
+
 import java.util.Calendar;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class UserSession extends DynamicData {
-  public String key;
-  public String userName;
-  public String fullName;
-  public Calendar loginTime;
-  public Calendar lastActiveTime;
-  public String locale;
-  public String messageLocale;
-  public Boolean extensionSession;
-  public String ipAddress;
-  public String userAgent;
-  public Long callCount;
+    public String key;
+    public String userName;
+    public String fullName;
+    public Calendar loginTime;
+    public Calendar lastActiveTime;
+    public String locale;
+    public String messageLocale;
+    public Boolean extensionSession;
+    public String ipAddress;
+    public String userAgent;
+    public Long callCount;
 
-  public String getKey() {
-    return this.key;
-  }
+    public String getKey() {
+        return this.key;
+    }
 
-  public String getUserName() {
-    return this.userName;
-  }
+    public String getUserName() {
+        return this.userName;
+    }
 
-  public String getFullName() {
-    return this.fullName;
-  }
+    public String getFullName() {
+        return this.fullName;
+    }
 
-  public Calendar getLoginTime() {
-    return this.loginTime;
-  }
+    public Calendar getLoginTime() {
+        return this.loginTime;
+    }
 
-  public Calendar getLastActiveTime() {
-    return this.lastActiveTime;
-  }
+    public Calendar getLastActiveTime() {
+        return this.lastActiveTime;
+    }
 
-  public String getLocale() {
-    return this.locale;
-  }
+    public String getLocale() {
+        return this.locale;
+    }
 
-  public String getMessageLocale() {
-    return this.messageLocale;
-  }
+    public String getMessageLocale() {
+        return this.messageLocale;
+    }
 
-  public Boolean getExtensionSession() {
-    return this.extensionSession;
-  }
+    public Boolean getExtensionSession() {
+        return this.extensionSession;
+    }
 
-  public String getIpAddress() {
-    return this.ipAddress;
-  }
+    public String getIpAddress() {
+        return this.ipAddress;
+    }
 
-  public String getUserAgent() {
-    return this.userAgent;
-  }
+    public String getUserAgent() {
+        return this.userAgent;
+    }
 
-  public Long getCallCount() {
-    return this.callCount;
-  }
+    public Long getCallCount() {
+        return this.callCount;
+    }
 
-  public void setKey(String key) {
-    this.key=key;
-  }
+    public void setKey(String key) {
+        this.key = key;
+    }
 
-  public void setUserName(String userName) {
-    this.userName=userName;
-  }
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
 
-  public void setFullName(String fullName) {
-    this.fullName=fullName;
-  }
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
+    }
 
-  public void setLoginTime(Calendar loginTime) {
-    this.loginTime=loginTime;
-  }
+    public void setLoginTime(Calendar loginTime) {
+        this.loginTime = loginTime;
+    }
 
-  public void setLastActiveTime(Calendar lastActiveTime) {
-    this.lastActiveTime=lastActiveTime;
-  }
+    public void setLastActiveTime(Calendar lastActiveTime) {
+        this.lastActiveTime = lastActiveTime;
+    }
 
-  public void setLocale(String locale) {
-    this.locale=locale;
-  }
+    public void setLocale(String locale) {
+        this.locale = locale;
+    }
 
-  public void setMessageLocale(String messageLocale) {
-    this.messageLocale=messageLocale;
-  }
+    public void setMessageLocale(String messageLocale) {
+        this.messageLocale = messageLocale;
+    }
 
-  public void setExtensionSession(Boolean extensionSession) {
-    this.extensionSession=extensionSession;
-  }
+    public void setExtensionSession(Boolean extensionSession) {
+        this.extensionSession = extensionSession;
+    }
 
-  public void setIpAddress(String ipAddress) {
-    this.ipAddress=ipAddress;
-  }
+    public void setIpAddress(String ipAddress) {
+        this.ipAddress = ipAddress;
+    }
 
-  public void setUserAgent(String userAgent) {
-    this.userAgent=userAgent;
-  }
+    public void setUserAgent(String userAgent) {
+        this.userAgent = userAgent;
+    }
 
-  public void setCallCount(Long callCount) {
-    this.callCount=callCount;
-  }
+    public void setCallCount(Long callCount) {
+        this.callCount = callCount;
+    }
 }

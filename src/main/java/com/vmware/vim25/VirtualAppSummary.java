@@ -30,55 +30,55 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VirtualAppSummary extends ResourcePoolSummary {
-  public VAppProductInfo product;
-  public VirtualAppVAppState vAppState;
-  public Boolean suspended;
-  public Boolean installBootRequired;
-  public String instanceUuid;
+    public VAppProductInfo product;
+    public VirtualAppVAppState vAppState;
+    public Boolean suspended;
+    public Boolean installBootRequired;
+    public String instanceUuid;
 
-  public VAppProductInfo getProduct() {
-    return this.product;
-  }
+    public VAppProductInfo getProduct() {
+        return this.product;
+    }
 
-  public VirtualAppVAppState getVAppState() {
-    return this.vAppState;
-  }
+    public VirtualAppVAppState getVAppState() {
+        return this.vAppState;
+    }
 
-  public Boolean getSuspended() {
-    return this.suspended;
-  }
+    public Boolean getSuspended() {
+        return this.suspended;
+    }
 
-  public Boolean getInstallBootRequired() {
-    return this.installBootRequired;
-  }
+    public Boolean getInstallBootRequired() {
+        return this.installBootRequired;
+    }
 
-  public String getInstanceUuid() {
-    return this.instanceUuid;
-  }
+    public String getInstanceUuid() {
+        return this.instanceUuid;
+    }
 
-  public void setProduct(VAppProductInfo product) {
-    this.product=product;
-  }
+    public void setProduct(VAppProductInfo product) {
+        this.product = product;
+    }
 
-  public void setVAppState(VirtualAppVAppState vAppState) {
-    this.vAppState=vAppState;
-  }
+    public void setVAppState(VirtualAppVAppState vAppState) {
+        this.vAppState = vAppState;
+    }
 
-  public void setSuspended(Boolean suspended) {
-    this.suspended=suspended;
-  }
+    public void setSuspended(Boolean suspended) {
+        this.suspended = suspended;
+    }
 
-  public void setInstallBootRequired(Boolean installBootRequired) {
-    this.installBootRequired=installBootRequired;
-  }
+    public void setInstallBootRequired(Boolean installBootRequired) {
+        this.installBootRequired = installBootRequired;
+    }
 
-  public void setInstanceUuid(String instanceUuid) {
-    this.instanceUuid=instanceUuid;
-  }
+    public void setInstanceUuid(String instanceUuid) {
+        this.instanceUuid = instanceUuid;
+    }
 }

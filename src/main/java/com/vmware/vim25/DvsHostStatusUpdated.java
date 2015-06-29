@@ -30,55 +30,55 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class DvsHostStatusUpdated extends DvsEvent {
-  public HostEventArgument hostMember;
-  public String oldStatus;
-  public String newStatus;
-  public String oldStatusDetail;
-  public String newStatusDetail;
+    public HostEventArgument hostMember;
+    public String oldStatus;
+    public String newStatus;
+    public String oldStatusDetail;
+    public String newStatusDetail;
 
-  public HostEventArgument getHostMember() {
-    return this.hostMember;
-  }
+    public HostEventArgument getHostMember() {
+        return this.hostMember;
+    }
 
-  public String getOldStatus() {
-    return this.oldStatus;
-  }
+    public String getOldStatus() {
+        return this.oldStatus;
+    }
 
-  public String getNewStatus() {
-    return this.newStatus;
-  }
+    public String getNewStatus() {
+        return this.newStatus;
+    }
 
-  public String getOldStatusDetail() {
-    return this.oldStatusDetail;
-  }
+    public String getOldStatusDetail() {
+        return this.oldStatusDetail;
+    }
 
-  public String getNewStatusDetail() {
-    return this.newStatusDetail;
-  }
+    public String getNewStatusDetail() {
+        return this.newStatusDetail;
+    }
 
-  public void setHostMember(HostEventArgument hostMember) {
-    this.hostMember=hostMember;
-  }
+    public void setHostMember(HostEventArgument hostMember) {
+        this.hostMember = hostMember;
+    }
 
-  public void setOldStatus(String oldStatus) {
-    this.oldStatus=oldStatus;
-  }
+    public void setOldStatus(String oldStatus) {
+        this.oldStatus = oldStatus;
+    }
 
-  public void setNewStatus(String newStatus) {
-    this.newStatus=newStatus;
-  }
+    public void setNewStatus(String newStatus) {
+        this.newStatus = newStatus;
+    }
 
-  public void setOldStatusDetail(String oldStatusDetail) {
-    this.oldStatusDetail=oldStatusDetail;
-  }
+    public void setOldStatusDetail(String oldStatusDetail) {
+        this.oldStatusDetail = oldStatusDetail;
+    }
 
-  public void setNewStatusDetail(String newStatusDetail) {
-    this.newStatusDetail=newStatusDetail;
-  }
+    public void setNewStatusDetail(String newStatusDetail) {
+        this.newStatusDetail = newStatusDetail;
+    }
 }

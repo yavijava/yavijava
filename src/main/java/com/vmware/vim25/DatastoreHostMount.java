@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class DatastoreHostMount extends DynamicData {
-  public ManagedObjectReference key;
-  public HostMountInfo mountInfo;
+    public ManagedObjectReference key;
+    public HostMountInfo mountInfo;
 
-  public ManagedObjectReference getKey() {
-    return this.key;
-  }
+    public ManagedObjectReference getKey() {
+        return this.key;
+    }
 
-  public HostMountInfo getMountInfo() {
-    return this.mountInfo;
-  }
+    public HostMountInfo getMountInfo() {
+        return this.mountInfo;
+    }
 
-  public void setKey(ManagedObjectReference key) {
-    this.key=key;
-  }
+    public void setKey(ManagedObjectReference key) {
+        this.key = key;
+    }
 
-  public void setMountInfo(HostMountInfo mountInfo) {
-    this.mountInfo=mountInfo;
-  }
+    public void setMountInfo(HostMountInfo mountInfo) {
+        this.mountInfo = mountInfo;
+    }
 }

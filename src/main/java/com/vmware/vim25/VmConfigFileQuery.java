@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VmConfigFileQuery extends FileQuery {
-  public VmConfigFileQueryFilter filter;
-  public VmConfigFileQueryFlags details;
+    public VmConfigFileQueryFilter filter;
+    public VmConfigFileQueryFlags details;
 
-  public VmConfigFileQueryFilter getFilter() {
-    return this.filter;
-  }
+    public VmConfigFileQueryFilter getFilter() {
+        return this.filter;
+    }
 
-  public VmConfigFileQueryFlags getDetails() {
-    return this.details;
-  }
+    public VmConfigFileQueryFlags getDetails() {
+        return this.details;
+    }
 
-  public void setFilter(VmConfigFileQueryFilter filter) {
-    this.filter=filter;
-  }
+    public void setFilter(VmConfigFileQueryFilter filter) {
+        this.filter = filter;
+    }
 
-  public void setDetails(VmConfigFileQueryFlags details) {
-    this.details=details;
-  }
+    public void setDetails(VmConfigFileQueryFlags details) {
+        this.details = details;
+    }
 }

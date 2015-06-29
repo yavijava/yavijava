@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VmUuidConflictEvent extends VmEvent {
-  public VmEventArgument conflictedVm;
-  public String uuid;
+    public VmEventArgument conflictedVm;
+    public String uuid;
 
-  public VmEventArgument getConflictedVm() {
-    return this.conflictedVm;
-  }
+    public VmEventArgument getConflictedVm() {
+        return this.conflictedVm;
+    }
 
-  public String getUuid() {
-    return this.uuid;
-  }
+    public String getUuid() {
+        return this.uuid;
+    }
 
-  public void setConflictedVm(VmEventArgument conflictedVm) {
-    this.conflictedVm=conflictedVm;
-  }
+    public void setConflictedVm(VmEventArgument conflictedVm) {
+        this.conflictedVm = conflictedVm;
+    }
 
-  public void setUuid(String uuid) {
-    this.uuid=uuid;
-  }
+    public void setUuid(String uuid) {
+        this.uuid = uuid;
+    }
 }

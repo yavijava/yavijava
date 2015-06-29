@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class UnsupportedGuest extends InvalidVmConfig {
-  public String unsupportedGuestOS;
+    public String unsupportedGuestOS;
 
-  public String getUnsupportedGuestOS() {
-    return this.unsupportedGuestOS;
-  }
+    public String getUnsupportedGuestOS() {
+        return this.unsupportedGuestOS;
+    }
 
-  public void setUnsupportedGuestOS(String unsupportedGuestOS) {
-    this.unsupportedGuestOS=unsupportedGuestOS;
-  }
+    public void setUnsupportedGuestOS(String unsupportedGuestOS) {
+        this.unsupportedGuestOS = unsupportedGuestOS;
+    }
 }

@@ -30,55 +30,55 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostPortGroup extends DynamicData {
-  public String key;
-  public HostPortGroupPort[] port;
-  public String vswitch;
-  public HostNetworkPolicy computedPolicy;
-  public HostPortGroupSpec spec;
+    public String key;
+    public HostPortGroupPort[] port;
+    public String vswitch;
+    public HostNetworkPolicy computedPolicy;
+    public HostPortGroupSpec spec;
 
-  public String getKey() {
-    return this.key;
-  }
+    public String getKey() {
+        return this.key;
+    }
 
-  public HostPortGroupPort[] getPort() {
-    return this.port;
-  }
+    public HostPortGroupPort[] getPort() {
+        return this.port;
+    }
 
-  public String getVswitch() {
-    return this.vswitch;
-  }
+    public String getVswitch() {
+        return this.vswitch;
+    }
 
-  public HostNetworkPolicy getComputedPolicy() {
-    return this.computedPolicy;
-  }
+    public HostNetworkPolicy getComputedPolicy() {
+        return this.computedPolicy;
+    }
 
-  public HostPortGroupSpec getSpec() {
-    return this.spec;
-  }
+    public HostPortGroupSpec getSpec() {
+        return this.spec;
+    }
 
-  public void setKey(String key) {
-    this.key=key;
-  }
+    public void setKey(String key) {
+        this.key = key;
+    }
 
-  public void setPort(HostPortGroupPort[] port) {
-    this.port=port;
-  }
+    public void setPort(HostPortGroupPort[] port) {
+        this.port = port;
+    }
 
-  public void setVswitch(String vswitch) {
-    this.vswitch=vswitch;
-  }
+    public void setVswitch(String vswitch) {
+        this.vswitch = vswitch;
+    }
 
-  public void setComputedPolicy(HostNetworkPolicy computedPolicy) {
-    this.computedPolicy=computedPolicy;
-  }
+    public void setComputedPolicy(HostNetworkPolicy computedPolicy) {
+        this.computedPolicy = computedPolicy;
+    }
 
-  public void setSpec(HostPortGroupSpec spec) {
-    this.spec=spec;
-  }
+    public void setSpec(HostPortGroupSpec spec) {
+        this.spec = spec;
+    }
 }

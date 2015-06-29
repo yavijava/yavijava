@@ -30,91 +30,91 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class OvfCreateImportSpecParams extends OvfManagerCommonParams {
-  public String entityName;
-  public ManagedObjectReference hostSystem;
-  public OvfNetworkMapping[] networkMapping;
-  public String ipAllocationPolicy;
-  public String ipProtocol;
-  public KeyValue[] propertyMapping;
-  public OvfResourceMap[] resourceMapping;
-  public String diskProvisioning;
-  public OvfConsumerOstNode instantiationOst;
+    public String entityName;
+    public ManagedObjectReference hostSystem;
+    public OvfNetworkMapping[] networkMapping;
+    public String ipAllocationPolicy;
+    public String ipProtocol;
+    public KeyValue[] propertyMapping;
+    public OvfResourceMap[] resourceMapping;
+    public String diskProvisioning;
+    public OvfConsumerOstNode instantiationOst;
 
-  public String getEntityName() {
-    return this.entityName;
-  }
+    public String getEntityName() {
+        return this.entityName;
+    }
 
-  public ManagedObjectReference getHostSystem() {
-    return this.hostSystem;
-  }
+    public ManagedObjectReference getHostSystem() {
+        return this.hostSystem;
+    }
 
-  public OvfNetworkMapping[] getNetworkMapping() {
-    return this.networkMapping;
-  }
+    public OvfNetworkMapping[] getNetworkMapping() {
+        return this.networkMapping;
+    }
 
-  public String getIpAllocationPolicy() {
-    return this.ipAllocationPolicy;
-  }
+    public String getIpAllocationPolicy() {
+        return this.ipAllocationPolicy;
+    }
 
-  public String getIpProtocol() {
-    return this.ipProtocol;
-  }
+    public String getIpProtocol() {
+        return this.ipProtocol;
+    }
 
-  public KeyValue[] getPropertyMapping() {
-    return this.propertyMapping;
-  }
+    public KeyValue[] getPropertyMapping() {
+        return this.propertyMapping;
+    }
 
-  public OvfResourceMap[] getResourceMapping() {
-    return this.resourceMapping;
-  }
+    public OvfResourceMap[] getResourceMapping() {
+        return this.resourceMapping;
+    }
 
-  public String getDiskProvisioning() {
-    return this.diskProvisioning;
-  }
+    public String getDiskProvisioning() {
+        return this.diskProvisioning;
+    }
 
-  public OvfConsumerOstNode getInstantiationOst() {
-    return this.instantiationOst;
-  }
+    public OvfConsumerOstNode getInstantiationOst() {
+        return this.instantiationOst;
+    }
 
-  public void setEntityName(String entityName) {
-    this.entityName=entityName;
-  }
+    public void setEntityName(String entityName) {
+        this.entityName = entityName;
+    }
 
-  public void setHostSystem(ManagedObjectReference hostSystem) {
-    this.hostSystem=hostSystem;
-  }
+    public void setHostSystem(ManagedObjectReference hostSystem) {
+        this.hostSystem = hostSystem;
+    }
 
-  public void setNetworkMapping(OvfNetworkMapping[] networkMapping) {
-    this.networkMapping=networkMapping;
-  }
+    public void setNetworkMapping(OvfNetworkMapping[] networkMapping) {
+        this.networkMapping = networkMapping;
+    }
 
-  public void setIpAllocationPolicy(String ipAllocationPolicy) {
-    this.ipAllocationPolicy=ipAllocationPolicy;
-  }
+    public void setIpAllocationPolicy(String ipAllocationPolicy) {
+        this.ipAllocationPolicy = ipAllocationPolicy;
+    }
 
-  public void setIpProtocol(String ipProtocol) {
-    this.ipProtocol=ipProtocol;
-  }
+    public void setIpProtocol(String ipProtocol) {
+        this.ipProtocol = ipProtocol;
+    }
 
-  public void setPropertyMapping(KeyValue[] propertyMapping) {
-    this.propertyMapping=propertyMapping;
-  }
+    public void setPropertyMapping(KeyValue[] propertyMapping) {
+        this.propertyMapping = propertyMapping;
+    }
 
-  public void setResourceMapping(OvfResourceMap[] resourceMapping) {
-    this.resourceMapping=resourceMapping;
-  }
+    public void setResourceMapping(OvfResourceMap[] resourceMapping) {
+        this.resourceMapping = resourceMapping;
+    }
 
-  public void setDiskProvisioning(String diskProvisioning) {
-    this.diskProvisioning=diskProvisioning;
-  }
+    public void setDiskProvisioning(String diskProvisioning) {
+        this.diskProvisioning = diskProvisioning;
+    }
 
-  public void setInstantiationOst(OvfConsumerOstNode instantiationOst) {
-    this.instantiationOst=instantiationOst;
-  }
+    public void setInstantiationOst(OvfConsumerOstNode instantiationOst) {
+        this.instantiationOst = instantiationOst;
+    }
 }

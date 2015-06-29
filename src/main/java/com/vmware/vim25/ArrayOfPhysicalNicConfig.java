@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfPhysicalNicConfig {
-  public PhysicalNicConfig[] PhysicalNicConfig;
+    public PhysicalNicConfig[] PhysicalNicConfig;
 
-  public PhysicalNicConfig[] getPhysicalNicConfig() {
-    return this.PhysicalNicConfig;
-  }
+    public PhysicalNicConfig[] getPhysicalNicConfig() {
+        return this.PhysicalNicConfig;
+    }
 
-  public PhysicalNicConfig getPhysicalNicConfig(int i) {
-    return this.PhysicalNicConfig[i];
-  }
+    public PhysicalNicConfig getPhysicalNicConfig(int i) {
+        return this.PhysicalNicConfig[i];
+    }
 
-  public void setPhysicalNicConfig(PhysicalNicConfig[] PhysicalNicConfig) {
-    this.PhysicalNicConfig=PhysicalNicConfig;
-  }
+    public void setPhysicalNicConfig(PhysicalNicConfig[] PhysicalNicConfig) {
+        this.PhysicalNicConfig = PhysicalNicConfig;
+    }
 }

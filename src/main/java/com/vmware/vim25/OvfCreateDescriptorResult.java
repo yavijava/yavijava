@@ -30,46 +30,46 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class OvfCreateDescriptorResult extends DynamicData {
-  public String ovfDescriptor;
-  public LocalizedMethodFault[] error;
-  public LocalizedMethodFault[] warning;
-  public Boolean includeImageFiles;
+    public String ovfDescriptor;
+    public LocalizedMethodFault[] error;
+    public LocalizedMethodFault[] warning;
+    public Boolean includeImageFiles;
 
-  public String getOvfDescriptor() {
-    return this.ovfDescriptor;
-  }
+    public String getOvfDescriptor() {
+        return this.ovfDescriptor;
+    }
 
-  public LocalizedMethodFault[] getError() {
-    return this.error;
-  }
+    public LocalizedMethodFault[] getError() {
+        return this.error;
+    }
 
-  public LocalizedMethodFault[] getWarning() {
-    return this.warning;
-  }
+    public LocalizedMethodFault[] getWarning() {
+        return this.warning;
+    }
 
-  public Boolean getIncludeImageFiles() {
-    return this.includeImageFiles;
-  }
+    public Boolean getIncludeImageFiles() {
+        return this.includeImageFiles;
+    }
 
-  public void setOvfDescriptor(String ovfDescriptor) {
-    this.ovfDescriptor=ovfDescriptor;
-  }
+    public void setOvfDescriptor(String ovfDescriptor) {
+        this.ovfDescriptor = ovfDescriptor;
+    }
 
-  public void setError(LocalizedMethodFault[] error) {
-    this.error=error;
-  }
+    public void setError(LocalizedMethodFault[] error) {
+        this.error = error;
+    }
 
-  public void setWarning(LocalizedMethodFault[] warning) {
-    this.warning=warning;
-  }
+    public void setWarning(LocalizedMethodFault[] warning) {
+        this.warning = warning;
+    }
 
-  public void setIncludeImageFiles(Boolean includeImageFiles) {
-    this.includeImageFiles=includeImageFiles;
-  }
+    public void setIncludeImageFiles(Boolean includeImageFiles) {
+        this.includeImageFiles = includeImageFiles;
+    }
 }

@@ -30,37 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostSystemResourceInfo extends DynamicData {
-  public String key;
-  public ResourceConfigSpec config;
-  public HostSystemResourceInfo[] child;
+    public String key;
+    public ResourceConfigSpec config;
+    public HostSystemResourceInfo[] child;
 
-  public String getKey() {
-    return this.key;
-  }
+    public String getKey() {
+        return this.key;
+    }
 
-  public ResourceConfigSpec getConfig() {
-    return this.config;
-  }
+    public ResourceConfigSpec getConfig() {
+        return this.config;
+    }
 
-  public HostSystemResourceInfo[] getChild() {
-    return this.child;
-  }
+    public HostSystemResourceInfo[] getChild() {
+        return this.child;
+    }
 
-  public void setKey(String key) {
-    this.key=key;
-  }
+    public void setKey(String key) {
+        this.key = key;
+    }
 
-  public void setConfig(ResourceConfigSpec config) {
-    this.config=config;
-  }
+    public void setConfig(ResourceConfigSpec config) {
+        this.config = config;
+    }
 
-  public void setChild(HostSystemResourceInfo[] child) {
-    this.child=child;
-  }
+    public void setChild(HostSystemResourceInfo[] child) {
+        this.child = child;
+    }
 }

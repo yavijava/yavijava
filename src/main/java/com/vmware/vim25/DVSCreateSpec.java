@@ -30,37 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class DVSCreateSpec extends DynamicData {
-  public DVSConfigSpec configSpec;
-  public DistributedVirtualSwitchProductSpec productInfo;
-  public DVSCapability capability;
+    public DVSConfigSpec configSpec;
+    public DistributedVirtualSwitchProductSpec productInfo;
+    public DVSCapability capability;
 
-  public DVSConfigSpec getConfigSpec() {
-    return this.configSpec;
-  }
+    public DVSConfigSpec getConfigSpec() {
+        return this.configSpec;
+    }
 
-  public DistributedVirtualSwitchProductSpec getProductInfo() {
-    return this.productInfo;
-  }
+    public DistributedVirtualSwitchProductSpec getProductInfo() {
+        return this.productInfo;
+    }
 
-  public DVSCapability getCapability() {
-    return this.capability;
-  }
+    public DVSCapability getCapability() {
+        return this.capability;
+    }
 
-  public void setConfigSpec(DVSConfigSpec configSpec) {
-    this.configSpec=configSpec;
-  }
+    public void setConfigSpec(DVSConfigSpec configSpec) {
+        this.configSpec = configSpec;
+    }
 
-  public void setProductInfo(DistributedVirtualSwitchProductSpec productInfo) {
-    this.productInfo=productInfo;
-  }
+    public void setProductInfo(DistributedVirtualSwitchProductSpec productInfo) {
+        this.productInfo = productInfo;
+    }
 
-  public void setCapability(DVSCapability capability) {
-    this.capability=capability;
-  }
+    public void setCapability(DVSCapability capability) {
+        this.capability = capability;
+    }
 }

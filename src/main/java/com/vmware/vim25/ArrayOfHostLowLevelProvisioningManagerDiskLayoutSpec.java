@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfHostLowLevelProvisioningManagerDiskLayoutSpec {
-  public HostLowLevelProvisioningManagerDiskLayoutSpec[] HostLowLevelProvisioningManagerDiskLayoutSpec;
+    public HostLowLevelProvisioningManagerDiskLayoutSpec[] HostLowLevelProvisioningManagerDiskLayoutSpec;
 
-  public HostLowLevelProvisioningManagerDiskLayoutSpec[] getHostLowLevelProvisioningManagerDiskLayoutSpec() {
-    return this.HostLowLevelProvisioningManagerDiskLayoutSpec;
-  }
+    public HostLowLevelProvisioningManagerDiskLayoutSpec[] getHostLowLevelProvisioningManagerDiskLayoutSpec() {
+        return this.HostLowLevelProvisioningManagerDiskLayoutSpec;
+    }
 
-  public HostLowLevelProvisioningManagerDiskLayoutSpec getHostLowLevelProvisioningManagerDiskLayoutSpec(int i) {
-    return this.HostLowLevelProvisioningManagerDiskLayoutSpec[i];
-  }
+    public HostLowLevelProvisioningManagerDiskLayoutSpec getHostLowLevelProvisioningManagerDiskLayoutSpec(int i) {
+        return this.HostLowLevelProvisioningManagerDiskLayoutSpec[i];
+    }
 
-  public void setHostLowLevelProvisioningManagerDiskLayoutSpec(HostLowLevelProvisioningManagerDiskLayoutSpec[] HostLowLevelProvisioningManagerDiskLayoutSpec) {
-    this.HostLowLevelProvisioningManagerDiskLayoutSpec=HostLowLevelProvisioningManagerDiskLayoutSpec;
-  }
+    public void setHostLowLevelProvisioningManagerDiskLayoutSpec(HostLowLevelProvisioningManagerDiskLayoutSpec[] HostLowLevelProvisioningManagerDiskLayoutSpec) {
+        this.HostLowLevelProvisioningManagerDiskLayoutSpec = HostLowLevelProvisioningManagerDiskLayoutSpec;
+    }
 }

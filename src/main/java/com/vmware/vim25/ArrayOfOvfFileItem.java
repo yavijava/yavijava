@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfOvfFileItem {
-  public OvfFileItem[] OvfFileItem;
+    public OvfFileItem[] OvfFileItem;
 
-  public OvfFileItem[] getOvfFileItem() {
-    return this.OvfFileItem;
-  }
+    public OvfFileItem[] getOvfFileItem() {
+        return this.OvfFileItem;
+    }
 
-  public OvfFileItem getOvfFileItem(int i) {
-    return this.OvfFileItem[i];
-  }
+    public OvfFileItem getOvfFileItem(int i) {
+        return this.OvfFileItem[i];
+    }
 
-  public void setOvfFileItem(OvfFileItem[] OvfFileItem) {
-    this.OvfFileItem=OvfFileItem;
-  }
+    public void setOvfFileItem(OvfFileItem[] OvfFileItem) {
+        this.OvfFileItem = OvfFileItem;
+    }
 }

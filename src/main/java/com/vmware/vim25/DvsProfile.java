@@ -30,37 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class DvsProfile extends ApplyProfile {
-  public String key;
-  public String name;
-  public PnicUplinkProfile[] uplink;
+    public String key;
+    public String name;
+    public PnicUplinkProfile[] uplink;
 
-  public String getKey() {
-    return this.key;
-  }
+    public String getKey() {
+        return this.key;
+    }
 
-  public String getName() {
-    return this.name;
-  }
+    public String getName() {
+        return this.name;
+    }
 
-  public PnicUplinkProfile[] getUplink() {
-    return this.uplink;
-  }
+    public PnicUplinkProfile[] getUplink() {
+        return this.uplink;
+    }
 
-  public void setKey(String key) {
-    this.key=key;
-  }
+    public void setKey(String key) {
+        this.key = key;
+    }
 
-  public void setName(String name) {
-    this.name=name;
-  }
+    public void setName(String name) {
+        this.name = name;
+    }
 
-  public void setUplink(PnicUplinkProfile[] uplink) {
-    this.uplink=uplink;
-  }
+    public void setUplink(PnicUplinkProfile[] uplink) {
+        this.uplink = uplink;
+    }
 }

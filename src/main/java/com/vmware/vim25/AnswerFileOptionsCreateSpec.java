@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class AnswerFileOptionsCreateSpec extends AnswerFileCreateSpec {
-  public ProfileDeferredPolicyOptionParameter[] userInput;
+    public ProfileDeferredPolicyOptionParameter[] userInput;
 
-  public ProfileDeferredPolicyOptionParameter[] getUserInput() {
-    return this.userInput;
-  }
+    public ProfileDeferredPolicyOptionParameter[] getUserInput() {
+        return this.userInput;
+    }
 
-  public void setUserInput(ProfileDeferredPolicyOptionParameter[] userInput) {
-    this.userInput=userInput;
-  }
+    public void setUserInput(ProfileDeferredPolicyOptionParameter[] userInput) {
+        this.userInput = userInput;
+    }
 }

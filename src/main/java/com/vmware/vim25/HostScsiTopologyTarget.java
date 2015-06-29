@@ -30,46 +30,46 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostScsiTopologyTarget extends DynamicData {
-  public String key;
-  public int target;
-  public HostScsiTopologyLun[] lun;
-  public HostTargetTransport transport;
+    public String key;
+    public int target;
+    public HostScsiTopologyLun[] lun;
+    public HostTargetTransport transport;
 
-  public String getKey() {
-    return this.key;
-  }
+    public String getKey() {
+        return this.key;
+    }
 
-  public int getTarget() {
-    return this.target;
-  }
+    public int getTarget() {
+        return this.target;
+    }
 
-  public HostScsiTopologyLun[] getLun() {
-    return this.lun;
-  }
+    public HostScsiTopologyLun[] getLun() {
+        return this.lun;
+    }
 
-  public HostTargetTransport getTransport() {
-    return this.transport;
-  }
+    public HostTargetTransport getTransport() {
+        return this.transport;
+    }
 
-  public void setKey(String key) {
-    this.key=key;
-  }
+    public void setKey(String key) {
+        this.key = key;
+    }
 
-  public void setTarget(int target) {
-    this.target=target;
-  }
+    public void setTarget(int target) {
+        this.target = target;
+    }
 
-  public void setLun(HostScsiTopologyLun[] lun) {
-    this.lun=lun;
-  }
+    public void setLun(HostScsiTopologyLun[] lun) {
+        this.lun = lun;
+    }
 
-  public void setTransport(HostTargetTransport transport) {
-    this.transport=transport;
-  }
+    public void setTransport(HostTargetTransport transport) {
+        this.transport = transport;
+    }
 }

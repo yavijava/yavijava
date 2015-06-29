@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class OvfUnsupportedPackage extends OvfFault {
-  public Integer lineNumber;
+    public Integer lineNumber;
 
-  public Integer getLineNumber() {
-    return this.lineNumber;
-  }
+    public Integer getLineNumber() {
+        return this.lineNumber;
+    }
 
-  public void setLineNumber(Integer lineNumber) {
-    this.lineNumber=lineNumber;
-  }
+    public void setLineNumber(Integer lineNumber) {
+        this.lineNumber = lineNumber;
+    }
 }

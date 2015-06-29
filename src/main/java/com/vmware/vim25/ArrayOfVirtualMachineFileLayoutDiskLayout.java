@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfVirtualMachineFileLayoutDiskLayout {
-  public VirtualMachineFileLayoutDiskLayout[] VirtualMachineFileLayoutDiskLayout;
+    public VirtualMachineFileLayoutDiskLayout[] VirtualMachineFileLayoutDiskLayout;
 
-  public VirtualMachineFileLayoutDiskLayout[] getVirtualMachineFileLayoutDiskLayout() {
-    return this.VirtualMachineFileLayoutDiskLayout;
-  }
+    public VirtualMachineFileLayoutDiskLayout[] getVirtualMachineFileLayoutDiskLayout() {
+        return this.VirtualMachineFileLayoutDiskLayout;
+    }
 
-  public VirtualMachineFileLayoutDiskLayout getVirtualMachineFileLayoutDiskLayout(int i) {
-    return this.VirtualMachineFileLayoutDiskLayout[i];
-  }
+    public VirtualMachineFileLayoutDiskLayout getVirtualMachineFileLayoutDiskLayout(int i) {
+        return this.VirtualMachineFileLayoutDiskLayout[i];
+    }
 
-  public void setVirtualMachineFileLayoutDiskLayout(VirtualMachineFileLayoutDiskLayout[] VirtualMachineFileLayoutDiskLayout) {
-    this.VirtualMachineFileLayoutDiskLayout=VirtualMachineFileLayoutDiskLayout;
-  }
+    public void setVirtualMachineFileLayoutDiskLayout(VirtualMachineFileLayoutDiskLayout[] VirtualMachineFileLayoutDiskLayout) {
+        this.VirtualMachineFileLayoutDiskLayout = VirtualMachineFileLayoutDiskLayout;
+    }
 }

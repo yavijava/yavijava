@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VMwareDVSVlanHealthCheckResult extends HostMemberUplinkHealthCheckResult {
-  public NumericRange[] trunkedVlan;
-  public NumericRange[] untrunkedVlan;
+    public NumericRange[] trunkedVlan;
+    public NumericRange[] untrunkedVlan;
 
-  public NumericRange[] getTrunkedVlan() {
-    return this.trunkedVlan;
-  }
+    public NumericRange[] getTrunkedVlan() {
+        return this.trunkedVlan;
+    }
 
-  public NumericRange[] getUntrunkedVlan() {
-    return this.untrunkedVlan;
-  }
+    public NumericRange[] getUntrunkedVlan() {
+        return this.untrunkedVlan;
+    }
 
-  public void setTrunkedVlan(NumericRange[] trunkedVlan) {
-    this.trunkedVlan=trunkedVlan;
-  }
+    public void setTrunkedVlan(NumericRange[] trunkedVlan) {
+        this.trunkedVlan = trunkedVlan;
+    }
 
-  public void setUntrunkedVlan(NumericRange[] untrunkedVlan) {
-    this.untrunkedVlan=untrunkedVlan;
-  }
+    public void setUntrunkedVlan(NumericRange[] untrunkedVlan) {
+        this.untrunkedVlan = untrunkedVlan;
+    }
 }

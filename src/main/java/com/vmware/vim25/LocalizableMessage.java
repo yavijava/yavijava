@@ -30,37 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class LocalizableMessage extends DynamicData {
-  public String key;
-  public KeyAnyValue[] arg;
-  public String message;
+    public String key;
+    public KeyAnyValue[] arg;
+    public String message;
 
-  public String getKey() {
-    return this.key;
-  }
+    public String getKey() {
+        return this.key;
+    }
 
-  public KeyAnyValue[] getArg() {
-    return this.arg;
-  }
+    public KeyAnyValue[] getArg() {
+        return this.arg;
+    }
 
-  public String getMessage() {
-    return this.message;
-  }
+    public String getMessage() {
+        return this.message;
+    }
 
-  public void setKey(String key) {
-    this.key=key;
-  }
+    public void setKey(String key) {
+        this.key = key;
+    }
 
-  public void setArg(KeyAnyValue[] arg) {
-    this.arg=arg;
-  }
+    public void setArg(KeyAnyValue[] arg) {
+        this.arg = arg;
+    }
 
-  public void setMessage(String message) {
-    this.message=message;
-  }
+    public void setMessage(String message) {
+        this.message = message;
+    }
 }

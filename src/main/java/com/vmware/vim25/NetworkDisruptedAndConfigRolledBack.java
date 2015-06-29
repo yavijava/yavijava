@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class NetworkDisruptedAndConfigRolledBack extends VimFault {
-  public String host;
+    public String host;
 
-  public String getHost() {
-    return this.host;
-  }
+    public String getHost() {
+        return this.host;
+    }
 
-  public void setHost(String host) {
-    this.host=host;
-  }
+    public void setHost(String host) {
+        this.host = host;
+    }
 }

@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VMwareDvsLacpGroupSpec extends DynamicData {
-  public VMwareDvsLacpGroupConfig lacpGroupConfig;
-  public String operation;
+    public VMwareDvsLacpGroupConfig lacpGroupConfig;
+    public String operation;
 
-  public VMwareDvsLacpGroupConfig getLacpGroupConfig() {
-    return this.lacpGroupConfig;
-  }
+    public VMwareDvsLacpGroupConfig getLacpGroupConfig() {
+        return this.lacpGroupConfig;
+    }
 
-  public String getOperation() {
-    return this.operation;
-  }
+    public String getOperation() {
+        return this.operation;
+    }
 
-  public void setLacpGroupConfig(VMwareDvsLacpGroupConfig lacpGroupConfig) {
-    this.lacpGroupConfig=lacpGroupConfig;
-  }
+    public void setLacpGroupConfig(VMwareDvsLacpGroupConfig lacpGroupConfig) {
+        this.lacpGroupConfig = lacpGroupConfig;
+    }
 
-  public void setOperation(String operation) {
-    this.operation=operation;
-  }
+    public void setOperation(String operation) {
+        this.operation = operation;
+    }
 }

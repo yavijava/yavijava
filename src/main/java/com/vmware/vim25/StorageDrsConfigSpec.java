@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class StorageDrsConfigSpec extends DynamicData {
-  public StorageDrsPodConfigSpec podConfigSpec;
-  public StorageDrsVmConfigSpec[] vmConfigSpec;
+    public StorageDrsPodConfigSpec podConfigSpec;
+    public StorageDrsVmConfigSpec[] vmConfigSpec;
 
-  public StorageDrsPodConfigSpec getPodConfigSpec() {
-    return this.podConfigSpec;
-  }
+    public StorageDrsPodConfigSpec getPodConfigSpec() {
+        return this.podConfigSpec;
+    }
 
-  public StorageDrsVmConfigSpec[] getVmConfigSpec() {
-    return this.vmConfigSpec;
-  }
+    public StorageDrsVmConfigSpec[] getVmConfigSpec() {
+        return this.vmConfigSpec;
+    }
 
-  public void setPodConfigSpec(StorageDrsPodConfigSpec podConfigSpec) {
-    this.podConfigSpec=podConfigSpec;
-  }
+    public void setPodConfigSpec(StorageDrsPodConfigSpec podConfigSpec) {
+        this.podConfigSpec = podConfigSpec;
+    }
 
-  public void setVmConfigSpec(StorageDrsVmConfigSpec[] vmConfigSpec) {
-    this.vmConfigSpec=vmConfigSpec;
-  }
+    public void setVmConfigSpec(StorageDrsVmConfigSpec[] vmConfigSpec) {
+        this.vmConfigSpec = vmConfigSpec;
+    }
 }

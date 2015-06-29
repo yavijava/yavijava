@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public enum HostVmciAccessManagerMode {
-  grant ("grant"),
-  replace ("replace"),
-  revoke ("revoke");
+    grant("grant"),
+    replace("replace"),
+    revoke("revoke");
 
-  @SuppressWarnings("unused")
-  private final String val;
-  private HostVmciAccessManagerMode(String val)
-  {
-    this.val = val;
-  }
+    @SuppressWarnings("unused")
+    private final String val;
+
+    private HostVmciAccessManagerMode(String val) {
+        this.val = val;
+    }
 }

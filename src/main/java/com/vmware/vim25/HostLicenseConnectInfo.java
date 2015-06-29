@@ -30,37 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostLicenseConnectInfo extends DynamicData {
-  public LicenseManagerLicenseInfo license;
-  public LicenseManagerEvaluationInfo evaluation;
-  public HostLicensableResourceInfo resource;
+    public LicenseManagerLicenseInfo license;
+    public LicenseManagerEvaluationInfo evaluation;
+    public HostLicensableResourceInfo resource;
 
-  public LicenseManagerLicenseInfo getLicense() {
-    return this.license;
-  }
+    public LicenseManagerLicenseInfo getLicense() {
+        return this.license;
+    }
 
-  public LicenseManagerEvaluationInfo getEvaluation() {
-    return this.evaluation;
-  }
+    public LicenseManagerEvaluationInfo getEvaluation() {
+        return this.evaluation;
+    }
 
-  public HostLicensableResourceInfo getResource() {
-    return this.resource;
-  }
+    public HostLicensableResourceInfo getResource() {
+        return this.resource;
+    }
 
-  public void setLicense(LicenseManagerLicenseInfo license) {
-    this.license=license;
-  }
+    public void setLicense(LicenseManagerLicenseInfo license) {
+        this.license = license;
+    }
 
-  public void setEvaluation(LicenseManagerEvaluationInfo evaluation) {
-    this.evaluation=evaluation;
-  }
+    public void setEvaluation(LicenseManagerEvaluationInfo evaluation) {
+        this.evaluation = evaluation;
+    }
 
-  public void setResource(HostLicensableResourceInfo resource) {
-    this.resource=resource;
-  }
+    public void setResource(HostLicensableResourceInfo resource) {
+        this.resource = resource;
+    }
 }

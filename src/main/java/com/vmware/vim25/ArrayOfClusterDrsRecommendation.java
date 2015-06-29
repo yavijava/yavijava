@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfClusterDrsRecommendation {
-  public ClusterDrsRecommendation[] ClusterDrsRecommendation;
+    public ClusterDrsRecommendation[] ClusterDrsRecommendation;
 
-  public ClusterDrsRecommendation[] getClusterDrsRecommendation() {
-    return this.ClusterDrsRecommendation;
-  }
+    public ClusterDrsRecommendation[] getClusterDrsRecommendation() {
+        return this.ClusterDrsRecommendation;
+    }
 
-  public ClusterDrsRecommendation getClusterDrsRecommendation(int i) {
-    return this.ClusterDrsRecommendation[i];
-  }
+    public ClusterDrsRecommendation getClusterDrsRecommendation(int i) {
+        return this.ClusterDrsRecommendation[i];
+    }
 
-  public void setClusterDrsRecommendation(ClusterDrsRecommendation[] ClusterDrsRecommendation) {
-    this.ClusterDrsRecommendation=ClusterDrsRecommendation;
-  }
+    public void setClusterDrsRecommendation(ClusterDrsRecommendation[] ClusterDrsRecommendation) {
+        this.ClusterDrsRecommendation = ClusterDrsRecommendation;
+    }
 }

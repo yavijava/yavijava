@@ -30,37 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostFibreChannelOverEthernetHbaLinkInfo extends DynamicData {
-  public String vnportMac;
-  public String fcfMac;
-  public int vlanId;
+    public String vnportMac;
+    public String fcfMac;
+    public int vlanId;
 
-  public String getVnportMac() {
-    return this.vnportMac;
-  }
+    public String getVnportMac() {
+        return this.vnportMac;
+    }
 
-  public String getFcfMac() {
-    return this.fcfMac;
-  }
+    public String getFcfMac() {
+        return this.fcfMac;
+    }
 
-  public int getVlanId() {
-    return this.vlanId;
-  }
+    public int getVlanId() {
+        return this.vlanId;
+    }
 
-  public void setVnportMac(String vnportMac) {
-    this.vnportMac=vnportMac;
-  }
+    public void setVnportMac(String vnportMac) {
+        this.vnportMac = vnportMac;
+    }
 
-  public void setFcfMac(String fcfMac) {
-    this.fcfMac=fcfMac;
-  }
+    public void setFcfMac(String fcfMac) {
+        this.fcfMac = fcfMac;
+    }
 
-  public void setVlanId(int vlanId) {
-    this.vlanId=vlanId;
-  }
+    public void setVlanId(int vlanId) {
+        this.vlanId = vlanId;
+    }
 }

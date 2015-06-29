@@ -30,55 +30,55 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostVFlashManagerVFlashResourceRunTimeInfo extends DynamicData {
-  public long usage;
-  public long capacity;
-  public boolean accessible;
-  public long capacityForVmCache;
-  public long freeForVmCache;
+    public long usage;
+    public long capacity;
+    public boolean accessible;
+    public long capacityForVmCache;
+    public long freeForVmCache;
 
-  public long getUsage() {
-    return this.usage;
-  }
+    public long getUsage() {
+        return this.usage;
+    }
 
-  public long getCapacity() {
-    return this.capacity;
-  }
+    public long getCapacity() {
+        return this.capacity;
+    }
 
-  public boolean isAccessible() {
-    return this.accessible;
-  }
+    public boolean isAccessible() {
+        return this.accessible;
+    }
 
-  public long getCapacityForVmCache() {
-    return this.capacityForVmCache;
-  }
+    public long getCapacityForVmCache() {
+        return this.capacityForVmCache;
+    }
 
-  public long getFreeForVmCache() {
-    return this.freeForVmCache;
-  }
+    public long getFreeForVmCache() {
+        return this.freeForVmCache;
+    }
 
-  public void setUsage(long usage) {
-    this.usage=usage;
-  }
+    public void setUsage(long usage) {
+        this.usage = usage;
+    }
 
-  public void setCapacity(long capacity) {
-    this.capacity=capacity;
-  }
+    public void setCapacity(long capacity) {
+        this.capacity = capacity;
+    }
 
-  public void setAccessible(boolean accessible) {
-    this.accessible=accessible;
-  }
+    public void setAccessible(boolean accessible) {
+        this.accessible = accessible;
+    }
 
-  public void setCapacityForVmCache(long capacityForVmCache) {
-    this.capacityForVmCache=capacityForVmCache;
-  }
+    public void setCapacityForVmCache(long capacityForVmCache) {
+        this.capacityForVmCache = capacityForVmCache;
+    }
 
-  public void setFreeForVmCache(long freeForVmCache) {
-    this.freeForVmCache=freeForVmCache;
-  }
+    public void setFreeForVmCache(long freeForVmCache) {
+        this.freeForVmCache = freeForVmCache;
+    }
 }

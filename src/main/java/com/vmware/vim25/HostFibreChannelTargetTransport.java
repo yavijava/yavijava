@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostFibreChannelTargetTransport extends HostTargetTransport {
-  public long portWorldWideName;
-  public long nodeWorldWideName;
+    public long portWorldWideName;
+    public long nodeWorldWideName;
 
-  public long getPortWorldWideName() {
-    return this.portWorldWideName;
-  }
+    public long getPortWorldWideName() {
+        return this.portWorldWideName;
+    }
 
-  public long getNodeWorldWideName() {
-    return this.nodeWorldWideName;
-  }
+    public long getNodeWorldWideName() {
+        return this.nodeWorldWideName;
+    }
 
-  public void setPortWorldWideName(long portWorldWideName) {
-    this.portWorldWideName=portWorldWideName;
-  }
+    public void setPortWorldWideName(long portWorldWideName) {
+        this.portWorldWideName = portWorldWideName;
+    }
 
-  public void setNodeWorldWideName(long nodeWorldWideName) {
-    this.nodeWorldWideName=nodeWorldWideName;
-  }
+    public void setNodeWorldWideName(long nodeWorldWideName) {
+        this.nodeWorldWideName = nodeWorldWideName;
+    }
 }

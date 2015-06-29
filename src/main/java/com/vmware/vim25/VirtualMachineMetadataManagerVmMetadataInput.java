@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VirtualMachineMetadataManagerVmMetadataInput extends DynamicData {
-  public String operation;
-  public VirtualMachineMetadataManagerVmMetadata vmMetadata;
+    public String operation;
+    public VirtualMachineMetadataManagerVmMetadata vmMetadata;
 
-  public String getOperation() {
-    return this.operation;
-  }
+    public String getOperation() {
+        return this.operation;
+    }
 
-  public VirtualMachineMetadataManagerVmMetadata getVmMetadata() {
-    return this.vmMetadata;
-  }
+    public VirtualMachineMetadataManagerVmMetadata getVmMetadata() {
+        return this.vmMetadata;
+    }
 
-  public void setOperation(String operation) {
-    this.operation=operation;
-  }
+    public void setOperation(String operation) {
+        this.operation = operation;
+    }
 
-  public void setVmMetadata(VirtualMachineMetadataManagerVmMetadata vmMetadata) {
-    this.vmMetadata=vmMetadata;
-  }
+    public void setVmMetadata(VirtualMachineMetadataManagerVmMetadata vmMetadata) {
+        this.vmMetadata = vmMetadata;
+    }
 }

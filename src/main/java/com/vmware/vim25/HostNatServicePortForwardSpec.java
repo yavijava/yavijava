@@ -30,55 +30,55 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostNatServicePortForwardSpec extends DynamicData {
-  public String type;
-  public String name;
-  public int hostPort;
-  public int guestPort;
-  public String guestIpAddress;
+    public String type;
+    public String name;
+    public int hostPort;
+    public int guestPort;
+    public String guestIpAddress;
 
-  public String getType() {
-    return this.type;
-  }
+    public String getType() {
+        return this.type;
+    }
 
-  public String getName() {
-    return this.name;
-  }
+    public String getName() {
+        return this.name;
+    }
 
-  public int getHostPort() {
-    return this.hostPort;
-  }
+    public int getHostPort() {
+        return this.hostPort;
+    }
 
-  public int getGuestPort() {
-    return this.guestPort;
-  }
+    public int getGuestPort() {
+        return this.guestPort;
+    }
 
-  public String getGuestIpAddress() {
-    return this.guestIpAddress;
-  }
+    public String getGuestIpAddress() {
+        return this.guestIpAddress;
+    }
 
-  public void setType(String type) {
-    this.type=type;
-  }
+    public void setType(String type) {
+        this.type = type;
+    }
 
-  public void setName(String name) {
-    this.name=name;
-  }
+    public void setName(String name) {
+        this.name = name;
+    }
 
-  public void setHostPort(int hostPort) {
-    this.hostPort=hostPort;
-  }
+    public void setHostPort(int hostPort) {
+        this.hostPort = hostPort;
+    }
 
-  public void setGuestPort(int guestPort) {
-    this.guestPort=guestPort;
-  }
+    public void setGuestPort(int guestPort) {
+        this.guestPort = guestPort;
+    }
 
-  public void setGuestIpAddress(String guestIpAddress) {
-    this.guestIpAddress=guestIpAddress;
-  }
+    public void setGuestIpAddress(String guestIpAddress) {
+        this.guestIpAddress = guestIpAddress;
+    }
 }

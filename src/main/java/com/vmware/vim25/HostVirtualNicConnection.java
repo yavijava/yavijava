@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostVirtualNicConnection extends DynamicData {
-  public String portgroup;
-  public DistributedVirtualSwitchPortConnection dvPort;
+    public String portgroup;
+    public DistributedVirtualSwitchPortConnection dvPort;
 
-  public String getPortgroup() {
-    return this.portgroup;
-  }
+    public String getPortgroup() {
+        return this.portgroup;
+    }
 
-  public DistributedVirtualSwitchPortConnection getDvPort() {
-    return this.dvPort;
-  }
+    public DistributedVirtualSwitchPortConnection getDvPort() {
+        return this.dvPort;
+    }
 
-  public void setPortgroup(String portgroup) {
-    this.portgroup=portgroup;
-  }
+    public void setPortgroup(String portgroup) {
+        this.portgroup = portgroup;
+    }
 
-  public void setDvPort(DistributedVirtualSwitchPortConnection dvPort) {
-    this.dvPort=dvPort;
-  }
+    public void setDvPort(DistributedVirtualSwitchPortConnection dvPort) {
+        this.dvPort = dvPort;
+    }
 }

@@ -30,55 +30,55 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostPlugStoreTopology extends DynamicData {
-  public HostPlugStoreTopologyAdapter[] adapter;
-  public HostPlugStoreTopologyPath[] path;
-  public HostPlugStoreTopologyTarget[] target;
-  public HostPlugStoreTopologyDevice[] device;
-  public HostPlugStoreTopologyPlugin[] plugin;
+    public HostPlugStoreTopologyAdapter[] adapter;
+    public HostPlugStoreTopologyPath[] path;
+    public HostPlugStoreTopologyTarget[] target;
+    public HostPlugStoreTopologyDevice[] device;
+    public HostPlugStoreTopologyPlugin[] plugin;
 
-  public HostPlugStoreTopologyAdapter[] getAdapter() {
-    return this.adapter;
-  }
+    public HostPlugStoreTopologyAdapter[] getAdapter() {
+        return this.adapter;
+    }
 
-  public HostPlugStoreTopologyPath[] getPath() {
-    return this.path;
-  }
+    public HostPlugStoreTopologyPath[] getPath() {
+        return this.path;
+    }
 
-  public HostPlugStoreTopologyTarget[] getTarget() {
-    return this.target;
-  }
+    public HostPlugStoreTopologyTarget[] getTarget() {
+        return this.target;
+    }
 
-  public HostPlugStoreTopologyDevice[] getDevice() {
-    return this.device;
-  }
+    public HostPlugStoreTopologyDevice[] getDevice() {
+        return this.device;
+    }
 
-  public HostPlugStoreTopologyPlugin[] getPlugin() {
-    return this.plugin;
-  }
+    public HostPlugStoreTopologyPlugin[] getPlugin() {
+        return this.plugin;
+    }
 
-  public void setAdapter(HostPlugStoreTopologyAdapter[] adapter) {
-    this.adapter=adapter;
-  }
+    public void setAdapter(HostPlugStoreTopologyAdapter[] adapter) {
+        this.adapter = adapter;
+    }
 
-  public void setPath(HostPlugStoreTopologyPath[] path) {
-    this.path=path;
-  }
+    public void setPath(HostPlugStoreTopologyPath[] path) {
+        this.path = path;
+    }
 
-  public void setTarget(HostPlugStoreTopologyTarget[] target) {
-    this.target=target;
-  }
+    public void setTarget(HostPlugStoreTopologyTarget[] target) {
+        this.target = target;
+    }
 
-  public void setDevice(HostPlugStoreTopologyDevice[] device) {
-    this.device=device;
-  }
+    public void setDevice(HostPlugStoreTopologyDevice[] device) {
+        this.device = device;
+    }
 
-  public void setPlugin(HostPlugStoreTopologyPlugin[] plugin) {
-    this.plugin=plugin;
-  }
+    public void setPlugin(HostPlugStoreTopologyPlugin[] plugin) {
+        this.plugin = plugin;
+    }
 }

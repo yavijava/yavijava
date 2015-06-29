@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfProfileMetadata {
-  public ProfileMetadata[] ProfileMetadata;
+    public ProfileMetadata[] ProfileMetadata;
 
-  public ProfileMetadata[] getProfileMetadata() {
-    return this.ProfileMetadata;
-  }
+    public ProfileMetadata[] getProfileMetadata() {
+        return this.ProfileMetadata;
+    }
 
-  public ProfileMetadata getProfileMetadata(int i) {
-    return this.ProfileMetadata[i];
-  }
+    public ProfileMetadata getProfileMetadata(int i) {
+        return this.ProfileMetadata[i];
+    }
 
-  public void setProfileMetadata(ProfileMetadata[] ProfileMetadata) {
-    this.ProfileMetadata=ProfileMetadata;
-  }
+    public void setProfileMetadata(ProfileMetadata[] ProfileMetadata) {
+        this.ProfileMetadata = ProfileMetadata;
+    }
 }

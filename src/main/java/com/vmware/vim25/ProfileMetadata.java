@@ -30,64 +30,64 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class ProfileMetadata extends DynamicData {
-  public String key;
-  public String profileTypeName;
-  public ExtendedDescription description;
-  public ProfileMetadataProfileSortSpec[] sortSpec;
-  public String profileCategory;
-  public String profileComponent;
+    public String key;
+    public String profileTypeName;
+    public ExtendedDescription description;
+    public ProfileMetadataProfileSortSpec[] sortSpec;
+    public String profileCategory;
+    public String profileComponent;
 
-  public String getKey() {
-    return this.key;
-  }
+    public String getKey() {
+        return this.key;
+    }
 
-  public String getProfileTypeName() {
-    return this.profileTypeName;
-  }
+    public String getProfileTypeName() {
+        return this.profileTypeName;
+    }
 
-  public ExtendedDescription getDescription() {
-    return this.description;
-  }
+    public ExtendedDescription getDescription() {
+        return this.description;
+    }
 
-  public ProfileMetadataProfileSortSpec[] getSortSpec() {
-    return this.sortSpec;
-  }
+    public ProfileMetadataProfileSortSpec[] getSortSpec() {
+        return this.sortSpec;
+    }
 
-  public String getProfileCategory() {
-    return this.profileCategory;
-  }
+    public String getProfileCategory() {
+        return this.profileCategory;
+    }
 
-  public String getProfileComponent() {
-    return this.profileComponent;
-  }
+    public String getProfileComponent() {
+        return this.profileComponent;
+    }
 
-  public void setKey(String key) {
-    this.key=key;
-  }
+    public void setKey(String key) {
+        this.key = key;
+    }
 
-  public void setProfileTypeName(String profileTypeName) {
-    this.profileTypeName=profileTypeName;
-  }
+    public void setProfileTypeName(String profileTypeName) {
+        this.profileTypeName = profileTypeName;
+    }
 
-  public void setDescription(ExtendedDescription description) {
-    this.description=description;
-  }
+    public void setDescription(ExtendedDescription description) {
+        this.description = description;
+    }
 
-  public void setSortSpec(ProfileMetadataProfileSortSpec[] sortSpec) {
-    this.sortSpec=sortSpec;
-  }
+    public void setSortSpec(ProfileMetadataProfileSortSpec[] sortSpec) {
+        this.sortSpec = sortSpec;
+    }
 
-  public void setProfileCategory(String profileCategory) {
-    this.profileCategory=profileCategory;
-  }
+    public void setProfileCategory(String profileCategory) {
+        this.profileCategory = profileCategory;
+    }
 
-  public void setProfileComponent(String profileComponent) {
-    this.profileComponent=profileComponent;
-  }
+    public void setProfileComponent(String profileComponent) {
+        this.profileComponent = profileComponent;
+    }
 }

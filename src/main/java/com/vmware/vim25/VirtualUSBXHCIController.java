@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VirtualUSBXHCIController extends VirtualController {
-  public Boolean autoConnectDevices;
+    public Boolean autoConnectDevices;
 
-  public Boolean getAutoConnectDevices() {
-    return this.autoConnectDevices;
-  }
+    public Boolean getAutoConnectDevices() {
+        return this.autoConnectDevices;
+    }
 
-  public void setAutoConnectDevices(Boolean autoConnectDevices) {
-    this.autoConnectDevices=autoConnectDevices;
-  }
+    public void setAutoConnectDevices(Boolean autoConnectDevices) {
+        this.autoConnectDevices = autoConnectDevices;
+    }
 }

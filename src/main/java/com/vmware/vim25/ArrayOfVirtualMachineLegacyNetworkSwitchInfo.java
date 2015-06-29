@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfVirtualMachineLegacyNetworkSwitchInfo {
-  public VirtualMachineLegacyNetworkSwitchInfo[] VirtualMachineLegacyNetworkSwitchInfo;
+    public VirtualMachineLegacyNetworkSwitchInfo[] VirtualMachineLegacyNetworkSwitchInfo;
 
-  public VirtualMachineLegacyNetworkSwitchInfo[] getVirtualMachineLegacyNetworkSwitchInfo() {
-    return this.VirtualMachineLegacyNetworkSwitchInfo;
-  }
+    public VirtualMachineLegacyNetworkSwitchInfo[] getVirtualMachineLegacyNetworkSwitchInfo() {
+        return this.VirtualMachineLegacyNetworkSwitchInfo;
+    }
 
-  public VirtualMachineLegacyNetworkSwitchInfo getVirtualMachineLegacyNetworkSwitchInfo(int i) {
-    return this.VirtualMachineLegacyNetworkSwitchInfo[i];
-  }
+    public VirtualMachineLegacyNetworkSwitchInfo getVirtualMachineLegacyNetworkSwitchInfo(int i) {
+        return this.VirtualMachineLegacyNetworkSwitchInfo[i];
+    }
 
-  public void setVirtualMachineLegacyNetworkSwitchInfo(VirtualMachineLegacyNetworkSwitchInfo[] VirtualMachineLegacyNetworkSwitchInfo) {
-    this.VirtualMachineLegacyNetworkSwitchInfo=VirtualMachineLegacyNetworkSwitchInfo;
-  }
+    public void setVirtualMachineLegacyNetworkSwitchInfo(VirtualMachineLegacyNetworkSwitchInfo[] VirtualMachineLegacyNetworkSwitchInfo) {
+        this.VirtualMachineLegacyNetworkSwitchInfo = VirtualMachineLegacyNetworkSwitchInfo;
+    }
 }

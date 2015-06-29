@@ -30,18 +30,18 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public enum ClusterDasConfigInfoServiceState {
-  disabled ("disabled"),
-  enabled ("enabled");
+    disabled("disabled"),
+    enabled("enabled");
 
-  @SuppressWarnings("unused")
-  private final String val;
-  private ClusterDasConfigInfoServiceState(String val)
-  {
-    this.val = val;
-  }
+    @SuppressWarnings("unused")
+    private final String val;
+
+    private ClusterDasConfigInfoServiceState(String val) {
+        this.val = val;
+    }
 }

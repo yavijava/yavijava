@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfHostRuntimeInfoNetStackInstanceRuntimeInfo {
-  public HostRuntimeInfoNetStackInstanceRuntimeInfo[] HostRuntimeInfoNetStackInstanceRuntimeInfo;
+    public HostRuntimeInfoNetStackInstanceRuntimeInfo[] HostRuntimeInfoNetStackInstanceRuntimeInfo;
 
-  public HostRuntimeInfoNetStackInstanceRuntimeInfo[] getHostRuntimeInfoNetStackInstanceRuntimeInfo() {
-    return this.HostRuntimeInfoNetStackInstanceRuntimeInfo;
-  }
+    public HostRuntimeInfoNetStackInstanceRuntimeInfo[] getHostRuntimeInfoNetStackInstanceRuntimeInfo() {
+        return this.HostRuntimeInfoNetStackInstanceRuntimeInfo;
+    }
 
-  public HostRuntimeInfoNetStackInstanceRuntimeInfo getHostRuntimeInfoNetStackInstanceRuntimeInfo(int i) {
-    return this.HostRuntimeInfoNetStackInstanceRuntimeInfo[i];
-  }
+    public HostRuntimeInfoNetStackInstanceRuntimeInfo getHostRuntimeInfoNetStackInstanceRuntimeInfo(int i) {
+        return this.HostRuntimeInfoNetStackInstanceRuntimeInfo[i];
+    }
 
-  public void setHostRuntimeInfoNetStackInstanceRuntimeInfo(HostRuntimeInfoNetStackInstanceRuntimeInfo[] HostRuntimeInfoNetStackInstanceRuntimeInfo) {
-    this.HostRuntimeInfoNetStackInstanceRuntimeInfo=HostRuntimeInfoNetStackInstanceRuntimeInfo;
-  }
+    public void setHostRuntimeInfoNetStackInstanceRuntimeInfo(HostRuntimeInfoNetStackInstanceRuntimeInfo[] HostRuntimeInfoNetStackInstanceRuntimeInfo) {
+        this.HostRuntimeInfoNetStackInstanceRuntimeInfo = HostRuntimeInfoNetStackInstanceRuntimeInfo;
+    }
 }

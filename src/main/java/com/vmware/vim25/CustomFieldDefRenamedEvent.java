@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class CustomFieldDefRenamedEvent extends CustomFieldDefEvent {
-  public String newName;
+    public String newName;
 
-  public String getNewName() {
-    return this.newName;
-  }
+    public String getNewName() {
+        return this.newName;
+    }
 
-  public void setNewName(String newName) {
-    this.newName=newName;
-  }
+    public void setNewName(String newName) {
+        this.newName = newName;
+    }
 }

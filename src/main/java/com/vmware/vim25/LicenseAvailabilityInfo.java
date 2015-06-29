@@ -30,37 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class LicenseAvailabilityInfo extends DynamicData {
-  public LicenseFeatureInfo feature;
-  public int total;
-  public int available;
+    public LicenseFeatureInfo feature;
+    public int total;
+    public int available;
 
-  public LicenseFeatureInfo getFeature() {
-    return this.feature;
-  }
+    public LicenseFeatureInfo getFeature() {
+        return this.feature;
+    }
 
-  public int getTotal() {
-    return this.total;
-  }
+    public int getTotal() {
+        return this.total;
+    }
 
-  public int getAvailable() {
-    return this.available;
-  }
+    public int getAvailable() {
+        return this.available;
+    }
 
-  public void setFeature(LicenseFeatureInfo feature) {
-    this.feature=feature;
-  }
+    public void setFeature(LicenseFeatureInfo feature) {
+        this.feature = feature;
+    }
 
-  public void setTotal(int total) {
-    this.total=total;
-  }
+    public void setTotal(int total) {
+        this.total = total;
+    }
 
-  public void setAvailable(int available) {
-    this.available=available;
-  }
+    public void setAvailable(int available) {
+        this.available = available;
+    }
 }

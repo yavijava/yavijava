@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfEntityBackupConfig {
-  public EntityBackupConfig[] EntityBackupConfig;
+    public EntityBackupConfig[] EntityBackupConfig;
 
-  public EntityBackupConfig[] getEntityBackupConfig() {
-    return this.EntityBackupConfig;
-  }
+    public EntityBackupConfig[] getEntityBackupConfig() {
+        return this.EntityBackupConfig;
+    }
 
-  public EntityBackupConfig getEntityBackupConfig(int i) {
-    return this.EntityBackupConfig[i];
-  }
+    public EntityBackupConfig getEntityBackupConfig(int i) {
+        return this.EntityBackupConfig[i];
+    }
 
-  public void setEntityBackupConfig(EntityBackupConfig[] EntityBackupConfig) {
-    this.EntityBackupConfig=EntityBackupConfig;
-  }
+    public void setEntityBackupConfig(EntityBackupConfig[] EntityBackupConfig) {
+        this.EntityBackupConfig = EntityBackupConfig;
+    }
 }

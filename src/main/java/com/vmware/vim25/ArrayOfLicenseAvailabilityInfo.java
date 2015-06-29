@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfLicenseAvailabilityInfo {
-  public LicenseAvailabilityInfo[] LicenseAvailabilityInfo;
+    public LicenseAvailabilityInfo[] LicenseAvailabilityInfo;
 
-  public LicenseAvailabilityInfo[] getLicenseAvailabilityInfo() {
-    return this.LicenseAvailabilityInfo;
-  }
+    public LicenseAvailabilityInfo[] getLicenseAvailabilityInfo() {
+        return this.LicenseAvailabilityInfo;
+    }
 
-  public LicenseAvailabilityInfo getLicenseAvailabilityInfo(int i) {
-    return this.LicenseAvailabilityInfo[i];
-  }
+    public LicenseAvailabilityInfo getLicenseAvailabilityInfo(int i) {
+        return this.LicenseAvailabilityInfo[i];
+    }
 
-  public void setLicenseAvailabilityInfo(LicenseAvailabilityInfo[] LicenseAvailabilityInfo) {
-    this.LicenseAvailabilityInfo=LicenseAvailabilityInfo;
-  }
+    public void setLicenseAvailabilityInfo(LicenseAvailabilityInfo[] LicenseAvailabilityInfo) {
+        this.LicenseAvailabilityInfo = LicenseAvailabilityInfo;
+    }
 }

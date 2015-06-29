@@ -30,24 +30,24 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public enum HostDasErrorEventHostDasErrorReason {
-  configFailed ("configFailed"),
-  timeout ("timeout"),
-  communicationInitFailed ("communicationInitFailed"),
-  healthCheckScriptFailed ("healthCheckScriptFailed"),
-  agentFailed ("agentFailed"),
-  agentShutdown ("agentShutdown"),
-  isolationAddressUnpingable ("isolationAddressUnpingable"),
-  other ("other");
+    configFailed("configFailed"),
+    timeout("timeout"),
+    communicationInitFailed("communicationInitFailed"),
+    healthCheckScriptFailed("healthCheckScriptFailed"),
+    agentFailed("agentFailed"),
+    agentShutdown("agentShutdown"),
+    isolationAddressUnpingable("isolationAddressUnpingable"),
+    other("other");
 
-  @SuppressWarnings("unused")
-  private final String val;
-  private HostDasErrorEventHostDasErrorReason(String val)
-  {
-    this.val = val;
-  }
+    @SuppressWarnings("unused")
+    private final String val;
+
+    private HostDasErrorEventHostDasErrorReason(String val) {
+        this.val = val;
+    }
 }

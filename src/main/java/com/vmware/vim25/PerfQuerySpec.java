@@ -28,76 +28,77 @@ POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
 
 package com.vmware.vim25;
+
 import java.util.Calendar;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class PerfQuerySpec extends DynamicData {
-  public ManagedObjectReference entity;
-  public Calendar startTime;
-  public Calendar endTime;
-  public Integer maxSample;
-  public PerfMetricId[] metricId;
-  public Integer intervalId;
-  public String format;
+    public ManagedObjectReference entity;
+    public Calendar startTime;
+    public Calendar endTime;
+    public Integer maxSample;
+    public PerfMetricId[] metricId;
+    public Integer intervalId;
+    public String format;
 
-  public ManagedObjectReference getEntity() {
-    return this.entity;
-  }
+    public ManagedObjectReference getEntity() {
+        return this.entity;
+    }
 
-  public Calendar getStartTime() {
-    return this.startTime;
-  }
+    public Calendar getStartTime() {
+        return this.startTime;
+    }
 
-  public Calendar getEndTime() {
-    return this.endTime;
-  }
+    public Calendar getEndTime() {
+        return this.endTime;
+    }
 
-  public Integer getMaxSample() {
-    return this.maxSample;
-  }
+    public Integer getMaxSample() {
+        return this.maxSample;
+    }
 
-  public PerfMetricId[] getMetricId() {
-    return this.metricId;
-  }
+    public PerfMetricId[] getMetricId() {
+        return this.metricId;
+    }
 
-  public Integer getIntervalId() {
-    return this.intervalId;
-  }
+    public Integer getIntervalId() {
+        return this.intervalId;
+    }
 
-  public String getFormat() {
-    return this.format;
-  }
+    public String getFormat() {
+        return this.format;
+    }
 
-  public void setEntity(ManagedObjectReference entity) {
-    this.entity=entity;
-  }
+    public void setEntity(ManagedObjectReference entity) {
+        this.entity = entity;
+    }
 
-  public void setStartTime(Calendar startTime) {
-    this.startTime=startTime;
-  }
+    public void setStartTime(Calendar startTime) {
+        this.startTime = startTime;
+    }
 
-  public void setEndTime(Calendar endTime) {
-    this.endTime=endTime;
-  }
+    public void setEndTime(Calendar endTime) {
+        this.endTime = endTime;
+    }
 
-  public void setMaxSample(Integer maxSample) {
-    this.maxSample=maxSample;
-  }
+    public void setMaxSample(Integer maxSample) {
+        this.maxSample = maxSample;
+    }
 
-  public void setMetricId(PerfMetricId[] metricId) {
-    this.metricId=metricId;
-  }
+    public void setMetricId(PerfMetricId[] metricId) {
+        this.metricId = metricId;
+    }
 
-  public void setIntervalId(Integer intervalId) {
-    this.intervalId=intervalId;
-  }
+    public void setIntervalId(Integer intervalId) {
+        this.intervalId = intervalId;
+    }
 
-  public void setFormat(String format) {
-    this.format=format;
-  }
+    public void setFormat(String format) {
+        this.format = format;
+    }
 }

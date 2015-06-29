@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfHostBootDevice {
-  public HostBootDevice[] HostBootDevice;
+    public HostBootDevice[] HostBootDevice;
 
-  public HostBootDevice[] getHostBootDevice() {
-    return this.HostBootDevice;
-  }
+    public HostBootDevice[] getHostBootDevice() {
+        return this.HostBootDevice;
+    }
 
-  public HostBootDevice getHostBootDevice(int i) {
-    return this.HostBootDevice[i];
-  }
+    public HostBootDevice getHostBootDevice(int i) {
+        return this.HostBootDevice[i];
+    }
 
-  public void setHostBootDevice(HostBootDevice[] HostBootDevice) {
-    this.HostBootDevice=HostBootDevice;
-  }
+    public void setHostBootDevice(HostBootDevice[] HostBootDevice) {
+        this.HostBootDevice = HostBootDevice;
+    }
 }

@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class DVSContactInfo extends DynamicData {
-  public String name;
-  public String contact;
+    public String name;
+    public String contact;
 
-  public String getName() {
-    return this.name;
-  }
+    public String getName() {
+        return this.name;
+    }
 
-  public String getContact() {
-    return this.contact;
-  }
+    public String getContact() {
+        return this.contact;
+    }
 
-  public void setName(String name) {
-    this.name=name;
-  }
+    public void setName(String name) {
+        this.name = name;
+    }
 
-  public void setContact(String contact) {
-    this.contact=contact;
-  }
+    public void setContact(String contact) {
+        this.contact = contact;
+    }
 }

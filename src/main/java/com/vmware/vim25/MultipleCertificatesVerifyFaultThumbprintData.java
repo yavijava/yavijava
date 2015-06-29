@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class MultipleCertificatesVerifyFaultThumbprintData extends DynamicData {
-  public int port;
-  public String thumbprint;
+    public int port;
+    public String thumbprint;
 
-  public int getPort() {
-    return this.port;
-  }
+    public int getPort() {
+        return this.port;
+    }
 
-  public String getThumbprint() {
-    return this.thumbprint;
-  }
+    public String getThumbprint() {
+        return this.thumbprint;
+    }
 
-  public void setPort(int port) {
-    this.port=port;
-  }
+    public void setPort(int port) {
+        this.port = port;
+    }
 
-  public void setThumbprint(String thumbprint) {
-    this.thumbprint=thumbprint;
-  }
+    public void setThumbprint(String thumbprint) {
+        this.thumbprint = thumbprint;
+    }
 }

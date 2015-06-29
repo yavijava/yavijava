@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class DvsHealthStatusChangeEvent extends HostEvent {
-  public String switchUuid;
-  public HostMemberHealthCheckResult healthResult;
+    public String switchUuid;
+    public HostMemberHealthCheckResult healthResult;
 
-  public String getSwitchUuid() {
-    return this.switchUuid;
-  }
+    public String getSwitchUuid() {
+        return this.switchUuid;
+    }
 
-  public HostMemberHealthCheckResult getHealthResult() {
-    return this.healthResult;
-  }
+    public HostMemberHealthCheckResult getHealthResult() {
+        return this.healthResult;
+    }
 
-  public void setSwitchUuid(String switchUuid) {
-    this.switchUuid=switchUuid;
-  }
+    public void setSwitchUuid(String switchUuid) {
+        this.switchUuid = switchUuid;
+    }
 
-  public void setHealthResult(HostMemberHealthCheckResult healthResult) {
-    this.healthResult=healthResult;
-  }
+    public void setHealthResult(HostMemberHealthCheckResult healthResult) {
+        this.healthResult = healthResult;
+    }
 }

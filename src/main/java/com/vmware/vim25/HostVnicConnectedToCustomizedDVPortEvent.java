@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostVnicConnectedToCustomizedDVPortEvent extends HostEvent {
-  public VnicPortArgument vnic;
+    public VnicPortArgument vnic;
 
-  public VnicPortArgument getVnic() {
-    return this.vnic;
-  }
+    public VnicPortArgument getVnic() {
+        return this.vnic;
+    }
 
-  public void setVnic(VnicPortArgument vnic) {
-    this.vnic=vnic;
-  }
+    public void setVnic(VnicPortArgument vnic) {
+        this.vnic = vnic;
+    }
 }

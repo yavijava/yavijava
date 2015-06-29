@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VspanSameSessionPortConflict extends DvsFault {
-  public String vspanSessionKey;
-  public String portKey;
+    public String vspanSessionKey;
+    public String portKey;
 
-  public String getVspanSessionKey() {
-    return this.vspanSessionKey;
-  }
+    public String getVspanSessionKey() {
+        return this.vspanSessionKey;
+    }
 
-  public String getPortKey() {
-    return this.portKey;
-  }
+    public String getPortKey() {
+        return this.portKey;
+    }
 
-  public void setVspanSessionKey(String vspanSessionKey) {
-    this.vspanSessionKey=vspanSessionKey;
-  }
+    public void setVspanSessionKey(String vspanSessionKey) {
+        this.vspanSessionKey = vspanSessionKey;
+    }
 
-  public void setPortKey(String portKey) {
-    this.portKey=portKey;
-  }
+    public void setPortKey(String portKey) {
+        this.portKey = portKey;
+    }
 }

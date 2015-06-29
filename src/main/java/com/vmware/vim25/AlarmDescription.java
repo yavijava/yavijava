@@ -30,100 +30,100 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class AlarmDescription extends DynamicData {
-  public TypeDescription[] expr;
-  public ElementDescription[] stateOperator;
-  public ElementDescription[] metricOperator;
-  public ElementDescription[] hostSystemConnectionState;
-  public ElementDescription[] virtualMachinePowerState;
-  public ElementDescription[] datastoreConnectionState;
-  public ElementDescription[] hostSystemPowerState;
-  public ElementDescription[] virtualMachineGuestHeartbeatStatus;
-  public ElementDescription[] entityStatus;
-  public TypeDescription[] action;
+    public TypeDescription[] expr;
+    public ElementDescription[] stateOperator;
+    public ElementDescription[] metricOperator;
+    public ElementDescription[] hostSystemConnectionState;
+    public ElementDescription[] virtualMachinePowerState;
+    public ElementDescription[] datastoreConnectionState;
+    public ElementDescription[] hostSystemPowerState;
+    public ElementDescription[] virtualMachineGuestHeartbeatStatus;
+    public ElementDescription[] entityStatus;
+    public TypeDescription[] action;
 
-  public TypeDescription[] getExpr() {
-    return this.expr;
-  }
+    public TypeDescription[] getExpr() {
+        return this.expr;
+    }
 
-  public ElementDescription[] getStateOperator() {
-    return this.stateOperator;
-  }
+    public ElementDescription[] getStateOperator() {
+        return this.stateOperator;
+    }
 
-  public ElementDescription[] getMetricOperator() {
-    return this.metricOperator;
-  }
+    public ElementDescription[] getMetricOperator() {
+        return this.metricOperator;
+    }
 
-  public ElementDescription[] getHostSystemConnectionState() {
-    return this.hostSystemConnectionState;
-  }
+    public ElementDescription[] getHostSystemConnectionState() {
+        return this.hostSystemConnectionState;
+    }
 
-  public ElementDescription[] getVirtualMachinePowerState() {
-    return this.virtualMachinePowerState;
-  }
+    public ElementDescription[] getVirtualMachinePowerState() {
+        return this.virtualMachinePowerState;
+    }
 
-  public ElementDescription[] getDatastoreConnectionState() {
-    return this.datastoreConnectionState;
-  }
+    public ElementDescription[] getDatastoreConnectionState() {
+        return this.datastoreConnectionState;
+    }
 
-  public ElementDescription[] getHostSystemPowerState() {
-    return this.hostSystemPowerState;
-  }
+    public ElementDescription[] getHostSystemPowerState() {
+        return this.hostSystemPowerState;
+    }
 
-  public ElementDescription[] getVirtualMachineGuestHeartbeatStatus() {
-    return this.virtualMachineGuestHeartbeatStatus;
-  }
+    public ElementDescription[] getVirtualMachineGuestHeartbeatStatus() {
+        return this.virtualMachineGuestHeartbeatStatus;
+    }
 
-  public ElementDescription[] getEntityStatus() {
-    return this.entityStatus;
-  }
+    public ElementDescription[] getEntityStatus() {
+        return this.entityStatus;
+    }
 
-  public TypeDescription[] getAction() {
-    return this.action;
-  }
+    public TypeDescription[] getAction() {
+        return this.action;
+    }
 
-  public void setExpr(TypeDescription[] expr) {
-    this.expr=expr;
-  }
+    public void setExpr(TypeDescription[] expr) {
+        this.expr = expr;
+    }
 
-  public void setStateOperator(ElementDescription[] stateOperator) {
-    this.stateOperator=stateOperator;
-  }
+    public void setStateOperator(ElementDescription[] stateOperator) {
+        this.stateOperator = stateOperator;
+    }
 
-  public void setMetricOperator(ElementDescription[] metricOperator) {
-    this.metricOperator=metricOperator;
-  }
+    public void setMetricOperator(ElementDescription[] metricOperator) {
+        this.metricOperator = metricOperator;
+    }
 
-  public void setHostSystemConnectionState(ElementDescription[] hostSystemConnectionState) {
-    this.hostSystemConnectionState=hostSystemConnectionState;
-  }
+    public void setHostSystemConnectionState(ElementDescription[] hostSystemConnectionState) {
+        this.hostSystemConnectionState = hostSystemConnectionState;
+    }
 
-  public void setVirtualMachinePowerState(ElementDescription[] virtualMachinePowerState) {
-    this.virtualMachinePowerState=virtualMachinePowerState;
-  }
+    public void setVirtualMachinePowerState(ElementDescription[] virtualMachinePowerState) {
+        this.virtualMachinePowerState = virtualMachinePowerState;
+    }
 
-  public void setDatastoreConnectionState(ElementDescription[] datastoreConnectionState) {
-    this.datastoreConnectionState=datastoreConnectionState;
-  }
+    public void setDatastoreConnectionState(ElementDescription[] datastoreConnectionState) {
+        this.datastoreConnectionState = datastoreConnectionState;
+    }
 
-  public void setHostSystemPowerState(ElementDescription[] hostSystemPowerState) {
-    this.hostSystemPowerState=hostSystemPowerState;
-  }
+    public void setHostSystemPowerState(ElementDescription[] hostSystemPowerState) {
+        this.hostSystemPowerState = hostSystemPowerState;
+    }
 
-  public void setVirtualMachineGuestHeartbeatStatus(ElementDescription[] virtualMachineGuestHeartbeatStatus) {
-    this.virtualMachineGuestHeartbeatStatus=virtualMachineGuestHeartbeatStatus;
-  }
+    public void setVirtualMachineGuestHeartbeatStatus(ElementDescription[] virtualMachineGuestHeartbeatStatus) {
+        this.virtualMachineGuestHeartbeatStatus = virtualMachineGuestHeartbeatStatus;
+    }
 
-  public void setEntityStatus(ElementDescription[] entityStatus) {
-    this.entityStatus=entityStatus;
-  }
+    public void setEntityStatus(ElementDescription[] entityStatus) {
+        this.entityStatus = entityStatus;
+    }
 
-  public void setAction(TypeDescription[] action) {
-    this.action=action;
-  }
+    public void setAction(TypeDescription[] action) {
+        this.action = action;
+    }
 }

@@ -30,64 +30,64 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostGraphicsInfo extends DynamicData {
-  public String deviceName;
-  public String vendorName;
-  public String pciId;
-  public String graphicsType;
-  public long memorySizeInKB;
-  public ManagedObjectReference[] vm;
+    public String deviceName;
+    public String vendorName;
+    public String pciId;
+    public String graphicsType;
+    public long memorySizeInKB;
+    public ManagedObjectReference[] vm;
 
-  public String getDeviceName() {
-    return this.deviceName;
-  }
+    public String getDeviceName() {
+        return this.deviceName;
+    }
 
-  public String getVendorName() {
-    return this.vendorName;
-  }
+    public String getVendorName() {
+        return this.vendorName;
+    }
 
-  public String getPciId() {
-    return this.pciId;
-  }
+    public String getPciId() {
+        return this.pciId;
+    }
 
-  public String getGraphicsType() {
-    return this.graphicsType;
-  }
+    public String getGraphicsType() {
+        return this.graphicsType;
+    }
 
-  public long getMemorySizeInKB() {
-    return this.memorySizeInKB;
-  }
+    public long getMemorySizeInKB() {
+        return this.memorySizeInKB;
+    }
 
-  public ManagedObjectReference[] getVm() {
-    return this.vm;
-  }
+    public ManagedObjectReference[] getVm() {
+        return this.vm;
+    }
 
-  public void setDeviceName(String deviceName) {
-    this.deviceName=deviceName;
-  }
+    public void setDeviceName(String deviceName) {
+        this.deviceName = deviceName;
+    }
 
-  public void setVendorName(String vendorName) {
-    this.vendorName=vendorName;
-  }
+    public void setVendorName(String vendorName) {
+        this.vendorName = vendorName;
+    }
 
-  public void setPciId(String pciId) {
-    this.pciId=pciId;
-  }
+    public void setPciId(String pciId) {
+        this.pciId = pciId;
+    }
 
-  public void setGraphicsType(String graphicsType) {
-    this.graphicsType=graphicsType;
-  }
+    public void setGraphicsType(String graphicsType) {
+        this.graphicsType = graphicsType;
+    }
 
-  public void setMemorySizeInKB(long memorySizeInKB) {
-    this.memorySizeInKB=memorySizeInKB;
-  }
+    public void setMemorySizeInKB(long memorySizeInKB) {
+        this.memorySizeInKB = memorySizeInKB;
+    }
 
-  public void setVm(ManagedObjectReference[] vm) {
-    this.vm=vm;
-  }
+    public void setVm(ManagedObjectReference[] vm) {
+        this.vm = vm;
+    }
 }

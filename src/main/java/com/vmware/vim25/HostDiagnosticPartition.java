@@ -30,46 +30,46 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostDiagnosticPartition extends DynamicData {
-  public String storageType;
-  public String diagnosticType;
-  public int slots;
-  public HostScsiDiskPartition id;
+    public String storageType;
+    public String diagnosticType;
+    public int slots;
+    public HostScsiDiskPartition id;
 
-  public String getStorageType() {
-    return this.storageType;
-  }
+    public String getStorageType() {
+        return this.storageType;
+    }
 
-  public String getDiagnosticType() {
-    return this.diagnosticType;
-  }
+    public String getDiagnosticType() {
+        return this.diagnosticType;
+    }
 
-  public int getSlots() {
-    return this.slots;
-  }
+    public int getSlots() {
+        return this.slots;
+    }
 
-  public HostScsiDiskPartition getId() {
-    return this.id;
-  }
+    public HostScsiDiskPartition getId() {
+        return this.id;
+    }
 
-  public void setStorageType(String storageType) {
-    this.storageType=storageType;
-  }
+    public void setStorageType(String storageType) {
+        this.storageType = storageType;
+    }
 
-  public void setDiagnosticType(String diagnosticType) {
-    this.diagnosticType=diagnosticType;
-  }
+    public void setDiagnosticType(String diagnosticType) {
+        this.diagnosticType = diagnosticType;
+    }
 
-  public void setSlots(int slots) {
-    this.slots=slots;
-  }
+    public void setSlots(int slots) {
+        this.slots = slots;
+    }
 
-  public void setId(HostScsiDiskPartition id) {
-    this.id=id;
-  }
+    public void setId(HostScsiDiskPartition id) {
+        this.id = id;
+    }
 }

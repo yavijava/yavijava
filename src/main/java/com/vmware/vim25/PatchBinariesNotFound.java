@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class PatchBinariesNotFound extends VimFault {
-  public String patchID;
-  public String[] binary;
+    public String patchID;
+    public String[] binary;
 
-  public String getPatchID() {
-    return this.patchID;
-  }
+    public String getPatchID() {
+        return this.patchID;
+    }
 
-  public String[] getBinary() {
-    return this.binary;
-  }
+    public String[] getBinary() {
+        return this.binary;
+    }
 
-  public void setPatchID(String patchID) {
-    this.patchID=patchID;
-  }
+    public void setPatchID(String patchID) {
+        this.patchID = patchID;
+    }
 
-  public void setBinary(String[] binary) {
-    this.binary=binary;
-  }
+    public void setBinary(String[] binary) {
+        this.binary = binary;
+    }
 }

@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class PatchNotApplicable extends VimFault {
-  public String patchID;
+    public String patchID;
 
-  public String getPatchID() {
-    return this.patchID;
-  }
+    public String getPatchID() {
+        return this.patchID;
+    }
 
-  public void setPatchID(String patchID) {
-    this.patchID=patchID;
-  }
+    public void setPatchID(String patchID) {
+        this.patchID = patchID;
+    }
 }

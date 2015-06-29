@@ -26,6 +26,6 @@ final public class ClientCreator {
 
     public static Client getClient(String url, boolean ignoreCert) throws NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
         Constructor<?> constructor = clientClass.getConstructor(String.class, boolean.class);
-        return (SoapClient) constructor.newInstance(new Object[] {url, ignoreCert});
+        return (Client) constructor.newInstance(new Object[]{url, ignoreCert});
     }
 }

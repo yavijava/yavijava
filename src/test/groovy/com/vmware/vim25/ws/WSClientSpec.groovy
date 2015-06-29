@@ -2,9 +2,6 @@ package com.vmware.vim25.ws
 
 import com.vmware.vim25.InvalidLogin
 import com.vmware.vim25.ManagedObjectReference
-import com.vmware.vim25.UserSession
-import org.spockframework.mock.runtime.StaticMockMethod
-import spock.lang.MockingApi
 import spock.lang.Specification
 
 /**
@@ -26,20 +23,18 @@ class WSClientSpec extends Specification {
 
     def 'test Login fails with InvalidLogin when invalid info is used'() {
         setup:
-        InputStream inputStream = new FileInputStream(new File("src/test/java/com/vmware/vim25/ws/xml/InvalidLoginFault.xml"));
+        InputStream inputStream = new FileInputStream(new File("src/test/java/com/vmware/vim25/ws/xml/InvalidLoginFault.xml"))
 
         WSClient wsClient = Spy(WSClient,constructorArgs:["https://foo.com/sdk", true]) {post(*_) >> inputStream}
-        //wsClient.
-
         ManagedObjectReference managedObjectReference = new ManagedObjectReference()
         managedObjectReference.setType("UserSession")
         managedObjectReference.val = "user-123"
 
-        Argument[] paras = new Argument[4];
-        paras[0] = new Argument("_this", "ManagedObjectReference", managedObjectReference);
-        paras[1] = new Argument("userName", "String", null);
-        paras[2] = new Argument("password", "String", null);
-        paras[3] = new Argument("locale", "String", null);
+        Argument[] paras = new Argument[4]
+        paras[0] = new Argument("_this", "ManagedObjectReference", managedObjectReference)
+        paras[1] = new Argument("userName", "String", null)
+        paras[2] = new Argument("password", "String", null)
+        paras[3] = new Argument("locale", "String", null)
 
         when:
 

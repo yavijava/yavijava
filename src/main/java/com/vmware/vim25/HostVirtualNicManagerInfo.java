@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostVirtualNicManagerInfo extends DynamicData {
-  public VirtualNicManagerNetConfig[] netConfig;
+    public VirtualNicManagerNetConfig[] netConfig;
 
-  public VirtualNicManagerNetConfig[] getNetConfig() {
-    return this.netConfig;
-  }
+    public VirtualNicManagerNetConfig[] getNetConfig() {
+        return this.netConfig;
+    }
 
-  public void setNetConfig(VirtualNicManagerNetConfig[] netConfig) {
-    this.netConfig=netConfig;
-  }
+    public void setNetConfig(VirtualNicManagerNetConfig[] netConfig) {
+        this.netConfig = netConfig;
+    }
 }

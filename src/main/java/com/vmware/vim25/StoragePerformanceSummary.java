@@ -30,82 +30,82 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class StoragePerformanceSummary extends DynamicData {
-  public int interval;
-  public int[] percentile;
-  public double[] datastoreReadLatency;
-  public double[] datastoreWriteLatency;
-  public double[] datastoreVmLatency;
-  public double[] datastoreReadIops;
-  public double[] datastoreWriteIops;
-  public int siocActivityDuration;
+    public int interval;
+    public int[] percentile;
+    public double[] datastoreReadLatency;
+    public double[] datastoreWriteLatency;
+    public double[] datastoreVmLatency;
+    public double[] datastoreReadIops;
+    public double[] datastoreWriteIops;
+    public int siocActivityDuration;
 
-  public int getInterval() {
-    return this.interval;
-  }
+    public int getInterval() {
+        return this.interval;
+    }
 
-  public int[] getPercentile() {
-    return this.percentile;
-  }
+    public int[] getPercentile() {
+        return this.percentile;
+    }
 
-  public double[] getDatastoreReadLatency() {
-    return this.datastoreReadLatency;
-  }
+    public double[] getDatastoreReadLatency() {
+        return this.datastoreReadLatency;
+    }
 
-  public double[] getDatastoreWriteLatency() {
-    return this.datastoreWriteLatency;
-  }
+    public double[] getDatastoreWriteLatency() {
+        return this.datastoreWriteLatency;
+    }
 
-  public double[] getDatastoreVmLatency() {
-    return this.datastoreVmLatency;
-  }
+    public double[] getDatastoreVmLatency() {
+        return this.datastoreVmLatency;
+    }
 
-  public double[] getDatastoreReadIops() {
-    return this.datastoreReadIops;
-  }
+    public double[] getDatastoreReadIops() {
+        return this.datastoreReadIops;
+    }
 
-  public double[] getDatastoreWriteIops() {
-    return this.datastoreWriteIops;
-  }
+    public double[] getDatastoreWriteIops() {
+        return this.datastoreWriteIops;
+    }
 
-  public int getSiocActivityDuration() {
-    return this.siocActivityDuration;
-  }
+    public int getSiocActivityDuration() {
+        return this.siocActivityDuration;
+    }
 
-  public void setInterval(int interval) {
-    this.interval=interval;
-  }
+    public void setInterval(int interval) {
+        this.interval = interval;
+    }
 
-  public void setPercentile(int[] percentile) {
-    this.percentile=percentile;
-  }
+    public void setPercentile(int[] percentile) {
+        this.percentile = percentile;
+    }
 
-  public void setDatastoreReadLatency(double[] datastoreReadLatency) {
-    this.datastoreReadLatency=datastoreReadLatency;
-  }
+    public void setDatastoreReadLatency(double[] datastoreReadLatency) {
+        this.datastoreReadLatency = datastoreReadLatency;
+    }
 
-  public void setDatastoreWriteLatency(double[] datastoreWriteLatency) {
-    this.datastoreWriteLatency=datastoreWriteLatency;
-  }
+    public void setDatastoreWriteLatency(double[] datastoreWriteLatency) {
+        this.datastoreWriteLatency = datastoreWriteLatency;
+    }
 
-  public void setDatastoreVmLatency(double[] datastoreVmLatency) {
-    this.datastoreVmLatency=datastoreVmLatency;
-  }
+    public void setDatastoreVmLatency(double[] datastoreVmLatency) {
+        this.datastoreVmLatency = datastoreVmLatency;
+    }
 
-  public void setDatastoreReadIops(double[] datastoreReadIops) {
-    this.datastoreReadIops=datastoreReadIops;
-  }
+    public void setDatastoreReadIops(double[] datastoreReadIops) {
+        this.datastoreReadIops = datastoreReadIops;
+    }
 
-  public void setDatastoreWriteIops(double[] datastoreWriteIops) {
-    this.datastoreWriteIops=datastoreWriteIops;
-  }
+    public void setDatastoreWriteIops(double[] datastoreWriteIops) {
+        this.datastoreWriteIops = datastoreWriteIops;
+    }
 
-  public void setSiocActivityDuration(int siocActivityDuration) {
-    this.siocActivityDuration=siocActivityDuration;
-  }
+    public void setSiocActivityDuration(int siocActivityDuration) {
+        this.siocActivityDuration = siocActivityDuration;
+    }
 }

@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfAuthorizationPrivilege {
-  public AuthorizationPrivilege[] AuthorizationPrivilege;
+    public AuthorizationPrivilege[] AuthorizationPrivilege;
 
-  public AuthorizationPrivilege[] getAuthorizationPrivilege() {
-    return this.AuthorizationPrivilege;
-  }
+    public AuthorizationPrivilege[] getAuthorizationPrivilege() {
+        return this.AuthorizationPrivilege;
+    }
 
-  public AuthorizationPrivilege getAuthorizationPrivilege(int i) {
-    return this.AuthorizationPrivilege[i];
-  }
+    public AuthorizationPrivilege getAuthorizationPrivilege(int i) {
+        return this.AuthorizationPrivilege[i];
+    }
 
-  public void setAuthorizationPrivilege(AuthorizationPrivilege[] AuthorizationPrivilege) {
-    this.AuthorizationPrivilege=AuthorizationPrivilege;
-  }
+    public void setAuthorizationPrivilege(AuthorizationPrivilege[] AuthorizationPrivilege) {
+        this.AuthorizationPrivilege = AuthorizationPrivilege;
+    }
 }

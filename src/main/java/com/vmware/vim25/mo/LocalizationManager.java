@@ -33,18 +33,16 @@ import com.vmware.vim25.ManagedObjectReference;
 
 /**
  * The managed object class corresponding to the one defined in VI SDK API reference.
+ *
  * @author Steve JIN (http://www.doublecloud.org)
  * @since 4.0
  */
-public class LocalizationManager extends ManagedObject 
-{
-	public LocalizationManager(ServerConnection sc, ManagedObjectReference mor) 
-	{
-		super(sc, mor);
-	}
-	
-	public LocalizationManagerMessageCatalog[] getCatalog()
-	{
-		return (LocalizationManagerMessageCatalog[]) getCurrentProperty("catalog");
-	}
+public class LocalizationManager extends ManagedObject {
+    public LocalizationManager(ServerConnection sc, ManagedObjectReference mor) {
+        super(sc, mor);
+    }
+
+    public LocalizationManagerMessageCatalog[] getCatalog() {
+        return (LocalizationManagerMessageCatalog[]) getCurrentProperty("catalog");
+    }
 }

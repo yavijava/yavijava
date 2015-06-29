@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VmfsMountFault extends HostConfigFault {
-  public String uuid;
+    public String uuid;
 
-  public String getUuid() {
-    return this.uuid;
-  }
+    public String getUuid() {
+        return this.uuid;
+    }
 
-  public void setUuid(String uuid) {
-    this.uuid=uuid;
-  }
+    public void setUuid(String uuid) {
+        this.uuid = uuid;
+    }
 }

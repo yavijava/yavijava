@@ -30,64 +30,64 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HttpNfcLeaseInfo extends DynamicData {
-  public ManagedObjectReference lease;
-  public ManagedObjectReference entity;
-  public HttpNfcLeaseDeviceUrl[] deviceUrl;
-  public long totalDiskCapacityInKB;
-  public int leaseTimeout;
-  public HttpNfcLeaseDatastoreLeaseInfo[] hostMap;
+    public ManagedObjectReference lease;
+    public ManagedObjectReference entity;
+    public HttpNfcLeaseDeviceUrl[] deviceUrl;
+    public long totalDiskCapacityInKB;
+    public int leaseTimeout;
+    public HttpNfcLeaseDatastoreLeaseInfo[] hostMap;
 
-  public ManagedObjectReference getLease() {
-    return this.lease;
-  }
+    public ManagedObjectReference getLease() {
+        return this.lease;
+    }
 
-  public ManagedObjectReference getEntity() {
-    return this.entity;
-  }
+    public ManagedObjectReference getEntity() {
+        return this.entity;
+    }
 
-  public HttpNfcLeaseDeviceUrl[] getDeviceUrl() {
-    return this.deviceUrl;
-  }
+    public HttpNfcLeaseDeviceUrl[] getDeviceUrl() {
+        return this.deviceUrl;
+    }
 
-  public long getTotalDiskCapacityInKB() {
-    return this.totalDiskCapacityInKB;
-  }
+    public long getTotalDiskCapacityInKB() {
+        return this.totalDiskCapacityInKB;
+    }
 
-  public int getLeaseTimeout() {
-    return this.leaseTimeout;
-  }
+    public int getLeaseTimeout() {
+        return this.leaseTimeout;
+    }
 
-  public HttpNfcLeaseDatastoreLeaseInfo[] getHostMap() {
-    return this.hostMap;
-  }
+    public HttpNfcLeaseDatastoreLeaseInfo[] getHostMap() {
+        return this.hostMap;
+    }
 
-  public void setLease(ManagedObjectReference lease) {
-    this.lease=lease;
-  }
+    public void setLease(ManagedObjectReference lease) {
+        this.lease = lease;
+    }
 
-  public void setEntity(ManagedObjectReference entity) {
-    this.entity=entity;
-  }
+    public void setEntity(ManagedObjectReference entity) {
+        this.entity = entity;
+    }
 
-  public void setDeviceUrl(HttpNfcLeaseDeviceUrl[] deviceUrl) {
-    this.deviceUrl=deviceUrl;
-  }
+    public void setDeviceUrl(HttpNfcLeaseDeviceUrl[] deviceUrl) {
+        this.deviceUrl = deviceUrl;
+    }
 
-  public void setTotalDiskCapacityInKB(long totalDiskCapacityInKB) {
-    this.totalDiskCapacityInKB=totalDiskCapacityInKB;
-  }
+    public void setTotalDiskCapacityInKB(long totalDiskCapacityInKB) {
+        this.totalDiskCapacityInKB = totalDiskCapacityInKB;
+    }
 
-  public void setLeaseTimeout(int leaseTimeout) {
-    this.leaseTimeout=leaseTimeout;
-  }
+    public void setLeaseTimeout(int leaseTimeout) {
+        this.leaseTimeout = leaseTimeout;
+    }
 
-  public void setHostMap(HttpNfcLeaseDatastoreLeaseInfo[] hostMap) {
-    this.hostMap=hostMap;
-  }
+    public void setHostMap(HttpNfcLeaseDatastoreLeaseInfo[] hostMap) {
+        this.hostMap = hostMap;
+    }
 }

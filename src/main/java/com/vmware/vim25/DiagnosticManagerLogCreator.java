@@ -30,23 +30,23 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public enum DiagnosticManagerLogCreator {
-  vpxd ("vpxd"),
-  vpxa ("vpxa"),
-  hostd ("hostd"),
-  serverd ("serverd"),
-  install ("install"),
-  vpxClient ("vpxClient"),
-  recordLog ("recordLog");
+    vpxd("vpxd"),
+    vpxa("vpxa"),
+    hostd("hostd"),
+    serverd("serverd"),
+    install("install"),
+    vpxClient("vpxClient"),
+    recordLog("recordLog");
 
-  @SuppressWarnings("unused")
-  private final String val;
-  private DiagnosticManagerLogCreator(String val)
-  {
-    this.val = val;
-  }
+    @SuppressWarnings("unused")
+    private final String val;
+
+    private DiagnosticManagerLogCreator(String val) {
+        this.val = val;
+    }
 }

@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfVmPortGroupProfile {
-  public VmPortGroupProfile[] VmPortGroupProfile;
+    public VmPortGroupProfile[] VmPortGroupProfile;
 
-  public VmPortGroupProfile[] getVmPortGroupProfile() {
-    return this.VmPortGroupProfile;
-  }
+    public VmPortGroupProfile[] getVmPortGroupProfile() {
+        return this.VmPortGroupProfile;
+    }
 
-  public VmPortGroupProfile getVmPortGroupProfile(int i) {
-    return this.VmPortGroupProfile[i];
-  }
+    public VmPortGroupProfile getVmPortGroupProfile(int i) {
+        return this.VmPortGroupProfile[i];
+    }
 
-  public void setVmPortGroupProfile(VmPortGroupProfile[] VmPortGroupProfile) {
-    this.VmPortGroupProfile=VmPortGroupProfile;
-  }
+    public void setVmPortGroupProfile(VmPortGroupProfile[] VmPortGroupProfile) {
+        this.VmPortGroupProfile = VmPortGroupProfile;
+    }
 }

@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class MethodDisabled extends RuntimeFault {
-  public String source;
+    public String source;
 
-  public String getSource() {
-    return this.source;
-  }
+    public String getSource() {
+        return this.source;
+    }
 
-  public void setSource(String source) {
-    this.source=source;
-  }
+    public void setSource(String source) {
+        this.source = source;
+    }
 }

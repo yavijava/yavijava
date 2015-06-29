@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class LinkDiscoveryProtocolConfig extends DynamicData {
-  public String protocol;
-  public String operation;
+    public String protocol;
+    public String operation;
 
-  public String getProtocol() {
-    return this.protocol;
-  }
+    public String getProtocol() {
+        return this.protocol;
+    }
 
-  public String getOperation() {
-    return this.operation;
-  }
+    public String getOperation() {
+        return this.operation;
+    }
 
-  public void setProtocol(String protocol) {
-    this.protocol=protocol;
-  }
+    public void setProtocol(String protocol) {
+        this.protocol = protocol;
+    }
 
-  public void setOperation(String operation) {
-    this.operation=operation;
-  }
+    public void setOperation(String operation) {
+        this.operation = operation;
+    }
 }

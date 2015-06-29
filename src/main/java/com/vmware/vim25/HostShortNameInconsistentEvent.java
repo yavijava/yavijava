@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostShortNameInconsistentEvent extends HostDasEvent {
-  public String shortName;
-  public String shortName2;
+    public String shortName;
+    public String shortName2;
 
-  public String getShortName() {
-    return this.shortName;
-  }
+    public String getShortName() {
+        return this.shortName;
+    }
 
-  public String getShortName2() {
-    return this.shortName2;
-  }
+    public String getShortName2() {
+        return this.shortName2;
+    }
 
-  public void setShortName(String shortName) {
-    this.shortName=shortName;
-  }
+    public void setShortName(String shortName) {
+        this.shortName = shortName;
+    }
 
-  public void setShortName2(String shortName2) {
-    this.shortName2=shortName2;
-  }
+    public void setShortName2(String shortName2) {
+        this.shortName2 = shortName2;
+    }
 }

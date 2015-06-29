@@ -30,37 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VirtualMachineScsiDiskDeviceInfo extends VirtualMachineDiskDeviceInfo {
-  public HostScsiDisk disk;
-  public String transportHint;
-  public Integer lunNumber;
+    public HostScsiDisk disk;
+    public String transportHint;
+    public Integer lunNumber;
 
-  public HostScsiDisk getDisk() {
-    return this.disk;
-  }
+    public HostScsiDisk getDisk() {
+        return this.disk;
+    }
 
-  public String getTransportHint() {
-    return this.transportHint;
-  }
+    public String getTransportHint() {
+        return this.transportHint;
+    }
 
-  public Integer getLunNumber() {
-    return this.lunNumber;
-  }
+    public Integer getLunNumber() {
+        return this.lunNumber;
+    }
 
-  public void setDisk(HostScsiDisk disk) {
-    this.disk=disk;
-  }
+    public void setDisk(HostScsiDisk disk) {
+        this.disk = disk;
+    }
 
-  public void setTransportHint(String transportHint) {
-    this.transportHint=transportHint;
-  }
+    public void setTransportHint(String transportHint) {
+        this.transportHint = transportHint;
+    }
 
-  public void setLunNumber(Integer lunNumber) {
-    this.lunNumber=lunNumber;
-  }
+    public void setLunNumber(Integer lunNumber) {
+        this.lunNumber = lunNumber;
+    }
 }

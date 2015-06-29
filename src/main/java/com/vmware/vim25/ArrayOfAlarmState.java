@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfAlarmState {
-  public AlarmState[] AlarmState;
+    public AlarmState[] AlarmState;
 
-  public AlarmState[] getAlarmState() {
-    return this.AlarmState;
-  }
+    public AlarmState[] getAlarmState() {
+        return this.AlarmState;
+    }
 
-  public AlarmState getAlarmState(int i) {
-    return this.AlarmState[i];
-  }
+    public AlarmState getAlarmState(int i) {
+        return this.AlarmState[i];
+    }
 
-  public void setAlarmState(AlarmState[] AlarmState) {
-    this.AlarmState=AlarmState;
-  }
+    public void setAlarmState(AlarmState[] AlarmState) {
+        this.AlarmState = AlarmState;
+    }
 }

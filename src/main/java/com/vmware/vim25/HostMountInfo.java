@@ -30,55 +30,55 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostMountInfo extends DynamicData {
-  public String path;
-  public String accessMode;
-  public Boolean mounted;
-  public Boolean accessible;
-  public String inaccessibleReason;
+    public String path;
+    public String accessMode;
+    public Boolean mounted;
+    public Boolean accessible;
+    public String inaccessibleReason;
 
-  public String getPath() {
-    return this.path;
-  }
+    public String getPath() {
+        return this.path;
+    }
 
-  public String getAccessMode() {
-    return this.accessMode;
-  }
+    public String getAccessMode() {
+        return this.accessMode;
+    }
 
-  public Boolean getMounted() {
-    return this.mounted;
-  }
+    public Boolean getMounted() {
+        return this.mounted;
+    }
 
-  public Boolean getAccessible() {
-    return this.accessible;
-  }
+    public Boolean getAccessible() {
+        return this.accessible;
+    }
 
-  public String getInaccessibleReason() {
-    return this.inaccessibleReason;
-  }
+    public String getInaccessibleReason() {
+        return this.inaccessibleReason;
+    }
 
-  public void setPath(String path) {
-    this.path=path;
-  }
+    public void setPath(String path) {
+        this.path = path;
+    }
 
-  public void setAccessMode(String accessMode) {
-    this.accessMode=accessMode;
-  }
+    public void setAccessMode(String accessMode) {
+        this.accessMode = accessMode;
+    }
 
-  public void setMounted(Boolean mounted) {
-    this.mounted=mounted;
-  }
+    public void setMounted(Boolean mounted) {
+        this.mounted = mounted;
+    }
 
-  public void setAccessible(Boolean accessible) {
-    this.accessible=accessible;
-  }
+    public void setAccessible(Boolean accessible) {
+        this.accessible = accessible;
+    }
 
-  public void setInaccessibleReason(String inaccessibleReason) {
-    this.inaccessibleReason=inaccessibleReason;
-  }
+    public void setInaccessibleReason(String inaccessibleReason) {
+        this.inaccessibleReason = inaccessibleReason;
+    }
 }

@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class NumVirtualCoresPerSocketNotSupported extends VirtualHardwareCompatibilityIssue {
-  public int maxSupportedCoresPerSocketDest;
-  public int numCoresPerSocketVm;
+    public int maxSupportedCoresPerSocketDest;
+    public int numCoresPerSocketVm;
 
-  public int getMaxSupportedCoresPerSocketDest() {
-    return this.maxSupportedCoresPerSocketDest;
-  }
+    public int getMaxSupportedCoresPerSocketDest() {
+        return this.maxSupportedCoresPerSocketDest;
+    }
 
-  public int getNumCoresPerSocketVm() {
-    return this.numCoresPerSocketVm;
-  }
+    public int getNumCoresPerSocketVm() {
+        return this.numCoresPerSocketVm;
+    }
 
-  public void setMaxSupportedCoresPerSocketDest(int maxSupportedCoresPerSocketDest) {
-    this.maxSupportedCoresPerSocketDest=maxSupportedCoresPerSocketDest;
-  }
+    public void setMaxSupportedCoresPerSocketDest(int maxSupportedCoresPerSocketDest) {
+        this.maxSupportedCoresPerSocketDest = maxSupportedCoresPerSocketDest;
+    }
 
-  public void setNumCoresPerSocketVm(int numCoresPerSocketVm) {
-    this.numCoresPerSocketVm=numCoresPerSocketVm;
-  }
+    public void setNumCoresPerSocketVm(int numCoresPerSocketVm) {
+        this.numCoresPerSocketVm = numCoresPerSocketVm;
+    }
 }

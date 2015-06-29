@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfVsanHostConfigInfo {
-  public VsanHostConfigInfo[] VsanHostConfigInfo;
+    public VsanHostConfigInfo[] VsanHostConfigInfo;
 
-  public VsanHostConfigInfo[] getVsanHostConfigInfo() {
-    return this.VsanHostConfigInfo;
-  }
+    public VsanHostConfigInfo[] getVsanHostConfigInfo() {
+        return this.VsanHostConfigInfo;
+    }
 
-  public VsanHostConfigInfo getVsanHostConfigInfo(int i) {
-    return this.VsanHostConfigInfo[i];
-  }
+    public VsanHostConfigInfo getVsanHostConfigInfo(int i) {
+        return this.VsanHostConfigInfo[i];
+    }
 
-  public void setVsanHostConfigInfo(VsanHostConfigInfo[] VsanHostConfigInfo) {
-    this.VsanHostConfigInfo=VsanHostConfigInfo;
-  }
+    public void setVsanHostConfigInfo(VsanHostConfigInfo[] VsanHostConfigInfo) {
+        this.VsanHostConfigInfo = VsanHostConfigInfo;
+    }
 }

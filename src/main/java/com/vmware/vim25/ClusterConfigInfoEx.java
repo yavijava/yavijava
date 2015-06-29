@@ -30,100 +30,100 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class ClusterConfigInfoEx extends ComputeResourceConfigInfo {
-  public ClusterDasConfigInfo dasConfig;
-  public ClusterDasVmConfigInfo[] dasVmConfig;
-  public ClusterDrsConfigInfo drsConfig;
-  public ClusterDrsVmConfigInfo[] drsVmConfig;
-  public ClusterRuleInfo[] rule;
-  public ClusterDpmConfigInfo dpmConfigInfo;
-  public ClusterDpmHostConfigInfo[] dpmHostConfig;
-  public VsanClusterConfigInfo vsanConfigInfo;
-  public VsanHostConfigInfo[] vsanHostConfig;
-  public ClusterGroupInfo[] group;
+    public ClusterDasConfigInfo dasConfig;
+    public ClusterDasVmConfigInfo[] dasVmConfig;
+    public ClusterDrsConfigInfo drsConfig;
+    public ClusterDrsVmConfigInfo[] drsVmConfig;
+    public ClusterRuleInfo[] rule;
+    public ClusterDpmConfigInfo dpmConfigInfo;
+    public ClusterDpmHostConfigInfo[] dpmHostConfig;
+    public VsanClusterConfigInfo vsanConfigInfo;
+    public VsanHostConfigInfo[] vsanHostConfig;
+    public ClusterGroupInfo[] group;
 
-  public ClusterDasConfigInfo getDasConfig() {
-    return this.dasConfig;
-  }
+    public ClusterDasConfigInfo getDasConfig() {
+        return this.dasConfig;
+    }
 
-  public ClusterDasVmConfigInfo[] getDasVmConfig() {
-    return this.dasVmConfig;
-  }
+    public ClusterDasVmConfigInfo[] getDasVmConfig() {
+        return this.dasVmConfig;
+    }
 
-  public ClusterDrsConfigInfo getDrsConfig() {
-    return this.drsConfig;
-  }
+    public ClusterDrsConfigInfo getDrsConfig() {
+        return this.drsConfig;
+    }
 
-  public ClusterDrsVmConfigInfo[] getDrsVmConfig() {
-    return this.drsVmConfig;
-  }
+    public ClusterDrsVmConfigInfo[] getDrsVmConfig() {
+        return this.drsVmConfig;
+    }
 
-  public ClusterRuleInfo[] getRule() {
-    return this.rule;
-  }
+    public ClusterRuleInfo[] getRule() {
+        return this.rule;
+    }
 
-  public ClusterDpmConfigInfo getDpmConfigInfo() {
-    return this.dpmConfigInfo;
-  }
+    public ClusterDpmConfigInfo getDpmConfigInfo() {
+        return this.dpmConfigInfo;
+    }
 
-  public ClusterDpmHostConfigInfo[] getDpmHostConfig() {
-    return this.dpmHostConfig;
-  }
+    public ClusterDpmHostConfigInfo[] getDpmHostConfig() {
+        return this.dpmHostConfig;
+    }
 
-  public VsanClusterConfigInfo getVsanConfigInfo() {
-    return this.vsanConfigInfo;
-  }
+    public VsanClusterConfigInfo getVsanConfigInfo() {
+        return this.vsanConfigInfo;
+    }
 
-  public VsanHostConfigInfo[] getVsanHostConfig() {
-    return this.vsanHostConfig;
-  }
+    public VsanHostConfigInfo[] getVsanHostConfig() {
+        return this.vsanHostConfig;
+    }
 
-  public ClusterGroupInfo[] getGroup() {
-    return this.group;
-  }
+    public ClusterGroupInfo[] getGroup() {
+        return this.group;
+    }
 
-  public void setDasConfig(ClusterDasConfigInfo dasConfig) {
-    this.dasConfig=dasConfig;
-  }
+    public void setDasConfig(ClusterDasConfigInfo dasConfig) {
+        this.dasConfig = dasConfig;
+    }
 
-  public void setDasVmConfig(ClusterDasVmConfigInfo[] dasVmConfig) {
-    this.dasVmConfig=dasVmConfig;
-  }
+    public void setDasVmConfig(ClusterDasVmConfigInfo[] dasVmConfig) {
+        this.dasVmConfig = dasVmConfig;
+    }
 
-  public void setDrsConfig(ClusterDrsConfigInfo drsConfig) {
-    this.drsConfig=drsConfig;
-  }
+    public void setDrsConfig(ClusterDrsConfigInfo drsConfig) {
+        this.drsConfig = drsConfig;
+    }
 
-  public void setDrsVmConfig(ClusterDrsVmConfigInfo[] drsVmConfig) {
-    this.drsVmConfig=drsVmConfig;
-  }
+    public void setDrsVmConfig(ClusterDrsVmConfigInfo[] drsVmConfig) {
+        this.drsVmConfig = drsVmConfig;
+    }
 
-  public void setRule(ClusterRuleInfo[] rule) {
-    this.rule=rule;
-  }
+    public void setRule(ClusterRuleInfo[] rule) {
+        this.rule = rule;
+    }
 
-  public void setDpmConfigInfo(ClusterDpmConfigInfo dpmConfigInfo) {
-    this.dpmConfigInfo=dpmConfigInfo;
-  }
+    public void setDpmConfigInfo(ClusterDpmConfigInfo dpmConfigInfo) {
+        this.dpmConfigInfo = dpmConfigInfo;
+    }
 
-  public void setDpmHostConfig(ClusterDpmHostConfigInfo[] dpmHostConfig) {
-    this.dpmHostConfig=dpmHostConfig;
-  }
+    public void setDpmHostConfig(ClusterDpmHostConfigInfo[] dpmHostConfig) {
+        this.dpmHostConfig = dpmHostConfig;
+    }
 
-  public void setVsanConfigInfo(VsanClusterConfigInfo vsanConfigInfo) {
-    this.vsanConfigInfo=vsanConfigInfo;
-  }
+    public void setVsanConfigInfo(VsanClusterConfigInfo vsanConfigInfo) {
+        this.vsanConfigInfo = vsanConfigInfo;
+    }
 
-  public void setVsanHostConfig(VsanHostConfigInfo[] vsanHostConfig) {
-    this.vsanHostConfig=vsanHostConfig;
-  }
+    public void setVsanHostConfig(VsanHostConfigInfo[] vsanHostConfig) {
+        this.vsanHostConfig = vsanHostConfig;
+    }
 
-  public void setGroup(ClusterGroupInfo[] group) {
-    this.group=group;
-  }
+    public void setGroup(ClusterGroupInfo[] group) {
+        this.group = group;
+    }
 }

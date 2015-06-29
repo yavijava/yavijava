@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class InvalidDatastore extends VimFault {
-  public ManagedObjectReference datastore;
-  public String name;
+    public ManagedObjectReference datastore;
+    public String name;
 
-  public ManagedObjectReference getDatastore() {
-    return this.datastore;
-  }
+    public ManagedObjectReference getDatastore() {
+        return this.datastore;
+    }
 
-  public String getName() {
-    return this.name;
-  }
+    public String getName() {
+        return this.name;
+    }
 
-  public void setDatastore(ManagedObjectReference datastore) {
-    this.datastore=datastore;
-  }
+    public void setDatastore(ManagedObjectReference datastore) {
+        this.datastore = datastore;
+    }
 
-  public void setName(String name) {
-    this.name=name;
-  }
+    public void setName(String name) {
+        this.name = name;
+    }
 }

@@ -7,7 +7,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.URL;
-import java.rmi.RemoteException;
 
 /**
  * Created by Michael Rice on 8/10/14.
@@ -50,6 +49,7 @@ public abstract class SoapClient implements Client {
       ===============================================
     */
     public void setSoapActionOnApiVersion(String apiVersion) {
+        log.trace("API Version detected: " + apiVersion);
         if ("4.0".equals(apiVersion)) {
             soapAction = SoapAction.SOAP_ACTION_V40.toString();
         }
@@ -65,8 +65,11 @@ public abstract class SoapClient implements Client {
         else if ("5.5".equals(apiVersion)) {
             soapAction = SoapAction.SOAP_ACTION_V55.toString();
         }
+        else if ("6.0".equals(apiVersion)) {
+            soapAction = SoapAction.SOAP_ACTION_V60.toString();
+        }
         else { //always defaults to latest version
-            soapAction = SoapAction.SOAP_ACTION_V55.toString();
+            soapAction = SoapAction.SOAP_ACTION_V60.toString();
         }
         log.trace("Set soapAction to: " + soapAction);
     }
@@ -180,7 +183,7 @@ public abstract class SoapClient implements Client {
 
     /**
      * This method will marshall the java payload object in to xml payload.
-     * 
+     *
      * @param methodName
      * @param paras
      * @return String - XML SoapMessage
@@ -194,7 +197,7 @@ public abstract class SoapClient implements Client {
     /**
      * This method will unmarshall the response inputstream to Java Object of
      * returnType type.
-     * 
+     *
      * @param returnType
      * @param is
      * @return Object - Converted Response inputstream

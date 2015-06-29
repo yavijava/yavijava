@@ -1,318 +1,90 @@
 /*================================================================================
 Copyright (c) 2013 Steve Jin. All Rights Reserved.
 
-Redistribution and use in source and binary forms, with or without modification, 
+Redistribution and use in source and binary forms, with or without modification,
 are permitted provided that the following conditions are met:
 
-* Redistributions of source code must retain the above copyright notice, 
+* Redistributions of source code must retain the above copyright notice,
 this list of conditions and the following disclaimer.
 
-* Redistributions in binary form must reproduce the above copyright notice, 
-this list of conditions and the following disclaimer in the documentation 
+* Redistributions in binary form must reproduce the above copyright notice,
+this list of conditions and the following disclaimer in the documentation
 and/or other materials provided with the distribution.
 
 * Neither the name of VMware, Inc. nor the names of its contributors may be used
-to endorse or promote products derived from this software without specific prior 
+to endorse or promote products derived from this software without specific prior
 written permission.
 
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
-ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED 
-WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. 
-IN NO EVENT SHALL VMWARE, INC. OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, 
-INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT 
-LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR 
-PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, 
-WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) 
-ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE 
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+IN NO EVENT SHALL VMWARE, INC. OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
 
 package com.vmware.vim25;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * Created by Michael Rice on Sun May 24 16:15:35 CDT 2015
+ *
+ * Copyright 2015 Michael Rice
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ * @since 6.0
+ */
 
-@SuppressWarnings("all")
 public class HostConfigManager extends DynamicData {
-  public ManagedObjectReference cpuScheduler;
-  public ManagedObjectReference datastoreSystem;
-  public ManagedObjectReference memoryManager;
-  public ManagedObjectReference storageSystem;
-  public ManagedObjectReference networkSystem;
-  public ManagedObjectReference vmotionSystem;
-  public ManagedObjectReference virtualNicManager;
-  public ManagedObjectReference serviceSystem;
-  public ManagedObjectReference firewallSystem;
-  public ManagedObjectReference advancedOption;
-  public ManagedObjectReference diagnosticSystem;
-  public ManagedObjectReference autoStartManager;
-  public ManagedObjectReference snmpSystem;
-  public ManagedObjectReference dateTimeSystem;
-  public ManagedObjectReference patchManager;
-  public ManagedObjectReference imageConfigManager;
-  public ManagedObjectReference bootDeviceSystem;
-  public ManagedObjectReference firmwareSystem;
-  public ManagedObjectReference healthStatusSystem;
-  public ManagedObjectReference pciPassthruSystem;
-  public ManagedObjectReference licenseManager;
-  public ManagedObjectReference kernelModuleSystem;
-  public ManagedObjectReference authenticationManager;
-  public ManagedObjectReference powerSystem;
-  public ManagedObjectReference cacheConfigurationManager;
-  public ManagedObjectReference esxAgentHostManager;
-  public ManagedObjectReference iscsiManager;
-  public ManagedObjectReference vFlashManager;
-  public ManagedObjectReference vsanSystem;
-  public ManagedObjectReference graphicsManager;
-  public ManagedObjectReference vsanInternalSystem;
-
-  public ManagedObjectReference getCpuScheduler() {
-    return this.cpuScheduler;
-  }
-
-  public ManagedObjectReference getDatastoreSystem() {
-    return this.datastoreSystem;
-  }
-
-  public ManagedObjectReference getMemoryManager() {
-    return this.memoryManager;
-  }
-
-  public ManagedObjectReference getStorageSystem() {
-    return this.storageSystem;
-  }
-
-  public ManagedObjectReference getNetworkSystem() {
-    return this.networkSystem;
-  }
-
-  public ManagedObjectReference getVmotionSystem() {
-    return this.vmotionSystem;
-  }
-
-  public ManagedObjectReference getVirtualNicManager() {
-    return this.virtualNicManager;
-  }
-
-  public ManagedObjectReference getServiceSystem() {
-    return this.serviceSystem;
-  }
-
-  public ManagedObjectReference getFirewallSystem() {
-    return this.firewallSystem;
-  }
-
-  public ManagedObjectReference getAdvancedOption() {
-    return this.advancedOption;
-  }
-
-  public ManagedObjectReference getDiagnosticSystem() {
-    return this.diagnosticSystem;
-  }
-
-  public ManagedObjectReference getAutoStartManager() {
-    return this.autoStartManager;
-  }
-
-  public ManagedObjectReference getSnmpSystem() {
-    return this.snmpSystem;
-  }
-
-  public ManagedObjectReference getDateTimeSystem() {
-    return this.dateTimeSystem;
-  }
-
-  public ManagedObjectReference getPatchManager() {
-    return this.patchManager;
-  }
-
-  public ManagedObjectReference getImageConfigManager() {
-    return this.imageConfigManager;
-  }
-
-  public ManagedObjectReference getBootDeviceSystem() {
-    return this.bootDeviceSystem;
-  }
-
-  public ManagedObjectReference getFirmwareSystem() {
-    return this.firmwareSystem;
-  }
-
-  public ManagedObjectReference getHealthStatusSystem() {
-    return this.healthStatusSystem;
-  }
-
-  public ManagedObjectReference getPciPassthruSystem() {
-    return this.pciPassthruSystem;
-  }
-
-  public ManagedObjectReference getLicenseManager() {
-    return this.licenseManager;
-  }
-
-  public ManagedObjectReference getKernelModuleSystem() {
-    return this.kernelModuleSystem;
-  }
-
-  public ManagedObjectReference getAuthenticationManager() {
-    return this.authenticationManager;
-  }
-
-  public ManagedObjectReference getPowerSystem() {
-    return this.powerSystem;
-  }
-
-  public ManagedObjectReference getCacheConfigurationManager() {
-    return this.cacheConfigurationManager;
-  }
-
-  public ManagedObjectReference getEsxAgentHostManager() {
-    return this.esxAgentHostManager;
-  }
-
-  public ManagedObjectReference getIscsiManager() {
-    return this.iscsiManager;
-  }
-
-  public ManagedObjectReference getVFlashManager() {
-    return this.vFlashManager;
-  }
-
-  public ManagedObjectReference getVsanSystem() {
-    return this.vsanSystem;
-  }
-
-  public ManagedObjectReference getGraphicsManager() {
-    return this.graphicsManager;
-  }
-
-  public ManagedObjectReference getVsanInternalSystem() {
-    return this.vsanInternalSystem;
-  }
-
-  public void setCpuScheduler(ManagedObjectReference cpuScheduler) {
-    this.cpuScheduler=cpuScheduler;
-  }
-
-  public void setDatastoreSystem(ManagedObjectReference datastoreSystem) {
-    this.datastoreSystem=datastoreSystem;
-  }
-
-  public void setMemoryManager(ManagedObjectReference memoryManager) {
-    this.memoryManager=memoryManager;
-  }
-
-  public void setStorageSystem(ManagedObjectReference storageSystem) {
-    this.storageSystem=storageSystem;
-  }
-
-  public void setNetworkSystem(ManagedObjectReference networkSystem) {
-    this.networkSystem=networkSystem;
-  }
-
-  public void setVmotionSystem(ManagedObjectReference vmotionSystem) {
-    this.vmotionSystem=vmotionSystem;
-  }
-
-  public void setVirtualNicManager(ManagedObjectReference virtualNicManager) {
-    this.virtualNicManager=virtualNicManager;
-  }
-
-  public void setServiceSystem(ManagedObjectReference serviceSystem) {
-    this.serviceSystem=serviceSystem;
-  }
-
-  public void setFirewallSystem(ManagedObjectReference firewallSystem) {
-    this.firewallSystem=firewallSystem;
-  }
-
-  public void setAdvancedOption(ManagedObjectReference advancedOption) {
-    this.advancedOption=advancedOption;
-  }
-
-  public void setDiagnosticSystem(ManagedObjectReference diagnosticSystem) {
-    this.diagnosticSystem=diagnosticSystem;
-  }
-
-  public void setAutoStartManager(ManagedObjectReference autoStartManager) {
-    this.autoStartManager=autoStartManager;
-  }
-
-  public void setSnmpSystem(ManagedObjectReference snmpSystem) {
-    this.snmpSystem=snmpSystem;
-  }
-
-  public void setDateTimeSystem(ManagedObjectReference dateTimeSystem) {
-    this.dateTimeSystem=dateTimeSystem;
-  }
-
-  public void setPatchManager(ManagedObjectReference patchManager) {
-    this.patchManager=patchManager;
-  }
-
-  public void setImageConfigManager(ManagedObjectReference imageConfigManager) {
-    this.imageConfigManager=imageConfigManager;
-  }
-
-  public void setBootDeviceSystem(ManagedObjectReference bootDeviceSystem) {
-    this.bootDeviceSystem=bootDeviceSystem;
-  }
-
-  public void setFirmwareSystem(ManagedObjectReference firmwareSystem) {
-    this.firmwareSystem=firmwareSystem;
-  }
-
-  public void setHealthStatusSystem(ManagedObjectReference healthStatusSystem) {
-    this.healthStatusSystem=healthStatusSystem;
-  }
-
-  public void setPciPassthruSystem(ManagedObjectReference pciPassthruSystem) {
-    this.pciPassthruSystem=pciPassthruSystem;
-  }
-
-  public void setLicenseManager(ManagedObjectReference licenseManager) {
-    this.licenseManager=licenseManager;
-  }
-
-  public void setKernelModuleSystem(ManagedObjectReference kernelModuleSystem) {
-    this.kernelModuleSystem=kernelModuleSystem;
-  }
-
-  public void setAuthenticationManager(ManagedObjectReference authenticationManager) {
-    this.authenticationManager=authenticationManager;
-  }
-
-  public void setPowerSystem(ManagedObjectReference powerSystem) {
-    this.powerSystem=powerSystem;
-  }
-
-  public void setCacheConfigurationManager(ManagedObjectReference cacheConfigurationManager) {
-    this.cacheConfigurationManager=cacheConfigurationManager;
-  }
-
-  public void setEsxAgentHostManager(ManagedObjectReference esxAgentHostManager) {
-    this.esxAgentHostManager=esxAgentHostManager;
-  }
-
-  public void setIscsiManager(ManagedObjectReference iscsiManager) {
-    this.iscsiManager=iscsiManager;
-  }
-
-  public void setVFlashManager(ManagedObjectReference vFlashManager) {
-    this.vFlashManager=vFlashManager;
-  }
-
-  public void setVsanSystem(ManagedObjectReference vsanSystem) {
-    this.vsanSystem=vsanSystem;
-  }
-
-  public void setGraphicsManager(ManagedObjectReference graphicsManager) {
-    this.graphicsManager=graphicsManager;
-  }
-
-  public void setVsanInternalSystem(ManagedObjectReference vsanInternalSystem) {
-    this.vsanInternalSystem=vsanInternalSystem;
-  }
+    @Getter @Setter public ManagedObjectReference cpuScheduler;
+    @Getter @Setter public ManagedObjectReference datastoreSystem;
+    @Getter @Setter public ManagedObjectReference memoryManager;
+    @Getter @Setter public ManagedObjectReference storageSystem;
+    @Getter @Setter public ManagedObjectReference networkSystem;
+    @Getter @Setter public ManagedObjectReference vmotionSystem;
+    @Getter @Setter public ManagedObjectReference virtualNicManager;
+    @Getter @Setter public ManagedObjectReference serviceSystem;
+    @Getter @Setter public ManagedObjectReference firewallSystem;
+    @Getter @Setter public ManagedObjectReference advancedOption;
+    @Getter @Setter public ManagedObjectReference diagnosticSystem;
+    @Getter @Setter public ManagedObjectReference autoStartManager;
+    @Getter @Setter public ManagedObjectReference snmpSystem;
+    @Getter @Setter public ManagedObjectReference dateTimeSystem;
+    @Getter @Setter public ManagedObjectReference patchManager;
+    @Getter @Setter public ManagedObjectReference imageConfigManager;
+    @Getter @Setter public ManagedObjectReference bootDeviceSystem;
+    @Getter @Setter public ManagedObjectReference firmwareSystem;
+    @Getter @Setter public ManagedObjectReference healthStatusSystem;
+    @Getter @Setter public ManagedObjectReference pciPassthruSystem;
+    @Getter @Setter public ManagedObjectReference licenseManager;
+    @Getter @Setter public ManagedObjectReference kernelModuleSystem;
+    @Getter @Setter public ManagedObjectReference authenticationManager;
+    @Getter @Setter public ManagedObjectReference powerSystem;
+    @Getter @Setter public ManagedObjectReference cacheConfigurationManager;
+    @Getter @Setter public ManagedObjectReference esxAgentHostManager;
+    @Getter @Setter public ManagedObjectReference iscsiManager;
+    @Getter @Setter public ManagedObjectReference vFlashManager;
+    @Getter @Setter public ManagedObjectReference vsanSystem;
+    @Getter @Setter public ManagedObjectReference messageBusProxy;
+    @Getter @Setter public ManagedObjectReference userDirectory;
+    @Getter @Setter public ManagedObjectReference accountManager;
+    @Getter @Setter public ManagedObjectReference hostAccessManager;
+    @Getter @Setter public ManagedObjectReference graphicsManager;
+    @Getter @Setter public ManagedObjectReference vsanInternalSystem;
+    @Getter @Setter public ManagedObjectReference certificateManager;
 }

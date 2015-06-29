@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostSystemHealthInfo extends DynamicData {
-  public HostNumericSensorInfo[] numericSensorInfo;
+    public HostNumericSensorInfo[] numericSensorInfo;
 
-  public HostNumericSensorInfo[] getNumericSensorInfo() {
-    return this.numericSensorInfo;
-  }
+    public HostNumericSensorInfo[] getNumericSensorInfo() {
+        return this.numericSensorInfo;
+    }
 
-  public void setNumericSensorInfo(HostNumericSensorInfo[] numericSensorInfo) {
-    this.numericSensorInfo=numericSensorInfo;
-  }
+    public void setNumericSensorInfo(HostNumericSensorInfo[] numericSensorInfo) {
+        this.numericSensorInfo = numericSensorInfo;
+    }
 }

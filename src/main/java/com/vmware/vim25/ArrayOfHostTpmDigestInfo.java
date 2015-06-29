@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfHostTpmDigestInfo {
-  public HostTpmDigestInfo[] HostTpmDigestInfo;
+    public HostTpmDigestInfo[] HostTpmDigestInfo;
 
-  public HostTpmDigestInfo[] getHostTpmDigestInfo() {
-    return this.HostTpmDigestInfo;
-  }
+    public HostTpmDigestInfo[] getHostTpmDigestInfo() {
+        return this.HostTpmDigestInfo;
+    }
 
-  public HostTpmDigestInfo getHostTpmDigestInfo(int i) {
-    return this.HostTpmDigestInfo[i];
-  }
+    public HostTpmDigestInfo getHostTpmDigestInfo(int i) {
+        return this.HostTpmDigestInfo[i];
+    }
 
-  public void setHostTpmDigestInfo(HostTpmDigestInfo[] HostTpmDigestInfo) {
-    this.HostTpmDigestInfo=HostTpmDigestInfo;
-  }
+    public void setHostTpmDigestInfo(HostTpmDigestInfo[] HostTpmDigestInfo) {
+        this.HostTpmDigestInfo = HostTpmDigestInfo;
+    }
 }

@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfHostDatastoreBrowserSearchResults {
-  public HostDatastoreBrowserSearchResults[] HostDatastoreBrowserSearchResults;
+    public HostDatastoreBrowserSearchResults[] HostDatastoreBrowserSearchResults;
 
-  public HostDatastoreBrowserSearchResults[] getHostDatastoreBrowserSearchResults() {
-    return this.HostDatastoreBrowserSearchResults;
-  }
+    public HostDatastoreBrowserSearchResults[] getHostDatastoreBrowserSearchResults() {
+        return this.HostDatastoreBrowserSearchResults;
+    }
 
-  public HostDatastoreBrowserSearchResults getHostDatastoreBrowserSearchResults(int i) {
-    return this.HostDatastoreBrowserSearchResults[i];
-  }
+    public HostDatastoreBrowserSearchResults getHostDatastoreBrowserSearchResults(int i) {
+        return this.HostDatastoreBrowserSearchResults[i];
+    }
 
-  public void setHostDatastoreBrowserSearchResults(HostDatastoreBrowserSearchResults[] HostDatastoreBrowserSearchResults) {
-    this.HostDatastoreBrowserSearchResults=HostDatastoreBrowserSearchResults;
-  }
+    public void setHostDatastoreBrowserSearchResults(HostDatastoreBrowserSearchResults[] HostDatastoreBrowserSearchResults) {
+        this.HostDatastoreBrowserSearchResults = HostDatastoreBrowserSearchResults;
+    }
 }

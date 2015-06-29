@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostAutoStartManagerConfig extends DynamicData {
-  public AutoStartDefaults defaults;
-  public AutoStartPowerInfo[] powerInfo;
+    public AutoStartDefaults defaults;
+    public AutoStartPowerInfo[] powerInfo;
 
-  public AutoStartDefaults getDefaults() {
-    return this.defaults;
-  }
+    public AutoStartDefaults getDefaults() {
+        return this.defaults;
+    }
 
-  public AutoStartPowerInfo[] getPowerInfo() {
-    return this.powerInfo;
-  }
+    public AutoStartPowerInfo[] getPowerInfo() {
+        return this.powerInfo;
+    }
 
-  public void setDefaults(AutoStartDefaults defaults) {
-    this.defaults=defaults;
-  }
+    public void setDefaults(AutoStartDefaults defaults) {
+        this.defaults = defaults;
+    }
 
-  public void setPowerInfo(AutoStartPowerInfo[] powerInfo) {
-    this.powerInfo=powerInfo;
-  }
+    public void setPowerInfo(AutoStartPowerInfo[] powerInfo) {
+        this.powerInfo = powerInfo;
+    }
 }

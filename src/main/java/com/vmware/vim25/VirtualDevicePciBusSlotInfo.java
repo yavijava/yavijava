@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VirtualDevicePciBusSlotInfo extends VirtualDeviceBusSlotInfo {
-  public int pciSlotNumber;
+    public int pciSlotNumber;
 
-  public int getPciSlotNumber() {
-    return this.pciSlotNumber;
-  }
+    public int getPciSlotNumber() {
+        return this.pciSlotNumber;
+    }
 
-  public void setPciSlotNumber(int pciSlotNumber) {
-    this.pciSlotNumber=pciSlotNumber;
-  }
+    public void setPciSlotNumber(int pciSlotNumber) {
+        this.pciSlotNumber = pciSlotNumber;
+    }
 }

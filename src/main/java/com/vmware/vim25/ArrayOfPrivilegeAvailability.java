@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfPrivilegeAvailability {
-  public PrivilegeAvailability[] PrivilegeAvailability;
+    public PrivilegeAvailability[] PrivilegeAvailability;
 
-  public PrivilegeAvailability[] getPrivilegeAvailability() {
-    return this.PrivilegeAvailability;
-  }
+    public PrivilegeAvailability[] getPrivilegeAvailability() {
+        return this.PrivilegeAvailability;
+    }
 
-  public PrivilegeAvailability getPrivilegeAvailability(int i) {
-    return this.PrivilegeAvailability[i];
-  }
+    public PrivilegeAvailability getPrivilegeAvailability(int i) {
+        return this.PrivilegeAvailability[i];
+    }
 
-  public void setPrivilegeAvailability(PrivilegeAvailability[] PrivilegeAvailability) {
-    this.PrivilegeAvailability=PrivilegeAvailability;
-  }
+    public void setPrivilegeAvailability(PrivilegeAvailability[] PrivilegeAvailability) {
+        this.PrivilegeAvailability = PrivilegeAvailability;
+    }
 }

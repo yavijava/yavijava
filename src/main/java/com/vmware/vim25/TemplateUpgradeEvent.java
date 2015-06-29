@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class TemplateUpgradeEvent extends Event {
-  public String legacyTemplate;
+    public String legacyTemplate;
 
-  public String getLegacyTemplate() {
-    return this.legacyTemplate;
-  }
+    public String getLegacyTemplate() {
+        return this.legacyTemplate;
+    }
 
-  public void setLegacyTemplate(String legacyTemplate) {
-    this.legacyTemplate=legacyTemplate;
-  }
+    public void setLegacyTemplate(String legacyTemplate) {
+        this.legacyTemplate = legacyTemplate;
+    }
 }

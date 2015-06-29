@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VmDiskFailedEvent extends VmEvent {
-  public String disk;
-  public LocalizedMethodFault reason;
+    public String disk;
+    public LocalizedMethodFault reason;
 
-  public String getDisk() {
-    return this.disk;
-  }
+    public String getDisk() {
+        return this.disk;
+    }
 
-  public LocalizedMethodFault getReason() {
-    return this.reason;
-  }
+    public LocalizedMethodFault getReason() {
+        return this.reason;
+    }
 
-  public void setDisk(String disk) {
-    this.disk=disk;
-  }
+    public void setDisk(String disk) {
+        this.disk = disk;
+    }
 
-  public void setReason(LocalizedMethodFault reason) {
-    this.reason=reason;
-  }
+    public void setReason(LocalizedMethodFault reason) {
+        this.reason = reason;
+    }
 }

@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfHttpNfcLeaseDatastoreLeaseInfo {
-  public HttpNfcLeaseDatastoreLeaseInfo[] HttpNfcLeaseDatastoreLeaseInfo;
+    public HttpNfcLeaseDatastoreLeaseInfo[] HttpNfcLeaseDatastoreLeaseInfo;
 
-  public HttpNfcLeaseDatastoreLeaseInfo[] getHttpNfcLeaseDatastoreLeaseInfo() {
-    return this.HttpNfcLeaseDatastoreLeaseInfo;
-  }
+    public HttpNfcLeaseDatastoreLeaseInfo[] getHttpNfcLeaseDatastoreLeaseInfo() {
+        return this.HttpNfcLeaseDatastoreLeaseInfo;
+    }
 
-  public HttpNfcLeaseDatastoreLeaseInfo getHttpNfcLeaseDatastoreLeaseInfo(int i) {
-    return this.HttpNfcLeaseDatastoreLeaseInfo[i];
-  }
+    public HttpNfcLeaseDatastoreLeaseInfo getHttpNfcLeaseDatastoreLeaseInfo(int i) {
+        return this.HttpNfcLeaseDatastoreLeaseInfo[i];
+    }
 
-  public void setHttpNfcLeaseDatastoreLeaseInfo(HttpNfcLeaseDatastoreLeaseInfo[] HttpNfcLeaseDatastoreLeaseInfo) {
-    this.HttpNfcLeaseDatastoreLeaseInfo=HttpNfcLeaseDatastoreLeaseInfo;
-  }
+    public void setHttpNfcLeaseDatastoreLeaseInfo(HttpNfcLeaseDatastoreLeaseInfo[] HttpNfcLeaseDatastoreLeaseInfo) {
+        this.HttpNfcLeaseDatastoreLeaseInfo = HttpNfcLeaseDatastoreLeaseInfo;
+    }
 }

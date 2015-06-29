@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public enum ProfileExecuteResultStatus {
-  success ("success"),
-  needInput ("needInput"),
-  error ("error");
+    success("success"),
+    needInput("needInput"),
+    error("error");
 
-  @SuppressWarnings("unused")
-  private final String val;
-  private ProfileExecuteResultStatus(String val)
-  {
-    this.val = val;
-  }
+    @SuppressWarnings("unused")
+    private final String val;
+
+    private ProfileExecuteResultStatus(String val) {
+        this.val = val;
+    }
 }

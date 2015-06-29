@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfHostVFlashManagerVFlashCacheConfigInfoVFlashModuleConfigOption {
-  public HostVFlashManagerVFlashCacheConfigInfoVFlashModuleConfigOption[] HostVFlashManagerVFlashCacheConfigInfoVFlashModuleConfigOption;
+    public HostVFlashManagerVFlashCacheConfigInfoVFlashModuleConfigOption[] HostVFlashManagerVFlashCacheConfigInfoVFlashModuleConfigOption;
 
-  public HostVFlashManagerVFlashCacheConfigInfoVFlashModuleConfigOption[] getHostVFlashManagerVFlashCacheConfigInfoVFlashModuleConfigOption() {
-    return this.HostVFlashManagerVFlashCacheConfigInfoVFlashModuleConfigOption;
-  }
+    public HostVFlashManagerVFlashCacheConfigInfoVFlashModuleConfigOption[] getHostVFlashManagerVFlashCacheConfigInfoVFlashModuleConfigOption() {
+        return this.HostVFlashManagerVFlashCacheConfigInfoVFlashModuleConfigOption;
+    }
 
-  public HostVFlashManagerVFlashCacheConfigInfoVFlashModuleConfigOption getHostVFlashManagerVFlashCacheConfigInfoVFlashModuleConfigOption(int i) {
-    return this.HostVFlashManagerVFlashCacheConfigInfoVFlashModuleConfigOption[i];
-  }
+    public HostVFlashManagerVFlashCacheConfigInfoVFlashModuleConfigOption getHostVFlashManagerVFlashCacheConfigInfoVFlashModuleConfigOption(int i) {
+        return this.HostVFlashManagerVFlashCacheConfigInfoVFlashModuleConfigOption[i];
+    }
 
-  public void setHostVFlashManagerVFlashCacheConfigInfoVFlashModuleConfigOption(HostVFlashManagerVFlashCacheConfigInfoVFlashModuleConfigOption[] HostVFlashManagerVFlashCacheConfigInfoVFlashModuleConfigOption) {
-    this.HostVFlashManagerVFlashCacheConfigInfoVFlashModuleConfigOption=HostVFlashManagerVFlashCacheConfigInfoVFlashModuleConfigOption;
-  }
+    public void setHostVFlashManagerVFlashCacheConfigInfoVFlashModuleConfigOption(HostVFlashManagerVFlashCacheConfigInfoVFlashModuleConfigOption[] HostVFlashManagerVFlashCacheConfigInfoVFlashModuleConfigOption) {
+        this.HostVFlashManagerVFlashCacheConfigInfoVFlashModuleConfigOption = HostVFlashManagerVFlashCacheConfigInfoVFlashModuleConfigOption;
+    }
 }

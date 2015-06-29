@@ -30,37 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VsanHostRuntimeInfo extends DynamicData {
-  public VsanHostMembershipInfo[] membershipList;
-  public VsanHostRuntimeInfoDiskIssue[] diskIssues;
-  public Integer accessGenNo;
+    public VsanHostMembershipInfo[] membershipList;
+    public VsanHostRuntimeInfoDiskIssue[] diskIssues;
+    public Integer accessGenNo;
 
-  public VsanHostMembershipInfo[] getMembershipList() {
-    return this.membershipList;
-  }
+    public VsanHostMembershipInfo[] getMembershipList() {
+        return this.membershipList;
+    }
 
-  public VsanHostRuntimeInfoDiskIssue[] getDiskIssues() {
-    return this.diskIssues;
-  }
+    public VsanHostRuntimeInfoDiskIssue[] getDiskIssues() {
+        return this.diskIssues;
+    }
 
-  public Integer getAccessGenNo() {
-    return this.accessGenNo;
-  }
+    public Integer getAccessGenNo() {
+        return this.accessGenNo;
+    }
 
-  public void setMembershipList(VsanHostMembershipInfo[] membershipList) {
-    this.membershipList=membershipList;
-  }
+    public void setMembershipList(VsanHostMembershipInfo[] membershipList) {
+        this.membershipList = membershipList;
+    }
 
-  public void setDiskIssues(VsanHostRuntimeInfoDiskIssue[] diskIssues) {
-    this.diskIssues=diskIssues;
-  }
+    public void setDiskIssues(VsanHostRuntimeInfoDiskIssue[] diskIssues) {
+        this.diskIssues = diskIssues;
+    }
 
-  public void setAccessGenNo(Integer accessGenNo) {
-    this.accessGenNo=accessGenNo;
-  }
+    public void setAccessGenNo(Integer accessGenNo) {
+        this.accessGenNo = accessGenNo;
+    }
 }

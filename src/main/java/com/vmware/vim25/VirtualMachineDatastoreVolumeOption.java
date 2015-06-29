@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VirtualMachineDatastoreVolumeOption extends DynamicData {
-  public String fileSystemType;
-  public Integer majorVersion;
+    public String fileSystemType;
+    public Integer majorVersion;
 
-  public String getFileSystemType() {
-    return this.fileSystemType;
-  }
+    public String getFileSystemType() {
+        return this.fileSystemType;
+    }
 
-  public Integer getMajorVersion() {
-    return this.majorVersion;
-  }
+    public Integer getMajorVersion() {
+        return this.majorVersion;
+    }
 
-  public void setFileSystemType(String fileSystemType) {
-    this.fileSystemType=fileSystemType;
-  }
+    public void setFileSystemType(String fileSystemType) {
+        this.fileSystemType = fileSystemType;
+    }
 
-  public void setMajorVersion(Integer majorVersion) {
-    this.majorVersion=majorVersion;
-  }
+    public void setMajorVersion(Integer majorVersion) {
+        this.majorVersion = majorVersion;
+    }
 }

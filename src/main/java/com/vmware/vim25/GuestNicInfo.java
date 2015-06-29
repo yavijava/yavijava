@@ -30,82 +30,82 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class GuestNicInfo extends DynamicData {
-  public String network;
-  public String[] ipAddress;
-  public String macAddress;
-  public boolean connected;
-  public int deviceConfigId;
-  public NetDnsConfigInfo dnsConfig;
-  public NetIpConfigInfo ipConfig;
-  public NetBIOSConfigInfo netBIOSConfig;
+    public String network;
+    public String[] ipAddress;
+    public String macAddress;
+    public boolean connected;
+    public int deviceConfigId;
+    public NetDnsConfigInfo dnsConfig;
+    public NetIpConfigInfo ipConfig;
+    public NetBIOSConfigInfo netBIOSConfig;
 
-  public String getNetwork() {
-    return this.network;
-  }
+    public String getNetwork() {
+        return this.network;
+    }
 
-  public String[] getIpAddress() {
-    return this.ipAddress;
-  }
+    public String[] getIpAddress() {
+        return this.ipAddress;
+    }
 
-  public String getMacAddress() {
-    return this.macAddress;
-  }
+    public String getMacAddress() {
+        return this.macAddress;
+    }
 
-  public boolean isConnected() {
-    return this.connected;
-  }
+    public boolean isConnected() {
+        return this.connected;
+    }
 
-  public int getDeviceConfigId() {
-    return this.deviceConfigId;
-  }
+    public int getDeviceConfigId() {
+        return this.deviceConfigId;
+    }
 
-  public NetDnsConfigInfo getDnsConfig() {
-    return this.dnsConfig;
-  }
+    public NetDnsConfigInfo getDnsConfig() {
+        return this.dnsConfig;
+    }
 
-  public NetIpConfigInfo getIpConfig() {
-    return this.ipConfig;
-  }
+    public NetIpConfigInfo getIpConfig() {
+        return this.ipConfig;
+    }
 
-  public NetBIOSConfigInfo getNetBIOSConfig() {
-    return this.netBIOSConfig;
-  }
+    public NetBIOSConfigInfo getNetBIOSConfig() {
+        return this.netBIOSConfig;
+    }
 
-  public void setNetwork(String network) {
-    this.network=network;
-  }
+    public void setNetwork(String network) {
+        this.network = network;
+    }
 
-  public void setIpAddress(String[] ipAddress) {
-    this.ipAddress=ipAddress;
-  }
+    public void setIpAddress(String[] ipAddress) {
+        this.ipAddress = ipAddress;
+    }
 
-  public void setMacAddress(String macAddress) {
-    this.macAddress=macAddress;
-  }
+    public void setMacAddress(String macAddress) {
+        this.macAddress = macAddress;
+    }
 
-  public void setConnected(boolean connected) {
-    this.connected=connected;
-  }
+    public void setConnected(boolean connected) {
+        this.connected = connected;
+    }
 
-  public void setDeviceConfigId(int deviceConfigId) {
-    this.deviceConfigId=deviceConfigId;
-  }
+    public void setDeviceConfigId(int deviceConfigId) {
+        this.deviceConfigId = deviceConfigId;
+    }
 
-  public void setDnsConfig(NetDnsConfigInfo dnsConfig) {
-    this.dnsConfig=dnsConfig;
-  }
+    public void setDnsConfig(NetDnsConfigInfo dnsConfig) {
+        this.dnsConfig = dnsConfig;
+    }
 
-  public void setIpConfig(NetIpConfigInfo ipConfig) {
-    this.ipConfig=ipConfig;
-  }
+    public void setIpConfig(NetIpConfigInfo ipConfig) {
+        this.ipConfig = ipConfig;
+    }
 
-  public void setNetBIOSConfig(NetBIOSConfigInfo netBIOSConfig) {
-    this.netBIOSConfig=netBIOSConfig;
-  }
+    public void setNetBIOSConfig(NetBIOSConfigInfo netBIOSConfig) {
+        this.netBIOSConfig = netBIOSConfig;
+    }
 }

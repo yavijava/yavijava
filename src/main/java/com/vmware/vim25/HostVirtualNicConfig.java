@@ -30,46 +30,46 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostVirtualNicConfig extends DynamicData {
-  public String changeOperation;
-  public String device;
-  public String portgroup;
-  public HostVirtualNicSpec spec;
+    public String changeOperation;
+    public String device;
+    public String portgroup;
+    public HostVirtualNicSpec spec;
 
-  public String getChangeOperation() {
-    return this.changeOperation;
-  }
+    public String getChangeOperation() {
+        return this.changeOperation;
+    }
 
-  public String getDevice() {
-    return this.device;
-  }
+    public String getDevice() {
+        return this.device;
+    }
 
-  public String getPortgroup() {
-    return this.portgroup;
-  }
+    public String getPortgroup() {
+        return this.portgroup;
+    }
 
-  public HostVirtualNicSpec getSpec() {
-    return this.spec;
-  }
+    public HostVirtualNicSpec getSpec() {
+        return this.spec;
+    }
 
-  public void setChangeOperation(String changeOperation) {
-    this.changeOperation=changeOperation;
-  }
+    public void setChangeOperation(String changeOperation) {
+        this.changeOperation = changeOperation;
+    }
 
-  public void setDevice(String device) {
-    this.device=device;
-  }
+    public void setDevice(String device) {
+        this.device = device;
+    }
 
-  public void setPortgroup(String portgroup) {
-    this.portgroup=portgroup;
-  }
+    public void setPortgroup(String portgroup) {
+        this.portgroup = portgroup;
+    }
 
-  public void setSpec(HostVirtualNicSpec spec) {
-    this.spec=spec;
-  }
+    public void setSpec(HostVirtualNicSpec spec) {
+        this.spec = spec;
+    }
 }

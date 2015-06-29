@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class DomainNotFound extends ActiveDirectoryFault {
-  public String domainName;
+    public String domainName;
 
-  public String getDomainName() {
-    return this.domainName;
-  }
+    public String getDomainName() {
+        return this.domainName;
+    }
 
-  public void setDomainName(String domainName) {
-    this.domainName=domainName;
-  }
+    public void setDomainName(String domainName) {
+        this.domainName = domainName;
+    }
 }

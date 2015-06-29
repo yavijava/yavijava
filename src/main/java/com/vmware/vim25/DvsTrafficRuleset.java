@@ -30,46 +30,46 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class DvsTrafficRuleset extends DynamicData {
-  public String key;
-  public Boolean enabled;
-  public Integer precedence;
-  public DvsTrafficRule[] rules;
+    public String key;
+    public Boolean enabled;
+    public Integer precedence;
+    public DvsTrafficRule[] rules;
 
-  public String getKey() {
-    return this.key;
-  }
+    public String getKey() {
+        return this.key;
+    }
 
-  public Boolean getEnabled() {
-    return this.enabled;
-  }
+    public Boolean getEnabled() {
+        return this.enabled;
+    }
 
-  public Integer getPrecedence() {
-    return this.precedence;
-  }
+    public Integer getPrecedence() {
+        return this.precedence;
+    }
 
-  public DvsTrafficRule[] getRules() {
-    return this.rules;
-  }
+    public DvsTrafficRule[] getRules() {
+        return this.rules;
+    }
 
-  public void setKey(String key) {
-    this.key=key;
-  }
+    public void setKey(String key) {
+        this.key = key;
+    }
 
-  public void setEnabled(Boolean enabled) {
-    this.enabled=enabled;
-  }
+    public void setEnabled(Boolean enabled) {
+        this.enabled = enabled;
+    }
 
-  public void setPrecedence(Integer precedence) {
-    this.precedence=precedence;
-  }
+    public void setPrecedence(Integer precedence) {
+        this.precedence = precedence;
+    }
 
-  public void setRules(DvsTrafficRule[] rules) {
-    this.rules=rules;
-  }
+    public void setRules(DvsTrafficRule[] rules) {
+        this.rules = rules;
+    }
 }

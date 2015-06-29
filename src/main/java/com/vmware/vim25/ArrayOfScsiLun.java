@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfScsiLun {
-  public ScsiLun[] ScsiLun;
+    public ScsiLun[] ScsiLun;
 
-  public ScsiLun[] getScsiLun() {
-    return this.ScsiLun;
-  }
+    public ScsiLun[] getScsiLun() {
+        return this.ScsiLun;
+    }
 
-  public ScsiLun getScsiLun(int i) {
-    return this.ScsiLun[i];
-  }
+    public ScsiLun getScsiLun(int i) {
+        return this.ScsiLun[i];
+    }
 
-  public void setScsiLun(ScsiLun[] ScsiLun) {
-    this.ScsiLun=ScsiLun;
-  }
+    public void setScsiLun(ScsiLun[] ScsiLun) {
+        this.ScsiLun = ScsiLun;
+    }
 }

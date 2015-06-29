@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VmReloadFromPathFailedEvent extends VmEvent {
-  public String configPath;
+    public String configPath;
 
-  public String getConfigPath() {
-    return this.configPath;
-  }
+    public String getConfigPath() {
+        return this.configPath;
+    }
 
-  public void setConfigPath(String configPath) {
-    this.configPath=configPath;
-  }
+    public void setConfigPath(String configPath) {
+        this.configPath = configPath;
+    }
 }

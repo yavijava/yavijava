@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class ClusterFailoverHostAdmissionControlInfo extends ClusterDasAdmissionControlInfo {
-  public ClusterFailoverHostAdmissionControlInfoHostStatus[] hostStatus;
+    public ClusterFailoverHostAdmissionControlInfoHostStatus[] hostStatus;
 
-  public ClusterFailoverHostAdmissionControlInfoHostStatus[] getHostStatus() {
-    return this.hostStatus;
-  }
+    public ClusterFailoverHostAdmissionControlInfoHostStatus[] getHostStatus() {
+        return this.hostStatus;
+    }
 
-  public void setHostStatus(ClusterFailoverHostAdmissionControlInfoHostStatus[] hostStatus) {
-    this.hostStatus=hostStatus;
-  }
+    public void setHostStatus(ClusterFailoverHostAdmissionControlInfoHostStatus[] hostStatus) {
+        this.hostStatus = hostStatus;
+    }
 }

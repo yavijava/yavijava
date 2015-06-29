@@ -30,55 +30,55 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostPciPassthruInfo extends DynamicData {
-  public String id;
-  public String dependentDevice;
-  public boolean passthruEnabled;
-  public boolean passthruCapable;
-  public boolean passthruActive;
+    public String id;
+    public String dependentDevice;
+    public boolean passthruEnabled;
+    public boolean passthruCapable;
+    public boolean passthruActive;
 
-  public String getId() {
-    return this.id;
-  }
+    public String getId() {
+        return this.id;
+    }
 
-  public String getDependentDevice() {
-    return this.dependentDevice;
-  }
+    public String getDependentDevice() {
+        return this.dependentDevice;
+    }
 
-  public boolean isPassthruEnabled() {
-    return this.passthruEnabled;
-  }
+    public boolean isPassthruEnabled() {
+        return this.passthruEnabled;
+    }
 
-  public boolean isPassthruCapable() {
-    return this.passthruCapable;
-  }
+    public boolean isPassthruCapable() {
+        return this.passthruCapable;
+    }
 
-  public boolean isPassthruActive() {
-    return this.passthruActive;
-  }
+    public boolean isPassthruActive() {
+        return this.passthruActive;
+    }
 
-  public void setId(String id) {
-    this.id=id;
-  }
+    public void setId(String id) {
+        this.id = id;
+    }
 
-  public void setDependentDevice(String dependentDevice) {
-    this.dependentDevice=dependentDevice;
-  }
+    public void setDependentDevice(String dependentDevice) {
+        this.dependentDevice = dependentDevice;
+    }
 
-  public void setPassthruEnabled(boolean passthruEnabled) {
-    this.passthruEnabled=passthruEnabled;
-  }
+    public void setPassthruEnabled(boolean passthruEnabled) {
+        this.passthruEnabled = passthruEnabled;
+    }
 
-  public void setPassthruCapable(boolean passthruCapable) {
-    this.passthruCapable=passthruCapable;
-  }
+    public void setPassthruCapable(boolean passthruCapable) {
+        this.passthruCapable = passthruCapable;
+    }
 
-  public void setPassthruActive(boolean passthruActive) {
-    this.passthruActive=passthruActive;
-  }
+    public void setPassthruActive(boolean passthruActive) {
+        this.passthruActive = passthruActive;
+    }
 }

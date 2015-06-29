@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class DistributedVirtualSwitchManagerHostDvsFilterSpec extends DynamicData {
-  public boolean inclusive;
+    public boolean inclusive;
 
-  public boolean isInclusive() {
-    return this.inclusive;
-  }
+    public boolean isInclusive() {
+        return this.inclusive;
+    }
 
-  public void setInclusive(boolean inclusive) {
-    this.inclusive=inclusive;
-  }
+    public void setInclusive(boolean inclusive) {
+        this.inclusive = inclusive;
+    }
 }

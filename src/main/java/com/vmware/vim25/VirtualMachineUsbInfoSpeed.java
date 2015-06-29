@@ -30,21 +30,21 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public enum VirtualMachineUsbInfoSpeed {
-  low ("low"),
-  full ("full"),
-  high ("high"),
-  superSpeed ("superSpeed"),
-  unknownSpeed ("unknownSpeed");
+    low("low"),
+    full("full"),
+    high("high"),
+    superSpeed("superSpeed"),
+    unknownSpeed("unknownSpeed");
 
-  @SuppressWarnings("unused")
-  private final String val;
-  private VirtualMachineUsbInfoSpeed(String val)
-  {
-    this.val = val;
-  }
+    @SuppressWarnings("unused")
+    private final String val;
+
+    private VirtualMachineUsbInfoSpeed(String val) {
+        this.val = val;
+    }
 }

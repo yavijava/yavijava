@@ -29,51 +29,44 @@ POSSIBILITY OF SUCH DAMAGE.
 
 package com.vmware.vim25.mo;
 
-import java.rmi.RemoteException;
-
 import com.vmware.vim25.*;
+
+import java.rmi.RemoteException;
 
 /**
  * The managed object class corresponding to the one defined in VI SDK API reference.
+ *
  * @author Steve JIN (http://www.doublecloud.org)
  */
 
-public class CustomFieldsManager extends ManagedObject 
-{
+public class CustomFieldsManager extends ManagedObject {
 
-	public CustomFieldsManager(ServerConnection serverConnection, ManagedObjectReference mor) 
-	{
-		super(serverConnection, mor);
-	}
-	
-	public CustomFieldDef[] getField()
-	{
-		return (CustomFieldDef[]) getCurrentProperty("field");
-	}
-	
-	public CustomFieldDef addCustomFieldDef(String name, String moType, PrivilegePolicyDef fieldDefPolicy, 
-			PrivilegePolicyDef fieldPolicy) throws DuplicateName, InvalidPrivilege, RuntimeFault, RemoteException  
-	{
-		return getVimService().addCustomFieldDef(getMOR(), name, moType, fieldDefPolicy, fieldPolicy);
-	}
-	
-	public void removeCustomFieldDef(int key) throws RuntimeFault, RemoteException  
-	{
-		getVimService().removeCustomFieldDef(getMOR(), key);
-	}
+    public CustomFieldsManager(ServerConnection serverConnection, ManagedObjectReference mor) {
+        super(serverConnection, mor);
+    }
 
-	public void renameCustomFieldDef(int key, String name) throws DuplicateName, RuntimeFault, RemoteException  
-	{
-		getVimService().renameCustomFieldDef(getMOR(), key, name);
-	}
-	
-	public void setField(ManagedEntity entity, int key, String value) throws RuntimeFault, RemoteException  
-	{
-		if(entity==null)
-		{
-			throw new IllegalArgumentException("entity must not be null.");
-		}
-		getVimService().setField(getMOR(), entity.getMOR(), key, value);
-	}
+    public CustomFieldDef[] getField() {
+        return (CustomFieldDef[]) getCurrentProperty("field");
+    }
+
+    public CustomFieldDef addCustomFieldDef(String name, String moType, PrivilegePolicyDef fieldDefPolicy,
+                                            PrivilegePolicyDef fieldPolicy) throws DuplicateName, InvalidPrivilege, RuntimeFault, RemoteException {
+        return getVimService().addCustomFieldDef(getMOR(), name, moType, fieldDefPolicy, fieldPolicy);
+    }
+
+    public void removeCustomFieldDef(int key) throws RuntimeFault, RemoteException {
+        getVimService().removeCustomFieldDef(getMOR(), key);
+    }
+
+    public void renameCustomFieldDef(int key, String name) throws DuplicateName, RuntimeFault, RemoteException {
+        getVimService().renameCustomFieldDef(getMOR(), key, name);
+    }
+
+    public void setField(ManagedEntity entity, int key, String value) throws RuntimeFault, RemoteException {
+        if (entity == null) {
+            throw new IllegalArgumentException("entity must not be null.");
+        }
+        getVimService().setField(getMOR(), entity.getMOR(), key, value);
+    }
 
 }

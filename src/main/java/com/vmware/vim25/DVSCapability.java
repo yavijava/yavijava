@@ -30,55 +30,55 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class DVSCapability extends DynamicData {
-  public Boolean dvsOperationSupported;
-  public Boolean dvPortGroupOperationSupported;
-  public Boolean dvPortOperationSupported;
-  public DistributedVirtualSwitchHostProductSpec[] compatibleHostComponentProductInfo;
-  public DVSFeatureCapability featuresSupported;
+    public Boolean dvsOperationSupported;
+    public Boolean dvPortGroupOperationSupported;
+    public Boolean dvPortOperationSupported;
+    public DistributedVirtualSwitchHostProductSpec[] compatibleHostComponentProductInfo;
+    public DVSFeatureCapability featuresSupported;
 
-  public Boolean getDvsOperationSupported() {
-    return this.dvsOperationSupported;
-  }
+    public Boolean getDvsOperationSupported() {
+        return this.dvsOperationSupported;
+    }
 
-  public Boolean getDvPortGroupOperationSupported() {
-    return this.dvPortGroupOperationSupported;
-  }
+    public Boolean getDvPortGroupOperationSupported() {
+        return this.dvPortGroupOperationSupported;
+    }
 
-  public Boolean getDvPortOperationSupported() {
-    return this.dvPortOperationSupported;
-  }
+    public Boolean getDvPortOperationSupported() {
+        return this.dvPortOperationSupported;
+    }
 
-  public DistributedVirtualSwitchHostProductSpec[] getCompatibleHostComponentProductInfo() {
-    return this.compatibleHostComponentProductInfo;
-  }
+    public DistributedVirtualSwitchHostProductSpec[] getCompatibleHostComponentProductInfo() {
+        return this.compatibleHostComponentProductInfo;
+    }
 
-  public DVSFeatureCapability getFeaturesSupported() {
-    return this.featuresSupported;
-  }
+    public DVSFeatureCapability getFeaturesSupported() {
+        return this.featuresSupported;
+    }
 
-  public void setDvsOperationSupported(Boolean dvsOperationSupported) {
-    this.dvsOperationSupported=dvsOperationSupported;
-  }
+    public void setDvsOperationSupported(Boolean dvsOperationSupported) {
+        this.dvsOperationSupported = dvsOperationSupported;
+    }
 
-  public void setDvPortGroupOperationSupported(Boolean dvPortGroupOperationSupported) {
-    this.dvPortGroupOperationSupported=dvPortGroupOperationSupported;
-  }
+    public void setDvPortGroupOperationSupported(Boolean dvPortGroupOperationSupported) {
+        this.dvPortGroupOperationSupported = dvPortGroupOperationSupported;
+    }
 
-  public void setDvPortOperationSupported(Boolean dvPortOperationSupported) {
-    this.dvPortOperationSupported=dvPortOperationSupported;
-  }
+    public void setDvPortOperationSupported(Boolean dvPortOperationSupported) {
+        this.dvPortOperationSupported = dvPortOperationSupported;
+    }
 
-  public void setCompatibleHostComponentProductInfo(DistributedVirtualSwitchHostProductSpec[] compatibleHostComponentProductInfo) {
-    this.compatibleHostComponentProductInfo=compatibleHostComponentProductInfo;
-  }
+    public void setCompatibleHostComponentProductInfo(DistributedVirtualSwitchHostProductSpec[] compatibleHostComponentProductInfo) {
+        this.compatibleHostComponentProductInfo = compatibleHostComponentProductInfo;
+    }
 
-  public void setFeaturesSupported(DVSFeatureCapability featuresSupported) {
-    this.featuresSupported=featuresSupported;
-  }
+    public void setFeaturesSupported(DVSFeatureCapability featuresSupported) {
+        this.featuresSupported = featuresSupported;
+    }
 }

@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class ExtendedFault extends VimFault {
-  public String faultTypeId;
-  public KeyValue[] data;
+    public String faultTypeId;
+    public KeyValue[] data;
 
-  public String getFaultTypeId() {
-    return this.faultTypeId;
-  }
+    public String getFaultTypeId() {
+        return this.faultTypeId;
+    }
 
-  public KeyValue[] getData() {
-    return this.data;
-  }
+    public KeyValue[] getData() {
+        return this.data;
+    }
 
-  public void setFaultTypeId(String faultTypeId) {
-    this.faultTypeId=faultTypeId;
-  }
+    public void setFaultTypeId(String faultTypeId) {
+        this.faultTypeId = faultTypeId;
+    }
 
-  public void setData(KeyValue[] data) {
-    this.data=data;
-  }
+    public void setData(KeyValue[] data) {
+        this.data = data;
+    }
 }

@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class ClusterFailoverResourcesAdmissionControlInfo extends ClusterDasAdmissionControlInfo {
-  public int currentCpuFailoverResourcesPercent;
-  public int currentMemoryFailoverResourcesPercent;
+    public int currentCpuFailoverResourcesPercent;
+    public int currentMemoryFailoverResourcesPercent;
 
-  public int getCurrentCpuFailoverResourcesPercent() {
-    return this.currentCpuFailoverResourcesPercent;
-  }
+    public int getCurrentCpuFailoverResourcesPercent() {
+        return this.currentCpuFailoverResourcesPercent;
+    }
 
-  public int getCurrentMemoryFailoverResourcesPercent() {
-    return this.currentMemoryFailoverResourcesPercent;
-  }
+    public int getCurrentMemoryFailoverResourcesPercent() {
+        return this.currentMemoryFailoverResourcesPercent;
+    }
 
-  public void setCurrentCpuFailoverResourcesPercent(int currentCpuFailoverResourcesPercent) {
-    this.currentCpuFailoverResourcesPercent=currentCpuFailoverResourcesPercent;
-  }
+    public void setCurrentCpuFailoverResourcesPercent(int currentCpuFailoverResourcesPercent) {
+        this.currentCpuFailoverResourcesPercent = currentCpuFailoverResourcesPercent;
+    }
 
-  public void setCurrentMemoryFailoverResourcesPercent(int currentMemoryFailoverResourcesPercent) {
-    this.currentMemoryFailoverResourcesPercent=currentMemoryFailoverResourcesPercent;
-  }
+    public void setCurrentMemoryFailoverResourcesPercent(int currentMemoryFailoverResourcesPercent) {
+        this.currentMemoryFailoverResourcesPercent = currentMemoryFailoverResourcesPercent;
+    }
 }

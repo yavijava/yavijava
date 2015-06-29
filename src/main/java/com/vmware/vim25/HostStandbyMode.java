@@ -30,20 +30,20 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public enum HostStandbyMode {
-  entering ("entering"),
-  exiting ("exiting"),
-  in ("in"),
-  none ("none");
+    entering("entering"),
+    exiting("exiting"),
+    in("in"),
+    none("none");
 
-  @SuppressWarnings("unused")
-  private final String val;
-  private HostStandbyMode(String val)
-  {
-    this.val = val;
-  }
+    @SuppressWarnings("unused")
+    private final String val;
+
+    private HostStandbyMode(String val) {
+        this.val = val;
+    }
 }

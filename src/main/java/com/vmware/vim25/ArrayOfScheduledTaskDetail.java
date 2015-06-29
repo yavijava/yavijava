@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfScheduledTaskDetail {
-  public ScheduledTaskDetail[] ScheduledTaskDetail;
+    public ScheduledTaskDetail[] ScheduledTaskDetail;
 
-  public ScheduledTaskDetail[] getScheduledTaskDetail() {
-    return this.ScheduledTaskDetail;
-  }
+    public ScheduledTaskDetail[] getScheduledTaskDetail() {
+        return this.ScheduledTaskDetail;
+    }
 
-  public ScheduledTaskDetail getScheduledTaskDetail(int i) {
-    return this.ScheduledTaskDetail[i];
-  }
+    public ScheduledTaskDetail getScheduledTaskDetail(int i) {
+        return this.ScheduledTaskDetail[i];
+    }
 
-  public void setScheduledTaskDetail(ScheduledTaskDetail[] ScheduledTaskDetail) {
-    this.ScheduledTaskDetail=ScheduledTaskDetail;
-  }
+    public void setScheduledTaskDetail(ScheduledTaskDetail[] ScheduledTaskDetail) {
+        this.ScheduledTaskDetail = ScheduledTaskDetail;
+    }
 }

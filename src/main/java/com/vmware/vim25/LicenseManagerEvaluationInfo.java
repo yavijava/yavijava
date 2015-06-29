@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class LicenseManagerEvaluationInfo extends DynamicData {
-  public KeyAnyValue[] properties;
+    public KeyAnyValue[] properties;
 
-  public KeyAnyValue[] getProperties() {
-    return this.properties;
-  }
+    public KeyAnyValue[] getProperties() {
+        return this.properties;
+    }
 
-  public void setProperties(KeyAnyValue[] properties) {
-    this.properties=properties;
-  }
+    public void setProperties(KeyAnyValue[] properties) {
+        this.properties = properties;
+    }
 }

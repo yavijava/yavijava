@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfVirtualNicManagerNetConfig {
-  public VirtualNicManagerNetConfig[] VirtualNicManagerNetConfig;
+    public VirtualNicManagerNetConfig[] VirtualNicManagerNetConfig;
 
-  public VirtualNicManagerNetConfig[] getVirtualNicManagerNetConfig() {
-    return this.VirtualNicManagerNetConfig;
-  }
+    public VirtualNicManagerNetConfig[] getVirtualNicManagerNetConfig() {
+        return this.VirtualNicManagerNetConfig;
+    }
 
-  public VirtualNicManagerNetConfig getVirtualNicManagerNetConfig(int i) {
-    return this.VirtualNicManagerNetConfig[i];
-  }
+    public VirtualNicManagerNetConfig getVirtualNicManagerNetConfig(int i) {
+        return this.VirtualNicManagerNetConfig[i];
+    }
 
-  public void setVirtualNicManagerNetConfig(VirtualNicManagerNetConfig[] VirtualNicManagerNetConfig) {
-    this.VirtualNicManagerNetConfig=VirtualNicManagerNetConfig;
-  }
+    public void setVirtualNicManagerNetConfig(VirtualNicManagerNetConfig[] VirtualNicManagerNetConfig) {
+        this.VirtualNicManagerNetConfig = VirtualNicManagerNetConfig;
+    }
 }

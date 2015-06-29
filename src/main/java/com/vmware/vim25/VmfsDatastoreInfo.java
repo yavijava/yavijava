@@ -30,37 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VmfsDatastoreInfo extends DatastoreInfo {
-  public Long maxPhysicalRDMFileSize;
-  public Long maxVirtualRDMFileSize;
-  public HostVmfsVolume vmfs;
+    public Long maxPhysicalRDMFileSize;
+    public Long maxVirtualRDMFileSize;
+    public HostVmfsVolume vmfs;
 
-  public Long getMaxPhysicalRDMFileSize() {
-    return this.maxPhysicalRDMFileSize;
-  }
+    public Long getMaxPhysicalRDMFileSize() {
+        return this.maxPhysicalRDMFileSize;
+    }
 
-  public Long getMaxVirtualRDMFileSize() {
-    return this.maxVirtualRDMFileSize;
-  }
+    public Long getMaxVirtualRDMFileSize() {
+        return this.maxVirtualRDMFileSize;
+    }
 
-  public HostVmfsVolume getVmfs() {
-    return this.vmfs;
-  }
+    public HostVmfsVolume getVmfs() {
+        return this.vmfs;
+    }
 
-  public void setMaxPhysicalRDMFileSize(Long maxPhysicalRDMFileSize) {
-    this.maxPhysicalRDMFileSize=maxPhysicalRDMFileSize;
-  }
+    public void setMaxPhysicalRDMFileSize(Long maxPhysicalRDMFileSize) {
+        this.maxPhysicalRDMFileSize = maxPhysicalRDMFileSize;
+    }
 
-  public void setMaxVirtualRDMFileSize(Long maxVirtualRDMFileSize) {
-    this.maxVirtualRDMFileSize=maxVirtualRDMFileSize;
-  }
+    public void setMaxVirtualRDMFileSize(Long maxVirtualRDMFileSize) {
+        this.maxVirtualRDMFileSize = maxVirtualRDMFileSize;
+    }
 
-  public void setVmfs(HostVmfsVolume vmfs) {
-    this.vmfs=vmfs;
-  }
+    public void setVmfs(HostVmfsVolume vmfs) {
+        this.vmfs = vmfs;
+    }
 }

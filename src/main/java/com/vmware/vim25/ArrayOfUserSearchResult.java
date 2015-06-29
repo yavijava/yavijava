@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfUserSearchResult {
-  public UserSearchResult[] UserSearchResult;
+    public UserSearchResult[] UserSearchResult;
 
-  public UserSearchResult[] getUserSearchResult() {
-    return this.UserSearchResult;
-  }
+    public UserSearchResult[] getUserSearchResult() {
+        return this.UserSearchResult;
+    }
 
-  public UserSearchResult getUserSearchResult(int i) {
-    return this.UserSearchResult[i];
-  }
+    public UserSearchResult getUserSearchResult(int i) {
+        return this.UserSearchResult[i];
+    }
 
-  public void setUserSearchResult(UserSearchResult[] UserSearchResult) {
-    this.UserSearchResult=UserSearchResult;
-  }
+    public void setUserSearchResult(UserSearchResult[] UserSearchResult) {
+        this.UserSearchResult = UserSearchResult;
+    }
 }

@@ -28,49 +28,50 @@ POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
 
 package com.vmware.vim25;
+
 import java.util.Calendar;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class AnswerFileStatusResult extends DynamicData {
-  public Calendar checkedTime;
-  public ManagedObjectReference host;
-  public String status;
-  public AnswerFileStatusError[] error;
+    public Calendar checkedTime;
+    public ManagedObjectReference host;
+    public String status;
+    public AnswerFileStatusError[] error;
 
-  public Calendar getCheckedTime() {
-    return this.checkedTime;
-  }
+    public Calendar getCheckedTime() {
+        return this.checkedTime;
+    }
 
-  public ManagedObjectReference getHost() {
-    return this.host;
-  }
+    public ManagedObjectReference getHost() {
+        return this.host;
+    }
 
-  public String getStatus() {
-    return this.status;
-  }
+    public String getStatus() {
+        return this.status;
+    }
 
-  public AnswerFileStatusError[] getError() {
-    return this.error;
-  }
+    public AnswerFileStatusError[] getError() {
+        return this.error;
+    }
 
-  public void setCheckedTime(Calendar checkedTime) {
-    this.checkedTime=checkedTime;
-  }
+    public void setCheckedTime(Calendar checkedTime) {
+        this.checkedTime = checkedTime;
+    }
 
-  public void setHost(ManagedObjectReference host) {
-    this.host=host;
-  }
+    public void setHost(ManagedObjectReference host) {
+        this.host = host;
+    }
 
-  public void setStatus(String status) {
-    this.status=status;
-  }
+    public void setStatus(String status) {
+        this.status = status;
+    }
 
-  public void setError(AnswerFileStatusError[] error) {
-    this.error=error;
-  }
+    public void setError(AnswerFileStatusError[] error) {
+        this.error = error;
+    }
 }

@@ -33,20 +33,18 @@ import com.vmware.vim25.ManagedObjectReference;
 
 /**
  * The managed object class corresponding to the one defined in VI SDK API reference.
+ *
  * @author Steve JIN (http://www.doublecloud.org)
  */
 
-abstract public class ManagedObjectView extends View 
-{
+abstract public class ManagedObjectView extends View {
 
-	public ManagedObjectView(ServerConnection serverConnection, ManagedObjectReference mor) 
-	{
-		super(serverConnection, mor);
-	}
+    public ManagedObjectView(ServerConnection serverConnection, ManagedObjectReference mor) {
+        super(serverConnection, mor);
+    }
 
-	public ManagedObject[] getView()
-	{
-		return getManagedObjects("view", true);
-	}
-	
+    public ManagedObject[] getView() {
+        return getManagedObjects("view", true);
+    }
+
 }

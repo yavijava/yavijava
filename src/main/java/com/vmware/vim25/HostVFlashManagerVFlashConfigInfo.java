@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostVFlashManagerVFlashConfigInfo extends DynamicData {
-  public HostVFlashManagerVFlashResourceConfigInfo vFlashResourceConfigInfo;
-  public HostVFlashManagerVFlashCacheConfigInfo vFlashCacheConfigInfo;
+    public HostVFlashManagerVFlashResourceConfigInfo vFlashResourceConfigInfo;
+    public HostVFlashManagerVFlashCacheConfigInfo vFlashCacheConfigInfo;
 
-  public HostVFlashManagerVFlashResourceConfigInfo getVFlashResourceConfigInfo() {
-    return this.vFlashResourceConfigInfo;
-  }
+    public HostVFlashManagerVFlashResourceConfigInfo getVFlashResourceConfigInfo() {
+        return this.vFlashResourceConfigInfo;
+    }
 
-  public HostVFlashManagerVFlashCacheConfigInfo getVFlashCacheConfigInfo() {
-    return this.vFlashCacheConfigInfo;
-  }
+    public HostVFlashManagerVFlashCacheConfigInfo getVFlashCacheConfigInfo() {
+        return this.vFlashCacheConfigInfo;
+    }
 
-  public void setVFlashResourceConfigInfo(HostVFlashManagerVFlashResourceConfigInfo vFlashResourceConfigInfo) {
-    this.vFlashResourceConfigInfo=vFlashResourceConfigInfo;
-  }
+    public void setVFlashResourceConfigInfo(HostVFlashManagerVFlashResourceConfigInfo vFlashResourceConfigInfo) {
+        this.vFlashResourceConfigInfo = vFlashResourceConfigInfo;
+    }
 
-  public void setVFlashCacheConfigInfo(HostVFlashManagerVFlashCacheConfigInfo vFlashCacheConfigInfo) {
-    this.vFlashCacheConfigInfo=vFlashCacheConfigInfo;
-  }
+    public void setVFlashCacheConfigInfo(HostVFlashManagerVFlashCacheConfigInfo vFlashCacheConfigInfo) {
+        this.vFlashCacheConfigInfo = vFlashCacheConfigInfo;
+    }
 }

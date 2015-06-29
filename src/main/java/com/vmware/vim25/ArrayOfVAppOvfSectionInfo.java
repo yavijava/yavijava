@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfVAppOvfSectionInfo {
-  public VAppOvfSectionInfo[] VAppOvfSectionInfo;
+    public VAppOvfSectionInfo[] VAppOvfSectionInfo;
 
-  public VAppOvfSectionInfo[] getVAppOvfSectionInfo() {
-    return this.VAppOvfSectionInfo;
-  }
+    public VAppOvfSectionInfo[] getVAppOvfSectionInfo() {
+        return this.VAppOvfSectionInfo;
+    }
 
-  public VAppOvfSectionInfo getVAppOvfSectionInfo(int i) {
-    return this.VAppOvfSectionInfo[i];
-  }
+    public VAppOvfSectionInfo getVAppOvfSectionInfo(int i) {
+        return this.VAppOvfSectionInfo[i];
+    }
 
-  public void setVAppOvfSectionInfo(VAppOvfSectionInfo[] VAppOvfSectionInfo) {
-    this.VAppOvfSectionInfo=VAppOvfSectionInfo;
-  }
+    public void setVAppOvfSectionInfo(VAppOvfSectionInfo[] VAppOvfSectionInfo) {
+        this.VAppOvfSectionInfo = VAppOvfSectionInfo;
+    }
 }

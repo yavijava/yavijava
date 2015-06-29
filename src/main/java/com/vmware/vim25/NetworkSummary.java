@@ -30,55 +30,55 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class NetworkSummary extends DynamicData {
-  public ManagedObjectReference network;
-  public String name;
-  public boolean accessible;
-  public String ipPoolName;
-  public Integer ipPoolId;
+    public ManagedObjectReference network;
+    public String name;
+    public boolean accessible;
+    public String ipPoolName;
+    public Integer ipPoolId;
 
-  public ManagedObjectReference getNetwork() {
-    return this.network;
-  }
+    public ManagedObjectReference getNetwork() {
+        return this.network;
+    }
 
-  public String getName() {
-    return this.name;
-  }
+    public String getName() {
+        return this.name;
+    }
 
-  public boolean isAccessible() {
-    return this.accessible;
-  }
+    public boolean isAccessible() {
+        return this.accessible;
+    }
 
-  public String getIpPoolName() {
-    return this.ipPoolName;
-  }
+    public String getIpPoolName() {
+        return this.ipPoolName;
+    }
 
-  public Integer getIpPoolId() {
-    return this.ipPoolId;
-  }
+    public Integer getIpPoolId() {
+        return this.ipPoolId;
+    }
 
-  public void setNetwork(ManagedObjectReference network) {
-    this.network=network;
-  }
+    public void setNetwork(ManagedObjectReference network) {
+        this.network = network;
+    }
 
-  public void setName(String name) {
-    this.name=name;
-  }
+    public void setName(String name) {
+        this.name = name;
+    }
 
-  public void setAccessible(boolean accessible) {
-    this.accessible=accessible;
-  }
+    public void setAccessible(boolean accessible) {
+        this.accessible = accessible;
+    }
 
-  public void setIpPoolName(String ipPoolName) {
-    this.ipPoolName=ipPoolName;
-  }
+    public void setIpPoolName(String ipPoolName) {
+        this.ipPoolName = ipPoolName;
+    }
 
-  public void setIpPoolId(Integer ipPoolId) {
-    this.ipPoolId=ipPoolId;
-  }
+    public void setIpPoolId(Integer ipPoolId) {
+        this.ipPoolId = ipPoolId;
+    }
 }

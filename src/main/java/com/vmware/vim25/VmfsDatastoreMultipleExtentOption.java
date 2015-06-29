@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VmfsDatastoreMultipleExtentOption extends VmfsDatastoreBaseOption {
-  public HostDiskPartitionBlockRange[] vmfsExtent;
+    public HostDiskPartitionBlockRange[] vmfsExtent;
 
-  public HostDiskPartitionBlockRange[] getVmfsExtent() {
-    return this.vmfsExtent;
-  }
+    public HostDiskPartitionBlockRange[] getVmfsExtent() {
+        return this.vmfsExtent;
+    }
 
-  public void setVmfsExtent(HostDiskPartitionBlockRange[] vmfsExtent) {
-    this.vmfsExtent=vmfsExtent;
-  }
+    public void setVmfsExtent(HostDiskPartitionBlockRange[] vmfsExtent) {
+        this.vmfsExtent = vmfsExtent;
+    }
 }

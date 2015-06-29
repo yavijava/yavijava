@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class HostMultipathInfoLogicalUnitPolicy extends DynamicData {
-  public String policy;
+    public String policy;
 
-  public String getPolicy() {
-    return this.policy;
-  }
+    public String getPolicy() {
+        return this.policy;
+    }
 
-  public void setPolicy(String policy) {
-    this.policy=policy;
-  }
+    public void setPolicy(String policy) {
+        this.policy = policy;
+    }
 }

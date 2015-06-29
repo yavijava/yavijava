@@ -30,19 +30,19 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class NetworkEventArgument extends EntityEventArgument {
-  public ManagedObjectReference network;
+    public ManagedObjectReference network;
 
-  public ManagedObjectReference getNetwork() {
-    return this.network;
-  }
+    public ManagedObjectReference getNetwork() {
+        return this.network;
+    }
 
-  public void setNetwork(ManagedObjectReference network) {
-    this.network=network;
-  }
+    public void setNetwork(ManagedObjectReference network) {
+        this.network = network;
+    }
 }

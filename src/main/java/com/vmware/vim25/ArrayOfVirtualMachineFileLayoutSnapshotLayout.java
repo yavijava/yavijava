@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfVirtualMachineFileLayoutSnapshotLayout {
-  public VirtualMachineFileLayoutSnapshotLayout[] VirtualMachineFileLayoutSnapshotLayout;
+    public VirtualMachineFileLayoutSnapshotLayout[] VirtualMachineFileLayoutSnapshotLayout;
 
-  public VirtualMachineFileLayoutSnapshotLayout[] getVirtualMachineFileLayoutSnapshotLayout() {
-    return this.VirtualMachineFileLayoutSnapshotLayout;
-  }
+    public VirtualMachineFileLayoutSnapshotLayout[] getVirtualMachineFileLayoutSnapshotLayout() {
+        return this.VirtualMachineFileLayoutSnapshotLayout;
+    }
 
-  public VirtualMachineFileLayoutSnapshotLayout getVirtualMachineFileLayoutSnapshotLayout(int i) {
-    return this.VirtualMachineFileLayoutSnapshotLayout[i];
-  }
+    public VirtualMachineFileLayoutSnapshotLayout getVirtualMachineFileLayoutSnapshotLayout(int i) {
+        return this.VirtualMachineFileLayoutSnapshotLayout[i];
+    }
 
-  public void setVirtualMachineFileLayoutSnapshotLayout(VirtualMachineFileLayoutSnapshotLayout[] VirtualMachineFileLayoutSnapshotLayout) {
-    this.VirtualMachineFileLayoutSnapshotLayout=VirtualMachineFileLayoutSnapshotLayout;
-  }
+    public void setVirtualMachineFileLayoutSnapshotLayout(VirtualMachineFileLayoutSnapshotLayout[] VirtualMachineFileLayoutSnapshotLayout) {
+        this.VirtualMachineFileLayoutSnapshotLayout = VirtualMachineFileLayoutSnapshotLayout;
+    }
 }

@@ -30,64 +30,64 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class VirtualHardware extends DynamicData {
-  public int numCPU;
-  public Integer numCoresPerSocket;
-  public int memoryMB;
-  public Boolean virtualICH7MPresent;
-  public Boolean virtualSMCPresent;
-  public VirtualDevice[] device;
+    public int numCPU;
+    public Integer numCoresPerSocket;
+    public int memoryMB;
+    public Boolean virtualICH7MPresent;
+    public Boolean virtualSMCPresent;
+    public VirtualDevice[] device;
 
-  public int getNumCPU() {
-    return this.numCPU;
-  }
+    public int getNumCPU() {
+        return this.numCPU;
+    }
 
-  public Integer getNumCoresPerSocket() {
-    return this.numCoresPerSocket;
-  }
+    public Integer getNumCoresPerSocket() {
+        return this.numCoresPerSocket;
+    }
 
-  public int getMemoryMB() {
-    return this.memoryMB;
-  }
+    public int getMemoryMB() {
+        return this.memoryMB;
+    }
 
-  public Boolean getVirtualICH7MPresent() {
-    return this.virtualICH7MPresent;
-  }
+    public Boolean getVirtualICH7MPresent() {
+        return this.virtualICH7MPresent;
+    }
 
-  public Boolean getVirtualSMCPresent() {
-    return this.virtualSMCPresent;
-  }
+    public Boolean getVirtualSMCPresent() {
+        return this.virtualSMCPresent;
+    }
 
-  public VirtualDevice[] getDevice() {
-    return this.device;
-  }
+    public VirtualDevice[] getDevice() {
+        return this.device;
+    }
 
-  public void setNumCPU(int numCPU) {
-    this.numCPU=numCPU;
-  }
+    public void setNumCPU(int numCPU) {
+        this.numCPU = numCPU;
+    }
 
-  public void setNumCoresPerSocket(Integer numCoresPerSocket) {
-    this.numCoresPerSocket=numCoresPerSocket;
-  }
+    public void setNumCoresPerSocket(Integer numCoresPerSocket) {
+        this.numCoresPerSocket = numCoresPerSocket;
+    }
 
-  public void setMemoryMB(int memoryMB) {
-    this.memoryMB=memoryMB;
-  }
+    public void setMemoryMB(int memoryMB) {
+        this.memoryMB = memoryMB;
+    }
 
-  public void setVirtualICH7MPresent(Boolean virtualICH7MPresent) {
-    this.virtualICH7MPresent=virtualICH7MPresent;
-  }
+    public void setVirtualICH7MPresent(Boolean virtualICH7MPresent) {
+        this.virtualICH7MPresent = virtualICH7MPresent;
+    }
 
-  public void setVirtualSMCPresent(Boolean virtualSMCPresent) {
-    this.virtualSMCPresent=virtualSMCPresent;
-  }
+    public void setVirtualSMCPresent(Boolean virtualSMCPresent) {
+        this.virtualSMCPresent = virtualSMCPresent;
+    }
 
-  public void setDevice(VirtualDevice[] device) {
-    this.device=device;
-  }
+    public void setDevice(VirtualDevice[] device) {
+        this.device = device;
+    }
 }

@@ -30,28 +30,28 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class DatastoreFileCopiedEvent extends DatastoreFileEvent {
-  public DatastoreEventArgument sourceDatastore;
-  public String sourceFile;
+    public DatastoreEventArgument sourceDatastore;
+    public String sourceFile;
 
-  public DatastoreEventArgument getSourceDatastore() {
-    return this.sourceDatastore;
-  }
+    public DatastoreEventArgument getSourceDatastore() {
+        return this.sourceDatastore;
+    }
 
-  public String getSourceFile() {
-    return this.sourceFile;
-  }
+    public String getSourceFile() {
+        return this.sourceFile;
+    }
 
-  public void setSourceDatastore(DatastoreEventArgument sourceDatastore) {
-    this.sourceDatastore=sourceDatastore;
-  }
+    public void setSourceDatastore(DatastoreEventArgument sourceDatastore) {
+        this.sourceDatastore = sourceDatastore;
+    }
 
-  public void setSourceFile(String sourceFile) {
-    this.sourceFile=sourceFile;
-  }
+    public void setSourceFile(String sourceFile) {
+        this.sourceFile = sourceFile;
+    }
 }

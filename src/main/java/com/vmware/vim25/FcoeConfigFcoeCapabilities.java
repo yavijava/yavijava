@@ -30,37 +30,37 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 @SuppressWarnings("all")
 public class FcoeConfigFcoeCapabilities extends DynamicData {
-  public boolean priorityClass;
-  public boolean sourceMacAddress;
-  public boolean vlanRange;
+    public boolean priorityClass;
+    public boolean sourceMacAddress;
+    public boolean vlanRange;
 
-  public boolean isPriorityClass() {
-    return this.priorityClass;
-  }
+    public boolean isPriorityClass() {
+        return this.priorityClass;
+    }
 
-  public boolean isSourceMacAddress() {
-    return this.sourceMacAddress;
-  }
+    public boolean isSourceMacAddress() {
+        return this.sourceMacAddress;
+    }
 
-  public boolean isVlanRange() {
-    return this.vlanRange;
-  }
+    public boolean isVlanRange() {
+        return this.vlanRange;
+    }
 
-  public void setPriorityClass(boolean priorityClass) {
-    this.priorityClass=priorityClass;
-  }
+    public void setPriorityClass(boolean priorityClass) {
+        this.priorityClass = priorityClass;
+    }
 
-  public void setSourceMacAddress(boolean sourceMacAddress) {
-    this.sourceMacAddress=sourceMacAddress;
-  }
+    public void setSourceMacAddress(boolean sourceMacAddress) {
+        this.sourceMacAddress = sourceMacAddress;
+    }
 
-  public void setVlanRange(boolean vlanRange) {
-    this.vlanRange=vlanRange;
-  }
+    public void setVlanRange(boolean vlanRange) {
+        this.vlanRange = vlanRange;
+    }
 }

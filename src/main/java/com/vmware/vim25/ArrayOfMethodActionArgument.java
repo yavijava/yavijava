@@ -30,22 +30,22 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
-* @author Steve Jin (http://www.doublecloud.org)
-* @version 5.1
-*/
+ * @author Steve Jin (http://www.doublecloud.org)
+ * @version 5.1
+ */
 
 public class ArrayOfMethodActionArgument {
-  public MethodActionArgument[] MethodActionArgument;
+    public MethodActionArgument[] MethodActionArgument;
 
-  public MethodActionArgument[] getMethodActionArgument() {
-    return this.MethodActionArgument;
-  }
+    public MethodActionArgument[] getMethodActionArgument() {
+        return this.MethodActionArgument;
+    }
 
-  public MethodActionArgument getMethodActionArgument(int i) {
-    return this.MethodActionArgument[i];
-  }
+    public MethodActionArgument getMethodActionArgument(int i) {
+        return this.MethodActionArgument[i];
+    }
 
-  public void setMethodActionArgument(MethodActionArgument[] MethodActionArgument) {
-    this.MethodActionArgument=MethodActionArgument;
-  }
+    public void setMethodActionArgument(MethodActionArgument[] MethodActionArgument) {
+        this.MethodActionArgument = MethodActionArgument;
+    }
 }

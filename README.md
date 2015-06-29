@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/yavijava/yavijava.svg?branch=gradle)](https://travis-ci.org/yavijava/yavijava)
+[![Join the chat at https://gitter.im/yavijava/yavijava](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/yavijava/yavijava?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 Welcome to the YAVI Java API
 
@@ -49,7 +50,7 @@ dependencies (Always check the build.gradle for the latest requirements):
     }
 
 ## WHERE CAN I GET HELP?
-File a bug: https://github.com/michaelrice/yavijava/issues
+File a bug: https://github.com/yavijava/yavijava/issues
 
 IRC: Freenode IRC #vijava 
 
@@ -59,7 +60,7 @@ BSD. See the License.txt file for details
 
 ## What happened to the samples?!?!
 
-Never fear. I removed them from the core of the project and made them their own project. They can be found here: https://github.com/michaelrice/yavijava-samples
+Never fear. I removed them from the core of the project and made them their own project. They can be found here: https://github.com/yavijava/yavijava-samples
 
 
 ## Testing
