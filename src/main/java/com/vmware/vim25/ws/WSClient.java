@@ -53,7 +53,11 @@ import java.security.NoSuchAlgorithmException;
 public class WSClient extends SoapClient {
 
     private static final Logger log = Logger.getLogger(WSClient.class);
-    private boolean ignoreCert = false;
+    
+    /**
+     * The {@link SSLSocketFactory} when ignoring the certificates.
+     */
+    private final SSLSocketFactory sslSocketFactory;
 
     XmlGen xmlGen = new XmlGenDom();
 
@@ -68,7 +72,18 @@ public class WSClient extends SoapClient {
         log.trace("Creating WSClient to server URL: " + serverUrl);
         log.trace("Ignore ssl: " + ignoreCert);
         this.baseUrl = new URL(serverUrl);
-        this.ignoreCert = ignoreCert;
+        
+        try {
+            this.sslSocketFactory = ignoreCert ? TrustAllSSL.getTrustContext().getSocketFactory() : null;
+        } 
+        catch (NoSuchAlgorithmException e) {
+            log.debug("Unable to find suitable algorithm while attempting to communicate with remote server.", e);
+            throw new IllegalArgumentException("Unable to find suitable algorithm while attempting to communicate with remote server.", e);
+        }
+        catch (KeyManagementException e) {
+            log.debug("Key Management exception while attempting to communicate with remote server.", e);
+            throw new IllegalArgumentException("Key Management exception while attempting to communicate with remote server.", e);
+        }
     }
 
     public Object invoke(String methodName, Argument[] paras, String returnType) throws RemoteException {
@@ -116,23 +131,10 @@ public class WSClient extends SoapClient {
     }
 
     protected InputStream post(String soapMsg) throws IOException {
-        HttpURLConnection postCon;
-        if (baseUrl.getProtocol().equalsIgnoreCase("https") && ignoreCert) {
-            postCon = (HttpsURLConnection) baseUrl.openConnection();
-            try {
-                ((HttpsURLConnection) postCon).setSSLSocketFactory(TrustAllSSL.getTrustContext().getSocketFactory());
-            }
-            catch (NoSuchAlgorithmException e) {
-                log.debug("Unable to find suitable algorithm while attempting to communicate with remote server.", e);
-                throw new RemoteException("Unable to find suitable algorithm while attempting to communicate with remote server.", e);
-            }
-            catch (KeyManagementException e) {
-                log.debug("Key Management exception while attempting to communicate with remote server.", e);
-                throw new RemoteException("Key Management exception while attempting to communicate with remote server.", e);
-            }
-        }
-        else {
-            postCon = (HttpURLConnection) baseUrl.openConnection();
+        HttpURLConnection postCon = (HttpURLConnection) baseUrl.openConnection();
+
+        if (sslSocketFactory != null) {
+            ((HttpsURLConnection) postCon).setSSLSocketFactory(sslSocketFactory);
         }
 
         log.trace("POST: " + soapAction);
