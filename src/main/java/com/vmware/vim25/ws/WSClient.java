@@ -34,6 +34,7 @@ package com.vmware.vim25.ws;
 import org.apache.log4j.Logger;
 
 import javax.net.ssl.HttpsURLConnection;
+import javax.net.ssl.SSLSocketFactory;
 import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
