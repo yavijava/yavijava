@@ -44,15 +44,32 @@ public class AlarmManager extends ManagedObject {
         super(sc, mor);
     }
 
+    /**
+     * Gets the values used by default for the client alarm wizard.
+     *
+     * @return The default setting for each {@link AlarmExpression}
+     */
     public AlarmExpression[] getDefaultExpression() {
         return (AlarmExpression[]) getCurrentProperty("defaultExpression");
     }
 
+    /**
+     * @return The set of descriptions used in alarms.
+     */
     public AlarmDescription getDescription() {
         return (AlarmDescription) this.getCurrentProperty("description");
     }
 
     /**
+     * Acknowledge the alarm for a managed entity.
+     *
+     * @param alarm
+     *            The {@link Alarm} to acknowledge.
+     * @param entity
+     *            The {@link ManagedEntity} which the alarm applies to.
+     * @throws RuntimeFault
+     *             if any unhandled runtime fault occurs
+     * @throws RemoteException
      * @since 4.0
      */
     public void acknowledgeAlarm(Alarm alarm, ManagedEntity entity) throws RuntimeFault, RemoteException {
@@ -60,14 +77,34 @@ public class AlarmManager extends ManagedObject {
     }
 
     /**
-     * @since 4.x
-     * added to yavija for 5.5b.07
+     * Set the status of an alarm for the given managed entity. Not a public
+     * VMware API.
+     *
+     * @param alarm
+     *            The {@link Alarm} to set the status of.
+     * @param entity
+     *            The {@link ManagedEntity} the alarm applies to.
+     * @param status
+     *            The string status corresponding to a
+     *            {@link ManagedEntityStatus} to set.
+     * @throws RuntimeFault
+     *             if any unhandled runtime fault occurs
+     * @throws RemoteException
+     * @since 4.x added to yavija for 5.5b.07
      */
     public void setAlarmStatus(Alarm alarm, ManagedEntity entity, String status) throws RuntimeFault, RemoteException {
         getVimService().setAlarmStatus(getMOR(), alarm.getMOR(), entity.getMOR(), status);
     }
 
     /**
+     * Whether or not alarm actions are available on the given ManagedEntity
+     *
+     * @param entity
+     *            The {@link ManagedEntity} to query.
+     * @return true if alarm actions are available
+     * @throws RuntimeFault
+     *             if any unhandled runtime fault occurs
+     * @throws RemoteException
      * @since 4.0
      */
     public boolean areAlarmActionsEnabled(ManagedEntity entity) throws RuntimeFault, RemoteException {
@@ -75,12 +112,38 @@ public class AlarmManager extends ManagedObject {
     }
 
     /**
+     * Toggles alarms on the given managed entity.
+     *
+     * @param entity
+     *            The {@link ManagedEntity} to toggle alarms on.
+     * @param enabled
+     *            Whether to enable or disable alarms.
+     * @throws RuntimeFault
+     *             if any unhandled runtime fault occurs
+     * @throws RemoteException
      * @since 4.0
      */
     public void enableAlarmActions(ManagedEntity entity, boolean enabled) throws RuntimeFault, RemoteException {
         getVimService().enableAlarmActions(getMOR(), entity.getMOR(), enabled);
     }
 
+    /**
+     * Create an alarm against the given managed entity using the alarm
+     * specification
+     *
+     * @param me
+     *            The {@link ManagedEntity} to alarm against.
+     * @param as
+     *            The {@link AlarmSpec} used to generate the alarm.
+     * @return The new {@link ALarm} created
+     * @throws InvalidName
+     *             if the alarm name exceeds the max length or is empty.
+     * @throws DuplicateName
+     *             if an alarm with the same name already exists.
+     * @throws RuntimeFault
+     *             if any unhandled runtime fault occurs
+     * @throws RemoteException
+     */
     public Alarm createAlarm(ManagedEntity me, AlarmSpec as) throws InvalidName, DuplicateName, RuntimeFault, RemoteException {
         if (me == null) {
             throw new IllegalArgumentException("entity must not be null.");
@@ -89,6 +152,12 @@ public class AlarmManager extends ManagedObject {
         return new Alarm(getServerConnection(), mor);
     }
 
+    /**
+     * @param me
+     * @return
+     * @throws RuntimeFault
+     * @throws RemoteException
+     */
     public Alarm[] getAlarm(ManagedEntity me) throws RuntimeFault, RemoteException {
         ManagedObjectReference[] mors = getVimService().getAlarm(getMOR(), me == null ? null : me.getMOR());
 
@@ -103,6 +172,12 @@ public class AlarmManager extends ManagedObject {
         return alarms;
     }
 
+    /**
+     * @param me
+     * @return
+     * @throws RuntimeFault
+     * @throws RemoteException
+     */
     public AlarmState[] getAlarmState(ManagedEntity me) throws RuntimeFault, RemoteException {
         if (me == null) {
             throw new IllegalArgumentException("entity must not be null.");

@@ -5,14 +5,14 @@ import com.vmware.vim25.*;
 import java.rmi.RemoteException;
 
 /**
- * Copyright 2015 Michael Rice <michael@michaelrice.org>
- * <p/>
+ * Copyright 2015 Michael Rice &lt;michael@michaelrice.org&gt;
+ * <p>
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * <p/>
+ * <p>
  * http://www.apache.org/licenses/LICENSE-2.0
- * <p/>
+ * <p>
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -64,7 +64,7 @@ public class HostAccessManager extends ManagedObject {
 
     /**
      * Changes the lockdown state of the ESXi host.
-     * <p/>
+     * <p>
      * This operation will do nothing if the host is already in the desired lockdown state.
      * When the host is in lockdown mode it can be managed only through vCenter and through DCUI
      * (Direct Console User Interface) if the DCUI service is running. This is achieved by removing all permissions on
@@ -73,17 +73,17 @@ public class HostAccessManager extends ManagedObject {
      * is disabled, the system will try to restore all permissions that have been removed when lockdown mode was
      * enabled. It is possible that not all permissions may be restored and this is not an error, e.g. if in the
      * meantime some user or managed object was deleted.
-     * <p/>
+     * <p>
      * It may be possible that after exiting lockdown mode the only permissions on the host will be those of users
      * 'dcui' and 'vpxuser'. This will render the host unmanageable if it is not already managed by vCenter, or if the
      * connection to vCenter is lost. To prevent this, the users in the "DCUI.Access" list will be assigned Admin roles.
      * While the host is in lockdown mode, some operations will fail with SecurityError. This ensures that the
      * conditions for lockdown mode cannot be changed. For example it is allowed to change the access mode only for
      * users in the exceptions list.
-     * <p/>
+     * <p>
      * When the host is in lockdown mode, changing the running state of service DCUI through HostServiceSystem will also
      * fail with SecurityError accompanied with an appropriate localizeable message.
-     * <p/>
+     * <p>
      * If mode is the same as the current lockdown mode state, the operation will silently succeed and nothing will be changed.
      * If mode is LockdownMode#lockdownDisabled then lockdown mode will be disabled and the system will start service DCUI if it is not running.
      * If mode is LockdownMode#lockdownNormal then lockdown mode will be enabled and the system will start service DCUI if it is not running.
@@ -105,7 +105,7 @@ public class HostAccessManager extends ManagedObject {
      * @return The list of users which will not lose their permissions when the host enters lockdown mode.
      * @throws RuntimeFault
      * @throws RemoteException
-     * @see {@link #updateLockdownExceptions UpdateLockdownExceptions}.
+     * @see #updateLockdownExceptions UpdateLockdownExceptions.
      */
     public String[] queryLockdownExceptions() throws RuntimeFault, RemoteException {
         return getVimService().queryLockdownExceptions(getMOR());
@@ -113,7 +113,7 @@ public class HostAccessManager extends ManagedObject {
 
     /**
      * Get the list of local system users.
-     * <p/>
+     * <p>
      * These are special users like 'vpxuser', 'vslauser' and 'dcui', which may be used for authenticating different
      * sub-components of the vSphere system and may be essential for its correct functioning.
      * Usually these users may not be used by human operators to connect directly to the host and the UI may choose to
@@ -141,13 +141,13 @@ public class HostAccessManager extends ManagedObject {
 
     /**
      * Update the list of users which are exceptions for lockdown mode.
-     * <p/>
+     * <p>
      * Usually these are user accounts used by third party solutions and external applications which need to continue to
      * function in lockdown mode. It is not advised to add user accounts used by human operators, because this will
      * compromise the purpose of lockdown mode.
-     * <p/>
+     * <p>
      * Both local and domain users are supported. The format for domain accounts is "DOMAIN\login".
-     * <p/>
+     * <p>
      * When this API is called when the host is in lockdown mode, the behaviour is as follows:
      * if a user is removed from the exceptions list, then the permissions of that user are removed.
      * if a user is added to the exceptions list, then the permissions of that user are restored.

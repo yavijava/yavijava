@@ -178,9 +178,6 @@ public class ExtensionManager extends ManagedObject {
     /**
      * Print out information of all the plugins to stdout
      *
-     * @throws RemoteException if something is wrong with web service call, either because of
-     *                         the web service itself, or because of the service provider unable
-     *                         to handle the request.
      * @deprecated
      */
     public void printAllExtensions() {

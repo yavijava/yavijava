@@ -42,8 +42,8 @@ import java.security.cert.X509Certificate;
 
 /**
  * The returned XML data is in the following format:
- * <p/>
  * <pre>
+ * {@code
  * <?xml version="1.0" encoding="UTF-8" ?>
  * <!--
  * Copyright 2005-2007 VMware, Inc.  All rights reserved.
@@ -60,8 +60,9 @@ import java.security.cert.X509Certificate;
  *     </port>
  *  </service>
  * </definitions>
+ * }
  * </pre>
- * <p/>
+ * <p>
  * Utility class for checking the version of VISDK the server supports.
  *
  * @author Steve JIN (sjin@vmware.com)
