@@ -102,7 +102,7 @@ import org.apache.log4j.Logger;
  * VirtualMachineDeviceManager manages the virtual devices in a much
  * simplified way than using the reconfigVM_Task() method defined in
  * VirtualMachine managed object.
- * <p/>
+ * <p>
  * Devices it manages include: FloppyDrive, CdDrive, NetworkAdapter, UsbDevice, HardDisk
  * Operations include:
  * create -- create something new
