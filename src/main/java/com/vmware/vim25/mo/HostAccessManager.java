@@ -105,7 +105,7 @@ public class HostAccessManager extends ManagedObject {
      * @return The list of users which will not lose their permissions when the host enters lockdown mode.
      * @throws RuntimeFault
      * @throws RemoteException
-     * @see {@link #updateLockdownExceptions UpdateLockdownExceptions}.
+     * @see #updateLockdownExceptions UpdateLockdownExceptions.
      */
     public String[] queryLockdownExceptions() throws RuntimeFault, RemoteException {
         return getVimService().queryLockdownExceptions(getMOR());

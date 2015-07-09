@@ -53,7 +53,7 @@ public class VsanUpgradeSystem extends ManagedObject {
      * @throws RuntimeFault
      * @throws VsanFault
      * @throws RemoteException
-     * @see {@link #performVsanUpgradePreflightCheck performVsanUpgradePreflightCheck}
+     * @see #performVsanUpgradePreflightCheck performVsanUpgradePreflightCheck
      */
     public Task performVsanUpgrade_Task(ClusterComputeResource cluster, Boolean performObjectUpgrade,
                                         Boolean downgradeFormat, Boolean allowReducedRedundancy, HostSystem[] excludeHosts)
@@ -88,7 +88,7 @@ public class VsanUpgradeSystem extends ManagedObject {
      * @throws RuntimeFault
      * @throws VsanFault
      * @throws RemoteException
-     * @see {@link #performVsanUpgradePreflightCheck performVsanUpgradePreflightCheck}
+     * @see #performVsanUpgradePreflightCheck performVsanUpgradePreflightCheck
      */
     public Task performVsanUpgrade_Task(ClusterComputeResource cluster, Boolean performObjectUpgrade,
                                         Boolean downgradeFormat, Boolean allowReducedRedundancy)
@@ -119,7 +119,7 @@ public class VsanUpgradeSystem extends ManagedObject {
      * @throws RuntimeFault
      * @throws VsanFault
      * @throws RemoteException
-     * @see {@link #performVsanUpgradePreflightCheck performVsanUpgradePreflightCheck}
+     * @see #performVsanUpgradePreflightCheck performVsanUpgradePreflightCheck
      */
     public Task performVsanUpgrade_Task(ClusterComputeResource cluster, Boolean performObjectUpgrade, Boolean downgradeFormat)
         throws RuntimeFault, VsanFault, RemoteException {
@@ -148,7 +148,7 @@ public class VsanUpgradeSystem extends ManagedObject {
      * @throws RuntimeFault
      * @throws VsanFault
      * @throws RemoteException
-     * @see {@link #performVsanUpgradePreflightCheck performVsanUpgradePreflightCheck}
+     * @see #performVsanUpgradePreflightCheck performVsanUpgradePreflightCheck
      */
     public Task performVsanUpgrade_Task(ClusterComputeResource cluster, Boolean performObjectUpgrade) throws RuntimeFault, VsanFault, RemoteException {
         return performVsanUpgrade_Task(cluster, performObjectUpgrade, null, null, null);
@@ -175,7 +175,7 @@ public class VsanUpgradeSystem extends ManagedObject {
      * @throws RuntimeFault
      * @throws VsanFault
      * @throws RemoteException
-     * @see {@link #performVsanUpgradePreflightCheck performVsanUpgradePreflightCheck}
+     * @see #performVsanUpgradePreflightCheck performVsanUpgradePreflightCheck
      */
     public Task performVsanUpgrade_Task(ClusterComputeResource cluster) throws RuntimeFault, VsanFault, RemoteException {
         return performVsanUpgrade_Task(cluster, null, null, null, null);
