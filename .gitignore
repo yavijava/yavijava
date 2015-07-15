@@ -13,3 +13,6 @@ bin/
 .settings/
 .classpath
 .project
+
+#IntelliJ specific
+atlassian-ide-plugin.xml

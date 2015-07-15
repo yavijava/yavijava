@@ -32,7 +32,6 @@ package com.vmware.vim25.mo;
 import com.vmware.vim25.*;
 import com.vmware.vim25.mo.util.MorUtil;
 import com.vmware.vim25.ws.Client;
-import com.vmware.vim25.ws.SoapClient;
 import org.apache.log4j.Logger;
 
 import java.net.MalformedURLException;
@@ -71,6 +70,26 @@ public class ServiceInstance extends ManagedObject {
 
     public ServiceInstance(URL url, String username, String password, boolean ignoreCert, String namespace)
         throws RemoteException, MalformedURLException {
+        constructServiceInstance(url, username, password, ignoreCert, namespace, 0, 0);
+    }
+
+    public ServiceInstance(URL url, String username, String password, int connectTimeout, int readTimeout)
+        throws RemoteException, MalformedURLException {
+        this(url, username, password, false, connectTimeout, readTimeout);
+    }
+
+    public ServiceInstance(URL url, String username, String password, boolean ignoreCert, int connectTimeout, int readTimeout)
+        throws RemoteException, MalformedURLException {
+        this(url, username, password, ignoreCert, VIM25_NAMESPACE, connectTimeout, readTimeout);
+    }
+
+    public ServiceInstance(URL url, String username, String password, boolean ignoreCert, String namespace, int connectTimeout, int readTimeout)
+        throws RemoteException, MalformedURLException {
+        constructServiceInstance(url, username, password, ignoreCert, namespace, connectTimeout, readTimeout);
+    }
+
+    protected void constructServiceInstance(URL url, String username, String password, boolean ignoreCert, String namespace, int connectTimeout, int readTimeout)
+        throws RemoteException, MalformedURLException {
         if (url == null || username == null) {
             throw new NullPointerException("None of url, username can be null.");
         }
@@ -80,12 +99,15 @@ public class ServiceInstance extends ManagedObject {
         VimPortType vimService = new VimPortType(url.toString(), ignoreCert);
         vimService.getWsc().setVimNameSpace(namespace);
 
-        serviceContent = vimService.retrieveServiceContent(SERVICE_INSTANCE_MOR);
-        vimService.getWsc().setSoapActionOnApiVersion(serviceContent.getAbout().getApiVersion());
-        serviceContent = vimService.retrieveServiceContent(SERVICE_INSTANCE_MOR); //with new SOAP_ACTION
+        vimService.getWsc().setConnectTimeout(connectTimeout);
+        vimService.getWsc().setReadTimeout(readTimeout);
+
+        serviceContent = retrieveServiceContent(vimService, SERVICE_INSTANCE_MOR);
+        vimService.getWsc().setSoapActionOnApiVersion(getApiVersion(serviceContent));
+        serviceContent = retrieveServiceContent(vimService, SERVICE_INSTANCE_MOR); //with new SOAP_ACTION
         setServerConnection(new ServerConnection(url, vimService, this));
 
-        UserSession userSession = getSessionManager().login(username, password, null);
+        UserSession userSession = login(getSessionManager(), username, password, null);
         getServerConnection().setUserSession(userSession);
     }
 
@@ -96,6 +118,22 @@ public class ServiceInstance extends ManagedObject {
 
     // sessionStr format: "vmware_soap_session=\"B3240D15-34DF-4BB8-B902-A844FDF42E85\""
     public ServiceInstance(URL url, String sessionStr, boolean ignoreCert, String namespace)
+        throws RemoteException, MalformedURLException {
+        constructServiceInstance(url, sessionStr, ignoreCert, namespace, 0, 0);
+    }
+
+    public ServiceInstance(URL url, String sessionStr, boolean ignoreCert, int connectTimeout, int readTimeout)
+        throws RemoteException, MalformedURLException {
+        this(url, sessionStr, ignoreCert, VIM25_NAMESPACE, connectTimeout, readTimeout);
+    }
+
+    // sessionStr format: "vmware_soap_session=\"B3240D15-34DF-4BB8-B902-A844FDF42E85\""
+    public ServiceInstance(URL url, String sessionStr, boolean ignoreCert, String namespace, int connectTimeout, int readTimeout)
+        throws RemoteException, MalformedURLException {
+        constructServiceInstance(url, sessionStr, ignoreCert, namespace, connectTimeout, readTimeout);
+    }
+
+    protected void constructServiceInstance(URL url, String sessionStr, boolean ignoreCert, String namespace, int connectTimeout, int readTimeout)
         throws RemoteException, MalformedURLException {
         if (url == null || sessionStr == null) {
             throw new NullPointerException("None of url, session string can be null.");
@@ -108,11 +146,14 @@ public class ServiceInstance extends ManagedObject {
         wsc.setCookie(sessionStr);
         wsc.setVimNameSpace(namespace);
 
-        serviceContent = vimService.retrieveServiceContent(SERVICE_INSTANCE_MOR);
-        wsc.setSoapActionOnApiVersion(serviceContent.getAbout().getApiVersion());
+        vimService.getWsc().setConnectTimeout(connectTimeout);
+        vimService.getWsc().setReadTimeout(readTimeout);
+
+        serviceContent = retrieveServiceContent(vimService, SERVICE_INSTANCE_MOR);
+        wsc.setSoapActionOnApiVersion(getApiVersion(serviceContent));
         setServerConnection(new ServerConnection(url, vimService, this));
-        serviceContent = vimService.retrieveServiceContent(SERVICE_INSTANCE_MOR); //with new SOAP_ACTION
-        UserSession userSession = (UserSession) getSessionManager().getCurrentProperty("currentSession");
+        serviceContent = retrieveServiceContent(vimService, SERVICE_INSTANCE_MOR); //with new SOAP_ACTION
+        UserSession userSession = getCurrentUserSession();
         getServerConnection().setUserSession(userSession);
     }
 
@@ -152,6 +193,18 @@ public class ServiceInstance extends ManagedObject {
         return getVimService().retrieveProductComponents(getMOR());
     }
 
+    protected UserSession login(SessionManager sessionManager, String userName, String password, String locale) throws RemoteException {
+        return sessionManager.login(userName, password, locale);
+    }
+
+    protected UserSession getCurrentUserSession() {
+        return (UserSession) getSessionManager().getCurrentProperty("currentSession");
+    }
+
+    protected ServiceContent retrieveServiceContent(VimPortType vimService, ManagedObjectReference mor) throws RemoteException {
+        return vimService.retrieveServiceContent(mor);
+    }
+
     protected ServiceContent retrieveServiceContent() throws RuntimeFault, RemoteException {
         return getVimService().retrieveServiceContent(getMOR());
     }
@@ -176,6 +229,18 @@ public class ServiceInstance extends ManagedObject {
             }
         }
         return serviceContent;
+    }
+
+    public int getConnectTimeout() {
+        return getServerConnection().getVimService().getWsc().getConnectTimeout();
+    }
+
+    public int getReadTimeout() {
+        return getServerConnection().getVimService().getWsc().getReadTimeout();
+    }
+
+    protected String getApiVersion(ServiceContent serviceContent) {
+        return serviceContent.getAbout().getApiVersion();
     }
 
     public AboutInfo getAboutInfo() {
