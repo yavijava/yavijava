@@ -1,21 +1,28 @@
 package com.vmware.vim25.ws;
 
+import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.rmi.RemoteException;
 import java.util.Calendar;
-import javax.net.ssl.SSLHandshakeException;
 
-import com.vmware.vim25.*;
+import javax.net.ssl.HttpsURLConnection;
+import javax.net.ssl.SSLHandshakeException;
+import javax.net.ssl.SSLSocketFactory;
+
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
 import com.utility.LoadVcenterProps;
+import com.vmware.vim25.ManagedObjectReference;
+import com.vmware.vim25.ObjectContent;
+import com.vmware.vim25.ObjectSpec;
+import com.vmware.vim25.PropertyFilterSpec;
+import com.vmware.vim25.PropertySpec;
+import com.vmware.vim25.SelectionSpec;
 import com.vmware.vim25.mo.ServiceInstance;
 import com.vmware.vim25.mo.util.PropertyCollectorUtil;
-
-import javax.net.ssl.HttpsURLConnection;
 
 public class WSClientIntTest {
     SoapClient wsClient = null;
@@ -134,6 +141,29 @@ public class WSClientIntTest {
     }
 
     /**
+     * This test will confirm that the internal SSL socket factory is initiate only once in the WSClient (Issue #38).
+     */
+    @Test
+    public void testSSLSocketFactoryInitialization() throws Exception {
+        CustomWSClient client = new CustomWSClient(LoadVcenterProps.url, true);
+        Assert.assertEquals(1, createdSSLFactory);
+
+        try {
+            client.invoke("RetrieveProperties", buildGetHostsArgs(), "ObjectContent[]");
+        } catch (RemoteException e) {
+        }
+        
+        Assert.assertEquals(1, createdSSLFactory);
+
+        try {
+            client.invoke("RetrieveProperties", buildGetHostsArgs(), "ObjectContent[]");
+        } catch (RemoteException e) {
+        }
+        
+        Assert.assertEquals(1, createdSSLFactory);
+    }
+
+   /**
      * This method will build the request payload.
      * 
      * @return Argument[]
@@ -172,5 +202,31 @@ public class WSClientIntTest {
                 new PropertyFilterSpec[] { spec });
 
         return paras;
+    }
+
+    /**
+     * Counter for created factory in {@link CustomWSClient}.
+     */
+    private int createdSSLFactory = 0;
+    
+    /**
+     * This extension of the WSClient will create count the number of time the {@link SSLSocketFactory} was created.
+     * 
+     * @author Francis Beaulé
+     *
+     */
+    private class CustomWSClient extends WSClient {
+        public CustomWSClient(String serverUrl, boolean ignoreCert) throws MalformedURLException, IOException {
+            super(serverUrl, ignoreCert);
+        }
+
+        /**
+         * {@inheritDoc}
+         */
+        @Override
+        protected SSLSocketFactory getSocketFactory(boolean ignoreCert) throws IOException {
+           ++createdSSLFactory;
+            return super.getSocketFactory(ignoreCert);
+        }
     }
 }
