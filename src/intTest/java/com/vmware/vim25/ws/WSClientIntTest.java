@@ -1,65 +1,63 @@
 package com.vmware.vim25.ws;
 
-import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.rmi.RemoteException;
 import java.util.Calendar;
-
-import javax.net.ssl.HttpsURLConnection;
 import javax.net.ssl.SSLHandshakeException;
-import javax.net.ssl.SSLSocketFactory;
 
+import com.vmware.vim25.*;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
 import com.utility.LoadVcenterProps;
-import com.vmware.vim25.ManagedObjectReference;
-import com.vmware.vim25.ObjectContent;
-import com.vmware.vim25.ObjectSpec;
-import com.vmware.vim25.PropertyFilterSpec;
-import com.vmware.vim25.PropertySpec;
-import com.vmware.vim25.SelectionSpec;
 import com.vmware.vim25.mo.ServiceInstance;
 import com.vmware.vim25.mo.util.PropertyCollectorUtil;
+
+import javax.net.ssl.HttpsURLConnection;
 
 public class WSClientIntTest {
     SoapClient wsClient = null;
 
+
     @Before
     public void setUp() throws Exception {
-        if (null == LoadVcenterProps.url || null == LoadVcenterProps.userName || null == LoadVcenterProps.password
-                || null == LoadVcenterProps.secondUrl || null == LoadVcenterProps.badUrl
-                || "".equals(LoadVcenterProps.url.trim()) || "".equals(LoadVcenterProps.secondUrl.trim())
-                || "".equals(LoadVcenterProps.badUrl.trim()) || "".equals(LoadVcenterProps.userName.trim())
+        if (null == LoadVcenterProps.url || null == LoadVcenterProps.userName
+                || null == LoadVcenterProps.password
+                || null == LoadVcenterProps.secondUrl
+                || null == LoadVcenterProps.badUrl
+                || "".equals(LoadVcenterProps.url.trim())
+                || "".equals(LoadVcenterProps.secondUrl.trim())
+                || "".equals(LoadVcenterProps.badUrl.trim())
+                || "".equals(LoadVcenterProps.userName.trim())
                 || "".equals(LoadVcenterProps.password.trim())) {
             throw new Exception("Vcenter credentials not loaded");
         }
 
         ServiceInstance si = null;
         try {
-            si = new ServiceInstance(new URL(LoadVcenterProps.url), LoadVcenterProps.userName, LoadVcenterProps.password,
-                    true);
+            si = new ServiceInstance(new URL(LoadVcenterProps.url),
+                    LoadVcenterProps.userName, LoadVcenterProps.password, true);
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
-
+        
         wsClient = new WSClient(LoadVcenterProps.url, true);
 
         wsClient.setVimNameSpace(ServiceInstance.VIM25_NAMESPACE);
         wsClient.setSoapActionOnApiVersion("5.5");
-        wsClient.setCookie(si.getSessionManager().getServerConnection().getVimService().getWsc().getCookie());
+        wsClient.setCookie(si.getSessionManager().getServerConnection()
+                .getVimService().getWsc().getCookie());
     }
 
     /**
-     * This method will test that you can ignore ssl to a vcenter but it doesnt trust every cert on the net and will fail
-     * trying to connect to my jenkins server
+     * This method will test that you can ignore ssl to a vcenter but it doesnt trust
+     * every cert on the net and will fail trying to connect to my jenkins server
      */
     @Test(expected = SSLHandshakeException.class)
     public void testIgnoreSslDoesNotTrustAllCertsOnline() throws Exception {
-        ServiceInstance si = new ServiceInstance(new URL(LoadVcenterProps.url), LoadVcenterProps.userName,
-                LoadVcenterProps.password, true);
+        ServiceInstance si = new ServiceInstance(new URL(LoadVcenterProps.url), LoadVcenterProps.userName, LoadVcenterProps.password, true);
         // if we get here we were successful ignoring the self signed cert from vcenter
         assert si.getServerClock() instanceof Calendar;
         URL badUrl = new URL(LoadVcenterProps.badUrl);
@@ -69,49 +67,52 @@ public class WSClientIntTest {
     }
 
     /**
-     * This method will test that you can ignore ssl to a vcenter but it doesnt trust every cert on the net and will fail
-     * trying to connect to my jenkins server
+     * This method will test that you can ignore ssl to a vcenter but it doesnt trust
+     * every cert on the net and will fail trying to connect to my jenkins server
      */
     @Test
     public void testIgnoreSslAllowsMultiplevCentersToBeIgnored() throws Exception {
-        ServiceInstance si = new ServiceInstance(new URL(LoadVcenterProps.url), LoadVcenterProps.userName,
-                LoadVcenterProps.password, true);
+        ServiceInstance si = new ServiceInstance(new URL(LoadVcenterProps.url), LoadVcenterProps.userName, LoadVcenterProps.password, true);
         // if we get here we were successful ignoring the self signed cert from vcenter
         assert si.getServerClock() instanceof Calendar;
-        ServiceInstance serviceInstance = new ServiceInstance(new URL(LoadVcenterProps.secondUrl),
-                LoadVcenterProps.userName, LoadVcenterProps.password, true);
+        ServiceInstance serviceInstance = new ServiceInstance(new URL(LoadVcenterProps.secondUrl), LoadVcenterProps.userName, LoadVcenterProps.password, true);
         assert serviceInstance.currentTime() instanceof Calendar;
     }
 
     /**
-     * This method should fail with ssl handshake exception the vcenter used in your properties file should be running on ssl
-     * and you should not have its cert imported in your keystore. For these tests I rely on a vCenter Server Appliance
-     * running simulator.
+     * This method should fail with ssl handshake exception
+     * the vcenter used in your properties file should be running on ssl
+     * and you should not have its cert imported in your keystore. For these
+     * tests I rely on a vCenter Server Appliance running simulator.
      */
     @Test
     public void testDoNotIgnoreSslFailsOnSelfSignedCertNotInKeyStore() throws Exception {
         Throwable t = null;
         try {
-            ServiceInstance si = new ServiceInstance(new URL(LoadVcenterProps.url), LoadVcenterProps.userName,
-                    LoadVcenterProps.password, false);
-        } catch (RemoteException re) {
+            ServiceInstance si = new ServiceInstance(new URL(LoadVcenterProps.url), LoadVcenterProps.userName, LoadVcenterProps.password, false);
+        }
+        catch (RemoteException re) {
             t = re;
         }
         assert t.getCause() instanceof SSLHandshakeException;
     }
 
     /**
-     * This test method will bring all the host systems under particular vCenter.
+     * This test method will bring all the host systems under particular
+     * vCenter.
      */
     @Test
     public void testGetHosts() {
 
         ObjectContent[] hostSystems = null;
         try {
-            hostSystems = (ObjectContent[]) wsClient.invoke("RetrieveProperties", buildGetHostsArgs(), "ObjectContent[]");
+            hostSystems = (ObjectContent[]) wsClient.invoke(
+                    "RetrieveProperties", buildGetHostsArgs(),
+                    "ObjectContent[]");
             if (hostSystems == null) {
-                hostSystems = (ObjectContent[]) wsClient
-                        .invoke("RetrieveProperties", buildGetHostsArgs(), "ObjectContent[]");
+                hostSystems = (ObjectContent[]) wsClient.invoke(
+                        "RetrieveProperties", buildGetHostsArgs(),
+                        "ObjectContent[]");
             }
         } catch (RemoteException e) {
             e.printStackTrace();
@@ -127,31 +128,9 @@ public class WSClientIntTest {
     @Test
     public void testReqMarshall() {
 
-        String soapPayload = wsClient.marshall("RetrieveProperties", buildGetHostsArgs());
+        String soapPayload = wsClient.marshall("RetrieveProperties",
+                buildGetHostsArgs());
         Assert.assertNotNull(soapPayload);
-    }
-
-    /**
-     * This test will confirm that the internal SSL socket factory is initiate only once in the WSClient (Issue #38).
-     */
-    @Test
-    public void testSSLSocketFactoryInitialization() throws Exception {
-        CustomWSClient client = new CustomWSClient(LoadVcenterProps.url, true);
-        Assert.assertEquals(1, createdSSLFactory);
-
-        try {
-            client.invoke("RetrieveProperties", buildGetHostsArgs(), "ObjectContent[]");
-        } catch (RemoteException e) {
-        }
-        
-        Assert.assertEquals(1, createdSSLFactory);
-
-        try {
-            client.invoke("RetrieveProperties", buildGetHostsArgs(), "ObjectContent[]");
-        } catch (RemoteException e) {
-        }
-        
-        Assert.assertEquals(1, createdSSLFactory);
     }
 
     /**
@@ -179,42 +158,19 @@ public class WSClientIntTest {
         os.setSkip(Boolean.FALSE);
         os.setSelectSet(selectionSpecs);
 
-        String[][] typeinfo = new String[][] { new String[] { "HostSystem", "name", }, };
-        PropertySpec[] propspecary = PropertyCollectorUtil.buildPropertySpecArray(typeinfo);
+        String[][] typeinfo = new String[][] { new String[] { "HostSystem",
+                "name", }, };
+        PropertySpec[] propspecary = PropertyCollectorUtil
+                .buildPropertySpecArray(typeinfo);
 
         PropertyFilterSpec spec = new PropertyFilterSpec();
         spec.setObjectSet(new ObjectSpec[] { os });
         spec.setPropSet(propspecary);
 
         paras[0] = new Argument("_this", "ManagedObjectReference", mor);
-        paras[1] = new Argument("specSet", "PropertyFilterSpec[]", new PropertyFilterSpec[] { spec });
+        paras[1] = new Argument("specSet", "PropertyFilterSpec[]",
+                new PropertyFilterSpec[] { spec });
 
         return paras;
-    }
-
-    /**
-     * Counter for created factory in {@link CustomWSClient}.
-     */
-    private int createdSSLFactory = 0;
-    
-    /**
-     * This extension of the WSClient will create count the number of time the {@link SSLSocketFactory} was created.
-     * 
-     * @author Francis Beaulé
-     *
-     */
-    private class CustomWSClient extends WSClient {
-        public CustomWSClient(String serverUrl, boolean ignoreCert) throws MalformedURLException, IOException {
-            super(serverUrl, ignoreCert);
-        }
-
-        /**
-         * {@inheritDoc}
-         */
-        @Override
-        protected SSLSocketFactory getSocketFactory(boolean ignoreCert) throws IOException {
-           ++createdSSLFactory;
-            return super.getSocketFactory(ignoreCert);
-        }
     }
 }
