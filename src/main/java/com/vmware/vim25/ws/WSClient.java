@@ -153,6 +153,10 @@ public class WSClient extends SoapClient {
 
         postCon.setDoOutput(true);
         postCon.setDoInput(true);
+        String soapAction = this.soapAction;
+        if (soapAction == null) {
+            soapAction = "";
+        }
         postCon.setRequestProperty(SoapAction.SOAP_ACTION_HEADER.toString(), soapAction);
         postCon.setRequestProperty("Content-Type", "text/xml; charset=utf-8");
 
