@@ -153,6 +153,10 @@ public class ApacheHttpClient extends SoapClient {
             .setConnectTimeout(this.connectTimeout)
             .setSocketTimeout(this.readTimeout)
             .build();
+        if(trustAllSSL && trustManager != null) {
+            log.warn("The option to ignore certs has been set along with a provided trust manager. This is not a valid scenario and the trust manager will be ignored.");
+        }
+
         if (trustAllSSL) {
             httpclient = HttpClients.custom().setSSLSocketFactory(ApacheTrustSelfSigned.trust()).build();
         } else if(trustManager != null) {

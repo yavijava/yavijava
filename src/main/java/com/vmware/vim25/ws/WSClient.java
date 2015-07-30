@@ -115,6 +115,11 @@ public class WSClient extends SoapClient {
 
     protected InputStream post(String soapMsg) throws IOException {
         HttpURLConnection postCon;
+
+        if(ignoreCert && trustManager != null) {
+            log.warn("The option to ignore certs has been set along with a provided trust manager. This is not a valid scenario and the trust manager will be ignored.");
+        }
+
         if (baseUrl.getProtocol().equalsIgnoreCase("https") && ignoreCert) {
             postCon = (HttpsURLConnection) baseUrl.openConnection();
             ((HttpsURLConnection) postCon).setSSLSocketFactory(TrustAllSSL.getTrustContext().getSocketFactory());
