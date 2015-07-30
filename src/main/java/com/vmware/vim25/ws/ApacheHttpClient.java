@@ -4,6 +4,9 @@ import org.apache.http.Header;
 import org.apache.http.client.config.RequestConfig;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpPost;
+import org.apache.http.conn.socket.LayeredConnectionSocketFactory;
+import org.apache.http.conn.ssl.AllowAllHostnameVerifier;
+import org.apache.http.conn.ssl.SSLConnectionSocketFactory;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
@@ -111,7 +114,7 @@ public class ApacheHttpClient extends SoapClient {
         }
         catch (Exception e1) {
             log.error("Exception caught while invoking method.", e1);
-            throw new RemoteException("VI SDK invoke exception:" + e1);
+            throw new RemoteException("VI SDK invoke exception:" + e1, e1);
         }
         finally {
             if (is != null) {
@@ -147,7 +150,7 @@ public class ApacheHttpClient extends SoapClient {
         }
     }
 
-    private InputStream post(String payload) {
+    private InputStream post(String payload) throws IOException {
         CloseableHttpClient httpclient;
         RequestConfig requestConfig = RequestConfig.custom()
             .setConnectTimeout(this.connectTimeout)
@@ -155,9 +158,10 @@ public class ApacheHttpClient extends SoapClient {
             .build();
         if (trustAllSSL) {
             httpclient = HttpClients.custom().setSSLSocketFactory(ApacheTrustSelfSigned.trust()).build();
-
-        }
-        else {
+        } else if(trustManager != null) {
+            LayeredConnectionSocketFactory sslConnectionSocketFactory = new SSLConnectionSocketFactory(TrustCustomSSLContextCreator.getTrustContext(trustManager), new AllowAllHostnameVerifier());
+            httpclient = HttpClients.custom().setSSLSocketFactory(sslConnectionSocketFactory).build();
+        } else {
             httpclient = HttpClients.createDefault();
         }
         HttpPost httpPost;
@@ -185,24 +189,19 @@ public class ApacheHttpClient extends SoapClient {
             httpPost.setHeader("Cookie", cookie);
         }
         httpPost.setEntity(stringEntity);
-        try {
-            CloseableHttpResponse response = httpclient.execute(httpPost);
-            InputStream inputStream = response.getEntity().getContent();
-            if (cookie == null) {
 
-                Header[] headers = response.getAllHeaders();
-                for (Header header : headers) {
-                    if (header.getName().equals("Set-Cookie")) {
-                        cookie = header.getValue();
-                        break;
-                    }
+        CloseableHttpResponse response = httpclient.execute(httpPost);
+        InputStream inputStream = response.getEntity().getContent();
+        if (cookie == null) {
+
+            Header[] headers = response.getAllHeaders();
+            for (Header header : headers) {
+                if (header.getName().equals("Set-Cookie")) {
+                    cookie = header.getValue();
+                    break;
                 }
             }
-            return inputStream;
         }
-        catch (IOException e) {
-            log.error("", e);
-        }
-        return null;
+        return inputStream;
     }
 }

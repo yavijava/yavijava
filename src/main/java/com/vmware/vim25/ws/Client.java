@@ -1,5 +1,6 @@
 package com.vmware.vim25.ws;
 
+import javax.net.ssl.TrustManager;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
@@ -147,6 +148,10 @@ public interface Client {
      * @param timeoutMilliSec Integer time in milliseconds
      */
     public void setReadTimeout(int timeoutMilliSec);
+
+    public TrustManager getTrustManager();
+
+    public void setTrustManager(TrustManager trustManager);
 
     /**
      * Sets the api version. The oldest supported will be v4.0

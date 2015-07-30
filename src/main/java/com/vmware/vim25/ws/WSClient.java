@@ -40,8 +40,6 @@ import java.net.MalformedURLException;
 import java.net.ProtocolException;
 import java.net.URL;
 import java.rmi.RemoteException;
-import java.security.KeyManagementException;
-import java.security.NoSuchAlgorithmException;
 
 /**
  * The Web Service Engine
@@ -119,19 +117,13 @@ public class WSClient extends SoapClient {
         HttpURLConnection postCon;
         if (baseUrl.getProtocol().equalsIgnoreCase("https") && ignoreCert) {
             postCon = (HttpsURLConnection) baseUrl.openConnection();
-            try {
-                ((HttpsURLConnection) postCon).setSSLSocketFactory(TrustAllSSL.getTrustContext().getSocketFactory());
+            ((HttpsURLConnection) postCon).setSSLSocketFactory(TrustAllSSL.getTrustContext().getSocketFactory());
+        } else if(baseUrl.getProtocol().equalsIgnoreCase("https") && !ignoreCert) {
+            postCon = (HttpsURLConnection) baseUrl.openConnection();
+            if(trustManager != null) {
+                ((HttpsURLConnection) postCon).setSSLSocketFactory(TrustCustomSSLContextCreator.getTrustContext(trustManager).getSocketFactory());
             }
-            catch (NoSuchAlgorithmException e) {
-                log.debug("Unable to find suitable algorithm while attempting to communicate with remote server.", e);
-                throw new RemoteException("Unable to find suitable algorithm while attempting to communicate with remote server.", e);
-            }
-            catch (KeyManagementException e) {
-                log.debug("Key Management exception while attempting to communicate with remote server.", e);
-                throw new RemoteException("Key Management exception while attempting to communicate with remote server.", e);
-            }
-        }
-        else {
+        } else {
             postCon = (HttpURLConnection) baseUrl.openConnection();
         }
 

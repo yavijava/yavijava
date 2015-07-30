@@ -1,6 +1,7 @@
 package com.vmware.vim25.ws;
 
 import javax.net.ssl.*;
+import java.rmi.RemoteException;
 import java.security.KeyManagementException;
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
@@ -26,23 +27,30 @@ public class TrustAllSSL {
     private static boolean alreadyCreated = false;
     private static SSLContext sslContext;
 
-    public static SSLContext getTrustContext() throws NoSuchAlgorithmException, KeyManagementException {
-        if (getAlreadyCreated()) {
+    public static SSLContext getTrustContext() {
+        try {
+            if (getAlreadyCreated()) {
+                return sslContext;
+            }
+            setAlreadyCreated();
+            TrustManager[] trustAllCerts = new TrustManager[1];
+            trustAllCerts[0] = new TrustAllManager();
+            sslContext = SSLContext.getInstance("TLS");
+            sslContext.init(null, trustAllCerts, new SecureRandom());
+            HttpsURLConnection.setDefaultHostnameVerifier(
+                new HostnameVerifier() {
+                    public boolean verify(String urlHostName, SSLSession session) {
+                        return true;
+                    }
+                }
+            );
+        } catch (NoSuchAlgorithmException e) {
+            throw new RemoteException("Unable to find suitable algorithm while attempting to communicate with remote server.", e);
+        } catch (KeyManagementException e) {
+            throw new RemoteException("Key Management exception while attempting to communicate with remote server.", e);
+        } finally {
             return sslContext;
         }
-        setAlreadyCreated();
-        TrustManager[] trustAllCerts = new TrustManager[1];
-        trustAllCerts[0] = new TrustAllManager();
-        sslContext = SSLContext.getInstance("TLS");
-        sslContext.init(null, trustAllCerts, new SecureRandom());
-        HttpsURLConnection.setDefaultHostnameVerifier(
-            new HostnameVerifier() {
-                public boolean verify(String urlHostName, SSLSession session) {
-                    return true;
-                }
-            }
-        );
-        return sslContext;
     }
 
     /**
