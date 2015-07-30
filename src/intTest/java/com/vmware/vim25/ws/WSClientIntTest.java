@@ -45,8 +45,6 @@ public class WSClientIntTest {
                     LoadVcenterProps.userName, LoadVcenterProps.password, true);
         } catch (MalformedURLException e) {
             e.printStackTrace();
-        } catch(RemoteException e) {
-
         }
 
         if(si != null) {

@@ -6,7 +6,7 @@ import java.security.KeyManagementException;
 import java.security.NoSuchAlgorithmException;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-public class TrustCustomSSLContextCreator {
+public class CustomSSLTrustContextCreator {
 
     private static AtomicBoolean contextAlreadyCreated = new AtomicBoolean(false);
     private static SSLContext sslContext;

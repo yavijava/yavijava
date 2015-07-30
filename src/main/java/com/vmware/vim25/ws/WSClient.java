@@ -121,7 +121,7 @@ public class WSClient extends SoapClient {
         } else if(baseUrl.getProtocol().equalsIgnoreCase("https") && !ignoreCert) {
             postCon = (HttpsURLConnection) baseUrl.openConnection();
             if(trustManager != null) {
-                ((HttpsURLConnection) postCon).setSSLSocketFactory(TrustCustomSSLContextCreator.getTrustContext(trustManager).getSocketFactory());
+                ((HttpsURLConnection) postCon).setSSLSocketFactory(CustomSSLTrustContextCreator.getTrustContext(trustManager).getSocketFactory());
             }
         } else {
             postCon = (HttpURLConnection) baseUrl.openConnection();

@@ -1,7 +1,7 @@
 package com.vmware.vim25.mo;
 
 import com.utility.LoadVcenterProps;
-import com.vmware.vim25.ws.TrustCustomSSLContextCreator;
+import com.vmware.vim25.ws.CustomSSLTrustContextCreator;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -31,7 +31,7 @@ public class ServiceInstanceIntTest {
         }
 
         // ensure that the ssl context is re-initialized for every test, so behavior for different trust managers can be verified
-        TrustCustomSSLContextCreator.setContextAlreadyCreated(false);
+        CustomSSLTrustContextCreator.setContextAlreadyCreated(false);
     }
 
     @Test
@@ -120,6 +120,8 @@ public class ServiceInstanceIntTest {
 
     /**
      * Tests case when no trust manager is provided and certs should not be ignored. Verifies an SSLHandshakeException occurs and the connection is not accepted.
+     * This must be run against a vCenter running on ssl and you should not have its cert in your keystore. This is because the default trust manager performs
+     * normal certificate verification against the JDK's default CA certs.
      */
     @Test
     public void testCreateServiceInstanceWithNullTrustManager() {
