@@ -170,8 +170,6 @@ public class ServiceInstanceTest {
         }
     }
 
-    // *******
-
     @Test
     public void testCreateServiceInstanceForSessionStringAndIgnoreCertsNoTimeouts() {
         try {
