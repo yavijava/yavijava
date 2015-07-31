@@ -11,7 +11,7 @@ public class CustomSSLTrustContextCreator {
     private static AtomicBoolean contextAlreadyCreated = new AtomicBoolean(false);
     private static SSLContext sslContext;
 
-    public static SSLContext getTrustContext(TrustManager trustManager) {
+    public static SSLContext getTrustContext(TrustManager trustManager) throws RemoteException {
         try {
             if (contextAlreadyCreated.getAndSet(true)) {
                 return sslContext;
@@ -24,9 +24,9 @@ public class CustomSSLTrustContextCreator {
             throw new RemoteException("Unable to find suitable algorithm while attempting to communicate with remote server.", e);
         } catch(KeyManagementException e) {
             throw new RemoteException("An error occurred initializing SSL context due to a problem with key management.", e);
-        } finally {
-            return sslContext;
         }
+
+        return sslContext;
     }
 
     /**

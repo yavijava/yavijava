@@ -27,7 +27,7 @@ public class TrustAllSSL {
     private static boolean alreadyCreated = false;
     private static SSLContext sslContext;
 
-    public static SSLContext getTrustContext() {
+    public static SSLContext getTrustContext() throws RemoteException {
         try {
             if (getAlreadyCreated()) {
                 return sslContext;
@@ -48,9 +48,9 @@ public class TrustAllSSL {
             throw new RemoteException("Unable to find suitable algorithm while attempting to communicate with remote server.", e);
         } catch (KeyManagementException e) {
             throw new RemoteException("Key Management exception while attempting to communicate with remote server.", e);
-        } finally {
-            return sslContext;
         }
+
+        return sslContext;
     }
 
     /**
