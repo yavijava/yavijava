@@ -18,7 +18,7 @@ public class CustomSSLTrustContextCreator {
             }
 
             TrustManager[] trustManagers = new TrustManager[] { trustManager };
-            sslContext = SSLContext.getInstance("SSL");
+            sslContext = SSLContext.getInstance("TLS");
             sslContext.init(null, trustManagers, null);
         }catch(NoSuchAlgorithmException e) {
             throw new RemoteException("Unable to find suitable algorithm while attempting to communicate with remote server.", e);
