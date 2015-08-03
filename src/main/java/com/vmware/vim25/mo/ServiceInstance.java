@@ -34,6 +34,7 @@ import com.vmware.vim25.mo.util.MorUtil;
 import com.vmware.vim25.ws.Client;
 import org.apache.log4j.Logger;
 
+import javax.net.ssl.TrustManager;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.rmi.RemoteException;
@@ -68,9 +69,19 @@ public class ServiceInstance extends ManagedObject {
         this(url, username, password, ignoreCert, VIM25_NAMESPACE);
     }
 
+    public ServiceInstance(URL url, String username, String password, TrustManager trustManager)
+            throws RemoteException, MalformedURLException {
+       this(url, username, password, trustManager, VIM25_NAMESPACE);
+    }
+
     public ServiceInstance(URL url, String username, String password, boolean ignoreCert, String namespace)
         throws RemoteException, MalformedURLException {
-        constructServiceInstance(url, username, password, ignoreCert, namespace, 0, 0);
+        constructServiceInstance(url, username, password, ignoreCert, namespace, 0, 0, null);
+    }
+
+    public ServiceInstance(URL url, String username, String password, TrustManager trustManager, String namespace)
+            throws RemoteException, MalformedURLException {
+        constructServiceInstance(url, username, password, false, namespace, 0, 0, trustManager);
     }
 
     public ServiceInstance(URL url, String username, String password, int connectTimeout, int readTimeout)
@@ -79,16 +90,26 @@ public class ServiceInstance extends ManagedObject {
     }
 
     public ServiceInstance(URL url, String username, String password, boolean ignoreCert, int connectTimeout, int readTimeout)
-        throws RemoteException, MalformedURLException {
+            throws RemoteException, MalformedURLException {
         this(url, username, password, ignoreCert, VIM25_NAMESPACE, connectTimeout, readTimeout);
+    }
+
+    public ServiceInstance(URL url, String username, String password, TrustManager trustManager, int connectTimeout, int readTimeout)
+            throws RemoteException, MalformedURLException {
+        this(url, username, password, trustManager, VIM25_NAMESPACE, connectTimeout, readTimeout);
     }
 
     public ServiceInstance(URL url, String username, String password, boolean ignoreCert, String namespace, int connectTimeout, int readTimeout)
         throws RemoteException, MalformedURLException {
-        constructServiceInstance(url, username, password, ignoreCert, namespace, connectTimeout, readTimeout);
+        constructServiceInstance(url, username, password, ignoreCert, namespace, connectTimeout, readTimeout, null);
     }
 
-    protected void constructServiceInstance(URL url, String username, String password, boolean ignoreCert, String namespace, int connectTimeout, int readTimeout)
+    public ServiceInstance(URL url, String username, String password, TrustManager trustManager, String namespace, int connectTimeout, int readTimeout)
+            throws RemoteException, MalformedURLException {
+        constructServiceInstance(url, username, password, false, namespace, connectTimeout, readTimeout, trustManager);
+    }
+
+    protected void constructServiceInstance(URL url, String username, String password, boolean ignoreCert, String namespace, int connectTimeout, int readTimeout, TrustManager trustManager)
         throws RemoteException, MalformedURLException {
         if (url == null || username == null) {
             throw new NullPointerException("None of url, username can be null.");
@@ -101,6 +122,7 @@ public class ServiceInstance extends ManagedObject {
 
         vimService.getWsc().setConnectTimeout(connectTimeout);
         vimService.getWsc().setReadTimeout(readTimeout);
+        vimService.getWsc().setTrustManager(trustManager);
 
         serviceContent = retrieveServiceContent(vimService, SERVICE_INSTANCE_MOR);
         vimService.getWsc().setSoapActionOnApiVersion(getApiVersion(serviceContent));
@@ -116,10 +138,20 @@ public class ServiceInstance extends ManagedObject {
         this(url, sessionStr, ignoreCert, VIM25_NAMESPACE);
     }
 
+    public ServiceInstance(URL url, String sessionStr, TrustManager trustManager)
+            throws RemoteException, MalformedURLException {
+        this(url, sessionStr, trustManager, VIM25_NAMESPACE);
+    }
+
     // sessionStr format: "vmware_soap_session=\"B3240D15-34DF-4BB8-B902-A844FDF42E85\""
     public ServiceInstance(URL url, String sessionStr, boolean ignoreCert, String namespace)
         throws RemoteException, MalformedURLException {
-        constructServiceInstance(url, sessionStr, ignoreCert, namespace, 0, 0);
+        constructServiceInstance(url, sessionStr, ignoreCert, namespace, 0, 0, null);
+    }
+
+    public ServiceInstance(URL url, String sessionStr, TrustManager trustManager, String namespace)
+            throws RemoteException, MalformedURLException {
+        constructServiceInstance(url, sessionStr, false, namespace, 0, 0, trustManager);
     }
 
     public ServiceInstance(URL url, String sessionStr, boolean ignoreCert, int connectTimeout, int readTimeout)
@@ -127,13 +159,23 @@ public class ServiceInstance extends ManagedObject {
         this(url, sessionStr, ignoreCert, VIM25_NAMESPACE, connectTimeout, readTimeout);
     }
 
+    public ServiceInstance(URL url, String sessionStr, TrustManager trustManager, int connectTimeout, int readTimeout)
+            throws RemoteException, MalformedURLException {
+        this(url, sessionStr, trustManager, VIM25_NAMESPACE, connectTimeout, readTimeout);
+    }
+
     // sessionStr format: "vmware_soap_session=\"B3240D15-34DF-4BB8-B902-A844FDF42E85\""
     public ServiceInstance(URL url, String sessionStr, boolean ignoreCert, String namespace, int connectTimeout, int readTimeout)
         throws RemoteException, MalformedURLException {
-        constructServiceInstance(url, sessionStr, ignoreCert, namespace, connectTimeout, readTimeout);
+        constructServiceInstance(url, sessionStr, ignoreCert, namespace, connectTimeout, readTimeout, null);
     }
 
-    protected void constructServiceInstance(URL url, String sessionStr, boolean ignoreCert, String namespace, int connectTimeout, int readTimeout)
+    public ServiceInstance(URL url, String sessionStr, TrustManager trustManager, String namespace, int connectTimeout, int readTimeout)
+            throws RemoteException, MalformedURLException {
+        constructServiceInstance(url, sessionStr, false, namespace, connectTimeout, readTimeout, trustManager);
+    }
+
+    protected void constructServiceInstance(URL url, String sessionStr, boolean ignoreCert, String namespace, int connectTimeout, int readTimeout, TrustManager trustManager)
         throws RemoteException, MalformedURLException {
         if (url == null || sessionStr == null) {
             throw new NullPointerException("None of url, session string can be null.");
@@ -148,6 +190,7 @@ public class ServiceInstance extends ManagedObject {
 
         vimService.getWsc().setConnectTimeout(connectTimeout);
         vimService.getWsc().setReadTimeout(readTimeout);
+        vimService.getWsc().setTrustManager(trustManager);
 
         serviceContent = retrieveServiceContent(vimService, SERVICE_INSTANCE_MOR);
         wsc.setSoapActionOnApiVersion(getApiVersion(serviceContent));
@@ -237,6 +280,10 @@ public class ServiceInstance extends ManagedObject {
 
     public int getReadTimeout() {
         return getServerConnection().getVimService().getWsc().getReadTimeout();
+    }
+
+    public TrustManager getTrustManager() {
+        return getServerConnection().getVimService().getWsc().getTrustManager();
     }
 
     protected String getApiVersion(ServiceContent serviceContent) {

@@ -2,6 +2,7 @@ package com.vmware.vim25.ws;
 
 import org.apache.log4j.Logger;
 
+import javax.net.ssl.TrustManager;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -34,6 +35,7 @@ public abstract class SoapClient implements Client {
     public String vimNameSpace = null;
     public int connectTimeout = 0;
     public int readTimeout = 0;
+    protected TrustManager trustManager;
 
     XmlGen xmlGen = new XmlGenDom();
 
@@ -167,6 +169,19 @@ public abstract class SoapClient implements Client {
      */
     public void setReadTimeout(int timeoutMilliSec) {
         this.readTimeout = timeoutMilliSec;
+    }
+
+    public TrustManager getTrustManager() {
+        return trustManager;
+    }
+
+    /**
+     * Set a custom trust manager responsible for material used when making trust decisions.
+     *
+     * @param trustManager
+     */
+    public void setTrustManager(TrustManager trustManager) {
+        this.trustManager = trustManager;
     }
 
     public StringBuffer readStream(InputStream is) throws IOException {

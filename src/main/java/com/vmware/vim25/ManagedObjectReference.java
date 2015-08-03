@@ -29,6 +29,8 @@ POSSIBILITY OF SUCH DAMAGE.
 
 package com.vmware.vim25;
 
+import java.text.MessageFormat;
+
 /**
  * @author Steve Jin (http://www.doublecloud.org)
  * @version 5.1
@@ -61,5 +63,26 @@ public class ManagedObjectReference {
 
     public void set_value(String val) {
         this.val = val;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if(this == obj)
+            return true;
+        if((obj == null) || (obj.getClass() != this.getClass()))
+            return false;
+
+        ManagedObjectReference mor = (ManagedObjectReference)obj;
+        return  mor.getType().equals(getType()) && mor.getVal().equals(getVal());
+    }
+
+    @Override
+    public int hashCode()  {
+        return val.hashCode() + type.hashCode();
+    }
+
+    @Override
+    public String toString() {
+        return MessageFormat.format("{0}:{1}", type, val);
     }
 }

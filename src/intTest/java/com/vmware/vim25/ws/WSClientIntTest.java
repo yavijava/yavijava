@@ -7,6 +7,7 @@ import java.util.Calendar;
 import javax.net.ssl.SSLHandshakeException;
 
 import com.vmware.vim25.*;
+import org.apache.log4j.Logger;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -18,6 +19,9 @@ import com.vmware.vim25.mo.util.PropertyCollectorUtil;
 import javax.net.ssl.HttpsURLConnection;
 
 public class WSClientIntTest {
+
+    private static final Logger log = Logger.getLogger(WSClientIntTest.class);
+
     SoapClient wsClient = null;
 
 
@@ -42,13 +46,15 @@ public class WSClientIntTest {
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
-        
-        wsClient = new WSClient(LoadVcenterProps.url, true);
 
-        wsClient.setVimNameSpace(ServiceInstance.VIM25_NAMESPACE);
-        wsClient.setSoapActionOnApiVersion("5.5");
-        wsClient.setCookie(si.getSessionManager().getServerConnection()
-                .getVimService().getWsc().getCookie());
+        if(si != null) {
+            wsClient = new WSClient(LoadVcenterProps.url, true);
+
+            wsClient.setVimNameSpace(ServiceInstance.VIM25_NAMESPACE);
+            wsClient.setSoapActionOnApiVersion("5.5");
+            wsClient.setCookie(si.getSessionManager().getServerConnection()
+                    .getVimService().getWsc().getCookie());
+        }
     }
 
     /**
