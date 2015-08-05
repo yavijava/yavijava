@@ -6,6 +6,12 @@ import com.vmware.vim25.mo.ServerConnection
 import com.vmware.vim25.mo.VirtualMachine
 import spock.lang.Specification
 
+import static groovy.test.GroovyAssert.shouldFail
+import static groovy.test.GroovyAssert.shouldFail
+import static groovy.test.GroovyAssert.shouldFail
+import static groovy.test.GroovyAssert.shouldFail
+import static groovy.test.GroovyAssert.shouldFail
+
 /**
  *  Copyright 2015 Michael Rice <michael@michaelrice.org>
  *
@@ -66,5 +72,79 @@ class MorUtilTestSpec extends Specification {
 
         then:
         vm.getMOR().val == val
+    }
+
+    def "test CreateExactManagedObject throws an IllegalArgumentException on ClassNotFoundException"() {
+        setup:
+        ManagedObjectReference mor1 = new ManagedObjectReference()
+        mor1.type = "null"
+        mor1.val = "vm-12345"
+        ServerConnection sc = Mock(ServerConnection)
+
+        when:
+        String message = shouldFail IllegalArgumentException, {MorUtil.createExactManagedObject(sc, mor1)}
+
+        then:
+        message.contains("vijava does not have an associated class for this mor: vm-12345")
+    }
+
+    def "test CreateExactManagedObject throws an IllegalArgumentException on NoSuchMethodException"() {
+        setup:
+        ManagedObjectReference mor1 = new ManagedObjectReference()
+        mor1.type = "ServiceInstance"
+        mor1.val = "vm-12345"
+        ServerConnection sc = Mock(ServerConnection)
+        MorUtil mu = Mock(MorUtil)
+
+        when:
+        String message = shouldFail IllegalArgumentException, {MorUtil.createExactManagedObject(sc, mor1)}
+
+        then:
+        message.contains("No constructor found in vijava for class: com.vmware.vim25.mo.ServiceInstance")
+    }
+
+    def "test CreateExactManagedObject throws an IllegalArgumentException on InstantiationException"() {
+        setup:
+        ManagedObjectReference mor1 = new ManagedObjectReference()
+        mor1.type = "ManagedObject"
+        mor1.val = "vm-12345"
+        ServerConnection sc = Mock(ServerConnection)
+
+
+        when:
+        String message = shouldFail IllegalArgumentException, {MorUtil.createExactManagedObject(sc, mor1)}
+
+        then:
+        message.contains("vijava is unable to create a managed object from this mor: vm-12345")
+    }
+
+    def "test CreateExactManagedObject throws an IllegalArgumentException on InvocationTargetException"() {
+        setup:
+        ManagedObjectReference mor1 = new ManagedObjectReference()
+        mor1.type = "TestInvocationTargetException"
+        mor1.val = "vm-12345"
+        ServerConnection sc = new ServerConnection(null, null, null)
+
+
+        when:
+        String message = shouldFail IllegalArgumentException, {MorUtil.createExactManagedObject(sc, mor1)}
+
+        then:
+        message.contains("vijava is unable to create a managed object from this mor: vm-12345")
+    }
+
+    def "test CreateExactManagedObject throws uncaught Exception"() {
+        setup:
+        ManagedObjectReference mor1 = new ManagedObjectReference()
+        mor1.type = "TestExceptionNotCaught"
+        mor1.val = "vm-12345"
+        ServerConnection sc = new ServerConnection(null, null, null)
+
+
+        when:
+        String message = shouldFail ClassCastException, {MorUtil.createExactManagedObject(sc, mor1)}
+
+        then:
+        message.contains("com.vmware.vim25.mo.TestExceptionNotCaught cannot be cast to com.vmware.vim25.mo.ManagedObject")
     }
 }

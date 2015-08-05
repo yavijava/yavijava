@@ -4,6 +4,10 @@ import com.vmware.vim25.InvalidLogin
 import com.vmware.vim25.ManagedObjectReference
 import spock.lang.Specification
 
+import java.rmi.RemoteException
+
+import static groovy.test.GroovyAssert.shouldFail
+
 /**
  *  Copyright 2015 Michael Rice <michael@michaelrice.org>
  *
@@ -42,5 +46,20 @@ class WSClientSpec extends Specification {
 
         then:
         thrown(InvalidLogin)
+    }
+
+    def 'test IOException Handling during getInputStream'() {
+        setup:
+        TestIOExceptionNullErrorStream connect = new TestIOExceptionNullErrorStream();
+        TestIOExceptionWithErrorStream connect2 = new TestIOExceptionWithErrorStream();
+        WSClient wsClient = new WSClient("https://foo.com/sdk", true)
+
+        when:
+        String message = shouldFail RemoteException, {wsClient.getInputStreamFromConnection(connect)}
+        String message2 = new InputStreamReader(wsClient.getInputStreamFromConnection(connect2)).readLine();
+
+        then:
+        message.contains("An error occurred getting a response from the connection at url https://foo.com/sdk; nested exception is: ")
+        message2.contains("There was an error retrieving the InputStream")
     }
 }

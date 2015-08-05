@@ -45,4 +45,13 @@ public class ManagedObjectNotFound extends RuntimeFault {
     public void setObj(ManagedObjectReference obj) {
         this.obj = obj;
     }
+
+    @Override
+    public String getMessage() {
+        if (obj != null) {
+            return obj.getType() + ":" + obj.getVal();
+        } else {
+            return "<null ManagedObjectReference>";
+        }
+    }
 }

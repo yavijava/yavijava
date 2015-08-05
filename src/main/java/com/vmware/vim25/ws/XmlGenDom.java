@@ -34,6 +34,7 @@ import com.vmware.vim25.ManagedObjectReference;
 import com.vmware.vim25.mo.util.MorUtil;
 import org.apache.log4j.Logger;
 import org.dom4j.Document;
+import org.dom4j.DocumentException;
 import org.dom4j.Element;
 import org.dom4j.io.SAXReader;
 import org.doublecloud.ws.util.ReflectUtil;
@@ -45,6 +46,7 @@ import java.lang.reflect.Array;
 import java.lang.reflect.Field;
 import java.rmi.RemoteException;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -78,7 +80,10 @@ class XmlGenDom extends XmlGen {
             log.trace("XML Document: " + doc.asXML());
             root = doc.getRootElement();
         }
-        catch (Exception e1) {
+        catch (DocumentException e){
+            Throwable throwThis = e.getNestedException() != null ? e.getNestedException() : e;
+            throw new RemoteException("An error occurred parsing XML with return type: " + returnType, throwThis);
+        } catch (Exception e1) {
             throw new RemoteException("VI SDK invoke exception:" + e1);
         }
         finally {
@@ -125,24 +130,38 @@ class XmlGenDom extends XmlGen {
     }
 
     protected SoapFaultException parseSoapFault(Element root) throws Exception {
-        SoapFaultException sfe = new SoapFaultException();
+        try {
+            SoapFaultException sfe = new SoapFaultException();
 
-        sfe.setFaultCode(root.elementText("faultcode"));
-        sfe.setFaultString(root.elementText("faultstring"));
-        sfe.setFaultActor(root.elementText("faultactor"));
+            sfe.setFaultCode(root.elementText("faultcode"));
+            sfe.setFaultString(root.elementText("faultstring"));
+            sfe.setFaultActor(root.elementText("faultactor"));
 
-        Element detailE = root.element("detail");
-        if (detailE != null) {
-            List<?> subElems = detailE.elements();
-            if (subElems.size() != 0) {
-                Element faultE = (Element) subElems.get(0);
-                String faultTypeName = faultE.attributeValue(SoapConsts.XSI_TYPE);
-                if (faultTypeName != null) {
-                    sfe.detail = (Throwable) fromXml(TypeUtil.getVimClass(faultTypeName), faultE);
+            Element detailE = root.element("detail");
+            if (detailE != null) {
+                List<?> subElems = detailE.elements();
+                if (subElems.size() != 0) {
+                    Element faultE = (Element) subElems.get(0);
+                    String faultTypeName = faultE.attributeValue(SoapConsts.XSI_TYPE);
+                    if (faultTypeName != null) {
+                        sfe.detail = (Throwable) fromXml(TypeUtil.getVimClass(faultTypeName), faultE);
+                    }
                 }
             }
+            return sfe;
         }
-        return sfe;
+        catch (RuntimeException e) {
+            throw new RuntimeException("Could not map the soap fault from:\n" + getContent(root), e);
+        }
+    }
+
+    private static String getContent(Element element) {
+        StringBuilder builder = new StringBuilder();
+        for (Iterator<Element> i = element.elementIterator(); i.hasNext(); ) {
+            Element e = i.next();
+            builder.append(e.asXML());
+        }
+        return builder.toString();
     }
 
     @SuppressWarnings("unchecked")
