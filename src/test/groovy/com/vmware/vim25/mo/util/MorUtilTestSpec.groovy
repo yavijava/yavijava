@@ -5,11 +5,6 @@ import com.vmware.vim25.mo.ManagedObject
 import com.vmware.vim25.mo.ServerConnection
 import com.vmware.vim25.mo.VirtualMachine
 import spock.lang.Specification
-
-import static groovy.test.GroovyAssert.shouldFail
-import static groovy.test.GroovyAssert.shouldFail
-import static groovy.test.GroovyAssert.shouldFail
-import static groovy.test.GroovyAssert.shouldFail
 import static groovy.test.GroovyAssert.shouldFail
 
 /**
