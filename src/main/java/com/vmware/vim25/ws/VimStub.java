@@ -5444,7 +5444,7 @@ public class VimStub {
     public ManagedObjectReference installIoFilter_Task(ManagedObjectReference _this, String vibUrl, ManagedObjectReference compRes) throws AlreadyExists, InvalidArgument, RuntimeFault, RemoteException {
         Argument[] params = new Argument[3];
         params[0] = new Argument("_this", "ManagedObjectReference", _this);
-        params[1] = new Argument("vimUrl", "String", vibUrl);
+        params[1] = new Argument("vibUrl", "String", vibUrl);
         params[2] = new Argument("compRes", "ManagedObjectReference", compRes);
         return (ManagedObjectReference) getWsc().invoke("InstallIoFilter_Task", params, "ManagedObjectReference");
     }
