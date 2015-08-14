@@ -40,6 +40,7 @@ import java.net.MalformedURLException;
 import java.net.ProtocolException;
 import java.net.URL;
 import java.rmi.RemoteException;
+import java.text.MessageFormat;
 
 /**
  * The Web Service Engine
@@ -164,6 +165,16 @@ public class WSClient extends SoapClient {
         out.write(soapMsg);
         out.close();
 
+        InputStream is = getInputStreamFromConnection(postCon);
+
+        if (cookie == null) {
+            cookie = postCon.getHeaderField("Set-Cookie");
+            log.trace("Cookie was null. Fetching Set-Cookie header to get new Cookie.");
+        }
+        return is;
+    }
+
+    protected InputStream getInputStreamFromConnection(HttpURLConnection postCon) throws RemoteException{
         InputStream is;
 
         try {
@@ -172,13 +183,18 @@ public class WSClient extends SoapClient {
         }
         catch (IOException ioe) {
             log.debug("Caught an IOException. Reading ErrorStream for results.", ioe);
-            is = postCon.getErrorStream();
+            InputStream errorStream = postCon.getErrorStream();
+
+            // check if there is an error stream available
+            if (errorStream != null) {
+                // return the error stream as the input stream so it can be parsed
+                is = errorStream;
+            } else {
+                // if there is no error stream available, wrap the IOException to give meaningful error
+                throw new RemoteException(MessageFormat.format("An error occurred getting a response from the connection at url {0}", baseUrl), ioe);
+            }
         }
 
-        if (cookie == null) {
-            cookie = postCon.getHeaderField("Set-Cookie");
-            log.trace("Cookie was null. Fetching Set-Cookie header to get new Cookie.");
-        }
         return is;
     }
 
