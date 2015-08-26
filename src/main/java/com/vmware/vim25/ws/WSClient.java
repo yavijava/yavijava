@@ -34,6 +34,7 @@ package com.vmware.vim25.ws;
 import org.apache.log4j.Logger;
 
 import javax.net.ssl.HttpsURLConnection;
+import javax.net.ssl.SSLSocketFactory;
 import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
@@ -52,22 +53,22 @@ import java.text.MessageFormat;
 public class WSClient extends SoapClient {
 
     private static final Logger log = Logger.getLogger(WSClient.class);
-    private boolean ignoreCert = false;
+    private final SSLSocketFactory sslSocketFactory;
 
     XmlGen xmlGen = new XmlGenDom();
 
-    public WSClient(String serverUrl) throws MalformedURLException {
+    public WSClient(String serverUrl) throws MalformedURLException, RemoteException {
         this(serverUrl, true);
     }
 
-    public WSClient(String serverUrl, boolean ignoreCert) throws MalformedURLException {
+    public WSClient(String serverUrl, boolean ignoreCert) throws MalformedURLException, RemoteException {
         if (serverUrl.endsWith("/")) {
             serverUrl = serverUrl.substring(0, serverUrl.length() - 1);
         }
         log.trace("Creating WSClient to server URL: " + serverUrl);
         log.trace("Ignore ssl: " + ignoreCert);
         this.baseUrl = new URL(serverUrl);
-        this.ignoreCert = ignoreCert;
+        this.sslSocketFactory = getSocketFactory(ignoreCert);
     }
 
     public Object invoke(String methodName, Argument[] paras, String returnType) throws RemoteException {
@@ -115,22 +116,9 @@ public class WSClient extends SoapClient {
     }
 
     protected InputStream post(String soapMsg) throws IOException {
-        HttpURLConnection postCon;
-
-        if(ignoreCert && trustManager != null) {
-            log.warn("The option to ignore certs has been set along with a provided trust manager. This is not a valid scenario and the trust manager will be ignored.");
-        }
-
-        if (baseUrl.getProtocol().equalsIgnoreCase("https") && ignoreCert) {
-            postCon = (HttpsURLConnection) baseUrl.openConnection();
-            ((HttpsURLConnection) postCon).setSSLSocketFactory(TrustAllSSL.getTrustContext().getSocketFactory());
-        } else if(baseUrl.getProtocol().equalsIgnoreCase("https") && !ignoreCert) {
-            postCon = (HttpsURLConnection) baseUrl.openConnection();
-            if(trustManager != null) {
-                ((HttpsURLConnection) postCon).setSSLSocketFactory(CustomSSLTrustContextCreator.getTrustContext(trustManager).getSocketFactory());
-            }
-        } else {
-            postCon = (HttpURLConnection) baseUrl.openConnection();
+        HttpURLConnection postCon = (HttpURLConnection) baseUrl.openConnection();
+        if (sslSocketFactory != null && baseUrl.getProtocol().equalsIgnoreCase("https")) {
+            ((HttpsURLConnection) postCon).setSSLSocketFactory(sslSocketFactory);
         }
 
         log.trace("POST: " + soapAction);
@@ -206,4 +194,7 @@ public class WSClient extends SoapClient {
         return new OutputStreamWriter(os, "UTF8");
     }
 
+    protected SSLSocketFactory getSocketFactory(boolean ignoreCert) throws RemoteException {
+        return ignoreCert ? TrustAllSSL.getTrustContext().getSocketFactory() : null;
+    }
 }
