@@ -22,15 +22,15 @@ import java.rmi.RemoteException;
 
 /**
  * Created by Michael Rice on 8/12/14.
- * <p/>
+ * <p>
  * Copyright 2014 Michael Rice
- * <p/>
+ * <p>
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * <p/>
+ * <p>
  * http://www.apache.org/licenses/LICENSE-2.0
- * <p/>
+ * <p>
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -52,7 +52,7 @@ public class ApacheHttpClient extends SoapClient {
 
     /**
      * Trust all the ssl stuff no matter what!?!
-     * <p/>
+     * <p>
      * We do true here because by default all the vsphere stuff
      * is self signed.
      */
@@ -88,10 +88,10 @@ public class ApacheHttpClient extends SoapClient {
      * This method typically creates the payload needed to send to the vi server. For example you would
      * pass in RetrieveServiceContent for the methodName, next the params needed for the method. Next give
      * the returnType the parser should convert the response to in this case the string ServiceContent
-     * <p/>
+     * <p>
      * Returns an {@link Object} of the given return type. Using the example above you would get
      * a {@link com.vmware.vim25.ServiceContent} Object.
-     * <p/>
+     * <p>
      *
      * @param methodName Name of the method to execute
      * @param paras      Array of Arguments aka params for the method

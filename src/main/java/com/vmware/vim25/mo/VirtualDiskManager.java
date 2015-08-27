@@ -139,13 +139,13 @@ public class VirtualDiskManager extends ManagedObject {
 
     /**
      * Import an unmanaged-snapshot from Virtual-Volume(VVol) enabled Storage Array.
-     * <p/>
+     * <p>
      * Storage Array may support users to take snapshots indepedent of VMware stack. Such copies or snapshots are known
      * as 'Unmanaged-Snapshots'. We are providing an ability to end-users to import such unmanaged-snapshots as Virtual
      * Disks.
-     * <p/>
+     * <p>
      * End-user needs to know the VVol-Identifier to import unmanaged snapshot as VirtualDisk.
-     * <p/>
+     * <p>
      * Once VirtualDisk is created, user can use 'Datastore Browser' to use with rest of Virtual Machine provisioning
      * APIs.
      *

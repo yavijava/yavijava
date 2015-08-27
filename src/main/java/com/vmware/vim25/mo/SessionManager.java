@@ -93,7 +93,7 @@ public class SessionManager extends ManagedObject {
     /**
      * Copyright 2009 NetApp, contribution by Eric Forgette
      * Modified by Steve Jin (sjin@vmware.com)
-     * <p/>
+     * <p>
      * This constructor builds a new ServiceInstance based on a ServiceInstance.
      * The new ServiceInstance is effectively a clone of the first.  This clone will
      * NOT become invalid when the first is logged out.
