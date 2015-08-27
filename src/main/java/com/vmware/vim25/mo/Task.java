@@ -32,6 +32,8 @@ package com.vmware.vim25.mo;
 import com.vmware.vim25.*;
 
 import java.rmi.RemoteException;
+import java.text.MessageFormat;
+import java.util.concurrent.TimeUnit;
 
 /**
  * The managed object class corresponding to the one defined in VI SDK API reference.
@@ -40,8 +42,13 @@ import java.rmi.RemoteException;
  */
 
 public class Task extends ExtensibleManagedObject {
+
     public static final String PROPNAME_INFO = "info";
     public static final String SUCCESS = "success";
+    private static final long DEFAULT_MAX_WAIT_TIME_MILLIS = TimeUnit.MINUTES.toMillis(10);
+    private static final int DEFAULT_RUNNING_SLEEP_TIME_MILLIS = 500;
+    private static final int DEFAULT_QUEUED_SLEEP_TIME_MILLIS = 1000;
+
 
     public Task(ServerConnection serverConnection, ManagedObjectReference mor) {
         super(serverConnection, mor);
@@ -87,20 +94,19 @@ public class Task extends ExtensibleManagedObject {
      * @return
      * @throws InvalidProperty
      * @throws RuntimeFault
-     * @throws RemoteException
+     * @throws java.rmi.RemoteException
      * @deprecated
      */
     public String waitForMe() throws InvalidProperty, RuntimeFault, RemoteException {
 
         Object[] result = waitForValues(
-            new String[]{"info.state", "info.error"},
-            new String[]{"state"},
-            new Object[][]{new Object[]{TaskInfoState.success, TaskInfoState.error}});
+                new String[]{"info.state", "info.error"},
+                new String[]{"state"},
+                new Object[][]{new Object[]{TaskInfoState.success, TaskInfoState.error}});
 
         if (result[0].equals(TaskInfoState.success)) {
             return SUCCESS;
-        }
-        else {
+        } else {
             TaskInfo tinfo = (TaskInfo) getCurrentProperty(PROPNAME_INFO);
             LocalizedMethodFault fault = tinfo.getError();
             String error = "Error Occured";
@@ -112,24 +118,16 @@ public class Task extends ExtensibleManagedObject {
         }
     }
 
-    /**
-     * Copyright 2009 NetApp, contribution by Eric Forgette
-     * <p/>
-     * This is a "drop-in" replacement for waitForMe() that uses a timed polling
-     * in place of waitForValues.
-     * <p/>
-     * This method will eat 3 exceptions while trying to get TaskInfo and TaskState.
-     * On the fourth try, the captured exception is thrown.
-     *
-     * @return String based on TaskInfoState
-     * @throws RuntimeFault
-     * @throws RemoteException
-     * @throws InterruptedException
-     * @throws RuntimeException     if the third exception is not RuntimeFault or RemoteException
-     * @author Eric Forgette (forgette@netapp.com)
-     */
-    public String waitForTask() throws RuntimeFault, RemoteException, InterruptedException {
-        return waitForTask(500, 1000);
+    public String waitForTask() throws RemoteException, InterruptedException {
+        return waitForTask(DEFAULT_RUNNING_SLEEP_TIME_MILLIS, DEFAULT_QUEUED_SLEEP_TIME_MILLIS, DEFAULT_MAX_WAIT_TIME_MILLIS);
+    }
+
+    public String waitForTask(int runningDelayInMillSecond, int queuedDelayInMillSecond) throws RemoteException, InterruptedException {
+        return waitForTask(runningDelayInMillSecond, queuedDelayInMillSecond, DEFAULT_MAX_WAIT_TIME_MILLIS);
+    }
+
+    public String waitForTask(long maxWaitInMillSecond) throws RemoteException, InterruptedException {
+        return waitForTask(DEFAULT_RUNNING_SLEEP_TIME_MILLIS, DEFAULT_QUEUED_SLEEP_TIME_MILLIS, maxWaitInMillSecond);
     }
 
     /**
@@ -148,18 +146,21 @@ public class Task extends ExtensibleManagedObject {
      *
      * @param runningDelayInMillSecond - number of milliseconds to sleep between polls for a running task
      * @param queuedDelayInMillSecond  - number of milliseconds to sleep between polls for a queued task
+     * @param maxWaitInMillSecond      - max wait time after which, if task is still running or queued, an IllegalStateException is thrown
      * @return String based on TaskInfoState
-     * @throws RuntimeFault
-     * @throws RemoteException
+     * @throws java.rmi.RemoteException
      * @throws InterruptedException
-     * @throws RuntimeException     if the third exception is not RuntimeFault or RemoteException
+     * @throws RuntimeException         if the third exception is not RuntimeFault or RemoteException
+     * @throws IllegalStateException    if task state still null/running/queued after maxWaitInMillSecond have elapsed
      * @author Eric Forgette (forgette@netapp.com)
      */
-    public String waitForTask(int runningDelayInMillSecond, int queuedDelayInMillSecond) throws RuntimeFault, RemoteException, InterruptedException {
+    public String waitForTask(int runningDelayInMillSecond, int queuedDelayInMillSecond, long maxWaitInMillSecond) throws RemoteException, InterruptedException {
         TaskInfoState tState = null;
-        int tries = 0;
+        int tries;
         int maxTries = 3;
-        Exception getInfoException = null;
+        Exception getInfoException;
+        long start = System.currentTimeMillis();
+        long elapsed;
 
         while ((tState == null) || tState.equals(TaskInfoState.running) || tState.equals(TaskInfoState.queued)) {
             tState = null;
@@ -171,22 +172,17 @@ public class Task extends ExtensibleManagedObject {
                 if (tries > maxTries) {
                     if (getInfoException == null) {
                         throw new NullPointerException();
-                    }
-                    else if (getInfoException instanceof RuntimeFault) {
+                    } else if (getInfoException instanceof RuntimeFault) {
                         throw (RuntimeFault) getInfoException;
-                    }
-                    else if (getInfoException instanceof RemoteException) {
+                    } else if (getInfoException instanceof RemoteException) {
                         throw (RemoteException) getInfoException;
-                    }
-                    else {
+                    } else {
                         throw new RuntimeException(getInfoException);
                     }
                 }
-
                 try {
                     tState = getTaskInfo().getState();
-                }
-                catch (Exception e) {
+                } catch (Exception e) {
                     //silently catch 3 exceptions
                     getInfoException = e;
                 }
@@ -195,9 +191,14 @@ public class Task extends ExtensibleManagedObject {
             // sleep for a specified time based on task state.
             if (tState.equals(TaskInfoState.running)) {
                 Thread.sleep(runningDelayInMillSecond);
-            }
-            else {
+            } else {
                 Thread.sleep(queuedDelayInMillSecond);
+            }
+
+            // check elapsed time
+            elapsed = System.currentTimeMillis() - start;
+            if ((elapsed > maxWaitInMillSecond)) {
+                throw new IllegalStateException(MessageFormat.format("Task {0} timed out ({1}ms) while TaskInfoState is: {2}", this.toString(), elapsed, tState));
             }
         }
         return tState.toString();
