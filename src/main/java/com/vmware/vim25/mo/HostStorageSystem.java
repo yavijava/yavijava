@@ -522,7 +522,7 @@ public class HostStorageSystem extends ExtensibleManagedObject {
      * security types that require user credentials for accessing data. The password is used to acquire credentials that
      * the NFS client needs to use in order to secure NFS traffic using RPCSECGSS. The client will access files on all
      * volumes mounted on this host (that are mounted with the relevant security type) on behalf of specified user.
-     * <p/>
+     * <p>
      * At present, this API supports only file system NFSv4.1.
      *
      * @param user     Username

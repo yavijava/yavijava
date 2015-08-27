@@ -199,13 +199,13 @@ public class VirtualMachine extends ManagedEntity {
 
     /**
      * Creates a secondary virtual machine to be part of this fault tolerant group.
-     * <p/>
+     * <p>
      * If a host is specified, the secondary virtual machine will be created on it. Otherwise, a host will be selected
      * by the system.
-     * <p/>
+     * <p>
      * If a FaultToleranceConfigSpec is specified, the virtual machine's configuration files and disks will be created
      * in the specified datastores.
-     * <p/>
+     * <p>
      * If the primary virtual machine (i.e., this virtual machine) is powered on when the secondary is created, an
      * attempt will be made to power on the secondary on a system selected host. If the cluster is a DRS cluster, DRS
      * will be invoked to obtain a placement for the new secondary virtual machine. If the DRS recommendation

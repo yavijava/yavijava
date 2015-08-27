@@ -114,10 +114,10 @@ public class Task extends ExtensibleManagedObject {
 
     /**
      * Copyright 2009 NetApp, contribution by Eric Forgette
-     * <p/>
+     * <p>
      * This is a "drop-in" replacement for waitForMe() that uses a timed polling
      * in place of waitForValues.
-     * <p/>
+     * <p>
      * This method will eat 3 exceptions while trying to get TaskInfo and TaskState.
      * On the fourth try, the captured exception is thrown.
      *
@@ -134,7 +134,7 @@ public class Task extends ExtensibleManagedObject {
 
     /**
      * Copyright 2009 NetApp, contribution by Eric Forgette
-     * <p/>
+     * <p>
      * This is a replacement for waitForMe() that uses a timed polling
      * in place of waitForValues.  The delay between each poll is
      * configurable based on the last seen task state.  The method will sleep
@@ -142,7 +142,7 @@ public class Task extends ExtensibleManagedObject {
      * while the task is in the running state.
      * The method will sleep for the number of milliseconds specified
      * in queuedDelayInMillSecond while the task is in the queued state.
-     * <p/>
+     * <p>
      * This method will eat 3 exceptions while trying to get TaskInfo and TaskState.
      * On the fourth try, the captured exception is thrown.
      *
