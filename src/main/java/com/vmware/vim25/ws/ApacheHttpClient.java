@@ -12,6 +12,7 @@ import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.log4j.Logger;
 
+import javax.net.ssl.TrustManager;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
@@ -48,7 +49,7 @@ public class ApacheHttpClient extends SoapClient {
     /**
      * The XML serialization/de-serialization engine
      */
-    XmlGen xmlGen = new XmlGenDom();
+    private XmlGen xmlGen = new XmlGenDom();
 
     /**
      * Trust all the ssl stuff no matter what!?!
@@ -66,12 +67,18 @@ public class ApacheHttpClient extends SoapClient {
      * @throws MalformedURLException
      */
     public ApacheHttpClient(String serverUrl, boolean ignoreCert) throws MalformedURLException {
+        this(serverUrl, ignoreCert, null);
+    }
+
+    public ApacheHttpClient(String serverUrl, boolean ignoreCert, TrustManager trustManager) throws MalformedURLException {
         if (serverUrl.endsWith("/")) {
             serverUrl = serverUrl.substring(0, serverUrl.length() - 1);
         }
-        trustAllSSL = ignoreCert;
+
         log.trace("Creating ApacheHttpClient to server URL: " + serverUrl);
         log.trace("Ignore ssl: " + ignoreCert);
+        this.trustAllSSL = ignoreCert;
+        this.trustManager = trustManager;
         this.baseUrl = new URL(serverUrl);
     }
 
@@ -205,4 +212,5 @@ public class ApacheHttpClient extends SoapClient {
         }
         return inputStream;
     }
+
 }

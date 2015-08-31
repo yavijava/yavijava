@@ -151,8 +151,6 @@ public interface Client {
 
     public TrustManager getTrustManager();
 
-    public void setTrustManager(TrustManager trustManager);
-
     /**
      * Sets the api version. The oldest supported will be v4.0
      *

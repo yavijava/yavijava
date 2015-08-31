@@ -30,9 +30,9 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25.ws;
 
 import com.vmware.vim25.*;
-import com.vmware.vim25.mo.ManagedObject;
 import org.apache.log4j.Logger;
 
+import javax.net.ssl.TrustManager;
 import java.lang.reflect.InvocationTargetException;
 import java.rmi.RemoteException;
 import java.util.Calendar;
@@ -51,7 +51,7 @@ public class VimStub {
      */
     private static Logger log = Logger.getLogger(VimStub.class);
 
-    public VimStub(String url, boolean ignoreCert) throws java.net.MalformedURLException {
+    public VimStub(String url, boolean ignoreCert) {
         try {
             this.wsc = ClientCreator.getClient(url, ignoreCert);
         }
@@ -66,6 +66,14 @@ public class VimStub {
         }
         catch (InstantiationException e) {
             log.error("Error detected for url: " + url + " ignoreSSL: " + ignoreCert, e);
+        }
+    }
+
+    public VimStub(String url, TrustManager trustManager) {
+        try {
+            this.wsc = ClientCreator.getClient(url, trustManager);
+        } catch (ReflectiveOperationException e) {
+            log.error("Error detected for url: " + url + " trustManager: " + trustManager, e);
         }
     }
 

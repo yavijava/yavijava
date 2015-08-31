@@ -175,15 +175,6 @@ public abstract class SoapClient implements Client {
         return trustManager;
     }
 
-    /**
-     * Set a custom trust manager responsible for material used when making trust decisions.
-     *
-     * @param trustManager
-     */
-    public void setTrustManager(TrustManager trustManager) {
-        this.trustManager = trustManager;
-    }
-
     public StringBuffer readStream(InputStream is) throws IOException {
         log.trace("Building StringBuffer from InputStream response.");
         StringBuffer sb = new StringBuffer();

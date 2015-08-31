@@ -1,5 +1,6 @@
 package com.vmware.vim25.ws;
 
+import javax.net.ssl.TrustManager;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 
@@ -26,6 +27,11 @@ final public class ClientCreator {
 
     public static Client getClient(String url, boolean ignoreCert) throws NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
         Constructor<?> constructor = clientClass.getConstructor(String.class, boolean.class);
-        return (Client) constructor.newInstance(new Object[]{url, ignoreCert});
+        return (Client) constructor.newInstance(url, ignoreCert);
+    }
+
+    public static Client getClient(String url, TrustManager trustManager) throws NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
+        Constructor<?> constructor = clientClass.getConstructor(String.class, boolean.class, TrustManager.class);
+        return (Client) constructor.newInstance(url, false, trustManager);
     }
 }

@@ -4,11 +4,10 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.rmi.RemoteException;
+import java.security.cert.X509Certificate;
 import java.util.Calendar;
 
-import javax.net.ssl.HttpsURLConnection;
-import javax.net.ssl.SSLHandshakeException;
-import javax.net.ssl.SSLSocketFactory;
+import javax.net.ssl.*;
 
 import org.apache.log4j.Logger;
 import org.junit.Assert;
@@ -29,6 +28,11 @@ public class WSClientIntTest {
 
     private static final Logger log = Logger.getLogger(WSClientIntTest.class);
 
+    /**
+     * Counter for created factory in {@link CustomWSClient}.
+     */
+    private int createdSSLFactory = 0;
+
     SoapClient wsClient = null;
 
 
@@ -45,6 +49,8 @@ public class WSClientIntTest {
                 || "".equals(LoadVcenterProps.password.trim())) {
             throw new Exception("Vcenter credentials not loaded");
         }
+
+        createdSSLFactory = 0;
 
         ServiceInstance si = null;
         try {
@@ -168,6 +174,29 @@ public class WSClientIntTest {
         Assert.assertEquals(1, createdSSLFactory);
     }
 
+    /**
+     * Tests the SSL factory is only created once when a trust manager is provided.
+     */
+    @Test
+    public void testSSLSocketFactoryInitWithTrustManager() throws Exception {
+        CustomWSClient client = new CustomWSClient(LoadVcenterProps.url, false, new TrustAllManager());
+        Assert.assertEquals(1, createdSSLFactory);
+
+        try {
+            client.invoke("RetrieveProperties", buildGetHostsArgs(), "ObjectContent[]");
+        } catch (RemoteException e) {
+        }
+
+        Assert.assertEquals(1, createdSSLFactory);
+
+        try {
+            client.invoke("RetrieveProperties", buildGetHostsArgs(), "ObjectContent[]");
+        } catch (RemoteException e) {
+        }
+
+        Assert.assertEquals(1, createdSSLFactory);
+    }
+
    /**
      * This method will build the request payload.
      * 
@@ -209,10 +238,7 @@ public class WSClientIntTest {
         return paras;
     }
 
-    /**
-     * Counter for created factory in {@link CustomWSClient}.
-     */
-    private int createdSSLFactory = 0;
+
     
     /**
      * This extension of the WSClient will create count the number of time the {@link SSLSocketFactory} was created.
@@ -221,17 +247,42 @@ public class WSClientIntTest {
      *
      */
     private class CustomWSClient extends WSClient {
-        public CustomWSClient(String serverUrl, boolean ignoreCert) throws MalformedURLException, IOException {
+        public CustomWSClient(String serverUrl, boolean ignoreCert) throws MalformedURLException, RemoteException {
             super(serverUrl, ignoreCert);
+        }
+
+        public CustomWSClient(String serverUrl, boolean ignoreCert, TrustManager trustManager) throws MalformedURLException, RemoteException {
+            super(serverUrl, ignoreCert, trustManager);
         }
 
         /**
          * {@inheritDoc}
          */
         @Override
-        protected SSLSocketFactory getSocketFactory(boolean ignoreCert) throws IOException {
-           ++createdSSLFactory;
+        protected SSLSocketFactory getSocketFactory(boolean ignoreCert) throws RemoteException {
+            ++createdSSLFactory;
             return super.getSocketFactory(ignoreCert);
+        }
+
+        @Override
+        protected SSLSocketFactory getSocketFactory(TrustManager trustManager) throws RemoteException {
+            ++createdSSLFactory;
+            return super.getSocketFactory(trustManager);
+        }
+    }
+
+    private static class TrustAllManager implements X509TrustManager {
+        @Override
+        public X509Certificate[] getAcceptedIssuers() {
+            return null;
+        }
+
+        @Override
+        public void checkServerTrusted(X509Certificate[] certs, String authType) {
+        }
+
+        @Override
+        public void checkClientTrusted(X509Certificate[] certs, String authType) {
         }
     }
 }
