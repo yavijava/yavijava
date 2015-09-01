@@ -259,15 +259,15 @@ public class WSClientIntTest {
          * {@inheritDoc}
          */
         @Override
-        protected SSLSocketFactory getSocketFactory(boolean ignoreCert) throws RemoteException {
+        protected SSLSocketFactory getTrustAllSocketFactory(boolean ignoreCert) throws RemoteException {
             ++createdSSLFactory;
-            return super.getSocketFactory(ignoreCert);
+            return super.getTrustAllSocketFactory(ignoreCert);
         }
 
         @Override
-        protected SSLSocketFactory getSocketFactory(TrustManager trustManager) throws RemoteException {
+        protected SSLSocketFactory getCustomTrustManagerSocketFactory(TrustManager trustManager) throws RemoteException {
             ++createdSSLFactory;
-            return super.getSocketFactory(trustManager);
+            return super.getCustomTrustManagerSocketFactory(trustManager);
         }
     }
 

@@ -79,7 +79,7 @@ public class WSClient extends SoapClient {
 
         this.trustManager = trustManager;
         this.baseUrl = new URL(serverUrl);
-        this.sslSocketFactory = ignoreCert ? getSocketFactory(true) : getSocketFactory(trustManager);
+        this.sslSocketFactory = ignoreCert ? getTrustAllSocketFactory(true) : getCustomTrustManagerSocketFactory(trustManager);
     }
 
     public Object invoke(String methodName, Argument[] paras, String returnType) throws RemoteException {
@@ -205,11 +205,11 @@ public class WSClient extends SoapClient {
         return new OutputStreamWriter(os, "UTF8");
     }
 
-    protected SSLSocketFactory getSocketFactory(boolean ignoreCert) throws RemoteException {
+    protected SSLSocketFactory getTrustAllSocketFactory(boolean ignoreCert) throws RemoteException {
         return ignoreCert ? TrustAllSSL.getTrustContext().getSocketFactory() : null;
     }
 
-    protected SSLSocketFactory getSocketFactory(TrustManager tm) throws RemoteException {
+    protected SSLSocketFactory getCustomTrustManagerSocketFactory(TrustManager tm) throws RemoteException {
         return tm != null ? CustomSSLTrustContextCreator.getTrustContext(tm).getSocketFactory() : null;
     }
 }
