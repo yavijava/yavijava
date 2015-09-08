@@ -35,6 +35,7 @@ import org.apache.log4j.Logger;
 
 import javax.net.ssl.HttpsURLConnection;
 import javax.net.ssl.SSLSocketFactory;
+import javax.net.ssl.TrustManager;
 import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
@@ -55,20 +56,30 @@ public class WSClient extends SoapClient {
     private static final Logger log = Logger.getLogger(WSClient.class);
     private final SSLSocketFactory sslSocketFactory;
 
-    XmlGen xmlGen = new XmlGenDom();
+    private XmlGen xmlGen = new XmlGenDom();
 
     public WSClient(String serverUrl) throws MalformedURLException, RemoteException {
         this(serverUrl, true);
     }
 
     public WSClient(String serverUrl, boolean ignoreCert) throws MalformedURLException, RemoteException {
+        this(serverUrl, ignoreCert, null);
+    }
+
+    public WSClient(String serverUrl, boolean ignoreCert, TrustManager trustManager) throws MalformedURLException, RemoteException {
+        if(ignoreCert && trustManager != null) {
+            log.warn("The option to ignore certs has been set along with a provided trust manager. This is not a valid scenario and the trust manager will be ignored.");
+        }
+
         if (serverUrl.endsWith("/")) {
             serverUrl = serverUrl.substring(0, serverUrl.length() - 1);
         }
         log.trace("Creating WSClient to server URL: " + serverUrl);
         log.trace("Ignore ssl: " + ignoreCert);
+
+        this.trustManager = trustManager;
         this.baseUrl = new URL(serverUrl);
-        this.sslSocketFactory = getSocketFactory(ignoreCert);
+        this.sslSocketFactory = ignoreCert ? getTrustAllSocketFactory(true) : getCustomTrustManagerSocketFactory(trustManager);
     }
 
     public Object invoke(String methodName, Argument[] paras, String returnType) throws RemoteException {
@@ -194,7 +205,11 @@ public class WSClient extends SoapClient {
         return new OutputStreamWriter(os, "UTF8");
     }
 
-    protected SSLSocketFactory getSocketFactory(boolean ignoreCert) throws RemoteException {
+    protected SSLSocketFactory getTrustAllSocketFactory(boolean ignoreCert) throws RemoteException {
         return ignoreCert ? TrustAllSSL.getTrustContext().getSocketFactory() : null;
+    }
+
+    protected SSLSocketFactory getCustomTrustManagerSocketFactory(TrustManager tm) throws RemoteException {
+        return tm != null ? CustomSSLTrustContextCreator.getTrustContext(tm).getSocketFactory() : null;
     }
 }

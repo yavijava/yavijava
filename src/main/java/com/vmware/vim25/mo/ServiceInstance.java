@@ -117,12 +117,11 @@ public class ServiceInstance extends ManagedObject {
 
         setMOR(SERVICE_INSTANCE_MOR);
 
-        VimPortType vimService = new VimPortType(url.toString(), ignoreCert);
+        VimPortType vimService = trustManager != null ? new VimPortType(url.toString(), trustManager) : new VimPortType(url.toString(), ignoreCert);
         vimService.getWsc().setVimNameSpace(namespace);
 
         vimService.getWsc().setConnectTimeout(connectTimeout);
         vimService.getWsc().setReadTimeout(readTimeout);
-        vimService.getWsc().setTrustManager(trustManager);
 
         serviceContent = retrieveServiceContent(vimService, SERVICE_INSTANCE_MOR);
         vimService.getWsc().setSoapActionOnApiVersion(getApiVersion(serviceContent));
@@ -183,14 +182,13 @@ public class ServiceInstance extends ManagedObject {
 
         setMOR(SERVICE_INSTANCE_MOR);
 
-        VimPortType vimService = new VimPortType(url.toString(), ignoreCert);
+        VimPortType vimService = trustManager != null ? new VimPortType(url.toString(), trustManager) : new VimPortType(url.toString(), ignoreCert);
         Client wsc = vimService.getWsc();
         wsc.setCookie(sessionStr);
         wsc.setVimNameSpace(namespace);
 
         vimService.getWsc().setConnectTimeout(connectTimeout);
         vimService.getWsc().setReadTimeout(readTimeout);
-        vimService.getWsc().setTrustManager(trustManager);
 
         serviceContent = retrieveServiceContent(vimService, SERVICE_INSTANCE_MOR);
         wsc.setSoapActionOnApiVersion(getApiVersion(serviceContent));
