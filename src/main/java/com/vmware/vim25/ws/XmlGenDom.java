@@ -44,6 +44,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.lang.reflect.Array;
 import java.lang.reflect.Field;
+import java.lang.reflect.Modifier;
 import java.rmi.RemoteException;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -148,11 +149,33 @@ class XmlGenDom extends XmlGen {
                     }
                 }
             }
+            sfe.detail = (Throwable) setDetailMessageInException(sfe.detail, root.elementText("faultstring"));
             return sfe;
         }
         catch (RuntimeException e) {
             throw new RuntimeException("Could not map the soap fault from:\n" + getContent(root), e);
         }
+    }
+
+    private static Object setDetailMessageInException(Object obj, String detailMessage) {
+        Class current = obj.getClass();
+        while(current != null) {
+            try{
+                Field field = current.getDeclaredField("detailMessage");
+                if ((!Modifier.isPublic(field.getModifiers()) || !Modifier.isPublic(field.getDeclaringClass().getModifiers()) ||
+                        Modifier.isFinal(field.getModifiers())) && !field.isAccessible()) {
+                    field.setAccessible(true);
+                }
+                field.set(obj, detailMessage);
+                return obj;
+            } catch (NoSuchFieldException e) {
+                current = current.getSuperclass();
+            } catch (IllegalAccessException e) {
+                log.info("The fault string: \"" + detailMessage + "\", was unable to be set in exception due to: ", e);
+                return obj;
+            }
+        }
+        return obj;
     }
 
     private static String getContent(Element element) {
