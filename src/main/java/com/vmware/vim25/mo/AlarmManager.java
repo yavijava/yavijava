@@ -135,7 +135,7 @@ public class AlarmManager extends ManagedObject {
      *            The {@link ManagedEntity} to alarm against.
      * @param as
      *            The {@link AlarmSpec} used to generate the alarm.
-     * @return The new {@link ALarm} created
+     * @return The new {@link Alarm} created
      * @throws InvalidName
      *             if the alarm name exceeds the max length or is empty.
      * @throws DuplicateName

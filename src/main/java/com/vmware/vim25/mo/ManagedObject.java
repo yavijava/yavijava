@@ -161,9 +161,6 @@ abstract public class ManagedObject {
      * @param propertyName The property name of current managed object
      * @return it will return either an array of related data objects, or an data object itself.
      * ManagedObjectReference objects are data objects!!!
-     * @throws RemoteException
-     * @throws RuntimeFault
-     * @throws InvalidProperty
      */
 
     protected Object getCurrentProperty(String propertyName) {
