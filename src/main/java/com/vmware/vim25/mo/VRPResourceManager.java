@@ -64,7 +64,7 @@ public class VRPResourceManager extends ManagedObject {
 
     /**
      * Deploy a VM in a given VRP, hub pair. Before deployment, admission control is performed to make sure that VRP can
-     * accomodate the VM's reservations. If the VM is already deployed in the same hub, the VM will remain deployed. The
+     * accommodate the VM's reservations. If the VM is already deployed in the same hub, the VM will remain deployed. The
      * API will just rerun the admission control checks.
      *
      * @param vrpId   The unique Id of the VRP.
