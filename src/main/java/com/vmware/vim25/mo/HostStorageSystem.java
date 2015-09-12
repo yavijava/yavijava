@@ -420,7 +420,7 @@ public class HostStorageSystem extends ExtensibleManagedObject {
     }
 
     /**
-     * Mark a disk to local disk, due to the reason that local disks behind some controllers might not be recongized as
+     * Mark a disk to local disk, due to the reason that local disks behind some controllers might not be recognized as
      * local correctly. Task failure might lose existing claim rules on the disk.
      *
      * @param scsiDiskUuid The SCSI disk UUID.
@@ -454,7 +454,7 @@ public class HostStorageSystem extends ExtensibleManagedObject {
     }
 
     /**
-     * Mark a disk to SSD, due to the reason that SSDs behind some controllers might not be recongized as SSD correctly.
+     * Mark a disk to SSD, due to the reason that SSDs behind some controllers might not be recognized as SSD correctly.
      * Task failure might lose existing claim rules on the disk.
      *
      * @param scsiDiskUuid The SCSI disk UUID.
@@ -471,7 +471,7 @@ public class HostStorageSystem extends ExtensibleManagedObject {
     }
 
     /**
-     * Mark a disk to SSD, due to the reason that SSDs behind some controllers might not be recongized as SSD correctly.
+     * Mark a disk to SSD, due to the reason that SSDs behind some controllers might not be recognized as SSD correctly.
      * Task failure might lose existing claim rules on the disk.
      *
      * @param scsiDiskUuid The SCSI disk UUID.
