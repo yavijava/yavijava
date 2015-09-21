@@ -11,6 +11,7 @@ public class LoadVcenterProps {
     public static String password;
     public static String secondUrl;
     public static String badUrl;
+    public static String sslThumbprint;
 
     static {
         InputStream input = null;
@@ -28,6 +29,7 @@ public class LoadVcenterProps {
             password = prop.getProperty("password");
             secondUrl = prop.getProperty("secondUrl");
             badUrl = prop.getProperty("badUrl");
+            sslThumbprint = prop.getProperty("sslThumbprint");
 
         } catch (IOException ex) {
             ex.printStackTrace();
