@@ -8,10 +8,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.URL;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
-import java.security.cert.X509Certificate;
-import java.security.cert.CertificateEncodingException;
 
 /**
  * Created by Michael Rice on 8/10/14.
@@ -36,7 +32,6 @@ public abstract class SoapClient implements Client {
     public String soapAction;
     public URL baseUrl = null;
     public String cookie = null;
-    public String thumbprint = null;
     public String vimNameSpace = null;
     public int connectTimeout = 0;
     public int readTimeout = 0;
@@ -107,36 +102,6 @@ public abstract class SoapClient implements Client {
      */
     public String getCookie() {
         return cookie;
-    }
-
-    public String getServerThumbprint() {
-        return thumbprint;
-    }
-
-    public static String computeX509CertificateThumbprint(X509Certificate cert){
-	try {
-	    MessageDigest md = MessageDigest.getInstance("SHA-1");
-	    return hexify(md.digest(cert.getEncoded()));
-	}
-	catch (NoSuchAlgorithmException ignore1) {
-	    return null;
-	}
-	catch (CertificateEncodingException ignore2) {
-	    return null;
-	}
-    }
-
-    public static String hexify (byte bytes[]) {
-	char[] hexDigits = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
-	    'A', 'B', 'C', 'D', 'E', 'F'};
-
-	StringBuffer buf = new StringBuffer(bytes.length * 3);
-	for (int i = 0; i < bytes.length; i++) {
-	    if (i != 0) buf.append(':');
-	    buf.append(hexDigits[(bytes[i] & 0xf0) >> 4]);
-	    buf.append(hexDigits[bytes[i] & 0x0f]);
-	}
-	return buf.toString();
     }
 
     /**

@@ -34,7 +34,6 @@ package com.vmware.vim25.ws;
 import org.apache.log4j.Logger;
 
 import javax.net.ssl.HttpsURLConnection;
-import javax.net.ssl.SSLPeerUnverifiedException;
 import javax.net.ssl.SSLSocketFactory;
 import javax.net.ssl.TrustManager;
 import java.io.*;
@@ -44,8 +43,6 @@ import java.net.ProtocolException;
 import java.net.URL;
 import java.rmi.RemoteException;
 import java.text.MessageFormat;
-import java.security.cert.Certificate;
-import java.security.cert.X509Certificate;
 
 /**
  * The Web Service Engine
@@ -201,20 +198,6 @@ public class WSClient extends SoapClient {
             }
         }
 
-        if (thumbprint == null && postCon instanceof HttpsURLConnection) {
-	    try {
-		Certificate[] certs = ((HttpsURLConnection)postCon).
-		    getServerCertificates();
-		for (int i = 0; thumbprint == null && i < certs.length; i++) {
-		    if (certs[i] instanceof X509Certificate)
-			thumbprint = computeX509CertificateThumbprint(
-			    (X509Certificate) certs[i]);
-		}
-	    }
-	    catch (SSLPeerUnverifiedException e) {
-                log.debug("SSLPeerUnverifiedException caught.", e);
-	    }
-        }
         return is;
     }
 
