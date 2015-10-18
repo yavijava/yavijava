@@ -197,6 +197,22 @@ public class ServiceInstanceIntTest {
         }
     }
 
+    @Test
+    public void testServiceInstanceUsingSession() {
+        try {
+            ServiceInstance si = new ServiceInstance(new URL(LoadVcenterProps.url),
+                LoadVcenterProps.userName, LoadVcenterProps.password, true, 5000, 5000);
+            Assert.assertNotNull("Expected non-null service instance", si.currentTime());
+            ServiceInstance si2 = new ServiceInstance(new URL(LoadVcenterProps.url),
+                si.getServerConnection().getSessionStr(), true);
+            Assert.assertNotNull("Expected non-null service instance", si2.currentTime());
+        } catch(MalformedURLException e) {
+            Assert.fail("An error occurred creating a service instance due its url being malformed. " + e.getMessage());
+        } catch(RemoteException e) {
+            Assert.fail("An error occurred creating and reading from service instance. " + e.getMessage());
+        }
+    }
+
     private static class TrustAllManager implements X509TrustManager {
         @Override
         public X509Certificate[] getAcceptedIssuers() {
