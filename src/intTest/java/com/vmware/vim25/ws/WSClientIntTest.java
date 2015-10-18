@@ -33,6 +33,11 @@ public class WSClientIntTest {
      */
     private int createdSSLFactory = 0;
 
+    /**
+     * Counter for computed thumbprint in {@link CustomWSClient}.
+     */
+    private int computedThumbprint = 0;
+
     SoapClient wsClient = null;
 
 
@@ -42,15 +47,19 @@ public class WSClientIntTest {
                 || null == LoadVcenterProps.password
                 || null == LoadVcenterProps.secondUrl
                 || null == LoadVcenterProps.badUrl
+                || null == LoadVcenterProps.sslThumbprint
                 || "".equals(LoadVcenterProps.url.trim())
                 || "".equals(LoadVcenterProps.secondUrl.trim())
                 || "".equals(LoadVcenterProps.badUrl.trim())
                 || "".equals(LoadVcenterProps.userName.trim())
-                || "".equals(LoadVcenterProps.password.trim())) {
+                || "".equals(LoadVcenterProps.password.trim())
+                || "".equals(LoadVcenterProps.sslThumbprint.trim())) {
             throw new Exception("Vcenter credentials not loaded");
         }
 
         createdSSLFactory = 0;
+
+        computedThumbprint = 0;
 
         ServiceInstance si = null;
         try {
@@ -238,12 +247,40 @@ public class WSClientIntTest {
         return paras;
     }
 
+    /**
+     * This test verifies that the computed thumbprint is correct and that it is computed only once.
+     * @author Hubert Verstraete
+     */
+    @Test
+    public void testServerThumbprintInit() throws Exception {
+        CustomWSClient client = new CustomWSClient(LoadVcenterProps.url, true);
+
+        try {
+            client.invoke("RetrieveProperties", buildGetHostsArgs(), "ObjectContent[]");
+        } catch (RemoteException e) {
+        }
+ 
+        Assert.assertEquals(1, computedThumbprint);
+
+        try {
+            client.invoke("RetrieveProperties", buildGetHostsArgs(), "ObjectContent[]");
+        } catch (RemoteException e) {
+        }
+
+        Assert.assertEquals(1, computedThumbprint);
+
+        Assert.assertEquals("The computed SSL Server Thumbprint is invalid.", client.getServerThumbprint(), LoadVcenterProps.sslThumbprint);
+    }
+
 
     
     /**
      * This extension of the WSClient will create count the number of time the {@link SSLSocketFactory} was created.
      * 
      * @author Francis Beaulé
+     * 
+     * This extension also counts the number of time the Server {@link thumbprint} is computed.
+     * @author Hubert Verstraete
      *
      */
     private class CustomWSClient extends WSClient {
@@ -268,6 +305,12 @@ public class WSClientIntTest {
         protected SSLSocketFactory getCustomTrustManagerSocketFactory(TrustManager trustManager) throws RemoteException {
             ++createdSSLFactory;
             return super.getCustomTrustManagerSocketFactory(trustManager);
+        }
+
+        @Override
+        public void setServerThumbprint(String thumbprint) {
+            ++computedThumbprint;
+            super.setServerThumbprint(thumbprint);
         }
     }
 
