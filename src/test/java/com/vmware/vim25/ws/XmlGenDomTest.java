@@ -7,7 +7,9 @@ import org.junit.Test;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStream;
+import java.lang.reflect.ReflectPermission;
 import java.rmi.RemoteException;
+import java.security.AccessControlException;
 import java.util.Objects;
 
 public class XmlGenDomTest {
@@ -24,6 +26,45 @@ public class XmlGenDomTest {
         InputStream inputStream = new FileInputStream(new File("src/test/java/com/vmware/vim25/ws/xml/CatchRuntimeExceptionTest.xml"));
         XmlGenDom xmlGenDom = new XmlGenDom();
         xmlGenDom.fromXML("Login", inputStream);
+    }
+
+    @Test
+    public void set_Detail_Message_Adds_Detail_Message_to_Exception() throws Exception {
+        InputStream inputStream = new FileInputStream(new File("src/test/java/com/vmware/vim25/ws/xml/InvalidLoginFault.xml"));
+        XmlGenDom xmlGenDom = new XmlGenDom();
+        try{
+            xmlGenDom.fromXML("Login", inputStream);
+        } catch (InvalidLogin e) {
+            Assert.assertTrue(e.getMessage().equals("Cannot complete login due to an incorrect user name or password."));
+        }
+    }
+
+    @Test
+    public void set_Detail_Message_throws_Exception() throws Exception {
+        SecurityManager previous = System.getSecurityManager();
+        try {
+            SecurityManager securityManager = new SecurityManager() {
+                @Override
+                public void checkPermission(java.security.Permission perm) {
+                    if (perm instanceof ReflectPermission && "suppressAccessChecks".equals((perm.getName()))) {
+                        for (StackTraceElement elem : Thread.currentThread().getStackTrace()) {
+                            if ("com.vmware.vim25.ws.XmlGenDom".equals(elem.getClassName())) {
+                                throw new AccessControlException("Access Denied!");
+                            }
+                        }
+                    }
+                }
+            };
+            System.setSecurityManager(securityManager);
+
+            Throwable throwable = new Throwable("Illegal Access");
+            Throwable noMessage = (Throwable) XmlGenDom.setDetailMessageInException(throwable, "Error occured");
+            Assert.assertFalse(noMessage.getMessage().equals("Error occured"));
+        } catch (Exception e) {
+            throw e;
+        } finally {
+            System.setSecurityManager(previous);
+        }
     }
 
     @Test(expected = RemoteException.class)
