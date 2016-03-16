@@ -860,7 +860,9 @@ public class VirtualMachineDeviceManager {
     @SuppressWarnings("unused")
     public static enum VirtualNetworkAdapterType {
         VirtualE1000("VirtualE1000"),
+        VirtualE1000E("VirtualE1000e"),
         VirtualPCNet32("VirtualPCNet32"),
+        VirtualSriovEthernetCard("VirtualSriovEthernetCard"),
         VirtualVmxnet("VirtualVmxnet"),
         VirtualVmxnet2("VirtualVmxnet2"),
         VirtualVmxnet3("VirtualVmxnet3"),
