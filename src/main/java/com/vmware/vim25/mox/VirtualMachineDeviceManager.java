@@ -235,15 +235,15 @@ public class VirtualMachineDeviceManager {
     /*############################################################
     CD/DVC Drive Management
     ############################################################*/
-    public void addCdDriveFromIso(String isoPath, boolean startConnected) throws InvalidProperty, RuntimeFault, RemoteException, InterruptedException {
-        addCdDrive(isoPath, null, startConnected);
+    public Task addCdDriveFromIso(String isoPath, boolean startConnected) throws InvalidProperty, RuntimeFault, RemoteException, InterruptedException {
+        return addCdDrive(isoPath, null, startConnected);
     }
 
-    public void addCdDriveFromHost(String hostDevice, boolean startConnected) throws InvalidProperty, RuntimeFault, RemoteException, InterruptedException {
-        addCdDrive(null, hostDevice, startConnected);
+    public Task addCdDriveFromHost(String hostDevice, boolean startConnected) throws InvalidProperty, RuntimeFault, RemoteException, InterruptedException {
+        return addCdDrive(null, hostDevice, startConnected);
     }
 
-    private void addCdDrive(String isoPath, String hostDevice, boolean startConnected) throws InvalidProperty, RuntimeFault, RemoteException, InterruptedException {
+    private Task addCdDrive(String isoPath, String hostDevice, boolean startConnected) throws InvalidProperty, RuntimeFault, RemoteException, InterruptedException {
         VirtualMachinePowerState powerState = vm.getRuntime().getPowerState();
         if (powerState != VirtualMachinePowerState.poweredOff) {
             throw new RuntimeException("VM is not yet powered off for adding a CD drive.");
@@ -294,7 +294,7 @@ public class VirtualMachineDeviceManager {
         }
 
         Task task = vm.reconfigVM_Task(config);
-        task.waitForTask();
+        return task;
     }
 
     private void validateCdromHostDevice(String hostDevice) throws InvalidProperty, RuntimeFault, RemoteException {
