@@ -29,6 +29,9 @@ POSSIBILITY OF SUCH DAMAGE.
 
 package com.vmware.vim25;
 
+import lombok.Getter;
+import lombok.Setter;
+
 /**
  * @author Steve Jin (http://www.doublecloud.org)
  * @version 5.1
@@ -36,4 +39,5 @@ package com.vmware.vim25;
 
 @SuppressWarnings("all")
 public class CannotAccessNetwork extends CannotAccessVmDevice {
+    @Getter @Setter public ManagedObjectReference network;
 }
