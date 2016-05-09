@@ -78,12 +78,12 @@ public class TypeUtil {
         return false;
     }
 
-    final private static Package LANG_PKG = String.class.getPackage();
-    final private static Package UTIL_PKG = Calendar.class.getPackage();
+    final private static String LANG_PKG = String.class.getPackage().getName();
+    final private static String UTIL_PKG = Calendar.class.getPackage().getName();
 
     public static boolean isBasicType(Class<?> clazz) {
         Package pkg = clazz.getPackage(); // for primitive type like int, the pkg is null
-        return pkg == null || pkg == LANG_PKG || pkg == UTIL_PKG;
+        return pkg == null || pkg.getName().equals(LANG_PKG) || pkg.getName().equals(UTIL_PKG);
     }
 
     private static String PACKAGE_NAME = "com.vmware.vim25";
