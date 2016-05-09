@@ -72,7 +72,7 @@ public class VimStub {
     public VimStub(String url, TrustManager trustManager) {
         try {
             this.wsc = ClientCreator.getClient(url, trustManager);
-        } catch (ReflectiveOperationException e) {
+        } catch (Exception e) {
             log.error("Error detected for url: " + url + " trustManager: " + trustManager, e);
         }
     }
