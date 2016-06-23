@@ -14,6 +14,15 @@ import java.util.Objects;
 
 public class XmlGenDomTest {
 
+    @Test
+    public void testFromXML_UnknownClass() throws Exception {
+        // simulate with non-existing class
+        InputStream inputStream = new FileInputStream(new File("src/test/resources/xml/UnknownConfigSpec.xml"));
+        XmlGenDom xmlGenDom = new XmlGenDom();
+        Object nullObject = xmlGenDom.fromXML("UnknownConfigSpec", inputStream);
+        assert nullObject == null;
+    }
+
     @Test(expected = InvalidLogin.class)
     public void testFromXML_Throws_Invalid_Login_When_Login_is_Invalid() throws Exception {
         InputStream inputStream = new FileInputStream(new File("src/test/java/com/vmware/vim25/ws/xml/InvalidLoginFault.xml"));

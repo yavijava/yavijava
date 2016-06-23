@@ -232,9 +232,14 @@ class XmlGenDom extends XmlGen {
                 Array.set(ao, i, o);
             }
             return ao;
-        }
-        else {
-            return fromXml(TypeUtil.getVimClass(type), subNodes.get(0));
+        } else {
+            Class<?> vimClass = TypeUtil.getVimClass(type);
+            if(vimClass != null) {
+                return fromXml(vimClass, subNodes.get(0));
+            } else {
+                log.error("Vim class not found for type: " + type + ", XML Document: " + subNodes.get(0).asXML());
+                return null;
+            }
         }
     }
 
