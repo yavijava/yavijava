@@ -27,7 +27,7 @@ public class TrustAllSSL {
     private static boolean alreadyCreated = false;
     private static SSLContext sslContext;
 
-    public static SSLContext getTrustContext() throws RemoteException {
+    public static synchronized SSLContext getTrustContext() throws RemoteException {
         try {
             if (getAlreadyCreated()) {
                 return sslContext;
