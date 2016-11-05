@@ -139,4 +139,20 @@ public class XmlGenDomTest {
             "-----END CERTIFICATE-----\n";
         Assert.assertEquals(actualCert, expectedCert);
     }
+
+    @Test
+    public void testFromXML_environment_variables_return_as_string_array() throws Exception {
+        InputStream inputStream = new FileInputStream(new File("src/test/java/com/vmware/vim25/ws/xml/ReadEnvironmentVariableInGuest.xml"));
+        XmlGenDom xmlGenDom = new XmlGenDom();
+        String[] strings = (String[]) xmlGenDom.fromXML("String[]", inputStream);
+        assert strings.getClass().isArray();
+    }
+
+    @Test
+    public void testFromXML_Folder_GetChildrenTypes() throws Exception {
+        InputStream inputStream = new FileInputStream(new File("src/test/java/com/vmware/vim25/ws/xml/Folder_GetChildType_String_Array.xml"));
+        XmlGenDom xmlGenDom = new XmlGenDom();
+        String[] strings = (String[]) xmlGenDom.fromXML("String[]", inputStream);
+        assert strings.getClass().isArray();
+    }
 }

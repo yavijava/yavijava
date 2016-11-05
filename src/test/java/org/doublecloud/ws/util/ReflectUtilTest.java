@@ -2,6 +2,7 @@ package org.doublecloud.ws.util;
 
 import com.vmware.vim25.AboutInfo;
 import org.doublecloud.ws.util.testUtils.*;
+import org.junit.Assert;
 import org.junit.Test;
 
 import java.lang.reflect.Field;
@@ -49,5 +50,16 @@ public class ReflectUtilTest {
         byte[] actual = ReflectUtil.toByteArray(values);
         byte[] expected = javax.xml.bind.DatatypeConverter.parseBase64Binary("ox991LwhCGLf2gntXqKkSPdqC+A=");
         assertArrayEquals(expected, actual);
+    }
+
+    @Test
+    public void testReflectUtil_ParseToObject_Returns_String_Array() throws Exception {
+        String type = "String[]";
+        List<String> strings = new ArrayList<String>();
+        strings.add("string1");
+        strings.add("string2");
+        strings.add("string3");
+        String[] stringArray = (String[]) ReflectUtil.parseToObject(type, strings);
+        assert stringArray.getClass().isArray();
     }
 }
