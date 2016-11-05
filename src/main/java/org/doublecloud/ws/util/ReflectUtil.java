@@ -231,7 +231,7 @@ public class ReflectUtil {
             return values.get(0);
         }
         else if ("String[]".equals(type)) {
-            return values;
+            return values.toArray(new String[values.size()]);
         }
         else if ("int".equals(type)) {
             return new Integer(values.get(0));
