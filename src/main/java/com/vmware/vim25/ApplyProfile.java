@@ -28,57 +28,23 @@ POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
 
 package com.vmware.vim25;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * @author Steve Jin (http://www.doublecloud.org)
  * @version 5.1
  */
 
-@SuppressWarnings("all")
 public class ApplyProfile extends DynamicData {
-    public boolean enabled;
-    public ProfilePolicy[] policy;
-    public String profileTypeName;
-    public String profileVersion;
-    public ProfileApplyProfileProperty[] property;
-
-    public boolean isEnabled() {
-        return this.enabled;
-    }
-
-    public ProfilePolicy[] getPolicy() {
-        return this.policy;
-    }
-
-    public String getProfileTypeName() {
-        return this.profileTypeName;
-    }
-
-    public String getProfileVersion() {
-        return this.profileVersion;
-    }
-
-    public ProfileApplyProfileProperty[] getProperty() {
-        return this.property;
-    }
-
-    public void setEnabled(boolean enabled) {
-        this.enabled = enabled;
-    }
-
-    public void setPolicy(ProfilePolicy[] policy) {
-        this.policy = policy;
-    }
-
-    public void setProfileTypeName(String profileTypeName) {
-        this.profileTypeName = profileTypeName;
-    }
-
-    public void setProfileVersion(String profileVersion) {
-        this.profileVersion = profileVersion;
-    }
-
-    public void setProperty(ProfileApplyProfileProperty[] property) {
-        this.property = property;
-    }
+    @Getter @Setter public boolean enabled;
+    @Getter @Setter public ProfilePolicy[] policy;
+    @Getter @Setter public String profileTypeName;
+    @Getter @Setter public String profileVersion;
+    @Getter @Setter public ProfileApplyProfileProperty[] property;
+    @Getter @Setter public Boolean favorite;
+    @Getter @Setter public Boolean toBeMerged;
+    @Getter @Setter public Boolean toReplaceWith;
+    @Getter @Setter public Boolean toBeDeleted;
+    @Getter @Setter public Boolean copyEnableStatus;
 }

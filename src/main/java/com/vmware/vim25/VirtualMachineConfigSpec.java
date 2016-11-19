@@ -32,7 +32,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 /**
- * Created by Michael Rice on Fri Jun 12 15:16:17 CDT 2015
+ * Created by Michael Rice on Fri Nov 18 12:45:26 CST 2016
  * This code is auto generated using yavijava_generator
  * https://github.com/yavijava/yavijava_generator
  *
@@ -52,7 +52,7 @@ import lombok.Setter;
  * @since 6.0
  */
 
-public class    VirtualMachineConfigSpec extends DynamicData {
+public class VirtualMachineConfigSpec extends DynamicData {
     @Getter @Setter public String changeVersion;
     @Getter @Setter public String name;
     @Getter @Setter public String version;
@@ -110,4 +110,6 @@ public class    VirtualMachineConfigSpec extends DynamicData {
     @Getter @Setter public ScheduledHardwareUpgradeInfo scheduledHardwareUpgradeInfo;
     @Getter @Setter public VirtualMachineProfileSpec[] vmProfile;
     @Getter @Setter public Boolean messageBusTunnelEnabled;
+    @Getter @Setter public CryptoSpec crypto;
+    @Getter @Setter public String migrateEncryption;
 }

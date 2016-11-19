@@ -32,7 +32,9 @@ import lombok.Getter;
 import lombok.Setter;
 
 /**
- * Created by Michael Rice on Sun May 24 16:15:35 CDT 2015
+ * Created by Michael Rice on Fri Nov 18 12:45:26 CST 2016
+ * This code is auto generated using yavijava_generator
+ * https://github.com/yavijava/yavijava_generator
  *
  * Copyright 2015 Michael Rice
  *
@@ -58,4 +60,5 @@ public class HostScsiDisk extends ScsiLun {
     @Getter @Setter public String[] physicalLocation;
     @Getter @Setter public Boolean emulatedDIXDIFEnabled;
     @Getter @Setter public VsanHostVsanDiskInfo vsanDiskInfo;
+    @Getter @Setter public String scsiDiskType;
 }

@@ -28,21 +28,15 @@ POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
 
 package com.vmware.vim25;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * @author Steve Jin (http://www.doublecloud.org)
  * @version 5.1
  */
 
-@SuppressWarnings("all")
 public class DVPortgroupReconfiguredEvent extends DVPortgroupEvent {
-    public DVPortgroupConfigSpec configSpec;
-
-    public DVPortgroupConfigSpec getConfigSpec() {
-        return this.configSpec;
-    }
-
-    public void setConfigSpec(DVPortgroupConfigSpec configSpec) {
-        this.configSpec = configSpec;
-    }
+    @Getter @Setter public DVPortgroupConfigSpec configSpec;
+    @Getter @Setter public ChangesInfoEventArgument configChanges;
 }

@@ -28,48 +28,18 @@ POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
 
 package com.vmware.vim25;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * @author Steve Jin (http://www.doublecloud.org)
  * @version 5.1
  */
 
-@SuppressWarnings("all")
 public class VirtualDeviceConfigSpec extends DynamicData {
-    public VirtualDeviceConfigSpecOperation operation;
-    public VirtualDeviceConfigSpecFileOperation fileOperation;
-    public VirtualDevice device;
-    public VirtualMachineProfileSpec[] profile;
-
-    public VirtualDeviceConfigSpecOperation getOperation() {
-        return this.operation;
-    }
-
-    public VirtualDeviceConfigSpecFileOperation getFileOperation() {
-        return this.fileOperation;
-    }
-
-    public VirtualDevice getDevice() {
-        return this.device;
-    }
-
-    public VirtualMachineProfileSpec[] getProfile() {
-        return this.profile;
-    }
-
-    public void setOperation(VirtualDeviceConfigSpecOperation operation) {
-        this.operation = operation;
-    }
-
-    public void setFileOperation(VirtualDeviceConfigSpecFileOperation fileOperation) {
-        this.fileOperation = fileOperation;
-    }
-
-    public void setDevice(VirtualDevice device) {
-        this.device = device;
-    }
-
-    public void setProfile(VirtualMachineProfileSpec[] profile) {
-        this.profile = profile;
-    }
+    @Getter @Setter public VirtualDeviceConfigSpecOperation operation;
+    @Getter @Setter public VirtualDeviceConfigSpecFileOperation fileOperation;
+    @Getter @Setter public VirtualDevice device;
+    @Getter @Setter public VirtualMachineProfileSpec[] profile;
+    @Getter @Setter public VirtualDeviceConfigSpecBackingSpec backing;
 }

@@ -32,7 +32,9 @@ import lombok.Getter;
 import lombok.Setter;
 
 /**
- * Created by Michael Rice on Sun May 24 16:15:35 CDT 2015
+ * Created by Michael Rice on Fri Nov 18 12:45:26 CST 2016
+ * This code is auto generated using yavijava_generator
+ * https://github.com/yavijava/yavijava_generator
  *
  * Copyright 2015 Michael Rice
  *
@@ -94,4 +96,6 @@ public class GuestOsDescriptor extends DynamicData {
     @Getter @Setter public Boolean supportsPvscsiControllerForBoot;
     @Getter @Setter public Boolean diskUuidEnabled;
     @Getter @Setter public Boolean supportsHotPlugPCI;
+    @Getter @Setter public Boolean supportsSecureBoot;
+    @Getter @Setter public Boolean defaultSecureBoot;
 }

@@ -28,30 +28,16 @@ POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
 
 package com.vmware.vim25;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * @author Steve Jin (http://www.doublecloud.org)
  * @version 5.1
  */
 
-@SuppressWarnings("all")
 public class VirtualMachineDefinedProfileSpec extends VirtualMachineProfileSpec {
-    public String profileId;
-    public VirtualMachineProfileRawData profileData;
-
-    public String getProfileId() {
-        return this.profileId;
-    }
-
-    public VirtualMachineProfileRawData getProfileData() {
-        return this.profileData;
-    }
-
-    public void setProfileId(String profileId) {
-        this.profileId = profileId;
-    }
-
-    public void setProfileData(VirtualMachineProfileRawData profileData) {
-        this.profileData = profileData;
-    }
+    @Getter @Setter public String profileId;
+    @Getter @Setter public ReplicationSpec replicationSpec;
+    @Getter @Setter public VirtualMachineProfileRawData profileData;
 }
