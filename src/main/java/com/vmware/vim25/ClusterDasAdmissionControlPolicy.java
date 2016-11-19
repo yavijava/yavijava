@@ -28,12 +28,14 @@ POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
 
 package com.vmware.vim25;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * @author Steve Jin (http://www.doublecloud.org)
  * @version 5.1
  */
 
-@SuppressWarnings("all")
 public class ClusterDasAdmissionControlPolicy extends DynamicData {
+    @Getter @Setter public Integer resourceReductionToToleratePercent;
 }

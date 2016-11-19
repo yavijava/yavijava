@@ -28,129 +28,30 @@ POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
 
 package com.vmware.vim25;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * @author Steve Jin (http://www.doublecloud.org)
  * @version 5.1
  */
 
-@SuppressWarnings("all")
 public class VMwareVspanSession extends DynamicData {
-    public String key;
-    public String name;
-    public String description;
-    public boolean enabled;
-    public VMwareVspanPort sourcePortTransmitted;
-    public VMwareVspanPort sourcePortReceived;
-    public VMwareVspanPort destinationPort;
-    public Integer encapsulationVlanId;
-    public boolean stripOriginalVlan;
-    public Integer mirroredPacketLength;
-    public boolean normalTrafficAllowed;
-    public String sessionType;
-    public Integer samplingRate;
-
-    public String getKey() {
-        return this.key;
-    }
-
-    public String getName() {
-        return this.name;
-    }
-
-    public String getDescription() {
-        return this.description;
-    }
-
-    public boolean isEnabled() {
-        return this.enabled;
-    }
-
-    public VMwareVspanPort getSourcePortTransmitted() {
-        return this.sourcePortTransmitted;
-    }
-
-    public VMwareVspanPort getSourcePortReceived() {
-        return this.sourcePortReceived;
-    }
-
-    public VMwareVspanPort getDestinationPort() {
-        return this.destinationPort;
-    }
-
-    public Integer getEncapsulationVlanId() {
-        return this.encapsulationVlanId;
-    }
-
-    public boolean isStripOriginalVlan() {
-        return this.stripOriginalVlan;
-    }
-
-    public Integer getMirroredPacketLength() {
-        return this.mirroredPacketLength;
-    }
-
-    public boolean isNormalTrafficAllowed() {
-        return this.normalTrafficAllowed;
-    }
-
-    public String getSessionType() {
-        return this.sessionType;
-    }
-
-    public Integer getSamplingRate() {
-        return this.samplingRate;
-    }
-
-    public void setKey(String key) {
-        this.key = key;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public void setEnabled(boolean enabled) {
-        this.enabled = enabled;
-    }
-
-    public void setSourcePortTransmitted(VMwareVspanPort sourcePortTransmitted) {
-        this.sourcePortTransmitted = sourcePortTransmitted;
-    }
-
-    public void setSourcePortReceived(VMwareVspanPort sourcePortReceived) {
-        this.sourcePortReceived = sourcePortReceived;
-    }
-
-    public void setDestinationPort(VMwareVspanPort destinationPort) {
-        this.destinationPort = destinationPort;
-    }
-
-    public void setEncapsulationVlanId(Integer encapsulationVlanId) {
-        this.encapsulationVlanId = encapsulationVlanId;
-    }
-
-    public void setStripOriginalVlan(boolean stripOriginalVlan) {
-        this.stripOriginalVlan = stripOriginalVlan;
-    }
-
-    public void setMirroredPacketLength(Integer mirroredPacketLength) {
-        this.mirroredPacketLength = mirroredPacketLength;
-    }
-
-    public void setNormalTrafficAllowed(boolean normalTrafficAllowed) {
-        this.normalTrafficAllowed = normalTrafficAllowed;
-    }
-
-    public void setSessionType(String sessionType) {
-        this.sessionType = sessionType;
-    }
-
-    public void setSamplingRate(Integer samplingRate) {
-        this.samplingRate = samplingRate;
-    }
+    @Getter @Setter public String key;
+    @Getter @Setter public String name;
+    @Getter @Setter public String description;
+    @Getter @Setter public boolean enabled;
+    @Getter @Setter public VMwareVspanPort sourcePortTransmitted;
+    @Getter @Setter public VMwareVspanPort sourcePortReceived;
+    @Getter @Setter public VMwareVspanPort destinationPort;
+    @Getter @Setter public Integer encapsulationVlanId;
+    @Getter @Setter public boolean stripOriginalVlan;
+    @Getter @Setter public Integer mirroredPacketLength;
+    @Getter @Setter public boolean normalTrafficAllowed;
+    @Getter @Setter public String sessionType;
+    @Getter @Setter public Integer samplingRate;
+    @Getter @Setter public String encapType;
+    @Getter @Setter public Integer erspanId;
+    @Getter @Setter public Integer erspanCOS;
+    @Getter @Setter public Boolean erspanGraNanosec;
 }

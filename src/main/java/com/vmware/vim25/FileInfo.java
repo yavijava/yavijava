@@ -28,7 +28,8 @@ POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
 
 package com.vmware.vim25;
-
+import lombok.Getter;
+import lombok.Setter;
 import java.util.Calendar;
 
 /**
@@ -36,42 +37,10 @@ import java.util.Calendar;
  * @version 5.1
  */
 
-@SuppressWarnings("all")
 public class FileInfo extends DynamicData {
-    public String path;
-    public Long fileSize;
-    public Calendar modification;
-    public String owner;
-
-    public String getPath() {
-        return this.path;
-    }
-
-    public Long getFileSize() {
-        return this.fileSize;
-    }
-
-    public Calendar getModification() {
-        return this.modification;
-    }
-
-    public String getOwner() {
-        return this.owner;
-    }
-
-    public void setPath(String path) {
-        this.path = path;
-    }
-
-    public void setFileSize(Long fileSize) {
-        this.fileSize = fileSize;
-    }
-
-    public void setModification(Calendar modification) {
-        this.modification = modification;
-    }
-
-    public void setOwner(String owner) {
-        this.owner = owner;
-    }
+    @Getter @Setter public String path;
+    @Getter @Setter public String friendlyName;
+    @Getter @Setter public Long fileSize;
+    @Getter @Setter public Calendar modification;
+    @Getter @Setter public String owner;
 }

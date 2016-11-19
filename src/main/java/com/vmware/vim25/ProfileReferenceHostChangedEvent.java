@@ -28,21 +28,16 @@ POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
 
 package com.vmware.vim25;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * @author Steve Jin (http://www.doublecloud.org)
  * @version 5.1
  */
 
-@SuppressWarnings("all")
 public class ProfileReferenceHostChangedEvent extends ProfileEvent {
-    public ManagedObjectReference referenceHost;
-
-    public ManagedObjectReference getReferenceHost() {
-        return this.referenceHost;
-    }
-
-    public void setReferenceHost(ManagedObjectReference referenceHost) {
-        this.referenceHost = referenceHost;
-    }
+    @Getter @Setter public ManagedObjectReference referenceHost;
+    @Getter @Setter public String referenceHostName;
+    @Getter @Setter public String prevReferenceHostName;
 }

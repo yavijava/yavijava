@@ -28,21 +28,16 @@ POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
 
 package com.vmware.vim25;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * @author Steve Jin (http://www.doublecloud.org)
  * @version 5.1
  */
 
-@SuppressWarnings("all")
 public class DatastoreFileEvent extends DatastoreEvent {
-    public String targetFile;
-
-    public String getTargetFile() {
-        return this.targetFile;
-    }
-
-    public void setTargetFile(String targetFile) {
-        this.targetFile = targetFile;
-    }
+    @Getter @Setter public String targetFile;
+    @Getter @Setter public String sourceOfOperation;
+    @Getter @Setter public Boolean succeeded;
 }

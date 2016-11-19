@@ -28,30 +28,16 @@ POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
 
 package com.vmware.vim25;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * @author Steve Jin (http://www.doublecloud.org)
  * @version 5.1
  */
 
-@SuppressWarnings("all")
 public class VirtualMachineSriovInfo extends VirtualMachinePciPassthroughInfo {
-    public boolean virtualFunction;
-    public String pnic;
-
-    public boolean isVirtualFunction() {
-        return this.virtualFunction;
-    }
-
-    public String getPnic() {
-        return this.pnic;
-    }
-
-    public void setVirtualFunction(boolean virtualFunction) {
-        this.virtualFunction = virtualFunction;
-    }
-
-    public void setPnic(String pnic) {
-        this.pnic = pnic;
-    }
+    @Getter @Setter public boolean virtualFunction;
+    @Getter @Setter public String pnic;
+    @Getter @Setter public VirtualMachineSriovDevicePoolInfo devicePool;
 }

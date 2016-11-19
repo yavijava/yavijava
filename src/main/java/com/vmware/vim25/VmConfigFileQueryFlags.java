@@ -28,21 +28,15 @@ POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
 
 package com.vmware.vim25;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * @author Steve Jin (http://www.doublecloud.org)
  * @version 5.1
  */
 
-@SuppressWarnings("all")
 public class VmConfigFileQueryFlags extends DynamicData {
-    public boolean configVersion;
-
-    public boolean isConfigVersion() {
-        return this.configVersion;
-    }
-
-    public void setConfigVersion(boolean configVersion) {
-        this.configVersion = configVersion;
-    }
+    @Getter @Setter public boolean configVersion;
+    @Getter @Setter public Boolean encryption;
 }

@@ -33,7 +33,7 @@ import lombok.Setter;
 import java.util.Calendar;
 
 /**
- * Created by Michael Rice on Fri Jun 12 15:16:17 CDT 2015
+ * Created by Michael Rice on Fri Nov 18 12:45:26 CST 2016
  * This code is auto generated using yavijava_generator
  * https://github.com/yavijava/yavijava_generator
  *
@@ -115,4 +115,7 @@ public class VirtualMachineConfigInfo extends DynamicData {
     @Getter @Setter public Boolean messageBusTunnelEnabled;
     @Getter @Setter public String vmStorageObjectId;
     @Getter @Setter public String swapStorageObjectId;
+    @Getter @Setter public CryptoKeyId keyId;
+    @Getter @Setter public VirtualMachineGuestIntegrityInfo guestIntegrityInfo;
+    @Getter @Setter public String migrateEncryption;
 }

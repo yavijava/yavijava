@@ -28,30 +28,16 @@ POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
 
 package com.vmware.vim25;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * @author Steve Jin (http://www.doublecloud.org)
  * @version 5.1
  */
 
-@SuppressWarnings("all")
 public class FileBackedVirtualDiskSpec extends VirtualDiskSpec {
-    public long capacityKb;
-    public VirtualMachineProfileSpec[] profile;
-
-    public long getCapacityKb() {
-        return this.capacityKb;
-    }
-
-    public VirtualMachineProfileSpec[] getProfile() {
-        return this.profile;
-    }
-
-    public void setCapacityKb(long capacityKb) {
-        this.capacityKb = capacityKb;
-    }
-
-    public void setProfile(VirtualMachineProfileSpec[] profile) {
-        this.profile = profile;
-    }
+    @Getter @Setter public long capacityKb;
+    @Getter @Setter public VirtualMachineProfileSpec[] profile;
+    @Getter @Setter public CryptoSpec crypto;
 }
