@@ -21,15 +21,15 @@ package com.vmware.vim25;
  * @since 6.0
  */
 
-public enum HostNasVolumeSecurityType {
+public enum VMwareDVSVspanSessionEncapType {
 
-    AUTH_SYS("AUTH_SYS"),
-    SEC_KRB5("SEC_KRB5"),
-    SEC_KRB5I("SEC_KRB5I");
+    gre("gre"),
+    erspan2("erspan2"),
+    erspan3("erspan3");
 
     private String val;
 
-    HostNasVolumeSecurityType(String val) {
+    VMwareDVSVspanSessionEncapType(String val) {
         this.val = val;
     }
 

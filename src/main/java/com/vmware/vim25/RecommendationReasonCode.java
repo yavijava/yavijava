@@ -30,7 +30,7 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
- * Created by Michael Rice on Mon May 25 21:12:07 CDT 2015
+ * Created by Michael Rice on Mon Nov 21 02:06:10 CST 2016
  * This code is auto generated using yavijava_generator
  * https://github.com/yavijava/yavijava_generator
  *
@@ -77,7 +77,11 @@ public enum RecommendationReasonCode {
     storagePlacement("storagePlacement"),
     iolbDisabledInternal("iolbDisabledInternal"),
     xvmotionPlacement("xvmotionPlacement"),
-    networkBandwidthReservation("networkBandwidthReservation");
+    networkBandwidthReservation("networkBandwidthReservation"),
+    hostInDegradation("hostInDegradation"),
+    hostExitDegradation("hostExitDegradation"),
+    maxVmsConstraint("maxVmsConstraint"),
+    ftConstraints("ftConstraints");
 
     private String val;
 

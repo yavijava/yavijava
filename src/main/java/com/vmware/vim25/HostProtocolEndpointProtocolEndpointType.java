@@ -21,15 +21,15 @@ package com.vmware.vim25;
  * @since 6.0
  */
 
-public enum HostNasVolumeSecurityType {
+public enum HostProtocolEndpointProtocolEndpointType {
 
-    AUTH_SYS("AUTH_SYS"),
-    SEC_KRB5("SEC_KRB5"),
-    SEC_KRB5I("SEC_KRB5I");
+    scsi("scsi"),
+    nfs("nfs"),
+    nfs4x("nfs4x");
 
     private String val;
 
-    HostNasVolumeSecurityType(String val) {
+    HostProtocolEndpointProtocolEndpointType(String val) {
         this.val = val;
     }
 

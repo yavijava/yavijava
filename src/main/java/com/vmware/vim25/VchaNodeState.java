@@ -21,15 +21,14 @@ package com.vmware.vim25;
  * @since 6.0
  */
 
-public enum HostNasVolumeSecurityType {
+public enum VchaNodeState {
 
-    AUTH_SYS("AUTH_SYS"),
-    SEC_KRB5("SEC_KRB5"),
-    SEC_KRB5I("SEC_KRB5I");
+    up("up"),
+    down("down");
 
     private String val;
 
-    HostNasVolumeSecurityType(String val) {
+    VchaNodeState(String val) {
         this.val = val;
     }
 

@@ -21,15 +21,15 @@ package com.vmware.vim25;
  * @since 6.0
  */
 
-public enum HostNasVolumeSecurityType {
+public enum QuarantineModeFaultFaultType {
 
-    AUTH_SYS("AUTH_SYS"),
-    SEC_KRB5("SEC_KRB5"),
-    SEC_KRB5I("SEC_KRB5I");
+    NoCompatibleNonQuarantinedHost("NoCompatibleNonQuarantinedHost"),
+    CorrectionDisallowed("CorrectionDisallowed"),
+    CorrectionImpact("CorrectionImpact");
 
     private String val;
 
-    HostNasVolumeSecurityType(String val) {
+    QuarantineModeFaultFaultType(String val) {
         this.val = val;
     }
 
