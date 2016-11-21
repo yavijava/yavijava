@@ -79,7 +79,9 @@ class XmlGenDom extends XmlGen {
         try {
             SAXReader reader = new SAXReader();
             Document doc = reader.read(is);
-            log.trace("XML Document: " + doc.asXML());
+            if(log.isTraceEnabled()) {
+                log.trace("XML Document: " + doc.asXML());
+            }
             root = doc.getRootElement();
         }
         catch (DocumentException e){
