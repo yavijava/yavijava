@@ -30,7 +30,7 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
- * Created by Michael Rice on Mon May 25 21:12:07 CDT 2015
+ * Created by Michael Rice on Mon Nov 21 02:06:10 CST 2016
  * This code is auto generated using yavijava_generator
  * https://github.com/yavijava/yavijava_generator
  *
@@ -58,7 +58,8 @@ public enum ActionType {
     HostMaintenanceV1("HostMaintenanceV1"),
     StorageMigrationV1("StorageMigrationV1"),
     StoragePlacementV1("StoragePlacementV1"),
-    PlacementV1("PlacementV1");
+    PlacementV1("PlacementV1"),
+    HostInfraUpdateHaV1("HostInfraUpdateHaV1");
 
     private String val;
 

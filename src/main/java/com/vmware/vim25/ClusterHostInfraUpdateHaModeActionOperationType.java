@@ -21,15 +21,15 @@ package com.vmware.vim25;
  * @since 6.0
  */
 
-public enum HostNasVolumeSecurityType {
+public enum ClusterHostInfraUpdateHaModeActionOperationType {
 
-    AUTH_SYS("AUTH_SYS"),
-    SEC_KRB5("SEC_KRB5"),
-    SEC_KRB5I("SEC_KRB5I");
+    enterQuarantine("enterQuarantine"),
+    exitQuarantine("exitQuarantine"),
+    enterMaintenance("enterMaintenance");
 
     private String val;
 
-    HostNasVolumeSecurityType(String val) {
+    ClusterHostInfraUpdateHaModeActionOperationType(String val) {
         this.val = val;
     }
 

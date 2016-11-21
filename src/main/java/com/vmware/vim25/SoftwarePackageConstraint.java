@@ -21,15 +21,17 @@ package com.vmware.vim25;
  * @since 6.0
  */
 
-public enum HostNasVolumeSecurityType {
+public enum SoftwarePackageConstraint {
 
-    AUTH_SYS("AUTH_SYS"),
-    SEC_KRB5("SEC_KRB5"),
-    SEC_KRB5I("SEC_KRB5I");
+    equals("equals"),
+    lessThan("lessThan"),
+    lessThanEqual("lessThanEqual"),
+    greaterThanEqual("greaterThanEqual"),
+    greaterThan("greaterThan");
 
     private String val;
 
-    HostNasVolumeSecurityType(String val) {
+    SoftwarePackageConstraint(String val) {
         this.val = val;
     }
 
