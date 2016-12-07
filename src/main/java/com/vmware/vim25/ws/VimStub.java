@@ -5512,4 +5512,47 @@ public class VimStub {
         params[3] = new Argument("vibUrl", "String", vibUrl);
         return (ManagedObjectReference) getWsc().invoke("UpgradeIoFilter_Task", params, "ManagedObjectReference");
     }
+
+    public void addKey(ManagedObjectReference _this, CryptoKeyPlain key) throws AlreadyExists, InvalidArgument, InvalidState, RuntimeFault, RemoteException {
+        Argument[] params = new Argument[2];
+        params[0] = new Argument("_this", "ManagedObjectReference", _this);
+        params[1] = new Argument("key", "CryptoKeyPlain", key);
+        getWsc().invoke("AddKey", params, null);
+    }
+
+    public void addKeys(ManagedObjectReference _this, CryptoKeyPlain[] keys) throws InvalidState, RuntimeFault, RemoteException {
+        Argument[] params = new Argument[2];
+        params[0] = new Argument("_this", "ManagedObjectReference", _this);
+        params[1] = new Argument("key", "CryptoKeyPlain", keys);
+        getWsc().invoke("AddKeys", params, null);
+    }
+
+    public CryptoKeyId[] listKeys(ManagedObjectReference _this) throws RuntimeFault, RemoteException {
+        Argument[] params = new Argument[1];
+        params[0] = new Argument("_this", "ManagedObjectReference", _this);
+        return (CryptoKeyId[]) getWsc().invoke("ListKeys", params, "CryptoKeysId[]");
+    }
+
+    public CryptoKeyId[] listKeys(ManagedObjectReference _this, int limit) throws RuntimeFault, RemoteException {
+        Argument[] params = new Argument[2];
+        params[0] = new Argument("_this", "ManagedObjectReference", _this);
+        params[1] = new Argument("limit", "int", limit);
+        return (CryptoKeyId[]) getWsc().invoke("ListKeys", params, "CryptoKeysId[]");
+    }
+
+    public void removeKey(ManagedObjectReference _this, CryptoKeyId key, boolean force) throws InvalidArgument, ResourceInUse, RuntimeFault, RemoteException {
+        Argument[] params = new Argument[3];
+        params[0] = new Argument("_this", "ManagedObjectReference", _this);
+        params[1] = new Argument("key", "CryptoKeyId", key);
+        params[2] = new Argument("force", "boolean", force);
+        getWsc().invoke("RemoveKey", params, null);
+    }
+
+    public CryptoKeyResult[] removeKeys(ManagedObjectReference _this, CryptoKeyId[] keys, boolean force) throws RuntimeFault, RemoteException {
+        Argument[] params = new Argument[3];
+        params[0] = new Argument("_this", "ManagedObjectReference", _this);
+        params[1] = new Argument("keys", "CryptoKeyId[]", keys);
+        params[2] = new Argument("force", "boolean", force);
+        return (CryptoKeyResult[]) getWsc().invoke("RemoveKeys", params, "CryptoKeyResult[]");
+    }
 }
