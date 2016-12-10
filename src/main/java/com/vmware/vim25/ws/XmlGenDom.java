@@ -32,7 +32,8 @@ package com.vmware.vim25.ws;
 
 import com.vmware.vim25.ManagedObjectReference;
 import com.vmware.vim25.mo.util.MorUtil;
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.dom4j.Document;
 import org.dom4j.DocumentException;
 import org.dom4j.Element;
@@ -58,7 +59,7 @@ import java.util.List;
  */
 
 class XmlGenDom extends XmlGen {
-    private static Logger log = Logger.getLogger(XmlGenDom.class);
+    private static Logger log = LoggerFactory.getLogger(XmlGenDom.class);
 
     protected static int getNumberOfSameTags(List<Element> subNodes, int sizeOfSubNodes, int from, String tagName) {
         int numOfTags = 1;
