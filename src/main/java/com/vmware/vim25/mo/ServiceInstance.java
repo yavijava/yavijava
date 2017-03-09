@@ -406,6 +406,10 @@ public class ServiceInstance extends ManagedObject {
         return (VirtualDiskManager) createMO(getServiceContent().getVirtualDiskManager());
     }
 
+    public CryptoManager getCryptoManager() {
+        return (CryptoManager) createMO(getServiceContent().getCryptoManager());
+    }
+
     public OptionManager getOptionManager() {
         return (OptionManager) createMO(getServiceContent().getSetting());
     }

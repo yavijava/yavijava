@@ -76,6 +76,9 @@ public abstract class SoapClient implements Client {
         else if ("6.0".equals(apiVersion)) {
             soapAction = SoapAction.SOAP_ACTION_V60.toString();
         }
+        else if ("6.5".equals(apiVersion)) {
+            soapAction = SoapAction.SOAP_ACTION_V65.toString();
+        }
         else { //always defaults to latest version
             soapAction = SoapAction.SOAP_ACTION_V60.toString();
         }
