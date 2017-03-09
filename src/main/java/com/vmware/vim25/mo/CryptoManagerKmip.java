@@ -22,63 +22,67 @@ public class CryptoManagerKmip extends CryptoManager {
         return getVimService().generateClientCsr(getMOR(), cluster);
     }
 
-    public CryptoKeyResult generateKey(ManagedObjectReference _this, KeyProviderId keyProvider) throws RuntimeFault, RemoteException {
+    public CryptoKeyResult generateKey(KeyProviderId keyProvider) throws RuntimeFault, RemoteException {
         return getVimService().generateKey(getMOR(), keyProvider);
     }
 
-    public String generateSelfSignedClientCert(ManagedObjectReference _this, KeyProviderId cluster) throws RuntimeFault, RemoteException {
+    public String generateSelfSignedClientCert(KeyProviderId cluster) throws RuntimeFault, RemoteException {
         return getVimService().generateSelfSignedClientCert(getMOR(), cluster);
     }
 
-    public KmipClusterInfo[] listKmipServers(ManagedObjectReference _this, int limit) throws RuntimeFault, RemoteException {
+    public KmipClusterInfo[] listKmipServers(int limit) throws RuntimeFault, RemoteException {
         return getVimService().listKmipServers(getMOR(), limit);
     }
 
-    public void registerKmipServer(ManagedObjectReference _this, KmipServerSpec server) throws RuntimeFault, RemoteException, InvalidArgument {
+    public void registerKmipServer(KmipServerSpec server) throws RuntimeFault, RemoteException, InvalidArgument {
         getVimService().registerKmipServer(getMOR(), server);
     }
 
-    public void removeKmipServer(ManagedObjectReference _this, KeyProviderId clusterId, String serverName) throws RuntimeFault, RemoteException, InvalidArgument {
+    public void removeKmipServer(KeyProviderId clusterId, String serverName) throws RuntimeFault, RemoteException, InvalidArgument {
         getVimService().removeKmipServer(getMOR(), clusterId, serverName);
     }
 
-    public String retrieveClientCert(ManagedObjectReference _this, KeyProviderId cluster) throws RuntimeFault, RemoteException {
+    public String retrieveClientCert(KeyProviderId cluster) throws RuntimeFault, RemoteException {
         return getVimService().retrieveClientCert(getMOR(), cluster);
     }
 
-    public String retrieveClientCsr(ManagedObjectReference _this, KeyProviderId cluster) throws RuntimeFault, RemoteException {
+    public String retrieveClientCsr(KeyProviderId cluster) throws RuntimeFault, RemoteException {
         return getVimService().retrieveClientCsr(getMOR(), cluster);
     }
 
-    public CryptoManagerKmipServerCertInfo retrieveKmipServerCert(ManagedObjectReference _this, KeyProviderId keyProvider, KmipServerInfo server) throws RuntimeFault, RemoteException, InvalidArgument {
+    public CryptoManagerKmipServerCertInfo retrieveKmipServerCert(KeyProviderId keyProvider, KmipServerInfo server) throws RuntimeFault, RemoteException, InvalidArgument {
         return getVimService().retrieveKmipServerCert(getMOR(), keyProvider, server);
     }
 
-    public ManagedObjectReference retrieveKmipServersStatus_Task(ManagedObjectReference _this, KmipClusterInfo[] clusters) throws RuntimeFault, RemoteException {
+    public ManagedObjectReference retrieveKmipServersStatus_Task(KmipClusterInfo[] clusters) throws RuntimeFault, RemoteException {
         return getVimService().retrieveKmipServersStatus_Task(getMOR(), clusters);
     }
 
-    public String retrieveSelfSignedClientCert(ManagedObjectReference _this, KeyProviderId cluster) throws RuntimeFault, RemoteException {
+    public String retrieveSelfSignedClientCert(KeyProviderId cluster) throws RuntimeFault, RemoteException {
         return getVimService().retrieveSelfSignedClientCert(getMOR(), cluster);
     }
 
-    public String updateKmipServer(ManagedObjectReference _this, KmipServerSpec server) throws RuntimeFault, RemoteException, InvalidArgument {
+    public String updateKmipServer(KmipServerSpec server) throws RuntimeFault, RemoteException, InvalidArgument {
         return getVimService().updateKmipServer(getMOR(), server);
     }
 
-    public void updateKmsSignedCsrClientCert(ManagedObjectReference _this, KeyProviderId cluster, String certificate) throws RuntimeFault, RemoteException, InvalidArgument {
+    public void updateKmsSignedCsrClientCert(KeyProviderId cluster, String certificate) throws RuntimeFault, RemoteException, InvalidArgument {
         getVimService().updateKmsSignedCsrClientCert(getMOR(), cluster, certificate);
     }
 
-    public void updateSelfSignedClientCert(ManagedObjectReference _this, KeyProviderId cluster, String certificate) throws RuntimeFault, RemoteException, InvalidArgument {
+    public void updateSelfSignedClientCert(KeyProviderId cluster, String certificate) throws RuntimeFault, RemoteException, InvalidArgument {
         getVimService().updateSelfSignedClientCert(getMOR(), cluster, certificate);
     }
 
-    public void uploadClientCert(ManagedObjectReference _this, KeyProviderId cluster, String certificate, String privateKey) throws RuntimeFault, RemoteException {
+    public void uploadClientCert(KeyProviderId cluster, String certificate, String privateKey) throws RuntimeFault, RemoteException {
         getVimService().uploadClientCert(getMOR(), cluster, certificate, privateKey);
     }
 
-    public void uploadKmipServerCert(ManagedObjectReference _this, KeyProviderId cluster, String certificate) throws RuntimeFault, RemoteException, InvalidArgument {
+    public void uploadKmipServerCert(KeyProviderId cluster, String certificate) throws RuntimeFault, RemoteException, InvalidArgument {
         getVimService().uploadKmipServerCert(getMOR(), cluster, certificate);
+    }
+
+    public void markDefault(KeyProviderId clusterId) throws RuntimeFault, RemoteException, InvalidArgument {
+        getVimService().markDefault(getMOR(), clusterId);
     }
 }
