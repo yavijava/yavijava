@@ -5626,7 +5626,7 @@ public class VimStub {
         params[0] = new Argument("_this", "ManagedObjectReference", _this);
         params[1] = new Argument("keyProvider", "KeyProviderId", keyProvider);
         params[2] = new Argument("server", "KmipServerInfo", server);
-        return (CryptoManagerKmipServerCertInfo)getWsc().invoke("RemoveKmipServer", params, "CryptoManagerKmipServerCertInfo");
+        return (CryptoManagerKmipServerCertInfo)getWsc().invoke("RetrieveKmipServerCert", params, "CryptoManagerKmipServerCertInfo");
     }
 
     public ManagedObjectReference retrieveKmipServersStatus_Task(ManagedObjectReference _this, KmipClusterInfo[] clusters) throws RuntimeFault, RemoteException {
