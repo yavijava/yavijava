@@ -126,6 +126,9 @@ public class ReflectUtil {
         else if ("Double".equals(type)) {
             field.set(object, new Double(value));
         }
+        else if ("base64Binary".equals(type)) {
+            field.set(object, DatatypeConverter.parseBase64Binary(value));
+        }
         else {
             throw new RuntimeException("Unexpected Type at setObjectField: " + field.getType().getCanonicalName() + field.getName());
         }

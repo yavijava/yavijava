@@ -1,6 +1,7 @@
 package org.doublecloud.ws.util;
 
 import com.vmware.vim25.AboutInfo;
+import com.vmware.vim25.PropertyChange;
 import org.doublecloud.ws.util.testUtils.*;
 import org.junit.Assert;
 import org.junit.Test;
@@ -61,5 +62,16 @@ public class ReflectUtilTest {
         strings.add("string3");
         String[] stringArray = (String[]) ReflectUtil.parseToObject(type, strings);
         assert stringArray.getClass().isArray();
+    }
+
+    @Test
+    public void testReflectUtil_SetObjectField_Supports_Base64Binary_To_ByteArray() throws Exception {
+        String base64BinaryStr = "EtUGWJdr2BYg3Dom7G6oPAlHHcc=";
+        Object obj = new PropertyChange();
+        Field field = PropertyChange.class.getField("val");
+        String type = "base64Binary";
+        ReflectUtil.setObjectField(obj, field, type, base64BinaryStr);
+        PropertyChange pc = (PropertyChange) obj;
+        assert pc.getVal() instanceof byte[];
     }
 }

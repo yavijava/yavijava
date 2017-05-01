@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <soapenv:Body>
+        <WaitForUpdatesExResponse xmlns="urn:vim25">
+            <returnval>
+                <version>3</version>
+                <filterSet>
+                    <filter type="PropertyFilter">session[5293e761-ee4a-d9cd-1dc3-8fe9c6ef7939]52379183-1a11-af2a-0e0a-c8ce4c507066</filter>
+                    <objectSet>
+                        <kind>modify</kind>
+                        <obj type="VirtualMachine">vm-13</obj>
+                        <changeSet>
+                            <name>config.annotation</name>
+                            <op>assign</op>
+                            <val xsi:type="xsd:string"/>
+                        </changeSet>
+                        <changeSet>
+                            <name>config.changeVersion</name>
+                            <op>assign</op>
+                            <val xsi:type="xsd:string">2017-04-30T18:10:33.370382Z</val>
+                        </changeSet>
+                        <changeSet>
+                            <name>config.vmxConfigChecksum</name>
+                            <op>assign</op>
+                            <val xsi:type="xsd:base64Binary">EtUGWJdr2BYg3Dom7G6oPAlHHcc=</val>
+                        </changeSet>
+                    </objectSet>
+                </filterSet>
+            </returnval>
+        </WaitForUpdatesExResponse>
+    </soapenv:Body>
+</soapenv:Envelope>
