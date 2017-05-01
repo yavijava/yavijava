@@ -155,4 +155,11 @@ public class XmlGenDomTest {
         String[] strings = (String[]) xmlGenDom.fromXML("String[]", inputStream);
         assert strings.getClass().isArray();
     }
+
+    @Test
+    public void testFromXML_When_UpdateSet_Contains_Base64_Binary_No_Exception_Is_Thrown() throws Exception {
+        InputStream inputStream = new FileInputStream(new File("src/test/resources/xml/UpdateSetWithBase64Binary.xml"));
+        XmlGenDom xmlGenDom = new XmlGenDom();
+        UpdateSet updateSet = (UpdateSet) xmlGenDom.fromXML("UpdateSet", inputStream);
+    }
 }
