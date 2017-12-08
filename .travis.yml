@@ -1,9 +1,5 @@
 language: java
 
-branches:
-  only:
-  - vsphere_6.5
-
 sudo: false
 
 jdk:
