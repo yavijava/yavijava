@@ -88,7 +88,7 @@ class XmlGenDom extends XmlGen {
             Throwable throwThis = e.getNestedException() != null ? e.getNestedException() : e;
             throw new RemoteException("An error occurred parsing XML with return type: " + returnType, throwThis);
         } catch (Exception e1) {
-            throw new RemoteException("VI SDK invoke exception:" + e1);
+            throw new RemoteException("VI SDK invoke exception:" + e1, e1);
         }
         finally {
             if (is != null) {
