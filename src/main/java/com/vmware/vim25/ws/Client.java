@@ -112,7 +112,7 @@ public interface Client {
      * interpreted as an infinite timeout. This is only used if your
      * client supports this setting.
      * <p>
-     * <p> Some non-standard implmentation of this method may ignore
+     * <p> Some non-standard implementation of this method may ignore
      * the specified timeout. To see the connect timeout set, please
      * call getConnectTimeout().
      *
@@ -159,7 +159,7 @@ public interface Client {
     public void setSoapActionOnApiVersion(String apiVersion);
 
     /**
-     * Marshall the JAVA Object into a XML payload to send to the
+     * Marshal the JAVA Object into a XML payload to send to the
      * server
      *
      * @param methodName String Name of the method to execute

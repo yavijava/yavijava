@@ -153,7 +153,7 @@ public class CacheInstance
 	}
 	
 	/**
-	 * Destrory the caching service when no longer needed.
+	 * Destroy the caching service when no longer needed.
 	 */
 	public void destroy()
 	{
