@@ -8,15 +8,13 @@ apply plugin: 'groovy'
 
 group = "com.toastcoders"
 archivesBaseName = "yavijava"
-version = '6.5.20170305'
+version = '6.5.01-SNAPSHOT'
 ext.isReleaseVersion = !version.endsWith("SNAPSHOT")
-targetCompatibility = 1.8
-sourceCompatibility = 1.8
+targetCompatibility = 1.7
+sourceCompatibility = 1.7
 
 repositories {
-    maven {
-        url("https://plugins.gradle.org/m2/")
-    }
+    mavenCentral()
 }
 
 dependencies {
@@ -75,35 +73,18 @@ test {
     }
 }
 
-//task javadocJar(type: Jar) {
-//    classifier = 'javadoc'
-//    from javadoc
-//}
+task javadocJar(type: Jar) {
+    classifier = 'javadoc'
+    from javadoc
+}
 
 task sourcesJar(type: Jar) {
     classifier = 'sources'
     from sourceSets.main.allSource
 }
-task writeNewPom {
-    doLast {
-        pom {
-            project {
-                inceptionYear '2008'
-                licenses {
-                    license {
-                        name 'The Apache Software License, Version 2.0'
-                        url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
-                        distribution 'repo'
-                    }
-                }
-            }
-        }.writeTo("$buildDir/pom.xml")
-    }
-}
 
 artifacts {
-//    archives javadocJar, sourcesJar
-    archives jar, sourcesJar
+    archives javadocJar, sourcesJar
 }
 
 signing {
@@ -119,20 +100,13 @@ uploadArchives {
         mavenDeployer {
             beforeDeployment { MavenDeployment deployment -> signing.signPom(deployment) }
 
-//            repository(url: mavenLocal().url){
-            repository(url: "file://localhost/repository/"){
-            }
-            repository(url: "http://10.0.33.190:8080/nexus/content/repositories/cloudview-release/") {
-                authentication(userName: "liugzh", password: "liugzh")
+            repository(url: "https://oss.sonatype.org/service/local/staging/deploy/maven2/") {
+                authentication(userName: ossrhUsername, password: ossrhPassword)
             }
 
-//            repository(url: "https://oss.sonatype.org/service/local/staging/deploy/maven2/") {
-//                authentication(userName: ossrhUsername, password: ossrhPassword)
-//            }
-//
-//            snapshotRepository(url: "https://oss.sonatype.org/content/repositories/snapshots/") {
-//                authentication(userName: ossrhUsername, password: ossrhPassword)
-//            }
+            snapshotRepository(url: "https://oss.sonatype.org/content/repositories/snapshots/") {
+                authentication(userName: ossrhUsername, password: ossrhPassword)
+            }
 
             pom.project {
                 name 'yavijava'
