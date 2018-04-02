@@ -80,7 +80,7 @@ public abstract class SoapClient implements Client {
             soapAction = SoapAction.SOAP_ACTION_V65.toString();
         }
         else { //always defaults to latest version
-            soapAction = SoapAction.SOAP_ACTION_V60.toString();
+            soapAction = SoapAction.SOAP_ACTION_V65.toString();
         }
         log.trace("Set soapAction to: " + soapAction);
     }
