@@ -76,7 +76,7 @@ public class VerUtil {
      * @return the namespace, e.g. urn:vim25Service
      * @throws IOException      when there is a network issue or service issue on the target server
      * @throws RuntimeException wrapping NoSuchAlgorithmException, KeyManagementException which are
-     *                          not likely to happen. If it happens, you can catch the runtime exception and unwrapp it
+     *                          not likely to happen. If it happens, you can catch the runtime exception and unwrap it
      *                          for the real exceptions.
      */
     public static String getTargetNameSpace(String target) throws IOException {
