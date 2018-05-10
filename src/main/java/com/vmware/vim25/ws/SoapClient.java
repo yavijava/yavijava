@@ -237,7 +237,9 @@ public abstract class SoapClient implements Client {
      */
     public String marshall(String methodName, Argument[] paras) {
         String soapMsg = XmlGen.toXML(methodName, paras, vimNameSpace);
-        log.trace("Marshalled Payload String xml: " + soapMsg);
+        if (log.isTraceEnabled()) {
+            log.trace("Marshalled Payload String xml: " + soapMsg);
+        }
         return soapMsg;
     }
 
