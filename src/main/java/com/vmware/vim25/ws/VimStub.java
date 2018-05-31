@@ -5556,4 +5556,131 @@ public class VimStub {
         params[2] = new Argument("force", "boolean", force);
         return (CryptoKeyResult[]) getWsc().invoke("RemoveKeys", params, "CryptoKeyResult[]");
     }
+
+    public String generateClientCsr(ManagedObjectReference _this, KeyProviderId cluster) throws RuntimeFault, RemoteException {
+        Argument[] params = new Argument[2];
+        params[0] = new Argument("_this", "ManagedObjectReference", _this);
+        params[1] = new Argument("cluster", "KeyProviderId", cluster);
+        return (String) getWsc().invoke("GenerateClientCsr", params, "String");
+    }
+
+    public CryptoKeyResult generateKey(ManagedObjectReference _this, KeyProviderId keyProvider) throws RuntimeFault, RemoteException {
+        Argument[] params = new Argument[2];
+        params[0] = new Argument("_this", "ManagedObjectReference", _this);
+        params[1] = new Argument("keyProvider", "KeyProviderId", keyProvider);
+        return (CryptoKeyResult) getWsc().invoke("GenerateKey", params, "CryptoKeyResult");
+    }
+
+    public String generateSelfSignedClientCert(ManagedObjectReference _this, KeyProviderId cluster) throws RuntimeFault, RemoteException {
+        Argument[] params = new Argument[2];
+        params[0] = new Argument("_this", "ManagedObjectReference", _this);
+        params[1] = new Argument("cluster", "KeyProviderId", cluster);
+        return (String) getWsc().invoke("GenerateSelfSignedClientCert", params, "String");
+    }
+
+    public KmipClusterInfo[] listKmipServers(ManagedObjectReference _this, int limit) throws RuntimeFault, RemoteException {
+        Argument[] params = new Argument[2];
+        params[0] = new Argument("_this", "ManagedObjectReference", _this);
+        params[1] = new Argument("limit", "int", limit);
+        return (KmipClusterInfo[]) getWsc().invoke("ListKmipServers", params, "KmipClusterInfo[]");
+    }
+
+    public void markDefault(ManagedObjectReference _this, KeyProviderId clusterId) throws RuntimeFault, RemoteException, InvalidArgument {
+        Argument[] params = new Argument[2];
+        params[0] = new Argument("_this", "ManagedObjectReference", _this);
+        params[1] = new Argument("clusterId", "KeyProviderId", clusterId);
+        getWsc().invoke("MarkDefault", params, null);
+    }
+
+    public void registerKmipServer(ManagedObjectReference _this, KmipServerSpec server) throws RuntimeFault, RemoteException, InvalidArgument {
+        Argument[] params = new Argument[2];
+        params[0] = new Argument("_this", "ManagedObjectReference", _this);
+        params[1] = new Argument("server", "KmipServerSpec", server);
+        getWsc().invoke("RegisterKmipServer", params, null);
+    }
+
+    public void removeKmipServer(ManagedObjectReference _this, KeyProviderId clusterId, String serverName) throws RuntimeFault, RemoteException, InvalidArgument {
+        Argument[] params = new Argument[3];
+        params[0] = new Argument("_this", "ManagedObjectReference", _this);
+        params[1] = new Argument("clusterId", "KeyProviderId", clusterId);
+        params[2] = new Argument("serverName", "String", serverName);
+        getWsc().invoke("RemoveKmipServer", params, null);
+    }
+
+    public String retrieveClientCert(ManagedObjectReference _this, KeyProviderId cluster) throws RuntimeFault, RemoteException {
+        Argument[] params = new Argument[2];
+        params[0] = new Argument("_this", "ManagedObjectReference", _this);
+        params[1] = new Argument("cluster", "KeyProviderId", cluster);
+        return (String) getWsc().invoke("RetrieveClientCert", params, "String");
+    }
+
+    public String retrieveClientCsr(ManagedObjectReference _this, KeyProviderId cluster) throws RuntimeFault, RemoteException {
+        Argument[] params = new Argument[2];
+        params[0] = new Argument("_this", "ManagedObjectReference", _this);
+        params[1] = new Argument("cluster", "KeyProviderId", cluster);
+        return (String) getWsc().invoke("RetrieveClientCsr", params, "String");
+    }
+
+    public CryptoManagerKmipServerCertInfo retrieveKmipServerCert(ManagedObjectReference _this, KeyProviderId keyProvider, KmipServerInfo server) throws RuntimeFault, RemoteException, InvalidArgument {
+        Argument[] params = new Argument[3];
+        params[0] = new Argument("_this", "ManagedObjectReference", _this);
+        params[1] = new Argument("keyProvider", "KeyProviderId", keyProvider);
+        params[2] = new Argument("server", "KmipServerInfo", server);
+        return (CryptoManagerKmipServerCertInfo)getWsc().invoke("RetrieveKmipServerCert", params, "CryptoManagerKmipServerCertInfo");
+    }
+
+    public ManagedObjectReference retrieveKmipServersStatus_Task(ManagedObjectReference _this, KmipClusterInfo[] clusters) throws RuntimeFault, RemoteException {
+        Argument[] params = new Argument[2];
+        params[0] = new Argument("_this", "ManagedObjectReference", _this);
+        params[1] = new Argument("clusters", "KmipClusterInfo[]", clusters);
+        return (ManagedObjectReference ) getWsc().invoke("RetrieveKmipServersStatus_Task", params, "ManagedObjectReference ");
+    }
+
+    public String retrieveSelfSignedClientCert(ManagedObjectReference _this, KeyProviderId cluster) throws RuntimeFault, RemoteException {
+        Argument[] params = new Argument[2];
+        params[0] = new Argument("_this", "ManagedObjectReference", _this);
+        params[1] = new Argument("cluster", "KeyProviderId", cluster);
+        return (String ) getWsc().invoke("RetrieveSelfSignedClientCert", params, "String ");
+    }
+
+    public String updateKmipServer(ManagedObjectReference _this, KmipServerSpec server) throws RuntimeFault, RemoteException, InvalidArgument {
+        Argument[] params = new Argument[2];
+        params[0] = new Argument("_this", "ManagedObjectReference", _this);
+        params[1] = new Argument("server", "KmipServerSpec", server);
+        return (String) getWsc().invoke("UpdateKmipServer", params, "String");
+    }
+
+    public void updateKmsSignedCsrClientCert(ManagedObjectReference _this, KeyProviderId cluster, String certificate) throws RuntimeFault, RemoteException, InvalidArgument {
+        Argument[] params = new Argument[3];
+        params[0] = new Argument("_this", "ManagedObjectReference", _this);
+        params[1] = new Argument("cluster", "KeyProviderId", cluster);
+        params[2] = new Argument("certificate", "String", certificate);
+        getWsc().invoke("UpdateKmsSignedCsrClientCert", params, null);
+    }
+
+    public void updateSelfSignedClientCert(ManagedObjectReference _this, KeyProviderId cluster, String certificate) throws RuntimeFault, RemoteException, InvalidArgument {
+        Argument[] params = new Argument[3];
+        params[0] = new Argument("_this", "ManagedObjectReference", _this);
+        params[1] = new Argument("cluster", "KeyProviderId", cluster);
+        params[2] = new Argument("certificate", "String", certificate);
+        getWsc().invoke("UpdateSelfSignedClientCert", params, null);
+    }
+
+    public void uploadClientCert(ManagedObjectReference _this, KeyProviderId cluster, String certificate, String privateKey) throws RuntimeFault, RemoteException {
+        Argument[] params = new Argument[4];
+        params[0] = new Argument("_this", "ManagedObjectReference", _this);
+        params[1] = new Argument("cluster", "KeyProviderId", cluster);
+        params[2] = new Argument("certificate", "String", certificate);
+        params[3] = new Argument("privateKey", "String", privateKey);
+        getWsc().invoke("UploadClientCert", params, null);
+    }
+
+    public void uploadKmipServerCert(ManagedObjectReference _this, KeyProviderId cluster, String certificate) throws RuntimeFault, RemoteException, InvalidArgument {
+        Argument[] params = new Argument[3];
+        params[0] = new Argument("_this", "ManagedObjectReference", _this);
+        params[1] = new Argument("cluster", "KeyProviderId", cluster);
+        params[2] = new Argument("certificate", "String", certificate);
+        getWsc().invoke("UploadKmipServerCert", params, null);
+    }
+
 }
