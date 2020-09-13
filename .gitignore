@@ -16,3 +16,4 @@ bin/
 
 #IntelliJ specific
 atlassian-ide-plugin.xml
+target/
