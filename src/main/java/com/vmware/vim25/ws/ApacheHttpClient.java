@@ -204,7 +204,7 @@ public class ApacheHttpClient extends SoapClient {
 
             Header[] headers = response.getAllHeaders();
             for (Header header : headers) {
-                if (header.getName().equals("Set-Cookie")) {
+                if (header.getName().equalsIgnoreCase("Set-Cookie")) {
                     cookie = header.getValue();
                     break;
                 }
