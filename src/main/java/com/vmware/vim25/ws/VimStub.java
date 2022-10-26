@@ -5531,14 +5531,14 @@ public class VimStub {
     public CryptoKeyId[] listKeys(ManagedObjectReference _this) throws RuntimeFault, RemoteException {
         Argument[] params = new Argument[1];
         params[0] = new Argument("_this", "ManagedObjectReference", _this);
-        return (CryptoKeyId[]) getWsc().invoke("ListKeys", params, "CryptoKeysId[]");
+        return (CryptoKeyId[]) getWsc().invoke("ListKeys", params, "CryptoKeyId[]");
     }
 
     public CryptoKeyId[] listKeys(ManagedObjectReference _this, int limit) throws RuntimeFault, RemoteException {
         Argument[] params = new Argument[2];
         params[0] = new Argument("_this", "ManagedObjectReference", _this);
         params[1] = new Argument("limit", "int", limit);
-        return (CryptoKeyId[]) getWsc().invoke("ListKeys", params, "CryptoKeysId[]");
+        return (CryptoKeyId[]) getWsc().invoke("ListKeys", params, "CryptoKeyId[]");
     }
 
     public void removeKey(ManagedObjectReference _this, CryptoKeyId key, boolean force) throws InvalidArgument, ResourceInUse, RuntimeFault, RemoteException {
