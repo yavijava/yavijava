@@ -29,6 +29,8 @@ POSSIBILITY OF SUCH DAMAGE.
 
 package com.vmware.vim.rest;
 
+import org.apache.commons.text.StringEscapeUtils;
+
 /** The utility to convert the HTML table to XML format.
   * @author Steve JIN (sjin@vmware.com)
 */
@@ -42,8 +44,9 @@ public class ResultConverter
   final static String TD_END = "</td>";
   final static String LINK_END = "</a>";
   
-  public static String convert2Xml(String html)
+  public static String convert2Xml(String inputHtml)
   {
+    String html = StringEscapeUtils.escapeHtml4(inputHtml);
     StringBuffer xml = new StringBuffer("<xml> <result");
     int pos = html.indexOf("<");
     String resultType = html.substring(1, pos);

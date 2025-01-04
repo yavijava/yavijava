@@ -1,16 +1,22 @@
-apply plugin: 'java'
-apply plugin: 'groovy'
-apply plugin: 'idea'
-apply plugin: 'eclipse'
-apply plugin: 'maven'
-apply plugin: 'maven-publish'
-apply plugin: 'signing'
-apply plugin: 'groovy'
+plugins{
+    id 'java'
+    id 'maven-publish'
+    id 'groovy'
+    id 'idea'
+    id 'eclipse'
+    id 'signing'
+}
 apply from: rootDir.canonicalPath + '/.gradle/publish.gradle'
+//apply plugin:'java'
+//apply plugin:'maven-publish'
+//apply plugin:'groovy'
+//apply plugin:'idea'
+//apply plugin:'eclipse'
+//apply plugin:'signing'
 
 group = "com.github"
 archivesBaseName = "hyavijava"
-version = '6.0.07'
+version = '6.0.08.1'
 ext.isReleaseVersion = !version.endsWith("SNAPSHOT")
 targetCompatibility = 1.8
 sourceCompatibility = 1.8
@@ -20,29 +26,20 @@ repositories {
 }
 
 dependencies {
-    annotationProcessor 'org.apache.directory.studio:org.dom4j.dom4j:1.6.1'
-    annotationProcessor 'log4j:log4j:1.2.17'
-    annotationProcessor 'org.apache.httpcomponents:httpclient:4.3.5'
-    annotationProcessor 'org.projectlombok:lombok:1.16.6'
-    compileOnly 'org.apache.directory.studio:org.dom4j.dom4j:1.6.1'
-    compileOnly 'log4j:log4j:1.2.17'
-    compileOnly 'org.apache.httpcomponents:httpclient:4.3.5'
-    compileOnly 'org.projectlombok:lombok:1.16.6'
-
-
-    annotationProcessor 'javax.servlet:javax.servlet-api:3.1.0'
-    annotationProcessor 'junit:junit-dep:4.11'
-    annotationProcessor 'junit:junit:4.12'
-    annotationProcessor 'org.spockframework:spock-core:0.7-groovy-2.0'
-    annotationProcessor 'cglib:cglib-nodep:3.1'
-    annotationProcessor 'org.objenesis:objenesis:2.1'
-
-    testCompileOnly  'javax.servlet:javax.servlet-api:3.1.0'
-    testCompileOnly  'junit:junit-dep:4.11'
-    testCompileOnly  'junit:junit:4.12'
-    testCompileOnly  'org.spockframework:spock-core:0.7-groovy-2.0'
-    testCompileOnly  'cglib:cglib-nodep:3.1'
-    testCompileOnly  'org.objenesis:objenesis:2.1'
+    implementation 'org.apache.directory.studio:org.dom4j.dom4j:1.6.1'
+    implementation 'log4j:log4j:1.2.17'
+    implementation 'org.apache.httpcomponents:httpclient:4.3.5'
+    implementation 'org.projectlombok:lombok:1.18.30'
+    implementation 'javax.xml.bind:jaxb-api:2.3.1'
+    implementation 'org.apache.commons:commons-text:1.9'
+    testImplementation 'javax.servlet:javax.servlet-api:3.1.0'
+    testImplementation 'junit:junit-dep:4.11'
+    testImplementation 'junit:junit:4.12'
+    testImplementation 'org.spockframework:spock-core:0.7-groovy-2.0'
+    testImplementation 'cglib:cglib-nodep:3.2.12'
+    testImplementation 'org.objenesis:objenesis:2.1'
+    testImplementation 'org.codehaus.groovy:groovy-all:2.5.23'
+    annotationProcessor 'org.projectlombok:lombok:1.18.30'
 }
 
 sourceSets {
@@ -52,23 +49,23 @@ sourceSets {
         }
     }
 
-//    intTest {
-//        java {
-//            compileClasspath += main.output + test.output
-//            runtimeClasspath += main.output + test.output
-//        }
-//        groovy {
-//            compileClasspath += main.output + test.output
-//            runtimeClasspath += main.output + test.output
-//        }
-//    }
-//
-//    test {
-//        java {
-//        }
-//        groovy {
-//        }
-//    }
+    intTest {
+        java {
+            compileClasspath += main.output + test.output
+            runtimeClasspath += main.output + test.output
+        }
+        groovy {
+            compileClasspath += main.output + test.output
+            runtimeClasspath += main.output + test.output
+        }
+    }
+
+    test {
+        java {
+        }
+        groovy {
+        }
+    }
 }
 
 configurations {
@@ -76,11 +73,11 @@ configurations {
     intTestRuntime.extendsFrom testRuntime
 }
 
-//task intTest(type:Test){
-//    description = "Run integration tests (located in src/intTest/...)."
-//    testClassesDir = project.sourceSets.intTest.output.classesDir
-//    classpath = project.sourceSets.intTest.runtimeClasspath
-//}
+task intTest(type:Test){
+    description = "Run integration tests (located in src/intTest/...)."
+    testClassesDirs = project.sourceSets.intTest.output.classesDirs
+    classpath = project.sourceSets.intTest.runtimeClasspath
+}
 
 test {
     testLogging {
@@ -89,7 +86,7 @@ test {
 }
 
 task javadocJar(type: Jar) {
-    classifier = 'javadoc'
+    archiveClassifier = 'javadoc'
     from javadoc
 }
 compileJava.options.encoding("UTF-8")
@@ -99,7 +96,7 @@ allprojects {
 }
 
 task sourcesJar(type: Jar) {
-    classifier = 'sources'
+    archiveClassifier = 'sources'
     from sourceSets.main.allSource
 }
 
@@ -110,9 +107,9 @@ artifacts {
 publishing {
     publications {
         mavenJava(MavenPublication) {
-             groupId = "com.github"
-             artifactId = "hyavijava"
-             version = "6.0.07.1"
+            groupId = "com.github"
+            artifactId = "hyavijava"
+            version = "6.0.08.1"
             from components.java
             artifact sourcesJar
             artifact javadocJar
