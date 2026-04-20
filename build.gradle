@@ -1,37 +1,39 @@
-apply plugin: 'java'
-apply plugin: 'groovy'
-apply plugin: 'idea'
-apply plugin: 'eclipse'
-apply plugin: 'maven'
-apply plugin: 'signing'
-apply plugin: 'groovy'
+plugins {
+    id 'java'
+    id 'groovy'
+    id 'idea'
+    id 'eclipse'
+    id 'maven-publish'
+    id 'signing'
+}
 
 group = "com.toastcoders"
 archivesBaseName = "yavijava"
 version = '6.0.05'
 ext.isReleaseVersion = !version.endsWith("SNAPSHOT")
-targetCompatibility = 1.6
-sourceCompatibility = 1.6
+targetCompatibility = JavaVersion.VERSION_1_8
+sourceCompatibility = JavaVersion.VERSION_1_8
 
 repositories {
     mavenCentral()
 }
 
 dependencies {
-    compile 'org.apache.directory.studio:org.dom4j.dom4j:1.6.1'
-    compile 'log4j:log4j:1.2.17'
-    compile 'org.apache.httpcomponents:httpclient:4.3.5'
-    compile 'org.projectlombok:lombok:1.16.6'
-    testCompile 'javax.servlet:javax.servlet-api:3.1.0'
-    testCompile 'junit:junit-dep:4.11'
-    testCompile 'junit:junit:4.12'
-    testCompile 'org.spockframework:spock-core:0.7-groovy-2.0'
-    testCompile 'cglib:cglib-nodep:3.1'
-    testCompile 'org.objenesis:objenesis:2.1'
+    implementation 'org.apache.directory.studio:org.dom4j.dom4j:1.6.1'
+    implementation 'log4j:log4j:1.2.17'
+    implementation 'org.apache.httpcomponents:httpclient:4.3.5'
+    compileOnly 'org.projectlombok:lombok:1.18.36'
+    annotationProcessor 'org.projectlombok:lombok:1.18.36'
+    implementation 'javax.xml.bind:jaxb-api:2.3.1'
+    testImplementation 'javax.servlet:javax.servlet-api:3.1.0'
+    testImplementation 'junit:junit-dep:4.11'
+    testImplementation 'junit:junit:4.12'
+    testImplementation 'org.spockframework:spock-core:0.7-groovy-2.0'
+    testImplementation 'cglib:cglib-nodep:3.1'
+    testImplementation 'org.objenesis:objenesis:2.1'
 }
 
 sourceSets {
-
     main {
         java {
         }
@@ -57,13 +59,13 @@ sourceSets {
 }
 
 configurations {
-    intTestCompile.extendsFrom testCompile
-    intTestRuntime.extendsFrom testRuntime
+    intTestImplementation.extendsFrom testImplementation
+    intTestRuntimeOnly.extendsFrom testRuntimeOnly
 }
 
-task intTest(type:Test){
+task intTest(type: Test) {
     description = "Run integration tests (located in src/intTest/...)."
-    testClassesDir = project.sourceSets.intTest.output.classesDir
+    testClassesDirs = project.sourceSets.intTest.output.classesDirs
     classpath = project.sourceSets.intTest.runtimeClasspath
 }
 
@@ -73,68 +75,63 @@ test {
     }
 }
 
-task javadocJar(type: Jar) {
-    classifier = 'javadoc'
-    from javadoc
-}
-
-task sourcesJar(type: Jar) {
-    classifier = 'sources'
-    from sourceSets.main.allSource
-}
-
-artifacts {
-    archives javadocJar, sourcesJar
+java {
+    withJavadocJar()
+    withSourcesJar()
 }
 
 signing {
-    required { isReleaseVersion && gradle.taskGraph.hasTask("uploadArchives") }
-    sign configurations.archives
+    required { isReleaseVersion && gradle.taskGraph.hasTask("publish") }
+    sign publishing.publications
 }
 
-def ossrhUsername = hasProperty('ossrhUsername') ? ossrhUsername : ''
-def ossrhPassword = hasProperty('ossrhPassword') ? ossrhPassword : ''
+def ossrhUsername = findProperty('ossrhUsername') ?: ''
+def ossrhPassword = findProperty('ossrhPassword') ?: ''
 
-uploadArchives {
-    repositories {
-        mavenDeployer {
-            beforeDeployment { MavenDeployment deployment -> signing.signPom(deployment) }
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            artifactId = 'yavijava'
+            from components.java
 
-            repository(url: "https://oss.sonatype.org/service/local/staging/deploy/maven2/") {
-                authentication(userName: ossrhUsername, password: ossrhPassword)
-            }
-
-            snapshotRepository(url: "https://oss.sonatype.org/content/repositories/snapshots/") {
-                authentication(userName: ossrhUsername, password: ossrhPassword)
-            }
-
-            pom.project {
-                name 'yavijava'
-                packaging 'jar'
-                // optionally artifactId can be defined here
-                description 'Java library for VMware vSphere'
-                url 'https://github.com/yavijava/yavijava'
+            pom {
+                name = 'yavijava'
+                packaging = 'jar'
+                description = 'Java library for VMware vSphere'
+                url = 'https://github.com/yavijava/yavijava'
 
                 scm {
-                    connection 'scm:git:https://github.com/yavijava/yavijava.git'
-                    developerConnection 'scm:git:https://github.com/yavijava/yavijava.git'
-                    url 'https://github.com/yavijava/yavijava'
+                    connection = 'scm:git:https://github.com/yavijava/yavijava.git'
+                    developerConnection = 'scm:git:https://github.com/yavijava/yavijava.git'
+                    url = 'https://github.com/yavijava/yavijava'
                 }
 
                 licenses {
                     license {
-                        name 'BSD'
-                        url 'http://opensource.org/licenses/BSD-3-Clause'
+                        name = 'BSD'
+                        url = 'http://opensource.org/licenses/BSD-3-Clause'
                     }
                 }
 
                 developers {
                     developer {
-                        id 'michaelrice'
-                        name 'Michael Rice'
-                        email 'michael@michaelrice.org'
+                        id = 'michaelrice'
+                        name = 'Michael Rice'
+                        email = 'michael@michaelrice.org'
                     }
                 }
+            }
+        }
+    }
+
+    repositories {
+        maven {
+            def releasesUrl = "https://oss.sonatype.org/service/local/staging/deploy/maven2/"
+            def snapshotsUrl = "https://oss.sonatype.org/content/repositories/snapshots/"
+            url = version.endsWith('SNAPSHOT') ? snapshotsUrl : releasesUrl
+            credentials {
+                username = ossrhUsername
+                password = ossrhPassword
             }
         }
     }
