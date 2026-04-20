@@ -32,7 +32,8 @@ package com.vmware.vim25.ws;
 
 import com.vmware.vim25.ManagedObjectReference;
 import com.vmware.vim25.mo.util.MorUtil;
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.doublecloud.ws.util.ReflectUtil;
 import org.doublecloud.ws.util.TypeUtil;
 import org.doublecloud.ws.util.XmlUtil;
@@ -45,7 +46,7 @@ import java.util.Calendar;
 
 public abstract class XmlGen {
 
-    private static Logger log = Logger.getLogger(XmlGen.class);
+    private static Logger log = LoggerFactory.getLogger(XmlGen.class);
 
     public static String toXML(String methodName, Argument[] paras, String vimNameSpace) {
         StringBuilder sb = new StringBuilder();

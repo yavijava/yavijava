@@ -32,7 +32,8 @@ package com.vmware.vim25.mo;
 import com.vmware.vim25.*;
 import com.vmware.vim25.mo.util.MorUtil;
 import com.vmware.vim25.mo.util.PropertyCollectorUtil;
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.lang.reflect.Array;
 import java.lang.reflect.Constructor;
@@ -55,7 +56,7 @@ abstract public class ManagedObject {
     /**
      * Create Logger
      */
-    private static Logger log = Logger.getLogger(ManagedObject.class);
+    private static Logger log = LoggerFactory.getLogger(ManagedObject.class);
 
     static {
         MO_PACKAGE_NAME = ManagedObject.class.getPackage().getName();

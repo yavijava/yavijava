@@ -10,7 +10,8 @@ import org.apache.http.conn.ssl.SSLConnectionSocketFactory;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.net.ssl.TrustManager;
 import java.io.IOException;
@@ -44,7 +45,7 @@ public class ApacheHttpClient extends SoapClient {
      * What rolls down stairs alone or in pairs?
      * Its log log log!
      */
-    private static final Logger log = Logger.getLogger(ApacheHttpClient.class);
+    private static final Logger log = LoggerFactory.getLogger(ApacheHttpClient.class);
 
     /**
      * The XML serialization/de-serialization engine

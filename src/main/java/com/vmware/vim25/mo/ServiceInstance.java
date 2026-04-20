@@ -32,7 +32,8 @@ package com.vmware.vim25.mo;
 import com.vmware.vim25.*;
 import com.vmware.vim25.mo.util.MorUtil;
 import com.vmware.vim25.ws.Client;
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.net.ssl.TrustManager;
 import java.net.MalformedURLException;
@@ -48,7 +49,7 @@ import java.util.Calendar;
 
 public class ServiceInstance extends ManagedObject {
     private ServiceContent serviceContent = null;
-    private static Logger log = Logger.getLogger(ServiceInstance.class);
+    private static Logger log = LoggerFactory.getLogger(ServiceInstance.class);
     final static ManagedObjectReference SERVICE_INSTANCE_MOR;
     public final static String VIM25_NAMESPACE = " xmlns=\"urn:vim25\">";
     public final static String VIM20_NAMESPACE = " xmlns=\"urn:vim2\">";

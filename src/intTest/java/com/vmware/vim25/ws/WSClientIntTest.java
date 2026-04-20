@@ -9,7 +9,7 @@ import java.util.Calendar;
 
 import javax.net.ssl.*;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;\nimport org.slf4j.LoggerFactory;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
