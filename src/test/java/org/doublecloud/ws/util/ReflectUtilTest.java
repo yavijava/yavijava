@@ -1,16 +1,14 @@
 package org.doublecloud.ws.util;
 
-import com.vmware.vim25.AboutInfo;
 import com.vmware.vim25.PropertyChange;
 import org.doublecloud.ws.util.testUtils.*;
-import org.junit.Assert;
 import org.junit.Test;
 
 import java.lang.reflect.Field;
-import java.nio.charset.Charset;
-import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Base64;
+import java.util.Calendar;
 import java.util.List;
 
 import static org.junit.Assert.*;
@@ -42,36 +40,62 @@ public class ReflectUtilTest {
     }
 
     @Test
-    public void testToByteArray() throws Exception {
-        List<String> values = new ArrayList<String>();
-        char[] chars = "ox991LwhCGLf2gntXqKkSPdqC+A=".toCharArray();
-        for (char c: chars) {
+    public void testToByteArray_decodesBase64EncodedCharList() throws Exception {
+        String base64 = "ox991LwhCGLf2gntXqKkSPdqC+A=";
+        List<String> values = new ArrayList<>();
+        for (char c : base64.toCharArray()) {
             values.add(Character.toString(c));
         }
         byte[] actual = ReflectUtil.toByteArray(values);
-        byte[] expected = javax.xml.bind.DatatypeConverter.parseBase64Binary("ox991LwhCGLf2gntXqKkSPdqC+A=");
+        byte[] expected = Base64.getDecoder().decode(base64);
         assertArrayEquals(expected, actual);
     }
 
     @Test
     public void testReflectUtil_ParseToObject_Returns_String_Array() throws Exception {
-        String type = "String[]";
-        List<String> strings = new ArrayList<String>();
-        strings.add("string1");
-        strings.add("string2");
-        strings.add("string3");
-        String[] stringArray = (String[]) ReflectUtil.parseToObject(type, strings);
-        assert stringArray.getClass().isArray();
+        List<String> strings = Arrays.asList("string1", "string2", "string3");
+        String[] stringArray = (String[]) ReflectUtil.parseToObject("String[]", strings);
+        assertTrue(stringArray.getClass().isArray());
     }
 
     @Test
     public void testReflectUtil_SetObjectField_Supports_Base64Binary_To_ByteArray() throws Exception {
-        String base64BinaryStr = "EtUGWJdr2BYg3Dom7G6oPAlHHcc=";
         Object obj = new PropertyChange();
         Field field = PropertyChange.class.getField("val");
-        String type = "base64Binary";
-        ReflectUtil.setObjectField(obj, field, type, base64BinaryStr);
-        PropertyChange pc = (PropertyChange) obj;
-        assert pc.getVal() instanceof byte[];
+        ReflectUtil.setObjectField(obj, field, "base64Binary", "EtUGWJdr2BYg3Dom7G6oPAlHHcc=");
+        assertTrue(((PropertyChange) obj).getVal() instanceof byte[]);
+    }
+
+    @Test
+    public void testReflectUtil_SetObjectField_Supports_DateTime_To_Calendar() throws Exception {
+        Object obj = new PropertyChange();
+        Field field = PropertyChange.class.getField("val");
+        ReflectUtil.setObjectField(obj, field, "dateTime", "2015-06-19T10:00:00.000-05:00");
+        assertTrue(((PropertyChange) obj).getVal() instanceof Calendar);
+    }
+
+    @Test
+    public void testReflectUtil_SetObjectField_DateTime_Preserves_TimeInMillis() throws Exception {
+        Object obj = new PropertyChange();
+        Field field = PropertyChange.class.getField("val");
+        ReflectUtil.setObjectField(obj, field, "dateTime", "2015-06-19T10:00:00.000-05:00");
+        Calendar cal = (Calendar) ((PropertyChange) obj).getVal();
+        // 2015-06-19T10:00:00-05:00 == 2015-06-19T15:00:00Z
+        Calendar expected = Calendar.getInstance(java.util.TimeZone.getTimeZone("UTC"));
+        expected.set(2015, Calendar.JUNE, 19, 15, 0, 0);
+        expected.set(Calendar.MILLISECOND, 0);
+        assertEquals(expected.getTimeInMillis(), cal.getTimeInMillis());
+    }
+
+    @Test
+    public void testReflectUtil_ParseToObject_Returns_Calendar_For_Calendar_Type() throws Exception {
+        Object result = ReflectUtil.parseToObject("Calendar", Arrays.asList("2015-06-19T10:00:00.000-05:00"));
+        assertTrue(result instanceof Calendar);
+    }
+
+    @Test
+    public void testReflectUtil_ParseToObject_Returns_Calendar_For_dateTime_Alias() throws Exception {
+        Object result = ReflectUtil.parseToObject("dateTime", Arrays.asList("2015-06-19T10:00:00.000-05:00"));
+        assertTrue(result instanceof Calendar);
     }
 }

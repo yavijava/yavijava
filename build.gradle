@@ -32,6 +32,7 @@ dependencies {
     testImplementation 'org.apache.groovy:groovy-all:4.0.24'
     testImplementation 'net.bytebuddy:byte-buddy:1.17.5'
     testRuntimeOnly 'org.objenesis:objenesis:3.3'
+    testRuntimeOnly 'org.junit.vintage:junit-vintage-engine:5.13.0'
 }
 
 sourceSets {
@@ -72,6 +73,8 @@ task intTest(type: Test) {
 
 test {
     useJUnitPlatform()
+    // Needed for XmlGenDom to set detailMessage on JDK exception classes via reflection
+    jvmArgs '--add-opens', 'java.base/java.lang=ALL-UNNAMED'
     testLogging {
         events 'started', 'passed', 'failed'
     }
