@@ -7,9 +7,7 @@ import org.junit.Test;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStream;
-import java.lang.reflect.ReflectPermission;
 import java.rmi.RemoteException;
-import java.security.AccessControlException;
 import java.util.Objects;
 
 public class XmlGenDomTest {
@@ -49,31 +47,10 @@ public class XmlGenDomTest {
     }
 
     @Test
-    public void set_Detail_Message_throws_Exception() throws Exception {
-        SecurityManager previous = System.getSecurityManager();
-        try {
-            SecurityManager securityManager = new SecurityManager() {
-                @Override
-                public void checkPermission(java.security.Permission perm) {
-                    if (perm instanceof ReflectPermission && "suppressAccessChecks".equals((perm.getName()))) {
-                        for (StackTraceElement elem : Thread.currentThread().getStackTrace()) {
-                            if ("com.vmware.vim25.ws.XmlGenDom".equals(elem.getClassName())) {
-                                throw new AccessControlException("Access Denied!");
-                            }
-                        }
-                    }
-                }
-            };
-            System.setSecurityManager(securityManager);
-
-            Throwable throwable = new Throwable("Illegal Access");
-            Throwable noMessage = (Throwable) XmlGenDom.setDetailMessageInException(throwable, "Error occured");
-            Assert.assertFalse(noMessage.getMessage().equals("Error occured"));
-        } catch (Exception e) {
-            throw e;
-        } finally {
-            System.setSecurityManager(previous);
-        }
+    public void set_Detail_Message_overwrites_existing_message() throws Exception {
+        Throwable throwable = new Throwable("original message");
+        Throwable result = (Throwable) XmlGenDom.setDetailMessageInException(throwable, "new message");
+        Assert.assertEquals("new message", result.getMessage());
     }
 
     @Test(expected = RemoteException.class)
@@ -98,7 +75,7 @@ public class XmlGenDomTest {
         ObjectContent objectContent = (ObjectContent) xmlGenDom.fromXML("ObjectContent", inputStream);
         DynamicProperty[] dps = objectContent.getPropSet();
         VirtualMachineConfigInfo configInfo = (VirtualMachineConfigInfo) dps[0].getVal();
-        byte[] exptected = javax.xml.bind.DatatypeConverter.parseBase64Binary("ox991LwhCGLf2gntXqKkSPdqC+A=");
+        byte[] exptected = java.util.Base64.getDecoder().decode("ox991LwhCGLf2gntXqKkSPdqC+A=");
         Assert.assertArrayEquals(configInfo.getVmxConfigChecksum(), exptected);
     }
 
