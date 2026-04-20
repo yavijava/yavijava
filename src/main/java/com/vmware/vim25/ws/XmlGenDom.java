@@ -46,7 +46,6 @@ import java.lang.reflect.Array;
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
 import java.rmi.RemoteException;
-import java.security.AccessControlException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -176,7 +175,7 @@ class XmlGenDom extends XmlGen {
             } catch (IllegalAccessException e) {
                 log.info("The fault string: \"" + detailMessage + "\", was unable to be set in exception due to: ", e);
                 return obj;
-            } catch (AccessControlException e) {
+            } catch (SecurityException e) {
                 log.info("The fault string: \"" + detailMessage + "\", was unable to be set in exception due to: ", e);
                 return obj;
             }

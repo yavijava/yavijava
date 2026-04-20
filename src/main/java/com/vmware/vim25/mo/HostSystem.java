@@ -123,7 +123,7 @@ public class HostSystem extends ManagedEntity {
      * @since SDK5.5
      */
     public Task enterMaintenanceMode(int timeout, boolean evacuatePoweredOffVms, HostMaintenanceSpec maintenanceSpec) throws Timedout, InvalidState, RuntimeFault, RemoteException {
-        ManagedObjectReference mor = getVimService().enterMaintenanceMode_Task(getMOR(), timeout, new Boolean(evacuatePoweredOffVms), maintenanceSpec);
+        ManagedObjectReference mor = getVimService().enterMaintenanceMode_Task(getMOR(), timeout, Boolean.valueOf(evacuatePoweredOffVms), maintenanceSpec);
         return new Task(getServerConnection(), mor);
     }
 
@@ -140,7 +140,7 @@ public class HostSystem extends ManagedEntity {
     }
 
     public Task powerDownHostToStandBy(int timeSec, boolean evacuatePoweredOffVms) throws RequestCanceled, HostPowerOpFailed, NotSupported, Timedout, InvalidState, RuntimeFault, RemoteException {
-        ManagedObjectReference mor = getVimService().powerDownHostToStandBy_Task(getMOR(), timeSec, new Boolean(evacuatePoweredOffVms));
+        ManagedObjectReference mor = getVimService().powerDownHostToStandBy_Task(getMOR(), timeSec, Boolean.valueOf(evacuatePoweredOffVms));
         return new Task(getServerConnection(), mor);
     }
 
@@ -168,7 +168,7 @@ public class HostSystem extends ManagedEntity {
     }
 
     public long queryMemoryOverhead(long memorySize, int videoRamSize, int numVcpus) throws RuntimeFault, RemoteException {
-        return getVimService().queryMemoryOverhead(getMOR(), memorySize, new Integer(videoRamSize), numVcpus);
+        return getVimService().queryMemoryOverhead(getMOR(), memorySize, Integer.valueOf(videoRamSize), numVcpus);
     }
 
     public long queryMemoryOverheadEx(VirtualMachineConfigInfo vmConfigInfo) throws RuntimeFault, RemoteException {
