@@ -3,7 +3,8 @@ package com.vmware.vim25.mo;
 import com.vmware.vim25.*;
 import com.vmware.vim25.mo.util.MorUtil;
 import com.vmware.vim25.mo.util.PropertyCollectorUtil;
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.rmi.RemoteException;
 
@@ -11,7 +12,7 @@ public class InventoryNavigator {
     private ManagedEntity rootEntity = null;
     private SelectionSpec[] selectionSpecs = null;
 
-    private static Logger log = Logger.getLogger(InventoryNavigator.class);
+    private static Logger log = LoggerFactory.getLogger(InventoryNavigator.class);
 
     public InventoryNavigator(ManagedEntity rootEntity) {
         this.rootEntity = rootEntity;

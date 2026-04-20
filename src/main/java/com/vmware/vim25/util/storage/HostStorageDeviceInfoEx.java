@@ -1,7 +1,8 @@
 package com.vmware.vim25.util.storage;
 
 import com.vmware.vim25.*;
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -15,7 +16,7 @@ public class HostStorageDeviceInfoEx {
     /**
      * Logger to log information.
      */
-    Logger log = Logger.getLogger(HostStorageDeviceInfoEx.class);
+    Logger log = LoggerFactory.getLogger(HostStorageDeviceInfoEx.class);
 
     /**
      * Host Storage Device Information.
