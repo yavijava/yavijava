@@ -140,6 +140,6 @@ class MorUtilTestSpec extends Specification {
         String message = shouldFail ClassCastException, {MorUtil.createExactManagedObject(sc, mor1)}
 
         then:
-        message.contains("com.vmware.vim25.mo.TestExceptionNotCaught cannot be cast to com.vmware.vim25.mo.ManagedObject")
+        message.contains("com.vmware.vim25.mo.TestExceptionNotCaught") && message.contains("com.vmware.vim25.mo.ManagedObject")
     }
 }

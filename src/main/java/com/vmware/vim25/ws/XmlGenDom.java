@@ -166,7 +166,9 @@ class XmlGenDom extends XmlGen {
                 Field field = current.getDeclaredField("detailMessage");
                 if ((!Modifier.isPublic(field.getModifiers()) || !Modifier.isPublic(field.getDeclaringClass().getModifiers()) ||
                         Modifier.isFinal(field.getModifiers())) && !field.isAccessible()) {
-                    field.setAccessible(true);
+                    if (!field.trySetAccessible()) {
+                        return obj;
+                    }
                 }
                 field.set(obj, detailMessage);
                 return obj;
