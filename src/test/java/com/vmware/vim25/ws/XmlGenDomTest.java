@@ -75,7 +75,7 @@ public class XmlGenDomTest {
         ObjectContent objectContent = (ObjectContent) xmlGenDom.fromXML("ObjectContent", inputStream);
         DynamicProperty[] dps = objectContent.getPropSet();
         VirtualMachineConfigInfo configInfo = (VirtualMachineConfigInfo) dps[0].getVal();
-        byte[] exptected = javax.xml.bind.DatatypeConverter.parseBase64Binary("ox991LwhCGLf2gntXqKkSPdqC+A=");
+        byte[] exptected = java.util.Base64.getDecoder().decode("ox991LwhCGLf2gntXqKkSPdqC+A=");
         Assert.assertArrayEquals(configInfo.getVmxConfigChecksum(), exptected);
     }
 

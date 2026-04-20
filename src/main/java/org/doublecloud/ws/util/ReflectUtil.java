@@ -32,11 +32,12 @@ package org.doublecloud.ws.util;
 import java.lang.reflect.Array;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
+import java.util.Base64;
 import java.util.Calendar;
 import java.util.Collections;
+import java.util.GregorianCalendar;
 import java.util.List;
-
-import javax.xml.bind.DatatypeConverter;
+import javax.xml.datatype.DatatypeFactory;
 
 public class ReflectUtil {
 
@@ -117,8 +118,12 @@ public class ReflectUtil {
             field.set(object, Boolean.valueOf(value));
         }
         else if ("Calendar".equals(type) || "dateTime".equals(type)) {
-            Calendar cal = DatatypeConverter.parseTime(value);
-            field.set(object, cal);
+            try {
+                Calendar cal = DatatypeFactory.newInstance().newXMLGregorianCalendar(value).toGregorianCalendar();
+                field.set(object, cal);
+            } catch (javax.xml.datatype.DatatypeConfigurationException e) {
+                throw new RuntimeException("Failed to parse dateTime: " + value, e);
+            }
         }
         else if ("double".equals(type)) {
             field.set(object, Double.parseDouble(value));
@@ -127,7 +132,7 @@ public class ReflectUtil {
             field.set(object, Double.valueOf(value));
         }
         else if ("base64Binary".equals(type)) {
-            field.set(object, DatatypeConverter.parseBase64Binary(value));
+            field.set(object, Base64.getDecoder().decode(value));
         }
         else {
             throw new RuntimeException("Unexpected Type at setObjectField: " + field.getType().getCanonicalName() + field.getName());
@@ -177,7 +182,7 @@ public class ReflectUtil {
             for (String s: values) {
                 tempStr += s;
             }
-            return DatatypeConverter.parseBase64Binary(tempStr);
+            return Base64.getDecoder().decode(tempStr);
         }
     }
 
@@ -273,7 +278,11 @@ public class ReflectUtil {
             return toBooleanArray(values);
         }
         else if ("Calendar".equals(type) || "dateTime".equals(type)) {
-            return DatatypeConverter.parseTime(values.get(0));
+            try {
+                return DatatypeFactory.newInstance().newXMLGregorianCalendar(values.get(0)).toGregorianCalendar();
+            } catch (javax.xml.datatype.DatatypeConfigurationException e) {
+                throw new RuntimeException("Failed to parse dateTime: " + values.get(0), e);
+            }
         }
         else if ("double".equals(type)) {
             return Double.valueOf(values.get(0));

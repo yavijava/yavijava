@@ -38,11 +38,13 @@ import org.doublecloud.ws.util.ReflectUtil;
 import org.doublecloud.ws.util.TypeUtil;
 import org.doublecloud.ws.util.XmlUtil;
 
-import javax.xml.bind.DatatypeConverter;
 import java.io.InputStream;
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
 import java.util.Calendar;
+import java.util.GregorianCalendar;
+import javax.xml.datatype.DatatypeConfigurationException;
+import javax.xml.datatype.DatatypeFactory;
 
 public abstract class XmlGen {
 
@@ -151,7 +153,15 @@ public abstract class XmlGen {
             sb.append("<").append(tagName).append(">").append(obj).append("</").append(tagName).append(">");
         }
         else if (obj instanceof Calendar) {
-            sb.append("<").append(tagName).append(" xsi:type=\"xsd:dateTime\">").append(DatatypeConverter.printDateTime((Calendar) obj)).append("</").append(tagName).append(">");
+            try {
+                Calendar cal = (Calendar) obj;
+                GregorianCalendar gcal = new GregorianCalendar(cal.getTimeZone());
+                gcal.setTimeInMillis(cal.getTimeInMillis());
+                String dateTimeStr = DatatypeFactory.newInstance().newXMLGregorianCalendar(gcal).toXMLFormat();
+                sb.append("<").append(tagName).append(" xsi:type=\"xsd:dateTime\">").append(dateTimeStr).append("</").append(tagName).append(">");
+            } catch (DatatypeConfigurationException e) {
+                throw new RuntimeException("Failed to serialize Calendar to xsd:dateTime", e);
+            }
         }
         else { // VIM type
             if (clazz == type) {
