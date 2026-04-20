@@ -29,8 +29,6 @@ POSSIBILITY OF SUCH DAMAGE.
 
 package com.vmware.vim.cf;
 import java.util.Map;
-import java.util.Observable;
-import java.util.Observer;
 import java.util.concurrent.ConcurrentHashMap;
 
 import com.vmware.vim25.ManagedObjectReference;
@@ -47,7 +45,7 @@ import static com.vmware.vim.cf.NullObject.NULL;
  * @author Steve JIN (sjin@vmware.com)
  */
 
-class ManagedObjectCache implements Observer
+class ManagedObjectCache implements PropertyFilterUpdateListener
 {
     // each value is yet another child HashMap corresponding to a ManagedObject
     // The child HashMap has key -- property name; value -- property value
@@ -66,51 +64,46 @@ class ManagedObjectCache implements Observer
         return items;
     }
 
-    public void update(Observable obj, Object arg)
+    public void onUpdate(PropertyFilterUpdate[] pfus)
     {
-        if (arg instanceof PropertyFilterUpdate[])
+        for(int i=0; pfus!=null && i< pfus.length; i++)
         {
-            PropertyFilterUpdate[] pfus = (PropertyFilterUpdate[]) arg;
-            
-            for(int i=0; pfus!=null && i< pfus.length; i++)
+            ObjectUpdate[] ous = pfus[i].getObjectSet();
+            for(int j=0; ous!=null && j < ous.length; j++)
             {
-                ObjectUpdate[] ous = pfus[i].getObjectSet();
-                for(int j=0; ous!=null && j < ous.length; j++)
+                ManagedObjectReference mor = ous[j].getObj();
+                if(! items.containsKey(mor))
                 {
-                    ManagedObjectReference mor = ous[j].getObj();
-                    if(! items.containsKey(mor))
+                    items.put(mor, new ConcurrentHashMap<String, Object>());
+                }
+                Map<String, Object> moMap = items.get(mor);
+
+                PropertyChange[] pcs = ous[j].getChangeSet();
+                if(pcs==null)
+                {
+                  continue;
+                }
+                for(int k=0; k < pcs.length; k++)
+                {
+                    Object value = pcs[k].getVal();
+                    value = value == null ? NULL : value; //null is not allowed as value in CHM
+                    String propName = pcs[k].getName();
+                    if(moMap.containsKey(propName))
                     {
-                        items.put(mor, new ConcurrentHashMap<String, Object>());
+                        moMap.put(propName, value);
                     }
-                    Map<String, Object> moMap = items.get(mor);
-                    
-                    PropertyChange[] pcs = ous[j].getChangeSet();
-                    if(pcs==null)
+                    else
                     {
-                      continue;
-                    }
-                    for(int k=0; k < pcs.length; k++)
-                    {
-                    	  Object value = pcs[k].getVal();
-                    	  value = value == null ? NULL : value; //null is not allowed as value in CHM
-                    	  String propName = pcs[k].getName();
-                    	  if(moMap.containsKey(propName))
-                    	  {
-                    	    moMap.put(propName, value);
-                    	  }
-                    	  else
-                    	  {
-                    	    String parentPropName = getExistingParentPropName(moMap, propName);
-                    	    if(parentPropName != null)
-                    	    {
-                    	      ManagedObject mo = MorUtil.createExactManagedObject(si.getServerConnection(), mor);
-                    	      moMap.put(parentPropName, mo.getPropertyByPath(parentPropName));
-                    	    }
-                    	    else
-                    	    { //almost impossible to be here.
-                    	      moMap.put(propName, value);
-                    	    }
-                    	  }
+                        String parentPropName = getExistingParentPropName(moMap, propName);
+                        if(parentPropName != null)
+                        {
+                            ManagedObject mo = MorUtil.createExactManagedObject(si.getServerConnection(), mor);
+                            moMap.put(parentPropName, mo.getPropertyByPath(parentPropName));
+                        }
+                        else
+                        {
+                            moMap.put(propName, value);
+                        }
                     }
                 }
             }

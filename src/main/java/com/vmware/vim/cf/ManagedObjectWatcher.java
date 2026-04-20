@@ -30,7 +30,8 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim.cf;
 
 import java.rmi.RemoteException;
-import java.util.Observable;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Vector;
 
 import com.vmware.vim25.NotAuthenticated;
@@ -49,27 +50,30 @@ import org.slf4j.LoggerFactory;
  * @author Steve JIN (sjin@vmware.com)
  */
 
-class ManagedObjectWatcher extends Observable implements Runnable {
+class ManagedObjectWatcher implements Runnable {
 
-    /**
-     * PropertyCollector
-     */
     private PropertyCollector pc;
-    /**
-     * Vector containing PropertyFilters
-     */
     private Vector<PropertyFilter> filters = new Vector<PropertyFilter>();
-    /**
-     * Version
-     */
     private String version = "";
-    /**
-     * Logger
-     */
     private static Logger log = LoggerFactory.getLogger(ManagedObjectWatcher.class);
+    private final List<PropertyFilterUpdateListener> listeners = new ArrayList<>();
 
     public ManagedObjectWatcher(PropertyCollector pc) {
         this.pc = pc;
+    }
+
+    public void addListener(PropertyFilterUpdateListener listener) {
+        listeners.add(listener);
+    }
+
+    public void removeListener(PropertyFilterUpdateListener listener) {
+        listeners.remove(listener);
+    }
+
+    void notifyListeners(PropertyFilterUpdate[] updates) {
+        for (PropertyFilterUpdateListener listener : listeners) {
+            listener.onUpdate(updates);
+        }
     }
 
     /**
@@ -118,8 +122,7 @@ class ManagedObjectWatcher extends Observable implements Runnable {
             try {
                 UpdateSet update = pc.waitForUpdates(version);
                 PropertyFilterUpdate[] pfu = update.getFilterSet();
-                this.setChanged();
-                this.notifyObservers(pfu);
+                notifyListeners(pfu);
                 version = update.getVersion();
             }
             catch (NotAuthenticated na) {

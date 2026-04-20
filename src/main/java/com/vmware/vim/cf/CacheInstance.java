@@ -51,7 +51,7 @@ public class CacheInstance
 	  this.si = si;
 		mom = new ManagedObjectWatcher(si.getPropertyCollector());
 		cache = new ManagedObjectCache(si);
-		mom.addObserver(cache);
+		mom.addListener(cache);
 	}
 	
 	/**
