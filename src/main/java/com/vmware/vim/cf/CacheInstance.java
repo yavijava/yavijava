@@ -158,7 +158,7 @@ public class CacheInstance
 	public void destroy()
 	{
 		mom.cleanUp();
-		mThread.stop();
+		mThread.interrupt();
 		si = null;
 		mom = null;
 		cache = null;

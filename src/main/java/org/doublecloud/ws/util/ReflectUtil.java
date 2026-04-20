@@ -84,31 +84,31 @@ public class ReflectUtil {
             field.set(object, Integer.parseInt(value));
         }
         else if ("Integer".equals(type)) {
-            field.set(object, new Integer(value));
+            field.set(object, Integer.valueOf(value));
         }
         else if ("short".equals(type)) {
             field.set(object, Short.parseShort(value));
         }
         else if ("Short".equals(type)) {
-            field.set(object, new Short(value));
+            field.set(object, Short.valueOf(value));
         }
         else if ("byte".equals(type)) {
             field.set(object, Byte.parseByte(value));
         }
         else if ("Byte".equals(type)) {
-            field.set(object, new Byte(value));
+            field.set(object, Byte.valueOf(value));
         }
         else if ("long".equals(type)) {
             field.set(object, Long.parseLong(value));
         }
         else if ("Long".equals(type)) {
-            field.set(object, new Long(value));
+            field.set(object, Long.valueOf(value));
         }
         else if ("float".equals(type)) {
             field.set(object, Float.parseFloat(value));
         }
         else if ("Float".equals(type)) {
-            field.set(object, new Float(value));
+            field.set(object, Float.valueOf(value));
         }
         else if ("boolean".equals(type)) {
             field.set(object, Boolean.parseBoolean(value));
@@ -124,7 +124,7 @@ public class ReflectUtil {
             field.set(object, Double.parseDouble(value));
         }
         else if ("Double".equals(type)) {
-            field.set(object, new Double(value));
+            field.set(object, Double.valueOf(value));
         }
         else if ("base64Binary".equals(type)) {
             field.set(object, DatatypeConverter.parseBase64Binary(value));
@@ -237,31 +237,31 @@ public class ReflectUtil {
             return values.toArray(new String[values.size()]);
         }
         else if ("int".equals(type)) {
-            return new Integer(values.get(0));
+            return Integer.valueOf(values.get(0));
         }
         else if ("int[]".equals(type)) {
             return toIntArray(values);
         }
         else if ("short".equals(type)) {
-            return new Short(values.get(0));
+            return Short.valueOf(values.get(0));
         }
         else if ("short[]".equals(type)) {
             return toShortArray(values);
         }
         else if ("byte".equals(type)) {
-            return new Byte(values.get(0));
+            return Byte.valueOf(values.get(0));
         }
         else if ("byte[]".equals(type)) {
             return toByteArray(values);
         }
         else if ("long".equals(type)) {
-            return new Long(values.get(0));
+            return Long.valueOf(values.get(0));
         }
         else if ("long[]".equals(type)) {
             return toLongArray(values);
         }
         else if ("float".equals(type)) {
-            return new Float(values.get(0));
+            return Float.valueOf(values.get(0));
         }
         else if ("float[]".equals(type)) {
             return toFloatArray(values);
@@ -276,7 +276,7 @@ public class ReflectUtil {
             return DatatypeConverter.parseTime(values.get(0));
         }
         else if ("double".equals(type)) {
-            return new Double(values.get(0));
+            return Double.valueOf(values.get(0));
         }
         else if ("double[]".equals(type)) {
             return toDoubleArray(values);
