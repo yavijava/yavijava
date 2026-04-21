@@ -53,6 +53,11 @@ public class CacheInstance
 		cache = new ManagedObjectCache(si);
 		mom.addListener(cache);
 	}
+
+	CacheInstance(ManagedObjectCache cache)
+	{
+		this.cache = cache;
+	}
 	
 	/**
 	 * Add the managed objects and their properties to be watched.
@@ -105,7 +110,19 @@ public class CacheInstance
 	 */
   public Object getCopy(ManagedObjectReference mor, String propName)
   {
-    return getCopy(mor, propName);
+    Object obj = get(mor, propName);
+    if(obj == null)
+    {
+      return null;
+    }
+    try
+    {
+      obj = DeepCopier.deepCopy(obj);
+    } catch(Exception e)
+    {
+      throw new RuntimeException(e);
+    }
+    return obj;
   }
    
   /**
