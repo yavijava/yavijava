@@ -28,75 +28,22 @@ POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
 
 package com.vmware.vim25;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * @author Steve Jin (http://www.doublecloud.org)
  * @version 5.1
  */
 
-@SuppressWarnings("all")
 public class HostNumericSensorInfo extends DynamicData {
-    public String name;
-    public ElementDescription healthState;
-    public long currentReading;
-    public int unitModifier;
-    public String baseUnits;
-    public String rateUnits;
-    public String sensorType;
-
-    public String getName() {
-        return this.name;
-    }
-
-    public ElementDescription getHealthState() {
-        return this.healthState;
-    }
-
-    public long getCurrentReading() {
-        return this.currentReading;
-    }
-
-    public int getUnitModifier() {
-        return this.unitModifier;
-    }
-
-    public String getBaseUnits() {
-        return this.baseUnits;
-    }
-
-    public String getRateUnits() {
-        return this.rateUnits;
-    }
-
-    public String getSensorType() {
-        return this.sensorType;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setHealthState(ElementDescription healthState) {
-        this.healthState = healthState;
-    }
-
-    public void setCurrentReading(long currentReading) {
-        this.currentReading = currentReading;
-    }
-
-    public void setUnitModifier(int unitModifier) {
-        this.unitModifier = unitModifier;
-    }
-
-    public void setBaseUnits(String baseUnits) {
-        this.baseUnits = baseUnits;
-    }
-
-    public void setRateUnits(String rateUnits) {
-        this.rateUnits = rateUnits;
-    }
-
-    public void setSensorType(String sensorType) {
-        this.sensorType = sensorType;
-    }
+    @Getter @Setter public String name;
+    @Getter @Setter public ElementDescription healthState;
+    @Getter @Setter public long currentReading;
+    @Getter @Setter public int unitModifier;
+    @Getter @Setter public String baseUnits;
+    @Getter @Setter public String rateUnits;
+    @Getter @Setter public String sensorType;
+    @Getter @Setter public String id;
+    @Getter @Setter public String timeStamp;
 }

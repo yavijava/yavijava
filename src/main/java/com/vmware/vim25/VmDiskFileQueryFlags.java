@@ -28,66 +28,20 @@ POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
 
 package com.vmware.vim25;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * @author Steve Jin (http://www.doublecloud.org)
  * @version 5.1
  */
 
-@SuppressWarnings("all")
 public class VmDiskFileQueryFlags extends DynamicData {
-    public boolean diskType;
-    public boolean capacityKb;
-    public boolean hardwareVersion;
-    public Boolean controllerType;
-    public Boolean diskExtents;
-    public Boolean thin;
-
-    public boolean isDiskType() {
-        return this.diskType;
-    }
-
-    public boolean isCapacityKb() {
-        return this.capacityKb;
-    }
-
-    public boolean isHardwareVersion() {
-        return this.hardwareVersion;
-    }
-
-    public Boolean getControllerType() {
-        return this.controllerType;
-    }
-
-    public Boolean getDiskExtents() {
-        return this.diskExtents;
-    }
-
-    public Boolean getThin() {
-        return this.thin;
-    }
-
-    public void setDiskType(boolean diskType) {
-        this.diskType = diskType;
-    }
-
-    public void setCapacityKb(boolean capacityKb) {
-        this.capacityKb = capacityKb;
-    }
-
-    public void setHardwareVersion(boolean hardwareVersion) {
-        this.hardwareVersion = hardwareVersion;
-    }
-
-    public void setControllerType(Boolean controllerType) {
-        this.controllerType = controllerType;
-    }
-
-    public void setDiskExtents(Boolean diskExtents) {
-        this.diskExtents = diskExtents;
-    }
-
-    public void setThin(Boolean thin) {
-        this.thin = thin;
-    }
+    @Getter @Setter public boolean diskType;
+    @Getter @Setter public boolean capacityKb;
+    @Getter @Setter public boolean hardwareVersion;
+    @Getter @Setter public Boolean controllerType;
+    @Getter @Setter public Boolean diskExtents;
+    @Getter @Setter public Boolean thin;
+    @Getter @Setter public Boolean encryption;
 }

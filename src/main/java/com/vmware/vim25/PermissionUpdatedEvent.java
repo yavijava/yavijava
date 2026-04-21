@@ -28,30 +28,17 @@ POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
 
 package com.vmware.vim25;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * @author Steve Jin (http://www.doublecloud.org)
  * @version 5.1
  */
 
-@SuppressWarnings("all")
 public class PermissionUpdatedEvent extends PermissionEvent {
-    public RoleEventArgument role;
-    public boolean propagate;
-
-    public RoleEventArgument getRole() {
-        return this.role;
-    }
-
-    public boolean isPropagate() {
-        return this.propagate;
-    }
-
-    public void setRole(RoleEventArgument role) {
-        this.role = role;
-    }
-
-    public void setPropagate(boolean propagate) {
-        this.propagate = propagate;
-    }
+    @Getter @Setter public RoleEventArgument role;
+    @Getter @Setter public boolean propagate;
+    @Getter @Setter public RoleEventArgument prevRole;
+    @Getter @Setter public Boolean prevPropagate;
 }

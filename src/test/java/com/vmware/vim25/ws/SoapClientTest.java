@@ -63,9 +63,15 @@ public class SoapClientTest {
     }
 
     @Test
-    public void setSoapAction_unknownVersion_defaultsToV60() {
+    public void setSoapAction_version65_setsV65Action() {
+        client.setSoapActionOnApiVersion("6.5");
+        assertEquals("urn:vim25/6.5", client.soapAction);
+    }
+
+    @Test
+    public void setSoapAction_unknownVersion_defaultsToV65() {
         client.setSoapActionOnApiVersion("99.9");
-        assertEquals("urn:vim25/6.0", client.soapAction);
+        assertEquals("urn:vim25/6.5", client.soapAction);
     }
 
     // --- hexify ---

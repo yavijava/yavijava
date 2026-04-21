@@ -28,7 +28,8 @@ POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
 
 package com.vmware.vim25;
-
+import lombok.Getter;
+import lombok.Setter;
 import java.util.Calendar;
 
 /**
@@ -36,24 +37,12 @@ import java.util.Calendar;
  * @version 5.1
  */
 
-@SuppressWarnings("all")
 public class HostBIOSInfo extends DynamicData {
-    public String biosVersion;
-    public Calendar releaseDate;
-
-    public String getBiosVersion() {
-        return this.biosVersion;
-    }
-
-    public Calendar getReleaseDate() {
-        return this.releaseDate;
-    }
-
-    public void setBiosVersion(String biosVersion) {
-        this.biosVersion = biosVersion;
-    }
-
-    public void setReleaseDate(Calendar releaseDate) {
-        this.releaseDate = releaseDate;
-    }
+    @Getter @Setter public String biosVersion;
+    @Getter @Setter public Calendar releaseDate;
+    @Getter @Setter public String vendor;
+    @Getter @Setter public Integer majorRelease;
+    @Getter @Setter public Integer minorRelease;
+    @Getter @Setter public Integer firmwareMajorRelease;
+    @Getter @Setter public Integer firmwareMinorRelease;
 }

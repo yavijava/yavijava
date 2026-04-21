@@ -28,48 +28,18 @@ POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
 
 package com.vmware.vim25;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * @author Steve Jin (http://www.doublecloud.org)
  * @version 5.1
  */
 
-@SuppressWarnings("all")
 public class CustomFieldValueChangedEvent extends CustomFieldEvent {
-    public ManagedEntityEventArgument entity;
-    public int fieldKey;
-    public String name;
-    public String value;
-
-    public ManagedEntityEventArgument getEntity() {
-        return this.entity;
-    }
-
-    public int getFieldKey() {
-        return this.fieldKey;
-    }
-
-    public String getName() {
-        return this.name;
-    }
-
-    public String getValue() {
-        return this.value;
-    }
-
-    public void setEntity(ManagedEntityEventArgument entity) {
-        this.entity = entity;
-    }
-
-    public void setFieldKey(int fieldKey) {
-        this.fieldKey = fieldKey;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setValue(String value) {
-        this.value = value;
-    }
+    @Getter @Setter public ManagedEntityEventArgument entity;
+    @Getter @Setter public int fieldKey;
+    @Getter @Setter public String name;
+    @Getter @Setter public String value;
+    @Getter @Setter public String prevState;
 }

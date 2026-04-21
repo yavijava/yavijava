@@ -28,21 +28,17 @@ POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
 
 package com.vmware.vim25;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * @author Steve Jin (http://www.doublecloud.org)
  * @version 5.1
  */
 
-@SuppressWarnings("all")
 public class RoleUpdatedEvent extends RoleEvent {
-    public String[] privilegeList;
-
-    public String[] getPrivilegeList() {
-        return this.privilegeList;
-    }
-
-    public void setPrivilegeList(String[] privilegeList) {
-        this.privilegeList = privilegeList;
-    }
+    @Getter @Setter public String[] privilegeList;
+    @Getter @Setter public String prevRoleName;
+    @Getter @Setter public String[] privilegesAdded;
+    @Getter @Setter public String[] privilegesRemoved;
 }

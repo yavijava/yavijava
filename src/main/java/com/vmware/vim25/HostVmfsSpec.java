@@ -28,48 +28,20 @@ POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
 
 package com.vmware.vim25;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * @author Steve Jin (http://www.doublecloud.org)
  * @version 5.1
  */
 
-@SuppressWarnings("all")
 public class HostVmfsSpec extends DynamicData {
-    public HostScsiDiskPartition extent;
-    public Integer blockSizeMb;
-    public int majorVersion;
-    public String volumeName;
-
-    public HostScsiDiskPartition getExtent() {
-        return this.extent;
-    }
-
-    public Integer getBlockSizeMb() {
-        return this.blockSizeMb;
-    }
-
-    public int getMajorVersion() {
-        return this.majorVersion;
-    }
-
-    public String getVolumeName() {
-        return this.volumeName;
-    }
-
-    public void setExtent(HostScsiDiskPartition extent) {
-        this.extent = extent;
-    }
-
-    public void setBlockSizeMb(Integer blockSizeMb) {
-        this.blockSizeMb = blockSizeMb;
-    }
-
-    public void setMajorVersion(int majorVersion) {
-        this.majorVersion = majorVersion;
-    }
-
-    public void setVolumeName(String volumeName) {
-        this.volumeName = volumeName;
-    }
+    @Getter @Setter public HostScsiDiskPartition extent;
+    @Getter @Setter public Integer blockSizeMb;
+    @Getter @Setter public int majorVersion;
+    @Getter @Setter public String volumeName;
+    @Getter @Setter public Integer blockSize;
+    @Getter @Setter public Integer unmapGranularity;
+    @Getter @Setter public String unmapPriority;
 }

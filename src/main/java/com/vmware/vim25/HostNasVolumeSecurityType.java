@@ -1,7 +1,7 @@
 package com.vmware.vim25;
 
 /**
- * Created by Michael Rice on Mon May 25 21:12:07 CDT 2015
+ * Created by Michael Rice on Mon Nov 21 02:06:10 CST 2016
  * This code is auto generated using yavijava_generator
  * https://github.com/yavijava/yavijava_generator
  *
@@ -24,7 +24,8 @@ package com.vmware.vim25;
 public enum HostNasVolumeSecurityType {
 
     AUTH_SYS("AUTH_SYS"),
-    SEC_KRB5("SEC_KRB5");
+    SEC_KRB5("SEC_KRB5"),
+    SEC_KRB5I("SEC_KRB5I");
 
     private String val;
 

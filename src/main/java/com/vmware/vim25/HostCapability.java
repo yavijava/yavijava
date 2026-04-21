@@ -32,7 +32,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 /**
- * Created by Michael Rice on Fri Jun 12 15:16:16 CDT 2015
+ * Created by Michael Rice on Fri Nov 18 12:45:26 CST 2016
  * This code is auto generated using yavijava_generator
  * https://github.com/yavijava/yavijava_generator
  *
@@ -131,9 +131,25 @@ public class HostCapability extends DynamicData {
     @Getter @Setter public Boolean hostAccessManagerSupported;
     @Getter @Setter public Boolean provisioningNicSelectionSupported;
     @Getter @Setter public Boolean nfs41Supported;
+    @Getter @Setter public Boolean nfs41Krb5iSupported;
     @Getter @Setter public Boolean turnDiskLocatorLedSupported;
     @Getter @Setter public Boolean virtualVolumeDatastoreSupported;
     @Getter @Setter public Boolean markAsSsdSupported;
     @Getter @Setter public Boolean markAsLocalSupported;
     @Getter @Setter public Boolean smartCardAuthenticationSupported;
+    @Getter @Setter public Boolean cryptoSupported;
+    @Getter @Setter public Boolean oneKVolumeAPIsSupported;
+    @Getter @Setter public Boolean gatewayOnNicSupported;
+    @Getter @Setter public Boolean upitSupported;
+    @Getter @Setter public Boolean cpuHwMmuSupported;
+    @Getter @Setter public Boolean encryptedVMotionSupported;
+    @Getter @Setter public Boolean encryptionChangeOnAddRemoveSupported;
+    @Getter @Setter public Boolean encryptionHotOperationSupported;
+    @Getter @Setter public Boolean encryptionWithSnapshotsSupported;
+    @Getter @Setter public Boolean encryptionFaultToleranceSupported;
+    @Getter @Setter public Boolean encryptionMemorySaveSupported;
+    @Getter @Setter public Boolean encryptionRDMSupported;
+    @Getter @Setter public Boolean encryptionVFlashSupported;
+    @Getter @Setter public Boolean encryptionCBRCSupported;
+    @Getter @Setter public Boolean encryptionHBRSupported;
 }

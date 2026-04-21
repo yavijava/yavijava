@@ -28,30 +28,16 @@ POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
 
 package com.vmware.vim25;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * @author Steve Jin (http://www.doublecloud.org)
  * @version 5.1
  */
 
-@SuppressWarnings("all")
 public class AccountUpdatedEvent extends HostEvent {
-    public HostAccountSpec spec;
-    public boolean group;
-
-    public HostAccountSpec getSpec() {
-        return this.spec;
-    }
-
-    public boolean isGroup() {
-        return this.group;
-    }
-
-    public void setSpec(HostAccountSpec spec) {
-        this.spec = spec;
-    }
-
-    public void setGroup(boolean group) {
-        this.group = group;
-    }
+    @Getter @Setter public HostAccountSpec spec;
+    @Getter @Setter public boolean group;
+    @Getter @Setter public String prevDescription;
 }

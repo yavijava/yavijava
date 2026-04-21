@@ -28,93 +28,23 @@ POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
 
 package com.vmware.vim25;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * @author Steve Jin (http://www.doublecloud.org)
  * @version 5.1
  */
 
-@SuppressWarnings("all")
 public class VirtualDiskSeSparseBackingInfo extends VirtualDeviceFileBackingInfo {
-    public String diskMode;
-    public Boolean writeThrough;
-    public String uuid;
-    public String contentId;
-    public String changeId;
-    public VirtualDiskSeSparseBackingInfo parent;
-    public String deltaDiskFormat;
-    public Boolean digestEnabled;
-    public Integer grainSize;
-
-    public String getDiskMode() {
-        return this.diskMode;
-    }
-
-    public Boolean getWriteThrough() {
-        return this.writeThrough;
-    }
-
-    public String getUuid() {
-        return this.uuid;
-    }
-
-    public String getContentId() {
-        return this.contentId;
-    }
-
-    public String getChangeId() {
-        return this.changeId;
-    }
-
-    public VirtualDiskSeSparseBackingInfo getParent() {
-        return this.parent;
-    }
-
-    public String getDeltaDiskFormat() {
-        return this.deltaDiskFormat;
-    }
-
-    public Boolean getDigestEnabled() {
-        return this.digestEnabled;
-    }
-
-    public Integer getGrainSize() {
-        return this.grainSize;
-    }
-
-    public void setDiskMode(String diskMode) {
-        this.diskMode = diskMode;
-    }
-
-    public void setWriteThrough(Boolean writeThrough) {
-        this.writeThrough = writeThrough;
-    }
-
-    public void setUuid(String uuid) {
-        this.uuid = uuid;
-    }
-
-    public void setContentId(String contentId) {
-        this.contentId = contentId;
-    }
-
-    public void setChangeId(String changeId) {
-        this.changeId = changeId;
-    }
-
-    public void setParent(VirtualDiskSeSparseBackingInfo parent) {
-        this.parent = parent;
-    }
-
-    public void setDeltaDiskFormat(String deltaDiskFormat) {
-        this.deltaDiskFormat = deltaDiskFormat;
-    }
-
-    public void setDigestEnabled(Boolean digestEnabled) {
-        this.digestEnabled = digestEnabled;
-    }
-
-    public void setGrainSize(Integer grainSize) {
-        this.grainSize = grainSize;
-    }
+    @Getter @Setter public String diskMode;
+    @Getter @Setter public Boolean writeThrough;
+    @Getter @Setter public String uuid;
+    @Getter @Setter public String contentId;
+    @Getter @Setter public String changeId;
+    @Getter @Setter public VirtualDiskSeSparseBackingInfo parent;
+    @Getter @Setter public String deltaDiskFormat;
+    @Getter @Setter public Boolean digestEnabled;
+    @Getter @Setter public Integer grainSize;
+    @Getter @Setter public CryptoKeyId keyId;
 }

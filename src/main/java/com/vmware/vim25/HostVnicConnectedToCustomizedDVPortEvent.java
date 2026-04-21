@@ -28,21 +28,15 @@ POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
 
 package com.vmware.vim25;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * @author Steve Jin (http://www.doublecloud.org)
  * @version 5.1
  */
 
-@SuppressWarnings("all")
 public class HostVnicConnectedToCustomizedDVPortEvent extends HostEvent {
-    public VnicPortArgument vnic;
-
-    public VnicPortArgument getVnic() {
-        return this.vnic;
-    }
-
-    public void setVnic(VnicPortArgument vnic) {
-        this.vnic = vnic;
-    }
+    @Getter @Setter public VnicPortArgument vnic;
+    @Getter @Setter public String prevPortKey;
 }

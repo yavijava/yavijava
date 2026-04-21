@@ -32,7 +32,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 /**
- * Created by Michael Rice on Thu Jun 11 17:52:06 CDT 2015
+ * Created by Michael Rice on Fri Nov 18 12:45:26 CST 2016
  * This code is auto generated using yavijava_generator
  * https://github.com/yavijava/yavijava_generator
  *
@@ -60,4 +60,5 @@ public class VirtualDisk extends VirtualDevice {
     @Getter @Setter public String diskObjectId;
     @Getter @Setter public VirtualDiskVFlashCacheConfigInfo vFlashCacheConfigInfo;
     @Getter @Setter public String[] iofilter;
+    @Getter @Setter public ID vDiskId;
 }

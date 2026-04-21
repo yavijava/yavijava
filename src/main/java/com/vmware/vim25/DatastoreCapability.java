@@ -28,75 +28,23 @@ POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
 
 package com.vmware.vim25;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * @author Steve Jin (http://www.doublecloud.org)
  * @version 5.1
  */
 
-@SuppressWarnings("all")
 public class DatastoreCapability extends DynamicData {
-    public boolean directoryHierarchySupported;
-    public boolean rawDiskMappingsSupported;
-    public boolean perFileThinProvisioningSupported;
-    public Boolean storageIORMSupported;
-    public Boolean nativeSnapshotSupported;
-    public Boolean topLevelDirectoryCreateSupported;
-    public Boolean seSparseSupported;
-
-    public boolean isDirectoryHierarchySupported() {
-        return this.directoryHierarchySupported;
-    }
-
-    public boolean isRawDiskMappingsSupported() {
-        return this.rawDiskMappingsSupported;
-    }
-
-    public boolean isPerFileThinProvisioningSupported() {
-        return this.perFileThinProvisioningSupported;
-    }
-
-    public Boolean getStorageIORMSupported() {
-        return this.storageIORMSupported;
-    }
-
-    public Boolean getNativeSnapshotSupported() {
-        return this.nativeSnapshotSupported;
-    }
-
-    public Boolean getTopLevelDirectoryCreateSupported() {
-        return this.topLevelDirectoryCreateSupported;
-    }
-
-    public Boolean getSeSparseSupported() {
-        return this.seSparseSupported;
-    }
-
-    public void setDirectoryHierarchySupported(boolean directoryHierarchySupported) {
-        this.directoryHierarchySupported = directoryHierarchySupported;
-    }
-
-    public void setRawDiskMappingsSupported(boolean rawDiskMappingsSupported) {
-        this.rawDiskMappingsSupported = rawDiskMappingsSupported;
-    }
-
-    public void setPerFileThinProvisioningSupported(boolean perFileThinProvisioningSupported) {
-        this.perFileThinProvisioningSupported = perFileThinProvisioningSupported;
-    }
-
-    public void setStorageIORMSupported(Boolean storageIORMSupported) {
-        this.storageIORMSupported = storageIORMSupported;
-    }
-
-    public void setNativeSnapshotSupported(Boolean nativeSnapshotSupported) {
-        this.nativeSnapshotSupported = nativeSnapshotSupported;
-    }
-
-    public void setTopLevelDirectoryCreateSupported(Boolean topLevelDirectoryCreateSupported) {
-        this.topLevelDirectoryCreateSupported = topLevelDirectoryCreateSupported;
-    }
-
-    public void setSeSparseSupported(Boolean seSparseSupported) {
-        this.seSparseSupported = seSparseSupported;
-    }
+    @Getter @Setter public boolean directoryHierarchySupported;
+    @Getter @Setter public boolean rawDiskMappingsSupported;
+    @Getter @Setter public boolean perFileThinProvisioningSupported;
+    @Getter @Setter public Boolean storageIORMSupported;
+    @Getter @Setter public Boolean nativeSnapshotSupported;
+    @Getter @Setter public Boolean topLevelDirectoryCreateSupported;
+    @Getter @Setter public Boolean seSparseSupported;
+    @Getter @Setter public Boolean vmfsSparseSupported;
+    @Getter @Setter public Boolean vsanSparseSupported;
+    @Getter @Setter public Boolean upitSupported;
 }

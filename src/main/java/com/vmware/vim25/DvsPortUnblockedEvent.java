@@ -28,30 +28,16 @@ POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
 
 package com.vmware.vim25;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * @author Steve Jin (http://www.doublecloud.org)
  * @version 5.1
  */
 
-@SuppressWarnings("all")
 public class DvsPortUnblockedEvent extends DvsEvent {
-    public String portKey;
-    public DVPortStatus runtimeInfo;
-
-    public String getPortKey() {
-        return this.portKey;
-    }
-
-    public DVPortStatus getRuntimeInfo() {
-        return this.runtimeInfo;
-    }
-
-    public void setPortKey(String portKey) {
-        this.portKey = portKey;
-    }
-
-    public void setRuntimeInfo(DVPortStatus runtimeInfo) {
-        this.runtimeInfo = runtimeInfo;
-    }
+    @Getter @Setter public String portKey;
+    @Getter @Setter public DVPortStatus runtimeInfo;
+    @Getter @Setter public String prevBlockState;
 }
