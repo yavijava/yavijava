@@ -22,7 +22,7 @@ dependencies {
     implementation 'org.dom4j:dom4j:2.1.4'
     implementation 'org.slf4j:slf4j-api:2.0.17'
     testRuntimeOnly 'ch.qos.logback:logback-classic:1.5.18'
-    implementation 'org.apache.httpcomponents:httpclient:4.5.14'
+    implementation 'org.apache.httpcomponents.client5:httpclient5:5.4.1'
     compileOnly 'org.projectlombok:lombok:1.18.36'
     annotationProcessor 'org.projectlombok:lombok:1.18.36'
     testImplementation 'javax.servlet:javax.servlet-api:3.1.0'

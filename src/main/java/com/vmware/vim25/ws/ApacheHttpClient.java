@@ -1,25 +1,26 @@
 package com.vmware.vim25.ws;
 
-import org.apache.http.Header;
-import org.apache.http.client.config.RequestConfig;
-import org.apache.http.client.methods.CloseableHttpResponse;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.conn.socket.LayeredConnectionSocketFactory;
-import org.apache.http.conn.ssl.AllowAllHostnameVerifier;
-import org.apache.http.conn.ssl.SSLConnectionSocketFactory;
-import org.apache.http.entity.StringEntity;
-import org.apache.http.impl.client.CloseableHttpClient;
-import org.apache.http.impl.client.HttpClients;
+import org.apache.hc.client5.http.classic.methods.HttpPost;
+import org.apache.hc.client5.http.config.RequestConfig;
+import org.apache.hc.client5.http.impl.classic.CloseableHttpClient;
+import org.apache.hc.client5.http.impl.classic.CloseableHttpResponse;
+import org.apache.hc.client5.http.impl.classic.HttpClients;
+import org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManagerBuilder;
+import org.apache.hc.client5.http.ssl.NoopHostnameVerifier;
+import org.apache.hc.client5.http.ssl.SSLConnectionSocketFactory;
+import org.apache.hc.core5.http.Header;
+import org.apache.hc.core5.http.io.entity.StringEntity;
+import org.apache.hc.core5.util.Timeout;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import javax.net.ssl.TrustManager;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.UnsupportedEncodingException;
 import java.net.MalformedURLException;
 import java.net.URISyntaxException;
 import java.net.URL;
+import java.nio.charset.StandardCharsets;
 import java.rmi.RemoteException;
 
 /**
@@ -156,33 +157,35 @@ public class ApacheHttpClient extends SoapClient {
     }
 
     private InputStream post(String payload) throws IOException {
-        CloseableHttpClient httpclient;
         RequestConfig requestConfig = RequestConfig.custom()
-            .setConnectTimeout(this.connectTimeout)
-            .setSocketTimeout(this.readTimeout)
+            .setConnectTimeout(Timeout.ofMilliseconds(this.connectTimeout))
+            .setResponseTimeout(Timeout.ofMilliseconds(this.readTimeout))
             .build();
-        if(trustAllSSL && trustManager != null) {
+
+        if (trustAllSSL && trustManager != null) {
             log.warn("The option to ignore certs has been set along with a provided trust manager. This is not a valid scenario and the trust manager will be ignored.");
         }
 
+        CloseableHttpClient httpclient;
         if (trustAllSSL) {
-            httpclient = HttpClients.custom().setSSLSocketFactory(ApacheTrustSelfSigned.trust()).build();
-        } else if(trustManager != null) {
-            LayeredConnectionSocketFactory sslConnectionSocketFactory = new SSLConnectionSocketFactory(CustomSSLTrustContextCreator.getTrustContext(trustManager), new AllowAllHostnameVerifier());
-            httpclient = HttpClients.custom().setSSLSocketFactory(sslConnectionSocketFactory).build();
+            httpclient = HttpClients.custom()
+                .setConnectionManager(PoolingHttpClientConnectionManagerBuilder.create()
+                    .setSSLSocketFactory(ApacheTrustSelfSigned.trust())
+                    .build())
+                .build();
+        } else if (trustManager != null) {
+            SSLConnectionSocketFactory sslConnectionSocketFactory = new SSLConnectionSocketFactory(
+                CustomSSLTrustContextCreator.getTrustContext(trustManager), NoopHostnameVerifier.INSTANCE);
+            httpclient = HttpClients.custom()
+                .setConnectionManager(PoolingHttpClientConnectionManagerBuilder.create()
+                    .setSSLSocketFactory(sslConnectionSocketFactory)
+                    .build())
+                .build();
         } else {
             httpclient = HttpClients.createDefault();
         }
+
         HttpPost httpPost;
-        StringEntity stringEntity;
-        try {
-            stringEntity = new StringEntity(payload);
-            log.trace("Converted payload to String entity.");
-        }
-        catch (UnsupportedEncodingException e) {
-            log.error("Failed to convert payload to StringEntity. Unsupported Encoding Exception caught. Payload: " + payload, e);
-            return null;
-        }
         try {
             httpPost = new HttpPost(this.baseUrl.toURI());
         }
@@ -190,6 +193,10 @@ public class ApacheHttpClient extends SoapClient {
             log.error("Malformed URI sent: " + this.baseUrl.toString(), e);
             return null;
         }
+
+        StringEntity stringEntity = new StringEntity(payload, StandardCharsets.UTF_8);
+        log.trace("Converted payload to String entity.");
+
         httpPost.setConfig(requestConfig);
         httpPost.setHeader(SoapAction.SOAP_ACTION_HEADER.toString(), soapAction);
         httpPost.setHeader("Content-Type", "text/xml; charset=utf-8");
@@ -202,16 +209,11 @@ public class ApacheHttpClient extends SoapClient {
         CloseableHttpResponse response = httpclient.execute(httpPost);
         InputStream inputStream = response.getEntity().getContent();
         if (cookie == null) {
-
-            Header[] headers = response.getAllHeaders();
-            for (Header header : headers) {
-                if (header.getName().equalsIgnoreCase("Set-Cookie")) {
-                    cookie = header.getValue();
-                    break;
-                }
+            Header setCookieHeader = response.getFirstHeader("Set-Cookie");
+            if (setCookieHeader != null) {
+                cookie = setCookieHeader.getValue();
             }
         }
         return inputStream;
     }
-
 }

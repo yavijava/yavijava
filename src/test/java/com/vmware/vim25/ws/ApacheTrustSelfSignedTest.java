@@ -1,6 +1,6 @@
 package com.vmware.vim25.ws;
 
-import org.apache.http.conn.ssl.SSLConnectionSocketFactory;
+import org.apache.hc.client5.http.ssl.SSLConnectionSocketFactory;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
