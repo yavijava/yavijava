@@ -11,8 +11,8 @@ group = "com.toastcoders"
 archivesBaseName = "yavijava"
 version = '6.5.01-SNAPSHOT'
 ext.isReleaseVersion = !version.endsWith("SNAPSHOT")
-targetCompatibility = JavaVersion.VERSION_11
-sourceCompatibility = JavaVersion.VERSION_11
+targetCompatibility = JavaVersion.VERSION_21
+sourceCompatibility = JavaVersion.VERSION_21
 
 repositories {
     mavenCentral()
