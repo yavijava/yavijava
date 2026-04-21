@@ -28,21 +28,15 @@ POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
 
 package com.vmware.vim25;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * @author Steve Jin (http://www.doublecloud.org)
  * @version 5.1
  */
 
-@SuppressWarnings("all")
 public class AlarmReconfiguredEvent extends AlarmEvent {
-    public ManagedEntityEventArgument entity;
-
-    public ManagedEntityEventArgument getEntity() {
-        return this.entity;
-    }
-
-    public void setEntity(ManagedEntityEventArgument entity) {
-        this.entity = entity;
-    }
+    @Getter @Setter public ManagedEntityEventArgument entity;
+    @Getter @Setter public ChangesInfoEventArgument configChanges;
 }

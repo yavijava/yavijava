@@ -28,57 +28,19 @@ POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
 
 package com.vmware.vim25;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * @author Steve Jin (http://www.doublecloud.org)
  * @version 5.1
  */
 
-@SuppressWarnings("all")
 public class HostProfileConfigInfo extends ProfileConfigInfo {
-    public HostApplyProfile applyProfile;
-    public ComplianceProfile defaultComplyProfile;
-    public ComplianceLocator[] defaultComplyLocator;
-    public ComplianceProfile customComplyProfile;
-    public String[] disabledExpressionList;
-
-    public HostApplyProfile getApplyProfile() {
-        return this.applyProfile;
-    }
-
-    public ComplianceProfile getDefaultComplyProfile() {
-        return this.defaultComplyProfile;
-    }
-
-    public ComplianceLocator[] getDefaultComplyLocator() {
-        return this.defaultComplyLocator;
-    }
-
-    public ComplianceProfile getCustomComplyProfile() {
-        return this.customComplyProfile;
-    }
-
-    public String[] getDisabledExpressionList() {
-        return this.disabledExpressionList;
-    }
-
-    public void setApplyProfile(HostApplyProfile applyProfile) {
-        this.applyProfile = applyProfile;
-    }
-
-    public void setDefaultComplyProfile(ComplianceProfile defaultComplyProfile) {
-        this.defaultComplyProfile = defaultComplyProfile;
-    }
-
-    public void setDefaultComplyLocator(ComplianceLocator[] defaultComplyLocator) {
-        this.defaultComplyLocator = defaultComplyLocator;
-    }
-
-    public void setCustomComplyProfile(ComplianceProfile customComplyProfile) {
-        this.customComplyProfile = customComplyProfile;
-    }
-
-    public void setDisabledExpressionList(String[] disabledExpressionList) {
-        this.disabledExpressionList = disabledExpressionList;
-    }
+    @Getter @Setter public HostApplyProfile applyProfile;
+    @Getter @Setter public ComplianceProfile defaultComplyProfile;
+    @Getter @Setter public ComplianceLocator[] defaultComplyLocator;
+    @Getter @Setter public ComplianceProfile customComplyProfile;
+    @Getter @Setter public String[] disabledExpressionList;
+    @Getter @Setter public ProfileDescription description;
 }

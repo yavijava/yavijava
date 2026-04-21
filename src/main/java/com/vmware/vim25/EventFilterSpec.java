@@ -28,111 +28,25 @@ POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
 
 package com.vmware.vim25;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * @author Steve Jin (http://www.doublecloud.org)
  * @version 5.1
  */
 
-@SuppressWarnings("all")
 public class EventFilterSpec extends DynamicData {
-    public EventFilterSpecByEntity entity;
-    public EventFilterSpecByTime time;
-    public EventFilterSpecByUsername userName;
-    public Integer eventChainId;
-    public ManagedObjectReference alarm;
-    public ManagedObjectReference scheduledTask;
-    public Boolean disableFullMessage;
-    public String[] category;
-    public String[] type;
-    public String[] tag;
-    public String[] eventTypeId;
-
-    public EventFilterSpecByEntity getEntity() {
-        return this.entity;
-    }
-
-    public EventFilterSpecByTime getTime() {
-        return this.time;
-    }
-
-    public EventFilterSpecByUsername getUserName() {
-        return this.userName;
-    }
-
-    public Integer getEventChainId() {
-        return this.eventChainId;
-    }
-
-    public ManagedObjectReference getAlarm() {
-        return this.alarm;
-    }
-
-    public ManagedObjectReference getScheduledTask() {
-        return this.scheduledTask;
-    }
-
-    public Boolean getDisableFullMessage() {
-        return this.disableFullMessage;
-    }
-
-    public String[] getCategory() {
-        return this.category;
-    }
-
-    public String[] getType() {
-        return this.type;
-    }
-
-    public String[] getTag() {
-        return this.tag;
-    }
-
-    public String[] getEventTypeId() {
-        return this.eventTypeId;
-    }
-
-    public void setEntity(EventFilterSpecByEntity entity) {
-        this.entity = entity;
-    }
-
-    public void setTime(EventFilterSpecByTime time) {
-        this.time = time;
-    }
-
-    public void setUserName(EventFilterSpecByUsername userName) {
-        this.userName = userName;
-    }
-
-    public void setEventChainId(Integer eventChainId) {
-        this.eventChainId = eventChainId;
-    }
-
-    public void setAlarm(ManagedObjectReference alarm) {
-        this.alarm = alarm;
-    }
-
-    public void setScheduledTask(ManagedObjectReference scheduledTask) {
-        this.scheduledTask = scheduledTask;
-    }
-
-    public void setDisableFullMessage(Boolean disableFullMessage) {
-        this.disableFullMessage = disableFullMessage;
-    }
-
-    public void setCategory(String[] category) {
-        this.category = category;
-    }
-
-    public void setType(String[] type) {
-        this.type = type;
-    }
-
-    public void setTag(String[] tag) {
-        this.tag = tag;
-    }
-
-    public void setEventTypeId(String[] eventTypeId) {
-        this.eventTypeId = eventTypeId;
-    }
+    @Getter @Setter public EventFilterSpecByEntity entity;
+    @Getter @Setter public EventFilterSpecByTime time;
+    @Getter @Setter public EventFilterSpecByUsername userName;
+    @Getter @Setter public Integer eventChainId;
+    @Getter @Setter public ManagedObjectReference alarm;
+    @Getter @Setter public ManagedObjectReference scheduledTask;
+    @Getter @Setter public Boolean disableFullMessage;
+    @Getter @Setter public String[] category;
+    @Getter @Setter public String[] type;
+    @Getter @Setter public String[] tag;
+    @Getter @Setter public String[] eventTypeId;
+    @Getter @Setter public Integer maxCount;
 }

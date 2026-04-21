@@ -28,21 +28,15 @@ POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
 
 package com.vmware.vim25;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * @author Steve Jin (http://www.doublecloud.org)
  * @version 5.1
  */
 
-@SuppressWarnings("all")
 public class VirtualMachineNetworkInfo extends VirtualMachineTargetInfo {
-    public NetworkSummary network;
-
-    public NetworkSummary getNetwork() {
-        return this.network;
-    }
-
-    public void setNetwork(NetworkSummary network) {
-        this.network = network;
-    }
+    @Getter @Setter public NetworkSummary network;
+    @Getter @Setter public String vswitch;
 }

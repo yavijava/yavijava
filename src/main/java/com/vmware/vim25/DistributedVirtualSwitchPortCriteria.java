@@ -28,75 +28,21 @@ POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
 
 package com.vmware.vim25;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * @author Steve Jin (http://www.doublecloud.org)
  * @version 5.1
  */
 
-@SuppressWarnings("all")
 public class DistributedVirtualSwitchPortCriteria extends DynamicData {
-    public Boolean connected;
-    public Boolean active;
-    public Boolean uplinkPort;
-    public ManagedObjectReference scope;
-    public String[] portgroupKey;
-    public Boolean inside;
-    public String[] portKey;
-
-    public Boolean getConnected() {
-        return this.connected;
-    }
-
-    public Boolean getActive() {
-        return this.active;
-    }
-
-    public Boolean getUplinkPort() {
-        return this.uplinkPort;
-    }
-
-    public ManagedObjectReference getScope() {
-        return this.scope;
-    }
-
-    public String[] getPortgroupKey() {
-        return this.portgroupKey;
-    }
-
-    public Boolean getInside() {
-        return this.inside;
-    }
-
-    public String[] getPortKey() {
-        return this.portKey;
-    }
-
-    public void setConnected(Boolean connected) {
-        this.connected = connected;
-    }
-
-    public void setActive(Boolean active) {
-        this.active = active;
-    }
-
-    public void setUplinkPort(Boolean uplinkPort) {
-        this.uplinkPort = uplinkPort;
-    }
-
-    public void setScope(ManagedObjectReference scope) {
-        this.scope = scope;
-    }
-
-    public void setPortgroupKey(String[] portgroupKey) {
-        this.portgroupKey = portgroupKey;
-    }
-
-    public void setInside(Boolean inside) {
-        this.inside = inside;
-    }
-
-    public void setPortKey(String[] portKey) {
-        this.portKey = portKey;
-    }
+    @Getter @Setter public Boolean connected;
+    @Getter @Setter public Boolean active;
+    @Getter @Setter public Boolean uplinkPort;
+    @Getter @Setter public ManagedObjectReference scope;
+    @Getter @Setter public String[] portgroupKey;
+    @Getter @Setter public Boolean inside;
+    @Getter @Setter public String[] portKey;
+    @Getter @Setter public ManagedObjectReference[] host;
 }

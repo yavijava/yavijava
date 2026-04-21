@@ -28,102 +28,27 @@ POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
 
 package com.vmware.vim25;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * @author Steve Jin (http://www.doublecloud.org)
  * @version 5.1
  */
 
-@SuppressWarnings("all")
 public class ClusterConfigSpecEx extends ComputeResourceConfigSpec {
-    public ClusterDasConfigInfo dasConfig;
-    public ClusterDasVmConfigSpec[] dasVmConfigSpec;
-    public ClusterDrsConfigInfo drsConfig;
-    public ClusterDrsVmConfigSpec[] drsVmConfigSpec;
-    public ClusterRuleSpec[] rulesSpec;
-    public ClusterDpmConfigInfo dpmConfig;
-    public ClusterDpmHostConfigSpec[] dpmHostConfigSpec;
-    public VsanClusterConfigInfo vsanConfig;
-    public VsanHostConfigInfo[] vsanHostConfigSpec;
-    public ClusterGroupSpec[] groupSpec;
-
-    public ClusterDasConfigInfo getDasConfig() {
-        return this.dasConfig;
-    }
-
-    public ClusterDasVmConfigSpec[] getDasVmConfigSpec() {
-        return this.dasVmConfigSpec;
-    }
-
-    public ClusterDrsConfigInfo getDrsConfig() {
-        return this.drsConfig;
-    }
-
-    public ClusterDrsVmConfigSpec[] getDrsVmConfigSpec() {
-        return this.drsVmConfigSpec;
-    }
-
-    public ClusterRuleSpec[] getRulesSpec() {
-        return this.rulesSpec;
-    }
-
-    public ClusterDpmConfigInfo getDpmConfig() {
-        return this.dpmConfig;
-    }
-
-    public ClusterDpmHostConfigSpec[] getDpmHostConfigSpec() {
-        return this.dpmHostConfigSpec;
-    }
-
-    public VsanClusterConfigInfo getVsanConfig() {
-        return this.vsanConfig;
-    }
-
-    public VsanHostConfigInfo[] getVsanHostConfigSpec() {
-        return this.vsanHostConfigSpec;
-    }
-
-    public ClusterGroupSpec[] getGroupSpec() {
-        return this.groupSpec;
-    }
-
-    public void setDasConfig(ClusterDasConfigInfo dasConfig) {
-        this.dasConfig = dasConfig;
-    }
-
-    public void setDasVmConfigSpec(ClusterDasVmConfigSpec[] dasVmConfigSpec) {
-        this.dasVmConfigSpec = dasVmConfigSpec;
-    }
-
-    public void setDrsConfig(ClusterDrsConfigInfo drsConfig) {
-        this.drsConfig = drsConfig;
-    }
-
-    public void setDrsVmConfigSpec(ClusterDrsVmConfigSpec[] drsVmConfigSpec) {
-        this.drsVmConfigSpec = drsVmConfigSpec;
-    }
-
-    public void setRulesSpec(ClusterRuleSpec[] rulesSpec) {
-        this.rulesSpec = rulesSpec;
-    }
-
-    public void setDpmConfig(ClusterDpmConfigInfo dpmConfig) {
-        this.dpmConfig = dpmConfig;
-    }
-
-    public void setDpmHostConfigSpec(ClusterDpmHostConfigSpec[] dpmHostConfigSpec) {
-        this.dpmHostConfigSpec = dpmHostConfigSpec;
-    }
-
-    public void setVsanConfig(VsanClusterConfigInfo vsanConfig) {
-        this.vsanConfig = vsanConfig;
-    }
-
-    public void setVsanHostConfigSpec(VsanHostConfigInfo[] vsanHostConfigSpec) {
-        this.vsanHostConfigSpec = vsanHostConfigSpec;
-    }
-
-    public void setGroupSpec(ClusterGroupSpec[] groupSpec) {
-        this.groupSpec = groupSpec;
-    }
+    @Getter @Setter public ClusterDasConfigInfo dasConfig;
+    @Getter @Setter public ClusterDasVmConfigSpec[] dasVmConfigSpec;
+    @Getter @Setter public ClusterDrsConfigInfo drsConfig;
+    @Getter @Setter public ClusterDrsVmConfigSpec[] drsVmConfigSpec;
+    @Getter @Setter public ClusterRuleSpec[] rulesSpec;
+    @Getter @Setter public ClusterOrchestrationInfo orchestration;
+    @Getter @Setter public ClusterVmOrchestrationSpec[] vmOrchestrationSpec;
+    @Getter @Setter public ClusterDpmConfigInfo dpmConfig;
+    @Getter @Setter public ClusterDpmHostConfigSpec[] dpmHostConfigSpec;
+    @Getter @Setter public VsanClusterConfigInfo vsanConfig;
+    @Getter @Setter public VsanHostConfigInfo[] vsanHostConfigSpec;
+    @Getter @Setter public ClusterGroupSpec[] groupSpec;
+    @Getter @Setter public ClusterInfraUpdateHaConfigInfo infraUpdateHaConfig;
+    @Getter @Setter public ClusterProactiveDrsConfigInfo proactiveDrsConfig;
 }

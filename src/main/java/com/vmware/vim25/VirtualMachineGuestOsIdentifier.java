@@ -30,7 +30,7 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim25;
 
 /**
- * Created by Michael Rice on Mon May 25 21:12:07 CDT 2015
+ * Created by Michael Rice on Mon Nov 21 02:06:10 CST 2016
  * This code is auto generated using yavijava_generator
  * https://github.com/yavijava/yavijava_generator
  *
@@ -102,8 +102,16 @@ public enum VirtualMachineGuestOsIdentifier {
     rhel7_64Guest("rhel7_64Guest"),
     centosGuest("centosGuest"),
     centos64Guest("centos64Guest"),
+    centos6Guest("centos6Guest"),
+    centos6_64Guest("centos6_64Guest"),
+    centos7Guest("centos7Guest"),
+    centos7_64Guest("centos7_64Guest"),
     oracleLinuxGuest("oracleLinuxGuest"),
     oracleLinux64Guest("oracleLinux64Guest"),
+    oracleLinux6Guest("oracleLinux6Guest"),
+    oracleLinux6_64Guest("oracleLinux6_64Guest"),
+    oracleLinux7Guest("oracleLinux7Guest"),
+    oracleLinux7_64Guest("oracleLinux7_64Guest"),
     suseGuest("suseGuest"),
     suse64Guest("suse64Guest"),
     slesGuest("slesGuest"),
@@ -134,16 +142,22 @@ public enum VirtualMachineGuestOsIdentifier {
     debian7_64Guest("debian7_64Guest"),
     debian8Guest("debian8Guest"),
     debian8_64Guest("debian8_64Guest"),
+    debian9Guest("debian9Guest"),
+    debian9_64Guest("debian9_64Guest"),
+    debian10Guest("debian10Guest"),
+    debian10_64Guest("debian10_64Guest"),
     asianux3Guest("asianux3Guest"),
     asianux3_64Guest("asianux3_64Guest"),
     asianux4Guest("asianux4Guest"),
     asianux4_64Guest("asianux4_64Guest"),
     asianux5_64Guest("asianux5_64Guest"),
+    asianux7_64Guest("asianux7_64Guest"),
     opensuseGuest("opensuseGuest"),
     opensuse64Guest("opensuse64Guest"),
     fedoraGuest("fedoraGuest"),
     fedora64Guest("fedora64Guest"),
     coreos64Guest("coreos64Guest"),
+    vmwarePhoton64Guest("vmwarePhoton64Guest"),
     other24xLinuxGuest("other24xLinuxGuest"),
     other26xLinuxGuest("other26xLinuxGuest"),
     otherLinuxGuest("otherLinuxGuest"),
@@ -178,9 +192,12 @@ public enum VirtualMachineGuestOsIdentifier {
     darwin12_64Guest("darwin12_64Guest"),
     darwin13_64Guest("darwin13_64Guest"),
     darwin14_64Guest("darwin14_64Guest"),
+    darwin15_64Guest("darwin15_64Guest"),
+    darwin16_64Guest("darwin16_64Guest"),
     vmkernelGuest("vmkernelGuest"),
     vmkernel5Guest("vmkernel5Guest"),
     vmkernel6Guest("vmkernel6Guest"),
+    vmkernel65Guest("vmkernel65Guest"),
     otherGuest("otherGuest"),
     otherGuest64("otherGuest64");
 

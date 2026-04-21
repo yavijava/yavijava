@@ -28,7 +28,8 @@ POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
 
 package com.vmware.vim25;
-
+import lombok.Getter;
+import lombok.Setter;
 import java.util.Calendar;
 
 /**
@@ -36,114 +37,20 @@ import java.util.Calendar;
  * @version 5.1
  */
 
-@SuppressWarnings("all")
 public class HostRuntimeInfo extends DynamicData {
-    public HostSystemConnectionState connectionState;
-    public HostSystemPowerState powerState;
-    public String standbyMode;
-    public boolean inMaintenanceMode;
-    public Calendar bootTime;
-    public HealthSystemRuntime healthSystemRuntime;
-    public ClusterDasFdmHostState dasHostState;
-    public HostTpmDigestInfo[] tpmPcrValues;
-    public VsanHostRuntimeInfo vsanRuntimeInfo;
-    public HostRuntimeInfoNetworkRuntimeInfo networkRuntimeInfo;
-    public HostVFlashManagerVFlashResourceRunTimeInfo vFlashResourceRuntimeInfo;
-    public Long hostMaxVirtualDiskCapacity;
-
-    public HostSystemConnectionState getConnectionState() {
-        return this.connectionState;
-    }
-
-    public HostSystemPowerState getPowerState() {
-        return this.powerState;
-    }
-
-    public String getStandbyMode() {
-        return this.standbyMode;
-    }
-
-    public boolean isInMaintenanceMode() {
-        return this.inMaintenanceMode;
-    }
-
-    public Calendar getBootTime() {
-        return this.bootTime;
-    }
-
-    public HealthSystemRuntime getHealthSystemRuntime() {
-        return this.healthSystemRuntime;
-    }
-
-    public ClusterDasFdmHostState getDasHostState() {
-        return this.dasHostState;
-    }
-
-    public HostTpmDigestInfo[] getTpmPcrValues() {
-        return this.tpmPcrValues;
-    }
-
-    public VsanHostRuntimeInfo getVsanRuntimeInfo() {
-        return this.vsanRuntimeInfo;
-    }
-
-    public HostRuntimeInfoNetworkRuntimeInfo getNetworkRuntimeInfo() {
-        return this.networkRuntimeInfo;
-    }
-
-    public HostVFlashManagerVFlashResourceRunTimeInfo getVFlashResourceRuntimeInfo() {
-        return this.vFlashResourceRuntimeInfo;
-    }
-
-    public Long getHostMaxVirtualDiskCapacity() {
-        return this.hostMaxVirtualDiskCapacity;
-    }
-
-    public void setConnectionState(HostSystemConnectionState connectionState) {
-        this.connectionState = connectionState;
-    }
-
-    public void setPowerState(HostSystemPowerState powerState) {
-        this.powerState = powerState;
-    }
-
-    public void setStandbyMode(String standbyMode) {
-        this.standbyMode = standbyMode;
-    }
-
-    public void setInMaintenanceMode(boolean inMaintenanceMode) {
-        this.inMaintenanceMode = inMaintenanceMode;
-    }
-
-    public void setBootTime(Calendar bootTime) {
-        this.bootTime = bootTime;
-    }
-
-    public void setHealthSystemRuntime(HealthSystemRuntime healthSystemRuntime) {
-        this.healthSystemRuntime = healthSystemRuntime;
-    }
-
-    public void setDasHostState(ClusterDasFdmHostState dasHostState) {
-        this.dasHostState = dasHostState;
-    }
-
-    public void setTpmPcrValues(HostTpmDigestInfo[] tpmPcrValues) {
-        this.tpmPcrValues = tpmPcrValues;
-    }
-
-    public void setVsanRuntimeInfo(VsanHostRuntimeInfo vsanRuntimeInfo) {
-        this.vsanRuntimeInfo = vsanRuntimeInfo;
-    }
-
-    public void setNetworkRuntimeInfo(HostRuntimeInfoNetworkRuntimeInfo networkRuntimeInfo) {
-        this.networkRuntimeInfo = networkRuntimeInfo;
-    }
-
-    public void setVFlashResourceRuntimeInfo(HostVFlashManagerVFlashResourceRunTimeInfo vFlashResourceRuntimeInfo) {
-        this.vFlashResourceRuntimeInfo = vFlashResourceRuntimeInfo;
-    }
-
-    public void setHostMaxVirtualDiskCapacity(Long hostMaxVirtualDiskCapacity) {
-        this.hostMaxVirtualDiskCapacity = hostMaxVirtualDiskCapacity;
-    }
+    @Getter @Setter public HostSystemConnectionState connectionState;
+    @Getter @Setter public HostSystemPowerState powerState;
+    @Getter @Setter public String standbyMode;
+    @Getter @Setter public boolean inMaintenanceMode;
+    @Getter @Setter public Boolean inQuarantineMode;
+    @Getter @Setter public Calendar bootTime;
+    @Getter @Setter public HealthSystemRuntime healthSystemRuntime;
+    @Getter @Setter public ClusterDasFdmHostState dasHostState;
+    @Getter @Setter public HostTpmDigestInfo[] tpmPcrValues;
+    @Getter @Setter public VsanHostRuntimeInfo vsanRuntimeInfo;
+    @Getter @Setter public HostRuntimeInfoNetworkRuntimeInfo networkRuntimeInfo;
+    @Getter @Setter public HostVFlashManagerVFlashResourceRunTimeInfo vFlashResourceRuntimeInfo;
+    @Getter @Setter public Long hostMaxVirtualDiskCapacity;
+    @Getter @Setter public String cryptoState;
+    @Getter @Setter public CryptoKeyId cryptoKeyId;
 }

@@ -28,111 +28,25 @@ POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
 
 package com.vmware.vim25;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * @author Steve Jin (http://www.doublecloud.org)
  * @version 5.1
  */
 
-@SuppressWarnings("all")
 public class VirtualPCIControllerOption extends VirtualControllerOption {
-    public IntOption numSCSIControllers;
-    public IntOption numEthernetCards;
-    public IntOption numVideoCards;
-    public IntOption numSoundCards;
-    public IntOption numVmiRoms;
-    public IntOption numVmciDevices;
-    public IntOption numPCIPassthroughDevices;
-    public IntOption numSasSCSIControllers;
-    public IntOption numVmxnet3EthernetCards;
-    public IntOption numParaVirtualSCSIControllers;
-    public IntOption numSATAControllers;
-
-    public IntOption getNumSCSIControllers() {
-        return this.numSCSIControllers;
-    }
-
-    public IntOption getNumEthernetCards() {
-        return this.numEthernetCards;
-    }
-
-    public IntOption getNumVideoCards() {
-        return this.numVideoCards;
-    }
-
-    public IntOption getNumSoundCards() {
-        return this.numSoundCards;
-    }
-
-    public IntOption getNumVmiRoms() {
-        return this.numVmiRoms;
-    }
-
-    public IntOption getNumVmciDevices() {
-        return this.numVmciDevices;
-    }
-
-    public IntOption getNumPCIPassthroughDevices() {
-        return this.numPCIPassthroughDevices;
-    }
-
-    public IntOption getNumSasSCSIControllers() {
-        return this.numSasSCSIControllers;
-    }
-
-    public IntOption getNumVmxnet3EthernetCards() {
-        return this.numVmxnet3EthernetCards;
-    }
-
-    public IntOption getNumParaVirtualSCSIControllers() {
-        return this.numParaVirtualSCSIControllers;
-    }
-
-    public IntOption getNumSATAControllers() {
-        return this.numSATAControllers;
-    }
-
-    public void setNumSCSIControllers(IntOption numSCSIControllers) {
-        this.numSCSIControllers = numSCSIControllers;
-    }
-
-    public void setNumEthernetCards(IntOption numEthernetCards) {
-        this.numEthernetCards = numEthernetCards;
-    }
-
-    public void setNumVideoCards(IntOption numVideoCards) {
-        this.numVideoCards = numVideoCards;
-    }
-
-    public void setNumSoundCards(IntOption numSoundCards) {
-        this.numSoundCards = numSoundCards;
-    }
-
-    public void setNumVmiRoms(IntOption numVmiRoms) {
-        this.numVmiRoms = numVmiRoms;
-    }
-
-    public void setNumVmciDevices(IntOption numVmciDevices) {
-        this.numVmciDevices = numVmciDevices;
-    }
-
-    public void setNumPCIPassthroughDevices(IntOption numPCIPassthroughDevices) {
-        this.numPCIPassthroughDevices = numPCIPassthroughDevices;
-    }
-
-    public void setNumSasSCSIControllers(IntOption numSasSCSIControllers) {
-        this.numSasSCSIControllers = numSasSCSIControllers;
-    }
-
-    public void setNumVmxnet3EthernetCards(IntOption numVmxnet3EthernetCards) {
-        this.numVmxnet3EthernetCards = numVmxnet3EthernetCards;
-    }
-
-    public void setNumParaVirtualSCSIControllers(IntOption numParaVirtualSCSIControllers) {
-        this.numParaVirtualSCSIControllers = numParaVirtualSCSIControllers;
-    }
-
-    public void setNumSATAControllers(IntOption numSATAControllers) {
-        this.numSATAControllers = numSATAControllers;
-    }
+    @Getter @Setter public IntOption numSCSIControllers;
+    @Getter @Setter public IntOption numEthernetCards;
+    @Getter @Setter public IntOption numVideoCards;
+    @Getter @Setter public IntOption numSoundCards;
+    @Getter @Setter public IntOption numVmiRoms;
+    @Getter @Setter public IntOption numVmciDevices;
+    @Getter @Setter public IntOption numPCIPassthroughDevices;
+    @Getter @Setter public IntOption numSasSCSIControllers;
+    @Getter @Setter public IntOption numVmxnet3EthernetCards;
+    @Getter @Setter public IntOption numParaVirtualSCSIControllers;
+    @Getter @Setter public IntOption numSATAControllers;
+    @Getter @Setter public IntOption numNVMEControllers;
 }
