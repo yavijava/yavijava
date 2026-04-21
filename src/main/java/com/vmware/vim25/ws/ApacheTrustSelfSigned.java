@@ -1,9 +1,9 @@
 package com.vmware.vim25.ws;
 
-import org.apache.http.conn.ssl.AllowAllHostnameVerifier;
-import org.apache.http.conn.ssl.SSLConnectionSocketFactory;
-import org.apache.http.conn.ssl.SSLContextBuilder;
-import org.apache.http.conn.ssl.TrustSelfSignedStrategy;
+import org.apache.hc.client5.http.ssl.NoopHostnameVerifier;
+import org.apache.hc.client5.http.ssl.SSLConnectionSocketFactory;
+import org.apache.hc.core5.ssl.SSLContextBuilder;
+import org.apache.hc.client5.http.ssl.TrustAllStrategy;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -33,23 +33,23 @@ public class ApacheTrustSelfSigned {
     private static Logger log = LoggerFactory.getLogger(ApacheTrustSelfSigned.class);
 
     public static SSLConnectionSocketFactory trust() {
-        SSLContextBuilder builder = new SSLContextBuilder();
+        SSLContextBuilder builder = SSLContextBuilder.create();
         log.trace("Set SSL Context Builder to trust self signed certs.");
         try {
-            builder.loadTrustMaterial(null, new TrustSelfSignedStrategy());
-            log.trace("Added Self Signed Strategy to builder.");
+            builder.loadTrustMaterial(TrustAllStrategy.INSTANCE);
+            log.trace("Added TrustAllStrategy to builder.");
         }
         catch (NoSuchAlgorithmException e) {
-            log.error("NoSuchAlgorithm caught trying to add SelfSignedStrategy.", e);
+            log.error("NoSuchAlgorithm caught trying to add TrustAllStrategy.", e);
             return null;
         }
         catch (KeyStoreException e) {
-            log.error("KeyStoreException caught trying to add TrustSelfSignedStrategy.", e);
+            log.error("KeyStoreException caught trying to add TrustAllStrategy.", e);
             return null;
         }
         SSLConnectionSocketFactory sslConnectionSocketFactory;
         try {
-            sslConnectionSocketFactory = new SSLConnectionSocketFactory(builder.build(), new AllowAllHostnameVerifier());
+            sslConnectionSocketFactory = new SSLConnectionSocketFactory(builder.build(), NoopHostnameVerifier.INSTANCE);
             log.trace("Added SSLConnectionSocketFactory to builder.");
         }
         catch (NoSuchAlgorithmException e) {
