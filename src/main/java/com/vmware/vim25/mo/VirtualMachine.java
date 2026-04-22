@@ -522,6 +522,13 @@ public class VirtualMachine extends ManagedEntity {
     }
 
     /**
+     * @since SDK5.5
+     */
+    public void terminate() throws InvalidState, TaskInProgress, RuntimeFault, RemoteException {
+        getVimService().terminateVM(getMOR());
+    }
+
+    /**
      * @since SDK4.0
      */
     public Task terminateFaultTolerantVM_Task(VirtualMachine vm) throws TaskInProgress, VmFaultToleranceIssue, InvalidState, RuntimeFault, RemoteException {
