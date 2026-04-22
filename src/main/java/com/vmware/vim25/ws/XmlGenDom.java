@@ -41,6 +41,8 @@ import org.dom4j.io.SAXReader;
 import org.doublecloud.ws.util.ReflectUtil;
 import org.doublecloud.ws.util.TypeUtil;
 
+import org.xml.sax.SAXException;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.lang.reflect.Array;
@@ -78,6 +80,13 @@ class XmlGenDom extends XmlGen {
         Element root = null;
         try {
             SAXReader reader = new SAXReader();
+            try {
+                reader.setFeature("http://apache.org/xml/features/disallow-doctype-decl", true);
+                reader.setFeature("http://xml.org/sax/features/external-general-entities", false);
+                reader.setFeature("http://xml.org/sax/features/external-parameter-entities", false);
+            } catch (SAXException e) {
+                throw new RemoteException("Failed to configure XML parser for XXE protection", e);
+            }
             Document doc = reader.read(is);
             if(log.isTraceEnabled()) {
                 log.trace("XML Document: " + doc.asXML());

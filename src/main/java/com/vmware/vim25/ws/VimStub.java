@@ -580,7 +580,12 @@ public class VimStub {
         Argument[] paras = new Argument[2];
         paras[0] = new Argument("_this", "ManagedObjectReference", _this);
         paras[1] = new Argument("criteria", "DistributedVirtualSwitchPortCriteria", criteria);
-        return (String[]) getWsc().invoke("FetchDVPortKeys", paras, "String[]");
+        Object result = getWsc().invoke("FetchDVPortKeys", paras, "String[]");
+        if (result instanceof java.util.List) {
+            java.util.List<?> list = (java.util.List<?>) result;
+            return list.toArray(new String[0]);
+        }
+        return (String[]) result;
     }
 
     public DistributedVirtualPort[] fetchDVPorts(ManagedObjectReference _this, DistributedVirtualSwitchPortCriteria criteria) throws java.rmi.RemoteException, RuntimeFault {
