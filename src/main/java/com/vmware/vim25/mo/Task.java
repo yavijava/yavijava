@@ -196,7 +196,7 @@ public class Task extends ExtensibleManagedObject {
             if (tState.equals(TaskInfoState.running)) {
                 Thread.sleep(runningDelayInMillSecond);
             }
-            else {
+            else if (tState.equals(TaskInfoState.queued)) {
                 Thread.sleep(queuedDelayInMillSecond);
             }
         }

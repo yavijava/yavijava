@@ -4,9 +4,11 @@ import com.vmware.vim25.*;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStream;
+import java.nio.charset.StandardCharsets;
 import java.rmi.RemoteException;
 import java.util.Objects;
 
@@ -138,5 +140,30 @@ public class XmlGenDomTest {
         InputStream inputStream = new FileInputStream(new File("src/test/resources/xml/UpdateSetWithBase64Binary.xml"));
         XmlGenDom xmlGenDom = new XmlGenDom();
         UpdateSet updateSet = (UpdateSet) xmlGenDom.fromXML("UpdateSet", inputStream);
+    }
+
+    @Test(expected = RemoteException.class)
+    public void fromXML_withDoctypeDeclaration_throwsRemoteException() throws Exception {
+        // DOCTYPE declarations must be rejected to prevent XXE attacks and offline
+        // DTD-fetch failures (issues #293, #240).
+        String payload = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" +
+            "<!DOCTYPE foo>\n" +
+            "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\">\n" +
+            "  <soapenv:Body><foo/></soapenv:Body>\n" +
+            "</soapenv:Envelope>";
+        InputStream is = new ByteArrayInputStream(payload.getBytes(StandardCharsets.UTF_8));
+        new XmlGenDom().fromXML("String", is);
+    }
+
+    @Test(expected = RemoteException.class)
+    public void fromXML_withExternalEntityReference_throwsRemoteException() throws Exception {
+        // External entity injection must be blocked (issue #293).
+        String payload = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" +
+            "<!DOCTYPE foo [<!ENTITY xxe SYSTEM \"file:///etc/passwd\">]>\n" +
+            "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\">\n" +
+            "  <soapenv:Body><foo>&xxe;</foo></soapenv:Body>\n" +
+            "</soapenv:Envelope>";
+        InputStream is = new ByteArrayInputStream(payload.getBytes(StandardCharsets.UTF_8));
+        new XmlGenDom().fromXML("String", is);
     }
 }
