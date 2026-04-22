@@ -170,6 +170,11 @@ abstract public class ManagedObject {
         Object propertyValue = null;
 
         if (objContent != null) {
+            MissingProperty[] missing = objContent.getMissingSet();
+            if (missing != null && missing.length > 0 && missing[0].getFault() != null) {
+                throw new RuntimeException(missing[0].getFault().getFault());
+            }
+
             DynamicProperty[] dynaProps = objContent.getPropSet();
 
             if ((dynaProps != null) && (dynaProps[0] != null)) {
