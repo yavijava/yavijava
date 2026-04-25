@@ -3,7 +3,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 /**
- * Created by Michael Rice on Fri Nov 18 12:45:26 CST 2016
+ * Created by Michael Rice on Fri Apr 24 22:47:25 CDT 2026
  * This code is auto generated using yavijava_generator
  * https://github.com/yavijava/yavijava_generator
  *
@@ -36,4 +36,5 @@ public class HostProtocolEndpoint extends DynamicData {
     @Getter @Setter public String nfsServerAuthType;
     @Getter @Setter public String nfsServerUser;
     @Getter @Setter public String deviceId;
+    @Getter @Setter public Boolean usedByStretchedContainer;
 }

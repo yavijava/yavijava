@@ -4,7 +4,7 @@ import lombok.Setter;
 import java.util.Calendar;
 
 /**
- * Created by Michael Rice on Fri Nov 18 12:45:26 CST 2016
+ * Created by Michael Rice on Fri Apr 24 22:47:25 CDT 2026
  * This code is auto generated using yavijava_generator
  * https://github.com/yavijava/yavijava_generator
  *
@@ -21,11 +21,12 @@ import java.util.Calendar;
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- * @since 6.5
+ * @since 6.0
  */
 
 public class HostSubSpecification extends DynamicData {
     @Getter @Setter public String name;
     @Getter @Setter public Calendar createdTime;
     @Getter @Setter public byte[] data;
+    @Getter @Setter public byte[] binaryData;
 }
