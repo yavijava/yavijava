@@ -60,6 +60,39 @@ The internal cache notification mechanism has been refactored away from the depr
 
 ---
 
+### vSphere 9.0 WSDL Bump
+
+The WSDL (and the regenerated `vim25/*` data objects, enums, and `VimStub`) is now at vSphere 9.0. Several `mo/*` wrapper signatures changed to match. Most are additive (new optional params nulled internally), but a handful are caller-visible breaks.
+
+**Public API removals:**
+
+- `AlarmManager.setAlarmStatus(Alarm, ManagedEntity, String)` — the underlying WSDL operation is gone in 9.0. There is no replacement.
+- `VRPResourceManager` (entire class) — VRP (Virtual Resource Pool) was removed by VMware in vSphere 9.0. All twelve underlying stub methods (`createVRP`, `deleteVRP`, `deployVM`, `getAllVRPIds`, `getChildRPforHub`, `getRPSettings`, `getVRPofVM`, `getVRPSettings`, `getVRPUsage`, `setManagedByVDC`, `undeployVM`, `updateVRP`) are gone. The generated `VRPEditSpec` and `VrpResourceAllocationInfo` data objects remain (regen output, harmless).
+- `HostDatastoreSystem.queryVmfsDatastoreCreateOptions(String)` (the SDK4.1 single-arg overload) — removed from the 9.0 stub. Use `queryVmfsDatastoreCreateOptions(String devicePath, int vmfsMajorVersion)` (the SDK5.0 overload) instead.
+
+**Public API signature changes:**
+
+- `CryptoManagerKmip.updateKmipServer(KmipServerSpec)` — return type changed from `String` to `void`. Drop any call-site usage of the return value.
+
+**Public API additions (new overloads, existing call sites still compile):**
+
+- `CryptoManager.listKeys(int limit)` — new required `limit` is surfaced as a wrapper arg. The no-arg `listKeys()` overload is retained and delegates with `limit = 0` (WSDL convention for "no limit"; verify against your vCenter if uncertain).
+- `DatastoreNamespaceManager.createDirectory(Datastore, String, String, long size)` — new 4-arg overload accepting `size`. The existing 3-arg overload is retained and delegates with `size = 0L`.
+- `HostStorageSystem.removeInternetScsiSendTargets(String, HostInternetScsiHbaSendTarget[], boolean force)` — new 3-arg overload accepting `force`. The existing 2-arg overload is retained and delegates with `force = false` (preserves prior non-forced behavior).
+
+**Internal changes (no public API impact):**
+
+- The stub call inside `HostAccessManager.changeLockdownMode` was renamed from `changeHostLockdownMode` to `changeLockdownMode` to track the WSDL rename. The public wrapper method name is unchanged.
+- A defensive `List` → `String[]` cast in `VimStub.fetchDVPortKeys` (originally added in commit `6eb81f6a` for issue-28) had to be reapplied after the regen. See `REGEN-NOTES.md` for the list of hand-fixes that future WSDL regens must preserve.
+
+**What to check:**
+
+- If you call `AlarmManager.setAlarmStatus`, `VRPResourceManager.*`, or the single-arg `queryVmfsDatastoreCreateOptions(String)` overload, your code will no longer compile. Migrate or delete those call sites.
+- If you consume the return value of `CryptoManagerKmip.updateKmipServer`, drop the assignment.
+- Other callers continue to work without changes.
+
+---
+
 ### vSphere 6.5 API Support Added
 
 The vSphere 6.5 API surface has been merged in. The default SOAP action for **unknown API versions** has changed from `urn:vim25/6.0` to `urn:vim25/6.5`.
