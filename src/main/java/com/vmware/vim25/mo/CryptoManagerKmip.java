@@ -62,8 +62,8 @@ public class CryptoManagerKmip extends CryptoManager {
         return getVimService().retrieveSelfSignedClientCert(getMOR(), cluster);
     }
 
-    public String updateKmipServer(KmipServerSpec server) throws RuntimeFault, RemoteException, InvalidArgument {
-        return getVimService().updateKmipServer(getMOR(), server);
+    public void updateKmipServer(KmipServerSpec server) throws RuntimeFault, RemoteException, InvalidArgument {
+        getVimService().updateKmipServer(getMOR(), server);
     }
 
     public void updateKmsSignedCsrClientCert(KeyProviderId cluster, String certificate) throws RuntimeFault, RemoteException, InvalidArgument {
