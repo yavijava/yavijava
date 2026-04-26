@@ -96,7 +96,7 @@ public class HostAccessManager extends ManagedObject {
      * @throws RemoteException
      */
     public void changeLockdownMode(HostLockdownMode mode) throws AuthMinimumAdminPermission, NoPermission, RuntimeFault, RemoteException {
-        getVimService().changeHostLockdownMode(getMOR(), mode);
+        getVimService().changeLockdownMode(getMOR(), mode);
     }
 
     /**
