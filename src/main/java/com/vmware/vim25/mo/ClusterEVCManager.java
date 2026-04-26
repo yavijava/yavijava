@@ -78,7 +78,7 @@ public class ClusterEVCManager extends ExtensibleManagedObject {
      * @throws RemoteException
      */
     public Task checkConfigureEvcMode_Task(String evcModeKey) throws RuntimeFault, RemoteException {
-        ManagedObjectReference task = getVimService().checkConfigureEvcMode_Task(getMOR(), evcModeKey);
+        ManagedObjectReference task = getVimService().checkConfigureEvcMode_Task(getMOR(), evcModeKey, null);
         return new Task(getServerConnection(), task);
     }
 
@@ -94,7 +94,7 @@ public class ClusterEVCManager extends ExtensibleManagedObject {
      * @throws RemoteException
      */
     public Task configureEvcMode_Task(String evcModeKey) throws RuntimeFault, RemoteException, EVCConfigFault {
-        ManagedObjectReference task = getVimService().configureEvcMode_Task(getMOR(), evcModeKey);
+        ManagedObjectReference task = getVimService().configureEvcMode_Task(getMOR(), evcModeKey, null);
         return new Task(getServerConnection(), task);
     }
 

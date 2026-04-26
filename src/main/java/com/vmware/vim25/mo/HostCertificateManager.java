@@ -46,7 +46,7 @@ public class HostCertificateManager extends ManagedObject {
      * @throws RemoteException
      */
     public String generateCertificateSigningRequest(boolean useIpAddressAsCommonName) throws HostConfigFault, RuntimeFault, RemoteException {
-        return getVimService().generateCertificateSigningRequest(getMOR(), useIpAddressAsCommonName);
+        return getVimService().generateCertificateSigningRequest(getMOR(), useIpAddressAsCommonName, null);
     }
 
     /**
@@ -60,7 +60,7 @@ public class HostCertificateManager extends ManagedObject {
      * @throws RemoteException
      */
     public String generateCertificateSigningRequestByDn(String distinguishedName) throws HostConfigFault, RuntimeFault, RemoteException {
-        return getVimService().generateCertificateSigningRequestByDn(getMOR(), distinguishedName);
+        return getVimService().generateCertificateSigningRequestByDn(getMOR(), distinguishedName, null);
     }
 
     /**

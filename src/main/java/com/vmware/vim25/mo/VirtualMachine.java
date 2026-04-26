@@ -441,7 +441,7 @@ public class VirtualMachine extends ManagedEntity {
 
     //SDK5.0 signature
     public Task removeAllSnapshots_Task(Boolean consolidate) throws SnapshotFault, TaskInProgress, InvalidState, RuntimeFault, RemoteException {
-        ManagedObjectReference mor = getVimService().removeAllSnapshots_Task(getMOR(), consolidate);
+        ManagedObjectReference mor = getVimService().removeAllSnapshots_Task(getMOR(), consolidate, null);
         return new Task(getServerConnection(), mor);
     }
 

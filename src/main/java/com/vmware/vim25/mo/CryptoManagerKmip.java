@@ -19,15 +19,15 @@ public class CryptoManagerKmip extends CryptoManager {
      * Generate a certificate signing request with its private .
      */
     public String generateClientCsr(KeyProviderId cluster) throws RuntimeFault, RemoteException {
-        return getVimService().generateClientCsr(getMOR(), cluster);
+        return getVimService().generateClientCsr(getMOR(), cluster, null);
     }
 
     public CryptoKeyResult generateKey(KeyProviderId keyProvider) throws RuntimeFault, RemoteException {
-        return getVimService().generateKey(getMOR(), keyProvider);
+        return getVimService().generateKey(getMOR(), keyProvider, null, null);
     }
 
     public String generateSelfSignedClientCert(KeyProviderId cluster) throws RuntimeFault, RemoteException {
-        return getVimService().generateSelfSignedClientCert(getMOR(), cluster);
+        return getVimService().generateSelfSignedClientCert(getMOR(), cluster, null);
     }
 
     public KmipClusterInfo[] listKmipServers(int limit) throws RuntimeFault, RemoteException {
