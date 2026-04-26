@@ -17,6 +17,13 @@ grep -rn "REGEN-PRESERVE" src/main/java/
 - **What it must be:** check whether `invoke` returned a `java.util.List`, and if so call `list.toArray(new String[0])` before returning. Otherwise the production SOAP path can throw `ClassCastException` for some servers.
 - **Test that catches a missing reapply:** `src/test/java/com/vmware/vim25/ws/VimStubFetchDVPortKeysTest.java`.
 
+### `VimStub.setAlarmStatus` — undocumented SOAP operation
+
+- **Origin:** discovered via the Onyx and doublecloud proxies. The `SetAlarmStatus` SOAP operation is not part of the published vCenter WSDL, so the regen does not emit a stub for it. The operation does work against real vCenter and is the only way to programmatically reset an alarm's `ManagedEntityStatus` from red back to green — `AcknowledgeAlarm` does not change the status.
+- **What the regen produces:** nothing (the method is silently dropped).
+- **What it must be:** a hand-added `setAlarmStatus(MOR _this, MOR alarm, MOR entity, String status)` method that invokes the `SetAlarmStatus` SOAP action with four arguments (`_this`, `alarm`, `entity`, `status`). The corresponding wrapper `AlarmManager.setAlarmStatus(Alarm, ManagedEntity, String)` calls it.
+- **How to recognize a missing reapply:** `AlarmManager.java` will fail to compile with `cannot find symbol method setAlarmStatus(...)` against `VimStub`.
+
 ## Procedure when regenerating `VimStub.java`
 
 1. Run the regen.

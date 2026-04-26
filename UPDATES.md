@@ -66,7 +66,6 @@ The WSDL (and the regenerated `vim25/*` data objects, enums, and `VimStub`) is n
 
 **Public API removals:**
 
-- `AlarmManager.setAlarmStatus(Alarm, ManagedEntity, String)` — the underlying WSDL operation is gone in 9.0. There is no replacement.
 - `VRPResourceManager` (entire class) — VRP (Virtual Resource Pool) was removed by VMware in vSphere 9.0. All twelve underlying stub methods (`createVRP`, `deleteVRP`, `deployVM`, `getAllVRPIds`, `getChildRPforHub`, `getRPSettings`, `getVRPofVM`, `getVRPSettings`, `getVRPUsage`, `setManagedByVDC`, `undeployVM`, `updateVRP`) are gone. The generated `VRPEditSpec` and `VrpResourceAllocationInfo` data objects remain (regen output, harmless).
 - `HostDatastoreSystem.queryVmfsDatastoreCreateOptions(String)` (the SDK4.1 single-arg overload) — removed from the 9.0 stub. Use `queryVmfsDatastoreCreateOptions(String devicePath, int vmfsMajorVersion)` (the SDK5.0 overload) instead.
 
@@ -87,7 +86,7 @@ The WSDL (and the regenerated `vim25/*` data objects, enums, and `VimStub`) is n
 
 **What to check:**
 
-- If you call `AlarmManager.setAlarmStatus`, `VRPResourceManager.*`, or the single-arg `queryVmfsDatastoreCreateOptions(String)` overload, your code will no longer compile. Migrate or delete those call sites.
+- If you call `VRPResourceManager.*` or the single-arg `queryVmfsDatastoreCreateOptions(String)` overload, your code will no longer compile. Migrate or delete those call sites.
 - If you consume the return value of `CryptoManagerKmip.updateKmipServer`, drop the assignment.
 - Other callers continue to work without changes.
 

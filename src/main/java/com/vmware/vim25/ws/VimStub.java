@@ -76,6 +76,20 @@ public class VimStub {
         getWsc().invoke("AcknowledgeAlarm", paras, null);
     }
 
+    // REGEN-PRESERVE: SetAlarmStatus is an undocumented SOAP operation discovered via
+    // the Onyx / doublecloud proxies. It is not in the WSDL and so the regen does
+    // not emit it, but the operation works on real vCenter and is the only way to
+    // programmatically reset an alarm's ManagedEntityStatus from red back to green.
+    // If you regenerate VimStub.java, reapply this stub (see REGEN-NOTES.md).
+    public void setAlarmStatus(ManagedObjectReference _this, ManagedObjectReference alarm, ManagedObjectReference entity, String status) throws java.rmi.RemoteException, RuntimeFault {
+        Argument[] params = new Argument[4];
+        params[0] = new Argument("_this", "ManagedObjectReference", _this);
+        params[1] = new Argument("alarm", "ManagedObjectReference", alarm);
+        params[2] = new Argument("entity", "ManagedObjectReference", entity);
+        params[3] = new Argument("status", "String", status);
+        getWsc().invoke("SetAlarmStatus", params, null);
+    }
+
     public HostServiceTicket acquireCimServicesTicket(ManagedObjectReference _this) throws java.rmi.RemoteException, RuntimeFault {
         Argument[] paras = new Argument[1];
         paras[0] = new Argument("_this", "ManagedObjectReference", _this);
