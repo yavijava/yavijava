@@ -224,7 +224,11 @@ public class HostStorageSystem extends ExtensibleManagedObject {
     }
 
     public void removeInternetScsiSendTargets(String iScsiHbaDevice, HostInternetScsiHbaSendTarget[] targets) throws HostConfigFault, NotFound, RuntimeFault, RemoteException {
-        getVimService().removeInternetScsiSendTargets(getMOR(), iScsiHbaDevice, targets);
+        removeInternetScsiSendTargets(iScsiHbaDevice, targets, false);
+    }
+
+    public void removeInternetScsiSendTargets(String iScsiHbaDevice, HostInternetScsiHbaSendTarget[] targets, boolean force) throws HostConfigFault, NotFound, RuntimeFault, RemoteException {
+        getVimService().removeInternetScsiSendTargets(getMOR(), iScsiHbaDevice, targets, force);
     }
 
     public void removeInternetScsiStaticTargets(String iScsiHbaDevice, HostInternetScsiHbaStaticTarget[] targets) throws HostConfigFault, NotFound, RuntimeFault, RemoteException {

@@ -67,7 +67,7 @@ public class IoFilterManager extends ManagedObject {
      * @throws RemoteException
      */
     public Task installIoFilter_Task(String vibUrl, ComputeResource compRes) throws AlreadyExists, InvalidArgument, RuntimeFault, RemoteException {
-        return new Task(getServerConnection(), getVimService().installIoFilter_Task(getMOR(), vibUrl, compRes.getMOR()));
+        return new Task(getServerConnection(), getVimService().installIoFilter_Task(getMOR(), vibUrl, compRes.getMOR(), null));
     }
 
     /**
@@ -239,6 +239,6 @@ public class IoFilterManager extends ManagedObject {
      * @throws RemoteException
      */
     public Task upgradeIoFilter_Task(String filterId, ComputeResource cluster, String vibUrl) throws InvalidArgument, InvalidState, NotFound, RuntimeFault, RemoteException {
-        return new Task(getServerConnection(), getVimService().upgradeIoFilter_Task(getMOR(), filterId, cluster.getMOR(), vibUrl));
+        return new Task(getServerConnection(), getVimService().upgradeIoFilter_Task(getMOR(), filterId, cluster.getMOR(), vibUrl, null));
     }
 }

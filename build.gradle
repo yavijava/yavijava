@@ -9,7 +9,7 @@ plugins {
 
 group = "com.toastcoders"
 archivesBaseName = "yavijava"
-version = '6.5.01-SNAPSHOT'
+version = '9.0-SNAPSHOT'
 ext.isReleaseVersion = !version.endsWith("SNAPSHOT")
 targetCompatibility = JavaVersion.VERSION_21
 sourceCompatibility = JavaVersion.VERSION_21

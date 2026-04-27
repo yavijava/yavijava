@@ -66,7 +66,7 @@ public class CryptoManager extends ManagedObject {
      * @throws RemoteException
      */
     public CryptoKeyId[] listKeys() throws RuntimeFault, RemoteException {
-        return getVimService().listKeys(getMOR());
+        return listKeys(0);
     }
 
     /**

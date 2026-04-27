@@ -46,7 +46,11 @@ public class DatastoreNamespaceManager extends ManagedObject {
     }
 
     public String createDirectory(Datastore datastore, String displayName, String policy) throws CannotCreateFile, FileAlreadyExists, InvalidDatastore, RuntimeFault, RemoteException {
-        return getVimService().createDirectory(this.getMOR(), datastore.getMOR(), displayName, policy);
+        return createDirectory(datastore, displayName, policy, 0L);
+    }
+
+    public String createDirectory(Datastore datastore, String displayName, String policy, long size) throws CannotCreateFile, FileAlreadyExists, InvalidDatastore, RuntimeFault, RemoteException {
+        return getVimService().createDirectory(this.getMOR(), datastore.getMOR(), displayName, policy, size);
     }
 
     public void deleteDirectory(Datacenter datacenter, String datastorePath) throws FileNotFound, InvalidDatastorePath, FileFault, InvalidDatastore, RuntimeFault, RemoteException {

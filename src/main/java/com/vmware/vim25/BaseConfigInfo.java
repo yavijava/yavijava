@@ -4,7 +4,7 @@ import lombok.Setter;
 import java.util.Calendar;
 
 /**
- * Created by Michael Rice on Fri Nov 18 12:45:25 CST 2016
+ * Created by Michael Rice on Fri Apr 24 22:47:25 CDT 2026
  * This code is auto generated using yavijava_generator
  * https://github.com/yavijava/yavijava_generator
  *
@@ -21,12 +21,19 @@ import java.util.Calendar;
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- * @since 6.5
+ * @since 6.0
  */
 
 public class BaseConfigInfo extends DynamicData {
     @Getter @Setter public ID id;
     @Getter @Setter public String name;
     @Getter @Setter public Calendar createTime;
+    @Getter @Setter public Boolean keepAfterDeleteVm;
+    @Getter @Setter public Boolean relocationDisabled;
+    @Getter @Setter public Boolean nativeSnapshotSupported;
+    @Getter @Setter public Boolean changedBlockTrackingEnabled;
     @Getter @Setter public BaseConfigInfoBackingInfo backing;
+    @Getter @Setter public KeyValue[] metadata;
+    @Getter @Setter public vslmVClockInfo vclock;
+    @Getter @Setter public String[] iofilter;
 }

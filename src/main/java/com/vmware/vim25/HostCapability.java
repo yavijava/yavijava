@@ -1,38 +1,9 @@
-/*================================================================================
-Copyright (c) 2013 Steve Jin. All Rights Reserved.
-
-Redistribution and use in source and binary forms, with or without modification,
-are permitted provided that the following conditions are met:
-
-* Redistributions of source code must retain the above copyright notice,
-this list of conditions and the following disclaimer.
-
-* Redistributions in binary form must reproduce the above copyright notice,
-this list of conditions and the following disclaimer in the documentation
-and/or other materials provided with the distribution.
-
-* Neither the name of VMware, Inc. nor the names of its contributors may be used
-to endorse or promote products derived from this software without specific prior
-written permission.
-
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
-ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
-WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
-IN NO EVENT SHALL VMWARE, INC. OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
-INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
-LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
-PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
-WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
-ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
-POSSIBILITY OF SUCH DAMAGE.
-================================================================================*/
-
 package com.vmware.vim25;
 import lombok.Getter;
 import lombok.Setter;
 
 /**
- * Created by Michael Rice on Fri Nov 18 12:45:26 CST 2016
+ * Created by Michael Rice on Fri Apr 24 22:47:25 CDT 2026
  * This code is auto generated using yavijava_generator
  * https://github.com/yavijava/yavijava_generator
  *
@@ -85,6 +56,7 @@ public class HostCapability extends DynamicData {
     @Getter @Setter public Boolean vmotionWithStorageVMotionSupported;
     @Getter @Setter public Boolean vmotionAcrossNetworkSupported;
     @Getter @Setter public Integer maxNumDisksSVMotion;
+    @Getter @Setter public Integer maxVirtualDiskDescVersionSupported;
     @Getter @Setter public Boolean hbrNicSelectionSupported;
     @Getter @Setter public Boolean vrNfcNicSelectionSupported;
     @Getter @Setter public Boolean recordReplaySupported;
@@ -100,6 +72,8 @@ public class HostCapability extends DynamicData {
     @Getter @Setter public Boolean deltaDiskBackingsSupported;
     @Getter @Setter public Boolean perVMNetworkTrafficShapingSupported;
     @Getter @Setter public Boolean tpmSupported;
+    @Getter @Setter public String tpmVersion;
+    @Getter @Setter public Boolean txtEnabled;
     @Getter @Setter public HostCpuIdInfo[] supportedCpuFeature;
     @Getter @Setter public Boolean virtualExecUsageSupported;
     @Getter @Setter public Boolean storageIORMSupported;
@@ -137,6 +111,8 @@ public class HostCapability extends DynamicData {
     @Getter @Setter public Boolean markAsSsdSupported;
     @Getter @Setter public Boolean markAsLocalSupported;
     @Getter @Setter public Boolean smartCardAuthenticationSupported;
+    @Getter @Setter public Boolean pMemSupported;
+    @Getter @Setter public Boolean pMemSnapshotSupported;
     @Getter @Setter public Boolean cryptoSupported;
     @Getter @Setter public Boolean oneKVolumeAPIsSupported;
     @Getter @Setter public Boolean gatewayOnNicSupported;
@@ -152,4 +128,59 @@ public class HostCapability extends DynamicData {
     @Getter @Setter public Boolean encryptionVFlashSupported;
     @Getter @Setter public Boolean encryptionCBRCSupported;
     @Getter @Setter public Boolean encryptionHBRSupported;
+    @Getter @Setter public Boolean ftEfiSupported;
+    @Getter @Setter public String unmapMethodSupported;
+    @Getter @Setter public Integer maxMemMBPerFtVm;
+    @Getter @Setter public Boolean virtualMmuUsageIgnored;
+    @Getter @Setter public Boolean virtualExecUsageIgnored;
+    @Getter @Setter public Boolean vmCreateDateSupported;
+    @Getter @Setter public Boolean vmfs3EOLSupported;
+    @Getter @Setter public Boolean ftVmcpSupported;
+    @Getter @Setter public Boolean quickBootSupported;
+    @Getter @Setter public Boolean encryptedFtSupported;
+    @Getter @Setter public Boolean assignableHardwareSupported;
+    @Getter @Setter public Boolean suspendToMemorySupported;
+    @Getter @Setter public Boolean useFeatureReqsForOldHWv;
+    @Getter @Setter public Boolean markPerenniallyReservedSupported;
+    @Getter @Setter public Boolean hppPspSupported;
+    @Getter @Setter public Boolean deviceRebindWithoutRebootSupported;
+    @Getter @Setter public Boolean storagePolicyChangeSupported;
+    @Getter @Setter public Boolean precisionTimeProtocolSupported;
+    @Getter @Setter public Boolean remoteDeviceVMotionSupported;
+    @Getter @Setter public Integer maxSupportedVmMemory;
+    @Getter @Setter public Boolean ahDeviceHintsSupported;
+    @Getter @Setter public Boolean nvmeOverTcpSupported;
+    @Getter @Setter public Boolean nvmeStorageFabricServicesSupported;
+    @Getter @Setter public Boolean assignHwPciConfigSupported;
+    @Getter @Setter public Boolean timeConfigSupported;
+    @Getter @Setter public Boolean nvmeBatchOperationsSupported;
+    @Getter @Setter public Boolean pMemFailoverSupported;
+    @Getter @Setter public Boolean hostConfigEncryptionSupported;
+    @Getter @Setter public Integer maxSupportedSimultaneousThreads;
+    @Getter @Setter public Boolean ptpConfigSupported;
+    @Getter @Setter public Integer maxSupportedPtpPorts;
+    @Getter @Setter public Boolean sgxRegistrationSupported;
+    @Getter @Setter public Boolean pMemIndependentSnapshotSupported;
+    @Getter @Setter public Boolean iommuSLDirtyCapable;
+    @Getter @Setter public Boolean vmknicBindingSupported;
+    @Getter @Setter public Boolean ultralowFixedUnmapSupported;
+    @Getter @Setter public Boolean nvmeVvolSupported;
+    @Getter @Setter public Boolean fptHotplugSupported;
+    @Getter @Setter public Boolean mconnectSupported;
+    @Getter @Setter public Boolean vsanNicMgmtSupported;
+    @Getter @Setter public Boolean vvolNQNSupported;
+    @Getter @Setter public Boolean stretchedSCSupported;
+    @Getter @Setter public Boolean vmknicBindingOnNFSv41;
+    @Getter @Setter public Boolean vpStatusCheckSupported;
+    @Getter @Setter public Boolean e2e4knSupported;
+    @Getter @Setter public Boolean vsanDedicatedVmkNicSupported;
+    @Getter @Setter public Boolean nConnectSupported;
+    @Getter @Setter public Boolean userKeySupported;
+    @Getter @Setter public Boolean ndcmSupported;
+    @Getter @Setter public Boolean uefiSecureBoot;
+    @Getter @Setter public Boolean vpxdVmxGenerationSupported;
+    @Getter @Setter public Boolean nfs41Krb5pSupported;
+    @Getter @Setter public Boolean cimSupported;
+    @Getter @Setter public Boolean npivSupported;
+    @Getter @Setter public Boolean entitlementSupported;
 }

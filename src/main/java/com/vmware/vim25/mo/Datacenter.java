@@ -113,7 +113,7 @@ public class Datacenter extends ManagedEntity {
 
     public HostConnectInfo queryConnectionInfo(String hostname, int port, String username, String password,
                                                String sslThumbprint) throws InvalidLogin, HostConnectFault, RuntimeFault, RemoteException {
-        return getVimService().queryConnectionInfo(getMOR(), hostname, port, username, password, sslThumbprint);
+        return getVimService().queryConnectionInfo(getMOR(), hostname, port, username, password, sslThumbprint, null);
     }
 
     /**

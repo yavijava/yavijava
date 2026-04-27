@@ -77,8 +77,11 @@ public class AlarmManager extends ManagedObject {
     }
 
     /**
-     * Set the status of an alarm for the given managed entity. Not a public
-     * VMware API.
+     * Set the status of an alarm for the given managed entity. SetAlarmStatus
+     * is an undocumented SOAP operation that is not part of the published
+     * VMware WSDL — it was discovered via the Onyx and doublecloud proxies
+     * and is the only way to programmatically reset an alarm's
+     * {@link ManagedEntityStatus} from red back to green.
      *
      * @param alarm
      *            The {@link Alarm} to set the status of.
