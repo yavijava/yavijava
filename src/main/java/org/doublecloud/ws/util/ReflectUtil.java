@@ -162,6 +162,9 @@ public class ReflectUtil {
         else if ("boolean[]".equals(type)) {
             field.set(object, toBooleanArray(values));
         }
+        else if ("double[]".equals(type)) {
+            field.set(object, toDoubleArray(values));
+        }
         else {
             throw new RuntimeException("Unexpected Type at setObjectArrayField: " + field.getType().getCanonicalName() + field.getName());
         }
