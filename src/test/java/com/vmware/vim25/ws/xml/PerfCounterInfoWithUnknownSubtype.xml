@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+                  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <soapenv:Body>
+        <RetrievePropertiesResponse xmlns="urn:vim25">
+            <returnval>
+                <obj type="PerformanceManager">PerfMgr</obj>
+                <propSet>
+                    <name>perfCounter</name>
+                    <val xsi:type="ArrayOfPerfCounterInfo">
+                        <PerfCounterInfo xsi:type="PerfCounterInfo">
+                            <key>1</key>
+                            <nameInfo><label>Usage</label><summary>CPU usage</summary><key>usage</key></nameInfo>
+                            <groupInfo><label>CPU</label><summary>CPU</summary><key>cpu</key></groupInfo>
+                            <unitInfo><label>%</label><summary>Percentage</summary><key>percent</key></unitInfo>
+                            <rollupType>none</rollupType>
+                            <statsType>rate</statsType>
+                            <level>4</level>
+                            <perDeviceLevel>4</perDeviceLevel>
+                        </PerfCounterInfo>
+                        <PerfCounterInfo xsi:type="PerfCounterInfoInt">
+                            <key>369</key>
+                            <nameInfo><label>VXLAN tx throughput</label><summary>Transmitted packet rate</summary><key>throughput.vds.txTotal</key></nameInfo>
+                            <groupInfo><label>Network</label><summary>Network</summary><key>net</key></groupInfo>
+                            <unitInfo><label>num</label><summary>Number</summary><key>number</key></unitInfo>
+                            <rollupType>summation</rollupType>
+                            <statsType>delta</statsType>
+                            <level>4</level>
+                            <perDeviceLevel>4</perDeviceLevel>
+                            <enabledByDefault>false</enabledByDefault>
+                            <enabled>false</enabled>
+                        </PerfCounterInfo>
+                    </val>
+                </propSet>
+            </returnval>
+        </RetrievePropertiesResponse>
+    </soapenv:Body>
+</soapenv:Envelope>

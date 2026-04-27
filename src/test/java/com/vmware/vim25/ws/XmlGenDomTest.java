@@ -192,4 +192,22 @@ public class XmlGenDomTest {
             (com.vmware.vim25.NoPermission) mp.getFault().getFault();
         Assert.assertEquals("System.Read", np.privilegeId);
     }
+
+    @Test
+    public void testFromXML_PerfCounterInfoWithUnknownSubtype_ParsesGracefully() throws Exception {
+        InputStream inputStream = new FileInputStream(
+            new File("src/test/java/com/vmware/vim25/ws/xml/PerfCounterInfoWithUnknownSubtype.xml"));
+        XmlGenDom xmlGenDom = new XmlGenDom();
+        ObjectContent objectContent = (ObjectContent) xmlGenDom.fromXML("ObjectContent", inputStream);
+
+        Assert.assertNotNull(objectContent.getPropSet());
+        Assert.assertEquals(1, objectContent.getPropSet().length);
+
+        PerfCounterInfo[] counters = (PerfCounterInfo[]) objectContent.getPropSet()[0].getVal();
+        Assert.assertNotNull("counter array should not be null", counters);
+        Assert.assertEquals("should have parsed both counters", 2, counters.length);
+
+        Assert.assertEquals("first counter key", 1, counters[0].getKey());
+        Assert.assertEquals("unknown-subtype counter key should be 369", 369, counters[1].getKey());
+    }
 }
