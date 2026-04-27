@@ -166,4 +166,30 @@ public class XmlGenDomTest {
         InputStream is = new ByteArrayInputStream(payload.getBytes(StandardCharsets.UTF_8));
         new XmlGenDom().fromXML("String", is);
     }
+
+    @Test
+    public void testFromXML_ObjectContentWithMissingSet_ParsesMissingPropertyFault() throws Exception {
+        InputStream inputStream = new FileInputStream(
+            new File("src/test/java/com/vmware/vim25/ws/xml/ObjectContentWithMissingSet.xml"));
+        XmlGenDom xmlGenDom = new XmlGenDom();
+        ObjectContent objectContent = (ObjectContent) xmlGenDom.fromXML("ObjectContent", inputStream);
+
+        Assert.assertNotNull("missingSet should be populated", objectContent.getMissingSet());
+        Assert.assertEquals(1, objectContent.getMissingSet().length);
+
+        MissingProperty mp = objectContent.getMissingSet()[0];
+        Assert.assertEquals("config", mp.getPath());
+        Assert.assertNotNull("MissingProperty.fault should not be null", mp.getFault());
+        Assert.assertEquals(
+            "Permission to perform this operation was denied.",
+            mp.getFault().getLocalizedMessage());
+        Assert.assertNotNull("LocalizedMethodFault.fault should not be null", mp.getFault().getFault());
+        Assert.assertTrue(
+            "inner fault should be a NoPermission",
+            mp.getFault().getFault() instanceof com.vmware.vim25.NoPermission);
+
+        com.vmware.vim25.NoPermission np =
+            (com.vmware.vim25.NoPermission) mp.getFault().getFault();
+        Assert.assertEquals("System.Read", np.privilegeId);
+    }
 }

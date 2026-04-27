@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+                  xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"
+                  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <soapenv:Body>
+        <RetrievePropertiesResponse xmlns="urn:vim25">
+            <returnval>
+                <obj type="VirtualMachine">vm-1</obj>
+                <missingSet>
+                    <path>config</path>
+                    <fault>
+                        <fault xsi:type="NoPermission">
+                            <object type="VirtualMachine">vm-1</object>
+                            <privilegeId>System.Read</privilegeId>
+                            <unknownFutureField>someValue</unknownFutureField>
+                        </fault>
+                        <localizedMessage>Permission to perform this operation was denied.</localizedMessage>
+                    </fault>
+                </missingSet>
+            </returnval>
+        </RetrievePropertiesResponse>
+    </soapenv:Body>
+</soapenv:Envelope>

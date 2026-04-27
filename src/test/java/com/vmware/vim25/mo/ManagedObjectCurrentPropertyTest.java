@@ -80,4 +80,32 @@ public class ManagedObjectCurrentPropertyTest {
             assertNotNull(e.getCause());
         }
     }
+
+    @Test
+    public void getCurrentProperty_runtimeExceptionMessageIsLocalizedMessageFromFault() {
+        MissingProperty missing = new MissingProperty();
+        missing.setPath("config");
+        LocalizedMethodFault lmf = new LocalizedMethodFault();
+        lmf.setFault(new com.vmware.vim25.NoPermission());
+        lmf.setLocalizedMessage("Permission to perform this operation was denied.");
+        missing.setFault(lmf);
+
+        ObjectContent objContent = new ObjectContent();
+        objContent.setMissingSet(new MissingProperty[]{missing});
+
+        TestManagedObject mo = new TestManagedObject(objContent);
+
+        try {
+            mo.testGetCurrentProperty("config");
+            fail("Expected RuntimeException");
+        } catch (RuntimeException e) {
+            assertEquals(
+                "Exception message should be the localized message from the server fault",
+                "Permission to perform this operation was denied.",
+                e.getMessage());
+            assertTrue(
+                "Cause should be the MethodFault so callers can inspect type",
+                e.getCause() instanceof com.vmware.vim25.NoPermission);
+        }
+    }
 }
