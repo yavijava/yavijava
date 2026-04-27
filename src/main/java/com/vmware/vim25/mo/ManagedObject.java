@@ -172,7 +172,11 @@ abstract public class ManagedObject {
         if (objContent != null) {
             MissingProperty[] missing = objContent.getMissingSet();
             if (missing != null && missing.length > 0 && missing[0].getFault() != null) {
-                throw new RuntimeException(missing[0].getFault().getFault());
+                LocalizedMethodFault lmf = missing[0].getFault();
+                String message = lmf.getLocalizedMessage() != null
+                    ? lmf.getLocalizedMessage()
+                    : "Property '" + propertyName + "' could not be retrieved";
+                throw new RuntimeException(message, lmf.getFault());
             }
 
             DynamicProperty[] dynaProps = objContent.getPropSet();
