@@ -271,11 +271,17 @@ class XmlGenDom extends XmlGen {
             String tagName = e.getName();
 
             Field field = null;
-            if (TypeUtil.isPrimitiveType(tagName)) {
-                field = clazz.getField("_" + tagName);
+            try {
+                if (TypeUtil.isPrimitiveType(tagName)) {
+                    field = clazz.getField("_" + tagName);
+                }
+                else {
+                    field = clazz.getField(tagName);
+                }
             }
-            else {
-                field = clazz.getField(tagName);
+            catch (NoSuchFieldException nsfe) {
+                log.debug("Skipping unrecognized element '{}' in {}", tagName, clazz.getSimpleName());
+                continue;
             }
 
             Class<?> fType = field.getType();
