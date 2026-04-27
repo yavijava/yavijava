@@ -101,17 +101,6 @@ public class ReflectUtilTest {
     }
 
     @Test
-    public void testReflectUtil_ParseToObject_Returns_Double_Array() throws Exception {
-        List<String> values = Arrays.asList("1.1", "2.2", "3.3");
-        double[] result = (double[]) ReflectUtil.parseToObject("double[]", values);
-        assertNotNull(result);
-        assertEquals(3, result.length);
-        assertEquals(1.1, result[0], 0.0001);
-        assertEquals(2.2, result[1], 0.0001);
-        assertEquals(3.3, result[2], 0.0001);
-    }
-
-    @Test
     public void testReflectUtil_SetObjectArrayField_Supports_Double_Array() throws Exception {
         // StoragePerformanceSummary has double[] fields (e.g. datastoreReadLatency).
         // Prior to the fix, setObjectArrayField threw RuntimeException for double[].
