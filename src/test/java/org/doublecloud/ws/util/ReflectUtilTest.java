@@ -1,6 +1,7 @@
 package org.doublecloud.ws.util;
 
 import com.vmware.vim25.PropertyChange;
+import com.vmware.vim25.StoragePerformanceSummary;
 import org.doublecloud.ws.util.testUtils.*;
 import org.junit.Test;
 
@@ -97,5 +98,29 @@ public class ReflectUtilTest {
     public void testReflectUtil_ParseToObject_Returns_Calendar_For_dateTime_Alias() throws Exception {
         Object result = ReflectUtil.parseToObject("dateTime", Arrays.asList("2015-06-19T10:00:00.000-05:00"));
         assertTrue(result instanceof Calendar);
+    }
+
+    @Test
+    public void testReflectUtil_ParseToObject_Returns_Double_Array() throws Exception {
+        List<String> values = Arrays.asList("1.1", "2.2", "3.3");
+        double[] result = (double[]) ReflectUtil.parseToObject("double[]", values);
+        assertNotNull(result);
+        assertEquals(3, result.length);
+        assertEquals(1.1, result[0], 0.0001);
+        assertEquals(2.2, result[1], 0.0001);
+        assertEquals(3.3, result[2], 0.0001);
+    }
+
+    @Test
+    public void testReflectUtil_SetObjectArrayField_Supports_Double_Array() throws Exception {
+        // StoragePerformanceSummary has double[] fields (e.g. datastoreReadLatency).
+        // Prior to the fix, setObjectArrayField threw RuntimeException for double[].
+        StoragePerformanceSummary summary = new StoragePerformanceSummary();
+        Field field = StoragePerformanceSummary.class.getField("datastoreReadLatency");
+        List<String> values = Arrays.asList("0.5", "1.0", "1.5");
+        ReflectUtil.setObjectArrayField(summary, field, "double[]", values);
+        assertNotNull(summary.getDatastoreReadLatency());
+        assertEquals(3, summary.getDatastoreReadLatency().length);
+        assertEquals(0.5, summary.getDatastoreReadLatency()[0], 0.0001);
     }
 }
