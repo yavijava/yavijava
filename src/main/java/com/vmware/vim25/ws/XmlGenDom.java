@@ -241,7 +241,12 @@ class XmlGenDom extends XmlGen {
             for (int i = 0; i < subNodes.size(); i++) {
                 Element e = subNodes.get(i);
                 String xsiType = e.attributeValue(SoapConsts.XSI_TYPE);
-                Object o = fromXml(TypeUtil.getVimClass(xsiType == null ? arrayItemTypeName : xsiType), subNodes.get(i));
+                Class<?> itemClass = TypeUtil.getVimClass(xsiType == null ? arrayItemTypeName : xsiType);
+                if (itemClass == null) {
+                    log.debug("Unknown xsi:type '{}' for array element, using base type {}", xsiType, arrayItemTypeName);
+                    itemClass = clazz;
+                }
+                Object o = fromXml(itemClass, subNodes.get(i));
                 Array.set(ao, i, o);
             }
             return ao;
@@ -293,8 +298,25 @@ class XmlGenDom extends XmlGen {
 
             Class fRealType = fType;
             String xsiType = e.attributeValue(SoapConsts.XSI_TYPE);
-            if (xsiType != null && (!xsiType.startsWith("xsd:"))) {
-                fRealType = TypeUtil.getVimClass(xsiType);
+            if (xsiType != null && xsiType.startsWith("ArrayOf")) {
+                String itemTypeName = xsiType.substring("ArrayOf".length());
+                Class<?> itemClass = TypeUtil.getVimClass(itemTypeName);
+                if (itemClass != null) {
+                    field.set(obj, fromXML(itemTypeName + "[]", e));
+                }
+                else {
+                    log.debug("Unknown ArrayOf item type '{}', skipping field", itemTypeName);
+                }
+                continue;
+            }
+            else if (xsiType != null && (!xsiType.startsWith("xsd:"))) {
+                Class resolvedType = TypeUtil.getVimClass(xsiType);
+                if (resolvedType != null) {
+                    fRealType = resolvedType;
+                }
+                else {
+                    log.debug("Unknown xsi:type '{}', falling back to declared field type {}", xsiType, fType.getSimpleName());
+                }
             }
 
             if (fRealType == ManagedObjectReference.class) { // MOR
