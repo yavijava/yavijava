@@ -1,3 +1,4 @@
+// auto generated using yavijava_generator
 /*================================================================================
 Copyright (c) 2013 Steve Jin. All Rights Reserved.
 Copyright (c) 2008 VMware, Inc. All Rights Reserved.
@@ -29,12 +30,17 @@ POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
 package com.vmware.vim25.mo;
 
+/* ===== BEGIN custom imports (preserved by regenerator) ===== */
 import com.vmware.vim25.DvsFault;
 import com.vmware.vim25.ManagedObjectReference;
 import com.vmware.vim25.RuntimeFault;
 import com.vmware.vim25.VMwareDvsLacpGroupSpec;
+/* ===== END custom imports ===== */
 
+
+import com.vmware.vim25.*;
 import java.rmi.RemoteException;
+import java.util.Calendar;
 
 /**
  * The managed object class corresponding to the one defined in VI SDK API reference.
@@ -43,6 +49,7 @@ import java.rmi.RemoteException;
  * @since 4.0
  */
 public class VmwareDistributedVirtualSwitch extends DistributedVirtualSwitch {
+
     public VmwareDistributedVirtualSwitch(ServerConnection sc, ManagedObjectReference mor) {
         super(sc, mor);
     }
@@ -51,4 +58,6 @@ public class VmwareDistributedVirtualSwitch extends DistributedVirtualSwitch {
         ManagedObjectReference mor = getVimService().updateDVSLacpGroupConfig_Task(this.getMOR(), lacpGroupSpec);
         return new Task(this.getServerConnection(), mor);
     }
+    /* ===== BEGIN custom (preserved by regenerator) ===== */
+    /* ===== END custom ===== */
 }

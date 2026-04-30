@@ -1,3 +1,4 @@
+// auto generated using yavijava_generator
 /*================================================================================
 Copyright (c) 2008 VMware, Inc. All Rights Reserved.
 
@@ -26,20 +27,22 @@ WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWIS
 ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE 
 POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
-
 package com.vmware.vim25.mo;
 
-import com.vmware.vim25.*;
+/* ===== BEGIN custom imports (preserved by regenerator) ===== */
 import com.vmware.vim25.mo.util.MorUtil;
+/* ===== END custom imports ===== */
 
+
+import com.vmware.vim25.*;
 import java.rmi.RemoteException;
+import java.util.Calendar;
 
 /**
  * The managed object class corresponding to the one defined in VI SDK API reference.
  *
  * @author Steve JIN (http://www.doublecloud.org)
  */
-
 public class ClusterComputeResource extends ComputeResource {
 
     public ClusterComputeResource(ServerConnection sc, ManagedObjectReference mor) {
@@ -76,11 +79,6 @@ public class ClusterComputeResource extends ComputeResource {
         return (ClusterRecommendation[]) getCurrentProperty("recommendation");
     }
 
-    // SDK 2.5 signature for back compatibility
-    public Task addHost_Task(HostConnectSpec spec, boolean asConnected, ResourcePool resourcePool) throws InvalidLogin, HostConnectFault, RuntimeFault, RemoteException {
-        return addHost_Task(spec, asConnected, resourcePool, null);
-    }
-
     // new SDK 4.0 signature
     public Task addHost_Task(HostConnectSpec spec, boolean asConnected, ResourcePool resourcePool, String license) throws InvalidLogin, HostConnectFault, RuntimeFault, RemoteException {
         ManagedObjectReference taskMOR = getVimService().addHost_Task(getMOR(), spec, asConnected, resourcePool == null ? null : resourcePool.getMOR(), license);
@@ -98,37 +96,6 @@ public class ClusterComputeResource extends ComputeResource {
         getVimService().cancelRecommendation(getMOR(), key);
     }
 
-    /**
-     * @since SDK5.0
-     */
-    public ClusterEnterMaintenanceResult clusterEnterMaintenanceMode(HostSystem[] hosts, OptionValue[] option) throws RuntimeFault, RemoteException {
-        ManagedObjectReference[] hostMors = MorUtil.createMORs(hosts);
-        return getVimService().clusterEnterMaintenanceMode(getMOR(), hostMors, option, null);
-    }
-
-    public Task moveHostInto_Task(HostSystem host, ResourcePool resourcePool) throws TooManyHosts, InvalidState, RuntimeFault, RemoteException {
-        if (host == null) {
-            throw new IllegalArgumentException("host must not be null.");
-        }
-        ManagedObjectReference taskMOR = getVimService().moveHostInto_Task(getMOR(), host.getMOR(), resourcePool == null ? null : resourcePool.getMOR());
-        return new Task(getServerConnection(), taskMOR);
-    }
-
-    public Task moveInto_Task(HostSystem[] hosts) throws TooManyHosts, DuplicateName, InvalidState, RuntimeFault, RemoteException {
-        if (hosts == null) {
-            throw new IllegalArgumentException("hosts must not be null.");
-        }
-        ManagedObjectReference taskMOR = getVimService().moveInto_Task(getMOR(), MorUtil.createMORs(hosts));
-        return new Task(getServerConnection(), taskMOR);
-    }
-
-    public ClusterHostRecommendation[] recommendHostsForVm(VirtualMachine vm, ResourcePool pool) throws RuntimeFault, RemoteException {
-        if (vm == null) {
-            throw new IllegalArgumentException("vm must not be null.");
-        }
-        return getVimService().recommendHostsForVm(getMOR(), vm.getMOR(), pool == null ? null : pool.getMOR());
-    }
-
     public Task reconfigureCluster_Task(ClusterConfigSpec spec, boolean modify) throws RuntimeFault, RemoteException {
         ManagedObjectReference taskMOR = getVimService().reconfigureCluster_Task(getMOR(), spec, modify);
         return new Task(getServerConnection(), taskMOR);
@@ -136,13 +103,6 @@ public class ClusterComputeResource extends ComputeResource {
 
     public void refreshRecommendation() throws RuntimeFault, RemoteException {
         getVimService().refreshRecommendation(getMOR());
-    }
-
-    /**
-     * @since 4.0
-     */
-    public ClusterDasAdvancedRuntimeInfo retrieveDasAdvancedRuntimeInfo() throws RuntimeFault, RemoteException {
-        return getVimService().retrieveDasAdvancedRuntimeInfo(getMOR());
     }
 
     /**
@@ -159,47 +119,6 @@ public class ClusterComputeResource extends ComputeResource {
     }
 
     /**
-     * Finds all enabled and disabled VM-VM Affinity and Anti-Affinity rules, involving the given Virtual Machine.
-     *
-     * @param vm The vm whose rules need to be looked up.
-     * @return Array of rule info
-     * @throws RuntimeFault
-     * @throws RemoteException
-     * @since 6.0
-     */
-    public ClusterRuleInfo[] findRulesForVm(VirtualMachine vm) throws RuntimeFault, RemoteException {
-        return getVimService().findRulesForVm(getMOR(), vm.getMOR());
-    }
-
-    /**
-     * This API can be invoked to get the current CPU, memory and storage usage in the cluster.
-     *
-     * @return An instance of ClusterResourceUsageSummary
-     * @throws RuntimeFault
-     * @throws RemoteException
-     * @since 6.0
-     */
-    public ClusterResourceUsageSummary getResourceUsage() throws RuntimeFault, RemoteException {
-        return getVimService().getResourceUsage(getMOR());
-    }
-
-    /**
-     * This method returns a PlacementResult object. This API can be invoked to ask DRS for a set of recommendations for
-     * moving a virtual machine and its virtual disks into a cluster.
-     *
-     * @param placementSpec Specification for placing a virtual machine and its virtual disks
-     * @return PlacementResult
-     * @throws InvalidArgument
-     * @throws InvalidState
-     * @throws RuntimeFault
-     * @throws RemoteException
-     * @since 6.0
-     */
-    public PlacementResult placeVm(PlacementSpec placementSpec) throws InvalidArgument, InvalidState, RuntimeFault, RemoteException {
-        return getVimService().placeVm(getMOR(), placementSpec);
-    }
-
-    /**
      * Stamp all rules in the cluster with ruleUuid. If a rule has ruleUuid field set, and it has a value, leave it
      * untouched. If rule's ruleUuid field is unset, generate a UUID and stamp the rule.
      *
@@ -212,4 +131,81 @@ public class ClusterComputeResource extends ComputeResource {
         ManagedObjectReference taskMor = getVimService().stampAllRulesWithUuid_Task(getMOR());
         return new Task(getServerConnection(), taskMor);
     }
+    /* ===== BEGIN custom (preserved by regenerator) ===== */
+    // SDK 2.5 signature for back compatibility
+public Task addHost_Task(HostConnectSpec spec, boolean asConnected, ResourcePool resourcePool) throws InvalidLogin, HostConnectFault, RuntimeFault, RemoteException {
+    return addHost_Task(spec, asConnected, resourcePool, null);
+}
+    /**
+ * @since SDK5.0
+ */
+public ClusterEnterMaintenanceResult clusterEnterMaintenanceMode(HostSystem[] hosts, OptionValue[] option) throws RuntimeFault, RemoteException {
+    ManagedObjectReference[] hostMors = MorUtil.createMORs(hosts);
+    return getVimService().clusterEnterMaintenanceMode(getMOR(), hostMors, option, null);
+}
+    public Task moveHostInto_Task(HostSystem host, ResourcePool resourcePool) throws TooManyHosts, InvalidState, RuntimeFault, RemoteException {
+    if (host == null) {
+        throw new IllegalArgumentException("host must not be null.");
+    }
+    ManagedObjectReference taskMOR = getVimService().moveHostInto_Task(getMOR(), host.getMOR(), resourcePool == null ? null : resourcePool.getMOR());
+    return new Task(getServerConnection(), taskMOR);
+}
+    public Task moveInto_Task(HostSystem[] hosts) throws TooManyHosts, DuplicateName, InvalidState, RuntimeFault, RemoteException {
+    if (hosts == null) {
+        throw new IllegalArgumentException("hosts must not be null.");
+    }
+    ManagedObjectReference taskMOR = getVimService().moveInto_Task(getMOR(), MorUtil.createMORs(hosts));
+    return new Task(getServerConnection(), taskMOR);
+}
+    public ClusterHostRecommendation[] recommendHostsForVm(VirtualMachine vm, ResourcePool pool) throws RuntimeFault, RemoteException {
+    if (vm == null) {
+        throw new IllegalArgumentException("vm must not be null.");
+    }
+    return getVimService().recommendHostsForVm(getMOR(), vm.getMOR(), pool == null ? null : pool.getMOR());
+}
+    /**
+ * @since 4.0
+ */
+public ClusterDasAdvancedRuntimeInfo retrieveDasAdvancedRuntimeInfo() throws RuntimeFault, RemoteException {
+    return getVimService().retrieveDasAdvancedRuntimeInfo(getMOR());
+}
+    /**
+ * Finds all enabled and disabled VM-VM Affinity and Anti-Affinity rules, involving the given Virtual Machine.
+ *
+ * @param vm The vm whose rules need to be looked up.
+ * @return Array of rule info
+ * @throws RuntimeFault
+ * @throws RemoteException
+ * @since 6.0
+ */
+public ClusterRuleInfo[] findRulesForVm(VirtualMachine vm) throws RuntimeFault, RemoteException {
+    return getVimService().findRulesForVm(getMOR(), vm.getMOR());
+}
+    /**
+ * This API can be invoked to get the current CPU, memory and storage usage in the cluster.
+ *
+ * @return An instance of ClusterResourceUsageSummary
+ * @throws RuntimeFault
+ * @throws RemoteException
+ * @since 6.0
+ */
+public ClusterResourceUsageSummary getResourceUsage() throws RuntimeFault, RemoteException {
+    return getVimService().getResourceUsage(getMOR());
+}
+    /**
+ * This method returns a PlacementResult object. This API can be invoked to ask DRS for a set of recommendations for
+ * moving a virtual machine and its virtual disks into a cluster.
+ *
+ * @param placementSpec Specification for placing a virtual machine and its virtual disks
+ * @return PlacementResult
+ * @throws InvalidArgument
+ * @throws InvalidState
+ * @throws RuntimeFault
+ * @throws RemoteException
+ * @since 6.0
+ */
+public PlacementResult placeVm(PlacementSpec placementSpec) throws InvalidArgument, InvalidState, RuntimeFault, RemoteException {
+    return getVimService().placeVm(getMOR(), placementSpec);
+}
+    /* ===== END custom ===== */
 }

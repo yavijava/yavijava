@@ -1,3 +1,4 @@
+// auto generated using yavijava_generator
 /*================================================================================
 Copyright (c) 2011 VMware, Inc. All Rights Reserved.
 
@@ -26,12 +27,18 @@ WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWIS
 ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE 
 POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
-
 package com.vmware.vim25.mo;
 
+/* ===== BEGIN custom imports (preserved by regenerator) ===== */
 import com.vmware.vim25.ManagedObjectReference;
 import com.vmware.vim25.PodStorageDrsEntry;
 import com.vmware.vim25.StoragePodSummary;
+/* ===== END custom imports ===== */
+
+
+import com.vmware.vim25.*;
+import java.rmi.RemoteException;
+import java.util.Calendar;
 
 /**
  * aggregates the storage resources of associated Datastore objects into a single
@@ -43,8 +50,8 @@ import com.vmware.vim25.StoragePodSummary;
  * @author Steve Jin (http://www.doublecloud.org)
  * @since SDK5.0
  */
-
 public class StoragePod extends Folder {
+
     public StoragePod(ServerConnection serverConnection, ManagedObjectReference mor) {
         super(serverConnection, mor);
     }
@@ -56,4 +63,6 @@ public class StoragePod extends Folder {
     public StoragePodSummary getSummary() {
         return (StoragePodSummary) getCurrentProperty("summary");
     }
+    /* ===== BEGIN custom (preserved by regenerator) ===== */
+    /* ===== END custom ===== */
 }

@@ -1,3 +1,4 @@
+// auto generated using yavijava_generator
 /*================================================================================
 Copyright (c) 2011 VMware, Inc. All Rights Reserved.
 
@@ -26,13 +27,15 @@ WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWIS
 ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE 
 POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
-
 package com.vmware.vim25.mo;
 
+/* ===== BEGIN custom imports (preserved by regenerator) ===== */
+/* ===== END custom imports ===== */
+
+
 import com.vmware.vim25.*;
-
 import java.rmi.RemoteException;
-
+import java.util.Calendar;
 
 /**
  * provides APIs to manipulate the guest operating system processes
@@ -40,32 +43,29 @@ import java.rmi.RemoteException;
  * @author Steve Jin (http://www.doublecloud.org)
  * @since SDK5.0
  */
-
 public class GuestProcessManager extends ManagedObject {
-    private VirtualMachine vm = null;
 
     public GuestProcessManager(ServerConnection sc, ManagedObjectReference mor, VirtualMachine vm) {
         super(sc, mor);
         this.vm = vm;
     }
 
-    public VirtualMachine getVM() {
-        return vm;
-    }
-
-    public GuestProcessInfo[] listProcessesInGuest(GuestAuthentication auth, long[] pids) throws GuestOperationsFault, InvalidState, TaskInProgress, RuntimeFault, RemoteException {
-        return getVimService().listProcessesInGuest(getMOR(), vm.getMOR(), auth, pids);
-    }
-
-    public String[] readEnvironmentVariableInGuest(GuestAuthentication auth, String[] names) throws GuestOperationsFault, InvalidState, TaskInProgress, RuntimeFault, RemoteException {
-        return getVimService().readEnvironmentVariableInGuest(getMOR(), vm.getMOR(), auth, names);
-    }
-
-    public long startProgramInGuest(GuestAuthentication auth, GuestProgramSpec spec) throws GuestOperationsFault, InvalidState, TaskInProgress, FileFault, RuntimeFault, RemoteException {
-        return getVimService().startProgramInGuest(getMOR(), vm.getMOR(), auth, spec);
-    }
-
     public void terminateProcessInGuest(GuestAuthentication auth, long pid) throws GuestOperationsFault, InvalidState, TaskInProgress, RuntimeFault, RemoteException {
         getVimService().terminateProcessInGuest(getMOR(), vm.getMOR(), auth, pid);
     }
+    /* ===== BEGIN custom (preserved by regenerator) ===== */
+    private VirtualMachine vm = null;
+    public VirtualMachine getVM() {
+    return vm;
+}
+    public GuestProcessInfo[] listProcessesInGuest(GuestAuthentication auth, long[] pids) throws GuestOperationsFault, InvalidState, TaskInProgress, RuntimeFault, RemoteException {
+    return getVimService().listProcessesInGuest(getMOR(), vm.getMOR(), auth, pids);
+}
+    public String[] readEnvironmentVariableInGuest(GuestAuthentication auth, String[] names) throws GuestOperationsFault, InvalidState, TaskInProgress, RuntimeFault, RemoteException {
+    return getVimService().readEnvironmentVariableInGuest(getMOR(), vm.getMOR(), auth, names);
+}
+    public long startProgramInGuest(GuestAuthentication auth, GuestProgramSpec spec) throws GuestOperationsFault, InvalidState, TaskInProgress, FileFault, RuntimeFault, RemoteException {
+    return getVimService().startProgramInGuest(getMOR(), vm.getMOR(), auth, spec);
+}
+    /* ===== END custom ===== */
 }

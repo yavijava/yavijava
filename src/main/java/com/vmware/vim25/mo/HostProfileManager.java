@@ -1,3 +1,4 @@
+// auto generated using yavijava_generator
 /*================================================================================
 Copyright (c) 2012 Steve Jin. All Rights Reserved.
 Copyright (c) 2008 VMware, Inc. All Rights Reserved.
@@ -29,10 +30,14 @@ POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
 package com.vmware.vim25.mo;
 
-import com.vmware.vim25.*;
+/* ===== BEGIN custom imports (preserved by regenerator) ===== */
 import com.vmware.vim25.mo.util.MorUtil;
+/* ===== END custom imports ===== */
 
+
+import com.vmware.vim25.*;
 import java.rmi.RemoteException;
+import java.util.Calendar;
 
 /**
  * The managed object class corresponding to the one defined in VI SDK API reference.
@@ -41,13 +46,9 @@ import java.rmi.RemoteException;
  * @since 4.0
  */
 public class HostProfileManager extends ProfileManager {
+
     public HostProfileManager(ServerConnection sc, ManagedObjectReference mor) {
         super(sc, mor);
-    }
-
-    //SDK4.1 signature for back compatibility
-    public Task applyHostConfig_Task(HostSystem host, HostConfigSpec configSpec) throws HostConfigFailed, InvalidState, RuntimeFault, RemoteException {
-        return applyHostConfig_Task(host, configSpec, null);
     }
 
     //SDK5.0 signature
@@ -59,36 +60,9 @@ public class HostProfileManager extends ProfileManager {
     /**
      * @since SDK5.0
      */
-    public Task checkAnswerFileStatus_Task(HostSystem[] hosts) throws RuntimeFault, RemoteException {
-        ManagedObjectReference[] hostMors = MorUtil.createMORs(hosts);
-        ManagedObjectReference taskMor = getVimService().checkAnswerFileStatus_Task(getMOR(), hostMors);
-        return new Task(getServerConnection(), taskMor);
-    }
-
-    //SDK4.1 signature for back compatibility
-    public ApplyProfile createDefaultProfile(String profileType) throws RuntimeFault, RemoteException {
-        return createDefaultProfile(profileType, null, null);
-    }
-
-    //SDK5.0 signature
-    public ApplyProfile createDefaultProfile(String profileType, String profileTypeName, Profile profile) throws RuntimeFault, RemoteException {
-        return getVimService().createDefaultProfile(getMOR(), profileType, profileTypeName,
-            profile == null ? null : profile.getMOR());
-    }
-
-    /**
-     * @since SDK5.0
-     */
     public Task exportAnswerFile_Task(HostSystem host) throws RuntimeFault, RemoteException {
         ManagedObjectReference taskMor = getVimService().exportAnswerFile_Task(getMOR(), host.getMOR());
         return new Task(getServerConnection(), taskMor);
-    }
-
-    /**
-     * @deprecated as of SDK5.5, use generateHostProfileTaskList_Task() instead
-     */
-    public HostProfileManagerConfigTaskList generateConfigTaskList(HostConfigSpec configSpec, HostSystem host) throws RuntimeFault, RemoteException {
-        return getVimService().generateConfigTaskList(getMOR(), configSpec, host.getMOR());
     }
 
     /**
@@ -102,49 +76,69 @@ public class HostProfileManager extends ProfileManager {
     /**
      * @since SDK5.0
      */
-    public AnswerFileStatusResult[] queryAnswerFileStatus(HostSystem[] hosts) throws RuntimeFault, RemoteException {
-        ManagedObjectReference[] hostMors = MorUtil.createMORs(hosts);
-        return getVimService().queryAnswerFileStatus(getMOR(), hostMors);
-    }
-
-    //SDK4.1 signature for back compatibility
-    public ProfileMetadata[] queryHostProfileMetadata(String[] profileName) throws RuntimeFault, RemoteException {
-        return getVimService().queryHostProfileMetadata(getMOR(), profileName, null);
-    }
-
-    //SDK5.0 signature
-    public ProfileMetadata[] queryHostProfileMetadata(String[] profileNames, Profile profile) throws RuntimeFault, RemoteException {
-        return getVimService().queryHostProfileMetadata(getMOR(), profileNames,
-            profile == null ? null : profile.getMOR());
-    }
-
-    /**
-     * @since SDK5.0
-     */
-    public ProfileProfileStructure queryProfileStructure(Profile profile) throws RuntimeFault, RemoteException {
-        return getVimService().queryProfileStructure(getMOR(), profile.getMOR());
-    }
-
-    /**
-     * @since SDK5.0
-     */
-    public AnswerFile retrieveAnswerFile(HostSystem host) throws RuntimeFault, RemoteException {
-        return getVimService().retrieveAnswerFile(getMOR(), host.getMOR());
-    }
-
-
-    /**
-     * @since SDK5.1
-     */
-    public AnswerFile retrieveAnswerFileForProfile(HostSystem host, HostApplyProfile applyProfile) throws RuntimeFault, RemoteException {
-        return getVimService().retrieveAnswerFileForProfile(getMOR(), host == null ? null : host.getMOR(), applyProfile);
-    }
-
-    /**
-     * @since SDK5.0
-     */
     public Task updateAnswerFile_Task(HostSystem host, AnswerFileCreateSpec configSpec) throws AnswerFileUpdateFailed, RuntimeFault, RemoteException {
         ManagedObjectReference taskMor = getVimService().updateAnswerFile_Task(getMOR(), host.getMOR(), configSpec);
         return new Task(getServerConnection(), taskMor);
     }
+    /* ===== BEGIN custom (preserved by regenerator) ===== */
+    //SDK4.1 signature for back compatibility
+public Task applyHostConfig_Task(HostSystem host, HostConfigSpec configSpec) throws HostConfigFailed, InvalidState, RuntimeFault, RemoteException {
+    return applyHostConfig_Task(host, configSpec, null);
+}
+    /**
+ * @since SDK5.0
+ */
+public Task checkAnswerFileStatus_Task(HostSystem[] hosts) throws RuntimeFault, RemoteException {
+    ManagedObjectReference[] hostMors = MorUtil.createMORs(hosts);
+    ManagedObjectReference taskMor = getVimService().checkAnswerFileStatus_Task(getMOR(), hostMors);
+    return new Task(getServerConnection(), taskMor);
+}
+    //SDK4.1 signature for back compatibility
+public ApplyProfile createDefaultProfile(String profileType) throws RuntimeFault, RemoteException {
+    return createDefaultProfile(profileType, null, null);
+}
+    //SDK5.0 signature
+public ApplyProfile createDefaultProfile(String profileType, String profileTypeName, Profile profile) throws RuntimeFault, RemoteException {
+    return getVimService().createDefaultProfile(getMOR(), profileType, profileTypeName, profile == null ? null : profile.getMOR());
+}
+    /**
+ * @deprecated as of SDK5.5, use generateHostProfileTaskList_Task() instead
+ */
+public HostProfileManagerConfigTaskList generateConfigTaskList(HostConfigSpec configSpec, HostSystem host) throws RuntimeFault, RemoteException {
+    return getVimService().generateConfigTaskList(getMOR(), configSpec, host.getMOR());
+}
+    /**
+ * @since SDK5.0
+ */
+public AnswerFileStatusResult[] queryAnswerFileStatus(HostSystem[] hosts) throws RuntimeFault, RemoteException {
+    ManagedObjectReference[] hostMors = MorUtil.createMORs(hosts);
+    return getVimService().queryAnswerFileStatus(getMOR(), hostMors);
+}
+    //SDK4.1 signature for back compatibility
+public ProfileMetadata[] queryHostProfileMetadata(String[] profileName) throws RuntimeFault, RemoteException {
+    return getVimService().queryHostProfileMetadata(getMOR(), profileName, null);
+}
+    //SDK5.0 signature
+public ProfileMetadata[] queryHostProfileMetadata(String[] profileNames, Profile profile) throws RuntimeFault, RemoteException {
+    return getVimService().queryHostProfileMetadata(getMOR(), profileNames, profile == null ? null : profile.getMOR());
+}
+    /**
+ * @since SDK5.0
+ */
+public ProfileProfileStructure queryProfileStructure(Profile profile) throws RuntimeFault, RemoteException {
+    return getVimService().queryProfileStructure(getMOR(), profile.getMOR());
+}
+    /**
+ * @since SDK5.0
+ */
+public AnswerFile retrieveAnswerFile(HostSystem host) throws RuntimeFault, RemoteException {
+    return getVimService().retrieveAnswerFile(getMOR(), host.getMOR());
+}
+    /**
+ * @since SDK5.1
+ */
+public AnswerFile retrieveAnswerFileForProfile(HostSystem host, HostApplyProfile applyProfile) throws RuntimeFault, RemoteException {
+    return getVimService().retrieveAnswerFileForProfile(getMOR(), host == null ? null : host.getMOR(), applyProfile);
+}
+    /* ===== END custom ===== */
 }

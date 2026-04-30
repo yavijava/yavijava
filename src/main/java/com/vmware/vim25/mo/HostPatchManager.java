@@ -1,3 +1,4 @@
+// auto generated using yavijava_generator
 /*================================================================================
 Copyright (c) 2008 VMware, Inc. All Rights Reserved.
 
@@ -26,19 +27,21 @@ WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWIS
 ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE 
 POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
-
 package com.vmware.vim25.mo;
 
-import com.vmware.vim25.*;
+/* ===== BEGIN custom imports (preserved by regenerator) ===== */
+/* ===== END custom imports ===== */
 
+
+import com.vmware.vim25.*;
 import java.rmi.RemoteException;
+import java.util.Calendar;
 
 /**
  * The managed object class corresponding to the one defined in VI SDK API reference.
  *
  * @author Steve JIN (http://www.doublecloud.org)
  */
-
 public class HostPatchManager extends ManagedObject {
 
     public HostPatchManager(ServerConnection serverConnection, ManagedObjectReference mor) {
@@ -61,22 +64,12 @@ public class HostPatchManager extends ManagedObject {
         return new Task(getServerConnection(), taskMor);
     }
 
-    public Task installHostPatch_Task(HostPatchManagerLocator repository, String updateID, Boolean force) throws PatchInstallFailed, NoDiskSpace, TaskInProgress, RebootRequired, PatchBinariesNotFound, InvalidState, PatchNotApplicable, PatchMetadataInvalid, RuntimeFault, RemoteException {
-        return new Task(getServerConnection(),
-            getVimService().installHostPatch_Task(getMOR(), repository, updateID, force));
-    }
-
     /**
      * @since 4.0
      */
     public Task queryHostPatch_Task(HostPatchManagerPatchManagerOperationSpec spec) throws PlatformConfigFault, RequestCanceled, InvalidState, TaskInProgress, RuntimeFault, RemoteException {
         ManagedObjectReference taskMor = getVimService().queryHostPatch_Task(getMOR(), spec);
         return new Task(getServerConnection(), taskMor);
-    }
-
-    public Task scanHostPatch_Task(HostPatchManagerLocator repository, String[] updateID) throws PlatformConfigFault, RequestCanceled, PatchMetadataInvalid, RuntimeFault, RemoteException {
-        return new Task(getServerConnection(),
-            getVimService().scanHostPatch_Task(getMOR(), repository, updateID));
     }
 
     /**
@@ -102,4 +95,12 @@ public class HostPatchManager extends ManagedObject {
         ManagedObjectReference taskMor = getVimService().uninstallHostPatch_Task(getMOR(), bulletinIds, spec);
         return new Task(getServerConnection(), taskMor);
     }
+    /* ===== BEGIN custom (preserved by regenerator) ===== */
+    public Task installHostPatch_Task(HostPatchManagerLocator repository, String updateID, Boolean force) throws PatchInstallFailed, NoDiskSpace, TaskInProgress, RebootRequired, PatchBinariesNotFound, InvalidState, PatchNotApplicable, PatchMetadataInvalid, RuntimeFault, RemoteException {
+    return new Task(getServerConnection(), getVimService().installHostPatch_Task(getMOR(), repository, updateID, force));
+}
+    public Task scanHostPatch_Task(HostPatchManagerLocator repository, String[] updateID) throws PlatformConfigFault, RequestCanceled, PatchMetadataInvalid, RuntimeFault, RemoteException {
+    return new Task(getServerConnection(), getVimService().scanHostPatch_Task(getMOR(), repository, updateID));
+}
+    /* ===== END custom ===== */
 }

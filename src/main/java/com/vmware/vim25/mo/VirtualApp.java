@@ -1,3 +1,4 @@
+// auto generated using yavijava_generator
 /*================================================================================
 Copyright (c) 2008 VMware, Inc. All Rights Reserved.
 
@@ -28,9 +29,13 @@ POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
 package com.vmware.vim25.mo;
 
-import com.vmware.vim25.*;
+/* ===== BEGIN custom imports (preserved by regenerator) ===== */
+/* ===== END custom imports ===== */
 
+
+import com.vmware.vim25.*;
 import java.rmi.RemoteException;
+import java.util.Calendar;
 
 /**
  * The managed object class corresponding to the one defined in VI SDK API reference.
@@ -38,6 +43,7 @@ import java.rmi.RemoteException;
  * @author Steve JIN (http://www.doublecloud.org)
  */
 public class VirtualApp extends ResourcePool {
+
     public VirtualApp(ServerConnection sc, ManagedObjectReference mor) {
         super(sc, mor);
     }
@@ -60,19 +66,6 @@ public class VirtualApp extends ResourcePool {
     @Override
     public VirtualAppSummary getSummary() {
         return (VirtualAppSummary) this.getCurrentProperty("summary");
-    }
-
-    public Folder getParentFolder() {
-        ManagedObjectReference mor = (ManagedObjectReference) getCurrentProperty("parentFolder");
-        return new Folder(getServerConnection(), mor);
-    }
-
-    /**
-     * @since SDK4.1
-     */
-    public ManagedEntity getParentVApp() {
-        ManagedObjectReference mor = (ManagedObjectReference) getCurrentProperty("parentVApp");
-        return new ManagedEntity(getServerConnection(), mor);
     }
 
     public VAppConfigInfo getVAppConfig() {
@@ -122,4 +115,17 @@ public class VirtualApp extends ResourcePool {
     public void updateVAppConfig(VAppConfigSpec spec) throws TaskInProgress, VmConfigFault, ConcurrentAccess, FileFault, InvalidName, DuplicateName, InvalidState, InsufficientResourcesFault, InvalidDatastore, RuntimeFault, RemoteException {
         getVimService().updateVAppConfig(getMOR(), spec);
     }
+    /* ===== BEGIN custom (preserved by regenerator) ===== */
+    public Folder getParentFolder() {
+    ManagedObjectReference mor = (ManagedObjectReference) getCurrentProperty("parentFolder");
+    return new Folder(getServerConnection(), mor);
+}
+    /**
+ * @since SDK4.1
+ */
+public ManagedEntity getParentVApp() {
+    ManagedObjectReference mor = (ManagedObjectReference) getCurrentProperty("parentVApp");
+    return new ManagedEntity(getServerConnection(), mor);
+}
+    /* ===== END custom ===== */
 }

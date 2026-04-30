@@ -1,3 +1,4 @@
+// auto generated using yavijava_generator
 /*================================================================================
 Copyright (c) 2008 VMware, Inc. All Rights Reserved.
 
@@ -28,9 +29,13 @@ POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
 package com.vmware.vim25.mo;
 
-import com.vmware.vim25.*;
+/* ===== BEGIN custom imports (preserved by regenerator) ===== */
+/* ===== END custom imports ===== */
 
+
+import com.vmware.vim25.*;
 import java.rmi.RemoteException;
+import java.util.Calendar;
 
 /**
  * The managed object class corresponding to the one defined in VI SDK API reference.
@@ -39,6 +44,7 @@ import java.rmi.RemoteException;
  * @since 4.0
  */
 public class HttpNfcLease extends ManagedObject {
+
     public HttpNfcLease(ServerConnection sc, ManagedObjectReference mor) {
         super(sc, mor);
     }
@@ -49,10 +55,6 @@ public class HttpNfcLease extends ManagedObject {
 
     public HttpNfcLeaseInfo getInfo() {
         return (HttpNfcLeaseInfo) getCurrentProperty("info");
-    }
-
-    public int getInitializeProgress() {
-        return ((Integer) getCurrentProperty("initializeProgress")).intValue();
     }
 
     public HttpNfcLeaseState getState() {
@@ -67,14 +69,18 @@ public class HttpNfcLease extends ManagedObject {
         getVimService().httpNfcLeaseComplete(getMOR());
     }
 
-    /**
-     * @since SDK4.1
-     */
-    public HttpNfcLeaseManifestEntry[] httpNfcLeaseGetManifest() throws Timedout, InvalidState, RuntimeFault, RemoteException {
-        return getVimService().httpNfcLeaseGetManifest(getMOR());
-    }
-
     public void httpNfcLeaseProgress(int percent) throws Timedout, RuntimeFault, RemoteException {
         getVimService().httpNfcLeaseProgress(getMOR(), percent);
     }
+    /* ===== BEGIN custom (preserved by regenerator) ===== */
+    public int getInitializeProgress() {
+    return ((Integer) getCurrentProperty("initializeProgress")).intValue();
+}
+    /**
+ * @since SDK4.1
+ */
+public HttpNfcLeaseManifestEntry[] httpNfcLeaseGetManifest() throws Timedout, InvalidState, RuntimeFault, RemoteException {
+    return getVimService().httpNfcLeaseGetManifest(getMOR());
+}
+    /* ===== END custom ===== */
 }

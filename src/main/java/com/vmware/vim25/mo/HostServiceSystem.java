@@ -1,3 +1,4 @@
+// auto generated using yavijava_generator
 /*================================================================================
 Copyright (c) 2008 VMware, Inc. All Rights Reserved.
 
@@ -26,19 +27,21 @@ WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWIS
 ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE 
 POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
-
 package com.vmware.vim25.mo;
 
-import com.vmware.vim25.*;
+/* ===== BEGIN custom imports (preserved by regenerator) ===== */
+/* ===== END custom imports ===== */
 
+
+import com.vmware.vim25.*;
 import java.rmi.RemoteException;
+import java.util.Calendar;
 
 /**
  * The managed object class corresponding to the one defined in VI SDK API reference.
  *
  * @author Steve JIN (http://www.doublecloud.org)
  */
-
 public class HostServiceSystem extends ExtensibleManagedObject {
 
     public HostServiceSystem(ServerConnection serverConnection, ManagedObjectReference mor) {
@@ -72,5 +75,6 @@ public class HostServiceSystem extends ExtensibleManagedObject {
     public void updateServicePolicy(String id, String policy) throws HostConfigFault, NotFound, RuntimeFault, RemoteException {
         getVimService().updateServicePolicy(getMOR(), id, policy);
     }
-
+    /* ===== BEGIN custom (preserved by regenerator) ===== */
+    /* ===== END custom ===== */
 }

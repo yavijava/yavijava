@@ -1,3 +1,4 @@
+// auto generated using yavijava_generator
 /*================================================================================
 Copyright (c) 2012 Steve Jin. All Rights Reserved.
 Copyright (c) 2008 VMware, Inc. All Rights Reserved.
@@ -27,23 +28,23 @@ WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWIS
 ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE 
 POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
-
 package com.vmware.vim25.mo;
 
-import com.vmware.vim25.*;
+/* ===== BEGIN custom imports (preserved by regenerator) ===== */
 import com.vmware.vim25.mo.util.MorUtil;
+/* ===== END custom imports ===== */
 
+
+import com.vmware.vim25.*;
 import java.rmi.RemoteException;
+import java.util.Calendar;
 
 /**
  * The managed object class corresponding to the one defined in VI SDK API reference.
  *
  * @author Steve JIN (http://www.doublecloud.org)
  */
-
 public class HostSystem extends ManagedEntity {
-
-    private HostConfigManager configManager = null;
 
     public HostSystem(ServerConnection sc, ManagedObjectReference mor) {
         super(sc, mor);
@@ -96,10 +97,6 @@ public class HostSystem extends ManagedEntity {
         return getVms("vm");
     }
 
-    public HostServiceTicket acquireCimServicesTicket() throws RuntimeFault, RemoteException {
-        return getVimService().acquireCimServicesTicket(getMOR());
-    }
-
     public Task disconnectHost() throws RuntimeFault, RemoteException {
         ManagedObjectReference mor = getVimService().disconnectHost_Task(getMOR());
         return new Task(getServerConnection(), mor);
@@ -110,13 +107,6 @@ public class HostSystem extends ManagedEntity {
      */
     public void enterLockdownMode() throws HostConfigFault, RuntimeFault, RemoteException {
         getVimService().enterLockdownMode(getMOR());
-    }
-
-    /**
-     * keep the old signature for compatibility
-     */
-    public Task enterMaintenanceMode(int timeout, boolean evacuatePoweredOffVms) throws Timedout, InvalidState, RuntimeFault, RemoteException {
-        return enterMaintenanceMode(timeout, evacuatePoweredOffVms, null);
     }
 
     /**
@@ -149,30 +139,11 @@ public class HostSystem extends ManagedEntity {
         return new Task(getServerConnection(), mor);
     }
 
-    public HostConnectInfo queryHostConnectionInfo() throws RuntimeFault, RemoteException {
-        return getVimService().queryHostConnectionInfo(getMOR());
-    }
-
-    /**
-     * @since SDK5.1
-     */
-    public HostTpmAttestationReport queryTpmAttestationReport() throws RuntimeFault, RemoteException {
-        return getVimService().queryTpmAttestationReport(getMOR());
-    }
-
     /**
      * @since SDK5.1
      */
     public void updateSystemSwapConfiguration(HostSystemSwapConfiguration sysSwapConfig) throws RuntimeFault, RemoteException {
         getVimService().updateSystemSwapConfiguration(getMOR(), sysSwapConfig);
-    }
-
-    public long queryMemoryOverhead(long memorySize, int videoRamSize, int numVcpus) throws RuntimeFault, RemoteException {
-        return getVimService().queryMemoryOverhead(getMOR(), memorySize, Integer.valueOf(videoRamSize), numVcpus);
-    }
-
-    public long queryMemoryOverheadEx(VirtualMachineConfigInfo vmConfigInfo) throws RuntimeFault, RemoteException {
-        return getVimService().queryMemoryOverheadEx(getMOR(), vmConfigInfo);
     }
 
     public Task rebootHost(boolean force) throws InvalidState, RuntimeFault, RemoteException {
@@ -185,22 +156,10 @@ public class HostSystem extends ManagedEntity {
         return new Task(getServerConnection(), mor);
     }
 
-    //SDK4.1 signature for back compatibility
-    public Task reconnectHost_Task(HostConnectSpec hcs) throws InvalidName, InvalidLogin, InvalidState, HostConnectFault, RuntimeFault, RemoteException {
-        return reconnectHost_Task(hcs, null);
-    }
-
     //SDK5.0 signature
     public Task reconnectHost_Task(HostConnectSpec cnxSpec, HostSystemReconnectSpec reconnectSpec) throws InvalidName, InvalidLogin, InvalidState, HostConnectFault, RuntimeFault, RemoteException {
         ManagedObjectReference mor = getVimService().reconnectHost_Task(getMOR(), cnxSpec, reconnectSpec);
         return new Task(getServerConnection(), mor);
-    }
-
-    /**
-     * @since SDK4.1
-     */
-    public long retrieveHardwareUptime() throws RuntimeFault, RemoteException {
-        return getVimService().retrieveHardwareUptime(getMOR());
     }
 
     public Task shutdownHost_Task(boolean force) throws InvalidState, NotSupported, RuntimeFault, RemoteException {
@@ -222,183 +181,161 @@ public class HostSystem extends ManagedEntity {
     public void updateIpmi(HostIpmiInfo ipmiInfo) throws InvalidIpmiLoginInfo, InvalidIpmiMacAddress, RuntimeFault, RemoteException {
         getVimService().updateIpmi(getMOR(), ipmiInfo);
     }
-
+    /* ===== BEGIN custom (preserved by regenerator) ===== */
+    private HostConfigManager configManager = null;
+    public HostServiceTicket acquireCimServicesTicket() throws RuntimeFault, RemoteException {
+    return getVimService().acquireCimServicesTicket(getMOR());
+}
+    /**
+ * keep the old signature for compatibility
+ */
+public Task enterMaintenanceMode(int timeout, boolean evacuatePoweredOffVms) throws Timedout, InvalidState, RuntimeFault, RemoteException {
+    return enterMaintenanceMode(timeout, evacuatePoweredOffVms, null);
+}
+    public HostConnectInfo queryHostConnectionInfo() throws RuntimeFault, RemoteException {
+    return getVimService().queryHostConnectionInfo(getMOR());
+}
+    /**
+ * @since SDK5.1
+ */
+public HostTpmAttestationReport queryTpmAttestationReport() throws RuntimeFault, RemoteException {
+    return getVimService().queryTpmAttestationReport(getMOR());
+}
+    public long queryMemoryOverhead(long memorySize, int videoRamSize, int numVcpus) throws RuntimeFault, RemoteException {
+    return getVimService().queryMemoryOverhead(getMOR(), memorySize, Integer.valueOf(videoRamSize), numVcpus);
+}
+    public long queryMemoryOverheadEx(VirtualMachineConfigInfo vmConfigInfo) throws RuntimeFault, RemoteException {
+    return getVimService().queryMemoryOverheadEx(getMOR(), vmConfigInfo);
+}
+    //SDK4.1 signature for back compatibility
+public Task reconnectHost_Task(HostConnectSpec hcs) throws InvalidName, InvalidLogin, InvalidState, HostConnectFault, RuntimeFault, RemoteException {
+    return reconnectHost_Task(hcs, null);
+}
+    /**
+ * @since SDK4.1
+ */
+public long retrieveHardwareUptime() throws RuntimeFault, RemoteException {
+    return getVimService().retrieveHardwareUptime(getMOR());
+}
     private HostConfigManager getConfigManager() throws InvalidProperty, RuntimeFault, RemoteException {
-        if (configManager == null) {
-            configManager = (HostConfigManager) getCurrentProperty("configManager");
-        }
-        return configManager;
+    if (configManager == null) {
+        configManager = (HostConfigManager) getCurrentProperty("configManager");
     }
-
+    return configManager;
+}
     public OptionManager getOptionManager() throws InvalidProperty, RuntimeFault, RemoteException {
-        return new OptionManager(getServerConnection(),
-            getConfigManager().getAdvancedOption());
-    }
-
+    return new OptionManager(getServerConnection(), getConfigManager().getAdvancedOption());
+}
     public HostAutoStartManager getHostAutoStartManager() throws InvalidProperty, RuntimeFault, RemoteException {
-        return new HostAutoStartManager(getServerConnection(),
-            getConfigManager().getAutoStartManager());
-    }
-
+    return new HostAutoStartManager(getServerConnection(), getConfigManager().getAutoStartManager());
+}
     public HostBootDeviceSystem getHostBootDeviceSystem() throws InvalidProperty, RuntimeFault, RemoteException {
-        return (HostBootDeviceSystem) MorUtil.createExactManagedObject(getServerConnection(),
-            getConfigManager().getBootDeviceSystem());
-    }
-
+    return (HostBootDeviceSystem) MorUtil.createExactManagedObject(getServerConnection(), getConfigManager().getBootDeviceSystem());
+}
     public HostDateTimeSystem getHostDateTimeSystem() throws InvalidProperty, RuntimeFault, RemoteException {
-        return (HostDateTimeSystem) MorUtil.createExactManagedObject(getServerConnection(),
-            getConfigManager().getDateTimeSystem());
-    }
-
+    return (HostDateTimeSystem) MorUtil.createExactManagedObject(getServerConnection(), getConfigManager().getDateTimeSystem());
+}
     public HostDiagnosticSystem getHostDiagnosticSystem() throws InvalidProperty, RuntimeFault, RemoteException {
-        return (HostDiagnosticSystem) MorUtil.createExactManagedObject(getServerConnection(),
-            getConfigManager().getDiagnosticSystem());
-    }
-
+    return (HostDiagnosticSystem) MorUtil.createExactManagedObject(getServerConnection(), getConfigManager().getDiagnosticSystem());
+}
     public HostEsxAgentHostManager getHostEsxAgentHostManager() throws InvalidProperty, RuntimeFault, RemoteException {
-        return (HostEsxAgentHostManager) MorUtil.createExactManagedObject(getServerConnection(),
-            getConfigManager().getEsxAgentHostManager());
-    }
-
+    return (HostEsxAgentHostManager) MorUtil.createExactManagedObject(getServerConnection(), getConfigManager().getEsxAgentHostManager());
+}
     public HostCacheConfigurationManager getHostCacheConfigurationManager() throws InvalidProperty, RuntimeFault, RemoteException {
-        return (HostCacheConfigurationManager) MorUtil.createExactManagedObject(getServerConnection(),
-            getConfigManager().getCacheConfigurationManager());
-    }
-
+    return (HostCacheConfigurationManager) MorUtil.createExactManagedObject(getServerConnection(), getConfigManager().getCacheConfigurationManager());
+}
     public HostCpuSchedulerSystem getHostCpuSchedulerSystem() throws InvalidProperty, RuntimeFault, RemoteException {
-        return (HostCpuSchedulerSystem) MorUtil.createExactManagedObject(getServerConnection(),
-            getConfigManager().getCpuScheduler());
-    }
-
+    return (HostCpuSchedulerSystem) MorUtil.createExactManagedObject(getServerConnection(), getConfigManager().getCpuScheduler());
+}
     public HostDatastoreSystem getHostDatastoreSystem() throws InvalidProperty, RuntimeFault, RemoteException {
-        return (HostDatastoreSystem) MorUtil.createExactManagedObject(getServerConnection(),
-            getConfigManager().getDatastoreSystem());
-    }
-
+    return (HostDatastoreSystem) MorUtil.createExactManagedObject(getServerConnection(), getConfigManager().getDatastoreSystem());
+}
     public HostFirmwareSystem getHostFirmwareSystem() throws InvalidProperty, RuntimeFault, RemoteException {
-        return (HostFirmwareSystem) MorUtil.createExactManagedObject(getServerConnection(),
-            getConfigManager().getFirmwareSystem());
-    }
-
+    return (HostFirmwareSystem) MorUtil.createExactManagedObject(getServerConnection(), getConfigManager().getFirmwareSystem());
+}
     /**
-     * @since SDK5.5
-     */
-    public HostGraphicsManager getHostGraphicsManager() throws InvalidProperty, RuntimeFault, RemoteException {
-        return (HostGraphicsManager) MorUtil.createExactManagedObject(getServerConnection(),
-            getConfigManager().getGraphicsManager());
-    }
-
+ * @since SDK5.5
+ */
+public HostGraphicsManager getHostGraphicsManager() throws InvalidProperty, RuntimeFault, RemoteException {
+    return (HostGraphicsManager) MorUtil.createExactManagedObject(getServerConnection(), getConfigManager().getGraphicsManager());
+}
     /**
-     * @since SDK4.0
-     */
-    public HostKernelModuleSystem getHostKernelModuleSystem() throws InvalidProperty, RuntimeFault, RemoteException {
-        return (HostKernelModuleSystem) MorUtil.createExactManagedObject(getServerConnection(),
-            getConfigManager().getKernelModuleSystem());
-    }
-
+ * @since SDK4.0
+ */
+public HostKernelModuleSystem getHostKernelModuleSystem() throws InvalidProperty, RuntimeFault, RemoteException {
+    return (HostKernelModuleSystem) MorUtil.createExactManagedObject(getServerConnection(), getConfigManager().getKernelModuleSystem());
+}
     /**
-     * @since SDK4.0
-     */
-    public LicenseManager getLicenseManager() throws InvalidProperty, RuntimeFault, RemoteException {
-        return (LicenseManager) MorUtil.createExactManagedObject(getServerConnection(),
-            getConfigManager().getLicenseManager());
-    }
-
+ * @since SDK4.0
+ */
+public LicenseManager getLicenseManager() throws InvalidProperty, RuntimeFault, RemoteException {
+    return (LicenseManager) MorUtil.createExactManagedObject(getServerConnection(), getConfigManager().getLicenseManager());
+}
     /**
-     * @since SDK4.0
-     */
-    public HostPciPassthruSystem getHostPciPassthruSystem() throws InvalidProperty, RuntimeFault, RemoteException {
-        return (HostPciPassthruSystem) MorUtil.createExactManagedObject(getServerConnection(),
-            getConfigManager().getPciPassthruSystem());
-    }
-
+ * @since SDK4.0
+ */
+public HostPciPassthruSystem getHostPciPassthruSystem() throws InvalidProperty, RuntimeFault, RemoteException {
+    return (HostPciPassthruSystem) MorUtil.createExactManagedObject(getServerConnection(), getConfigManager().getPciPassthruSystem());
+}
     /**
-     * @since SDK4.0
-     */
-    public HostVirtualNicManager getHostVirtualNicManager() throws InvalidProperty, RuntimeFault, RemoteException {
-        return (HostVirtualNicManager) MorUtil.createExactManagedObject(getServerConnection(),
-            getConfigManager().getVirtualNicManager());
-    }
-
+ * @since SDK4.0
+ */
+public HostVirtualNicManager getHostVirtualNicManager() throws InvalidProperty, RuntimeFault, RemoteException {
+    return (HostVirtualNicManager) MorUtil.createExactManagedObject(getServerConnection(), getConfigManager().getVirtualNicManager());
+}
     public HostHealthStatusSystem getHealthStatusSystem() throws InvalidProperty, RuntimeFault, RemoteException {
-        return (HostHealthStatusSystem) MorUtil.createExactManagedObject(getServerConnection(),
-            getConfigManager().getHealthStatusSystem());
-    }
-
+    return (HostHealthStatusSystem) MorUtil.createExactManagedObject(getServerConnection(), getConfigManager().getHealthStatusSystem());
+}
     public HostFirewallSystem getHostFirewallSystem() throws InvalidProperty, RuntimeFault, RemoteException {
-        return (HostFirewallSystem) MorUtil.createExactManagedObject(getServerConnection(),
-            getConfigManager().getFirewallSystem());
-    }
-
+    return (HostFirewallSystem) MorUtil.createExactManagedObject(getServerConnection(), getConfigManager().getFirewallSystem());
+}
     public HostImageConfigManager getHostImageConfigManager() throws InvalidProperty, RuntimeFault, RemoteException {
-        return (HostImageConfigManager) MorUtil.createExactManagedObject(getServerConnection(),
-            getConfigManager().getImageConfigManager());
-    }
-
+    return (HostImageConfigManager) MorUtil.createExactManagedObject(getServerConnection(), getConfigManager().getImageConfigManager());
+}
     public HostMemorySystem getHostMemorySystem() throws InvalidProperty, RuntimeFault, RemoteException {
-        return (HostMemorySystem) MorUtil.createExactManagedObject(getServerConnection(),
-            getConfigManager().getMemoryManager());
-    }
-
+    return (HostMemorySystem) MorUtil.createExactManagedObject(getServerConnection(), getConfigManager().getMemoryManager());
+}
     public HostNetworkSystem getHostNetworkSystem() throws InvalidProperty, RuntimeFault, RemoteException {
-        return (HostNetworkSystem) MorUtil.createExactManagedObject(getServerConnection(),
-            getConfigManager().getNetworkSystem());
-    }
-
+    return (HostNetworkSystem) MorUtil.createExactManagedObject(getServerConnection(), getConfigManager().getNetworkSystem());
+}
     public HostPatchManager getHostPatchManager() throws InvalidProperty, RuntimeFault, RemoteException {
-        return (HostPatchManager) MorUtil.createExactManagedObject(getServerConnection(),
-            getConfigManager().getPatchManager());
-    }
-
+    return (HostPatchManager) MorUtil.createExactManagedObject(getServerConnection(), getConfigManager().getPatchManager());
+}
     public HostServiceSystem getHostServiceSystem() throws InvalidProperty, RuntimeFault, RemoteException {
-        return (HostServiceSystem) MorUtil.createExactManagedObject(getServerConnection(),
-            getConfigManager().getServiceSystem());
-    }
-
+    return (HostServiceSystem) MorUtil.createExactManagedObject(getServerConnection(), getConfigManager().getServiceSystem());
+}
     public HostSnmpSystem getHostSnmpSystem() throws InvalidProperty, RuntimeFault, RemoteException {
-        return (HostSnmpSystem) MorUtil.createExactManagedObject(getServerConnection(),
-            getConfigManager().getSnmpSystem());
-    }
-
+    return (HostSnmpSystem) MorUtil.createExactManagedObject(getServerConnection(), getConfigManager().getSnmpSystem());
+}
     public HostStorageSystem getHostStorageSystem() throws InvalidProperty, RuntimeFault, RemoteException {
-        return (HostStorageSystem) MorUtil.createExactManagedObject(getServerConnection(),
-            getConfigManager().getStorageSystem());
-    }
-
+    return (HostStorageSystem) MorUtil.createExactManagedObject(getServerConnection(), getConfigManager().getStorageSystem());
+}
     /**
-     * @since SDK5.5
-     */
-    public HostVFlashManager getHostVFlashManager() throws InvalidProperty, RuntimeFault, RemoteException {
-        return (HostVFlashManager) MorUtil.createExactManagedObject(getServerConnection(),
-            getConfigManager().getVFlashManager());
-    }
-
+ * @since SDK5.5
+ */
+public HostVFlashManager getHostVFlashManager() throws InvalidProperty, RuntimeFault, RemoteException {
+    return (HostVFlashManager) MorUtil.createExactManagedObject(getServerConnection(), getConfigManager().getVFlashManager());
+}
     public IscsiManager getIscsiManager() throws InvalidProperty, RuntimeFault, RemoteException {
-        return (IscsiManager) MorUtil.createExactManagedObject(getServerConnection(),
-            getConfigManager().getIscsiManager());
-    }
-
+    return (IscsiManager) MorUtil.createExactManagedObject(getServerConnection(), getConfigManager().getIscsiManager());
+}
     /**
-     * @deprecated as of SDK 4.0, use getHostVirtualNicManager instead
-     */
-    public HostVMotionSystem getHostVMotionSystem() throws InvalidProperty, RuntimeFault, RemoteException {
-        return (HostVMotionSystem) MorUtil.createExactManagedObject(getServerConnection(),
-            getConfigManager().getVmotionSystem());
-    }
-
+ * @deprecated as of SDK 4.0, use getHostVirtualNicManager instead
+ */
+public HostVMotionSystem getHostVMotionSystem() throws InvalidProperty, RuntimeFault, RemoteException {
+    return (HostVMotionSystem) MorUtil.createExactManagedObject(getServerConnection(), getConfigManager().getVmotionSystem());
+}
     /**
-     * @since SDK5.5
-     */
-    public HostVsanInternalSystem getHostVsanInternalSystem() throws InvalidProperty, RuntimeFault, RemoteException {
-        return (HostVsanInternalSystem) MorUtil.createExactManagedObject(getServerConnection(),
-            getConfigManager().getVsanInternalSystem());
-    }
-
+ * @since SDK5.5
+ */
+public HostVsanInternalSystem getHostVsanInternalSystem() throws InvalidProperty, RuntimeFault, RemoteException {
+    return (HostVsanInternalSystem) MorUtil.createExactManagedObject(getServerConnection(), getConfigManager().getVsanInternalSystem());
+}
     /**
-     * @since SDK5.5
-     */
-    public HostVsanSystem getHostVsanSystem() throws InvalidProperty, RuntimeFault, RemoteException {
-        return (HostVsanSystem) MorUtil.createExactManagedObject(getServerConnection(),
-            getConfigManager().getVsanSystem());
-    }
+ * @since SDK5.5
+ */
+public HostVsanSystem getHostVsanSystem() throws InvalidProperty, RuntimeFault, RemoteException {
+    return (HostVsanSystem) MorUtil.createExactManagedObject(getServerConnection(), getConfigManager().getVsanSystem());
+}
+    /* ===== END custom ===== */
 }

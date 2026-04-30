@@ -1,3 +1,4 @@
+// auto generated using yavijava_generator
 /*================================================================================
 Copyright (c) 2008 VMware, Inc. All Rights Reserved.
 
@@ -26,20 +27,23 @@ WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWIS
 ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE 
 POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
-
 package com.vmware.vim25.mo;
 
-import com.vmware.vim25.*;
+/* ===== BEGIN custom imports (preserved by regenerator) ===== */
+/* ===== END custom imports ===== */
 
+
+import com.vmware.vim25.*;
 import java.rmi.RemoteException;
+import java.util.Calendar;
 
 /**
  * The managed object class corresponding to the one defined in VI SDK API reference.
  *
  * @author Steve JIN (http://www.doublecloud.org)
  */
-
 public class VirtualMachine extends ManagedEntity {
+
     public VirtualMachine(ServerConnection sc, ManagedObjectReference mor) {
         super(sc, mor);
     }
@@ -90,35 +94,12 @@ public class VirtualMachine extends ManagedEntity {
         return getNetworks("network");
     }
 
-    /**
-     * @since SDK4.1
-     */
-    public ManagedEntity getParentVApp() {
-        ManagedObjectReference mor = (ManagedObjectReference) getCurrentProperty("parentVApp");
-        return new ManagedEntity(getServerConnection(), mor);
-    }
-
     public ResourceConfigSpec getResourceConfig() {
         return (ResourceConfigSpec) getCurrentProperty("resourceConfig");
     }
 
     public ResourcePool getResourcePool() throws InvalidProperty, RuntimeFault, RemoteException {
         return (ResourcePool) getManagedObject("resourcePool");
-    }
-
-    /**
-     * @since SDK4.1
-     */
-    public VirtualMachineSnapshot[] getRootSnapshot() {
-        ManagedObjectReference[] mors = (ManagedObjectReference[]) getCurrentProperty("rootSnapshot");
-        if (mors == null) {
-            return new VirtualMachineSnapshot[0];
-        }
-        VirtualMachineSnapshot[] vmns = new VirtualMachineSnapshot[mors.length];
-        for (int i = 0; i < mors.length; i++) {
-            vmns[i] = new VirtualMachineSnapshot(getServerConnection(), mors[i]);
-        }
-        return vmns;
     }
 
     public VirtualMachineRuntimeInfo getRuntime() {
@@ -137,34 +118,12 @@ public class VirtualMachine extends ManagedEntity {
         return (VirtualMachineSummary) getCurrentProperty("summary");
     }
 
-    /**
-     * @deprecated as of SDK4.1. Use acquireTicket instead.
-     */
-    public VirtualMachineMksTicket acquireMksTicket() throws RuntimeFault, RemoteException {
-        return getVimService().acquireMksTicket(getMOR());
-    }
-
-    /**
-     * @since SDK4.1
-     */
-    public VirtualMachineTicket acquireTicket(String ticketType) throws InvalidState, RuntimeFault, RemoteException {
-        return getVimService().acquireTicket(getMOR(), ticketType);
-    }
-
     public void answerVM(String questionId, String answerChoice) throws ConcurrentAccess, RuntimeFault, RemoteException {
         getVimService().answerVM(getMOR(), questionId, answerChoice);
     }
 
     public void checkCustomizationSpec(CustomizationSpec spec) throws CustomizationFault, RuntimeFault, RemoteException {
         getVimService().checkCustomizationSpec(getMOR(), spec);
-    }
-
-    public Task cloneVM_Task(Folder folder, String name, VirtualMachineCloneSpec spec) throws VmConfigFault, TaskInProgress, CustomizationFault, FileFault, InvalidState, InsufficientResourcesFault, MigrationFault, InvalidDatastore, RuntimeFault, RemoteException {
-        if (folder == null) {
-            throw new IllegalArgumentException("folder must not be null.");
-        }
-        ManagedObjectReference mor = getVimService().cloneVM_Task(getMOR(), folder.getMOR(), name, spec);
-        return new Task(getServerConnection(), mor);
     }
 
     /**
@@ -240,20 +199,6 @@ public class VirtualMachine extends ManagedEntity {
     }
 
     /**
-     * @since 6.0
-     */
-    public Task createSecondaryVMEx_Task(HostSystem host) throws FileFault, InsufficientResourcesFault, InvalidState, ManagedObjectNotFound, NotSupported, RuntimeFault, TaskInProgress, VmConfigFault, VmFaultToleranceIssue, RemoteException {
-        return createSecondaryVMEx_Task(host, null);
-    }
-
-    /**
-     * @since 6.0
-     */
-    public Task createSecondaryVMEx_Task(FaultToleranceConfigSpec spec) throws FileFault, InsufficientResourcesFault, InvalidState, ManagedObjectNotFound, NotSupported, RuntimeFault, TaskInProgress, VmConfigFault, VmFaultToleranceIssue, RemoteException {
-        return createSecondaryVMEx_Task(null, spec);
-    }
-
-    /**
      * @since SDK4.0
      */
     public Task disableSecondaryVM_Task(VirtualMachine vm) throws TaskInProgress, VmFaultToleranceIssue, InvalidState, RuntimeFault, RemoteException {
@@ -265,8 +210,7 @@ public class VirtualMachine extends ManagedEntity {
      * @since SDK4.0
      */
     public Task enableSecondaryVM_Task(VirtualMachine vm, HostSystem host) throws TaskInProgress, VmFaultToleranceIssue, InvalidState, VmConfigFault, RuntimeFault, RemoteException {
-        ManagedObjectReference mor = getVimService().enableSecondaryVM_Task(getMOR(), vm.getMOR(),
-            host == null ? null : host.getMOR());
+        ManagedObjectReference mor = getVimService().enableSecondaryVM_Task(getMOR(), vm.getMOR(), host == null ? null : host.getMOR());
         return new Task(getServerConnection(), mor);
     }
 
@@ -284,13 +228,6 @@ public class VirtualMachine extends ManagedEntity {
     public HttpNfcLease exportVm() throws InvalidPowerState, TaskInProgress, InvalidState, FileFault, RuntimeFault, RemoteException {
         ManagedObjectReference mor = getVimService().exportVm(getMOR());
         return new HttpNfcLease(getServerConnection(), mor);
-    }
-
-    /**
-     * @since SDK4.0
-     */
-    public String extractOvfEnvironment() throws InvalidState, RuntimeFault, RemoteException {
-        return getVimService().extractOvfEnvironment(getMOR());
     }
 
     /**
@@ -314,15 +251,7 @@ public class VirtualMachine extends ManagedEntity {
         getVimService().markAsTemplate(getMOR());
     }
 
-    public void markAsVirtualMachine(ResourcePool pool, HostSystem host) throws VmConfigFault, FileFault, InvalidState, InvalidDatastore, RuntimeFault, RemoteException {
-        if (pool == null) {
-            throw new IllegalArgumentException("pool must not be null.");
-        }
-        getVimService().markAsVirtualMachine(getMOR(), pool.getMOR(), host == null ? null : host.getMOR());
-    }
-
-    public Task migrateVM_Task(ResourcePool pool, HostSystem host, VirtualMachineMovePriority priority,
-                               VirtualMachinePowerState state) throws VmConfigFault, Timedout, FileFault, InvalidState, InsufficientResourcesFault, MigrationFault, RuntimeFault, RemoteException {
+    public Task migrateVM_Task(ResourcePool pool, HostSystem host, VirtualMachineMovePriority priority, VirtualMachinePowerState state) throws VmConfigFault, Timedout, FileFault, InvalidState, InsufficientResourcesFault, MigrationFault, RuntimeFault, RemoteException {
         ManagedObjectReference mor = getVimService().migrateVM_Task(getMOR(), pool == null ? null : pool.getMOR(), host == null ? null : host.getMOR(), priority, state);
         return new Task(getServerConnection(), mor);
     }
@@ -349,56 +278,6 @@ public class VirtualMachine extends ManagedEntity {
         return new Task(getServerConnection(), mor);
     }
 
-    /**
-     * @since SDK4.0
-     */
-    public DiskChangeInfo queryChangedDiskAreas(VirtualMachineSnapshot snapshot, int deviceKey, long startOffset, String changeId) throws FileFault, NotFound, RuntimeFault, RemoteException {
-        return getVimService().queryChangedDiskAreas(getMOR(),
-            snapshot == null ? null : snapshot.getMOR(),
-            deviceKey, startOffset, changeId);
-    }
-
-    /**
-     * @since SDK4.1
-     * @deprecated As of 6.0 use {@link #queryFaultToleranceCompatibilityEx}
-     */
-    public LocalizedMethodFault[] queryFaultToleranceCompatibility() throws InvalidState, VmConfigFault, RuntimeFault, RemoteException {
-        return getVimService().queryFaultToleranceCompatibility(getMOR());
-    }
-
-    /**
-     * This API can be invoked to determine whether a virtual machine is compatible for Fault Tolerance. The API only
-     * checks for VM-specific factors that impact compatibility for Fault Tolerance. Other requirements for Fault
-     * Tolerance such as host processor compatibility, logging nic configuration and licensing are not covered by this
-     * API. The query returns a list of faults, each fault corresponding to a specific incompatibility. If a given
-     * virtual machine is compatible for Fault Tolerance, then the fault list returned will be empty.
-     *
-     * @param forLegacyFt checks for legacy record-replay FT compatibility only if this is set to true.
-     * @return Localized Method Fault
-     * @throws InvalidState
-     * @throws VmConfigFault
-     * @throws RuntimeFault
-     * @throws RemoteException
-     * @since 6.0
-     */
-    public LocalizedMethodFault[] queryFaultToleranceCompatibilityEx(Boolean forLegacyFt) throws InvalidState, VmConfigFault, RuntimeFault, RemoteException {
-        return getVimService().queryFaultToleranceCompatibilityEx(getMOR(), forLegacyFt);
-    }
-
-    /**
-     * @since 6.0
-     */
-    public LocalizedMethodFault[] queryFaultToleranceCompatibilityEx() throws InvalidState, VmConfigFault, RuntimeFault, RemoteException {
-        return queryFaultToleranceCompatibilityEx(null);
-    }
-
-    /**
-     * @since SDK4.0
-     */
-    public String[] queryUnownedFiles() throws RuntimeFault, RemoteException {
-        return getVimService().queryUnownedFiles(getMOR());
-    }
-
     public void rebootGuest() throws TaskInProgress, InvalidState, ToolsUnavailable, RuntimeFault, RemoteException {
         getVimService().rebootGuest(getMOR());
     }
@@ -423,20 +302,10 @@ public class VirtualMachine extends ManagedEntity {
         getVimService().refreshStorageInfo(getMOR());
     }
 
-    //SDK2.5 signature for back compatibility
-    public Task relocateVM_Task(VirtualMachineRelocateSpec spec) throws VmConfigFault, Timedout, FileFault, InvalidState, InsufficientResourcesFault, MigrationFault, InvalidDatastore, RuntimeFault, RemoteException {
-        return relocateVM_Task(spec, null);
-    }
-
     //SDK4.0 signature
     public Task relocateVM_Task(VirtualMachineRelocateSpec spec, VirtualMachineMovePriority priority) throws VmConfigFault, Timedout, FileFault, InvalidState, InsufficientResourcesFault, MigrationFault, InvalidDatastore, RuntimeFault, RemoteException {
         ManagedObjectReference mor = getVimService().relocateVM_Task(getMOR(), spec, priority);
         return new Task(getServerConnection(), mor);
-    }
-
-    //SDK4.1 signature for back compatibility
-    public Task removeAllSnapshots_Task() throws SnapshotFault, TaskInProgress, InvalidState, RuntimeFault, RemoteException {
-        return removeAllSnapshots_Task(null);
     }
 
     //SDK5.0 signature
@@ -452,11 +321,6 @@ public class VirtualMachine extends ManagedEntity {
     public Task resetVM_Task() throws TaskInProgress, InvalidState, RuntimeFault, RemoteException {
         ManagedObjectReference mor = getVimService().resetVM_Task(getMOR());
         return new Task(getServerConnection(), mor);
-    }
-
-    //SDK2.5 signature for back compatibility
-    public Task revertToCurrentSnapshot_Task(HostSystem host) throws VmConfigFault, SnapshotFault, TaskInProgress, InvalidState, InsufficientResourcesFault, NotFound, RuntimeFault, RemoteException {
-        return revertToCurrentSnapshot_Task(host, null);
     }
 
     //SDK4.0 signature
@@ -532,8 +396,7 @@ public class VirtualMachine extends ManagedEntity {
      * @since SDK4.0
      */
     public Task terminateFaultTolerantVM_Task(VirtualMachine vm) throws TaskInProgress, VmFaultToleranceIssue, InvalidState, RuntimeFault, RemoteException {
-        ManagedObjectReference mor = getVimService().terminateFaultTolerantVM_Task(getMOR(),
-            vm == null ? null : vm.getMOR());
+        ManagedObjectReference mor = getVimService().terminateFaultTolerantVM_Task(getMOR(), vm == null ? null : vm.getMOR());
         return new Task(getServerConnection(), mor);
     }
 
@@ -575,4 +438,125 @@ public class VirtualMachine extends ManagedEntity {
     public void sendNMI() throws InvalidState, RuntimeFault, RemoteException {
         getVimService().sendNMI(getMOR());
     }
+    /* ===== BEGIN custom (preserved by regenerator) ===== */
+    /**
+ * @since SDK4.1
+ */
+public ManagedEntity getParentVApp() {
+    ManagedObjectReference mor = (ManagedObjectReference) getCurrentProperty("parentVApp");
+    return new ManagedEntity(getServerConnection(), mor);
+}
+    /**
+ * @since SDK4.1
+ */
+public VirtualMachineSnapshot[] getRootSnapshot() {
+    ManagedObjectReference[] mors = (ManagedObjectReference[]) getCurrentProperty("rootSnapshot");
+    if (mors == null) {
+        return new VirtualMachineSnapshot[0];
+    }
+    VirtualMachineSnapshot[] vmns = new VirtualMachineSnapshot[mors.length];
+    for (int i = 0; i < mors.length; i++) {
+        vmns[i] = new VirtualMachineSnapshot(getServerConnection(), mors[i]);
+    }
+    return vmns;
+}
+    /**
+ * @deprecated as of SDK4.1. Use acquireTicket instead.
+ */
+public VirtualMachineMksTicket acquireMksTicket() throws RuntimeFault, RemoteException {
+    return getVimService().acquireMksTicket(getMOR());
+}
+    /**
+ * @since SDK4.1
+ */
+public VirtualMachineTicket acquireTicket(String ticketType) throws InvalidState, RuntimeFault, RemoteException {
+    return getVimService().acquireTicket(getMOR(), ticketType);
+}
+    public Task cloneVM_Task(Folder folder, String name, VirtualMachineCloneSpec spec) throws VmConfigFault, TaskInProgress, CustomizationFault, FileFault, InvalidState, InsufficientResourcesFault, MigrationFault, InvalidDatastore, RuntimeFault, RemoteException {
+    if (folder == null) {
+        throw new IllegalArgumentException("folder must not be null.");
+    }
+    ManagedObjectReference mor = getVimService().cloneVM_Task(getMOR(), folder.getMOR(), name, spec);
+    return new Task(getServerConnection(), mor);
+}
+    /**
+ * @since 6.0
+ */
+public Task createSecondaryVMEx_Task(HostSystem host) throws FileFault, InsufficientResourcesFault, InvalidState, ManagedObjectNotFound, NotSupported, RuntimeFault, TaskInProgress, VmConfigFault, VmFaultToleranceIssue, RemoteException {
+    return createSecondaryVMEx_Task(host, null);
+}
+    /**
+ * @since 6.0
+ */
+public Task createSecondaryVMEx_Task(FaultToleranceConfigSpec spec) throws FileFault, InsufficientResourcesFault, InvalidState, ManagedObjectNotFound, NotSupported, RuntimeFault, TaskInProgress, VmConfigFault, VmFaultToleranceIssue, RemoteException {
+    return createSecondaryVMEx_Task(null, spec);
+}
+    /**
+ * @since SDK4.0
+ */
+public String extractOvfEnvironment() throws InvalidState, RuntimeFault, RemoteException {
+    return getVimService().extractOvfEnvironment(getMOR());
+}
+    public void markAsVirtualMachine(ResourcePool pool, HostSystem host) throws VmConfigFault, FileFault, InvalidState, InvalidDatastore, RuntimeFault, RemoteException {
+    if (pool == null) {
+        throw new IllegalArgumentException("pool must not be null.");
+    }
+    getVimService().markAsVirtualMachine(getMOR(), pool.getMOR(), host == null ? null : host.getMOR());
+}
+    /**
+ * @since SDK4.0
+ */
+public DiskChangeInfo queryChangedDiskAreas(VirtualMachineSnapshot snapshot, int deviceKey, long startOffset, String changeId) throws FileFault, NotFound, RuntimeFault, RemoteException {
+    return getVimService().queryChangedDiskAreas(getMOR(), snapshot == null ? null : snapshot.getMOR(), deviceKey, startOffset, changeId);
+}
+    /**
+ * @since SDK4.1
+ * @deprecated As of 6.0 use {@link #queryFaultToleranceCompatibilityEx}
+ */
+public LocalizedMethodFault[] queryFaultToleranceCompatibility() throws InvalidState, VmConfigFault, RuntimeFault, RemoteException {
+    return getVimService().queryFaultToleranceCompatibility(getMOR());
+}
+    /**
+ * This API can be invoked to determine whether a virtual machine is compatible for Fault Tolerance. The API only
+ * checks for VM-specific factors that impact compatibility for Fault Tolerance. Other requirements for Fault
+ * Tolerance such as host processor compatibility, logging nic configuration and licensing are not covered by this
+ * API. The query returns a list of faults, each fault corresponding to a specific incompatibility. If a given
+ * virtual machine is compatible for Fault Tolerance, then the fault list returned will be empty.
+ *
+ * @param forLegacyFt checks for legacy record-replay FT compatibility only if this is set to true.
+ * @return Localized Method Fault
+ * @throws InvalidState
+ * @throws VmConfigFault
+ * @throws RuntimeFault
+ * @throws RemoteException
+ * @since 6.0
+ */
+public LocalizedMethodFault[] queryFaultToleranceCompatibilityEx(Boolean forLegacyFt) throws InvalidState, VmConfigFault, RuntimeFault, RemoteException {
+    return getVimService().queryFaultToleranceCompatibilityEx(getMOR(), forLegacyFt);
+}
+    /**
+ * @since 6.0
+ */
+public LocalizedMethodFault[] queryFaultToleranceCompatibilityEx() throws InvalidState, VmConfigFault, RuntimeFault, RemoteException {
+    return queryFaultToleranceCompatibilityEx(null);
+}
+    /**
+ * @since SDK4.0
+ */
+public String[] queryUnownedFiles() throws RuntimeFault, RemoteException {
+    return getVimService().queryUnownedFiles(getMOR());
+}
+    //SDK2.5 signature for back compatibility
+public Task relocateVM_Task(VirtualMachineRelocateSpec spec) throws VmConfigFault, Timedout, FileFault, InvalidState, InsufficientResourcesFault, MigrationFault, InvalidDatastore, RuntimeFault, RemoteException {
+    return relocateVM_Task(spec, null);
+}
+    //SDK4.1 signature for back compatibility
+public Task removeAllSnapshots_Task() throws SnapshotFault, TaskInProgress, InvalidState, RuntimeFault, RemoteException {
+    return removeAllSnapshots_Task(null);
+}
+    //SDK2.5 signature for back compatibility
+public Task revertToCurrentSnapshot_Task(HostSystem host) throws VmConfigFault, SnapshotFault, TaskInProgress, InvalidState, InsufficientResourcesFault, NotFound, RuntimeFault, RemoteException {
+    return revertToCurrentSnapshot_Task(host, null);
+}
+    /* ===== END custom ===== */
 }

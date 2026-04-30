@@ -1,3 +1,4 @@
+// auto generated using yavijava_generator
 /*================================================================================
 Copyright (c) 2008 VMware, Inc. All Rights Reserved.
 
@@ -26,17 +27,22 @@ WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWIS
 ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE 
 POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
-
 package com.vmware.vim25.mo;
 
+/* ===== BEGIN custom imports (preserved by regenerator) ===== */
 import com.vmware.vim25.ManagedObjectReference;
+/* ===== END custom imports ===== */
+
+
+import com.vmware.vim25.*;
+import java.rmi.RemoteException;
+import java.util.Calendar;
 
 /**
  * The managed object class corresponding to the one defined in VI SDK API reference.
  *
  * @author Steve JIN (http://www.doublecloud.org)
  */
-
 public class ContainerView extends ManagedObjectView {
 
     public ContainerView(ServerConnection serverConnection, ManagedObjectReference mor) {
@@ -47,12 +53,12 @@ public class ContainerView extends ManagedObjectView {
         return (ManagedEntity) getManagedObject("container");
     }
 
-    public boolean getRecursive() {
-        return ((Boolean) getCurrentProperty("recursive")).booleanValue();
-    }
-
     public String[] getType() {
         return (String[]) getCurrentProperty("type");
     }
-
+    /* ===== BEGIN custom (preserved by regenerator) ===== */
+    public boolean getRecursive() {
+    return ((Boolean) getCurrentProperty("recursive")).booleanValue();
+}
+    /* ===== END custom ===== */
 }

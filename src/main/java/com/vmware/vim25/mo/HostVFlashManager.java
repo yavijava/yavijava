@@ -1,3 +1,4 @@
+// auto generated using yavijava_generator
 /*================================================================================
 Copyright (c) 2013 Steve Jin. All Rights Reserved.
 
@@ -26,12 +27,15 @@ WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWIS
 ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE 
 POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
-
 package com.vmware.vim25.mo;
 
-import com.vmware.vim25.*;
+/* ===== BEGIN custom imports (preserved by regenerator) ===== */
+/* ===== END custom imports ===== */
 
+
+import com.vmware.vim25.*;
 import java.rmi.RemoteException;
+import java.util.Calendar;
 
 /**
  * The managed object class corresponding to the one defined in VI SDK API reference.
@@ -39,8 +43,8 @@ import java.rmi.RemoteException;
  * @author Steve JIN (http://www.doublecloud.org)
  * @since SDK5.5
  */
-
 public class HostVFlashManager extends ManagedObject {
+
     public HostVFlashManager(ServerConnection serverConnection, ManagedObjectReference mor) {
         super(serverConnection, mor);
     }
@@ -62,11 +66,12 @@ public class HostVFlashManager extends ManagedObject {
         getVimService().hostConfigVFlashCache(this.getMOR(), spec);
     }
 
-    public VirtualDiskVFlashCacheConfigInfo hostGetVFlashModuleDefaultConfig(String vFlashModule) throws NotFound, HostConfigFault, RuntimeFault, RemoteException {
-        return getVimService().hostGetVFlashModuleDefaultConfig(this.getMOR(), vFlashModule);
-    }
-
     public void hostRemoveVFlashResource() throws NotFound, HostConfigFault, ResourceInUse, RuntimeFault, RemoteException {
         getVimService().hostRemoveVFlashResource(this.getMOR());
     }
+    /* ===== BEGIN custom (preserved by regenerator) ===== */
+    public VirtualDiskVFlashCacheConfigInfo hostGetVFlashModuleDefaultConfig(String vFlashModule) throws NotFound, HostConfigFault, RuntimeFault, RemoteException {
+    return getVimService().hostGetVFlashModuleDefaultConfig(this.getMOR(), vFlashModule);
+}
+    /* ===== END custom ===== */
 }

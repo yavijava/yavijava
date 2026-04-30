@@ -1,3 +1,4 @@
+// auto generated using yavijava_generator
 /*================================================================================
 Copyright (c) 2008 VMware, Inc. All Rights Reserved.
 
@@ -28,9 +29,13 @@ POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
 package com.vmware.vim25.mo;
 
-import com.vmware.vim25.*;
+/* ===== BEGIN custom imports (preserved by regenerator) ===== */
+/* ===== END custom imports ===== */
 
+
+import com.vmware.vim25.*;
 import java.rmi.RemoteException;
+import java.util.Calendar;
 
 /**
  * The managed object class corresponding to the one defined in VI SDK API reference.
@@ -38,43 +43,38 @@ import java.rmi.RemoteException;
  * @author Steve JIN (http://www.doublecloud.org)
  */
 public class ProfileManager extends ManagedObject {
+
     public ProfileManager(ServerConnection sc, ManagedObjectReference mor) {
         super(sc, mor);
-    }
-
-    public Profile[] getProfile() {
-        ManagedObjectReference[] mors = (ManagedObjectReference[]) getCurrentProperty("profile");
-        return convert2Profiles(mors);
     }
 
     public Profile createProfile(ProfileCreateSpec createSpec) throws DuplicateName, RuntimeFault, RemoteException {
         ManagedObjectReference profileMor = getVimService().createProfile(getMOR(), createSpec);
         return new Profile(getServerConnection(), profileMor);
     }
-
+    /* ===== BEGIN custom (preserved by regenerator) ===== */
+    public Profile[] getProfile() {
+    ManagedObjectReference[] mors = (ManagedObjectReference[]) getCurrentProperty("profile");
+    return convert2Profiles(mors);
+}
     public Profile[] findAssociatedProfile(ManagedEntity entity) throws RuntimeFault, RemoteException {
-        ManagedObjectReference[] mors = getVimService().findAssociatedProfile(getMOR(), entity.getMOR());
-        return convert2Profiles(mors);
-    }
-
+    ManagedObjectReference[] mors = getVimService().findAssociatedProfile(getMOR(), entity.getMOR());
+    return convert2Profiles(mors);
+}
     //SDK4.1 signature for back compatibility
-    public ProfilePolicyMetadata[] queryPolicyMetadata(String[] policyName) throws RuntimeFault, RemoteException {
-        return queryPolicyMetadata(policyName, null);
-    }
-
+public ProfilePolicyMetadata[] queryPolicyMetadata(String[] policyName) throws RuntimeFault, RemoteException {
+    return queryPolicyMetadata(policyName, null);
+}
     //SDK5.0 signature
-    public ProfilePolicyMetadata[] queryPolicyMetadata(String[] policyName, Profile profile) throws RuntimeFault, RemoteException {
-        return getVimService().queryPolicyMetadata(getMOR(), policyName, profile == null ? null : profile.getMOR());
-    }
-
-
+public ProfilePolicyMetadata[] queryPolicyMetadata(String[] policyName, Profile profile) throws RuntimeFault, RemoteException {
+    return getVimService().queryPolicyMetadata(getMOR(), policyName, profile == null ? null : profile.getMOR());
+}
     private Profile[] convert2Profiles(ManagedObjectReference[] mors) {
-        Profile[] pfs = new Profile[mors.length];
-
-        for (int i = 0; i < mors.length; i++) {
-            pfs[i] = new Profile(getServerConnection(), mors[i]);
-        }
-        return pfs;
+    Profile[] pfs = new Profile[mors.length];
+    for (int i = 0; i < mors.length; i++) {
+        pfs[i] = new Profile(getServerConnection(), mors[i]);
     }
-
+    return pfs;
+}
+    /* ===== END custom ===== */
 }

@@ -1,3 +1,4 @@
+// auto generated using yavijava_generator
 /*================================================================================
 Copyright (c) 2008 VMware, Inc. All Rights Reserved.
 
@@ -26,11 +27,13 @@ WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWIS
 ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE 
 POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
-
 package com.vmware.vim25.mo;
 
-import com.vmware.vim25.*;
+/* ===== BEGIN custom imports (preserved by regenerator) ===== */
+/* ===== END custom imports ===== */
 
+
+import com.vmware.vim25.*;
 import java.rmi.RemoteException;
 import java.util.Calendar;
 
@@ -39,7 +42,6 @@ import java.util.Calendar;
  *
  * @author Steve JIN (http://www.doublecloud.org)
  */
-
 public class HostDateTimeSystem extends ManagedObject {
 
     public HostDateTimeSystem(ServerConnection serverConnection, ManagedObjectReference mor) {
@@ -48,14 +50,6 @@ public class HostDateTimeSystem extends ManagedObject {
 
     public HostDateTimeInfo getDateTimeInfo() {
         return (HostDateTimeInfo) getCurrentProperty("dateTimeInfo");
-    }
-
-    public HostDateTimeSystemTimeZone[] queryAvailableTimeZones() throws RuntimeFault, RemoteException {
-        return getVimService().queryAvailableTimeZones(getMOR());
-    }
-
-    public Calendar queryDateTime() throws RuntimeFault, RemoteException {
-        return getVimService().queryDateTime(getMOR());
     }
 
     public void refreshDateTimeSystem() throws RuntimeFault, RemoteException {
@@ -69,5 +63,12 @@ public class HostDateTimeSystem extends ManagedObject {
     public void updateDateTimeConfig(HostDateTimeConfig config) throws HostConfigFault, RuntimeFault, RemoteException {
         getVimService().updateDateTimeConfig(getMOR(), config);
     }
-
+    /* ===== BEGIN custom (preserved by regenerator) ===== */
+    public HostDateTimeSystemTimeZone[] queryAvailableTimeZones() throws RuntimeFault, RemoteException {
+    return getVimService().queryAvailableTimeZones(getMOR());
+}
+    public Calendar queryDateTime() throws RuntimeFault, RemoteException {
+    return getVimService().queryDateTime(getMOR());
+}
+    /* ===== END custom ===== */
 }

@@ -1,3 +1,4 @@
+// auto generated using yavijava_generator
 /*================================================================================
 Copyright (c) 2012 Steve Jin. All Rights Reserved.
 Copyright (c) 2008 VMware, Inc. All Rights Reserved.
@@ -27,13 +28,16 @@ WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWIS
 ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE 
 POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
-
 package com.vmware.vim25.mo;
 
-import com.vmware.vim25.*;
+/* ===== BEGIN custom imports (preserved by regenerator) ===== */
 import com.vmware.vim25.mo.util.MorUtil;
+/* ===== END custom imports ===== */
 
+
+import com.vmware.vim25.*;
 import java.rmi.RemoteException;
+import java.util.Calendar;
 
 /**
  * The managed object class corresponding to the one defined in VI SDK API reference.
@@ -41,7 +45,6 @@ import java.rmi.RemoteException;
  * @author Steve JIN (http://www.doublecloud.org)
  * @since 4.0
  */
-
 public class DistributedVirtualSwitch extends ManagedEntity {
 
     public DistributedVirtualSwitch(ServerConnection sc, ManagedObjectReference mor) {
@@ -61,19 +64,6 @@ public class DistributedVirtualSwitch extends ManagedEntity {
      */
     public DVSNetworkResourcePool[] getNetworkResourcePool() {
         return (DVSNetworkResourcePool[]) getCurrentProperty("networkResourcePool");
-    }
-
-    public DistributedVirtualPortgroup[] getPortgroup() {
-        ManagedObjectReference[] pgMors = (ManagedObjectReference[]) getCurrentProperty("portgroup");
-        if (pgMors == null) {
-            return new DistributedVirtualPortgroup[]{};
-        }
-
-        DistributedVirtualPortgroup[] dvpgs = new DistributedVirtualPortgroup[pgMors.length];
-        for (int i = 0; i < pgMors.length; i++) {
-            dvpgs[i] = new DistributedVirtualPortgroup(getServerConnection(), pgMors[i]);
-        }
-        return dvpgs;
     }
 
     public DVSSummary getSummary() {
@@ -143,14 +133,6 @@ public class DistributedVirtualSwitch extends ManagedEntity {
         getVimService().enableNetworkResourceManagement(getMOR(), enable);
     }
 
-    public String[] fetchDVPortKeys(DistributedVirtualSwitchPortCriteria criteria) throws RuntimeFault, RemoteException {
-        return getVimService().fetchDVPortKeys(getMOR(), criteria);
-    }
-
-    public DistributedVirtualPort[] fetchDVPorts(DistributedVirtualSwitchPortCriteria criteria) throws RuntimeFault, RemoteException {
-        return getVimService().fetchDVPorts(getMOR(), criteria);
-    }
-
     public Task mergeDvs_Task(DistributedVirtualSwitch dvs) throws InvalidHostState, DvsFault, NotFound, ResourceInUse, RuntimeFault, RemoteException {
         ManagedObjectReference taskMor = getVimService().mergeDvs_Task(getMOR(), dvs.getMOR());
         return new Task(getServerConnection(), taskMor);
@@ -166,19 +148,9 @@ public class DistributedVirtualSwitch extends ManagedEntity {
         return new Task(getServerConnection(), taskMor);
     }
 
-    public int[] queryUsedVlanIdInDvs() throws RuntimeFault, RemoteException {
-        return getVimService().queryUsedVlanIdInDvs(getMOR());
-    }
-
     public Task reconfigureDvs_Task(DVSConfigSpec spec) throws DvsNotAuthorized, DvsFault, ConcurrentAccess, DuplicateName, InvalidState, InvalidName, NotFound, AlreadyExists, LimitExceeded, ResourceInUse, ResourceNotAvailable, RuntimeFault, RemoteException {
         ManagedObjectReference taskMor = getVimService().reconfigureDvs_Task(getMOR(), spec);
         return new Task(getServerConnection(), taskMor);
-    }
-
-    public Task rectifyDvsHost_Task(HostSystem[] hosts) throws DvsFault, NotFound, RuntimeFault, RemoteException {
-        ManagedObjectReference[] mors = MorUtil.createMORs(hosts);
-        ManagedObjectReference mor = getVimService().rectifyDvsHost_Task(getMOR(), mors);
-        return new Task(getServerConnection(), mor);
     }
 
     public void refreshDVPortState(String[] portKeys) throws DvsFault, NotFound, RuntimeFault, RemoteException {
@@ -229,5 +201,31 @@ public class DistributedVirtualSwitch extends ManagedEntity {
         ManagedObjectReference taskMor = getVimService().dvsReconfigureVmVnicNetworkResourcePool_Task(getMOR(), configSpec);
         return new Task(getServerConnection(), taskMor);
     }
-
+    /* ===== BEGIN custom (preserved by regenerator) ===== */
+    public DistributedVirtualPortgroup[] getPortgroup() {
+    ManagedObjectReference[] pgMors = (ManagedObjectReference[]) getCurrentProperty("portgroup");
+    if (pgMors == null) {
+        return new DistributedVirtualPortgroup[] {};
+    }
+    DistributedVirtualPortgroup[] dvpgs = new DistributedVirtualPortgroup[pgMors.length];
+    for (int i = 0; i < pgMors.length; i++) {
+        dvpgs[i] = new DistributedVirtualPortgroup(getServerConnection(), pgMors[i]);
+    }
+    return dvpgs;
+}
+    public String[] fetchDVPortKeys(DistributedVirtualSwitchPortCriteria criteria) throws RuntimeFault, RemoteException {
+    return getVimService().fetchDVPortKeys(getMOR(), criteria);
+}
+    public DistributedVirtualPort[] fetchDVPorts(DistributedVirtualSwitchPortCriteria criteria) throws RuntimeFault, RemoteException {
+    return getVimService().fetchDVPorts(getMOR(), criteria);
+}
+    public int[] queryUsedVlanIdInDvs() throws RuntimeFault, RemoteException {
+    return getVimService().queryUsedVlanIdInDvs(getMOR());
+}
+    public Task rectifyDvsHost_Task(HostSystem[] hosts) throws DvsFault, NotFound, RuntimeFault, RemoteException {
+    ManagedObjectReference[] mors = MorUtil.createMORs(hosts);
+    ManagedObjectReference mor = getVimService().rectifyDvsHost_Task(getMOR(), mors);
+    return new Task(getServerConnection(), mor);
+}
+    /* ===== END custom ===== */
 }

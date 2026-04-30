@@ -1,3 +1,4 @@
+// auto generated using yavijava_generator
 /*================================================================================
 Copyright (c) 2008 VMware, Inc. All Rights Reserved.
 
@@ -26,31 +27,25 @@ WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWIS
 ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE 
 POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
-
 package com.vmware.vim25.mo;
 
-import com.vmware.vim25.*;
+/* ===== BEGIN custom imports (preserved by regenerator) ===== */
+/* ===== END custom imports ===== */
 
+
+import com.vmware.vim25.*;
 import java.rmi.RemoteException;
+import java.util.Calendar;
 
 /**
  * The managed object class corresponding to the one defined in VI SDK API reference.
  *
  * @author Steve JIN (http://www.doublecloud.org)
  */
-
 public class HostFirmwareSystem extends ManagedObject {
 
     public HostFirmwareSystem(ServerConnection serverConnection, ManagedObjectReference mor) {
         super(serverConnection, mor);
-    }
-
-    public String backupFirmwareConfiguration() throws RuntimeFault, RemoteException {
-        return getVimService().backupFirmwareConfiguration(getMOR());
-    }
-
-    public String queryFirmwareConfigUploadURL() throws RuntimeFault, RemoteException {
-        return getVimService().queryFirmwareConfigUploadURL(getMOR());
     }
 
     public void resetFirmwareToFactoryDefaults() throws InvalidState, RuntimeFault, RemoteException {
@@ -60,5 +55,12 @@ public class HostFirmwareSystem extends ManagedObject {
     public void restoreFirmwareConfiguration(boolean force) throws InvalidBundle, MismatchedBundle, FileFault, InvalidState, RuntimeFault, RemoteException {
         getVimService().restoreFirmwareConfiguration(getMOR(), force);
     }
-
+    /* ===== BEGIN custom (preserved by regenerator) ===== */
+    public String backupFirmwareConfiguration() throws RuntimeFault, RemoteException {
+    return getVimService().backupFirmwareConfiguration(getMOR());
+}
+    public String queryFirmwareConfigUploadURL() throws RuntimeFault, RemoteException {
+    return getVimService().queryFirmwareConfigUploadURL(getMOR());
+}
+    /* ===== END custom ===== */
 }

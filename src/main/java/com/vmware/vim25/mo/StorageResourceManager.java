@@ -1,3 +1,4 @@
+// auto generated using yavijava_generator
 /*================================================================================
 Copyright (c) 2011 VMware, Inc. All Rights Reserved.
 Copyright (c) 2012 Steve Jin. All Rights Reserved.
@@ -27,14 +28,18 @@ WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWIS
 ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE 
 POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
-
 package com.vmware.vim25.mo;
 
-import com.vmware.vim25.*;
+/* ===== BEGIN custom imports (preserved by regenerator) ===== */
+/* ===== END custom imports ===== */
 
+
+import com.vmware.vim25.*;
 import java.rmi.RemoteException;
+import java.util.Calendar;
 
 public class StorageResourceManager extends ManagedObject {
+
     public StorageResourceManager(ServerConnection serverConnection, ManagedObjectReference mor) {
         super(serverConnection, mor);
     }
@@ -76,27 +81,26 @@ public class StorageResourceManager extends ManagedObject {
     }
 
     /**
-     * @since SDK5.1
-     */
-    public StoragePerformanceSummary[] queryDatastorePerformanceSummary(Datastore datastore) throws NotFound, RuntimeFault, RemoteException {
-        return getVimService().queryDatastorePerformanceSummary(getMOR(), datastore.getMOR());
-    }
-
-    public StorageIORMConfigOption queryIORMConfigOption(HostSystem host) throws RuntimeFault, RemoteException {
-        return getVimService().queryIORMConfigOption(getMOR(), host.getMOR());
-    }
-
-    /**
-     * @since SDK5.0
-     */
-    public StoragePlacementResult recommendDatastores(StoragePlacementSpec storageSpec) throws RuntimeFault, RemoteException {
-        return getVimService().recommendDatastores(getMOR(), storageSpec);
-    }
-
-    /**
      * @since SDK5.0
      */
     public void refreshStorageDrsRecommendation(StoragePod pod) throws RuntimeFault, RemoteException {
         getVimService().refreshStorageDrsRecommendation(getMOR(), pod.getMOR());
     }
+    /* ===== BEGIN custom (preserved by regenerator) ===== */
+    /**
+ * @since SDK5.1
+ */
+public StoragePerformanceSummary[] queryDatastorePerformanceSummary(Datastore datastore) throws NotFound, RuntimeFault, RemoteException {
+    return getVimService().queryDatastorePerformanceSummary(getMOR(), datastore.getMOR());
+}
+    public StorageIORMConfigOption queryIORMConfigOption(HostSystem host) throws RuntimeFault, RemoteException {
+    return getVimService().queryIORMConfigOption(getMOR(), host.getMOR());
+}
+    /**
+ * @since SDK5.0
+ */
+public StoragePlacementResult recommendDatastores(StoragePlacementSpec storageSpec) throws RuntimeFault, RemoteException {
+    return getVimService().recommendDatastores(getMOR(), storageSpec);
+}
+    /* ===== END custom ===== */
 }

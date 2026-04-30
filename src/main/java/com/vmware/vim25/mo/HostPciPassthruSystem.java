@@ -1,3 +1,4 @@
+// auto generated using yavijava_generator
 /*================================================================================
 Copyright (c) 2008 VMware, Inc. All Rights Reserved.
 
@@ -28,9 +29,13 @@ POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
 package com.vmware.vim25.mo;
 
-import com.vmware.vim25.*;
+/* ===== BEGIN custom imports (preserved by regenerator) ===== */
+/* ===== END custom imports ===== */
 
+
+import com.vmware.vim25.*;
 import java.rmi.RemoteException;
+import java.util.Calendar;
 
 /**
  * The managed object class corresponding to the one defined in VI SDK API reference.
@@ -39,6 +44,7 @@ import java.rmi.RemoteException;
  * @since 4.0
  */
 public class HostPciPassthruSystem extends ExtensibleManagedObject {
+
     public HostPciPassthruSystem(ServerConnection sc, ManagedObjectReference mor) {
         super(sc, mor);
     }
@@ -54,4 +60,6 @@ public class HostPciPassthruSystem extends ExtensibleManagedObject {
     public void updatePassthruConfig(HostPciPassthruConfig[] config) throws HostConfigFault, RuntimeFault, RemoteException {
         getVimService().updatePassthruConfig(getMOR(), config);
     }
+    /* ===== BEGIN custom (preserved by regenerator) ===== */
+    /* ===== END custom ===== */
 }

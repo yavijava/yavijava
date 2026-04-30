@@ -1,3 +1,4 @@
+// auto generated using yavijava_generator
 /*================================================================================
 Copyright (c) 2008 VMware, Inc. All Rights Reserved.
 
@@ -26,20 +27,23 @@ WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWIS
 ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE 
 POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
-
 package com.vmware.vim25.mo;
 
+/* ===== BEGIN custom imports (preserved by regenerator) ===== */
 import com.vmware.vim25.ManagedObjectReference;
 import com.vmware.vim25.RuntimeFault;
+/* ===== END custom imports ===== */
 
+
+import com.vmware.vim25.*;
 import java.rmi.RemoteException;
+import java.util.Calendar;
 
 /**
  * The managed object class corresponding to the one defined in VI SDK API reference.
  *
  * @author Steve JIN (http://www.doublecloud.org)
  */
-
 abstract public class HistoryCollector extends ManagedObject {
 
     public HistoryCollector(ServerConnection serverConnection, ManagedObjectReference mor) {
@@ -48,7 +52,6 @@ abstract public class HistoryCollector extends ManagedObject {
 
     // The "filter" property type is different from EventHistoryCollector(TaskFilterSpec) and TaskHistoryCollector(EventFilterSpec)
     // and these two *Spec are not inherited from each other. So getFilter() is moved to subclasses...
-
     public void destroyCollector() throws RuntimeFault, RemoteException {
         getVimService().destroyCollector(getMOR());
     }
@@ -64,5 +67,6 @@ abstract public class HistoryCollector extends ManagedObject {
     public void setCollectorPageSize(int maxCount) throws RuntimeFault, RemoteException {
         getVimService().setCollectorPageSize(getMOR(), maxCount);
     }
-
+    /* ===== BEGIN custom (preserved by regenerator) ===== */
+    /* ===== END custom ===== */
 }

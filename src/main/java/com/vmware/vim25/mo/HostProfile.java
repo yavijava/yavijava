@@ -1,3 +1,4 @@
+// auto generated using yavijava_generator
 /*================================================================================
 Copyright (c) 2008 VMware, Inc. All Rights Reserved.
 
@@ -28,9 +29,13 @@ POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
 package com.vmware.vim25.mo;
 
-import com.vmware.vim25.*;
+/* ===== BEGIN custom imports (preserved by regenerator) ===== */
+/* ===== END custom imports ===== */
 
+
+import com.vmware.vim25.*;
 import java.rmi.RemoteException;
+import java.util.Calendar;
 
 /**
  * The managed object class corresponding to the one defined in VI SDK API reference.
@@ -39,6 +44,7 @@ import java.rmi.RemoteException;
  * @since 4.0
  */
 public class HostProfile extends Profile {
+
     public HostProfile(ServerConnection sc, ManagedObjectReference mor) {
         super(sc, mor);
     }
@@ -47,16 +53,16 @@ public class HostProfile extends Profile {
         return (HostSystem) getManagedObject("referenceHost");
     }
 
-    public ProfileExecuteResult executeHostProfile(HostSystem host, ProfileDeferredPolicyOptionParameter[] deferredParam) throws RuntimeFault, RemoteException {
-        return getVimService().executeHostProfile(getMOR(), host.getMOR(), deferredParam);
-    }
-
     public void updateHostProfile(HostProfileConfigSpec config) throws DuplicateName, ProfileUpdateFailed, RuntimeFault, RemoteException {
         getVimService().updateHostProfile(getMOR(), config);
     }
 
     public void updateReferenceHost(HostSystem host) throws RuntimeFault, RemoteException {
-        getVimService().updateReferenceHost(getMOR(),
-            host == null ? null : host.getMOR());
+        getVimService().updateReferenceHost(getMOR(), host == null ? null : host.getMOR());
     }
+    /* ===== BEGIN custom (preserved by regenerator) ===== */
+    public ProfileExecuteResult executeHostProfile(HostSystem host, ProfileDeferredPolicyOptionParameter[] deferredParam) throws RuntimeFault, RemoteException {
+    return getVimService().executeHostProfile(getMOR(), host.getMOR(), deferredParam);
+}
+    /* ===== END custom ===== */
 }

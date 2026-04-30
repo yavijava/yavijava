@@ -1,3 +1,4 @@
+// auto generated using yavijava_generator
 /*================================================================================
 Copyright (c) 2011 VMware, Inc. All Rights Reserved.
 
@@ -26,13 +27,15 @@ WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWIS
 ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE 
 POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
-
 package com.vmware.vim25.mo;
 
+/* ===== BEGIN custom imports (preserved by regenerator) ===== */
+/* ===== END custom imports ===== */
+
+
 import com.vmware.vim25.*;
-
 import java.rmi.RemoteException;
-
+import java.util.Calendar;
 
 /**
  * provides APIs to manipulate the guest operating authentication
@@ -40,21 +43,11 @@ import java.rmi.RemoteException;
  * @author Steve Jin (http://www.doublecloud.org)
  * @since SDK5.0
  */
-
 public class GuestAuthManager extends ManagedObject {
-    private VirtualMachine vm = null;
 
     public GuestAuthManager(ServerConnection sc, ManagedObjectReference mor, VirtualMachine vm) {
         super(sc, mor);
         this.vm = vm;
-    }
-
-    public VirtualMachine getVM() {
-        return vm;
-    }
-
-    public GuestAuthentication acquireCredentialsInGuest(GuestAuthentication requestedAuth, long sessionID) throws GuestOperationsFault, TaskInProgress, InvalidState, RuntimeFault, RemoteException {
-        return getVimService().acquireCredentialsInGuest(this.getMOR(), vm.getMOR(), requestedAuth, sessionID);
     }
 
     public void releaseCredentialsInGuest(GuestAuthentication auth) throws GuestOperationsFault, TaskInProgress, InvalidState, RuntimeFault, RemoteException {
@@ -69,4 +62,13 @@ public class GuestAuthManager extends ManagedObject {
     public void ValidateCredentialsInGuest(GuestAuthentication auth) throws GuestOperationsFault, InvalidState, TaskInProgress, RuntimeFault, RemoteException {
         getVimService().validateCredentialsInGuest(getMOR(), vm.getMOR(), auth);
     }
+    /* ===== BEGIN custom (preserved by regenerator) ===== */
+    private VirtualMachine vm = null;
+    public VirtualMachine getVM() {
+    return vm;
+}
+    public GuestAuthentication acquireCredentialsInGuest(GuestAuthentication requestedAuth, long sessionID) throws GuestOperationsFault, TaskInProgress, InvalidState, RuntimeFault, RemoteException {
+    return getVimService().acquireCredentialsInGuest(this.getMOR(), vm.getMOR(), requestedAuth, sessionID);
+}
+    /* ===== END custom ===== */
 }

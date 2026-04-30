@@ -1,3 +1,4 @@
+// auto generated using yavijava_generator
 /*================================================================================
 Copyright (c) 2011 VMware, Inc. All Rights Reserved.
 
@@ -26,13 +27,15 @@ WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWIS
 ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE 
 POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
-
 package com.vmware.vim25.mo;
 
+/* ===== BEGIN custom imports (preserved by regenerator) ===== */
+/* ===== END custom imports ===== */
+
+
 import com.vmware.vim25.*;
-
 import java.rmi.RemoteException;
-
+import java.util.Calendar;
 
 /**
  * provides APIs to manipulate the guest operating system files.
@@ -40,29 +43,15 @@ import java.rmi.RemoteException;
  * @author Steve Jin (http://www.doublecloud.org)
  * @since SDK5.0
  */
-
 public class GuestFileManager extends ManagedObject {
-    private VirtualMachine vm = null;
 
     public GuestFileManager(ServerConnection sc, ManagedObjectReference mor, VirtualMachine vm) {
         super(sc, mor);
         this.vm = vm;
     }
 
-    public VirtualMachine getVM() {
-        return vm;
-    }
-
     public void changeFileAttributesInGuest(GuestAuthentication auth, String guestFilePath, GuestFileAttributes fileAttributes) throws GuestOperationsFault, InvalidState, TaskInProgress, FileFault, RuntimeFault, RemoteException {
         getVimService().changeFileAttributesInGuest(getMOR(), vm.getMOR(), auth, guestFilePath, fileAttributes);
-    }
-
-    public String createTemporaryDirectoryInGuest(GuestAuthentication auth, String prefix, String suffix, String directoryPath) throws GuestOperationsFault, InvalidState, TaskInProgress, FileFault, RuntimeFault, RemoteException {
-        return getVimService().createTemporaryDirectoryInGuest(getMOR(), vm.getMOR(), auth, prefix, suffix, directoryPath);
-    }
-
-    public String createTemporaryFileInGuest(GuestAuthentication auth, String prefix, String suffix, String directoryPath) throws GuestOperationsFault, InvalidState, TaskInProgress, FileFault, RuntimeFault, RemoteException {
-        return getVimService().createTemporaryFileInGuest(getMOR(), vm.getMOR(), auth, prefix, suffix, directoryPath);
     }
 
     public void deleteDirectoryInGuest(GuestAuthentication auth, String directoryPath, boolean recursive) throws GuestOperationsFault, InvalidState, TaskInProgress, FileFault, RuntimeFault, RemoteException {
@@ -71,18 +60,6 @@ public class GuestFileManager extends ManagedObject {
 
     public void deleteFileInGuest(GuestAuthentication auth, String filePath) throws GuestOperationsFault, InvalidState, TaskInProgress, FileFault, RuntimeFault, RemoteException {
         getVimService().deleteFileInGuest(getMOR(), vm.getMOR(), auth, filePath);
-    }
-
-    public FileTransferInformation initiateFileTransferFromGuest(GuestAuthentication auth, String guestFilePath) throws GuestOperationsFault, InvalidState, TaskInProgress, FileFault, RuntimeFault, RemoteException {
-        return getVimService().initiateFileTransferFromGuest(getMOR(), vm.getMOR(), auth, guestFilePath);
-    }
-
-    public String initiateFileTransferToGuest(GuestAuthentication auth, String guestFilePath, GuestFileAttributes fileAttributes, long fileSize, boolean overwrite) throws GuestOperationsFault, InvalidState, TaskInProgress, FileFault, RuntimeFault, RemoteException {
-        return getVimService().initiateFileTransferToGuest(getMOR(), vm.getMOR(), auth, guestFilePath, fileAttributes, fileSize, overwrite);
-    }
-
-    public GuestListFileInfo listFilesInGuest(GuestAuthentication auth, String filePath, int index, int maxResults, String matchPattern) throws GuestOperationsFault, InvalidState, TaskInProgress, FileFault, RuntimeFault, RemoteException {
-        return getVimService().listFilesInGuest(getMOR(), vm.getMOR(), auth, filePath, index, maxResults, matchPattern);
     }
 
     public void makeDirectoryInGuest(GuestAuthentication auth, String directoryPath, boolean createParentDirectories) throws GuestOperationsFault, InvalidState, TaskInProgress, FileFault, RuntimeFault, RemoteException {
@@ -96,4 +73,25 @@ public class GuestFileManager extends ManagedObject {
     public void moveFileInGuest(GuestAuthentication auth, String srcFilePath, String dstFilePath, boolean overwrite) throws GuestOperationsFault, InvalidState, TaskInProgress, FileFault, RuntimeFault, RemoteException {
         getVimService().moveFileInGuest(getMOR(), vm.getMOR(), auth, srcFilePath, dstFilePath, overwrite);
     }
+    /* ===== BEGIN custom (preserved by regenerator) ===== */
+    private VirtualMachine vm = null;
+    public VirtualMachine getVM() {
+    return vm;
+}
+    public String createTemporaryDirectoryInGuest(GuestAuthentication auth, String prefix, String suffix, String directoryPath) throws GuestOperationsFault, InvalidState, TaskInProgress, FileFault, RuntimeFault, RemoteException {
+    return getVimService().createTemporaryDirectoryInGuest(getMOR(), vm.getMOR(), auth, prefix, suffix, directoryPath);
+}
+    public String createTemporaryFileInGuest(GuestAuthentication auth, String prefix, String suffix, String directoryPath) throws GuestOperationsFault, InvalidState, TaskInProgress, FileFault, RuntimeFault, RemoteException {
+    return getVimService().createTemporaryFileInGuest(getMOR(), vm.getMOR(), auth, prefix, suffix, directoryPath);
+}
+    public FileTransferInformation initiateFileTransferFromGuest(GuestAuthentication auth, String guestFilePath) throws GuestOperationsFault, InvalidState, TaskInProgress, FileFault, RuntimeFault, RemoteException {
+    return getVimService().initiateFileTransferFromGuest(getMOR(), vm.getMOR(), auth, guestFilePath);
+}
+    public String initiateFileTransferToGuest(GuestAuthentication auth, String guestFilePath, GuestFileAttributes fileAttributes, long fileSize, boolean overwrite) throws GuestOperationsFault, InvalidState, TaskInProgress, FileFault, RuntimeFault, RemoteException {
+    return getVimService().initiateFileTransferToGuest(getMOR(), vm.getMOR(), auth, guestFilePath, fileAttributes, fileSize, overwrite);
+}
+    public GuestListFileInfo listFilesInGuest(GuestAuthentication auth, String filePath, int index, int maxResults, String matchPattern) throws GuestOperationsFault, InvalidState, TaskInProgress, FileFault, RuntimeFault, RemoteException {
+    return getVimService().listFilesInGuest(getMOR(), vm.getMOR(), auth, filePath, index, maxResults, matchPattern);
+}
+    /* ===== END custom ===== */
 }

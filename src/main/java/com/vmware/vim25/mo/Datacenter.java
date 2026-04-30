@@ -1,3 +1,4 @@
+// auto generated using yavijava_generator
 /*================================================================================
 Copyright (c) 2012 Steve Jin. All Rights Reserved.
 Copyright (c) 2008 VMware, Inc. All Rights Reserved.
@@ -27,20 +28,22 @@ WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWIS
 ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE 
 POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
-
 package com.vmware.vim25.mo;
 
-import com.vmware.vim25.*;
+/* ===== BEGIN custom imports (preserved by regenerator) ===== */
 import com.vmware.vim25.mo.util.MorUtil;
+/* ===== END custom imports ===== */
 
+
+import com.vmware.vim25.*;
 import java.rmi.RemoteException;
+import java.util.Calendar;
 
 /**
  * The managed object class corresponding to the one defined in VI SDK API reference.
  *
  * @author Steve JIN (http://www.doublecloud.org)
  */
-
 public class Datacenter extends ManagedEntity {
 
     public Datacenter(ServerConnection sc, ManagedObjectReference mor) {
@@ -85,66 +88,62 @@ public class Datacenter extends ManagedEntity {
     }
 
     /**
-     * old signature for back compatibility with 2.5 and 4.0
-     */
-    public Task powerOnMultiVM_Task(VirtualMachine[] vms) throws RuntimeFault, RemoteException {
-        return powerOnMultiVM_Task(vms, null);
-    }
-
-    /**
-     * @since SDK4.1
-     */
-    public Task powerOnMultiVM_Task(VirtualMachine[] vms, OptionValue[] option) throws RuntimeFault, RemoteException {
-        if (vms == null) {
-            throw new IllegalArgumentException("vms must not be null.");
-        }
-        ManagedObjectReference[] mors = MorUtil.createMORs(vms);
-        ManagedObjectReference tmor = getVimService().powerOnMultiVM_Task(getMOR(), mors, option);
-        return new Task(getServerConnection(), tmor);
-    }
-
-    /**
      * @since SDK5.1
      */
     public Task reconfigureDatacenter_Task(DatacenterConfigSpec spec, boolean modify) throws RuntimeFault, RemoteException {
         ManagedObjectReference tmor = getVimService().reconfigureDatacenter_Task(getMOR(), spec, modify);
         return new Task(getServerConnection(), tmor);
     }
-
-    public HostConnectInfo queryConnectionInfo(String hostname, int port, String username, String password,
-                                               String sslThumbprint) throws InvalidLogin, HostConnectFault, RuntimeFault, RemoteException {
-        return getVimService().queryConnectionInfo(getMOR(), hostname, port, username, password, sslThumbprint, null);
-    }
-
+    /* ===== BEGIN custom (preserved by regenerator) ===== */
     /**
-     * @since SDK5.1
-     */
-    public VirtualMachineConfigOptionDescriptor[] queryDatacenterConfigOptionDescriptor() throws RuntimeFault, RemoteException {
-        return getVimService().queryDatacenterConfigOptionDescriptor(getMOR());
-    }
-
+ * old signature for back compatibility with 2.5 and 4.0
+ */
+public Task powerOnMultiVM_Task(VirtualMachine[] vms) throws RuntimeFault, RemoteException {
+    return powerOnMultiVM_Task(vms, null);
+}
     /**
-     * This method provides a way of getting basic information about a host without adding it to a datacenter. This
-     * method is similar to QueryConnectionInfo, but it takes a HostConnectSpec as argument, instead of list of
-     * parameters.
-     *
-     * @param spec The connection spec for the host to be queried. It must contain values for all parameters required by QueryConnectionInfo See QueryConnectionInfo or a list of thrown expections.
-     * @return HostConnectInfo
-     * @throws GatewayConnectFault
-     * @throws GatewayHostNotReachable
-     * @throws GatewayNotFound
-     * @throws GatewayNotReachable
-     * @throws GatewayOperationRefused
-     * @throws GatewayToHostAuthFault
-     * @throws GatewayToHostTrustVerifyFault
-     * @throws HostConnectFault
-     * @throws InvalidArgument
-     * @throws InvalidLogin
-     * @throws RuntimeFault
-     * @throws RemoteException
-     * @since 6.0
-     */
-    public HostConnectInfo queryConnectionInfoViaSpec(HostConnectSpec spec) throws GatewayConnectFault, GatewayHostNotReachable, GatewayNotFound, GatewayNotReachable, GatewayOperationRefused, GatewayToHostAuthFault, GatewayToHostTrustVerifyFault, HostConnectFault, InvalidArgument, InvalidLogin, RuntimeFault, RemoteException {
-        return getVimService().queryConnectionInfoViaSpec(getMOR(), spec);
+ * @since SDK4.1
+ */
+public Task powerOnMultiVM_Task(VirtualMachine[] vms, OptionValue[] option) throws RuntimeFault, RemoteException {
+    if (vms == null) {
+        throw new IllegalArgumentException("vms must not be null.");
     }
+    ManagedObjectReference[] mors = MorUtil.createMORs(vms);
+    ManagedObjectReference tmor = getVimService().powerOnMultiVM_Task(getMOR(), mors, option);
+    return new Task(getServerConnection(), tmor);
+}
+    public HostConnectInfo queryConnectionInfo(String hostname, int port, String username, String password, String sslThumbprint) throws InvalidLogin, HostConnectFault, RuntimeFault, RemoteException {
+    return getVimService().queryConnectionInfo(getMOR(), hostname, port, username, password, sslThumbprint, null);
+}
+    /**
+ * @since SDK5.1
+ */
+public VirtualMachineConfigOptionDescriptor[] queryDatacenterConfigOptionDescriptor() throws RuntimeFault, RemoteException {
+    return getVimService().queryDatacenterConfigOptionDescriptor(getMOR());
+}
+    /**
+ * This method provides a way of getting basic information about a host without adding it to a datacenter. This
+ * method is similar to QueryConnectionInfo, but it takes a HostConnectSpec as argument, instead of list of
+ * parameters.
+ *
+ * @param spec The connection spec for the host to be queried. It must contain values for all parameters required by QueryConnectionInfo See QueryConnectionInfo or a list of thrown expections.
+ * @return HostConnectInfo
+ * @throws GatewayConnectFault
+ * @throws GatewayHostNotReachable
+ * @throws GatewayNotFound
+ * @throws GatewayNotReachable
+ * @throws GatewayOperationRefused
+ * @throws GatewayToHostAuthFault
+ * @throws GatewayToHostTrustVerifyFault
+ * @throws HostConnectFault
+ * @throws InvalidArgument
+ * @throws InvalidLogin
+ * @throws RuntimeFault
+ * @throws RemoteException
+ * @since 6.0
+ */
+public HostConnectInfo queryConnectionInfoViaSpec(HostConnectSpec spec) throws GatewayConnectFault, GatewayHostNotReachable, GatewayNotFound, GatewayNotReachable, GatewayOperationRefused, GatewayToHostAuthFault, GatewayToHostTrustVerifyFault, HostConnectFault, InvalidArgument, InvalidLogin, RuntimeFault, RemoteException {
+    return getVimService().queryConnectionInfoViaSpec(getMOR(), spec);
+}
+    /* ===== END custom ===== */
 }

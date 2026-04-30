@@ -1,3 +1,4 @@
+// auto generated using yavijava_generator
 /*================================================================================
 Copyright (c) 2008 VMware, Inc. All Rights Reserved.
 
@@ -26,19 +27,21 @@ WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWIS
 ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE 
 POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
-
 package com.vmware.vim25.mo;
 
-import com.vmware.vim25.*;
+/* ===== BEGIN custom imports (preserved by regenerator) ===== */
+/* ===== END custom imports ===== */
 
+
+import com.vmware.vim25.*;
 import java.rmi.RemoteException;
+import java.util.Calendar;
 
 /**
  * The managed object class corresponding to the one defined in VI SDK API reference.
  *
  * @author Steve JIN (http://www.doublecloud.org), Lu Yu (lyu@vmware.com)
  */
-
 public class HostNetworkSystem extends ExtensibleManagedObject {
 
     public HostNetworkSystem(ServerConnection serverConnection, ManagedObjectReference mor) {
@@ -77,20 +80,8 @@ public class HostNetworkSystem extends ExtensibleManagedObject {
         getVimService().addPortGroup(getMOR(), portgrp);
     }
 
-    public String addServiceConsoleVirtualNic(String portgroup, HostVirtualNicSpec spec) throws HostConfigFault, RuntimeFault, RemoteException {
-        return getVimService().addServiceConsoleVirtualNic(getMOR(), portgroup, spec);
-    }
-
-    public String addVirtualNic(String portgroup, HostVirtualNicSpec nicSpec) throws HostConfigFault, AlreadyExists, RuntimeFault, RemoteException {
-        return getVimService().addVirtualNic(getMOR(), portgroup, nicSpec);
-    }
-
     public void addVirtualSwitch(String vswitchName, HostVirtualSwitchSpec spec) throws HostConfigFault, ResourceInUse, AlreadyExists, RuntimeFault, RemoteException {
         getVimService().addVirtualSwitch(getMOR(), vswitchName, spec);
-    }
-
-    public PhysicalNicHintInfo[] queryNetworkHint(String[] devices) throws HostConfigFault, NotFound, RuntimeFault, RemoteException {
-        return getVimService().queryNetworkHint(getMOR(), devices);
     }
 
     public void refreshNetworkSystem() throws RuntimeFault, RemoteException {
@@ -156,5 +147,15 @@ public class HostNetworkSystem extends ExtensibleManagedObject {
     public void updateVirtualSwitch(String vswitchName, HostVirtualSwitchSpec spec) throws HostConfigFault, ResourceInUse, NotFound, RuntimeFault, RemoteException {
         getVimService().updateVirtualSwitch(getMOR(), vswitchName, spec);
     }
-
+    /* ===== BEGIN custom (preserved by regenerator) ===== */
+    public String addServiceConsoleVirtualNic(String portgroup, HostVirtualNicSpec spec) throws HostConfigFault, RuntimeFault, RemoteException {
+    return getVimService().addServiceConsoleVirtualNic(getMOR(), portgroup, spec);
+}
+    public String addVirtualNic(String portgroup, HostVirtualNicSpec nicSpec) throws HostConfigFault, AlreadyExists, RuntimeFault, RemoteException {
+    return getVimService().addVirtualNic(getMOR(), portgroup, nicSpec);
+}
+    public PhysicalNicHintInfo[] queryNetworkHint(String[] devices) throws HostConfigFault, NotFound, RuntimeFault, RemoteException {
+    return getVimService().queryNetworkHint(getMOR(), devices);
+}
+    /* ===== END custom ===== */
 }

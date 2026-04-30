@@ -1,3 +1,4 @@
+// auto generated using yavijava_generator
 /*================================================================================
 Copyright (c) 2008 VMware, Inc. All Rights Reserved.
 
@@ -26,22 +27,25 @@ WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWIS
 ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE 
 POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
-
 package com.vmware.vim25.mo;
 
+/* ===== BEGIN custom imports (preserved by regenerator) ===== */
 import com.vmware.vim25.Event;
 import com.vmware.vim25.EventFilterSpec;
 import com.vmware.vim25.ManagedObjectReference;
 import com.vmware.vim25.RuntimeFault;
+/* ===== END custom imports ===== */
 
+
+import com.vmware.vim25.*;
 import java.rmi.RemoteException;
+import java.util.Calendar;
 
 /**
  * The managed object class corresponding to the one defined in VI SDK API reference.
  *
  * @author Steve JIN (http://www.doublecloud.org)
  */
-
 public class EventHistoryCollector extends HistoryCollector {
 
     public EventHistoryCollector(ServerConnection serverConnection, ManagedObjectReference mor) {
@@ -55,13 +59,12 @@ public class EventHistoryCollector extends HistoryCollector {
     public Event[] getLatestPage() {
         return (Event[]) this.getCurrentProperty("latestPage");
     }
-
+    /* ===== BEGIN custom (preserved by regenerator) ===== */
     public Event[] readNextEvents(int maxCount) throws RuntimeFault, RemoteException {
-        return getVimService().readNextEvents(getMOR(), maxCount);
-    }
-
+    return getVimService().readNextEvents(getMOR(), maxCount);
+}
     public Event[] readPreviousEvents(int maxCount) throws RuntimeFault, RemoteException {
-        return getVimService().readPreviousEvents(getMOR(), maxCount);
-    }
-
+    return getVimService().readPreviousEvents(getMOR(), maxCount);
+}
+    /* ===== END custom ===== */
 }

@@ -1,3 +1,4 @@
+// auto generated using yavijava_generator
 /*================================================================================
 Copyright (c) 2008 VMware, Inc. All Rights Reserved.
 
@@ -28,12 +29,17 @@ POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
 package com.vmware.vim25.mo;
 
+/* ===== BEGIN custom imports (preserved by regenerator) ===== */
 import com.vmware.vim25.LicenseAssignmentManagerLicenseAssignment;
 import com.vmware.vim25.LicenseManagerLicenseInfo;
 import com.vmware.vim25.ManagedObjectReference;
 import com.vmware.vim25.RuntimeFault;
+/* ===== END custom imports ===== */
 
+
+import com.vmware.vim25.*;
 import java.rmi.RemoteException;
+import java.util.Calendar;
 
 /**
  * The managed object class corresponding to the one defined in VI SDK API reference.
@@ -42,19 +48,20 @@ import java.rmi.RemoteException;
  * @since 4.0
  */
 public class LicenseAssignmentManager extends ManagedObject {
+
     public LicenseAssignmentManager(ServerConnection sc, ManagedObjectReference mor) {
         super(sc, mor);
-    }
-
-    public LicenseAssignmentManagerLicenseAssignment[] queryAssignedLicenses(String entityId) throws RuntimeFault, RemoteException {
-        return getVimService().queryAssignedLicenses(getMOR(), entityId);
     }
 
     public void removeAssignedLicense(String entityId) throws RuntimeFault, RemoteException {
         getVimService().removeAssignedLicense(getMOR(), entityId);
     }
-
+    /* ===== BEGIN custom (preserved by regenerator) ===== */
+    public LicenseAssignmentManagerLicenseAssignment[] queryAssignedLicenses(String entityId) throws RuntimeFault, RemoteException {
+    return getVimService().queryAssignedLicenses(getMOR(), entityId);
+}
     public LicenseManagerLicenseInfo updateAssignedLicense(String entity, String licenseKey, String entityDisplayName) throws RuntimeFault, RemoteException {
-        return getVimService().updateAssignedLicense(getMOR(), entity, licenseKey, entityDisplayName);
-    }
+    return getVimService().updateAssignedLicense(getMOR(), entity, licenseKey, entityDisplayName);
+}
+    /* ===== END custom ===== */
 }

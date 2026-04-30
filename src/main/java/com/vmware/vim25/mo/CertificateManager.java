@@ -1,11 +1,17 @@
+// auto generated using yavijava_generator
 package com.vmware.vim25.mo;
 
+/* ===== BEGIN custom imports (preserved by regenerator) ===== */
 import com.vmware.vim25.ManagedObjectReference;
 import com.vmware.vim25.RuntimeFault;
 import com.vmware.vim25.SystemError;
 import com.vmware.vim25.mo.util.MorUtil;
+/* ===== END custom imports ===== */
 
+
+import com.vmware.vim25.*;
 import java.rmi.RemoteException;
+import java.util.Calendar;
 
 /**
  * Copyright 2015 Michael Rice &lt;michael@michaelrice.org&gt;
@@ -81,4 +87,6 @@ public class CertificateManager extends ManagedObject {
         ManagedObjectReference taskMor = getVimService().certMgrRevokeCertificates_Task(getMOR(), MorUtil.createMORs(hostSystems));
         return new Task(getServerConnection(), taskMor);
     }
+    /* ===== BEGIN custom (preserved by regenerator) ===== */
+    /* ===== END custom ===== */
 }

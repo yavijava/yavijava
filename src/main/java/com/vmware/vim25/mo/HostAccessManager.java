@@ -1,8 +1,13 @@
+// auto generated using yavijava_generator
 package com.vmware.vim25.mo;
 
-import com.vmware.vim25.*;
+/* ===== BEGIN custom imports (preserved by regenerator) ===== */
+/* ===== END custom imports ===== */
 
+
+import com.vmware.vim25.*;
 import java.rmi.RemoteException;
+import java.util.Calendar;
 
 /**
  * Copyright 2015 Michael Rice &lt;michael@michaelrice.org&gt;
@@ -100,46 +105,6 @@ public class HostAccessManager extends ManagedObject {
     }
 
     /**
-     * Get the list of users which are exceptions for lockdown mode.
-     *
-     * @return The list of users which will not lose their permissions when the host enters lockdown mode.
-     * @throws RuntimeFault
-     * @throws RemoteException
-     * @see #updateLockdownExceptions UpdateLockdownExceptions.
-     */
-    public String[] queryLockdownExceptions() throws RuntimeFault, RemoteException {
-        return getVimService().queryLockdownExceptions(getMOR());
-    }
-
-    /**
-     * Get the list of local system users.
-     * <p>
-     * These are special users like 'vpxuser', 'vslauser' and 'dcui', which may be used for authenticating different
-     * sub-components of the vSphere system and may be essential for its correct functioning.
-     * Usually these users may not be used by human operators to connect directly to the host and the UI may choose to
-     * show them only in some "advanced" UI view.
-     *
-     * @return The list of local system users.
-     * @throws RuntimeFault
-     * @throws RemoteException
-     */
-    public String[] querySystemUsers() throws RuntimeFault, RemoteException {
-        return getVimService().querySystemUsers(getMOR());
-    }
-
-    /**
-     * Retrieve access entries. Returns a list of AccessEntry objects for each VIM user or group which have explicitly
-     * assigned permissions on the host. This means that AccessMode#accessNone will not be present in the result.
-     *
-     * @return A list of AccessEntry objects.
-     * @throws RuntimeFault
-     * @throws RemoteException
-     */
-    public HostAccessControlEntry[] retrieveHostAccessControlEntries() throws RuntimeFault, RemoteException {
-        return getVimService().retrieveHostAccessControlEntries(getMOR());
-    }
-
-    /**
      * Update the list of users which are exceptions for lockdown mode.
      * <p>
      * Usually these are user accounts used by third party solutions and external applications which need to continue to
@@ -162,10 +127,6 @@ public class HostAccessManager extends ManagedObject {
         getVimService().updateLockdownExceptions(getMOR(), users);
     }
 
-    public void updateLockdownExceptions() throws AuthMinimumAdminPermission, RuntimeFault, UserNotFound, RemoteException {
-        updateLockdownExceptions(null);
-    }
-
     /**
      * Update the list of local system users. The special users 'dcui', 'vpxuser' and 'vslauser' need not be specified.
      * They are always reported in the list of system users.
@@ -179,8 +140,49 @@ public class HostAccessManager extends ManagedObject {
     public void updateSystemUsers(String[] users) throws InvalidArgument, RuntimeFault, UserNotFound, RemoteException {
         getVimService().updateSystemUsers(getMOR(), users);
     }
-
+    /* ===== BEGIN custom (preserved by regenerator) ===== */
+    /**
+ * Get the list of users which are exceptions for lockdown mode.
+ *
+ * @return The list of users which will not lose their permissions when the host enters lockdown mode.
+ * @throws RuntimeFault
+ * @throws RemoteException
+ * @see #updateLockdownExceptions UpdateLockdownExceptions.
+ */
+public String[] queryLockdownExceptions() throws RuntimeFault, RemoteException {
+    return getVimService().queryLockdownExceptions(getMOR());
+}
+    /**
+ * Get the list of local system users.
+ * <p>
+ * These are special users like 'vpxuser', 'vslauser' and 'dcui', which may be used for authenticating different
+ * sub-components of the vSphere system and may be essential for its correct functioning.
+ * Usually these users may not be used by human operators to connect directly to the host and the UI may choose to
+ * show them only in some "advanced" UI view.
+ *
+ * @return The list of local system users.
+ * @throws RuntimeFault
+ * @throws RemoteException
+ */
+public String[] querySystemUsers() throws RuntimeFault, RemoteException {
+    return getVimService().querySystemUsers(getMOR());
+}
+    /**
+ * Retrieve access entries. Returns a list of AccessEntry objects for each VIM user or group which have explicitly
+ * assigned permissions on the host. This means that AccessMode#accessNone will not be present in the result.
+ *
+ * @return A list of AccessEntry objects.
+ * @throws RuntimeFault
+ * @throws RemoteException
+ */
+public HostAccessControlEntry[] retrieveHostAccessControlEntries() throws RuntimeFault, RemoteException {
+    return getVimService().retrieveHostAccessControlEntries(getMOR());
+}
+    public void updateLockdownExceptions() throws AuthMinimumAdminPermission, RuntimeFault, UserNotFound, RemoteException {
+    updateLockdownExceptions(null);
+}
     public void updateSystemUsers() throws InvalidArgument, RuntimeFault, UserNotFound, RemoteException {
-        updateSystemUsers(null);
-    }
+    updateSystemUsers(null);
+}
+    /* ===== END custom ===== */
 }

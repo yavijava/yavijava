@@ -1,3 +1,4 @@
+// auto generated using yavijava_generator
 /*================================================================================
 Copyright (c) 2008 VMware, Inc. All Rights Reserved.
 
@@ -26,20 +27,23 @@ WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWIS
 ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE 
 POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
-
 package com.vmware.vim25.mo;
 
-import com.vmware.vim25.*;
+/* ===== BEGIN custom imports (preserved by regenerator) ===== */
+/* ===== END custom imports ===== */
 
+
+import com.vmware.vim25.*;
 import java.rmi.RemoteException;
+import java.util.Calendar;
 
 /**
  * The managed object class corresponding to the one defined in VI SDK API reference.
  *
  * @author Steve JIN (http://www.doublecloud.org)
  */
-
 public class Datastore extends ManagedEntity {
+
     public Datastore(ServerConnection serverConnection, ManagedObjectReference mor) {
         super(serverConnection, mor);
     }
@@ -78,13 +82,6 @@ public class Datastore extends ManagedEntity {
     /**
      * @since SDK5.0
      */
-    public StoragePlacementResult datastoreEnterMaintenanceMode() throws InvalidState, RuntimeFault, RemoteException {
-        return getVimService().datastoreEnterMaintenanceMode(getMOR());
-    }
-
-    /**
-     * @since SDK5.0
-     */
     public Task datastoreExitMaintenanceMode_Task() throws InvalidState, RuntimeFault, RemoteException {
         ManagedObjectReference taskMor = getVimService().datastoreExitMaintenanceMode_Task(getMOR());
         return new Task(getServerConnection(), taskMor);
@@ -116,4 +113,12 @@ public class Datastore extends ManagedEntity {
         ManagedObjectReference mor = getVimService().updateVirtualMachineFiles_Task(getMOR(), mountPathDatastoreMapping);
         return new Task(getServerConnection(), mor);
     }
+    /* ===== BEGIN custom (preserved by regenerator) ===== */
+    /**
+ * @since SDK5.0
+ */
+public StoragePlacementResult datastoreEnterMaintenanceMode() throws InvalidState, RuntimeFault, RemoteException {
+    return getVimService().datastoreEnterMaintenanceMode(getMOR());
+}
+    /* ===== END custom ===== */
 }

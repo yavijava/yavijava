@@ -1,3 +1,4 @@
+// auto generated using yavijava_generator
 /*================================================================================
 Copyright (c) 2008 VMware, Inc. All Rights Reserved.
 
@@ -26,22 +27,25 @@ WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWIS
 ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE 
 POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
-
 package com.vmware.vim25.mo;
 
+/* ===== BEGIN custom imports (preserved by regenerator) ===== */
 import com.vmware.vim25.ManagedObjectReference;
 import com.vmware.vim25.RuntimeFault;
 import com.vmware.vim25.TaskFilterSpec;
 import com.vmware.vim25.TaskInfo;
+/* ===== END custom imports ===== */
 
+
+import com.vmware.vim25.*;
 import java.rmi.RemoteException;
+import java.util.Calendar;
 
 /**
  * The managed object class corresponding to the one defined in VI SDK API reference.
  *
  * @author Steve JIN (http://www.doublecloud.org)
  */
-
 public class TaskHistoryCollector extends HistoryCollector {
 
     public TaskHistoryCollector(ServerConnection serverConnection, ManagedObjectReference mor) {
@@ -55,13 +59,12 @@ public class TaskHistoryCollector extends HistoryCollector {
     public TaskInfo[] getLatestPage() {
         return (TaskInfo[]) getCurrentProperty("latestPage");
     }
-
+    /* ===== BEGIN custom (preserved by regenerator) ===== */
     public TaskInfo[] readNextTasks(int maxCount) throws RuntimeFault, RemoteException {
-        return getVimService().readNextTasks(getMOR(), maxCount);
-    }
-
+    return getVimService().readNextTasks(getMOR(), maxCount);
+}
     public TaskInfo[] readPreviousTasks(int maxCount) throws RuntimeFault, RemoteException {
-        return getVimService().readPreviousTasks(getMOR(), maxCount);
-    }
-
+    return getVimService().readPreviousTasks(getMOR(), maxCount);
+}
+    /* ===== END custom ===== */
 }

@@ -1,3 +1,4 @@
+// auto generated using yavijava_generator
 /*================================================================================
 Copyright (c) 2008 VMware, Inc. All Rights Reserved.
 
@@ -28,8 +29,15 @@ POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
 package com.vmware.vim25.mo;
 
+/* ===== BEGIN custom imports (preserved by regenerator) ===== */
 import com.vmware.vim25.LocalizationManagerMessageCatalog;
 import com.vmware.vim25.ManagedObjectReference;
+/* ===== END custom imports ===== */
+
+
+import com.vmware.vim25.*;
+import java.rmi.RemoteException;
+import java.util.Calendar;
 
 /**
  * The managed object class corresponding to the one defined in VI SDK API reference.
@@ -38,6 +46,7 @@ import com.vmware.vim25.ManagedObjectReference;
  * @since 4.0
  */
 public class LocalizationManager extends ManagedObject {
+
     public LocalizationManager(ServerConnection sc, ManagedObjectReference mor) {
         super(sc, mor);
     }
@@ -45,4 +54,6 @@ public class LocalizationManager extends ManagedObject {
     public LocalizationManagerMessageCatalog[] getCatalog() {
         return (LocalizationManagerMessageCatalog[]) getCurrentProperty("catalog");
     }
+    /* ===== BEGIN custom (preserved by regenerator) ===== */
+    /* ===== END custom ===== */
 }

@@ -1,3 +1,4 @@
+// auto generated using yavijava_generator
 /*================================================================================
 Copyright (c) 2008 VMware, Inc. All Rights Reserved.
 
@@ -28,9 +29,13 @@ POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
 package com.vmware.vim25.mo;
 
-import com.vmware.vim25.*;
+/* ===== BEGIN custom imports (preserved by regenerator) ===== */
+/* ===== END custom imports ===== */
 
+
+import com.vmware.vim25.*;
 import java.rmi.RemoteException;
+import java.util.Calendar;
 
 /**
  * The managed object class corresponding to the one defined in VI SDK API reference.
@@ -39,16 +44,13 @@ import java.rmi.RemoteException;
  * @since 4.0
  */
 public class HostVirtualNicManager extends ExtensibleManagedObject {
+
     public HostVirtualNicManager(ServerConnection sc, ManagedObjectReference mor) {
         super(sc, mor);
     }
 
     public HostVirtualNicManagerInfo getInfo() {
         return (HostVirtualNicManagerInfo) getCurrentProperty("info");
-    }
-
-    public VirtualNicManagerNetConfig queryNetConfig(String nicType) throws HostConfigFault, InvalidArgument, RuntimeFault, RemoteException {
-        return getVimService().queryNetConfig(getMOR(), nicType);
     }
 
     public void deselectVnicForNicType(String nicType, String device) throws HostConfigFault, InvalidArgument, RuntimeFault, RemoteException {
@@ -58,4 +60,9 @@ public class HostVirtualNicManager extends ExtensibleManagedObject {
     public void selectVnicForNicType(String nicType, String device) throws HostConfigFault, InvalidArgument, RuntimeFault, RemoteException {
         getVimService().selectVnicForNicType(getMOR(), nicType, device);
     }
+    /* ===== BEGIN custom (preserved by regenerator) ===== */
+    public VirtualNicManagerNetConfig queryNetConfig(String nicType) throws HostConfigFault, InvalidArgument, RuntimeFault, RemoteException {
+    return getVimService().queryNetConfig(getMOR(), nicType);
+}
+    /* ===== END custom ===== */
 }

@@ -1,3 +1,4 @@
+// auto generated using yavijava_generator
 /*================================================================================
 Copyright (c) 2012 Steve Jin. All Rights Reserved.
 Copyright (c) 2008 VMware, Inc. All Rights Reserved.
@@ -27,13 +28,16 @@ WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWIS
 ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE 
 POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
-
 package com.vmware.vim25.mo;
 
-import com.vmware.vim25.*;
+/* ===== BEGIN custom imports (preserved by regenerator) ===== */
 import com.vmware.vim25.mo.util.MorUtil;
+/* ===== END custom imports ===== */
 
+
+import com.vmware.vim25.*;
 import java.rmi.RemoteException;
+import java.util.Calendar;
 
 /**
  * The managed object class corresponding to the one defined in VI SDK API reference.
@@ -41,88 +45,15 @@ import java.rmi.RemoteException;
  * @author Steve JIN (http://www.doublecloud.org)
  * @since 4.0
  */
-
 public class DistributedVirtualSwitchManager extends ManagedObject {
+
     public DistributedVirtualSwitchManager(ServerConnection sc, ManagedObjectReference mor) {
         super(sc, mor);
-    }
-
-    public DistributedVirtualSwitchProductSpec[] queryAvailableDvsSpec() throws RuntimeFault, RemoteException {
-        return queryAvailableDvsSpec(null);
-    }
-
-    /**
-     * This operation returns a list of switch product specifications that are supported by the vCenter Server.
-     *
-     * @param recommended If set to true, return only the recommened versions. If set to false, return only the not recommended versions. If unset, return all supported versions.
-     * @return DistributedVirtualSwitchProductSpec[]
-     * @throws RuntimeFault
-     * @throws RemoteException
-     * @since 6.0
-     */
-    public DistributedVirtualSwitchProductSpec[] queryAvailableDvsSpec(Boolean recommended) throws RuntimeFault, RemoteException {
-        return getVimService().queryAvailableDvsSpec(getMOR(), recommended);
-    }
-
-    public HostSystem[] queryCompatibleHostForExistingDvs(ManagedEntity container, boolean recursive, DistributedVirtualSwitch dvs) throws RuntimeFault, RemoteException {
-        ManagedObjectReference[] mors = getVimService().queryCompatibleHostForExistingDvs(getMOR(), container.getMOR(), recursive, dvs.getMOR());
-
-        HostSystem[] hosts = new HostSystem[mors.length];
-        for (int i = 0; i < hosts.length; i++) {
-            hosts[i] = new HostSystem(getServerConnection(), mors[i]);
-        }
-        return hosts;
-    }
-
-    public HostSystem[] queryCompatibleHostForNewDvs(ManagedEntity container, boolean recursive, DistributedVirtualSwitchProductSpec switchProductSpec) throws RuntimeFault, RemoteException {
-        ManagedObjectReference[] mors = getVimService().queryCompatibleHostForNewDvs(getMOR(), container.getMOR(), recursive, switchProductSpec);
-
-        HostSystem[] hosts = new HostSystem[mors.length];
-        for (int i = 0; i < hosts.length; i++) {
-            hosts[i] = new HostSystem(getServerConnection(), mors[i]);
-        }
-        return hosts;
-    }
-
-    public DistributedVirtualSwitchHostProductSpec[] queryDvsCompatibleHostSpec(DistributedVirtualSwitchProductSpec switchProductSpec) throws RuntimeFault, RemoteException {
-        return getVimService().queryDvsCompatibleHostSpec(getMOR(), switchProductSpec);
-    }
-
-    /**
-     * @since SDK4.1
-     */
-    public DistributedVirtualSwitchManagerCompatibilityResult[] queryDvsCheckCompatibility(
-        DistributedVirtualSwitchManagerHostContainer hostContainer, DistributedVirtualSwitchManagerDvsProductSpec dvsProductSpec,
-        DistributedVirtualSwitchManagerHostDvsFilterSpec[] hostFilterSpec) throws RuntimeFault, RemoteException {
-        return getVimService().queryDvsCheckCompatibility(getMOR(), hostContainer, dvsProductSpec, hostFilterSpec);
-    }
-
-
-    public DVSManagerDvsConfigTarget queryDvsConfigTarget(HostSystem host, DistributedVirtualSwitch dvs) throws RuntimeFault, RemoteException {
-        return getVimService().queryDvsConfigTarget(getMOR(),
-            host == null ? null : host.getMOR(),
-            dvs == null ? null : dvs.getMOR());
     }
 
     public DistributedVirtualSwitch queryDvsByUuid(String uuid) throws NotFound, RuntimeFault, RemoteException {
         ManagedObjectReference mor = getVimService().queryDvsByUuid(getMOR(), uuid);
         return new DistributedVirtualSwitch(getServerConnection(), mor);
-    }
-
-    /**
-     * @since SDK4.1
-     */
-    public DVSFeatureCapability queryDvsFeatureCapability(DistributedVirtualSwitchProductSpec switchProductSpec) throws RuntimeFault, RemoteException {
-        return getVimService().queryDvsFeatureCapability(getMOR(), switchProductSpec);
-    }
-
-    /**
-     * @since SDK5.0
-     */
-    public Task rectifyDvsOnHost_Task(HostSystem[] hosts) throws DvsFault, RuntimeFault, RemoteException {
-        ManagedObjectReference[] hostMors = MorUtil.createMORs(hosts);
-        ManagedObjectReference taskMor = getVimService().rectifyDvsOnHost_Task(getMOR(), hostMors);
-        return new Task(getServerConnection(), taskMor);
     }
 
     /**
@@ -148,4 +79,63 @@ public class DistributedVirtualSwitchManager extends ManagedObject {
         ManagedObjectReference mor = getVimService().dVSManagerLookupDvPortGroup(getMOR(), switchUuid, portgroupKey);
         return new DistributedVirtualPortgroup(getServerConnection(), mor);
     }
+    /* ===== BEGIN custom (preserved by regenerator) ===== */
+    public DistributedVirtualSwitchProductSpec[] queryAvailableDvsSpec() throws RuntimeFault, RemoteException {
+    return queryAvailableDvsSpec(null);
+}
+    /**
+ * This operation returns a list of switch product specifications that are supported by the vCenter Server.
+ *
+ * @param recommended If set to true, return only the recommened versions. If set to false, return only the not recommended versions. If unset, return all supported versions.
+ * @return DistributedVirtualSwitchProductSpec[]
+ * @throws RuntimeFault
+ * @throws RemoteException
+ * @since 6.0
+ */
+public DistributedVirtualSwitchProductSpec[] queryAvailableDvsSpec(Boolean recommended) throws RuntimeFault, RemoteException {
+    return getVimService().queryAvailableDvsSpec(getMOR(), recommended);
+}
+    public HostSystem[] queryCompatibleHostForExistingDvs(ManagedEntity container, boolean recursive, DistributedVirtualSwitch dvs) throws RuntimeFault, RemoteException {
+    ManagedObjectReference[] mors = getVimService().queryCompatibleHostForExistingDvs(getMOR(), container.getMOR(), recursive, dvs.getMOR());
+    HostSystem[] hosts = new HostSystem[mors.length];
+    for (int i = 0; i < hosts.length; i++) {
+        hosts[i] = new HostSystem(getServerConnection(), mors[i]);
+    }
+    return hosts;
+}
+    public HostSystem[] queryCompatibleHostForNewDvs(ManagedEntity container, boolean recursive, DistributedVirtualSwitchProductSpec switchProductSpec) throws RuntimeFault, RemoteException {
+    ManagedObjectReference[] mors = getVimService().queryCompatibleHostForNewDvs(getMOR(), container.getMOR(), recursive, switchProductSpec);
+    HostSystem[] hosts = new HostSystem[mors.length];
+    for (int i = 0; i < hosts.length; i++) {
+        hosts[i] = new HostSystem(getServerConnection(), mors[i]);
+    }
+    return hosts;
+}
+    public DistributedVirtualSwitchHostProductSpec[] queryDvsCompatibleHostSpec(DistributedVirtualSwitchProductSpec switchProductSpec) throws RuntimeFault, RemoteException {
+    return getVimService().queryDvsCompatibleHostSpec(getMOR(), switchProductSpec);
+}
+    /**
+ * @since SDK4.1
+ */
+public DistributedVirtualSwitchManagerCompatibilityResult[] queryDvsCheckCompatibility(DistributedVirtualSwitchManagerHostContainer hostContainer, DistributedVirtualSwitchManagerDvsProductSpec dvsProductSpec, DistributedVirtualSwitchManagerHostDvsFilterSpec[] hostFilterSpec) throws RuntimeFault, RemoteException {
+    return getVimService().queryDvsCheckCompatibility(getMOR(), hostContainer, dvsProductSpec, hostFilterSpec);
+}
+    public DVSManagerDvsConfigTarget queryDvsConfigTarget(HostSystem host, DistributedVirtualSwitch dvs) throws RuntimeFault, RemoteException {
+    return getVimService().queryDvsConfigTarget(getMOR(), host == null ? null : host.getMOR(), dvs == null ? null : dvs.getMOR());
+}
+    /**
+ * @since SDK4.1
+ */
+public DVSFeatureCapability queryDvsFeatureCapability(DistributedVirtualSwitchProductSpec switchProductSpec) throws RuntimeFault, RemoteException {
+    return getVimService().queryDvsFeatureCapability(getMOR(), switchProductSpec);
+}
+    /**
+ * @since SDK5.0
+ */
+public Task rectifyDvsOnHost_Task(HostSystem[] hosts) throws DvsFault, RuntimeFault, RemoteException {
+    ManagedObjectReference[] hostMors = MorUtil.createMORs(hosts);
+    ManagedObjectReference taskMor = getVimService().rectifyDvsOnHost_Task(getMOR(), hostMors);
+    return new Task(getServerConnection(), taskMor);
+}
+    /* ===== END custom ===== */
 }

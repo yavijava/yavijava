@@ -1,3 +1,4 @@
+// auto generated using yavijava_generator
 /*================================================================================
 Copyright (c) 2013 Steve Jin. All Rights Reserved.
 Copyright (c) 2008 VMware, Inc. All Rights Reserved.
@@ -27,35 +28,25 @@ WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWIS
 ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE 
 POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
-
 package com.vmware.vim25.mo;
 
-import com.vmware.vim25.*;
+/* ===== BEGIN custom imports (preserved by regenerator) ===== */
+/* ===== END custom imports ===== */
 
+
+import com.vmware.vim25.*;
 import java.rmi.RemoteException;
+import java.util.Calendar;
 
 /**
  * The managed object class corresponding to the one defined in VI SDK API reference.
  *
  * @author Steve JIN (http://www.doublecloud.org)
  */
-
 public class VirtualMachineSnapshot extends ManagedObject {
 
     public VirtualMachineSnapshot(ServerConnection sc, ManagedObjectReference mor) {
         super(sc, mor);
-    }
-
-    /**
-     * @since SDK4.1
-     */
-    public VirtualMachineSnapshot[] getChildSnapshot() {
-        ManagedObjectReference[] mors = (ManagedObjectReference[]) getCurrentProperty("childSnapshot");
-        VirtualMachineSnapshot[] vmns = new VirtualMachineSnapshot[mors.length];
-        for (int i = 0; i < mors.length; i++) {
-            vmns[i] = new VirtualMachineSnapshot(getServerConnection(), mors[i]);
-        }
-        return vmns;
     }
 
     public VirtualMachineConfigInfo getConfig() {
@@ -70,40 +61,46 @@ public class VirtualMachineSnapshot extends ManagedObject {
         return new HttpNfcLease(this.getServerConnection(), mor);
     }
 
-    //SDK4.1 signature for back compatibility
-    public Task removeSnapshot_Task(boolean removeChildren) throws TaskInProgress, RuntimeFault, RemoteException {
-        return removeSnapshot_Task(removeChildren, null);
-    }
-
-    //SDK5.0 signature
-    public Task removeSnapshot_Task(boolean removeChildren, Boolean consolidate) throws TaskInProgress, RuntimeFault, RemoteException {
-        return new Task(getServerConnection(),
-            getVimService().removeSnapshot_Task(getMOR(), removeChildren, consolidate));
-    }
-
     public void renameSnapshot(String name, String description) throws InvalidName, RuntimeFault, RemoteException {
         getVimService().renameSnapshot(getMOR(), name, description);
     }
-
-    //SDK2.5 signature for back compatibility
-    public Task revertToSnapshot_Task(HostSystem host) throws VmConfigFault, TaskInProgress, FileFault, InvalidState, InsufficientResourcesFault, RuntimeFault, RemoteException {
-        return revertToSnapshot_Task(host, null);
-    }
-
-    //SDK4.0 signature
-    public Task revertToSnapshot_Task(HostSystem host, Boolean suppressPowerOn) throws VmConfigFault, TaskInProgress, FileFault, InvalidState, InsufficientResourcesFault, RuntimeFault, RemoteException {
-        return new Task(getServerConnection(),
-            getVimService().revertToSnapshot_Task(getMOR(), host == null ? null : host.getMOR(), suppressPowerOn));
-    }
-
+    /* ===== BEGIN custom (preserved by regenerator) ===== */
     /**
-     * Get the virtual machine for which the snapshot was taken.
-     *
-     * @return {@link com.vmware.vim25.mo.VirtualMachine VirtualMachine}
-     * @since 6.0
-     */
-    public VirtualMachine getVm() {
-        ManagedObjectReference mor = (ManagedObjectReference) getCurrentProperty("vm");
-        return new VirtualMachine(getServerConnection(), mor);
+ * @since SDK4.1
+ */
+public VirtualMachineSnapshot[] getChildSnapshot() {
+    ManagedObjectReference[] mors = (ManagedObjectReference[]) getCurrentProperty("childSnapshot");
+    VirtualMachineSnapshot[] vmns = new VirtualMachineSnapshot[mors.length];
+    for (int i = 0; i < mors.length; i++) {
+        vmns[i] = new VirtualMachineSnapshot(getServerConnection(), mors[i]);
     }
+    return vmns;
+}
+    //SDK4.1 signature for back compatibility
+public Task removeSnapshot_Task(boolean removeChildren) throws TaskInProgress, RuntimeFault, RemoteException {
+    return removeSnapshot_Task(removeChildren, null);
+}
+    //SDK5.0 signature
+public Task removeSnapshot_Task(boolean removeChildren, Boolean consolidate) throws TaskInProgress, RuntimeFault, RemoteException {
+    return new Task(getServerConnection(), getVimService().removeSnapshot_Task(getMOR(), removeChildren, consolidate));
+}
+    //SDK2.5 signature for back compatibility
+public Task revertToSnapshot_Task(HostSystem host) throws VmConfigFault, TaskInProgress, FileFault, InvalidState, InsufficientResourcesFault, RuntimeFault, RemoteException {
+    return revertToSnapshot_Task(host, null);
+}
+    //SDK4.0 signature
+public Task revertToSnapshot_Task(HostSystem host, Boolean suppressPowerOn) throws VmConfigFault, TaskInProgress, FileFault, InvalidState, InsufficientResourcesFault, RuntimeFault, RemoteException {
+    return new Task(getServerConnection(), getVimService().revertToSnapshot_Task(getMOR(), host == null ? null : host.getMOR(), suppressPowerOn));
+}
+    /**
+ * Get the virtual machine for which the snapshot was taken.
+ *
+ * @return {@link com.vmware.vim25.mo.VirtualMachine VirtualMachine}
+ * @since 6.0
+ */
+public VirtualMachine getVm() {
+    ManagedObjectReference mor = (ManagedObjectReference) getCurrentProperty("vm");
+    return new VirtualMachine(getServerConnection(), mor);
+}
+    /* ===== END custom ===== */
 }

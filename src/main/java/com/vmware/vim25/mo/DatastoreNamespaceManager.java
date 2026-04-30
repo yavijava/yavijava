@@ -1,3 +1,4 @@
+// auto generated using yavijava_generator
 /*================================================================================
 Copyright (c) 2013 Steve Jin. All Rights Reserved.
 
@@ -26,12 +27,15 @@ WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWIS
 ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE 
 POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
-
 package com.vmware.vim25.mo;
 
-import com.vmware.vim25.*;
+/* ===== BEGIN custom imports (preserved by regenerator) ===== */
+/* ===== END custom imports ===== */
 
+
+import com.vmware.vim25.*;
 import java.rmi.RemoteException;
+import java.util.Calendar;
 
 /**
  * The managed object class corresponding to the one defined in VI SDK API reference.
@@ -39,21 +43,21 @@ import java.rmi.RemoteException;
  * @author Steve JIN (http://www.doublecloud.org)
  * @since SDK5.5
  */
-
 public class DatastoreNamespaceManager extends ManagedObject {
+
     public DatastoreNamespaceManager(ServerConnection serverConnection, ManagedObjectReference mor) {
         super(serverConnection, mor);
-    }
-
-    public String createDirectory(Datastore datastore, String displayName, String policy) throws CannotCreateFile, FileAlreadyExists, InvalidDatastore, RuntimeFault, RemoteException {
-        return createDirectory(datastore, displayName, policy, 0L);
-    }
-
-    public String createDirectory(Datastore datastore, String displayName, String policy, long size) throws CannotCreateFile, FileAlreadyExists, InvalidDatastore, RuntimeFault, RemoteException {
-        return getVimService().createDirectory(this.getMOR(), datastore.getMOR(), displayName, policy, size);
     }
 
     public void deleteDirectory(Datacenter datacenter, String datastorePath) throws FileNotFound, InvalidDatastorePath, FileFault, InvalidDatastore, RuntimeFault, RemoteException {
         getVimService().deleteDirectory(this.getMOR(), datacenter == null ? null : datacenter.getMOR(), datastorePath);
     }
+    /* ===== BEGIN custom (preserved by regenerator) ===== */
+    public String createDirectory(Datastore datastore, String displayName, String policy) throws CannotCreateFile, FileAlreadyExists, InvalidDatastore, RuntimeFault, RemoteException {
+    return createDirectory(datastore, displayName, policy, 0L);
+}
+    public String createDirectory(Datastore datastore, String displayName, String policy, long size) throws CannotCreateFile, FileAlreadyExists, InvalidDatastore, RuntimeFault, RemoteException {
+    return getVimService().createDirectory(this.getMOR(), datastore.getMOR(), displayName, policy, size);
+}
+    /* ===== END custom ===== */
 }

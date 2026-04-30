@@ -1,3 +1,4 @@
+// auto generated using yavijava_generator
 /*================================================================================
 Copyright (c) 2008 VMware, Inc. All Rights Reserved.
 
@@ -28,12 +29,17 @@ POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
 package com.vmware.vim25.mo;
 
+/* ===== BEGIN custom imports (preserved by regenerator) ===== */
 import com.vmware.vim25.DatabaseSizeEstimate;
 import com.vmware.vim25.DatabaseSizeParam;
 import com.vmware.vim25.ManagedObjectReference;
 import com.vmware.vim25.RuntimeFault;
+/* ===== END custom imports ===== */
 
+
+import com.vmware.vim25.*;
 import java.rmi.RemoteException;
+import java.util.Calendar;
 
 /**
  * The managed object class corresponding to the one defined in VI SDK API reference.
@@ -42,11 +48,13 @@ import java.rmi.RemoteException;
  * @since 4.0
  */
 public class ResourcePlanningManager extends Profile {
+
     public ResourcePlanningManager(ServerConnection sc, ManagedObjectReference mor) {
         super(sc, mor);
     }
-
+    /* ===== BEGIN custom (preserved by regenerator) ===== */
     public DatabaseSizeEstimate estimateDatabaseSize(DatabaseSizeParam dbSizeParam) throws RuntimeFault, RemoteException {
-        return getVimService().estimateDatabaseSize(getMOR(), dbSizeParam);
-    }
+    return getVimService().estimateDatabaseSize(getMOR(), dbSizeParam);
+}
+    /* ===== END custom ===== */
 }

@@ -1,3 +1,4 @@
+// auto generated using yavijava_generator
 /*================================================================================
 Copyright (c) 2008 VMware, Inc. All Rights Reserved.
 
@@ -26,21 +27,24 @@ WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWIS
 ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE 
 POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
-
 package com.vmware.vim25.mo;
 
+/* ===== BEGIN custom imports (preserved by regenerator) ===== */
 import com.vmware.vim25.ManagedObjectReference;
 import com.vmware.vim25.RuntimeFault;
 import com.vmware.vim25.mo.util.MorUtil;
+/* ===== END custom imports ===== */
 
+
+import com.vmware.vim25.*;
 import java.rmi.RemoteException;
+import java.util.Calendar;
 
 /**
  * The managed object class corresponding to the one defined in VI SDK API reference.
  *
  * @author Steve JIN (http://www.doublecloud.org)
  */
-
 public class ViewManager extends ManagedObject {
 
     public ViewManager(ServerConnection sc, ManagedObjectReference mor) {
@@ -50,31 +54,25 @@ public class ViewManager extends ManagedObject {
     public View[] getViewList() {
         return getViews("viewList");
     }
-
+    /* ===== BEGIN custom (preserved by regenerator) ===== */
     public ContainerView createContainerView(ManagedEntity container, String[] type, boolean recursive) throws RuntimeFault, RemoteException {
-        if (container == null) {
-            throw new IllegalArgumentException("container must not be null.");
-        }
-        return new ContainerView(getServerConnection(),
-            getVimService().createContainerView(getMOR(), container.getMOR(), type, recursive));
+    if (container == null) {
+        throw new IllegalArgumentException("container must not be null.");
     }
-
+    return new ContainerView(getServerConnection(), getVimService().createContainerView(getMOR(), container.getMOR(), type, recursive));
+}
     public InventoryView createInventoryView() throws RuntimeFault, RemoteException {
-        return new InventoryView(getServerConnection(),
-            getVimService().createInventoryView(getMOR()));
-    }
-
+    return new InventoryView(getServerConnection(), getVimService().createInventoryView(getMOR()));
+}
     public ListView createListView(ManagedObject[] mos) throws RuntimeFault, RemoteException {
-        return new ListView(getServerConnection(),
-            getVimService().createListView(getMOR(), mos == null ? null : MorUtil.createMORs(mos)));
-    }
-
+    return new ListView(getServerConnection(), getVimService().createListView(getMOR(), mos == null ? null : MorUtil.createMORs(mos)));
+}
     public ListView createListViewFromView(View view) throws RuntimeFault, RemoteException {
-        if (view == null) {
-            throw new IllegalArgumentException("view must not be null.");
-        }
-        ManagedObjectReference mor = getVimService().createListViewFromView(getMOR(), view.getMOR());
-        return new ListView(getServerConnection(), mor);
+    if (view == null) {
+        throw new IllegalArgumentException("view must not be null.");
     }
-
+    ManagedObjectReference mor = getVimService().createListViewFromView(getMOR(), view.getMOR());
+    return new ListView(getServerConnection(), mor);
+}
+    /* ===== END custom ===== */
 }

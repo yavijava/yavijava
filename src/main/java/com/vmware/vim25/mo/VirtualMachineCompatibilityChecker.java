@@ -1,3 +1,4 @@
+// auto generated using yavijava_generator
 /*================================================================================
 Copyright (c) 2008 VMware, Inc. All Rights Reserved.
 
@@ -28,12 +29,17 @@ POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
 package com.vmware.vim25.mo;
 
+/* ===== BEGIN custom imports (preserved by regenerator) ===== */
 import com.vmware.vim25.InvalidState;
 import com.vmware.vim25.ManagedObjectReference;
 import com.vmware.vim25.NoActiveHostInCluster;
 import com.vmware.vim25.RuntimeFault;
+/* ===== END custom imports ===== */
 
+
+import com.vmware.vim25.*;
 import java.rmi.RemoteException;
+import java.util.Calendar;
 
 /**
  * The managed object class corresponding to the one defined in VI SDK API reference.
@@ -42,14 +48,15 @@ import java.rmi.RemoteException;
  * @since 4.0
  */
 public class VirtualMachineCompatibilityChecker extends ManagedObject {
+
     public VirtualMachineCompatibilityChecker(ServerConnection sc, ManagedObjectReference mor) {
         super(sc, mor);
     }
 
     public Task checkCompatibility_Task(VirtualMachine vm, HostSystem host, ResourcePool pool, String[] testType) throws NoActiveHostInCluster, InvalidState, RuntimeFault, RemoteException {
-        ManagedObjectReference taskMor = getVimService().checkCompatibility_Task(getMOR(),
-            vm == null ? null : vm.getMOR(), host == null ? null : host.getMOR(),
-            pool == null ? null : pool.getMOR(), testType);
+        ManagedObjectReference taskMor = getVimService().checkCompatibility_Task(getMOR(), vm == null ? null : vm.getMOR(), host == null ? null : host.getMOR(), pool == null ? null : pool.getMOR(), testType);
         return new Task(getServerConnection(), taskMor);
     }
+    /* ===== BEGIN custom (preserved by regenerator) ===== */
+    /* ===== END custom ===== */
 }

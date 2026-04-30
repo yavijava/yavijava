@@ -1,3 +1,4 @@
+// auto generated using yavijava_generator
 /*================================================================================
 Copyright (c) 2013 Steve Jin. All Rights Reserved.
 
@@ -26,14 +27,18 @@ WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWIS
 ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
-
 package com.vmware.vim25.mo;
 
+/* ===== BEGIN custom imports (preserved by regenerator) ===== */
 import com.vmware.vim25.HostGraphicsInfo;
 import com.vmware.vim25.ManagedObjectReference;
 import com.vmware.vim25.RuntimeFault;
+/* ===== END custom imports ===== */
 
+
+import com.vmware.vim25.*;
 import java.rmi.RemoteException;
+import java.util.Calendar;
 
 /**
  * The managed object class corresponding to the one defined in VI SDK API reference.
@@ -41,18 +46,14 @@ import java.rmi.RemoteException;
  * @author Steve JIN (http://www.doublecloud.org)
  * @since SDK5.5
  */
-
 public class HostGraphicsManager extends ExtensibleManagedObject {
+
     public HostGraphicsManager(ServerConnection serverConnection, ManagedObjectReference mor) {
         super(serverConnection, mor);
     }
 
     public HostGraphicsInfo[] getGraphicsInfo() {
         return (HostGraphicsInfo[]) getCurrentProperty("graphicsInfo");
-    }
-
-    public boolean isSharedGraphicsActive() throws RuntimeFault, RemoteException {
-        return getVimService().isSharedGraphicsActive(this.getMOR());
     }
 
     public void refreshGraphicsManager() throws RuntimeFault, RemoteException {
@@ -69,4 +70,9 @@ public class HostGraphicsManager extends ExtensibleManagedObject {
     public String[] getSharedPassthruGpuTypes() {
         return (String[]) getCurrentProperty("sharedPassthruGpuTypes");
     }
+    /* ===== BEGIN custom (preserved by regenerator) ===== */
+    public boolean isSharedGraphicsActive() throws RuntimeFault, RemoteException {
+    return getVimService().isSharedGraphicsActive(this.getMOR());
+}
+    /* ===== END custom ===== */
 }

@@ -1,3 +1,4 @@
+// auto generated using yavijava_generator
 /*================================================================================
 Copyright (c) 2011 VMware, Inc. All Rights Reserved.
 
@@ -26,11 +27,16 @@ WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWIS
 ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE 
 POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
-
 package com.vmware.vim25.mo;
 
+/* ===== BEGIN custom imports (preserved by regenerator) ===== */
 import com.vmware.vim25.ManagedObjectReference;
+/* ===== END custom imports ===== */
 
+
+import com.vmware.vim25.*;
+import java.rmi.RemoteException;
+import java.util.Calendar;
 
 /**
  * provides access to three different APIs to managed guests: file, process, auth.
@@ -39,46 +45,42 @@ import com.vmware.vim25.ManagedObjectReference;
  * @author Michael Rice (http://errr-online.com/)
  * @since SDK5.0
  */
-
 public class GuestOperationsManager extends ManagedObject {
+
     public GuestOperationsManager(ServerConnection sc, ManagedObjectReference mor) {
         super(sc, mor);
     }
-
+    /* ===== BEGIN custom (preserved by regenerator) ===== */
     public GuestAuthManager getAuthManager(VirtualMachine vm) {
-        ManagedObjectReference mor = (ManagedObjectReference) getCurrentProperty("authManager");
-        return new GuestAuthManager(getServerConnection(), mor, vm);
-    }
-
-
+    ManagedObjectReference mor = (ManagedObjectReference) getCurrentProperty("authManager");
+    return new GuestAuthManager(getServerConnection(), mor, vm);
+}
     public GuestFileManager getFileManager(VirtualMachine vm) {
-        ManagedObjectReference mor = (ManagedObjectReference) getCurrentProperty("fileManager");
-        return new GuestFileManager(getServerConnection(), mor, vm);
-    }
-
+    ManagedObjectReference mor = (ManagedObjectReference) getCurrentProperty("fileManager");
+    return new GuestFileManager(getServerConnection(), mor, vm);
+}
     public GuestProcessManager getProcessManager(VirtualMachine vm) {
-        ManagedObjectReference mor = (ManagedObjectReference) getCurrentProperty("processManager");
-        return new GuestProcessManager(getServerConnection(), mor, vm);
-    }
-
+    ManagedObjectReference mor = (ManagedObjectReference) getCurrentProperty("processManager");
+    return new GuestProcessManager(getServerConnection(), mor, vm);
+}
     /**
-     * A managed object that provides methods to support single sign-on in the guest operating system.
-     *
-     * @return {@link com.vmware.vim25.mo.GuestAliasManager GuestAliasManager}
-     * @since 6.0
-     */
-    public GuestAliasManager getAliasManager() {
-        ManagedObjectReference mor = (ManagedObjectReference) getCurrentProperty("aliasManager");
-        return new GuestAliasManager(getServerConnection(), mor);
-    }
-
+ * A managed object that provides methods to support single sign-on in the guest operating system.
+ *
+ * @return {@link com.vmware.vim25.mo.GuestAliasManager GuestAliasManager}
+ * @since 6.0
+ */
+public GuestAliasManager getAliasManager() {
+    ManagedObjectReference mor = (ManagedObjectReference) getCurrentProperty("aliasManager");
+    return new GuestAliasManager(getServerConnection(), mor);
+}
     /**
-     * A singleton managed object that provides methods for guest windows registry operations.
-     *
-     * @return GuestWindowsRegistryManager
-     */
-    public GuestWindowsRegistryManager getGuestWindowsRegistryManager() {
-        ManagedObjectReference mor = (ManagedObjectReference) getCurrentProperty("guestWindowsRegistryManager");
-        return new GuestWindowsRegistryManager(getServerConnection(), mor);
-    }
+ * A singleton managed object that provides methods for guest windows registry operations.
+ *
+ * @return GuestWindowsRegistryManager
+ */
+public GuestWindowsRegistryManager getGuestWindowsRegistryManager() {
+    ManagedObjectReference mor = (ManagedObjectReference) getCurrentProperty("guestWindowsRegistryManager");
+    return new GuestWindowsRegistryManager(getServerConnection(), mor);
+}
+    /* ===== END custom ===== */
 }

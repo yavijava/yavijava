@@ -1,3 +1,4 @@
+// auto generated using yavijava_generator
 /*================================================================================
 Copyright (c) 2011 VMware, Inc. All Rights Reserved.
 
@@ -26,14 +27,18 @@ WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWIS
 ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE 
 POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
-
 package com.vmware.vim25.mo;
 
+/* ===== BEGIN custom imports (preserved by regenerator) ===== */
 import com.vmware.vim25.HostEsxAgentHostManagerConfigInfo;
 import com.vmware.vim25.ManagedObjectReference;
 import com.vmware.vim25.RuntimeFault;
+/* ===== END custom imports ===== */
 
+
+import com.vmware.vim25.*;
 import java.rmi.RemoteException;
+import java.util.Calendar;
 
 /**
  * configure agent virtual machine resource configuration, such as what network
@@ -42,7 +47,6 @@ import java.rmi.RemoteException;
  * @author Steve Jin (http://www.doublecloud.org)
  * @since SDK5.0
  */
-
 public class HostEsxAgentHostManager extends ManagedObject {
 
     public HostEsxAgentHostManager(ServerConnection serverConnection, ManagedObjectReference mor) {
@@ -56,4 +60,6 @@ public class HostEsxAgentHostManager extends ManagedObject {
     public void esxAgentHostManagerUpdateConfig(HostEsxAgentHostManagerConfigInfo configInfo) throws RuntimeFault, RemoteException {
         getVimService().esxAgentHostManagerUpdateConfig(getMOR(), configInfo);
     }
+    /* ===== BEGIN custom (preserved by regenerator) ===== */
+    /* ===== END custom ===== */
 }

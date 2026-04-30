@@ -1,3 +1,4 @@
+// auto generated using yavijava_generator
 /*================================================================================
 Copyright (c) 2013 Steve Jin. All Rights Reserved.
 
@@ -26,10 +27,16 @@ WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWIS
 ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE 
 POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
-
 package com.vmware.vim25.mo;
 
+/* ===== BEGIN custom imports (preserved by regenerator) ===== */
 import com.vmware.vim25.ManagedObjectReference;
+/* ===== END custom imports ===== */
+
+
+import com.vmware.vim25.*;
+import java.rmi.RemoteException;
+import java.util.Calendar;
 
 /**
  * The managed object class corresponding to the one defined in VI SDK API reference.
@@ -37,9 +44,11 @@ import com.vmware.vim25.ManagedObjectReference;
  * @author Steve JIN (http://www.doublecloud.org)
  * @since SDK5.5
  */
-
 public class OpaqueNetwork extends Network {
+
     public OpaqueNetwork(ServerConnection serverConnection, ManagedObjectReference mor) {
         super(serverConnection, mor);
     }
+    /* ===== BEGIN custom (preserved by regenerator) ===== */
+    /* ===== END custom ===== */
 }

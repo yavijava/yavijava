@@ -1,13 +1,19 @@
+// auto generated using yavijava_generator
 package com.vmware.vim25.mo;
 
-import com.vmware.vim25.*;
+/* ===== BEGIN custom imports (preserved by regenerator) ===== */
+/* ===== END custom imports ===== */
 
+
+import com.vmware.vim25.*;
 import java.rmi.RemoteException;
+import java.util.Calendar;
 
 /**
  * @since SDK4.1
  */
 public class HostActiveDirectoryAuthentication extends HostDirectoryStore {
+
     public HostActiveDirectoryAuthentication(ServerConnection sc, ManagedObjectReference mor) {
         super(sc, mor);
     }
@@ -79,19 +85,6 @@ public class HostActiveDirectoryAuthentication extends HostDirectoryStore {
     }
 
     /**
-     * Lists installed trust anchor certificates for smart card authentication.
-     *
-     * @return SSL certificates of trusted CAs in PEM format.
-     * @throws HostConfigFault
-     * @throws RuntimeFault
-     * @throws RemoteException
-     * @since 6.0
-     */
-    public String[] listSmartCardTrustAnchors() throws HostConfigFault, RuntimeFault, RemoteException {
-        return getVimService().listSmartCardTrustAnchors(getMOR());
-    }
-
-    /**
      * Remove a smart card trust anchor certificate from the system.
      *
      * @param issuer Certificate issuer
@@ -129,14 +122,27 @@ public class HostActiveDirectoryAuthentication extends HostDirectoryStore {
     public void replaceSmartCardTrustAnchors(String[] certs) throws RuntimeFault, RemoteException {
         getVimService().replaceSmartCardTrustAnchors(getMOR(), certs);
     }
-
+    /* ===== BEGIN custom (preserved by regenerator) ===== */
     /**
-     * Replace the trust anchor certificates for smart card authentication, all existing trust anchors are removed.
-     *
-     * @throws RuntimeFault
-     * @throws RemoteException
-     */
-    public void replaceSmartCardTrustAnchors() throws RuntimeFault, RemoteException {
-        replaceSmartCardTrustAnchors(null);
-    }
+ * Lists installed trust anchor certificates for smart card authentication.
+ *
+ * @return SSL certificates of trusted CAs in PEM format.
+ * @throws HostConfigFault
+ * @throws RuntimeFault
+ * @throws RemoteException
+ * @since 6.0
+ */
+public String[] listSmartCardTrustAnchors() throws HostConfigFault, RuntimeFault, RemoteException {
+    return getVimService().listSmartCardTrustAnchors(getMOR());
+}
+    /**
+ * Replace the trust anchor certificates for smart card authentication, all existing trust anchors are removed.
+ *
+ * @throws RuntimeFault
+ * @throws RemoteException
+ */
+public void replaceSmartCardTrustAnchors() throws RuntimeFault, RemoteException {
+    replaceSmartCardTrustAnchors(null);
+}
+    /* ===== END custom ===== */
 }

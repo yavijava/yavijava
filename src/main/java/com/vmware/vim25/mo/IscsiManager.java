@@ -1,3 +1,4 @@
+// auto generated using yavijava_generator
 /*================================================================================
 Copyright (c) 2011 VMware, Inc. All Rights Reserved.
 
@@ -26,12 +27,15 @@ WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWIS
 ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE 
 POSSIBILITY OF SUCH DAMAGE.
 ================================================================================*/
-
 package com.vmware.vim25.mo;
 
-import com.vmware.vim25.*;
+/* ===== BEGIN custom imports (preserved by regenerator) ===== */
+/* ===== END custom imports ===== */
 
+
+import com.vmware.vim25.*;
 import java.rmi.RemoteException;
+import java.util.Calendar;
 
 /**
  * provides interfaces for mapping VMkernel NIC to iSCSI Host Bus Adapter
@@ -40,7 +44,6 @@ import java.rmi.RemoteException;
  * @author Steve Jin (http://www.doublecloud.org)
  * @since SDK5.0
  */
-
 public class IscsiManager extends ManagedObject {
 
     public IscsiManager(ServerConnection serverConnection, ManagedObjectReference mor) {
@@ -51,28 +54,24 @@ public class IscsiManager extends ManagedObject {
         getVimService().bindVnic(getMOR(), iScsiHbaName, vnicDevice);
     }
 
-    public IscsiPortInfo[] queryBoundVnics(String iScsiHbaName) throws IscsiFault, NotFound, RuntimeFault, RemoteException {
-        return getVimService().queryBoundVnics(getMOR(), iScsiHbaName);
-    }
-
-    public IscsiPortInfo[] queryCandidateNics(String iScsiHbaName) throws IscsiFault, NotFound, RuntimeFault, RemoteException {
-        return getVimService().queryCandidateNics(getMOR(), iScsiHbaName);
-    }
-
-    public IscsiMigrationDependency queryMigrationDependencies(String[] pnicDevice) throws RuntimeFault, RemoteException {
-        return getVimService().queryMigrationDependencies(getMOR(), pnicDevice);
-    }
-
-    public IscsiStatus queryPnicStatus(String pnicDevice) throws IscsiFault, RuntimeFault, RemoteException {
-        return getVimService().queryPnicStatus(getMOR(), pnicDevice);
-    }
-
-    public IscsiStatus queryVnicStatus(String vnicDevice) throws IscsiFault, RuntimeFault, RemoteException {
-        return getVimService().queryVnicStatus(getMOR(), vnicDevice);
-    }
-
     public void unbindVnic(String iScsiHbaName, String vnicDevice, boolean force) throws IscsiFaultVnicNotBound, IscsiFaultVnicHasActivePaths, IscsiFaultVnicIsLastPath, PlatformConfigFault, IscsiFault, NotFound, RuntimeFault, RemoteException {
         getVimService().unbindVnic(getMOR(), iScsiHbaName, vnicDevice, force);
     }
-
+    /* ===== BEGIN custom (preserved by regenerator) ===== */
+    public IscsiPortInfo[] queryBoundVnics(String iScsiHbaName) throws IscsiFault, NotFound, RuntimeFault, RemoteException {
+    return getVimService().queryBoundVnics(getMOR(), iScsiHbaName);
+}
+    public IscsiPortInfo[] queryCandidateNics(String iScsiHbaName) throws IscsiFault, NotFound, RuntimeFault, RemoteException {
+    return getVimService().queryCandidateNics(getMOR(), iScsiHbaName);
+}
+    public IscsiMigrationDependency queryMigrationDependencies(String[] pnicDevice) throws RuntimeFault, RemoteException {
+    return getVimService().queryMigrationDependencies(getMOR(), pnicDevice);
+}
+    public IscsiStatus queryPnicStatus(String pnicDevice) throws IscsiFault, RuntimeFault, RemoteException {
+    return getVimService().queryPnicStatus(getMOR(), pnicDevice);
+}
+    public IscsiStatus queryVnicStatus(String vnicDevice) throws IscsiFault, RuntimeFault, RemoteException {
+    return getVimService().queryVnicStatus(getMOR(), vnicDevice);
+}
+    /* ===== END custom ===== */
 }

@@ -1,8 +1,13 @@
+// auto generated using yavijava_generator
 package com.vmware.vim25.mo;
 
-import com.vmware.vim25.*;
+/* ===== BEGIN custom imports (preserved by regenerator) ===== */
+/* ===== END custom imports ===== */
 
+
+import com.vmware.vim25.*;
 import java.rmi.RemoteException;
+import java.util.Calendar;
 
 /**
  * Copyright 2015 Michael Rice &lt;michael@michaelrice.org&gt;
@@ -19,11 +24,22 @@ import java.rmi.RemoteException;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 /**
  * @since 6.0
  */
 public class ClusterEVCManager extends ExtensibleManagedObject {
+
+    /**
+     * Class Constructor
+     *
+     * @param serverConnection ServerConnection
+     * @param mor              ManagedObjectReference
+     * @see com.vmware.vim25.mo.ServerConnection
+     * @see com.vmware.vim25.ManagedObjectReference
+     */
+    public ClusterEVCManager(ServerConnection serverConnection, ManagedObjectReference mor) {
+        super(serverConnection, mor);
+    }
 
     /**
      * EVC-related state of the managed cluster.
@@ -37,18 +53,6 @@ public class ClusterEVCManager extends ExtensibleManagedObject {
      */
     public ClusterComputeResource getManagedCluster() {
         return (ClusterComputeResource) getCurrentProperty("managedCluster");
-    }
-
-    /**
-     * Class Constructor
-     *
-     * @param serverConnection ServerConnection
-     * @param mor              ManagedObjectReference
-     * @see com.vmware.vim25.mo.ServerConnection
-     * @see com.vmware.vim25.ManagedObjectReference
-     */
-    public ClusterEVCManager(ServerConnection serverConnection, ManagedObjectReference mor) {
-        super(serverConnection, mor);
     }
 
     /**
@@ -109,4 +113,6 @@ public class ClusterEVCManager extends ExtensibleManagedObject {
         ManagedObjectReference task = getVimService().disableEvcMode_Task(getMOR());
         return new Task(getServerConnection(), task);
     }
+    /* ===== BEGIN custom (preserved by regenerator) ===== */
+    /* ===== END custom ===== */
 }
