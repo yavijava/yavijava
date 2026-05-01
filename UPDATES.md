@@ -92,6 +92,51 @@ The WSDL (and the regenerated `vim25/*` data objects, enums, and `VimStub`) is n
 
 ---
 
+### mo/ Layer Regenerated to vSphere 9.0 API Parity
+
+The `mo/*` convenience wrappers (115 existing classes + 18 new classes) have been regenerated to match the vSphere 9.0 WSDL. All new methods available in the stub are now surfaced via typed wrapper methods.
+
+**New managed-object wrapper classes:**
+
+| Class | Notes |
+|---|---|
+| `CryptoManagerHost` | Host-side key management |
+| `CryptoManagerHostKMS` | Host KMS management |
+| `DirectPathProfileManager` | DirectPath profile CRUD |
+| `HealthUpdateManager` | Custom health provider registration |
+| `HostAssignableHardwareManager` | Host assignable hardware config |
+| `HostNvdimmSystem` | NVDIMM namespace management |
+| `HostSpbm` | Host-side storage policy |
+| `HostSpecificationManager` | Host specification queries |
+| `HostVStorageObjectManager` | Host-side FCD (First Class Disk) management |
+| `ServiceManager` | Guest service enumeration |
+| `SimpleCommand` | Simple command execution |
+| `SiteInfoManager` | Site info queries |
+| `StorageQueryManager` | Storage-related host queries |
+| `TenantTenantManager` | Tenant/service-provider entity management |
+| `VStorageObjectManagerBase` | Shared base for FCD managers |
+| `VcenterVStorageObjectManager` | vCenter-side FCD management |
+| `VirtualMachineGuestCustomizationManager` | In-guest customization tasks |
+| `VirtualizationManager` | Virtualization manager stub |
+
+**Caller-visible API changes in existing classes:**
+
+- `ServiceInstance` — public URL/session constructors were moved into the custom fence (preserved across regeneration). No change to call sites.
+- `SessionManager.cloneSession()` — uses `new ServiceInstance(ServerConnection)` internally (no public API change).
+- `StorageResourceManager` — several methods that previously returned `void` or wrong types now correctly return `Task` and match the stub: `applyRecommendation`, `applyRecommendationToPod`, `configureDatastoreIORM`, `configureStorageDrsForPod`, `refreshRecommendationsForPod`.
+- `StorageResourceManager.validateStoragePodConfig` — return type corrected to `LocalizedMethodFault` (was `MethodFault[]`).
+- `HostStorageSystem` — `markPerenniallyReservedEx`, `resolveMultipleUnresolvedVmfsVolumesEx`, `turnDiskLocatorLedOff`, `turnDiskLocatorLedOn` corrected from `Task[]` to single `Task`.
+- `HealthUpdateManager.queryFilterEntities`, `queryMonitoredEntities`, `queryUnmonitoredHosts` — return `ManagedObjectReference[]` instead of typed arrays (matches stub).
+- `TenantTenantManager.retrieveServiceProviderEntities` — returns `ManagedObjectReference[]` instead of `ManagedEntity[]`.
+
+**What to check:**
+
+- Code calling any of the `StorageResourceManager` methods listed above should verify it handles the `Task` return correctly.
+- Code consuming `HealthUpdateManager.queryFilterEntities` / `queryMonitoredEntities` / `queryUnmonitoredHosts` now receives `ManagedObjectReference[]` — wrap with `MorUtil.createExactManagedObject` if a typed object is needed.
+- New classes are purely additive; existing call sites continue to compile unchanged.
+
+---
+
 ### vSphere 6.5 API Support Added
 
 The vSphere 6.5 API surface has been merged in. The default SOAP action for **unknown API versions** has changed from `urn:vim25/6.0` to `urn:vim25/6.5`.
