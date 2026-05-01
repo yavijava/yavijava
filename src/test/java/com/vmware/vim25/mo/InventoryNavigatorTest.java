@@ -12,6 +12,8 @@ import static org.junit.Assert.*;
 public class InventoryNavigatorTest {
 
     // Configures a sequence of pages; retrievePropertiesEx returns first, continueRetrievePropertiesEx returns the rest.
+    // retrieveProperties (the old deprecated path) returns only the first page's objects, so multi-page tests fail
+    // with the correct assertion error rather than NPE when run against unfixed code.
     static class StubPropertyCollector extends PropertyCollector {
         private final List<RetrieveResult> pages;
         private int callCount = 0;
@@ -19,6 +21,12 @@ public class InventoryNavigatorTest {
         StubPropertyCollector(RetrieveResult... pages) {
             super(null, null);
             this.pages = Arrays.asList(pages);
+        }
+
+        @Override
+        public ObjectContent[] retrieveProperties(PropertyFilterSpec[] specSet)
+                throws InvalidProperty, RuntimeFault, RemoteException {
+            return pages.isEmpty() ? null : pages.get(0).getObjects();
         }
 
         @Override
