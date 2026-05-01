@@ -120,5 +120,9 @@ public Task addStandaloneHost_Task(HostConnectSpec spec, ComputeResourceConfigSp
     public Task unregisterAndDestroy_Task() throws InvalidState, ConcurrentAccess, RuntimeFault, RemoteException {
     return new Task(getServerConnection(), getVimService().unregisterAndDestroy_Task(getMOR()));
 }
+    /** Backward-compat alias for {@link #createDistributedVirtualSwitch(DVSCreateSpec)}. */
+    public Task createDVS_Task(DVSCreateSpec spec) throws DvsNotAuthorized, DvsFault, DuplicateName, InvalidName, NotFound, RuntimeFault, RemoteException {
+        return createDistributedVirtualSwitch(spec);
+    }
     /* ===== END custom ===== */
 }

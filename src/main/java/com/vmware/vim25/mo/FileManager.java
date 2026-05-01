@@ -42,5 +42,13 @@ public class FileManager extends ManagedObject {
     }
 
     /* ===== BEGIN custom (preserved by regenerator) ===== */
+    /** Backward-compat alias for {@link #copyFile(String, Datacenter, String, Datacenter, boolean)}. */
+    public Task copyDatastoreFile_Task(String sourceName, Datacenter sourceDatacenter, String destinationName, Datacenter destinationDatacenter, boolean force) throws FileFault, InvalidDatastore, RuntimeFault, RemoteException {
+        return copyFile(sourceName, sourceDatacenter, destinationName, destinationDatacenter, force);
+    }
+    /** Backward-compat alias for {@link #deleteFile(String, Datacenter)}. */
+    public Task deleteDatastoreFile_Task(String name, Datacenter datacenter) throws FileFault, InvalidDatastore, RuntimeFault, RemoteException {
+        return deleteFile(name, datacenter);
+    }
     /* ===== END custom ===== */
 }

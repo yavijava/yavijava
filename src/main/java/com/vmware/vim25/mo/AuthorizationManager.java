@@ -103,5 +103,9 @@ public EntityPrivilege[] hasPrivilegeOnEntities(ManagedEntity[] entity, String s
     }
     getVimService().setEntityPermissions(getMOR(), entity.getMOR(), permission);
 }
+    /** Backward-compat alias for {@link #updateRole(int, String, String[])}. */
+    public void updateAuthorizationRole(int roleId, String newName, String[] privIds) throws AlreadyExists, InvalidName, NotFound, RuntimeFault, RemoteException {
+        updateRole(roleId, newName, privIds);
+    }
     /* ===== END custom ===== */
 }

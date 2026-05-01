@@ -148,5 +148,9 @@ public class DistributedVirtualSwitch extends ManagedEntity {
     ManagedObjectReference mor = getVimService().rectifyDvsHost_Task(getMOR(), mors);
     return new Task(getServerConnection(), mor);
 }
+    /** Backward-compat array overload of {@link #addDVPortgroups_Task(DVPortgroupConfigSpec[])}. */
+    public Task addDVPortgroup_Task(DVPortgroupConfigSpec[] spec) throws DvsFault, DuplicateName, InvalidName, RuntimeFault, RemoteException {
+        return addDVPortgroups_Task(spec);
+    }
     /* ===== END custom ===== */
 }

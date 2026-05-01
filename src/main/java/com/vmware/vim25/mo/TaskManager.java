@@ -62,5 +62,9 @@ public TaskInfo createTask(ManagedObject obj, String taskTypeId, String initiate
     }
     return getVimService().createTask(getMOR(), obj.getMOR(), taskTypeId, initiatedBy, cancelable, parentTaskKey, activationId);
 }
+    /** Backward-compat alias for {@link #getRecentTask()}. */
+    public Task[] getRecentTasks() {
+        return getRecentTask();
+    }
     /* ===== END custom ===== */
 }

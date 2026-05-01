@@ -91,5 +91,9 @@ public class Datastore extends ManagedEntity {
 public StoragePlacementResult datastoreEnterMaintenanceMode() throws InvalidState, RuntimeFault, RemoteException {
     return getVimService().datastoreEnterMaintenanceMode(getMOR());
 }
+    /** Backward-compat alias for {@link #getVm()}. */
+    public VirtualMachine[] getVms() {
+        return getVm();
+    }
     /* ===== END custom ===== */
 }

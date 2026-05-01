@@ -117,5 +117,21 @@ public LicenseManagerLicenseInfo decodeLicense(String licenseKey) throws Runtime
     public LicenseFeatureInfo[] querySupportedFeatures(HostSystem host) throws RuntimeFault, RemoteException {
     return getVimService().querySupportedFeatures(getMOR(), host == null ? null : host.getMOR());
 }
+    /** Backward-compat alias for {@link #configureSource(HostSystem, LicenseSource)}. */
+    public void configureLicenseSource(HostSystem host, LicenseSource licenseSource) throws CannotAccessLocalSource, InvalidLicense, LicenseServerUnavailable, RuntimeFault, RemoteException {
+        configureSource(host, licenseSource);
+    }
+    /** Backward-compat alias for {@link #setEdition(HostSystem, String)}. */
+    public void setLicenseEdition(HostSystem host, String featureKey) throws InvalidState, LicenseServerUnavailable, RuntimeFault, RemoteException {
+        setEdition(host, featureKey);
+    }
+    /** Backward-compat alias for {@link #enable(HostSystem, String)}; ignores boolean return. */
+    public void enableFeature(HostSystem host, String featureKey) throws InvalidState, LicenseServerUnavailable, RuntimeFault, RemoteException {
+        enable(host, featureKey);
+    }
+    /** Backward-compat alias for {@link #disable(HostSystem, String)}; ignores boolean return. */
+    public void disableFeature(HostSystem host, String featureKey) throws InvalidState, LicenseServerUnavailable, RuntimeFault, RemoteException {
+        disable(host, featureKey);
+    }
     /* ===== END custom ===== */
 }

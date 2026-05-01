@@ -27,6 +27,10 @@ public class HostDatastoreBrowser extends ManagedObject {
     }
 
     /* ===== BEGIN custom (preserved by regenerator) ===== */
+    /** Backward-compat alias for {@link #getDatastore()}. */
+    public Datastore[] getDatastores() {
+        return getDatastore();
+    }
     public Task searchDatastore_Task(String datastorePath, HostDatastoreBrowserSearchSpec searchSpec) throws FileFault, InvalidDatastore, RuntimeFault, RemoteException {
     return new Task(getServerConnection(), getVimService().searchDatastore_Task(getMOR(), datastorePath, searchSpec));
 }
