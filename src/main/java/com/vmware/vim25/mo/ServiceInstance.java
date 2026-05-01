@@ -292,6 +292,12 @@ public class ServiceInstance extends ManagedObject {
     public IoFilterManager getIoFilterManager() {
     return (IoFilterManager) createMO(getServiceContent().getIoFilterManager());
 }
+    public FailoverClusterConfigurator getFailoverClusterConfigurator() {
+    return (FailoverClusterConfigurator) createMO(getServiceContent().getFailoverClusterConfigurator());
+}
+    public FailoverClusterManager getFailoverClusterManager() {
+    return (FailoverClusterManager) createMO(getServiceContent().getFailoverClusterManager());
+}
     private ManagedObject createMO(ManagedObjectReference mor) {
     return MorUtil.createExactManagedObject(getServerConnection(), mor);
 }
