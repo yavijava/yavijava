@@ -106,7 +106,6 @@ The `mo/*` convenience wrappers (115 existing classes + 18 new classes) have bee
 | `HealthUpdateManager` | Custom health provider registration |
 | `HostAssignableHardwareManager` | Host assignable hardware config |
 | `HostNvdimmSystem` | NVDIMM namespace management |
-| `HostSpbm` | Host-side storage policy |
 | `HostSpecificationManager` | Host specification queries |
 | `HostVStorageObjectManager` | Host-side FCD (First Class Disk) management |
 | `ServiceManager` | Guest service enumeration |
