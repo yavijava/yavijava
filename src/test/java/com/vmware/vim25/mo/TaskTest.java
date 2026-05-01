@@ -75,7 +75,7 @@ public class TaskTest {
         assertEquals("success", task.waitForTask(10, 10, 5000L));
     }
 
-    @Test
+    @Test(timeout = 5000)
     public void waitForTask_withTimeout_throwsTimeoutWhenTaskNeverCompletes() throws Exception {
         Task task = taskReturning(TaskInfoState.running);
         long start = System.currentTimeMillis();
@@ -95,7 +95,7 @@ public class TaskTest {
         assertEquals("success", task.waitForTask(0, 0, 0L));
     }
 
-    @Test
+    @Test(timeout = 5000)
     public void waitForTask_singleArgTimeoutOverload_throwsTimeout() throws Exception {
         Task task = taskReturning(TaskInfoState.running);
         try {
