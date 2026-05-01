@@ -194,6 +194,40 @@ public class XmlGenDomTest {
     }
 
     @Test
+    public void testFromXML_TagArrayProperty_DeserializesAsTagArray() throws Exception {
+        // Issue #228: ManagedEntity.tag (Tag[]) and triggeredAlarmState (AlarmState[])
+        // came back as raw java.lang.Object via DynamicProperty.val. The XML in the
+        // wild uses xsi:type="ArrayOfTag" / "ArrayOfAlarmState" wrappers around the items.
+        InputStream inputStream = new FileInputStream(
+            new File("src/test/java/com/vmware/vim25/ws/xml/ObjectContentWithTagAndAlarmState.xml"));
+        XmlGenDom xmlGenDom = new XmlGenDom();
+        ObjectContent objectContent = (ObjectContent) xmlGenDom.fromXML("ObjectContent", inputStream);
+
+        Assert.assertNotNull(objectContent.getPropSet());
+        Assert.assertEquals(2, objectContent.getPropSet().length);
+
+        Object tagVal = objectContent.getPropSet()[0].getVal();
+        Assert.assertNotNull("tag value should not be null", tagVal);
+        Assert.assertTrue(
+            "tag value should be Tag[], got " + tagVal.getClass().getName(),
+            tagVal instanceof Tag[]);
+        Tag[] tags = (Tag[]) tagVal;
+        Assert.assertEquals(2, tags.length);
+        Assert.assertEquals("com.vmware.cis.tagging.Tag:abcd-1234", tags[0].getKey());
+        Assert.assertEquals("com.vmware.cis.tagging.Tag:efgh-5678", tags[1].getKey());
+
+        Object alarmVal = objectContent.getPropSet()[1].getVal();
+        Assert.assertNotNull("triggeredAlarmState value should not be null", alarmVal);
+        Assert.assertTrue(
+            "triggeredAlarmState value should be AlarmState[], got " + alarmVal.getClass().getName(),
+            alarmVal instanceof AlarmState[]);
+        AlarmState[] states = (AlarmState[]) alarmVal;
+        Assert.assertEquals(1, states.length);
+        Assert.assertEquals("alarm-1.vm-42", states[0].getKey());
+        Assert.assertEquals(ManagedEntityStatus.red, states[0].getOverallStatus());
+    }
+
+    @Test
     public void testFromXML_PerfCounterInfoWithUnknownSubtype_ParsesGracefully() throws Exception {
         InputStream inputStream = new FileInputStream(
             new File("src/test/java/com/vmware/vim25/ws/xml/PerfCounterInfoWithUnknownSubtype.xml"));

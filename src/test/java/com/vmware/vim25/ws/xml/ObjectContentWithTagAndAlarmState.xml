@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+                  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <soapenv:Body>
+        <RetrievePropertiesResponse xmlns="urn:vim25">
+            <returnval>
+                <obj type="VirtualMachine">vm-42</obj>
+                <propSet>
+                    <name>tag</name>
+                    <val xsi:type="ArrayOfTag">
+                        <Tag xsi:type="Tag">
+                            <key>com.vmware.cis.tagging.Tag:abcd-1234</key>
+                        </Tag>
+                        <Tag xsi:type="Tag">
+                            <key>com.vmware.cis.tagging.Tag:efgh-5678</key>
+                        </Tag>
+                    </val>
+                </propSet>
+                <propSet>
+                    <name>triggeredAlarmState</name>
+                    <val xsi:type="ArrayOfAlarmState">
+                        <AlarmState xsi:type="AlarmState">
+                            <key>alarm-1.vm-42</key>
+                            <entity type="VirtualMachine">vm-42</entity>
+                            <alarm type="Alarm">alarm-1</alarm>
+                            <overallStatus>red</overallStatus>
+                            <time>2026-01-15T10:30:00Z</time>
+                            <acknowledged>false</acknowledged>
+                        </AlarmState>
+                    </val>
+                </propSet>
+            </returnval>
+        </RetrievePropertiesResponse>
+    </soapenv:Body>
+</soapenv:Envelope>
