@@ -119,5 +119,27 @@ public AlarmState[] getAlarmState(ManagedEntity me) throws RuntimeFault, RemoteE
     }
     return getVimService().getAlarmState(getMOR(), me.getMOR());
 }
+    /**
+ * Set the status of an alarm for the given managed entity. SetAlarmStatus
+ * is an undocumented SOAP operation that is not part of the published
+ * VMware WSDL — it was discovered via the Onyx and doublecloud proxies
+ * and is the only way to programmatically reset an alarm's
+ * {@link ManagedEntityStatus} from red back to green.
+ *
+ * @param alarm
+ *            The {@link Alarm} to set the status of.
+ * @param entity
+ *            The {@link ManagedEntity} the alarm applies to.
+ * @param status
+ *            The string status corresponding to a
+ *            {@link ManagedEntityStatus} to set.
+ * @throws RuntimeFault
+ *             if any unhandled runtime fault occurs
+ * @throws RemoteException
+ * @since 4.x added to yavija for 5.5b.07
+ */
+public void setAlarmStatus(Alarm alarm, ManagedEntity entity, String status) throws RuntimeFault, RemoteException {
+    getVimService().setAlarmStatus(getMOR(), alarm.getMOR(), entity.getMOR(), status);
+}
     /* ===== END custom ===== */
 }
