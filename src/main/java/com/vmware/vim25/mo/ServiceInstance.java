@@ -7,7 +7,6 @@ import java.rmi.RemoteException;
 import java.util.Calendar;
 
 /* ===== BEGIN custom imports (preserved by regenerator) ===== */
-import com.vmware.vim25.mo.util.MorUtil;
 import com.vmware.vim25.ws.Client;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

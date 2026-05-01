@@ -11,7 +11,6 @@ import com.vmware.vim25.ManagedObjectReference;
 import com.vmware.vim25.ProfileConfigInfo;
 import com.vmware.vim25.ProfileDescription;
 import com.vmware.vim25.RuntimeFault;
-import com.vmware.vim25.mo.util.MorUtil;
 /* ===== END custom imports ===== */
 
 public class Profile extends ManagedObject {

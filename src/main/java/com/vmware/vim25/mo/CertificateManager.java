@@ -9,7 +9,6 @@ import java.rmi.RemoteException;
 import com.vmware.vim25.ManagedObjectReference;
 import com.vmware.vim25.RuntimeFault;
 import com.vmware.vim25.SystemError;
-import com.vmware.vim25.mo.util.MorUtil;
 /* ===== END custom imports ===== */
 
 public class CertificateManager extends ManagedObject {

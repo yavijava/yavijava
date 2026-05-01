@@ -9,7 +9,6 @@ import java.rmi.RemoteException;
 import com.vmware.vim25.InvalidDatastore;
 import com.vmware.vim25.ManagedObjectReference;
 import com.vmware.vim25.RuntimeFault;
-import com.vmware.vim25.mo.util.MorUtil;
 /* ===== END custom imports ===== */
 
 public class SearchIndex extends ManagedObject {

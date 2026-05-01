@@ -8,7 +8,6 @@ import java.rmi.RemoteException;
 /* ===== BEGIN custom imports (preserved by regenerator) ===== */
 import com.vmware.vim25.ManagedObjectReference;
 import com.vmware.vim25.RuntimeFault;
-import com.vmware.vim25.mo.util.MorUtil;
 /* ===== END custom imports ===== */
 
 public class ListView extends ManagedObjectView {
