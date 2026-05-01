@@ -58,29 +58,51 @@ public abstract class SoapClient implements Client {
     */
     public void setSoapActionOnApiVersion(String apiVersion) {
         log.trace("API Version detected: " + apiVersion);
-        if ("4.0".equals(apiVersion)) {
+        // vSphere 7.0+ reports apiVersion as "7.0.0.0" / "8.0.0.0" / "9.0.0.0"
+        // (four-part), while 6.x and earlier reported "6.5" / "5.5" (two-part).
+        // Normalize to the major.minor prefix for the SOAP action.
+        String majorMinor = apiVersion;
+        if (apiVersion != null) {
+            String[] parts = apiVersion.split("\\.");
+            if (parts.length >= 2) {
+                majorMinor = parts[0] + "." + parts[1];
+            }
+        }
+        if ("4.0".equals(majorMinor)) {
             soapAction = SoapAction.SOAP_ACTION_V40.toString();
         }
-        else if ("4.1".equals(apiVersion)) {
+        else if ("4.1".equals(majorMinor)) {
             soapAction = SoapAction.SOAP_ACTION_V41.toString();
         }
-        else if ("5.0".equals(apiVersion)) {
+        else if ("5.0".equals(majorMinor)) {
             soapAction = SoapAction.SOAP_ACTION_V50.toString();
         }
-        else if ("5.1".equals(apiVersion)) {
+        else if ("5.1".equals(majorMinor)) {
             soapAction = SoapAction.SOAP_ACTION_V51.toString();
         }
-        else if ("5.5".equals(apiVersion)) {
+        else if ("5.5".equals(majorMinor)) {
             soapAction = SoapAction.SOAP_ACTION_V55.toString();
         }
-        else if ("6.0".equals(apiVersion)) {
+        else if ("6.0".equals(majorMinor)) {
             soapAction = SoapAction.SOAP_ACTION_V60.toString();
         }
-        else if ("6.5".equals(apiVersion)) {
+        else if ("6.5".equals(majorMinor)) {
             soapAction = SoapAction.SOAP_ACTION_V65.toString();
         }
-        else { //always defaults to latest version
-            soapAction = SoapAction.SOAP_ACTION_V65.toString();
+        else if ("6.7".equals(majorMinor)) {
+            soapAction = SoapAction.SOAP_ACTION_V67.toString();
+        }
+        else if ("7.0".equals(majorMinor)) {
+            soapAction = SoapAction.SOAP_ACTION_V70.toString();
+        }
+        else if ("8.0".equals(majorMinor)) {
+            soapAction = SoapAction.SOAP_ACTION_V80.toString();
+        }
+        else if ("9.0".equals(majorMinor)) {
+            soapAction = SoapAction.SOAP_ACTION_V90.toString();
+        }
+        else { //unknown version: default to latest known
+            soapAction = SoapAction.SOAP_ACTION_V90.toString();
         }
         log.trace("Set soapAction to: " + soapAction);
     }

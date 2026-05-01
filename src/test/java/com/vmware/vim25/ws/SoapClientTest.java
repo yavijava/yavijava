@@ -69,9 +69,12 @@ public class SoapClientTest {
     }
 
     @Test
-    public void setSoapAction_unknownVersion_defaultsToV65() {
+    public void setSoapAction_unknownVersion_defaultsToLatestKnown() {
+        // Was previously V65 — bug: caused 7.x/8.x/9.x clients to receive
+        // 6.5-era ServiceContent missing newer manager MORs. Default is now
+        // the latest supported version (9.0).
         client.setSoapActionOnApiVersion("99.9");
-        assertEquals("urn:vim25/6.5", client.soapAction);
+        assertEquals("urn:vim25/9.0", client.soapAction);
     }
 
     // --- hexify ---
