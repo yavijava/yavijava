@@ -27,5 +27,8 @@ public class Alarm extends ExtensibleManagedObject {
     }
 
     /* ===== BEGIN custom (preserved by regenerator) ===== */
+    public ManagedEntity getAssociatedEntity() {
+        return (ManagedEntity) getManagedObject("info.entity");
+    }
     /* ===== END custom ===== */
 }

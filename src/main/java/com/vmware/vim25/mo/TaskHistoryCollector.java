@@ -23,6 +23,9 @@ public class TaskHistoryCollector extends HistoryCollector {
     }
 
     /* ===== BEGIN custom (preserved by regenerator) ===== */
+    public TaskFilterSpec getFilter() {
+        return (TaskFilterSpec) getCurrentProperty("filter");
+    }
     public TaskInfo[] readNextTasks(int maxCount) throws RuntimeFault, RemoteException {
     return getVimService().readNextTasks(getMOR(), maxCount);
 }

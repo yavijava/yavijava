@@ -48,6 +48,9 @@ public class Profile extends ManagedObject {
     }
 
     /* ===== BEGIN custom (preserved by regenerator) ===== */
+    public ProfileDescription getDescriptioin() {
+        return (ProfileDescription) getCurrentProperty("description");
+    }
     public ManagedEntity[] getEntity() {
     Object[] objs = getManagedObjects("entity");
     if (objs.length == 0) {

@@ -39,5 +39,8 @@ public class HostFirewallSystem extends ExtensibleManagedObject {
     }
 
     /* ===== BEGIN custom (preserved by regenerator) ===== */
+    public void refreshFirewall() throws RuntimeFault, RemoteException {
+        getVimService().refreshFirewall(getMOR());
+    }
     /* ===== END custom ===== */
 }

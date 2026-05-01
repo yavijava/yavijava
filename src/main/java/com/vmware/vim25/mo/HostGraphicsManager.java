@@ -50,6 +50,9 @@ public class HostGraphicsManager extends ExtensibleManagedObject {
     }
 
     /* ===== BEGIN custom (preserved by regenerator) ===== */
+    public void refreshGraphicsManager() throws RuntimeFault, RemoteException {
+        getVimService().refreshGraphicsManager(getMOR());
+    }
     public boolean isSharedGraphicsActive() throws RuntimeFault, RemoteException {
     return getVimService().isSharedGraphicsActive(this.getMOR());
 }

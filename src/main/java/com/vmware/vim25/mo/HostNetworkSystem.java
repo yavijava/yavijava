@@ -119,6 +119,9 @@ public class HostNetworkSystem extends ExtensibleManagedObject {
     }
 
     /* ===== BEGIN custom (preserved by regenerator) ===== */
+    public void refreshNetworkSystem() throws RuntimeFault, RemoteException {
+        getVimService().refreshNetworkSystem(getMOR());
+    }
     public String addServiceConsoleVirtualNic(String portgroup, HostVirtualNicSpec spec) throws HostConfigFault, RuntimeFault, RemoteException {
     return getVimService().addServiceConsoleVirtualNic(getMOR(), portgroup, spec);
 }

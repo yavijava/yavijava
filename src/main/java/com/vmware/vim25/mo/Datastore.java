@@ -78,6 +78,13 @@ public class Datastore extends ManagedEntity {
     }
 
     /* ===== BEGIN custom (preserved by regenerator) ===== */
+    public void refreshDatastore() throws HostConfigFault, NotFound, RuntimeFault, RemoteException {
+        getVimService().refreshDatastore(getMOR());
+    }
+    /** @since SDK4.0 */
+    public void refreshDatastoreStorageInfo() throws RuntimeFault, RemoteException {
+        getVimService().refreshDatastoreStorageInfo(getMOR());
+    }
     /**
  * @since SDK5.0
  */

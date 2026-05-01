@@ -36,6 +36,9 @@ public class HostDateTimeSystem extends ManagedObject {
     }
 
     /* ===== BEGIN custom (preserved by regenerator) ===== */
+    public void refreshDateTimeSystem() throws RuntimeFault, RemoteException {
+        getVimService().refreshDateTimeSystem(getMOR());
+    }
     public HostDateTimeSystemTimeZone[] queryAvailableTimeZones() throws RuntimeFault, RemoteException {
     return getVimService().queryAvailableTimeZones(getMOR());
 }

@@ -23,6 +23,16 @@ public class DistributedVirtualSwitchManager extends ManagedObject {
     }
 
     /* ===== BEGIN custom (preserved by regenerator) ===== */
+    /** @since SDK5.1 */
+    public Task dVSManagerExportEntity_Task(SelectionSet[] selectionSet) throws BackupBlobWriteFailure, NotFound, RuntimeFault, RemoteException {
+        ManagedObjectReference taskMor = getVimService().dVSManagerExportEntity_Task(getMOR(), selectionSet);
+        return new Task(getServerConnection(), taskMor);
+    }
+    /** @since SDK5.1 */
+    public Task dVSManagerImportEntity_Task(EntityBackupConfig[] entityBackup, String importType) throws DvsFault, NotFound, RuntimeFault, RemoteException {
+        ManagedObjectReference taskMor = getVimService().dVSManagerImportEntity_Task(getMOR(), entityBackup, importType);
+        return new Task(getServerConnection(), taskMor);
+    }
     public DistributedVirtualSwitchProductSpec[] queryAvailableDvsSpec() throws RuntimeFault, RemoteException {
     return queryAvailableDvsSpec(null);
 }

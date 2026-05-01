@@ -35,5 +35,8 @@ public class Network extends ManagedEntity {
     }
 
     /* ===== BEGIN custom (preserved by regenerator) ===== */
+    public String getName() {
+        return (String) getCurrentProperty("name");
+    }
     /* ===== END custom ===== */
 }

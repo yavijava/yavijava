@@ -35,6 +35,12 @@ public class Task extends ExtensibleManagedObject {
     }
 
     /* ===== BEGIN custom (preserved by regenerator) ===== */
+    public ManagedEntity getAssociatedManagedEntity() {
+        return (ManagedEntity) getManagedObject("info.entity");
+    }
+    public ManagedEntity[] getLockedManagedEntities() {
+        return (ManagedEntity[]) getManagedObjects("info.locked");
+    }
     public static final String PROPNAME_INFO = "info";
     public static final String SUCCESS = "success";
     public TaskInfo getTaskInfo() throws InvalidProperty, RuntimeFault, RemoteException {

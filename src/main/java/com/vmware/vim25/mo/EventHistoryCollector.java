@@ -27,6 +27,9 @@ public class EventHistoryCollector extends HistoryCollector {
     }
 
     /* ===== BEGIN custom (preserved by regenerator) ===== */
+    public EventFilterSpec getFilter() {
+        return (EventFilterSpec) getCurrentProperty("filter");
+    }
     public Event[] readNextEvents(int maxCount) throws RuntimeFault, RemoteException {
     return getVimService().readNextEvents(getMOR(), maxCount);
 }

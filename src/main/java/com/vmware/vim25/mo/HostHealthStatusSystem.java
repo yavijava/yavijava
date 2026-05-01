@@ -38,5 +38,8 @@ public class HostHealthStatusSystem extends ManagedObject {
     }
 
     /* ===== BEGIN custom (preserved by regenerator) ===== */
+    public void refreshHealthStatusSystem() throws RuntimeFault, RemoteException {
+        getVimService().refreshHealthStatusSystem(getMOR());
+    }
     /* ===== END custom ===== */
 }

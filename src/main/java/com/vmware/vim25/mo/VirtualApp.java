@@ -69,6 +69,10 @@ public class VirtualApp extends ResourcePool {
     }
 
     /* ===== BEGIN custom (preserved by regenerator) ===== */
+    @Override
+    public VirtualAppSummary getSummary() {
+        return (VirtualAppSummary) getCurrentProperty("summary");
+    }
     public Folder getParentFolder() {
     ManagedObjectReference mor = (ManagedObjectReference) getCurrentProperty("parentFolder");
     return new Folder(getServerConnection(), mor);

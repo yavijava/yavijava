@@ -88,6 +88,14 @@ public class ResourcePool extends ManagedEntity {
     }
 
     /* ===== BEGIN custom (preserved by regenerator) ===== */
+    public VirtualMachine[] getVMs() throws InvalidProperty, RuntimeFault, RemoteException {
+        return getVms("vm");
+    }
+    /** @since SDK4.0 */
+    public Task createChildVM_Task(VirtualMachineConfigSpec config, HostSystem host) throws VmConfigFault, FileFault, OutOfBounds, InvalidName, InvalidDatastore, InsufficientResourcesFault, RuntimeFault, RemoteException {
+        ManagedObjectReference taskMor = getVimService().createChildVM_Task(getMOR(), config, host == null ? null : host.getMOR());
+        return new Task(getServerConnection(), taskMor);
+    }
     public void moveIntoResourcePool(ManagedEntity[] entities) throws DuplicateName, InsufficientResourcesFault, RuntimeFault, RemoteException {
     if (entities == null) {
         throw new IllegalArgumentException("entities must not be null.");

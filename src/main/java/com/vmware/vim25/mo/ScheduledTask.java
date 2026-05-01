@@ -31,5 +31,11 @@ public class ScheduledTask extends ExtensibleManagedObject {
     }
 
     /* ===== BEGIN custom (preserved by regenerator) ===== */
+    public Task getActiveTask() {
+        return (Task) getCurrentProperty("info.activeTask");
+    }
+    public ManagedEntity getAssociatedManagedEntity() {
+        return (ManagedEntity) getCurrentProperty("info.entity");
+    }
     /* ===== END custom ===== */
 }

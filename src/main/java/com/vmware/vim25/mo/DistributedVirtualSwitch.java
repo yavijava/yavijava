@@ -118,6 +118,11 @@ public class DistributedVirtualSwitch extends ManagedEntity {
     }
 
     /* ===== BEGIN custom (preserved by regenerator) ===== */
+    /** @since SDK5.1 */
+    public Task createDVPortgroup_Task(DVPortgroupConfigSpec spec) throws DvsFault, DuplicateName, InvalidName, RuntimeFault, RemoteException {
+        ManagedObjectReference taskMor = getVimService().createDVPortgroup_Task(getMOR(), spec);
+        return new Task(getServerConnection(), taskMor);
+    }
     public DistributedVirtualPortgroup[] getPortgroup() {
     ManagedObjectReference[] pgMors = (ManagedObjectReference[]) getCurrentProperty("portgroup");
     if (pgMors == null) {

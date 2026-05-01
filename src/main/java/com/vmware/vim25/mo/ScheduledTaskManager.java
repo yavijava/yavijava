@@ -23,6 +23,9 @@ public class ScheduledTaskManager extends ManagedObject {
     }
 
     /* ===== BEGIN custom (preserved by regenerator) ===== */
+    public ScheduledTaskDescription getDescriptioin() {
+        return (ScheduledTaskDescription) getCurrentProperty("description");
+    }
     public ScheduledTask createScheduledTask(ManagedEntity entity, ScheduledTaskSpec spec) throws InvalidName, DuplicateName, RuntimeFault, RemoteException {
     if (entity == null) {
         throw new IllegalArgumentException("entity must not be null.");

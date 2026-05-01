@@ -331,6 +331,9 @@ public class VirtualMachine extends ManagedEntity {
     }
 
     /* ===== BEGIN custom (preserved by regenerator) ===== */
+    public VirtualMachineSnapshot getCurrentSnapShot() throws InvalidProperty, RuntimeFault, RemoteException {
+        return (VirtualMachineSnapshot) getManagedObject("snapshot.currentSnapshot");
+    }
     /**
  * @since SDK4.1
  */
