@@ -170,12 +170,34 @@ public class CacheInstance
 	}
 	
 	/**
-	 * Destroy the caching service when no longer needed.
+	 * Destroy the caching service when no longer needed. Call this <em>before</em>
+	 * {@link ServiceInstance#getServerConnection() ServiceInstance.disconnect()}; otherwise the
+	 * watcher thread will spin on the dead session until vCenter rejects the next call with
+	 * NotAuthenticated.
+	 *
+	 * <p>Cancels any in-flight {@code waitForUpdatesEx} on the underlying property collector,
+	 * destroys the watcher's filters, and joins the watcher thread so this method returns only
+	 * after the watcher has actually stopped. Safe to call multiple times.
 	 */
 	public void destroy()
 	{
+		if (mom == null) {
+			return; // already destroyed
+		}
+		try {
+			si.getPropertyCollector().cancelWaitForUpdates();
+		} catch (Exception ignore) {
+			// best effort: session may already be closed
+		}
 		mom.cleanUp();
-		mThread.interrupt();
+		if (mThread != null) {
+			mThread.interrupt();
+			try {
+				mThread.join(5000);
+			} catch (InterruptedException ie) {
+				Thread.currentThread().interrupt();
+			}
+		}
 		si = null;
 		mom = null;
 		cache = null;
@@ -197,5 +219,19 @@ public class CacheInstance
 	public boolean isReady()
 	{
 		return cache.isReady();
+	}
+
+	/**
+	 * Block until the cache has received its first update from the server, or until the timeout
+	 * elapses. Use this after {@link #start()} to avoid the race window where {@link #get} returns
+	 * null because the watcher thread has not yet delivered an update.
+	 *
+	 * @param timeoutMillis maximum time to wait, in milliseconds; non-positive returns immediately
+	 * @return true if the cache became ready before the timeout; false otherwise
+	 * @throws InterruptedException if the current thread is interrupted while waiting
+	 */
+	public boolean awaitReady(long timeoutMillis) throws InterruptedException
+	{
+		return cache.awaitReady(timeoutMillis);
 	}
 }

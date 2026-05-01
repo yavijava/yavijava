@@ -30,6 +30,8 @@ POSSIBILITY OF SUCH DAMAGE.
 package com.vmware.vim.cf;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.TimeUnit;
 
 import com.vmware.vim25.ManagedObjectReference;
 import com.vmware.vim25.ObjectUpdate;
@@ -50,7 +52,8 @@ class ManagedObjectCache implements PropertyFilterUpdateListener
     // each value is yet another child HashMap corresponding to a ManagedObject
     // The child HashMap has key -- property name; value -- property value
     private Map<ManagedObjectReference, Map<String, Object>> items;
-    private boolean isReady = false;
+    private volatile boolean isReady = false;
+    private final CountDownLatch readyLatch = new CountDownLatch(1);
     private ServiceInstance si;
 
     ManagedObjectCache(ServiceInstance si)
@@ -109,8 +112,14 @@ class ManagedObjectCache implements PropertyFilterUpdateListener
             }
         }
         isReady = true;
+        readyLatch.countDown();
     }
-    
+
+    public boolean awaitReady(long timeoutMillis) throws InterruptedException
+    {
+        return readyLatch.await(timeoutMillis, TimeUnit.MILLISECONDS);
+    }
+
     private String getExistingParentPropName(Map<String, Object> moMap, String propName)
     {
       //remove everything after the first "["
