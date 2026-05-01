@@ -6,6 +6,18 @@ This document covers breaking changes and things to verify before upgrading your
 
 ## Breaking Changes
 
+### `com.vmware.vim.rest` Package Removed
+
+The `com.vmware.vim.rest` package (`RestClient`, `RestManagedObject`, `CachedManagedObject`, `ResultConverter`, and the bundled `RestAppDemo` sample) has been removed.
+
+This package parsed VMware Managed Object Browser (MOB) HTML responses using a hand-rolled recursive parser. It was not compatible with modern vSphere, had no test coverage, and contained a stack overflow vulnerability (CVE-2023-51084) in `ResultConverter.convert2Xml` caused by unbounded mutual recursion on deeply nested HTML tables.
+
+**What to check:**
+
+- If your application imports anything from `com.vmware.vim.rest.*`, those imports will no longer compile. There is no replacement — use the SOAP-based `mo/` wrapper layer instead.
+
+---
+
 ### Apache HttpClient 4 → 5
 
 The HTTP transport layer has been migrated from `org.apache.httpcomponents:httpclient` (4.x) to `org.apache.httpcomponents.client5:httpclient5` (5.x).
