@@ -81,6 +81,9 @@ public class ServiceInstance extends ManagedObject {
     //with new SOAP_ACTION
     serviceContent = retrieveServiceContent(vimService, SERVICE_INSTANCE_MOR);
     UserSession userSession = getCurrentUserSession();
+    if (userSession == null) {
+        throw new RemoteException("Session string is invalid or expired — vCenter returned no current session for the supplied cookie.");
+    }
     getServerConnection().setUserSession(userSession);
 }
     protected UserSession getCurrentUserSession() {
