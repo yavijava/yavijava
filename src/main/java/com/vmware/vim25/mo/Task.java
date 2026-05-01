@@ -6,6 +6,7 @@ import com.vmware.vim25.mo.util.MorUtil;
 import java.rmi.RemoteException;
 
 /* ===== BEGIN custom imports (preserved by regenerator) ===== */
+import java.util.concurrent.TimeoutException;
 /* ===== END custom imports ===== */
 
 public class Task extends ExtensibleManagedObject {
@@ -90,7 +91,23 @@ public String waitForMe() throws InvalidProperty, RuntimeFault, RemoteException 
  * @author Eric Forgette (forgette@netapp.com)
  */
 public String waitForTask() throws RuntimeFault, RemoteException, InterruptedException {
-    return waitForTask(500, 1000);
+    try {
+        return waitForTask(500, 1000, 0L);
+    } catch (TimeoutException impossible) {
+        // 0L means no timeout, so this branch is unreachable
+        throw new IllegalStateException(impossible);
+    }
+}
+    /**
+ * Wait for the task to complete, giving up after maxWaitMillis.
+ * Uses the default poll intervals (500ms running, 1000ms queued).
+ *
+ * @param maxWaitMillis maximum time to wait before giving up; 0 or negative means wait forever
+ * @return String based on TaskInfoState
+ * @throws TimeoutException if maxWaitMillis elapses before the task reaches a terminal state
+ */
+public String waitForTask(long maxWaitMillis) throws RuntimeFault, RemoteException, InterruptedException, TimeoutException {
+    return waitForTask(500, 1000, maxWaitMillis);
 }
     /**
  * Copyright 2009 NetApp, contribution by Eric Forgette
@@ -116,10 +133,33 @@ public String waitForTask() throws RuntimeFault, RemoteException, InterruptedExc
  * @author Eric Forgette (forgette@netapp.com)
  */
 public String waitForTask(int runningDelayInMillSecond, int queuedDelayInMillSecond) throws RuntimeFault, RemoteException, InterruptedException {
+    try {
+        return waitForTask(runningDelayInMillSecond, queuedDelayInMillSecond, 0L);
+    } catch (TimeoutException impossible) {
+        // 0L means no timeout, so this branch is unreachable
+        throw new IllegalStateException(impossible);
+    }
+}
+    /**
+ * Same as {@link #waitForTask(int, int)} but bounded by a maximum wait time.
+ * If the task has not reached a terminal state (success or error) within
+ * {@code maxWaitMillis}, throws {@link TimeoutException}. The task itself is
+ * not cancelled — call {@link #cancelTask()} from the caller if desired.
+ *
+ * @param runningDelayInMillSecond number of milliseconds to sleep between polls for a running task
+ * @param queuedDelayInMillSecond  number of milliseconds to sleep between polls for a queued task
+ * @param maxWaitMillis            maximum time to wait before giving up; 0 or negative means wait forever
+ * @return String based on TaskInfoState
+ * @throws TimeoutException if maxWaitMillis elapses before the task reaches a terminal state
+ */
+public String waitForTask(int runningDelayInMillSecond, int queuedDelayInMillSecond, long maxWaitMillis) throws RuntimeFault, RemoteException, InterruptedException, TimeoutException {
     TaskInfoState tState = null;
     int tries = 0;
     int maxTries = 3;
     Exception getInfoException = null;
+    long deadlineNanos = maxWaitMillis > 0L
+        ? System.nanoTime() + maxWaitMillis * 1_000_000L
+        : 0L;
     while ((tState == null) || tState.equals(TaskInfoState.running) || tState.equals(TaskInfoState.queued)) {
         tState = null;
         getInfoException = null;
@@ -144,6 +184,12 @@ public String waitForTask(int runningDelayInMillSecond, int queuedDelayInMillSec
                 //silently catch 3 exceptions
                 getInfoException = e;
             }
+        }
+        if (tState.equals(TaskInfoState.success) || tState.equals(TaskInfoState.error)) {
+            break;
+        }
+        if (deadlineNanos > 0L && System.nanoTime() >= deadlineNanos) {
+            throw new TimeoutException("Task did not complete within " + maxWaitMillis + "ms; last state was " + tState);
         }
         // sleep for a specified time based on task state.
         if (tState.equals(TaskInfoState.running)) {
