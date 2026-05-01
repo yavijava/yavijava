@@ -7,6 +7,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.rmi.RemoteException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class InventoryNavigator {
     private ManagedEntity rootEntity = null;
@@ -101,7 +103,24 @@ public class InventoryNavigator {
         spec.setObjectSet(new ObjectSpec[]{os});
         spec.setPropSet(propspecary);
 
-        return pc.retrieveProperties(new PropertyFilterSpec[]{spec});
+        RetrieveOptions retrieveOptions = new RetrieveOptions();
+        List<ObjectContent> allObjects = new ArrayList<>();
+
+        RetrieveResult result = pc.retrievePropertiesEx(new PropertyFilterSpec[]{spec}, retrieveOptions);
+        while (result != null) {
+            if (result.getObjects() != null) {
+                for (ObjectContent oc : result.getObjects()) {
+                    allObjects.add(oc);
+                }
+            }
+            String token = result.getToken();
+            if (token == null) {
+                break;
+            }
+            result = pc.continueRetrievePropertiesEx(token);
+        }
+
+        return allObjects.isEmpty() ? null : allObjects.toArray(new ObjectContent[0]);
     }
 
     private ManagedEntity[] createManagedEntities(ObjectContent[] ocs) {
