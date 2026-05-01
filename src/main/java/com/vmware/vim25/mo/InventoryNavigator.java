@@ -57,7 +57,23 @@ public class InventoryNavigator {
         return createManagedEntities(ocs);
     }
 
-    private ObjectContent[] retrieveObjectContents(String[][] typeinfo, boolean recurse) throws InvalidProperty, RuntimeFault, RemoteException {
+    /**
+     * Retrieve raw {@link ObjectContent} for entities matching {@code typeinfo}, optionally recursing
+     * down from the root entity. Use this when you need the entities <em>and</em> their requested
+     * property values from a single round-trip — {@link #searchManagedEntities(String[][], boolean)}
+     * throws the property values away.
+     *
+     * Each returned {@link ObjectContent} carries the entity's MOR (use
+     * {@link com.vmware.vim25.mo.util.MorUtil#createExactManagedEntity} to wrap it) plus a
+     * {@code propSet} with the requested property values. Note that ManagedEntity instances
+     * created from these MORs do not cache the values — calling getters on them still triggers
+     * a server round-trip. Read property values from the {@code propSet} directly.
+     *
+     * @param typeinfo 2D array of {typename, prop1, prop2, ...} per type; null/empty returns null
+     * @param recurse  retrieve contents recursively from the root down
+     * @return ObjectContent for each matching entity, or null when typeinfo is null/empty
+     */
+    public ObjectContent[] retrieveObjectContents(String[][] typeinfo, boolean recurse) throws InvalidProperty, RuntimeFault, RemoteException {
         if (typeinfo == null || typeinfo.length == 0) {
             return null;
         }

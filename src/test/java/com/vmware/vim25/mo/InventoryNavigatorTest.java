@@ -134,4 +134,50 @@ public class InventoryNavigatorTest {
         assertNotNull(result);
         assertEquals(0, result.length);
     }
+
+    private ObjectContent folderContentWithProps(String val, String name, String overallStatus) {
+        ObjectContent oc = folderContent(val);
+        DynamicProperty pName = new DynamicProperty();
+        pName.setName("name");
+        pName.setVal(name);
+        DynamicProperty pStatus = new DynamicProperty();
+        pStatus.setName("overallStatus");
+        pStatus.setVal(overallStatus);
+        oc.setPropSet(new DynamicProperty[]{pName, pStatus});
+        return oc;
+    }
+
+    @Test
+    public void retrieveObjectContents_isPublic_andPreservesPropSet() throws Exception {
+        StubPropertyCollector stubPc = new StubPropertyCollector(
+            page(null,
+                folderContentWithProps("folder-1", "datacenter-folder", "green"),
+                folderContentWithProps("folder-2", "vm-folder", "yellow"))
+        );
+        InventoryNavigator nav = makeNavigator(stubPc);
+
+        ObjectContent[] result = nav.retrieveObjectContents(
+            new String[][]{{"Folder", "name", "overallStatus"}}, true);
+
+        assertEquals(2, result.length);
+
+        DynamicProperty[] firstProps = result[0].getPropSet();
+        assertEquals(2, firstProps.length);
+        assertEquals("name", firstProps[0].getName());
+        assertEquals("datacenter-folder", firstProps[0].getVal());
+        assertEquals("overallStatus", firstProps[1].getName());
+        assertEquals("green", firstProps[1].getVal());
+
+        assertEquals("folder-2", result[1].getObj().getVal());
+        assertEquals("vm-folder", result[1].getPropSet()[0].getVal());
+    }
+
+    @Test
+    public void retrieveObjectContents_nullTypeinfo_returnsNull() throws Exception {
+        InventoryNavigator nav = makeNavigator(new StubPropertyCollector());
+
+        ObjectContent[] result = nav.retrieveObjectContents(null, true);
+
+        assertNull(result);
+    }
 }
