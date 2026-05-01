@@ -328,6 +328,31 @@ public class ServiceInstanceTest {
     }
 
     @Test
+    public void sessionStringConstructor_throwsWhenSessionInvalid() throws Exception {
+        try {
+            new ServiceInstance(new URL("https://some-vcenter-address/sdk"), "vmware_soap_session=\"bogus\"", true) {
+                @Override
+                protected UserSession getCurrentUserSession() {
+                    return null;  // simulate the server saying "no current session for that cookie"
+                }
+                @Override
+                protected ServiceContent retrieveServiceContent(VimPortType vimService, ManagedObjectReference mor) {
+                    return new ServiceContent();
+                }
+                @Override
+                protected String getApiVersion(ServiceContent serviceContent) {
+                    return "7.0";
+                }
+            };
+            Assert.fail("Expected RemoteException when session string is invalid");
+        } catch (RemoteException expected) {
+            Assert.assertTrue("message should mention session: " + expected.getMessage(),
+                expected.getMessage() != null
+                && expected.getMessage().toLowerCase().contains("session"));
+        }
+    }
+
+    @Test
     public void testExistingConstructorPassesNullLocale() {
         try {
             TestServiceInstance si = new TestServiceInstance(new URL("https://some-vcenter-address/sdk"), "username", "password", true, ServiceInstance.VIM25_NAMESPACE, 2000, 5000);
