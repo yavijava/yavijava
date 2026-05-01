@@ -34,6 +34,7 @@ package com.vmware.vim25.ws;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.net.ssl.HostnameVerifier;
 import javax.net.ssl.HttpsURLConnection;
 import javax.net.ssl.SSLPeerUnverifiedException;
 import javax.net.ssl.SSLSocketFactory;
@@ -59,6 +60,7 @@ public class WSClient extends SoapClient {
 
     private static final Logger log = LoggerFactory.getLogger(WSClient.class);
     private final SSLSocketFactory sslSocketFactory;
+    private final HostnameVerifier hostnameVerifier;
 
     private XmlGen xmlGen = new XmlGenDom();
 
@@ -84,6 +86,11 @@ public class WSClient extends SoapClient {
         this.trustManager = trustManager;
         this.baseUrl = new URL(serverUrl);
         this.sslSocketFactory = ignoreCert ? getTrustAllSocketFactory(true) : getCustomTrustManagerSocketFactory(trustManager);
+        // ignoreCert means "don't verify the server's identity at all" — that includes
+        // the hostname check. Without this, IP-based connections fail with
+        // "No subject alternative names matching IP address …" because vSphere certs
+        // don't usually carry the IP in their SAN. See issue #115.
+        this.hostnameVerifier = ignoreCert ? TrustAllSSL.getTrustAllHostnameVerifier() : null;
     }
 
     public Object invoke(String methodName, Argument[] paras, String returnType) throws RemoteException {
@@ -132,8 +139,8 @@ public class WSClient extends SoapClient {
 
     protected InputStream post(String soapMsg) throws IOException {
         HttpURLConnection postCon = (HttpURLConnection) baseUrl.openConnection();
-        if (sslSocketFactory != null && baseUrl.getProtocol().equalsIgnoreCase("https")) {
-            ((HttpsURLConnection) postCon).setSSLSocketFactory(sslSocketFactory);
+        if (postCon instanceof HttpsURLConnection) {
+            applyHttpsConfig((HttpsURLConnection) postCon);
         }
 
         log.trace("POST: " + soapAction);
@@ -228,5 +235,14 @@ public class WSClient extends SoapClient {
 
     protected SSLSocketFactory getCustomTrustManagerSocketFactory(TrustManager tm) throws RemoteException {
         return tm != null ? CustomSSLTrustContextCreator.getTrustContext(tm).getSocketFactory() : null;
+    }
+
+    void applyHttpsConfig(HttpsURLConnection con) {
+        if (sslSocketFactory != null) {
+            con.setSSLSocketFactory(sslSocketFactory);
+        }
+        if (hostnameVerifier != null) {
+            con.setHostnameVerifier(hostnameVerifier);
+        }
     }
 }

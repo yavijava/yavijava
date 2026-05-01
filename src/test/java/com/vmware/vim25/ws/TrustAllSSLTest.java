@@ -44,4 +44,18 @@ public class TrustAllSSLTest {
     public void trustAllHttpsCertificates_doesNotThrow() throws Exception {
         TrustAllSSL.trustAllHttpsCertificates();
     }
+
+    @Test
+    public void getTrustAllHostnameVerifier_returnsVerifierThatAcceptsAnyHostname() {
+        javax.net.ssl.HostnameVerifier verifier = TrustAllSSL.getTrustAllHostnameVerifier();
+        assertNotNull(verifier);
+        assertTrue(verifier.verify("any-host", null));
+        assertTrue(verifier.verify("192.0.2.1", null));
+    }
+
+    @Test
+    public void getTrustAllHostnameVerifier_returnsSameInstanceAcrossCalls() {
+        // Reused instance keeps WSClient.applyHttpsConfig allocation-free per request.
+        assertSame(TrustAllSSL.getTrustAllHostnameVerifier(), TrustAllSSL.getTrustAllHostnameVerifier());
+    }
 }
