@@ -294,11 +294,69 @@ public class ServiceInstanceTest {
         }
     }
 
+    @Test
+    public void testCreateServiceInstanceForUsernameAndPasswordAndIgnoreCertsAndLocaleWithTimeouts() {
+        try {
+            TestServiceInstance si = new TestServiceInstance(new URL("https://some-vcenter-address/sdk"), "username", "password", true, ServiceInstance.VIM25_NAMESPACE, 2000, 5000, "fr_FR");
+
+            Assert.assertEquals(2000, si.getConnectTimeout());
+            Assert.assertEquals(5000, si.getReadTimeout());
+            Assert.assertNull(si.getTrustManager());
+            Assert.assertEquals("fr_FR", si.getCapturedLocale());
+        } catch(MalformedURLException e) {
+            Assert.fail("An error occurred creating a service instance due its url being malformed. " + e.getMessage());
+        } catch(RemoteException e) {
+            Assert.fail("An error occurred creating and reading from service instance. " + e.getMessage());
+        }
+    }
+
+    @Test
+    public void testCreateServiceInstanceForUsernameAndPasswordAndTrustManagerAndLocaleWithTimeouts() {
+        try {
+            TestTrustManager testTrustManager = new TestTrustManager();
+            TestServiceInstance si = new TestServiceInstance(new URL("https://some-vcenter-address/sdk"), "username", "password", testTrustManager, ServiceInstance.VIM25_NAMESPACE, 2000, 5000, "ja_JP");
+
+            Assert.assertEquals(2000, si.getConnectTimeout());
+            Assert.assertEquals(5000, si.getReadTimeout());
+            Assert.assertEquals(testTrustManager, si.getTrustManager());
+            Assert.assertEquals("ja_JP", si.getCapturedLocale());
+        } catch(MalformedURLException e) {
+            Assert.fail("An error occurred creating a service instance due its url being malformed. " + e.getMessage());
+        } catch(RemoteException e) {
+            Assert.fail("An error occurred creating and reading from service instance. " + e.getMessage());
+        }
+    }
+
+    @Test
+    public void testExistingConstructorPassesNullLocale() {
+        try {
+            TestServiceInstance si = new TestServiceInstance(new URL("https://some-vcenter-address/sdk"), "username", "password", true, ServiceInstance.VIM25_NAMESPACE, 2000, 5000);
+
+            Assert.assertNull("existing constructor must not change behavior — locale should be null", si.getCapturedLocale());
+        } catch(MalformedURLException e) {
+            Assert.fail("An error occurred creating a service instance due its url being malformed. " + e.getMessage());
+        } catch(RemoteException e) {
+            Assert.fail("An error occurred creating and reading from service instance. " + e.getMessage());
+        }
+    }
+
     private class TestServiceInstance extends ServiceInstance {
+
+        private String capturedLocale;
 
         private TestServiceInstance(URL url, String username, String password)
                 throws RemoteException, MalformedURLException {
             super(url, username, password);
+        }
+
+        private TestServiceInstance(URL url, String username, String password, boolean ignoreCert, String namespace, int connectTimeout, int readTimeout, String locale)
+                throws RemoteException, MalformedURLException {
+            super(url, username, password, ignoreCert, namespace, connectTimeout, readTimeout, locale);
+        }
+
+        private TestServiceInstance(URL url, String username, String password, TrustManager trustManager, String namespace, int connectTimeout, int readTimeout, String locale)
+                throws RemoteException, MalformedURLException {
+            super(url, username, password, trustManager, namespace, connectTimeout, readTimeout, locale);
         }
 
         private TestServiceInstance(URL url, String username, String password, boolean ignoreCert)
@@ -388,7 +446,12 @@ public class ServiceInstanceTest {
 
         @Override
         protected UserSession login(SessionManager sessionManager, String userName, String password, String locale) {
+            this.capturedLocale = locale;
             return new UserSession();
+        }
+
+        public String getCapturedLocale() {
+            return capturedLocale;
         }
 
         @Override
