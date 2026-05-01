@@ -21,7 +21,8 @@ package com.vmware.vim25;
  * @since 6.0
  */
 
-public class ArrayOfFolderFailedHostResult {
+public class ArrayOfFolderFailedHostResult implements java.io.Serializable {
+    private static final long serialVersionUID = 1L;
     public FolderFailedHostResult[] FolderFailedHostResult;
 
     public FolderFailedHostResult[] getFolderFailedHostResult() {

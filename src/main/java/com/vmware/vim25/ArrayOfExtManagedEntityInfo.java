@@ -34,7 +34,8 @@ package com.vmware.vim25;
  * @version 5.1
  */
 
-public class ArrayOfExtManagedEntityInfo {
+public class ArrayOfExtManagedEntityInfo implements java.io.Serializable {
+    private static final long serialVersionUID = 1L;
     public ExtManagedEntityInfo[] ExtManagedEntityInfo;
 
     public ExtManagedEntityInfo[] getExtManagedEntityInfo() {

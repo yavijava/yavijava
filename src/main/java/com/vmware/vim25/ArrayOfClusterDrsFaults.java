@@ -34,7 +34,8 @@ package com.vmware.vim25;
  * @version 5.1
  */
 
-public class ArrayOfClusterDrsFaults {
+public class ArrayOfClusterDrsFaults implements java.io.Serializable {
+    private static final long serialVersionUID = 1L;
     public ClusterDrsFaults[] ClusterDrsFaults;
 
     public ClusterDrsFaults[] getClusterDrsFaults() {

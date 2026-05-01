@@ -34,7 +34,8 @@ package com.vmware.vim25;
  * @version 5.1
  */
 
-public class ArrayOfInt {
+public class ArrayOfInt implements java.io.Serializable {
+    private static final long serialVersionUID = 1L;
     public int[] _int;
 
     public int[] get_int() {

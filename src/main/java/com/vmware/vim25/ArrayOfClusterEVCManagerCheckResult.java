@@ -21,7 +21,8 @@ package com.vmware.vim25;
  * @since 6.0
  */
 
-public class ArrayOfClusterEVCManagerCheckResult {
+public class ArrayOfClusterEVCManagerCheckResult implements java.io.Serializable {
+    private static final long serialVersionUID = 1L;
     public ClusterEVCManagerCheckResult[] ClusterEVCManagerCheckResult;
 
     public ClusterEVCManagerCheckResult[] getClusterEVCManagerCheckResult() {

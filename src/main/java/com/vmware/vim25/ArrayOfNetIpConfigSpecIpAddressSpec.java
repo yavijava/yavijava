@@ -34,7 +34,8 @@ package com.vmware.vim25;
  * @version 5.1
  */
 
-public class ArrayOfNetIpConfigSpecIpAddressSpec {
+public class ArrayOfNetIpConfigSpecIpAddressSpec implements java.io.Serializable {
+    private static final long serialVersionUID = 1L;
     public NetIpConfigSpecIpAddressSpec[] NetIpConfigSpecIpAddressSpec;
 
     public NetIpConfigSpecIpAddressSpec[] getNetIpConfigSpecIpAddressSpec() {

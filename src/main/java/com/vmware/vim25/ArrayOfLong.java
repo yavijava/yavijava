@@ -34,7 +34,8 @@ package com.vmware.vim25;
  * @version 5.1
  */
 
-public class ArrayOfLong {
+public class ArrayOfLong implements java.io.Serializable {
+    private static final long serialVersionUID = 1L;
     public long[] _long;
 
     public long[] get_long() {

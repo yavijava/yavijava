@@ -34,7 +34,8 @@ package com.vmware.vim25;
  * @version 5.1
  */
 
-public class ArrayOfHostInternetScsiHbaParamValue {
+public class ArrayOfHostInternetScsiHbaParamValue implements java.io.Serializable {
+    private static final long serialVersionUID = 1L;
     public HostInternetScsiHbaParamValue[] HostInternetScsiHbaParamValue;
 
     public HostInternetScsiHbaParamValue[] getHostInternetScsiHbaParamValue() {

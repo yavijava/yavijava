@@ -21,7 +21,8 @@ package com.vmware.vim25;
  * @since 6.0
  */
 
-public class ArrayOfNvdimmRegionInfo {
+public class ArrayOfNvdimmRegionInfo implements java.io.Serializable {
+    private static final long serialVersionUID = 1L;
     public NvdimmRegionInfo[] NvdimmRegionInfo;
 
     public NvdimmRegionInfo[] getNvdimmRegionInfo() {

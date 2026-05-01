@@ -33,7 +33,8 @@ package com.vmware.vim25;
  * @author Steve Jin (sjin@vmware.com)
  */
 
-public class ArrayOfLicenseAssignmentManagerEntityFeaturePair {
+public class ArrayOfLicenseAssignmentManagerEntityFeaturePair implements java.io.Serializable {
+    private static final long serialVersionUID = 1L;
     public LicenseAssignmentManagerEntityFeaturePair[] LicenseAssignmentManagerEntityFeaturePair;
 
     public LicenseAssignmentManagerEntityFeaturePair[] getLicenseAssignmentManagerEntityFeaturePair() {

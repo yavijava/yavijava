@@ -34,7 +34,8 @@ package com.vmware.vim25;
  * @version 5.1
  */
 
-public class ArrayOfShort {
+public class ArrayOfShort implements java.io.Serializable {
+    private static final long serialVersionUID = 1L;
     public short[] _short;
 
     public short[] get_short() {

@@ -34,7 +34,8 @@ package com.vmware.vim25;
  * @version 5.1
  */
 
-public class ArrayOfPermission {
+public class ArrayOfPermission implements java.io.Serializable {
+    private static final long serialVersionUID = 1L;
     public Permission[] Permission;
 
     public Permission[] getPermission() {

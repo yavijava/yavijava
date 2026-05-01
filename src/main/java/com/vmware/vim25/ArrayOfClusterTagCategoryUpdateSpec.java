@@ -21,7 +21,8 @@ package com.vmware.vim25;
  * @since 6.0
  */
 
-public class ArrayOfClusterTagCategoryUpdateSpec {
+public class ArrayOfClusterTagCategoryUpdateSpec implements java.io.Serializable {
+    private static final long serialVersionUID = 1L;
     public ClusterTagCategoryUpdateSpec[] ClusterTagCategoryUpdateSpec;
 
     public ClusterTagCategoryUpdateSpec[] getClusterTagCategoryUpdateSpec() {

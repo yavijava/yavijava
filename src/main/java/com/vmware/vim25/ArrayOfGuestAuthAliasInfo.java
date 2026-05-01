@@ -21,7 +21,8 @@ package com.vmware.vim25;
  * @since 6.0
  */
 
-public class ArrayOfGuestAuthAliasInfo {
+public class ArrayOfGuestAuthAliasInfo implements java.io.Serializable {
+    private static final long serialVersionUID = 1L;
     public GuestAuthAliasInfo[] GuestAuthAliasInfo;
 
     public GuestAuthAliasInfo[] getGuestAuthAliasInfo() {

@@ -21,7 +21,8 @@ package com.vmware.vim25;
  * @since 6.0
  */
 
-public class ArrayOfStorageDrsPlacementRankVmSpec {
+public class ArrayOfStorageDrsPlacementRankVmSpec implements java.io.Serializable {
+    private static final long serialVersionUID = 1L;
     public StorageDrsPlacementRankVmSpec[] StorageDrsPlacementRankVmSpec;
 
     public StorageDrsPlacementRankVmSpec[] getStorageDrsPlacementRankVmSpec() {

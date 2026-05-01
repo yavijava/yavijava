@@ -34,7 +34,8 @@ package com.vmware.vim25;
  * @version 5.1
  */
 
-public class ArrayOfHostDhcpServiceConfig {
+public class ArrayOfHostDhcpServiceConfig implements java.io.Serializable {
+    private static final long serialVersionUID = 1L;
     public HostDhcpServiceConfig[] HostDhcpServiceConfig;
 
     public HostDhcpServiceConfig[] getHostDhcpServiceConfig() {

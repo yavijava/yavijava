@@ -34,7 +34,8 @@ package com.vmware.vim25;
  * @version 5.1
  */
 
-public class ArrayOfObjectUpdate {
+public class ArrayOfObjectUpdate implements java.io.Serializable {
+    private static final long serialVersionUID = 1L;
     public ObjectUpdate[] ObjectUpdate;
 
     public ObjectUpdate[] getObjectUpdate() {

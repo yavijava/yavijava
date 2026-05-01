@@ -21,7 +21,8 @@ package com.vmware.vim25;
  * @since 6.0
  */
 
-public class ArrayOfAnyURI {
+public class ArrayOfAnyURI implements java.io.Serializable {
+    private static final long serialVersionUID = 1L;
     public String[] anyURI;
 
     public String[] getAnyURI() {

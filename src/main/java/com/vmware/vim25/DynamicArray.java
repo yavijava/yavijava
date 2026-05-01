@@ -36,7 +36,8 @@ package com.vmware.vim25;
 
 @SuppressWarnings("all")
 
-public class DynamicArray {
+public class DynamicArray implements java.io.Serializable {
+    private static final long serialVersionUID = 1L;
     public String dynamicType;
     public Object[] val;
 

@@ -34,7 +34,8 @@ package com.vmware.vim25;
  * @version 5.1
  */
 
-public class ArrayOfEntityBackupConfig {
+public class ArrayOfEntityBackupConfig implements java.io.Serializable {
+    private static final long serialVersionUID = 1L;
     public EntityBackupConfig[] EntityBackupConfig;
 
     public EntityBackupConfig[] getEntityBackupConfig() {

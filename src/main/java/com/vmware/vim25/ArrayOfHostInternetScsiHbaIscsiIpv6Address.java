@@ -21,7 +21,8 @@ package com.vmware.vim25;
  * @since 6.0
  */
 
-public class ArrayOfHostInternetScsiHbaIscsiIpv6Address {
+public class ArrayOfHostInternetScsiHbaIscsiIpv6Address implements java.io.Serializable {
+    private static final long serialVersionUID = 1L;
     public HostInternetScsiHbaIscsiIpv6Address[] HostInternetScsiHbaIscsiIpv6Address;
 
     public HostInternetScsiHbaIscsiIpv6Address[] getHostInternetScsiHbaIscsiIpv6Address() {

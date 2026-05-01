@@ -34,7 +34,8 @@ package com.vmware.vim25;
  * @version 5.1
  */
 
-public class ArrayOfDvsOutOfSyncHostArgument {
+public class ArrayOfDvsOutOfSyncHostArgument implements java.io.Serializable {
+    private static final long serialVersionUID = 1L;
     public DvsOutOfSyncHostArgument[] DvsOutOfSyncHostArgument;
 
     public DvsOutOfSyncHostArgument[] getDvsOutOfSyncHostArgument() {

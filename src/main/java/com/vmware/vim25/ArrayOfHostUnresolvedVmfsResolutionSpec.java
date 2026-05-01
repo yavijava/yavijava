@@ -34,7 +34,8 @@ package com.vmware.vim25;
  * @version 5.1
  */
 
-public class ArrayOfHostUnresolvedVmfsResolutionSpec {
+public class ArrayOfHostUnresolvedVmfsResolutionSpec implements java.io.Serializable {
+    private static final long serialVersionUID = 1L;
     public HostUnresolvedVmfsResolutionSpec[] HostUnresolvedVmfsResolutionSpec;
 
     public HostUnresolvedVmfsResolutionSpec[] getHostUnresolvedVmfsResolutionSpec() {

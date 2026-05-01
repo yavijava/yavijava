@@ -21,7 +21,8 @@ package com.vmware.vim25;
  * @since 6.0
  */
 
-public class ArrayOfVirtualMachineBaseIndependentFilterSpec {
+public class ArrayOfVirtualMachineBaseIndependentFilterSpec implements java.io.Serializable {
+    private static final long serialVersionUID = 1L;
     public VirtualMachineBaseIndependentFilterSpec[] VirtualMachineBaseIndependentFilterSpec;
 
     public VirtualMachineBaseIndependentFilterSpec[] getVirtualMachineBaseIndependentFilterSpec() {

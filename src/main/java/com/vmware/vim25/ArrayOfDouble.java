@@ -34,7 +34,8 @@ package com.vmware.vim25;
  * @version 5.1
  */
 
-public class ArrayOfDouble {
+public class ArrayOfDouble implements java.io.Serializable {
+    private static final long serialVersionUID = 1L;
     public double[] _double;
 
     public double[] get_double() {

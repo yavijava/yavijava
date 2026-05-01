@@ -21,7 +21,8 @@ package com.vmware.vim25;
  * @since 6.0
  */
 
-public class ArrayOfVirtualMachineVMotionStunTimeInfo {
+public class ArrayOfVirtualMachineVMotionStunTimeInfo implements java.io.Serializable {
+    private static final long serialVersionUID = 1L;
     public VirtualMachineVMotionStunTimeInfo[] VirtualMachineVMotionStunTimeInfo;
 
     public VirtualMachineVMotionStunTimeInfo[] getVirtualMachineVMotionStunTimeInfo() {

@@ -21,7 +21,8 @@ package com.vmware.vim25;
  * @since 6.0
  */
 
-public class ArrayOfHostNvmeDisconnectSpec {
+public class ArrayOfHostNvmeDisconnectSpec implements java.io.Serializable {
+    private static final long serialVersionUID = 1L;
     public HostNvmeDisconnectSpec[] HostNvmeDisconnectSpec;
 
     public HostNvmeDisconnectSpec[] getHostNvmeDisconnectSpec() {

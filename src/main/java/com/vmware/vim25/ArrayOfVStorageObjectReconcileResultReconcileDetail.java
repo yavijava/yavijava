@@ -21,7 +21,8 @@ package com.vmware.vim25;
  * @since 6.0
  */
 
-public class ArrayOfVStorageObjectReconcileResultReconcileDetail {
+public class ArrayOfVStorageObjectReconcileResultReconcileDetail implements java.io.Serializable {
+    private static final long serialVersionUID = 1L;
     public VStorageObjectReconcileResultReconcileDetail[] VStorageObjectReconcileResultReconcileDetail;
 
     public VStorageObjectReconcileResultReconcileDetail[] getVStorageObjectReconcileResultReconcileDetail() {

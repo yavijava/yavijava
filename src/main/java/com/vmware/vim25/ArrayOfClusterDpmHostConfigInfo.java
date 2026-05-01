@@ -34,7 +34,8 @@ package com.vmware.vim25;
  * @version 5.1
  */
 
-public class ArrayOfClusterDpmHostConfigInfo {
+public class ArrayOfClusterDpmHostConfigInfo implements java.io.Serializable {
+    private static final long serialVersionUID = 1L;
     public ClusterDpmHostConfigInfo[] ClusterDpmHostConfigInfo;
 
     public ClusterDpmHostConfigInfo[] getClusterDpmHostConfigInfo() {

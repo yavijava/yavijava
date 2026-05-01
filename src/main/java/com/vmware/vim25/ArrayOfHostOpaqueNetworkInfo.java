@@ -34,7 +34,8 @@ package com.vmware.vim25;
  * @version 5.1
  */
 
-public class ArrayOfHostOpaqueNetworkInfo {
+public class ArrayOfHostOpaqueNetworkInfo implements java.io.Serializable {
+    private static final long serialVersionUID = 1L;
     public HostOpaqueNetworkInfo[] HostOpaqueNetworkInfo;
 
     public HostOpaqueNetworkInfo[] getHostOpaqueNetworkInfo() {

@@ -21,7 +21,8 @@ package com.vmware.vim25;
  * @since 6.0
  */
 
-public class ArrayOfVimVasaProviderStatePerArray {
+public class ArrayOfVimVasaProviderStatePerArray implements java.io.Serializable {
+    private static final long serialVersionUID = 1L;
     public VimVasaProviderStatePerArray[] VimVasaProviderStatePerArray;
 
     public VimVasaProviderStatePerArray[] getVimVasaProviderStatePerArray() {

@@ -21,7 +21,8 @@ package com.vmware.vim25;
  * @since 6.0
  */
 
-public class ArrayOfHostIoFilterInfo {
+public class ArrayOfHostIoFilterInfo implements java.io.Serializable {
+    private static final long serialVersionUID = 1L;
     public HostIoFilterInfo[] HostIoFilterInfo;
 
     public HostIoFilterInfo[] getHostIoFilterInfo() {

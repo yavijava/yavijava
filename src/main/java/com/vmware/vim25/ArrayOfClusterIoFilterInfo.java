@@ -21,7 +21,8 @@ package com.vmware.vim25;
  * @since 6.0
  */
 
-public class ArrayOfClusterIoFilterInfo {
+public class ArrayOfClusterIoFilterInfo implements java.io.Serializable {
+    private static final long serialVersionUID = 1L;
     public ClusterIoFilterInfo[] ClusterIoFilterInfo;
 
     public ClusterIoFilterInfo[] getClusterIoFilterInfo() {

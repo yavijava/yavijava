@@ -34,7 +34,8 @@ package com.vmware.vim25;
  * @version 5.1
  */
 
-public class ArrayOfProfileUpdateFailedUpdateFailure {
+public class ArrayOfProfileUpdateFailedUpdateFailure implements java.io.Serializable {
+    private static final long serialVersionUID = 1L;
     public ProfileUpdateFailedUpdateFailure[] ProfileUpdateFailedUpdateFailure;
 
     public ProfileUpdateFailedUpdateFailure[] getProfileUpdateFailedUpdateFailure() {

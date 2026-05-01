@@ -21,7 +21,8 @@ package com.vmware.vim25;
  * @since 6.0
  */
 
-public class ArrayOfHostLowLevelProvisioningManagerFileReserveSpec {
+public class ArrayOfHostLowLevelProvisioningManagerFileReserveSpec implements java.io.Serializable {
+    private static final long serialVersionUID = 1L;
     public HostLowLevelProvisioningManagerFileReserveSpec[] HostLowLevelProvisioningManagerFileReserveSpec;
 
     public HostLowLevelProvisioningManagerFileReserveSpec[] getHostLowLevelProvisioningManagerFileReserveSpec() {

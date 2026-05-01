@@ -21,7 +21,8 @@ package com.vmware.vim25;
  * @since 6.0
  */
 
-public class ArrayOfDpuStatusInfo {
+public class ArrayOfDpuStatusInfo implements java.io.Serializable {
+    private static final long serialVersionUID = 1L;
     public DpuStatusInfo[] DpuStatusInfo;
 
     public DpuStatusInfo[] getDpuStatusInfo() {

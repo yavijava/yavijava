@@ -34,7 +34,8 @@ package com.vmware.vim25;
  * @version 5.1
  */
 
-public class ArrayOfExtendedEventPair {
+public class ArrayOfExtendedEventPair implements java.io.Serializable {
+    private static final long serialVersionUID = 1L;
     public ExtendedEventPair[] ExtendedEventPair;
 
     public ExtendedEventPair[] getExtendedEventPair() {

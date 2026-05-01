@@ -34,7 +34,8 @@ package com.vmware.vim25;
  * @version 5.1
  */
 
-public class ArrayOfDistributedVirtualSwitchKeyedOpaqueBlob {
+public class ArrayOfDistributedVirtualSwitchKeyedOpaqueBlob implements java.io.Serializable {
+    private static final long serialVersionUID = 1L;
     public DistributedVirtualSwitchKeyedOpaqueBlob[] DistributedVirtualSwitchKeyedOpaqueBlob;
 
     public DistributedVirtualSwitchKeyedOpaqueBlob[] getDistributedVirtualSwitchKeyedOpaqueBlob() {

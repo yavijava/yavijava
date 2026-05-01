@@ -34,7 +34,8 @@ package com.vmware.vim25;
  * @version 5.1
  */
 
-public class ArrayOfPerfMetricSeriesCSV {
+public class ArrayOfPerfMetricSeriesCSV implements java.io.Serializable {
+    private static final long serialVersionUID = 1L;
     public PerfMetricSeriesCSV[] PerfMetricSeriesCSV;
 
     public PerfMetricSeriesCSV[] getPerfMetricSeriesCSV() {

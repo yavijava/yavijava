@@ -34,7 +34,8 @@ package com.vmware.vim25;
  * @version 5.1
  */
 
-public class ArrayOfHostNasVolumeConfig {
+public class ArrayOfHostNasVolumeConfig implements java.io.Serializable {
+    private static final long serialVersionUID = 1L;
     public HostNasVolumeConfig[] HostNasVolumeConfig;
 
     public HostNasVolumeConfig[] getHostNasVolumeConfig() {

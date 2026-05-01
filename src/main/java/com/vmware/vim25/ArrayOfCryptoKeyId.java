@@ -21,7 +21,8 @@ package com.vmware.vim25;
  * @since 6.0
  */
 
-public class ArrayOfCryptoKeyId {
+public class ArrayOfCryptoKeyId implements java.io.Serializable {
+    private static final long serialVersionUID = 1L;
     public CryptoKeyId[] CryptoKeyId;
 
     public CryptoKeyId[] getCryptoKeyId() {
