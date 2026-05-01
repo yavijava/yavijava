@@ -34,7 +34,8 @@ package com.vmware.vim25;
  * @version 5.1
  */
 
-public class ArrayOfClusterDasFailoverLevelAdvancedRuntimeInfoVmSlots {
+public class ArrayOfClusterDasFailoverLevelAdvancedRuntimeInfoVmSlots implements java.io.Serializable {
+    private static final long serialVersionUID = 1L;
     public ClusterDasFailoverLevelAdvancedRuntimeInfoVmSlots[] ClusterDasFailoverLevelAdvancedRuntimeInfoVmSlots;
 
     public ClusterDasFailoverLevelAdvancedRuntimeInfoVmSlots[] getClusterDasFailoverLevelAdvancedRuntimeInfoVmSlots() {

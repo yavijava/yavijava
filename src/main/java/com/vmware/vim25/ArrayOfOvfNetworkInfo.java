@@ -34,7 +34,8 @@ package com.vmware.vim25;
  * @version 5.1
  */
 
-public class ArrayOfOvfNetworkInfo {
+public class ArrayOfOvfNetworkInfo implements java.io.Serializable {
+    private static final long serialVersionUID = 1L;
     public OvfNetworkInfo[] OvfNetworkInfo;
 
     public OvfNetworkInfo[] getOvfNetworkInfo() {

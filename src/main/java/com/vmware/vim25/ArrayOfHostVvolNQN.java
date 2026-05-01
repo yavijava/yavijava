@@ -21,7 +21,8 @@ package com.vmware.vim25;
  * @since 6.0
  */
 
-public class ArrayOfHostVvolNQN {
+public class ArrayOfHostVvolNQN implements java.io.Serializable {
+    private static final long serialVersionUID = 1L;
     public HostVvolNQN[] HostVvolNQN;
 
     public HostVvolNQN[] getHostVvolNQN() {

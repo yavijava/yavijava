@@ -34,7 +34,8 @@ package com.vmware.vim25;
  * @version 5.1
  */
 
-public class ArrayOfCustomizationIpV6Generator {
+public class ArrayOfCustomizationIpV6Generator implements java.io.Serializable {
+    private static final long serialVersionUID = 1L;
     public CustomizationIpV6Generator[] CustomizationIpV6Generator;
 
     public CustomizationIpV6Generator[] getCustomizationIpV6Generator() {

@@ -34,7 +34,8 @@ package com.vmware.vim25;
  * @version 5.1
  */
 
-public class ArrayOfVAppEntityConfigInfo {
+public class ArrayOfVAppEntityConfigInfo implements java.io.Serializable {
+    private static final long serialVersionUID = 1L;
     public VAppEntityConfigInfo[] VAppEntityConfigInfo;
 
     public VAppEntityConfigInfo[] getVAppEntityConfigInfo() {

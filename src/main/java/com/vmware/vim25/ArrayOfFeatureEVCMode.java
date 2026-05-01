@@ -21,7 +21,8 @@ package com.vmware.vim25;
  * @since 6.0
  */
 
-public class ArrayOfFeatureEVCMode {
+public class ArrayOfFeatureEVCMode implements java.io.Serializable {
+    private static final long serialVersionUID = 1L;
     public FeatureEVCMode[] FeatureEVCMode;
 
     public FeatureEVCMode[] getFeatureEVCMode() {

@@ -34,7 +34,8 @@ package com.vmware.vim25;
  * @version 5.1
  */
 
-public class ArrayOfNetIpConfigInfoIpAddress {
+public class ArrayOfNetIpConfigInfoIpAddress implements java.io.Serializable {
+    private static final long serialVersionUID = 1L;
     public NetIpConfigInfoIpAddress[] NetIpConfigInfoIpAddress;
 
     public NetIpConfigInfoIpAddress[] getNetIpConfigInfoIpAddress() {

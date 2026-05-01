@@ -33,7 +33,8 @@ package com.vmware.vim25;
  * @author Steve Jin (sjin@vmware.com)
  */
 
-public class ArrayOfSendTargetProfile {
+public class ArrayOfSendTargetProfile implements java.io.Serializable {
+    private static final long serialVersionUID = 1L;
     public SendTargetProfile[] SendTargetProfile;
 
     public SendTargetProfile[] getSendTargetProfile() {

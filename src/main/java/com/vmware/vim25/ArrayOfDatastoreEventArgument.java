@@ -33,7 +33,8 @@ package com.vmware.vim25;
  * @author Steve Jin (sjin@vmware.com)
  */
 
-public class ArrayOfDatastoreEventArgument {
+public class ArrayOfDatastoreEventArgument implements java.io.Serializable {
+    private static final long serialVersionUID = 1L;
     public DatastoreEventArgument[] DatastoreEventArgument;
 
     public DatastoreEventArgument[] getDatastoreEventArgument() {

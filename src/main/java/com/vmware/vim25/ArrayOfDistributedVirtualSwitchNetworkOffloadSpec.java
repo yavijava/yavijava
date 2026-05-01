@@ -21,7 +21,8 @@ package com.vmware.vim25;
  * @since 6.0
  */
 
-public class ArrayOfDistributedVirtualSwitchNetworkOffloadSpec {
+public class ArrayOfDistributedVirtualSwitchNetworkOffloadSpec implements java.io.Serializable {
+    private static final long serialVersionUID = 1L;
     public DistributedVirtualSwitchNetworkOffloadSpec[] DistributedVirtualSwitchNetworkOffloadSpec;
 
     public DistributedVirtualSwitchNetworkOffloadSpec[] getDistributedVirtualSwitchNetworkOffloadSpec() {

@@ -21,7 +21,8 @@ package com.vmware.vim25;
  * @since 6.0
  */
 
-public class ArrayOfHostAssignableHardwareBinding {
+public class ArrayOfHostAssignableHardwareBinding implements java.io.Serializable {
+    private static final long serialVersionUID = 1L;
     public HostAssignableHardwareBinding[] HostAssignableHardwareBinding;
 
     public HostAssignableHardwareBinding[] getHostAssignableHardwareBinding() {

@@ -21,7 +21,8 @@ package com.vmware.vim25;
  * @since 6.0
  */
 
-public class ArrayOfNoPermissionEntityPrivileges {
+public class ArrayOfNoPermissionEntityPrivileges implements java.io.Serializable {
+    private static final long serialVersionUID = 1L;
     public NoPermissionEntityPrivileges[] NoPermissionEntityPrivileges;
 
     public NoPermissionEntityPrivileges[] getNoPermissionEntityPrivileges() {

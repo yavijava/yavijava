@@ -21,7 +21,8 @@ package com.vmware.vim25;
  * @since 6.0
  */
 
-public class ArrayOfVirtualMachineVcpuConfig {
+public class ArrayOfVirtualMachineVcpuConfig implements java.io.Serializable {
+    private static final long serialVersionUID = 1L;
     public VirtualMachineVcpuConfig[] VirtualMachineVcpuConfig;
 
     public VirtualMachineVcpuConfig[] getVirtualMachineVcpuConfig() {

@@ -34,7 +34,8 @@ package com.vmware.vim25;
  * @version 5.1
  */
 
-public class ArrayOfBoolean {
+public class ArrayOfBoolean implements java.io.Serializable {
+    private static final long serialVersionUID = 1L;
     public boolean[] _boolean;
 
     public boolean[] get_boolean() {

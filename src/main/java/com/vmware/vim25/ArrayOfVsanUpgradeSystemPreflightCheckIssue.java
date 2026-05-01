@@ -21,7 +21,8 @@ package com.vmware.vim25;
  * @since 6.0
  */
 
-public class ArrayOfVsanUpgradeSystemPreflightCheckIssue {
+public class ArrayOfVsanUpgradeSystemPreflightCheckIssue implements java.io.Serializable {
+    private static final long serialVersionUID = 1L;
     public VsanUpgradeSystemPreflightCheckIssue[] VsanUpgradeSystemPreflightCheckIssue;
 
     public VsanUpgradeSystemPreflightCheckIssue[] getVsanUpgradeSystemPreflightCheckIssue() {

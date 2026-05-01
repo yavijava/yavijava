@@ -34,7 +34,8 @@ package com.vmware.vim25;
  * @version 5.1
  */
 
-public class ArrayOfDvsOperationBulkFaultFaultOnHost {
+public class ArrayOfDvsOperationBulkFaultFaultOnHost implements java.io.Serializable {
+    private static final long serialVersionUID = 1L;
     public DvsOperationBulkFaultFaultOnHost[] DvsOperationBulkFaultFaultOnHost;
 
     public DvsOperationBulkFaultFaultOnHost[] getDvsOperationBulkFaultFaultOnHost() {

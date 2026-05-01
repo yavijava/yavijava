@@ -21,7 +21,8 @@ package com.vmware.vim25;
  * @since 6.0
  */
 
-public class ArrayOfHostPlacedVirtualNicIdentifier {
+public class ArrayOfHostPlacedVirtualNicIdentifier implements java.io.Serializable {
+    private static final long serialVersionUID = 1L;
     public HostPlacedVirtualNicIdentifier[] HostPlacedVirtualNicIdentifier;
 
     public HostPlacedVirtualNicIdentifier[] getHostPlacedVirtualNicIdentifier() {

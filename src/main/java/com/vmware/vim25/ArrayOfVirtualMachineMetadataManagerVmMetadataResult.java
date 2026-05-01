@@ -34,7 +34,8 @@ package com.vmware.vim25;
  * @version 5.1
  */
 
-public class ArrayOfVirtualMachineMetadataManagerVmMetadataResult {
+public class ArrayOfVirtualMachineMetadataManagerVmMetadataResult implements java.io.Serializable {
+    private static final long serialVersionUID = 1L;
     public VirtualMachineMetadataManagerVmMetadataResult[] VirtualMachineMetadataManagerVmMetadataResult;
 
     public VirtualMachineMetadataManagerVmMetadataResult[] getVirtualMachineMetadataManagerVmMetadataResult() {

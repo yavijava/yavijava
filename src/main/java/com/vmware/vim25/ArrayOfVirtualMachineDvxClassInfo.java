@@ -21,7 +21,8 @@ package com.vmware.vim25;
  * @since 6.0
  */
 
-public class ArrayOfVirtualMachineDvxClassInfo {
+public class ArrayOfVirtualMachineDvxClassInfo implements java.io.Serializable {
+    private static final long serialVersionUID = 1L;
     public VirtualMachineDvxClassInfo[] VirtualMachineDvxClassInfo;
 
     public VirtualMachineDvxClassInfo[] getVirtualMachineDvxClassInfo() {

@@ -21,7 +21,8 @@ package com.vmware.vim25;
  * @since 6.0
  */
 
-public class ArrayOfHostNvmeController {
+public class ArrayOfHostNvmeController implements java.io.Serializable {
+    private static final long serialVersionUID = 1L;
     public HostNvmeController[] HostNvmeController;
 
     public HostNvmeController[] getHostNvmeController() {

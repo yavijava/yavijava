@@ -37,7 +37,8 @@ import java.text.MessageFormat;
  */
 
 @SuppressWarnings("all")
-public class ManagedObjectReference {
+public class ManagedObjectReference implements java.io.Serializable {
+    private static final long serialVersionUID = 1L;
     public String val;
     public String type;
 

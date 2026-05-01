@@ -21,7 +21,8 @@ package com.vmware.vim25;
  * @since 6.0
  */
 
-public class ArrayOfChangesInfoEventArgument {
+public class ArrayOfChangesInfoEventArgument implements java.io.Serializable {
+    private static final long serialVersionUID = 1L;
     public ChangesInfoEventArgument[] ChangesInfoEventArgument;
 
     public ChangesInfoEventArgument[] getChangesInfoEventArgument() {

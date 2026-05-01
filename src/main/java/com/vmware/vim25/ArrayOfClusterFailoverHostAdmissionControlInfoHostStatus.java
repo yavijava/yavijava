@@ -34,7 +34,8 @@ package com.vmware.vim25;
  * @version 5.1
  */
 
-public class ArrayOfClusterFailoverHostAdmissionControlInfoHostStatus {
+public class ArrayOfClusterFailoverHostAdmissionControlInfoHostStatus implements java.io.Serializable {
+    private static final long serialVersionUID = 1L;
     public ClusterFailoverHostAdmissionControlInfoHostStatus[] ClusterFailoverHostAdmissionControlInfoHostStatus;
 
     public ClusterFailoverHostAdmissionControlInfoHostStatus[] getClusterFailoverHostAdmissionControlInfoHostStatus() {

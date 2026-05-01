@@ -34,7 +34,8 @@ package com.vmware.vim25;
  * @version 5.1
  */
 
-public class ArrayOfByte {
+public class ArrayOfByte implements java.io.Serializable {
+    private static final long serialVersionUID = 1L;
     public byte[] _byte;
 
     public byte[] get_byte() {

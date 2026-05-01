@@ -34,7 +34,8 @@ package com.vmware.vim25;
  * @version 5.1
  */
 
-public class ArrayOfExtensionClientInfo {
+public class ArrayOfExtensionClientInfo implements java.io.Serializable {
+    private static final long serialVersionUID = 1L;
     public ExtensionClientInfo[] ExtensionClientInfo;
 
     public ExtensionClientInfo[] getExtensionClientInfo() {

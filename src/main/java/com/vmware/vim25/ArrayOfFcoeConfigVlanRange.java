@@ -34,7 +34,8 @@ package com.vmware.vim25;
  * @version 5.1
  */
 
-public class ArrayOfFcoeConfigVlanRange {
+public class ArrayOfFcoeConfigVlanRange implements java.io.Serializable {
+    private static final long serialVersionUID = 1L;
     public FcoeConfigVlanRange[] FcoeConfigVlanRange;
 
     public FcoeConfigVlanRange[] getFcoeConfigVlanRange() {

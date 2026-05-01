@@ -36,7 +36,8 @@ package com.vmware.vim25;
 
 @SuppressWarnings("all")
 
-public class DynamicData {
+public class DynamicData implements java.io.Serializable {
+    private static final long serialVersionUID = 1L;
     public String dynamicType;
     public DynamicProperty[] dynamicProperty;
 

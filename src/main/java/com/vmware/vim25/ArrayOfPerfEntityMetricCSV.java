@@ -33,7 +33,8 @@ package com.vmware.vim25;
  * @author Steve Jin (sjin@vmware.com)
  */
 
-public class ArrayOfPerfEntityMetricCSV {
+public class ArrayOfPerfEntityMetricCSV implements java.io.Serializable {
+    private static final long serialVersionUID = 1L;
     public PerfEntityMetricCSV[] PerfEntityMetricCSV;
 
     public PerfEntityMetricCSV[] getPerfEntityMetricCSV() {

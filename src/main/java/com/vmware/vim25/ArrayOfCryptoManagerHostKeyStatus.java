@@ -21,7 +21,8 @@ package com.vmware.vim25;
  * @since 6.0
  */
 
-public class ArrayOfCryptoManagerHostKeyStatus {
+public class ArrayOfCryptoManagerHostKeyStatus implements java.io.Serializable {
+    private static final long serialVersionUID = 1L;
     public CryptoManagerHostKeyStatus[] CryptoManagerHostKeyStatus;
 
     public CryptoManagerHostKeyStatus[] getCryptoManagerHostKeyStatus() {

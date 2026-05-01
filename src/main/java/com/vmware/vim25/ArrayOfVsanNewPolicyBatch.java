@@ -21,7 +21,8 @@ package com.vmware.vim25;
  * @since 6.0
  */
 
-public class ArrayOfVsanNewPolicyBatch {
+public class ArrayOfVsanNewPolicyBatch implements java.io.Serializable {
+    private static final long serialVersionUID = 1L;
     public VsanNewPolicyBatch[] VsanNewPolicyBatch;
 
     public VsanNewPolicyBatch[] getVsanNewPolicyBatch() {

@@ -21,7 +21,8 @@ package com.vmware.vim25;
  * @since 6.0
  */
 
-public class ArrayOfKmipServerInfo {
+public class ArrayOfKmipServerInfo implements java.io.Serializable {
+    private static final long serialVersionUID = 1L;
     public KmipServerInfo[] KmipServerInfo;
 
     public KmipServerInfo[] getKmipServerInfo() {

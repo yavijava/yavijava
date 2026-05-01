@@ -21,7 +21,8 @@ package com.vmware.vim25;
  * @since 6.0
  */
 
-public class ArrayOfCryptoManagerKmipCryptoKeyStatus {
+public class ArrayOfCryptoManagerKmipCryptoKeyStatus implements java.io.Serializable {
+    private static final long serialVersionUID = 1L;
     public CryptoManagerKmipCryptoKeyStatus[] CryptoManagerKmipCryptoKeyStatus;
 
     public CryptoManagerKmipCryptoKeyStatus[] getCryptoManagerKmipCryptoKeyStatus() {

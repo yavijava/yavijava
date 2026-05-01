@@ -1,6 +1,7 @@
 package com.vmware.vim25;
 
-public class ArrayOfDVSOpaqueCommandResultInfo {
+public class ArrayOfDVSOpaqueCommandResultInfo implements java.io.Serializable {
+    private static final long serialVersionUID = 1L;
     public DVSOpaqueCommandResultInfo[] DVSOpaqueCommandResultInfo;
 
     public DVSOpaqueCommandResultInfo[] getDVSOpaqueCommandResultInfo() {

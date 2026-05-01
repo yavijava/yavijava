@@ -34,7 +34,8 @@ package com.vmware.vim25;
  * @version 5.1
  */
 
-public class ArrayOfHostIpConfigIpV6Address {
+public class ArrayOfHostIpConfigIpV6Address implements java.io.Serializable {
+    private static final long serialVersionUID = 1L;
     public HostIpConfigIpV6Address[] HostIpConfigIpV6Address;
 
     public HostIpConfigIpV6Address[] getHostIpConfigIpV6Address() {

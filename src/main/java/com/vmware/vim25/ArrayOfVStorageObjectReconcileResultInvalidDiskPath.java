@@ -21,7 +21,8 @@ package com.vmware.vim25;
  * @since 6.0
  */
 
-public class ArrayOfVStorageObjectReconcileResultInvalidDiskPath {
+public class ArrayOfVStorageObjectReconcileResultInvalidDiskPath implements java.io.Serializable {
+    private static final long serialVersionUID = 1L;
     public VStorageObjectReconcileResultInvalidDiskPath[] VStorageObjectReconcileResultInvalidDiskPath;
 
     public VStorageObjectReconcileResultInvalidDiskPath[] getVStorageObjectReconcileResultInvalidDiskPath() {

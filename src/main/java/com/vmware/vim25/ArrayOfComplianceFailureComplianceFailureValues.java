@@ -21,7 +21,8 @@ package com.vmware.vim25;
  * @since 6.0
  */
 
-public class ArrayOfComplianceFailureComplianceFailureValues {
+public class ArrayOfComplianceFailureComplianceFailureValues implements java.io.Serializable {
+    private static final long serialVersionUID = 1L;
     public ComplianceFailureComplianceFailureValues[] ComplianceFailureComplianceFailureValues;
 
     public ComplianceFailureComplianceFailureValues[] getComplianceFailureComplianceFailureValues() {

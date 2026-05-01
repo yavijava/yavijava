@@ -21,7 +21,8 @@ package com.vmware.vim25;
  * @since 6.0
  */
 
-public class ArrayOfGuestRegKeyRecordSpec {
+public class ArrayOfGuestRegKeyRecordSpec implements java.io.Serializable {
+    private static final long serialVersionUID = 1L;
     public GuestRegKeyRecordSpec[] GuestRegKeyRecordSpec;
 
     public GuestRegKeyRecordSpec[] getGuestRegKeyRecordSpec() {

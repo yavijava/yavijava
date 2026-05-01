@@ -21,7 +21,8 @@ package com.vmware.vim25;
  * @since 6.0
  */
 
-public class ArrayOfVASAStorageArrayDiscoverySvcInfo {
+public class ArrayOfVASAStorageArrayDiscoverySvcInfo implements java.io.Serializable {
+    private static final long serialVersionUID = 1L;
     public VASAStorageArrayDiscoverySvcInfo[] VASAStorageArrayDiscoverySvcInfo;
 
     public VASAStorageArrayDiscoverySvcInfo[] getVASAStorageArrayDiscoverySvcInfo() {

@@ -34,7 +34,8 @@ package com.vmware.vim25;
  * @version 5.1
  */
 
-public class ArrayOfProfilePropertyPath {
+public class ArrayOfProfilePropertyPath implements java.io.Serializable {
+    private static final long serialVersionUID = 1L;
     public ProfilePropertyPath[] ProfilePropertyPath;
 
     public ProfilePropertyPath[] getProfilePropertyPath() {
