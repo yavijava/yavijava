@@ -26,7 +26,11 @@ public enum SoapAction {
     SOAP_ACTION_V51("urn:vim25/5.1"),
     SOAP_ACTION_V55("urn:vim25/5.5"),
     SOAP_ACTION_V60("urn:vim25/6.0"),
-    SOAP_ACTION_V65("urn:vim25/6.5");
+    SOAP_ACTION_V65("urn:vim25/6.5"),
+    SOAP_ACTION_V67("urn:vim25/6.7"),
+    SOAP_ACTION_V70("urn:vim25/7.0"),
+    SOAP_ACTION_V80("urn:vim25/8.0"),
+    SOAP_ACTION_V90("urn:vim25/9.0");
 
     private final String value;
 

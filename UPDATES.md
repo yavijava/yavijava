@@ -148,6 +148,23 @@ The vSphere 6.5 API surface has been merged in. The default SOAP action for **un
 
 ---
 
+### SOAP Action Negotiation Now Recognizes vSphere 6.7 / 7.0 / 8.0 / 9.0
+
+`setSoapActionOnApiVersion()` previously had explicit cases only through 6.5 — anything newer fell through to the 6.5 default. When connected to a vCenter 7.x/8.x/9.x, this caused the server to negotiate at the 6.5 protocol level, which silently returned a 6.5-era subset of `ServiceContent` and `HostConfigManager` (no `tenantManager`, `siteInfoManager`, `storageQueryManager`, `directPathProfileManager`, `guestCustomizationManager`, `assignableHardwareManager`, `nvdimmSystem`, etc.). Calls would compile and not error — fields would just come back `null`.
+
+**What changed:**
+
+- New enum constants: `SOAP_ACTION_V67`, `SOAP_ACTION_V70`, `SOAP_ACTION_V80`, `SOAP_ACTION_V90`.
+- `setSoapActionOnApiVersion()` now normalizes the four-part `apiVersion` string that 7.0+ servers report (e.g. `9.0.0.0` → matched as `9.0`) before looking up the SOAP action.
+- The default SOAP action for **unknown future API versions** is now `urn:vim25/9.0` (was `urn:vim25/6.5`).
+
+**What to check:**
+
+- If you talked to a vSphere 7.x/8.x/9.x server before and saw fields you expected to be populated coming back `null`, this fix likely resolves them. Re-test inventory walks and `ServiceContent` consumers.
+- If you explicitly want the old behavior (negotiate at 6.5), call `getWsc().setSoapActionOnApiVersion("6.5")` after connection setup.
+
+---
+
 ## Bug Fixes
 
 ### `CacheInstance.getCopy(ManagedObjectReference, String)` — Infinite Recursion

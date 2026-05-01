@@ -20,6 +20,10 @@ public class SoapActionTest {
         assertEquals("urn:vim25/5.5", SoapAction.SOAP_ACTION_V55.toString());
         assertEquals("urn:vim25/6.0", SoapAction.SOAP_ACTION_V60.toString());
         assertEquals("urn:vim25/6.5", SoapAction.SOAP_ACTION_V65.toString());
+        assertEquals("urn:vim25/6.7", SoapAction.SOAP_ACTION_V67.toString());
+        assertEquals("urn:vim25/7.0", SoapAction.SOAP_ACTION_V70.toString());
+        assertEquals("urn:vim25/8.0", SoapAction.SOAP_ACTION_V80.toString());
+        assertEquals("urn:vim25/9.0", SoapAction.SOAP_ACTION_V90.toString());
     }
 
     @Test
@@ -39,6 +43,6 @@ public class SoapActionTest {
 
     @Test
     public void allEnumConstants_arePresent() {
-        assertEquals(8, SoapAction.values().length);
+        assertEquals(12, SoapAction.values().length);
     }
 }
