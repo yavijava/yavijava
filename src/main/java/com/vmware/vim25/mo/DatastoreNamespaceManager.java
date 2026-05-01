@@ -1,59 +1,41 @@
-/*================================================================================
-Copyright (c) 2013 Steve Jin. All Rights Reserved.
-
-Redistribution and use in source and binary forms, with or without modification, 
-are permitted provided that the following conditions are met:
-
-* Redistributions of source code must retain the above copyright notice, 
-this list of conditions and the following disclaimer.
-
-* Redistributions in binary form must reproduce the above copyright notice, 
-this list of conditions and the following disclaimer in the documentation 
-and/or other materials provided with the distribution.
-
-* Neither the name of VMware, Inc. nor the names of its contributors may be used
-to endorse or promote products derived from this software without specific prior 
-written permission.
-
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
-ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED 
-WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. 
-IN NO EVENT SHALL VMWARE, INC. OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, 
-INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT 
-LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR 
-PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, 
-WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) 
-ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE 
-POSSIBILITY OF SUCH DAMAGE.
-================================================================================*/
-
+// auto generated using yavijava_generator
 package com.vmware.vim25.mo;
 
 import com.vmware.vim25.*;
-
+import com.vmware.vim25.mo.util.MorUtil;
 import java.rmi.RemoteException;
 
-/**
- * The managed object class corresponding to the one defined in VI SDK API reference.
- *
- * @author Steve JIN (http://www.doublecloud.org)
- * @since SDK5.5
- */
+/* ===== BEGIN custom imports (preserved by regenerator) ===== */
+/* ===== END custom imports ===== */
 
 public class DatastoreNamespaceManager extends ManagedObject {
+
     public DatastoreNamespaceManager(ServerConnection serverConnection, ManagedObjectReference mor) {
         super(serverConnection, mor);
     }
 
+    public String convertNamespacePathToUuidPath(Datacenter datacenter, String namespaceUrl) throws InvalidDatastore, InvalidDatastorePath, RuntimeFault, RemoteException {
+        return getVimService().convertNamespacePathToUuidPath(getMOR(), datacenter == null ? null : datacenter.getMOR(), namespaceUrl);
+    }
+
+    public void deleteDirectory(Datacenter datacenter, String datastorePath) throws FileFault, FileNotFound, InvalidDatastore, InvalidDatastorePath, RuntimeFault, RemoteException {
+        getVimService().deleteDirectory(getMOR(), datacenter == null ? null : datacenter.getMOR(), datastorePath);
+    }
+
+    public void increaseDirectorySize(Datacenter datacenter, String stableName, long size) throws FileFault, FileNotFound, InvalidArgument, InvalidDatastore, NotSupported, RuntimeFault, RemoteException {
+        getVimService().increaseDirectorySize(getMOR(), datacenter == null ? null : datacenter.getMOR(), stableName, size);
+    }
+
+    public DatastoreNamespaceManagerDirectoryInfo queryDirectoryInfo(Datacenter datacenter, String stableName) throws FileFault, FileNotFound, InvalidDatastore, NotSupported, RuntimeFault, RemoteException {
+        return getVimService().queryDirectoryInfo(getMOR(), datacenter == null ? null : datacenter.getMOR(), stableName);
+    }
+
+    /* ===== BEGIN custom (preserved by regenerator) ===== */
     public String createDirectory(Datastore datastore, String displayName, String policy) throws CannotCreateFile, FileAlreadyExists, InvalidDatastore, RuntimeFault, RemoteException {
-        return createDirectory(datastore, displayName, policy, 0L);
-    }
-
+    return createDirectory(datastore, displayName, policy, 0L);
+}
     public String createDirectory(Datastore datastore, String displayName, String policy, long size) throws CannotCreateFile, FileAlreadyExists, InvalidDatastore, RuntimeFault, RemoteException {
-        return getVimService().createDirectory(this.getMOR(), datastore.getMOR(), displayName, policy, size);
-    }
-
-    public void deleteDirectory(Datacenter datacenter, String datastorePath) throws FileNotFound, InvalidDatastorePath, FileFault, InvalidDatastore, RuntimeFault, RemoteException {
-        getVimService().deleteDirectory(this.getMOR(), datacenter == null ? null : datacenter.getMOR(), datastorePath);
-    }
+    return getVimService().createDirectory(this.getMOR(), datastore.getMOR(), displayName, policy, size);
+}
+    /* ===== END custom ===== */
 }

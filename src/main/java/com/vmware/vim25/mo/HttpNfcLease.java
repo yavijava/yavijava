@@ -1,80 +1,77 @@
-/*================================================================================
-Copyright (c) 2008 VMware, Inc. All Rights Reserved.
-
-Redistribution and use in source and binary forms, with or without modification, 
-are permitted provided that the following conditions are met:
-
-* Redistributions of source code must retain the above copyright notice, 
-this list of conditions and the following disclaimer.
-
-* Redistributions in binary form must reproduce the above copyright notice, 
-this list of conditions and the following disclaimer in the documentation 
-and/or other materials provided with the distribution.
-
-* Neither the name of VMware, Inc. nor the names of its contributors may be used
-to endorse or promote products derived from this software without specific prior 
-written permission.
-
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
-ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED 
-WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. 
-IN NO EVENT SHALL VMWARE, INC. OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, 
-INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT 
-LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR 
-PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, 
-WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) 
-ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE 
-POSSIBILITY OF SUCH DAMAGE.
-================================================================================*/
+// auto generated using yavijava_generator
 package com.vmware.vim25.mo;
 
 import com.vmware.vim25.*;
-
+import com.vmware.vim25.mo.util.MorUtil;
 import java.rmi.RemoteException;
 
-/**
- * The managed object class corresponding to the one defined in VI SDK API reference.
- *
- * @author Steve JIN (http://www.doublecloud.org)
- * @since 4.0
- */
+/* ===== BEGIN custom imports (preserved by regenerator) ===== */
+/* ===== END custom imports ===== */
+
 public class HttpNfcLease extends ManagedObject {
-    public HttpNfcLease(ServerConnection sc, ManagedObjectReference mor) {
-        super(sc, mor);
+
+    public HttpNfcLease(ServerConnection serverConnection, ManagedObjectReference mor) {
+        super(serverConnection, mor);
     }
 
-    public LocalizedMethodFault getError() {
-        return (LocalizedMethodFault) getCurrentProperty("error");
+    public HttpNfcLeaseCapabilities getCapabilities() {
+        return (HttpNfcLeaseCapabilities) getCurrentProperty("capabilities");
+    }
+
+    public MethodFault getError() {
+        return (MethodFault) getCurrentProperty("error");
     }
 
     public HttpNfcLeaseInfo getInfo() {
         return (HttpNfcLeaseInfo) getCurrentProperty("info");
     }
 
-    public int getInitializeProgress() {
-        return ((Integer) getCurrentProperty("initializeProgress")).intValue();
+    public String getMode() {
+        return (String) getCurrentProperty("mode");
     }
 
     public HttpNfcLeaseState getState() {
         return (HttpNfcLeaseState) getCurrentProperty("state");
     }
 
-    public void httpNfcLeaseAbort(LocalizedMethodFault fault) throws Timedout, InvalidState, RuntimeFault, RemoteException {
+    public int getTransferProgress() {
+        return (int) getCurrentProperty("transferProgress");
+    }
+
+    public void httpNfcLeaseAbort(LocalizedMethodFault fault) throws InvalidState, Timedout, RuntimeFault, RemoteException {
         getVimService().httpNfcLeaseAbort(getMOR(), fault);
     }
 
-    public void httpNfcLeaseComplete() throws Timedout, InvalidState, RuntimeFault, RemoteException {
+    public void httpNfcLeaseComplete() throws InvalidState, Timedout, RuntimeFault, RemoteException {
         getVimService().httpNfcLeaseComplete(getMOR());
     }
 
-    /**
-     * @since SDK4.1
-     */
-    public HttpNfcLeaseManifestEntry[] httpNfcLeaseGetManifest() throws Timedout, InvalidState, RuntimeFault, RemoteException {
-        return getVimService().httpNfcLeaseGetManifest(getMOR());
+    public HttpNfcLeaseProbeResult[] httpNfcLeaseProbeUrls(HttpNfcLeaseSourceFile[] files, int timeout) throws InvalidState, RuntimeFault, RemoteException {
+        return getVimService().httpNfcLeaseProbeUrls(getMOR(), files, timeout);
     }
 
     public void httpNfcLeaseProgress(int percent) throws Timedout, RuntimeFault, RemoteException {
         getVimService().httpNfcLeaseProgress(getMOR(), percent);
     }
+
+    public Task httpNfcLeasePullFromUrls_Task(HttpNfcLeaseSourceFile[] files) throws HttpFault, InvalidState, SSLVerifyFault, RuntimeFault, RemoteException {
+        ManagedObjectReference resultMor = getVimService().httpNfcLeasePullFromUrls_Task(getMOR(), files);
+        return new Task(getServerConnection(), resultMor);
+    }
+
+    public void httpNfcLeaseSetManifestChecksumType(KeyValue[] deviceUrlsToChecksumTypes) throws InvalidState, RuntimeFault, RemoteException {
+        getVimService().httpNfcLeaseSetManifestChecksumType(getMOR(), deviceUrlsToChecksumTypes);
+    }
+
+    /* ===== BEGIN custom (preserved by regenerator) ===== */
+    public int getInitializeProgress() {
+    return ((Integer) getCurrentProperty("initializeProgress")).intValue();
+}
+    /**
+ * @since SDK4.1
+ */
+public HttpNfcLeaseManifestEntry[] httpNfcLeaseGetManifest() throws Timedout, InvalidState, RuntimeFault, RemoteException {
+    return getVimService().httpNfcLeaseGetManifest(getMOR());
+}
+    /* ===== END custom ===== */
 }

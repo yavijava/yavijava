@@ -1,43 +1,12 @@
-/*================================================================================
-Copyright (c) 2008 VMware, Inc. All Rights Reserved.
-
-Redistribution and use in source and binary forms, with or without modification, 
-are permitted provided that the following conditions are met:
-
-* Redistributions of source code must retain the above copyright notice, 
-this list of conditions and the following disclaimer.
-
-* Redistributions in binary form must reproduce the above copyright notice, 
-this list of conditions and the following disclaimer in the documentation 
-and/or other materials provided with the distribution.
-
-* Neither the name of VMware, Inc. nor the names of its contributors may be used
-to endorse or promote products derived from this software without specific prior 
-written permission.
-
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
-ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED 
-WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. 
-IN NO EVENT SHALL VMWARE, INC. OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, 
-INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT 
-LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR 
-PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, 
-WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) 
-ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE 
-POSSIBILITY OF SUCH DAMAGE.
-================================================================================*/
-
+// auto generated using yavijava_generator
 package com.vmware.vim25.mo;
 
 import com.vmware.vim25.*;
-
+import com.vmware.vim25.mo.util.MorUtil;
 import java.rmi.RemoteException;
 
-/**
- * The managed object class corresponding to the one defined in VI SDK API reference.
- *
- * @author Steve JIN (http://www.doublecloud.org), Lu Yu (lyu@vmware.com)
- */
+/* ===== BEGIN custom imports (preserved by regenerator) ===== */
+/* ===== END custom imports ===== */
 
 public class HostNetworkSystem extends ExtensibleManagedObject {
 
@@ -73,35 +42,23 @@ public class HostNetworkSystem extends ExtensibleManagedObject {
         return (HostNetOffloadCapabilities) getCurrentProperty("offloadCapabilities");
     }
 
-    public void addPortGroup(HostPortGroupSpec portgrp) throws HostConfigFault, AlreadyExists, NotFound, RuntimeFault, RemoteException {
+    public void addPortGroup(HostPortGroupSpec portgrp) throws AlreadyExists, HostConfigFault, NotFound, RuntimeFault, RemoteException {
         getVimService().addPortGroup(getMOR(), portgrp);
     }
 
-    public String addServiceConsoleVirtualNic(String portgroup, HostVirtualNicSpec spec) throws HostConfigFault, RuntimeFault, RemoteException {
-        return getVimService().addServiceConsoleVirtualNic(getMOR(), portgroup, spec);
-    }
-
-    public String addVirtualNic(String portgroup, HostVirtualNicSpec nicSpec) throws HostConfigFault, AlreadyExists, RuntimeFault, RemoteException {
-        return getVimService().addVirtualNic(getMOR(), portgroup, nicSpec);
-    }
-
-    public void addVirtualSwitch(String vswitchName, HostVirtualSwitchSpec spec) throws HostConfigFault, ResourceInUse, AlreadyExists, RuntimeFault, RemoteException {
+    public void addVirtualSwitch(String vswitchName, HostVirtualSwitchSpec spec) throws AlreadyExists, HostConfigFault, ResourceInUse, RuntimeFault, RemoteException {
         getVimService().addVirtualSwitch(getMOR(), vswitchName, spec);
     }
 
-    public PhysicalNicHintInfo[] queryNetworkHint(String[] devices) throws HostConfigFault, NotFound, RuntimeFault, RemoteException {
-        return getVimService().queryNetworkHint(getMOR(), devices);
+    public void refresh() throws RuntimeFault, RemoteException {
+        getVimService().refresh(getMOR());
     }
 
-    public void refreshNetworkSystem() throws RuntimeFault, RemoteException {
-        getVimService().refreshNetworkSystem(getMOR());
-    }
-
-    public void removePortGroup(String pgName) throws HostConfigFault, ResourceInUse, NotFound, RuntimeFault, RemoteException {
+    public void removePortGroup(String pgName) throws HostConfigFault, NotFound, ResourceInUse, RuntimeFault, RemoteException {
         getVimService().removePortGroup(getMOR(), pgName);
     }
 
-    public void removeServiceConsoleVirtualNic(String device) throws HostConfigFault, ResourceInUse, NotFound, RuntimeFault, RemoteException {
+    public void removeServiceConsoleVirtualNic(String device) throws HostConfigFault, NotFound, ResourceInUse, RuntimeFault, RemoteException {
         getVimService().removeServiceConsoleVirtualNic(getMOR(), device);
     }
 
@@ -109,12 +66,16 @@ public class HostNetworkSystem extends ExtensibleManagedObject {
         getVimService().removeVirtualNic(getMOR(), device);
     }
 
-    public void removeVirtualSwitch(String vswitchName) throws HostConfigFault, ResourceInUse, NotFound, RuntimeFault, RemoteException {
+    public void removeVirtualSwitch(String vswitchName) throws HostConfigFault, NotFound, ResourceInUse, RuntimeFault, RemoteException {
         getVimService().removeVirtualSwitch(getMOR(), vswitchName);
     }
 
     public void restartServiceConsoleVirtualNic(String device) throws HostConfigFault, NotFound, RuntimeFault, RemoteException {
         getVimService().restartServiceConsoleVirtualNic(getMOR(), device);
+    }
+
+    public void startDpuFailover(String dvsName, String targetDpuAlias) throws InvalidArgument, RuntimeFault, RemoteException {
+        getVimService().startDpuFailover(getMOR(), dvsName, targetDpuAlias);
     }
 
     public void updateConsoleIpRouteConfig(HostIpRouteConfig config) throws HostConfigFault, RuntimeFault, RemoteException {
@@ -125,7 +86,7 @@ public class HostNetworkSystem extends ExtensibleManagedObject {
         getVimService().updateDnsConfig(getMOR(), config);
     }
 
-    public void updateIpRouteConfig(HostIpRouteConfig config) throws HostConfigFault, RuntimeFault, RemoteException {
+    public void updateIpRouteConfig(HostIpRouteConfig config) throws HostConfigFault, InvalidState, RuntimeFault, RemoteException {
         getVimService().updateIpRouteConfig(getMOR(), config);
     }
 
@@ -133,28 +94,42 @@ public class HostNetworkSystem extends ExtensibleManagedObject {
         getVimService().updateIpRouteTableConfig(getMOR(), config);
     }
 
-    public void updateNetworkConfig(HostNetworkConfig config, String changeMode) throws HostConfigFault, AlreadyExists, NotFound, RuntimeFault, RemoteException {
-        getVimService().updateNetworkConfig(getMOR(), config, changeMode);
+    public HostNetworkConfigResult updateNetworkConfig(HostNetworkConfig config, String changeMode) throws AlreadyExists, HostConfigFault, NotFound, ResourceInUse, RuntimeFault, RemoteException {
+        return getVimService().updateNetworkConfig(getMOR(), config, changeMode);
     }
 
     public void updatePhysicalNicLinkSpeed(String device, PhysicalNicLinkInfo linkSpeed) throws HostConfigFault, NotFound, RuntimeFault, RemoteException {
         getVimService().updatePhysicalNicLinkSpeed(getMOR(), device, linkSpeed);
     }
 
-    public void updatePortGroup(String pgName, HostPortGroupSpec portgrp) throws HostConfigFault, NotFound, RuntimeFault, RemoteException {
+    public void updatePortGroup(String pgName, HostPortGroupSpec portgrp) throws AlreadyExists, HostConfigFault, NotFound, RuntimeFault, RemoteException {
         getVimService().updatePortGroup(getMOR(), pgName, portgrp);
     }
 
-    public void updateServiceConsoleVirtualNic(String device, HostVirtualNicSpec nic) throws HostConfigFault, ResourceInUse, NotFound, RuntimeFault, RemoteException {
+    public void updateServiceConsoleVirtualNic(String device, HostVirtualNicSpec nic) throws HostConfigFault, NotFound, ResourceInUse, RuntimeFault, RemoteException {
         getVimService().updateServiceConsoleVirtualNic(getMOR(), device, nic);
     }
 
-    public void updateVirtualNic(String device, HostVirtualNicSpec nic) throws HostConfigFault, NotFound, RuntimeFault, RemoteException {
+    public void updateVirtualNic(String device, HostVirtualNicSpec nic) throws HostConfigFault, InvalidState, NotFound, RuntimeFault, RemoteException {
         getVimService().updateVirtualNic(getMOR(), device, nic);
     }
 
-    public void updateVirtualSwitch(String vswitchName, HostVirtualSwitchSpec spec) throws HostConfigFault, ResourceInUse, NotFound, RuntimeFault, RemoteException {
+    public void updateVirtualSwitch(String vswitchName, HostVirtualSwitchSpec spec) throws HostConfigFault, NotFound, ResourceInUse, RuntimeFault, RemoteException {
         getVimService().updateVirtualSwitch(getMOR(), vswitchName, spec);
     }
 
+    /* ===== BEGIN custom (preserved by regenerator) ===== */
+    public void refreshNetworkSystem() throws RuntimeFault, RemoteException {
+        getVimService().refreshNetworkSystem(getMOR());
+    }
+    public String addServiceConsoleVirtualNic(String portgroup, HostVirtualNicSpec spec) throws HostConfigFault, RuntimeFault, RemoteException {
+    return getVimService().addServiceConsoleVirtualNic(getMOR(), portgroup, spec);
+}
+    public String addVirtualNic(String portgroup, HostVirtualNicSpec nicSpec) throws HostConfigFault, AlreadyExists, RuntimeFault, RemoteException {
+    return getVimService().addVirtualNic(getMOR(), portgroup, nicSpec);
+}
+    public PhysicalNicHintInfo[] queryNetworkHint(String[] devices) throws HostConfigFault, NotFound, RuntimeFault, RemoteException {
+    return getVimService().queryNetworkHint(getMOR(), devices);
+}
+    /* ===== END custom ===== */
 }
