@@ -38,7 +38,9 @@ import org.slf4j.LoggerFactory;
 import java.lang.reflect.Array;
 import java.lang.reflect.Constructor;
 import java.rmi.RemoteException;
+import java.util.HashMap;
 import java.util.Hashtable;
+import java.util.Map;
 
 /**
  * This class is intended to provide a wrapper around a managed object class.
@@ -70,6 +72,14 @@ abstract public class ManagedObject {
      * holds the ExtensionManager managed object reference
      */
     private ManagedObjectReference mor = null;
+
+    /**
+     * Optional cache of property values, populated by callers who pre-fetched a known set of
+     * properties (for example via {@link InventoryNavigator#searchManagedEntitiesWithProperties}).
+     * Null until the first {@link #setCachedProperty} call to keep the per-instance footprint at
+     * zero for callers that don't use the cache. Read by {@link #getCurrentProperty(String)}.
+     */
+    private Map<String, Object> cachedProperties = null;
 
     protected ManagedObject() {
     }
@@ -164,7 +174,27 @@ abstract public class ManagedObject {
      * ManagedObjectReference objects are data objects!!!
      */
 
+    /**
+     * Pre-populate this object's property cache with a value the caller already fetched
+     * (for example, from an InventoryNavigator bulk read). A subsequent
+     * {@link #getCurrentProperty(String)} for the same name returns the cached value
+     * without contacting the server.
+     *
+     * The cache is opt-in: callers who never call this method incur no overhead and
+     * see the original always-round-trip behavior. Cached values do not expire — long-lived
+     * entities will return stale data if the underlying property changes on the server.
+     */
+    public void setCachedProperty(String propertyName, Object value) {
+        if (cachedProperties == null) {
+            cachedProperties = new HashMap<String, Object>();
+        }
+        cachedProperties.put(propertyName, value);
+    }
+
     protected Object getCurrentProperty(String propertyName) {
+        if (cachedProperties != null && cachedProperties.containsKey(propertyName)) {
+            return cachedProperties.get(propertyName);
+        }
         ObjectContent objContent = retrieveObjectProperties(new String[]{propertyName});
 
         Object propertyValue = null;
