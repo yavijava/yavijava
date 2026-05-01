@@ -27,6 +27,24 @@ public class TrustAllSSL {
     private static boolean alreadyCreated = false;
     private static SSLContext sslContext;
 
+    private static final HostnameVerifier TRUST_ALL_HOSTNAME_VERIFIER = new HostnameVerifier() {
+        public boolean verify(String urlHostName, SSLSession session) {
+            return true;
+        }
+    };
+
+    /**
+     * Returns a {@link HostnameVerifier} that accepts any hostname. Used by {@code WSClient}
+     * to disable hostname verification on each per-connection {@code HttpsURLConnection} when
+     * the caller opted into ignoring certificates. This is a per-connection setting; relying on
+     * {@link HttpsURLConnection#setDefaultHostnameVerifier(HostnameVerifier)} alone has timing
+     * pitfalls (issue #115: connections via IP rejected because the captured default fired
+     * before the trust-all default was installed).
+     */
+    public static HostnameVerifier getTrustAllHostnameVerifier() {
+        return TRUST_ALL_HOSTNAME_VERIFIER;
+    }
+
     public static synchronized SSLContext getTrustContext() throws RemoteException {
         try {
             if (getAlreadyCreated()) {
