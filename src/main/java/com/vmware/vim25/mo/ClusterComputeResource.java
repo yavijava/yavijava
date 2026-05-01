@@ -1,74 +1,38 @@
 // auto generated using yavijava_generator
-/*================================================================================
-Copyright (c) 2008 VMware, Inc. All Rights Reserved.
-
-Redistribution and use in source and binary forms, with or without modification, 
-are permitted provided that the following conditions are met:
-
-* Redistributions of source code must retain the above copyright notice, 
-this list of conditions and the following disclaimer.
-
-* Redistributions in binary form must reproduce the above copyright notice, 
-this list of conditions and the following disclaimer in the documentation 
-and/or other materials provided with the distribution.
-
-* Neither the name of VMware, Inc. nor the names of its contributors may be used
-to endorse or promote products derived from this software without specific prior 
-written permission.
-
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
-ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED 
-WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. 
-IN NO EVENT SHALL VMWARE, INC. OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, 
-INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT 
-LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR 
-PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, 
-WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) 
-ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE 
-POSSIBILITY OF SUCH DAMAGE.
-================================================================================*/
 package com.vmware.vim25.mo;
+
+import com.vmware.vim25.*;
+import com.vmware.vim25.mo.util.MorUtil;
+import java.rmi.RemoteException;
 
 /* ===== BEGIN custom imports (preserved by regenerator) ===== */
 import com.vmware.vim25.mo.util.MorUtil;
 /* ===== END custom imports ===== */
 
-
-import com.vmware.vim25.*;
-import java.rmi.RemoteException;
-import java.util.Calendar;
-
-/**
- * The managed object class corresponding to the one defined in VI SDK API reference.
- *
- * @author Steve JIN (http://www.doublecloud.org)
- */
 public class ClusterComputeResource extends ComputeResource {
 
-    public ClusterComputeResource(ServerConnection sc, ManagedObjectReference mor) {
-        super(sc, mor);
+    public ClusterComputeResource(ServerConnection serverConnection, ManagedObjectReference mor) {
+        super(serverConnection, mor);
     }
 
     public ClusterActionHistory[] getActionHistory() {
-        return (ClusterActionHistory[]) this.getCurrentProperty("actionHistory");
+        return (ClusterActionHistory[]) getCurrentProperty("actionHistory");
     }
 
-    /*
-     * @deprecated
-     */
     public ClusterConfigInfo getConfiguration() {
         return (ClusterConfigInfo) getCurrentProperty("configuration");
     }
 
-    /**
-     * @since 4.0
-     */
     public ClusterDrsFaults[] getDrsFault() {
         return (ClusterDrsFaults[]) getCurrentProperty("drsFault");
     }
 
     public ClusterDrsRecommendation[] getDrsRecommendation() {
         return (ClusterDrsRecommendation[]) getCurrentProperty("drsRecommendation");
+    }
+
+    public ClusterComputeResourceHCIConfigInfo getHciConfig() {
+        return (ClusterComputeResourceHCIConfigInfo) getCurrentProperty("hciConfig");
     }
 
     public ClusterDrsMigration[] getMigrationHistory() {
@@ -79,58 +43,78 @@ public class ClusterComputeResource extends ComputeResource {
         return (ClusterRecommendation[]) getCurrentProperty("recommendation");
     }
 
-    // new SDK 4.0 signature
-    public Task addHost_Task(HostConnectSpec spec, boolean asConnected, ResourcePool resourcePool, String license) throws InvalidLogin, HostConnectFault, RuntimeFault, RemoteException {
-        ManagedObjectReference taskMOR = getVimService().addHost_Task(getMOR(), spec, asConnected, resourcePool == null ? null : resourcePool.getMOR(), license);
-        return new Task(getServerConnection(), taskMOR);
+    public ClusterComputeResourceSummary getSummaryEx() {
+        return (ClusterComputeResourceSummary) getCurrentProperty("summaryEx");
+    }
+
+    public void abandonHciWorkflow() throws InvalidState, RuntimeFault, RemoteException {
+        getVimService().abandonHciWorkflow(getMOR());
+    }
+
+    public Task addHost_Task(HostConnectSpec spec, boolean asConnected, ResourcePool resourcePool, String license) throws DuplicateName, HostConnectFault, InvalidLogin, RuntimeFault, RemoteException {
+        ManagedObjectReference resultMor = getVimService().addHost_Task(getMOR(), spec, asConnected, resourcePool == null ? null : resourcePool.getMOR(), license);
+        return new Task(getServerConnection(), resultMor);
     }
 
     public void applyRecommendation(String key) throws RuntimeFault, RemoteException {
         getVimService().applyRecommendation(getMOR(), key);
     }
 
-    /**
-     * @since SDK4.1
-     */
     public void cancelRecommendation(String key) throws RuntimeFault, RemoteException {
         getVimService().cancelRecommendation(getMOR(), key);
     }
 
+    public Task configureHCI_Task(ClusterComputeResourceHCIConfigSpec clusterSpec, ClusterComputeResourceHostConfigurationInput[] hostInputs) throws RuntimeFault, RemoteException {
+        ManagedObjectReference resultMor = getVimService().configureHCI_Task(getMOR(), clusterSpec, hostInputs);
+        return new Task(getServerConnection(), resultMor);
+    }
+
+    public ClusterEnterMaintenanceResult clusterEnterMaintenanceMode(HostSystem[] host, OptionValue[] option, ClusterComputeResourceMaintenanceInfo info) throws RuntimeFault, RemoteException {
+        return getVimService().clusterEnterMaintenanceMode(getMOR(), host == null ? null : MorUtil.createMORs(host), option, info);
+    }
+
+    public ClusterEVCManager evcManager() throws RuntimeFault, RemoteException {
+        ManagedObjectReference resultMor = getVimService().evcManager(getMOR());
+        return new ClusterEVCManager(getServerConnection(), resultMor);
+    }
+
+    public Task extendHCI_Task(ClusterComputeResourceHostConfigurationInput[] hostInputs, SDDCBase vSanConfigSpec) throws RuntimeFault, RemoteException {
+        ManagedObjectReference resultMor = getVimService().extendHCI_Task(getMOR(), hostInputs, vSanConfigSpec);
+        return new Task(getServerConnection(), resultMor);
+    }
+
+    public Datastore[] getSystemVMsRestrictedDatastores() throws RuntimeFault, RemoteException {
+        ManagedObjectReference[] mors = getVimService().getSystemVMsRestrictedDatastores(getMOR());
+        if (mors == null) return new Datastore[0];
+        Datastore[] ds = new Datastore[mors.length];
+        for (int i = 0; i < mors.length; i++) {
+            ds[i] = new Datastore(getServerConnection(), mors[i]);
+        }
+        return ds;
+    }
+
     public Task reconfigureCluster_Task(ClusterConfigSpec spec, boolean modify) throws RuntimeFault, RemoteException {
-        ManagedObjectReference taskMOR = getVimService().reconfigureCluster_Task(getMOR(), spec, modify);
-        return new Task(getServerConnection(), taskMOR);
+        ManagedObjectReference resultMor = getVimService().reconfigureCluster_Task(getMOR(), spec, modify);
+        return new Task(getServerConnection(), resultMor);
     }
 
     public void refreshRecommendation() throws RuntimeFault, RemoteException {
         getVimService().refreshRecommendation(getMOR());
     }
 
-    /**
-     * Returns A managed object that controls Enhanced vMotion Compatibility mode for this cluster.
-     *
-     * @return EvcManager
-     * @throws RuntimeFault
-     * @throws RemoteException
-     * @since 6.0
-     */
-    public ClusterEVCManager evcManager() throws RuntimeFault, RemoteException {
-        ManagedObjectReference cevcmgrMor = getVimService().evcManager(getMOR());
-        return new ClusterEVCManager(getServerConnection(), cevcmgrMor);
+    public void setCryptoMode(String cryptoMode, ClusterComputeResourceCryptoModePolicy policy) throws InvalidArgument, InvalidRequest, RuntimeFault, RemoteException {
+        getVimService().setCryptoMode(getMOR(), cryptoMode, policy);
     }
 
-    /**
-     * Stamp all rules in the cluster with ruleUuid. If a rule has ruleUuid field set, and it has a value, leave it
-     * untouched. If rule's ruleUuid field is unset, generate a UUID and stamp the rule.
-     *
-     * @return Task
-     * @throws RuntimeFault
-     * @throws RemoteException
-     * @since 6.0
-     */
     public Task stampAllRulesWithUuid_Task() throws RuntimeFault, RemoteException {
-        ManagedObjectReference taskMor = getVimService().stampAllRulesWithUuid_Task(getMOR());
-        return new Task(getServerConnection(), taskMor);
+        ManagedObjectReference resultMor = getVimService().stampAllRulesWithUuid_Task(getMOR());
+        return new Task(getServerConnection(), resultMor);
     }
+
+    public ClusterComputeResourceValidationResultBase[] validateHCIConfiguration(ClusterComputeResourceHCIConfigSpec hciConfigSpec, HostSystem[] hosts) throws InvalidState, RuntimeFault, RemoteException {
+        return getVimService().validateHCIConfiguration(getMOR(), hciConfigSpec, hosts == null ? null : MorUtil.createMORs(hosts));
+    }
+
     /* ===== BEGIN custom (preserved by regenerator) ===== */
     // SDK 2.5 signature for back compatibility
 public Task addHost_Task(HostConnectSpec spec, boolean asConnected, ResourcePool resourcePool) throws InvalidLogin, HostConnectFault, RuntimeFault, RemoteException {

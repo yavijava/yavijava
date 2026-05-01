@@ -1,33 +1,10 @@
 // auto generated using yavijava_generator
-/*================================================================================
-Copyright (c) 2008 VMware, Inc. All Rights Reserved.
-
-Redistribution and use in source and binary forms, with or without modification, 
-are permitted provided that the following conditions are met:
-
-* Redistributions of source code must retain the above copyright notice, 
-this list of conditions and the following disclaimer.
-
-* Redistributions in binary form must reproduce the above copyright notice, 
-this list of conditions and the following disclaimer in the documentation 
-and/or other materials provided with the distribution.
-
-* Neither the name of VMware, Inc. nor the names of its contributors may be used
-to endorse or promote products derived from this software without specific prior 
-written permission.
-
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
-ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED 
-WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. 
-IN NO EVENT SHALL VMWARE, INC. OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, 
-INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT 
-LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR 
-PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, 
-WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) 
-ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE 
-POSSIBILITY OF SUCH DAMAGE.
-================================================================================*/
 package com.vmware.vim25.mo;
+
+import com.vmware.vim25.*;
+import com.vmware.vim25.mo.util.MorUtil;
+import java.rmi.RemoteException;
+import java.util.Calendar;
 
 /* ===== BEGIN custom imports (preserved by regenerator) ===== */
 import com.vmware.vim25.mo.util.MorUtil;
@@ -39,34 +16,24 @@ import java.net.MalformedURLException;
 import java.net.URL;
 /* ===== END custom imports ===== */
 
-
-import com.vmware.vim25.*;
-import java.rmi.RemoteException;
-import java.util.Calendar;
-
-/**
- * The managed object class corresponding to the one defined in VI SDK API reference.
- *
- * @author Steve JIN (http://www.doublecloud.org)
- */
 public class ServiceInstance extends ManagedObject {
 
     public ServiceInstance(ServerConnection sc) {
         super(sc, SERVICE_INSTANCE_MOR);
     }
 
-    public Calendar getServerClock() {
-        return (Calendar) getCurrentProperty("serverClock");
-    }
-
     public Capability getCapability() {
         return (Capability) getCurrentProperty("capability");
     }
 
-    protected UserSession getCurrentUserSession() {
-        return (UserSession) getSessionManager().getCurrentProperty("currentSession");
+    public ServiceContent getContent() {
+        return (ServiceContent) getCurrentProperty("content");
     }
-    // TODO vim.VirtualizationManager is defined in servicecontent but no documentation there. Filed a bug already
+
+    public Calendar getServerClock() {
+        return (Calendar) getCurrentProperty("serverClock");
+    }
+
     /* ===== BEGIN custom (preserved by regenerator) ===== */
     private ServiceContent serviceContent = null;
     private static Logger log = LoggerFactory.getLogger(ServiceInstance.class);
@@ -113,6 +80,67 @@ public class ServiceInstance extends ManagedObject {
     serviceContent = retrieveServiceContent(vimService, SERVICE_INSTANCE_MOR);
     UserSession userSession = getCurrentUserSession();
     getServerConnection().setUserSession(userSession);
+}
+    protected UserSession getCurrentUserSession() {
+    return getSessionManager().getCurrentSession();
+}
+    public ServiceInstance(URL url, String username, String password) throws RemoteException, MalformedURLException {
+    this(url, username, password, false);
+}
+    public ServiceInstance(URL url, String username, String password, boolean ignoreCert) throws RemoteException, MalformedURLException {
+    this(url, username, password, ignoreCert, VIM25_NAMESPACE);
+}
+    public ServiceInstance(URL url, String username, String password, TrustManager trustManager) throws RemoteException, MalformedURLException {
+    this(url, username, password, trustManager, VIM25_NAMESPACE);
+}
+    public ServiceInstance(URL url, String username, String password, boolean ignoreCert, String namespace) throws RemoteException, MalformedURLException {
+    this(url, username, password, ignoreCert, namespace, 0, 0);
+}
+    public ServiceInstance(URL url, String username, String password, TrustManager trustManager, String namespace) throws RemoteException, MalformedURLException {
+    this(url, username, password, trustManager, namespace, 0, 0);
+}
+    public ServiceInstance(URL url, String username, String password, int connectTimeout, int readTimeout) throws RemoteException, MalformedURLException {
+    this(url, username, password, false, connectTimeout, readTimeout);
+}
+    public ServiceInstance(URL url, String username, String password, boolean ignoreCert, int connectTimeout, int readTimeout) throws RemoteException, MalformedURLException {
+    this(url, username, password, ignoreCert, VIM25_NAMESPACE, connectTimeout, readTimeout);
+}
+    public ServiceInstance(URL url, String username, String password, TrustManager trustManager, int connectTimeout, int readTimeout) throws RemoteException, MalformedURLException {
+    this(url, username, password, trustManager, VIM25_NAMESPACE, connectTimeout, readTimeout);
+}
+    public ServiceInstance(URL url, String username, String password, boolean ignoreCert, String namespace, int connectTimeout, int readTimeout) throws RemoteException, MalformedURLException {
+    super(null, null);
+    constructServiceInstance(url, username, password, ignoreCert, namespace, connectTimeout, readTimeout, null);
+}
+    public ServiceInstance(URL url, String username, String password, TrustManager trustManager, String namespace, int connectTimeout, int readTimeout) throws RemoteException, MalformedURLException {
+    super(null, null);
+    constructServiceInstance(url, username, password, false, namespace, connectTimeout, readTimeout, trustManager);
+}
+    public ServiceInstance(URL url, String sessionStr, boolean ignoreCert) throws RemoteException, MalformedURLException {
+    this(url, sessionStr, ignoreCert, VIM25_NAMESPACE);
+}
+    public ServiceInstance(URL url, String sessionStr, TrustManager trustManager) throws RemoteException, MalformedURLException {
+    this(url, sessionStr, trustManager, VIM25_NAMESPACE);
+}
+    public ServiceInstance(URL url, String sessionStr, boolean ignoreCert, int connectTimeout, int readTimeout) throws RemoteException, MalformedURLException {
+    this(url, sessionStr, ignoreCert, VIM25_NAMESPACE, connectTimeout, readTimeout);
+}
+    public ServiceInstance(URL url, String sessionStr, TrustManager trustManager, int connectTimeout, int readTimeout) throws RemoteException, MalformedURLException {
+    this(url, sessionStr, trustManager, VIM25_NAMESPACE, connectTimeout, readTimeout);
+}
+    public ServiceInstance(URL url, String sessionStr, boolean ignoreCert, String namespace) throws RemoteException, MalformedURLException {
+    this(url, sessionStr, ignoreCert, namespace, 0, 0);
+}
+    public ServiceInstance(URL url, String sessionStr, TrustManager trustManager, String namespace) throws RemoteException, MalformedURLException {
+    this(url, sessionStr, trustManager, namespace, 0, 0);
+}
+    public ServiceInstance(URL url, String sessionStr, boolean ignoreCert, String namespace, int connectTimeout, int readTimeout) throws RemoteException, MalformedURLException {
+    super(null, null);
+    constructServiceInstance(url, sessionStr, ignoreCert, namespace, connectTimeout, readTimeout, null);
+}
+    public ServiceInstance(URL url, String sessionStr, TrustManager trustManager, String namespace, int connectTimeout, int readTimeout) throws RemoteException, MalformedURLException {
+    super(null, null);
+    constructServiceInstance(url, sessionStr, false, namespace, connectTimeout, readTimeout, trustManager);
 }
     public ClusterProfileManager getClusterProfileManager() {
     return (ClusterProfileManager) createMO(getServiceContent().getClusterProfileManager());

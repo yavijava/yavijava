@@ -1,56 +1,19 @@
 // auto generated using yavijava_generator
-/*================================================================================
-Copyright (c) 2008 VMware, Inc. All Rights Reserved.
-
-Redistribution and use in source and binary forms, with or without modification, 
-are permitted provided that the following conditions are met:
-
-* Redistributions of source code must retain the above copyright notice, 
-this list of conditions and the following disclaimer.
-
-* Redistributions in binary form must reproduce the above copyright notice, 
-this list of conditions and the following disclaimer in the documentation 
-and/or other materials provided with the distribution.
-
-* Neither the name of VMware, Inc. nor the names of its contributors may be used
-to endorse or promote products derived from this software without specific prior 
-written permission.
-
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
-ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED 
-WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. 
-IN NO EVENT SHALL VMWARE, INC. OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, 
-INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT 
-LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR 
-PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, 
-WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) 
-ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE 
-POSSIBILITY OF SUCH DAMAGE.
-================================================================================*/
 package com.vmware.vim25.mo;
+
+import com.vmware.vim25.*;
+import com.vmware.vim25.mo.util.MorUtil;
+import java.rmi.RemoteException;
 
 /* ===== BEGIN custom imports (preserved by regenerator) ===== */
 /* ===== END custom imports ===== */
 
-
-import com.vmware.vim25.*;
-import java.rmi.RemoteException;
-import java.util.Calendar;
-
-/**
- * The managed object class corresponding to the one defined in VI SDK API reference.
- *
- * @author Steve JIN (http://www.doublecloud.org)
- */
 public class VirtualApp extends ResourcePool {
 
-    public VirtualApp(ServerConnection sc, ManagedObjectReference mor) {
-        super(sc, mor);
+    public VirtualApp(ServerConnection serverConnection, ManagedObjectReference mor) {
+        super(serverConnection, mor);
     }
 
-    /**
-     * @since SDK4.1
-     */
     public VirtualAppLinkInfo[] getChildLink() {
         return (VirtualAppLinkInfo[]) getCurrentProperty("childLink");
     }
@@ -63,58 +26,48 @@ public class VirtualApp extends ResourcePool {
         return getNetworks("network");
     }
 
-    @Override
-    public VirtualAppSummary getSummary() {
-        return (VirtualAppSummary) this.getCurrentProperty("summary");
-    }
-
     public VAppConfigInfo getVAppConfig() {
         return (VAppConfigInfo) getCurrentProperty("vAppConfig");
     }
 
-    public Task cloneVApp_Task(String name, ManagedObjectReference target, VAppCloneSpec spec) throws InvalidState, InvalidDatastore, TaskInProgress, VmConfigFault, FileFault, MigrationFault, InsufficientResourcesFault, RuntimeFault, RemoteException {
-        ManagedObjectReference taskMor = getVimService().cloneVApp_Task(getMOR(), name, target, spec);
-        return new Task(getServerConnection(), taskMor);
+    public Task cloneVApp_Task(String name, ResourcePool target, VAppCloneSpec spec) throws FileFault, InsufficientResourcesFault, InvalidDatastore, InvalidState, MigrationFault, TaskInProgress, VmConfigFault, RuntimeFault, RemoteException {
+        ManagedObjectReference resultMor = getVimService().cloneVApp_Task(getMOR(), name, target == null ? null : target.getMOR(), spec);
+        return new Task(getServerConnection(), resultMor);
     }
 
-    public HttpNfcLease exportVApp() throws InvalidPowerState, TaskInProgress, InvalidState, FileFault, RuntimeFault, RemoteException {
-        ManagedObjectReference mor = getVimService().exportVApp(getMOR());
-        return new HttpNfcLease(getServerConnection(), mor);
+    public HttpNfcLease exportVApp() throws FileFault, InvalidPowerState, InvalidState, TaskInProgress, RuntimeFault, RemoteException {
+        ManagedObjectReference resultMor = getVimService().exportVApp(getMOR());
+        return new HttpNfcLease(getServerConnection(), resultMor);
     }
 
-    public Task powerOffVApp_Task(boolean force) throws TaskInProgress, InvalidState, VAppConfigFault, RuntimeFault, RemoteException {
-        ManagedObjectReference taskMor = getVimService().powerOffVApp_Task(getMOR(), force);
-        return new Task(getServerConnection(), taskMor);
+    public Task powerOffVApp_Task(boolean force) throws InvalidState, TaskInProgress, VAppConfigFault, RuntimeFault, RemoteException {
+        ManagedObjectReference resultMor = getVimService().powerOffVApp_Task(getMOR(), force);
+        return new Task(getServerConnection(), resultMor);
     }
 
-    /**
-     * @since SDK4.1
-     */
-    public Task suspendVApp_Task() throws TaskInProgress, InvalidState, VAppConfigFault, RuntimeFault, RemoteException {
-        ManagedObjectReference taskMor = getVimService().suspendVApp_Task(getMOR());
-        return new Task(getServerConnection(), taskMor);
+    public Task powerOnVApp_Task() throws FileFault, InsufficientResourcesFault, InvalidState, TaskInProgress, VAppConfigFault, VmConfigFault, RuntimeFault, RemoteException {
+        ManagedObjectReference resultMor = getVimService().powerOnVApp_Task(getMOR());
+        return new Task(getServerConnection(), resultMor);
     }
 
-    public Task powerOnVApp_Task() throws TaskInProgress, InvalidState, InsufficientResourcesFault, VmConfigFault, VAppConfigFault, FileFault, RuntimeFault, RemoteException {
-        ManagedObjectReference taskMor = getVimService().powerOnVApp_Task(getMOR());
-        return new Task(getServerConnection(), taskMor);
+    public Task suspendVApp_Task() throws InvalidState, TaskInProgress, VAppConfigFault, RuntimeFault, RemoteException {
+        ManagedObjectReference resultMor = getVimService().suspendVApp_Task(getMOR());
+        return new Task(getServerConnection(), resultMor);
     }
 
     public Task unregisterVApp_Task() throws ConcurrentAccess, InvalidState, RuntimeFault, RemoteException {
-        ManagedObjectReference taskMor = getVimService().unregisterVApp_Task(getMOR());
-        return new Task(getServerConnection(), taskMor);
+        ManagedObjectReference resultMor = getVimService().unregisterVApp_Task(getMOR());
+        return new Task(getServerConnection(), resultMor);
     }
 
-    /**
-     * @since SDK4.1
-     */
-    public void updateLinkedChildren(VirtualAppLinkInfo[] addChangeSet, ManagedObjectReference[] removeSet) throws ConcurrentAccess, RuntimeFault, RemoteException {
-        getVimService().updateLinkedChildren(getMOR(), addChangeSet, removeSet);
+    public void updateLinkedChildren(VirtualAppLinkInfo[] addChangeSet, ManagedEntity[] removeSet) throws ConcurrentAccess, RuntimeFault, RemoteException {
+        getVimService().updateLinkedChildren(getMOR(), addChangeSet, removeSet == null ? null : MorUtil.createMORs(removeSet));
     }
 
-    public void updateVAppConfig(VAppConfigSpec spec) throws TaskInProgress, VmConfigFault, ConcurrentAccess, FileFault, InvalidName, DuplicateName, InvalidState, InsufficientResourcesFault, InvalidDatastore, RuntimeFault, RemoteException {
+    public void updateVAppConfig(VAppConfigSpec spec) throws ConcurrentAccess, DuplicateName, FileFault, InsufficientResourcesFault, InvalidDatastore, InvalidName, InvalidState, TaskInProgress, VmConfigFault, RuntimeFault, RemoteException {
         getVimService().updateVAppConfig(getMOR(), spec);
     }
+
     /* ===== BEGIN custom (preserved by regenerator) ===== */
     public Folder getParentFolder() {
     ManagedObjectReference mor = (ManagedObjectReference) getCurrentProperty("parentFolder");

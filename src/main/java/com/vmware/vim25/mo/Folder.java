@@ -1,73 +1,77 @@
 // auto generated using yavijava_generator
-/*================================================================================
-Copyright (c) 2008 VMware, Inc. All Rights Reserved.
-
-Redistribution and use in source and binary forms, with or without modification, 
-are permitted provided that the following conditions are met:
-
-* Redistributions of source code must retain the above copyright notice, 
-this list of conditions and the following disclaimer.
-
-* Redistributions in binary form must reproduce the above copyright notice, 
-this list of conditions and the following disclaimer in the documentation 
-and/or other materials provided with the distribution.
-
-* Neither the name of VMware, Inc. nor the names of its contributors may be used
-to endorse or promote products derived from this software without specific prior 
-written permission.
-
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
-ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED 
-WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. 
-IN NO EVENT SHALL VMWARE, INC. OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, 
-INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT 
-LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR 
-PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, 
-WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) 
-ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE 
-POSSIBILITY OF SUCH DAMAGE.
-================================================================================*/
 package com.vmware.vim25.mo;
+
+import com.vmware.vim25.*;
+import com.vmware.vim25.mo.util.MorUtil;
+import java.rmi.RemoteException;
 
 /* ===== BEGIN custom imports (preserved by regenerator) ===== */
 import com.vmware.vim25.mo.util.MorUtil;
 /* ===== END custom imports ===== */
 
-
-import com.vmware.vim25.*;
-import java.rmi.RemoteException;
-import java.util.Calendar;
-
-/**
- * The managed object class corresponding to the one defined in VI SDK API reference.
- *
- * @author Steve JIN (http://www.doublecloud.org)
- */
 public class Folder extends ManagedEntity {
 
-    public Folder(ServerConnection sc, ManagedObjectReference mor) {
-        super(sc, mor);
+    public Folder(ServerConnection serverConnection, ManagedObjectReference mor) {
+        super(serverConnection, mor);
     }
 
     public String[] getChildType() {
         return (String[]) getCurrentProperty("childType");
     }
 
-    /**
-     * @since 4.0
-     */
-    public Task createDVS_Task(DVSCreateSpec spec) throws DvsNotAuthorized, DvsFault, DuplicateName, InvalidName, NotFound, RuntimeFault, RemoteException {
-        ManagedObjectReference taskMor = getVimService().createDVS_Task(getMOR(), spec);
-        return new Task(getServerConnection(), taskMor);
+    public FolderExternallyManagedFolderInfo getExternallyManagedFolderInfo() {
+        return (FolderExternallyManagedFolderInfo) getCurrentProperty("externallyManagedFolderInfo");
     }
 
-    /**
-     * @since SDK5.0
-     */
-    public StoragePod createStoragePod(String name) throws DuplicateName, InvalidName, RuntimeFault, RemoteException {
-        ManagedObjectReference mor = getVimService().createStoragePod(getMOR(), name);
-        return new StoragePod(getServerConnection(), mor);
+    public String getNamespace() {
+        return (String) getCurrentProperty("namespace");
     }
+
+    public Task addStandaloneHost(HostConnectSpec spec, ComputeResourceConfigSpec compResSpec, boolean addConnected, String license) throws DuplicateName, HostConnectFault, InvalidLogin, RuntimeFault, RemoteException {
+        ManagedObjectReference resultMor = getVimService().addStandaloneHost_Task(getMOR(), spec, compResSpec, addConnected, license);
+        return new Task(getServerConnection(), resultMor);
+    }
+
+    public Task batchAddHostsToCluster(ClusterComputeResource cluster, FolderNewHostSpec[] newHosts, HostSystem[] existingHosts, ComputeResourceConfigSpec compResSpec, String desiredState) throws RuntimeFault, RemoteException {
+        ManagedObjectReference resultMor = getVimService().batchAddHostsToCluster_Task(getMOR(), cluster == null ? null : cluster.getMOR(), newHosts, existingHosts == null ? null : MorUtil.createMORs(existingHosts), compResSpec, desiredState);
+        return new Task(getServerConnection(), resultMor);
+    }
+
+    public Task batchAddStandaloneHosts(FolderNewHostSpec[] newHosts, ComputeResourceConfigSpec compResSpec, boolean addConnected) throws RuntimeFault, RemoteException {
+        ManagedObjectReference resultMor = getVimService().batchAddStandaloneHosts_Task(getMOR(), newHosts, compResSpec, addConnected);
+        return new Task(getServerConnection(), resultMor);
+    }
+
+    public Task createDistributedVirtualSwitch(DVSCreateSpec spec) throws DuplicateName, DvsFault, DvsNotAuthorized, InvalidName, NotFound, RuntimeFault, RemoteException {
+        ManagedObjectReference resultMor = getVimService().createDVS_Task(getMOR(), spec);
+        return new Task(getServerConnection(), resultMor);
+    }
+
+    public StoragePod createStoragePod(String name) throws DuplicateName, InvalidName, RuntimeFault, RemoteException {
+        ManagedObjectReference resultMor = getVimService().createStoragePod(getMOR(), name);
+        return new StoragePod(getServerConnection(), resultMor);
+    }
+
+    public Task createVm(VirtualMachineConfigSpec config, ResourcePool pool, HostSystem host) throws AlreadyExists, DuplicateName, FileFault, InsufficientResourcesFault, InvalidDatastore, InvalidName, InvalidState, OutOfBounds, VmConfigFault, RuntimeFault, RemoteException {
+        ManagedObjectReference resultMor = getVimService().createVM_Task(getMOR(), config, pool == null ? null : pool.getMOR(), host == null ? null : host.getMOR());
+        return new Task(getServerConnection(), resultMor);
+    }
+
+    public Task moveInto(ManagedEntity[] list) throws DuplicateName, InvalidFolder, InvalidState, RuntimeFault, RemoteException {
+        ManagedObjectReference resultMor = getVimService().moveIntoFolder_Task(getMOR(), list == null ? null : MorUtil.createMORs(list));
+        return new Task(getServerConnection(), resultMor);
+    }
+
+    public Task registerVm(String path, String name, boolean asTemplate, ResourcePool pool, HostSystem host) throws AlreadyExists, DuplicateName, FileFault, InsufficientResourcesFault, InvalidDatastore, InvalidName, InvalidState, NotFound, OutOfBounds, VmConfigFault, RuntimeFault, RemoteException {
+        ManagedObjectReference resultMor = getVimService().registerVM_Task(getMOR(), path, name, asTemplate, pool == null ? null : pool.getMOR(), host == null ? null : host.getMOR());
+        return new Task(getServerConnection(), resultMor);
+    }
+
+    public Task unregisterAndDestroy() throws ConcurrentAccess, InvalidState, RuntimeFault, RemoteException {
+        ManagedObjectReference resultMor = getVimService().unregisterAndDestroy_Task(getMOR());
+        return new Task(getServerConnection(), resultMor);
+    }
+
     /* ===== BEGIN custom (preserved by regenerator) ===== */
     // the array could have different real types, therefore cannot use getManagedObjects()
 public ManagedEntity[] getChildEntity() throws InvalidProperty, RuntimeFault, RemoteException {

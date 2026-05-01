@@ -1,84 +1,74 @@
 // auto generated using yavijava_generator
-/*================================================================================
-Copyright (c) 2012 Steve Jin. All Rights Reserved.
-Copyright (c) 2008 VMware, Inc. All Rights Reserved.
-
-Redistribution and use in source and binary forms, with or without modification, 
-are permitted provided that the following conditions are met:
-
-* Redistributions of source code must retain the above copyright notice, 
-this list of conditions and the following disclaimer.
-
-* Redistributions in binary form must reproduce the above copyright notice, 
-this list of conditions and the following disclaimer in the documentation 
-and/or other materials provided with the distribution.
-
-* Neither the name of VMware, Inc. nor the names of its contributors may be used
-to endorse or promote products derived from this software without specific prior 
-written permission.
-
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
-ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED 
-WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. 
-IN NO EVENT SHALL VMWARE, INC. OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, 
-INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT 
-LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR 
-PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, 
-WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) 
-ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE 
-POSSIBILITY OF SUCH DAMAGE.
-================================================================================*/
 package com.vmware.vim25.mo;
+
+import com.vmware.vim25.*;
+import com.vmware.vim25.mo.util.MorUtil;
+import java.rmi.RemoteException;
 
 /* ===== BEGIN custom imports (preserved by regenerator) ===== */
 import com.vmware.vim25.mo.util.MorUtil;
 /* ===== END custom imports ===== */
 
-
-import com.vmware.vim25.*;
-import java.rmi.RemoteException;
-import java.util.Calendar;
-
-/**
- * The managed object class corresponding to the one defined in VI SDK API reference.
- *
- * @author Steve JIN (http://www.doublecloud.org)
- */
 public class HostSystem extends ManagedEntity {
 
-    public HostSystem(ServerConnection sc, ManagedObjectReference mor) {
-        super(sc, mor);
+    public HostSystem(ServerConnection serverConnection, ManagedObjectReference mor) {
+        super(serverConnection, mor);
+    }
+
+    public AnswerFileStatusResult getAnswerFileValidationResult() {
+        return (AnswerFileStatusResult) getCurrentProperty("answerFileValidationResult");
+    }
+
+    public AnswerFileStatusResult getAnswerFileValidationState() {
+        return (AnswerFileStatusResult) getCurrentProperty("answerFileValidationState");
     }
 
     public HostCapability getCapability() {
         return (HostCapability) getCurrentProperty("capability");
     }
 
+    public ComplianceResult getComplianceCheckResult() {
+        return (ComplianceResult) getCurrentProperty("complianceCheckResult");
+    }
+
+    public HostSystemComplianceCheckState getComplianceCheckState() {
+        return (HostSystemComplianceCheckState) getCurrentProperty("complianceCheckState");
+    }
+
     public HostConfigInfo getConfig() {
         return (HostConfigInfo) getCurrentProperty("config");
     }
 
-    public Datastore[] getDatastores() throws InvalidProperty, RuntimeFault, RemoteException {
+    public Datastore[] getDatastore() {
         return getDatastores("datastore");
     }
 
-    public HostDatastoreBrowser getDatastoreBrowser() throws InvalidProperty, RuntimeFault, RemoteException {
-        return (HostDatastoreBrowser) getManagedObject("datastoreBrowser");
+    public HostDatastoreBrowser getDatastoreBrowser() {
+        return (HostDatastoreBrowser) this.getManagedObject("datastoreBrowser");
     }
 
     public HostHardwareInfo getHardware() {
         return (HostHardwareInfo) getCurrentProperty("hardware");
     }
 
-    /**
-     * @since SDK5.0
-     */
     public HostLicensableResourceInfo getLicensableResource() {
         return (HostLicensableResourceInfo) getCurrentProperty("licensableResource");
     }
 
-    public Network[] getNetworks() throws InvalidProperty, RuntimeFault, RemoteException {
+    public Network[] getNetwork() {
         return getNetworks("network");
+    }
+
+    public ApplyHostProfileConfigurationSpec getPrecheckRemediationResult() {
+        return (ApplyHostProfileConfigurationSpec) getCurrentProperty("precheckRemediationResult");
+    }
+
+    public ApplyHostProfileConfigurationResult getRemediationResult() {
+        return (ApplyHostProfileConfigurationResult) getCurrentProperty("remediationResult");
+    }
+
+    public HostSystemRemediationState getRemediationState() {
+        return (HostSystemRemediationState) getCurrentProperty("remediationState");
     }
 
     public HostRuntimeInfo getRuntime() {
@@ -93,94 +83,104 @@ public class HostSystem extends ManagedEntity {
         return (HostSystemResourceInfo) getCurrentProperty("systemResources");
     }
 
-    public VirtualMachine[] getVms() throws InvalidProperty, RuntimeFault, RemoteException {
+    public VirtualMachine[] getVm() {
         return getVms("vm");
     }
 
-    public Task disconnectHost() throws RuntimeFault, RemoteException {
-        ManagedObjectReference mor = getVimService().disconnectHost_Task(getMOR());
-        return new Task(getServerConnection(), mor);
+    public void configureCryptoKey(CryptoKeyId keyId) throws RuntimeFault, RemoteException {
+        getVimService().configureCryptoKey(getMOR(), keyId);
     }
 
-    /**
-     * @since SDK4.1
-     */
+    public Task disconnectHost_Task() throws RuntimeFault, RemoteException {
+        ManagedObjectReference resultMor = getVimService().disconnectHost_Task(getMOR());
+        return new Task(getServerConnection(), resultMor);
+    }
+
+    public void enableCrypto(CryptoKeyPlain keyPlain) throws InvalidState, RuntimeFault, RemoteException {
+        getVimService().enableCrypto(getMOR(), keyPlain);
+    }
+
     public void enterLockdownMode() throws HostConfigFault, RuntimeFault, RemoteException {
         getVimService().enterLockdownMode(getMOR());
     }
 
-    /**
-     * @since SDK5.5
-     */
-    public Task enterMaintenanceMode(int timeout, boolean evacuatePoweredOffVms, HostMaintenanceSpec maintenanceSpec) throws Timedout, InvalidState, RuntimeFault, RemoteException {
-        ManagedObjectReference mor = getVimService().enterMaintenanceMode_Task(getMOR(), timeout, Boolean.valueOf(evacuatePoweredOffVms), maintenanceSpec);
-        return new Task(getServerConnection(), mor);
+    public Task enterMaintenanceMode_Task(int timeout, boolean evacuatePoweredOffVms, HostMaintenanceSpec maintenanceSpec) throws InvalidState, Timedout, RuntimeFault, RemoteException {
+        ManagedObjectReference resultMor = getVimService().enterMaintenanceMode_Task(getMOR(), timeout, evacuatePoweredOffVms, maintenanceSpec);
+        return new Task(getServerConnection(), resultMor);
     }
 
-    /**
-     * @since SDK4.1
-     */
+    public Task powerDownHostToStandBy_Task(int timeoutSec, boolean evacuatePoweredOffVms) throws HostPowerOpFailed, InvalidState, NotSupported, RequestCanceled, Timedout, RuntimeFault, RemoteException {
+        ManagedObjectReference resultMor = getVimService().powerDownHostToStandBy_Task(getMOR(), timeoutSec, evacuatePoweredOffVms);
+        return new Task(getServerConnection(), resultMor);
+    }
+
     public void exitLockdownMode() throws HostConfigFault, RuntimeFault, RemoteException {
         getVimService().exitLockdownMode(getMOR());
     }
 
-    public Task exitMaintenanceMode(int timeout) throws Timedout, InvalidState, RuntimeFault, RemoteException {
-        ManagedObjectReference mor = getVimService().exitMaintenanceMode_Task(getMOR(), timeout);
-        return new Task(getServerConnection(), mor);
+    public Task exitMaintenanceMode_Task(int timeout) throws InvalidState, Timedout, RuntimeFault, RemoteException {
+        ManagedObjectReference resultMor = getVimService().exitMaintenanceMode_Task(getMOR(), timeout);
+        return new Task(getServerConnection(), resultMor);
     }
 
-    public Task powerDownHostToStandBy(int timeSec, boolean evacuatePoweredOffVms) throws RequestCanceled, HostPowerOpFailed, NotSupported, Timedout, InvalidState, RuntimeFault, RemoteException {
-        ManagedObjectReference mor = getVimService().powerDownHostToStandBy_Task(getMOR(), timeSec, Boolean.valueOf(evacuatePoweredOffVms));
-        return new Task(getServerConnection(), mor);
+    public Task powerUpHostFromStandBy_Task(int timeoutSec) throws HostPowerOpFailed, InvalidState, NotSupported, Timedout, RuntimeFault, RemoteException {
+        ManagedObjectReference resultMor = getVimService().powerUpHostFromStandBy_Task(getMOR(), timeoutSec);
+        return new Task(getServerConnection(), resultMor);
     }
 
-    public Task powerUpHostFromStandBy(int timeSec) throws HostPowerOpFailed, NotSupported, Timedout, InvalidState, RuntimeFault, RemoteException {
-        ManagedObjectReference mor = getVimService().powerUpHostFromStandBy_Task(getMOR(), timeSec);
-        return new Task(getServerConnection(), mor);
+    public void prepareCrypto() throws InvalidState, RuntimeFault, RemoteException {
+        getVimService().prepareCrypto(getMOR());
     }
 
-    /**
-     * @since SDK5.1
-     */
-    public void updateSystemSwapConfiguration(HostSystemSwapConfiguration sysSwapConfig) throws RuntimeFault, RemoteException {
-        getVimService().updateSystemSwapConfiguration(getMOR(), sysSwapConfig);
+    public String queryProductLockerLocation() throws HostConfigFault, RuntimeFault, RemoteException {
+        return getVimService().queryProductLockerLocation(getMOR());
     }
 
-    public Task rebootHost(boolean force) throws InvalidState, RuntimeFault, RemoteException {
-        ManagedObjectReference mor = getVimService().rebootHost_Task(getMOR(), force);
-        return new Task(getServerConnection(), mor);
+    public Task rebootHost_Task(boolean force) throws InvalidState, RuntimeFault, RemoteException {
+        ManagedObjectReference resultMor = getVimService().rebootHost_Task(getMOR(), force);
+        return new Task(getServerConnection(), resultMor);
     }
 
-    public Task reconfigureHostForDAS() throws DasConfigFault, RuntimeFault, RemoteException {
-        ManagedObjectReference mor = getVimService().reconfigureHostForDAS_Task(getMOR());
-        return new Task(getServerConnection(), mor);
+    public Task reconfigureHostForDAS_Task() throws DasConfigFault, RuntimeFault, RemoteException {
+        ManagedObjectReference resultMor = getVimService().reconfigureHostForDAS_Task(getMOR());
+        return new Task(getServerConnection(), resultMor);
     }
 
-    //SDK5.0 signature
-    public Task reconnectHost_Task(HostConnectSpec cnxSpec, HostSystemReconnectSpec reconnectSpec) throws InvalidName, InvalidLogin, InvalidState, HostConnectFault, RuntimeFault, RemoteException {
-        ManagedObjectReference mor = getVimService().reconnectHost_Task(getMOR(), cnxSpec, reconnectSpec);
-        return new Task(getServerConnection(), mor);
+    public Task reconnectHost_Task(HostConnectSpec cnxSpec, HostSystemReconnectSpec reconnectSpec) throws HostConnectFault, InvalidLogin, InvalidName, InvalidState, RuntimeFault, RemoteException {
+        ManagedObjectReference resultMor = getVimService().reconnectHost_Task(getMOR(), cnxSpec, reconnectSpec);
+        return new Task(getServerConnection(), resultMor);
     }
 
-    public Task shutdownHost_Task(boolean force) throws InvalidState, NotSupported, RuntimeFault, RemoteException {
-        ManagedObjectReference mor = getVimService().shutdownHost_Task(getMOR(), force);
-        return new Task(getServerConnection(), mor);
+    public long retrieveFreeEpcMemory() throws RuntimeFault, RemoteException {
+        return getVimService().retrieveFreeEpcMemory(getMOR());
     }
 
-    public void updateFlags(HostFlagInfo hfi) throws RuntimeFault, RemoteException {
-        getVimService().updateFlags(getMOR(), hfi);
+    public Task shutdownHost_Task(boolean force) throws InvalidState, RuntimeFault, RemoteException {
+        ManagedObjectReference resultMor = getVimService().shutdownHost_Task(getMOR(), force);
+        return new Task(getServerConnection(), resultMor);
+    }
+
+    public void updateFlags(HostFlagInfo flagInfo) throws RuntimeFault, RemoteException {
+        getVimService().updateFlags(getMOR(), flagInfo);
+    }
+
+    public void updateIpmi(HostIpmiInfo ipmiInfo) throws InvalidIpmiLoginInfo, InvalidIpmiMacAddress, RuntimeFault, RemoteException {
+        getVimService().updateIpmi(getMOR(), ipmiInfo);
+    }
+
+    public Task updateProductLockerLocation_Task(String path) throws FileNotFound, HostConfigFault, InvalidArgument, TaskInProgress, RuntimeFault, RemoteException {
+        ManagedObjectReference resultMor = getVimService().updateProductLockerLocation_Task(getMOR(), path);
+        return new Task(getServerConnection(), resultMor);
     }
 
     public void updateSystemResources(HostSystemResourceInfo resourceInfo) throws RuntimeFault, RemoteException {
         getVimService().updateSystemResources(getMOR(), resourceInfo);
     }
 
-    /**
-     * @since 4.0
-     */
-    public void updateIpmi(HostIpmiInfo ipmiInfo) throws InvalidIpmiLoginInfo, InvalidIpmiMacAddress, RuntimeFault, RemoteException {
-        getVimService().updateIpmi(getMOR(), ipmiInfo);
+    public void updateSystemSwapConfiguration(HostSystemSwapConfiguration sysSwapConfig) throws RuntimeFault, RemoteException {
+        getVimService().updateSystemSwapConfiguration(getMOR(), sysSwapConfig);
     }
+
     /* ===== BEGIN custom (preserved by regenerator) ===== */
     private HostConfigManager configManager = null;
     public HostServiceTicket acquireCimServicesTicket() throws RuntimeFault, RemoteException {
@@ -189,8 +189,8 @@ public class HostSystem extends ManagedEntity {
     /**
  * keep the old signature for compatibility
  */
-public Task enterMaintenanceMode(int timeout, boolean evacuatePoweredOffVms) throws Timedout, InvalidState, RuntimeFault, RemoteException {
-    return enterMaintenanceMode(timeout, evacuatePoweredOffVms, null);
+public Task enterMaintenanceMode_Task(int timeout, boolean evacuatePoweredOffVms) throws Timedout, InvalidState, RuntimeFault, RemoteException {
+    return enterMaintenanceMode_Task(timeout, evacuatePoweredOffVms, null);
 }
     public HostConnectInfo queryHostConnectionInfo() throws RuntimeFault, RemoteException {
     return getVimService().queryHostConnectionInfo(getMOR());

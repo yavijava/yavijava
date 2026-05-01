@@ -1,99 +1,65 @@
 // auto generated using yavijava_generator
-/*================================================================================
-Copyright (c) 2012 Steve Jin. All Rights Reserved.
-Copyright (c) 2008 VMware, Inc. All Rights Reserved.
-
-Redistribution and use in source and binary forms, with or without modification, 
-are permitted provided that the following conditions are met:
-
-* Redistributions of source code must retain the above copyright notice, 
-this list of conditions and the following disclaimer.
-
-* Redistributions in binary form must reproduce the above copyright notice, 
-this list of conditions and the following disclaimer in the documentation 
-and/or other materials provided with the distribution.
-
-* Neither the name of VMware, Inc. nor the names of its contributors may be used
-to endorse or promote products derived from this software without specific prior 
-written permission.
-
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
-ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED 
-WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. 
-IN NO EVENT SHALL VMWARE, INC. OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, 
-INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT 
-LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR 
-PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, 
-WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) 
-ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE 
-POSSIBILITY OF SUCH DAMAGE.
-================================================================================*/
 package com.vmware.vim25.mo;
+
+import com.vmware.vim25.*;
+import com.vmware.vim25.mo.util.MorUtil;
+import java.rmi.RemoteException;
 
 /* ===== BEGIN custom imports (preserved by regenerator) ===== */
 import com.vmware.vim25.mo.util.MorUtil;
 /* ===== END custom imports ===== */
 
-
-import com.vmware.vim25.*;
-import java.rmi.RemoteException;
-import java.util.Calendar;
-
-/**
- * The managed object class corresponding to the one defined in VI SDK API reference.
- *
- * @author Steve JIN (http://www.doublecloud.org)
- */
 public class Datacenter extends ManagedEntity {
 
-    public Datacenter(ServerConnection sc, ManagedObjectReference mor) {
-        super(sc, mor);
+    public Datacenter(ServerConnection serverConnection, ManagedObjectReference mor) {
+        super(serverConnection, mor);
     }
 
-    public Folder getVmFolder() throws InvalidProperty, RuntimeFault, RemoteException {
-        return (Folder) this.getManagedObject("vmFolder");
-    }
-
-    public Folder getHostFolder() throws InvalidProperty, RuntimeFault, RemoteException {
-        return (Folder) this.getManagedObject("hostFolder");
-    }
-
-    public Datastore[] getDatastores() {
-        return getDatastores("datastore");
-    }
-
-    /**
-     * @since SDK5.1
-     */
     public DatacenterConfigInfo getConfiguration() {
         return (DatacenterConfigInfo) getCurrentProperty("configuration");
     }
 
-    /**
-     * @since 4.0
-     */
+    public Datastore[] getDatastore() {
+        return getDatastores("datastore");
+    }
+
     public Folder getDatastoreFolder() {
-        return (Folder) getManagedObject("datastoreFolder");
+        return (Folder) this.getManagedObject("datastoreFolder");
     }
 
-    /**
-     * @since 4.0
-     */
-    public Folder getNetworkFolder() {
-        return (Folder) getManagedObject("networkFolder");
+    public Folder getHostFolder() {
+        return (Folder) this.getManagedObject("hostFolder");
     }
 
-    public Network[] getNetworks() throws InvalidProperty, RuntimeFault, RemoteException {
+    public Network[] getNetwork() {
         return getNetworks("network");
     }
 
-    /**
-     * @since SDK5.1
-     */
-    public Task reconfigureDatacenter_Task(DatacenterConfigSpec spec, boolean modify) throws RuntimeFault, RemoteException {
-        ManagedObjectReference tmor = getVimService().reconfigureDatacenter_Task(getMOR(), spec, modify);
-        return new Task(getServerConnection(), tmor);
+    public Folder getNetworkFolder() {
+        return (Folder) this.getManagedObject("networkFolder");
     }
+
+    public Folder getVmFolder() {
+        return (Folder) this.getManagedObject("vmFolder");
+    }
+
+    public DatacenterBasicConnectInfo[] batchQueryConnectInfo(HostConnectSpec[] hostSpecs) throws RuntimeFault, RemoteException {
+        return getVimService().batchQueryConnectInfo(getMOR(), hostSpecs);
+    }
+
+    public VirtualMachineConfigOptionDescriptor[] queryConfigOptionDescriptor() throws RuntimeFault, RemoteException {
+        return getVimService().queryConfigOptionDescriptor(getMOR());
+    }
+
+    public HostConnectInfo queryConnectionInfo(String hostname, int port, String username, String password, String sslThumbprint, String sslCertificate) throws HostConnectFault, InvalidLogin, RuntimeFault, RemoteException {
+        return getVimService().queryConnectionInfo(getMOR(), hostname, port, username, password, sslThumbprint, sslCertificate);
+    }
+
+    public Task reconfigureDatacenter_Task(DatacenterConfigSpec spec, boolean modify) throws RuntimeFault, RemoteException {
+        ManagedObjectReference resultMor = getVimService().reconfigureDatacenter_Task(getMOR(), spec, modify);
+        return new Task(getServerConnection(), resultMor);
+    }
+
     /* ===== BEGIN custom (preserved by regenerator) ===== */
     /**
  * old signature for back compatibility with 2.5 and 4.0

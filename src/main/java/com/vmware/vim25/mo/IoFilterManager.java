@@ -1,6 +1,10 @@
 // auto generated using yavijava_generator
 package com.vmware.vim25.mo;
 
+import com.vmware.vim25.*;
+import com.vmware.vim25.mo.util.MorUtil;
+import java.rmi.RemoteException;
+
 /* ===== BEGIN custom imports (preserved by regenerator) ===== */
 import com.vmware.vim25.AlreadyExists;
 import com.vmware.vim25.ClusterIoFilterInfo;
@@ -14,40 +18,17 @@ import com.vmware.vim25.RuntimeFault;
 import com.vmware.vim25.VirtualDiskId;
 /* ===== END custom imports ===== */
 
-
-import com.vmware.vim25.*;
-import java.rmi.RemoteException;
-import java.util.Calendar;
-
-/**
- * Copyright 2015 Michael Rice &lt;michael@michaelrice.org&gt;
- * <p>
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- * <p>
- * http://www.apache.org/licenses/LICENSE-2.0
- * <p>
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-/**
- * Interface to manage IO Filters installed on the ESXi hosts and IO Filter configurations on virtual disks. IO Filters
- * are customized filters provided by third parties to process I/Os to virtual disks. They can be used to provide data
- * services such as flash caching and replication. This interface is only supported on vCenter server.
- *
- * @since vSphere API 6.0
- *
- * @author Jaidil Karippara
- */
 public class IoFilterManager extends ManagedObject {
 
-    public IoFilterManager(ServerConnection sc, ManagedObjectReference mor) {
-        super(sc, mor);
+    public IoFilterManager(ServerConnection serverConnection, ManagedObjectReference mor) {
+        super(serverConnection, mor);
     }
+
+    public Task initiateTransitionToVLCM_Task(ClusterComputeResource cluster) throws InvalidArgument, RuntimeFault, RemoteException {
+        ManagedObjectReference resultMor = getVimService().initiateTransitionToVLCM_Task(getMOR(), cluster == null ? null : cluster.getMOR());
+        return new Task(getServerConnection(), resultMor);
+    }
+
     /* ===== BEGIN custom (preserved by regenerator) ===== */
     /**
  * Install an IO Filter on a compute resource. IO Filters can only be installed on a cluster.

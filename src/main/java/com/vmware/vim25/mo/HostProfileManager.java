@@ -1,85 +1,68 @@
 // auto generated using yavijava_generator
-/*================================================================================
-Copyright (c) 2012 Steve Jin. All Rights Reserved.
-Copyright (c) 2008 VMware, Inc. All Rights Reserved.
-
-Redistribution and use in source and binary forms, with or without modification, 
-are permitted provided that the following conditions are met:
-
-* Redistributions of source code must retain the above copyright notice, 
-this list of conditions and the following disclaimer.
-
-* Redistributions in binary form must reproduce the above copyright notice, 
-this list of conditions and the following disclaimer in the documentation 
-and/or other materials provided with the distribution.
-
-* Neither the name of VMware, Inc. nor the names of its contributors may be used
-to endorse or promote products derived from this software without specific prior 
-written permission.
-
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
-ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED 
-WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. 
-IN NO EVENT SHALL VMWARE, INC. OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, 
-INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT 
-LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR 
-PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, 
-WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) 
-ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE 
-POSSIBILITY OF SUCH DAMAGE.
-================================================================================*/
 package com.vmware.vim25.mo;
+
+import com.vmware.vim25.*;
+import com.vmware.vim25.mo.util.MorUtil;
+import java.rmi.RemoteException;
 
 /* ===== BEGIN custom imports (preserved by regenerator) ===== */
 import com.vmware.vim25.mo.util.MorUtil;
 /* ===== END custom imports ===== */
 
-
-import com.vmware.vim25.*;
-import java.rmi.RemoteException;
-import java.util.Calendar;
-
-/**
- * The managed object class corresponding to the one defined in VI SDK API reference.
- *
- * @author Steve JIN (http://www.doublecloud.org)
- * @since 4.0
- */
 public class HostProfileManager extends ProfileManager {
 
-    public HostProfileManager(ServerConnection sc, ManagedObjectReference mor) {
-        super(sc, mor);
+    public HostProfileManager(ServerConnection serverConnection, ManagedObjectReference mor) {
+        super(serverConnection, mor);
     }
 
-    //SDK5.0 signature
-    public Task applyHostConfig_Task(HostSystem host, HostConfigSpec configSpec, ProfileDeferredPolicyOptionParameter[] userInputs) throws HostConfigFailed, InvalidState, RuntimeFault, RemoteException {
-        ManagedObjectReference taskMor = getVimService().applyHostConfig_Task(getMOR(), host.getMOR(), configSpec, userInputs);
-        return new Task(getServerConnection(), taskMor);
+    public Task applyEntitiesConfig_Task(ApplyHostProfileConfigurationSpec[] applyConfigSpecs) throws RuntimeFault, RemoteException {
+        ManagedObjectReference resultMor = getVimService().applyEntitiesConfig_Task(getMOR(), applyConfigSpecs);
+        return new Task(getServerConnection(), resultMor);
     }
 
-    /**
-     * @since SDK5.0
-     */
+    public Task applyHostConfig_Task(HostSystem host, HostConfigSpec configSpec, ProfileDeferredPolicyOptionParameter[] userInput) throws HostConfigFailed, InvalidState, RuntimeFault, RemoteException {
+        ManagedObjectReference resultMor = getVimService().applyHostConfig_Task(getMOR(), host == null ? null : host.getMOR(), configSpec, userInput);
+        return new Task(getServerConnection(), resultMor);
+    }
+
+    public Task compositeHostProfile_Task(Profile source, Profile[] targets, HostApplyProfile toBeMerged, HostApplyProfile toBeReplacedWith, HostApplyProfile toBeDeleted, HostApplyProfile enableStatusToBeCopied) throws RuntimeFault, RemoteException {
+        ManagedObjectReference resultMor = getVimService().compositeHostProfile_Task(getMOR(), source == null ? null : source.getMOR(), targets == null ? null : MorUtil.createMORs(targets), toBeMerged, toBeReplacedWith, toBeDeleted, enableStatusToBeCopied);
+        return new Task(getServerConnection(), resultMor);
+    }
+
     public Task exportAnswerFile_Task(HostSystem host) throws RuntimeFault, RemoteException {
-        ManagedObjectReference taskMor = getVimService().exportAnswerFile_Task(getMOR(), host.getMOR());
-        return new Task(getServerConnection(), taskMor);
+        ManagedObjectReference resultMor = getVimService().exportAnswerFile_Task(getMOR(), host == null ? null : host.getMOR());
+        return new Task(getServerConnection(), resultMor);
     }
 
-    /**
-     * @since SDK5.5
-     */
+    public Task generateHostConfigTaskSpec_Task(StructuredCustomizations[] hostsInfo) throws RuntimeFault, RemoteException {
+        ManagedObjectReference resultMor = getVimService().generateHostConfigTaskSpec_Task(getMOR(), hostsInfo);
+        return new Task(getServerConnection(), resultMor);
+    }
+
     public Task generateHostProfileTaskList_Task(HostConfigSpec configSpec, HostSystem host) throws RuntimeFault, RemoteException {
-        ManagedObjectReference mor = getVimService().generateHostProfileTaskList_Task(getMOR(), configSpec, host.getMOR());
-        return new Task(getServerConnection(), mor);
+        ManagedObjectReference resultMor = getVimService().generateHostProfileTaskList_Task(getMOR(), configSpec, host == null ? null : host.getMOR());
+        return new Task(getServerConnection(), resultMor);
     }
 
-    /**
-     * @since SDK5.0
-     */
-    public Task updateAnswerFile_Task(HostSystem host, AnswerFileCreateSpec configSpec) throws AnswerFileUpdateFailed, RuntimeFault, RemoteException {
-        ManagedObjectReference taskMor = getVimService().updateAnswerFile_Task(getMOR(), host.getMOR(), configSpec);
-        return new Task(getServerConnection(), taskMor);
+    public StructuredCustomizations[] retrieveHostCustomizations(HostSystem[] hosts) throws RuntimeFault, RemoteException {
+        return getVimService().retrieveHostCustomizations(getMOR(), hosts == null ? null : MorUtil.createMORs(hosts));
     }
+
+    public StructuredCustomizations[] retrieveHostCustomizationsForProfile(HostSystem[] hosts, HostApplyProfile applyProfile) throws RuntimeFault, RemoteException {
+        return getVimService().retrieveHostCustomizationsForProfile(getMOR(), hosts == null ? null : MorUtil.createMORs(hosts), applyProfile);
+    }
+
+    public Task updateAnswerFile_Task(HostSystem host, AnswerFileCreateSpec configSpec) throws AnswerFileUpdateFailed, RuntimeFault, RemoteException {
+        ManagedObjectReference resultMor = getVimService().updateAnswerFile_Task(getMOR(), host == null ? null : host.getMOR(), configSpec);
+        return new Task(getServerConnection(), resultMor);
+    }
+
+    public Task validateHostProfileComposition_Task(Profile source, Profile[] targets, HostApplyProfile toBeMerged, HostApplyProfile toReplaceWith, HostApplyProfile toBeDeleted, HostApplyProfile enableStatusToBeCopied, boolean errorOnly) throws RuntimeFault, RemoteException {
+        ManagedObjectReference resultMor = getVimService().validateHostProfileComposition_Task(getMOR(), source == null ? null : source.getMOR(), targets == null ? null : MorUtil.createMORs(targets), toBeMerged, toReplaceWith, toBeDeleted, enableStatusToBeCopied, errorOnly);
+        return new Task(getServerConnection(), resultMor);
+    }
+
     /* ===== BEGIN custom (preserved by regenerator) ===== */
     //SDK4.1 signature for back compatibility
 public Task applyHostConfig_Task(HostSystem host, HostConfigSpec configSpec) throws HostConfigFailed, InvalidState, RuntimeFault, RemoteException {

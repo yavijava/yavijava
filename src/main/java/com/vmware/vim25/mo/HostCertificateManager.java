@@ -1,6 +1,10 @@
 // auto generated using yavijava_generator
 package com.vmware.vim25.mo;
 
+import com.vmware.vim25.*;
+import com.vmware.vim25.mo.util.MorUtil;
+import java.rmi.RemoteException;
+
 /* ===== BEGIN custom imports (preserved by regenerator) ===== */
 import com.vmware.vim25.HostCertificateManagerCertificateInfo;
 import com.vmware.vim25.HostConfigFault;
@@ -8,63 +12,44 @@ import com.vmware.vim25.ManagedObjectReference;
 import com.vmware.vim25.RuntimeFault;
 /* ===== END custom imports ===== */
 
-
-import com.vmware.vim25.*;
-import java.rmi.RemoteException;
-import java.util.Calendar;
-
-/**
- * Copyright 2015 Michael Rice &lt;michael@michaelrice.org&gt;
- * <p>
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- * <p>
- * http://www.apache.org/licenses/LICENSE-2.0
- * <p>
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- *
- * @since 6.0
- */
 public class HostCertificateManager extends ManagedObject {
 
-    public HostCertificateManager(ServerConnection sc, ManagedObjectReference mor) {
-        super(sc, mor);
+    public HostCertificateManager(ServerConnection serverConnection, ManagedObjectReference mor) {
+        super(serverConnection, mor);
     }
 
     public HostCertificateManagerCertificateInfo getCertificateInfo() {
         return (HostCertificateManagerCertificateInfo) getCurrentProperty("certificateInfo");
     }
 
-    /**
-     * Installs a given SSL certificate on the server.
-     *
-     * @param cert SSL certificate in PEM format
-     * @throws HostConfigFault
-     * @throws RuntimeFault
-     * @throws RemoteException
-     */
+    public String generateCertificateSigningRequest(boolean useIpAddressAsCommonName, HostCertificateManagerCertificateSpec spec) throws HostConfigFault, RuntimeFault, RemoteException {
+        return getVimService().generateCertificateSigningRequest(getMOR(), useIpAddressAsCommonName, spec);
+    }
+
+    public String generateCertificateSigningRequestByDn(String distinguishedName, HostCertificateManagerCertificateSpec spec) throws HostConfigFault, RuntimeFault, RemoteException {
+        return getVimService().generateCertificateSigningRequestByDn(getMOR(), distinguishedName, spec);
+    }
+
     public void installServerCertificate(String cert) throws HostConfigFault, RuntimeFault, RemoteException {
         getVimService().installServerCertificate(getMOR(), cert);
     }
 
-    /**
-     * Replaces the trusted Certificate Authority (CA) certificates and Certification Revocation List (CRL) used by the
-     * server with the provided values. These determine whether the server can verify the identity of an external entity.
-     *
-     * @param caCert List of SSL certificates, in PEM format, of all CAs that should be trusted
-     * @param caCrl  List of SSL CRLs, in PEM format, issued by trusted CAs from the above list
-     * @throws HostConfigFault
-     * @throws RuntimeFault
-     * @throws RemoteException
-     */
+    public void notifyAffectedServices(String[] services) throws RuntimeFault, RemoteException {
+        getVimService().notifyAffectedServices(getMOR(), services);
+    }
+
+    public void provisionServerPrivateKey(String key) throws HostConfigFault, RuntimeFault, RemoteException {
+        getVimService().provisionServerPrivateKey(getMOR(), key);
+    }
+
     public void replaceCACertificatesAndCRLs(String[] caCert, String[] caCrl) throws HostConfigFault, RuntimeFault, RemoteException {
         getVimService().replaceCACertificatesAndCRLs(getMOR(), caCert, caCrl);
     }
+
+    public HostCertificateManagerCertificateInfo[] retrieveCertificateInfoList() throws RuntimeFault, RemoteException {
+        return getVimService().retrieveCertificateInfoList(getMOR());
+    }
+
     /* ===== BEGIN custom (preserved by regenerator) ===== */
     /**
  * Requests the server to generate a certificate-signing request (CSR) for itself. The CSR is then typically
