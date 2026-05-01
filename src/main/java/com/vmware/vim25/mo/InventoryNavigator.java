@@ -10,6 +10,18 @@ import java.rmi.RemoteException;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Locate ManagedEntity objects under a root folder. Supports two modes:
+ *
+ * <ul>
+ *   <li>Find-only ({@link #searchManagedEntities(String)} and friends) — returns entities
+ *       whose subsequent property reads round-trip to the server.</li>
+ *   <li>Find-and-fetch ({@link #searchManagedEntitiesWithProperties(String[][], boolean)}) —
+ *       single round-trip that returns entities with the requested properties pre-cached;
+ *       subsequent reads of those properties via typed getters are served from the cache.</li>
+ * </ul>
+ */
+
 public class InventoryNavigator {
     private ManagedEntity rootEntity = null;
     private SelectionSpec[] selectionSpecs = null;
@@ -42,19 +54,58 @@ public class InventoryNavigator {
     }
 
     /**
-     * Retrieve content recursively with multiple properties.
-     * the typeinfo array contains typename + properties to retrieve.
+     * Retrieve content recursively with multiple properties. The {@code typeinfo} array contains
+     * {typename, prop1, prop2, ...} per type.
+     *
+     * <p><strong>Note:</strong> the requested property values are fetched from the server but
+     * <em>discarded</em> — only the entities are returned, and subsequent calls to entity getters
+     * round-trip to the server again. To keep the property values, use
+     * {@link #searchManagedEntitiesWithProperties(String[][], boolean)} instead.
      *
      * @param typeinfo 2D array of properties for each typename
      * @param recurse  retrieve contents recursively from the root down
-     * @return retrieved object contents
-     * @throws RemoteException
-     * @throws RuntimeFault
-     * @throws InvalidProperty
+     * @return matching entities (without cached properties)
      */
     public ManagedEntity[] searchManagedEntities(String[][] typeinfo, boolean recurse) throws InvalidProperty, RuntimeFault, RemoteException {
         ObjectContent[] ocs = retrieveObjectContents(typeinfo, recurse);
         return createManagedEntities(ocs);
+    }
+
+    /**
+     * Like {@link #searchManagedEntities(String[][], boolean)} but pre-populates each returned
+     * entity's property cache with the requested values. Reading a cached property via the
+     * entity's typed getter (e.g. {@code vm.getName()}) returns the cached value without
+     * contacting the server. Reads of properties that weren't requested fall through to the
+     * server as usual.
+     *
+     * <p>Cached values do not refresh — long-lived entities will return stale data if the
+     * underlying property changes on the server. For polling use cases, re-run the search.
+     *
+     * <p>Single round-trip equivalent of:
+     * <pre>
+     * ManagedEntity[] mes = nav.searchManagedEntities(typename);
+     * Hashtable&lt;String, Object&gt;[] props = PropertyCollectorUtil.retrieveProperties(mes, typename, propNames);
+     * </pre>
+     *
+     * @param typeinfo 2D array of {typename, prop1, prop2, ...} per type
+     * @param recurse  retrieve contents recursively from the root down
+     */
+    public ManagedEntity[] searchManagedEntitiesWithProperties(String[][] typeinfo, boolean recurse) throws InvalidProperty, RuntimeFault, RemoteException {
+        ObjectContent[] ocs = retrieveObjectContents(typeinfo, recurse);
+        if (ocs == null) {
+            return new ManagedEntity[]{};
+        }
+        ManagedEntity[] mes = new ManagedEntity[ocs.length];
+        for (int i = 0; i < mes.length; i++) {
+            mes[i] = MorUtil.createExactManagedEntity(rootEntity.getServerConnection(), ocs[i].getObj());
+            DynamicProperty[] propSet = ocs[i].getPropSet();
+            if (propSet != null) {
+                for (DynamicProperty p : propSet) {
+                    mes[i].setCachedProperty(p.getName(), p.getVal());
+                }
+            }
+        }
+        return mes;
     }
 
     private ObjectContent[] retrieveObjectContents(String[][] typeinfo, boolean recurse) throws InvalidProperty, RuntimeFault, RemoteException {

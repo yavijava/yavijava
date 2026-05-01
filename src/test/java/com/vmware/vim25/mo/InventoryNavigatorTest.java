@@ -134,4 +134,49 @@ public class InventoryNavigatorTest {
         assertNotNull(result);
         assertEquals(0, result.length);
     }
+
+    private ObjectContent folderContentWithProps(String val, String name, ManagedEntityStatus overallStatus) {
+        ObjectContent oc = folderContent(val);
+        DynamicProperty pName = new DynamicProperty();
+        pName.setName("name");
+        pName.setVal(name);
+        DynamicProperty pStatus = new DynamicProperty();
+        pStatus.setName("overallStatus");
+        pStatus.setVal(overallStatus);
+        oc.setPropSet(new DynamicProperty[]{pName, pStatus});
+        return oc;
+    }
+
+    @Test
+    public void searchManagedEntitiesWithProperties_populatesPropertyCacheOnEachEntity() throws Exception {
+        StubPropertyCollector stubPc = new StubPropertyCollector(
+            page(null,
+                folderContentWithProps("folder-1", "datacenter-folder", ManagedEntityStatus.green),
+                folderContentWithProps("folder-2", "vm-folder", ManagedEntityStatus.yellow))
+        );
+        InventoryNavigator nav = makeNavigator(stubPc);
+
+        ManagedEntity[] result = nav.searchManagedEntitiesWithProperties(
+            new String[][]{{"Folder", "name", "overallStatus"}}, true);
+
+        assertEquals(2, result.length);
+
+        // Cached values are accessible via the typed getters with no extra round-trip.
+        // Calling getName() here would NPE if it tried to talk to the server (stub is
+        // PropertyCollector-only and getName() goes through getCurrentProperty/retrieveObjectProperties).
+        assertEquals("datacenter-folder", result[0].getName());
+        assertEquals(ManagedEntityStatus.green, result[0].getOverallStatus());
+        assertEquals("vm-folder", result[1].getName());
+        assertEquals(ManagedEntityStatus.yellow, result[1].getOverallStatus());
+    }
+
+    @Test
+    public void searchManagedEntitiesWithProperties_nullTypeinfo_returnsEmptyArray() throws Exception {
+        InventoryNavigator nav = makeNavigator(new StubPropertyCollector());
+
+        ManagedEntity[] result = nav.searchManagedEntitiesWithProperties(null, true);
+
+        assertNotNull(result);
+        assertEquals(0, result.length);
+    }
 }

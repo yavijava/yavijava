@@ -81,6 +81,37 @@ public class ManagedObjectCurrentPropertyTest {
         }
     }
 
+    // Subclass that fails loudly if retrieveObjectProperties is called — proves the cache short-circuits the server call.
+    static class CacheOnlyManagedObject extends ManagedObject {
+        @Override
+        protected ObjectContent retrieveObjectProperties(String[] properties) {
+            throw new AssertionError("retrieveObjectProperties called for "
+                + (properties != null && properties.length > 0 ? properties[0] : "?")
+                + " — cache should have served this read");
+        }
+        public Object testGetCurrentProperty(String name) {
+            return getCurrentProperty(name);
+        }
+    }
+
+    @Test
+    public void getCurrentProperty_returnsCachedValue_withoutServerCall() {
+        CacheOnlyManagedObject mo = new CacheOnlyManagedObject();
+        mo.setCachedProperty("name", "test-vm");
+        mo.setCachedProperty("overallStatus", "green");
+
+        assertEquals("test-vm", mo.testGetCurrentProperty("name"));
+        assertEquals("green", mo.testGetCurrentProperty("overallStatus"));
+    }
+
+    @Test
+    public void getCurrentProperty_cachedNullValue_returnsNullWithoutServerCall() {
+        CacheOnlyManagedObject mo = new CacheOnlyManagedObject();
+        mo.setCachedProperty("network", null);  // server may legitimately return null for a property
+
+        assertNull(mo.testGetCurrentProperty("network"));
+    }
+
     @Test
     public void getCurrentProperty_runtimeExceptionMessageIsLocalizedMessageFromFault() {
         MissingProperty missing = new MissingProperty();
