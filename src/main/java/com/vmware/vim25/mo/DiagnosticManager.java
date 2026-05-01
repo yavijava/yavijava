@@ -38,5 +38,9 @@ public class DiagnosticManager extends ManagedObject {
     public DiagnosticManagerLogDescriptor[] queryDescriptions(HostSystem host) throws RuntimeFault, RemoteException {
     return getVimService().queryDescriptions(getMOR(), host == null ? null : host.getMOR());
 }
+    /** Backward-compat alias for {@link #generateLogBundles(boolean, HostSystem[])}. */
+    public Task generateLogBundles_Task(boolean includeDefault, HostSystem[] hosts) throws LogBundlingFailed, TaskInProgress, RuntimeFault, RemoteException {
+        return generateLogBundles(includeDefault, hosts);
+    }
     /* ===== END custom ===== */
 }

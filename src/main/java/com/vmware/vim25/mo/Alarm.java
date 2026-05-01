@@ -30,5 +30,9 @@ public class Alarm extends ExtensibleManagedObject {
     public ManagedEntity getAssociatedEntity() {
         return (ManagedEntity) getManagedObject("info.entity");
     }
+    /** Backward-compat alias for {@link #getInfo()}. */
+    public AlarmInfo getAlarmInfo() {
+        return getInfo();
+    }
     /* ===== END custom ===== */
 }

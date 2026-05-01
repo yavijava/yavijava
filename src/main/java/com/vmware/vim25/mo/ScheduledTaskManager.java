@@ -60,5 +60,9 @@ public ScheduledTask[] retrieveObjectScheduledTask(ManagedObject obj) throws Run
     }
     return tasks;
 }
+    /** Backward-compat alias for {@link #getScheduledTask()}. */
+    public ScheduledTask[] getScheduledTasks() {
+        return getScheduledTask();
+    }
     /* ===== END custom ===== */
 }

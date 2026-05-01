@@ -26,5 +26,9 @@ public class HostEsxAgentHostManager extends ManagedObject {
     }
 
     /* ===== BEGIN custom (preserved by regenerator) ===== */
+    /** Backward-compat alias for {@link #getConfigInfo()}. */
+    public HostEsxAgentHostManagerConfigInfo getCacheConfigurationInfo() {
+        return getConfigInfo();
+    }
     /* ===== END custom ===== */
 }

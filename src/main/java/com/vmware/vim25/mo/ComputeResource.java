@@ -70,5 +70,9 @@ public class ComputeResource extends ManagedEntity {
     }
 
     /* ===== BEGIN custom (preserved by regenerator) ===== */
+    /** Backward-compat alias for {@link #getNetwork()}. */
+    public Network[] getNetworks() {
+        return getNetwork();
+    }
     /* ===== END custom ===== */
 }

@@ -43,5 +43,17 @@ public class HostServiceSystem extends ExtensibleManagedObject {
     }
 
     /* ===== BEGIN custom (preserved by regenerator) ===== */
+    /** Backward-compat alias for {@link #start(String)}. */
+    public void startService(String id) throws HostConfigFault, InvalidState, NotFound, RuntimeFault, RemoteException {
+        start(id);
+    }
+    /** Backward-compat alias for {@link #stop(String)}. */
+    public void stopService(String id) throws HostConfigFault, InvalidState, NotFound, RuntimeFault, RemoteException {
+        stop(id);
+    }
+    /** Backward-compat alias for {@link #restart(String)}. */
+    public void restartService(String id) throws HostConfigFault, InvalidState, NotFound, RuntimeFault, RemoteException {
+        restart(id);
+    }
     /* ===== END custom ===== */
 }

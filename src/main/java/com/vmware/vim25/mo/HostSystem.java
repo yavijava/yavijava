@@ -336,5 +336,17 @@ public HostVsanInternalSystem getHostVsanInternalSystem() throws InvalidProperty
 public HostVsanSystem getHostVsanSystem() throws InvalidProperty, RuntimeFault, RemoteException {
     return (HostVsanSystem) MorUtil.createExactManagedObject(getServerConnection(), getConfigManager().getVsanSystem());
 }
+    /** Backward-compat alias for {@link #getNetwork()}. */
+    public Network[] getNetworks() {
+        return getNetwork();
+    }
+    /** Backward-compat alias for {@link #getDatastore()}. */
+    public Datastore[] getDatastores() {
+        return getDatastore();
+    }
+    /** Backward-compat alias for {@link #getVm()}. */
+    public VirtualMachine[] getVms() {
+        return getVm();
+    }
     /* ===== END custom ===== */
 }

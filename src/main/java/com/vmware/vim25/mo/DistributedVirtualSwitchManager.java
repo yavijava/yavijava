@@ -98,5 +98,14 @@ public Task rectifyDvsOnHost_Task(HostSystem[] hosts) throws DvsFault, RuntimeFa
     ManagedObjectReference resultMor = getVimService().queryDvsByUuid(getMOR(), uuid);
     return new DistributedVirtualSwitch(getServerConnection(), resultMor);
 }
+    /**
+     * Look up a DVPortgroup by switch UUID + portgroup key. This is a distinct
+     * SOAP operation from {@link #lookupDvPortGroup(String)} (which looks up by
+     * portgroup key only within the current scope).
+     */
+    public DistributedVirtualPortgroup dVSManagerLookupDvPortGroup(String switchUuid, String portgroupKey) throws NotFound, RuntimeFault, RemoteException {
+        ManagedObjectReference mor = getVimService().dVSManagerLookupDvPortGroup(getMOR(), switchUuid, portgroupKey);
+        return new DistributedVirtualPortgroup(getServerConnection(), mor);
+    }
     /* ===== END custom ===== */
 }

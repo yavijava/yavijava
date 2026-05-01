@@ -453,5 +453,9 @@ public Task removeAllSnapshots_Task() throws SnapshotFault, TaskInProgress, Inva
 public Task revertToCurrentSnapshot_Task(HostSystem host) throws VmConfigFault, SnapshotFault, TaskInProgress, InvalidState, InsufficientResourcesFault, NotFound, RuntimeFault, RemoteException {
     return revertToCurrentSnapshot_Task(host, false);
 }
+    /** Backward-compat alias for {@link #getDatastore()}. */
+    public Datastore[] getDatastores() {
+        return getDatastore();
+    }
     /* ===== END custom ===== */
 }
