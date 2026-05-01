@@ -40,6 +40,7 @@ import com.vmware.vim25.PropertyFilterSpec;
 import com.vmware.vim25.PropertyFilterUpdate;
 import com.vmware.vim25.PropertySpec;
 import com.vmware.vim25.UpdateSet;
+import com.vmware.vim25.WaitOptions;
 import com.vmware.vim25.mo.ManagedObject;
 import com.vmware.vim25.mo.PropertyCollector;
 import com.vmware.vim25.mo.PropertyFilter;
@@ -118,11 +119,15 @@ class ManagedObjectWatcher implements Runnable {
      *
      */
     public void run() {
+        WaitOptions options = new WaitOptions();
         while (true) {
             try {
-                UpdateSet update = pc.waitForUpdates(version);
-                PropertyFilterUpdate[] pfu = update.getFilterSet();
-                notifyListeners(pfu);
+                UpdateSet update = pc.waitForUpdatesEx(version, options);
+                if (update == null) {
+                    // No updates within the wait window — server returns null per the SDK contract.
+                    continue;
+                }
+                notifyListeners(update.getFilterSet());
                 version = update.getVersion();
             }
             catch (NotAuthenticated na) {
