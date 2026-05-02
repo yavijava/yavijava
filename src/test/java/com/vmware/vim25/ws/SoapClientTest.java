@@ -114,6 +114,17 @@ public class SoapClientTest {
         assertEquals("line1line2line3", client.readStream(is).toString());
     }
 
+    @Test
+    public void readStream_utf8NonAsciiContent_preservesCharacters() throws Exception {
+        // SOAP responses from vSphere are UTF-8. VM names / descriptions can contain
+        // non-ASCII characters (e.g. German umlauts, accented chars). Without an explicit
+        // charset the JDK uses the platform default, which corrupts these characters on
+        // non-UTF-8 systems.
+        String input = "München-VM Résumé Ñoño";
+        InputStream is = new ByteArrayInputStream(input.getBytes(StandardCharsets.UTF_8));
+        assertEquals(input, client.readStream(is).toString());
+    }
+
     // --- marshall ---
 
     @Test

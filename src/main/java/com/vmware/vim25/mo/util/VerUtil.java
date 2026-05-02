@@ -33,6 +33,7 @@ import javax.net.ssl.*;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.security.KeyManagementException;
@@ -100,13 +101,14 @@ public class VerUtil {
         URL url = new URL(urlStr);
         HttpURLConnection conn = (HttpURLConnection) url.openConnection();
         conn.connect();
-        BufferedReader in = new BufferedReader(new InputStreamReader(conn.getInputStream()));
-
-        String xmlWSDL = "";
-        String line;
-        while ((line = in.readLine()) != null) {
-            xmlWSDL = xmlWSDL + line;
+        StringBuilder sb = new StringBuilder();
+        try (BufferedReader in = new BufferedReader(new InputStreamReader(conn.getInputStream(), StandardCharsets.UTF_8))) {
+            String line;
+            while ((line = in.readLine()) != null) {
+                sb.append(line);
+            }
         }
+        String xmlWSDL = sb.toString();
 
         int start = xmlWSDL.indexOf("targetNamespace") + "targetNamespace".length();
         start = xmlWSDL.indexOf("\"", start);

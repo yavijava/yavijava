@@ -8,6 +8,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
 import java.net.URL;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -245,7 +246,7 @@ public abstract class SoapClient implements Client {
     public StringBuffer readStream(InputStream is) throws IOException {
         log.trace("Building StringBuffer from InputStream response.");
         StringBuffer sb = new StringBuffer();
-        BufferedReader in = new BufferedReader(new InputStreamReader(is));
+        BufferedReader in = new BufferedReader(new InputStreamReader(is, StandardCharsets.UTF_8));
         String lineStr;
         while ((lineStr = in.readLine()) != null) {
             sb.append(lineStr);
