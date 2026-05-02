@@ -51,6 +51,9 @@ public class GuestFileManager extends ManagedObject {
     public VirtualMachine getVM() {
     return vm;
 }
+    public void setVM(VirtualMachine vm) {
+    this.vm = vm;
+}
     public String createTemporaryDirectoryInGuest(GuestAuthentication auth, String prefix, String suffix, String directoryPath) throws GuestOperationsFault, InvalidState, TaskInProgress, FileFault, RuntimeFault, RemoteException {
     return getVimService().createTemporaryDirectoryInGuest(getMOR(), vm.getMOR(), auth, prefix, suffix, directoryPath);
 }

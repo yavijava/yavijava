@@ -27,6 +27,9 @@ public class GuestAuthManager extends ManagedObject {
     public VirtualMachine getVM() {
     return vm;
 }
+    public void setVM(VirtualMachine vm) {
+    this.vm = vm;
+}
     public GuestAuthentication acquireCredentialsInGuest(GuestAuthentication requestedAuth, long sessionID) throws GuestOperationsFault, TaskInProgress, InvalidState, RuntimeFault, RemoteException {
     return getVimService().acquireCredentialsInGuest(this.getMOR(), vm.getMOR(), requestedAuth, sessionID);
 }

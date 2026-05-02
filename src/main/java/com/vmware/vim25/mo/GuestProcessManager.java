@@ -35,6 +35,9 @@ public class GuestProcessManager extends ManagedObject {
     public VirtualMachine getVM() {
     return vm;
 }
+    public void setVM(VirtualMachine vm) {
+    this.vm = vm;
+}
     public GuestProcessInfo[] listProcessesInGuest(GuestAuthentication auth, long[] pids) throws GuestOperationsFault, InvalidState, TaskInProgress, RuntimeFault, RemoteException {
     return getVimService().listProcessesInGuest(getMOR(), vm.getMOR(), auth, pids);
 }

@@ -30,15 +30,21 @@ public class GuestOperationsManager extends ManagedObject {
     /* ===== BEGIN custom (preserved by regenerator) ===== */
     public GuestAuthManager getAuthManager(VirtualMachine vm) {
     ManagedObjectReference mor = (ManagedObjectReference) getCurrentProperty("authManager");
-    return new GuestAuthManager(getServerConnection(), mor);
+    GuestAuthManager am = new GuestAuthManager(getServerConnection(), mor);
+    am.setVM(vm);
+    return am;
 }
     public GuestFileManager getFileManager(VirtualMachine vm) {
     ManagedObjectReference mor = (ManagedObjectReference) getCurrentProperty("fileManager");
-    return new GuestFileManager(getServerConnection(), mor);
+    GuestFileManager fm = new GuestFileManager(getServerConnection(), mor);
+    fm.setVM(vm);
+    return fm;
 }
     public GuestProcessManager getProcessManager(VirtualMachine vm) {
     ManagedObjectReference mor = (ManagedObjectReference) getCurrentProperty("processManager");
-    return new GuestProcessManager(getServerConnection(), mor);
+    GuestProcessManager pm = new GuestProcessManager(getServerConnection(), mor);
+    pm.setVM(vm);
+    return pm;
 }
     /**
  * A managed object that provides methods to support single sign-on in the guest operating system.
