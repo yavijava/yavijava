@@ -32,12 +32,6 @@ public class TaskManager extends ManagedObject {
     }
 
     /* ===== BEGIN custom (preserved by regenerator) ===== */
-    /**
- * @deprecated the misspelled word. Use getDescription() instead
- */
-public TaskDescription getDescriptioin() {
-    return getDescription();
-}
     public int getMaxCollector() {
     return ((Integer) getCurrentProperty("maxCollector")).intValue();
 }
