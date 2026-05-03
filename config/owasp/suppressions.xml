@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suppressions xmlns="https://jeremylong.github.io/DependencyCheck/dependency-suppression.1.3.xsd">
+  <!--
+    Add suppression entries here for known false positives.
+    Format:
+      <suppress>
+        <notes>Why this is suppressed</notes>
+        <gav regex="true">^group:artifact:.*$</gav>
+        <cve>CVE-YYYY-NNNNN</cve>
+      </suppress>
+  -->
+</suppressions>
