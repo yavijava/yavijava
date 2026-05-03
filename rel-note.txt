@@ -1,3 +1,12 @@
+What is new in Version 9.0?
+vSphere 9.0 WSDL support (new managed objects, updated stubs)
+Apache HttpClient 4 → 5 migration (httpclient5:5.5.2)
+Java 21 source/target compatibility
+Dropped com.vmware.vim.rest (CVE-2023-51084)
+Bug fixes: guest manager NPE, integer overflow in createHardDisk, ApacheHttpClient resource leak, charset handling
+Code quality: SpotBugs + OWASP Dependency-Check, CRLF→LF, Java 9+ reflection API updates
+See UPDATES.md for full upgrade notes and breaking changes.
+
 What is new in Version 5.0.1?
 Mainly bug fixes. Check out http://www.doublecloud.org for details. 
 

@@ -59,6 +59,7 @@ public class Task extends ExtensibleManagedObject {
  * @throws RemoteException
  * @deprecated
  */
+@Deprecated
 public String waitForMe() throws InvalidProperty, RuntimeFault, RemoteException {
     Object[] result = waitForValues(new String[] { "info.state", "info.error" }, new String[] { "state" }, new Object[][] { new Object[] { TaskInfoState.success, TaskInfoState.error } });
     if (result[0].equals(TaskInfoState.success)) {

@@ -136,6 +136,7 @@ public Extension findExtension(String keyStr) throws RuntimeFault, RemoteExcepti
  *
  * @deprecated
  */
+@Deprecated
 public void printAllExtensions() {
     Extension[] exts = getExtensionList();
     System.out.println("There are totally " + exts.length + " plugin(s) registered.");

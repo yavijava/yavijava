@@ -70,14 +70,15 @@ public class PropertyCollectorUtil {
      * @throws RemoteException
      */
 
-    public static Hashtable[] retrieveProperties(ManagedObject[] mos, String moType,
+    @SuppressWarnings("unchecked")
+    public static Hashtable<String, Object>[] retrieveProperties(ManagedObject[] mos, String moType,
                                                  String[] propPaths) throws InvalidProperty,
         RuntimeFault, RemoteException {
         if (mos == null) {
             throw new IllegalArgumentException("Managed object array cannot be null.");
         }
         if (mos.length == 0 || mos[0] == null) {
-            return new Hashtable[]{};
+            return new Hashtable[0];
         }
 
         PropertyCollector pc = getPropertyCollector(mos[0]);
@@ -96,7 +97,7 @@ public class PropertyCollectorUtil {
         ObjectContent[] objs = pc.retrieveProperties(
             new PropertyFilterSpec[]{pfs});
 
-        Hashtable[] pTables = new Hashtable[mos.length];
+        Hashtable<String, Object>[] pTables = new Hashtable[mos.length];
 
         for (int i = 0; objs != null && i < objs.length && objs[i] != null; i++) {
             DynamicProperty[] props = objs[i].getPropSet();
@@ -113,7 +114,7 @@ public class PropertyCollectorUtil {
                     throw new RuntimeException("Unexpected managed object in result: " + mor.getType() + ":" + mor.get_value());
                 }
             }
-            pTables[index] = new Hashtable();
+            pTables[index] = new Hashtable<>();
             for (int j = 0; props != null && j < props.length; j++) {
                 Object obj = convertProperty(props[j].getVal());
                 if (obj == null) {

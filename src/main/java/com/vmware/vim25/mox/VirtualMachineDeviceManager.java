@@ -347,7 +347,7 @@ public class VirtualMachineDeviceManager {
         disk.setControllerKey(scsiController.key);
         disk.setUnitNumber(unitNumber);
         disk.setBacking(diskfileBacking);
-        disk.setCapacityInKB(1024 * diskSizeMB);
+        disk.setCapacityInKB((long) diskSizeMB * 1024L);
         disk.setKey(-1);
 
         diskSpec.setOperation(VirtualDeviceConfigSpecOperation.add);
@@ -615,6 +615,10 @@ public class VirtualMachineDeviceManager {
                 guestOsInfo = desc;
                 break;
             }
+        }
+
+        if (guestOsInfo == null) {
+            return adapterType;
         }
 
         if (adapterType == VirtualNetworkAdapterType.Unknown) {

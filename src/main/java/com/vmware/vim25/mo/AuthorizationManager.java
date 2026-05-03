@@ -57,6 +57,7 @@ public class AuthorizationManager extends ManagedObject {
     /**
  * @deprecated as of SDK5.5, use hasPrivilegeOnEntity instead, which fixed upper-case H typo in method name in 5.5
  */
+@Deprecated
 public boolean[] HasPrivilegeOnEntity(ManagedEntity entity, String sessionId, String[] privId) throws RuntimeFault, RemoteException {
     return getVimService().hasPrivilegeOnEntity(getMOR(), entity.getMOR(), sessionId, privId);
 }

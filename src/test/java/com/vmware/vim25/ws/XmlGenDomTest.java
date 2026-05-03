@@ -63,6 +63,22 @@ public class XmlGenDomTest {
     }
 
     @Test
+    public void fromXML_documentException_causeIsUnwrappedParseError_notDocumentException() throws Exception {
+        // The RemoteException thrown for a DocumentException must expose the underlying
+        // parse error as its cause, not the DocumentException wrapper itself.
+        String malformedXml = "<not-closed";
+        InputStream is = new ByteArrayInputStream(malformedXml.getBytes(StandardCharsets.UTF_8));
+        try {
+            new XmlGenDom().fromXML("String", is);
+            Assert.fail("Expected RemoteException");
+        } catch (RemoteException e) {
+            Assert.assertNotNull("RemoteException must have a cause", e.getCause());
+            Assert.assertFalse("cause must not be the DocumentException wrapper itself",
+                e.getCause() instanceof org.dom4j.DocumentException);
+        }
+    }
+
+    @Test
     public void testFromXML_ValidUserSessionReturnsValidUserSession() throws Exception {
         InputStream inputStream = new FileInputStream(new File("src/test/resources/xml/UserSessionValidLoginSession.xml"));
         XmlGenDom xmlGenDom = new XmlGenDom();

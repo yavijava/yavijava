@@ -18,6 +18,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import javax.net.ssl.TrustManager;
+import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.MalformedURLException;
@@ -189,10 +190,6 @@ public class ApacheHttpClient extends SoapClient {
             connManagerBuilder.setTlsSocketStrategy(tlsStrategy);
         }
 
-        CloseableHttpClient httpclient = HttpClients.custom()
-            .setConnectionManager(connManagerBuilder.build())
-            .build();
-
         HttpPost httpPost;
         try {
             httpPost = new HttpPost(this.baseUrl.toURI());
@@ -214,14 +211,18 @@ public class ApacheHttpClient extends SoapClient {
         }
         httpPost.setEntity(stringEntity);
 
-        CloseableHttpResponse response = httpclient.execute(httpPost, HttpClientContext.create());
-        InputStream inputStream = response.getEntity().getContent();
-        if (cookie == null) {
-            Header setCookieHeader = response.getFirstHeader("Set-Cookie");
-            if (setCookieHeader != null) {
-                cookie = setCookieHeader.getValue();
+        try (CloseableHttpClient httpclient = HttpClients.custom()
+                .setConnectionManager(connManagerBuilder.build())
+                .build();
+             CloseableHttpResponse response = httpclient.execute(httpPost, HttpClientContext.create())) {
+            if (cookie == null) {
+                Header setCookieHeader = response.getFirstHeader("Set-Cookie");
+                if (setCookieHeader != null) {
+                    cookie = setCookieHeader.getValue();
+                }
             }
+            byte[] responseBytes = response.getEntity().getContent().readAllBytes();
+            return new ByteArrayInputStream(responseBytes);
         }
-        return inputStream;
     }
 }

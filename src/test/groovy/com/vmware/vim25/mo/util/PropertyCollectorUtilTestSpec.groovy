@@ -4,6 +4,7 @@ import com.vmware.vim25.ArrayOfManagedObjectReference
 import com.vmware.vim25.ManagedObjectReference
 import com.vmware.vim25.ObjectSpec
 import com.vmware.vim25.SelectionSpec
+import com.vmware.vim25.mo.ManagedObject
 import org.slf4j.Logger
 import spock.lang.Specification
 
@@ -88,6 +89,25 @@ class PropertyCollectorUtilTestSpec extends Specification {
         then:
         thing == null
         1 * log.error("Exception caught trying to convertProperty",*_)
+    }
+
+    def "retrieveProperties return type is parameterized Hashtable<String, Object> array"() {
+        when:
+        def method = PropertyCollectorUtil.getDeclaredMethod(
+            "retrieveProperties", ManagedObject[].class, String.class, String[].class)
+        def returnType = method.getGenericReturnType().toString()
+
+        then:
+        returnType == "java.util.Hashtable<java.lang.String, java.lang.Object>[]"
+    }
+
+    def "ManagedObject.getPropertiesByPaths return type is parameterized Hashtable<String, Object>"() {
+        when:
+        def method = ManagedObject.getDeclaredMethod("getPropertiesByPaths", String[].class)
+        def returnType = method.getGenericReturnType().toString()
+
+        then:
+        returnType == "java.util.Hashtable<java.lang.String, java.lang.Object>"
     }
 
     def "CreatObjectSpec returns valid objectspec"() {

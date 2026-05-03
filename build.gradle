@@ -11,7 +11,7 @@ plugins {
 
 group = "com.toastcoders"
 archivesBaseName = "yavijava"
-version = '9.0-SNAPSHOT'
+version = '9.0'
 ext.isReleaseVersion = !version.endsWith("SNAPSHOT")
 targetCompatibility = JavaVersion.VERSION_21
 sourceCompatibility = JavaVersion.VERSION_21
@@ -25,14 +25,14 @@ dependencies {
     implementation 'org.slf4j:slf4j-api:2.0.17'
     testRuntimeOnly 'ch.qos.logback:logback-classic:1.5.32'
     implementation 'org.apache.httpcomponents.client5:httpclient5:5.5.2'
-    compileOnly 'org.projectlombok:lombok:1.18.36'
-    annotationProcessor 'org.projectlombok:lombok:1.18.36'
+    compileOnly 'org.projectlombok:lombok:1.18.38'
+    annotationProcessor 'org.projectlombok:lombok:1.18.38'
     testImplementation 'javax.servlet:javax.servlet-api:3.1.0'
     testImplementation 'junit:junit:4.13.2'
     testImplementation 'org.spockframework:spock-core:2.4-groovy-4.0'
     testImplementation 'org.apache.groovy:groovy-all:4.0.24'
     testImplementation 'net.bytebuddy:byte-buddy:1.17.5'
-    testRuntimeOnly 'org.objenesis:objenesis:3.3'
+    testRuntimeOnly 'org.objenesis:objenesis:3.4'
     testRuntimeOnly 'org.junit.vintage:junit-vintage-engine:5.13.0'
 }
 
@@ -70,6 +70,8 @@ task intTest(type: Test) {
     description = "Run integration tests (located in src/intTest/...)."
     testClassesDirs = project.sourceSets.intTest.output.classesDirs
     classpath = project.sourceSets.intTest.runtimeClasspath
+    useJUnitPlatform()
+    jvmArgs '--add-opens', 'java.base/java.lang=ALL-UNNAMED'
 }
 
 test {
@@ -82,8 +84,16 @@ test {
 }
 
 java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+
     withJavadocJar()
     withSourcesJar()
+}
+
+javadoc {
+    options.addBooleanOption('Xdoclint:none', true)
 }
 
 // --- SpotBugs static analysis (runs as part of `check`) ---
@@ -119,11 +129,17 @@ dependencyCheck {
 
 signing {
     required { isReleaseVersion && gradle.taskGraph.hasTask("publish") }
+    def signingKey = findProperty('signingKey')
+    def signingKeyId = findProperty('signingKeyId')
+    def signingPassword = findProperty('signingPassword')
+    if (signingKey) {
+        useInMemoryPgpKeys(signingKeyId, signingKey, signingPassword)
+    }
     sign publishing.publications
 }
 
-def ossrhUsername = findProperty('ossrhUsername') ?: ''
-def ossrhPassword = findProperty('ossrhPassword') ?: ''
+def mavenCentralUsername = findProperty('mavenCentralUsername') ?: ''
+def mavenCentralPassword = findProperty('mavenCentralPassword') ?: ''
 
 publishing {
     publications {
@@ -163,12 +179,12 @@ publishing {
 
     repositories {
         maven {
-            def releasesUrl = "https://oss.sonatype.org/service/local/staging/deploy/maven2/"
-            def snapshotsUrl = "https://oss.sonatype.org/content/repositories/snapshots/"
+            def releasesUrl = "https://ossrh-staging-api.central.sonatype.com/service/local/staging/deploy/maven2/"
+            def snapshotsUrl = "https://central.sonatype.com/repository/maven-snapshots/"
             url = version.endsWith('SNAPSHOT') ? snapshotsUrl : releasesUrl
             credentials {
-                username = ossrhUsername
-                password = ossrhPassword
+                username = mavenCentralUsername
+                password = mavenCentralPassword
             }
         }
     }

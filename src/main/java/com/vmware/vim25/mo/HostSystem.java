@@ -321,6 +321,7 @@ public HostVFlashManager getHostVFlashManager() throws InvalidProperty, RuntimeF
     /**
  * @deprecated as of SDK 4.0, use getHostVirtualNicManager instead
  */
+@Deprecated
 public HostVMotionSystem getHostVMotionSystem() throws InvalidProperty, RuntimeFault, RemoteException {
     return (HostVMotionSystem) MorUtil.createExactManagedObject(getServerConnection(), getConfigManager().getVmotionSystem());
 }
