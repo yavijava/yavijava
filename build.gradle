@@ -70,6 +70,8 @@ task intTest(type: Test) {
     description = "Run integration tests (located in src/intTest/...)."
     testClassesDirs = project.sourceSets.intTest.output.classesDirs
     classpath = project.sourceSets.intTest.runtimeClasspath
+    useJUnitPlatform()
+    jvmArgs '--add-opens', 'java.base/java.lang=ALL-UNNAMED'
 }
 
 test {

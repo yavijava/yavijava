@@ -25,4 +25,21 @@ public class BuildDependencyVersionTest {
         assertTrue("Expected lombok:1.18.38 in build.gradle",
             buildGradle().contains("lombok:1.18.38"));
     }
+
+    @Test
+    public void intTest_task_calls_useJUnitPlatform() throws IOException {
+        String content = buildGradle();
+        int first = content.indexOf("useJUnitPlatform()");
+        int second = content.indexOf("useJUnitPlatform()", first + 1);
+        assertTrue("Expected useJUnitPlatform() in both test and intTest tasks", second != -1);
+    }
+
+    @Test
+    public void intTest_task_has_addOpens_jvmArg() throws IOException {
+        String content = buildGradle();
+        int first = content.indexOf("java.base/java.lang=ALL-UNNAMED");
+        int second = content.indexOf("java.base/java.lang=ALL-UNNAMED", first + 1);
+        assertTrue("Expected --add-opens java.base/java.lang=ALL-UNNAMED in both test and intTest tasks",
+            second != -1);
+    }
 }
