@@ -1,9 +1,10 @@
 package com.vmware.vim25.ws;
 
+import org.apache.hc.client5.http.ssl.DefaultClientTlsStrategy;
 import org.apache.hc.client5.http.ssl.NoopHostnameVerifier;
-import org.apache.hc.client5.http.ssl.SSLConnectionSocketFactory;
-import org.apache.hc.core5.ssl.SSLContextBuilder;
+import org.apache.hc.client5.http.ssl.TlsSocketStrategy;
 import org.apache.hc.client5.http.ssl.TrustAllStrategy;
+import org.apache.hc.core5.ssl.SSLContextBuilder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -32,35 +33,16 @@ public class ApacheTrustSelfSigned {
 
     private static Logger log = LoggerFactory.getLogger(ApacheTrustSelfSigned.class);
 
-    public static SSLConnectionSocketFactory trust() {
-        SSLContextBuilder builder = SSLContextBuilder.create();
-        log.trace("Set SSL Context Builder to trust self signed certs.");
+    public static TlsSocketStrategy trust() {
         try {
-            builder.loadTrustMaterial(TrustAllStrategy.INSTANCE);
-            log.trace("Added TrustAllStrategy to builder.");
-        }
-        catch (NoSuchAlgorithmException e) {
-            log.error("NoSuchAlgorithm caught trying to add TrustAllStrategy.", e);
+            return new DefaultClientTlsStrategy(
+                SSLContextBuilder.create()
+                    .loadTrustMaterial(TrustAllStrategy.INSTANCE)
+                    .build(),
+                NoopHostnameVerifier.INSTANCE);
+        } catch (NoSuchAlgorithmException | KeyStoreException | KeyManagementException e) {
+            log.error("Error creating trust-all TLS strategy.", e);
             return null;
         }
-        catch (KeyStoreException e) {
-            log.error("KeyStoreException caught trying to add TrustAllStrategy.", e);
-            return null;
-        }
-        SSLConnectionSocketFactory sslConnectionSocketFactory;
-        try {
-            sslConnectionSocketFactory = new SSLConnectionSocketFactory(builder.build(), NoopHostnameVerifier.INSTANCE);
-            log.trace("Added SSLConnectionSocketFactory to builder.");
-        }
-        catch (NoSuchAlgorithmException e) {
-            log.error("Error trying to trust self signed certs.", e);
-            return null;
-        }
-        catch (KeyManagementException e) {
-            log.error("Error trying to trust self signed certs.", e);
-            return null;
-        }
-        log.trace("Created self signed trust.");
-        return sslConnectionSocketFactory;
     }
 }

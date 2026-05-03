@@ -38,6 +38,7 @@
       <Class name="com.vmware.vim25.mo.ServiceInstance"/>
       <Class name="com.vmware.vim25.mo.util.CommandLineParser"/>
       <Class name="com.vmware.vim25.ws.WSClient"/>
+      <Class name="com.vmware.vim25.ws.ApacheHttpClient"/>
     </Or>
     <Bug code="CT"/>
   </Match>
