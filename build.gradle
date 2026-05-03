@@ -7,6 +7,8 @@ plugins {
     id 'signing'
     id 'com.github.spotbugs' version '6.5.4'
     id 'org.owasp.dependencycheck' version '12.2.1'
+    id 'com.gradleup.nmcp' version '1.5.0'
+    id 'com.gradleup.nmcp.aggregation' version '1.5.0'
 }
 
 group = "com.toastcoders"
@@ -128,7 +130,7 @@ dependencyCheck {
 }
 
 signing {
-    required { isReleaseVersion && gradle.taskGraph.hasTask("publish") }
+    required { isReleaseVersion }
     def signingKey = findProperty('signingKey')
     def signingKeyId = findProperty('signingKeyId')
     def signingPassword = findProperty('signingPassword')
@@ -137,9 +139,6 @@ signing {
     }
     sign publishing.publications
 }
-
-def mavenCentralUsername = findProperty('mavenCentralUsername') ?: ''
-def mavenCentralPassword = findProperty('mavenCentralPassword') ?: ''
 
 publishing {
     publications {
@@ -176,16 +175,16 @@ publishing {
             }
         }
     }
+}
 
-    repositories {
-        maven {
-            def releasesUrl = "https://ossrh-staging-api.central.sonatype.com/service/local/staging/deploy/maven2/"
-            def snapshotsUrl = "https://central.sonatype.com/repository/maven-snapshots/"
-            url = version.endsWith('SNAPSHOT') ? snapshotsUrl : releasesUrl
-            credentials {
-                username = mavenCentralUsername
-                password = mavenCentralPassword
-            }
-        }
+nmcpAggregation {
+    centralPortal {
+        username = findProperty('mavenCentralUsername') ?: ''
+        password = findProperty('mavenCentralPassword') ?: ''
+        publishingType = "AUTOMATIC"
     }
+}
+
+dependencies {
+    nmcpAggregation project(':')
 }
