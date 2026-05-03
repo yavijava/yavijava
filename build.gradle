@@ -12,11 +12,9 @@ plugins {
 }
 
 group = "com.toastcoders"
-archivesBaseName = "yavijava"
+base.archivesName = "yavijava"
 version = '9.0'
 ext.isReleaseVersion = !version.endsWith("SNAPSHOT")
-targetCompatibility = JavaVersion.VERSION_21
-sourceCompatibility = JavaVersion.VERSION_21
 
 repositories {
     mavenCentral()
