@@ -33,6 +33,17 @@ public class ApacheTrustSelfSigned {
 
     private static Logger log = LoggerFactory.getLogger(ApacheTrustSelfSigned.class);
 
+    /**
+     * Returns a TLS socket strategy that accepts all certificates without validation
+     * and skips hostname verification.
+     *
+     * @apiNote <strong>WARNING:</strong> This intentionally disables SSL certificate
+     *     validation and hostname checking. Use only in closed, trusted environments
+     *     (e.g., local vSphere labs with self-signed certs). Never use against
+     *     untrusted or public endpoints.
+     * @return a trust-all {@link TlsSocketStrategy}, or {@code null} if the TLS context
+     *     cannot be initialised
+     */
     public static TlsSocketStrategy trust() {
         try {
             return new DefaultClientTlsStrategy(

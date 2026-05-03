@@ -11,6 +11,17 @@ public class CustomSSLTrustContextCreator {
     private static AtomicBoolean contextAlreadyCreated = new AtomicBoolean(false);
     private static SSLContext sslContext;
 
+    /**
+     * Creates or returns a cached {@link SSLContext} initialised with the supplied
+     * {@link TrustManager}.
+     *
+     * @apiNote <strong>WARNING:</strong> If {@code trustManager} accepts all certificates
+     *     without validation this disables SSL verification entirely. Callers are responsible
+     *     for ensuring the trust manager is appropriate for the target environment.
+     * @param trustManager the trust manager to install in the SSL context
+     * @return the (possibly cached) {@link SSLContext}
+     * @throws RemoteException if the TLS algorithm or key management is unavailable
+     */
     public static SSLContext getTrustContext(TrustManager trustManager) throws RemoteException {
         try {
             if (contextAlreadyCreated.getAndSet(true)) {

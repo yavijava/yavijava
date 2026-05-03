@@ -79,6 +79,10 @@ public class VerUtil {
      * @throws RuntimeException wrapping NoSuchAlgorithmException, KeyManagementException which are
      *                          not likely to happen. If it happens, you can catch the runtime exception and unwrap it
      *                          for the real exceptions.
+     * @apiNote <strong>WARNING:</strong> This method installs a trust-all SSL context via
+     *     {@code trustAllHttpsCertificates()}, disabling certificate validation JVM-wide
+     *     for the duration of the request. Use only in closed, trusted environments.
+     *     This class is deprecated; prefer a properly configured HTTPS client.
      */
     public static String getTargetNameSpace(String target) throws IOException {
         String version = "";
