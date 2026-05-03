@@ -231,9 +231,9 @@ abstract public class ManagedObject {
      * @throws RuntimeFault
      * @throws RemoteException
      */
-    public Hashtable getPropertiesByPaths(String[] propPaths)
+    public Hashtable<String, Object> getPropertiesByPaths(String[] propPaths)
         throws InvalidProperty, RuntimeFault, RemoteException {
-        Hashtable[] pht = PropertyCollectorUtil.retrieveProperties(
+        Hashtable<String, Object>[] pht = PropertyCollectorUtil.retrieveProperties(
             new ManagedObject[]{this}, getMOR().getType(), propPaths);
         if (pht.length != 0) {
             return pht[0];
