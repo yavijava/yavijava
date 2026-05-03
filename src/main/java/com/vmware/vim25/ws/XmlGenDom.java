@@ -94,7 +94,7 @@ class XmlGenDom extends XmlGen {
             root = doc.getRootElement();
         }
         catch (DocumentException e){
-            Throwable throwThis = e.getNestedException() != null ? e.getNestedException() : e;
+            Throwable throwThis = e.getCause() != null ? e.getCause() : e;
             throw new RemoteException("An error occurred parsing XML with return type: " + returnType, throwThis);
         } catch (Exception e1) {
             throw new RemoteException("VI SDK invoke exception:" + e1, e1);
@@ -175,7 +175,7 @@ class XmlGenDom extends XmlGen {
             try{
                 Field field = current.getDeclaredField("detailMessage");
                 if ((!Modifier.isPublic(field.getModifiers()) || !Modifier.isPublic(field.getDeclaringClass().getModifiers()) ||
-                        Modifier.isFinal(field.getModifiers())) && !field.isAccessible()) {
+                        Modifier.isFinal(field.getModifiers())) && !field.canAccess(obj)) {
                     if (!field.trySetAccessible()) {
                         return obj;
                     }
@@ -266,7 +266,7 @@ class XmlGenDom extends XmlGen {
      */
     @SuppressWarnings({"unchecked", "rawtypes"})
     private Object fromXml(Class<?> clazz, Element node) throws Exception {
-        Object obj = clazz.newInstance();
+        Object obj = clazz.getDeclaredConstructor().newInstance();
 
         List<Element> subNodes = node.elements();
         int sizeOfSubNodes = subNodes.size();
