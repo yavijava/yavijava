@@ -128,7 +128,7 @@ dependencyCheck {
 }
 
 signing {
-    required { isReleaseVersion }
+    required = isReleaseVersion
     def signingKey = findProperty('signingKey')
     def signingKeyId = findProperty('signingKeyId')
     def signingPassword = findProperty('signingPassword')
