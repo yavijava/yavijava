@@ -181,11 +181,11 @@ public class ReflectUtil {
         // seems to happen when we need to base64 decode
         // see issue 102
         catch (NumberFormatException ignore) {
-            String tempStr = "";
-            for (String s: values) {
-                tempStr += s;
+            StringBuilder sb = new StringBuilder();
+            for (String s : values) {
+                sb.append(s);
             }
-            return Base64.getDecoder().decode(tempStr);
+            return Base64.getDecoder().decode(sb.toString());
         }
     }
 

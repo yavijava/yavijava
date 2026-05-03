@@ -94,15 +94,6 @@
   </Match>
 
   <!--
-    SBSC: String concatenation with + inside a loop in ReflectUtil.toByteArray.
-    Pre-existing; a StringBuilder refactor is tracked separately.
-  -->
-  <Match>
-    <Class name="org.doublecloud.ws.util.ReflectUtil"/>
-    <Bug code="SBSC"/>
-  </Match>
-
-  <!--
     Dm: CommandLineParser reads user input from System.in (terminal).
     Using the platform-default charset is correct — it matches the terminal encoding.
   -->

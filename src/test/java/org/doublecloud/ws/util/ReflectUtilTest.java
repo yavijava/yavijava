@@ -53,6 +53,21 @@ public class ReflectUtilTest {
     }
 
     @Test
+    public void testToByteArray_decodesBase64SplitIntoMultiCharChunks() throws Exception {
+        // Realistic scenario: base64 payload arrives as multi-character chunks across
+        // several XML text nodes rather than one character per element.
+        String base64 = "ox991LwhCGLf2gntXqKkSPdqC+A=";
+        List<String> values = Arrays.asList(
+            base64.substring(0, 8),
+            base64.substring(8, 16),
+            base64.substring(16)
+        );
+        byte[] actual = ReflectUtil.toByteArray(values);
+        byte[] expected = Base64.getDecoder().decode(base64);
+        assertArrayEquals(expected, actual);
+    }
+
+    @Test
     public void testReflectUtil_ParseToObject_Returns_String_Array() throws Exception {
         List<String> strings = Arrays.asList("string1", "string2", "string3");
         String[] stringArray = (String[]) ReflectUtil.parseToObject("String[]", strings);
