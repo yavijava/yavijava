@@ -47,4 +47,42 @@ public class ReleaseNotesTest {
         assertTrue("Expected 9.0 entry in rel-note.txt",
             relNote().contains("9.0"));
     }
+
+    // --- items not covered in initial pass ---
+
+    @Test
+    public void updatesDoc_documentsInventoryNavigatorPagination() throws IOException {
+        assertTrue("Expected InventoryNavigator pagination fix in UPDATES.md",
+            updates().contains("InventoryNavigator"));
+    }
+
+    @Test
+    public void updatesDoc_documentsHostnameVerifierFix() throws IOException {
+        assertTrue("Expected HostnameVerifier IP-address fix in UPDATES.md",
+            updates().contains("HostnameVerifier"));
+    }
+
+    @Test
+    public void updatesDoc_documentsSerializableDataClasses() throws IOException {
+        assertTrue("Expected Serializable vim25 data classes in UPDATES.md",
+            updates().contains("Serializable"));
+    }
+
+    @Test
+    public void updatesDoc_documentsTaskWaitForTaskTimeout() throws IOException {
+        assertTrue("Expected Task.waitForTask timeout overload in UPDATES.md",
+            updates().contains("waitForTask"));
+    }
+
+    @Test
+    public void updatesDoc_documentsFailoverClusterWrappers() throws IOException {
+        assertTrue("Expected FailoverCluster wrapper classes in UPDATES.md",
+            updates().contains("FailoverCluster"));
+    }
+
+    @Test
+    public void updatesDoc_documentsCacheInstanceAwaitReady() throws IOException {
+        assertTrue("Expected CacheInstance.awaitReady in UPDATES.md",
+            updates().contains("awaitReady"));
+    }
 }

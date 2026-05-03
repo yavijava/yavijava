@@ -177,6 +177,69 @@ The vSphere 6.5 API surface has been merged in. The default SOAP action for **un
 
 ---
 
+## New Features
+
+### `Task.waitForTask` — Bounded Wait with `TimeoutException`
+
+Two new overloads give callers a deadline instead of an infinite wait:
+
+```java
+task.waitForTask(long maxWaitMillis);
+task.waitForTask(int runningDelay, int queuedDelay, long maxWaitMillis);
+```
+
+Both throw `java.util.concurrent.TimeoutException` if the task has not reached a terminal state within the deadline. The existing zero- and two-argument overloads are unchanged and still wait indefinitely.
+
+---
+
+### `ServiceInstance` — Locale-Aware Constructors
+
+Two new constructors accept a `locale` string and pass it through to `login()`:
+
+```java
+new ServiceInstance(URL url, String username, String password, boolean ignoreCert, String locale);
+new ServiceInstance(URL url, String username, String password, boolean ignoreCert, String appName, String locale);
+```
+
+Existing constructors are unchanged and continue to pass `null` for locale.
+
+---
+
+### `InventoryNavigator.searchManagedEntitiesWithProperties`
+
+New method that performs the same inventory traversal as `searchManagedEntities` but pre-populates each returned entity's property cache from the `PropertyCollector` results. Subsequent calls to typed getters (e.g. `vm.getName()`, `vm.getRuntime()`) return the pre-fetched value without a round-trip to vSphere.
+
+The existing `searchManagedEntities(typeinfo, recurse)` overload is unchanged; it discards the retrieved property values as before.
+
+---
+
+### `CacheInstance.awaitReady(long timeoutMillis)`
+
+New method that blocks until the cache delivers its first `onUpdate` event (i.e. is populated and ready to serve reads), removing the start()/get() race window where callers polled `isReady()` in a loop.
+
+`destroy()` is also hardened: it now calls `pc.cancelWaitForUpdates()` to break any in-flight long-poll so the watcher thread exits promptly, joins the thread (5 s) before returning, tolerates being called before `start()`, and is idempotent on repeated invocations. Call `destroy()` before disconnecting the `ServerConnection`.
+
+---
+
+### `vim25` Data Classes Implement `Serializable`
+
+`DynamicData` (root of ~1 174 data-object subclasses), `DynamicProperty`, `DynamicArray`, `ManagedObjectReference`, and all 614 `ArrayOf*` wrapper classes now implement `java.io.Serializable` (with `serialVersionUID = 1L`). This enables callers to snapshot vSphere state to disk, send it over Java serialization streams, or store it in a serialization-based cache.
+
+The `mo/` wrapper layer (`ServerConnection`, `WSClient`, managed-object classes) is intentionally **not** serializable — those hold live HTTP connections.
+
+---
+
+### `FailoverClusterConfigurator` and `FailoverClusterManager` Wrappers
+
+Two new `mo/` wrapper classes for the vSphere High Availability (VCHA) API that have been present in the WSDL since vSphere 6.5 but were previously unwrapped:
+
+- **`FailoverClusterConfigurator`**: `configureVcha_Task`, `createPassiveNode_Task`, `createWitnessNode_Task`, `deployVcha_Task`, `destroyVcha_Task`, `getVchaConfig`, `prepareVcha_Task`
+- **`FailoverClusterManager`**: `getClusterMode`, `getVchaClusterHealth`, `initiateFailover_Task`, `setClusterMode_Task`
+
+Accessible via `ServiceInstance.getFailoverClusterConfigurator()` and `ServiceInstance.getFailoverClusterManager()`.
+
+---
+
 ## Bug Fixes
 
 ### Guest Manager Null-Return NPE (`GuestFileManager`, `GuestProcessManager`, `GuestAuthManager`)
@@ -227,6 +290,96 @@ This method was silently broken since it was introduced: it called itself recurs
 
 - Any code path that called `cacheInstance.getCopy(mor, propertyName)` (with a `ManagedObjectReference` argument, not a `ManagedObject`) was throwing `StackOverflowError` at runtime. That code will now work correctly.
 - The method also now returns `null` for unknown MORs or missing property keys instead of throwing an exception.
+
+---
+
+### `InventoryNavigator` — OOM on Large Inventories
+
+`searchManagedEntities` previously called the deprecated `retrieveProperties` which fetches the entire inventory in one unbounded response. On large vCenter environments this caused `OutOfMemoryError`. The implementation now uses `retrievePropertiesEx` + `continueRetrievePropertiesEx` to page through results in bounded chunks.
+
+**What to check:**
+
+- No API change. The method returns the same results. Memory usage on large inventories is now proportional to the page size rather than the full inventory.
+
+---
+
+### `WSClient` — `HostnameVerifier` Not Applied Per-Connection When `ignoreCert=true`
+
+Connecting to vSphere by IP address with `ignoreCert=true` failed with "No subject alternative names matching IP address" because the `NoopHostnameVerifier` was applied globally via `HttpsURLConnection.setDefaultHostnameVerifier` — a JVM-wide, timing-fragile call. Connections that captured the JDK default before the override took effect ignored it and rejected the IP. Now applied per-connection via `applyHttpsConfig`, affecting only connections from this client.
+
+**What to check:**
+
+- No API change. If you were connecting to vSphere by IP with `ignoreCert=true` and saw hostname verification failures, this resolves them.
+
+---
+
+### `ManagedObjectWatcher` — Crash on Null `UpdateSet` / Deprecated `waitForUpdates`
+
+`CacheInstance.get()` returned null because the watcher thread crashed on its first iteration: `pc.waitForUpdates(version)` is deprecated as of SDK 4.1 and vCenter 6+ deserializes its response to a null `UpdateSet`, causing an NPE that spun the loop forever without populating the cache. Switched to `pc.waitForUpdatesEx(version, options)` and null `UpdateSet` responses are now skipped cleanly.
+
+**What to check:**
+
+- No API change. If you used `CacheInstance` and observed persistent null returns, this resolves it.
+
+---
+
+### `ServiceInstance` — Session-String Constructor Fails Fast on Invalid Session
+
+The session-string constructor previously silently stored a null `UserSession` when `getCurrentUserSession()` returned null (invalid or expired cookie), causing an NPE at the use-site far from the root cause. The constructor now throws `RemoteException` with a descriptive message at construction time.
+
+**What to check:**
+
+- Code that previously caught an NPE from a method call (after constructing `ServiceInstance` with an invalid session) will now see `RemoteException` from the constructor. Update error handling accordingly.
+
+---
+
+### `XmlGenDom` — NPE on Unknown `xsi:type`s and `ArrayOf*` Wrappers
+
+Two gaps in the XML deserializer:
+1. An `ArrayOf*` `xsi:type` on an `Object` field (e.g. `DynamicProperty.val` with `xsi:type="ArrayOfPerfCounterInfo"`) fell into the basic-type branch and threw NPE. Now detected upfront and deserialized as a typed array.
+2. An array element with an `xsi:type` that `TypeUtil` cannot resolve (unknown vSphere types introduced in newer API versions) threw `ClassNotFoundException`, aborting the entire parse. Now logs a warning and skips the unknown element.
+
+**What to check:**
+
+- No API change. Responses containing types not in the current Java model are now skipped gracefully instead of crashing the call.
+
+---
+
+### `missingSet` Fault Parsing — Real Error Swallowed by `NoSuchFieldException`
+
+Unknown XML elements in `MethodFault` subtypes (fields returned by newer vSphere API versions not yet in the Java model) caused `NoSuchFieldException` to propagate through `fromXml`, aborting `ObjectContent` parsing and swallowing the server-side fault entirely. The parser now logs unrecognised elements at DEBUG and continues, so `LocalizedMethodFault` is fully populated and `getCurrentProperty` surfaces the localized error message instead of an unhelpful class name.
+
+**What to check:**
+
+- No API change. Calls that were silently returning null or throwing cryptic exceptions due to missing fields now correctly surface the localized server error message.
+
+---
+
+### Backward-Compatible Method Aliases Restored
+
+The 9.0 WSDL regeneration renamed several public methods (dropping common prefixes/suffixes). Building the `yavijava-samples` project against the 9.0-SNAPSHOT revealed the breaks. The original method names are restored as thin delegating aliases alongside the new names; both compile and behave identically.
+
+Affected classes and method pairs (old → new, both available):
+- `AuthorizationManager.updateAuthorizationRole` → `updateRole`
+- `ComputeResource.getNetworks` → `getNetwork`
+- `Datastore.getVms` → `getVm`
+- `DiagnosticManager.generateLogBundles_Task` → `generateLogBundles`
+- `DistributedVirtualSwitch.addDVPortgroup_Task(spec[])` → `addDVPortgroups_Task`
+- `DistributedVirtualSwitchManager.dVSManagerLookupDvPortGroup` and other `dVSManager*` prefix drops
+
+**What to check:**
+
+- Code using the old names continues to compile. Code using the new shorter names also compiles. No behaviour change.
+
+---
+
+### `double[]` Missing from `ReflectUtil.setObjectArrayField`
+
+`ReflectUtil.setObjectArrayField` was missing a dispatch case for `double[]`, causing a `RuntimeException` when deserializing objects with `double[]` fields (e.g. `StoragePerformanceSummary`). The existing `toDoubleArray()` helper was wired in.
+
+**What to check:**
+
+- No API change. Calls to APIs that return objects with `double[]` fields (e.g. storage performance queries) no longer throw a `RuntimeException` during deserialization.
 
 ---
 
