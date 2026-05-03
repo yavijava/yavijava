@@ -90,6 +90,7 @@ public class LicenseManager extends ManagedObject {
     /**
  * @deprecated in SDK4.0
  */
+@Deprecated
 public boolean getSourceAvailable() {
     return ((Boolean) getCurrentProperty("sourceAvailable")).booleanValue();
 }

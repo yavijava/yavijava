@@ -358,6 +358,7 @@ public VirtualMachineSnapshot[] getRootSnapshot() {
     /**
  * @deprecated as of SDK4.1. Use acquireTicket instead.
  */
+@Deprecated
 public VirtualMachineMksTicket acquireMksTicket() throws RuntimeFault, RemoteException {
     return getVimService().acquireMksTicket(getMOR());
 }
@@ -408,6 +409,7 @@ public DiskChangeInfo queryChangedDiskAreas(VirtualMachineSnapshot snapshot, int
  * @since SDK4.1
  * @deprecated As of 6.0 use {@link #queryFaultToleranceCompatibilityEx}
  */
+@Deprecated
 public LocalizedMethodFault[] queryFaultToleranceCompatibility() throws InvalidState, VmConfigFault, RuntimeFault, RemoteException {
     return getVimService().queryFaultToleranceCompatibility(getMOR());
 }

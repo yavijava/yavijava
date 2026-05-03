@@ -118,6 +118,7 @@ public String getVsanObjExtAttrs(String[] uuids) throws RuntimeFault, RemoteExce
  * @throws RemoteException
  * @deprecated use {@link HostVsanInternalSystem#queryCmmds(HostVsanInternalSystemCmmdsQuery[])}
  */
+@Deprecated
 public String QueryCmmds(HostVsanInternalSystemCmmdsQuery[] queries) throws RuntimeFault, RemoteException {
     return queryCmmds(queries);
 }

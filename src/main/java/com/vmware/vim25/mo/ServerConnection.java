@@ -99,6 +99,7 @@ public class ServerConnection {
      * deprecate it. Also see bug: 3403474
      * To get updated UserSession, always use SessionManager.
      */
+    @Deprecated
     public UserSession getUserSession() {
         return userSession;
     }

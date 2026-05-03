@@ -86,6 +86,7 @@ public ApplyProfile createDefaultProfile(String profileType, String profileTypeN
     /**
  * @deprecated as of SDK5.5, use generateHostProfileTaskList_Task() instead
  */
+@Deprecated
 public HostProfileManagerConfigTaskList generateConfigTaskList(HostConfigSpec configSpec, HostSystem host) throws RuntimeFault, RemoteException {
     return getVimService().generateConfigTaskList(getMOR(), configSpec, host.getMOR());
 }

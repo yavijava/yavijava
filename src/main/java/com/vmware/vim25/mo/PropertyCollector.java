@@ -94,6 +94,7 @@ public class PropertyCollector extends ManagedObject {
     /**
      * @deprecated as of SDK4.1
      */
+    @Deprecated
     public ObjectContent[] retrieveProperties(PropertyFilterSpec[] specSet) throws InvalidProperty, RuntimeFault, RemoteException {
         return getVimService().retrieveProperties(getMOR(), specSet);
     }
@@ -108,6 +109,7 @@ public class PropertyCollector extends ManagedObject {
     /**
      * @deprecated as of SDK4.1
      */
+    @Deprecated
     public UpdateSet waitForUpdates(String version) throws InvalidCollectorVersion, RuntimeFault, RemoteException {
         return getVimService().waitForUpdates(getMOR(), version);
     }
