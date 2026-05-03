@@ -35,7 +35,7 @@ jobs:
         run: |
           VERSION=$(grep '^version' build.gradle | sed "s/version = '//;s/'//")
           if [[ "$VERSION" == *-SNAPSHOT ]]; then
-            ./gradlew publishAllPublicationsToCentralSnapshots
+            ./gradlew publishAggregationToCentralSnapshots
           else
-            ./gradlew publishAllPublicationsToCentralPortal
+            ./gradlew publishAggregationToCentralPortal
           fi
