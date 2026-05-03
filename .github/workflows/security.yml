@@ -1,0 +1,35 @@
+name: Security
+
+on:
+  schedule:
+    # Every Monday at 08:00 UTC
+    - cron: '0 8 * * 1'
+  workflow_dispatch:
+
+jobs:
+  dependency-check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up JDK 21
+        uses: actions/setup-java@v4
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v4
+
+      - name: OWASP Dependency-Check
+        # NVD_API_KEY secret: add in repo Settings → Secrets for higher NVD rate limits.
+        # Without it the scan still works but may be throttled on first run.
+        run: ./gradlew dependencyCheckAnalyze -PnvdApiKey="${{ secrets.NVD_API_KEY }}"
+
+      - name: Upload dependency-check report
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: dependency-check-report
+          path: build/reports/dependency-check-report.*
