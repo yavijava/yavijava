@@ -1,4 +1,4 @@
-# Upgrade Notes — 6.5.01-SNAPSHOT
+# Upgrade Notes — 9.0
 
 This document covers breaking changes and things to verify before upgrading your application to this version.
 
@@ -179,6 +179,46 @@ The vSphere 6.5 API surface has been merged in. The default SOAP action for **un
 
 ## Bug Fixes
 
+### Guest Manager Null-Return NPE (`GuestFileManager`, `GuestProcessManager`, `GuestAuthManager`)
+
+Several guest-operation wrapper methods could receive a `null` result from the vSphere API and then unconditionally dereference it, throwing `NullPointerException`. Affected methods now guard against null before returning.
+
+**What to check:**
+
+- Code that previously relied on an NPE as an implicit error signal from these methods should add an explicit null check instead.
+
+---
+
+### Charset Fixes (`SoapClient`, `VerUtil`)
+
+SOAP request encoding and HTTP response parsing now explicitly use UTF-8 instead of the platform default charset. This prevents corrupted request bodies or misread responses on hosts where the default charset is not UTF-8 (e.g. Windows hosts with a non-UTF-8 system locale).
+
+**What to check:**
+
+- No API change. If you were on a non-UTF-8 host and saw garbled characters or parse failures, this resolves them.
+
+---
+
+### Integer Overflow in `VirtualMachineDeviceManager.createHardDisk`
+
+The disk-size calculation `diskSizeMB * 1024` was `int * int`, silently overflowing to a negative or wrong value for disks larger than 2 TB. Fixed to `(long) diskSizeMB * 1024L`.
+
+**What to check:**
+
+- No API change. Code creating disks ≥ 2 TB will now send the correct capacity to vSphere instead of a wrapped negative value.
+
+---
+
+### Resource Leak in `ApacheHttpClient.post()`
+
+`CloseableHttpClient` and `CloseableHttpResponse` were created but never closed, leaking HTTP connections on every SOAP call. Both are now wrapped in try-with-resources; the response body is buffered into a `ByteArrayInputStream` before the connection is released.
+
+**What to check:**
+
+- No API change. The `InputStream` returned from `post()` is now a self-contained `ByteArrayInputStream`; callers that closed or streamed it continue to work correctly.
+
+---
+
 ### `CacheInstance.getCopy(ManagedObjectReference, String)` — Infinite Recursion
 
 This method was silently broken since it was introduced: it called itself recursively, causing a `StackOverflowError` on every invocation. It now correctly retrieves the cached value and returns a deep copy.
@@ -194,10 +234,11 @@ This method was silently broken since it was introduced: it called itself recurs
 
 | Dependency | Old | New |
 |---|---|---|
-| Apache HttpClient | `httpclient:4.5.14` | `httpclient5:5.4.1` |
+| Apache HttpClient | `httpclient:4.5.14` | `httpclient5:5.5.2` |
 | SLF4J API | 1.x | 2.0.17 |
 | dom4j | 1.6.1 | 2.1.4 |
-| Lombok | 1.16.x | 1.18.36 |
+| Lombok | 1.16.x | 1.18.38 |
+| objenesis | — | 3.4 |
 | JUnit | 4.12 | 4.13.2 |
 
 ---
@@ -210,3 +251,11 @@ The following changes are internal and do not affect your application code:
 - CI pipeline added (GitHub Actions, JDK 21 Temurin)
 - log4j replaced with SLF4J throughout (no log4j on the classpath)
 - Comprehensive unit test suite added across the `ws` and `cf` packages
+- CRLF → LF: all source and configuration files converted from Windows line endings to Unix line endings (dos2unix)
+- SpotBugs and OWASP Dependency-Check wired into the Gradle build (`check` and `dependencyCheckAnalyze`)
+- Deprecated Java reflection APIs in `XmlGenDom` updated for Java 9+ (`isAccessible()` → `canAccess()`, `newInstance()` → `getDeclaredConstructor().newInstance()`)
+- `dom4j` exception unwrapping in `XmlGenDom` corrected to use `getCause()` instead of `getNestedException()`, which returned `null` for SAX parse errors
+- Raw `Hashtable` in `ManagedObject` / `PropertyCollectorUtil` parameterised to `Hashtable<String, Object>`
+- `TaskManager.getDescriptioin()` typo-method removed (the correctly-spelled `getDescription()` is unaffected)
+- Missing `@Deprecated` annotations added to eleven managed-object methods that carried the `@deprecated` Javadoc tag without the corresponding annotation
+- `@apiNote` security warnings added to `ApacheTrustSelfSigned.trust()`, `CustomSSLTrustContextCreator.getTrustContext()`, and `VerUtil.getTargetNameSpace()`
