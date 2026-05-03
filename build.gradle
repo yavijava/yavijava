@@ -11,7 +11,7 @@ plugins {
 
 group = "com.toastcoders"
 archivesBaseName = "yavijava"
-version = '9.0-SNAPSHOT'
+version = '9.0'
 ext.isReleaseVersion = !version.endsWith("SNAPSHOT")
 targetCompatibility = JavaVersion.VERSION_21
 sourceCompatibility = JavaVersion.VERSION_21
@@ -129,6 +129,12 @@ dependencyCheck {
 
 signing {
     required { isReleaseVersion && gradle.taskGraph.hasTask("publish") }
+    def signingKey = findProperty('signingKey')
+    def signingKeyId = findProperty('signingKeyId')
+    def signingPassword = findProperty('signingPassword')
+    if (signingKey) {
+        useInMemoryPgpKeys(signingKeyId, signingKey, signingPassword)
+    }
     sign publishing.publications
 }
 
