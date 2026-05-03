@@ -7,7 +7,7 @@ on:
     branches: [ gradle, master ]
 
 jobs:
-  test:
+  build:
     runs-on: ubuntu-latest
 
     steps:
@@ -22,12 +22,19 @@ jobs:
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v4
 
-      - name: Run tests
-        run: ./gradlew test
+      - name: Build and check
+        run: ./gradlew check
 
-      - name: Publish test report
+      - name: Upload test report
         uses: actions/upload-artifact@v4
         if: always()
         with:
           name: test-results
           path: build/reports/tests/test/
+
+      - name: Upload SpotBugs report
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: spotbugs-report
+          path: build/reports/spotbugs/

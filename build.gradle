@@ -5,6 +5,8 @@ plugins {
     id 'eclipse'
     id 'maven-publish'
     id 'signing'
+    id 'com.github.spotbugs' version '6.5.4'
+    id 'org.owasp.dependencycheck' version '12.2.1'
 }
 
 group = "com.toastcoders"
@@ -82,6 +84,37 @@ test {
 java {
     withJavadocJar()
     withSourcesJar()
+}
+
+// --- SpotBugs static analysis (runs as part of `check`) ---
+spotbugs {
+    ignoreFailures = false
+    effort = com.github.spotbugs.snom.Effort.MAX
+    excludeFilter = file('config/spotbugs/exclude.xml')
+}
+
+spotbugsMain {
+    reports {
+        html.required = true
+        text.required = true
+        xml.required = false
+    }
+}
+
+// Test/intTest sources are not gated — too much noise for minimal benefit.
+spotbugsTest.enabled = false
+spotbugsIntTest.enabled = false
+
+// --- OWASP Dependency-Check (run explicitly: ./gradlew dependencyCheckAnalyze) ---
+// Not wired into `check` because it requires downloading the NVD database (~200 MB).
+// Run periodically in CI as a separate job.
+// Provide NVD API key via -PnvdApiKey=<key> or gradle.properties for higher rate limits.
+dependencyCheck {
+    failBuildOnCVSS = 7
+    suppressionFile = 'config/owasp/suppressions.xml'
+    nvd {
+        apiKey = findProperty('nvdApiKey') ?: ''
+    }
 }
 
 signing {
