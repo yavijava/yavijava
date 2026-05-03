@@ -1,5 +1,6 @@
 package com.vmware.vim25.mox
 
+import com.vmware.vim25.GuestOsDescriptor
 import com.vmware.vim25.VirtualDevice
 import com.vmware.vim25.VirtualDisk
 import com.vmware.vim25.VirtualDiskMode
@@ -36,5 +37,23 @@ class VirtualMachineDeviceManagerSpec extends Specification {
         then:
         VirtualDisk disk = captured[0].deviceChange[0].device as VirtualDisk
         disk.capacityInKB == (long) diskSizeMB * 1024L
+    }
+
+    def "validateNicType returns input adapter type unchanged when guest OS is not found"() {
+        setup:
+        def method = VirtualMachineDeviceManager.getDeclaredMethod(
+            "validateNicType",
+            GuestOsDescriptor[].class,
+            String.class,
+            VirtualMachineDeviceManager.VirtualNetworkAdapterType.class
+        )
+        method.setAccessible(true)
+
+        when:
+        def result = method.invoke(null, new GuestOsDescriptor[0], "unknown-os-id",
+            VirtualMachineDeviceManager.VirtualNetworkAdapterType.VirtualVmxnet3)
+
+        then:
+        result == VirtualMachineDeviceManager.VirtualNetworkAdapterType.VirtualVmxnet3
     }
 }

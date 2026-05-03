@@ -617,6 +617,10 @@ public class VirtualMachineDeviceManager {
             }
         }
 
+        if (guestOsInfo == null) {
+            return adapterType;
+        }
+
         if (adapterType == VirtualNetworkAdapterType.Unknown) {
             result = TryGetNetworkAdapterType(guestOsInfo);
         }
