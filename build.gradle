@@ -8,6 +8,7 @@ plugins {
     id 'com.github.spotbugs' version '6.5.4'
     id 'org.owasp.dependencycheck' version '12.2.1'
     id 'com.gradleup.nmcp' version '1.5.0'
+    id 'com.gradleup.nmcp.aggregation' version '1.5.0'
 }
 
 group = "com.toastcoders"
@@ -176,10 +177,14 @@ publishing {
     }
 }
 
-nmcp {
-    publishAllPublications {
+nmcpAggregation {
+    centralPortal {
         username = findProperty('mavenCentralUsername') ?: ''
         password = findProperty('mavenCentralPassword') ?: ''
         publishingType = "AUTOMATIC"
     }
+}
+
+dependencies {
+    nmcpAggregation project(':')
 }
