@@ -1,13 +1,16 @@
 package com.vmware.vim25.ws;
 
 import org.apache.hc.client5.http.classic.methods.HttpPost;
+import org.apache.hc.client5.http.config.ConnectionConfig;
 import org.apache.hc.client5.http.config.RequestConfig;
 import org.apache.hc.client5.http.impl.classic.CloseableHttpClient;
 import org.apache.hc.client5.http.impl.classic.CloseableHttpResponse;
 import org.apache.hc.client5.http.impl.classic.HttpClients;
 import org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManagerBuilder;
+import org.apache.hc.client5.http.protocol.HttpClientContext;
+import org.apache.hc.client5.http.ssl.DefaultClientTlsStrategy;
 import org.apache.hc.client5.http.ssl.NoopHostnameVerifier;
-import org.apache.hc.client5.http.ssl.SSLConnectionSocketFactory;
+import org.apache.hc.client5.http.ssl.TlsSocketStrategy;
 import org.apache.hc.core5.http.Header;
 import org.apache.hc.core5.http.io.entity.StringEntity;
 import org.apache.hc.core5.util.Timeout;
@@ -18,8 +21,8 @@ import javax.net.ssl.TrustManager;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.MalformedURLException;
+import java.net.URI;
 import java.net.URISyntaxException;
-import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.rmi.RemoteException;
 
@@ -81,7 +84,11 @@ public class ApacheHttpClient extends SoapClient {
         log.trace("Ignore ssl: " + ignoreCert);
         this.trustAllSSL = ignoreCert;
         this.trustManager = trustManager;
-        this.baseUrl = new URL(serverUrl);
+        try {
+            this.baseUrl = URI.create(serverUrl).toURL();
+        } catch (IllegalArgumentException e) {
+            throw new MalformedURLException(e.getMessage());
+        }
     }
 
     /**
@@ -157,8 +164,11 @@ public class ApacheHttpClient extends SoapClient {
     }
 
     private InputStream post(String payload) throws IOException {
-        RequestConfig requestConfig = RequestConfig.custom()
+        ConnectionConfig connectionConfig = ConnectionConfig.custom()
             .setConnectTimeout(Timeout.ofMilliseconds(this.connectTimeout))
+            .build();
+
+        RequestConfig requestConfig = RequestConfig.custom()
             .setResponseTimeout(Timeout.ofMilliseconds(this.readTimeout))
             .build();
 
@@ -166,24 +176,22 @@ public class ApacheHttpClient extends SoapClient {
             log.warn("The option to ignore certs has been set along with a provided trust manager. This is not a valid scenario and the trust manager will be ignored.");
         }
 
-        CloseableHttpClient httpclient;
+        PoolingHttpClientConnectionManagerBuilder connManagerBuilder =
+            PoolingHttpClientConnectionManagerBuilder.create()
+                .setDefaultConnectionConfig(connectionConfig);
+
         if (trustAllSSL) {
-            httpclient = HttpClients.custom()
-                .setConnectionManager(PoolingHttpClientConnectionManagerBuilder.create()
-                    .setSSLSocketFactory(ApacheTrustSelfSigned.trust())
-                    .build())
-                .build();
+            connManagerBuilder.setTlsSocketStrategy(ApacheTrustSelfSigned.trust());
         } else if (trustManager != null) {
-            SSLConnectionSocketFactory sslConnectionSocketFactory = new SSLConnectionSocketFactory(
-                CustomSSLTrustContextCreator.getTrustContext(trustManager), NoopHostnameVerifier.INSTANCE);
-            httpclient = HttpClients.custom()
-                .setConnectionManager(PoolingHttpClientConnectionManagerBuilder.create()
-                    .setSSLSocketFactory(sslConnectionSocketFactory)
-                    .build())
-                .build();
-        } else {
-            httpclient = HttpClients.createDefault();
+            TlsSocketStrategy tlsStrategy = new DefaultClientTlsStrategy(
+                CustomSSLTrustContextCreator.getTrustContext(trustManager),
+                NoopHostnameVerifier.INSTANCE);
+            connManagerBuilder.setTlsSocketStrategy(tlsStrategy);
         }
+
+        CloseableHttpClient httpclient = HttpClients.custom()
+            .setConnectionManager(connManagerBuilder.build())
+            .build();
 
         HttpPost httpPost;
         try {
@@ -206,7 +214,7 @@ public class ApacheHttpClient extends SoapClient {
         }
         httpPost.setEntity(stringEntity);
 
-        CloseableHttpResponse response = httpclient.execute(httpPost);
+        CloseableHttpResponse response = httpclient.execute(httpPost, HttpClientContext.create());
         InputStream inputStream = response.getEntity().getContent();
         if (cookie == null) {
             Header setCookieHeader = response.getFirstHeader("Set-Cookie");
