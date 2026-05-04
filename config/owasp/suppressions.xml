@@ -1,12 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <suppressions xmlns="https://jeremylong.github.io/DependencyCheck/dependency-suppression.1.3.xsd">
-  <!--
-    Add suppression entries here for known false positives.
-    Format:
-      <suppress>
-        <notes>Why this is suppressed</notes>
-        <gav regex="true">^group:artifact:.*$</gav>
-        <cve>CVE-YYYY-NNNNN</cve>
-      </suppress>
-  -->
+
+  <!-- FALSE POSITIVES: gratatouille-tasks-runtime and nmcp-tasks -->
+  <!-- CVE-2020-22475 and CVE-2022-39349 are for the "Tasks" Android/mobile app
+       (insecure permissions / XSS). The CPE matcher is keying on the word "tasks"
+       in the JAR name, but these are Gradle build-time plugin JARs with no
+       relationship to that product. -->
+  <suppress>
+    <notes>False positive: CVE-2020-22475 is for a "Tasks" Android app, not the gratatouille Gradle plugin runtime.</notes>
+    <packageUrl regex="true">^pkg:maven/com\.gradleup\.gratatouille/gratatouille-tasks-runtime@.*$</packageUrl>
+    <cve>CVE-2020-22475</cve>
+  </suppress>
+  <suppress>
+    <notes>False positive: CVE-2022-39349 is for the Tasks Android app, not the gratatouille Gradle plugin runtime.</notes>
+    <packageUrl regex="true">^pkg:maven/com\.gradleup\.gratatouille/gratatouille-tasks-runtime@.*$</packageUrl>
+    <cve>CVE-2022-39349</cve>
+  </suppress>
+  <suppress>
+    <notes>False positive: CVE-2020-22475 is for a "Tasks" Android app, not the nmcp Gradle plugin.</notes>
+    <packageUrl regex="true">^pkg:maven/com\.gradleup\.nmcp/nmcp-tasks@.*$</packageUrl>
+    <cve>CVE-2020-22475</cve>
+  </suppress>
+  <suppress>
+    <notes>False positive: CVE-2022-39349 is for the Tasks Android app, not the nmcp Gradle plugin.</notes>
+    <packageUrl regex="true">^pkg:maven/com\.gradleup\.nmcp/nmcp-tasks@.*$</packageUrl>
+    <cve>CVE-2022-39349</cve>
+  </suppress>
+
 </suppressions>
