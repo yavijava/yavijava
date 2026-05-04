@@ -115,6 +115,15 @@ spotbugsMain {
 spotbugsTest.enabled = false
 spotbugsIntTest.enabled = false
 
+// Force log4j to a version that fixes CVE-2026-34478, CVE-2026-34480, CVE-2026-34481,
+// and CVE-2025-68161. SpotBugs pulls in 2.25.2; 2.25.4 is within its [2.17.1,3) range.
+configurations.all {
+    resolutionStrategy {
+        force 'org.apache.logging.log4j:log4j-core:2.25.4'
+        force 'org.apache.logging.log4j:log4j-api:2.25.4'
+    }
+}
+
 // --- OWASP Dependency-Check (run explicitly: ./gradlew dependencyCheckAnalyze) ---
 // Not wired into `check` because it requires downloading the NVD database (~200 MB).
 // Run periodically in CI as a separate job.
