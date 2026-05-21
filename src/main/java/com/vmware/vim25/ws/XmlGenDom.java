@@ -50,6 +50,7 @@ import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
 import java.rmi.RemoteException;
 import java.util.ArrayList;
+import java.util.Base64;
 import java.util.Iterator;
 import java.util.List;
 
@@ -319,7 +320,19 @@ class XmlGenDom extends XmlGen {
                 }
             }
 
-            if (fRealType == ManagedObjectReference.class) { // MOR
+            // byte[][] would otherwise be misread as a single byte[] via base64Binary after getComponentType()
+            if (field.getType() == byte[][].class) {
+                int count = getNumberOfSameTags(subNodes, sizeOfSubNodes, i, tagName);
+                byte[][] result = new byte[count][];
+                for (int j = 0; j < count; j++) {
+                    String text = ((Element) subNodes.get(j + i)).getText().trim();
+                    result[j] = Base64.getDecoder().decode(text);
+                }
+                field.set(obj, result);
+                i = i + count - 1;
+                continue;
+            }
+            else if (fRealType == ManagedObjectReference.class) { // MOR
                 if (isFieldArray) {
                     int sizeOfFieldArray = getNumberOfSameTags(subNodes, sizeOfSubNodes, i, tagName);
                     ManagedObjectReference[] mos = new ManagedObjectReference[sizeOfFieldArray];
