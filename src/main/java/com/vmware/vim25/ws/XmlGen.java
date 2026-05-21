@@ -178,11 +178,13 @@ public abstract class XmlGen {
                 String fName = f.getName();
 
                 Object value = null;
-                if (!Modifier.isTransient(f.getModifiers())) {
+                // Skip static fields (e.g. serialVersionUID): Field.get on a private static throws IllegalAccessException
+                if (!Modifier.isTransient(f.getModifiers()) && !Modifier.isStatic(f.getModifiers())) {
                     try {
                         value = f.get(obj);
                     }
                     catch (IllegalAccessException iae) {
+                        // Defensive: static fields are skipped by the guard above; this remains for any other access failure.
                         log.error("IllegalAccessException caught.", iae);
                     }
                 }
