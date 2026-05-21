@@ -50,6 +50,7 @@ import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
 import java.rmi.RemoteException;
 import java.util.ArrayList;
+import java.util.Base64;
 import java.util.Iterator;
 import java.util.List;
 
@@ -325,10 +326,11 @@ class XmlGenDom extends XmlGen {
                 byte[][] result = new byte[count][];
                 for (int j = 0; j < count; j++) {
                     String text = ((Element) subNodes.get(j + i)).getText().trim();
-                    result[j] = java.util.Base64.getDecoder().decode(text);
+                    result[j] = Base64.getDecoder().decode(text);
                 }
                 field.set(obj, result);
                 i = i + count - 1;
+                continue;
             }
             else if (fRealType == ManagedObjectReference.class) { // MOR
                 if (isFieldArray) {

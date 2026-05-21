@@ -8,6 +8,8 @@
             <returnval>
                 <endorsementKeyCertificateSigningRequest>AQID</endorsementKeyCertificateSigningRequest>
                 <endorsementKeyCertificateSigningRequest>BAUG</endorsementKeyCertificateSigningRequest>
+                <endorsementKeyCertificate>BwgJ</endorsementKeyCertificate>
+                <endorsementKeyCertificate>CgsM</endorsementKeyCertificate>
             </returnval>
         </RetrievePropertiesResponse>
     </soapenv:Body>
