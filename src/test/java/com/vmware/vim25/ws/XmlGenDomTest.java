@@ -244,6 +244,22 @@ public class XmlGenDomTest {
     }
 
     @Test
+    public void testFromXML_VirtualTPM_with_byteArrayArray_field_deserializes_correctly() throws Exception {
+        InputStream inputStream = new FileInputStream(new File("src/test/resources/xml/VirtualTPMWithEndorsementKeyCSR.xml"));
+        XmlGenDom xmlGenDom = new XmlGenDom();
+        VirtualTPM vtpm = (VirtualTPM) xmlGenDom.fromXML("VirtualTPM", inputStream);
+        Assert.assertNotNull("VirtualTPM should not be null", vtpm);
+        Assert.assertNotNull("endorsementKeyCertificateSigningRequest should not be null",
+            vtpm.endorsementKeyCertificateSigningRequest);
+        Assert.assertEquals("should have 2 CSR entries", 2,
+            vtpm.endorsementKeyCertificateSigningRequest.length);
+        Assert.assertArrayEquals("first CSR entry should decode to 0x01 0x02 0x03",
+            new byte[]{0x01, 0x02, 0x03}, vtpm.endorsementKeyCertificateSigningRequest[0]);
+        Assert.assertArrayEquals("second CSR entry should decode to 0x04 0x05 0x06",
+            new byte[]{0x04, 0x05, 0x06}, vtpm.endorsementKeyCertificateSigningRequest[1]);
+    }
+
+    @Test
     public void testFromXML_PerfCounterInfoWithUnknownSubtype_ParsesGracefully() throws Exception {
         InputStream inputStream = new FileInputStream(
             new File("src/test/java/com/vmware/vim25/ws/xml/PerfCounterInfoWithUnknownSubtype.xml"));
