@@ -85,4 +85,30 @@ public class ReleaseNotesTest {
         assertTrue("Expected CacheInstance.awaitReady in UPDATES.md",
             updates().contains("awaitReady"));
     }
+
+    // --- 9.0.1 patch release ---
+
+    @Test
+    public void updatesDoc_documents901Section() throws IOException {
+        assertTrue("Expected 9.0.1 section heading in UPDATES.md",
+            updates().contains("9.0.1"));
+    }
+
+    @Test
+    public void updatesDoc_documentsVtpmByteArrayFix() throws IOException {
+        assertTrue("Expected VirtualTPM byte[][] fix entry in UPDATES.md",
+            updates().contains("VirtualTPM"));
+    }
+
+    @Test
+    public void updatesDoc_documentsSerialVersionUidLogSpamFix() throws IOException {
+        assertTrue("Expected serialVersionUID log spam fix entry in UPDATES.md",
+            updates().contains("serialVersionUID"));
+    }
+
+    @Test
+    public void relNote_hasVersion901Entry() throws IOException {
+        assertTrue("Expected 9.0.1 entry in rel-note.txt",
+            relNote().contains("9.0.1"));
+    }
 }

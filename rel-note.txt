@@ -1,3 +1,8 @@
+What is new in Version 9.0.1?
+Bug fixes:
+- VirtualMachine.getConfig() IllegalArgumentException on VMs with vTPM (byte[][] deserialization, #352)
+- XmlGen.toXML() ERROR log spam from serialVersionUID on Serializable ArrayOf* classes (#353)
+
 What is new in Version 9.0?
 vSphere 9.0 WSDL support (new managed objects, updated stubs)
 Apache HttpClient 4 → 5 migration (httpclient5:5.5.2)

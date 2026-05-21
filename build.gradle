@@ -13,7 +13,7 @@ plugins {
 
 group = "com.toastcoders"
 base.archivesName = "yavijava"
-version = '9.0'
+version = '9.0.1'
 ext.isReleaseVersion = !version.endsWith("SNAPSHOT")
 
 repositories {

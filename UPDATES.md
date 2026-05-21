@@ -4,6 +4,15 @@ This document covers breaking changes and things to verify before upgrading your
 
 ---
 
+## 9.0.1 — Bug Fixes
+
+No breaking changes from 9.0. Bug fixes only:
+
+- **`VirtualMachine.getConfig()` `IllegalArgumentException` for VMs with vTPM (#352).** `XmlGenDom.fromXml()` collapsed `byte[][]` fields (`VirtualTPM.endorsementKeyCertificateSigningRequest`, `VirtualTPM.endorsementKeyCertificate`) to `byte[]` via a single `getComponentType()` call, then tried to assign the resulting `byte[]` to the `byte[][]` field. Any VM with a virtual TPM device — Windows 11 mandates one by default — threw on `getConfig()`. The deserializer now special-cases `byte[][]` fields and base64-decodes each element into the outer array.
+- **`ERROR` log spam from `serialVersionUID` on every serialization (#353).** `XmlGen.toXML()` iterated all declared fields and filtered only `transient`, so the `private static final long serialVersionUID` on every `Serializable` `ArrayOf*` class hit `Field.get()` and triggered an `IllegalAccessException` that was caught and logged at `ERROR`. Wire output was correct, but the noise was per-call. The field-iteration guard now also skips `static` fields.
+
+---
+
 ## Breaking Changes
 
 ### `com.vmware.vim.rest` Package Removed
