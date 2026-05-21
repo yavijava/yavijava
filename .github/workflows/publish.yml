@@ -8,18 +8,20 @@ on:
 jobs:
   publish:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
       - name: Set up JDK 21
-        uses: actions/setup-java@v4
+        uses: actions/setup-java@v5
         with:
           java-version: '21'
           distribution: 'temurin'
 
       - name: Setup Gradle
-        uses: gradle/actions/setup-gradle@v4
+        uses: gradle/actions/setup-gradle@v6
 
       - name: Publish
         # SNAPSHOT → publishAllPublicationsToCentralSnapshots (no signing required)
@@ -39,3 +41,24 @@ jobs:
           else
             ./gradlew publishAggregationToCentralPortal
           fi
+
+      - name: Create GitHub Release
+        # Skipped for SNAPSHOT builds and when a release already exists for this tag
+        # (e.g. maintainer created one manually). --generate-notes diffs against the
+        # previous tag; the maintainer can edit the body afterward.
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          VERSION=$(grep '^version' build.gradle | sed "s/version = '//;s/'//")
+          if [[ "$VERSION" == *-SNAPSHOT ]]; then
+            echo "SNAPSHOT version, skipping GitHub Release"
+            exit 0
+          fi
+          if gh release view "$GITHUB_REF_NAME" >/dev/null 2>&1; then
+            echo "Release $GITHUB_REF_NAME already exists, skipping"
+            exit 0
+          fi
+          gh release create "$GITHUB_REF_NAME" \
+            --title "$GITHUB_REF_NAME" \
+            --generate-notes \
+            --verify-tag
