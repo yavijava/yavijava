@@ -184,6 +184,7 @@ public abstract class XmlGen {
                         value = f.get(obj);
                     }
                     catch (IllegalAccessException iae) {
+                        // Defensive: static fields are skipped by the guard above; this remains for any other access failure.
                         log.error("IllegalAccessException caught.", iae);
                     }
                 }

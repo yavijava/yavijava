@@ -58,13 +58,10 @@ public class XmlGenTest {
             List<ILoggingEvent> events = appender.list;
             for (ILoggingEvent event : events) {
                 if (event.getLevel() == Level.ERROR) {
-                    Throwable t = event.getThrowableProxy() != null
-                            ? (event.getThrowableProxy() instanceof ch.qos.logback.classic.spi.ThrowableProxy
-                                ? ((ch.qos.logback.classic.spi.ThrowableProxy) event.getThrowableProxy()).getThrowable()
-                                : null)
-                            : null;
-                    boolean mentionsIllegalAccess = event.getFormattedMessage().contains("IllegalAccessException")
-                            || (t instanceof IllegalAccessException);
+                    boolean mentionsIllegalAccess =
+                        event.getFormattedMessage().contains("IllegalAccessException")
+                            || (event.getThrowableProxy() != null
+                                && event.getThrowableProxy().getClassName().equals(IllegalAccessException.class.getName()));
                     assertFalse(
                             "XmlGen must not log ERROR for IllegalAccessException on serialVersionUID, but got: "
                                     + event.getFormattedMessage(),
@@ -77,6 +74,8 @@ public class XmlGenTest {
         }
     }
 
+    // Regression guard: if a future refactor starts iterating static fields for serialization,
+    // this catches it. Does NOT detect the original log-spam bug — see the sibling symptom test.
     @Test
     public void toXML_serializedXml_doesNotContainStaticSerialVersionUID() {
         ArrayOfHostRdmaDevice payload = new ArrayOfHostRdmaDevice();
