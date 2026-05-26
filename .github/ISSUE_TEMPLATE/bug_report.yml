@@ -1,0 +1,90 @@
+name: Bug report
+description: Something is broken or behaves incorrectly.
+title: "<short description of the problem>"
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to file a bug. Please fill in as much as you can — version info and a reproduction are what move a report from "we'll get to it" to "we can fix this."
+
+        If you suspect a security vulnerability, **do not** open this form — see [SECURITY.md](https://github.com/yavijava/yavijava/blob/gradle/SECURITY.md) for the private disclosure process.
+
+  - type: input
+    id: yavijava-version
+    attributes:
+      label: yavijava version
+      description: The version on your classpath (e.g. `9.0.1`). Check `build.gradle`, `pom.xml`, or the JAR.
+      placeholder: "9.0.1"
+    validations:
+      required: true
+
+  - type: input
+    id: vsphere-version
+    attributes:
+      label: vSphere / vCenter version
+      description: The version of vSphere or vCenter you were talking to when the problem occurred.
+      placeholder: "8.0 U2 / 9.0 / vcsim"
+    validations:
+      required: true
+
+  - type: input
+    id: jdk-version
+    attributes:
+      label: JDK version
+      description: Output of `java -version`.
+      placeholder: "OpenJDK 21.0.4"
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction steps
+      description: What did you do? Minimal code or shell commands are ideal.
+      placeholder: |
+        1. ServiceInstance si = new ServiceInstance(...)
+        2. VirtualMachine vm = (VirtualMachine) new InventoryNavigator(...).searchManagedEntity(...);
+        3. vm.getConfig();
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+      description: Include the exact exception, error message, or log line if you have one.
+    validations:
+      required: true
+
+  - type: textarea
+    id: stacktrace
+    attributes:
+      label: Stack trace
+      description: Paste the full stack trace if relevant. Wrap in triple-backticks for readability.
+      render: text
+    validations:
+      required: false
+
+  - type: textarea
+    id: suspected-cause
+    attributes:
+      label: Suspected cause or proposed fix
+      description: Optional. If you've already dug into the code, share what you found — it's often the fastest path to a merge.
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Code of Conduct
+      options:
+        - label: I agree to follow this project's [Code of Conduct](https://github.com/yavijava/yavijava/blob/gradle/CODE_OF_CONDUCT.md).
+          required: true

@@ -1,0 +1,63 @@
+name: Regression
+description: Something that used to work in a previous yavijava version now fails.
+title: "<short description of the regression>"
+labels: ["bug", "regression"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this template if the same code worked on an earlier yavijava version and stopped working on a newer one. If you're not sure whether it ever worked, use the **Bug report** template instead.
+
+  - type: input
+    id: last-good-version
+    attributes:
+      label: Last yavijava version where it worked
+    validations:
+      required: true
+
+  - type: input
+    id: first-bad-version
+    attributes:
+      label: First yavijava version where it broke
+    validations:
+      required: true
+
+  - type: input
+    id: vsphere-version
+    attributes:
+      label: vSphere / vCenter version (same across both runs)
+      placeholder: "8.0 U2 / 9.0 / vcsim"
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction
+      description: Code or steps that exercise the regression. Ideally the same call site runs on both versions.
+    validations:
+      required: true
+
+  - type: textarea
+    id: observed
+    attributes:
+      label: What changed
+      description: Exception, output difference, behavior change — whatever lets a maintainer see the delta.
+    validations:
+      required: true
+
+  - type: textarea
+    id: suspected-commit
+    attributes:
+      label: Suspected commit or PR
+      description: Optional. If you've bisected or skimmed the changelog, point to the suspected change.
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Code of Conduct
+      options:
+        - label: I agree to follow this project's [Code of Conduct](https://github.com/yavijava/yavijava/blob/gradle/CODE_OF_CONDUCT.md).
+          required: true

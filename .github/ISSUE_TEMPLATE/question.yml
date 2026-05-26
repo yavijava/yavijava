@@ -1,0 +1,37 @@
+name: Question
+description: You have a usage question. (Prefer Discussions.)
+title: "<your question in one line>"
+labels: ["question"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Most usage questions are a better fit for [GitHub Discussions](https://github.com/yavijava/yavijava/discussions) — they're searchable, others can answer, and they don't crowd the issue tracker.
+
+        Open an issue here only if:
+        - The behavior you're seeing might actually be a bug (in which case, use the **Bug report** template).
+        - The question is short and you've already searched Discussions and the README.
+
+  - type: textarea
+    id: question
+    attributes:
+      label: Question
+      description: What are you trying to do, and what's blocking you?
+    validations:
+      required: true
+
+  - type: textarea
+    id: tried
+    attributes:
+      label: What you've tried
+      description: Code snippets, API calls, or docs you've already looked at.
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Code of Conduct
+      options:
+        - label: I agree to follow this project's [Code of Conduct](https://github.com/yavijava/yavijava/blob/gradle/CODE_OF_CONDUCT.md).
+          required: true

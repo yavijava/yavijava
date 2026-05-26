@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Discussions
+    url: https://github.com/yavijava/yavijava/discussions
+    about: Ask a usage question, share a pattern, or start an open-ended discussion. Please search existing discussions first.
+  - name: Security vulnerability
+    url: https://github.com/yavijava/yavijava/blob/gradle/SECURITY.md
+    about: Do NOT open a public issue. See SECURITY.md for the private disclosure process.
