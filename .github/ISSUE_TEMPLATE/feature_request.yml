@@ -1,0 +1,41 @@
+name: Feature request
+description: Suggest a new API surface, helper, or capability.
+title: "<short description of the feature>"
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Feature requests are welcome but lower-priority than bug reports. The more clearly you can describe the *problem* the feature solves, the easier it is to evaluate.
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What are you trying to do? What's painful or impossible today?
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed feature
+      description: A sketch of the API or behavior you have in mind. Method signatures, class names, or sample usage are all welcome.
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Why can the existing API not solve this?
+      description: Have you tried `mo/`, `mox/`, or a direct `VimStub` call? What's missing or awkward?
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Code of Conduct
+      options:
+        - label: I agree to follow this project's [Code of Conduct](https://github.com/yavijava/yavijava/blob/gradle/CODE_OF_CONDUCT.md).
+          required: true
