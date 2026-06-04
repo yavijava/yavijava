@@ -37,6 +37,25 @@ public class ManagedObjectCurrentPropertyTest {
         assertNull(mo.testGetCurrentProperty("name"));
     }
 
+    // Reproduces github.com/yavijava/yavijava/issues/360 — PropertyCollector returns a
+    // DynamicProperty whose val is null (e.g. when XmlGenDom can't resolve an ArrayOf*
+    // xsi:type and leaves the field unset). getCurrentProperty should return null for
+    // a present-but-null property, matching the long-standing contract that optional
+    // managed-object properties yield null when unset.
+    @Test
+    public void getCurrentProperty_returnsNullWhenDynamicPropertyValIsNull() {
+        DynamicProperty dp = new DynamicProperty();
+        dp.setName("customValue");
+        dp.setVal(null);
+
+        ObjectContent objContent = new ObjectContent();
+        objContent.setPropSet(new DynamicProperty[]{dp});
+
+        TestManagedObject mo = new TestManagedObject(objContent);
+
+        assertNull(mo.testGetCurrentProperty("customValue"));
+    }
+
     @Test
     public void getCurrentProperty_throwsWhenMissingSetContainsFault() {
         MissingProperty missing = new MissingProperty();

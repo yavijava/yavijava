@@ -211,7 +211,7 @@ abstract public class ManagedObject {
 
             DynamicProperty[] dynaProps = objContent.getPropSet();
 
-            if ((dynaProps != null) && (dynaProps[0] != null)) {
+            if ((dynaProps != null) && (dynaProps[0] != null) && (dynaProps[0].getVal() != null)) {
                 propertyValue = PropertyCollectorUtil.convertProperty(dynaProps[0].getVal());
             }
         }
