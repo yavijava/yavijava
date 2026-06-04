@@ -4,6 +4,14 @@ This document covers breaking changes and things to verify before upgrading your
 
 ---
 
+## 9.0.2 — Bug Fixes
+
+No breaking changes from 9.0.1. Bug fixes only:
+
+- **`ManagedObject.getCurrentProperty()` `IllegalArgumentException: Unable to convertProperty on null object.` (#360).** `getCurrentProperty` guarded `dynaProps[0] != null` but not `dynaProps[0].getVal() != null`, then passed the value straight into `PropertyCollectorUtil.convertProperty`, which throws on null input. Reachable when the `XmlGenDom` deserializer cannot resolve an `ArrayOf*` xsi:type on a `DynamicProperty.val` and leaves the field unset (see #320), or via any other code path that lands a present-but-null val on `ObjectContent.propSet`. This affected every thin accessor built on `getCurrentProperty` — for example `ManagedEntity.getCustomValue()` and `VirtualMachine.getSnapshot()`. The accessor now returns `null` for a present-but-null property, restoring the expected behavior for unset optional managed-object properties.
+
+---
+
 ## 9.0.1 — Bug Fixes
 
 No breaking changes from 9.0. Bug fixes only:

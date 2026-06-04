@@ -111,4 +111,24 @@ public class ReleaseNotesTest {
         assertTrue("Expected 9.0.1 entry in rel-note.txt",
             relNote().contains("9.0.1"));
     }
+
+    // --- 9.0.2 patch release ---
+
+    @Test
+    public void updatesDoc_documents902Section() throws IOException {
+        assertTrue("Expected 9.0.2 section heading in UPDATES.md",
+            updates().contains("9.0.2"));
+    }
+
+    @Test
+    public void updatesDoc_documentsGetCurrentPropertyNullValFix() throws IOException {
+        assertTrue("Expected getCurrentProperty null-val fix entry in UPDATES.md",
+            updates().contains("getCurrentProperty"));
+    }
+
+    @Test
+    public void relNote_hasVersion902Entry() throws IOException {
+        assertTrue("Expected 9.0.2 entry in rel-note.txt",
+            relNote().contains("9.0.2"));
+    }
 }

@@ -1,3 +1,7 @@
+What is new in Version 9.0.2?
+Bug fixes:
+- ManagedObject.getCurrentProperty() IllegalArgumentException on present-but-null DynamicProperty.val (#360)
+
 What is new in Version 9.0.1?
 Bug fixes:
 - VirtualMachine.getConfig() IllegalArgumentException on VMs with vTPM (byte[][] deserialization, #352)
